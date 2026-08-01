@@ -23,6 +23,11 @@ description: ComfyUI 项目操作手册 — Wan2.2 I2V Lightning 快速视频生
 | ANIMA 生图 | anima-base-v1.0 + qwen_3_06b_base + qwen_image_vae | diffusion_models/ |
 | KREA 2 生图 | krea2_turbo_fp8 + qwen3vl_4b_fp8_scaled + qwen_image_vae | diffusion_models/ |
 | 角色 LoRA | alisa(Alya) / yuki(Yuki) / anima-highres / anima-turbo-v0.2 | models/loras/ |
+| 抠图 | BiRefNetRMBG 节点（ComfyUI-RMBG，1038lab）+ BiRefNet_toonout | custom_nodes/ + models/RMBG/ |
+| 超分 | 4x-ClearRealityV1 | models/upscale_models/ |
+| 编辑(下载中) | Bernini-R 双 fp8（Wan2.2 renderer，重打光/重风格化/插主体）| diffusion_models/ |
+
+- 图像编辑/超分安装细节与 Bernini 状态见 docs/06_extras_install.md
 
 - Wan2.1 I2V fp8 模型也在（20 步 ~3 分钟，对照用）
 - 聪明档：同一 GGUF 去掉 Lightning LoRA + 20 步 cfg 3.5 shift 8 = 原版模式（多动作可行，零下载）

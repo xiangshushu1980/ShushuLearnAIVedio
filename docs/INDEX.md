@@ -12,6 +12,7 @@
 | [03_api.md](03_api.md) | API 客户端用法、自动化调用 | 做远程服务 / 脚本化调用 |
 | [04_workflows.md](04_workflows.md) | 工作流索引、主力工作流速览 | 编辑/运行工作流 |
 | [05_session_handoff.md](05_session_handoff.md) | 会话交接（2025-08-01）：环境状态/成果/待办 | 新对话起点，无缝续接 |
+| [06_extras_install.md](06_extras_install.md) | 图像编辑/超分工具安装（RMBG/ClearReality）+ Bernini-R 状态 | 涉及这些能力时加载 |
 
 > agent 操作手册（参数/踩坑/工作流档案/学习记录）在 `.pi/skills/comfyui/SKILL.md` 及其 `references/` 分册。
 
