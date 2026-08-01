@@ -1,0 +1,15 @@
+# 敏感信息（含 API token，勿上传）
+.mcp.json
+
+# 本地数据库（MCP 生成的 generations 记录）
+comfyui-mcp/
+
+# 输出产物（AI 生成图/视频，体积大且非项目源码）
+outputs/
+
+# Python
+__pycache__/
+*.pyc
+
+# 系统
+.DS_Store
