@@ -32,14 +32,14 @@
     "class_type": "CLIPTextEncode",
     "inputs": {
       "clip": ["2", 0],
-      "text": "masterpiece, best quality, score_9, score_8, score_7, official art, 1girl, solo, clean lineart, detailed eyes, soft shading,\nalisa mikhailovna kujou (roshidere), long hair, silver hair, ahoge, hair between eyes, hair ribbon, blue eyes,\nschool uniform, grey blazer, brown lapels, white collared shirt, red bowtie, black vest, long sleeves, pleated skirt, white thighhighs, black loafers,\nstanding at the center of the frame facing the camera, night city street background, bokeh lights, cinematic lighting"
+      "text": "masterpiece, best quality, score_9, score_8, score_7, official art, 1girl, solo, clean lineart, detailed eyes, soft shading,\nalisa mikhailovna kujou (roshidere), long hair, silver hair, ahoge, hair between eyes, hair ribbon, blue eyes,\nschool uniform, grey blazer, brown lapels, white collared shirt, red bowtie, black vest, long sleeves, pleated skirt, white thighhighs, black loafers,\nstanding at the center of the frame, eye-level frontal view, looking directly at the camera, straight-on composition, no high angle, night city street background, bokeh lights, cinematic lighting"
     }
   },
   "6": {
     "class_type": "CLIPTextEncode",
     "inputs": {
       "clip": ["2", 0],
-      "text": "dark face, shaded face, worst quality, low quality, score_1, score_2, score_3, artist name, blurry, jpeg artifacts, lowres, censor, bad anatomy, bad hands, extra fingers, text, watermark"
+      "text": "dark face, shaded face, worst quality, low quality, score_1, score_2, score_3, artist name, blurry, jpeg artifacts, lowres, censor, bad anatomy, bad hands, extra fingers, text, watermark, top-down view, high angle, bird's eye view"
     }
   },
   "7": {
