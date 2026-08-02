@@ -103,3 +103,22 @@ LoadImage(起始图) ───────────────────�
 - `krea2-combo`：KREA 两遍细化；`krea2-txt2img-json`：区域提示
 - 每个 pack 含 workflow.json + manifest.yaml，可用 `comfyui_read_pack_workflow` 读取
 - 详细分析见 [learning.md](learning.md)
+
+## 8. Bernini 编辑管线（2025-08-02 实测沉淀）
+
+### pipeline_wan22_bernini_golden.json — 推荐主管线
+`参考图 → Wan2.2 I2V（第一帧锁定）→ Bernini v2v（编辑）→ RIFE×3 → ClearReality×4 → 1080p`
+- 已验证：脸部/动作/风格全保持，v2v 编辑约 120s
+
+### video_bernini_r_v2v_test.json — v2v 视频编辑（已验证 ✓）
+- 结构：LoadVideo(input/) → GetVideoComponents → BerniniConditioning(source_video, length=41, 480²) → SamplerCustom×2（res_multistep/6步 split 3/3/cfg1.0）→ CreateVideo(fps=8) → SaveVideo
+- 参数：LoRA Hi=3.0/Lo=1.5；产出 `output/video/bernini_v2v_alya_golden_00001_.mp4`
+
+### bernini_static2v_test.json — 单帧伪装视频技巧
+- 单帧 → RepeatImageBatch×81 → source_video → 模型按"编辑目标"处理（风格保持✅ 脸部漂移⚠️）
+
+### bernini_rv2v_face_test.json — 双参考脸部保真
+- source_video(静态帧) + reference_images(同图) + 脸部提示词 + 换脸负面词（保真✅ 慢 370s）
+
+### 通用约束（详见 docs/06）
+- 必须完整 fp8 text encoder（非 GGUF）；res_multistep 采样器；不能 img2img 半程去噪；16 倍数分辨率/4n+1 帧
