@@ -53,10 +53,10 @@ description: 多 Agent 共享记忆系统（Mem0）操作手册 — MCP 工具�
 ## 运维
 
 - Server: `scripts/mem0_mcp.py`（conda env `mem0`，python 3.11）
-- **HTTP 常驻模式**（streamable-http）：`scripts/start_mem0.sh` 启动，监听 `http://127.0.0.1:8899/mcp`；**单实例服务所有 pi 会话**（消除 stdio 多进程撞锁）
+- **HTTP 常驻模式**（streamable-http）：`scripts/mem0.sh start` 启动，监听 `http://127.0.0.1:8899/mcp`；**单实例服务所有 pi 会话**（消除 stdio 多进程撞锁）
+- **进程管理**：`scripts/mem0.sh {start|stop|restart|status}`（PID 文件 `.mem0/mem0.pid`，**不要用 pkill -f**——会匹配自身命令行误杀）；启动已离线化（bge-m3 缓存完整，`HF_HUB_OFFLINE=1` 无需联网，~35s 就绪）
 - `.mcp.json` 配置：`"mem0": {"url": "http://127.0.0.1:8899/mcp"}`（url 模式，非 command）
 - Key：`~/.config/mem0_deepseek_key`（600 权限，不入 git；server 启动时自动读）或环境变量 `MEM0_DEEPSEEK_API_KEY`
-- 重启 server：`pkill -f mem0_mcp.py && ./scripts/start_mem0.sh`（首次启动需加载 bge-m3 ~30s）
 - 数据: `.mem0/`（gitignored）
 
 ## 已知坑（mem0ai 2.x）
@@ -70,5 +70,7 @@ description: 多 Agent 共享记忆系统（Mem0）操作手册 — MCP 工具�
 - BM25 需要 `pip install "mem0ai[extras]"`（fastembed），首次使用自动下载稀疏模型
 - **Qdrant 嵌入式单实例锁**：`.mem0/qdrant` 同一时刻只允许一个进程访问（独占锁）；多进程会报 "already accessed by another instance"。**HTTP 常驻模式已从架构上消除**（单 server 进程串行访问）——不要回退到 stdio 多实例模式
 - **stdio 模式淘汰**：mcp 2.0 移除 FastMCP（需 1.x）；HTTP 模式用 `transport="streamable-http"`（不是 "http"）
-- **启动注意**：`start_mem0.sh` 前台跑时 curl 探测会挂起 ~30s（等 bge-m3 加载）；用 `setsid nohup ... &` 脱离进程组，避免 shell 超时把 server 一起杀掉
+- **启动必须离线**：`HF_HUB_OFFLINE=1`/`TRANSFORMERS_OFFLINE=1` 必须在 `import mem0` 之前设置（mem0 连带 import sentence-transformers，它 import 时读配置）；之前因在线检查 HF 元数据，网络不通时启动必挂（httpx client closed 报错）；bge-m3 已缓存 ~/.cache/huggingface（4.3G）
+- 环境变量位置坑：`os.environ.setdefault` 必须在 `from mem0 import Memory` 之前（mem0_mcp.py 已修正）
+- **pkill -f 误杀**：`pkill -f mem0_mcp.py` 会匹配自身命令行里的同名字符串把自己杀掉，用 `mem0.sh`（PID 文件）代替
 - **WSL2 显存测量坑**：nvidia-smi per-process 对 GPU 内存显示 N/A（加载了 libnvdxgdmal 但不显示数字）；判断某进程是否占显存要用总显存差值法（`nvidia-smi --query-gpu=memory.used` 停前/停后对比）

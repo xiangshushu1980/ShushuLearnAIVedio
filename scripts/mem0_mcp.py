@@ -9,14 +9,18 @@ Mem0 共享记忆 MCP Server — 多 Agent 共享经验（retain/recall/delete/l
 import os
 import sys
 
+# ⚠️ 环境变量必须在 import mem0/sentence-transformers 之前设置（它们 import 时读配置）
+# 强制离线：bge-m3 已缓存在 ~/.cache/huggingface（4.3G），启动无需联网
+os.environ.setdefault("HF_HUB_OFFLINE", "1")
+os.environ.setdefault("TRANSFORMERS_OFFLINE", "1")
+os.environ.setdefault("HF_ENDPOINT", "https://hf-mirror.com")
+os.environ.setdefault("MEM0_TELEMETRY", "false")
+
 # 运行环境: mem0 conda env（确保 mem0 已安装）
 try:
     from mem0 import Memory
 except ImportError:
     sys.exit("mem0 not installed. Run: pip install mem0ai 'mem0ai[nlp]' sentence-transformers")
-
-os.environ.setdefault("HF_ENDPOINT", "https://hf-mirror.com")
-os.environ.setdefault("MEM0_TELEMETRY", "false")
 
 MEM0_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".mem0")
 
