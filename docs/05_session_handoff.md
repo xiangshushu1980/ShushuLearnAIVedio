@@ -85,6 +85,8 @@
 2. **多动作管线探索**：artokun-flow **已完成结构评估**（需 WanVideoWrapper 生态 ~30GB，成本高）→ 降级方案优先 `wan-longer-videos`（同 GGUF 栈，适配成本低）待评估
 3. **更多测试**（可选）：Yuki 角色 LoRA、KREA 画 Alya、不同场景 I2V、Wan2.1 Fun Camera 相机运镜（需下载专用模型 ~30GB，暂缓）
 4. **资源索引脚本**（可选）：sqlite 登记 prompt/参数/文件，按角色/题材检索
+5. **Mem0 共享记忆系统（已落地 2025-08-02）**：MCP server（scripts/mem0_mcp.py）+ 20 条经验入库（docs/06 迁移）+ AGENTS.md 决策树 + mem0 skill（.pi/skills/mem0/）。会话开始先 memory_recall，结束时 memory_retain。**后续优化**：① 记忆中文输出（custom_instructions）② Codex 接入（~/.codex/config.toml 声明同一 MCP server）③ docs/06 实测部分精简（头注已约定）④ BM25 混合检索（pip install "mem0ai[extras]"，当前仅 dense 单路）
+6. **Bernini int8 vs fp8 对比（2025-08-02 已测，已 retain 入 Mem0）**：视频任务 int8 快 21% 画质无损 → 低配加速选项，完整结论在 Mem0 检索
 
 ## 四、常用链接
 
