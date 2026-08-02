@@ -24,7 +24,9 @@ CONFIG = {
     "llm": {
         "provider": "deepseek",
         "config": {
-            "api_key": os.environ.get("DEEPSEEK_API_KEY", ""),
+            # 优先用独立 key（MEM0_DEEPSEEK_API_KEY，配在 .mcp.json env，gitignore 保护），
+            # 回退到主 key（DEEPSEEK_API_KEY）
+            "api_key": os.environ.get("MEM0_DEEPSEEK_API_KEY") or os.environ.get("DEEPSEEK_API_KEY", ""),
             "model": "deepseek-chat",
         },
     },
