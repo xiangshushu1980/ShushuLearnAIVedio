@@ -127,9 +127,13 @@ def memory_delete(memory_id: str) -> str:
 
 @mcp.tool()
 def memory_update(memory_id: str, content: str, user_id: str = "") -> str:
-    """修改一条已有记忆的内容（memory_id 来自 memory_list）。"""
+    """修改一条已有记忆的内容（memory_id 来自 memory_list）。
+    
+    注意：mem0 库 update() 不支持 user_id 参数（user_id/agent_id 创建后不可变），
+    该参数仅保留在签名里兼容调用方，实际不传递。
+    """
     try:
-        r = _memory.update(memory_id, content, user_id=user_id or PROJECT_USER)
+        r = _memory.update(memory_id, content)
         return f"updated: {r}"
     except Exception as e:
         return f"ERROR: {e}"
