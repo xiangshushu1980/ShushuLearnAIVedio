@@ -9,7 +9,8 @@ description: ComfyUI 项目操作手册 — Wan2.2 I2V Lightning 快速视频生
 - 服务器: http://127.0.0.1:8188（WSL2 mirror / RTX 4090 24GB / torch 2.13+cu130 / py3.13 / ComfyUI 0.29）
 - 启动: `cd /home/sean/projects/ComfyUI && ./start.sh`，日志 `/tmp/comfyui_start.log`
 - venv python: `./venv/bin/python`（非系统 python）
-- MCP: pi-mcp-adapter + 项目级 `.mcp.json` → comfyui server（181 工具，mcp({search}) 按需发现）
+- MCP: pi-mcp-adapter + 项目级 `.mcp.json` → comfyui server（comfyui-mcp v0.48+，181 工具，mcp({search}) 按需发现）
+- comfy-cli: **1.13.0 已装进 ComfyUI 工作区 venv**（`/home/sean/projects/ComfyUI/venv/bin/comfy`），解锁 MCP 内 8 个 `comfy_cli_*` 桥接工具（status/server/jobs/search_nodes/workflow/transfer/models/skills）；comfyui-mcp 探测顺序 PATH → COMFY_CLI_PATH → 工作区 `.venv`/`venv`，装在 venv 里最稳（不依赖 spawn env）
 - 目录: ComfyUI 本体在 `/home/sean/projects/ComfyUI`；工作流/文档/脚本在 `/home/sean/projects/comfy-ops`
 
 ## 模型栈（快速视频生成）

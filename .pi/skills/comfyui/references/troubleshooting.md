@@ -21,6 +21,16 @@
 ## 构图
 - ⚠️ I2V 构图锚定起始图：人物在底部 → 输出从底部出现；换居中图解决（构图分析：PIL 分三带比颜色差异，主体带差异最大）
 
+## pip / comfy-cli
+- ⚠️ **ComfyUI venv 的 pip 配了阿里云镜像**（`mirrors.aliyun.com`，全局 index-url），镜像缺 comfy-cli → 报 "Could not find a version... (from versions: none)"。**绕行：`venv/bin/pip install comfy-cli -i https://pypi.org/simple/`** 显式走官方 PyPI（miniconda 的 pip 无镜像配置，不受影响）
+- comfy-cli 安装位置：装进 ComfyUI 工作区 venv（`venv` 或 `.venv` 均可被 comfyui-mcp 探测到），**不要依赖 `.mcp.json` env 或 PATH**（pi 的 MCP spawn 环境不可控，见 CivitAI token 坑）；装完用 `comfy_cli_status`(detail=env) 验证
+
+## 内存/OOM（系统崩溃）
+- ⚠️ **2025-08-02 实测：连续跑 Bernini 大任务（尤其 40 步无 LoRA 质量模式）后，ComfyUI python 进程内存飙到 ~30GB → 触发系统 OOM killer → dockerd panic → 整个 WSL2 需重启**
+  - 日志证据：`journalctl -b -1` 显示 `Out of memory: Killed process python3 total-vm:177917948kB anon-rss:30888192kB` + `dockerd: panic: runtime error`
+- **防护**：① 大任务之间 sleep 30-60s 让缓存回收 ② 不要连续多个 40 步任务 ③ 每任务后 `nvidia-smi` + `free -h` 确认内存回落 ④ 重启后 history 清空（内存态），重跑丢失任务
+- **重启命令**：`cd /home/sean/projects/ComfyUI && setsid ./start.sh > /tmp/comfyui_start.log 2>&1 < /dev/null &`（nohup 在会话结束时可能被杀，setsid 更稳）；日志文件被清空过（启动时截断）
+
 ## 下载（HF/CivitAI）
 - ⚠️ HF 下载频繁断线 → `curl -L -C -` 断点续传 + 循环重试脚本（setsid 脱离会话）；直连/mirror 波动时测速切换（hf-mirror.com vs huggingface.co）
 - ⚠️ MCP `apply_manifest` 大下载会请求超时（部分节点会装，模型不会）→ 大文件用 bash 手动下载
