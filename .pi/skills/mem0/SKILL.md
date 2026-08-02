@@ -9,7 +9,8 @@ description: 多 Agent 共享记忆系统（Mem0）操作手册 — MCP 工具�
 
 本地自托管的 agent 记忆系统，解决多 Agent 跨会话经验共享：
 - **LLM**: DeepSeek API（提取/去重/总结，费用≈0）；已配置 **custom_instructions 中文提取**（保留技术术语原文）
-- **Embedder**: bge-m3 本地（CPU 推理，**不占生视频 GPU**）+ **BM25 稀疏检索**（fastembed，术语精确命中）
+- **Embedder**: bge-m3 本地 + **BM25 稀疏检索**（fastembed，术语精确命中）
+- ⚠️ **显存（实测 2025-08-02）**：sentence-transformers 加载 bge-m3 时默认探测 CUDA 并把模型放 GPU（**占 ~2.6GB 显存**，WSL2 下 nvidia-smi per-process 显示 N/A 测不出，需用总显存差值法）；已在 `mem0_mcp.py` embedder 配置 `model_kwargs: {"device": "cpu"}` 强制 CPU 推理，显存占用归零（代价：embedding 慢一点，毫秒~百毫秒级，可忽略）
 - **存储**: Qdrant 本地（`.mem0/qdrant`，bge-m3 维度 1024）
 - **接入**: MCP server（stdio）→ pi / Codex / Cursor 通用
 
@@ -68,3 +69,5 @@ description: 多 Agent 共享记忆系统（Mem0）操作手册 — MCP 工具�
 - BM25 需要 `pip install "mem0ai[extras]"`（fastembed），首次使用自动下载稀疏模型
 - **Qdrant 嵌入式单实例锁**：`.mem0/qdrant` 同一时刻只允许一个进程访问（独占锁）；多进程会报 "already accessed by another instance"。**HTTP 常驻模式已从架构上消除**（单 server 进程串行访问）——不要回退到 stdio 多实例模式
 - **stdio 模式淘汰**：mcp 2.0 移除 FastMCP（需 1.x）；HTTP 模式用 `transport="streamable-http"`（不是 "http"）
+- **启动注意**：`start_mem0.sh` 前台跑时 curl 探测会挂起 ~30s（等 bge-m3 加载）；用 `setsid nohup ... &` 脱离进程组，避免 shell 超时把 server 一起杀掉
+- **WSL2 显存测量坑**：nvidia-smi per-process 对 GPU 内存显示 N/A（加载了 libnvdxgdmal 但不显示数字）；判断某进程是否占显存要用总显存差值法（`nvidia-smi --query-gpu=memory.used` 停前/停后对比）

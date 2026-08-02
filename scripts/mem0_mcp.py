@@ -42,7 +42,12 @@ CONFIG = {
     },
     "embedder": {
         "provider": "huggingface",
-        "config": {"model": "BAAI/bge-m3"},
+        "config": {
+            "model": "BAAI/bge-m3",
+            # sentence-transformers 默认探测 CUDA 后会把 bge-m3 放 GPU（实测占 2.6GB 显存）；
+            # 强制 CPU 推理，释放显存给生视频用。代价：embedding 稍慢（毫秒~百毫秒级，可忽略）
+            "model_kwargs": {"device": "cpu"},
+        },
     },
     "vector_store": {
         "provider": "qdrant",
