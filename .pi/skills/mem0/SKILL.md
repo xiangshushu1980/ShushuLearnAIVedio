@@ -52,10 +52,11 @@ description: 多 Agent 共享记忆系统（Mem0）操作手册 — MCP 工具�
 ## 运维
 
 - Server: `scripts/mem0_mcp.py`（conda env `mem0`，python 3.11）
-- 启动: 由 MCP 客户端（pi）按需拉起，无需常驻；数据在 `.mem0/`
-- 环境: `DEEPSEEK_API_KEY` 必须（依赖 pi 进程 env 或显式传）；`HF_ENDPOINT=hf-mirror.com` 已在脚本内默认
-- 迁移脚本: `scripts/mem0_migrate.py`（批量 retain 用）
-- 诊断: `Memory.from_config` 打印 `embedding_model.config.embedding_dims`（必须 1024，不是 1536 默认！）
+- **HTTP 常驻模式**（streamable-http）：`scripts/start_mem0.sh` 启动，监听 `http://127.0.0.1:8899/mcp`；**单实例服务所有 pi 会话**（消除 stdio 多进程撞锁）
+- `.mcp.json` 配置：`"mem0": {"url": "http://127.0.0.1:8899/mcp"}`（url 模式，非 command）
+- Key：`~/.config/mem0_deepseek_key`（600 权限，不入 git；server 启动时自动读）或环境变量 `MEM0_DEEPSEEK_API_KEY`
+- 重启 server：`pkill -f mem0_mcp.py && ./scripts/start_mem0.sh`（首次启动需加载 bge-m3 ~30s）
+- 数据: `.mem0/`（gitignored）
 
 ## 已知坑（mem0ai 2.x）
 
@@ -65,4 +66,5 @@ description: 多 Agent 共享记忆系统（Mem0）操作手册 — MCP 工具�
 - `.mcp.json` 新增 server 后需重启 pi 生效
 - 中文提取：MemoryConfig `custom_instructions` 加“记忆条目必须使用简体中文输出，保留关键技术术语原文”（已配在 mem0_mcp.py）
 - BM25 需要 `pip install "mem0ai[extras]"`（fastembed），首次使用自动下载稀疏模型
-- **Qdrant 嵌入式单实例锁**：`.mem0/qdrant` 同一时刻只允许一个进程访问；多会话/重复启动 mem0 server 会报 "already accessed by another instance" → `pkill -f mem0_mcp.py` 清理后重试（pi 会重新拉起）
+- **Qdrant 嵌入式单实例锁**：`.mem0/qdrant` 同一时刻只允许一个进程访问（独占锁）；多进程会报 "already accessed by another instance"。**HTTP 常驻模式已从架构上消除**（单 server 进程串行访问）——不要回退到 stdio 多实例模式
+- **stdio 模式淘汰**：mcp 2.0 移除 FastMCP（需 1.x）；HTTP 模式用 `transport="streamable-http"`（不是 "http"）

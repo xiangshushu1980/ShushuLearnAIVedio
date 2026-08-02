@@ -20,13 +20,23 @@ os.environ.setdefault("MEM0_TELEMETRY", "false")
 
 MEM0_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".mem0")
 
+
+def _get_api_key() -> str:
+    """key 读取顺序：环境变量 → ~/.config/mem0_deepseek_key 文件（600 权限，不入 git）"""
+    key = os.environ.get("MEM0_DEEPSEEK_API_KEY") or os.environ.get("DEEPSEEK_API_KEY")
+    if key:
+        return key
+    keyfile = os.path.expanduser("~/.config/mem0_deepseek_key")
+    if os.path.exists(keyfile):
+        with open(keyfile) as f:
+            return f.read().strip()
+    return ""
+
 CONFIG = {
     "llm": {
         "provider": "deepseek",
         "config": {
-            # 优先用独立 key（MEM0_DEEPSEEK_API_KEY，配在 .mcp.json env，gitignore 保护），
-            # 回退到主 key（DEEPSEEK_API_KEY）
-            "api_key": os.environ.get("MEM0_DEEPSEEK_API_KEY") or os.environ.get("DEEPSEEK_API_KEY", ""),
+            "api_key": _get_api_key(),
             "model": "deepseek-chat",
         },
     },
@@ -46,13 +56,14 @@ CONFIG = {
 }
 
 if not CONFIG["llm"]["config"]["api_key"]:
-    sys.exit("DEEPSEEK_API_KEY not set")
+    sys.exit("No DeepSeek API key (set MEM0_DEEPSEEK_API_KEY / DEEPSEEK_API_KEY / ~/.config/mem0_deepseek_key)")
 
 _memory = Memory.from_config(CONFIG)
 
 from mcp.server.fastmcp import FastMCP
 
-mcp = FastMCP("mem0")
+# HTTP 模式（streamable-http）：一个常驻实例服务所有 pi 会话，消除 stdio 多进程撞锁
+mcp = FastMCP("mem0", host="127.0.0.1", port=8899)
 
 PROJECT_USER = "comfy-ops"  # 项目级共享记忆池
 
@@ -120,4 +131,4 @@ def memory_update(memory_id: str, content: str, user_id: str = "") -> str:
 
 
 if __name__ == "__main__":
-    mcp.run(transport="stdio")
+    mcp.run(transport="streamable-http")
