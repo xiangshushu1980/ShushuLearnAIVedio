@@ -74,7 +74,7 @@
 
 ## 三、待办（新对话优先级）
 
-0. **Bernini 视频编辑 v2v（新）**：图像编辑已测成功（官方管线 `official_relight`），下一步测**视频编辑**（source_video 输入用现有 5 秒视频做重打光/风格化）——官方子图 `video_bernini_r_video_editing.json` 同结构
+0. **✅ Bernini 图像+视频编辑全部测通**：图像（official_relight）/视频（v2v_alya_golden）均成功，工作流 `video_bernini_r_{test,v2v_test}.json`；下一步可测**风格化/换背景/插主体**等其他编辑任务，或 **Bernini 长视频**（81帧）
 1. **起始图选优拍板**：ANIMA vs KREA Alya 768²（对比图 output/compare/）→ 用户拍板主角色管线
 2. **多动作管线探索**：artokun-flow **已完成结构评估**（需 WanVideoWrapper 生态 ~30GB，成本高）→ 降级方案优先 `wan-longer-videos`（同 GGUF 栈，适配成本低）待评估
 3. **更多测试**（可选）：Yuki 角色 LoRA、KREA 画 Alya、不同场景 I2V、Wan2.1 Fun Camera 相机运镜（需下载专用模型 ~30GB，暂缓）

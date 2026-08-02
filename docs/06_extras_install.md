@@ -45,6 +45,18 @@ SamplerCustom(high, add_noise=True, cfg=1.0) → SamplerCustom(low, add_noise=Fa
 - **踩坑**：① 不能用 GGUF text encoder（Q5_K_S），必须完整 fp8（`umt5_xxl_fp8_e4m3fn_scaled`，6.7GB）② 不能用 euler 采样器（官方用 res_multistep）③ 不能走 img2img VAEEncode 半程去噪（会“花”）；必须 BerniniConditioning in-context 注入从头采样 ④ WanImageToVideo 不适合（那是 I2V concat 条件，Bernini 需 BerniniConditioning）
 - **产出**：`output/img_bernini/official_relight_00001_.png`（928×1280 重打光）
 
+### Bernini 视频编辑 v2v（✅ 已测成功 2025-08-02）
+```
+LoadVideo(源视频, input/ 路径) → GetVideoComponents(拆帧) → BerniniConditioning(source_video=帧, length=41, 480²) → SamplerCustom×2 → CreateVideo(fps=8) → SaveVideo
+```
+- **结构**：与图像编辑同管线，源视频经 GetVideoComponents 拆帧注入 source_video
+- **参数**：LoRA Hi=3.0/Lo=1.5、res_multistep、6步 split 3/3、cfg=1.0、length=帧数（41=5秒@8fps）
+- **效果**：整段一致性重打光，动作保留（14.1→15.6），主体保持
+- **产出**：`output/video/bernini_v2v_alya_golden_00001_.mp4`（Alya 金色时刻 5 秒）
+- **工作流**：`workflows/video_bernini_r_v2v_test.json`
+- **踩坑**：LoadVideo 只能读 input/ 下文件（不能用 output/ 路径）；SaveVideo 需显式 format/codec
+
+
 ## 四、MCP 工具可用性更新（本会话盘点结论）
 
 | 工具 | 之前 | 现在 |
