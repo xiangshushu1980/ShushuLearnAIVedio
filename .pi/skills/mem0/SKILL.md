@@ -65,3 +65,4 @@ description: 多 Agent 共享记忆系统（Mem0）操作手册 — MCP 工具�
 - `.mcp.json` 新增 server 后需重启 pi 生效
 - 中文提取：MemoryConfig `custom_instructions` 加“记忆条目必须使用简体中文输出，保留关键技术术语原文”（已配在 mem0_mcp.py）
 - BM25 需要 `pip install "mem0ai[extras]"`（fastembed），首次使用自动下载稀疏模型
+- **Qdrant 嵌入式单实例锁**：`.mem0/qdrant` 同一时刻只允许一个进程访问；多会话/重复启动 mem0 server 会报 "already accessed by another instance" → `pkill -f mem0_mcp.py` 清理后重试（pi 会重新拉起）
