@@ -46,9 +46,10 @@
 - ⚠️ ComfyUI-Manager 是旧 3.x：comfyui-mcp 的 Manager API 操作（install_custom_node / Manager 下载）不可用 → 装节点用 git clone（走代理）或手动
 - ⚠️ Civitai token 有效（curl 带 token 307 / 不带 401），但 MCP `download_civitai_model` 因缺 COMFYUI_PATH + Manager 3.x 不可用 → 下载用 curl 绕行（见 SKILL troubleshooting）
 
-## 五、网络/代理备忘（本会话实测，2025-08-01 修订）
+## 五、网络/代理备忘（用户权威配置，2025-08-01 修订）
 
-- **直连优先**：TUN 模式平时直连 GitHub 即通（实测 codeload/raw 直连 200）；显式 `-x http://127.0.0.1:7890`（Clash 端口，WSL2 mirror 下可达）作为**失败兜底**——DNS 污染/节点抖动时最稳（绕过本地 DNS 远端解析）
+- **Clash Rule 模式 + TUN 接管**：无 system proxy（无 http_proxy 环境变量），流量被 TUN 透明接管后按规则分流——**GitHub 走代理节点、国内直连**
+- **curl/git 默认直连即可**（TUN 接管后自动按规则分流，实测 codeload/raw 直连 200）；显式 `-x http://127.0.0.1:7890`（Clash 端口，WSL2 mirror 下可达）仅在 DNS 污染/节点抖动时作**失败兜底**
 - **git 报 "could not read Username" = 认证问题**（仓库不存在/无权限），不是网络被墙
-- HF 模型下载：`hf-mirror.com` 直连可用（不用代理）
-- pip：清华源 `https://pypi.tuna.tsinghua.edu.cn/simple`
+- **遇到无法访问的问题，第一时间与用户确认和测试，不要擅自改配置/反复重试**（网络配置以用户为准）
+- HF 模型下载：`hf-mirror.com` 直连可用（不用代理）；pip：清华源 `https://pypi.tuna.tsinghua.edu.cn/simple`
