@@ -8,8 +8,8 @@ description: 多 Agent 共享记忆系统（Mem0）操作手册 — MCP 工具�
 ## 是什么
 
 本地自托管的 agent 记忆系统，解决多 Agent 跨会话经验共享：
-- **LLM**: DeepSeek API（提取/去重/总结，费用≈0）
-- **Embedder**: bge-m3 本地（CPU 推理，**不占生视频 GPU**）
+- **LLM**: DeepSeek API（提取/去重/总结，费用≈0）；已配置 **custom_instructions 中文提取**（保留技术术语原文）
+- **Embedder**: bge-m3 本地（CPU 推理，**不占生视频 GPU**）+ **BM25 稀疏检索**（fastembed，术语精确命中）
 - **存储**: Qdrant 本地（`.mem0/qdrant`，bge-m3 维度 1024）
 - **接入**: MCP server（stdio）→ pi / Codex / Cursor 通用
 
@@ -48,7 +48,8 @@ description: 多 Agent 共享记忆系统（Mem0）操作手册 — MCP 工具�
 ## 已知坑（mem0ai 2.x）
 
 - QdrantConfig `embedding_model_dims` 默认 1536（OpenAI 维度），本地 bge-m3 必须显式 1024，否则 add/search 维度错
-- API 不一致：`add()` 用 `user_id=`；`search()`/`get_all()` 用 `filters={"user_id": ...}`
+- API 不一致：`add()` 用 `user_id=`；`search()`/`get_all()` 用 `filters={"user_id": ...}`；`delete(memory_id)` 只收 id（不带 user_id）
 - mcp SDK 需 1.x（`pip install "mcp>=1.12,<2"`）；mcp 2.0 移除 FastMCP
 - `.mcp.json` 新增 server 后需重启 pi 生效
-- 记忆提取默认英文输出（mem0 默认 prompt），语义检索不受影响
+- 中文提取：MemoryConfig `custom_instructions` 加“记忆条目必须使用简体中文输出，保留关键技术术语原文”（已配在 mem0_mcp.py）
+- BM25 需要 `pip install "mem0ai[extras]"`（fastembed），首次使用自动下载稀疏模型

@@ -40,6 +40,7 @@ CONFIG = {
         },
     },
     "history_db_path": os.path.join(MEM0_DIR, "history.db"),
+    "custom_instructions": "记忆条目必须使用简体中文输出，保留关键技术术语（如 res_multistep、cfg、LoRA）原文。",
 }
 
 if not CONFIG["llm"]["config"]["api_key"]:
@@ -97,10 +98,10 @@ def memory_list(user_id: str = "", agent_id: str = "") -> list:
 
 
 @mcp.tool()
-def memory_delete(memory_id: str, user_id: str = "") -> str:
-    """删除一条记忆（先 memory_list 查 id）。"""
+def memory_delete(memory_id: str) -> str:
+    """删除一条记忆（先 memory_list 查 id；memory_id 全局唯一）。"""
     try:
-        r = _memory.delete(memory_id, user_id=user_id or PROJECT_USER)
+        r = _memory.delete(memory_id)
         return f"deleted: {r}"
     except Exception as e:
         return f"ERROR: {e}"
