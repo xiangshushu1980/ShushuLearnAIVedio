@@ -34,8 +34,19 @@
 | 文件 | 位置 | 大小 | 用途 |
 |------|------|------|------|
 | wan2.1_i2v_480p_14B_fp8_e4m3fn.safetensors | models/diffusion_models/ | 16GB | Wan2.1 I2V（20 步 ~3 分钟，对照）|
-| umt5_xxl_fp8_e4m3fn_scaled.safetensors | models/text_encoders/ | 6.3GB | 2.1 文本编码器 |
+| umt5_xxl_fp8_e4m3fn_scaled.safetensors | models/text_encoders/ | 6.3GB | **2.1 + Bernini 文本编码器**（Bernini 不能用 GGUF 版，必须这个完整 fp8）|
 | clip_vision_h.safetensors | models/clip_vision/ | 1.2GB | CLIP Vision（2.1 I2V 需要；2.2 不需要）|
+
+### 图像编辑/超分（2025-08-01/02 新增）
+| 文件 | 位置 | 大小 | 用途 |
+|------|------|------|------|
+| BiRefNet_toonout.safetensors | models/RMBG/BiRefNet/ | 884MB | 抠图（ComfyUI-RMBG 节点）|
+| 4x-ClearRealityV1.pth | models/upscale_models/ | 9MB | 超分 4x（768→3072 实测 3.3s）|
+| wan2.2_bernini_r_{high,low}_noise_fp8_scaled.safetensors | models/diffusion_models/ | 15.5GB×2 | Bernini-R 编辑（重打光/重风格化）|
+| wan2.2_bernini_r_{high,low}_noise_int8_convrot.safetensors | models/diffusion_models/ | 14.5GB×2 | Bernini int8（视频任务快 21% 画质无损）|
+| lightx2v_T2V_14B_cfg_step_distill_v2_lora_rank64_bf16.safetensors | models/loras/ | 630MB | Bernini 蒸馏 LoRA（Hi 3.0/Lo 1.5）|
+
+- Bernini 安装/管线/经验详见 docs/06_extras_install.md（经验已迁 Mem0，`memory_recall` 可检索）
 
 ## 下载源
 
@@ -64,6 +75,8 @@ https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/tree/main/split_file
 - 4090 用 fp8 更省显存更快，fp16 画质略好
 
 ### 2. 网络加速（WSL + FLClash VPN）
+
+> ⚠️ **2025-08-02 修订**：当前已切 **Clash Rule 模式 + TUN**（GitHub 走代理/国内直连，见 docs/06 第五节）。以下 FLClash 脚本是早期 TUN 全劫持配置，**保留作重装参考**，新配置以 06 为准。
 下载慢的根因：**VPN TUN 模式劫持所有流量**（含国内域名），DNS 返回 fake-ip (198.18.0.x)。
 
 FLClash 脚本配置（已设置，未来重装需恢复）：

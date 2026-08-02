@@ -1,20 +1,18 @@
 # ComfyUI 项目文档索引
 
 > 本机环境：Ubuntu 24.04 (WSL2, mirror 网络模式) / RTX 4090 24GB / Python 3.13 / CUDA 13
-> 最后更新：2025-08-01
+> 最后更新：2025-08-02
 
 ## 📚 文档导航（按需加载）
 
 | 文档 | 用途 | 何时加载 |
 |------|------|----------|
-| [01_install.md](01_install.md) | 安装、启动、目录结构 | 环境出问题 / 需要重启服务 |
-| [02_models.md](02_models.md) | 已下载模型清单、下载源、网络加速经验 | 需要下新模型 / 下载慢 |
-| [03_api.md](03_api.md) | API 客户端用法、自动化调用 | 做远程服务 / 脚本化调用 |
-| [04_workflows.md](04_workflows.md) | 工作流索引、主力工作流速览 | 编辑/运行工作流 |
-| [05_session_handoff.md](05_session_handoff.md) | 会话交接（2025-08-01）：环境状态/成果/待办 | 新对话起点，无缝续接 |
-| [06_extras_install.md](06_extras_install.md) | 图像编辑/超分工具安装（RMBG/ClearReality）+ Bernini-R 状态 | 涉及这些能力时加载 |
+| [01_environment.md](01_environment.md) | 环境/启动/维护/API/客户端（01+03 合并） | 环境出问题 / 重启服务 / 脚本化调用 |
+| [02_models.md](02_models.md) | 已下载模型清单（含 RMBG/ClearReality/Bernini）、下载源、显存参考 | 下新模型 / 下载慢 / 查模型 |
+| [05_session_handoff.md](05_session_handoff.md) | 会话交接：环境状态/成果/待办 | 新对话起点，无缝续接 |
+| [06_extras_install.md](06_extras_install.md) | 图像编辑/超分/Bernini 手册（经验已迁 Mem0） | 涉及这些能力时加载 |
 
-> agent 操作手册（参数/踩坑/工作流档案/学习记录）在 `.pi/skills/comfyui/SKILL.md` 及其 `references/` 分册。
+> agent 操作手册（模型栈/参数/踩坑/工作流档案）在 `.pi/skills/comfyui/SKILL.md` 及其 `references/` 分册；共享记忆/经验检索在 Mem0（`memory_recall`）。
 
 ## 🔑 快速速览
 
