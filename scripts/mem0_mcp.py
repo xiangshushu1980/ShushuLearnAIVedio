@@ -75,6 +75,9 @@ from mcp.server.fastmcp import FastMCP
 mcp = FastMCP("mem0", host="127.0.0.1", port=8899)
 
 PROJECT_USER = "comfy-ops"  # 项目级共享记忆池
+GLOBAL_USER = "global"  # 跨项目通用记忆池（网络/机器/方法论等所有项目都需要的经验）
+
+DEFAULT_RECALL_POOLS = [GLOBAL_USER, PROJECT_USER]  # recall 默认双池合并
 
 
 def _filters(user_id: str = "", agent_id: str = ""):
@@ -84,25 +87,15 @@ def _filters(user_id: str = "", agent_id: str = ""):
     return f
 
 
-@mcp.tool()
-def memory_retain(content: str, user_id: str = "", agent_id: str = "") -> str:
-    """存一条经验/事实到共享记忆库。内容用自然语言描述（如"Bernini 图像编辑用 res_multistep 采样器，LoRA 3.0/1.5"）。
-    user_id 默认 comfy-ops（项目共享池）；agent_id 可选（区分来源 agent）。"""
+def _search_pool(query: str, pool: str, agent_id: str = "", limit: int = 5) -> list:
+    """单池检索（mem0 强制至少一个 user_id/agent_id 过滤，无法全库盲搜）。"""
     try:
-        r = _memory.add(content, **_filters(user_id, agent_id))
-        mems = [x.get("memory", "") for x in r.get("results", [])]
-        return f"OK stored: {mems}"
-    except Exception as e:
-        return f"ERROR: {e}"
-
-
-@mcp.tool()
-def memory_recall(query: str, user_id: str = "", agent_id: str = "", limit: int = 5) -> list:
-    """按语义检索共享记忆（如"Bernini 用什么采样器""之前测过超分多快"）。返回带相关度分数的记忆列表。"""
-    try:
-        r = _memory.search(query, filters=_filters(user_id, agent_id), limit=limit)
+        f = {"user_id": pool}
+        if agent_id:
+            f["agent_id"] = agent_id
+        r = _memory.search(query, filters=f, limit=limit)
         return [
-            {"score": round(x.get("score", 0), 3), "memory": x.get("memory", "")}
+            {"score": round(x.get("score", 0), 3), "memory": x.get("memory", ""), "pool": pool}
             for x in r.get("results", [])
         ]
     except Exception as e:
@@ -110,10 +103,47 @@ def memory_recall(query: str, user_id: str = "", agent_id: str = "", limit: int 
 
 
 @mcp.tool()
-def memory_list(user_id: str = "", agent_id: str = "") -> list:
-    """列出共享记忆库的全部记忆（用于审查/人工可读）。"""
+def memory_retain(content: str, user_id: str = "", agent_id: str = "") -> str:
+    """存一条经验/事实到共享记忆库。内容用自然语言描述（如"Bernini 图像编辑用 res_multistep 采样器，LoRA 3.0/1.5"）。
+    user_id 默认 comfy-ops（项目共享池）；传 "global" 存跨项目通用池（网络/机器/方法论等）；agent_id 可选。"""
     try:
-        r = _memory.get_all(filters=_filters(user_id, agent_id))
+        uid = user_id or PROJECT_USER
+        r = _memory.add(content, user_id=uid, agent_id=agent_id or None)
+        mems = [x.get("memory", "") for x in r.get("results", [])]
+        return f"OK stored to {uid}: {mems}"
+    except Exception as e:
+        return f"ERROR: {e}"
+
+
+@mcp.tool()
+def memory_recall(query: str, user_id: str = "", agent_id: str = "", limit: int = 5) -> list:
+    """按语义检索共享记忆（如"Bernini 用什么采样器""之前测过超分多快"）。
+    默认双池合并（global 跨项目通用 + comfy-ops 项目共享，结果按分数排序去重）；
+    传 user_id 则只查指定池。返回带相关度分数的记忆列表。"""
+    try:
+        pools = [user_id] if user_id else DEFAULT_RECALL_POOLS
+        seen = set()
+        merged = []
+        for pool in pools:
+            for item in _search_pool(query, pool, agent_id, limit):
+                if "error" in item:
+                    return [item]
+                key = item["memory"]
+                if key not in seen:
+                    seen.add(key)
+                    merged.append(item)
+        merged.sort(key=lambda x: x.get("score", 0), reverse=True)
+        return merged[:limit]
+    except Exception as e:
+        return [{"error": str(e)}]
+
+
+@mcp.tool()
+def memory_list(user_id: str = "", agent_id: str = "") -> list:
+    """列出指定池的全部记忆（用于审查/人工可读）。默认 comfy-ops；传 "global" 看通用池。"""
+    try:
+        uid = user_id or PROJECT_USER
+        r = _memory.get_all(filters=_filters(uid, agent_id))
         return [{"id": x.get("id", ""), "memory": x.get("memory", "")} for x in r.get("results", [])]
     except Exception as e:
         return [{"error": str(e)}]

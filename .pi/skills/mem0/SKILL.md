@@ -25,6 +25,8 @@ description: 多 Agent 共享记忆系统（Mem0）操作手册 — MCP 工具�
 | `memory_update(memory_id, content, user_id?)` | 改一条 | 修正过时经验 |
 
 - **默认 user_id=comfy-ops**（项目共享池），所有 agent 读写同一池；agent_id 可选区分来源
+- **双池架构（2025-08-02 起）**：`global` 跨项目通用池 + `comfy-ops` 项目池；recall **默认双池合并检索**（global 在前按分数排序去重），Agent 无需指定池；retain 时显式传 `user_id="global"` 存通用经验（网络/机器/方法论），默认存项目池
+- **判断规则**：所有项目都需要 → global；项目专属 → comfy-ops；说不清/跨界 → 默认 global（检索是命中式不是强制加载，放宽不易丢）
 - 记忆是人可读明文条目（LLM 提取），随时可看可改可删
 
 ## 内容分类决策树

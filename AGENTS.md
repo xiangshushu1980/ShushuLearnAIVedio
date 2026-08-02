@@ -12,10 +12,16 @@
 ```
 这条信息是？
 ├─ 稳定、可执行、需要查的参考（模型清单/工作流结构/参数表/安装要点）→ docs/ + .pi/skills/comfyui/（手册）
-├─ 动态经验、踩坑、实测数据、对比结论、用户偏好 → Mem0 共享记忆（memory_retain，user_id=comfy-ops）
+├─ 动态经验、踩坑、实测数据、对比结论、用户偏好 → Mem0 共享记忆（memory_retain）
+│   ├─ 所有项目都需要（网络/机器/工具方法论）→ user_id="global"（跨项目通用池）
+│   ├─ 本项目专属（Bernini/Wan2.2/ComfyUI 细节）→ user_id=comfy-ops（项目池）
+│   └─ 说不清/可能跨界 → 默认 global（检索是命中式不是强制加载，放宽不易丢）
 ├─ 会话级进度（正在做什么/交接下一步）→ docs/05_session_handoff.md（短期，收尾归档）
 └─ 拿不准 → 问用户
 ```
+
+> recall 默认双池合并检索（global + comfy-ops 按分数排序），Agent 无需指定池；
+> 显式传 user_id 则只查指定池（高级用法）。
 
 ## 记忆纪律（Mem0 共享记忆）
 
