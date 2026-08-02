@@ -25,12 +25,25 @@
 - **模型**（fp8_scaled 版，4090 推荐）：
   - `diffusion_models/wan2.2_bernini_r_high_noise_fp8_scaled.safetensors`（~15.5GB，✅ 已完整）
   - `diffusion_models/wan2.2_bernini_r_low_noise_fp8_scaled.safetensors`（~15.5GB，下载中）
-  - `loras/lightx2v_T2V_14B_cfg_step_distill_v2_lora_rank64_bf16.safetensors`（T2V 版，需下）
-  - 源：`hf-mirror.com/Comfy-Org/Bernini-R`；text encoder 用现有 `umt5_xxl_fp8`（不用下）；VAE 用现有 `wan_2.1_vae`
-- **workflow 模板**：`comfy-ops/workflows/video_bernini_r_{image_editing,video_editing}.json`（已下载，Comfy-Org 官方）
-- **节点**：用 ComfyUI 0.29 内置节点（GetVideoComponents/BatchImagesNode 等已验证可用）
+  - `loras/lightx2v_T2V_14B_cfg_step_distill_v2_lora_rank64_bf16.safetensors`（✅ 已下 13:51，630MB）
+  - 源：`hf-mirror.com/Comfy-Org/Bernini-R`；text encoder 用现有 `umt5_xxl_fp8_e4m3fn_scaled.safetensors`（✅ 已有，注意**不是 GGUF 版**）；VAE 用现有 `wan_2.1_vae`
+- **workflow 模板**：`comfy-ops/workflows/video_bernini_r_{image_editing,video_editing}.json`（UI 格式，Comfy-Org 官方）；**可用 API 版：`comfy-ops/workflows/video_bernini_r_test.json`**（官方子图反编译，已验证）
+- **节点**：用 ComfyUI 0.29 内置节点（**BerniniConditioning** + SamplerCustom×2 + SplitSigmas + KSamplerSelect(res_multistep)）
 - **推荐工作流**：Wan2.2 生成 → Bernini 编辑；可编辑任意来源视频（含 Wan2.1/云端，需符合 Wan 帧数 4n+1/分辨率 16 倍数）
-- **测试待办**：由其他 Agent 负责（模型下完 → 核对 → 跑 image_editing 模板验证）
+- **✅ 测试完成（2025-08-01）**：图像编辑（重打光）实测成功，官方管线 `official_relight_00001_.png`（928×1280）效果优秀，用户满意
+
+### Bernini 图像编辑官方管线（API 版，已验证）
+```
+CLIPLoader(umt5_xxl_fp8_e4m3fn_scaled, wan) → CLIPTextEncode×2
+UNETLoader(high_noise fp8) → LoRA(T2V distill, strength=3.0)
+UNETLoader(low_noise fp8) → LoRA(T2V distill, strength=1.5)
+BerniniConditioning(positive, negative, vae, width=928, height=1280, length=1, source_video=缩放图) → positive/negative/latent
+KSamplerSelect(res_multistep) + BasicScheduler(simple, 6步) + SplitSigmas(3/3)
+SamplerCustom(high, add_noise=True, cfg=1.0) → SamplerCustom(low, add_noise=False) → VAEDecode → SaveImage
+```
+- **关键参数**：LoRA Hi=3.0 / Lo=1.5（官方 Turbo）；采样器 `res_multistep`；6 步 split 3/3；cfg=1.0；length=1（单帧图像）；分辨率 16 倍数（928×1280）
+- **踩坑**：① 不能用 GGUF text encoder（Q5_K_S），必须完整 fp8（`umt5_xxl_fp8_e4m3fn_scaled`，6.7GB）② 不能用 euler 采样器（官方用 res_multistep）③ 不能走 img2img VAEEncode 半程去噪（会“花”）；必须 BerniniConditioning in-context 注入从头采样 ④ WanImageToVideo 不适合（那是 I2V concat 条件，Bernini 需 BerniniConditioning）
+- **产出**：`output/img_bernini/official_relight_00001_.png`（928×1280 重打光）
 
 ## 四、MCP 工具可用性更新（本会话盘点结论）
 
