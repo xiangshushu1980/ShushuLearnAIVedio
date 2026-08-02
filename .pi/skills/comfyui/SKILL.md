@@ -32,7 +32,7 @@ description: ComfyUI 项目操作手册 — Wan2.2 I2V Lightning 快速视频生
 - 图像编辑/超分安装细节与 Bernini 官方管线见 docs/06_extras_install.md
 - ⚠️ **Bernini 时长铁律**：源视频时长必须 == 输出时长（10s→5s 会脑补/步伐乱）；cfg 用 1.0 最稳；fps16 官方默认
 
-- Wan2.1 I2V fp8 模型也在（20 步 ~3 分钟，对照用）
+- ~~Wan2.1 I2V fp8 模型~~ **已删除（2025-08-02）**：Wan2.2 A14B 完全覆盖（原生 480P+720P，2.1 仅 480P），管线已全量切 2.2；**VAE（wan_2.1_vae）保留**，Bernini/2.2 跨版本共用
 - 聪明档：同一 GGUF 去掉 Lightning LoRA + 20 步 cfg 3.5 shift 8 = 原版模式（多动作可行，零下载）
 
 ## 测试工作流（comfy-ops/workflows/）
