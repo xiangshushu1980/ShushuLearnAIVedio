@@ -84,7 +84,7 @@ v2v 时：LoadVideo(input/路径) → GetVideoComponents 拆帧 → 注入 sourc
 | train_* | ❌ 需 docker-GPU + HF_TOKEN |
 | RunPod / 云端 API | ❌ 不用（用户排除云）|
 
-- ⚠️ ComfyUI-Manager 3.x：Manager API 操作不可用 → 装节点用 git clone 或手动
+- ✅ ComfyUI-Manager 已更新（2026-07-30，behind=3），Manager API 可用（`/customnode/installed` 正常响应）；Manager 界面的 node conflict 红标是静态比对噪音（线上仓库声明表互相比对，非本地安装冲突），本地已装扩展 AST 扫描 0 同名冲突，可无视
 - ⚠️ CivitAI token 有效但 MCP `download_civitai_model` 不可用 → 用 curl 绕行
 
 ## 五、网络（用户权威配置）
