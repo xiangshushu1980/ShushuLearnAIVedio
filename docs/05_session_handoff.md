@@ -88,6 +88,23 @@
 5. **Mem0 共享记忆系统（已落地 2025-08-02）**：MCP server（scripts/mem0_mcp.py）+ 20 条经验入库（docs/06 迁移）+ AGENTS.md 决策树 + mem0 skill（.pi/skills/mem0/）。会话开始先 memory_recall，结束时 memory_retain。**后续优化**：① 记忆中文输出（custom_instructions）② Codex 接入（~/.codex/config.toml 声明同一 MCP server）③ docs/06 实测部分精简（头注已约定）④ BM25 混合检索（pip install "mem0ai[extras]"，当前仅 dense 单路）
 6. **Bernini int8 vs fp8 对比（2025-08-02 已测，已 retain 入 Mem0）**：视频任务 int8 快 21% 画质无损 → 低配加速选项，完整结论在 Mem0 检索
 
+## 本次追加（2025-08-02 晚，Bernini 收尾）
+
+### 已完成
+- ✅ **int8_convrot 已下载并实测**：视频任务 int8 快 21%（105s vs 133s/81帧）画质无损（清晰度 1023 vs 999）；图像单帧 int8 反而慢 18%（加载开销）；结论入 `bernini_int8_findings.md` + docs/06 + params.md
+- ✅ **cfg/fps 三版对比**：cfg1.0@16fps（81帧 480²）清晰度最高 1320，动作最连贯；cfg1.5 压低清晰度 + 步伐乱；**cfg1.0 是编辑任务甜点**
+- ✅ **10s 组合管线验证（关键）**：`wan22_alya_10s_f16`（Wan2.2 161帧@16fps 832×480，280s）→ `bernini_v2v_10s_f16`（Bernini 编辑，1310s）→ 清晰度 732→870，**用户目视确认 10s 全程自然连贯**
+- ✅ **时长匹配铁律**：源视频时长必须 == Bernini 输出时长（10s→10s 匹配；10s→5s 脑补/步伐混乱）
+- ✅ **WSL 内存 32GB→48GB**：Bernini 任务 python 峰值 ~30GB 两次 OOM 崩溃 → `.wslconfig` 加 `memory=48GB`（已生效，免费 45GB）；重启命令 setsid
+- ✅ **ComfyUI 模型缓存机制确认**：NORMAL_VRAM 任务间不释放（空闲显存 ~11.8GB 驻留），同模型连跑快、互切才重载
+- ✅ **新工作流**：`bernini_int8_cfg10_fps16.json` / `bernini_v2v_10s_f16.json` / `wan22_alya_10s_f16.json`
+
+### 待办（重开对话优先级）
+1. **10s 甜点定案**：161帧@832×480 = 1310s 太慢（非线性 12×）；待测 **640×360** 降面积方案（预计 ~500s）——若接受则固化 10s 组合管线
+2. **5s 甜点定案**：待测 **81帧@832×480（官方横屏）** vs 480² 的画质/耗时权衡 → 确定后固化默认管线
+3. **产物对比图**：`output/compare/bernini_3way_fps_cfg.png`（cfg/fps 三版）、`bernini_v2v_10s_f16_compare.png`（10s 源/编辑）
+4. **目视确认遗留**：cfg1.0@16fps 5s 版步伐是否自然（用户已确认 10s 版连贯）
+
 ## 四、常用链接
 
 - Alya 768² 起始图：`http://localhost:8188/view?filename=anima_alya_768_00001_.png&subfolder=anima&type=output`

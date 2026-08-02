@@ -96,6 +96,20 @@ LoadVideo(源视频, input/ 路径) → GetVideoComponents(拆帧) → BerniniCo
 - 结构：主体引用 → 外貌保持描述 → 场景 → 动作序列（start/then/after/throughout）→ 镜头固定+一致性保证
 - 负面词加 photorealistic/3D render/different face/换脸（防写实漂移）
 
+### Bernini 量化选型（int8 vs fp8，2025-08-02 实测）
+- **int8_convrot 双模型**：`wan2.2_bernini_r_{high,low}_noise_int8_convrot.safetensors`（各 14.54GB）✅ 已下载（hf-mirror，约 18 分钟）
+- **甜点**：视频任务 int8 快 21%（105s vs 133s/81帧）画质无损（清晰度 1023 vs 999）→ **默认用 int8**；图像单帧 int8 加载开销主导反而慢 18% → 单帧可留 fp8
+- 需 ComfyUI 0.29+（convrot 支持）；RTX 40 系是 int8 收益最大区间；Ampere/ROCm 有坑（与 4090 无关）
+- 对比图 `output/compare/bernini_fp8_vs_int8.png`；完整结论 `bernini_int8_findings.md`
+
+### 10s 视频组合管线（2025-08-02 验证，时长匹配铁律）
+**工作流**：`wan22_alya_10s_f16.json`（Wan2.2 161帧@16fps 832×480，280s）+ `bernini_v2v_10s_f16.json`（Bernini int8 编辑同帧率，1310s）
+- ⚠️ **铁律：源视频时长必须 == Bernini 输出时长**（10s→10s 匹配则自然连贯；10s 压 5s 会脑补/步伐混乱）
+- 效果：脸部/动作/风格全保持，清晰度 732→870（+19%），用户目视确认自然连贯
+- ⚠️ **161帧@832×480 非线性爆炸**：1310s ≈ 81帧@480²（110s）的 12 倍——长序列成本非线性 + 显存压力
+- **耗时预算**：5s 编辑 ≈ 110s；10s 编辑 ≈ 22 分钟（除非降分辨率 640×360 待测）
+- 10s 产物：`output/video/wan22_alya_10s_f16_00001_.mp4` / `bernini_v2v_10s_f16_00001_.mp4`
+
 
 ## 四、MCP 工具可用性更新（本会话盘点结论）
 
