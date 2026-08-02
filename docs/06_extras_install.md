@@ -56,6 +56,43 @@ LoadVideo(源视频, input/ 路径) → GetVideoComponents(拆帧) → BerniniCo
 - **工作流**：`workflows/video_bernini_r_v2v_test.json`
 - **踩坑**：LoadVideo 只能读 input/ 下文件（不能用 output/ 路径）；SaveVideo 需显式 format/codec
 
+### Bernini 深度研究（2025-08-02，官方仓库 bytedance/Bernini 分析 + 实测）
+
+**任务类型**（由 BerniniConditioning 连了什么决定）：
+| 任务 | 连接 | 用途 | 状态 |
+|------|------|------|------|
+| t2v | 什么都不连 | 纯文本→视频 | ✅ 但一致性弱 |
+| v2v | source_video | 视频→视频编辑 | ✅ 保持好 |
+| rv2v | source_video + reference_images | 视频编辑+参考图 | ✅ 脸部保真加强 |
+| r2v | 只 reference_images | 参考图→视频 | ⚠️ 风格难保 |
+| i2i | source_video(单帧) | 图像编辑 | ✅ 保持好 |
+| ads2v | source_video + reference_video | 广告插入 | 未测 |
+
+**核心发现：Bernini 是“编辑器”不是“生成器”**
+- Wan2.2 I2V 是 **concat 硬锁**（第一帧噪声=0，必须重建）→ 脸部保真天然好
+- Bernini 是 **in-context 软参考**（VAE 编码 token，模型“参考”但不锁定）→ 从静态图生成新内容会重绘细节（脸部漂移）
+- 保真度排序：骑士 i2i（单帧小改）≈ v2v（有真实视频参考）> static2v（静态帧无运动）> r2v/t2v（自由生成）
+
+**✅ 最终管线（已验证，推荐）**：`workflows/pipeline_wan22_bernini_golden.json`
+```
+参考图(任意风格) → Wan2.2 I2V（第一帧锁定，脸部/风格保真）→ Bernini v2v（编辑：重打光/风格化）→ RIFE补帧×3 → ClearReality超分×4
+```
+- 实测：Wan2.2 I2V 10s 视频 → Bernini 金色时刻编辑，脸部/动作/风格全保持，120s
+- 耗时对比：v2v（120s）< static2v（230s）< rv2v 双参考（370s）——v2v 单参考 2 次 forward 最快
+
+**static2v 技巧（单图伪装视频）**：`workflows/bernini_static2v_test.json`
+- 单帧 → RepeatImageBatch×81 → source_video → 模型当“编辑目标”处理（风格保持二次元✅ 动作自然✅ 但脸部有漂移）
+
+**rv2v 脸部保真**：`workflows/bernini_rv2v_face_test.json`
+- source_video(静态帧) + reference_images(同图) 双参考 + 脸部细节提示词 + “换脸/变脸”负面词 → 脸部保持✅ 但慢（370s）
+
+**官方参数**（gradio_demo.py，质量模式）：width=832 height=480（16:9 横屏）fps=16 max_image_size=624 40步 flow_shift=5.0 引导 APG（ComfyUI 无法完全复刻链式 APG，用 Turbo 6 步 + cfg1 + LoRA 3.0/1.5 替代）
+
+**提示词技巧**（官方 testcase 案例）：
+- 用 image0/image1 引用参考图（每张图独立 token）
+- 结构：主体引用 → 外貌保持描述 → 场景 → 动作序列（start/then/after/throughout）→ 镜头固定+一致性保证
+- 负面词加 photorealistic/3D render/different face/换脸（防写实漂移）
+
 
 ## 四、MCP 工具可用性更新（本会话盘点结论）
 

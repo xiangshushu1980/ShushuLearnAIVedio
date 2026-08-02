@@ -74,7 +74,13 @@
 
 ## 三、待办（新对话优先级）
 
-0. **✅ Bernini 图像+视频编辑全部测通**：图像（official_relight）/视频（v2v_alya_golden）均成功，工作流 `video_bernini_r_{test,v2v_test}.json`；下一步可测**风格化/换背景/插主体**等其他编辑任务，或 **Bernini 长视频**（81帧）
+0. **✅ Bernini 深度探索完成（2025-08-02）**：
+   - **核心结论**：Bernini 是"编辑器"（in-context 软参考）非"生成器"（concat 硬锁）→ 生成模式（r2v/t2v）脸部漂移，编辑模式（v2v/i2i）保持好
+   - **✅ 最终管线（推荐）**：`Wan2.2 I2V（脸部锁定）→ Bernini v2v 编辑 → RIFE补帧 → ClearReality超分`，工作流 `pipeline_wan22_bernini_golden.json`，全链路验证通过（脸部/动作/风格保持，120s）
+   - **static2v 技巧**：单帧→RepeatImageBatch→source_video 伪装视频（风格保持✅ 脸部漂移⚠️）
+   - **rv2v 双参考**：source_video+reference_images 脸部保真✅ 但慢（370s）
+   - 官方参数：832×480 横屏 / fps16 / 40步（ComfyUI 用 Turbo 6步替代）；提示词技巧（image0 引用/动作序列/负面词防写实）
+   - 详细见 docs/06_extras_install.md；Bernini 视频生成（t2v 一致性）后续再探索
 1. **起始图选优拍板**：ANIMA vs KREA Alya 768²（对比图 output/compare/）→ 用户拍板主角色管线
 2. **多动作管线探索**：artokun-flow **已完成结构评估**（需 WanVideoWrapper 生态 ~30GB，成本高）→ 降级方案优先 `wan-longer-videos`（同 GGUF 栈，适配成本低）待评估
 3. **更多测试**（可选）：Yuki 角色 LoRA、KREA 画 Alya、不同场景 I2V、Wan2.1 Fun Camera 相机运镜（需下载专用模型 ~30GB，暂缓）
