@@ -62,3 +62,15 @@
 - Anima Highres/Aesthetic Boost：base 30步 + LoRA@0.6 → 清晰度 +8%（1036→1118），构图保持
 - 角色 LoRA：alisa(Alya)、yuki(Yuki) 各 840 张量；anima-turbo-lora-v0.2（1016 张量）
 - Alya 触发词：`alisa mikhailovna kujou (roshidere)`（金发蓝眼、校服灰西装+红领结）
+
+## Bernini 量化对比（2025-08-02 实测，RTX 4090）
+
+| 任务 | fp8_scaled | int8_convrot | 结论 |
+|------|-----------|-------------|------|
+| v2v 视频 81帧 | 133.1s / 清晰度999 | **105.1s / 1023** | **int8 快21% + 画质略高 → 视频用 int8** |
+| 图像编辑 单帧 | **52.8s** / 778 | 62.4s / 771 | int8 加载开销主导反而慢 → 单帧可留 fp8 |
+| 显存 | 15.57GB×2 | 14.54GB×2 | int8 省 1GB |
+
+- int8 模型名：`wan2.2_bernini_r_{high,low}_noise_int8_convrot.safetensors`（需 ComfyUI 0.29+ convrot 支持）
+- 同 seed 像素差异均值 2.08 → 画质几乎一致；40 系是 int8 收益最大区间
+- 对比图：`output/compare/bernini_fp8_vs_int8.png`

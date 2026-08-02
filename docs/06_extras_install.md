@@ -22,7 +22,11 @@
 ## 三、Bernini-R（⏳ 下载中，由另一 Agent 负责测试）
 
 - **定位**：ByteDance 的 Wan 2.2 renderer-only 编辑模型（重打光/重风格化/主体插入/多任务 t2v/v2v/rv2v/r2v/img/ads2v），非 Wan2.1 替代品
-- **模型**（fp8_scaled 版，4090 推荐）：
+- **模型**（4090 实测，2025-08-02）：
+  - **int8_convrot 版**（`wan2.2_bernini_r_{high,low}_noise_int8_convrot.safetensors`，各 14.54GB，✅ 已下载）——**视频任务甜点：比 fp8 快 21%（105s vs 133s/81帧）且画质无损**（清晰度 1023 vs 999，一致性持平）→ **默认用它**
+  - fp8_scaled 版（`wan2.2_bernini_r_{high,low}_noise_fp8_scaled.safetensors`，各 15.57GB，✅ 已下载）：单帧图像编辑仍可用（int8 单帧因加载开销反而慢 18%），或作 int8 对比基线
+  - int8 注意事项：int8_convrot 需 ComfyUI 0.29+（convrot 支持）；RTX 40 系是 int8 收益最大区间；Ampere/ROCm 有坑（与 4090 无关）
+
   - `diffusion_models/wan2.2_bernini_r_high_noise_fp8_scaled.safetensors`（~15.5GB，✅ 已完整）
   - `diffusion_models/wan2.2_bernini_r_low_noise_fp8_scaled.safetensors`（~15.5GB，下载中）
   - `loras/lightx2v_T2V_14B_cfg_step_distill_v2_lora_rank64_bf16.safetensors`（✅ 已下 13:51，630MB）
