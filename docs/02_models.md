@@ -48,6 +48,18 @@
 
 - Bernini 安装/管线/经验详见 docs/06_extras_install.md（经验已迁 Mem0，`memory_recall` 可检索）
 
+### 音视频生成（MiniMax H3，2026-08-03 新增）
+| 文件 | 位置 | 大小 | 用途 |
+|------|------|------|------|
+| minimax_h3_fl2va_pruned_int8_convrot.safetensors | models/diffusion_models/ | 21GB | H3 FL2VA 扩散模型（首/尾帧→视频+音频）|
+| qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors | models/text_encoders/ | 15.7GB | H3 文本编码器（Qwen3-VL-32B，nvfp4_awq 官方推荐）|
+| minimax_h3_video_vae_fp16.safetensors | models/vae/ | 5.2GB | H3 视频 VAE |
+| minimax_h3_audio_vae_fp32.safetensors | models/vae/ | 0.6GB | H3 音频 VAE（32kHz 立体声）|
+
+- 下载源：`Comfy-Org/MiniMax-H3`（hf-mirror，需 `HF_HUB_DISABLE_XET=1` 绕过 Xet 401）
+- 硬件实测（4090 24GB）：扩散 13.9GB 显存 + 6.1GB offload；nvfp4 文本编码器可全量入显存
+- 工作流：`comfy-ops/workflows/minimax_h3_{i2v,t2v}_api.json`
+
 ## 下载源
 
 ### Wan2.2 GGUF（Comfy-Org 或 city96）
