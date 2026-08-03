@@ -32,6 +32,15 @@
 - 文档三层分工：`docs/`=环境事实（不常变）；`SKILL` 主体+references=操作经验（高频）；`workflows/`=案例资产（可复用）
 - 本册 learning.md = 来源管道 + 案例记录
 
+## 3.5 新节点落地流程（遇到没见过的节点走此流程，无需用户提醒）
+
+1. **读源码**：`ComfyUI/comfy_extras/nodes_*.py` 或 `custom_nodes/` 对应文件，看 INPUT_TYPES（参数 schema）/ RETURN_TYPES（输出类型）
+2. **读官方用法**：`blueprints/`（官方 80+，Wan2.2/H3 都有）、官方 templates、MCP packs 里该节点的参数值（权威基线）
+3. **最小验证**：`comfyui_validate_workflow` + 最小化工作流实跑（能出结果即可，不做花活）
+4. **沉淀**：节点语义 + 官方/社区推荐 → `nodes.md`（含出处和理由）；工作流结构 → `workflows.md`；实测参数 → `params.md` 或 Mem0
+5. **不猜参数**：没见过的参数值先查官方基线；偏离官方值必须标注理由（如"6 步因为实测不增耗时"）
+6. **来源分层**：官方/社区/本地实测分开标注（标签约定见 nodes.md 顶部），社区经验须注明来源与适用配置
+
 ## 4. 已学习案例
 
 ### Wan2.1 Fun Camera（2025-08-01 验证通路）

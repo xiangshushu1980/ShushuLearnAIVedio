@@ -1,6 +1,6 @@
 ---
 name: comfyui
-description: ComfyUI 项目操作手册 — Wan2.2 I2V Lightning 快速视频生成栈（GGUF Hi/Lo + 4步LoRA）、ANIMA/KREA 生图、MCP 工具用法、速度/质量参数经验、操作流程与踩坑记录。使用 ComfyUI 视频生成、工作流编辑、参数调优、agent 测试循环时加载。分册：references/params.md（参数经验）、references/workflows.md（工作流档案）、references/troubleshooting.md（踩坑）、references/learning.md（学习记录）。
+description: ComfyUI 项目操作手册 — Wan2.2 I2V Lightning 快速视频生成栈（GGUF Hi/Lo + 4步LoRA）、ANIMA/KREA 生图、MCP 工具用法、速度/质量参数经验、操作流程与踩坑记录。使用 ComfyUI 视频生成、工作流编辑、参数调优、agent 测试循环时加载。分册：references/nodes.md（节点速查/官方推荐）、references/params.md（参数经验）、references/workflows.md（工作流档案）、references/troubleshooting.md（踩坑）、references/learning.md（学习记录）。
 ---
 
 # ComfyUI 项目手册
@@ -61,7 +61,8 @@ description: ComfyUI 项目操作手册 — Wan2.2 I2V Lightning 快速视频生
 - **移动文件后需重启 ComfyUI**：asset_seeder(prune_first=True) 自动软删除旧路径记录(is_missing=1)，API 层自动过滤
 
 ## 分册导航（按需加载）
-- [params.md](references/params.md) — 参数经验全量：速度表、cfg 甜点、分辨率、多动作边界、帧数约束
+- [nodes.md](references/nodes.md) — 节点速查：用过的节点语义/关键参数/官方与社区推荐（含出处理由）/本地实测；**搭新工作流先查本表**
+- [params.md](references/params.md) — 参数经验全量：速度表、cfg 甜点、分辨率、多动作边界、帧数约束（官方/社区/本地实测分层标注）
 - [workflows.md](references/workflows.md) — 工作流档案：每个工作流节点结构/用途/参数/已生成结果
 - [troubleshooting.md](references/troubleshooting.md) — 踩坑全量：Assets/history/下载/token/队列
-- [learning.md](references/learning.md) — 高质量来源管道 + 学习闭环 + 已学习案例记录
+- [learning.md](references/learning.md) — 高质量来源管道 + 学习闭环（含**新节点落地流程**）+ 已学习案例记录
