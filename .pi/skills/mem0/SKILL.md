@@ -77,6 +77,7 @@ description: 多 Agent 共享记忆系统（Mem0）操作手册 — MCP 工具�
 - `.mcp.json` 新增 server 后需重启 pi 生效
 - 中文提取：MemoryConfig `custom_instructions` 加“记忆条目必须使用简体中文输出，保留关键技术术语原文”（已配在 mem0_mcp.py）
 - BM25 需要 `pip install "mem0ai[extras]"`（fastembed），首次使用自动下载稀疏模型
+- **BM25 稀疏向量可能缺失**：qdrant 的 sparse slot 声明 ≠ 数据写入——早期写入/迁移后的记忆可能只有稠密向量（无 bm25 键），术语精确检索失效；抽查方法：反序列化 points 看 vector 字典有无 bm25 键；修复：停服后跑 `~/.pi/agent/mem0/fix_bm25.py`（用 payload text_lemmatized 重编码补写，2025-08-02 修复 113 条达 100%）
 - **Qdrant 嵌入式单实例锁**：`.mem0/qdrant` 同一时刻只允许一个进程访问（独占锁）；多进程会报 "already accessed by another instance"。**HTTP 常驻模式已从架构上消除**（单 server 进程串行访问）——不要回退到 stdio 多实例模式
 - **stdio 模式淘汰**：mcp 2.0 移除 FastMCP（需 1.x）；HTTP 模式用 `transport="streamable-http"`（不是 "http"）
 - **启动必须离线**：`HF_HUB_OFFLINE=1`/`TRANSFORMERS_OFFLINE=1` 必须在 `import mem0` 之前设置（mem0 连带 import sentence-transformers，它 import 时读配置）；之前因在线检查 HF 元数据，网络不通时启动必挂（httpx client closed 报错）；bge-m3 已缓存 ~/.cache/huggingface（4.3G）
