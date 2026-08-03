@@ -90,3 +90,24 @@ MiniMax H3 落地首测（已完成）→ 下一步进入画质验证与 Ref2VA 
 **完整调研文档**：`docs/08_h3_prompt_agent.md`（含六段式格式、方案对比、落地计划）
 
 一句话交接：官方 H3-Context-IR（未开源，API 按量付费+素材上云）输出格式规范**已开源**（六段式 rewrite + 标签体系，见官方 `docs/VIDEO_PROMPT_WRITING_GUIDE_{base,ref}_en.md`）→ **推荐自建提示词智能体**（LM Studio Qwen3.6-35B 视觉模型 + pi skill + 官方指南做 system prompt），官方 IR 作对照基准。新对话直接读 08 文档 + `/tmp/guide_ref.md` 开干。
+
+---
+
+## 六、H3 夜间系统化测试报告（2026-08-03/04 夜跑完成）
+
+**完整测试计划与数据**：`docs/09_h3_test_plan.md`（全阶段落盘 + 甜点总结）
+
+### 关键结论速览
+- **速度甜点**：1024×576（16:9）——5s≈123s / 10s≈295s / 15s≈503s（干净环境）
+- **铁律**：跑批前先重启 ComfyUI 清内存！内存压力下采样慢近 2 倍（9.5 vs 4.5s/it）
+- **Ref2VA 视频参考**：必须 CLIPLoader device="cpu"（否则显存打爆卡死）；单图参考零惩罚
+- **量化**：fp8 vs int8 采样同速；GGUF 暂不可行（ComfyUI-GGUF 不支持 H3）
+- steps 10-20 差异仅 35s，14-16 步候选甜点
+
+### 产物（34 视频）
+output/video/ 下：h3_res/（分辨率 5）+ h3_res2/（时长 5）+ h3_steps/（4）+ h3_prompt/（8）+ h3_ref/（6）+ h3_quant/（2）+ h3_clean/（2）+ h3_ref2va/（2）；拼图 output/compare/h3_res_compare.png
+
+### 待办（明早）
+1. **目视评估**：提示词 8 变体响应（尤其 p3 六段式/p6 场景/p7 中文/p8 声音）、steps 质量、fp8 vs int8 画质
+2. 确定默认参数后更新 comfyui skill 的 params 分册
+3. 提示词智能体（docs/08_h3_prompt_agent.md 方案）可启动
