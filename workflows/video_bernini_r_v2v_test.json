@@ -36,7 +36,7 @@
  "5": {
   "class_type": "UNETLoader",
   "inputs": {
-   "unet_name": "wan2.2_bernini_r_high_noise_fp8_scaled.safetensors",
+   "unet_name": "wan2.2_bernini_r_high_noise_int8_convrot.safetensors",
    "weight_dtype": "default"
   }
  },
@@ -54,7 +54,7 @@
  "7": {
   "class_type": "UNETLoader",
   "inputs": {
-   "unet_name": "wan2.2_bernini_r_low_noise_fp8_scaled.safetensors",
+   "unet_name": "wan2.2_bernini_r_low_noise_int8_convrot.safetensors",
    "weight_dtype": "default"
   }
  },

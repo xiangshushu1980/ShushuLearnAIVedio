@@ -11,6 +11,7 @@
 | [02_models.md](02_models.md) | 已下载模型清单（含 RMBG/ClearReality/Bernini）、下载源、显存参考 | 下新模型 / 下载慢 / 查模型 |
 | [05_session_handoff.md](05_session_handoff.md) | 会话交接：环境状态/成果/待办 | 新对话起点，无缝续接 |
 | [06_extras_install.md](06_extras_install.md) | 图像编辑/超分/Bernini 手册（经验已迁 Mem0） | 涉及这些能力时加载 |
+| [bernini_int8_findings.md](../bernini_int8_findings.md) | Bernini int8 调研/下载/实测快照（项目根） | 查 int8 来龙去脉/下载源时 |
 
 > agent 操作手册（模型栈/参数/踩坑/工作流档案）在 `.pi/skills/comfyui/SKILL.md` 及其 `references/` 分册；共享记忆/经验检索在 Mem0（`memory_recall`）。
 
