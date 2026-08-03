@@ -82,3 +82,11 @@ MiniMax H3 落地首测（已完成）→ 下一步进入画质验证与 Ref2VA 
 - H3 成片：`http://localhost:8188/view?filename=<文件名>&subfolder=video&type=output`（output/video/ 目录）
 - H3 工作流：`python3 run_workflow.py workflows/minimax_h3_i2v_api.json`（或 MCP comfyui_enqueue_workflow）
 - 下载 H3 其他变体：`HF_ENDPOINT=https://hf-mirror.com HF_HUB_DISABLE_XET=1 hf download Comfy-Org/MiniMax-H3 --include "..." --local-dir models`
+
+---
+
+## 五、提示词增强方案（新对话必读，2026-08-03 调研完成）
+
+**完整调研文档**：`docs/08_h3_prompt_agent.md`（含六段式格式、方案对比、落地计划）
+
+一句话交接：官方 H3-Context-IR（未开源，API 按量付费+素材上云）输出格式规范**已开源**（六段式 rewrite + 标签体系，见官方 `docs/VIDEO_PROMPT_WRITING_GUIDE_{base,ref}_en.md`）→ **推荐自建提示词智能体**（LM Studio Qwen3.6-35B 视觉模型 + pi skill + 官方指南做 system prompt），官方 IR 作对照基准。新对话直接读 08 文档 + `/tmp/guide_ref.md` 开干。
