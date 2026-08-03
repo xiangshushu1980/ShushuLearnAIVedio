@@ -25,8 +25,12 @@ description: 多 Agent 共享记忆系统（Mem0）操作手册 — MCP 工具�
 | `memory_update(memory_id, content, user_id?)` | 改一条 | 修正过时经验 |
 
 - **默认 user_id=comfy-ops**（项目共享池），所有 agent 读写同一池；agent_id 可选区分来源
-- **双池架构（2025-08-02 起）**：`global` 跨项目通用池 + `comfy-ops` 项目池；recall **默认双池合并检索**（global 在前按分数排序去重），Agent 无需指定池；retain 时显式传 `user_id="global"` 存通用经验（网络/机器/方法论），默认存项目池
+## Mem0 共享记忆（用户级，所有项目可用）
+
+- MCP server：HTTP 常驻 `http://127.0.0.1:8899/mcp`（已提升用户级：全局注册 `~/.config/mcp/mcp.json`，所有 pi 会话自动连接；项目 `.mcp.json` 里的 mem0 条目为兼容冗余）
+- **双池架构**：`global`（跨项目通用）+ `comfy-ops`（项目池）；recall 默认双池合并检索，Agent 无需指定池；显式传 user_id 只查指定池
 - **判断规则**：所有项目都需要 → global；项目专属 → comfy-ops；说不清/跨界 → 默认 global（检索是命中式不是强制加载，放宽不易丢）
+- 会话开始先 `memory_recall` 检索；会话结束 `memory_retain` 关键经验
 - 记忆是人可读明文条目（LLM 提取），随时可看可改可删
 
 ## 内容分类决策树
