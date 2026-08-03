@@ -58,7 +58,7 @@ Pexels 下载 → 预处理(832×480/81帧) → Bernini 编辑
 - 已验证：路由 /material-gallery/start 工作，前端 JS 加载成功
 
 ### 7. 其他
-- mem0 锁问题：因 pi 会话连接方式（需重启 pi 走 HTTP 8899），server 本身健康
+- mem0：✅ 已全局化（脚本 `~/.pi/agent/mem0/`，数据 `~/.local/share/mem0/`，运维 `mem0.sh {start|stop|restart|status}`）；旧锁问题已由 HTTP 常驻 + 单实例架构解决
 - input 根目录散文件已全部归类（start/ test/ 等）
 
 ## 三、待办（新对话优先级）

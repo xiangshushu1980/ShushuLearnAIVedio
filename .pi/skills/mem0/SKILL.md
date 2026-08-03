@@ -58,12 +58,14 @@ description: 多 Agent 共享记忆系统（Mem0）操作手册 — MCP 工具�
 
 ## 运维
 
-- Server: `scripts/mem0_mcp.py`（conda env `mem0`，python 3.11）
-- **HTTP 常驻模式**（streamable-http）：`scripts/mem0.sh start` 启动，监听 `http://127.0.0.1:8899/mcp`；**单实例服务所有 pi 会话**（消除 stdio 多进程撞锁）
-- **进程管理**：`scripts/mem0.sh {start|stop|restart|status}`（PID 文件 `.mem0/mem0.pid`，**不要用 pkill -f**——会匹配自身命令行误杀）；启动已离线化（bge-m3 缓存完整，`HF_HUB_OFFLINE=1` 无需联网，~35s 就绪）
+- Server: `~/.pi/agent/mem0/mem0_mcp.py`（conda env `mem0`，python 3.11）
+- **HTTP 常驻模式**（streamable-http）：`~/.pi/agent/mem0/mem0.sh start` 启动，监听 `http://127.0.0.1:8899/mcp`；**单实例服务所有 pi 会话**（消除 stdio 多进程撞锁）
+- **全局化（2025-08-02）**：脚本入 `~/.pi/agent/mem0/`（git 仓 pi-agent-config 可回滚）；数据在 `~/.local/share/mem0/`（XDG 标准，独立于任何项目）；全局 MCP 注册 `~/.config/mcp/mcp.json`（符号链接→仓库内 `config/mcp/mcp.json`）；comfy-ops `scripts/mem0.sh` 是跳板（exec 全局脚本）
+- **进程管理**：`mem0.sh {start|stop|restart|status}`（PID 文件 `~/.local/share/mem0/mem0.pid`，**不要用 pkill -f**——会匹配自身命令行误杀）；启动已离线化（bge-m3 缓存完整，`HF_HUB_OFFLINE=1` 无需联网，~35s 就绪）
+- **数据迁移**：旧数据在 comfy-ops/.mem0（2.3M，已拷至 ~/.local/share/mem0/；若需回滚保留即可，不冲突）
 - `.mcp.json` 配置：`"mem0": {"url": "http://127.0.0.1:8899/mcp"}`（url 模式，非 command）
 - Key：`~/.config/mem0_deepseek_key`（600 权限，不入 git；server 启动时自动读）或环境变量 `MEM0_DEEPSEEK_API_KEY`
-- 数据: `.mem0/`（gitignored）
+- 数据: `~/.local/share/mem0/`（XDG，独立于任何项目；旧位置 comfy-ops/.mem0 已迁，gitignored）
 
 ## 已知坑（mem0ai 2.x）
 
