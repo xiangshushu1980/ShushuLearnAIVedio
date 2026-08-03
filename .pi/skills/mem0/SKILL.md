@@ -70,6 +70,7 @@ description: 多 Agent 共享记忆系统（Mem0）操作手册 — MCP 工具�
 ## 已知坑（mem0ai 2.x）
 
 - QdrantConfig `embedding_model_dims` 默认 1536（OpenAI 维度），本地 bge-m3 必须显式 1024，否则 add/search 维度错
+- **`get_all` 默认 top_k=20**：`memory_list` 不加 limit 会漏检重复/过期条目（2025-08-02 已加 `limit` 参数，默认 200）；审查记忆用 `memory_list(user_id=..., limit=200)` 拉全量
 - API 不一致：`add()` 用 `user_id=`；`search()`/`get_all()` 用 `filters={"user_id": ...}`；`delete(memory_id)` 只收 id（不带 user_id）
 - **`update()` 不支持 user_id**：mem0 库 `Memory.update(memory_id, text)` 签名没有 user_id 参数（user_id/agent_id 创建后不可变，库会抛 `unexpected keyword argument`）；wrapper 曾误传 `user_id=` 导致更新必失败（2025-08-02 已修，保留参数兼容但不再传递）
 - mcp SDK 需 1.x（`pip install "mcp>=1.12,<2"`）；mcp 2.0 移除 FastMCP
