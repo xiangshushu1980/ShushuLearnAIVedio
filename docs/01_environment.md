@@ -26,7 +26,7 @@ cd /home/sean/projects/ComfyUI
 |------|------|
 | `run_workflow.py` | UI 格式工作流 JSON → API 格式并提交运行 |
 | `comfy_client.py` | API 客户端（`ComfyClient` + `build_wan_i2v_workflow`） |
-| `scripts/mem0.sh` | Mem0 运维跳板（exec 全局 `~/.pi/agent/mem0/mem0.sh`；见 .pi/skills/mem0/） |
+| `scripts/mem0.sh` | Mem0 运维跳板（exec 全局 `~/.pi/agent/mem0/mem0.sh`；手册见用户级 skill `~/.pi/agent/skills/mem0/`） |
 
 ## 核心 API 端点
 
