@@ -221,3 +221,12 @@
 
 ## review 对比目录已建（output/review/，40 视频 37MB，复制不移动）
 A_motioncache/ B_steps/ C_quant/ D_prompt/ E_ref/ F_long/ G_res/（文件名语义化+前缀排序，方便对比）
+
+### 补测批 B 完成：fp8 vs int8 多案例（3 场景 × 2 量化，同 seed 20260820，1024×576 5s）
+| 场景 | int8 | fp8 | 备注 |
+|------|------|-----|------|
+| forest | 183s | 215s | fp8 冷加载 |
+| night | 205s | 205s | 同速 |
+| dessert | 206s | 208s | 同速 |
+
+采样同速确认（队列后段无加载差异）。3 组可控画质对比已入 review/C_quant/（C4-C6 同场景相邻命名），待目测。
