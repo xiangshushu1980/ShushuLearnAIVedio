@@ -188,3 +188,12 @@
 - **ComfyUI-MiniMaxH3-Cache**（lihaoyun6，16⭐）：⚠️ patch ComfyUI 核心文件，未装
 - 其他：ComfyUI-MiniMax-H3-Guide（提示词准备节点，13⭐）、Director（多段导演）、H3-Tools（prompt 校验/画布规划/audio reroll）、minimax-h3-prompt-skill（Claude skill 写官方格式 prompt，**与提示词智能体计划相关**）
 - asset-hashing 说明：计算 blake3 内容哈希（未来资产去重/跨机解析），默认关闭，大目录开销大 → 已从 start.sh 移除
+
+### 目测反馈整理（2026-08-04 用户评估）
+**A. MotionCache**：视频画质差异小，但**音频明显变弱**（768 更明显）→ 需音频专项对比后定启用与否
+**B. steps**：画面 16-20 接近；**眼睛 14-16 崩；声音 20 步明显更好** → 双档：14 步快速看效果 / 20 步成片
+**C. fp8 vs int8**：fp8 头发动态更好、更清晰；但同 seed 内容不可比（量化差异致采样路径不同）→ 需多案例统计
+**D. 提示词**：p3 结构化"内容更多但人物完全变了"（提示词主导>seed 锚定）；p4/p5/p6 全部生效；**p7 中文 prompt 未产出中文元素**；**p8 鸟鸣未生成**（风生效、钢琴本就有）
+**E. 参考图**：r_alya_action（动作指定+保长相）✅ r_multi2（双图融合）✅；max 模式对 1280px 图无增益
+**F. 长视频**：15s 稳定但动作简单（token 分配限制）
+**G. firstlast**：双帧控制测试通过（工作流见上文记录）
