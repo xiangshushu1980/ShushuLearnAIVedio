@@ -180,3 +180,11 @@
 - 画质均衡：1024×576（5s≈2.7min / 15s≈8.4min）
 - steps 用 14（121s vs 20 步 165s，省 27%）
 - 768×448 × 14 步 5s ≈ **1.6 min/条**，可支撑批量迭代
+
+### 社区加速节点调研（2026-08-04）
+- **MiniMax H3 MotionCache**（starsFriday，论文方法，无核心 patch）：运动感知去噪缓存，跳过变化小的 denoiser 调用
+  - 实测（同条件对照）：768×448 5s 115s→105s（skip 4/20，1.25x）；1024×576 5s 165s→~138s（skip 5/20，1.33x）
+  - 加速 ~9-16%，参数可调更激进（reuse_threshold↑/warmup↓）但画质风险（复用残差可能糊，**需目视**）
+- **ComfyUI-MiniMaxH3-Cache**（lihaoyun6，16⭐）：⚠️ patch ComfyUI 核心文件，未装
+- 其他：ComfyUI-MiniMax-H3-Guide（提示词准备节点，13⭐）、Director（多段导演）、H3-Tools（prompt 校验/画布规划/audio reroll）、minimax-h3-prompt-skill（Claude skill 写官方格式 prompt，**与提示词智能体计划相关**）
+- asset-hashing 说明：计算 blake3 内容哈希（未来资产去重/跨机解析），默认关闭，大目录开销大 → 已从 start.sh 移除
