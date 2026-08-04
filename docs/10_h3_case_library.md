@@ -15,3 +15,9 @@
 ## 批 2（写实双图融合 + 文化特色）
 | 案例 | 变体 | 耗时 | 目录 |
 |------|------|------|------|
+| C07 | 双图 bikini+霓虹夜景 + 雨声 | 153s | video/h3_cases/C07 |
+| C08 | 双图 hanfu+灯笼街 + 鞭炮声 | 153s | video/h3_cases/C08 |
+| C09 | qipao 单图 + 老上海复古 + 爵士乐 | 145s | video/h3_cases/C09 |
+| C10 | bikini+水墨意境融合（partially）| 153s | video/h3_cases/C10 |
+| C11 | tibetan + 经幡 + 强风 | 152s | video/h3_cases/C11 |
+| C12 | fisherman **10s** + 船体晃动 + 海鸥声 | 待填 | video/h3_cases/C12 |
