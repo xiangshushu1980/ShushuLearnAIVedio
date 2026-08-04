@@ -309,3 +309,11 @@ A_motioncache/ B_steps/ C_quant/ D_prompt/ E_ref/ F_long/ G_res/（文件名语�
 - 提示词强度：同 seed 下语言梯度（镜头幅度/速度、动作强度形容词、详细度 10→100 词→六段式、约束强调词 must/strictly）
 - 参考强度：retention marker 梯度（fully→weak 同图）、描述占比（详细 vs 简略）、双图主次分配
 - 导演台：装 AIMixer Director + 自建 pi prompt skill（system=官方指南）+ 校验器（借鉴 babicat 规则）
+
+### 底图库建设（2026-08-04，78 张）
+- **KREA2 写实 39 张**（8步/cfg1.0/er_sde）：人物 15 + 场景 8 + 静物 7 + 5 样张 + HD 2(1344×768) + 快速 2(768×448)
+- **ANIMA 插画 39 张**（20步/cfg4.0 + turbo LoRA）：人物 15 + 奇幻场景 10 + 风格化 5 + 5 样张 + HD 2 + 快速 2
+- 位置：`output/ref_lib/sample_{krea,anima}/`（45MB）；已复制到 `input/ref_lib/{realistic,illustration}/` 供 LoadImage 直接引用
+- 预览拼图：`output/compare/ref_lib_preview.png`
+- 用途：H3 ref2va 参考图库（单主体聚焦，16:9 匹配视频比例）+ 提示词强度/参考强度测试素材
+- 批量脚本：`/tmp/gen_ref.py`（可复用，LINE=krea|anima 参数化）
