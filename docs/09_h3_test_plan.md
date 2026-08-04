@@ -343,3 +343,20 @@ A_motioncache/ B_steps/ C_quant/ D_prompt/ E_ref/ F_long/ G_res/（文件名语�
 2. **动作指令中等**：strong vs gentle 1.7x vs 1x——形容词梯度生效但弱于镜头
 3. **约束指令（strictly/must）**：动作量层面无显著压制，**需目测画面**是否真保脸/保场景
 4. 提示词不影响速度（全部 ~175s±3）
+
+**用户目测确认（2026-08-04）**：
+- J1-J5 速度/强度全部符合指令 → **镜头语言（幅度+速度）和动作形容词（gentle→strong）都是可靠控制手段**
+- J6 保脸/服装**有效** → 主体锚定约束可用（I2V 参考图锚定强）
+- J7 保场景**无效** → 判断为**提示词内部矛盾**（"keep scene unchanged" vs "camera pans right" 冲突，模型优先镜头）→ 约束指令不与运动指令同句混用
+
+### B 参考图强度测试（2026-08-04，ref2va int8 20步 1024×576 5s，参考=krea_bikini_beach + krea_forest，review/K_refstrength/）
+| 文件 | 变体 | 耗时 |
+|------|------|------|
+| B1 fully+详细 | fully preserved + 完整特征描述 | 155s |
+| B2 weak+简略 | weak reference + 风格近似 | 153s |
+| B3 一句话 | 只说 "the woman in <Picture 1>" | 171s |
+| B4 人物主图 | bikini 详 + 森林 <Picture 2> 提场景 | 384s(含加载) |
+| B5 场景主图 | 森林详 + 人物简 | 176s |
+| B6 partially | 同脸换白色连衣裙 | 187s |
+
+**待目测**：参考保真梯度（fully vs weak vs 一句话）、双图主次（B4 vs B5 谁主导）、换装保留（B6 是否同脸换衣）
