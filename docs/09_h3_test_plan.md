@@ -211,3 +211,13 @@
 - 步数：14（快速档）| 20（成片档）
 - MotionCache：**默认不启用**（音频受损，等专项结论）
 - 量化：int8（现用）| fp8 待多案例统计
+
+### 补测：MotionCache 音频专项（2026-08-04，文件 video/h3_audio/）
+- voice_nocache vs voice_motioncache（同 prompt 含人声+钢琴+鸟鸣，同 seed）
+  - 响度：-18.8 vs -19.5 LUFS（差 0.7，<1 LU 人耳难辨阈值）
+  - LRA：5.4 vs 5.6（动态几乎同）
+- **结论：响度差异客观很小，但用户主观感知"声音变弱"明显 → 差异可能来自音频内容/清晰度（残差复用致高频或细节丢失），需听感确认**
+- zh_dialog（<d>标签中文对话测试）、bird_strong（强声音指令）已生成待听测
+
+## review 对比目录已建（output/review/，40 视频 37MB，复制不移动）
+A_motioncache/ B_steps/ C_quant/ D_prompt/ E_ref/ F_long/ G_res/（文件名语义化+前缀排序，方便对比）
