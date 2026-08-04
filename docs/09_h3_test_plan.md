@@ -290,3 +290,22 @@ A_motioncache/ B_steps/ C_quant/ D_prompt/ E_ref/ F_long/ G_res/（文件名语�
   - 快速抽卡：fp8 + sage + MC + 14 步 @ 768×448（画面安全，声音差无所谓）→ 预计 <1.5min/条
   - 正式成片：fp8 + sage + 20 步 @ 1024×576（画面+声音双保）→ 5s≈2min / 10s≈5min / 15s≈8min
 - 声音专项（后续）：sage/MC 对音频频谱影响、成片档声音基线
+
+### 社区做法调研：提示词控制强度 / 参考图强度 / 导演台（2026-08-04）
+**关键洞察：H3 无 CFG → 控制强度没有数字权重参数，全靠语言量化控制**
+- 镜头运动：类型 + 幅度（small/large amplitude）+ 速度（slow/fast）写进自然语言
+- 动作强度：形容词梯度（gently → strongly）
+- 参考保留（ref2va retention_analysis）：`fully_preserved` → `partially_preserved` → `attribute_transfer` → `weak_reference`
+- 音频保留：`fully_copy` → `partially_copy` → `reference` → `weak_reference`
+- 官方 IR 输出格式（开源指南 base 222 行/ref 341 行，HF 仓库 docs/）：base=指令+三段核心字段；ref=六段式
+
+**社区 4 流派**：
+1. **导演台插件**：AIMixer/ComfyUI_MiniMaxH3_Director ★15（多段时间轴/智能分镜 PySceneDetect/多任务 t2v~rv2v/参考素材组/选择运行/原生立体声）——我们的首选导演台
+2. **Prompt Skill**：babicat4242/minimax-h3-prompting ★5（Codex skill+确定性校验器：schema 顺序/时长/7000 字符硬限）、kuronzzhan/minimax-h3-prompt-skill ★2（Claude skill）
+3. **案例库**：imagineVid/Awesome-minimax-h3-prompts-and-skills ★4（28 个验证案例+真实结果片段+6 类工作流）、joeVenner/awesome-minimax-h3 ★3
+4. **ComfyUI 内工具**：Rinne414/ComfyUI-MiniMaxH3-Tools ★1（prompt 校验/画布规划/audio reroll）
+
+**我们的测试方案（拟）**：
+- 提示词强度：同 seed 下语言梯度（镜头幅度/速度、动作强度形容词、详细度 10→100 词→六段式、约束强调词 must/strictly）
+- 参考强度：retention marker 梯度（fully→weak 同图）、描述占比（详细 vs 简略）、双图主次分配
+- 导演台：装 AIMixer Director + 自建 pi prompt skill（system=官方指南）+ 校验器（借鉴 babicat 规则）
