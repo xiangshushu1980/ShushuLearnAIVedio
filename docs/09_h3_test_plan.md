@@ -317,3 +317,11 @@ A_motioncache/ B_steps/ C_quant/ D_prompt/ E_ref/ F_long/ G_res/（文件名语�
 - 预览拼图：`output/compare/ref_lib_preview.png`
 - 用途：H3 ref2va 参考图库（单主体聚焦，16:9 匹配视频比例）+ 提示词强度/参考强度测试素材
 - 批量脚本：`/tmp/gen_ref.py`（可复用，LINE=krea|anima 参数化）
+
+### 底图库扩充 2（2026-08-04，+43 张，共 121 张）
+- **KREA2 写实 +20**：清凉美女 12（bikini/pool/surfer/sundress/yoga/volleyball 等）+ 文化特色 8（hanfu/qipao/kimono/tibetan/opera/inkwash/lanterns/dunhuang）
+- **ANIMA 插画 +23**：人物扩充 15（swimsuit/cowgirl/punk/knight/mermaid/samurai 等）+ 文化特色 8（hanfu/cheongsam/liondance/dragon/torii/thangka 等）
+- **新 LoRA**：Anima Highres/Aesthetic Boost（CivitAI ★1821，135MB）已下载并挂载（strength 0.6 + turbo LoRA 1.0 串联）
+- **LoRA 调研结论**：CivitAI 泳装 LoRA 仅 2 个小众 Krea2 的（★109/★91 质量存疑未下）；文化类无 Anima/Krea2 现成 LoRA（Illustrious/SDXL 生态的汉服旗袍 LoRA 架构不兼容）→ 清凉/文化全靠 prompt（Qwen3-VL 文本编码器理解强）
+- 位置：`input/ref_lib/{realistic:59, illustration:62}`；预览：`output/compare/ref_lib_preview2.png`
+- 批量脚本：`/tmp/gen_ref2.py`（KREA 8步 / ANIMA 20步+双LoRA）
