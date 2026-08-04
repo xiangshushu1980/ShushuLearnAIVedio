@@ -20,4 +20,10 @@
 | C09 | qipao 单图 + 老上海复古 + 爵士乐 | 145s | video/h3_cases/C09 |
 | C10 | bikini+水墨意境融合（partially）| 153s | video/h3_cases/C10 |
 | C11 | tibetan + 经幡 + 强风 | 152s | video/h3_cases/C11 |
-| C12 | fisherman **10s** + 船体晃动 + 海鸥声 | 待填 | video/h3_cases/C12 |
+| C12 | fisherman **10s** + 船体晃动 + 海鸥声 | ~600s | video/h3_cases/C12 |
+| C13 | 剑士拔剑 + 环绕快移 + 魔法声 | 320s(含加载) | video/h3_cases/C13 |
+| C14 | 双图 剑士+蘑菇森林 + 萤火虫 | 295s(含加载) | video/h3_cases/C14 |
+| C15 | hanfu 少女跳舞 + 古琴声 | 162s | video/h3_cases/C15 |
+| C16 | 泳装少女玩水 + 笑声 | 157s | video/h3_cases/C16 |
+| C17 | 双图 剑士+浮岛 + 史诗拉远 | 166s | video/h3_cases/C17 |
+| C18 | 中国龙穿云 + 跟踪镜头 + 雷鸣 | ~600s | video/h3_cases/C18 |
