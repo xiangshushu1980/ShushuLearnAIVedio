@@ -265,3 +265,15 @@ A_motioncache/ B_steps/ C_quant/ D_prompt/ E_ref/ F_long/ G_res/（文件名语�
 - fp8 + sage 10s = 372s（含冷加载，与 int8 303s 同档）→ **fp8 与 int8 速度等价确认（sage 下）**
 - MC + sage 可叠加（跳步 4/20 × 每步 ~19s）；MC 音频劣化只影响抽卡档
 - **最终管线建议**：fp8 + sage（成片）/ fp8 + sage + MC（快速抽卡）
+
+### sage/MC 画面影响测试（1024×576 5s，同 seed/prompt，四状态，review/I_sg_mc/）
+| 状态 | 文件 | 耗时 |
+|------|------|------|
+| 全关 | I1_full_off | ~210s |
+| sage only | I2_sage_only | 165s |
+| mc only（无 sage）| I3_mc_only | 138s |
+| sage+MC | I4_sage_mc | 129s |
+| 768 sage+MC | I5 | 161s |
+| 768 sage only | I6 | 115s |
+
+**待目测**：四状态画面主体/结构是否一致（细节/声音允许差异）。若主体一致 → 抽卡管线 = fp8+sage+MC+14步，预计 768×448 5s <1min/条。
