@@ -230,3 +230,11 @@ A_motioncache/ B_steps/ C_quant/ D_prompt/ E_ref/ F_long/ G_res/（文件名语�
 | dessert | 206s | 208s | 同速 |
 
 采样同速确认（队列后段无加载差异）。3 组可控画质对比已入 review/C_quant/（C4-C6 同场景相邻命名），待目测。
+
+### 讨论定论（2026-08-04）
+1. **量化默认改为 fp8_scaled**（int8 备选）：
+   - 架构：fp8 e4m3 是 Hopper/Ada 原生格式；4090 (Ada) 原生支持 → 画质更好速度不输；30系 (Ampere) 无原生 fp8 → int8 更优（符合用户听闻）
+   - 实测：fp8 采样 ≈ int8 同速；显存驻留更多（17.1 vs 13.9GB）
+   - 社区：ComfyUI issue "INT8 ConvRot slower than FP8 on A100" 佐证 fp8 通用性
+2. **MC 节省机制**：固定跳步数（skip 4-5/20）→ 绝对节省 = 跳步数×每步耗时，随分辨率/时长放大（768 5s 省10s/9%，1024 5s 省27s/16%）；**抽卡可用 MC（声音劣化不影响选片），成片不用**
+3. **review 目录**：保持复制现状（分组自包含利于对比，37MB 可忽略）
