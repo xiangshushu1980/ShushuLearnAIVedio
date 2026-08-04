@@ -116,3 +116,31 @@ output/video/ 下：h3_res/（分辨率 5）+ h3_res2/（时长 5）+ h3_steps/�
 - **最终速度矩阵已定论**（docs/09 补测批A/B/C）：768×448=115/234/403s，1024×576≈165/295/503s（5/10/15s）；steps 14 省 27%
 - **新坑**：ComfyUI `--enable-asset-hashing` 对大量视频 → RSS 33GB 内存堆积（已去掉该参数，素材库不受影响；start.sh 已改？——**注意：start.sh 仍含该参数，下次启动注意**）
 - 补测产物：h3_steps2/（4）+ h3_seed/（2）+ h3_quant/fp8_*（2）+ h3_clean/768x448_*（3）+ h3_fl2va/firstlast（1）≈ 12 个新视频
+
+---
+
+## 七、H3 测试完结 + 管线定论（2026-08-04 深夜最终交接）
+
+> 本会话全部成果与数据：`docs/09_h3_test_plan.md`（完整测试记录+结论）；对比视频：`output/review/`（56 条，A-G + H_audio + I_sg_mc 分组语义命名）；提示词智能体方案：`docs/08_h3_prompt_agent.md`
+
+### 服务状态
+- ComfyUI 0.30 运行中（**start.sh = --enable-assets --use-sage-attention**，勿加 asset-hashing）；mem0 常驻；gallery :8000
+
+### H3 管线定论（已固化进 skill params 分册）
+- **快速抽卡**：fp8 + sage + **MC(MotionCache)** + 14 步 @ 768×448 → ~1.5min/条（画面安全、声音差可接受）
+- **正式成片**：fp8 + sage + 20 步 @ 1024×576 → 5s≈2min / 10s≈5min / 15s≈8min
+- **已确认**：sage/MC 画面主体零影响（三状态 20 步同 seed 画面一致）；MC 音频劣化；fp8(4090) vs int8(30系) 架构定论；SageAttention 必须开（10s+ 快 40-48%）
+- 模型就绪：fl2va/ref2va pruned int8 + fl2va fp8_scaled + nvfp4 TE + 双 VAE
+
+### 关键坑（勿重踩）
+1. 跑批前**重启 ComfyUI**（内存压力慢 2 倍）
+2. **--enable-asset-hashing** 视频多时 RSS 33GB（已移除）
+3. 手动启动别漏 `--use-sage-attention`（10s+ 慢 40-90%）
+4. Ref2VA 视频参考必须 CLIPLoader device="cpu"
+5. 杀进程先 pgrep 拿 PID（pkill -f 会误杀自己 shell）
+
+### 遗留待办（新会话优先级）
+1. **声音专项**：sage/MC 对音频频谱影响量化、成片档声音基线、MC 音频劣化表现（h3_audio/ 4 条待听测）
+2. **提示词智能体**（docs/08 方案，可启动：LM Studio Qwen3.6-35B 视觉 + 官方六段式指南）
+3. **素材管线整合**：选片（抽卡档）→ 成片（成片档）工作流一键化
+4. skill workflows 分册补 H3 工作流档案（3 个 API 工作流已就位）
