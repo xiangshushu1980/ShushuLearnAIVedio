@@ -111,3 +111,8 @@ output/video/ 下：h3_res/（分辨率 5）+ h3_res2/（时长 5）+ h3_steps/�
 1. **目视评估**：提示词 8 变体响应（尤其 p3 六段式/p6 场景/p7 中文/p8 声音）、steps 质量、fp8 vs int8 画质
 2. 确定默认参数后更新 comfyui skill 的 params 分册
 3. 提示词智能体（docs/08_h3_prompt_agent.md 方案）可启动
+
+### 补测补充（2026-08-04 凌晨第二轮）
+- **最终速度矩阵已定论**（docs/09 补测批A/B/C）：768×448=115/234/403s，1024×576≈165/295/503s（5/10/15s）；steps 14 省 27%
+- **新坑**：ComfyUI `--enable-asset-hashing` 对大量视频 → RSS 33GB 内存堆积（已去掉该参数，素材库不受影响；start.sh 已改？——**注意：start.sh 仍含该参数，下次启动注意**）
+- 补测产物：h3_steps2/（4）+ h3_seed/（2）+ h3_quant/fp8_*（2）+ h3_clean/768x448_*（3）+ h3_fl2va/firstlast（1）≈ 12 个新视频
