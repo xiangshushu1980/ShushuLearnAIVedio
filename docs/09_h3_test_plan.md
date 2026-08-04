@@ -325,3 +325,21 @@ A_motioncache/ B_steps/ C_quant/ D_prompt/ E_ref/ F_long/ G_res/（文件名语�
 - **LoRA 调研结论**：CivitAI 泳装 LoRA 仅 2 个小众 Krea2 的（★109/★91 质量存疑未下）；文化类无 Anima/Krea2 现成 LoRA（Illustrious/SDXL 生态的汉服旗袍 LoRA 架构不兼容）→ 清凉/文化全靠 prompt（Qwen3-VL 文本编码器理解强）
 - 位置：`input/ref_lib/{realistic:59, illustration:62}`；预览：`output/compare/ref_lib_preview2.png`
 - 批量脚本：`/tmp/gen_ref2.py`（KREA 8步 / ANIMA 20步+双LoRA）
+
+### A 提示词控制强度测试（2026-08-04，fp8+sage 20步 1024×576 5s，同 seed，review/J_prompt_strength/）
+| 文件 | 变体 | 耗时 | 动作量 |
+|------|------|------|--------|
+| J0 p2 (int8 参照) | 基线 slow pans right | 151s | 4.17 |
+| J1 A1 基线 (fp8) | 同上 | 177s | 4.07 |
+| J2 pan fast large | 大幅快移横摇 | 178s | **12.59 (3.1x)** |
+| J3 push fast large | 剧烈推近 | 175s | **14.25 (3.5x)** |
+| J4 wave gentle | 轻柔挥手 | 174s | 4.06 (≈基线) |
+| J5 wave strong | 强烈挥手 | 176s | **6.96 (1.7x)** |
+| J6 preserve face | 严格保留脸/服装 | 175s | 3.97 |
+| J7 keep scene | 必须保持场景不变 | 176s | 5.98 |
+
+**结论（客观）**：
+1. **镜头语言控制强度最高**：幅度+速度写清楚（large amplitude at fast speed）→ 动作量 3-3.5x；J2/J3 差异说明镜头类型（Pan vs Push）也可控
+2. **动作指令中等**：strong vs gentle 1.7x vs 1x——形容词梯度生效但弱于镜头
+3. **约束指令（strictly/must）**：动作量层面无显著压制，**需目测画面**是否真保脸/保场景
+4. 提示词不影响速度（全部 ~175s±3）
