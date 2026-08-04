@@ -97,3 +97,28 @@
 - 同模型连续任务命中缓存快；Wan2.2↔Bernini 互切才重载（+45s）
 - **WSL 内存配置**：默认 32GB（宿主 64GB 的 50%）→ 2025-08-02 改 `.wslconfig` 加 `memory=48GB`（需 wsl --shutdown 重启生效）
 - ⚠️ OOM 教训：Bernini 任务 python 进程可到 ~30GB，32GB 上限必炸（两次崩溃）→ 48GB 后安全；仍避免同时跑多个大任务
+
+## MiniMax H3 参数经验（2026-08-04 全量实测，详见 docs/09_h3_test_plan.md）
+
+### 管线双档
+| 档位 | 配置 | 速度（1024×576）| 用途 |
+|------|------|------|------|
+| **快速抽卡** | fp8 + sage + **MC(MotionCache)** + 14 步 @768×448 | ~1.5min/条(5s) | 选片/构图验证（声音差无所谓）|
+| **正式成片** | fp8 + sage + 20 步 @1024×576 | 5s≈2min / 10s≈5min / 15s≈8min | 最终输出（画面+声音双保）|
+
+### 关键参数
+- **steps**：14 步快速看效果（眼睛细节略崩）/ 20 步成片（声音明显更好）；画面 16-20 接近
+- **scheduler/sampler**：simple + res_multistep（官方默认）；**无 cfg**（BasicGuider，CFG-distilled）
+- **分辨率**：1024×576 画质均衡甜点；768×448 快 30-40%；1344×768 10s+ 成本非线性飙升禁用
+- **时长**：5-15s（trained 124-362 帧）；15s 动作较简单；首尾帧双 keyframe +52s
+- **SageAttention 必须开**：10s 快 40%、15s 快 48%（长序列收益大）；768 系列影响小
+- **MotionCache**：跳 4-5/20 步（固定跳步数，节省=跳步×每步耗时）；**画面无损但音频劣化**（复用音频残差）→ 只用于抽卡
+- **量化**：fp8_scaled（4090/Ada 原生 fp8，画质更好同速）；30系用 int8；GGUF 暂不可行（加载器不支持）
+- **显存**：fp8 驻留 17.1GB / int8 13.9GB + offload；文本编码器 nvfp4_awq 15.7GB 全量入显存
+- **铁律**：跑批前重启 ComfyUI（内存压力下慢 2 倍）；start.sh 勿加 --enable-asset-hashing（视频多了 RSS 33GB）
+
+### Ref2VA 参考
+- 单图参考零速度惩罚（~150s 5s）；多图（≤9）可用 `<Picture N>` / `<Subject N>` 标签
+- **视频参考必须 CLIPLoader device="cpu"**（否则 24GB 显存打爆卡死；+600s CPU 编码）
+- ref_image_size max 仅对 >2048px 图有增益
+- 声音指令：风/雨等环境声生效；鸟鸣等细粒度弱；`<d>` 标签可触发对话
