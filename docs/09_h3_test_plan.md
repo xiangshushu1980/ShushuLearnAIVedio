@@ -277,3 +277,8 @@ A_motioncache/ B_steps/ C_quant/ D_prompt/ E_ref/ F_long/ G_res/（文件名语�
 | 768 sage only | I6 | 115s |
 
 **待目测**：四状态画面主体/结构是否一致（细节/声音允许差异）。若主体一致 → 抽卡管线 = fp8+sage+MC+14步，预计 768×448 5s <1min/条。
+
+### sage/MC 10s 放大测试（1024×576 10s，同 seed/prompt）
+- I7 sage+MC 10s（301s，MC 跳 4/20 正常）
+- I8 sage only 10s（303s）
+- **待用户确认异常表现**；MC 跳步复用残差对运动场景（10s 运动多）可能产生伪影/闪烁，需目测
