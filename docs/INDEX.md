@@ -10,7 +10,7 @@
 | [01_environment.md](01_environment.md) | 环境/启动/维护/API/客户端（01+03 合并） | 环境出问题 / 重启服务 / 脚本化调用 |
 | [02_models.md](02_models.md) | 已下载模型清单（含 RMBG/ClearReality/Bernini/H3）、下载源、显存参考 | 下新模型 / 下载慢 / 查模型 |
 | [04_bernini_int8_findings.md](04_bernini_int8_findings.md) | Bernini int8 调研/下载/实测快照（结果已同步 06 + Mem0） | 查 int8 来龙去脉/下载源时 |
-| [05_session_handoff.md](05_session_handoff.md) | 会话交接：环境状态/成果/待办 | 新对话起点，无缝续接 |
+| [05_session_handoff.md](05_session_handoff.md) | ~~会话交接~~ **已归档**（2026-08-05 起状态迁移至 mem0 [STATE] + `.pi/agents/` progress，git 历史可查） | 新会话开场按 AGENTS.md 流程（progress → INDEX → recall [STATE]） |
 | [06_extras_install.md](06_extras_install.md) | 图像编辑/超分/Bernini 手册（经验已迁 Mem0） | 涉及这些能力时加载 |
 | [07_video_material.md](07_video_material.md) | 视频素材库索引（Pexels 原片/Bernini 预处理版/命名规则） | 找 v2v 编辑素材 / 素材管线 |
 | [08_h3_prompt_agent.md](08_h3_prompt_agent.md) | H3 提示词增强方案（官方六段式 + 自建智能体） | 提示词智能体落地时 |
