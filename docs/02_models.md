@@ -80,7 +80,7 @@ https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/tree/main/split_file
 - **命令**：`wget -c --tries=0 --timeout=30`（断点续传+无限重试）
 - **网络实测**：hf-mirror 直连 ~8.6MB/s；**开 VPN 后大幅提速**（18 分钟下完 29GB）；GitHub 直连时通时不通（7890 代理未监听，勿依赖）
 - **完整性校验（三重）**：① 字节数精确等于目标 14535868680；② safetensors header（190464 字节）可解析；③ wget rc=0 正常收尾
-- 完整调研快照：`/bernini_int8_findings.md`（项目根）
+- 完整调研快照：[04_bernini_int8_findings.md](04_bernini_int8_findings.md)
 
 ### CivitAI（需 token）
 - 角色/风格 LoRA：civitai.com 搜索，token 在 `.mcp.json`（**pi MCP 不读新增 env → 用 curl 绕行下载**，见 SKILL troubleshooting）
