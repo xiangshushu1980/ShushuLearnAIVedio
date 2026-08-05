@@ -22,3 +22,10 @@
 - 测试数据：docs/09_h3_test_plan.md（补测批 D）
 - 批量优化既有分析：docs/10_h3_batch_optimization.md（TE 80s 加载 / 两阶段流水线）
 - 脚本：/tmp/patch_runner.py（补测 runner，串行提交+轮询耗时）、/tmp/patch_cases*.json
+
+### 2026-08-05（收尾）
+- 用户决策（2026-08-05）：**测试范围收窄到 ≤10s**（10s+ 不再测，fp8 15s 开销问题不再追）；WSL 内存 48→56GB（.wslconfig 已改，待 wsl --shutdown 生效，Windows 留 8GB）
+- 脚本落地（项目 scripts/）：
+  - `scripts/restart_comfyui.sh`：安全重启（精确 PID/等端口释放/参数化 --nosage/健康检查/自动 venv），实测 15s 就绪
+  - `scripts/h3_batch_runner.py`：正式版批量 runner（提交确认防误判/轮询耗时/结果 JSON），冒烟验证 125s ✅
+- 两阶段流水线 → 新任务线（用户指示重开对话做）：方案见 docs/10 六、两阶段流水线；前置验证=cond 序列化（NestedTensor .pt 存读）；本批数据支撑：TE 加载 ~80s 是最大固定开销、fp8 驻留 33GB 顶满内存
