@@ -1,6 +1,6 @@
 ---
 name: comfyui
-description: ComfyUI 项目操作手册 — Wan2.2 I2V Lightning 快速视频生成栈（GGUF Hi/Lo + 4步LoRA）、ANIMA/KREA 生图、MCP 工具用法、速度/质量参数经验、操作流程与踩坑记录。使用 ComfyUI 视频生成、工作流编辑、参数调优、agent 测试循环时加载。分册：references/nodes.md（节点速查/官方推荐）、references/params.md（参数经验）、references/workflows.md（工作流档案）、references/troubleshooting.md（踩坑）、references/learning.md（学习记录）。
+description: ComfyUI 项目操作手册 — Wan2.2 I2V Lightning 快速视频栈、ANIMA/KREA 生图、MCP 工具用法、参数经验与踩坑。做 ComfyUI 视频生成/工作流编辑/参数调优时加载。分册：nodes/params/workflows/troubleshooting/learning 见 references/。
 ---
 
 # ComfyUI 项目手册
