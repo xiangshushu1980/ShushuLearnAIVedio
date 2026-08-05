@@ -113,6 +113,14 @@
 | **快速抽卡** | fp8 + sage + **MC(MotionCache)** + 14 步 @768×448 | ~1.5min/条(5s) | 选片/构图验证（声音差无所谓）|
 | **正式成片** | fp8 + sage + 20 步 @1024×576 | 5s≈2min / 10s≈5min / 15s≈8min | 最终输出（画面+声音双保）|
 
+### 提示词控制技巧（2026-08 A 测试 + 官方指南，详见 docs/10 案例库）
+- **镜头语言是最强控制**：类型+幅度+速度（如 `pans right with large amplitude at fast speed`）→ 动作量 3-3.5x（实测 J2/J3）；官方四要素表：Zoom/Push/Pan/Truck/Tilt/Arc/Tracking/Static/Shake/POV/Roll × small/large amplitude × slow/fast speed
+- **动作形容词梯度生效**：`gently` → `strongly and energetically` 1.7x（J4/J5）；动作序列用逗号/连词串（走→停→挥手→转身）
+- **约束指令**：`strictly preserving her face and clothing` 有效（主体锚定）；**勿与运动指令同句**（矛盾时模型优先运动，J7 场景保持无效案例）
+- **结构**：I2VA 用官方指令头 `For the target video, at 0.00 seconds, <Picture 1> (from [Shot 1]) is fully referenced.` + 三段核心字段（integrated_multimodal_description / overall_soundscape / non_diegetic_music）；ref 模式六段式（subject_definitions / summary / retention_analysis / detailed_description / overall_soundscape / non_diegetic_music）
+- **声音指令**：环境声（风/雨/海浪/鞭炮/古琴）强；鸟鸣等细粒度弱需 `loud and clear` 强调（C22）；对话用 `<d>[语言] ...</d>`
+- **全英文 prompt**（p7 中文验证无效）；**详细度与速度无关**（六段式 159s = 普通 prompt）→ 写详细不付时间成本
+
 ### 关键参数
 - **steps**：14 步快速看效果（眼睛细节略崩）/ 20 步成片（声音明显更好）；画面 16-20 接近
 - **scheduler/sampler**：simple + res_multistep（官方默认）；**无 cfg**（BasicGuider，CFG-distilled）
