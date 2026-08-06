@@ -29,6 +29,15 @@
 - 文档沉淀：`docs/12_speech_to_video_pipeline.md`（视频管线）+ `docs/13_bgm_music_production.md`（音乐制作）已建，待新对话复用
 - ACE-Step BGM：**4 个模型全部下载完成且 safetensors 校验通过**（2026-08-07 复核）：diffusion_models 9.3G + vae 322M + qwen_0.6b 1.2G + qwen_4b 7.9G，无 wget 进程残留。可随时对比重出 ACE-Step 版 BGM
 
+## BGM 重做进展（2026-08-07 执行）
+
+- **ACE-Step 1.5 版 BGM 已完成**：6 段生成（开场6s/立论27.2s/质询24.5+24.5+20.2s/总结30.9s），acrossfade 拼接 → `bgm_full_ace.wav`（133.33s），sidechain 混音 → `final_audio_ace.wav`
+- **对比版成品**：`experiments/speech-video/assets/debate_final_acebgm.mp4`（133.33s，10.2MB）+ ComfyUI 副本 `output/video/debate_final_acebgm.mp4`（Output 浏览器可看）
+- 旧版（MusicGen BGM）未动：`debate_final_animated.mp4` 保留
+- **⚠️ generate_audio 踩坑**：该工具自动选 TE 有 bug——clip_name1 会错选 `qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors`（H3 的 32B）而非 ACE 的 0.6B，导致 DualCLIPLoader size mismatch 报错。**必须显式传 `clip_a=qwen_0.6b_ace15.safetensors` + `clip_b=qwen_4b_ace15.safetensors`**
+- ACE-Step 单段 6-31s 生成约 30-40s/段（模型驻留），输出 48k stereo mp3
+- 待用户试听对比定版（旧 MusicGen 版 vs 新 ACE-Step 版）
+
 ## 关键约束（用户决策 2026-08-07，后续必须遵守）
 - 这是**辩论**演讲，画面里的 speaker = **辩论者**（1辩/2辩/3辩，正方/反方），不是普通演讲者
 - 图片转视频时，**每帧动画必须由对话上下文驱动**（见 `animation_plan.md`）：讲攻击就射箭、讲轮流就拨开关、讲看钟就转指针，动作贴合该句语义
