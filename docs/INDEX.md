@@ -17,6 +17,9 @@
 | [09_h3_test_plan.md](09_h3_test_plan.md) | H3 系统化测试全量数据（速度矩阵/steps/提示词/量化/MC） | 查 H3 实测数据 / 参数定论依据 |
 | [10_h3_batch_optimization.md](10_h3_batch_optimization.md) | H3 fl2va 机制/TE 加载成本/缓存/两阶段批量方案 | 批量优化 / 理解 80s TE 开销 |
 | [11_h3_case_library.md](11_h3_case_library.md) | H3 提示词案例库（A-G 分组 + 目视反馈） | 写提示词参考案例时 |
+| [12_speech_to_video_pipeline.md](12_speech_to_video_pipeline.md) | 音频+文字→生成视频管线（whisper→分镜→KREA生图→Wan I2V动画→合成→字幕→混音） | 做演讲稿/旁白转视频时 |
+| [13_bgm_music_production.md](13_bgm_music_production.md) | 背景音乐制作（本地 MusicGen + ACE-Step/ComfyUI）、混音、音效、降噪 | 做 BGM/配乐/音效时 |
+| [14_skill_governance.md](14_skill_governance.md) | Skill 治理框架（三层划分/经验→mem0 原则/蒸馏管道/升级路径） | 建新 skill / 组织多 skill 时 |
 
 > agent 操作手册（模型栈/参数/踩坑/工作流档案）在 `.pi/skills/comfyui/SKILL.md` 及其 `references/` 分册；共享记忆/经验检索在 Mem0（`memory_recall`）。
 

@@ -1,0 +1,134 @@
+[
+ {
+  "id": "F1",
+  "s": 0.0,
+  "e": 5.96,
+  "p": "wide shot of a school debate hall, three stage zones glowing: a podium with gavel, a question-mark bubble, a closing seal, seated human students watching"
+ },
+ {
+  "id": "F2",
+  "s": 5.96,
+  "e": 9.24,
+  "p": "title card of the word CONSTRUCTIVE, a human young debater at a podium stacking building blocks that represent arguments"
+ },
+ {
+  "id": "F3",
+  "s": 9.24,
+  "e": 13.72,
+  "p": "a human first debater standing at a podium placing a large solid foundation under the floor, big building blocks, confident gesture"
+ },
+ {
+  "id": "F4",
+  "s": 13.72,
+  "e": 18.76,
+  "p": "a human debater at a podium, three floating bullet banners above the head showing team position and main reasons"
+ },
+ {
+  "id": "F5",
+  "s": 18.76,
+  "e": 25.62,
+  "p": "a human second debater leaning forward shooting a thought-arrow toward the opposing team's first debater podium, the target speech bubble cracking"
+ },
+ {
+  "id": "F6",
+  "s": 25.62,
+  "e": 27.8,
+  "p": "a large magnifying glass scanning a speech bubble made of chain links, one broken weak link glowing red"
+ },
+ {
+  "id": "F7",
+  "s": 27.8,
+  "e": 33.22,
+  "p": "a human debater laying out three example cards on a table, real and hypothetical examples to support their own side"
+ },
+ {
+  "id": "F8",
+  "s": 33.22,
+  "e": 37.84,
+  "p": "a human debater split by a vertical line: left half holding a gavel and magnifier (critic), right half placing a brick on a wall (builder)"
+ },
+ {
+  "id": "F9",
+  "s": 37.84,
+  "e": 43.84,
+  "p": "title card of the word CROSS-EXAMINATION, two human teams across a table exchanging question and answer speech bubbles"
+ },
+ {
+  "id": "F10",
+  "s": 43.84,
+  "e": 50.24,
+  "p": "diagram: two human affirmative-team debaters on the left, three human negative members on the right, two arrows pointing to all three negatives"
+ },
+ {
+  "id": "F11",
+  "s": 50.24,
+  "e": 57.18,
+  "p": "diagram mirrored: two human negative-team debaters on the right, three human affirmative members on the left, arrows pointing to all affirmatives"
+ },
+ {
+  "id": "F12",
+  "s": 57.18,
+  "e": 62.58,
+  "p": "a clipboard checklist titled RULES with one rule highlighted, and a human moderator holding a conductor baton in front of a clock"
+ },
+ {
+  "id": "F13",
+  "s": 62.58,
+  "e": 70.14,
+  "p": "a human debater holding a timer and a numbered list deciding how many questions and when to switch, a large hourglass with flowing sand"
+ },
+ {
+  "id": "F14",
+  "s": 70.14,
+  "e": 76.7,
+  "p": "a human questioner pointing one finger directly at a single seated member, targeted question, that member highlighted"
+ },
+ {
+  "id": "F15",
+  "s": 76.7,
+  "e": 82.2,
+  "p": "the human responding team huddled in a circle looking at each other, one member raising a hand volunteering to answer"
+ },
+ {
+  "id": "F16",
+  "s": 82.2,
+  "e": 92.0,
+  "p": "a red cross-out over one member's seat, another member standing up to answer instead, the team whispering to choose the best one"
+ },
+ {
+  "id": "F17",
+  "s": 92.0,
+  "e": 96.26,
+  "p": "two human questioners side by side with a take-turns toggle switching between them, alternating rhythm"
+ },
+ {
+  "id": "F18",
+  "s": 96.26,
+  "e": 102.4,
+  "p": "two human questioners each holding one or two small question bubbles, with a small just-a-suggestion tag"
+ },
+ {
+  "id": "F19",
+  "s": 102.4,
+  "e": 114.0,
+  "p": "one human questioner rapid-firing a chain of follow-up question bubbles at the same member, plus a wall clock and a do-not-interrupt sign"
+ },
+ {
+  "id": "F20",
+  "s": 114.0,
+  "e": 120.32,
+  "p": "title card of the word SUMMARY, a human third debater giving a closing statement under a warm spotlight, team behind in support"
+ },
+ {
+  "id": "F21",
+  "s": 120.32,
+  "e": 123.7,
+  "p": "a human debater gathering the strongest argument cards into a neat stack under a spotlight"
+ },
+ {
+  "id": "F22",
+  "s": 123.7,
+  "e": 133.33,
+  "p": "a human debater under a warm spotlight with a rising arrow and applause, addressing the opponent challenges, memorable finale"
+ }
+]

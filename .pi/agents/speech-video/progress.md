@@ -1,0 +1,36 @@
+# 任务进度：speech-video（辩论结构演讲稿 → 视频）
+
+## 任务
+- 目标：把 08-05-2026 23.04.m4a（133s 辩论结构讲解）做成视频 ✅
+- 当前状态：✅ 完成
+- 交付物：`comfy-ops/debate_video_final.mp4`（1024×576, 30fps, 133.3s, h264+aac, 8MB）
+- ComfyUI 可查看副本：`ComfyUI/output/video/debate_structure_video.mp4`（Output 浏览器可见）
+
+## 方案（用户决策 2026-08-07）
+- 画面：KREA 扁平插画风 + 横屏 16:9 + 烧英文字幕
+- 结构：7 分镜（开场标题/第一辩/第二辩/质询总览/质询规则/质询轮换/总结辩），每段 zoompan 微动
+- H3/数字人未用：H3 只能生成自带语音的画面，无法同步用户固定音频；本机无口型模型
+- 补充信息做成画面文字层：开场叠加辩题卡、各环节加时间徽标(2.5/2.5/3/4min)、片尾投票收束
+
+## 产物文件（.pi/agents/speech-video/）
+- transcript.json（whisper 时间轴 31 段）、subtitles.srt + subtitles_hms.srt（烧录用，须 HH:MM:SS 格式）
+- narr.wav（音频 16k 单声道转写副本）
+- anima_sample.png / krea_sample.png（风格小样）
+- segments/ 7 段 zoompan 无声片段 + silent_full.mp4
+- ovl/ 文字层（topic/badges/closing）
+
+## 踩坑（2026-08-07）
+- ffmpeg SRT 解析：时间戳必须 HH:MM:SS,mmm 全格式，MM:SS,mmm 会报 Invalid data
+- 字幕滤镜打不开文件多半是 SRT 格式问题，不是路径
+- 声音在 comfy-ops 根目录，脚本要用绝对路径
+
+## 下一步
+- 用户审片：可调整文字层位置/字号、微动幅度、加转场、换封面
+- 文档沉淀：`docs/12_speech_to_video_pipeline.md`（视频管线）+ `docs/13_bgm_music_production.md`（音乐制作）已建，待新对话复用
+- ACE-Step BGM：qwen_0.6b 下载修复中（wget -c），下完后可对比重出 ACE-Step 版 BGM
+
+## 关键约束（用户决策 2026-08-07，后续必须遵守）
+- 这是**辩论**演讲，画面里的 speaker = **辩论者**（1辩/2辩/3辩，正方/反方），不是普通演讲者
+- 图片转视频时，**每帧动画必须由对话上下文驱动**（见 `animation_plan.md`）：讲攻击就射箭、讲轮流就拨开关、讲看钟就转指针，动作贴合该句语义
+- 27 帧新分镜（~5s/帧）已生成：`img_debate3/`，成品 `debate_v2_27frames.mp4`
+- BGM：方案A，ACE-Step 1.5 下载中（huggingface.co 直连；hf-mirror 的 SSL 当前不通已换源）
