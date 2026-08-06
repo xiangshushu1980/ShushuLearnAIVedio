@@ -27,10 +27,28 @@
 ## 下一步
 - 用户审片：可调整文字层位置/字号、微动幅度、加转场、换封面
 - 文档沉淀：`docs/12_speech_to_video_pipeline.md`（视频管线）+ `docs/13_bgm_music_production.md`（音乐制作）已建，待新对话复用
-- ACE-Step BGM：qwen_0.6b 下载修复中（wget -c），下完后可对比重出 ACE-Step 版 BGM
+- ACE-Step BGM：**4 个模型全部下载完成且 safetensors 校验通过**（2026-08-07 复核）：diffusion_models 9.3G + vae 322M + qwen_0.6b 1.2G + qwen_4b 7.9G，无 wget 进程残留。可随时对比重出 ACE-Step 版 BGM
 
 ## 关键约束（用户决策 2026-08-07，后续必须遵守）
 - 这是**辩论**演讲，画面里的 speaker = **辩论者**（1辩/2辩/3辩，正方/反方），不是普通演讲者
 - 图片转视频时，**每帧动画必须由对话上下文驱动**（见 `animation_plan.md`）：讲攻击就射箭、讲轮流就拨开关、讲看钟就转指针，动作贴合该句语义
 - 27 帧新分镜（~5s/帧）已生成：`img_debate3/`，成品 `debate_v2_27frames.mp4`
 - BGM：方案A，ACE-Step 1.5 下载中（huggingface.co 直连；hf-mirror 的 SSL 当前不通已换源）
+
+## BGM 重做 runbook（新对话接续用）
+
+**状态**：ACE-Step 1.5 **4 模型全部就绪且校验通过**（无 wget 残留，复核 2026-08-07）：
+- `diffusion_models/acestep_v1.5_xl_turbo_bf16.safetensors` (9.97G)
+- `vae/ace_1.5_vae.safetensors` (337M)
+- `text_encoders/qwen_0.6b_ace15.safetensors` (1.19G，曾损坏已修好)
+- `text_encoders/qwen_4b_ace15.safetensors` (8.38G)
+
+**步骤**（只重做音乐时不必重做画面）：
+1. 读手册 `docs/13_bgm_music_production.md`（ACE-Step 用法/混音参数/音效合成）+ `docs/12` 合成节
+2. 路径选择：A) ComfyUI `generate_audio` ACE-Step 1.5（模型就绪，质量高）；B) 本地 MusicGen `experiments/speech-video/scripts/gen_bgm.py`（快但质量低一档）
+3. 生成分段 BGM 对应环节（开场/立论/质询/总结），acrossfade 拼接成 bgm_full.wav
+4. 混音：`narr_denoised.wav` + 新 BGM + SFX → sidechaincompress（threshold≈0.1-0.12, ratio 3-4）→ amix → final_audio.wav
+5. 换音轨：`ffmpeg -i 成品视频 -i final_audio.wav -map 0:v -map 1:a -c:v copy -c:a aac`（不动画面只换音频）
+6. 对比试听后选版；收尾更新本文件 + [STATE] + git commit
+
+**现有素材**：`experiments/speech-video/assets/`（narr_denoised.wav 旁白、sfx_*.wav 音效、bgm_seg1/2/3.wav 旧 MusicGen 版）
