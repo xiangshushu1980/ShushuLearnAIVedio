@@ -31,12 +31,16 @@
 
 ## BGM 重做进展（2026-08-07 执行）
 
-- **ACE-Step 1.5 版 BGM 已完成**：6 段生成（开场6s/立论27.2s/质询24.5+24.5+20.2s/总结30.9s），acrossfade 拼接 → `bgm_full_ace.wav`（133.33s），sidechain 混音 → `final_audio_ace.wav`
-- **对比版成品**：`experiments/speech-video/assets/debate_final_acebgm.mp4`（133.33s，10.2MB）+ ComfyUI 副本 `output/video/debate_final_acebgm.mp4`（Output 浏览器可看）
-- 旧版（MusicGen BGM）未动：`debate_final_animated.mp4` 保留
-- **⚠️ generate_audio 踩坑**：该工具自动选 TE 有 bug——clip_name1 会错选 `qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors`（H3 的 32B）而非 ACE 的 0.6B，导致 DualCLIPLoader size mismatch 报错。**必须显式传 `clip_a=qwen_0.6b_ace15.safetensors` + `clip_b=qwen_4b_ace15.safetensors`**
-- ACE-Step 单段 6-31s 生成约 30-40s/段（模型驻留），输出 48k stereo mp3
-- 待用户试听对比定版（旧 MusicGen 版 vs 新 ACE-Step 版）
+### V1（已废弃）
+- ACE-Step 1.5 版 6 段 BGM，acrossfade 1s 拼接 → `bgm_full_ace.wav`，对比版 `debate_final_acebgm.mp4`
+- 用户反馈：**衔接不紧密（质询内部 57.7/82.2s 拍脑袋拆段）+ 音乐复杂抢占说话空间**
+
+### V2（当前）
+- **重生成简单风**：prompt 改 minimal/ambient（sparse/very simple/low-key/去复杂声部），质询段一次 60s 长生成成功（ACE-Step 支持 60s+），接缝只剩 4 个且全部对齐环节边界（6/37.8/97.8/114s）
+- **环节边界修正**：立论 6-37.8s（非 33.2）、质询 37.8-114s（非 102.4）、总结 114-133.3s（F20 才是 SUMMARY 标题卡）
+- **混音三改**：BGM 音量 0.55→0.4；sidechain 加强 threshold 0.07/ratio 6/attack 15/release 600；BGM 加 highpass 50 + equalizer 2.5kHz -4dB 让中频
+- **对比版**：`assets/debate_final_acebgm_v2.mp4` + ComfyUI 副本 `output/video/debate_final_acebgm_v2.mp4`
+- 待用户试听对比（旧 MusicGen 版 / V1 / V2）
 
 ## 关键约束（用户决策 2026-08-07，后续必须遵守）
 - 这是**辩论**演讲，画面里的 speaker = **辩论者**（1辩/2辩/3辩，正方/反方），不是普通演讲者
