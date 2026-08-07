@@ -23,6 +23,27 @@
 - 会淘汰：补丁类技巧（hires fix/九宫格/分段采样——模型内化）；不会淘汰：框架类（VAE/潜空间/编排思维/条件注入）
 - 学习策略：框架概念值得学、参数甜点走 params.md/Mem0；Wan3 开源后社区沉淀 2-4 周再学新玩法
 
+## 社区进展快照（2026-08-07 新增，临时会话调研落盘）
+
+### 🔥 4 步加速 LoRA 今日发布（lightX2V 出品）
+- `lightx2v/Minimax-h3-Turbo` v0.1（HF 08-07 14:45 UTC）：`minimax_h3_fl2v_turbo_4step_v0.1.safetensors`
+- Kijai 同日转 ComfyUI 版（15:18 UTC）：`Kijai/MiniMax-H3_comfy/loras/`，含 `resized_avg_rank_21_bf16` 低显存版
+- **Kijai README 参数铁律：4 步 + 0.75 强度 + er_sde/sa_solver 采样器；噪输出降强度**
+- 官方仓库无新 LoRA（08-06 仅 README 更新）；"官方加速lora"标题党
+
+### 社区实测（今天视频，结论分歧）
+- 乐观派：刘悦 BV1LPu46ZE9J（3923播放）4 步 lora 支持所有裁剪模型+KJ 新节点，4060 6 步 ~100s；larryvrh 社区版 Turbo LoRA 已到 0.85 权重（GitHub 08-07 10:17 更新）
+- 冷静派 Aiden_0 BV19Yu86eE6t：809s→200s+ 但**4 步音频有问题/重影/提示词遵循差；不能用多参 Ref 模型（只能 fl2va）**；建议等优化
+- 预览派惊尘 BV1QBu86cEJZ：0.7 权重+10 步音频正常点，画面略过拟合
+
+### 三重加速组合拳（Sol-Attn+SageAttention+EasyCache，BV1K1ut6UEHB）
+- T2V 7:12→3:34、I2V 10:49→3:19（~3.2x）、Ref2V 8:05→3:41
+- EasyCache 已入 ComfyUI 原生；Sol-Attn 是 KJ 新扩展；我们已有 sage，两者可叠加试点
+
+### 对任务线意义
+- 4 步 lora 可能重估速度甜点（基线 14 步 75s/条 → 6 步或 ~30-40s），但音频/Ref 不支持需实测验证，暂不直接上生产
+- Sol-Attn + EasyCache 低风险试点增量
+
 ## 下一步（新对话入口）
 
 ### T1. 社区 H3 技巧调研（B 站 BV 清单，已定位未深挖）
