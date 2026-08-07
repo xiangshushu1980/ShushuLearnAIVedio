@@ -59,7 +59,28 @@
 3. A/B 评测：直接 prompt vs 增强 prompt 各 2-3 条（同 seed 同素材）
 4. 复杂案例调官方 IR 对照校准（需要时再申请 API）
 
-## 五、相关资料
+## 五、IR API 接入落地（2026-08-08 更新）
+
+> 用户拍板 2026-08-08：**接入官方 H3-Context-IR API 为主路径**（在线，本地视觉 LLM 方案关闭——GPU 切换成本 3-6min/次，对 2min/条成片不可接受）；同时装官方 9 个 skill（`.pi/skills/`，见下）。
+
+### 已装官方资产
+- **9 个官方 skill** → `.pi/skills/`（h3-prompt-writing 核心 + 8 风格生成 skill，含 SKILL.cn.md）；源 = `vendor/minimax-h3`（sparse 克隆仅 skills/，跟踪 commit 8d8824e，更新时 `cd vendor/minimax-h3 && git pull` 后重新复制）
+- 官方安装命令（备用）：`npx skills add https://github.com/MiniMax-AI/MiniMax-H3 --skill h3-prompt-writing`
+
+### IR API 细则（CN 平台实测文档 2026-08-08）
+- **创建**：`POST https://api.minimaxi.com/v2/h3_context_ir`，Bearer key；body = model + content[] + duration(4-15) + ratio
+- **content 元素**：text（必填非空）/ image_url / video_url / audio_url，role 标用途：`first_frame`/`last_frame`/`reference_image`/`reference_video`/`reference_audio`；首尾帧与 reference_* 互斥
+- **素材引用**：先传 `POST /v1/files/upload`（multipart，purpose=`video_generation_input`）→ 返回 file_id → content 里用 `mm_file://{file_id}`（7 天有效）；请求体 ≤64MB，大文件用 URL
+- **限制**：图 ≤30MB/≤9 张（首尾帧各 1）；视频 ≤50MB/≤3 个/段 2-15s 总 ≤15s；音频 ≤15MB/≤3 个/段 2-15s
+- **查询**：`GET /v2/query/video_generation/{task_id}` → 成功 `task.content.prompt`（六段式/三核心段）；`task_type=h3_context_ir`
+- **计费**：按 tokens（示例 4s 任务 ~9090 tokens）；错误 402=余额不足
+- **调用脚本**：`scripts/h3_ir_rewrite.py`（上传→提交→轮询→落盘；key 读 `~/.config/minimax_key`，不进 git）
+
+### 待办
+- 账户充值后跑冒烟测试 → A/B 实测（自写 vs IR，同 seed 同素材 2-3 条）
+- 规则校验层优先级重估（IR 输出天然合规；校验主要留给本地 skill 路径）
+
+## 六、相关资料
 - 模型卡：`hf-mirror.com/MiniMaxAI/MiniMax-H3`（README 含 IR/2K workflow 章节）
 - IR 调用示例：`scripts/readme/full-2k-{t2va,i2va,ref2va}-h3-context-ir.sh`
 - 本地已存：`/tmp/h3_card.md`（模型卡全文）、`/tmp/guide_ref.md`（ref 版指南全文）

@@ -13,16 +13,20 @@
 
 ## 进度日志（append-only，每条带日期）
 ### 2026-08-08
-- **官方 9 skill 已装** `.pi/skills/`（h3-prompt-writing + 8 风格，含 SKILL.cn.md，共 18 文件）；源 = vendor/minimax-h3（sparse 仅 skills/，996K）
+- **官方 9 skill 已装** `.pi/skills/`（h3-prompt-writing + 8 风格，含 SKILL.cn.md，共 18 文件）；源 = vendor/minimax-h3（sparse 仅 skills/，996K，commit 8d8824e）
 - 确认 h3-prompt-writing 结构：SKILL.md（34 行，识别模式→读 references 指南→重写）+ references/base-en.txt（222 行，T2VA/I2VA/FL2VA/L2VA 三核心段）+ ref-en.txt（341 行，六段式）
 - 六段式 = 官方 ref 指南定义（非自创）：subject_definitions / summary / retention_analysis / detailed_description / overall_soundscape / non_diegetic_music；base 模式 = integrated_multimodal_description / overall_soundscape / non_diegetic_music
 - 规则校验 = 自建层（官方 skill 无）：六段齐全/标签一致性/时长帧数/语言规范，确定性规则脚本
+- **架构决策（用户拍板）**：在线 IR API 为主路径；本地视觉 LLM 关闭（GPU 切换 3-6min/次不可接受，无 LM Studio 安装）
+- **IR API 接入**：CN 平台（api.minimaxi.com）；用户提供 key（存 ~/.config/minimax_key，chmod 600，不进 git）；文档拉全（创建/查询/上传三接口）；脚本 scripts/h3_ir_rewrite.py 写完（上传→提交→轮询→落盘，dry-run 通过）
+- **卡点：账户余额不足（402 insufficient_balance）**——待用户充值后冒烟测试
+- 已 commit：a6435d2（9 skill + vendor）；docs/08 已更新接入落地节
 
 ## 下一步
-1. **IR API 接入**：查官方文档确认上传/鉴权/配额（doc 08 有旧记录：POST /v2/h3_context_ir 异步 + GET /v2/query/video_generation/{task_id}，素材传海螺 CDN）；拿用户 API key（问平台账号 global/CN）
-2. 写 scripts/h3_ir_rewrite.py：素材上传 → IR 提交 → 轮询 → 取 .task.content.prompt → 落盘
-3. A/B 实测：自写 prompt vs IR prompt（同 seed 同素材 2-3 条）验证"差别非常大"的传闻
-4. 决定自建增强层：规则校验脚本（确定性，低优先级）是否有必要写
+1. **用户充值后冒烟测试**：纯文本 t2va 一条 → 验证 key/计费/输出格式（402 已确认 key 有效）
+2. A/B 实测：自写 prompt vs IR prompt（同 seed 同素材 2-3 条）验证"差别非常大"的传闻；用现有素材（input/start/ 起始图）
+3. IR 输出与 ComfyUI H3 工作流对接：六段式 prompt 直接填 ref2va 节点
+4. 规则校验层优先级重估（IR 输出天然合规；校验留给本地 skill 路径再定）
 
 ## 关键链接
 - 上游：github.com/MiniMax-AI/MiniMax-H3（skills/ 目录），vendor/minimax-h3 本地镜像
