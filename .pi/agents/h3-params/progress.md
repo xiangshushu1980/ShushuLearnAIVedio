@@ -44,6 +44,27 @@
 - 4 步 lora 可能重估速度甜点（基线 14 步 75s/条 → 6 步或 ~30-40s），但音频/Ref 不支持需实测验证，暂不直接上生产
 - Sol-Attn + EasyCache 低风险试点增量
 
+## 社区反应深挖（2026-08-07 晚，临时会话二轮调研落盘）
+
+### B 站反应：怀疑观望派为主
+- 高赞直指标题党刷流量（"300%加速/王炸"封面党）；"等等党胜利"、一天几更等稳定
+- 实测负面：4 步爆音（er_sde 0.75/4 步）、重影/糊、提示词遵循差、动作变慢；**低于 24fps 音频易出问题**；**pruned 模型用 unpruned lora 有兼容大问题**；爆显存（20 系/8G）；EasyCache 劣化严重 + 音频问题（与 4 步 lora 二选一）；多参 Ref 不支持只能 fl2va
+- 实测正面：lightx2v lora 8 步"完美"R2V 可（紫韵）；只挂 lora 8 步 480p≈150s；4060 6 步≈100s（刘悦）；5070ti 15s 1080 370s；**sage 最稳（~30% 提速画质影响最小）**
+
+### Reddit：权威参数与作者定调
+- **larryvrh Turbo LoRA 热帖 1550 分**：video sigma shift=12 / audio=4-6；8-10 步(EMA) / 6-8 步(ckpt500)；**res_multistep 采样器**；strength 0.8-1.8；可叠 sage/Sol-Attn/Gradient；**禁与 cache 同用**；音频修复用其自定义采样器（GitHub Larryvrh/ComfyUI-MiniMax-H3-Turbo）；官方承认 undertrained
+- **Kijai PR #15243 已合并进 ComfyUI**（Fix sampler issues for audio with minimax）→ **nightly 已修复 4 步 lora 爆音**（Jota_be 实测：nightly+Kijai loader+sage+4 步 lora(500 ckpt pruned) 音频完美清晰）
+- **comfyanonymous 定调**（tips 帖 65 赞）：sage+easycache 好；**GGUF/VRAM清理节点/tiled VAE 完全避免**；省内存用 `--fast-disk`；推荐 `MiniMaxH3MemoryEfficientSageAttentionPatch` 专用节点；OPTIMIZE_FOR_SPEED=1 + expandable_segments
+- **Spectrum 节点**（551 分，斯坦福+字节）：~1.5x 提速（Euler -34%），作者诚实标注**非无损**（快速运动眼睛/手指劣化）；不与 EasyCache 同用；位置=loader→lora→sigma shift→Spectrum→guider
+- **Ostris 在训练 4 步 turbo lora**（374 分，期待极高）；官方 X 发推夸社区 4 天做出实验室级成果
+- 环境要点：CUDA 30+ 原生 int8 convrot（旧 CUDA 软模拟慢）；INT4 TE 可用（Merserk 量）；--fast-disk 后 16GB RAM 即可（峰值 11GB）
+
+### 结论：当前最佳选择（用户待拍板）
+1. **本周立即**：ComfyUI 更新到最新 nightly（PR 15243 音频修复已合）；生产维持 sage 不动（最稳）
+2. **试点（新任务线）**：4 步 lora 用 **Kijai 转换的 pruned 兼容版（resized_avg_rank_21_bf16）**，参数起点 larryvrh（res_multistep + sigma shift 12/4-6 + 8 步），音频作 gate；预期 75s→45-50s（8 步）/→30-35s（4 步）
+3. **观望 1-2 周**：Ostris lora、lightx2v 修复版（UP 自曝明天修）、ComfyUI 正式版合入 PR
+4. **不做**：EasyCache/Sol-Attn 上生产（劣化+音频报告多）、GGUF/清理节点/tiled VAE（作者明令）、多参 Ref+4 步 lora（不支持）、4 步档出成品
+
 ## 下一步（新对话入口）
 
 ### T1. 社区 H3 技巧调研（B 站 BV 清单，已定位未深挖）
