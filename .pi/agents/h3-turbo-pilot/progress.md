@@ -28,6 +28,12 @@
 - 画质：对比图 /tmp/h3_frames/{mid,end}_compare.png（base/850-4/850-6/500-6 四格）——**待用户主观确认**
 - 产物：ComfyUI/output/h3_turbo_pilot/*.mp4（7 个）
 
+### 2026-08-07（二批：动漫风 WoW 8s 对比，用户要求）
+- 首帧：anima-base 文生图生成「血精灵法师施法」（768×448，无角色 lora），落 input/start/wow_anime_768.png
+- 8s（192帧）四档同 prompt/seed：**wow-base-14=185s / wow-850-4=50s（-73%）/ wow-850-6=65s / wow-500-6=65s**
+- 音频 gate：全部 8.0s+8.0s 32kHz 立体声完整；响度 turbo 各档一致（mean -16.0~-16.2dB）vs 基线 -14.6dB，无削波
+- 产物：video/h3_wow/*.mp4 + 对比图 video/wow_{mid,end}_compare.png（四格顺序：base-14|850-4|850-6|500-6）——**待用户目视**
+
 ## 下一步
 1. **用户画质确认**（对比图 /tmp/h3_frames/ + 产物 mp4）→ 定最终档（初步：ckpt850-4 或 6-s1.0）
 2. 若达标：进快速档替换方案（快速档 75s → 50s，2 分钟成片从 30min 降到 ~20min），更新 params.md 管线表 + docs
