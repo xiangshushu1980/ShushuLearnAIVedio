@@ -19,14 +19,14 @@
 - 规则校验 = 自建层（官方 skill 无）：六段齐全/标签一致性/时长帧数/语言规范，确定性规则脚本
 - **架构决策（用户拍板）**：在线 IR API 为主路径；本地视觉 LLM 关闭（GPU 切换 3-6min/次不可接受，无 LM Studio 安装）
 - **IR API 接入**：CN 平台（api.minimaxi.com）；用户提供 key（存 ~/.config/minimax_key，chmod 600，不进 git）；文档拉全（创建/查询/上传三接口）；脚本 scripts/h3_ir_rewrite.py 写完（上传→提交→轮询→落盘，dry-run 通过）
-- **卡点：账户余额不足（402 insufficient_balance）**——待用户充值后冒烟测试
+- **卡点解除：账户已充值 25 元，冒烟测试通过 ✅**：纯文本 t2va 4s 全链路 OK（创建→queued→succeeded），输出 1602 字符三核心段增强提示词（integrated_multimodal_description/overall_soundscape/non_diegetic_music），7500 tokens ≈ 0.1 元（定价：输入 5.8/百万，输出 23/百万 tokens）；25 元 ≈ 200+ 次 IR 调用
+- 输出质量观察：一句话输入 → 电影级分镜（光线方向/丁达尔灰尘/呼吸节奏/耳部微动）+ 声音层（底噪+呼噜+皮毛摩擦）+ BGM 建议——远超自写水平，"差别非常大"的传闻初步验证
 - 已 commit：a6435d2（9 skill + vendor）；docs/08 已更新接入落地节
 
 ## 下一步
-1. **用户充值后冒烟测试**：纯文本 t2va 一条 → 验证 key/计费/输出格式（402 已确认 key 有效）
-2. A/B 实测：自写 prompt vs IR prompt（同 seed 同素材 2-3 条）验证"差别非常大"的传闻；用现有素材（input/start/ 起始图）
-3. IR 输出与 ComfyUI H3 工作流对接：六段式 prompt 直接填 ref2va 节点
-4. 规则校验层优先级重估（IR 输出天然合规；校验留给本地 skill 路径再定）
+1. **A/B 实测（GPU 队列占用，需声明）**：自写 prompt vs IR prompt，同 seed 同素材 2-3 条（用 input/start/ 起始图或用户实际场景）
+2. IR 输出与 ComfyUI H3 工作流对接：六段式 prompt 直接填 ref2va 节点
+3. 规则校验层优先级重估（IR 输出天然合规；校验留给本地 skill 路径再定）
 
 ## 关键链接
 - 上游：github.com/MiniMax-AI/MiniMax-H3（skills/ 目录），vendor/minimax-h3 本地镜像
