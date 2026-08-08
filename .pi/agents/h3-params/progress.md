@@ -65,6 +65,36 @@
 3. **观望 1-2 周**：Ostris lora、lightx2v 修复版（UP 自曝明天修）、ComfyUI 正式版合入 PR
 4. **不做**：EasyCache/Sol-Attn 上生产（劣化+音频报告多）、GGUF/清理节点/tiled VAE（作者明令）、多参 Ref+4 步 lora（不支持）、4 步档出成品
 
+## 社区进展快照 v3（2026-08-07 深夜，三轮调研落盘）
+
+### 官方级重磅：lightx2v + ModelTC 发布 4 步 Turbo LoRA v0.1（今日 UTC 12:59）
+- `minimax_h3_fl2v_turbo_4step_v0.1.safetensors`（1.3GB，FL2V 蒸馏；HF 147 likes/8 小时）
+- **Kijai 1 小时内出 ComfyUI 转换 ×2**：`minimax_h3_fl2v_lightx2v_turbo_4step_v0.1_comfy.safetensors` + `_comfy_resized_avg_rank_21_bf16.safetensors`（都在 Kijai/MiniMax-H3_comfy）
+- **无需自定义节点**：丢 models/loras/ + 原生 LoraLoader 即可；Kijai 测试笔记参数：**0.75 strength + 4 步 + er_sde 或 sa_solver**
+- 社区实测好参数（Reddit 11 赞）：**er_sde + beta57 + shift 12/10 + strength 1.0**
+- 踩坑：普通采样器（euler simple）→ 音频完全毁（必须 er_sde）；**只支持 T/I2V，Ref2V 不可用**（roadmap 有 Ref2V 蒸馏）；8GB VRAM 可跑（传闻）；Diffusers 与 ComfyUI 音频有差异（nightly 已修 = Kijai PR #15243）
+- 团队自述：v0.1 仅预览，**未来几天出更新版**
+
+### larryvrh v4-600 EMA（今晚更新，434 likes，~744MB bf16）
+- 推荐 `minimax_h3_turbo_v4_step600_ema.safetensors`：静帧/小动作大提升、微细节（脸/手指/纹理）更好、v1 过锐塑料感解决
+- trade-off：仅 4 步 + 大快速运动 → motion-smear/trailing（作者修中）；6-8 步基本消除
+- **步骤范围改为 4-8**（超 8 步过锐伪影无益）；**strength 固定 1.0**（ghosting→1.05-1.2；过锐→0.8-0.95）；**scheduler 用 simple**；4 步重动作场景 v1-850 仍更友好
+- 节点自动适配 pruned base（pruned_int8/fp8 均支持，我们 pruned fp8 ✓）；low_vram off 应用最锐
+- 音频仍待改进
+
+### Ostris 状态
+- 8/4 X：turbo time LoRA 训练中，**音频算法未解决（borked）** + 数据集（慢动作问题）生成中；未发布 → lightx2v 抢先
+
+### B 站动态
+- 标题党整合包潮继续（900%/350%/45% 封面党）；8g显存小黑 106s 出片实测（整活向无参数细节）
+- 官方 vllm_project：**vLLM-Omni day-0 支持 MiniMax H3**（34 分钟）→ 推理服务赛道铺路（本地线不受影响，仅记录）
+- 安仔先生「双时钟加速版」新概念待考证（可能指 video/audio 双调度）
+
+### 对我们的意义（行动清单更新）
+1. **立即试点 lightx2v v0.1**：无节点依赖、官方团队背书；Kijai resized bf16 转换；4 步 + er_sde + beta57 + shift 12/10 + strength 0.75 与 1.0 两档；沿用写实泳池首帧同 seed；音频作 gate
+2. **同步换 larryvrh v4-600 EMA**：替换 ckpt500/850 旧档；6 步 + strength 1.0 + simple；4 步重动作留 v1-850 作对照
+3. 观望：lightx2v v0.2（几天内）、Ref2V turbo（roadmap）、Ostris DMD
+
 ## 下一步（新对话入口）
 
 ### T1. 社区 H3 技巧调研（B 站 BV 清单，已定位未深挖）

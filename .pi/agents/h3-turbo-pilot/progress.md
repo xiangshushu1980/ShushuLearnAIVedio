@@ -34,11 +34,25 @@
 - 音频 gate：全部 8.0s+8.0s 32kHz 立体声完整；响度 turbo 各档一致（mean -16.0~-16.2dB）vs 基线 -14.6dB，无削波
 - 产物：video/h3_wow/*.mp4 + 对比图 video/wow_{mid,end}_compare.png（四格顺序：base-14|850-4|850-6|500-6）——**待用户目视**
 
+### 2026-08-07（三批：写实美女 10s 768×448 + 用户目视反馈）
+- **用户目视反馈（关键）**：WoW 动漫 8s——**只有 base-14 能看，turbo 全胡**；写实 10s 768——**turbo 胡，且 base-14 也胡**（写实 480p 细节上限坐实）
+- 写实批速度：base-14=203s / 850-4=66s / 850-6=65s / 500-6=66s（turbo 快 68%但画质崩）
+- **初判：turbo lora 画质 gate 不通过，不进生产**；用户提新方向：1024×576 验证（写实 1024 首帧 krea2 重生成，base-14 vs 850-6 对比批跑中）
+- 产物：video/h3_real/*.mp4 + video/real_mid_compare.png（四格：基线|850-4|850-6|500-6）
+
+### 2026-08-07（四批：1024/960 验证 + sage 节点确认）
+- **用户目视：1024×576 14 步可用**（写实）；960×544 16 步单条（执行 ~280s，runner 1420s 含排队等待——提交时队列有他人任务插队）
+- 1024 批：r1024-base-14=293s / r1024-850-6=127s（turbo 快 57% 但用户未认可画质）
+- 对比图：video/r960_vs_1024.png（左 960×544-16 步 | 右 1024×576-14 步，5s 处）
+- **sage 启用方式确认：`--use-sage-attention` 启动参数（全局），未用 KJ 专用节点 MiniMaxH3MemoryEfficientSageAttentionPatch**；当前 24GB 无显存压力不换，若遇 15s+/低显存内存压力再试专用节点
+
 ## 下一步
-1. **用户画质确认**（对比图 /tmp/h3_frames/ + 产物 mp4）→ 定最终档（初步：ckpt850-4 或 6-s1.0）
-2. 若达标：进快速档替换方案（快速档 75s → 50s，2 分钟成片从 30min 降到 ~20min），更新 params.md 管线表 + docs
-3. 长期项：等 Ostris/larayvrh 新 checkpoint 再复测；Sol-Attn+EasyCache 仍不在生产候选（社区劣化报告）
-4. 收尾：progress + [STATE] + scoped commit
+1. **今日新武器（v1 代判失败后重启试点）**：
+   - lightx2v v0.1（官方团队，FL2V 蒸馏，无需插件）：Kijai 转换下载 → 4 步 + er_sde + beta57 + shift 12/10 + strength 0.75/1.0 两档；只支持 T/I2V（我们用 I2V ✓）
+   - larryvrh v4-600 EMA：替换 ckpt500/850 旧档 → 6 步 + strength 1.0 + simple；预期静帧/微细节大提升
+   - 同 seed 写实泳池首帧对比 base-14 @1024；音频 gate 不变
+2. 待用户确认 960 vs 1024 档位偏好（对比图 video/05_compare/cmp_real_960vs1024_mid.png）
+3. 收尾：progress + [STATE] + scoped commit（含 video 重组 8da72c5/f99ce3c）
 
 ## 关键链接
 - 测试用例：/tmp/h3_turbo_cases.json，结果 /tmp/h3_turbo_cases.json.results.json
