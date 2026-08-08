@@ -1,0 +1,12 @@
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+
+integrated_multimodal_description:
+A 16:9 2D anime concert scene with vivid stage lighting, holding the visual identity of <Picture 1> — the silver-white haired girl — as she stands center stage under a single overhead spotlight, a dark arena of swaying glow sticks around her.
+[Shot 1] (00:00.000-00:02.500): A medium-wide, eye-level shot of the girl standing on the blue-toned stage floor: silver-white long hair with soft pink reflections and a single ahoge, pale skin, and large bright blue eyes looking toward the audience. A white spotlight shines straight down from overhead, outlining her in a bright pool of light, while in the surrounding darkness the audience waves glow sticks in blue, pink and purple, their lights rippling like waves through the crowd. She slowly raises her right hand from her side. The camera remains static, holding the framing. 
+[Shot 2] (00:02.500-00:05.000): The camera pushes in with small amplitude at slow speed toward the girl, the background dissolving into a bokeh of sweeping stage lights. She waves to the audience with a gentle smile on her pale face, her ahoge bobbing softly with the motion. Moving beams sweep across the venue from blue to pink and violet, and the pink reflections on her silver hair brighten as the light passes over her. The audience's glow sticks continue swaying at the edges of the frame, and she stays on the same spot of the blue-toned stage floor, her hair and eyes remaining clearly identifiable as the push-in deepens.
+
+overall_soundscape:
+The muffled roar of a large crowd cheering and whistling fills the arena, layered with the soft swishing rustle of hundreds of glow sticks being waved, the low electrical hum of the stage lighting rig, and the light tapping of her footsteps as she shifts her weight on the stage floor.
+
+non_diegetic_music:
+An electronic pop instrumental at a moderate tempo, built on a steady four-on-the-floor beat, warm synth pads and a bright arpeggio melody, with the volume and density of the arrangement gradually increasing as the camera pushes in.

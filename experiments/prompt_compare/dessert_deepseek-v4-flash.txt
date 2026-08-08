@@ -1,0 +1,14 @@
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+
+integrated_multimodal_description:
+A cinematic food-advertisement macro shot with a warm, glowing backlight, glossy creamy textures, and a slow, indulgent sense of motion.
+
+[Shot 1] At 00:00.000, the strawberry cream cake from the reference picture remains on its round white plate on the bright white marble countertop, with thick sponge layers and white cream rose piping, while the other desserts in the glass display case stay softly blurred in the background. The cream slowly softens and begins to flow, one glossy ribbon sliding gently down the side of the cake. The camera pushes in with small amplitude at slow speed toward the cream roses, and the warm light glints across the marble surface.
+
+[Shot 2] At 00:02.500, the camera holds a slightly lower macro angle as glossy chocolate sauce pours from the top of the frame, drizzling over the cream roses and the sponge edges, then dripping onto the marble countertop beside the cake. The flowing cream from the previous shot continues to slide down the cake layers, and a thin pool of chocolate and cream spreads on the marble. The camera keeps pushing in with small amplitude at slow speed, holding the macro framing and catching the glossy highlights under the warm background light.
+
+overall_soundscape:
+A quiet bakery ambience with a faint glass display case hum; the thick, silky sound of cream slowly sliding; light splashes and drips of chocolate sauce hitting the cream and the marble surface; no human voices.
+
+non_diegetic_music:
+A solo piano motif at a slow tempo with sparse, steady high-register notes, soft dynamic swells, and a sustained soft string pad underneath, resolving with a gentle deceleration.

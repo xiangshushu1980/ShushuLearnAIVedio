@@ -1,0 +1,14 @@
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+
+integrated_multimodal_description:
+2D anime style in a Japanese fresh, sunny seaside atmosphere, rendered in clean pastel colors with a soft film-like texture. The video carries a dreamlike transformation from the dim night-lit street of the reference picture to brilliant beach sunlight.
+
+[Shot 1] The camera pushes in with small amplitude at slow speed toward the girl standing on the night-lit street exactly as in <Picture 1>: silver-white long hair accented by a red ribbon on her left side, big blue eyes, a white coat with golden trim over a dark blue top with a red bow tie, a black pleated skirt with white stripes at the hem, white over-knee socks with golden bands, and black shoes. A sudden sea breeze sweeps through the street, lifting her silver hair and the hem of her skirt; the glowing street lamps blur and dissolve into warm morning sunlight, the dark pavement turning into golden sand as the night city melts away and reveals a sunlit beach around her.
+
+[Shot 2, 02.500-05.000s] The same girl, still wearing the white coat with golden trim, the black pleated skirt with white stripes, the white over-knee socks and the black shoes, now stands on the sunny beach as gentle waves lap softly around her ankles, her silver-white hair with the red ribbon flowing in the sea breeze. The camera slowly orbits around her with small amplitude at slow speed, while she gazes toward the distant horizon and smiles softly, her blue eyes sparkling with reflected sunlight.
+
+overall_soundscape:
+The gentle rush of sea breeze sweeping across the sand, soft waves washing in and receding around her ankles, the rustling flutter of her coat and pleated skirt in the wind, and faint seagull cries echoing in the distance.
+
+non_diegetic_music:
+Soft acoustic piano supported by airy strings at a relaxed tempo, a gentle legato melody with a slowly swaying rhythm and delicate dynamics that gradually brighten as daylight takes over.

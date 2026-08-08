@@ -1,0 +1,20 @@
+integrated_multimodal_description:
+
+The video unfolds as a serene, cinematic spa vignette bathed in warm amber lantern light, with white steam drifting through the air and a tranquil, dreamlike pacing that lingers on stillness and gentle motion.
+
+[Shot 1]
+A wide shot from 00:00.000 to 00:03.500: a young East Asian woman in her early twenties — her black hair pinned up in a loose wet bun, a soft white cotton towel wrapped around her torso — sits immersed in a traditional hinoki wooden bath inside a dimly lit Japanese bathhouse. Warm yellow paper lanterns glow along the timber walls, and thick white steam curls upward from the water surface. The camera performs a slow arc shot around the bath with small amplitude at slow speed, gliding from her left side toward the front while she gently settles deeper into the steaming water, sending soft ripples that lap against the wooden rim. The light flickers faintly as steam drifts past the lanterns, and distant droplets echo in the quiet space.
+
+[Shot 2]
+From 00:03.500 to 00:07.000, a medium close-up at shoulder level: the camera continues its slow orbit as a tracking shot with small amplitude at slow speed, moving to her right side. Clear water trickles in fine rivulets down her neck, over her damp collarbone and shoulder, catching the warm glow as it slides along her skin. Her single dominant action is a slow, soft exhale as she tilts her head slightly back, eyes half closed, droplets falling from her shoulder back into the bath. Her wet bun, white towel, and the amber lantern glow remain consistent from the previous shot; steam swirls thicker around her shoulders, and her submerged body is faintly visible through the crystal-clear water.
+
+[Shot 3]
+From 00:07.000 to 00:10.000, a relaxed medium-wide shot: the camera pulls back slowly with small amplitude at slow speed while slightly elevating, revealing the full bath and her serene profile once more. She rests her forearms along the wooden rim, head tilted, eyes fully closed, and her dominant action is a deep, contented sigh as she sinks a little lower into the water, which rises gently against her chest. Steam rises in lazy wisps around her, the warm yellow lanterns cast a soft glow across the dark wooden planks, and a single droplet rolls down her cheek and falls into the bath as the scene holds its tranquil stillness to the final frame.
+
+overall_soundscape:
+
+Soft, echoing drips of water from wooden buckets and ceiling beams; the gentle lapping and rippling of bathwater as the woman shifts and settles; the faint hiss and whisper of rising steam; a subtle creak of the old wooden bathhouse; and her slow, soft breathing with one quiet, contented sigh.
+
+non_diegetic_music:
+
+A sparse ambient piano with a warm sustained string pad, at approximately 60 BPM, featuring slow arpeggiated phrases and gentle dynamic swells, with no percussion — a minimal, breathing texture that follows the rhythm of the water and steam.

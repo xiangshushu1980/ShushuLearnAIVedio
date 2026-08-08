@@ -1,0 +1,17 @@
+integrated_multimodal_description:
+Epic dark-fantasy MMORPG cinematic battle sequence with gritty, saturated color grading: volcanic orange rim light against deep blue shadow, drifting dust backlit by magic flares, subtle film grain, and an energetic handheld camera identity that keeps the fight feeling live and physical.
+
+[Shot 1]
+On a war-torn field under a smoke-choked sky, a massive green-skinned orc warrior with a scarred jaw and jagged lower tusks, clad in black iron plate with spiked pauldrons and a torn leather harness, grips a notched double-headed war axe crackling with green ember energy. Facing him, a human paladin in ornate silver-and-gold plate armor, holding a weathered blue kite shield with a dented lion emblem, raises a longsword whose edge burns with golden holy light. The two collide with a thunderous impact: the axe smashes against the shield rim, hurling white-hot sparks, green ember trails, and a fan of gray dust across the frame. The camera trucks fast from left to right at a low angle, keeping the locked weapons at frame center with a slight handheld shake; ground stone chips explode under their boots, and for one instant at the collision the frame drops to slow motion before snapping back to full speed.
+
+[Shot 2, 00:03.500 - 00:07.000]
+Low behind the orc, the camera pushes in with large amplitude at fast speed as the orc rears back, the tendons of his arms tensing through the black plate, then swings the axe in a massive overhead arc. The paladin bobs behind his shield and angles it to deflect; the blade screeches down the shield's face, spraying a long curved line of golden holy sparks and green embers, and a radial shockwave of dust and pebbles blasts outward from their boots. The paladin's right pauldron gains a fresh scrape, the orc's chest plate shows a hairline scorch mark, and a violent camera shake at the moment of contact makes the impact feel crushing. Screen direction holds left-to-right.
+
+[Shot 3, 00:07.000 - 00:10.000]
+Wide shot with a fast tracking pull-back and a slight pedestal up: the paladin pivots low and lashes out a horizontal counter-slash, holy light streaming from the blade like a burning ribbon; the orc twists his torso back, and the sword carves a shallow glowing gash across his chest plate, showering blackened armor shards into the air. Dust kicks up in two rolling clouds as both warriors plant their boots, skidding to a halt across the settling haze, crouched and panting, facing each other with weapons raised. The camera holds on the two silhouettes framed against the burning smoke, the orc's new gash still faintly glowing, the paladin's sword hum tight in his grip.
+
+overall_soundscape:
+Constant battlefield wind and the low rumble of distant siege engines; armored boots crunching on broken stone; heavy metal impacts — axe against shield, sword scraping pauldron — with sharp ringing overtones; whooshing air from wide swings; crackling green fel energy and a searing hum from the holy blade; rapid thudding footsteps; strained guttural grunts and one short wordless battle roar from the orc.
+
+non_diegetic_music:
+Full orchestra with heavy percussion: pounding taiko and timpani in a driving 6/8 rhythm, sharp low-brass stabs timed to each weapon impact, fast string tremolo ostinati, and a sustained low choir; dynamics surge loudly on every collision and recede into the brief holds between exchanges.

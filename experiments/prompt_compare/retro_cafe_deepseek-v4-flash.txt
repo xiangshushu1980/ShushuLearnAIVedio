@@ -1,0 +1,8 @@
+integrated_multimodal_description:
+A retro film aesthetic with warm amber tones, fine grain, and a nostalgic café atmosphere. [Shot 1] Inside a vintage café, faded movie posters line the walls and a gramophone on the counter softly spins a jazz 78-rpm record, its delicate crackle filling the air. A young woman in a dark blue cheongsam sits by the mullioned window, gently turning the yellowed pages of an old book. The camera, at eye level, pushes in slowly from a medium-wide shot to a close-up, drawing attention to her calm gaze and the fine embroidered details of her dress. Warm yellow lamp light paints the scene, mingling with the pale daylight from the window, while subtle film grain and a faint light flicker evoke classic 16mm footage. The dominant sounds are the mellow gramophone jazz, the rustle of paper, and the occasional clink of a coffee cup.
+
+overall_soundscape:
+The soft hiss and crackle of the gramophone needle, the rustling of book pages, the delicate clink of a porcelain cup against its saucer, and a barely audible sigh from the woman as she pauses in her reading.
+
+non_diegetic_music:
+No non-diegetic music is added; the audio layer consists solely of the diegetic gramophone jazz and ambient café sounds.

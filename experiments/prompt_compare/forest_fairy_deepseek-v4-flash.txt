@@ -1,0 +1,14 @@
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+
+integrated_multimodal_description:
+Cinematic live-action footage carrying a real-film visual texture — a mist-veiled primeval forest where volumetric Tyndall beams rake down through the canopy, an ethereal fairy-tale mood, and a smooth floating camera presence with a barely perceptible handheld sway.
+
+[Shot 1]: Wide shot at eye level. The opening frame matches the reference exactly: a misty ancient forest with colossal moss-covered trunks, ferns and broadleaf undergrowth, a winding gravel path, and soft Tyndall rays slanting through the haze. A delicate elf-like maiden — long silver-white hair, flowing off-white linen dress edged with pale green embroidery — steps out from behind a mossy trunk into a shaft of light and begins to glide lightly along the path. The camera follows her in a lateral tracking shot with small amplitude, keeping her centered as she moves left to right through the hanging mist.
+
+[Shot 2] — 00:02.500: Medium-low angle tracking shot. The camera trucks alongside the same silver-haired maiden in her flowing off-white dress as she continues gliding left to right along the winding gravel path, deeper into the surrounding fog. Her skirt sweeps over the fern fronds beside the path, brushing them aside in a slow, soft wave while faint droplets shake from the leaves. The camera holds its lateral tracking with small amplitude as Tyndall beams flicker across her dress and the mist gently thickens toward the end.
+
+overall_soundscape:
+Misty primeval-forest ambience — a soft wind breathing through the high canopy, faint distant bird calls, and the muted hush of drifting fog. The maiden's light footsteps crunch softly on the gravel, her soft even breath is faintly audible, and the fabric of her skirt whispers as it sweeps across the fern fronds.
+
+non_diegetic_music:
+A sparse ambient score for solo piano, celesta, and airy string pads at a slow tempo, with a floating rubato rhythm, long sustained tones, and gentle dynamic swells that gradually recede into silence as the video ends.

@@ -1,0 +1,12 @@
+integrated_multimodal_description:
+A documentary-realist night-market food style with an observational camera gaze, warm sodium-vapor streetlight color grading, subtle film grain, and the lived-in texture of a late-night street stall.
+
+[Shot 1] A medium front-three-quarter shot of a middle-aged street chef in a grease-stained white apron and dark cap standing behind a battered steel wok station. The camera pushes in with small amplitude at slow speed toward the wok as he tosses the ingredients with a single crisp wrist motion; orange flames leap from the rim of the wok, hot oil sizzles and spits, and thick steam rolls upward into the warm light. Blurred customers sit on plastic stools around the stall, waiting with chopsticks in hand. The narrow night alley is lit by one warm streetlamp and the stall's hanging bulb, cooking smoke hanging in the air.
+
+[Shot 2] at 00:02.400 A macro close-up from a low angle of the wok's interior as chopped vegetables and sliced meat tumble and flip in a rising arc through the flame-lit air. The camera tilts up with small amplitude at slow speed following the rising ingredients; droplets of hot oil glitter in the firelight and the flame licks the wok's edge. The chef's hand and steel spatula enter the lower frame, flipping the mass in a practiced rhythm, while steam curls around the lens. The warm orange glow of the flames lights every surface of the frame.
+
+overall_soundscape:
+The night street hums with distant traffic and a faint low city drone. Hot oil crackles and spits against the steel wok, the flame whooshes with each toss, and the metal spatula scrapes and clangs against the wok. Steam hisses softly as it rises, and the low murmur of waiting customers mixes with the clatter of chopsticks and bowls.
+
+non_diegetic_music:
+A minimal documentary underscore for solo cello and brushed snare at a medium-slow tempo, with a steady pulse, soft dynamic swells that follow each flame flare-up, and a sparse low bass drone.
