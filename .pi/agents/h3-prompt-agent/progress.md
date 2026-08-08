@@ -23,10 +23,20 @@
 - 输出质量观察：一句话输入 → 电影级分镜（光线方向/丁达尔灰尘/呼吸节奏/耳部微动）+ 声音层（底噪+呼噜+皮毛摩擦）+ BGM 建议——远超自写水平，"差别非常大"的传闻初步验证
 - 已 commit：a6435d2（9 skill + vendor）；docs/08 已更新接入落地节
 
+### 2026-08-08 生成器前期准备执行（第二轮）
+- **IR 样本库建成 13 条**：experiments/ir_samples/ = 8 新（4 t2v 多风格 + 4 i2v 真实素材 Alya/森林/甜点）+ 3 官方（t2v 10s/i2v 8s/ref2v 5s，从 vendor README 提取含 token 用量）+ 旧 A/B 2 条；脚本 scripts/h3_ir_sample_batch.sh（可复用，t2v/i2v 分段）
+- **官方示例（#4）✅**：README full-2k 3 case 全提取；**发现官方脚本媒体格式**：image_url/video_url/audio_url 需嵌套 `{type:{url:...}}` + 本地文件传 mm_file:// 引用（修复 h3_ir_rewrite.py 两处 bug：file_id 嵌套读取 + 媒体嵌套结构）
+- **社区 skill（#3）benjiyaya 拆解 ✅**：7 维创作增强框架 + 时长→镜头预算 + 运动语法（type+amplitude+speed）+ 10 坑 + 验证清单 + showcase 7 个完整 pattern（含 SeeDance→H3 转换）；蒸馏入 docs/17
+- **docs/17_h3_prompt_writing_rules.md 新建**：生成器合成规则手册（模式契约/镜头规划/对话声音语法/Ref2VA 六段式/七维增强/高级 pattern/验证清单）
+- **docs/18_ir_sample_teardown.md 新建**：13 条样本逐条拆解（开场三件套/每镜描述层次/声音三层/配乐公式/六段式规律/i2v 读图锚点）
+- **新发现（mem0 备选）**：① IR 会加戏（alya_beach 输入海边→输出夜景街道+海滩两幕）——黑盒不可控再实证；② diegetic 音乐可入 soundscape（与社区规则出入，以官方输出为准）；③ i2v 比 t2v 长 2-3 倍（图驱动细节）；④ 媒体嵌套结构 bug 修复
+- docs/16 收集清单状态已更新（#1/#2/#4 ✅，#3/#5/#6/#7 🟡，#8 待）
+
 ## 下一步
-1. **A/B 实测（GPU 队列占用，需声明）**：自写 prompt vs IR prompt，同 seed 同素材 2-3 条（用 input/start/ 起始图或用户实际场景）
-2. IR 输出与 ComfyUI H3 工作流对接：六段式 prompt 直接填 ref2va 节点
-3. 规则校验层优先级重估（IR 输出天然合规；校验留给本地 skill 路径再定）
+1. **词汇库初版（#5/#6/#7）**：从 showcase + IR 样本蒸馏（docs/19 或 18 附录）
+2. **路线 1 验证**：DeepSeek + docs/17 规则写 A/B 场景 prompt vs IR 输出并排对比（不跑视频）
+3. kuronzzhan-droid / imagineVid-Awesome 拆解（可选）
+4. **最小闭环**：剧本+参数头 → DeepSeek 分镜表 → 合成 prompt → 校验 → ComfyUI
 
 ## 关键链接
 - 上游：github.com/MiniMax-AI/MiniMax-H3（skills/ 目录），vendor/minimax-h3 本地镜像

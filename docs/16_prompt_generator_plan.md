@@ -47,15 +47,15 @@ IR 定位：**降级为可选精修层**（黑盒但强，效果不满意时丢�
 
 | # | 收集项 | 内容 | 状态 |
 |---|---|---|---|
-| 1 | IR 输出样本库 | 10-20 条多场景真实输出（每条~1毛），逐条拆解标注六要素 | 已有3条（太空歌剧/温泉/魔兽） |
-| 2 | IR 输出拆解文档 | 结构规律：多镜头/细节密度/时间点/声音三层 | 待做 |
-| 3 | 社区开源 prompt skill | benjiyaya/Minimax-H3-Prompt-AgentSkill(53★)、kuronzzhan-droid、imagineVid/Awesome 案例合集 | 待拆解 |
-| 4 | 官方示例 | 模型卡 README full-2k 示例 + scripts/readme IR 调用脚本 | 待拉 |
-| 5 | 镜头词汇表 | SeeDance 镜头体系（取词汇不取模板）+ 英文标准术语（dolly/pan/tilt/crane/arc） | 待收集 |
-| 6 | 风格词汇库 | 光线/色调/质感描述词（golden hour/noir/soft light...） | 待收集 |
-| 7 | 声音词汇 | 环境音/氛围/BGM 描述词 | 待收集 |
+| 1 | IR 输出样本库 | 10-20 条多场景真实输出（每条~1毛），逐条拆解标注六要素 | ✅ 13条（8 新 + 3 官方 + 2 旧 A/B，experiments/ir_samples/） |
+| 2 | IR 输出拆解文档 | 结构规律：多镜头/细节密度/时间点/声音三层 | ✅ docs/18（i2v 4条待补） |
+| 3 | 社区开源 prompt skill | benjiyaya/Minimax-H3-Prompt-AgentSkill(53★)、kuronzzhan-droid、imagineVid/Awesome 案例合集 | 🟡 benjiyaya 已拆（7维框架/格式规范/showcase）；kuronzzhan、imagineVid 待拆 |
+| 4 | 官方示例 | 模型卡 README full-2k 示例 + scripts/readme IR 调用脚本 | ✅ 3 case 已入库 + 官方脚本格式已确认（媒体嵌套结构） |
+| 5 | 镜头词汇表 | SeeDance 镜头体系（取词汇不取模板）+ 英文标准术语（dolly/pan/tilt/crane/arc） | 🟡 H3 运动词汇已入 docs/17（type+amplitude+speed）；SeeDance 另表待建 |
+| 6 | 风格词汇库 | 光线/色调/质感描述词（golden hour/noir/soft light...） | 🟡 部分实测词在 docs/18 §四；完整词库待建 |
+| 7 | 声音词汇 | 环境音/氛围/BGM 描述词 | 🟡 三层结构+实例在 docs/18；词库待建 |
 | 8 | 成功案例 | docs 09 本地实测 + B站优质案例 | 待收集 |
-| 9 | 经验蒸馏 | mem0 音频/动作规律 → 生成器规则（如：安静类词+turbo→静音，需 soundscape 兜底） | 已有素材 |
+| 9 | 经验蒸馏 | mem0 音频/动作规律 → 生成器规则（如：安静类词+turbo→静音，需 soundscape 兜底） | ✅ 已有素材（docs/18 §四 规则 3） |
 | 10 | 指南文本 | base-en.txt(222行) + ref-en.txt(341行) + h3-prompt-writing skill | ✅ 已装 |
 
 **不做**：敏感词规避表（用户拍板：敏感场景走本地生成器，不需要绕过 IR 拦截）。

@@ -65,7 +65,7 @@ def upload_file(key: str, path: str) -> str:
     base = data.get("base_resp", {})
     if base.get("status_code") != 0:
         sys.exit(f"[upload] 失败: {base.get('status_msg', data)}")
-    file_id = data.get("file_id")
+    file_id = data.get("file_id") or data.get("file", {}).get("file_id")
     if not file_id:
         sys.exit(f"[upload] 响应缺 file_id: {data}")
     print(f"[upload] OK -> mm_file://{file_id}", flush=True)
@@ -125,27 +125,28 @@ def main():
     ap.add_argument("--dry-run", action="store_true", help="只打印将提交的 content，不调 API")
     args = ap.parse_args()
 
-    # 组装 content
+    # 组装 content（媒体为嵌套结构：{type, <type>:{url}, role}，官方脚本格式）
     content = [{"type": "text", "text": args.text}]
     for item in args.image:
         role, _, path = item.partition("=")
         if not path:
             role, path = "first_frame", item  # 单图默认首帧
-        content.append({"type": "image_url", "role": role, "url": path})
+        content.append({"type": "image_url", "role": role, "image_url": {"url": path}})
     for path in args.video:
-        content.append({"type": "video_url", "role": "reference_video", "url": path})
+        content.append({"type": "video_url", "role": "reference_video", "video_url": {"url": path}})
     for path in args.audio:
-        content.append({"type": "audio_url", "role": "reference_audio", "url": path})
+        content.append({"type": "audio_url", "role": "reference_audio", "audio_url": {"url": path}})
 
     # 本地文件先上传（mm_file:// 引用；URL 原样透传）
     for item in content:
         if item["type"] == "text":
             continue
-        url = item["url"]
+        holder = item[item["type"]]  # image_url / video_url / audio_url 对象
+        url = holder["url"]
         if url.startswith(("http://", "https://", "mm_file://")):
             continue
         key = get_key()
-        item["url"] = upload_file(key, url)
+        holder["url"] = upload_file(key, url)
 
     if args.dry_run:
         print(json.dumps(content, ensure_ascii=False, indent=2))
