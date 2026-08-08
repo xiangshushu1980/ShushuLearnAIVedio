@@ -38,6 +38,9 @@ IR 定位：**降级为可选精修层**（黑盒但强，效果不满意时丢�
 ## 四、生成引擎
 
 - **DeepSeek V4 flash / Pro（用户已有 key）**：flash 试错迭代、Pro 精写
+- key 位置：`~/.config/mem0_deepseek_key` + 环境变量 `DEEPSEEK_API_KEY`（pi 进程内已设）
+- 参数：**思考（reasoning）开 MAX**（用户 2026-08-08 确认，深度思考模式效果最佳）
+- endpoint：`https://api.deepseek.com`
 - 敏感内容策略：**敏感/擦边场景走本地生成器，不依赖 IR**（IR 有 1026 敏感拦截；2026-08-08 实测 A 场景第一次被拦）
 
 ## 五、前期准备清单（收集项）
