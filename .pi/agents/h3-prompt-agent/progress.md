@@ -33,3 +33,16 @@
 - 官方 skill 安装方式：npx skills add ... --skill h3-prompt-writing（我们走 vendor 复制，未用 npx）
 - API 文档：platform.minimax.io/docs/api-reference/video-generation-v2-h3-context-ir（EN）/ platform.minimaxi.com（CN）
 - 相关文档：docs/08_h3_prompt_agent.md（方案调研）、docs/14_skill_governance.md
+### 2026-08-08 第二轮（turbo 步数矩阵，全部已标注耗时）
+- 8 条 turbo 批完成：t6（132-141s/条）+ t8（161s/条），同 seed 同 prompt 960×544 240帧
+- **完整矩阵（耗时必标注纪律已固化 mem0）**：
+  | 配置 | 耗时 | A_ir清晰度 | B_ir清晰度 | B_raw清晰度 |
+  | std 20步 | 300s | 57.2 | 56.3 | 38.2 |
+  | t4 | 115s | 42.3 | 41.3 | 29.6 |
+  | t6 | 138s | 43.1 | 47.4 | 33.1 |
+  | t8 | 161s | 43.2 | 52.8(94%) | 38.0(追平) |
+- **音频规律确认**：A_raw（含"宁静唯美"）+turbo 任意档 → 静音 -48dB（跨批复现）；IR 的 overall_soundscape 段稳住音频
+- **用户反馈**：8 步效果不错，待用户时间再确认定档（生产候选 = t8+IR，161s/条 vs std 300s）
+- IR 成本换算：1 毛 ≈ 7500 total tokens（输入5.8/百万+输出23/百万，输入输出约 6:4）；输出每 1000 tokens ≈ 2.3 分；10s 复杂场景增强 prompt（~2800字符）≈ 1.4 毛
+- 提交脚本：scripts/h3_ab_submit.py（std 批）、scripts/h3_ab_turbo_submit.py（turbo 批，t2v 分支）
+- 发现 h3_turbo_runner.py t2v 分支 bug（未建节点6却引用）——已用独立脚本规避，未改其文件（文件认领纪律）
