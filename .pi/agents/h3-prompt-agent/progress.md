@@ -32,11 +32,18 @@
 - **新发现（mem0 备选）**：① IR 会加戏（alya_beach 输入海边→输出夜景街道+海滩两幕）——黑盒不可控再实证；② diegetic 音乐可入 soundscape（与社区规则出入，以官方输出为准）；③ i2v 比 t2v 长 2-3 倍（图驱动细节）；④ 媒体嵌套结构 bug 修复
 - docs/16 收集清单状态已更新（#1/#2/#4 ✅，#3/#5/#6/#7 🟡，#8 待）
 
+### 2026-08-08 视频验收批次（路线 1 收尾）
+- **Pro 确认提示词**：deepseek-v4-pro 10 场景全部合规（few-shot+校验器+重试；max_tokens 24000；reasoning effort 参数化）
+- **关键校准**：IR 实测 i2v 输出本身不带 [Shot 2] 标签（[Shot 1] 段内嵌切点），t2v 才带——校验器 i2v 规则对齐 IR 基准（降为 warn）；重试逻辑修复（最后一次生成也校验）+ --allow-warn
+- **视频验收 12 条完成**（t8 960×544 同 seed 20260810）：onsen/wow/cyberpunk/streetfood/alya_beach/dessert × DS-Pro/IR，输出 ComfyUI/output/video/h3_prompt_ab/，对比页 experiments/prompt_compare/compare.html（左右并排+打分表）；耗时 100-245s/条
+- **音频响度检查**：onsen DS 版 -39.7dB 近静音 vs IR -15.9dB（安静场景+turbo 静音规律 DS 未规避，**待用户验收确认**）；其余 5 场景 DS/IR 均在正常档（-14~-35）
+- i2v 提交坑：LoadImage 需要子目录前缀（start/xxx.png）
+
 ## 下一步
-1. **词汇库初版（#5/#6/#7）**：从 showcase + IR 样本蒸馏（docs/19 或 18 附录）
-2. **路线 1 验证**：DeepSeek + docs/17 规则写 A/B 场景 prompt vs IR 输出并排对比（不跑视频）
-3. kuronzzhan-droid / imagineVid-Awesome 拆解（可选）
-4. **最小闭环**：剧本+参数头 → DeepSeek 分镜表 → 合成 prompt → 校验 → ComfyUI
+1. **用户视频验收**（对比页打分，重点：onsen 音频 + 整体画面）
+2. 若 o nsen 静音确认：DS 生成器对安静场景的声音层需强化（参考 IR soundscape 特征 或 声音层后处理）
+3. **最小闭环**：剧本文件+参数头 → DS 分镜表 → 合成 prompt → 校验 → ComfyUI 提交
+4. 词汇库初版（#5/#6/#7）
 
 ## 关键链接
 - 上游：github.com/MiniMax-AI/MiniMax-H3（skills/ 目录），vendor/minimax-h3 本地镜像

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<title>H3 提示词视频验收：DS-Pro vs IR（2026-08-08）</title>
+<style>
+  body { font-family: sans-serif; margin: 24px; background: #1a1a1a; color: #ddd; }
+  h1 { color: #fff; } h2 { color: #ffd479; margin-top: 32px; }
+  .pair { display: flex; gap: 16px; flex-wrap: wrap; }
+  .card { background: #2a2a2a; padding: 12px; border-radius: 8px; }
+  .card video { width: 480px; max-width: 100%; border-radius: 6px; }
+  .tag { font-weight: bold; } .ds { color: #6ec6ff; } .ir { color: #7dff9b; }
+  .note { color: #ff9d9d; } .ok { color: #7dff9b; }
+  table { border-collapse: collapse; margin: 12px 0; }
+  td, th { border: 1px solid #444; padding: 6px 12px; }
+</style>
+</head>
+<body>
+<h1>H3 提示词视频验收：DeepSeek-Pro vs IR</h1>
+<p>同 seed 20260810 · t8 turbo 档 · 960×544 · 24fps · 输出 <code>ComfyUI/output/video/h3_prompt_ab/</code></p>
+
+<h2>音频响度（volumedetect）</h2>
+<table>
+<tr><th>场景</th><th>DS-Pro</th><th>IR</th><th>判定</th></tr>
+<tr><td>onsen 温泉</td><td>-39.7 dB</td><td>-15.9 dB</td><td class="note">⚠ DS 近静音（安静场景+turbo 规律，IR 版正常）</td></tr>
+<tr><td>wow 魔兽</td><td>-14.1 dB</td><td>-15.2 dB</td><td class="ok">✓ 正常</td></tr>
+<tr><td>cyberpunk 赛博</td><td>-26.0 dB</td><td>-25.5 dB</td><td class="ok">✓ 正常</td></tr>
+<tr><td>streetfood 小吃</td><td>-33.7 dB</td><td>-34.8 dB</td><td class="ok">✓ 正常</td></tr>
+<tr><td>alya_beach 海边</td><td>-32.4 dB</td><td>-31.3 dB</td><td class="ok">✓ 正常</td></tr>
+<tr><td>dessert 甜点</td><td>-16.3 dB</td><td>-21.1 dB</td><td class="ok">✓ 正常</td></tr>
+</table>
+<p>注：静音阈值 ~ -45dB 以下为全静；-30~-40 区间偏轻；-14~-26 为正常档。</p>
+
+<h2>逐场景对比（左=DS-Pro 右=IR）</h2>
+
+<h3>1. onsen 温泉（10s 宁静场景）</h3>
+<div class="pair">
+  <div class="card"><div class="tag ds">DS-Pro</div><video controls src="file:///home/sean/projects/ComfyUI/output/video/h3_prompt_ab/onsen_ds_00001_.mp4"></video></div>
+  <div class="card"><div class="tag ir">IR</div><video controls src="file:///home/sean/projects/ComfyUI/output/video/h3_prompt_ab/onsen_ir_00001_.mp4"></video></div>
+</div>
+
+<h3>2. wow 魔兽战斗（10s 动作）</h3>
+<div class="pair">
+  <div class="card"><div class="tag ds">DS-Pro</div><video controls src="file:///home/sean/projects/ComfyUI/output/video/h3_prompt_ab/wow_fight_ds_00001_.mp4"></video></div>
+  <div class="card"><div class="tag ir">IR</div><video controls src="file:///home/sean/projects/ComfyUI/output/video/h3_prompt_ab/wow_fight_ir_00001_.mp4"></video></div>
+</div>
+
+<h3>3. cyberpunk 赛博雨夜（5s 风格）</h3>
+<div class="pair">
+  <div class="card"><div class="tag ds">DS-Pro</div><video controls src="file:///home/sean/projects/ComfyUI/output/video/h3_prompt_ab/cyberpunk_ds_00001_.mp4"></video></div>
+  <div class="card"><div class="tag ir">IR</div><video controls src="file:///home/sean/projects/ComfyUI/output/video/h3_prompt_ab/cyberpunk_ir_00001_.mp4"></video></div>
+</div>
+
+<h3>4. streetfood 街头小吃（5s 纪实）</h3>
+<div class="pair">
+  <div class="card"><div class="tag ds">DS-Pro</div><video controls src="file:///home/sean/projects/ComfyUI/output/video/h3_prompt_ab/streetfood_ds_00001_.mp4"></video></div>
+  <div class="card"><div class="tag ir">IR</div><video controls src="file:///home/sean/projects/ComfyUI/output/video/h3_prompt_ab/streetfood_ir_00001_.mp4"></video></div>
+</div>
+
+<h3>5. alya_beach 海边少女（5s i2v 生产角色）</h3>
+<div class="pair">
+  <div class="card"><div class="tag ds">DS-Pro</div><video controls src="file:///home/sean/projects/ComfyUI/output/video/h3_prompt_ab/alya_beach_ds_00001_.mp4"></video></div>
+  <div class="card"><div class="tag ir">IR</div><video controls src="file:///home/sean/projects/ComfyUI/output/video/h3_prompt_ab/alya_beach_ir_00001_.mp4"></video></div>
+</div>
+
+<h3>6. dessert 甜点特写（5s i2v 产品）</h3>
+<div class="pair">
+  <div class="card"><div class="tag ds">DS-Pro</div><video controls src="file:///home/sean/projects/ComfyUI/output/video/h3_prompt_ab/dessert_ds_00001_.mp4"></video></div>
+  <div class="card"><div class="tag ir">IR</div><video controls src="file:///home/sean/projects/ComfyUI/output/video/h3_prompt_ab/dessert_ir_00001_.mp4"></video></div>
+</div>
+
+<h2>验收打分（每场景 3 项）</h2>
+<table>
+<tr><th>场景</th><th>画面（1-5）DS/IR</th><th>动作/镜头（1-5）DS/IR</th><th>音频（1-5）DS/IR</th></tr>
+<tr><td>onsen</td><td></td><td></td><td></td></tr>
+<tr><td>wow</td><td></td><td></td><td></td></tr>
+<tr><td>cyberpunk</td><td></td><td></td><td></td></tr>
+<tr><td>streetfood</td><td></td><td></td><td></td></tr>
+<tr><td>alya_beach</td><td></td><td></td><td></td></tr>
+<tr><td>dessert</td><td></td><td></td><td></td></tr>
+</table>
+</body>
+</html>

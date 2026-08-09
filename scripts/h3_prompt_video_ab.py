@@ -23,8 +23,8 @@ SCENES = [
     ("wow_fight",   "t2v", 10, 240, 20260810, f"{IR}/ab_B_wow_fight_10s.txt",   f"{DS}/wow_fight_deepseek-v4-pro.txt", None),
     ("cyberpunk",   "t2v", 5,  120, 20260810, f"{IR}/t2v_cyberpunk_rainy.txt",  f"{DS}/cyberpunk_rainy_deepseek-v4-pro.txt", None),
     ("streetfood",  "t2v", 5,  120, 20260810, f"{IR}/t2v_doc_streetfood.txt",   f"{DS}/doc_streetfood_deepseek-v4-pro.txt", None),
-    ("alya_beach",  "i2v", 5,  120, 20260810, f"{IR}/i2v_alya_beach.txt",       f"{DS}/alya_beach_deepseek-v4-pro.txt", "alya_169.png"),
-    ("dessert",     "i2v", 5,  120, 20260810, f"{IR}/i2v_dessert.txt",          f"{DS}/dessert_deepseek-v4-pro.txt", "dessert_1024.png"),
+    ("alya_beach",  "i2v", 5,  120, 20260810, f"{IR}/i2v_alya_beach.txt",       f"{DS}/alya_beach_deepseek-v4-pro.txt", "start/alya_169.png"),
+    ("dessert",     "i2v", 5,  120, 20260810, f"{IR}/i2v_dessert.txt",          f"{DS}/dessert_deepseek-v4-pro.txt", "start/dessert_1024.png"),
 ]
 
 
