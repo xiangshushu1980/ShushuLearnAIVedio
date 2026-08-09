@@ -46,6 +46,8 @@
 - 对比图：video/r960_vs_1024.png（左 960×544-16 步 | 右 1024×576-14 步，5s 处）
 - **sage 启用方式确认：`--use-sage-attention` 启动参数（全局），未用 KJ 专用节点 MiniMaxH3MemoryEfficientSageAttentionPatch**；当前 24GB 无显存压力不换，若遇 15s+/低显存内存压力再试专用节点
 
+## 产物规范（用户 2026-08-09 指示）：全部产物放 ComfyUI output/（试点归档 output/pilot_archive/），项目 video/ 目录已废弃删除；新产物按 分辨率_时长_优化_步数 命名
+
 ## 下一步
 1. **今日新武器（v1 代判失败后重启试点）**：
    - lightx2v v0.1（官方团队，FL2V 蒸馏，无需插件）：Kijai 转换下载 → 4 步 + er_sde + beta57 + shift 12/10 + strength 0.75/1.0 两档；只支持 T/I2V（我们用 I2V ✓）
