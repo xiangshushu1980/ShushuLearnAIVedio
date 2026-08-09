@@ -115,6 +115,32 @@
 - Ostris 推文评论：社区提「跳过音频生成」需求（专业场景音频不可用需重新配乐）
 - 大凯智障君：4 步 + AI 自动写分镜 + LTX 高清放大工作流（254 播放）；H3 vs LTX 2.3：H3 视觉/角色一致性/prompt 遵循/物理理解胜出
 
+### 社区进展快照 v5（2026-08-09 凌晨，五轮增量）
+
+**larryvrh v5 实验权重出现**（08-08 20:07 UTC 更新，likes 493）：
+- 新增 `experimental_v5_step_600.bin`（无成品 safetensors）——v4 拖影修复方向训练中
+- README 未更新（仍是 v4 推荐）；音频+快速运动仍是两个待改进点
+
+**lightx2v 出新：MiniMax-H3-Prompt-Rewriter-LoRA**（Qwen3.6-27B + LoRA 适配）：
+- 短 prompt + 宽高比 + 时长 → 官方格式（integrated_multimodal_description/overall_soundscape/non_diegetic_music）
+- 配合 **ModelTC/LightX2V 推理框架**（本地推理栈：内存卸载/张量序列并行/量化/优化内核/特征缓存）——之前只看 lora 漏了配套框架
+- 意义：本地免费版 IR（用户已定在线 IR 为主路径，此为备选/可对比）；27B 模型体积大
+- v0.1 lora 仓库未更新（likes 203）——v0.2 尚未发布
+
+**comfyui-wiki 补漏（8/5 遗漏）**：
+- **ComfyUI-H3-SeedScout**（tsuremen）：多 seed 试镜节点——前几步预览多 seed，选中才完整渲染——抽卡场景实用，快速档候选
+- **Kijai w4a8 PR**（4bit 权重 8bit 激活量化，90 PR demo）
+
+**B 站新动态（8/8）**：
+- 机智罗（664 播放）：本地提示词预设节点——5 模式×中英×12 时长×36 视觉×21 音乐×7 画幅=63.5 万组合，基于官方提示词文档；本地 prompt 增强方向（与 IR/lightx2v rewriter 并列）
+- FoxSaying（382）：lightx2v/kj 蒸馏 4 步实测「效果夯爆」+低显存优化；蓝染先生（214）：10s 8 步实测；TimeTraveler（133）：6G 显存 3060 教程；Leoday（8）：加速 lora 不同采样器对比；AIEveryThing（275）：「fl2v 变身 r2v，kj 新 lora」——**查证 Kijai 仓库无新文件，标题党/旧闻炒作**
+- Reddit 高分帖均为 8/1-8/3 旧帖，无重大新帖
+
+**对我们的意义**：
+1. v5 拖影修复出来前，生产候选维持 v4-600（6/8 步）结论；盯 v5 成品
+2. 本地 prompt 重写两条路线（lightx2v rewriter / 机智罗节点）可作 IR 备用，暂不行动（IR 主路径已定）
+3. SeedScout 可加入抽卡档候选（先预览后渲染，省 TE 重载？待验证）
+
 ## 下一步（新对话入口）
 
 ### T1. 社区 H3 技巧调研（B 站 BV 清单，已定位未深挖）
