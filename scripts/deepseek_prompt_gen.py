@@ -10,12 +10,15 @@ Key：~/.config/mem0_deepseek_key 或环境变量 DEEPSEEK_API_KEY
 import argparse
 import json
 import os
+import subprocess
+import sys
 from pathlib import Path
 
 import requests
 
 API_URL = "https://api.deepseek.com/chat/completions"
 RULES_FILE = Path(__file__).resolve().parent.parent / "docs" / "17_h3_prompt_writing_rules.md"
+VALIDATOR = Path(__file__).resolve().parent / "prompt_validator.py"
 
 SYSTEM_TEMPLATE = """你是 MiniMax H3 视频模型的提示词合成器（T2VA 模式）。严格按以下规则手册输出：
 ===== 规则手册开始 =====
@@ -23,7 +26,15 @@ SYSTEM_TEMPLATE = """你是 MiniMax H3 视频模型的提示词合成器（T2VA 
 ===== 规则手册结束 =====
 
 铁律：只输出三核心段（integrated_multimodal_description / overall_soundscape / non_diegetic_music），
-无任何前言、解释、markdown fence。全部英文。"""
+无任何前言、解释、markdown fence。全部英文。
+
+===== 格式示例（逐字模仿其结构，尤其是时间戳语法；这是官方 IR 输出）=====
+{example}
+===== 示例结束 =====
+
+时间戳铁律（示例中可见）：[Shot 1] 永不带时间戳；第 N 镜（N>1）写作 `[Shot N] At MM:SS.mmm, the camera cuts to ...`，时间严格递增且在时长内。"""
+
+EXAMPLE_FILE = Path(__file__).resolve().parent.parent / "experiments" / "ir_samples" / "official_t2va_10s.txt"
 
 
 def get_key() -> str:
@@ -36,12 +47,19 @@ def get_key() -> str:
     raise SystemExit("缺少 DeepSeek key：~/.config/mem0_deepseek_key 或 DEEPSEEK_API_KEY")
 
 
-def gen(key: str, model: str, scene_text: str, duration: int, ratio: str, mode: str = "t2va", first_frame_desc: str = "") -> str:
+def gen(key: str, model: str, scene_text: str, duration: int, ratio: str, mode: str = "t2va", first_frame_desc: str = "", effort: str = "high") -> str:
     rules = RULES_FILE.read_text()
-    sys_prompt = SYSTEM_TEMPLATE.format(rules=rules)
+    if mode == "i2va":
+        # i2v 示例用含切点时间戳的 IR 实测样本（官方 i2va 示例无切点）
+        example_file = Path(str(EXAMPLE_FILE).replace("official_t2va_10s", "i2v_alya_beach"))
+    else:
+        example_file = EXAMPLE_FILE
+    example = example_file.read_text() if example_file.exists() else ""
+    sys_prompt = SYSTEM_TEMPLATE.format(rules=rules, example=example)
     user_lines = [
         f"场景（中文意图，保持原意）：{scene_text}",
         f"参数：duration={duration}s, ratio={ratio}, mode={mode}。",
+        "每个镜头切点必须带 [Shot N] 标签（如 `[Shot 2] At 00:02.500, the camera cuts to`），严禁裸切点。",
     ]
     if mode == "i2va" and first_frame_desc:
         user_lines.append(f"首帧图像内容描述（参考图不可见，以下是对首帧的准确描述）：{first_frame_desc}")
@@ -55,7 +73,7 @@ def gen(key: str, model: str, scene_text: str, duration: int, ratio: str, mode: 
             {"role": "system", "content": sys_prompt},
             {"role": "user", "content": user_prompt},
         ],
-        "reasoning": {"effort": "high"},  # 思考参数开 MAX（用户决策）
+        "reasoning": {"effort": effort},  # 思考程度（用户授权可调；high=MAX 精写）
         "temperature": 0.7,
         "max_tokens": 16000,  # reasoning tokens 计入 completion，需给思考+正文留足空间
     }
@@ -74,15 +92,32 @@ def main():
     ap.add_argument("--ratio", default="16:9")
     ap.add_argument("--model", default="deepseek-v4-flash", choices=["deepseek-v4-flash", "deepseek-v4-pro"])
     ap.add_argument("--mode", default="t2va", choices=["t2va", "i2va"])
+    ap.add_argument("--effort", default="high", choices=["high", "medium", "low"], help="reasoning 程度（用户授权可随时调；high=MAX 精写，low=快速）")
     ap.add_argument("--first-frame-desc", default="", help="i2va 模式：首帧图像内容描述")
     ap.add_argument("--output", help="落盘路径（默认 experiments/prompt_compare/{scene}_{model}.txt）")
+    ap.add_argument("--output-dir", help="输出目录（与 --output 互斥，文件名 = {scene}_{model}.txt）")
+    ap.add_argument("--retry", type=int, default=3, help="生成后本地校验不过时自动重试次数（默认 3）")
     args = ap.parse_args()
 
-    out = args.output or f"experiments/prompt_compare/{args.scene}_{args.model}.txt"
+    out = args.output
+    if not out:
+        base = args.output_dir or "experiments/prompt_compare"
+        out = f"{base}/{args.scene}_{args.model}.txt"
     Path(out).parent.mkdir(parents=True, exist_ok=True)
-    prompt = gen(get_key(), args.model, args.text, args.duration, args.ratio, args.mode, args.first_frame_desc)
-    Path(out).write_text(prompt)
-    print(f"[ok] {out} ({len(prompt)} chars)")
+
+    for attempt in range(1, args.retry + 1):
+        prompt = gen(get_key(), args.model, args.text, args.duration, args.ratio, args.mode, args.first_frame_desc, args.effort)
+        Path(out).write_text(prompt)
+        if attempt < args.retry:
+            r = subprocess.run(
+                [sys.executable, str(VALIDATOR), out, "--mode", args.mode, "--duration", str(args.duration)],
+                capture_output=True, text=True)
+            if r.returncode == 0:
+                print(f"[ok] {out} ({len(prompt)} chars, 校验通过 attempt={attempt})")
+                return
+            print(f"[retry] 校验不过（attempt={attempt}），重新生成...")
+        else:
+            print(f"[warn] {out} ({len(prompt)} chars, 达重试上限 {args.retry}，校验未过，文件已保留)")
 
 
 if __name__ == "__main__":

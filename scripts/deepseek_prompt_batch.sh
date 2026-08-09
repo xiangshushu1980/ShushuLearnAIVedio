@@ -4,7 +4,8 @@
 set -e
 cd "$(dirname "$0")/.."
 MODEL=${1:-deepseek-v4-flash}
-GEN="python3 scripts/deepseek_prompt_gen.py --model $MODEL"
+OUTDIR=${2:-experiments/prompt_compare}
+GEN="python3 scripts/deepseek_prompt_gen.py --model $MODEL --output-dir $OUTDIR"
 
 run() { # name duration mode text [first_frame_desc]
   local name=$1 dur=$2 mode=$3 text=$4 desc=$5

@@ -93,6 +93,21 @@ Full orchestra with heavy percussion: pounding taiko and timpani in a driving 6/
 | 字段冒号 | ⚠️ 2/10 缺冒号（cyberpunk/dream 写成了无冒号的裸标题） |
 | soundscape/配乐公式 | ✅ 10/10 齐，配器+速度+动态无情绪词 |
 
+### 合规修复结果（few-shot + 强约束 + 自动重试，2026-08-08 第二轮）
+
+| 版本 | pass | warn | fail | 说明 |
+|---|---|---|---|---|
+| 无 few-shot（初版） | 0 | 7 | 3 | 时间戳 4 种变体/缺冒号/镜头超预算 |
+| few-shot 修正版 | **10/10** | 0 | 0 | 官方 IR 示例注入 + 切点标签强约束 + 校验不过自动重试（默认 3 次） |
+
+修复手段：
+1. few-shot：t2v 注入官方 official_t2va_10s 示例；i2v 注入含切点时间戳的 IR 实测样本
+2. user prompt 强约束："每个镜头切点必须带 [Shot N] 标签，严禁裸切点"
+3. `scripts/prompt_validator.py` 规则校验器（确定性检查 7 项）+ `--retry N` 自动重试（生成→校验→不过重跑，flash 单条成功率 ~60-70%，重试后收敛）
+4. reasoning effort 参数化（--effort high/medium/low，用户授权可调）
+
+结论：**合规问题已解决**，flash 档可用；校验层从"可选项"升级为管线必备件（flash 不稳定性由重试兜底）。
+
 ### 用户逐项打分表（A-J 每个场景打 9 项）
 
 | # | 维度 | 判定标准 | A温泉 | B魔兽 |
