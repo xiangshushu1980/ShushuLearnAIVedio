@@ -7,6 +7,11 @@ comfyui-mcp/
 # 输出产物（AI 生成图/视频，体积大且非项目源码）
 outputs/
 
+# 实验资产（个人创作媒体，不公开）
+experiments/speech-video/assets/
+*.safetensors
+*.m4a
+
 # Python
 __pycache__/
 *.pyc
