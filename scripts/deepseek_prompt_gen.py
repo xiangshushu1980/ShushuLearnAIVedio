@@ -47,7 +47,7 @@ def get_key() -> str:
     raise SystemExit("缺少 DeepSeek key：~/.config/mem0_deepseek_key 或 DEEPSEEK_API_KEY")
 
 
-def gen(key: str, model: str, scene_text: str, duration: int, ratio: str, mode: str = "t2va", first_frame_desc: str = "", effort: str = "high") -> str:
+def gen(key: str, model: str, scene_text: str, duration: int, ratio: str, mode: str = "t2va", first_frame_desc: str = "", effort: str = "high", max_tokens: int = 24000) -> str:
     rules = RULES_FILE.read_text()
     if mode == "i2va":
         # i2v 示例用含切点时间戳的 IR 实测样本（官方 i2va 示例无切点）
@@ -75,7 +75,7 @@ def gen(key: str, model: str, scene_text: str, duration: int, ratio: str, mode: 
         ],
         "reasoning": {"effort": effort},  # 思考程度（用户授权可调；high=MAX 精写）
         "temperature": 0.7,
-        "max_tokens": 16000,  # reasoning tokens 计入 completion，需给思考+正文留足空间
+        "max_tokens": max_tokens,  # reasoning tokens 计入 completion，给足防正文截断
     }
     r = requests.post(API_URL, headers={"Authorization": f"Bearer {key}"}, json=body, timeout=300)
     if r.status_code != 200:
@@ -97,6 +97,7 @@ def main():
     ap.add_argument("--output", help="落盘路径（默认 experiments/prompt_compare/{scene}_{model}.txt）")
     ap.add_argument("--output-dir", help="输出目录（与 --output 互斥，文件名 = {scene}_{model}.txt）")
     ap.add_argument("--retry", type=int, default=3, help="生成后本地校验不过时自动重试次数（默认 3）")
+    ap.add_argument("--max-tokens", type=int, default=24000, help="completion 上限（含 reasoning；默认 24000 给足）")
     args = ap.parse_args()
 
     out = args.output
@@ -106,15 +107,15 @@ def main():
     Path(out).parent.mkdir(parents=True, exist_ok=True)
 
     for attempt in range(1, args.retry + 1):
-        prompt = gen(get_key(), args.model, args.text, args.duration, args.ratio, args.mode, args.first_frame_desc, args.effort)
+        prompt = gen(get_key(), args.model, args.text, args.duration, args.ratio, args.mode, args.first_frame_desc, args.effort, args.max_tokens)
         Path(out).write_text(prompt)
+        r = subprocess.run(
+            [sys.executable, str(VALIDATOR), out, "--mode", args.mode, "--duration", str(args.duration), "--allow-warn"],
+            capture_output=True, text=True)
+        if r.returncode == 0:
+            print(f"[ok] {out} ({len(prompt)} chars, 校验通过 attempt={attempt})")
+            return
         if attempt < args.retry:
-            r = subprocess.run(
-                [sys.executable, str(VALIDATOR), out, "--mode", args.mode, "--duration", str(args.duration)],
-                capture_output=True, text=True)
-            if r.returncode == 0:
-                print(f"[ok] {out} ({len(prompt)} chars, 校验通过 attempt={attempt})")
-                return
             print(f"[retry] 校验不过（attempt={attempt}），重新生成...")
         else:
             print(f"[warn] {out} ({len(prompt)} chars, 达重试上限 {args.retry}，校验未过，文件已保留)")

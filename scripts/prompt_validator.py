@@ -49,7 +49,11 @@ def check(text: str, duration: int = None, mode: str = None) -> dict:
         # Shot 1 带时间戳？（只在 [Shot 1] 段内检查，排除 instruction line 与后续镜头）
         m1 = re.search(r"\[Shot 1\]([^\[]*?)(?:\[Shot 2\]|\Z)", t, re.S)
         if m1 and re.search(r"At\s*0*:\d", m1.group(1)):
-            issues.append("Shot 1 段落内出现时间戳")
+            # IR 实测：i2v 输出为 [Shot 1] 段内嵌切点（无 [Shot 2] 标签），t2v 才有标签
+            if mode == "i2va":
+                warns.append("Shot 1 段内嵌切点（i2v 与 IR 实测同构，软要求）")
+            else:
+                issues.append("Shot 1 段落内出现时间戳（t2v 应带 [Shot N] 标签切点）")
         # 切点式时间戳（须带 [Shot N] 标签）
         cut_ts = re.findall(r"\[Shot (\d+)\](?:[^\[]*?)At (00:\d{2}\.\d{3})", t)
         times = [float(x.split(":")[1]) for x in [c[1] for c in cut_ts]]
@@ -58,7 +62,7 @@ def check(text: str, duration: int = None, mode: str = None) -> dict:
         tagged_cuts = re.findall(r"\[Shot \d+\](?:[^\[]*?)At 00:\d{2}\.\d{3}, the camera (?:cuts|transitions|changes)", t)
         bare = len(all_cuts) - len(tagged_cuts)
         if bare > 0:
-            warns.append(f"裸切点缺 [Shot N] 标签: {bare} 处")
+            warns.append(f"裸切点缺 [Shot N] 标签: {bare} 处（i2v 软要求，t2v 建议修）")
         if len(set(shots)) > 1 and not cut_ts and not bare:
             warns.append("多镜但无切点式时间戳（At MM:SS.mmm）")
         if times != sorted(times):
@@ -92,13 +96,13 @@ def check(text: str, duration: int = None, mode: str = None) -> dict:
     level = "pass" if not issues and not warns else ("warn" if warns and not issues else "fail")
     return {"issues": issues, "warns": warns, "level": level, "shots": len(set(shots))}
 
-
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("files", nargs="+")
     ap.add_argument("--duration", type=int, default=10)
     ap.add_argument("--mode", default="t2va", choices=["t2va", "i2va", "auto"])
     ap.add_argument("--json", action="store_true")
+    ap.add_argument("--allow-warn", action="store_true", help="warn 级也视为通过（exit 0），仅 fail 阻断")
     args = ap.parse_args()
 
     all_pass = True
@@ -120,7 +124,7 @@ def main():
                 print(f"    ❌ {i}")
     if args.json:
         print(json.dumps(results, ensure_ascii=False, indent=1))
-    sys.exit(0 if all_pass else (1 if any(r["level"] == "warn" for r in results.values()) else 2))
+    sys.exit(0 if all_pass else (1 if any(r["level"] == "warn" for r in results.values()) and not args.allow_warn else (2 if any(r["level"] == "fail" for r in results.values()) else 0)))
 
 
 if __name__ == "__main__":
