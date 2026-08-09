@@ -79,3 +79,17 @@
 - 工具形态：方案 A 剧本文件+参数头优先（不做 Web UI 起步）
 - 收集清单 10 项 → docs/16_prompt_generator_plan.md（含 IR 样本库/社区 skill 参考/SeeDance 镜头词汇表/风格与声音词汇库/经验蒸馏）
 - 本轮 A/B 完整数据已入 mem0（IR 效果/步数矩阵/音频规律/成本换算）
+
+### 2026-08-09 双轨盲区补测（18 case 全完成，无 OOM）
+- **快车道定档实测**（fl2va fp8+sage，IR 级 prompt）：i2v turbo8 8s=111s（=t2v 零惩罚）、5s=94s；firstlast 静态双锚 turbo8=123s（+12s 便宜）；turbo4=90s（收益递减）；1024 档=171s
+- **慢车道定档实测**（ref2va int8）：1/2/4图 std20 = 130/133/144s（4图仅 +11%）；std14=82s（含 TE 缓存命中，估 ~120s）；4图@1024=226s 不爆显存（21.9GB）；**ref2va+turbo lora 兼容但无价值**（123s > std14）
+- **帧链硬桥判死刑（关键负面）**：生成帧做 first_frame 锚定 SSIM 0.14-0.52（静态图 0.99）；std20 比 turbo8 更差 → 非步数因素，生成帧分布 OOD。快车道跨段改：独立段+静态锚+prompt 连续性 / firstlast 静态双锚转场段
+- 显存全批峰值 ≤22.3GB，4图+1024 也安全；监控纪律生效（阈值 23.6GB 告警 + OOM abort，未触发）
+- IR 级长 prompt 使速度 vs turbo-pilot 短 prompt 数据差 ~1.7x（A1 114s vs 67s），对比需折算
+- 产物 ComfyUI/output/video/h3_gap_test/（18 mp4）；数据 docs/19_h3_dual_track_gap_test.md；runner=scripts/h3_gap_runner.py（支持帧链依赖/断点续跑/OOM abort）
+
+## 下一步（明日开工）
+1. **工具 A**：剧本+参数头 YAML → DeepSeek 分镜表/导演拍摄本（镜头/景别/运动/时长/角色卡引用），2-3 场景验证——补测结论已入设计：跨段不用帧链硬桥，转场段用 firstlast 静态双锚
+2. **工具 B 升级**：拍摄本 → 三核心段/六段式，few-shot 换官方 ref 示例
+3. 全链路试跑：Alya 海边 → 拍摄本（用户审）→ Ref2VA 出片（std14/20，多图 4 张内）
+4. 用户视频验收打分（compare.html，onsen 音频）+ 补测产物可顺带归档
