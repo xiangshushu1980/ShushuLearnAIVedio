@@ -86,3 +86,10 @@
 - [ ] larryvrh v5 成品（拖影修复，experimental_v5_step_600.bin 训练中）
 - [ ] lightx2v v0.2（「几天内出更新版」）
 - [ ] Ostris DMD lora（音频算法 borked，未发布）
+
+### 2026-08-09 定档收尾（用户确认）
+- **快速档（定）**：fp8+sage+v4-600 EMA 8 步 @768×448 = 67s/8s（复杂动作 88s；社区共识 8 步甜点）
+- **极速档（定，用户「可以了」）**：v4-4 步 @768×448 = 45s/8s（挥手 46s/转身 45s 复测稳定）
+- **成片档**：挂起等 int8（下载 21GB 2.2MB/s 进行中）→ 验证省显存消除 offload 后 960/1024 速度 → 再定成片档分辨率/步数
+- 产物规范：全部在 ComfyUI output/（pilot_archive/ 7 文件锚点）
+- 网络问题解决记录：Clash 原节点白天拥塞 → 换美国节点后国外 2.1MB/s（国内 672M 一直正常）；WSL 连 7890 需 Clash 开混合端口 + 9090 external-controller
