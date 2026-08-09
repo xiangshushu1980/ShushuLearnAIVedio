@@ -59,3 +59,24 @@
 - runner：scripts/h3_turbo_runner.py
 - 上游：github.com/Larryvrh/ComfyUI-MiniMax-H3-Turbo、HF drbaph/MiniMax-H3-Turbo-Lora-ComfyUI
 - 社区调研：h3-params/progress.md「社区反应深挖」节
+
+### 试点候选执行计划（2026-08-09 立，用户拍板「一个个来」）
+**P0 目视 gate（欠账，先清）**
+- [x] P0.1 v1 批作废：首帧手太不明显（侧面全身，手指不可辨）→ 重做「手可见+有动作+非主体」首帧（用户 2026-08-09 指示）；旧批产物已清理
+- [ ] P0.2 1024 手部五档目视（video/cmp_hand_1024x576_5way_mid.png）→ 定成片档是否换代
+
+**P1 画质 gate 通过后的速度甜点探索**
+- [ ] P1.1 v4-4 步档 @768×448（静帧/小动作场景，README 卖点）→ 预期 40-50s，快速抽卡再提速
+- [ ] P1.2 v4 大动作边界（4 vs 6 步同场景）→ 确认拖影边界，快动作场景选档依据
+
+**P2 管线优化**
+- [ ] P2.1 SeedScout 多 seed 试镜试点（抽卡档：先预览后渲染，省全渲染碰运气）
+- [ ] P2.2 params.md 管线表定稿（含 8s/10s 数据点 + turbo 结论 + 观望清单）
+
+**P3 移交 h3-prompt-agent（提示词方向，用户 2026-08-09 指示在提示词 Agent 对话继续）**
+- lightx2v Prompt-Rewriter-LoRA（本地 IR 备选）/ 机智罗预设节点——由提示词线评估
+
+**P4 观望清单（发布即复测，同套 seed）**
+- [ ] larryvrh v5 成品（拖影修复，experimental_v5_step_600.bin 训练中）
+- [ ] lightx2v v0.2（「几天内出更新版」）
+- [ ] Ostris DMD lora（音频算法 borked，未发布）
