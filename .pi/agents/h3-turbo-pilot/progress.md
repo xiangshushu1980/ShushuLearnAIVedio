@@ -104,3 +104,15 @@
 - X：AMD RDNA4 补丁 + turbo lora = 82s（Italianclownz）
 - **int8 DiT 下载完成**（20970379616 字节 = 远程大小一致 ✓，wget 完成；网络恢复后提速至 ~5MB/s）
 - 结论：turbo/模型主线无重大变化；新动向 = GGUF 生态（unsloth）+ w4a8/int8 VAE（需 ComfyUI 0.31.0，暂观望）；我们 4090+fp8 路线不受影响
+
+### 2026-08-10 第六轮调研补充（用户三问：fp8/int8、TE 版本、X/Reddit）
+- **官方量化推荐**（Comfy-Org README 原话）：「For diffusion_model prefer int8_convrot if you are able to use pytorch with cu130. Fp8_scaled should only be used if you for any reason can not use the int8_convrot」——**int8 是官方首选，fp8 是兜底**；本地 torch 2.13.0+cu130 ✓ 条件满足（sage 2.2.0 兼容）
+- **TE 推荐**（官方 README 原话）：「This nvfp4 text encoder does not require Blackwell GPU to use」——**nvfp4_awq TE（15.7G）4090 可用且为最小档，本地用法正确**；NVFP4 DiT（Abiray）才是 Blackwell/CUDA13-only（X: Bin Chen 5090 480p 5s=48s/turbo 32s 佐证）
+- **INT8-Fast**（BobJohnson24/ComfyUI-INT8-Fast，284★）：30 系卡 int8 matmul triton 内核 1.5-2x 加速（Reddit 1vhi2n7 有复刻帖）；40 系 cu130 原生 convrot 路径即可，非必需
+- **X（8/10）**：Maki L4(Colab) 1280×704 turbo v4 8步 5s=21:56；Bin Chen 5090 nvfp4 480p=48s/32s(turbo)；Jun 3060 8GB turbo 480p 10s≈10min（本地试戏+RunPod 生产模式）
+- **Reddit AMA（8/7，官方 6 人，939 赞，443 评论）重磅**：
+  1. **稀疏注意力推理版「near term」发布**（Kiro_Song：train-aware 稀疏化，保守配置无感画质损失，先参考实现）——未来 H3 提速大事件
+  2. **官方考虑 4-step 低步数版本**（「actively considering a lower-step version, such as a 4-…」，非蒸馏极端低步数）
+  3. **H3-Regenerate-2K**：专用 latent-space DiT 再生 checkpoint（高分辨率 + base 输出上下文），非普通 upscaler；官方计划开源（效率优化中）——官方 2K 画质来源
+  4. Ref2VA 视觉质量差 FL2VA 官方承认（post-training 差异），改进中；技巧=用最高质量参考输入
+  5. 官方将发 comprehensive technical report
