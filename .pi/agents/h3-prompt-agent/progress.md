@@ -93,3 +93,15 @@
 2. **工具 B 升级**：拍摄本 → 三核心段/六段式，few-shot 换官方 ref 示例
 3. 全链路试跑：Alya 海边 → 拍摄本（用户审）→ Ref2VA 出片（std14/20，多图 4 张内）
 4. 用户视频验收打分（compare.html，onsen 音频）+ 补测产物可顺带归档
+
+### 2026-08-09 工具 A stage1 落地（剧本→导演拍摄本）
+- **scripts/h3_shotlist_gen.py 完成**：剧本（YAML 参数头+正文）→ DeepSeek → 拍摄本 YAML（镜头/景别/运动 type+amplitude+speed/时长/角色卡/声音三层/连续性），内嵌校验（时长和=总时长±1s/镜头预算/字段齐全/camera.type 枚举），自动重试，纯 YAML 落盘
+- **3 场景验证全过**：alya_beach（8s first_static 日系清新 3镜 中全景→中近景→全景）、alya_stage（8s firstlast_bridge 舞台 3镜）、cyberpunk_rain（10s independent 赛博朋克 3镜 无角色卡）；chain 策略正确写入首镜 continuity
+- 角色卡机制启用：experiments/shotlist/rolecards/alya_v1.md（从 IR 实测 i2v_alya_beach 提取外观锚定）；剧本库 experiments/shotlist/scripts/
+- 踩坑：YAML 1.1 sexagesimal 把 16:9 解析成 969 → 参数头加引号 + 脚本 str() 双保险；system prompt 里 `{camera_type}` 需避开 .format 占位
+- 拍摄本 = 中文导演控制面（用户审阅），工具 B 负责英文化合成——下一环节
+
+## 下一步（明日开工）
+1. **工具 B stage2**：拍摄本 → 三核心段（快车道）/六段式（Ref2VA 慢车道），few-shot 换官方 ref 示例；拍摄本 YAML 直接消费
+2. **全链路试跑**：拍摄本（用户审）→ 六段式 → Ref2VA 出片 → 与 IR 版并排
+3. 用户视频验收打分（compare.html，onsen 音频）+ 工具 A 产物可并入对比

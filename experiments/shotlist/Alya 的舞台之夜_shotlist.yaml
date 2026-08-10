@@ -1,0 +1,48 @@
+title: 舞台演出（聚光灯）
+style: 舞台演出（聚光灯）
+ratio: 969
+duration_total: 8s
+role_cards: ['alya_v1']
+chain: firstlast_bridge
+shots:
+  - id: 1
+    duration_s: 2.8
+    framing: 全景
+    camera:
+      type: static
+      amplitude: small
+      speed: normal
+    subject: alya_v1
+    action: 聚光灯光束从顶部打下，Alya 站立于舞台中央，身体静止，四周暗色幕布与模糊观众席可见
+    sound:
+      ambient: 现场观众低语氛围
+      bgm: 抒情钢琴，轻柔渐入
+    continuity: 首尾帧静态双锚（首帧=角色图，尾帧=转场目标图）；锚定策略=聚光灯光束+舞台中央站位+白色金边夹克外观身份锚
+  - id: 2
+    duration_s: 2.8
+    framing: 中景
+    camera:
+      type: tilt_up
+      amplitude: medium
+      speed: slow
+    subject: alya_v1
+    action: Alya 缓缓抬头，银白长发在灯光下微微泛光，裙摆随动作轻轻摆动
+    sound:
+      ambient: 现场观众氛围持续
+      fx: 布料轻摆声
+      bgm: 抒情钢琴，旋律展开
+    continuity: 延续舞台中央站位；动作延续=低头状态转抬头；屏幕方向=正前方中景逐步上移；银白长发+红丝带蝴蝶结身份锚
+  - id: 3
+    duration_s: 2.4
+    framing: 中全景
+    camera:
+      type: pull_out
+      amplitude: medium
+      speed: slow
+    subject: alya_v1
+    action: Alya 向观众席微微鞠躬，灯光渐暗，画面落幕渐隐
+    sound:
+      ambient: 观众氛围淡出
+      fx: 鞠躬时布料摩擦声
+      bgm: 抒情钢琴，尾句渐弱收束
+    continuity: 承接抬头后站姿；动作延续=抬头结束转鞠躬；屏幕方向=镜头向舞台后方拉远；鞠躬动作+暗场落幕状态延续；黑色百褶裙+黑色皮鞋身份锚

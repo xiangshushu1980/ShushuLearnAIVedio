@@ -1,0 +1,49 @@
+title: 雨夜赛博朋克街道 - 全息鲸鱼下的驻足
+style: 赛博朋克
+ratio: 16:9
+duration_total: 10
+role_cards: []
+chain: independent
+shots:
+  - id: 1
+    duration_s: 3.5
+    framing: 中全景
+    camera:
+      type: tracking
+      amplitude: medium
+      speed: slow
+    subject: object
+    action: 透明雨衣女子撑着伞，从画面左侧缓步走向右侧，身后全息广告牌不断闪烁
+    sound:
+      ambient: 细雨声+城市底噪（远处车流、电子设备蜂鸣）
+      fx: 透明雨衣布料摩擦声，脚步踩过积水声
+      bgm: 电子BGM，冷峻迷幻，低频脉冲
+    continuity: 首镜锚定策略：独立段生成，一致性靠prompt文本锚定；身份锚点=透明雨衣女子+伞；屏幕方向：从画左向右移动
+  - id: 2
+    duration_s: 3.0
+    framing: 近景
+    camera:
+      type: push_in
+      amplitude: small
+      speed: slow
+    subject: object
+    action: 女子行走中骤然停步，上身微微前倾后稳住，透明雨衣下摆轻摆，伞沿滴下水珠
+    sound:
+      ambient: 雨声（环境底噪降低，突出近处）
+      fx: 雨衣下摆甩动声，伞沿水珠滴落声
+      bgm: 电子BGM继续，节奏保持
+    continuity: 身份锚点延续=透明雨衣女子+伞；状态变化：从走变为静止；身体面向右侧，屏幕方向未跳轴
+  - id: 3
+    duration_s: 3.5
+    framing: 中景
+    camera:
+      type: push_in
+      amplitude: small
+      speed: slow
+    subject: object
+    action: 女子抬头凝视上方巨幅全息鲸鱼广告，雨滴沿伞沿连续滑落
+    sound:
+      ambient: 雨声+城市底噪（广告全息嗡鸣）
+      fx: 雨滴敲击伞面的密集滴答声
+      bgm: 电子BGM渐强，加入空灵合成器音色，推向情绪顶点
+    continuity: 身份锚点延续=透明雨衣女子+伞；视线方向朝上方（全息鲸鱼），与上一镜朝向不冲突；全息鲸鱼作为本镜新空间锚点
