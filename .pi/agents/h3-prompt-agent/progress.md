@@ -168,3 +168,10 @@
 1. 工具 B 首句防重绘规则（instruction line 注明首帧画面=参考图内容）
 2. 图库按场景归档（169/ 子目录：beach/stage/night/…）
 3. 角色图库扩充（Yuki 场景版等）+ 拍摄本 schema 加 scene 字段
+
+### 2026-08-10 音乐策略定版（用户决策：视频不生成 BGM，后期配乐）
+- **问题确认**：短片内 BGM 无法连续（每段独立生成，旋律跨切点断裂、跨段无记忆）；音量层面平稳（F1 三段 -15.0/-14.2/-14.4dB）但内容不连续
+- **用户方案 = 社区主流**：Sogni 官方示例 "Everything is diegetic and natural. No music of any kind."；Medium/Scenario 文章；MiniMax 官方 Music 2.6 独立音乐线——音乐后期配
+- **改工具 B**：i2va/ref2va 模板 non_diegetic_music 默认 N/A；diegetic 声音（环境音/音效/对话/演出音乐）保留
+- **对话/音效社区共识**：对话用官方 <d>[语言]</d> 语法保留生成；音效 diegetic 保留在 soundscape
+- docs/17 音乐策略规则更新；本地 BGM 管线 docs/13（MusicGen/ACE-Step）为后期配乐准备

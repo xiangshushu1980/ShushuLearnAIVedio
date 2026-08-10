@@ -50,9 +50,13 @@ I2VA_TPL = """你是 MiniMax H3 提示词合成器（工具 B 阶段）。输入
 For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
 
 integrated_multimodal_description: [Shot 1] ...（按拍摄本镜头展开，每镜 `[Shot N]` + 时间戳）
-overall_soundscape: ...
-non_diegetic_music: ...
+overall_soundscape: ...（只含 diegetic：环境音+动作声+非语言人声）
+non_diegetic_music: N/A
 ===== 模式结束 =====
+
+音乐策略（用户决策 2026-08-10）：默认不生成 BGM——短片内 BGM 无法连续（实测），
+后期独立配乐（本地 MusicGen/ACE-Step 管线）。除非用户显式要求，否则 non_diegetic_music 一律写 N/A。
+diegetic 声音（环境音/音效/演出音乐）保留在画面与 soundscape 描述中。
 
 ===== 合成规则（docs/17 关键节）=====
 1. 每镜：[Shot 1] 不带时间戳；第 N 镜（N>1）写作 `[Shot N] At MM:SS.mmm, the camera cuts to ...`
@@ -60,7 +64,7 @@ non_diegetic_music: ...
 2. 镜头运动语法 = type + amplitude + speed 自然句（如 "the camera pushes in with small amplitude at slow speed"）
 3. 一镜一动作；身份锚点每镜重复（换措辞但一致）；状态跨镜延续；保持屏幕方向
 4. 声音三层进 overall_soundscape：环境音+物理动作声+非语言人声；对话 verbatim 原文不翻译
-5. 音乐两分：角色能听到的音乐写进画面（diegetic），背景配乐只进 non_diegetic_music
+5. 音乐策略：默认 non_diegetic_music: N/A（后期配乐）；角色能听到的音乐（演出/收音机）写进画面（diegetic）
 6. 跨段策略（拍摄本 chain 字段）：
    first_static → 首句保留 instruction line（首帧静态图锚定）
    firstlast_bridge → 结尾注明尾帧锚定画面
@@ -96,9 +100,11 @@ The target video is in the style from the shooting plan (use its style field).
 overall_soundscape:
 ...（环境音+物理动作声+非语言人声，1-4 句）
 
-non_diegetic_music:
-...（配器/速度/节奏/动态，1-3 句）
+non_diegetic_music: N/A
 ===== 模式结束 =====
+
+音乐策略（用户决策 2026-08-10）：默认不生成 BGM（短片 BGM 无法连续，后期独立配乐）；
+non_diegetic_music 一律写 N/A，除非显式要求。diegetic 声音保留。
 
 ===== 合成规则（docs/17 六段式要点）=====
 1. 角色卡是 <Subject N> 不是 <Picture N>（<Picture N> 仅当图本身是帧锚点）
@@ -106,7 +112,7 @@ non_diegetic_music:
 3. retention_analysis 每 label 一行；音频用 fully_copy / partially_copy / reference / weak_reference
 4. detailed_description：风格开场 → [Shot N] 时间线（[Shot 1] 无时间戳，N>1 写 At MM:SS.mmm）
 5. 每镜一动作；身份锚点每镜重复；状态跨镜延续；保持屏幕方向
-6. 声音三层进 overall_soundscape；背景配乐只进 non_diegetic_music
+6. 声音三层进 overall_soundscape（diegetic）；non_diegetic_music 默认 N/A（后期配乐）
 7. 输出纯文本：无前言、无解释、无 markdown fence
 
 ===== 官方参考指南（ref-en.txt）=====
