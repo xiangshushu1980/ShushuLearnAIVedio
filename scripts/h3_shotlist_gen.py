@@ -192,6 +192,26 @@ def validate(data: dict, duration_total: float) -> list:
     return errs
 
 
+REVIEW_TPL = """你是资深分镜导演，审阅以下拍摄本。只找问题，不改写。
+检查维度：\n1. 镜头预算与节奏（时长分配是否合理，是否有过长/过短的镜头）\n2. 一镜一动作（有没有镜头塞了两个主导动作）\n3. 切 vs 移（切是否引入了新信息；纯距离/角度变化是否误用了切）\n4. 连续性（身份锚点是否每镜重复、状态是否跨镜延续、屏幕方向是否保持）\n5. 声音分层（ambient/fx/bgm 是否每镜合理，是否与画面内容匹配）\n6. 跨段策略与 chain 参数是否一致\n\n输出格式：\n- 问题清单（无问题则写“无”），每条：镜号 | 问题 | 建议\n- 最后一行给出总评：通过 / 建议修改（理由一句话）\n\n===== 拍摄本 =====\n{shotlist}\n"""
+
+
+def review_shotlist(key: str, model: str, shotlist_path: Path, effort: str = "high") -> str:
+    shotlist = shotlist_path.read_text(encoding="utf-8")
+    body = {
+        "model": model,
+        "messages": [{"role": "system", "content": "你是审阅助手，只输出结构化审阅结果。"},
+                      {"role": "user", "content": REVIEW_TPL.format(shotlist=shotlist)}],
+        "reasoning": {"effort": effort},
+        "temperature": 0.3,
+        "max_tokens": 16000,  # reasoning 会吃大量 token（实测 4000 不够，思考吃满则正文为空）
+    }
+    r = requests.post(API_URL, headers={"Authorization": f"Bearer {key}"}, json=body, timeout=300)
+    if r.status_code != 200:
+        raise SystemExit(f"[DeepSeek] HTTP {r.status_code}: {r.text[:500]}")
+    return r.json()["choices"][0]["message"]["content"].strip()
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--script", required=True, help="剧本文件（YAML 参数头+正文）")
@@ -200,6 +220,7 @@ def main():
     ap.add_argument("--max-tokens", type=int, default=12000)
     ap.add_argument("--retry", type=int, default=3, help="校验不过自动重试次数")
     ap.add_argument("--output", help="落盘路径（默认 experiments/shotlist/<title>_shotlist.yaml）")
+    ap.add_argument("--review", action="store_true", help="生成后调用 DeepSeek 导演视角自审（只报问题不改写）")
     args = ap.parse_args()
 
     script = load_script(Path(args.script))
@@ -223,6 +244,10 @@ def main():
             print(f"✅ 拍摄本通过校验（{n} 镜），落盘: {out}")
             print("=" * 60)
             print(raw)
+            if args.review:
+                print("=" * 60)
+                print("📋 导演自审（--review）:")
+                print(review_shotlist(get_key(), args.model, out, args.effort))
             return
         last_err = "；".join(errs)
         print(f"   ⚠️ 校验失败: {last_err[:200]}", flush=True)

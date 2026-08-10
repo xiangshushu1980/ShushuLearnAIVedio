@@ -1,49 +1,49 @@
-title: 黄昏海边 · Alya 凝望
+title: 黄昏的海边
 style: 日系清新
-ratio: 969
-duration_total: 8
+ratio: 16:9
+duration_total: 8.0
 role_cards:
-- alya_v1
+  - alya_v1
 chain: first_static
 shots:
-- id: 1
-  duration_s: 2.5
-  framing: 中全景
-  camera:
-    type: static
-    amplitude: small
-    speed: normal
-  subject: alya_v1
-  action: 站在湿润沙滩上，海风吹过，银白长发与黑裙裙摆随风轻扬
-  sound:
-    ambient: 海浪声+海风
-    fx: 衣料与发丝窸窣声
-    bgm: 轻快吉他，清新温柔（配乐）
-  continuity: 首帧=角色静态图锚定（角色卡+参考图）；身份锚点：银白长发、蓝眼、白金边夹克、黑裙；屏幕方向：主体居中轴线
-- id: 2
-  duration_s: 3.0
-  framing: 中近景
-  camera:
-    type: push_in
-    amplitude: small
-    speed: slow
-  subject: alya_v1
-  action: 抬眼望向海平面，神情从平静缓缓转为柔和微笑
-  sound:
-    ambient: 海浪声（潮声略收）+海风
-    fx: 发丝与裙摆布料轻响
-    bgm: 轻快吉他，清新温柔（配乐）
-  continuity: 延续首镜身份与状态；视线方向朝海平面；由平静转向柔和微笑的跨镜递进
-- id: 3
-  duration_s: 2.5
-  framing: 全景
-  camera:
-    type: arc_shot
-    amplitude: medium
-    speed: slow
-  subject: alya_v1
-  action: 静立凝望，浪花一波波漫过脚踝，镜头环绕她展现与大海、天空融为一体
-  sound:
-    ambient: 海浪声（潮声环绕）+海风
-    bgm: 轻快吉他，清新温柔（配乐）
-  continuity: 延续微笑状态；银发蓝眼身份锚定；镜位绕行但主体保持在画面中心轴线，屏幕方向不变
+  - id: 1
+    duration_s: 2.5
+    framing: 中全景
+    camera:
+      type: push_in
+      amplitude: small
+      speed: slow
+    subject: alya_v1
+    action: 海风拂过，银白长发与裙摆随风轻扬
+    sound:
+      ambient: 海浪+海风
+      fx: 布料飘动声
+      bgm: 轻快吉他，清新温暖
+    continuity: 首帧=角色静态图锚定（角色卡+参考图）；身份锚点：银白长发+红色丝带、白色金边夹克、黑色百褶裙；屏幕方向：人物居左，面向右侧海平面
+  - id: 2
+    duration_s: 2.5
+    framing: 特写
+    camera:
+      type: static
+      amplitude: small
+      speed: slow
+    subject: alya_v1
+    action: 海浪一波波涌来，漫过她的脚踝
+    sound:
+      ambient: 海浪+海风
+      fx: 水流漫过脚踝的轻响
+      bgm: 轻快吉他，清新温暖
+    continuity: 承镜 1：Alya 仍面向右侧；身份锚点收束于白色过膝袜金环、黑皮鞋与裙摆湿边；海浪为跨镜状态延续
+  - id: 3
+    duration_s: 3.0
+    framing: 近景
+    camera:
+      type: arc_shot
+      amplitude: medium
+      speed: slow
+    subject: alya_v1
+    action: 转头望向海平面，神情从平静转为温柔微笑
+    sound:
+      ambient: 海浪+海风
+      bgm: 轻快吉他，清新温暖
+    continuity: 承镜 2：裙摆留有湿痕；身份锚点：银白长发、蓝色眼眸、白色金边夹克、领口红蝴蝶结；保持屏幕方向，弧线环绕不越轴，面向右侧海平面

@@ -105,3 +105,17 @@
 1. **工具 B stage2**：拍摄本 → 三核心段（快车道）/六段式（Ref2VA 慢车道），few-shot 换官方 ref 示例；拍摄本 YAML 直接消费
 2. **全链路试跑**：拍摄本（用户审）→ 六段式 → Ref2VA 出片 → 与 IR 版并排
 3. 用户视频验收打分（compare.html，onsen 音频）+ 工具 A 产物可并入对比
+
+### 2026-08-09 工具 B stage2 + 全链路试跑（闭环打通）
+- **scripts/h3_prompt_stage2.py 完成**：拍摄本 YAML → 三核心段（i2va 快车道）/ 六段式（ref2va 慢车道），消费工具 A 输出 + 角色卡注入，few-shot=官方 IR 样本（i2va）/ ref-en 指南（ref2va），复用 prompt_validator 确定性校验
+- **文本端全链路通**：剧本→拍摄本→提示词，i2va 与 ref2va 各一次通过（时间戳 2.5/5.0 与拍摄本精确对齐、label 定义正确、角色卡逐字保留）
+- **视频端试跑（E 批）**：E1 快车道 i2v turbo8（stage2 提示词）首帧锚定 SSIM=0.992 **= IR 版基准**，音频 -17.1dB 正常；E2 慢车道 ref2va 4图 std20 音频 -18.2dB 正常、显存 22.0GB 安全；速度与 IR prompt 相当（E1 计时 420s 含队列排队 ~300s，实际运行 ~120s）
+- 踩坑：DeepSeek reasoning 模式 max_tokens 给不足（4000）会被思考吃满导致正文空——review/stage2 统一 max_tokens 16000-24000；.format 占位符两处（{camera_type}/{style}）
+- 工具 A --review 导演自审验证有效：抓到真实问题（屏幕方向矛盾/一镜双动作/chain 与 camera 不一致/配饰锚点命名不统一）
+- 工具 A 非确定性：同剧本重跑镜头结构会变（多 draft 抽卡特性，可多次跑选满意版）
+- 队列纪律实证：E1 慢 4 倍原因是 turbo-pilot 线任务先入队（runner 计时含排队）——跑批前查 /queue 确认空位
+
+## 下一步
+1. **反推优化第一轮**：对比 E1/E2 产物与 IR 版（补测 A2/D2），客观指标（音频/锚定/时长）已齐；拍摄本层面可让用户审阅三个拍摄本（experiments/shotlist/）
+2. 按反推结果针对性补模板库（docs/16 清单 #3/#5/#6/#7）
+3. 用户验收打分（compare.html 12 条 + onsen 音频）
