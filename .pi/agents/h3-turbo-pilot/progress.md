@@ -93,3 +93,14 @@
 - **成片档**：挂起等 int8（下载 21GB 2.2MB/s 进行中）→ 验证省显存消除 offload 后 960/1024 速度 → 再定成片档分辨率/步数
 - 产物规范：全部在 ComfyUI output/（pilot_archive/ 7 文件锚点）
 - 网络问题解决记录：Clash 原节点白天拥塞 → 换美国节点后国外 2.1MB/s（国内 672M 一直正常）；WSL 连 7890 需 Clash 开混合端口 + 9090 external-controller
+
+### 2026-08-10 第六轮社区调研（今日 H3 动态）
+- **unsloth 官方 GGUF 包发布**（8/10 06:46 UTC）：fl2va/ref2va Q2-Q8 + UD 动态量化 + **TE 也 GGUF 化**（qwen3vl 32B Q2_K_M 12.2G/Q4_K_M 17G）；sd-cli/stable-diffusion.cpp/ComfyUI 全通；示例 UD-Q2_K_XL @960×544 124帧 8步可跑。低显存/CPU 卸载路线已打通
+- **Kijai experimental 仓库**：w4a8（4bit 权重 + int8-convrot 激活）测试中，Comfy-Org comfy-kitchen PR#90，需 ComfyUI 0.31.0；**int8_convrot VAE 解码快 1.5x**（需 0.31.0，官方仓库暂无此 VAE 文件）；ref lora 实验性
+- **官方仓库 8/9 更新**：新增 qwen3vl_32b_minimax_h3_nvfp4_awq TE（15.7G，本地已在用且 4090 实测可跑——Abiray README 说 NVFP4 仅 Blackwell，本地证伪）
+- **Abiray 仓库 8/10 更新**：nvfp4 全家族 + mixed int4/int8 + TE int4/nvfp4；24GB 卡推荐 INT8（与我们一致）
+- larryvrh v5 无成品（8/8 后无更新）；lightx2v 无 v0.2（8/7 后无更新）
+- 新讨论：#31 LabMike3D 低显存音频修复 4 步（8/9）、#32 stable-diffusion.cpp 体验（8/9）
+- X：AMD RDNA4 补丁 + turbo lora = 82s（Italianclownz）
+- **int8 DiT 下载完成**（20970379616 字节 = 远程大小一致 ✓，wget 完成；网络恢复后提速至 ~5MB/s）
+- 结论：turbo/模型主线无重大变化；新动向 = GGUF 生态（unsloth）+ w4a8/int8 VAE（需 ComfyUI 0.31.0，暂观望）；我们 4090+fp8 路线不受影响
