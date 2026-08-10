@@ -149,3 +149,10 @@
 - 产物：output/h3_clipproj/cp_1024_s{20260810,42}.mp4（对照 pilot_archive 旧 1024cmp_int8_s* 同 seed）
 - **注意：output/pilot_archive/ 已被用户手动清理**（output 根目录与子目录全清，仅留 anima/audio/h3_clipproj/krea/ref_lib/review/video）——归档目录概念暂停，产物按用途放子目录
 - 待用户目视：画质（挥手场景）+ 音频；已知局限=非英语语音降级、图像参考投影出分布
+
+### 2026-08-10 P1.4 ClipProj 结论（用户目视：声音差很多 + 效果简化）
+- **判失败，不进生产**：音频 gate 不过（README 已知局限实测证实：音频分支要求远高于画面分支）；效果简化（4B 丢知识）
+- 速度确实 2x（同 TE 连续批 125s vs 60s；交替批被 TE 切换 80s/次污染），但画质/音频代价不可接受
+- 成片档维持 32B TE（int8 @1024×576 = 125s）；ClipProj 仅存续为「纯画面极速预览」非正式选项（按音频 gate 纪律不采用）
+- 环境变更保留：ComfyUI 0.31.0（含 H3 VAE 优化）+ ClipProj 节点/矩阵（保留备用）
+- 产物：output/h3_tecmp/ 10 条对比（wave/anime/hand/turn/dessert × 32B/cp4b）
