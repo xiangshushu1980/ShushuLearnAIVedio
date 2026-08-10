@@ -123,3 +123,11 @@
 - fp8 1024 同规格 185-345s（offload 抖动）——int8 为唯一成片档
 - 管线三档定稿（params.md 已更新）：极速 fp8-4步@768=45s / 快速 fp8-8步@768=67s / 成片 int8-8步@1024=125s
 - 清理：wave 系列全删、fp8 1024 对照删、int8 768/960 删；archive 保留 turn 4/6/8 + 1024cmp int8 ×3 + base 参照 ×2 + README
+
+### 2026-08-10 ref2va 优化现状专项（用户问：ref2va 一直没优化吗）
+- **步数加速（turbo lora）：无**。larryvrh/lightx2v 均只做 fl2va；YouTube 教程（emmPVR0n9LQ）确认 ref2va 加速只能靠通用手段：sage + 20→15 步 + EasyCache ≈ 3x（4min→1:25），turbo 测试与 ref2va 无关
+- **量化：齐全**。官方 pruned int8/fp8（本地已有 int8 ref2va 21GB ✓）；Kijai w4a8 ref2va（8/7）；unsloth GGUF ref2va Q2-Q8+UD（8/10）；Abiray nvfp4/mixed；MLX 4/8bit（Mac）
+- **新发现（Kijai 8/8）**：**ref lora**（loras/minimax_h3_ref_lora_rank_256_bf16.safetensors）= fl2va↔ref2va delta 权重；Kijai 标注完全实验性（"don't even know if it has a use case"）；**潜在价值：fl2va+turbo lora+ref lora 组合 = ref2va 慢车道提速路径（未验证）**
+- **Kijai experimental 仓库全清单**（8/8）：fl2va w4a8、ref2va w4a8、video_vae_int8_convrot（int8 VAE 在此，需 ComfyUI 0.31.0 否则黑输出）、ref lora
+- 官方：AMA 承认 Ref2VA 画质差距改进中；无 ref2va 专属低步数计划
+- 结论：ref2va 慢车道（h3-prompt-agent 多角色场景）维持 std 步数；w4a8/ref lora 组合列为可选试点（实验性，等 Kijai 或社区验证后再说）
