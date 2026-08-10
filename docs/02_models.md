@@ -17,7 +17,7 @@
 | 文件 | 位置 | 大小 | 用途 |
 |------|------|------|------|
 | anima-base-v1.0.safetensors | models/diffusion_models/ | 4.18GB | ANIMA 动漫生图 |
-| qwen_3_06b_base.safetensors | models/text_encoders/ | — | ANIMA 文本编码器 |
+| qwen_3_06b_base.safetensors | models/text_encoders/ | 1.19GB | ANIMA 文本编码器（2026-08-10 从 HF circlestone-labs/Anima 补回，曾误清）|
 | krea2_turbo_fp8.safetensors | models/diffusion_models/ | 12.9GB | KREA 2 turbo 生图 |
 | qwen3vl_4b_fp8_scaled.safetensors | models/text_encoders/ | 5.24GB | KREA 文本编码器 |
 | qwen_image_vae.safetensors | models/vae/ | — | ANIMA/KREA VAE（与 wan_2.1_vae 同结构）|
@@ -25,7 +25,10 @@
 ### LoRA（CivitAI）
 | 文件 | 说明 |
 |------|------|
-| alisa_mikhailovna_kujou-roshidere-ana-soralz.safetensors | 角色 Alya（840 张量）|
+| alisa_mikhailovna_kujou_roshidere.safetensors | 角色 Alya（2026-08-10 重下 civitai 28695，72MB）|
+| alisa_mikhailovna_kujou_tokidoki.safetensors | 角色 Alya（civitai 557213，39MB）|
+| alisa_mikhailovna_kujou_ayra.safetensors | 角色 Alya（civitai 955584，109MB）|
+| yuki_suou_v1120706.safetensors | 角色 Yuki（civitai 1000015，114MB）|
 | yuki_suou-roshidere-ana-soralz.safetensors | 角色 Yuki（840 张量）|
 | anima-highres-aesthetic-boost.safetensors | ANIMA 高清/美学增强 |
 | anima-turbo-lora-v0.1 / v0.2.safetensors | ANIMA 加速（v0.2 更新）|

@@ -132,3 +132,15 @@
 1. 16:9 角色图库补强（重新下载 Alya LoRA 或 img2img 扩图）——生产快车道底图储备
 2. 反推第二轮：可用 E3/E5 与 E1/A2 四产物做同场景对照组
 3. 用户审拍摄本 + compare.html 验收打分
+
+### 2026-08-10 角色图库重建（Alya/Yuki LoRA + 16:9 首帧）
+- **anima 生图栈修复**：发现 qwen_3_06b_base.safetensors（ANIMA 文本编码器）也被误清，从 HF circlestone-labs/Anima 补回（1.19GB，hf-mirror 直连）；qwen_image_vae 仍在
+- **Alya LoRA ×3 重下**（civitai 匿名下载）：roshidere 28695（72MB，原版）/ tokidoki 557213（39MB）/ ayra 955584（109MB）；热门的 558240（7051 下载）需登录未取
+- **Yuki LoRA ×1**：yuki_suou_v1120706（civitai 1000015，114MB）
+- **16:9 角色首帧生成 4 张**：alya169_tokidoki/roshidere/ayra + yuki169_stand（768×448，input/start/169/），全部成功——首帧底图库现共 39+4 张
+- docs/02 模型清单已同步
+
+## 下一步
+1. 反推/生产储备已完成：快车道（i2v turbo8 + 16:9 首帧）与慢车道（ref2va 4图）配置 + 角色图库就绪
+2. 待用户：审拍摄本（experiments/shotlist/3 个）+ compare.html 12 条验收打分（onsen 音频）
+3. 工具链可选增强：拍摄本模板库（docs/16 #3/#5/#6/#7）按需补
