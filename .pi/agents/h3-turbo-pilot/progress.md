@@ -131,3 +131,12 @@
 - **Kijai experimental 仓库全清单**（8/8）：fl2va w4a8、ref2va w4a8、video_vae_int8_convrot（int8 VAE 在此，需 ComfyUI 0.31.0 否则黑输出）、ref lora
 - 官方：AMA 承认 Ref2VA 画质差距改进中；无 ref2va 专属低步数计划
 - 结论：ref2va 慢车道（h3-prompt-agent 多角色场景）维持 std 步数；w4a8/ref lora 组合列为可选试点（实验性，等 Kijai 或社区验证后再说）
+
+### 2026-08-10 第七轮调研（扩大范围：GitHub/B站/官方仓库/推理栈）
+- **ComfyUI 原生 AV 采样确认**：bdcb886（8/6，「Fix sampler issues for audio with minimax」）已并入本地 0.30.0 → 4 步不爆音原理实锤（双时钟 euler 自动转官方路径）；shuaixn/ComfyUI-MiniMaxH3DualClockSampler（25★）仅旧版 ComfyUI 需要，我们无需安装
+- **NicoLab28/ComfyUI-ClipProj（32★，矩阵仓库 8/10 12:50 更新）——TE 瘦身 POC**：Qwen3-VL-4B（2560 dims）+ 线性/MLP 投影 → 5120 dims；TE 15.7GB→4.5GB（int8 4B），同一 tokenizer（151936 tokens）位置对齐可学习；实测出片（3090/4070/3060，ComfyUI 0.31.0）；4B/8B × 线性/MLP × celeb（身份优化）/普通 变体 + control-identity；**TE 加载 80s + 显存 15.7GB 痛点的最有希望方案（POC 风险：0.31.0 测试、投影画质未定）**
+- **t8star**：ref2va_patchin_hf102（8/10，视频 patch 投影 2×2 高频 +2% 去油感，作者自称「肉眼未确认有效，仅 EXP 对照」——ref2va 画质修复无成）；minimax-h3-4step-turbo-loras-comfyui-exp（4 步移植版：euler/beta、要求完整非 pruned 模型、爆音→8-10 步或双时钟）；T8mars/comfyui-minimax-h3-prompt-enhancer-T8（78★，提示词增强，提示词线相关）
+- **Work-Fisher（B站）**：12G 显存加速整合包（10s 视频 300s，530% 提速）——低显存向；comfyui秋葉 加速插件 45%
+- **官方 MiniMaxAI/MiniMax-H3 8/10 README #68**：vLLM 部署示例（--performance-mode speed，4×ulysses）；官方仓库 3682★
+- **其他 8/10 新仓库**：H3-Inpaint（latent mask 编辑）、H3-Auto-Director（多段自动导演）、Prompt-Rewriter-ComfyUI（lightx2v 适配）、MLX 节点（Apple Silicon）、kevrai-omni 工作站
+- 结论：生态在 8/10 扎堆爆发（提示词/编辑/多段/瘦身）；**对 pilot 最大价值 = ClipProj（TE 瓶颈）**，建议试点 P1.4
