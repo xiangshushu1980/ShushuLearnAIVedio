@@ -1,0 +1,18 @@
+title: 复古咖啡馆中的翻书女子
+style: 复古怀旧/胶片质感
+duration_total: 8
+chain: unknown
+shots:
+  - id: 1
+    duration_s: 8.0
+    framing: 中景
+    camera:
+      type: push_in
+      speed: slow
+    subject: 穿墨绿色旗袍的年轻女子
+    action: 指尖捏住旧书页上角，手腕缓慢优雅地翻页，手掌轻抚展开的新页
+    sound:
+      ambient: 黑胶唱片旋转的噼啪嘶嘶声
+      fx: 厚纸页翻动时的沙沙声与摩擦声，指尖轻触纸面的细微声响
+      bgm: 无
+    continuity: 无

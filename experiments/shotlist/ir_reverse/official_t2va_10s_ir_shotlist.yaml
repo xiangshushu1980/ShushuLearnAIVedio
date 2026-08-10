@@ -1,0 +1,33 @@
+title: 星舰跃迁之刻
+style: 太空歌剧/科幻史诗
+duration_total: 10
+chain: unknown
+shots:
+  - id: 1
+    duration_s: 4.5
+    framing: 中全景
+    camera:
+      type: push_in
+      amplitude: small
+      speed: slow
+    subject: 女舰长背影与窗外舰队
+    action: 女舰长双手背后站立，凝视窗外密集的黑色无畏舰，其尾部推进器开始发出渐强的蓝光。
+    sound:
+      ambient: 星舰生命支持系统低沉的嗡嗡声
+      fx: 舰队超空间引擎充电时高亢的电子啸叫声逐渐增强
+      bgm: 太空歌剧管弦乐，慢速独奏悲怆圆号，弦乐不和谐音渐强
+    continuity: 舰桥内景，女舰长背对镜头，舰队位于窗外正前方。
+  - id: 2
+    duration_s: 5.5
+    framing: 特写
+    camera:
+      type: shake
+      amplitude: large
+      speed: fast
+    subject: 女舰长的面部
+    action: 舰队跃迁产生白闪光，冲击震得舰桥晃动，女舰长踉跄前倾随即稳住，白光消退后她咬牙缓缓闭眼。
+    sound:
+      ambient: 冲击后只余空洞的回声房间音
+      fx: 巨大低音轰鸣与爆裂声，金属舱壁吱嘎作响、闷响震动
+      bgm: 管弦乐音量骤然极速膨胀到顶峰，跃迁后瞬间归于寂静
+    continuity: 同一女舰长，承接第一镜的身份与状态；屏幕方向保持，舰桥内景。

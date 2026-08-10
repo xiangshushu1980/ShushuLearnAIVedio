@@ -1,0 +1,17 @@
+title: 阳光牧场的粉色西装男子
+style: 写实摄影风格
+duration_total: null
+chain: unknown
+shots:
+  - id: 1
+    duration_s: null
+    framing: 中全景
+    camera:
+      type: push_in
+      speed: slow
+    subject: 穿粉色西装的年轻男子，怀抱小黑羊
+    action: 怀抱黑羊，轻声说出指定台词，轻抚羊的毛，目光转向地平线
+    sound:
+      ambient: 无
+      bgm: 从<Audio 1>延续的氛围背景音乐
+    continuity: 无

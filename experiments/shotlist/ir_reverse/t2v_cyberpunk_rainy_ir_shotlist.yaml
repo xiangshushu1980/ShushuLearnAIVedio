@@ -1,0 +1,18 @@
+title: 雨夜霓虹独行者
+style: 赛博朋克
+duration_total: 10
+chain: unknown
+shots:
+  - id: 1
+    duration_s: 10.0
+    framing: 全景
+    camera:
+      type: tracking
+      speed: slow
+    subject: 年轻女子（身着透明雨衣，撑黑伞）
+    action: 在暴雨中沿街道缓慢行走，肩膀轻轻摇摆，脚步稳健
+    sound:
+      ambient: 持续大雨击打地面和雨伞的声响，伴随霓虹灯低频电流声，远处飞行器呼啸声
+      fx: 脚步踩过水洼的溅水声
+      bgm: 慢速大气合成波，深沉脉动贝斯，冰冷合成器长音，稀疏回响电子鼓
+    continuity: 无

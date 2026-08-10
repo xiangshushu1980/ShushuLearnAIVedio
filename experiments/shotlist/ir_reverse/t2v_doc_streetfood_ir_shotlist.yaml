@@ -1,0 +1,27 @@
+title: 夜市炒锅
+style: 纪实
+duration_total: 5
+chain: firstlast_bridge
+shots:
+  - id: 1
+    duration_s: 2.65
+    framing: 近景
+    camera:
+      type: truck_l
+    subject: 中年男厨师
+    action: 用力摇晃铁锅，火焰从锅中冲天而起，蒸汽升腾
+    sound:
+      ambient: 燃气灶轰鸣、远处街道交通、顾客衣服摩擦声
+      fx: 金属铲敲击铁锅声、火焰爆燃呼啸、热油滋滋声
+    continuity: 无
+  - id: 2
+    duration_s: 2.35
+    framing: 特写
+    camera:
+      type: push_in
+    subject: 铁锅内的炒饭
+    action: 米饭、鸡蛋、葱花被抛起形成弧线，热油翻滚，火焰舔舐锅边，食物回落
+    sound:
+      ambient: 燃气灶轰鸣
+      fx: 热油滋滋声
+    continuity: 承接第一镜，同一厨师与铁锅，视角转入锅内

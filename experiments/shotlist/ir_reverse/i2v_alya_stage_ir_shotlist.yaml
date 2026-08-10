@@ -1,0 +1,17 @@
+title: 舞台上的银发少女
+style: 日系动漫
+duration_total: 5
+chain: first_static
+shots:
+  - id: 1
+    duration_s: 5.16
+    framing: 全景
+    camera:
+      type: push_in
+      speed: slow
+    subject: 银白色长发的少女
+    action: 从平静站立到举手向台下观众热烈挥手
+    sound:
+      ambient: 夜间微风，现场流行音乐，人群欢呼声
+      fx: 荧光棒挥舞的嗖嗖声，衣物摩擦声
+    continuity: 少女身份，状态从平静转为兴奋

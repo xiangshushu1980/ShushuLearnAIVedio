@@ -76,10 +76,19 @@ shots:
    first_static → 首镜注明"首帧=角色静态图锚定（角色卡+参考图）"
    firstlast_bridge → 注明"首尾帧静态双锚（首帧=角色图，尾帧=转场目标图）"
    independent → 注明"独立段生成，一致性靠 prompt 文本锚定"
-8. 输出必须为合法 YAML 纯文本：无前言、无解释、无 markdown fence（``` 禁止）
+8. 镜头策略（shot_style 参数，决定镜头拆解方式）：
+   分镜剪辑(默认) → 3-5 镜（预算内），景别递进（远景→中景→特写或逆），每镜一主导动作，叙事节奏感
+   长镜头流 → 1-2 镜（预算内），镜内多事件连续推进，机位随事件缓慢变化（如 tracking/arc 贯穿），
+             适合氛围/纪实/演出场景；镜头内信息密度高：一个镜头完成 站位+环境+动作变化+情绪转变
+9. 镜头内信息密度（参考 IR 基准）：单镜内容要饱满——身份锚点+环境+动作+光线氛围在镜内一次交代，
+   不要用松散的一句话打发一个镜头
+10. 音乐场景驱动判断：若场景本身含表演/演出/现场音乐（舞台/演唱会/收音机/街头艺人），
+   bgm 可写"无（演出音乐即 diegetic）"，不必硬塞背景配乐
+11. 输出必须为合法 YAML 纯文本：无前言、无解释、无 markdown fence（``` 禁止）
 ===== 规则结束 =====
 
 {role_cards_block}
+{fewshot_block}
 """
 
 
@@ -120,19 +129,39 @@ def load_role_cards(ids: list) -> str:
     return "\n".join(blocks)
 
 
-def gen_shotlist(key: str, model: str, script: dict, effort: str = "high", max_tokens: int = 12000) -> str:
+IR_REVERSE_DIR = BASE / "experiments" / "shotlist" / "ir_reverse"
+
+
+def load_fewshot(names: list) -> str:
+    """从 IR 逆向样本库加载代表样本作为 few-shot（风格锚点，不复制内容）"""
+    if not names:
+        return ""
+    blocks = []
+    for n in names:
+        # 支持 样本名 或 文件名
+        cand = IR_REVERSE_DIR / (n if n.endswith("_ir_shotlist.yaml") else f"{n}_ir_shotlist.yaml")
+        if cand.exists():
+            blocks.append(f"===== IR 参考样本（模仿其镜头内信息密度/景别选择/声音写法，不要复制具体内容）=====\n{cand.read_text(encoding='utf-8')}")
+        else:
+            print(f"⚠️ few-shot 样本 {n} 不存在，跳过", flush=True)
+    return "\n\n".join(blocks)
+
+
+def gen_shotlist(key: str, model: str, script: dict, effort: str = "high", max_tokens: int = 12000, shot_style: str = "分镜剪辑", fewshot_names: list = None) -> str:
     rules = RULES_FILE.read_text(encoding="utf-8")
     # 只注入镜头规划相关节（二、三节），避免无关内容干扰
     sec2 = re.search(r"## 二、镜头规划.*?(?=## )", rules, re.S)
     role_block = load_role_cards(script.get("role_cards", []))
     sys_prompt = SYSTEM_TPL.format(camera_types=", ".join(sorted(CAMERA_TYPES)),
-                                   role_cards_block=role_block)
+                                   role_cards_block=role_block,
+                                   fewshot_block=load_fewshot(fewshot_names or []))
     user_lines = [
         f"===== 剧本 =====\n{script['_body']}",
         f"===== 参数 =====\n"
         f"style: {script.get('style','')}\nratio: {script.get('ratio','16:9')}\n"
         f"duration_total: {script.get('duration','8')}s\nsound: {script.get('sound','')}\n"
-        f"role_cards: {script.get('role_cards',[])}\nchain: {script.get('chain','independent')}",
+        f"role_cards: {script.get('role_cards',[])}"
+        f"\nchain: {script.get('chain','independent')}\nshot_style: {shot_style}",
         "请输出拍摄本 YAML（严格按 Schema）。",
     ]
     body = {
@@ -221,6 +250,8 @@ def main():
     ap.add_argument("--retry", type=int, default=3, help="校验不过自动重试次数")
     ap.add_argument("--output", help="落盘路径（默认 experiments/shotlist/<title>_shotlist.yaml）")
     ap.add_argument("--review", action="store_true", help="生成后调用 DeepSeek 导演视角自审（只报问题不改写）")
+    ap.add_argument("--shot-style", default="分镜剪辑", choices=["分镜剪辑", "长镜头流"], help="镜头拆解策略（默认分镜剪辑）")
+    ap.add_argument("--fewshot", default="", help="IR 逆向样本 few-shot，逗号分隔样本名（如 i2v_alya_beach,t2v_doc_streetfood）")
     args = ap.parse_args()
 
     script = load_script(Path(args.script))
@@ -228,9 +259,10 @@ def main():
     duration = float(script.get("duration", 8))
 
     last_err = "未执行"
+    fewshot_names = [s.strip() for s in args.fewshot.split(",") if s.strip()] if args.fewshot else None
     for attempt in range(1, args.retry + 2):
         print(f"[{title}] 生成拍摄本 (try {attempt}) ...", flush=True)
-        raw = gen_shotlist(get_key(), args.model, script, args.effort, args.max_tokens)
+        raw = gen_shotlist(get_key(), args.model, script, args.effort, args.max_tokens, args.shot_style, fewshot_names)
         raw = strip_fence(raw)
         try:
             data = yaml.safe_load(raw)

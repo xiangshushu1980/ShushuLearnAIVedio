@@ -1,0 +1,19 @@
+title: 薄暮森林精灵
+style: 奇幻清新
+duration_total: 20
+chain: first_static
+shots:
+  - id: 1
+    duration_s: 20.0
+    framing: 全景
+    camera:
+      type: push_in
+      amplitude: large
+      speed: slow
+    subject: 银发精灵女孩和原始森林
+    action: 女孩从右侧树干后轻盈跑上泥径，穿过丁达尔光束，裙摆拂动路边蕨类，逐渐消失在远处雾中
+    sound:
+      ambient: 林间风声，远处鸟鸣
+      fx: 赤脚踩泥地的轻柔脚步声，裙摆摩擦植物的沙沙响
+      bgm: 空灵飘渺的合成器垫，配竖琴滑音与风铃质感
+    continuity: 女孩银发、白裙、赤脚，从右入画后沿小路纵深移动

@@ -1,0 +1,19 @@
+title: 荒原上的圣骑士与兽人激战
+style: 高幻想3D CG
+duration_total: 5
+chain: unknown
+shots:
+  - id: 1
+    duration_s: 5.0
+    framing: 中全景
+    camera:
+      type: tracking
+      amplitude: large
+      speed: fast
+    subject: 绿皮兽人战士与人类圣骑士
+    action: 兽人挥巨斧劈砍，圣骑士举盾格挡，双方武器碰撞后圣骑士持战锤反击，兽人以斧柄格挡，最终双方武器相锁僵持。
+    sound:
+      ambient: 呼啸风声，金属靴在碎石上滑动声，持续落下的尘土与碎石声。
+      fx: 巨斧撞击盾牌的巨响，魔法能量低鸣与火花噼啪声，兽人低吼，盔甲金属碰撞声，武器剧烈摩擦声。
+      bgm: 史诗快节奏管弦乐，定音鼓猛击，铜管强奏，弦乐急速断奏。
+    continuity: 兽人从画面左侧进攻，圣骑士在画面右侧防御，镜头持续跟随二人移动。

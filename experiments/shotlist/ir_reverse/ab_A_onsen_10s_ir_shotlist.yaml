@@ -1,0 +1,19 @@
+title: 温泉浴场
+style: 日式传统和风
+duration_total: 8
+chain: unknown
+shots:
+  - id: 1
+    duration_s: 8
+    framing: 近景
+    camera:
+      type: arc_shot
+      amplitude: medium
+      speed: slow
+    subject: 温泉中的年轻女子
+    action: 闭眼静坐，头微微后仰，肩膀下沉放松
+    sound:
+      ambient: 温泉水持续冒泡与拍打声，封闭木质浴室中隐约的空洞回声
+      fx: 水流过湿滑的皮肤并落回池中的细碎溅落声
+      bgm: 缓慢冥想的氛围音乐，尺八长音融合温暖合成器垫底
+    continuity: 无

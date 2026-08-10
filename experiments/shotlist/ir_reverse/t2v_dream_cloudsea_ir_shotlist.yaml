@@ -1,0 +1,17 @@
+title: 云海日出延时
+style: 电影感自然延时
+duration_total: null
+chain: unknown
+shots:
+  - id: 1
+    duration_s: null
+    framing: 全景
+    camera:
+      type: truck_r
+      speed: slow
+    subject: 云海与山峦上的日出
+    action: 镜头缓慢右移，云层如海浪般快速翻涌，金色晨光穿透云隙
+    sound:
+      ambient: 持续的高山强风，夹杂低沉轰鸣
+      bgm: 庄严悠扬的管弦乐，温暖弦乐渐强
+    continuity: 无

@@ -1,49 +1,49 @@
-title: 黄昏的海边
+title: 黄昏海滨的银发少女
 style: 日系清新
 ratio: 16:9
-duration_total: 8.0
-role_cards:
-  - alya_v1
+duration_total: 8
+role_cards: ['alya_v1']
 chain: first_static
 shots:
   - id: 1
-    duration_s: 2.5
-    framing: 中全景
+    duration_s: 3.5
+    framing: 全景
     camera:
       type: push_in
       amplitude: small
       speed: slow
     subject: alya_v1
-    action: 海风拂过，银白长发与裙摆随风轻扬
+    action: 银白长发少女安静伫立在湿润沙滩上，海风从侧面拂过，吹动长发和黑色百褶裙裙摆，她眼神平静望向前方海面，背景是黄昏渐暗的天际与柔和的暖橘色光线
     sound:
-      ambient: 海浪+海风
-      fx: 布料飘动声
-      bgm: 轻快吉他，清新温暖
-    continuity: 首帧=角色静态图锚定（角色卡+参考图）；身份锚点：银白长发+红色丝带、白色金边夹克、黑色百褶裙；屏幕方向：人物居左，面向右侧海平面
+      ambient: 黄昏海滩开阔环境声，海浪持续拍打沙滩，海风轻柔呼啸
+      fx: 夹克与裙摆被风吹动的沙沙声
+      bgm: 轻快明朗的日式吉他拨弦，带着温暖柔和的夏日气息，钢琴轻轻点缀
+    continuity: 首帧=角色静态图锚定（角色卡+参考图）；身份锚点：银白长发系红色蝴蝶结、白金边夹克、黑色百褶裙、白色过膝袜
   - id: 2
     duration_s: 2.5
-    framing: 特写
+    framing: 中景
     camera:
-      type: static
-      amplitude: small
-      speed: slow
+      type: tracking
+      amplitude: medium
+      speed: normal
     subject: alya_v1
-    action: 海浪一波波涌来，漫过她的脚踝
+    action: 海浪一波波涌上沙滩，漫过她脚踝打湿白色过膝袜边缘，她低头看了一眼脚边卷起的白色泡沫，随后重新抬起头望向海平线
     sound:
-      ambient: 海浪+海风
-      fx: 水流漫过脚踝的轻响
-      bgm: 轻快吉他，清新温暖
-    continuity: 承镜 1：Alya 仍面向右侧；身份锚点收束于白色过膝袜金环、黑皮鞋与裙摆湿边；海浪为跨镜状态延续
+      ambient: 海浪贴近脚边的涌动声，海风持续
+      fx: 海水漫过脚踝的哗啦声，湿润沙粒被水流带动的细碎声响
+      bgm: 延续上一镜的吉他旋律，节奏略微加快，加入轻快的铃鼓点缀
+    continuity: 同一银白长发少女，服饰与镜1完全一致；动作状态延续：发丝与裙摆仍在随风飘动；屏幕方向保持人物在画面中朝向右侧海面
   - id: 3
-    duration_s: 3.0
+    duration_s: 2.0
     framing: 近景
     camera:
       type: arc_shot
-      amplitude: medium
+      amplitude: small
       speed: slow
     subject: alya_v1
-    action: 转头望向海平面，神情从平静转为温柔微笑
+    action: 她转头望向远方的海平面，深蓝色眼睛映着天边最后一抹霞光，表情从平静慢慢舒展开，嘴角浮现温柔微笑，银白发丝在风中掠过脸颊
     sound:
-      ambient: 海浪+海风
-      bgm: 轻快吉他，清新温暖
-    continuity: 承镜 2：裙摆留有湿痕；身份锚点：银白长发、蓝色眼眸、白色金边夹克、领口红蝴蝶结；保持屏幕方向，弧线环绕不越轴，面向右侧海平面
+      ambient: 远处海浪声渐轻，海风转为柔和气流声
+      fx: 发丝拂过脸颊的轻微摩擦声，衣领轻微摆动
+      bgm: 吉他旋律收束，钢琴明亮和弦落下，与海浪声自然融合
+    continuity: 同一银白长发少女，服饰与镜2完全一致；情绪状态从平静转为温柔微笑，承接上一镜的转头趋势；保持望向画面右侧海平线的屏幕方向

@@ -1,0 +1,31 @@
+title: 银发少女的昼夜海滨切换
+style: 日系清新
+duration_total: 5
+chain: first_static
+shots:
+  - id: 1
+    duration_s: 1.5
+    framing: 全景
+    camera:
+      type: push_in
+      amplitude: small
+      speed: slow
+    subject: 银白色长发少女，扎着红色蝴蝶结，穿白色金边夹克、黑色百褶裙、白色过膝袜、黑鞋
+    action: 站在夜晚灯光街道中央，安静凝视前方，背景是闪烁蓝白灯光的树木与暖色路灯
+    sound:
+      ambient: 深夜城市街头静谧的嗡嗡声，远处树叶沙沙声
+      bgm: 轻柔神秘的日式器乐，音乐盒与大提琴旋律
+    continuity: 无
+  - id: 2
+    duration_s: 3.5
+    framing: 全景
+    camera:
+      type: arc_shot
+      speed: slow
+    subject: 同一银发少女，服饰与前一镜完全相同
+    action: 站在阳光海滩上，海风吹动长发与裙摆，海浪滚到脚踝，她转头望向海平面并露出柔和微笑
+    sound:
+      ambient: 白天海滩开阔环境声，海浪持续拍打沙滩，海风呼啸，远处海鸥鸣叫
+      fx: 场景切换的嗖声与魔法风铃声，海浪拍溅脚踝的声响，夹克和裙摆被风吹动的沙沙声
+      bgm: 明快愉悦的日式吉他钢琴伴奏，充满阳光夏日气息
+    continuity: 与前一镜保持同一人物与服装；场景由夜晚街道瞬间切换到阳光海滩

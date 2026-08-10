@@ -1,0 +1,19 @@
+title: 甜点展示柜巧克力淋酱
+style: 食品广告/温馨电影感
+duration_total: 5
+chain: first_static
+shots:
+  - id: 1
+    duration_s: 5.16
+    framing: 特写
+    camera:
+      type: push_in
+      amplitude: medium
+      speed: slow
+    subject: 甜点展示柜内的草莓蛋糕、奶油泡芙、马卡龙
+    action: 镜头持续缓慢推进，奶油泡芙内奶油软化流动，巧克力酱从画面上方淋下覆盖蛋糕和泡芙并滴落到托盘与台面
+    sound:
+      ambient: 冷藏展示柜持续低鸣
+      fx: 奶油湿润挤压声，巧克力酱浓稠浇淋声、滴落声、落在金属托盘与大理石台面的轻响
+      bgm: 慢速爵士器乐，温暖萨克斯风旋律伴随低音提琴与柔和钢琴
+    continuity: 无

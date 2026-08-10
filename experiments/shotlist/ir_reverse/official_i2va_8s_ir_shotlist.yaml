@@ -1,0 +1,17 @@
+title: 温馨日式家庭聚餐
+style: 日系温馨/家庭纪实
+duration_total: 8
+chain: first_static
+shots:
+  - id: 1
+    duration_s: 8
+    framing: 中全景
+    camera:
+      type: static
+    subject: 日式餐厅里的家庭聚餐与前景拉面碗
+    action: 镜头固定，焦点从前景拉面碗平滑移至背景家人，家人无声交谈用餐，蒸汽持续升腾
+    sound:
+      ambient: 房间底噪、蒸汽咝咝声、汤底冒泡声
+      fx: 陶瓷碗筷碰撞声、杯子放下的闷响、衣物摩擦声
+      bgm: 温馨的原声吉他伴随日本筝，节奏舒缓
+    continuity: 无
