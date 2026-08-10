@@ -140,3 +140,12 @@
 - **官方 MiniMaxAI/MiniMax-H3 8/10 README #68**：vLLM 部署示例（--performance-mode speed，4×ulysses）；官方仓库 3682★
 - **其他 8/10 新仓库**：H3-Inpaint（latent mask 编辑）、H3-Auto-Director（多段自动导演）、Prompt-Rewriter-ComfyUI（lightx2v 适配）、MLX 节点（Apple Silicon）、kevrai-omni 工作站
 - 结论：生态在 8/10 扎堆爆发（提示词/编辑/多段/瘦身）；**对 pilot 最大价值 = ClipProj（TE 瓶颈）**，建议试点 P1.4
+
+### 2026-08-10 P1.4 ClipProj 试点（升级 0.31.0 + 节点 + 矩阵 + 首测）
+- **ComfyUI 升级 0.31.0**（344b439→7d11ec3，含 Optimize MiniMax-H3 VAE #15446 + ER-SDE 扩展 #15428）
+- **安装 ComfyUI-ClipProj**（nicolab28，0.1.4）+ 矩阵 mmh3-4b-ClipProj-celeb-mlp.safetensors（304MB）
+- **测试配置**：ClipProjLoader（qwen3vl_4b_fp8_scaled + celeb-mlp 投影，type=auto，resident）+ int8 DiT + v4-8 8s @1024×576
+- **速度：首条 ~180s（含载）→ 驻留 ~60s vs 32B TE 的 125s = 快 2.1 倍**（TE 15.7GB→5.2GB + 加载 80s→秒级）
+- 产物：output/h3_clipproj/cp_1024_s{20260810,42}.mp4（对照 pilot_archive 旧 1024cmp_int8_s* 同 seed）
+- **注意：output/pilot_archive/ 已被用户手动清理**（output 根目录与子目录全清，仅留 anima/audio/h3_clipproj/krea/ref_lib/review/video）——归档目录概念暂停，产物按用途放子目录
+- 待用户目视：画质（挥手场景）+ 音频；已知局限=非英语语音降级、图像参考投影出分布
