@@ -116,3 +116,10 @@
   3. **H3-Regenerate-2K**：专用 latent-space DiT 再生 checkpoint（高分辨率 + base 输出上下文），非普通 upscaler；官方计划开源（效率优化中）——官方 2K 画质来源
   4. Ref2VA 视觉质量差 FL2VA 官方承认（post-training 差异），改进中；技巧=用最高质量参考输入
   5. 官方将发 comprehensive technical report
+
+### 2026-08-10 成片档定案（用户目视 gate 通过）
+- **正式成片档 = int8_convrot + sage + v4-600EMA 8步 @1024×576 = 125s/8s**（单模型连续批稳定值）
+- 多 seed 对比（3 seeds int8 vs fp8 @1024，用户逐条目视）→ int8 画质可接受
+- fp8 1024 同规格 185-345s（offload 抖动）——int8 为唯一成片档
+- 管线三档定稿（params.md 已更新）：极速 fp8-4步@768=45s / 快速 fp8-8步@768=67s / 成片 int8-8步@1024=125s
+- 清理：wave 系列全删、fp8 1024 对照删、int8 768/960 删；archive 保留 turn 4/6/8 + 1024cmp int8 ×3 + base 参照 ×2 + README

@@ -107,11 +107,15 @@
 
 ## MiniMax H3 参数经验（2026-08-04 全量实测，详见 docs/09_h3_test_plan.md）
 
-### 管线双档
-| 档位 | 配置 | 速度（1024×576）| 用途 |
+### 管线三档（2026-08-10 Turbo 时代定稿，替代 08-04 base 双档）
+| 档位 | 配置 | 速度 | 用途 |
 |------|------|------|------|
-| **快速抽卡** | fp8 + sage + 14 步 @768×448（**无 MC**，08-05 实测定论：MC 在 14 步无收益且伤音频）| **75s/条(5s)** | 选片/构图验证 |
-| **正式成片** | fp8 + sage + 20 步 @1024×576 | 5s≈2min / 10s≈5min / 15s≈8min | 最终输出（画面+声音双保）|
+| **极速抽卡** | fp8 + sage + v4-600EMA 4步 @768×448 | **45s/8s** | 批量试 seed/构图（08-09 定档）|
+| **快速抽卡** | fp8 + sage + v4-600EMA 8步 @768×448 | **67s/8s**（复杂动作 88s）| 选片定稿（08-09 定档；社区共识 8 步甜点）|
+| **正式成片** | **int8_convrot + sage + v4-600EMA 8步 @1024×576** | **125s/8s** | 最终输出（08-10 定档：int8 消除 960/1024 offload 抖动，fp8 同规格 185-385s）|
+
+- **模型选择**（官方 README 2026-08-10 查证）：DiT 官方首选 int8_convrot（需 torch cu130，本地 2.13.0+cu130 ✓），fp8_scaled 仅兜底；TE 用 nvfp4_awq（15.7G，官方确认无需 Blackwell，4090 可用 ✓）
+- **旧 base 档参考**（08-04 实测，无 turbo）：fp8+14步 @768×448 = 75s/5s 快速；fp8+20步 @1024×576 = 5s≈2min / 10s≈5min / 15s≈8min 成片；**已被 turbo 三档全面取代**
 
 ### 提示词控制技巧（2026-08 A 测试 + 官方指南，详见 docs/10 案例库）
 - **镜头语言是最强控制**：类型+幅度+速度（如 `pans right with large amplitude at fast speed`）→ 动作量 3-3.5x（实测 J2/J3）；官方四要素表：Zoom/Push/Pan/Truck/Tilt/Arc/Tracking/Static/Shake/POV/Roll × small/large amplitude × slow/fast speed
