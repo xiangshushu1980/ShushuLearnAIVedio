@@ -1,0 +1,63 @@
+title: 社团活动的问答
+style: 日系校园青春
+ratio: "16:9"
+duration_total: 8
+role_cards: ['alya_v1', 'yuki_v1']
+audio_refs:
+  alya_v1: voice_seeds/voice_seed_alya.wav
+  yuki_v1: voice_seeds/voice_seed_yuki.wav
+chain: independent
+shots:
+  - id: 1
+    duration_s: 2.6
+    framing: 中全景
+    camera:
+      type: static
+    subject: scene
+    action: 教室课桌边三人围坐：Yuki（画面左，粉紫双马尾）、Alya（画面中，银白长发红丝带）、同学甲（画面右，戴眼镜穿白衬衫的男同学），同学甲推了推眼镜认真发问，Alya 和 Yuki 转头看向他。
+    dialogue:
+      - speaker: 同学甲
+        text: "明天的社团活动，你们都去吗？"
+    sound:
+      ambient: 教室环境声，窗外蝉鸣
+      fx: 座椅轻微响动
+      bgm: 无（对话场景，情绪由台词承载）
+    continuity: 独立段自身锚定。位置锚定：Yuki 左、Alya 中、同学甲右；身份锚点：粉紫双马尾+深色水手服（Yuki）、银白长发+红丝带+白金边夹克（Alya）、眼镜+白衬衫（同学甲）；教室日光。
+  - id: 2
+    duration_s: 2.6
+    framing: 中景
+    camera:
+      type: push_in
+      amplitude: small
+      speed: slow
+    subject: scene
+    action: 三人同框中景：Alya 和 Yuki 同时大声回答（两人声音重叠，同一句话），说完两人对视一笑；同学甲笑着看向 Yuki 追问。
+    dialogue:
+      - speaker: alya_v1, yuki_v1
+        text: "去！当然去！"
+      - speaker: 同学甲
+        text: "那 Yuki，你这次不会又迟到吧？"
+    sound:
+      ambient: 教室环境声，窗外蝉鸣
+      fx: 两人同时起身的椅子响动声
+      bgm: 无（对话场景，情绪由台词承载）
+    continuity: 独立段自身锚定。位置锚定：Yuki 左、Alya 中、同学甲右；身份锚点完整；同时说话：Alya 和 Yuki 一起喊出同一句（声音重叠），随后同学甲接话。
+  - id: 3
+    duration_s: 2.8
+    framing: 近景
+    camera:
+      type: static
+    subject: scene
+    action: 三人同框近景：Alya 抢先替妹妹打包票，同学甲同时半开玩笑地唱反调，两人声音叠在一起各说各的；Yuki 在中间鼓着脸不满地抗议，三人笑作一团。
+    dialogue:
+      - speaker: alya_v1, 同学甲
+        text: "她肯定准时到！"
+      - speaker: alya_v1, 同学甲
+        text: "难说哦～"
+      - speaker: yuki_v1
+        text: "喂！你们两个！"
+    sound:
+      ambient: 教室环境声，窗外蝉鸣
+      fx: 三人笑闹声
+      bgm: 无（对话场景，情绪由台词承载）
+    continuity: 独立段自身锚定。位置锚定：Yuki 左、Alya 中、同学甲右；身份锚点完整；同时说话：Alya 说"她肯定准时到！"、同学甲同时说"难说哦～"（两人声音重叠各说各的），Yuki 随后抗议。

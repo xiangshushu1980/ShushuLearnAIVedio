@@ -124,6 +124,13 @@ non_diegetic_music 一律写 N/A，除非显式要求。diegetic 声音保留。
 4. detailed_description：风格开场 → [Shot N] 时间线（[Shot 1] 无时间戳，N>1 写 At MM:SS.mmm）
 5. 每镜一动作；身份锚点每镜重复；状态跨镜延续；保持屏幕方向
 6. 声音三层进 overall_soundscape（diegetic）；non_diegetic_music 默认 N/A（后期配乐）
+7. 音频参考（拍摄本 audio_refs 字段，有则强制）：
+   - subject_definitions 写 "<Audio N> is the voice-timbre reference for <Subject N> (Sx)."
+     （N 按 audio_refs 顺序从 1 起；Sx 用该角色在对话语法中的稳定 ID）
+   - summary 任务类型前缀追加 + audio reference（如 [reference generation + audio reference]）
+   - retention_analysis 每音频一行："<Audio N> (voice-timbre for <Subject N> (Sx)): reference - ..."
+   - detailed_description 中该角色首次发声处写明 "using the voice timbre referenced from <Audio N>"
+   - 音色参考不复制台词：台词仍由 <d> 文本生成（<Audio N> 只锁音色/语气/语速）
 
 ===== 对话语法（docs/17 三节，有 dialogue 字段时强制，否则忽略）=====
 - 发声者稳定 ID `(S1)`、`(S2)`…按出现顺序分配，跨镜复用；不发声角色无 ID；群声 `(S1,S2)`
@@ -187,6 +194,10 @@ def gen(key: str, model: str, mode: str, shotlist_yaml: str, effort: str, max_to
         f"===== 角色卡（subject_definitions 外观锚定用）=====\n{role_cards}" if role_cards else "===== 角色卡 =====（无）",
         "请输出 H3 提示词（纯文本，严格按模式）。",
     ]
+    audio_refs = sl.get("audio_refs", {})
+    if audio_refs:
+        lines = [f"{rid} -> {path}" for rid, path in audio_refs.items()]
+        user_lines.insert(1, f"===== 音频参考（音色种子，按顺序编 <Audio N>）=====\n" + "\n".join(lines))
     body = {
         "model": model,
         "messages": [{"role": "system", "content": sys_prompt},

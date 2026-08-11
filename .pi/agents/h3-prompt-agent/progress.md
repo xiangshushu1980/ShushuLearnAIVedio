@@ -253,3 +253,27 @@
 **d2 结果**：Ref2VA 2图 std20 188s（比 d1 快，TE 缓存命中）显存 22GB；切点 2.96/5.21 vs 声明 3.0/5.5（镜1→2 完美，镜2→3 提前 0.29s）；音频 -11.2 LUFS 正常；语音分段吻合（VO 0-2.8s→Alya 3.5-4.9s→Yuki 5.4s+）；⚠️ 镜3 内 6.88s 额外帧差峰待目检
 **教训**：工具 A 在双人同框时镜 3 会把另一人写到画外（subject 单角色惯性）——手动修正为三镜全同框；independent 链每镜必须自足（自审机制有效）
 **待用户**：试听 d2（同框双人说话者区分/对画外说话的方向感/旁白）+ 目检 6.88s 帧；通过后补 VO 跨镜（scenetrans）/5s 快车道对话段
+
+### 2026-08-11 d2 待验收 + d3 群像压力批（3人+人群口号+同时说话+抢话）
+**d3 设计**（用户要求：3-4 人无画外音、抢话、同时说话、背景人群口号、5s+ 看是否足够）：运动会跑道边——Yuki 左/Alya 中右/同学甲右（同学甲=一次性路人无参考图，prompt 描述）；人群口号进 soundscape（"加油！"齐喊）；同时说话=官方群声写法（overlapping voices）；抢话="cuts in ahead, rapid, urgent, gleefully proud"；5.2s 2 镜（预算约束）
+**d3 结果**：Ref2VA 2图 std20 141s 显存 22GB；切点 2.54 vs 声明 2.60（0.06s）；音频 mean -18.6dB/max -5.4dB 略低于 d1/d2 但非静音；⚠️ 全片无静音段（台词+人群连续，5.2s 内容密度高）；3.38s 帧差峰=镜2 欢呼动作
+**过程坑**：① 工具 A 今天 DeepSeek 响应慢+连续超时（try 4 超时），且 5.2s 预算 2 镜模型总给 3 镜——改手动写拍摄本；② stage2 首次 max_tokens 24000 被 reasoning 吃满正文空 → 32000 通过（沿用 2026-08-09 踩坑）
+**待用户**：试听 d3——抢话/同时说话/人群口号表现、5.2s 是否足够；帧 /tmp/d3_frames/
+
+### 2026-08-11 d4/d5/d6 批 + 音色种子调研 + d7 音频参考实验
+**d4/d5/d6（8s 三连，用户反馈：d4 抢话、d6 背景喊声效果非常好；d5 同句群声"去！当然去！"听不出两人）**
+- d4 抢话：cuts in + "voices layering over each other" 叠声各说各的——区分度好
+- d5 三人组合：同句群声（overlapping on the same line）听不出两人 = 同词同调混成一声（群声写法本质）
+- d6 背景喊声：三段口号（传球/好球/防守）逐镜渐响 + "clearly quieter than the foreground" 分层
+**音色种子调研（用户问题：跨片段声音一致性）**：
+- 官方规格：Ref2VA 音频 ≤3 段、每段 2-15s、类型总 ≤15s、全部文件 ≤12；音频不能单独用（必须带图/视频）；社区典型 5s 独白
+- 源码确认：ref_audios 全量编码无裁剪（token=40Hz×时长×2声道），编码走 audio_vae（GPU 快）；官方写法 "<Audio 1> is the voice-timbre reference for <Subject 1> (S1)"
+- 社区结论：音频参考=主流声音克隆方案（Reddit voice cloning works 实证）；差异化提示词只辅助同片段区分，不解决跨段一致
+- 音色种子制作：从 d1 裁剪（用户验收过的角色音色）——alya 2.2s/yuki 2.5s 独白 → input/voice_seeds/
+**d7 音频参考实验（d5 同配置+2 条种子，唯一变量）**：
+- **性能影响实测 ≈ 0**：184s vs d5 188s（-4s 噪声级），显存 21.9GB 持平——音频 token 相对视频极小
+- 音频 -14.0dB（比 d5 的 -18.6 更响，接近 d1/d2），切点 2.50/5.04 正常
+- 工具 B 升级：拍摄本 audio_refs 字段 → <Audio N> 六段式合成（subject_definitions/summary+audio reference/retention/detailed 发声处引用）
+- runner 升级：cases 加 audios 字段（LoadAudio→ref_audios）
+- 音色保持/同句群声区分度：待用户试听 d7
+**中文魔兽配音 sample（用户备选要求）**：BV1Zs411Z77U『经典的声音』14:35 合集下载，弹幕聚类定位台词区，裁剪 3 条 5s 备用（input/voice_seeds/wow/）：illidan（~215s）/lichking（~430s）/for_the_horde（~848s 结尾口号）；无 AI 字幕，具体台词待试听确认

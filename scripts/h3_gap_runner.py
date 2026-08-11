@@ -78,6 +78,12 @@ def build_wf(c):
         wf[str(n)] = {"class_type": "LoadImage", "inputs": {"image": p}}
         n += 1
 
+    aud_refs = {}  # LoadAudio node_id -> rel path
+    for i, p in enumerate(c.get("audios", [])):
+        aud_refs[i] = (n, p)
+        wf[str(n)] = {"class_type": "LoadAudio", "inputs": {"audio": p}}
+        n += 1
+
     mode = c["mode"]
     if mode in ("t2v", "i2v", "firstlast"):
         inp = {"clip": ["2", 0], "vae": ["3", 0], "prompt": prompt,
@@ -93,6 +99,8 @@ def build_wf(c):
                "length": c["length"], "ref_image_size": c.get("ref_image_size", "match")}
         for i, (node_id, _) in img_refs.items():
             inp[f"ref_images.ref_image_{i}"] = [str(node_id), 0]
+        for i, (node_id, _) in aud_refs.items():
+            inp[f"ref_audios.ref_audio_{i}"] = [str(node_id), 0]
         wf["6"] = {"class_type": "MiniMaxH3ReferenceToVideo", "inputs": inp}
 
     # sampler / lora

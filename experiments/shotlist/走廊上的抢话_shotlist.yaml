@@ -1,0 +1,62 @@
+title: 走廊上的抢话
+style: 日系校园青春
+ratio: "16:9"
+duration_total: 8
+role_cards: ['alya_v1', 'yuki_v1']
+chain: independent
+shots:
+  - id: 1
+    duration_s: 2.5
+    framing: 中景
+    camera:
+      type: static
+    subject: scene
+    action: 放学后的走廊，Alya（画面左，银白长发红丝带）和 Yuki（画面右，粉紫双马尾）面对面站着，Alya 刚开口要讲昨天的比赛，话还没说完就被 Yuki 抢着打断。
+    dialogue:
+      - speaker: alya_v1
+        text: "我跟你讲，昨天的比赛——"
+      - speaker: yuki_v1
+        text: "我知道我知道！那个三分球超帅的！"
+    sound:
+      ambient: 放学走廊环境声，远处下课铃，风声
+      fx: 脚步轻响，衣料摩擦声
+      bgm: 无（对话场景，情绪由台词承载）
+    continuity: 独立段自身锚定。位置锚定：Alya 左、Yuki 右，面对面；身份锚点：银白长发+红丝带+白金边夹克（Alya）、粉紫双马尾+深色水手服（Yuki）；走廊暖色灯光。
+  - id: 2
+    duration_s: 2.7
+    framing: 近景
+    camera:
+      type: push_in
+      amplitude: small
+      speed: normal
+    subject: scene
+    action: 双人近景同框：Yuki 语速飞快地抢说，Alya 又急又好笑地再次打断她，两人最后同时开口，声音叠在一起各说各的。
+    dialogue:
+      - speaker: alya_v1
+        text: "你听我说完嘛！根本不是——"
+      - speaker: alya_v1, yuki_v1
+        text: "根本不是——"
+      - speaker: alya_v1, yuki_v1
+        text: "明明就是——"
+    sound:
+      ambient: 放学走廊环境声，远处铃声渐远
+      fx: 两人语速加快的气息声
+      bgm: 无（对话场景，情绪由台词承载）
+    continuity: 独立段自身锚定。位置锚定：Alya 左、Yuki 右；身份锚点完整：银白长发+红丝带（Alya）、粉紫双马尾（Yuki）；抢话节奏：一句接一句无停顿，最后一句两人声音重叠（Alya 说"根本不是——"、Yuki 同时说"明明就是——"）。
+  - id: 3
+    duration_s: 2.8
+    framing: 近景
+    camera:
+      type: static
+    subject: scene
+    action: 双人近景同框：Yuki 笑着让步，语气俏皮；Alya 愣了一下也笑起来，得意地回了一句。
+    dialogue:
+      - speaker: yuki_v1
+        text: "好吧好吧，你说你说。"
+      - speaker: alya_v1
+        text: "这还差不多～"
+    sound:
+      ambient: 放学走廊环境声，风声
+      fx: 轻笑声
+      bgm: 无（对话场景，情绪由台词承载）
+    continuity: 独立段自身锚定。位置锚定：Alya 左、Yuki 右；身份锚点完整；情绪递进：Yuki 让步笑 → Alya 得意笑，两人氛围从抢话转为嬉闹。

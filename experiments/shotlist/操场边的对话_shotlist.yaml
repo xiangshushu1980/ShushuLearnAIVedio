@@ -1,0 +1,58 @@
+title: 操场边的对话
+style: 日系校园青春
+ratio: "16:9"
+duration_total: 8
+role_cards: ['alya_v1', 'yuki_v1']
+chain: independent
+shots:
+  - id: 1
+    duration_s: 2.5
+    framing: 中景
+    camera:
+      type: tracking
+      amplitude: small
+      speed: slow
+    subject: scene
+    action: 放学路上，Alya（画面左，银白长发红丝带）和 Yuki（画面右，粉紫双马尾）并肩走在操场边的铁网围栏旁，远处操场上有学生奔跑比赛，背景多人喊声持续。Alya 边走边说，Yuki 侧头听。
+    dialogue:
+      - speaker: alya_v1
+        text: "听说了吗，下午决赛是三年级对二年级。"
+    sound:
+      ambient: 操场环境声，远处比赛哨声，背景多人齐喊"传球！快传球！"（远处，声音较前景对话轻）
+      fx: 脚步声，铁网旁风声
+      bgm: 无（对话场景，背景操场氛围即主体）
+    continuity: 独立段自身锚定。位置锚定：Alya 左、Yuki 右，并肩前行方向向右；身份锚点：银白长发+红丝带+白金边夹克（Alya）、粉紫双马尾+深色水手服（Yuki）；黄昏放学光线。
+  - id: 2
+    duration_s: 2.5
+    framing: 近景
+    camera:
+      type: static
+    subject: scene
+    action: 双人近景同框：Yuki 点点头接话，语气轻快；Alya 侧头看她；远处操场上人群欢呼声穿过铁网传来。
+    dialogue:
+      - speaker: yuki_v1
+        text: "嗯嗯，听说三年级那个王牌超厉害的。"
+    sound:
+      ambient: 操场环境声，背景多人齐喊"好球！漂亮！"（远处，比镜1喊声更响）
+      fx: 脚步声
+      bgm: 无（对话场景，背景操场氛围即主体）
+    continuity: 独立段自身锚定。位置锚定：Alya 左、Yuki 右，前行方向向右；身份锚点完整；背景喊声分层：前景对话清晰、背景喊声在远处。
+  - id: 3
+    duration_s: 3.0
+    framing: 中景
+    camera:
+      type: tracking
+      amplitude: small
+      speed: slow
+    subject: scene
+    action: 两人继续并肩走：Alya 眼睛一亮提议，Yuki 跳起来开心答应，两人加快脚步向操场方向走去；背景多人喊声达到高潮。
+    dialogue:
+      - speaker: alya_v1
+        text: "那放学我们也去看吧。"
+      - speaker: yuki_v1
+        text: "好呀好呀！"
+    sound:
+      ambient: 操场环境声，背景多人齐喊"防守！注意防守！"（远处，喊声最密集），哨声
+      fx: 加快的脚步声，Yuki 跳起的落地声
+      bgm: 无（对话场景，背景操场氛围即主体）
+    continuity: 独立段自身锚定。位置锚定：Alya 左、Yuki 右；身份锚点完整；情绪递进：提议→开心答应→加快脚步走向操场，背景喊声随之渐近渐响。
