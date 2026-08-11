@@ -1,0 +1,41 @@
+title: 跑道边的呐喊
+style: 日系校园运动会
+ratio: "16:9"
+duration_total: 5.2
+role_cards: ['alya_v1', 'yuki_v1']
+chain: independent
+shots:
+  - id: 1
+    duration_s: 2.6
+    framing: 中全景
+    camera:
+      type: static
+    subject: scene
+    action: 运动会观众席前排，三人并肩站在栏杆边兴奋望向跑道：Yuki（画面左侧，粉紫双马尾、深色水手服）双手握栏杆，Alya（画面中间偏右，银白长发红丝带、白色金边夹克）探身向前，同学甲（画面右侧，戴深色运动发带、穿白色 T 恤的男同学）抬手指着跑道方向。远处跑道上一名选手正在冲刺，人群喧闹。同学甲语气激动地对两人喊话，Alya 和 Yuki 转头看向跑道，齐声惊呼前的期待状态。
+    dialogue:
+      - speaker: 同学甲
+        text: "你快看！要冲线了！"
+    sound:
+      ambient: 运动会观众席喧闹，远处人群齐喊"加油！加油！"口号，哨声
+      fx: 脚步急促声与欢呼声渐起
+      bgm: 无（运动会现场氛围即主体）
+    continuity: 独立段自身锚定。位置锚定：Yuki 左、Alya 中右、同学甲右，三人面向画面右侧跑道；身份锚点：粉紫双马尾+深色水手服（Yuki）、银白长发+红丝带+白金边夹克（Alya）、深色发带+白 T 恤男同学（同学甲）；白昼操场强光色温。
+  - id: 2
+    duration_s: 2.6
+    framing: 中景
+    camera:
+      type: push_in
+      amplitude: small
+      speed: normal
+    subject: scene
+    action: 三人同框中景：Alya 和 Yuki 同时跳起来欢呼（两人一起喊，声音重叠），随后 Yuki 抢在 Alya 前面接着喊，语速又急又得意，Alya 愣了一下露出无奈笑容；同学甲在画面右侧拍手大笑。背景人群口号持续。
+    dialogue:
+      - speaker: alya_v1, yuki_v1
+        text: "太厉害了！"
+      - speaker: yuki_v1
+        text: "我就说他能赢吧！姐姐你还担心！"
+    sound:
+      ambient: 人群齐喊"加油！"与欢呼声达到高潮，哨声
+      fx: 三人欢呼跳跃的衣料声，拍手声
+      bgm: 无（运动会现场氛围即主体）
+    continuity: 独立段自身锚定。位置锚定：Yuki 左、Alya 中右、同学甲右，面向右侧跑道；身份锚点完整：粉紫双马尾+深色水手服（Yuki）、银白长发+红丝带+白金边夹克（Alya）、深色发带+白 T 恤（同学甲）；欢呼动作衔接：跳起→落地→Yuki 抢话。
