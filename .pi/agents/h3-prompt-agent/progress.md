@@ -193,3 +193,26 @@
 - **对照矩阵**：H2(turbo8)=-19.2dB / T1(fp8 std20)=-28.5 / T2(int8 std20)=-27.9 / V2(t2v std20)=-39.0 / V1(苹果)=-60.7——响度=f(场景声音描述量)；谐波检测全配置存在（15-44 基频）→ 音乐先验恒定，turbo/std 无本质差异
 - **结论**：N/A/显式 no-music/静音指令均无法去除有声音场景的音乐成分；完全静音可行（极简 soundscape）；环境音无音乐不可行（后期分离待定）
 - mem0 已修正 h3-nobgm-test 误判经验（id 686bf8fb 补对照结论）
+
+### 2026-08-10 BGM 调查收束（上下文压缩点，完整矩阵）
+**目标**：H3 视频如何控制背景音乐。**判定权威=用户试听**（频谱谐波误报多，海浪/风声共振均像谐波；87Hz 泛音序列=音乐特征）
+**测试矩阵**（seed 20260810，768×448 为主，t2v/i2v × 长短 prompt × turbo/std）：
+| # | 配置 | prompt | 结果 |
+|---|---|---|---|
+| h3-nobgm | int8 std20 t2v | 苹果极简+N/A | 近静音 -64.7dB（mem0 已修正：场景无内容所致，非 N/A 功效）|
+| h3-sfx | int8 std20 t2v | 海边短+N/A | 无音乐 ✓用户 |
+| H1 | fp8 turbo8 i2v | 海边长+N/A 无否定句 | 87Hz 泛音（疑音乐，未试听）|
+| H2 | fp8 turbo8 i2v | 海边长+N/A+否定句 | **有音乐** ✓用户 |
+| H3/H4 | fp8 turbo8 i2v | 全静音/极端否定 | 无效 |
+| T1/T2 | std20 i2v | 海边长+N/A | -28dB 有谐波（未试听）|
+| V1/V2 | int8 std20 t2v | 苹果复现/海边短 | -60.7dB 复现 / -39dB |
+| T3 | fp8 turbo8 t2v | 海边短337字+N/A | **无音乐** ✓用户 |
+| P1 | fp8 turbo8 t2v | 海边长4872字+N/A | **无音乐** ✓用户 |
+| P2 | fp8 turbo8 i2v | 海边短337字+instruction | 频谱像无音乐，**待用户试听** |
+**已排除**：N/A vs 否定句（H1 无否定句也疑音乐）；prompt 长度（P1 长 t2v 无音乐）；turbo（T3 无音乐）；fp8/int8；静音写法
+**当前锁定**：i2v 模式嫌疑（H1/H2=i2v 有，T3/P1=h3-sfx=t2v 无）。P2（i2v 短）待判：
+- P2 无音乐 → i2v 无罪，需再查 i2v+长 prompt 组合触发段（P3 定位）
+- P2 有音乐 → i2v 模式触发（机制候选：首帧图多模态联想/instruction line/节点差异）
+**生产影响**：若 i2v 触发音乐 → 快车道（i2v）音乐不可控：接受 or std 档（T2 疑）or 后期分离（demucs 待定）
+**待回滚**：stage2 模板的 "No background music of any kind" 否定句（实测无效，若 i2v 是主因则无害可留；有副作用则删）
+**产物**：ComfyUI/output/video/h3_gap_test/P2_i2v_shortprompt_00001_.mp4（试听中）+ P2_boost.wav；服务 http://localhost:8766/
