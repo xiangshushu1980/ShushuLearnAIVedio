@@ -15,6 +15,8 @@ input/
 │   ├─ portrait/
 │   └─ scene/
 ├─ start/              ← 起始图（alya 等生图起始图）
+│   └─ 169/            ← 16:9 首帧图库（H3 i2v 首帧必须 16:9，35 张，规则见 docs/21 §首帧锚定规律）
+├─ ref_lib/            ← H3 ref2va 参考图库（realistic/ 写实 59 + illustration/ 插画 62，共 121 张，来源见 docs/09 底图库）
 ├─ test/               ← 测试用临时文件
 └─ 3d/                 ← 3D 相关
 ```

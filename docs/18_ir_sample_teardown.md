@@ -107,6 +107,6 @@ night hum → whoosh+magic chime（转场声）→ beach waves；配乐两段式
 
 - [x] i2v 4 条样本拆解（完成，见 §五）
 - [x] IR 脚本媒体嵌套格式修复（h3_ir_rewrite.py：image_url/video_url/audio_url 需 `{type:{url:...}}` 嵌套，官方脚本格式；本地文件传 mm_file:// 引用）
-- [ ] 词汇库初版（docs/16 清单 #5/#6/#7 合并进 docs/19 或本册附录）
+- [ ] 词汇库初版（docs/16 清单 #5/#6/#7 → 落本册附录；归属 2026-08-11 用户确认）
 - [ ] DeepSeek vs IR 文本对比验证（docs/16 路线 1）
 - [ ] kuronzzhan-droid / imagineVid-Awesome 社区 skill 拆解

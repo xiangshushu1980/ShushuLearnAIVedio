@@ -83,7 +83,7 @@ https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/tree/main/split_file
 - **命令**：`wget -c --tries=0 --timeout=30`（断点续传+无限重试）
 - **网络实测**：hf-mirror 直连 ~8.6MB/s；**开 VPN 后大幅提速**（18 分钟下完 29GB）；GitHub 直连时通时不通（7890 代理未监听，勿依赖）
 - **完整性校验（三重）**：① 字节数精确等于目标 14535868680；② safetensors header（190464 字节）可解析；③ wget rc=0 正常收尾
-- 完整调研快照：[04_bernini_int8_findings.md](04_bernini_int8_findings.md)
+- int8 选型背景与平台差异见 docs/06 §三（原 04 已并入 06）
 
 ### CivitAI（需 token）
 - 角色/风格 LoRA：civitai.com 搜索，token 在 `.mcp.json`（**pi MCP 不读新增 env → 用 curl 绕行下载**，见 SKILL troubleshooting）
@@ -96,29 +96,9 @@ https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/tree/main/split_file
 - 直接下 Comfy-Org 的**单文件**版本（fp16 28GB / fp8 16GB）
 - 4090 用 fp8 更省显存更快，fp16 画质略好
 
-### 2. 网络加速（WSL + FLClash VPN）
+### 2. 网络加速
 
-> ⚠️ **2025-08-02 修订**：当前已切 **Clash Rule 模式 + TUN**（GitHub 走代理/国内直连，见 docs/06 第五节）。以下 FLClash 脚本是早期 TUN 全劫持配置，**保留作重装参考**，新配置以 06 为准。
-下载慢的根因：**VPN TUN 模式劫持所有流量**（含国内域名），DNS 返回 fake-ip (198.18.0.x)。
-
-FLClash 脚本配置（已设置，未来重装需恢复）：
-```javascript
-const main = (config) => {
-  config.tun.mtu = 1500;
-  if (!config.rules) config.rules = [];
-  config.rules.unshift('DOMAIN-SUFFIX,xethub.hf.co,DIRECT');
-  config.rules.unshift('DOMAIN-SUFFIX,hf-mirror.com,DIRECT');
-  config.rules.unshift('DOMAIN-SUFFIX,modelscope.cn,DIRECT');
-  if (!config.dns) config.dns = {};
-  if (!config.dns['fake-ip-filter']) config.dns['fake-ip-filter'] = [];
-  config.dns['fake-ip-filter'].push('+.xethub.hf.co');
-  config.dns['fake-ip-filter'].push('+.hf-mirror.com');
-  config.dns['fake-ip-filter'].push('+.modelscope.cn');
-  return config;
-};
-```
-- hf-mirror.com 302 重定向到 `cas-bridge.xethub.hf.co`（CloudFront CDN）→ 必须直连
-- 部分文件重定向到 `us.aws.cdn.hf.co`（也需直连，可加进规则）
+> 网络权威配置以用户级 AGENTS.md（Clash Rule + TUN）与 docs/06 §五 为准；遗留 FLClash 全劫持脚本（重装参考）见 docs/06 §五。
 
 ### 3. 下载命令（带续传）
 ```bash

@@ -1,4 +1,4 @@
-# 06 图像编辑/超分与 Bernini 手册（2025-08-02 精简版）
+# 06 图像编辑/超分与 Bernini 手册（2025-08-02 精简版；2026-08-11 并入原 04 调研要点 + 02 遗留 FLClash 脚本）
 
 > ⚠️ **经验迁移**：本文件的实测数据/踩坑实例/提炼认知已迁至 **Mem0 共享记忆**（`memory_recall` 可检索，如"Bernini 用什么采样器""超分多快"）。本文件只留**手册类内容**（安装/模型/管线/参数/规则），经验类内容不再追加。
 
@@ -70,6 +70,11 @@ v2v 时：LoadVideo(input/路径) → GetVideoComponents 拆帧 → 注入 sourc
 - image0/image1 引用参考图（每图独立 token）；结构：主体引用 → 外貌保持 → 场景 → 动作序列（start/then/after/throughout）→ 镜头固定
 - 负面词加 photorealistic / 3D render / different face / 换脸（防写实漂移）
 
+### int8 选型背景（并入自原 04，2026-08-11）
+- **int8_convrot 含义**：int8 量化 + ConvRot（量化前对权重做 Hadamard 旋转压低离群值 → 精度损失更小）
+- **平台差异（选型必读）**：int8 硬件加速在 RTX 30/40/50 系收益最大（4× fp16，4090 正好）；**A100/A6000（Ampere 数据中心卡）反而慢 33-50%**（布局不匹配时后端静默反量化回 float）；AMD ROCm+triton 有 NaN 黑图 bug（#15084）
+- 需 ComfyUI 0.29+ 原生支持（本地 0.29.0 已含 int8_tensorwise + convrot，UNETLoader 直接加载）
+
 ### int8 vs fp8 对比（2025-08-02）
 - 视频任务（81帧）：int8 105.1s/清晰度1023 vs fp8 133.1s/999 → **int8 快21% 略优**；单帧图像 int8 反而慢（加载开销）
 - 同 seed 像素差异均值 2.08 → 画质几乎一致；int8 省 1GB 显存
@@ -93,3 +98,23 @@ v2v 时：LoadVideo(input/路径) → GetVideoComponents 拆帧 → 注入 sourc
 - git 报 "could not read Username" = 认证问题，不是网络被墙
 - **遇到网络异常，第一时间与用户确认和测试，不擅自改配置**
 - HF 下载用 hf-mirror.com；pip 用清华源
+
+### 遗留：FLClash TUN 全劫持脚本（重装参考，勿用于新配置；自原 02 移入）
+
+> 早期 TUN 全劫持配置，新配置以上方 Rule+TUN 为准。背景：下载慢根因是 VPN TUN 劫持所有流量（含国内域名），DNS 返回 fake-ip (198.18.0.x)；hf-mirror 302 重定向到 `cas-bridge.xethub.hf.co`（CloudFront CDN）→ 必须直连；部分文件重定向 `us.aws.cdn.hf.co` 也需直连。
+
+```javascript
+const main = (config) => {
+  config.tun.mtu = 1500;
+  if (!config.rules) config.rules = [];
+  config.rules.unshift('DOMAIN-SUFFIX,xethub.hf.co,DIRECT');
+  config.rules.unshift('DOMAIN-SUFFIX,hf-mirror.com,DIRECT');
+  config.rules.unshift('DOMAIN-SUFFIX,modelscope.cn,DIRECT');
+  if (!config.dns) config.dns = {};
+  if (!config.dns['fake-ip-filter']) config.dns['fake-ip-filter'] = [];
+  config.dns['fake-ip-filter'].push('+.xethub.hf.co');
+  config.dns['fake-ip-filter'].push('+.hf-mirror.com');
+  config.dns['fake-ip-filter'].push('+.modelscope.cn');
+  return config;
+};
+```

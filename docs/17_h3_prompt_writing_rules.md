@@ -46,7 +46,7 @@
 - 画外音：用精确短语 "says in an off-screen voiceover" + 立即声明嘴唇闭合 "while his lips remain completely closed."
 - 对话跨切：两端加 `<scenetrans>` + 连续性声明；视频截断说话：`<cutoff>`
 - 画面内文字：英文双引号 verbatim（如 A red neon sign reading "营业中"）
-- **音乐策略（用户决策 2026-08-10）**：默认不生成 BGM——短片内模型生成音乐无法连续。`non_diegetic_music` 写 `N/A` + soundscape 首句显式 no-music 句，后期独立配乐（本地 MusicGen/ACE-Step 管线，docs/13）
+- **音乐策略（用户决策 2026-08-10）**：默认不生成 BGM——短片内模型生成音乐无法连续。`non_diegetic_music` 写 `N/A` + soundscape 首句显式 no-music 句，后期独立配乐（本地 MusicGen/ACE-Step 管线，docs/12 §10）
 - **prompt 级去音乐无效（2026-08-10 四写法实测）**：N/A、显式 no music、全静音指令、极端否定描述——产物频谱均有音乐谐波（87/174/349Hz 泛音序列 + 440Hz）。H3 音频模块音乐先验与 prompt 解耦。后续：接受自带氛围音乐 / 后期分离（demucs，待定）
 - **音乐两分**：角色能听到的音乐（收音机/现场演出）→ 写进镜头描述（diegetic）；若用户显式要求生成配乐才写 `non_diegetic_music`（配器/速度/节奏/力度，不写情绪词）
 - **场景驱动判断（2026-08-10 对比 IR 补充）**：表演/演出类场景（舞台/演唱会/街头艺人/收音机）音乐本身是 diegetic 主体，`non_diegetic_music` 可写 `N/A` 省略（IR 舞台版实测行为）；反之纯氛围场景必须有背景配乐

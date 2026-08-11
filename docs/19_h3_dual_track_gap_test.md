@@ -66,19 +66,9 @@
 - 音频响度全批 -14.6~-26.6dB mean，无静音/爆音异常（IR 级 prompt 稳定音频，与 onsen DS 近静音形成对照）
 - 本批 prompt 为 IR 级长文本；turbo-pilot 的 67s/45s 是短 prompt 数据，直接对比需折算
 
-## 首帧底图规范（2026-08-09 实测补充）
+## 首帧底图规范（2026-08-09 实测；规则已归 docs/21 §首帧锚定规律）
 
-**问题**：`MiniMaxH3ImageToVideo` 的 first_frame 注入是**纯拉伸**（"disabled"，源码 nodes_minimax_h3.py）；方形底图（768×768）拉伸到 16:9 画布后**变形传导到产物**——产物首帧对拉伸输入 SSIM 0.992（忠实复刻），但对无变形参考仅 0.474。用户目测"图被压缩"坐实。
-
-**验证**（同 seed 同 prompt，仅换首帧）：
-| 首帧底图 | 产物首帧 vs 无变形参考 SSIM | 结论 |
-|---|---|---|
-| alya_768（方形，被拉伸） | 0.474 | 变形传导，不可用 |
-| alya_169（16:9 原生） | 0.993 | 无变形，生产标准 |
-
-**规则**：
-- 快车道 i2v 首帧 = **必须 16:9 底图**（与画布同比例，任意分辨率）
-- 尾帧（firstlast last_frame）是 center-crop（保比例）→ 任意比例可用，构图会被裁
-- ref2va 参考图是 match 缩放（保比例）→ 任意比例安全
-- 适配库：`ComfyUI/input/start/169/`（35 张 center-crop 16:9，构图略偏上保脸；裁剪丢构图，角色图优选原生 16:9 重生成）
-- 原生 16:9 角色图现仅 alya_169.png（1280×720）；Alya LoRA 文件已被清理（anima 工作流暂不可用），需重生成 16:9 角色图时：重新下载 LoRA 或 img2img 扩图（denoise 0.5-0.7）
+- **铁律：i2v 首帧必须 16:9 底图**——first_frame 注入是纯拉伸（源码 nodes_minimax_h3.py），方形图变形传导到产物（拉伸 SSIM 0.992 vs 无变形参考 0.474，同 seed 同 prompt 实测）
+- 尾帧（firstlast last_frame）center-crop 保比例、ref2va 参考图 match 缩放保比例 → 任意比例可用
+- 图库：`ComfyUI/input/start/169/`（35 张 center-crop 16:9，构图略偏上保脸）
+- 原生 16:9 角色图现仅 alya_169.png（1280×720）；Alya LoRA 文件已被清理（anima 工作流暂不可用），重生成 16:9 角色图需：重下 LoRA 或 img2img 扩图（denoise 0.5-0.7）
