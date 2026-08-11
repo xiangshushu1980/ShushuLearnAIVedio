@@ -216,3 +216,14 @@
 **生产影响**：若 i2v 触发音乐 → 快车道（i2v）音乐不可控：接受 or std 档（T2 疑）or 后期分离（demucs 待定）
 **待回滚**：stage2 模板的 "No background music of any kind" 否定句（实测无效，若 i2v 是主因则无害可留；有副作用则删）
 **产物**：ComfyUI/output/video/h3_gap_test/P2_i2v_shortprompt_00001_.mp4（试听中）+ P2_boost.wav；服务 http://localhost:8766/
+
+### 2026-08-10 H3 新消息 + 范文扩充调研（临时会话）
+**新消息盘点（官方/准官方/社区）：**
+- 官方 GitHub/HF：无新范文（HF model card 今日更新 Full 2K-Workflow 章节 = 已提取过的 3 case，token 用量可查：t2v 8565 / i2v 22822 / ref2v 39299）；官方指南格式未变（[Shot N] 体系，与本地 references 一致）
+- **LightX2V Prompt-Rewriter LoRA 发布**（重大，与本线工具 B 直接相关）：Qwen3.6-27B + LoRA 微调，短 prompt→三核心段结构化重写（T2VA only；FL2VA/Ref2VA 在 roadmap）；本地跑需 27B 显存；HF: lightx2v/MiniMax-H3-Prompt-Rewriter-LoRA。与 DeepSeek 自建方案并列观察
+- Reddit 新帖：本地 LLM sysprompt 模拟 H3-Context-IR（r/StableDiffusion 1veb4bn + r/comfyui 1vgau32）；官方 45 示例说法（atlascloud 博客）提到 [0s-2s] 时间窗格式——社区 IR 风格与官方 skill [Shot N] 体系并存的证据
+- wildminder/awesome-minimax-H3（134★）更新：joyfox BF16 4step LoRA、t8star 双时钟采样器版、tututututu 20to8 NFE LoRA、matlod turnaround（1图→5视角转身）——参数线情报
+**范文扩充（BeatAPI/awesome-minimax-h3-prompts 85★，205 条全量 clone）**：
+- 精选 8 条 source-verified 落盘 experiments/community_samples/（README 带入选理由）：IR 风格时间窗 I2V、日文角色固定 R2V、K-pop 8 图歌词 MV、三人女团 MV、jazz-noir 音频对齐标题、R2V 多图分槽、161s 长对话、1 视频转 MV
+- 全量 205 条分类：cinematic-story 59 / product-commercial 35 / anime 21 / music-video 21 / travel 11 / action 9 / horror 8 / fashion 8；模式 T2V 146 / R2V 44 / I2V 7
+- 判断：官方格式基准不动（references 仍权威）；社区库作风格词汇/结构变体参考（R2V 长 prompt、多图分槽、字幕 MV、时间窗）
