@@ -236,3 +236,13 @@
 生产选项待用户定：① 快车道改 5s 段（最快最干净）② 8s 接受氛围音乐 ③ 后期分离（demucs 待定）
 待办：ref2va 8s 段是否触发（多角色验证时留意）；音乐出现时刻分析（可裁则 8s 也可用）未做
 产物：ComfyUI/output/video/h3_gap_test/P6_H2_replay_00001_.mp4（可复现样本）
+
+### 2026-08-11 对话落地（B站教程 BV1yfua6sEC4 → 工具链升级 + d1 验证批）
+**教程核心**（Swan鹄仙，19:19 提示词基础篇）：四大标签（Subject=角色/物体引用、Picture=守帧锚点、Video/Audio=参考，不可混用）；对话占位符（S1/S2 稳定 ID、<d>[语言] verbatim、screen transition/cutoff、off-screen voiceover+lips closed）；音频参考必变（latent 重采样）；时间锚点精确性（2.8s 切镜实测）；说话对象必须在镜内否则模型把话安到别人嘴上；相似角色必须标签（双胞胎案例）
+**对照结论**：S1/S2+<d>+VO 闭嘴+时间锚点 = 官方 ref-en/base-en + docs/17 已有；**工具链空白=对话从未落地**（拍摄本无 dialogue 字段、stage2 无对话语法、3 个旧剧本全无台词）
+**工具 A 升级**：shots[].dialogue（speaker+text verbatim；off_screen=画外音）+ 规则 11 对话规则（说话者必须在镜内/旁白闭嘴/一句一条）+ 校验
+**工具 B 升级**：I2VA/REF2VA 模板注入对话语法块（S 稳定 ID 跨镜复用/<d>[语言] verbatim/VO 精确短语+lips closed/台词时间锚点必须精确/谁在镜内谁说话）
+**d1 验证批**（Ref2VA 2图 std20 192帧）：剧本=黄昏天台姐妹对话（Alya+Yuki，旁白+Alya 2句+Yuki 1句）；工具 A 生成 3 镜 + 导演自审抓到真实问题（旁白/台词时长超载、一镜双动作、锚点不全）手动修正；六段式质量高（旁白 S1+lips closed、Alya S2/Yuki S3 绑定 <Subject N>、verbatim 中文、锚点 2.5/5.0）
+**d1 结果**：281s 显存 22.0GB；切点 2.54/5.04 vs 声明 2.5/5.0（误差 0.04s）；音频 -10.6 LUFS/mean -14dB 正常；语音分段吻合台词轴（旁白 0-2.2s→停顿→Alya 2.7s→Yuki 5.2s+）；⚠️ 镜3 内 6.54/7.38 两个额外帧差峰待目检（帧在 /tmp/d1_frames/）
+**待用户**：试听 d1（说话者分配/口型/旁白闭嘴）+ 目检镜3 额外切点帧；通过后补 3 条：VO 跨镜（scenetrans）、5s 快车道对话段、Ref2VA 8s 音乐触发观察（顺带）
+**决策落盘**：否定句已回滚（用户拍板 2026-08-11：不留）；BGM 线冻结（用户单独测）；快车道 5s/8s 按场景两档都要

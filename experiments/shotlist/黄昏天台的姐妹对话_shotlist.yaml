@@ -1,0 +1,59 @@
+title: 黄昏的校园天台
+style: 日系校园青春
+ratio: "16:9"
+duration_total: 8
+role_cards: ['alya_v1', 'yuki_v1']
+chain: independent
+shots:
+  - id: 1
+    duration_s: 2.5
+    framing: 全景
+    camera:
+      type: static
+      amplitude: small
+      speed: slow
+    subject: scene
+    action: Alya 与 Yuki 并肩靠在栏杆上，Yuki 双手背在身后，两人安静望向远处被晚霞烧红的天际；风同时吹起银白长发和粉紫双马尾，画面内两人嘴唇闭合，旁白画外音响起。
+    dialogue:
+      - speaker: off_screen
+        text: "这个夏天，似乎格外安静。"
+    sound:
+      ambient: 黄昏校园环境声（远处广播、风声）
+      fx: 衣摆与发丝被风吹动的细碎声
+      vo: 旁白画外音（女声，语速舒缓），音量低于 bgm，与钢琴旋律错开节奏
+      bgm: 配乐：温暖钢琴与轻柔弦乐，略带怅惘与安心
+    continuity: 独立段生成，一致性靠 prompt 文本锚定。身份锚点：银白长发+左侧红丝带（Alya）、粉紫双马尾（Yuki）；同款深色学园制服。屏幕方向锚定：Alya 在左、Yuki 在右，两人面向画面左前方栏杆。
+  - id: 2
+    duration_s: 2.5
+    framing: 近景
+    camera:
+      type: static
+      amplitude: small
+      speed: slow
+    subject: alya_v1
+    action: Alya 侧头看向 Yuki，语气平淡却带着关心地开口；银发与红丝带在风中轻扬。
+    dialogue:
+      - speaker: alya_v1
+        text: "喂，Yuki，你真的决定要去那边了吗？"
+    sound:
+      ambient: 黄昏校园环境声（远处广播略微远移、风声持续）
+      fx: 风拂过发梢的细碎声
+      bgm: 配乐：钢琴渐强，弦乐铺垫温润情绪
+    continuity: 延续 shot1 站位与屏幕方向（Alya 左、Yuki 右）；Alya 转脸看 Yuki，Yuki 仍背手入画在右侧边缘；身份锚点完整：银白长发+左侧红丝带+白金边夹克（Alya）、粉紫双马尾+同款深色制服（Yuki）；银发飘向画面右方保持一致。
+  - id: 3
+    duration_s: 3.0
+    framing: 近景
+    camera:
+      type: static
+      amplitude: small
+      speed: slow
+    subject: yuki_v1
+    action: Yuki 歪头露出猫嘴坏笑，双手仍背在身后，声音轻快俏皮地说出回应；双马尾随动作微晃，眼睛亮晶晶看向 Alya。
+    dialogue:
+      - speaker: yuki_v1
+        text: "哼哼，姐姐是在担心我吗？放心啦，我都会带回来的。"
+    sound:
+      ambient: 黄昏校园环境声（广播声渐远、风声轻柔）
+      fx: 衣料摩擦声与发尾晃动声
+      bgm: 配乐：钢琴与弦乐转为轻快俏皮，落回温柔
+    continuity: 延续 Alya 在左、Yuki 在右；Yuki 歪头看向 Alya；身份锚点完整：粉紫双马尾+琥珀色眼睛（Yuki）、银白长发+左侧红丝带（Alya 侧脸入画左侧边缘）；双马尾动态与夕阳色温延续。

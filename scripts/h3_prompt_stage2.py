@@ -63,8 +63,19 @@ diegetic 声音（环境音/音效/演出音乐）保留在画面与 soundscape 
    时间严格递增且总长=拍摄本 duration_total
 2. 镜头运动语法 = type + amplitude + speed 自然句（如 "the camera pushes in with small amplitude at slow speed"）
 3. 一镜一动作；身份锚点每镜重复（换措辞但一致）；状态跨镜延续；保持屏幕方向
-4. 声音三层进 overall_soundscape：环境音+物理动作声+非语言人声；对话 verbatim 原文不翻译
-5. 音乐策略：默认 non_diegetic_music: N/A（后期配乐）；角色能听到的音乐（演出/收音机）写进画面（diegetic）
+4. 声音三层进 overall_soundscape：环境音+物理动作声+非语言人声；
+   对话/台词按“对话语法”合成（见下），verbatim 原文不翻译
+
+===== 对话语法（docs/17 三节，有 dialogue 字段时强制，否则忽略）=====
+- 发声者稳定 ID `(S1)`、`(S2)`…按出现顺序分配，跨镜复用；不发声角色无 ID；群声 `(S1,S2)`
+- 识别短语（角色卡外观/语气/动作）+ ID 在 `<d>` 外；`<d>` 内只有语言标签+原词：
+  `<d>[Chinese] 台词原文。</d>`（中文台词语言标签用 Chinese，英文用 English；verbatim 不译不改）
+- 画外音旁白：精确短语 "says in an off-screen voiceover" + 立即声明镜内角色嘴唇闭合
+  "while her lips remain completely closed"（拍摄本 speaker=off_screen 时用）
+- 台词时间锚点：台词所在镜头的时间戳必须精确（[Shot N] At MM:SS.mmm），
+  模型会按时间把话安到镜内说话者嘴上；无锚点会错位/重叠
+- 说话者与镜头主体绑定：谁在镜内谁说话（拍摄本已保证，合成时保持）
+5. 音乐策略：默认不生成 BGM——non_diegetic_music 写 N/A（后期配乐）；角色能听到的音乐（演出/收音机）写进画面（diegetic）
 6. 跨段策略（拍摄本 chain 字段）：
    first_static → 首句保留 instruction line（首帧静态图锚定）
    firstlast_bridge → 结尾注明尾帧锚定画面
@@ -113,6 +124,16 @@ non_diegetic_music 一律写 N/A，除非显式要求。diegetic 声音保留。
 4. detailed_description：风格开场 → [Shot N] 时间线（[Shot 1] 无时间戳，N>1 写 At MM:SS.mmm）
 5. 每镜一动作；身份锚点每镜重复；状态跨镜延续；保持屏幕方向
 6. 声音三层进 overall_soundscape（diegetic）；non_diegetic_music 默认 N/A（后期配乐）
+
+===== 对话语法（docs/17 三节，有 dialogue 字段时强制，否则忽略）=====
+- 发声者稳定 ID `(S1)`、`(S2)`…按出现顺序分配，跨镜复用；不发声角色无 ID；群声 `(S1,S2)`
+- 识别短语（角色卡外观/语气/动作）+ ID 在 `<d>` 外；`<d>` 内只有语言标签+原词：
+  `<d>[Chinese] 台词原文。</d>`（中文用 Chinese，英文用 English；verbatim 不译不改）
+- 说话主体写法：`<Subject N> (S1)`（subject 与说话者一致时）；画外音旁白用
+  "says in an off-screen voiceover" + 立即声明镜内角色嘴唇闭合 "while her lips remain completely closed"
+- 台词时间锚点：台词所在镜头时间戳必须精确，防止模型把话安到镜内其他人嘴上
+- 谁在镜内谁说话（拍摄本已保证）；台词只在 detailed_description 内写，
+  overall_soundscape 不重复对话内容
 7. 输出纯文本：无前言、无解释、无 markdown fence
 
 ===== 官方参考指南（ref-en.txt）=====

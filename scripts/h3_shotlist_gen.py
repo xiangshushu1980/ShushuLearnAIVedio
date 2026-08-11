@@ -57,6 +57,9 @@ shots:
       speed: slow|normal|fast
     subject: alya_v1         # 角色卡 id（role_cards 中引用）；无角色用 scene/object
     action: 本镜主导动作（中文，一镜一动作）
+    dialogue:                # 本镜台词（可省略）；说话者必须在镜内（否则标 off_screen）
+      - speaker: alya_v1     # 角色卡 id；画外音用 off_screen
+        text: "台词原文 verbatim，中英文均可，不得改写"
     sound:
       ambient: 环境音（如：海浪+海风）
       fx: 物理动作声（如：布料飘动声；无则省略）
@@ -84,7 +87,13 @@ shots:
    不要用松散的一句话打发一个镜头
 10. 音乐场景驱动判断：若场景本身含表演/演出/现场音乐（舞台/演唱会/收音机/街头艺人），
    bgm 可写"无（演出音乐即 diegetic）"，不必硬塞背景配乐
-11. 输出必须为合法 YAML 纯文本：无前言、无解释、无 markdown fence（``` 禁止）
+11. 对话规则（dialogue 字段）：
+   - 台词 verbatim：speaker 指定说话角色（role_cards 中 id）；画外音 speaker 写 off_screen
+   - 说话者必须在本镜画面内（说话对象不在镜内则口型会错位——模型把话安到镜内其他人的嘴上）；
+     画外音旁白不受此限，但需在 action 中注明"画面内角色闭嘴"
+   - 一句台词一个 dialogue 条目；同一角色连续多句可合并为一条（text 内用句号分隔）
+   - 有台词镜头：action 中交代说话者的动作/表情/语气（合成时作为 <d> 外的识别短语）
+12. 输出必须为合法 YAML 纯文本：无前言、无解释、无 markdown fence（``` 禁止）
 ===== 规则结束 =====
 
 {role_cards_block}
@@ -210,6 +219,11 @@ def validate(data: dict, duration_total: float) -> list:
         for k in ("framing", "camera", "action", "sound", "continuity"):
             if k not in s:
                 errs.append(f"shot {s.get('id','?')} 缺字段 {k}")
+        for d in s.get("dialogue", []) or []:
+            if "speaker" not in d or "text" not in d:
+                errs.append(f"shot {s.get('id','?')} dialogue 条目缺 speaker/text")
+            elif not d.get("text", "").strip():
+                errs.append(f"shot {s.get('id','?')} dialogue 文本为空")
         cam = s.get("camera", {})
         if cam.get("type") not in CAMERA_TYPES:
             errs.append(f"shot {s.get('id','?')} camera.type 非法: {cam.get('type')}（枚举见脚本）")

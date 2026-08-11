@@ -1,49 +1,48 @@
-title: 雨夜赛博朋克街道 - 全息鲸鱼下的驻足
+title: 雨夜鲸影
 style: 赛博朋克
 ratio: 16:9
-duration_total: 10
+duration_total: 10.0
 role_cards: []
 chain: independent
 shots:
   - id: 1
+    duration_s: 3.0
+    framing: 全景
+    camera:
+      type: push_in
+      amplitude: small
+      speed: slow
+    subject: 赛博朋克雨夜街道（场景）
+    action: 镜头沿街道纵深缓慢前推，霓虹灯牌在湿漉漉的路面上摇曳倒映，远处全息广告屏在雨幕中闪烁变换色彩
+    sound:
+      ambient: 密集雨声笼罩街道，霓虹灯牌低频电流嗡鸣，远处飞行器穿破雨幕的呼啸
+      bgm: 疏离冷峻的电子配乐，低沉贝斯脉冲与干净合成器琶音，稀疏电子鼓点
+    continuity: 独立段生成，一致性靠 prompt 文本锚定；锚定雨夜赛博朋克街道、湿漉路面霓虹倒影、全息广告
+  - id: 2
     duration_s: 3.5
     framing: 中全景
     camera:
       type: tracking
       amplitude: medium
       speed: slow
-    subject: object
-    action: 透明雨衣女子撑着伞，从画面左侧缓步走向右侧，身后全息广告牌不断闪烁
+    subject: 穿透明雨衣撑黑伞的女子
+    action: 从画面右侧向左侧缓步走过，雨滴击打伞面，透明雨衣随步伐摆动，身后全息广告屏明灭闪烁
     sound:
-      ambient: 细雨声+城市底噪（远处车流、电子设备蜂鸣）
-      fx: 透明雨衣布料摩擦声，脚步踩过积水声
-      bgm: 电子BGM，冷峻迷幻，低频脉冲
-    continuity: 首镜锚定策略：独立段生成，一致性靠prompt文本锚定；身份锚点=透明雨衣女子+伞；屏幕方向：从画左向右移动
-  - id: 2
-    duration_s: 3.0
-    framing: 近景
-    camera:
-      type: push_in
-      amplitude: small
-      speed: slow
-    subject: object
-    action: 女子行走中骤然停步，上身微微前倾后稳住，透明雨衣下摆轻摆，伞沿滴下水珠
-    sound:
-      ambient: 雨声（环境底噪降低，突出近处）
-      fx: 雨衣下摆甩动声，伞沿水珠滴落声
-      bgm: 电子BGM继续，节奏保持
-    continuity: 身份锚点延续=透明雨衣女子+伞；状态变化：从走变为静止；身体面向右侧，屏幕方向未跳轴
+      ambient: 持续雨声与城市底噪，远处广告屏低频嗡鸣，飞行器掠过的余音
+      fx: 雨滴密集打在伞面的啪嗒声，脚步踩过积水的溅水声
+      bgm: 电子配乐延续，加入一层缓慢起伏的合成器长音，节拍保持不变
+    continuity: 承接第一镜，同一雨夜街道与霓虹倒影；身份锚点：透明雨衣与黑伞；行走方向保持从画面右向左
   - id: 3
     duration_s: 3.5
-    framing: 中景
+    framing: 近景
     camera:
-      type: push_in
-      amplitude: small
+      type: tilt_up
+      amplitude: medium
       speed: slow
-    subject: object
-    action: 女子抬头凝视上方巨幅全息鲸鱼广告，雨滴沿伞沿连续滑落
+    subject: 穿透明雨衣撑伞的女子（驻足仰望全息鲸鱼）
+    action: 女子停步立于街中，仰头凝望悬浮在楼宇之间的全息鲸鱼广告，雨滴沿伞沿成串滑落，鲸鱼巨尾在雨幕中缓缓摆动
     sound:
-      ambient: 雨声+城市底噪（广告全息嗡鸣）
-      fx: 雨滴敲击伞面的密集滴答声
-      bgm: 电子BGM渐强，加入空灵合成器音色，推向情绪顶点
-    continuity: 身份锚点延续=透明雨衣女子+伞；视线方向朝上方（全息鲸鱼），与上一镜朝向不冲突；全息鲸鱼作为本镜新空间锚点
+      ambient: 雨声略收，全息鲸鱼广告的低频立体声嗡鸣在空间内铺开，城市底噪退远
+      fx: 雨滴从伞沿滑落坠地的细微滴答声
+      bgm: 电子配乐节奏放缓，合成器长音扬起后悬停，情绪集中于凝望
+    continuity: 承接第二镜，同一女子与伞；状态延续：走动转为停步，视线由平视转为仰望；屏幕方向：女子居画面左下，目光朝向画面右上空中的全息鲸鱼
