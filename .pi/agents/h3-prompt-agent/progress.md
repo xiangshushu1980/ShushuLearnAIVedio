@@ -227,3 +227,12 @@
 - 精选 8 条 source-verified 落盘 experiments/community_samples/（README 带入选理由）：IR 风格时间窗 I2V、日文角色固定 R2V、K-pop 8 图歌词 MV、三人女团 MV、jazz-noir 音频对齐标题、R2V 多图分槽、161s 长对话、1 视频转 MV
 - 全量 205 条分类：cinematic-story 59 / product-commercial 35 / anime 21 / music-video 21 / travel 11 / action 9 / horror 8 / fashion 8；模式 T2V 146 / R2V 44 / I2V 7
 - 判断：官方格式基准不动（references 仍权威）；社区库作风格词汇/结构变体参考（R2V 长 prompt、多图分槽、字幕 MV、时间窗）
+
+### 2026-08-10 BGM 调查收官（9 条试听判定全完成）
+**最终结论：H3 音乐触发 = i2v + 长 prompt + 8s（192帧）三因素缺一不可，可复现（P6 重跑 H2 有音乐）**
+完整矩阵：t2v×长短×5.2/8s 全无音乐；i2v×短×5.2/8s 无；i2v×长×5.2s 无；i2v×长×8s 有（H2/P6 可复现）
+排除：N/A 写法/否定句/静音指令/极端否定（8s 组合下全无效）；提示词无音乐词（track=镜头术语）；seed 无关（同 seed 可复现）
+生产影响：快车道（i2v+turbo8+8s+长prompt）= 触发组合必带音乐；5s 段（94s 更快）无音乐
+生产选项待用户定：① 快车道改 5s 段（最快最干净）② 8s 接受氛围音乐 ③ 后期分离（demucs 待定）
+待办：ref2va 8s 段是否触发（多角色验证时留意）；音乐出现时刻分析（可裁则 8s 也可用）未做
+产物：ComfyUI/output/video/h3_gap_test/P6_H2_replay_00001_.mp4（可复现样本）
