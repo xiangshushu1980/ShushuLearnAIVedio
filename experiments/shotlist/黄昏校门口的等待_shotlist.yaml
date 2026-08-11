@@ -1,0 +1,57 @@
+title: 黄昏校门口的等待
+style: 日系校园青春
+ratio: "16:9"
+duration_total: 8
+role_cards: ['alya_v1', 'yuki_v1']
+chain: independent
+shots:
+  - id: 1
+    duration_s: 3.0
+    framing: 中全景
+    camera:
+      type: push_in
+      amplitude: small
+      speed: slow
+    subject: scene
+    action: 黄昏校门口，暖橙色光线洒落，两姐妹并肩站立望向画面右侧马路方向。Yuki 在画面左侧（粉紫双马尾、深色水手服、双手背在身后），Alya 在画面右侧（银白长发、左侧红丝带、白色金边夹克），两人同时望向画面右方等待第三人出现。画面内两人嘴唇闭合，旁白画外音响起。
+    dialogue:
+      - speaker: off_screen
+        text: "那天放学后，她们在校门口等了很久。"
+    sound:
+      ambient: 黄昏校园环境声，远处车流与广播，风声
+      fx: 布料飘动声
+      vo: 旁白画外音（女声，语速舒缓），音量低于 bgm，与钢琴旋律错开节奏
+      bgm: 配乐：温暖治愈的校园青春钢琴与弦乐
+    continuity: 独立段生成，一致性靠 prompt 文本锚定。位置锚定：Yuki 画面左、Alya 画面右，两人并肩面向画面右侧；身份锚点：银白长发+红丝带+白金边夹克（Alya）、粉紫双马尾+深色水手服（Yuki）；黄昏暖光色温。
+  - id: 2
+    duration_s: 2.5
+    framing: 近景
+    camera:
+      type: push_in
+      amplitude: small
+      speed: normal
+    subject: alya_v1
+    action: 双人同框近景：Alya（画面右侧主体，银白长发红丝带）神情期待，身体微微前倾，对着画面右侧画外空间大声呼喊；Yuki（画面左侧，粉紫双马尾）侧头看向 Alya，保持等待姿态。
+    dialogue:
+      - speaker: alya_v1
+        text: "喂——，我们在这儿！"
+    sound:
+      ambient: 黄昏校园环境声，远处车流与广播，风声
+      fx: 喊话时的气息声
+      bgm: 配乐：温暖治愈的校园青春钢琴与弦乐（节奏稍起）
+    continuity: 独立段自身锚定。位置锚定：Yuki 左、Alya 右，望向画面右侧；身份锚点完整：银白长发+左侧红丝带+白金边夹克（Alya）、粉紫双马尾+深色水手服（Yuki）；黄昏暖光持续。
+  - id: 3
+    duration_s: 2.5
+    framing: 近景
+    camera:
+      type: static
+    subject: yuki_v1
+    action: 双人同框近景：Yuki（画面左侧主体，粉紫双马尾）歪头露出猫嘴坏笑看向 Alya，声音俏皮；Alya（画面右侧，银白长发红丝带）微笑看着她，两人仍望向右侧等待。
+    dialogue:
+      - speaker: yuki_v1
+        text: "姐姐，你喊那么大声，他肯定早就听到啦。"
+    sound:
+      ambient: 黄昏校园环境声，远处车流与广播，风声
+      fx: 轻笑声
+      bgm: 配乐：温暖治愈的校园青春钢琴与弦乐（轻快收尾）
+    continuity: 独立段自身锚定。位置锚定：Yuki 左、Alya 右，视线向右；身份锚点完整：粉紫双马尾+琥珀色眼睛+深色水手服（Yuki）、银白长发+左侧红丝带+白金边夹克（Alya）；黄昏暖光持续，裙摆与马尾随风轻动。
