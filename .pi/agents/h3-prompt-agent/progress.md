@@ -301,3 +301,13 @@
 - anima t2i 768×448（anima-base + yuki_suou_v1120706 LoRA，触发词 yuki suou；角色描述用 yuki_v1 角色卡：粉紫双马尾/琥珀眼/猫嘴坏笑）
 - 3 张全成功：beach（warm+82.9 暖亮）/ stage（warm-40.6 暗冷）/ night（warm-88.8 强冷蓝），像素场景特征明确
 - 待用户目检：Yuki 形象三场景一致性（LoRA 训练标签黑发紫瞳 vs 角色卡粉紫双马尾琥珀眼，以用户验收为准）
+
+### 2026-08-11 T5 视频端验证（防重绘规则对照批，队列占用后释放）
+**对照设计**（F3 复刻 + 防重绘句）：同首帧（169/beach/alya169_tokidoki）同 seed 20260810 同配置（i2v turbo8 8s 768×448），唯一变量=prompt 场景
+- A 一致组：beach 拍摄本（scene: beach）→ 首帧 **SSIM 0.865** 锚定正常，切点 3.08/5.04（声明 3.0/5.0）执行完美，音频 -18.4dB 正常
+- B 冲突组：stage 拍摄本（scene: stage）→ 首帧 **SSIM 0.020 被重绘**（防重绘句未阻止，模型服从 detailed_description），切点 3.04/5.54，音频 -20.0dB
+**结论**：
+1. instruction line 防重绘句=软约束无效（冲突仍重绘，与 F3 历史 ~0 一致）；保留作意图表达
+2. 硬防线=操作层：scene 字段 + 图库按场景归档匹配（一致 0.865 vs 冲突 0.020）——图库归档价值实证
+3. 工具链升级闭环：scene 必填校验 → 图库场景匹配 → 锚定正常；docs/21 行动项全部落地并标注实测结论
+**产物**：ComfyUI/output/t5_verify/consistent_00001_.mp4 + conflict_00001_.mp4（保留作对照样本）

@@ -2,6 +2,7 @@
 title: Alya 的舞台之夜
 style: 舞台演出（聚光灯）
 ratio: "16:9"
+scene: stage
 duration: 8
 sound: 现场观众氛围 + 抒情钢琴 BGM
 role_cards: [alya_v1]

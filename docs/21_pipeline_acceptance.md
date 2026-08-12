@@ -39,11 +39,12 @@
 3. 舞台长镜头流 + diegetic 音乐判断 = IR 级别（见下节结构对比）
 4. 舞台暗场场景 audio 正常（-21.4dB）——diegetic 音乐场景不静音
 
-## 行动项
+## 行动项（2026-08-11 已落地 + 实测结论）
 
-1. 工具 B stage2 i2va 模式：首句 instruction line 后注明"首帧画面=参考图内容（构图/角色/位置），光照按场景微调"——防场景冲突重绘
-2. 角色图库按场景标注：rolecards 或 图库索引（input/start/169/ 按场景子目录）
-3. 拍摄本 schema 第一镜加 scene 字段（首帧场景标注），工具链联动
+1. ✅ 工具 B stage2 i2va：instruction line 后已加防重绘句（"The opening frame shows exactly the content of <Picture 1> (the reference image, scene: X); keep it unchanged, do not redraw or alter the opening frame"）+ scene 动态注入；ref2va 模板加场景一致性规则
+   - **实测结论（2026-08-11 对照批）**：防重绘句是**软约束，无法阻止冲突重绘**——同首帧同 seed，beach prompt 一致组 SSIM=0.865，stage prompt 冲突组 SSIM=0.020（重绘，与 F3 历史 ~0 一致）；模型服从 detailed_description 内容主导。保留该句（意图表达无害），**硬防线=操作层**（见 2/3）
+2. ✅ 角色图库按场景归档：input/start/169/ 子目录 beach/stage/night/portrait/multi（alya 4 + yuki 4 + 同框 3）；Yuki beach/stage/night 场景版 2026-08-11 生成（anima，scripts/anima_scene_batch.py）；rolecards 引用已同步
+3. ✅ 拍摄本 schema 加 scene 字段（顶层必填，参数头可传）；工具 A 校验 + 工具 B 注入 instruction line——**操作层纪律生效的载体：scene 匹配 = 首帧锚定 0.865，冲突 = 0.020**
 
 ## 工具链 vs IR 公平对比（G1，2026-08-10 补跑）
 
