@@ -2,7 +2,7 @@
 
 ## 任务
 - 目标：验证 4 步加速 LoRA（larryvrh 训练 / lightx2v 蒸馏）在 fl2va pruned int8/fp8 + 4090 上的速度/音频/画质，决定是否进快速档
-- 当前状态：🟡 进行中（2026-08-07 启动）
+- 当前状态：✅ 完成（2026-08-12 收口）
 - 我负责的文件区：scripts/h3_turbo_runner.py（独立 runner）、/tmp/h3_turbo_cases.json、video/h3_turbo_pilot/ 产物、本 progress
 
 ## 背景（用户决策 2026-08-07：试点 4 步 LoRA）
@@ -156,3 +156,13 @@
 - 成片档维持 32B TE（int8 @1024×576 = 125s）；ClipProj 仅存续为「纯画面极速预览」非正式选项（按音频 gate 纪律不采用）
 - 环境变更保留：ComfyUI 0.31.0（含 H3 VAE 优化）+ ClipProj 节点/矩阵（保留备用）
 - 产物：output/h3_tecmp/ 10 条对比（wave/anime/hand/turn/dessert × 32B/cp4b）
+
+### 2026-08-12（收口）
+- **收口原因**：「下一步」的新武器计划（lightx2v v0.1 + v4-600 EMA 对比）已被 h3-today-testing 线 T1 完整覆盖——v0.1/v1.0/v4 全代已测并定案（2026-08-11 用户目视）：成片档维持 v4-600EMA 8步@1024（F，125s）、lightx2v v1.0 8step 留作风备选（须 res_multistep+shift12/3@1024）、4步档（H/D/E）全淘汰；本线不再单独试点，与 h3-today-testing 合并收口
+- **本线最终结论（供后续查阅）**：① 4 步 turbo LoRA 全代判败（ckpt500/850 胡、v0.1/v1.0 4步 768p 胡）；② 8 步 v4-600EMA@1024 = 成片档（基线）；③ ClipProj TE 瘦身（P1.4）判败（音频 gate 不过+效果简化），32B TE 维持；④ 快速三档（极速 fp8-4步 768 45s / 快速 fp8-8步 768 67s / 成片 int8-8步 1024 125s）已入 params.md + mem0（25c7c379）
+- **产物状态**：pilot_archive/ 与 h3_turbo_pilot/ 早期产物已于 2026-08-10 被用户清理（e9ae032 记录），无遗留；对照数据完整保留在本文档 + docs + mem0
+- **runner WIP 提交**：h3_turbo_runner.py 未提交两分支本次随收尾入库——clipproj 分支（P1.4 判败，弃用留史）+ native loader 分支（lightx2v 官方蒸馏版 LoraLoaderModelOnly+er_sde 加载法，已由 h3-today-testing 验证）
+- 备注：「下一步」段的历史计划（新武器/960vs1024）均已被覆盖或随清理失效，保留作历史记录
+
+## 下一步
+- 无（本线收口，结论与 h3-today-testing 合并）
