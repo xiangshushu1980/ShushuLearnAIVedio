@@ -346,3 +346,15 @@
 **机制确认（canon 基准图方案成立）**：角色卡文本与参考图完全对齐（白色水手服）+ 跨段复用同参考图 + 同音色种子 = 跨段稳定一致
 **成片管线基础就绪**：Ref2VA（用户拍板默认）+ canon 角色图 + audio_refs + 切点精确执行 + 无 BGM（ref2va 8s 不触发）
 **下一步候选**：① 成片试跑（多段拼接）② T-03 设定图体系（变体图集/工具 C 图需求推导）③ 机制沉淀 docs
+
+## 下一步（2026-08-12 会话收尾，新会话从这里继续）
+
+**里程碑**：多角色多场景一致性闭环 ✅（v3 验收"非常一致"）——canon 基准图 + 角色卡对齐 + 跨段同图 + 同音色种子 = 跨段一致；Ref2VA 定为默认生产模式（用户拍板）
+
+**候选方向（用户排序后开工）**：
+1. **成片试跑**：一致性配置（agreement 系列：双人对话/音色种子/切点/无BGM）跑一条完整成片（2-3 段 + 简单拼接），暴露集成问题——建议优先
+2. **T-03 设定图体系**：变体图集（换装/破损/状态，禁文本微调原则）+ 工具 C 图需求推导器（拍摄本 → 图需求清单 → anima 自动生图）
+3. **机制沉淀**：canon 机制 + 变体原则写入 docs/21 或新文档
+
+**遗留 TODO**：T-20260812-01（Ref2VA 站位冲突主导实测）、T-20260812-02（BGM 正向控制实测）、T3（标志性声音）
+**热文件**：scripts/h3_shotlist_gen.py（audio_refs 透传）、scripts/h3_prompt_stage2.py、scripts/anima_scene_batch.py（i2i 模式）、scripts/h3_gap_runner.py、experiments/shotlist/scripts/agreement_*.yaml、ComfyUI/input/start/169/portrait/（canon 图）
