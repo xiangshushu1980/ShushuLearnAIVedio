@@ -50,7 +50,7 @@ cd /home/sean/projects/ComfyUI
 - `workflows/video_bernini_r_v2v_test.json` — Bernini v2v 编辑（int8 已切默认）
 
 ### 资源规范（2025-08-01 起沿用）
-- `output/` 按模型/用途分子目录：anima / krea / compare / video / review / img_* / res_test
+- `output/` 按模型/用途分子目录：anima / krea / compare / video / img_* / res_test（旧验收批 `review/` 已归档至 `output_archive/review/`，2026-08-12）
 - `input/start/` 公用 I2V 起始图（语义命名，用原图分辨率直接跑）；`input/start/169/` H3 首帧 16:9 图库（35 张，规则见 21）；`input/ref_lib/` H3 参考图库（realistic/illustration 121 张）；`input/test/` 测试素材；`input/material(_b)/` v2v 素材（见 07）
 - SaveImage/SaveVideo 的 filename_prefix 直接带子目录，生成即落位
 
@@ -62,7 +62,7 @@ cd /home/sean/projects/ComfyUI
 ├── models/                           # 模型（unet/diffusion_models/text_encoders/vae/loras...）
 ├── custom_nodes/                     # 自定义节点（Manager、browser、GGUF、WanVideoWrapper 等 8 个）
 ├── input/                            # 输入（start/ + start/169/、ref_lib/、test/、material(_b)/）
-├── output/                           # 生成结果（anima/ krea/ compare/ video/ review/ img_*/ res_test/）
+├── output/                           # 生成结果（anima/ krea/ compare/ video/ img_*/ res_test/；旧 review/ 已归档 output_archive/）
 └── user/                             # 用户数据（workflows/ comfyui.db assets 索引）
 
 /home/sean/projects/comfy-ops/        # 本项目（工作流/文档/脚本）
