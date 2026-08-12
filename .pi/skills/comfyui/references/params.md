@@ -128,6 +128,8 @@
 - **结论**：① #15486 生效——15s 长档从内存压力禁用变生产可用（内存峰值 45-51GB @15s 1024，56GB WSL 上限内 + swap 兜底）；② #15446 无明显提速；③ 15s 若开放走成片档配置（int8+v4 8步@1024）= 275s，8s 的 ~2x 线性合理；④ ≤10s 限制为用户决策 2026-08-05，放宽与否由用户拍板
 
 ### 提示词控制技巧（2026-08 A 测试 + 官方指南，详见 docs/10 案例库）
+- **渲染风格词主导（2026-08-12 实测，T-20260812-07）**：i2v 快车道下 prompt 风格词决定渲染风格，首帧只锚定身份/构图——`Live-action, cinematic` → 真人写实（同首帧 aliya_1024）；`Anime style, cinematic` → **真实光照/真人质感 + 卡通渲染动漫角色**（V7 混合风，用户点赞需记录；配置=int8_convrot+v4-600EMA 8步@1024×576）
+  - 生产规则：要写实 → Live-action；要动漫 → Anime style（产出带真实光照的卡通渲染）；纯 2D 动漫 → 动漫首帧 + 不写人物描述（337 字版已验证风格完全跟随首帧）
 - **镜头语言是最强控制**：类型+幅度+速度（如 `pans right with large amplitude at fast speed`）→ 动作量 3-3.5x（实测 J2/J3）；官方四要素表：Zoom/Push/Pan/Truck/Tilt/Arc/Tracking/Static/Shake/POV/Roll × small/large amplitude × slow/fast speed
 - **动作形容词梯度生效**：`gently` → `strongly and energetically` 1.7x（J4/J5）；动作序列用逗号/连词串（走→停→挥手→转身）
 - **约束指令**：`strictly preserving her face and clothing` 有效（主体锚定）；**勿与运动指令同句**（矛盾时模型优先运动，J7 场景保持无效案例）
