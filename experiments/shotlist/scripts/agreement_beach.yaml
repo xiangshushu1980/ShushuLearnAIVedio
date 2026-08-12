@@ -1,0 +1,16 @@
+---
+title: 约定·海边
+style: 日系清新
+ratio: "16:9"
+scene: beach
+duration: 8
+sound: 海边环境音（海浪、海风、远处海鸥）
+role_cards: [alya_v1, yuki_v1]
+chain: independent
+audio_refs:
+  alya_v1: voice_seeds/voice_seed_alya.wav
+  yuki_v1: voice_seeds/voice_seed_yuki.wav
+---
+黄昏的海边，海浪轻轻拍打沙滩。Alya 在画面左侧望向海平线，Yuki 在画面右侧张开双臂迎着海风。
+
+Alya 轻声感叹海面的景色，Yuki 笑着大声回应要一起看遍每一片海，两人相视而笑，夕阳把影子拉得很长。

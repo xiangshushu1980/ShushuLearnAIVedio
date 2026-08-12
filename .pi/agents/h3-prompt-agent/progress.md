@@ -311,3 +311,13 @@
 2. 硬防线=操作层：scene 字段 + 图库按场景归档匹配（一致 0.865 vs 冲突 0.020）——图库归档价值实证
 3. 工具链升级闭环：scene 必填校验 → 图库场景匹配 → 锚定正常；docs/21 行动项全部落地并标注实测结论
 **产物**：ComfyUI/output/t5_verify/consistent_00001_.mp4 + conflict_00001_.mp4（保留作对照样本）
+
+### 2026-08-12 多角色多场景一致性测试（2 段 Ref2VA，队列占用后释放）
+**设计**：跨段一致性首测——段1 天台（campus）/ 段2 海边（beach），同对角色（Alya+Yuki）双人对话各 2 句，同音色种子（alya/yuki），唯一变化=场景+Yuki 换海边版参考图（yuki169_beach）
+**工具链**：工具 A 新增 audio_refs 透传（剧本参数头 → 拍摄本顶层 + 校验）；剧本 experiments/shotlist/scripts/agreement_rooftop.yaml + agreement_beach.yaml（含 scene/audio_refs 参数头）；拍摄本 → stage2 ref2va 六段式（<Audio N> 绑定 Subject）
+**结果**（seed 20260811，ref2va std20 8s 768×448，显存 22.0GB）：
+- 段1 260s：切点 3.04/5.58（声明 3.0/5.5，偏差 0.04/0.08s）、音频 -16.5dB、语音活跃 3.8-5.3（Yuki 问）/7.0-7.4（Alya 答）
+- 段2 320s：切点 3.46/5.96（声明 3.5/6.0）、音频 -15.2dB、语音活跃 3.7-4.3（Alya 叹）/5.3-7.6（Yuki 约）
+- 产物 output/video/h3_dialogue/agreement_seg1_rooftop_00001_.mp4 + agreement_seg2_beach_00001_.mp4
+**踩坑**：工具 B 抽卡把首镜 scene 写成 <Subject 1>（图序错位风险）——d1 是角色优先；改拍摄本首镜 subject 为 alya_v1 重跑解决（非确定性，需留意）
+**待用户**：目检/试听——① 跨段形象（Yuki 换海边图后两段是否同一人）② 跨段音色（同种子 Alya/Yuki 两段是否一致）③ Ref2VA 8s 是否触发 BGM（遗留观察点）④ 双人站位/口型/台词分配

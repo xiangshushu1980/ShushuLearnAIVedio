@@ -1,0 +1,16 @@
+---
+title: 约定·天台
+style: 日系校园青春
+ratio: "16:9"
+scene: campus
+duration: 8
+sound: 黄昏校园环境声（远处广播、风声）
+role_cards: [alya_v1, yuki_v1]
+chain: independent
+audio_refs:
+  alya_v1: voice_seeds/voice_seed_alya.wav
+  yuki_v1: voice_seeds/voice_seed_yuki.wav
+---
+黄昏的校园天台，晚霞把天空染成橘红色。Yuki 在画面左侧，双手背在身后歪头看向 Alya；Alya 在画面右侧靠在栏杆上。
+
+Yuki 俏皮地开口问 Alya 明天的约定，Alya 微微低头露出温柔的笑容轻声回应，风吹起两人的发丝。

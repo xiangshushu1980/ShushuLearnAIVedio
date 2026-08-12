@@ -48,6 +48,8 @@ scene: 首帧场景 id（如 beach/stage/night/classroom，对应首帧图库 in
 duration_total: 总时长秒
 role_cards: [角色卡 id 列表]
 chain: first_static | firstlast_bridge | independent（来自参数头）
+audio_refs:             # 可选：角色 id → 音色种子 wav（相对 ComfyUI/input/，如 voice_seeds/xxx.wav）
+  alya_v1: voice_seeds/voice_seed_alya.wav
 shots:
   - id: 1                    # 从 1 递增
     duration_s: 3.5          # 秒，可小数
@@ -177,7 +179,8 @@ def gen_shotlist(key: str, model: str, script: dict, effort: str = "high", max_t
         f"scene: {script.get('scene','')}\n"
         f"duration_total: {script.get('duration','8')}s\nsound: {script.get('sound','')}\n"
         f"role_cards: {script.get('role_cards',[])}"
-        f"\nchain: {script.get('chain','independent')}\nshot_style: {shot_style}",
+        f"\nchain: {script.get('chain','independent')}\nshot_style: {shot_style}\naudio_refs: {script.get('audio_refs', {})}"
+        "  # 音色种子（角色 id → wav 路径，可选）",
         "请输出拍摄本 YAML（严格按 Schema）。",
     ]
     body = {
@@ -207,6 +210,9 @@ def validate(data: dict, duration_total: float) -> list:
     errs = []
     if not data.get("scene"):
         errs.append("缺顶层 scene 字段（首帧场景 id，如 beach/stage/night）")
+    ar = data.get("audio_refs", {})
+    if ar and not isinstance(ar, dict):
+        errs.append("audio_refs 必须是 角色id → wav路径 的映射")
     shots = data.get("shots")
     if not isinstance(shots, list) or not shots:
         return ["shots 缺失或为空"]
