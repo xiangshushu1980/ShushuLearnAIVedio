@@ -1,7 +1,7 @@
 /** 项目路由（docs/22 六节 API 设计） */
 import type { FastifyInstance } from 'fastify'
 import { z } from 'zod'
-import { createProject, listProjects, listRoleCards, listTrash, purgeProject, readProject, restoreProject, saveProject, trashProject } from '../store.ts'
+import { createProject, exportProject, importProject, listProjects, listRoleCards, listTrash, purgeProject, readProject, renameProject, restoreProject, saveProject, trashProject } from '../store.ts'
 import { gateEntities } from '../gate.ts'
 import { genShotlist } from '../tools/shotlistGen.ts'
 import { genPrompt } from '../tools/promptStage2.ts'
@@ -72,6 +72,52 @@ export async function projectRoutes(app: FastifyInstance): Promise<void> {
       return saveProject(id, parsed.data)
     } catch (e) {
       return reply.code(404).send({ error: (e as Error).message })
+    }
+  })
+
+  // 重命名（仅改显示名）
+  app.post('/projects/:id/rename', async (req, reply) => {
+    const { id } = idParam.parse(req.params)
+    const parsed = z.object({ name: z.string().min(1).max(80) }).safeParse(req.body)
+    if (!parsed.success) return reply.code(400).send({ error: parsed.error.issues.map((i) => i.message).join('；') })
+    try {
+      const meta = renameProject(id, parsed.data.name)
+      return meta
+    } catch (e) {
+      return reply.code(404).send({ error: (e as Error).message })
+    }
+  })
+
+  // 导出 JSON 包
+  app.get('/projects/:id/export', async (req, reply) => {
+    const { id } = idParam.parse(req.params)
+    try {
+      return exportProject(id)
+    } catch (e) {
+      return reply.code(404).send({ error: (e as Error).message })
+    }
+  })
+
+  // 导入 JSON 包（新建项目）
+  app.post('/projects/import', async (req, reply) => {
+    const pack = z
+      .object({
+        format: z.literal('shotlist-project'),
+        version: z.number().optional(),
+        exportedAt: z.string().optional(),
+        name: z.string().min(1).max(80),
+        script: z.string().nullable().optional(),
+        shotlist: z.string().nullable().optional(),
+        prompt: z.string().nullable().optional(),
+        promptMode: z.enum(['i2va', 'ref2va']).nullable().optional(),
+        entities: z.array(z.string()).optional(),
+      })
+      .safeParse(req.body)
+    if (!pack.success) return reply.code(400).send({ error: pack.error.issues.map((i) => i.message).join('；') })
+    try {
+      return importProject(pack.data as import('@shotlist/shared').ProjectExport)
+    } catch (e) {
+      return reply.code(400).send({ error: (e as Error).message })
     }
   })
 

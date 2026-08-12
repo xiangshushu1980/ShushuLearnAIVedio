@@ -31,6 +31,9 @@ export const api = {
   trashProject: (id: string) => req<TrashItem>(`/api/projects/${id}/trash`, { method: 'POST' }),
   restoreProject: (id: string) => req<ProjectMeta>(`/api/projects/${id}/restore`, { method: 'POST' }),
   purgeProject: (id: string) => req<{ ok: true }>(`/api/projects/${id}`, { method: 'DELETE' }),
+  renameProject: (id: string, name: string) => req<ProjectMeta>(`/api/projects/${id}/rename`, { method: 'POST', body: JSON.stringify({ name }) }),
+  exportProject: (id: string) => req<import('@shotlist/shared').ProjectExport>(`/api/projects/${id}/export`),
+  importProject: (pack: import('@shotlist/shared').ProjectExport) => req<Project>('/api/projects/import', { method: 'POST', body: JSON.stringify(pack) }),
   listRoleCards: () => req<string[]>('/api/role-cards'),
   // 实体
   listEntities: () => req<Array<Pick<Entity, 'id' | 'name' | 'type' | 'importance'>>>(`/api/entities`),

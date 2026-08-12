@@ -159,6 +159,19 @@ export interface TrashItem {
   trashedAt: string
 }
 
+/** 项目导出包（导入导出用；实体资产是全局注册表不打包） */
+export interface ProjectExport {
+  format: 'shotlist-project'
+  version: number
+  exportedAt?: string
+  name: string
+  script: string | null
+  shotlist: string | null
+  prompt: string | null
+  promptMode: PromptMode | null
+  entities: string[]
+}
+
 export interface Project {
   meta: ProjectMeta
   script?: Script

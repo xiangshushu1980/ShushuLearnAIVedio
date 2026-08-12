@@ -107,7 +107,7 @@ export async function entityRoutes(app: FastifyInstance): Promise<void> {
     if (!parsed.success) return reply.code(400).send({ error: parsed.error.issues.map((i) => i.message).join('；') })
     if (!readEntity(id)) return reply.code(404).send({ error: `实体不存在: ${id}` })
     if (!(await comfyAlive())) return reply.code(503).send({ error: 'ComfyUI 不在线（http://127.0.0.1:8188）' })
-    const { task, conflict } = submitTask('art', { entityId: id, prompt: parsed.data.prompt, seed: parsed.data.seed })
+    const { task, conflict } = submitTask('art', { entityId: id, prompt: parsed.data.prompt, seed: parsed.data.seed, type: readEntity(id)?.type ?? '角色' })
     if (conflict) return reply.code(409).send({ error: '已有任务运行中，请等待完成' })
     return { taskId: task!.id }
   })

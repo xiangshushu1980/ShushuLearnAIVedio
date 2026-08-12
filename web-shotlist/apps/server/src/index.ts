@@ -19,8 +19,8 @@ registerRunner('extract', async (task) => {
 })
 
 registerRunner('art', async (task) => {
-  const { entityId, prompt, seed } = task.input as { entityId: string; prompt?: string; seed?: number }
-  const { promptId } = await generateArt(entityId, prompt, seed)
+  const { entityId, prompt, seed, type } = task.input as { entityId: string; prompt?: string; seed?: number; type?: import('@shotlist/shared').EntityType }
+  const { promptId } = await generateArt(entityId, prompt, seed, type)
   if (!promptId) throw new Error('未拿到 prompt_id')
   const images = await waitArtDone(entityId, promptId)
   return { images }

@@ -14,6 +14,7 @@ import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import { ConfirmDialog } from '@/components/ui/dialog'
 import { NewProjectDialog } from '@/components/NewProjectDialog'
+import { ImportDialog, RenameDialog } from '@/components/ProjectDialogs'
 import { ScriptPanel } from '@/components/script/ScriptPanel'
 import { EntityPanel } from '@/components/sidebar/EntityPanel'
 import { EntityDialogHost } from '@/components/entity/EntityDialogs'
@@ -35,6 +36,8 @@ export default function App() {
   const [trashOpen, setTrashOpen] = useState(false)
   const [opsOpen, setOpsOpen] = useState(false)
   const [confirmTrash, setConfirmTrash] = useState(false)
+  const [renameOpen, setRenameOpen] = useState(false)
+  const [importOpen, setImportOpen] = useState(false)
   const lastSavedRef = useRef('')
 
   // 项目列表
@@ -116,6 +119,21 @@ export default function App() {
     onError: (e) => setError((e as Error).message),
   })
 
+  // 导出项目 JSON 包（下载）
+  const exportMut = useMutation({
+    mutationFn: async () => {
+      const pack = await api.exportProject(projectId!)
+      const blob = new Blob([JSON.stringify(pack, null, 2)], { type: 'application/json' })
+      const url = URL.createObjectURL(blob)
+      const a = document.createElement('a')
+      a.href = url
+      a.download = `${pack.name || projectId}.shotlist.json`
+      a.click()
+      URL.revokeObjectURL(url)
+    },
+    onError: (e) => setError((e as Error).message),
+  })
+
   const genShotlistMut = useMutation({
     mutationFn: async (shotStyle?: string) => {
       const ok = await flushSave()
@@ -185,8 +203,27 @@ export default function App() {
             </option>
           ))}
         </select>
+        {/* 任务全局可见：当前项目 + 三步骤完成度指示 */}
+        {project && (
+          <span className="ml-2 flex items-center gap-1.5 rounded border border-slate-800 bg-slate-950/60 px-2 py-1 text-[11px]">
+            <span className="max-w-40 truncate font-semibold text-slate-200">{project.meta.name}</span>
+            <span className="text-slate-600">|</span>
+            {[
+              { label: '剧本', ok: !!project.script?.raw },
+              { label: '拍摄本', ok: !!project.shotlist },
+              { label: '提示词', ok: !!project.prompt },
+            ].map((s) => (
+              <span key={s.label} title={s.ok ? `${s.label} 已有` : `${s.label} 未生成`} className={s.ok ? 'text-emerald-400' : 'text-slate-600'}>
+                {s.ok ? '✓' : '○'} {s.label}
+              </span>
+            ))}
+          </span>
+        )}
         <Button size="sm" variant="secondary" onClick={() => setNewOpen(true)} title="新建项目" className="px-2.5">
           +
+        </Button>
+        <Button size="sm" variant="secondary" onClick={() => setImportOpen(true)} title="导入项目包" className="px-2.5">
+          ⇪ 导入
         </Button>
 
         {error && (
@@ -207,7 +244,26 @@ export default function App() {
                 项目操作 ▾
               </button>
               {opsOpen && (
-                <div className="absolute right-0 top-full z-20 mt-1 w-32 rounded border border-slate-700 bg-slate-900 py-1 shadow-xl">
+                <div className="absolute right-0 top-full z-20 mt-1 w-40 rounded border border-slate-700 bg-slate-900 py-1 shadow-xl">
+                  <button
+                    onMouseDown={() => {
+                      setOpsOpen(false)
+                      setRenameOpen(true)
+                    }}
+                    className="w-full px-3 py-1.5 text-left text-[11px] text-slate-300 hover:bg-slate-800"
+                  >
+                    重命名项目
+                  </button>
+                  <button
+                    onMouseDown={() => {
+                      setOpsOpen(false)
+                      exportMut.mutate()
+                    }}
+                    className="w-full px-3 py-1.5 text-left text-[11px] text-slate-300 hover:bg-slate-800"
+                  >
+                    导出项目（JSON 包）
+                  </button>
+                  <div className="my-1 border-t border-slate-800" />
                   <button
                     onMouseDown={() => setConfirmTrash(true)}
                     className="w-full px-3 py-1.5 text-left text-[11px] text-red-400 hover:bg-slate-800"
@@ -261,6 +317,19 @@ export default function App() {
 
       {/* 弹层 */}
       <NewProjectDialog open={newOpen} onClose={() => setNewOpen(false)} onCreated={(id) => setProjectId(id)} />
+      <ImportDialog open={importOpen} onClose={() => setImportOpen(false)} onImported={(id) => setProjectId(id)} />
+      {projectId && (
+        <RenameDialog
+          open={renameOpen}
+          onClose={() => setRenameOpen(false)}
+          projectId={projectId}
+          currentName={project?.meta.name ?? ''}
+          onRenamed={() => {
+            qc.invalidateQueries({ queryKey: ['projects'] })
+            qc.invalidateQueries({ queryKey: ['project', projectId] })
+          }}
+        />
+      )}
       <ConfirmDialog
         open={confirmTrash}
         onClose={() => setConfirmTrash(false)}

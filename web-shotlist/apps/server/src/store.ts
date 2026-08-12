@@ -6,7 +6,7 @@
  */
 import fs from 'node:fs'
 import path from 'node:path'
-import { parseScript, parseShotlistYaml, type InputRef, type Project, type ProjectMeta, type PromptMode, type TrashItem } from '@shotlist/shared'
+import { parseScript, parseShotlistYaml, type InputRef, type Project, type ProjectExport, type ProjectMeta, type PromptMode, type TrashItem } from '@shotlist/shared'
 import { DATA_ROOT, ROLE_CARD_DIR } from './config.ts'
 
 export function projectsRoot(): string {
@@ -95,6 +95,52 @@ export function readProject(id: string): Project {
   }
   project.inputs = parseInputs(project)
   return project
+}
+
+/** 重命名项目（仅改 meta.name 显示名；id/目录名不变，引用安全） */
+export function renameProject(id: string, name: string): ProjectMeta {
+  const dir = projectDir(id)
+  const meta = readJson<ProjectMeta>(path.join(dir, 'meta.json'))
+  if (!meta) throw new Error(`项目不存在: ${id}`)
+  const trimmed = name.trim().slice(0, 80)
+  if (!trimmed) throw new Error('名称不能为空')
+  meta.name = trimmed
+  writeJson(path.join(dir, 'meta.json'), meta)
+  return meta
+}
+
+/** 导出项目为 JSON 包（可导入还原；不含实体资产——实体是全局注册表） */
+export function exportProject(id: string): ProjectExport {
+  const p = readProject(id)
+  return {
+    format: 'shotlist-project',
+    version: 1,
+    exportedAt: new Date().toISOString(),
+    name: p.meta.name,
+    script: p.script?.raw ?? null,
+    shotlist: p.shotlistRaw ?? null,
+    prompt: p.prompt ?? null,
+    promptMode: p.promptMode ?? null,
+    entities: p.meta.entities ?? [],
+  }
+}
+
+/** 从 JSON 包创建项目（导入还原） */
+export function importProject(pack: ProjectExport): Project {
+  if (pack.format !== 'shotlist-project') throw new Error('不支持的包格式')
+  const project = createProject(pack.name || '导入项目', {
+    script: pack.script ?? undefined,
+    shotlist: pack.shotlist ?? undefined,
+    prompt: pack.prompt ?? undefined,
+    promptMode: pack.promptMode ?? undefined,
+  })
+  if (pack.entities?.length) {
+    const dir = projectDir(project.meta.id)
+    const meta = readJson<ProjectMeta>(path.join(dir, 'meta.json')) ?? project.meta
+    meta.entities = pack.entities
+    writeJson(path.join(dir, 'meta.json'), meta)
+  }
+  return readProject(project.meta.id)
 }
 
 export function saveProject(id: string, patch: { script?: string; shotlist?: string; prompt?: string; promptMode?: PromptMode }): Project {

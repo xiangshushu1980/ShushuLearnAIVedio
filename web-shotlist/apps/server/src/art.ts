@@ -1,9 +1,10 @@
-/**
- * 实体设定图生成（ANIMA t2i，移植 scripts/anima_scene_batch.py 逻辑）
+/** 实体设定图生成（ANIMA t2i，移植 scripts/anima_scene_batch.py 逻辑）
  * 模板 = workflows/anima_alya_169_t2i.json；prompt 用实体外观描述；图落 ComfyUI/output/shotlist-art/
+ * 缺省 prompt 按实体类型区分（角色=站姿人像 / 场景·地点=环境 / 物件=产品展示 / 其余=居中主体）
  */
 import fs from 'node:fs'
 import path from 'node:path'
+import type { EntityType } from '@shotlist/shared'
 import { importAsset, listAssets } from './assets.ts'
 import { REPO_ROOT } from './config.ts'
 
@@ -12,6 +13,19 @@ const COMFY_HOME = path.resolve(REPO_ROOT, '..', 'ComfyUI')
 const OUTPUT_DIR = path.join(COMFY_HOME, 'output', 'shotlist-art')
 const TPL = path.join(REPO_ROOT, '..', 'workflows', 'anima_alya_169_t2i.json')
 const ART_PREFIX = 'shotlist-art'
+
+/** 基础质量词（ANIMA 通用） */
+const BASE = 'masterpiece, best quality, score_9, score_8, score_7, official art, clean lineart, soft shading, detailed, warm dusk light, gentle golden hour ambience, soft blurred background'
+
+/** 按实体类型的缺省构图（prompt 未提供时用） */
+const TYPE_PROMPTS: Record<EntityType, string> = {
+  角色: `${BASE}, 1girl, solo, full body, a character standing at the center of the frame, eye-level frontal view, looking directly at the camera, straight-on composition, no high angle`,
+  场景: `${BASE}, a scenic environment, wide establishing shot, no characters, expansive composition, atmospheric perspective, cinematic lighting`,
+  地点: `${BASE}, a distinct location, wide shot, no characters, clear spatial layout, landmark features visible, cinematic lighting`,
+  物件: `${BASE}, a single object at the center of the frame, product showcase style, front three-quarter view, clean neutral background, high detail`,
+  技能: `${BASE}, an abstract visual representation, centered composition, elegant stylized depiction, no characters`,
+  组织: `${BASE}, an emblem-like centered composition, symbolic depiction, no characters`,
+}
 
 export interface ArtResult {
   ok: boolean
@@ -29,13 +43,10 @@ export async function comfyAlive(): Promise<boolean> {
   }
 }
 
-/** 生成实体设定图（prompt 缺省 = 实体外观 + 通用站姿） */
-export async function generateArt(entityId: string, prompt?: string, seed?: number): Promise<ArtResult> {  if (!fs.existsSync(TPL)) throw new Error(`缺少 ANIMA 模板: ${TPL}`)
+/** 生成实体设定图（prompt 缺省按实体类型自动选构图） */
+export async function generateArt(entityId: string, prompt?: string, seed?: number, type: EntityType = '角色'): Promise<ArtResult> {  if (!fs.existsSync(TPL)) throw new Error(`缺少 ANIMA 模板: ${TPL}`)
   const wf = JSON.parse(fs.readFileSync(TPL, 'utf-8')) as Record<string, { inputs: Record<string, unknown> }>
-  const text =
-    prompt?.trim() ||
-    'masterpiece, best quality, score_9, score_8, score_7, official art, 1girl, solo, clean lineart, detailed eyes, soft shading,\n' +
-      'a character standing at the center of the frame, eye-level frontal view, looking directly at the camera, straight-on composition, no high angle, warm dusk light, soft blurred background, gentle golden hour ambience'
+  const text = prompt?.trim() || TYPE_PROMPTS[type] || TYPE_PROMPTS.角色
   wf['5']!.inputs.text = text
   const s = seed ?? Math.floor(Math.random() * 1_000_000)
   wf['8']!.inputs.seed = s
