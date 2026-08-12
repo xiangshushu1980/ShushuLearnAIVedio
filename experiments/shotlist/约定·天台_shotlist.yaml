@@ -1,0 +1,61 @@
+title: "黄昏校园天台：明日的约定"
+style: 日系校园青春
+ratio: 16:9
+scene: campus
+duration_total: 8
+chain: independent
+role_cards:
+  - alya_v1
+  - yuki_v1
+audio_refs:
+  alya_v1: voice_seeds/voice_seed_alya.wav
+  yuki_v1: voice_seeds/voice_seed_yuki.wav
+shots:
+  - id: 1
+    duration_s: 3.0
+    framing: 全景
+    camera:
+      type: push_in
+      amplitude: small
+      speed: slow
+    subject: yuki_v1, alya_v1
+    action: 黄昏校园天台双人全景：Yuki 居左双手背在身后歪头看向右侧的 Alya；Alya 居右靠在栏杆上；橘红晚霞染满天际，微风轻轻吹起两人的发丝
+    sound:
+      ambient: 黄昏校园顶楼的开阔风声，远处隐约传来放学广播声
+      fx: 两人发丝与衣角被风拂动的沙沙声
+      bgm: N/A（导演特意决策：本段无 BGM，后期配乐）
+    continuity: 独立段生成，一致性靠 prompt 文本锚定；屏幕方向锚定：Yuki 居左、Alya 居右；身份锚点：Yuki 粉紫双马尾+水手服、Alya 银白长发红丝带+白金边夹克黑百褶裙；黄昏橘红光线贯穿全片
+  - id: 2
+    duration_s: 2.5
+    framing: 中景
+    camera:
+      type: push_in
+      amplitude: small
+      speed: normal
+    subject: yuki_v1
+    action: 中景推向 Yuki：她歪着头、双手仍背在身后，目光看向画面右侧的 Alya，嘴角带着小恶魔般的俏皮坏笑，语气轻快地问话，双马尾被风吹得微微晃动
+    dialogue:
+      - speaker: yuki_v1
+        text: "姐姐，明天的约定，你没有忘记吧？"
+    sound:
+      ambient: 风声与远处广播声持续
+      fx: 双马尾与裙摆晃动的沙沙声
+      bgm: N/A（导演特意决策：本段无 BGM，后期配乐）
+    continuity: 延续屏幕方向：Yuki 居左望向右侧；歪头+双手背后姿态承接首镜，同人同服装，镜头由全景推至中景
+  - id: 3
+    duration_s: 2.5
+    framing: 近景
+    camera:
+      type: static
+      amplitude: small
+      speed: slow
+    subject: alya_v1
+    action: 近景切至 Alya：她微微低头，随即抬起头露出温柔的笑容轻声回应，风把她的银白发丝和红色丝带吹起，右手轻轻扶住栏杆
+    dialogue:
+      - speaker: alya_v1
+        text: "嗯，我记得呢。说好了，明天见。"
+    sound:
+      ambient: 风声渐柔，远处广播声隐约可闻
+      fx: 银白发丝与衣摆被风吹动的沙沙声
+      bgm: N/A（导演特意决策：本段无 BGM，后期配乐）
+    continuity: 延续屏幕方向：Alya 居右面向左侧；低声回应承接 Yuki 的提问（对话状态延续）；由中景切近景，服装与黄昏光线色调保持一致

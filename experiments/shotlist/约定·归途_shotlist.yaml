@@ -1,0 +1,57 @@
+title: 夜晚街道的道别
+style: 日系校园青春
+ratio: 16:9
+scene: street_night
+duration_total: 8
+role_cards:
+  - alya_v1
+  - yuki_v1
+chain: independent
+audio_refs:
+  alya_v1: voice_seeds/voice_seed_alya.wav
+  yuki_v1: voice_seeds/voice_seed_yuki.wav
+shots:
+  - id: 1
+    duration_s: 2.5
+    framing: 中全景
+    camera:
+      type: push_in
+      amplitude: small
+      speed: slow
+    subject: yuki_v1, alya_v1
+    action: 夜晚街道上，冷蓝夜色中暖黄路灯投下光晕，两人影子在地面拉长。Yuki（左侧，粉紫双马尾、白色水手服、深色领巾）双手背在身后，俏皮歪头笑着看向 Alya；Alya（右侧，银白长发左侧扎红色丝带蝴蝶结、白色金边夹克）停下脚步，转身面对 Yuki，神情平静中透着柔和。
+    sound:
+      ambient: 夜晚街道环境声：远处车流持续、风声、路灯电流嗡鸣
+      fx: 停步的脚步声，转身时衣料摩擦声
+      bgm: N/A（导演特意决策：本段无 BGM，后期配乐）
+    continuity: 独立段生成，一致性靠 prompt 文本锚定（chain=independent）；首镜身份锚点：Alya=银白长发红丝带+白色金边夹克，Yuki=粉紫双马尾+白色水手服；屏幕方向 Yuki 左、Alya 右（与天台/海边段一致）
+  - id: 2
+    duration_s: 3.0
+    framing: 近景
+    camera:
+      type: static
+      speed: normal
+    subject: yuki_v1, alya_v1
+    action: 近景下，Yuki 歪着头、带着俏皮的笑容，语气轻快地对 Alya 说出道别；Alya 在右侧温柔地点头，嘴角浮起柔和微笑，目光注视着 Yuki。
+    dialogue:
+      - speaker: yuki_v1
+        text: "明天见"
+    sound:
+      ambient: 夜晚街道环境声：远处车流持续、风声、路灯电流嗡鸣
+      fx: Yuki 歪头时衣料轻微摩擦声，Alya 点头时发丝轻晃
+      bgm: N/A（导演特意决策：本段无 BGM，后期配乐）
+    continuity: 状态延续：Alya 方才停步转身，此刻正面对 Yuki；身份锚点：同一银发 Alya / 粉紫双马尾 Yuki，服饰不变；屏幕方向保持 Yuki 左、Alya 右
+  - id: 3
+    duration_s: 2.5
+    framing: 全景
+    camera:
+      type: pull_out
+      amplitude: medium
+      speed: slow
+    subject: yuki_v1, alya_v1
+    action: Yuki 转身向街道深处跑去，逐渐远离镜头，风轻轻吹起她的双马尾与 Alya 的银发；Alya 站在原地温柔目送，路灯下两人的影子在地面渐渐分开。
+    sound:
+      ambient: 夜晚街道环境声：远处车流持续、风声渐起、路灯电流嗡鸣
+      fx: Yuki 跑远的急促脚步声，衣摆与发丝在风中飘动声
+      bgm: N/A（导演特意决策：本段无 BGM，后期配乐）
+    continuity: 状态延续：Yuki 从道别转入跑远，Alya 目送；身份锚点：同一两位角色、服饰不变；屏幕方向保持 Yuki 左（向街道深处远去）、Alya 右（原地目送）

@@ -77,7 +77,9 @@ shots:
 4. 连续性：每镜重复身份锚点（换措辞但一致）；状态变化跨镜延续；保持屏幕方向
 5. 运动语法 type 枚举：{camera_types}
 6. 声音三层：ambient=环境底噪、fx=物理动作声、bgm=背景配乐（情绪+配器）；音乐两分法：
-   角色能听到的音乐写进 action（diegetic），背景配乐只写 bgm
+   角色能听到的音乐写进 action（diegetic），背景配乐只写 bgm；bgm 无则写 N/A
+   （参数头 no_bgm: true 时：全本 bgm 一律 N/A，且镜头情绪描述中性化——避免温馨/抒情/浪漫/氛围词，
+   用客观动作与光线描述替代；实测 BGM 触发 = 多镜头×温情/氛围词，中性描述+多镜头不触发）
 7. 跨段策略（chain 参数，写入首镜 continuity）：
    first_static → 首镜注明"首帧=角色静态图锚定（角色卡+参考图）"
    firstlast_bridge → 注明"首尾帧静态双锚（首帧=角色图，尾帧=转场目标图）"
@@ -172,6 +174,9 @@ def gen_shotlist(key: str, model: str, script: dict, effort: str = "high", max_t
     sys_prompt = SYSTEM_TPL.format(camera_types=", ".join(sorted(CAMERA_TYPES)),
                                    role_cards_block=role_block,
                                    fewshot_block=load_fewshot(fewshot_names or []))
+    no_bgm = bool(script.get("no_bgm"))
+    if script.get("bgm") == "N/A":
+        no_bgm = True
     user_lines = [
         f"===== 剧本 =====\n{script['_body']}",
         f"===== 参数 =====\n"
@@ -181,6 +186,8 @@ def gen_shotlist(key: str, model: str, script: dict, effort: str = "high", max_t
         f"role_cards: {script.get('role_cards',[])}"
         f"\nchain: {script.get('chain','independent')}\nshot_style: {shot_style}\naudio_refs: {script.get('audio_refs', {})}"
         "  # 音色种子（角色 id → wav 路径，可选）",
+        "no_bgm: " + str(no_bgm) + "  # true=本段不要 BGM：bgm 一律 N/A + 镜头情绪中性化",
+    ]
         "请输出拍摄本 YAML（严格按 Schema）。",
     ]
     body = {

@@ -1,0 +1,58 @@
+title: 黄昏海边的姐妹约定
+style: 日系清新
+ratio: 16:9
+scene: beach
+duration_total: 8
+role_cards: ['alya_v1', 'yuki_v1']
+chain: independent
+audio_refs:
+  alya_v1: voice_seeds/voice_seed_alya.wav
+  yuki_v1: voice_seeds/voice_seed_yuki.wav
+shots:
+  - id: 1
+    duration_s: 3.0
+    framing: 全景
+    camera:
+      type: push_in
+      amplitude: small
+      speed: slow
+    subject: "yuki_v1, alya_v1"
+    action: "黄昏海边全景：Yuki（粉色双马尾、白色水手服）在画面左侧张开双臂迎风，Alya（银白长发、白色金边夹克）在画面右侧静静望向海平线；海浪轻轻拍打沙滩，夕阳余晖把影子拉长。"
+    sound:
+      ambient: "黄昏海边环境音：海浪轻轻拍打沙滩，海风持续，远处海鸥鸣叫"
+      fx: "风吹动 Yuki 发丝、裙摆与 Alya 夹克衣摆的沙沙声"
+      bgm: N/A（导演特意决策：本段无 BGM，后期配乐）
+    continuity: "独立段生成，一致性靠 prompt 文本锚定；首帧场景为黄昏海滩（beach），与 scene 一致；屏幕方向锚定：Yuki 左 / Alya 右（与天台段一致）；Yuki 双马尾水手服、Alya 银发金边夹克身份锚定。"
+  - id: 2
+    duration_s: 2.5
+    framing: 近景
+    camera:
+      type: static
+      speed: slow
+    subject: "alya_v1"
+    action: "Alya（银白长发、蓝色眼眸、白色金边夹克）站在黄昏海边，目光沉静地望向海平线，神情平静柔和，轻声感叹；夕阳在她脸上镀上暖光，海风吹起几缕银发。"
+    dialogue:
+      - speaker: alya_v1
+        text: "海面……真美啊。"
+    sound:
+      ambient: "海浪与海风持续，略轻"
+      fx: "海风吹拂 Alya 银白长发的簌簌声"
+      bgm: N/A（导演特意决策：本段无 BGM，后期配乐）
+    continuity: "承上镜：Alya 仍居画面右侧，视线延续望向海平线；屏幕方向不变；黄昏暖光与发型/服装身份锚定持续。"
+  - id: 3
+    duration_s: 2.5
+    framing: 中全景
+    camera:
+      type: pull_out
+      amplitude: small
+      speed: slow
+    subject: "yuki_v1, alya_v1"
+    action: "Yuki（粉色双马尾、白色水手服）在画面左侧，Alya（银白长发、白色金边夹克）在画面右侧，两人相视而笑；Yuki 笑着大声说出约定，Alya 抿嘴微笑注视 Yuki 不开口；夕阳把沙滩上的影子拉得很长。"
+    dialogue:
+      - speaker: yuki_v1
+        text: "姐姐！我们一起看遍每一片海吧！"
+    sound:
+      ambient: "海浪与海风持续，远处海鸥渐远"
+      fx: "两人相视而笑时脚踩沙滩的细微沙沙声、衣料摩擦声"
+      bgm: N/A（导演特意决策：本段无 BGM，后期配乐）
+    continuity: "承 Alya 感叹，Yuki 回应并相视而笑；屏幕方向保持 Yuki 左 / Alya 右；夕阳拉长影子作为收束画面，身份锚定不变。"

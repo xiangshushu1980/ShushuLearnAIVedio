@@ -1,0 +1,9 @@
+[
+ {
+  "name": "t01_stance_flip",
+  "seconds": 150,
+  "peak_vram_gb": 21.9,
+  "error": null,
+  "video": "/home/sean/projects/ComfyUI/output/video/h3_film/t01_stance_flip_00001_.mp4"
+ }
+]

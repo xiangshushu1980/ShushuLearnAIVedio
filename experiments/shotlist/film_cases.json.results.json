@@ -1,0 +1,23 @@
+[
+ {
+  "name": "seg1_rooftop",
+  "seconds": 150,
+  "peak_vram_gb": 21.9,
+  "error": null,
+  "video": "/home/sean/projects/ComfyUI/output/video/h3_film/seg1_rooftop_00001_.mp4"
+ },
+ {
+  "name": "seg2_beach",
+  "seconds": 150,
+  "peak_vram_gb": 22.1,
+  "error": null,
+  "video": "/home/sean/projects/ComfyUI/output/video/h3_film/seg2_beach_00001_.mp4"
+ },
+ {
+  "name": "seg3_night",
+  "seconds": 165,
+  "peak_vram_gb": 21.9,
+  "error": null,
+  "video": "/home/sean/projects/ComfyUI/output/video/h3_film/seg3_night_00001_.mp4"
+ }
+]

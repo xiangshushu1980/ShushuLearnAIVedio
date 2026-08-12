@@ -400,3 +400,16 @@
 - 建议：MVP 全自动跑通 + 预留 checkpoint 语义（拍摄本评审点/首条成片验收点，默认跳过）
 - 唯一不可跳过的点=**首条成片人工验收**（建立审美/质量基准，校准自动验收阈值：切点偏差/音频 dB/SSIM/语音活跃），之后自动批量，异常时（自动验收失败）暂停问人
 - 理由：拍摄本错误全链返工（每段 3-5min GPU + IR 费）；质量 gate 需一次人类锚定
+
+### 2026-08-12 成片试跑（3 段 Ref2VA 全链路）+ T-01 站位对照 + 用户反馈（队列已释放）
+**成片链路**：剧本（agreement_rooftop/beach + 新写 agreement_night）→ 工具 A 拍摄本（--fewshot i2v_alya_beach + --review）→ 工具 B 六段式（ref2va）→ h3_gap_runner 出片（std20 8s 768×448 seed 20260811 canon 图×2+音色种子×2）
+- 耗时：seg1 150s / seg2 150s / seg3 165s，显存 21.9-22.1GB；音频 -14.2/-15.6/-21.9dB
+- 产物：output/video/h3_film/seg{1,2,3}_{rooftop,beach,night}_00001_.mp4
+- 拼接脚本 scripts/h3_concat.py（新，stream-copy 优先降级 re-encode，注意 32kHz）
+**音乐策略修订（用户拍板 2026-08-12）**：non_diegetic_music 不再是"一律 N/A"硬规定——不可控手段不作硬性默认。新规则：跟随拍摄本 bgm 字段（导演决策层）；拍摄本 bgm=N/A（或参数头 no_bgm: true）时启动"特意三件套"=N/A + soundscape 显式 no music + 描述避免温情词。工具 A 新增 no_bgm 参数支持；工具 B 两模板已改；成片三段采用特意无 BGM（bgm 改 N/A 重跑 stage2 通过）
+**T-01 站位对照（已跑）**：t01_stance_flip = 段1 提示词全文翻转站位（Yuki→右/Alya→左），同图同 seed，150s；产物 t01_stance_flip_00001_.mp4，抽帧对比 seg1 待用户验收
+**用户反馈（seg1/seg2）**：
+- seg1 "嗯"（Alya 台词）画面对 Yuki——定位：新提示词 [Shot 3] "facing left toward Yuki" 歧义（模型把 Yuki 纳入主体）；对比 d1 批每特写写死"主体+配角在边缘"，绑定强度不同
+- seg2 "海面真美"时海浪声消失——定位：提示词 [Shot 2] "The waves and wind grow slightly lighter" 被忠实执行；是提示词设计问题非模型问题
+- 质量对比澄清：h3_dialogue 与 h3_film 同为 Ref2VA std20 同 seed，非模型差异，是提示词细节差异
+**新任务登记**：T-20260812-05 网页拍摄本工具（剧本→拍摄本：分段提示词高亮/时间轴/渲染输入源）——用户要求生成告一段落后新开任务讨论设计

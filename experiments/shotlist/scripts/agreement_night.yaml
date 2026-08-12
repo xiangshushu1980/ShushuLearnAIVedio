@@ -1,0 +1,16 @@
+---
+title: 约定·归途
+style: 日系校园青春
+ratio: "16:9"
+scene: street_night
+duration: 8
+sound: 夜晚街道环境声（远处车流、风声、路灯电流嗡鸣）
+role_cards: [alya_v1, yuki_v1]
+chain: independent
+audio_refs:
+  alya_v1: voice_seeds/voice_seed_alya.wav
+  yuki_v1: voice_seeds/voice_seed_yuki.wav
+---
+夜晚的街道，路灯把两人的影子拉得很长。Yuki 在画面左侧，双手背在身后，歪头笑着看向 Alya；Alya 在画面右侧，停下脚步转身面对 Yuki（与天台、海边段屏幕方向一致：Yuki 左/Alya 右）。
+
+Yuki 俏皮地说明天见，Alya 温柔地点头微笑目送 Yuki 转身跑远，风轻轻吹起两人的发丝，路灯下影子渐渐分开。

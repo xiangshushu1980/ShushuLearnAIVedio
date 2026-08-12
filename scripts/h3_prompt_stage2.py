@@ -51,12 +51,16 @@ For the target video, at 0.00 seconds into the target video, <Picture 1> (from [
 
 integrated_multimodal_description: [Shot 1] ...（按拍摄本镜头展开，每镜 `[Shot N]` + 时间戳）
 overall_soundscape: ...（只含 diegetic：环境音+动作声+非语言人声）
-non_diegetic_music: N/A
+non_diegetic_music: <跟随拍摄本 bgm 字段，见音乐策略>
 ===== 模式结束 =====
 
-音乐策略（用户决策 2026-08-10）：默认不生成 BGM——短片内 BGM 无法连续（实测），
-后期独立配乐（本地 MusicGen/ACE-Step 管线）。除非用户显式要求，否则 non_diegetic_music 一律写 N/A。
-diegetic 声音（环境音/音效/演出音乐）保留在画面与 soundscape 描述中。
+音乐策略（2026-08-12 修订，替代旧"一律 N/A"硬规定）：
+- 拍摄本各镜 sound.bgm 有描述 → non_diegetic_music 写该配乐描述（英文：情绪+配器，跨镜延续）
+- 拍摄本 bgm 全部为 N/A 或参数头 no_bgm: true → 写 N/A，且三件套配合：
+  ① overall_soundscape 只写 diegetic 并显式声明 "No music, only diegetic sounds"
+  ② detailed_description 避免温馨/抒情/浪漫/氛围词，用客观光线动作描述（实测 BGM 触发=多镜头×温情词）
+  ③ non_diegetic_music 精确写 N/A（不要写 no music / none）
+- 角色能听到的音乐（演出/收音机）写进画面（diegetic），不属于 non_diegetic
 
 ===== 合成规则（docs/17 关键节）=====
 1. 每镜：[Shot 1] 不带时间戳；第 N 镜（N>1）写作 `[Shot N] At MM:SS.mmm, the camera cuts to ...`
@@ -75,7 +79,9 @@ diegetic 声音（环境音/音效/演出音乐）保留在画面与 soundscape 
 - 台词时间锚点：台词所在镜头的时间戳必须精确（[Shot N] At MM:SS.mmm），
   模型会按时间把话安到镜内说话者嘴上；无锚点会错位/重叠
 - 说话者与镜头主体绑定：谁在镜内谁说话（拍摄本已保证，合成时保持）
-5. 音乐策略：默认不生成 BGM——non_diegetic_music 写 N/A（后期配乐）；角色能听到的音乐（演出/收音机）写进画面（diegetic）
+5. 音乐策略（跟随拍摄本，2026-08-12 修订）：non_diegetic_music 内容=拍摄本 bgm 字段
+   （有描述→写描述；N/A→写 N/A + 三件套：soundscape 显式 no music + 描述避免温情词 + 精确 N/A）；
+   角色能听到的音乐（演出/收音机）写进画面（diegetic）
 6. 跨段策略（拍摄本 chain 字段）：
    first_static → 首句保留 instruction line（首帧静态图锚定）
    firstlast_bridge → 结尾注明尾帧锚定画面
@@ -111,11 +117,16 @@ The target video is in the style from the shooting plan (use its style field).
 overall_soundscape:
 ...（环境音+物理动作声+非语言人声，1-4 句）
 
-non_diegetic_music: N/A
+non_diegetic_music: <跟随拍摄本 bgm 字段，见音乐策略>
 ===== 模式结束 =====
 
-音乐策略（用户决策 2026-08-10）：默认不生成 BGM（短片 BGM 无法连续，后期独立配乐）；
-non_diegetic_music 一律写 N/A，除非显式要求。diegetic 声音保留。
+音乐策略（2026-08-12 修订，替代旧"一律 N/A"硬规定）：
+- 拍摄本各镜 sound.bgm 有描述 → non_diegetic_music 写该配乐描述（英文：情绪+配器，跨镜延续）
+- 拍摄本 bgm 全部为 N/A 或参数头 no_bgm: true → 写 N/A，且三件套配合：
+  ① overall_soundscape 只写 diegetic 并显式声明 "No music, only diegetic sounds"
+  ② detailed_description 避免温馨/抒情/浪漫/氛围词，用客观光线动作描述（实测 BGM 触发=多镜头×温情词）
+  ③ non_diegetic_music 精确写 N/A（不要写 no music / none）
+- 角色能听到的音乐（演出/收音机）写进画面（diegetic），不属于 non_diegetic
 
 ===== 合成规则（docs/17 六段式要点）=====
 1. 角色卡是 <Subject N> 不是 <Picture N>（<Picture N> 仅当图本身是帧锚点）
@@ -123,7 +134,7 @@ non_diegetic_music 一律写 N/A，除非显式要求。diegetic 声音保留。
 3. retention_analysis 每 label 一行；音频用 fully_copy / partially_copy / reference / weak_reference
 4. detailed_description：风格开场 → [Shot N] 时间线（[Shot 1] 无时间戳，N>1 写 At MM:SS.mmm）
 5. 每镜一动作；身份锚点每镜重复；状态跨镜延续；保持屏幕方向
-6. 声音三层进 overall_soundscape（diegetic）；non_diegetic_music 默认 N/A（后期配乐）
+6. 声音三层进 overall_soundscape（diegetic）；non_diegetic_music 跟随拍摄本 bgm 字段（见音乐策略）
 7. 音频参考（拍摄本 audio_refs 字段，有则强制）：
    - subject_definitions 写 "<Audio N> is the voice-timbre reference for <Subject N> (Sx)."
      （N 按 audio_refs 顺序从 1 起；Sx 用该角色在对话语法中的稳定 ID）

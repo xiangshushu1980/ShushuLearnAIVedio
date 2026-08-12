@@ -1,0 +1,68 @@
+{
+ "prompt": null,
+ "cases": [
+  {
+   "mode": "ref2va",
+   "unet": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+   "steps": 20,
+   "width": 768,
+   "height": 448,
+   "length": 192,
+   "seed": 20260811,
+   "ref_image_size": "match",
+   "images": [
+    "start/169/portrait/alya169_portrait_uniform_00001_.png",
+    "start/169/portrait/yuki169_portrait_uniform_00001_.png"
+   ],
+   "audios": [
+    "voice_seeds/voice_seed_alya.wav",
+    "voice_seeds/voice_seed_yuki.wav"
+   ],
+   "name": "seg1_rooftop",
+   "prompt": "@experiments/shotlist/prompts/黄昏校园天台：明日的约定_ref2va.txt",
+   "prefix": "video/h3_film/seg1_rooftop"
+  },
+  {
+   "mode": "ref2va",
+   "unet": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+   "steps": 20,
+   "width": 768,
+   "height": 448,
+   "length": 192,
+   "seed": 20260811,
+   "ref_image_size": "match",
+   "images": [
+    "start/169/portrait/alya169_portrait_uniform_00001_.png",
+    "start/169/portrait/yuki169_portrait_uniform_00001_.png"
+   ],
+   "audios": [
+    "voice_seeds/voice_seed_alya.wav",
+    "voice_seeds/voice_seed_yuki.wav"
+   ],
+   "name": "seg2_beach",
+   "prompt": "@experiments/shotlist/prompts/黄昏海边的姐妹约定_ref2va.txt",
+   "prefix": "video/h3_film/seg2_beach"
+  },
+  {
+   "mode": "ref2va",
+   "unet": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+   "steps": 20,
+   "width": 768,
+   "height": 448,
+   "length": 192,
+   "seed": 20260811,
+   "ref_image_size": "match",
+   "images": [
+    "start/169/portrait/alya169_portrait_uniform_00001_.png",
+    "start/169/portrait/yuki169_portrait_uniform_00001_.png"
+   ],
+   "audios": [
+    "voice_seeds/voice_seed_alya.wav",
+    "voice_seeds/voice_seed_yuki.wav"
+   ],
+   "name": "seg3_night",
+   "prompt": "@experiments/shotlist/prompts/夜晚街道的道别_ref2va.txt",
+   "prefix": "video/h3_film/seg3_night"
+  }
+ ]
+}
