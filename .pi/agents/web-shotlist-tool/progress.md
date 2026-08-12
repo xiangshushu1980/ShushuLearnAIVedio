@@ -6,6 +6,12 @@
 - 我负责的文件区：（设计阶段无文件；确定后认领新目录，如 web-shotlist/ 或 tools/shotlist-web/）
 
 ## 进度日志（append-only，每条带日期）
+### 2026-08-12（第九轮：输入源真实化 + 提示词联动 + TODO 登记）
+- **T-20260812-08 登记**：TODO.md 近期区（认领 mc-test）；用户开新会话执行 MC 线，本线继续主线
+- **输入源真实化**（docs/22 第 4 步）：parseRefMapping 解析 <Picture N>↔<Subject N>↔实体（role_cards 顺序；兼容 LLM 句式变体 reference image/reference still image——实测 Alya 项目映射 Picture1↔Subject1↔alya_v1）；参考图墙显示实体设定图缩略图（无图占位+引导）；标注 Picture N · Subject N · 实体名
+- **联动**：hover 提示词 ref chip → 参考图卡片高亮 ring；点击卡片 → 提示词引用闪烁 1.5s（PromptHighlight 加 onRefHover/activeRef）
+- 已 commit；服务常驻 8787/5173
+
 ### 2026-08-12（第八轮：任务队列 + 资源系统 + 门禁 + 角色卡迁移）
 - **单实例任务队列**：extract/art 任务式（提交立即返回 taskId，2s 轮询，运行中冲突 409）；前端 useTaskPoll；extract 实测 done+4 实体
 - **实体资源系统**：data/entities/assets/<id>/（art/voice/file）；multipart 上传/试听/删除/静态服务；设定图生成后 importAsset 移入资产目录；实体列表三态徽章（文字✓/画面✓/声音✓）可观测
@@ -77,11 +83,11 @@
 
 ## 下一步
 1. ✅ 核心管线（工具 A/B/三页/实体/门禁/队列/资源）全部完成（2026-08-12）
-2. 待拍板：关系升级（related 带阶段+自然语言）与故事时间线是否纳入实体抽取模板；A0.5 影视化改写层
-3. 输入源真实化：参考图墙显示实体设定图 + 与拍摄本 hover 联动（docs/22 第 4 步）
-4. 实体 → 提示词参考图映射（<Subject N> ↔ 设定图）
-5. 任务全局可见（顶栏指示）+ 项目重命名 + 导入导出
-6. MC 测试线：等 seedance 释放 → 重启 ComfyUI → 两段对比跑批（mc-test/progress.md）
+2. ✅ 输入源真实化 + 提示词联动（2026-08-12 完成）
+3. 待拍板：关系升级（related 带阶段+自然语言）与故事时间线；A0.5 影视化改写层
+4. 体验收尾：任务全局可见（顶栏指示）、项目重命名、导入导出
+5. 设定图按实体类型优化 prompt（角色站姿/场景/物件）
+6. MC 测试线（新会话执行）：等 seedance 释放 → 重启 ComfyUI → 两段对比跑批（mc-test/progress.md）
 7. 用户浏览器验收（http://localhost:5173）
 
 ## 关键链接
