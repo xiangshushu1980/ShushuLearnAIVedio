@@ -321,3 +321,15 @@
 - 产物 output/video/h3_dialogue/agreement_seg1_rooftop_00001_.mp4 + agreement_seg2_beach_00001_.mp4
 **踩坑**：工具 B 抽卡把首镜 scene 写成 <Subject 1>（图序错位风险）——d1 是角色优先；改拍摄本首镜 subject 为 alya_v1 重跑解决（非确定性，需留意）
 **待用户**：目检/试听——① 跨段形象（Yuki 换海边图后两段是否同一人）② 跨段音色（同种子 Alya/Yuki 两段是否一致）③ Ref2VA 8s 是否触发 BGM（遗留观察点）④ 双人站位/口型/台词分配
+
+### 2026-08-12 一致性测试用户验收（判定权威）
+**验收结果**：① **Yuki 跨段换衣服**（段1/段2 服装不一致），段 1 产物两人服装观感差（用户："图1他们樵夫一样的"）② Alya 银发跨段一致 ✓（"银色不错"）③ **两段均无 BGM**——Ref2VA 8s 不触发音乐（遗留观察点闭合：触发组合收窄为 i2v+长prompt+8s 专属，t2v/ref2va 不触发）④ **站位镜像**：seg1 Yuki 左 / seg2 Yuki 右（剧本设计失误——段 2 剧本我写了 Alya 左/Yuki 右，未延续段 1 方向）
+**教训**：跨段一致性三要素=服装（参考图服装需统一+角色卡逐字）、屏幕方向（跨段全局约定，不能每段自定）、音色（同种子，本次未发现异常）
+
+### 2026-08-12 变体机制决策（用户拍板 + 社区证据）
+**用户决策**：拍摄本保证提示词与设定图完全一致；**暂时禁止文本微调获得变体**（服装颜色漂移实测教训：参考图白 vs 文本深色 → 产物随机选边）
+**社区证据**（experiments/community_samples/ 精选样本）：
+- five-cinematic-dialogue：服装本体=参考图 source of truth（face/hat/wardrobe/light 全锁定，POSITIVE LOCKS 规则）；torn shirt 状态变化用文本（PHYSICS 层）
+- dark-pop-trio：strict identity reference（faces/hair/wardrobe unchanged）
+- image-1-for-the-character：多图分槽（角色/UI/武器各一图），武器 8 变体全部以参考图为准
+**落地原则**：换装变体=独立设定图（canon 基准图 + 变体图集，拍摄本引用变体 id，retention 用 partially_preserved 声明）；破损等状态变化暂也走"破损版设定图"（先全禁文本微调，跑稳后再评估状态级文本）；记录于 T-20260812-03 上下文
