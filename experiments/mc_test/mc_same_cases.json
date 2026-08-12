@@ -1,0 +1,63 @@
+{
+  "seed": 20260812,
+  "cases": [
+    {
+      "name": "same_seg1",
+      "mode": "ref2va",
+      "images": [
+        "start/169/portrait/alya169_portrait_uniform_00001_.png",
+        "start/169/portrait/yuki169_portrait_uniform_00001_.png"
+      ],
+      "audios": [
+        "voice_seeds/voice_seed_alya.wav",
+        "voice_seeds/voice_seed_yuki.wav"
+      ],
+      "width": 768,
+      "height": 448,
+      "length": 192,
+      "steps": 20,
+      "prompt": "@/tmp/same_scene_seg1.txt",
+      "prefix": "video/h3_mc_same/agreement_same_seg1",
+      "save_latent": {"filename_prefix": "h3_ctx_same/clip", "clip_index": 1}
+    },
+    {
+      "name": "same_seg2_baseline",
+      "mode": "ref2va",
+      "images": [
+        "start/169/portrait/alya169_portrait_uniform_00001_.png",
+        "start/169/portrait/yuki169_portrait_uniform_00001_.png"
+      ],
+      "audios": [
+        "voice_seeds/voice_seed_alya.wav",
+        "voice_seeds/voice_seed_yuki.wav"
+      ],
+      "width": 768,
+      "height": 448,
+      "length": 192,
+      "steps": 20,
+      "prompt": "@/tmp/same_scene_seg2_baseline.txt",
+      "prefix": "video/h3_mc_same/agreement_same_seg2_base"
+    },
+    {
+      "name": "same_seg2_chain",
+      "mode": "ref2va",
+      "images": [
+        "start/169/portrait/alya169_portrait_uniform_00001_.png",
+        "start/169/portrait/yuki169_portrait_uniform_00001_.png"
+      ],
+      "audios": [
+        "voice_seeds/voice_seed_alya.wav",
+        "voice_seeds/voice_seed_yuki.wav"
+      ],
+      "width": 768,
+      "height": 448,
+      "length": 192,
+      "steps": 20,
+      "prompt": "@/tmp/same_scene_seg2_chain.txt",
+      "prefix": "video/h3_mc_same/agreement_same_seg2_chain",
+      "mc": {"context_length": "22", "audio_context_length": 24,
+             "latent_path": "h3_ctx_same", "clip_index": 1},
+      "save_latent": {"filename_prefix": "h3_ctx_same/clip", "clip_index": 2}
+    }
+  ]
+}

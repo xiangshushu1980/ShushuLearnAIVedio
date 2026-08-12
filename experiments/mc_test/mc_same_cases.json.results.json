@@ -1,0 +1,23 @@
+[
+ {
+  "name": "same_seg1",
+  "seconds": 152,
+  "peak_vram_gb": 21.9,
+  "error": null,
+  "video": "/home/sean/projects/ComfyUI/output/video/h3_mc_same/agreement_same_seg1_00001_.mp4"
+ },
+ {
+  "name": "same_seg2_baseline",
+  "seconds": 151,
+  "peak_vram_gb": 22.0,
+  "error": null,
+  "video": "/home/sean/projects/ComfyUI/output/video/h3_mc_same/agreement_same_seg2_base_00001_.mp4"
+ },
+ {
+  "name": "same_seg2_chain",
+  "seconds": 167,
+  "peak_vram_gb": 22.2,
+  "error": null,
+  "video": "/home/sean/projects/ComfyUI/output/video/h3_mc_same/agreement_same_seg2_chain_00001_.mp4"
+ }
+]

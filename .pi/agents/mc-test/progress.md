@@ -7,6 +7,16 @@
 - 背景调研（2026-08-12 h3-prompt-agent 线）：作者实测 16-clip 4:34 多机位情景剧@736×576≈2h；视频链中位 seam level step 0.905→带音频跨载后 0.16；v0.2.0 'No more visible seam'（pin 帧直接从 latent 取）；上限判断：解决相邻段音画平滑衔接上限高，但①链式质量递减（音频高频先损，长链在自然乐句处重开）②分辨率链内锁定 ③成本线性堆叠 ④不解决长距离一致性 ⑤许可 EU/UK/KR/US 未覆盖
 
 ## 进度
+
+### 2026-08-12 第二批：同场景连续动作（用户反馈驱动）
+- **用户验收首批**："貌似 chain 好一点"；但换场景看不出衔接（天台→海边），且"注意用同样的片段合成"、"base 动态看起来更好"——重新设计：同场景（天台）连续动作测试，**同一段1** 对比两种段2
+- **设计**：段1 结尾 Alya 答应后离开栏杆向左走（动作未完成，留给段2）；段2 开头 Airlock 2s 延续步伐无对话 → Yuki 迎上"太好了！说定了！" → 双人近景"嗯，明天见。"；chain 版时间码 +0.92s（2.0→2.92、4.5→5.42）
+- **跑批**（seed 20260812，同配置）：same_seg1 152s（存 h3_ctx_same clip1）/ same_seg2_baseline 151s / same_seg2_chain 167s（存 clip2）；显存 22.2GB 峰值安全
+- **seam_probe**：chain mean corr 0.586（16/35>0.6，无锁边）vs baseline 0.504（12/35，1 锁边）——同场景下差距缩小（环境音天然相似），lag trend chain -20.3ms 待查（脚步声瞬态事件干扰相关窗口）
+- **freeze**：chain 段2 头部 motion 2.42x 中位——Alya 走步延续，无冻结
+- **产物**：output/video/h3_mc_same/（same_base_chain.mp4 + same_mc_chain.mp4，相同段1 拼接）
+- **待用户验收**：目视段2 开头 Alya 走步/位置衔接 vs baseline 新起点
+
 ### 2026-08-12 跑批完成（首批：两段 MC 链式 vs 基线静态锚）
 - **ComfyUI 重启**（队列已空，MC 5 节点注册成功含 SeamProbe）
 - **跑批**（scripts/h3_mc_runner.py 新建 + experiments/mc_test/mc_cases.json，ref2va int8 std20 768×448 192帧，seed 20260812，同 agreement_v2 配置）：
