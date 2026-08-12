@@ -1,0 +1,24 @@
+subject_definitions:
+<Subject 1> is Yuki (yuki_v1), a 2D anime-style teenage girl and Alya's younger sister, slightly shorter than Alya, with long light-purple-tinted pink hair tied into large twin-tail ponytails, fair skin, large amber-gold eyes, a playful expression often wearing a small devilish cat-mouth smirk, and a dark sailor-style school uniform with a short skirt, white knee-high socks, and dark leather shoes.
+<Subject 2> is the male classmate in the shooting plan, a high-school boy with short black hair, glasses, and a plain white shirt, who stands on the right of the frame opposite Yuki.
+<Audio 1> is the voice-timbre reference for <Subject 1> (S1).
+<Audio 2> is the voice-timbre reference for <Subject 2> (S2).
+
+summary:
+[reference generation + audio reference] The target video shows <Subject 1> and <Subject 2> standing side by side at a classroom entrance in a sunlit school corridor; <Subject 1> asks <Subject 2> whether he will go to tomorrow's event, and then both shout the same answer at the very same moment with overlapping voices, before turning to laugh at each other. <Audio 1> and <Audio 2> provide the voice-timbre references for the two characters' dialogue.
+
+retention_analysis:
+<Subject 1> (appears in [Shot 1], [Shot 2]): fully_preserved - Yuki's 2D anime look, light-purple-tinted pink twin tails, amber-gold eyes, and dark sailor-style school uniform are retained, with her anchored on the left of the frame in both shots.
+<Subject 2> (appears in [Shot 1], [Shot 2]): fully_preserved - the male classmate's short black hair, glasses, and white shirt are retained, with him anchored on the right of the frame in both shots.
+<Audio 1> (voice-timbre for <Subject 1> (S1)): reference - Yuki's dialogue follows <Audio 1>'s bright, clear vocal timbre and light delivery without copying the original signal.
+<Audio 2> (voice-timbre for <Subject 2> (S2)): reference - the classmate's dialogue follows <Audio 2>'s lower, deeper vocal timbre without copying the original signal.
+
+detailed_description:
+The target video is in a Japanese-style school-campus youth aesthetic, with soft corridor daylight, a clean bright color palette, and a light, playful, youthful atmosphere.
+[Shot 1] A static medium shot frames the entrance of a classroom along a school corridor. On the left of the frame stands <Subject 1>, Yuki — a 2D anime-style teenage girl with long light-purple-tinted pink twin tails, fair skin, large amber-gold eyes, and a dark sailor-style school uniform with white knee-high socks and dark leather shoes. On the right stands <Subject 2>, the male classmate with short black hair, glasses, and a plain white shirt, his hands in his pockets as he looks toward her. Daylight spills through the corridor, casting soft shadows across the doorway and glinting in Yuki's amber eyes. <Subject 1> (S1) tilts her head toward <Subject 2> and, using the bright, clear voice timbre referenced from <Audio 1>, asks in a light, brisk tone, <d>[Chinese] 喂，明天的活动你去吗？</d> She finishes with a playful, expectant expression while <Subject 2> keeps his hands in his pockets, listening without speaking, and faint distant voices and footsteps drift through the corridor.
+[Shot 2] At 00:03.000, the shot cuts to a close-up of both characters, <Subject 1> still on the left and <Subject 2> still on the right, Yuki's pink-purple twin tails, glasses, and white shirt clearly visible as the camera begins a slow push-in with a small amplitude. <Subject 2> opens his mouth as if about to answer, then both characters suddenly raise their hands high at the same instant, their sleeves making a soft fabric rustle as <Subject 2> pulls his hands out of his pockets. Together they shout the same sentence with voices fully overlapping (S1,S2) — Yuki's bright, clear girl's voice using the voice timbre referenced from <Audio 1> and the classmate's lower male voice using the voice timbre referenced from <Audio 2>, the two timbres clearly distinguishable as they cry out in unison, <d>[Chinese] 去！一起去！</d> After the shout, they turn to look at each other and burst into cheerful laughter, their expressions open and amused. The slow push-in continues gently, ending on a closer framing of the two laughing faces, corridor light gleaming on Yuki's hair and on the classmate's glasses.
+
+overall_soundscape:
+A quiet school-corridor room tone continues throughout the video, with distant muffled conversations and a faint breeze; light footsteps pass by in the background, and the characters' clothing produces soft fabric rustles as they move and raise their hands.
+
+non_diegetic_music: N/A

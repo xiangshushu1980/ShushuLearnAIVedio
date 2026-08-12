@@ -1,0 +1,24 @@
+title: 等姐姐的少女
+style: 日系校园青春
+ratio: "16:9"
+duration_total: 5.2
+role_cards: ['yuki_v1']
+audio_refs:
+  yuki_v1: voice_seeds/voice_seed_yuki.wav
+chain: independent
+shots:
+  - id: 1
+    duration_s: 5.2
+    framing: 中景
+    camera:
+      type: static
+    subject: yuki_v1
+    action: Yuki（粉紫双马尾、深色水手服）站在校门口左顾右盼等人，等了一会儿后开口抱怨，语气娇憨带着一点不满，说完撇了撇嘴。
+    dialogue:
+      - speaker: yuki_v1
+        text: "姐姐怎么还不来呀，都等了好久啦。"
+    sound:
+      ambient: 放学校门口环境声，远处车流，风声
+      fx: 脚步挪动声，裙摆轻响
+      bgm: 无（对话场景，情绪由台词承载）
+    continuity: 独立段自身锚定。身份锚点：粉紫双马尾+琥珀色眼睛+深色水手服（Yuki）；校门口黄昏光线；说话时表情从张望转为嘟嘴抱怨。

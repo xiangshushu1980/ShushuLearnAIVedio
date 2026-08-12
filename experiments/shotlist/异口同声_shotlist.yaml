@@ -1,0 +1,42 @@
+title: 异口同声
+style: 日系校园青春
+ratio: "16:9"
+duration_total: 8
+role_cards: ['yuki_v1']
+audio_refs:
+  yuki_v1: voice_seeds/voice_seed_yuki.wav
+  同学甲: voice_seeds/voice_seed_male.wav
+chain: independent
+shots:
+  - id: 1
+    duration_s: 3.0
+    framing: 中景
+    camera:
+      type: static
+    subject: scene
+    action: 教室门口，Yuki（画面左，粉紫双马尾深色水手服）和同学甲（画面右，戴眼镜穿白衬衫的男同学）并肩站着，Yuki 侧头问同学甲，语气轻快；同学甲双手插兜看向她。
+    dialogue:
+      - speaker: yuki_v1
+        text: "喂，明天的活动你去吗？"
+    sound:
+      ambient: 教室走廊环境声，远处人声，风声
+      fx: 脚步声，衣料轻响
+      bgm: 无（对话场景，情绪由台词承载）
+    continuity: 独立段自身锚定。位置锚定：Yuki 左、同学甲右；身份锚点：粉紫双马尾+琥珀色眼睛+深色水手服（Yuki）、眼镜+白衬衫+黑色短发（同学甲）；走廊日光。
+  - id: 2
+    duration_s: 5.0
+    framing: 近景
+    camera:
+      type: push_in
+      amplitude: small
+      speed: slow
+    subject: scene
+    action: 双人同框近景：同学甲刚想开口，两人就同时举起手大声回答，声音重叠在一起（一个清亮少女声、一个低沉男声同时喊出同一句话），喊完两人对视笑起来。
+    dialogue:
+      - speaker: yuki_v1, 同学甲
+        text: "去！一起去！"
+    sound:
+      ambient: 教室走廊环境声，远处人声
+      fx: 两人同时举手的衣料声，笑闹声
+      bgm: 无（对话场景，情绪由台词承载）
+    continuity: 独立段自身锚定。位置锚定：Yuki 左、同学甲右；身份锚点完整：粉紫双马尾（Yuki）、眼镜+白衬衫（同学甲）；同时说话：两人一起喊出同一句"去！一起去！"，Yuki 声音清亮偏高、同学甲声音低沉，两个音色同时可辨。

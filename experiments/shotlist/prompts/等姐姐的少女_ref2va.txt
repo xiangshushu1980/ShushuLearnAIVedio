@@ -1,0 +1,21 @@
+subject_definitions:
+<Subject 1> is Yuki Suou, a 2D anime-style girl, Alya's younger sister, slightly shorter than Alya, with long light pink-purple hair tied into twin tails (large bilateral ponytails), fair skin, large amber/golden eyes, a playful expression that often shows a small devilish cat-mouth smirk, wearing the same school-uniform style as Alya — a dark sailor uniform/blazer with a short skirt — with white thigh-high socks and dark leather shoes.
+<Audio 1> is the voice-timbre reference for <Subject 1> (S1).
+
+summary:
+[reference generation + audio reference] The target video is an independent, single-shot scene in a Japanese school-youth style, showing <Subject 1> waiting alone at the school gate at dusk. She looks around expectantly, then pouts and complains about how long she has been waiting; her single line of spoken dialogue follows the voice timbre referenced from <Audio 1>.
+
+retention_analysis:
+<Subject 1> (appears in [Shot 1]): fully_preserved - Yuki's light pink-purple twin-tail ponytails, amber/golden eyes, playful expression, dark sailor-uniform-style school outfit with short skirt, white thigh-high socks, and dark leather shoes are all retained in the medium shot at the school gate.
+<Audio 1> (voice-timbre for <Subject 1> (S1)): reference - the spoken line follows <Audio 1>'s youthful, coquettish timbre and slightly drawn-out, playful delivery without copying the original signal; the wording itself comes from the scripted dialogue.
+
+detailed_description:
+The target video is in a Japanese school-youth style with a clean 2D anime aesthetic, warm dusk lighting, and a gentle, nostalgic everyday mood.
+[Shot 1] A static medium shot opens at the school gate in late-afternoon dusk light, with the gate pillars, the short approach path, and the street beyond softly visible behind the subject. <Subject 1>, Yuki Suou, a 2D anime-style girl and Alya's younger sister, stands centered in the frame with long light pink-purple hair tied into large bilateral twin-tail ponytails, fair skin, large amber/golden eyes, and a playful expression, wearing a dark sailor-uniform-style school outfit with a short skirt, white thigh-high socks, and dark leather shoes. Warm golden dusk light rakes gently across the scene from the low western sky, casting a soft glow over her face, twin tails, and uniform and stretching her shadow long across the pavement behind her, while a continuous light wind brushes loose strands of her ponytails and gently stirs the hem of her skirt. The camera holds perfectly still for the entire 5.2-second shot — no pan, no tilt — keeping her at medium distance in the center of the 16:9 frame.
+She scans left and right for her sister, turning her head in small, expectant arcs while her amber eyes dart between the gate and the street; faint school-dismissal ambience, distant traffic, and wind fill the background. After a few moments of waiting, she shifts her weight from foot to foot, producing a soft foot-shuffling sound on the pavement while her skirt rustles faintly with each small movement. Her expression gradually changes from bright, playful waiting to a slight pout of impatience, and then, using the voice timbre referenced from <Audio 1>, <Subject 1> (S1) says in a youthful, coquettish tone with a hint of dissatisfaction, <d>[Chinese] 姐姐怎么还不来呀，都等了好久啦。</d> — the line delivered in a clear, soft, slightly drawn-out pace. She closes her lips, gives a small sideways pout, and lowers her gaze for a moment before lifting it again to look down the street once more. Her pink-purple twin tails, amber eyes, and dark sailor uniform remain unobstructed and clearly identifiable throughout the shot, and the frame holds on her waiting figure until the video ends.
+
+overall_soundscape:
+School-gate ambience at dismissal time continues throughout the video, with distant traffic noise and a continuous gentle wind. Soft foot-shuffling on the pavement and the faint rustle of the skirt accompany the character's small waiting movements.
+
+non_diegetic_music:
+N/A
