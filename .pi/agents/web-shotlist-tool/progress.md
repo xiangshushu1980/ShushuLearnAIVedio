@@ -6,6 +6,13 @@
 - 我负责的文件区：（设计阶段无文件；确定后认领新目录，如 web-shotlist/ 或 tools/shotlist-web/）
 
 ## 进度日志（append-only，每条带日期）
+### 2026-08-12（阶段收尾：主线落盘）
+- **主线告一段落**（用户拍板），新对话继续（web-shotlist-tool）
+- 交接要点：服务常驻 8787/5173（日志 /tmp/shotlist-server.log、/tmp/shotlist-web.log）；git 已全部提交（web-shotlist/ + progress）；data/ 不入库
+- **重要**：seedance-h3-verify 已完成（34 条 AB 对比收尾，T2/T7 成立等）——**队列已释放**，MC 线新会话可直接重启 ComfyUI + 跑批（无需再等）
+- 待拍板项：关系升级（related 带阶段+自然语言）+ 故事时间线；A0.5 影视化改写层
+- 体验收尾：任务全局可见、项目重命名、导入导出；设定图按实体类型优化 prompt
+
 ### 2026-08-12（第九轮：输入源真实化 + 提示词联动 + TODO 登记）
 - **T-20260812-08 登记**：TODO.md 近期区（认领 mc-test）；用户开新会话执行 MC 线，本线继续主线
 - **输入源真实化**（docs/22 第 4 步）：parseRefMapping 解析 <Picture N>↔<Subject N>↔实体（role_cards 顺序；兼容 LLM 句式变体 reference image/reference still image——实测 Alya 项目映射 Picture1↔Subject1↔alya_v1）；参考图墙显示实体设定图缩略图（无图占位+引导）；标注 Picture N · Subject N · 实体名
@@ -81,14 +88,13 @@
 - 用户确认的成片反馈（本工具需求上下文）：① 镜头主体绑定要写死"主体+配角在边缘"（seg1 教训）② 环境音不随台词变轻（seg2 教训，grow lighter 参数效果持续考察中）③ Ref2VA 站位由 prompt 主导（T-01 已验收 flip）
 - 设计讨论启动（待用户输入需求细节）
 
-## 下一步
-1. ✅ 核心管线（工具 A/B/三页/实体/门禁/队列/资源）全部完成（2026-08-12）
-2. ✅ 输入源真实化 + 提示词联动（2026-08-12 完成）
-3. 待拍板：关系升级（related 带阶段+自然语言）与故事时间线；A0.5 影视化改写层
-4. 体验收尾：任务全局可见（顶栏指示）、项目重命名、导入导出
-5. 设定图按实体类型优化 prompt（角色站姿/场景/物件）
-6. MC 测试线（新会话执行）：等 seedance 释放 → 重启 ComfyUI → 两段对比跑批（mc-test/progress.md）
-7. 用户浏览器验收（http://localhost:5173）
+## 下一步（新对话从这继续）
+1. ✅ 核心管线 + 输入源联动全部完成（2026-08-12）
+2. 待拍板：关系升级（related 带阶段+自然语言）与故事时间线；A0.5 影视化改写层
+3. 体验收尾：任务全局可见（顶栏指示）、项目重命名、导入导出
+4. 设定图按实体类型优化 prompt（角色站姿/场景/物件）
+5. MC 测试线（新会话执行，队列已释放）：重启 ComfyUI → 两段对比跑批（mc-test/progress.md）
+6. 用户浏览器验收（http://localhost:5173）
 
 ## 关键链接
 - 相关文档：docs/16_prompt_generator_plan.md（工具 A/B 方案）、docs/17_h3_prompt_writing_rules.md（提示词规则）、docs/21_pipeline_acceptance.md、docs/22_shotlist_web_tool.md（设计+开发计划）
