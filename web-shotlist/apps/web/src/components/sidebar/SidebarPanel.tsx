@@ -5,16 +5,41 @@
  */
 import { useState } from 'react'
 import type { InputRef, Project } from '@shotlist/shared'
+import { cn } from '@/lib/utils'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { EntityPanel } from './EntityPanel'
 
 export function SidebarPanel({ project }: { project: Project }) {
+  const [tab, setTab] = useState<'inputs' | 'entities'>('inputs')
   const [advOpen, setAdvOpen] = useState(false)
   const images = project.inputs.filter((i): i is Extract<InputRef, { kind: 'image' }> => i.kind === 'image')
   const audios = project.inputs.filter((i): i is Extract<InputRef, { kind: 'audio' }> => i.kind === 'audio')
 
   return (
-    <div className="flex h-full flex-col gap-3 overflow-y-auto">
+    <div className="flex h-full flex-col gap-2">
+      {/* Tab：输入源 / 实体 */}
+      <div className="flex shrink-0 rounded border border-slate-800 bg-slate-900/60 p-0.5">
+        {([['inputs', '输入源'], ['entities', '实体']] as const).map(([k, label]) => (
+          <button
+            key={k}
+            onClick={() => setTab(k)}
+            className={cn(
+              'flex-1 rounded px-2 py-1 text-[11px] transition-colors',
+              tab === k ? 'bg-slate-700 text-slate-100' : 'text-slate-500 hover:text-slate-300',
+            )}
+          >
+            {label}
+          </button>
+        ))}
+      </div>
+
+      {tab === 'entities' ? (
+        <div className="min-h-0 flex-1 overflow-y-auto">
+          <EntityPanel />
+        </div>
+      ) : (
+        <div className="flex min-h-0 flex-1 flex-col gap-3 overflow-y-auto">
       {/* 参考图墙 */}
       <Card>
         <CardHeader className="border-b border-slate-800 pb-2">
@@ -81,6 +106,8 @@ export function SidebarPanel({ project }: { project: Project }) {
           </CardContent>
         )}
       </Card>
+      </div>
+      )}
     </div>
   )
 }

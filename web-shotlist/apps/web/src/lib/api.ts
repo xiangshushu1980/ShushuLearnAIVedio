@@ -1,5 +1,5 @@
 /** API client（Fastify 后端，/api 前缀经 Vite proxy） */
-import type { Project, ProjectMeta, TrashItem } from '@shotlist/shared'
+import type { DraftLength, Entity, Project, ProjectMeta, TrashItem } from '@shotlist/shared'
 
 async function req<T>(path: string, init?: RequestInit): Promise<T> {
   const headers: Record<string, string> = {}
@@ -32,4 +32,13 @@ export const api = {
   restoreProject: (id: string) => req<ProjectMeta>(`/api/projects/${id}/restore`, { method: 'POST' }),
   purgeProject: (id: string) => req<{ ok: true }>(`/api/projects/${id}`, { method: 'DELETE' }),
   listRoleCards: () => req<string[]>('/api/role-cards'),
+  // 实体
+  listEntities: () => req<Array<Pick<Entity, 'id' | 'name' | 'type' | 'importance'>>>(`/api/entities`),
+  getEntity: (id: string) => req<Entity>(`/api/entities/${encodeURIComponent(id)}`),
+  saveEntity: (e: Partial<Entity> & { name: string }) => req<Entity>('/api/entities', { method: 'POST', body: JSON.stringify(e) }),
+  updateEntity: (id: string, e: Partial<Entity> & { name: string }) => req<Entity>(`/api/entities/${encodeURIComponent(id)}`, { method: 'PUT', body: JSON.stringify(e) }),
+  deleteEntity: (id: string) => req<{ ok: true }>(`/api/entities/${encodeURIComponent(id)}`, { method: 'DELETE' }),
+  extractEntities: (body: { worldview: string; script: string }) => req<{ entities: Entity[] }>('/api/entities/extract', { method: 'POST', body: JSON.stringify(body) }),
+  // 工具 A0
+  genDraft: (body: { idea: string; length: DraftLength; withWorldview: boolean }) => req<{ worldview: string; script: string }>('/api/draft', { method: 'POST', body: JSON.stringify(body) }),
 }

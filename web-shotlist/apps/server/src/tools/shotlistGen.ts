@@ -55,7 +55,7 @@ export async function genShotlist(scriptText: string, opts: GenShotlistOptions):
       `scene: ${script.head.scene ?? ''}\n` +
       `duration_total: ${duration}s\nsound: ${script.head.sound ?? ''}\n` +
       `role_cards: ${JSON.stringify(script.head.role_cards ?? [])}` +
-      `\nchain: ${script.head.chain ?? 'independent'}\nshot_style: ${opts.shotStyle ?? '分镜剪辑'}\n` +
+      `\nchain: ${script.head.chain ?? 'independent'}\nshot_style: ${opts.shotStyle ?? script.head.shot_style ?? '分镜剪辑'}\n` +
       `audio_refs: ${JSON.stringify(script.head.audio_refs ?? {})}` +
       `  # 音色种子（角色 id → wav 路径，可选）`,
     `no_bgm: ${noBgm}  # true=本段不要 BGM：bgm 一律 N/A + 镜头情绪中性化`,

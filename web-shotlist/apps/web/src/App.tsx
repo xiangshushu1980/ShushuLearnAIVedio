@@ -9,21 +9,24 @@
  */
 import { useEffect, useRef, useState } from 'react'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
-import { scriptTemplate, type PromptMode } from '@shotlist/shared'
+import type { PromptMode } from '@shotlist/shared'
 import { api } from '@/lib/api'
 import { useAppStore } from '@/lib/store'
 import { Button } from '@/components/ui/button'
 import { ConfirmDialog } from '@/components/ui/dialog'
+import { NewProjectDialog } from '@/components/NewProjectDialog'
 import { ScriptPanel } from '@/components/script/ScriptPanel'
 import { ShotList } from '@/components/shotlist/ShotList'
 import { SidebarPanel } from '@/components/sidebar/SidebarPanel'
 import { OutputPanel } from '@/components/prompt/OutputPanel'
 import { TrashPanel } from '@/components/trash/TrashPanel'
+import { A0View } from '@/components/a0/A0View'
 
 export default function App() {
   const qc = useQueryClient()
+  const [view, setView] = useState<'board' | 'a0'>('board')
   const [projectId, setProjectId] = useState<string | null>(null)
-  const [newName, setNewName] = useState('')
+  const [newOpen, setNewOpen] = useState(false)
   const [trashOpen, setTrashOpen] = useState(false)
   const [opsOpen, setOpsOpen] = useState(false)
   const [confirmTrash, setConfirmTrash] = useState(false)
@@ -89,11 +92,11 @@ export default function App() {
   const refresh = () => qc.invalidateQueries({ queryKey: ['project', projectId] })
 
   const createMut = useMutation({
-    mutationFn: () => api.createProject({ name: newName }),
+    mutationFn: ({ name, script }: { name: string; script?: string }) => api.createProject({ name, script }),
     onSuccess: (p) => {
       setProjectId(p.meta.id)
-      setScriptDraft(scriptTemplate(p.meta.name)) // 模板预填
-      setNewName('')
+      setView('board')
+      if (p.script?.raw) setScriptDraft(p.script.raw)
       qc.invalidateQueries({ queryKey: ['projects'] })
     },
     onError: (e) => setError((e as Error).message),
@@ -143,31 +146,31 @@ export default function App() {
 
   return (
     <div className="flex h-full flex-col">
-      {/* 顶栏：主入口区在左，删除/回收站等次要操作在右 */}
+      {/* 顶栏：主入口区（创作/新建/项目选择）在左，删除/回收站等次要操作在右 */}
       <header className="flex items-center gap-3 border-b border-slate-800 bg-slate-900/80 px-4 py-2">
         <h1 className="text-sm font-bold text-slate-100">拍摄本看板</h1>
-        <select
-          value={projectId ?? ''}
-          onChange={(e) => setProjectId(e.target.value || null)}
-          className="rounded border border-slate-700 bg-slate-950 px-2 py-1 text-xs text-slate-200"
-        >
-          <option value="">选择项目…</option>
-          {(projects ?? []).map((p) => (
-            <option key={p.id} value={p.id}>
-              {p.name}
-            </option>
-          ))}
-        </select>
-        <input
-          value={newName}
-          onChange={(e) => setNewName(e.target.value)}
-          onKeyDown={(e) => e.key === 'Enter' && newName.trim() && createMut.mutate()}
-          placeholder="新建项目名（回车）"
-          className="w-44 rounded border border-slate-700 bg-slate-950 px-2 py-1 text-xs text-slate-200 placeholder:text-slate-600"
-        />
-        <Button size="sm" variant="secondary" onClick={() => createMut.mutate()} disabled={!newName.trim()} loading={createMut.isPending}>
-          新建
+        <Button size="sm" variant={view === 'a0' ? 'default' : 'outline'} onClick={() => setView(view === 'a0' ? 'board' : 'a0')}>
+          ✍ 创作
         </Button>
+        {view === 'board' && (
+          <>
+            <select
+              value={projectId ?? ''}
+              onChange={(e) => setProjectId(e.target.value || null)}
+              className="rounded border border-slate-700 bg-slate-950 px-2 py-1 text-xs text-slate-200"
+            >
+              <option value="">选择项目…</option>
+              {(projects ?? []).map((p) => (
+                <option key={p.id} value={p.id}>
+                  {p.name}
+                </option>
+              ))}
+            </select>
+            <Button size="sm" variant="secondary" onClick={() => setNewOpen(true)} title="新建项目" className="px-2.5">
+              +
+            </Button>
+          </>
+        )}
 
         {error && (
           <button onClick={() => setError(null)} className="ml-auto max-w-[40%] truncate rounded bg-red-950/60 px-2 py-1 text-[11px] text-red-300" title={error}>
@@ -214,7 +217,13 @@ export default function App() {
       </header>
 
       {/* 三段式 + 输出区 */}
-      {project ? (
+      {view === 'a0' ? (
+        <A0View
+          onApply={(script, name) =>
+            createMut.mutate({ name, script })
+          }
+        />
+      ) : project ? (
         <div className="grid min-h-0 flex-1 grid-cols-[340px_minmax(0,1fr)_260px] grid-rows-[minmax(0,1fr)_260px] gap-0">
           <div className="min-h-0 border-r border-slate-800 p-2">
             <ScriptPanel onGenerate={() => genShotlistMut.mutate()} />
@@ -235,7 +244,8 @@ export default function App() {
         </div>
       )}
 
-      {/* 弹层：确认删除 / 回收站 */}
+      {/* 弹层：新建 / 确认删除 / 回收站 */}
+      <NewProjectDialog open={newOpen} onClose={() => setNewOpen(false)} onCreated={(id) => setProjectId(id)} />
       <ConfirmDialog
         open={confirmTrash}
         onClose={() => setConfirmTrash(false)}

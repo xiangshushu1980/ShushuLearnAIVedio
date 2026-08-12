@@ -1,6 +1,7 @@
 /** Fastify 入口（docs/22：后端 = Fastify，API 前缀 /api） */
 import cors from '@fastify/cors'
 import Fastify from 'fastify'
+import { draftRoutes } from './routes/draft.ts'
 import { entityRoutes } from './routes/entities.ts'
 import { projectRoutes } from './routes/projects.ts'
 
@@ -14,6 +15,7 @@ await app.register(
   async (api) => {
     await api.register(projectRoutes)
     await api.register(entityRoutes)
+    await api.register(draftRoutes)
   },
   { prefix: '/api' },
 )

@@ -82,24 +82,41 @@ export interface Shotlist {
   shots: Shot[]
 }
 
-// ===== 实体（世界观设定单元，docs/22 实体系统）=====
+// ===== 实体（世界观设定单元，docs/22 实体系统；V1 = 结构化轻度描述卡）=====
 export const ENTITY_TYPES = ['角色', '场景', '物件', '技能', '组织', '地点'] as const
 export type EntityType = (typeof ENTITY_TYPES)[number]
 
 /** 重要程度：核心（实线边框）/ 次要（虚线边框） */
 export type EntityImportance = 'core' | 'secondary'
 
+export interface EntityRelation {
+  id: string
+  relation: string
+}
+
 export interface Entity {
   id: string
   name: string
   type: EntityType
   importance: EntityImportance
-  /** 详细设定（markdown） */
+  /** 外观（canon 机制：工具 B subject_definitions 逐字采用；参考图生成用） */
+  appearance: string
+  /** 声音（音色/语气描述；关联 audio_refs 音色种子） */
+  sound: string
+  /** 介绍/设定（markdown） */
   description: string
+  /** 来源引用（剧本/世界观/多份材料） */
+  source?: string
+  /** 关系（文本列表，V1；V2 图谱） */
+  related?: EntityRelation[]
+  createdAt?: string
 }
 
 // ===== 提示词（工具 B 输出）=====
 export type PromptMode = 'i2va' | 'ref2va'
+
+// ===== 工具 A0（点子 → 世界观 + 剧本）=====
+export type DraftLength = 'short' | 'medium' | 'long'
 
 // ===== 渲染输入源（docs/22 侧栏清单，解析自拍摄本 audio_refs / 提示词引用）=====
 export interface InputRefImage {

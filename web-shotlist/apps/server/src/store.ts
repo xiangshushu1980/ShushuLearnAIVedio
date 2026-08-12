@@ -7,7 +7,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { parseScript, parseShotlistYaml, type InputRef, type Project, type ProjectMeta, type PromptMode, type TrashItem } from '@shotlist/shared'
-import { DATA_ROOT, ENTITIES_DIR, ROLE_CARD_DIR } from './config.ts'
+import { DATA_ROOT, ROLE_CARD_DIR } from './config.ts'
 
 export function projectsRoot(): string {
   const dir = path.join(DATA_ROOT, 'projects')
@@ -38,19 +38,25 @@ export function listProjects(): ProjectMeta[] {
 }
 
 export function createProject(name: string, imported?: { script?: string; shotlist?: string; prompt?: string; promptMode?: PromptMode }): Project {
-  const id = name
-    .trim()
+  const base = name.trim()
+  const baseId = base
     .toLowerCase()
     .replace(/[^a-z0-9\u4e00-\u9fff_-]+/g, '_')
     .replace(/^_+|_+$/g, '')
-    .slice(0, 60)
-  if (!id) throw new Error('项目名不能为空')
+    .slice(0, 60) || 'untitled'
+  // 重复自动加数字（base_id2 / base_id3 …）；name 同步显示后缀
+  let id = baseId
+  let i = 2
+  while (fs.existsSync(projectDir(id))) {
+    id = `${baseId}_${i++}`
+  }
+  const finalName = i === 2 ? base || '未命名剧本' : `${base || '未命名剧本'} ${i - 1}`
   const dir = projectDir(id)
   if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true })
 
   const meta: ProjectMeta = {
     id,
-    name: name.trim(),
+    name: finalName,
     createdAt: new Date().toISOString(),
     entities: [],
   }
@@ -137,18 +143,6 @@ export function parseInputs(project: Project): InputRef[] {
     })
   }
   return inputs
-}
-
-// ===== 实体注册表（V1 基础版；V2 对接 experiments/entities）=====
-export function listEntities(): Array<{ id: string; name: string; type: string; importance: string }> {
-  const idx = readJson<Array<{ id: string; name: string; type: string; importance: string }>>(path.join(ENTITIES_DIR, 'index.json'))
-  return idx ?? []
-}
-
-export function readEntity(id: string): { entity?: unknown; errs?: string[] } {
-  const f = path.join(ENTITIES_DIR, `${id}.md`)
-  if (!fs.existsSync(f)) return { errs: [`实体不存在: ${id}`] }
-  return { entity: { id, description: fs.readFileSync(f, 'utf-8') } }
 }
 
 // ===== 回收站（软删除：项目目录移入 data/trash/）=====
