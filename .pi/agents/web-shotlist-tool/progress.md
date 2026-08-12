@@ -6,6 +6,10 @@
 - 我负责的文件区：（设计阶段无文件；确定后认领新目录，如 web-shotlist/ 或 tools/shotlist-web/）
 
 ## 进度日志（append-only，每条带日期）
+### 2026-08-14（恢复上下文 + mem0 整理）
+- 新会话恢复：服务常驻 8787/5173 存活；git 已提交（web-shotlist/ + progress）；data/ 不入库
+- mem0 整理（用户要求合并精简）：[STATE] 更新为新版（并入需求上下文/成片反馈/T-01 闭环）；删除 12 条过期/重复（设计讨论快照、成片反馈、待办/热文件快照、过期队列占用声明×3、MC 调研截断版×2、Seedance 双版本已合并为一条）；mc-test 建 [STATE]
+- 队列：已释放（seedance-h3-verify 完成）→ MC 线可重启 ComfyUI 跑批，与主线并行
 ### 2026-08-12（阶段收尾：主线落盘）
 - **主线告一段落**（用户拍板），新对话继续（web-shotlist-tool）
 - 交接要点：服务常驻 8787/5173（日志 /tmp/shotlist-server.log、/tmp/shotlist-web.log）；git 已全部提交（web-shotlist/ + progress）；data/ 不入库
