@@ -1,0 +1,32 @@
+{
+  "seed": 20260816,
+  "cases": [
+    {"name": "T3r_a", "mode": "t2v", "width": 768, "height": 448, "length": 192, "steps": 8,
+     "prompt": "黄昏城市街道，一名年轻女子打着伞走过斑马线，镜头一边轨道前推一边往左摇，她脚步从容，裙摆微微摆动",
+     "prefix": "video/h3_seedance3/T3r_a"},
+    {"name": "T3r_b", "mode": "t2v", "width": 768, "height": 448, "length": 192, "steps": 8,
+     "prompt": "黄昏城市街道，一名年轻女子打着伞走过斑马线，镜头缓慢上摇同时向右横移，她脚步从容，裙摆微微摆动",
+     "prefix": "video/h3_seedance3/T3r_b"},
+    {"name": "T3r_c", "mode": "t2v", "width": 768, "height": 448, "length": 192, "steps": 8,
+     "prompt": "黄昏城市街道，一名年轻女子打着伞走过斑马线，慢速推轨，略带手持感，她脚步从容，裙摆微微摆动",
+     "prefix": "video/h3_seedance3/T3r_c"},
+    {"name": "T5r2_fast", "mode": "t2v", "width": 768, "height": 448, "length": 192, "steps": 8,
+     "prompt": "黄昏城市街道，一名年轻女子穿着深色运动裤和浅色上衣，镜头固定不动，她侧身从画面中奔跑穿过，手臂摆动，脚步交替，快速奔跑，动作迅速，速度极快",
+     "prefix": "video/h3_seedance3/T5r2_fast"},
+    {"name": "T5r2_base", "mode": "t2v", "width": 768, "height": 448, "length": 192, "steps": 8,
+     "prompt": "黄昏城市街道，一名年轻女子穿着深色运动裤和浅色上衣，镜头固定不动，她侧身从画面中奔跑穿过，手臂摆动，脚步交替",
+     "prefix": "video/h3_seedance3/T5r2_base"},
+    {"name": "T6r2_none", "mode": "i2v", "width": 768, "height": 448, "length": 192, "steps": 8,
+     "images": ["ref_lib/realistic/krea_woman_rain_00001_.png"],
+     "prompt": "她缓缓转身，雨伞轻轻转动，雨滴从伞沿滑落，镜头缓慢推近",
+     "prefix": "video/h3_seedance3/T6r2_none"},
+    {"name": "T6r2_mid", "mode": "i2v", "width": 768, "height": 448, "length": 192, "steps": 8,
+     "images": ["ref_lib/realistic/krea_woman_rain_00001_.png"],
+     "prompt": "一个撑着伞的年轻女子，她缓缓转身，雨伞轻轻转动，雨滴从伞沿滑落，镜头缓慢推近",
+     "prefix": "video/h3_seedance3/T6r2_mid"},
+    {"name": "T6r2_detail", "mode": "i2v", "width": 768, "height": 448, "length": 192, "steps": 8,
+     "images": ["ref_lib/realistic/krea_woman_rain_00001_.png"],
+     "prompt": "一个撑着伞的年轻女子，她穿着外套长裙，路灯照亮她的脸，她缓缓转身，雨伞轻轻转动，雨滴从伞沿滑落，镜头缓慢推近",
+     "prefix": "video/h3_seedance3/T6r2_detail"}
+  ]
+}

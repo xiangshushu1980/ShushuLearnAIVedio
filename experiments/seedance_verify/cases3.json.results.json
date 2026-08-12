@@ -1,0 +1,58 @@
+[
+ {
+  "name": "T3r_a",
+  "seconds": 110,
+  "peak_vram_gb": 22.0,
+  "error": null,
+  "video": "/home/sean/projects/ComfyUI/output/video/h3_seedance3/T3r_a_00001_.mp4"
+ },
+ {
+  "name": "T3r_b",
+  "seconds": 100,
+  "peak_vram_gb": 22.1,
+  "error": null,
+  "video": "/home/sean/projects/ComfyUI/output/video/h3_seedance3/T3r_b_00001_.mp4"
+ },
+ {
+  "name": "T3r_c",
+  "seconds": 101,
+  "peak_vram_gb": 22.1,
+  "error": null,
+  "video": "/home/sean/projects/ComfyUI/output/video/h3_seedance3/T3r_c_00001_.mp4"
+ },
+ {
+  "name": "T5r2_fast",
+  "seconds": 101,
+  "peak_vram_gb": 22.0,
+  "error": null,
+  "video": "/home/sean/projects/ComfyUI/output/video/h3_seedance3/T5r2_fast_00001_.mp4"
+ },
+ {
+  "name": "T5r2_base",
+  "seconds": 101,
+  "peak_vram_gb": 22.1,
+  "error": null,
+  "video": "/home/sean/projects/ComfyUI/output/video/h3_seedance3/T5r2_base_00001_.mp4"
+ },
+ {
+  "name": "T6r2_none",
+  "seconds": 101,
+  "peak_vram_gb": 22.1,
+  "error": null,
+  "video": "/home/sean/projects/ComfyUI/output/video/h3_seedance3/T6r2_none_00001_.mp4"
+ },
+ {
+  "name": "T6r2_mid",
+  "seconds": 131,
+  "peak_vram_gb": 22.0,
+  "error": null,
+  "video": "/home/sean/projects/ComfyUI/output/video/h3_seedance3/T6r2_mid_00001_.mp4"
+ },
+ {
+  "name": "T6r2_detail",
+  "seconds": 100,
+  "peak_vram_gb": 22.1,
+  "error": null,
+  "video": "/home/sean/projects/ComfyUI/output/video/h3_seedance3/T6r2_detail_00001_.mp4"
+ }
+]

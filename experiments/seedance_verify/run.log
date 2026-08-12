@@ -1,0 +1,34 @@
+[T1_short] ✅ 111s 峰值显存 21.3GB -> /home/sean/projects/ComfyUI/output/video/h3_seedance/T1_short_00001_.mp4
+[T1_long] ✅ 100s 峰值显存 22.0GB -> /home/sean/projects/ComfyUI/output/video/h3_seedance/T1_long_00001_.mp4
+[T1_xlong] ✅ 100s 峰值显存 22.0GB -> /home/sean/projects/ComfyUI/output/video/h3_seedance/T1_xlong_00001_.mp4
+[T2_bad] ✅ 90s 峰值显存 21.9GB -> /home/sean/projects/ComfyUI/output/video/h3_seedance/T2_bad_00001_.mp4
+[T2_good] ✅ 100s 峰值显存 21.9GB -> /home/sean/projects/ComfyUI/output/video/h3_seedance/T2_good_00001_.mp4
+[T3_bad] ✅ 90s 峰值显存 22.0GB -> /home/sean/projects/ComfyUI/output/video/h3_seedance/T3_bad_00001_.mp4
+[T3_good] ✅ 90s 峰值显存 22.0GB -> /home/sean/projects/ComfyUI/output/video/h3_seedance/T3_good_00001_.mp4
+[T4_neg] ✅ 90s 峰值显存 22.0GB -> /home/sean/projects/ComfyUI/output/video/h3_seedance/T4_neg_00001_.mp4
+[T4_pos] ✅ 100s 峰值显存 21.9GB -> /home/sean/projects/ComfyUI/output/video/h3_seedance/T4_pos_00001_.mp4
+[T4_ctl] ✅ 100s 峰值显存 21.9GB -> /home/sean/projects/ComfyUI/output/video/h3_seedance/T4_ctl_00001_.mp4
+[T5_fast] ✅ 90s 峰值显存 22.0GB -> /home/sean/projects/ComfyUI/output/video/h3_seedance/T5_fast_00001_.mp4
+[T5_phys] ✅ 90s 峰值显存 22.1GB -> /home/sean/projects/ComfyUI/output/video/h3_seedance/T5_phys_00001_.mp4
+[T6_bad] ✅ 100s 峰值显存 21.9GB -> /home/sean/projects/ComfyUI/output/video/h3_seedance/T6_bad_00001_.mp4
+[T6_good] ✅ 100s 峰值显存 21.9GB -> /home/sean/projects/ComfyUI/output/video/h3_seedance/T6_good_00001_.mp4
+[T7_bad] ✅ 100s 峰值显存 22.0GB -> /home/sean/projects/ComfyUI/output/video/h3_seedance/T7_bad_00001_.mp4
+[T7_good] ✅ 100s 峰值显存 22.1GB -> /home/sean/projects/ComfyUI/output/video/h3_seedance/T7_good_00001_.mp4
+
+结果: experiments/seedance_verify/cases.json.results.json
+  T1_short: 111s vram=21.3 ✅
+  T1_long: 100s vram=22.0 ✅
+  T1_xlong: 100s vram=22.0 ✅
+  T2_bad: 90s vram=21.9 ✅
+  T2_good: 100s vram=21.9 ✅
+  T3_bad: 90s vram=22.0 ✅
+  T3_good: 90s vram=22.0 ✅
+  T4_neg: 90s vram=22.0 ✅
+  T4_pos: 100s vram=21.9 ✅
+  T4_ctl: 100s vram=21.9 ✅
+  T5_fast: 90s vram=22.0 ✅
+  T5_phys: 90s vram=22.1 ✅
+  T6_bad: 100s vram=21.9 ✅
+  T6_good: 100s vram=21.9 ✅
+  T7_bad: 100s vram=22.0 ✅
+  T7_good: 100s vram=22.1 ✅

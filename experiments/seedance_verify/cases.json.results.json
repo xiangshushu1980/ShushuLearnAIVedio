@@ -1,0 +1,114 @@
+[
+ {
+  "name": "T1_short",
+  "seconds": 111,
+  "peak_vram_gb": 21.3,
+  "error": null,
+  "video": "/home/sean/projects/ComfyUI/output/video/h3_seedance/T1_short_00001_.mp4"
+ },
+ {
+  "name": "T1_long",
+  "seconds": 100,
+  "peak_vram_gb": 22.0,
+  "error": null,
+  "video": "/home/sean/projects/ComfyUI/output/video/h3_seedance/T1_long_00001_.mp4"
+ },
+ {
+  "name": "T1_xlong",
+  "seconds": 100,
+  "peak_vram_gb": 22.0,
+  "error": null,
+  "video": "/home/sean/projects/ComfyUI/output/video/h3_seedance/T1_xlong_00001_.mp4"
+ },
+ {
+  "name": "T2_bad",
+  "seconds": 90,
+  "peak_vram_gb": 21.9,
+  "error": null,
+  "video": "/home/sean/projects/ComfyUI/output/video/h3_seedance/T2_bad_00001_.mp4"
+ },
+ {
+  "name": "T2_good",
+  "seconds": 100,
+  "peak_vram_gb": 21.9,
+  "error": null,
+  "video": "/home/sean/projects/ComfyUI/output/video/h3_seedance/T2_good_00001_.mp4"
+ },
+ {
+  "name": "T3_bad",
+  "seconds": 90,
+  "peak_vram_gb": 22.0,
+  "error": null,
+  "video": "/home/sean/projects/ComfyUI/output/video/h3_seedance/T3_bad_00001_.mp4"
+ },
+ {
+  "name": "T3_good",
+  "seconds": 90,
+  "peak_vram_gb": 22.0,
+  "error": null,
+  "video": "/home/sean/projects/ComfyUI/output/video/h3_seedance/T3_good_00001_.mp4"
+ },
+ {
+  "name": "T4_neg",
+  "seconds": 90,
+  "peak_vram_gb": 22.0,
+  "error": null,
+  "video": "/home/sean/projects/ComfyUI/output/video/h3_seedance/T4_neg_00001_.mp4"
+ },
+ {
+  "name": "T4_pos",
+  "seconds": 100,
+  "peak_vram_gb": 21.9,
+  "error": null,
+  "video": "/home/sean/projects/ComfyUI/output/video/h3_seedance/T4_pos_00001_.mp4"
+ },
+ {
+  "name": "T4_ctl",
+  "seconds": 100,
+  "peak_vram_gb": 21.9,
+  "error": null,
+  "video": "/home/sean/projects/ComfyUI/output/video/h3_seedance/T4_ctl_00001_.mp4"
+ },
+ {
+  "name": "T5_fast",
+  "seconds": 90,
+  "peak_vram_gb": 22.0,
+  "error": null,
+  "video": "/home/sean/projects/ComfyUI/output/video/h3_seedance/T5_fast_00001_.mp4"
+ },
+ {
+  "name": "T5_phys",
+  "seconds": 90,
+  "peak_vram_gb": 22.1,
+  "error": null,
+  "video": "/home/sean/projects/ComfyUI/output/video/h3_seedance/T5_phys_00001_.mp4"
+ },
+ {
+  "name": "T6_bad",
+  "seconds": 100,
+  "peak_vram_gb": 21.9,
+  "error": null,
+  "video": "/home/sean/projects/ComfyUI/output/video/h3_seedance/T6_bad_00001_.mp4"
+ },
+ {
+  "name": "T6_good",
+  "seconds": 100,
+  "peak_vram_gb": 21.9,
+  "error": null,
+  "video": "/home/sean/projects/ComfyUI/output/video/h3_seedance/T6_good_00001_.mp4"
+ },
+ {
+  "name": "T7_bad",
+  "seconds": 100,
+  "peak_vram_gb": 22.0,
+  "error": null,
+  "video": "/home/sean/projects/ComfyUI/output/video/h3_seedance/T7_bad_00001_.mp4"
+ },
+ {
+  "name": "T7_good",
+  "seconds": 100,
+  "peak_vram_gb": 22.1,
+  "error": null,
+  "video": "/home/sean/projects/ComfyUI/output/video/h3_seedance/T7_good_00001_.mp4"
+ }
+]
