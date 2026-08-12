@@ -2,6 +2,7 @@
 import type { FastifyInstance } from 'fastify'
 import { z } from 'zod'
 import { createProject, listProjects, listRoleCards, listTrash, purgeProject, readProject, restoreProject, saveProject, trashProject } from '../store.ts'
+import { gateEntities } from '../gate.ts'
 import { genShotlist } from '../tools/shotlistGen.ts'
 import { genPrompt } from '../tools/promptStage2.ts'
 
@@ -95,10 +96,19 @@ export async function projectRoutes(app: FastifyInstance): Promise<void> {
     if (!parsed.success) return reply.code(400).send({ error: parsed.error.issues.map((i) => i.message).join('；') })
     const project = readProject(id)
     if (!project.shotlist) return reply.code(400).send({ error: '项目缺少拍摄本（shotlist）' })
+    // 渲染门禁：引用实体必须合格（无 fallback；文字不合格 = 硬阻塞）
+    // 引用来源：剧本参数头 role_cards + 拍摄本 role_cards + audio_refs（防 LLM 输出丢 role_cards）
+    const scriptRoleIds = project.script?.head?.role_cards ?? []
+    const shotlistRoleIds = project.shotlist.role_cards ?? []
+    const audioIds = Object.keys(project.shotlist.audio_refs ?? {})
+    const gate = gateEntities([...scriptRoleIds, ...shotlistRoleIds, ...audioIds])
+    if (!gate.allTextOk) {
+      return reply.code(422).send({ error: '实体门禁未通过：' + gate.blocks.join('；'), gate: gate.blocks })
+    }
     try {
       const result = await genPrompt(project.shotlistRaw ?? '', parsed.data)
       saveProject(id, { prompt: result.prompt, promptMode: parsed.data.mode })
-      return { mode: parsed.data.mode, attempts: result.attempts, issues: result.issues }
+      return { mode: parsed.data.mode, attempts: result.attempts, issues: result.issues, gate }
     } catch (e) {
       return reply.code(502).send({ error: (e as Error).message })
     }

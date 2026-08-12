@@ -4,6 +4,7 @@
  */
 import fs from 'node:fs'
 import path from 'node:path'
+import { importAsset, listAssets } from './assets.ts'
 import { REPO_ROOT } from './config.ts'
 
 const COMFY_API = process.env.COMFYUI_API ?? 'http://127.0.0.1:8188'
@@ -29,8 +30,7 @@ export async function comfyAlive(): Promise<boolean> {
 }
 
 /** 生成实体设定图（prompt 缺省 = 实体外观 + 通用站姿） */
-export async function generateArt(entityId: string, prompt?: string, seed?: number): Promise<ArtResult> {
-  if (!fs.existsSync(TPL)) throw new Error(`缺少 ANIMA 模板: ${TPL}`)
+export async function generateArt(entityId: string, prompt?: string, seed?: number): Promise<ArtResult> {  if (!fs.existsSync(TPL)) throw new Error(`缺少 ANIMA 模板: ${TPL}`)
   const wf = JSON.parse(fs.readFileSync(TPL, 'utf-8')) as Record<string, { inputs: Record<string, unknown> }>
   const text =
     prompt?.trim() ||
@@ -54,8 +54,8 @@ export async function generateArt(entityId: string, prompt?: string, seed?: numb
   return { ok: true, images: [], promptId: prompt_id }
 }
 
-/** 轮询等待生成完成，返回图片文件名列表 */
-export async function waitArtDone(promptId: string, timeoutMs = 300_000): Promise<string[]> {
+/** 轮询等待生成完成，把图移入实体资产目录，返回文件名列表 */
+export async function waitArtDone(entityId: string, promptId: string, timeoutMs = 300_000): Promise<string[]> {
   const deadline = Date.now() + timeoutMs
   while (Date.now() < deadline) {
     const r = await fetch(`${COMFY_API}/history/${promptId}`, { signal: AbortSignal.timeout(10_000) })
@@ -66,7 +66,13 @@ export async function waitArtDone(promptId: string, timeoutMs = 300_000): Promis
       if (st.completed) {
         const imgs: string[] = []
         for (const out of Object.values(entry.outputs ?? {})) {
-          for (const img of out.images ?? []) imgs.push(img.filename)
+          for (const img of out.images ?? []) {
+            const from = path.join(OUTPUT_DIR, img.filename)
+            if (fs.existsSync(from)) {
+              importAsset(entityId, 'art', from)
+              imgs.push(path.basename(from))
+            }
+          }
         }
         return imgs
       }
@@ -77,23 +83,15 @@ export async function waitArtDone(promptId: string, timeoutMs = 300_000): Promis
   throw new Error(`生成超时 ${timeoutMs / 1000}s`)
 }
 
-/** 该实体的设定图列表（扫描 output/shotlist-art/<entityId>_*.png） */
+/** 该实体的设定图列表（读资产目录 data/entities/assets/<id>/） */
 export function listEntityArt(entityId: string): string[] {
-  if (!fs.existsSync(OUTPUT_DIR)) return []
-  const prefix = `${entityId}_`
-  return fs
-    .readdirSync(OUTPUT_DIR)
-    .filter((f) => f.startsWith(prefix) && /\.(png|jpg|jpeg|webp)$/i.test(f))
-    .sort()
-    .reverse()
+  return listAssets(entityId)
+    .filter((a) => a.kind === 'art')
+    .map((a) => a.file)
 }
 
-/** 读图文件（前端 <img> 用） */
+/** 读图文件（前端 <img> 用；改读资产目录） */
 export function readArtFile(filename: string): { buf: Buffer; mime: string } | null {
-  const safe = path.basename(filename) // 防穿越
-  const f = path.join(OUTPUT_DIR, safe)
-  if (!fs.existsSync(f)) return null
-  const ext = path.extname(safe).toLowerCase()
-  const mime = ext === '.jpg' || ext === '.jpeg' ? 'image/jpeg' : ext === '.webp' ? 'image/webp' : 'image/png'
-  return { buf: fs.readFileSync(f), mime }
+  void filename
+  return null
 }

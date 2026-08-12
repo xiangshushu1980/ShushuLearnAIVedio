@@ -1,11 +1,12 @@
 /**
- * 实体全局弹层（页 0/1/2 共用）：详情/编辑（含设定图生成）+ 新建 + 抽取 + 选择器
+ * 实体全局弹层（三页共用）：详情/编辑 + 资源面板（画面/声音/文字 可重刷可观测）+ 新建 + 选择器
  */
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import type { Entity } from '@shotlist/shared'
 import { api } from '@/lib/api'
 import { useAppStore } from '@/lib/store'
+import { useTaskPoll } from '@/lib/useTaskPoll'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import { ConfirmDialog, Dialog } from '@/components/ui/dialog'
@@ -65,7 +66,7 @@ export function EntityDetailDialog({ id, onClose }: { id: string; onClose: () =>
             <TextArea label="声音（音色/语气）" value={e?.sound ?? ''} onChange={(v) => set({ sound: v })} rows={2} />
             <TextArea label="介绍（身份/背景/作用）" value={e?.description ?? ''} onChange={(v) => set({ description: v })} rows={3} />
             <input value={e?.source ?? ''} onChange={(ev) => set({ source: ev.target.value })} placeholder="来源（如：剧本《XX》/世界观手册）" className="w-full text-xs" />
-            {!isNew && e && <ArtSection entityId={e.id} />}
+            {!isNew && e && <AssetsSection entityId={e.id} entityName={e.name} />}
             <div className="flex items-center justify-between pt-1">
               <button onClick={() => setConfirmDel(true)} className="rounded px-2 py-1 text-[11px] text-red-400 hover:bg-red-950/50">
                 {isNew ? '' : '删除'}
@@ -87,38 +88,128 @@ export function EntityDetailDialog({ id, onClose }: { id: string; onClose: () =>
   )
 }
 
-/** 设定图区（ANIMA 生成 + 展示） */
-function ArtSection({ entityId }: { entityId: string }) {
+/** 资源面板：三态（文字/画面/声音）+ 设定图生成（任务式）+ 上传/试听/删除 */
+function AssetsSection({ entityId, entityName }: { entityId: string; entityName: string }) {
   const qc = useQueryClient()
-  const { data } = useQuery({ queryKey: ['entity-art', entityId], queryFn: () => api.getEntityArt(entityId) })
+  const { data: art } = useQuery({ queryKey: ['entity-art', entityId], queryFn: () => api.getEntityArt(entityId) })
+  const { data: assets } = useQuery({ queryKey: ['entity-assets', entityId], queryFn: () => api.getEntityAssets(entityId) })
   const [prompt, setPrompt] = useState('')
-  const genMut = useMutation({
-    mutationFn: () => api.generateEntityArt(entityId, { prompt: prompt.trim() || undefined }),
-    onSuccess: () => qc.invalidateQueries({ queryKey: ['entity-art', entityId] }),
+  const [artTaskId, setArtTaskId] = useState<string | null>(null)
+  const [artConflict, setArtConflict] = useState<string | null>(null)
+  const fileRef = useRef<HTMLInputElement>(null)
+  const voiceRef = useRef<HTMLInputElement>(null)
+
+  const artTask = useTaskPoll(artTaskId, () => {
+    qc.invalidateQueries({ queryKey: ['entity-art', entityId] })
+    qc.invalidateQueries({ queryKey: ['entity-assets', entityId] })
   })
 
+  const upload = async (kind: 'art' | 'voice', file: File) => {
+    try {
+      await api.uploadEntityAsset(entityId, kind, file)
+      qc.invalidateQueries({ queryKey: ['entity-assets', entityId] })
+      qc.invalidateQueries({ queryKey: ['entity-art', entityId] })
+    } catch (e) {
+      useAppStore.getState().setError(`上传失败: ${(e as Error).message}`)
+    }
+  }
+
+  const del = async (file: string) => {
+    try {
+      await api.deleteEntityAsset(entityId, file)
+      qc.invalidateQueries({ queryKey: ['entity-assets', entityId] })
+      qc.invalidateQueries({ queryKey: ['entity-art', entityId] })
+    } catch (e) {
+      useAppStore.getState().setError((e as Error).message)
+    }
+  }
+
+  const genArt = async () => {
+    setArtConflict(null)
+    try {
+      const r = await api.generateEntityArt(entityId, { prompt: prompt.trim() || undefined })
+      setArtTaskId(r.taskId)
+    } catch (e) {
+      const msg = (e as Error).message
+      if (msg.includes('已有任务')) setArtConflict(msg)
+      else useAppStore.getState().setError(msg)
+    }
+  }
+
+  const artFiles = art?.images ?? []
+  const artAssets = assets?.assets.filter((a) => a.kind === 'art') ?? []
+  const voiceAssets = assets?.assets.filter((a) => a.kind === 'voice') ?? []
+
   return (
-    <div className="rounded border border-slate-800 bg-slate-950/50 p-2">
-      <p className="mb-1.5 text-[10px] font-medium uppercase tracking-wide text-slate-500">
-        设定图（ANIMA 生图{data && !data.comfyOnline ? ' · ⚠ ComfyUI 不在线' : ''}）
-      </p>
-      <div className="mb-1.5 flex gap-1.5">
-        <input value={prompt} onChange={(e) => setPrompt(e.target.value)} placeholder="自定义 prompt（留空=用外观描述）" className="min-w-0 flex-1 text-[11px]" />
-        <Button size="sm" variant="secondary" onClick={() => genMut.mutate()} loading={genMut.isPending} disabled={data && !data.comfyOnline}>
-          生成
-        </Button>
+    <div className="space-y-2 rounded border border-slate-800 bg-slate-950/50 p-2">
+      {/* 三态徽章 */}
+      <div className="flex flex-wrap gap-1.5">
+        <StateBadge ok={artFiles.length > 0} label="画面（设定图）" missing="无设定图" count={artFiles.length} />
+        <StateBadge ok={voiceAssets.length > 0} label="声音（音色种子）" missing="无音色" count={voiceAssets.length} />
+        <span className="rounded bg-slate-800 px-1.5 py-0.5 text-[10px] text-slate-400">文字（外观/介绍）</span>
       </div>
-      {data && data.images.length > 0 && (
+
+      {/* 设定图：生成 + 展示 */}
+      <div>
+        <div className="mb-1 flex gap-1.5">
+          <input value={prompt} onChange={(e) => setPrompt(e.target.value)} placeholder="自定义 prompt（留空=用外观描述）" className="min-w-0 flex-1 text-[11px]" />
+          <Button size="sm" variant="secondary" onClick={genArt} loading={artTask?.status === 'running'} disabled={art?.comfyOnline === false}>
+            {art?.comfyOnline === false ? 'ComfyUI 离线' : artFiles.length ? '重刷' : '生成'}
+          </Button>
+          <Button size="sm" variant="outline" onClick={() => fileRef.current?.click()}>上传</Button>
+          <input ref={fileRef} type="file" accept="image/*" className="hidden" onChange={(e) => e.target.files?.[0] && upload('art', e.target.files[0])} />
+        </div>
+        {artConflict && <p className="mb-1 text-[10px] text-amber-300">⏳ {artConflict}</p>}
+        {artTask?.status === 'running' && <p className="mb-1 text-[10px] text-cyan-300">⏳ 生成中… 已等待 {artTask.elapsed}s（ANIMA 约 1-2 分钟）</p>}
+        {artTask?.status === 'error' && <p className="mb-1 text-[10px] text-red-300">✗ {artTask.error}</p>}
         <div className="grid grid-cols-3 gap-1.5">
-          {data.images.slice(0, 6).map((f) => (
-            <a key={f} href={api.artUrl(f)} target="_blank" rel="noreferrer">
-              <img src={api.artUrl(f)} alt={f} className="aspect-video w-full rounded border border-slate-700 object-cover" />
-            </a>
+          {artFiles.slice(0, 6).map((f) => (
+            <div key={f} className="group relative">
+              <a href={api.assetUrl(entityId, f)} target="_blank" rel="noreferrer">
+                <img src={api.assetUrl(entityId, f)} alt={f} className="aspect-video w-full rounded border border-slate-700 object-cover" />
+              </a>
+              <button
+                onClick={() => del(f)}
+                className="absolute right-0.5 top-0.5 hidden rounded bg-red-950/80 px-1 text-[9px] text-red-300 group-hover:block"
+                title="删除"
+              >
+                ✕
+              </button>
+            </div>
           ))}
         </div>
-      )}
-      {data && data.images.length === 0 && !genMut.isPending && <p className="text-[10px] text-slate-600">暂无设定图（生成约需 1-2 分钟）</p>}
+        {artFiles.length === 0 && artTask?.status !== 'running' && <p className="text-[10px] text-slate-600">暂无设定图（生成或上传）</p>}
+      </div>
+
+      {/* 音色种子：上传 + 试听 */}
+      <div>
+        <div className="mb-1 flex items-center justify-between">
+          <span className="text-[10px] font-medium uppercase tracking-wide text-slate-500">音色种子（{voiceAssets.length}）</span>
+          <Button size="sm" variant="outline" onClick={() => voiceRef.current?.click()}>上传 wav</Button>
+          <input ref={voiceRef} type="file" accept="audio/*" className="hidden" onChange={(e) => e.target.files?.[0] && upload('voice', e.target.files[0])} />
+        </div>
+        {voiceAssets.length === 0 && <p className="text-[10px] text-slate-600">暂无音色种子（上传角色声音 wav）</p>}
+        <div className="space-y-1">
+          {voiceAssets.map((a) => (
+            <div key={a.file} className="flex items-center gap-2 rounded border border-slate-800 bg-slate-950 px-1.5 py-1">
+              <audio controls src={api.assetUrl(entityId, a.file)} className="h-6 min-w-0 flex-1" />
+              <button onClick={() => del(a.file)} className="text-[10px] text-red-400 hover:text-red-300" title="删除">✕</button>
+            </div>
+          ))}
+        </div>
+      </div>
+      <p className="text-[10px] leading-relaxed text-slate-600">
+        渲染门禁：生成提示词前会检查引用实体——文字不合格阻塞；画面/声音缺失警告。「{entityName}」的设定图可作 ref2va 参考图。
+      </p>
     </div>
+  )
+}
+
+function StateBadge({ ok, label, missing, count }: { ok: boolean; label: string; missing: string; count: number }) {
+  return ok ? (
+    <span className="rounded bg-emerald-900/60 px-1.5 py-0.5 text-[10px] text-emerald-300">✓ {label} ×{count}</span>
+  ) : (
+    <span className="rounded bg-amber-950/60 px-1.5 py-0.5 text-[10px] text-amber-400">△ {label}：{missing}</span>
   )
 }
 

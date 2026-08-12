@@ -138,8 +138,10 @@ export default function App() {
   const genPromptMut = useMutation({
     mutationFn: (mode: PromptMode) => api.generatePrompt(projectId!, { mode, model: 'deepseek-v4-flash', effort: 'high' }),
     onMutate: () => setBusy('prompt'),
-    onSuccess: async () => {
+    onSuccess: async (r) => {
       setBusy(null)
+      const warns = (r as { gate?: { warns: string[] } }).gate?.warns
+      if (warns?.length) setError(`门禁警告（可后补）：${warns.slice(0, 3).join('；')}`)
       await refresh()
       setPage(2) // 生成成功 → 提示词页
     },

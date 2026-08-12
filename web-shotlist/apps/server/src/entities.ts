@@ -124,12 +124,13 @@ function parseFrontmatter(f: string): Record<string, unknown> {
 }
 
 /**
- * 角色卡注入（工具 A/B 共用）：实体库优先（外观/声音/介绍），缺失 fallback experiments/shotlist/rolecards/
- * 实体连接一致性：ref2va 靠实体（设定图+卡）锚定身份
+ * 角色卡注入（工具 A/B 共用）：实体库必须匹配（无 fallback，用户决策 2026-08-12）
+ * 找不到 → 抛错阻断生成，提示先到①剧本页从剧本+世界观抽取实体
  */
 export function loadEntityCards(ids: string[]): string {
   if (!ids.length) return '（无角色卡）'
   const blocks: string[] = []
+  const missing: string[] = []
   for (const rid of ids) {
     const e = readEntity(rid)
     if (e) {
@@ -137,10 +138,58 @@ export function loadEntityCards(ids: string[]): string {
         `===== 角色卡 ${rid} =====\n# ${e.name}（${e.type}·${e.importance === 'core' ? '核心' : '次要'}）\n## 外观\n${e.appearance}\n## 声音\n${e.sound || '无特殊'}\n## 介绍\n${e.description}`,
       )
     } else {
-      const f = path.join(ROLE_CARD_DIR, `${rid}.md`)
-      if (fs.existsSync(f)) blocks.push(`===== 角色卡 ${rid} =====\n${fs.readFileSync(f, 'utf-8')}`)
-      else blocks.push(`（角色卡 ${rid} 未找到，忽略）`)
+      missing.push(rid)
     }
   }
+  if (missing.length) {
+    throw new Error(`角色卡不在实体库（无 fallback）：${missing.join('、')}——请先在①剧本页用 AI 抽取从剧本+世界观生成实体`)
+  }
   return blocks.join('\n')
+}
+
+/**
+ * 从 experiments/shotlist/rolecards/*.md 一键导入实体库（老项目迁移，2026-08-12）
+ * 节解析：外观节 → appearance；行为锚定/场景关联 → description；声音缺省（可后补）
+ */
+export function importRolecardsToEntities(): Array<{ id: string; name: string; imported: boolean; error?: string }> {
+  const dir = ROLE_CARD_DIR
+  if (!fs.existsSync(dir)) return []
+  const results: Array<{ id: string; name: string; imported: boolean; error?: string }> = []
+  for (const f of fs.readdirSync(dir).filter((x) => x.endsWith('.md'))) {
+    const id = f.slice(0, -3)
+    let cardName = id
+    try {
+      const text = fs.readFileSync(path.join(dir, f), 'utf-8')
+      const nameMatch = /^#\s*角色卡：?([^（(\s]+)/m.exec(text) ?? /^#\s*(.+)$/m.exec(text)
+      cardName = (nameMatch?.[1] ?? id).trim()
+      const section = (title: string): string => {
+        const re = new RegExp('##\\s*' + title + '[^\\n]*\\n([\\s\\S]*?)(?=\\n##\\s|$)')
+        const m = re.exec(text)
+        return m ? m[1].trim() : ''
+      }
+      const appearance = section('外观')
+      const behavior = section('行为锚定')
+      const scene = section('场景关联')
+      const desc = [behavior, scene].filter(Boolean).join('\n\n')
+      if (!appearance && !desc) {
+        results.push({ id, name: cardName, imported: false, error: '未解析到外观/行为节，跳过（可手动新建）' })
+        continue
+      }
+      saveEntity({
+        id,
+        name: cardName,
+        type: '角色',
+        importance: 'core',
+        appearance,
+        sound: '',
+        description: desc,
+        source: `角色卡 ${id}（experiments/shotlist/rolecards 导入）`,
+      })
+      results.push({ id, name: cardName, imported: true })
+    } catch (e) {
+      const errMsg = e instanceof Error ? e.message : String(e)
+      results.push({ id, name: cardName, imported: false, error: errMsg })
+    }
+  }
+  return results
 }
