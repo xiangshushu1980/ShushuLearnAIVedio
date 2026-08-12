@@ -6,6 +6,13 @@
 - 我负责的文件区：（设计阶段无文件；确定后认领新目录，如 web-shotlist/ 或 tools/shotlist-web/）
 
 ## 进度日志（append-only，每条带日期）
+### 2026-08-12（第四轮：+新建 / AI 实体卡 / 工具 A0 创作页）
+- **新建简化**：顶栏 + 按钮 → 对话框输入名字；空名默认"未命名剧本"；重名自动加数字（同名测试 → 同名测试 2）；不占顶栏空间
+- **实体卡系统 V1**（用户确认：重要，但 V1 结构化轻度描述足够，图谱 V2）：外观+声音+介绍 三段结构化卡，data/entities/<id>.md（frontmatter 元信息+关系文本列表）；CRUD API + **AI 抽取**（世界观+剧本 → DeepSeek → 实体卡落库，实测 31s 抽 Alya/Yuki/天台，外观可作画级）；侧栏改 Tab（输入源/实体）+ 详情/编辑/删除弹层；外观段=canon 机制基础（工具 B 逐字采用）
+- **工具 A0 创作页**（顶栏主入口 ✍）：输入几句话 → 长度档（短 8s/中 12s/长 20s）+ 世界观开关 → 世界观手册 + 剧本 YAML（可编辑）→ 应用到新项目；实测 18s 出《夏末的约定》短档
+- **修复**：shot_style 参数头被工具 A 忽略（改读 head.shot_style）；A0 模板约束 duration 数字/shot_style 枚举
+- 已 commit；服务常驻 8787/5173
+
 ### 2026-08-12（第三轮：参数头模板化 + 自动保存 + 回收站）
 - **参数头表单**（ScriptHeadForm）：title/style/ratio/scene/duration 快捷档/chain/shot_style/sound/no_bgm/role_cards 多选（GET /api/role-cards 扫描 experiments/shotlist/rolecards）/audio_refs 键值对
 - **双向绑定**：表单修改→yaml merge 重写参数头（保留未知字段如 branch，丢注释=已知取舍）；文本修改→防抖 500ms 解析回填；解析失败红条不覆盖文本
@@ -33,10 +40,11 @@
 ## 下一步
 1. ✅ 脚手架 + 工具 A/B TS 重写 + 三段式骨架 + 标色（2026-08-12 完成）
 2. ✅ 参数头模板化表单 + 自动保存 + 回收站（2026-08-12 完成）
-3. 用户浏览器验收（http://localhost:5173；后端 8787）
-4. 输入源解析增强 + 侧栏联动（hover/跳转/返回栈，docs/22 开发计划第 4 步）
-5. 实体注册表 + 详情面板（V1 基础版，第 5 步）
-6. 导入导出、项目 meta、样式打磨（第 6 步）
+3. ✅ + 新建 / AI 实体卡 / 工具 A0 创作页（2026-08-12 完成）
+4. 用户浏览器验收（http://localhost:5173）
+5. 输入源解析增强 + 侧栏联动（hover/跳转/返回栈，docs/22 开发计划第 4 步）
+6. 实体卡接入工具 A/B（角色卡注入统一从实体库取）+ 拍摄本 chip 点击→实体详情联动
+7. 导入导出、项目 meta、样式打磨（第 6 步）
 
 ## 关键链接
 - 相关文档：docs/16_prompt_generator_plan.md（工具 A/B 方案）、docs/17_h3_prompt_writing_rules.md（提示词规则）、docs/21_pipeline_acceptance.md、docs/22_shotlist_web_tool.md（设计+开发计划）
