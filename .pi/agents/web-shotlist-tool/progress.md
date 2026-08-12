@@ -35,3 +35,8 @@
 **技术栈结论**：无独有技术可抄；FastAPI + 前端单页即可。UI 参考=seesee75 时间线（ruler+tracks+prompt zones+编译预览）+ j955229 chip 标色 + DirectorsConsole 布局成熟度
 **UI 设计**：用户建议让 Gemini（Google）出界面设计稿——待用户提供 key/确认渠道后执行
 **候选交互**：用户拍板=每镜候选多选一（整本候选=重拍无意义）；当前阶段先生成单本，候选后续加
+### 2026-08-12 设计文档定稿（docs/22）
+- **全部关键决策已确认**：全 TS 单栈（Node22+Fastify+React19+Vite7+pnpm+Zustand+TanStack Query+Tailwind/shadcn+zod）；分层（审阅层 web / 执行层 ComfyUI）；V1 纯看板三段式+侧栏输入源；实体系统（类型色+重要度+chip/tooltip/详情/返回栈）；标色方案；项目=目录格式+导入；剧本 YAML 预留 branch 扩展点；Python-only 边界=demucs/AudioSep 两脚本（child_process 调用）
+- **架构讨论结论**：不用 ComfyUI 实现（执行引擎≠审阅工作台）；不用无限画布作主界面（V2 tldraw 探索视图）；分支=剧本层路径展开（拍摄本线性）；表现变体=候选多选一（每镜，V2）
+- docs/22 已写并登记 INDEX；docs_check 通过
+- 下一步：脚手架+工具 A/B TS 重写（见 docs/22 开发计划）

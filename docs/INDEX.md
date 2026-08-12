@@ -1,7 +1,7 @@
 # ComfyUI 项目文档索引
 
 > 本机环境：Ubuntu 24.04 (WSL2, mirror 网络模式) / RTX 4090 24GB / Python 3.13 / CUDA 13
-> 最后更新：2026-08-11（docs 体系整理：13→12、04→06、20→21 合并；09/19 瘦身；维护规则见文末）
+> 最后更新：2026-08-12（新增 22 拍摄本看板工具设计）
 
 ## 📚 文档导航（按需加载）
 
@@ -22,6 +22,7 @@
 | [18_ir_sample_teardown.md](18_ir_sample_teardown.md) | IR 输出样本拆解（结构规律/声音三层/词汇库附录待建） | 学习 IR 输出 / 查词汇 |
 | [19_h3_dual_track_gap_test.md](19_h3_dual_track_gap_test.md) | H3 双轨盲区补测（快/慢车道矩阵/帧链 SSIM 负面结论） | 双轨参数 / 帧链可靠性 |
 | [21_pipeline_acceptance.md](21_pipeline_acceptance.md) | 新管线全链路验收（F 批/首帧锚定规律/工具链 vs IR/无 BGM 版） | 管线验收 / 首帧规范 |
+| [22_shotlist_web_tool.md](22_shotlist_web_tool.md) | 拍摄本看板 Web 工具设计（全 TS 单栈/三段式/实体系统/标色/输入源） | 看板工具开发 / 工具 A/B 重写 |
 
 **已归档**（内容已并入他处，git 历史可查）：03（→01）、04（→06）、05（→mem0 [STATE]）、13（→12）、20（→21）
 
