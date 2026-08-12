@@ -7,6 +7,7 @@ import { deleteEntity, importRolecardsToEntities, listEntities, readEntity, save
 import { gateEntities } from '../gate.ts'
 import { readStyle, writeStyle } from '../style.ts'
 import { submitTask, getTask } from '../tasks.ts'
+import { ttsReady } from '../voice.ts'
 import { extractEntities } from '../tools/entityExtract.ts'
 import { chatCompletion, stripFence, type Effort } from '../llm.ts'
 
@@ -77,6 +78,29 @@ export async function entityRoutes(app: FastifyInstance): Promise<void> {
     const parsed = styleBody.safeParse(req.body)
     if (!parsed.success) return reply.code(400).send({ error: parsed.error.issues.map((i) => i.message).join('；') })
     return writeStyle(parsed.data.prompt)
+  })
+
+  // ===== 音色种子生成（Qwen3-TTS 三种模式；任务式）=====
+  app.get('/tts-ready', async () => ({ ready: ttsReady() }))
+
+  app.post('/entities/:id/voice', async (req, reply) => {
+    const { id } = z.object({ id: z.string().min(1) }).parse(req.params)
+    const parsed = z
+      .object({
+        kind: z.enum(['custom', 'design', 'clone']),
+        text: z.string().min(1),
+        speaker: z.string().optional(),
+        instruct: z.string().optional(),
+        refText: z.string().optional(),
+        seed: z.number().optional(),
+      })
+      .safeParse(req.body)
+    if (!parsed.success) return reply.code(400).send({ error: parsed.error.issues.map((i) => i.message).join('；') })
+    if (!readEntity(id)) return reply.code(404).send({ error: `实体不存在: ${id}` })
+    if (!ttsReady()) return reply.code(503).send({ error: 'Qwen3-TTS 未就绪（缺脚本或 venv）' })
+    const { task, conflict } = submitTask('voice', { entityId: id, input: parsed.data })
+    if (conflict) return reply.code(409).send({ error: '已有任务运行中，请等待完成' })
+    return { taskId: task!.id }
   })
 
   app.delete('/entities/:id', async (req, reply) => {

@@ -7,7 +7,7 @@
  *  - 关系编辑界面化
  *  - 全局风格（⚙ 顶栏设置，只影响设定图）
  */
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import type { Entity, EntityRelation, EntityVariant } from '@shotlist/shared'
 import { api } from '@/lib/api'
@@ -385,6 +385,40 @@ function AssetsSection({ entityId, entity }: { entityId: string; entity: Entity 
     }
   }
 
+  // ===== 音色种子生成（Qwen3-TTS 三模式）=====
+  const [voiceMode, setVoiceMode] = useState<'custom' | 'design'>('design')
+  const [voiceSpeaker, setVoiceSpeaker] = useState('serena')
+  const [voiceInstruct, setVoiceInstruct] = useState('')
+  const [voiceText, setVoiceText] = useState('我是一片随风飘落的树叶，轻轻落在你的肩头。')
+  const [voiceTaskId, setVoiceTaskId] = useState<string | null>(null)
+  const [voiceConflict, setVoiceConflict] = useState<string | null>(null)
+  const [ttsReady, setTtsReady] = useState<boolean | null>(null)
+  useEffect(() => {
+    api
+      .ttsReady()
+      .then((r) => setTtsReady(r.ready))
+      .catch(() => setTtsReady(false))
+  }, [])
+  const voiceTask = useTaskPoll(voiceTaskId, () => {
+    qc.invalidateQueries({ queryKey: ['entity-assets', entityId] })
+  })
+  const genVoice = async () => {
+    setVoiceConflict(null)
+    try {
+      const r = await api.generateEntityVoice(entityId, {
+        kind: voiceMode,
+        text: voiceText || '你好。',
+        speaker: voiceMode === 'custom' ? voiceSpeaker : undefined,
+        instruct: voiceMode === 'design' ? voiceInstruct || entity.sound : undefined,
+      })
+      setVoiceTaskId(r.taskId)
+    } catch (e) {
+      const msg = (e as Error).message
+      if (msg.includes('已有任务')) setVoiceConflict(msg)
+      else useAppStore.getState().setError(msg)
+    }
+  }
+
   const artFiles = art?.images ?? []
   const artAssets = assets?.assets.filter((a) => a.kind === 'art') ?? []
   const voiceAssets = assets?.assets.filter((a) => a.kind === 'voice') ?? []
@@ -430,14 +464,40 @@ function AssetsSection({ entityId, entity }: { entityId: string; entity: Entity 
         {artFiles.length === 0 && artTask?.status !== 'running' && <p className="text-[10px] text-slate-600">暂无设定图（生成或上传）</p>}
       </div>
 
-      {/* 音色种子：上传 + 试听（Qwen3-TTS 生成接入 V2） */}
+      {/* 音色种子：Qwen3-TTS 生成 + 上传 + 试听 */}
       <div>
         <div className="mb-1 flex items-center justify-between">
           <span className="text-[10px] font-medium uppercase tracking-wide text-slate-500">音色种子（{voiceAssets.length}）</span>
           <Button size="sm" variant="outline" onClick={() => voiceRef.current?.click()}>上传 wav</Button>
           <input ref={voiceRef} type="file" accept="audio/*" className="hidden" onChange={(e) => e.target.files?.[0] && upload('voice', e.target.files[0])} />
         </div>
-        {voiceAssets.length === 0 && <p className="text-[10px] text-slate-600">暂无音色种子（上传角色声音 wav，或待 Qwen3-TTS 生成接入）</p>}
+        {/* AI 生成（Qwen3-TTS） */}
+        <div className="mb-2 space-y-1.5 rounded border border-slate-800 bg-slate-950 p-2">
+          <div className="flex items-center gap-1.5">
+            <select value={voiceMode} onChange={(e) => setVoiceMode(e.target.value as 'custom' | 'design')} className="w-28 text-[11px]">
+              <option value="design">描述设计（推荐）</option>
+              <option value="custom">预设音色</option>
+            </select>
+            {voiceMode === 'custom' ? (
+              <select value={voiceSpeaker} onChange={(e) => setVoiceSpeaker(e.target.value)} className="w-28 text-[11px]">
+                {['serena', 'vivian', 'ono_anna', 'ryan', 'dylan', 'eric', 'sohee', 'aiden', 'uncle_fu'].map((s) => (
+                  <option key={s} value={s}>{s}</option>
+                ))}
+              </select>
+            ) : (
+              <input value={voiceInstruct} onChange={(e) => setVoiceInstruct(e.target.value)} placeholder="风格指令（留空=用实体声音描述）" className="min-w-0 flex-1 text-[11px]" />
+            )}
+            <Button size="sm" variant="secondary" onClick={genVoice} loading={voiceTask?.status === 'running'} disabled={ttsReady === false} className="shrink-0">
+              {ttsReady === false ? 'TTS 未就绪' : 'AI 生成'}
+            </Button>
+          </div>
+          <input value={voiceText} onChange={(e) => setVoiceText(e.target.value)} placeholder="试听文本（生成音色种子用，不是台词）" className="w-full text-[11px]" />
+          {voiceConflict && <p className="text-[10px] text-amber-300">⏳ {voiceConflict}</p>}
+          {voiceTask?.status === 'running' && <p className="text-[10px] text-cyan-300">⏳ 生成中… {voiceTask.elapsed}s（1.7B 模型，首次加载约 1-2 分钟）</p>}
+          {voiceTask?.status === 'done' && <p className="text-[10px] text-emerald-400">✓ 音色种子已生成（{((voiceTask.result as { durSec?: number } | undefined)?.durSec ?? '').toString()}s）</p>}
+          {voiceTask?.status === 'error' && <p className="text-[10px] text-red-300">✗ {voiceTask.error}</p>}
+        </div>
+        {voiceAssets.length === 0 && voiceTask?.status !== 'running' && <p className="text-[10px] text-slate-600">暂无音色种子（AI 生成或上传 wav）</p>}
         <div className="space-y-1">
           {voiceAssets.map((a) => (
             <div key={a.file} className="flex items-center gap-2 rounded border border-slate-800 bg-slate-950 px-1.5 py-1">

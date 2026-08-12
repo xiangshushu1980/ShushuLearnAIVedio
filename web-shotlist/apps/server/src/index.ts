@@ -5,6 +5,7 @@ import Fastify from 'fastify'
 import { generateArt, waitArtDone } from './art.ts'
 import { saveEntity } from './entities.ts'
 import { registerRunner } from './tasks.ts'
+import { generateVoice, ttsReady } from './voice.ts'
 import { extractEntities } from './tools/entityExtract.ts'
 import { draftRoutes } from './routes/draft.ts'
 import { entityRoutes } from './routes/entities.ts'
@@ -24,6 +25,13 @@ registerRunner('art', async (task) => {
   if (!promptId) throw new Error('未拿到 prompt_id')
   const images = await waitArtDone(entityId, promptId)
   return { images }
+})
+
+// 音色种子生成（Qwen3-TTS 独立推理；显存自适应，不占 ComfyUI 队列）
+registerRunner('voice', async (task) => {
+  const { entityId, input } = task.input as { entityId: string; input: import('./voice.ts').VoiceGenInput }
+  const r = generateVoice(entityId, input)
+  return r
 })
 
 const PORT = Number(process.env.SHOTLIST_PORT ?? 8787)

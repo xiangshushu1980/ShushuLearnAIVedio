@@ -61,6 +61,10 @@ export const api = {
   // 全局风格
   getStyle: () => req<{ prompt: string; updatedAt?: string }>('/api/style'),
   updateStyle: (prompt: string) => req<{ prompt: string; updatedAt?: string }>('/api/style', { method: 'PUT', body: JSON.stringify({ prompt }) }),
+  // 音色种子（Qwen3-TTS）
+  ttsReady: () => req<{ ready: boolean }>('/api/tts-ready'),
+  generateEntityVoice: (id: string, body: { kind: 'custom' | 'design' | 'clone'; text: string; speaker?: string; instruct?: string; refText?: string; seed?: number }) =>
+    req<{ taskId: string }>(`/api/entities/${encodeURIComponent(id)}/voice`, { method: 'POST', body: JSON.stringify(body) }),
   // 工具 A0
   genDraft: (body: { idea: string; length: DraftLength; withWorldview: boolean }) => req<{ worldview: string; script: string }>('/api/draft', { method: 'POST', body: JSON.stringify(body) }),
 }
