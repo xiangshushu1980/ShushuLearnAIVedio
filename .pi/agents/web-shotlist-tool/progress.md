@@ -6,6 +6,13 @@
 - 我负责的文件区：（设计阶段无文件；确定后认领新目录，如 web-shotlist/ 或 tools/shotlist-web/）
 
 ## 进度日志（append-only，每条带日期）
+### 2026-08-14（实体系统升级 + Qwen3-TTS 接入完成）
+- **实体系统升级**（用户决策拍板）：侧滑面板（右滑出，主视图保持可见，替代模态）；星级 1-5（≥4=core 必检，游戏式颜色）；实体内变体（换装/状态，引用写 `实体id:变体id`，变体图生成后自动归属）；关系编辑界面化（选实体+关系词）；全局风格（顶栏 ⚙，data/style.json，只影响设定图）
+- **设定图生成修复**：原来缺省 prompt 只用类型模板没用外观描述——现在 = 外观描述（canon）+ 类型构图 + 全局风格词，对齐描述直接决定形象设定
+- **Qwen3-TTS 接入**（调研结论：中文最强、1.7B 仅 6-8GB 显存）：独立 venv（~/miniconda3/envs/qwen-tts，transformers 4.57）避开 ComfyUI 的 transformers 5.x 冲突；三模型（CustomVoice/Base/VoiceDesign 各 3.8GB + tokenizer 682MB）下载到 models/qwen-tts/（hf-mirror curl 直拉，huggingface_hub 在镜像下会 LocalEntryNotFoundError）；scripts/qwen_tts_gen.py 独立推理（CPU 优先，不打扰跑批）；voice 任务 runner + 前端三模式 UI（描述设计/预设音色）；实测三模式全通（design 2.7s 清冷少女声→clone 克隆成功）
+- **踩坑**：①hf-mirror resolve URL 需 -L 跟随重定向，huggingface_hub snapshot_download 失败 ②多 curl 并发写同文件会损坏 safetensors（校验头失败），须单进程+校验大小 ③wrapper 无 .to()，CUDA 下 embedding 设备不一致→先用 CPU ④speech_tokenizer 子模型也须校验
+- 已 commit；服务常驻 8787/5173
+
 ### 2026-08-14（恢复上下文 + mem0 整理）
 - 新会话恢复：服务常驻 8787/5173 存活；git 已提交（web-shotlist/ + progress）；data/ 不入库
 - mem0 整理（用户要求合并精简）：[STATE] 更新为新版（并入需求上下文/成片反馈/T-01 闭环）；删除 12 条过期/重复（设计讨论快照、成片反馈、待办/热文件快照、过期队列占用声明×3、MC 调研截断版×2、Seedance 双版本已合并为一条）；mc-test 建 [STATE]
