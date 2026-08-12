@@ -86,7 +86,7 @@ export interface Shotlist {
 export const ENTITY_TYPES = ['角色', '场景', '物件', '技能', '组织', '地点'] as const
 export type EntityType = (typeof ENTITY_TYPES)[number]
 
-/** 重要程度：核心（实线边框）/ 次要（虚线边框） */
+/** 重要程度：核心（实线边框，渲染门禁必检）/ 次要（虚线边框）；UI 用星级 1-5 表达（≥4 星 = 核心） */
 export type EntityImportance = 'core' | 'secondary'
 
 export interface EntityRelation {
@@ -94,11 +94,26 @@ export interface EntityRelation {
   relation: string
 }
 
+/** 实体变体（换装/状态变种，用户决策 2026-08-14：实体内建变体，不拆多实体）
+ * 引用语法：subject / role_cards 写 `实体id:变体id`（如 alya_v1:战斗服） */
+export interface EntityVariant {
+  /** 变体 id（短名，如 战斗服） */
+  id: string
+  /** 显示名 */
+  name: string
+  /** 变体外观差异描述（叠加在基础 appearance 之上） */
+  description: string
+  /** 变体专属设定图（资产文件名，存 data/entities/assets/<id>/） */
+  art?: string[]
+}
+
 export interface Entity {
   id: string
   name: string
   type: EntityType
   importance: EntityImportance
+  /** 星级 1-5（游戏式重要度：设定越复杂越高；≥4 = core 必检，保存时自动映射） */
+  stars?: number
   /** 外观（canon 机制：工具 B subject_definitions 逐字采用；参考图生成用） */
   appearance: string
   /** 声音（音色/语气描述；关联 audio_refs 音色种子） */
@@ -109,6 +124,8 @@ export interface Entity {
   source?: string
   /** 关系（文本列表，V1；V2 图谱） */
   related?: EntityRelation[]
+  /** 变体（换装/状态变种，引用语法 `id:变体id`） */
+  variants?: EntityVariant[]
   createdAt?: string
 }
 

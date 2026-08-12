@@ -1,9 +1,56 @@
 /** 项目级小弹层：重命名 / 导入（JSON 包） */
-import { useRef, useState } from 'react'
-import { useMutation, useQueryClient } from '@tanstack/react-query'
+import { useEffect, useRef, useState } from 'react'
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import type { ProjectExport } from '@shotlist/shared'
 import { api } from '@/lib/api'
 import { Dialog } from '@/components/ui/dialog'
+
+/** 全局风格设定（用户决策 2026-08-14：只影响设定图生成，不影响提示词） */
+export function StyleDialog({ open, onClose }: { open: boolean; onClose: () => void }) {
+  const { data: style } = useQuery({ queryKey: ['style'], queryFn: api.getStyle, enabled: open })
+  const [draft, setDraft] = useState('')
+  const [saved, setSaved] = useState(false)
+  useEffect(() => {
+    if (style) setDraft(style.prompt)
+  }, [style])
+  const mut = useMutation({
+    mutationFn: (prompt: string) => api.updateStyle(prompt),
+    onSuccess: () => {
+      setSaved(true)
+      setTimeout(() => setSaved(false), 1500)
+    },
+  })
+  return (
+    <Dialog open={open} onClose={onClose} title="全局风格（设定图）">
+      <p className="mb-2 text-[11px] text-slate-500">
+        注入所有实体设定图生成（英文风格词，如 <code className="text-slate-400">watercolor, soft pastel, dreamy</code>）；提示词风格仍由剧本 style 主导。
+      </p>
+      <textarea
+        value={draft}
+        onChange={(e) => {
+          setDraft(e.target.value)
+          setSaved(false)
+        }}
+        rows={3}
+        placeholder="英文风格词（留空 = 默认动画写实风）"
+        className="w-full text-xs"
+      />
+      {saved && <p className="mt-1 text-[11px] text-emerald-400">✓ 已保存（下次生成设定图生效）</p>}
+      <div className="mt-4 flex justify-end gap-2">
+        <button onClick={onClose} className="rounded-md border border-slate-700 px-3 py-1.5 text-xs text-slate-300 hover:bg-slate-800">
+          关闭
+        </button>
+        <button
+          onClick={() => mut.mutate(draft)}
+          disabled={mut.isPending}
+          className="rounded-md bg-blue-600 px-3 py-1.5 text-xs text-white hover:bg-blue-500 disabled:opacity-50"
+        >
+          {mut.isPending ? '保存中…' : '保存'}
+        </button>
+      </div>
+    </Dialog>
+  )
+}
 
 /** 重命名项目（仅改显示名，id/目录不变） */
 export function RenameDialog({

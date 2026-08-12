@@ -14,7 +14,7 @@ import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import { ConfirmDialog } from '@/components/ui/dialog'
 import { NewProjectDialog } from '@/components/NewProjectDialog'
-import { ImportDialog, RenameDialog } from '@/components/ProjectDialogs'
+import { ImportDialog, RenameDialog, StyleDialog } from '@/components/ProjectDialogs'
 import { ScriptPanel } from '@/components/script/ScriptPanel'
 import { EntityPanel } from '@/components/sidebar/EntityPanel'
 import { EntityDialogHost } from '@/components/entity/EntityDialogs'
@@ -38,6 +38,7 @@ export default function App() {
   const [confirmTrash, setConfirmTrash] = useState(false)
   const [renameOpen, setRenameOpen] = useState(false)
   const [importOpen, setImportOpen] = useState(false)
+  const [styleOpen, setStyleOpen] = useState(false)
   const lastSavedRef = useRef('')
 
   // 项目列表
@@ -225,6 +226,9 @@ export default function App() {
         <Button size="sm" variant="secondary" onClick={() => setImportOpen(true)} title="导入项目包" className="px-2.5">
           ⇪ 导入
         </Button>
+        <Button size="sm" variant="secondary" onClick={() => setStyleOpen(true)} title="全局风格（设定图）" className="px-2.5">
+          ⚙ 风格
+        </Button>
 
         {error && (
           <button onClick={() => setError(null)} className="ml-auto max-w-[35%] truncate rounded bg-red-950/60 px-2 py-1 text-[11px] text-red-300" title={error}>
@@ -318,6 +322,7 @@ export default function App() {
       {/* 弹层 */}
       <NewProjectDialog open={newOpen} onClose={() => setNewOpen(false)} onCreated={(id) => setProjectId(id)} />
       <ImportDialog open={importOpen} onClose={() => setImportOpen(false)} onImported={(id) => setProjectId(id)} />
+      <StyleDialog open={styleOpen} onClose={() => setStyleOpen(false)} />
       {projectId && (
         <RenameDialog
           open={renameOpen}

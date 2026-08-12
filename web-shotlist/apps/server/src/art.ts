@@ -7,6 +7,7 @@ import path from 'node:path'
 import type { EntityType } from '@shotlist/shared'
 import { importAsset, listAssets } from './assets.ts'
 import { REPO_ROOT } from './config.ts'
+import { styleSuffix } from './style.ts'
 
 const COMFY_API = process.env.COMFYUI_API ?? 'http://127.0.0.1:8188'
 const COMFY_HOME = path.resolve(REPO_ROOT, '..', 'ComfyUI')
@@ -43,10 +44,22 @@ export async function comfyAlive(): Promise<boolean> {
   }
 }
 
-/** 生成实体设定图（prompt 缺省按实体类型自动选构图） */
-export async function generateArt(entityId: string, prompt?: string, seed?: number, type: EntityType = '角色'): Promise<ArtResult> {  if (!fs.existsSync(TPL)) throw new Error(`缺少 ANIMA 模板: ${TPL}`)
+/** 生成实体设定图（prompt 缺省按实体类型自动选构图；全局风格词自动注入尾部）
+ * variant 可选：变体外观 = 实体外观 + 变体描述（对齐描述直接决定形象设定准确性） */
+export async function generateArt(
+  entityId: string,
+  prompt?: string,
+  seed?: number,
+  type: EntityType = '角色',
+  appearance = '',
+  variant?: string,
+): Promise<ArtResult> {
+  if (!fs.existsSync(TPL)) throw new Error(`缺少 ANIMA 模板: ${TPL}`)
   const wf = JSON.parse(fs.readFileSync(TPL, 'utf-8')) as Record<string, { inputs: Record<string, unknown> }>
-  const text = prompt?.trim() || TYPE_PROMPTS[type] || TYPE_PROMPTS.角色
+  const style = styleSuffix()
+  const text = prompt?.trim()
+    ? prompt.trim() + style
+    : `${TYPE_PROMPTS[type] || TYPE_PROMPTS.角色}${style}\n${appearance || ''}${variant ? `\n[变体] ${variant}` : ''}`.trim()
   wf['5']!.inputs.text = text
   const s = seed ?? Math.floor(Math.random() * 1_000_000)
   wf['8']!.inputs.seed = s

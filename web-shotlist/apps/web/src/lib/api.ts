@@ -55,9 +55,12 @@ export const api = {
   },
   deleteEntityAsset: (id: string, file: string) => req<{ ok: true }>(`/api/entities/${encodeURIComponent(id)}/assets/${encodeURIComponent(file)}`, { method: 'DELETE' }),
   assetUrl: (entityId: string, file: string) => `/api/assets/${encodeURIComponent(entityId)}/${encodeURIComponent(file)}`,
-  // 设定图（ANIMA t2i）
+  // 设定图（ANIMA t2i；variant 可选=变体图）
   getEntityArt: (id: string) => req<{ images: string[]; comfyOnline: boolean }>(`/api/entities/${encodeURIComponent(id)}/art`),
-  generateEntityArt: (id: string, body: { prompt?: string; seed?: number }) => req<{ taskId: string }>(`/api/entities/${encodeURIComponent(id)}/art`, { method: 'POST', body: JSON.stringify(body) }),
+  generateEntityArt: (id: string, body: { prompt?: string; seed?: number; variant?: string }) => req<{ taskId: string }>(`/api/entities/${encodeURIComponent(id)}/art`, { method: 'POST', body: JSON.stringify(body) }),
+  // 全局风格
+  getStyle: () => req<{ prompt: string; updatedAt?: string }>('/api/style'),
+  updateStyle: (prompt: string) => req<{ prompt: string; updatedAt?: string }>('/api/style', { method: 'PUT', body: JSON.stringify({ prompt }) }),
   // 工具 A0
   genDraft: (body: { idea: string; length: DraftLength; withWorldview: boolean }) => req<{ worldview: string; script: string }>('/api/draft', { method: 'POST', body: JSON.stringify(body) }),
 }

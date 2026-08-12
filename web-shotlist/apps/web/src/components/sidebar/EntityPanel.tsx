@@ -90,7 +90,7 @@ export function EntityPanel() {
                 )}
               </span>
               <span className={cn('shrink-0 text-[10px] opacity-70', c.text)}>
-                {e.type} · {IMPORTANCE_LABEL[e.importance]}
+                {e.type} · {(e as Entity & { stars?: number }).stars ?? (e.importance === 'core' ? 4 : 2)}★
               </span>
             </button>
           )

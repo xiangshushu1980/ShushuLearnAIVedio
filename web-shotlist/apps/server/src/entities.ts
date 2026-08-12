@@ -23,18 +23,20 @@ function safeId(name: string): string {
 }
 
 /** 实体索引（轻量：扫描 .md frontmatter，不读正文） */
-export function listEntities(): Array<Pick<Entity, 'id' | 'name' | 'type' | 'importance'>> {
+export function listEntities(): Array<Pick<Entity, 'id' | 'name' | 'type' | 'importance' | 'stars'>> {
   const dir = entitiesDir()
   return fs
     .readdirSync(dir)
     .filter((f) => f.endsWith('.md'))
     .map((f) => {
       const meta = parseFrontmatter(path.join(dir, f))
+      const importance = (meta.importance as EntityImportance) ?? 'secondary'
       return {
         id: (meta.id as string) ?? f.slice(0, -3),
         name: (meta.name as string) ?? f.slice(0, -3),
         type: (meta.type as EntityType) ?? '角色',
-        importance: (meta.importance as EntityImportance) ?? 'secondary',
+        importance,
+        stars: (meta.stars as number | undefined) ?? (importance === 'core' ? 4 : 2),
       }
     })
     .sort((a, b) => a.id.localeCompare(b.id))
@@ -69,11 +71,13 @@ export function readEntity(id: string): Entity | null {
     name: (meta.name as string) ?? id,
     type: (meta.type as EntityType) ?? '角色',
     importance: (meta.importance as EntityImportance) ?? 'secondary',
+    stars: (meta.stars as number | undefined) ?? (meta.importance === 'core' ? 4 : 2),
     appearance: sections['外观'] ?? '',
     sound: sections['声音'] ?? '',
     description: sections['介绍'] ?? '',
     source: meta.source as string | undefined,
     related: meta.related as Entity['related'],
+    variants: meta.variants as Entity['variants'],
     createdAt: meta.createdAt as string | undefined,
   }
 }
@@ -81,14 +85,19 @@ export function readEntity(id: string): Entity | null {
 export function saveEntity(e: Entity): Entity {
   const dir = entitiesDir()
   const id = safeId(e.id || e.name)
+  // 星级 → importance 自动映射（用户决策 2026-08-14：≥4 星 = 核心必检）
+  const stars = Math.min(5, Math.max(1, Math.round(e.stars ?? 3)))
+  const importance: EntityImportance = stars >= 4 ? 'core' : 'secondary'
   const meta: Record<string, unknown> = {
     name: e.name,
     type: e.type,
-    importance: e.importance,
+    importance,
+    stars,
     createdAt: e.createdAt ?? new Date().toISOString(),
   }
   if (e.source) meta.source = e.source
   if (e.related?.length) meta.related = e.related
+  if (e.variants?.length) meta.variants = e.variants.map((v) => ({ ...v, art: v.art?.length ? v.art : undefined }))
   const body = [
     `# ${e.name}`,
     '',
@@ -104,7 +113,7 @@ export function saveEntity(e: Entity): Entity {
   ].join('\n')
   const text = `---\n${stringify(meta)}\n---\n${body}`
   fs.writeFileSync(path.join(dir, `${id}.md`), text, 'utf-8')
-  return { ...e, id, createdAt: meta.createdAt as string }
+  return { ...e, id, stars, importance, createdAt: meta.createdAt as string }
 }
 
 export function deleteEntity(id: string): void {
@@ -125,6 +134,7 @@ function parseFrontmatter(f: string): Record<string, unknown> {
 
 /**
  * 角色卡注入（工具 A/B 共用）：实体库必须匹配（无 fallback，用户决策 2026-08-12）
+ * 引用语法：`实体id` 或 `实体id:变体id`（变体 = 换装/状态变种，外观 = 基础外观 + 变体描述）
  * 找不到 → 抛错阻断生成，提示先到①剧本页从剧本+世界观抽取实体
  */
 export function loadEntityCards(ids: string[]): string {
@@ -132,10 +142,19 @@ export function loadEntityCards(ids: string[]): string {
   const blocks: string[] = []
   const missing: string[] = []
   for (const rid of ids) {
-    const e = readEntity(rid)
+    const [baseId, variantId] = rid.split(':')
+    const e = readEntity(baseId)
     if (e) {
+      const variant = variantId ? e.variants?.find((v) => v.id === variantId || v.name === variantId) : undefined
+      if (variantId && !variant) {
+        missing.push(`${rid}（变体不存在）`)
+        continue
+      }
+      const stars = e.stars ?? (e.importance === 'core' ? 4 : 2)
+      const starMark = '★'.repeat(stars) + '☆'.repeat(5 - stars)
+      const appearance = variant ? `${e.appearance}\n【变体 ${variant.name}】${variant.description}`.trim() : e.appearance
       blocks.push(
-        `===== 角色卡 ${rid} =====\n# ${e.name}（${e.type}·${e.importance === 'core' ? '核心' : '次要'}）\n## 外观\n${e.appearance}\n## 声音\n${e.sound || '无特殊'}\n## 介绍\n${e.description}`,
+        `===== 角色卡 ${rid} =====\n# ${e.name}（${e.type}·${starMark}）\n## 外观\n${appearance}\n## 声音\n${e.sound || '无特殊'}\n## 介绍\n${e.description}`,
       )
     } else {
       missing.push(rid)

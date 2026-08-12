@@ -5,6 +5,7 @@ import { deleteAsset, listAssets, readAsset, saveAsset, type AssetKind } from '.
 import { comfyAlive, generateArt, waitArtDone } from '../art.ts'
 import { deleteEntity, importRolecardsToEntities, listEntities, readEntity, saveEntity } from '../entities.ts'
 import { gateEntities } from '../gate.ts'
+import { readStyle, writeStyle } from '../style.ts'
 import { submitTask, getTask } from '../tasks.ts'
 import { extractEntities } from '../tools/entityExtract.ts'
 import { chatCompletion, stripFence, type Effort } from '../llm.ts'
@@ -14,12 +15,16 @@ const entityBody = z.object({
   name: z.string().min(1),
   type: z.enum(['角色', '场景', '物件', '技能', '组织', '地点']).default('角色'),
   importance: z.enum(['core', 'secondary']).default('secondary'),
+  stars: z.number().int().min(1).max(5).optional(),
   appearance: z.string().default(''),
   sound: z.string().default(''),
   description: z.string().default(''),
   source: z.string().optional(),
   related: z.array(z.object({ id: z.string(), relation: z.string() })).optional(),
+  variants: z.array(z.object({ id: z.string().min(1), name: z.string().min(1), description: z.string().default(''), art: z.array(z.string()).optional() })).optional(),
 })
+
+const styleBody = z.object({ prompt: z.string().max(500).default('') })
 
 const extractBody = z.object({
   worldview: z.string().default(''),
@@ -46,11 +51,13 @@ export async function entityRoutes(app: FastifyInstance): Promise<void> {
       name: d.name,
       type: d.type,
       importance: d.importance,
+      stars: d.stars,
       appearance: d.appearance,
       sound: d.sound,
       description: d.description,
       source: d.source,
       related: d.related,
+      variants: d.variants,
     })
   })
 
@@ -61,6 +68,15 @@ export async function entityRoutes(app: FastifyInstance): Promise<void> {
     if (!parsed.success) return reply.code(400).send({ error: parsed.error.issues.map((i) => i.message).join('；') })
     const d = parsed.data
     return saveEntity({ ...d, id })
+  })
+
+  // 全局风格（设定图生成注入；用户决策 2026-08-14：只影响设定图，不影响提示词）
+  app.get('/style', async () => readStyle())
+
+  app.put('/style', async (req, reply) => {
+    const parsed = styleBody.safeParse(req.body)
+    if (!parsed.success) return reply.code(400).send({ error: parsed.error.issues.map((i) => i.message).join('；') })
+    return writeStyle(parsed.data.prompt)
   })
 
   app.delete('/entities/:id', async (req, reply) => {
@@ -103,11 +119,20 @@ export async function entityRoutes(app: FastifyInstance): Promise<void> {
 
   app.post('/entities/:id/art', async (req, reply) => {
     const { id } = z.object({ id: z.string().min(1) }).parse(req.params)
-    const parsed = z.object({ prompt: z.string().optional(), seed: z.number().optional() }).safeParse(req.body)
+    const parsed = z.object({ prompt: z.string().optional(), seed: z.number().optional(), variant: z.string().optional() }).safeParse(req.body)
     if (!parsed.success) return reply.code(400).send({ error: parsed.error.issues.map((i) => i.message).join('；') })
-    if (!readEntity(id)) return reply.code(404).send({ error: `实体不存在: ${id}` })
+    const entity = readEntity(id)
+    if (!entity) return reply.code(404).send({ error: `实体不存在: ${id}` })
     if (!(await comfyAlive())) return reply.code(503).send({ error: 'ComfyUI 不在线（http://127.0.0.1:8188）' })
-    const { task, conflict } = submitTask('art', { entityId: id, prompt: parsed.data.prompt, seed: parsed.data.seed, type: readEntity(id)?.type ?? '角色' })
+    const variant = parsed.data.variant ? entity.variants?.find((v) => v.id === parsed.data.variant || v.name === parsed.data.variant) : undefined
+    const { task, conflict } = submitTask('art', {
+      entityId: id,
+      prompt: parsed.data.prompt,
+      seed: parsed.data.seed,
+      type: entity.type ?? '角色',
+      appearance: entity.appearance,
+      variant: variant ? `${variant.name}：${variant.description}` : undefined,
+    })
     if (conflict) return reply.code(409).send({ error: '已有任务运行中，请等待完成' })
     return { taskId: task!.id }
   })
