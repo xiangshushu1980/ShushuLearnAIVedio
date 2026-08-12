@@ -6,6 +6,16 @@
 - 我负责的文件区：（设计阶段无文件；确定后认领新目录，如 web-shotlist/ 或 tools/shotlist-web/）
 
 ## 进度日志（append-only，每条带日期）
+### 2026-08-12（第三轮：参数头模板化 + 自动保存 + 回收站）
+- **参数头表单**（ScriptHeadForm）：title/style/ratio/scene/duration 快捷档/chain/shot_style/sound/no_bgm/role_cards 多选（GET /api/role-cards 扫描 experiments/shotlist/rolecards）/audio_refs 键值对
+- **双向绑定**：表单修改→yaml merge 重写参数头（保留未知字段如 branch，丢注释=已知取舍）；文本修改→防抖 500ms 解析回填；解析失败红条不覆盖文本
+- **自动保存**：2s 防抖 PUT + 保存状态指示；生成前强制落盘（修复“剧本文字编辑不生效” bug）
+- **回收站（次要入口）**：顶栏右侧 项目操作▾（删除→确认→回收站）+ 🕘回收站角标；恢复/永久删除（确认）；后端 trash/restore/purge API（data/trash/）
+- **scene 预设**：= 首帧图库 input/start/169/ 真实子目录（beach/forest/night/night_street/portrait/stage/multi）+ 惯例补充（classroom/city/...）；V2 磁盘扫描
+- **布局**：左列 340px/右列 260px；新建项目预填剧本模板
+- **踩坑**：Fastify 空 body+JSON 头→400（req 无 body 不带 Content-Type）；YAML 空值 null 需 zod preprocess；audio_refs 输入中不触发序列化（onBlur 生效）
+- 已 commit（d8c2e2a 附近）；服务常驻 8787/5173
+
 ### 2026-08-12（第二阶段：开发启动）
 - **脚手架完成**：web-shotlist/ monorepo（pnpm workspace + Node22 + Vite7 + React19 + Fastify5 + Tailwind v4 + shadcn 风格组件 + zod4）；packages/shared（类型/校验/tokenizer/标色）+ apps/server + apps/web；typecheck 全绿
 - **工具 A/B TS 重写完成**：h3_shotlist_gen.py / h3_prompt_stage2.py / prompt_validator.py → TS（模板忠实搬运 + zod 校验）；DeepSeek client（llm.ts）+ 角色卡/few-shot 注入 + 重试循环 + 自审（--review 等价）
@@ -22,10 +32,11 @@
 
 ## 下一步
 1. ✅ 脚手架 + 工具 A/B TS 重写 + 三段式骨架 + 标色（2026-08-12 完成）
-2. 用户浏览器验收（http://localhost:5173；后端 8787）
-3. 输入源解析增强 + 侧栏联动（hover/跳转/返回栈，docs/22 开发计划第 4 步）
-4. 实体注册表 + 详情面板（V1 基础版，第 5 步）
-5. 导入导出、项目 meta、样式打磨（第 6 步）
+2. ✅ 参数头模板化表单 + 自动保存 + 回收站（2026-08-12 完成）
+3. 用户浏览器验收（http://localhost:5173；后端 8787）
+4. 输入源解析增强 + 侧栏联动（hover/跳转/返回栈，docs/22 开发计划第 4 步）
+5. 实体注册表 + 详情面板（V1 基础版，第 5 步）
+6. 导入导出、项目 meta、样式打磨（第 6 步）
 
 ## 关键链接
 - 相关文档：docs/16_prompt_generator_plan.md（工具 A/B 方案）、docs/17_h3_prompt_writing_rules.md（提示词规则）、docs/21_pipeline_acceptance.md、docs/22_shotlist_web_tool.md（设计+开发计划）
