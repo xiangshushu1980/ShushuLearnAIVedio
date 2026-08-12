@@ -24,6 +24,8 @@ export function PromptPage({ onGenerate }: Props) {
   const setPage = useAppStore((s) => s.setPage)
   const [copied, setCopied] = useState(false)
   const [pickerOpen, setPickerOpen] = useState(false)
+  const [hoverRef, setHoverRef] = useState<{ label: string; n: number } | null>(null)
+  const [flashRef, setFlashRef] = useState<{ label: string; n: number } | null>(null)
 
   const prompt = project?.prompt
   const mode = project?.promptMode
@@ -36,6 +38,12 @@ export function PromptPage({ onGenerate }: Props) {
     await navigator.clipboard.writeText(prompt)
     setCopied(true)
     setTimeout(() => setCopied(false), 1500)
+  }
+
+  // 点击输入源卡片 → 提示词对应引用闪烁高亮（1.5s）
+  const flashInput = (label: string, n: number) => {
+    setFlashRef({ label, n })
+    setTimeout(() => setFlashRef(null), 1500)
   }
 
   return (
@@ -71,6 +79,8 @@ export function PromptPage({ onGenerate }: Props) {
                 text={prompt}
                 onShotClick={(n) => gotoShot(n)}
                 onRefClick={() => setPickerOpen(true)}
+                onRefHover={(label, n) => setHoverRef(n > 0 ? { label, n } : null)}
+                activeRef={flashRef ?? hoverRef}
               />
             ) : (
               <p className="text-xs text-slate-500">尚未生成提示词 —— ②拍摄本页确认后，点上方模式生成（或导入已有提示词文件）</p>
@@ -78,8 +88,8 @@ export function PromptPage({ onGenerate }: Props) {
           </CardContent>
         </Card>
 
-        {/* 右：渲染输入源 */}
-        <InputsSidebar project={project} />
+        {/* 右：渲染输入源（hover/点击联动） */}
+        <InputsSidebar project={project} hoverRef={hoverRef} onCardClick={flashInput} />
       </div>
 
       <EntityPickerDialog

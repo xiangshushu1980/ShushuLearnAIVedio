@@ -6,28 +6,54 @@ import { Fragment } from 'react'
 import { REF_BADGE_COLORS, SOUND_LAYER_COLORS, tokenizePrompt, type PromptToken } from '@shotlist/shared'
 import { cn } from '@/lib/utils'
 
-export function PromptHighlight({ text, className, onShotClick, onRefClick }: { text: string; className?: string; onShotClick?: (n: number) => void; onRefClick?: (label: string, n: number) => void }) {
+export function PromptHighlight({
+  text,
+  className,
+  onShotClick,
+  onRefClick,
+  onRefHover,
+  activeRef,
+}: {
+  text: string
+  className?: string
+  onShotClick?: (n: number) => void
+  onRefClick?: (label: string, n: number) => void
+  onRefHover?: (label: string, n: number) => void
+  activeRef?: { label: string; n: number } | null
+}) {
   const tokens = tokenizePrompt(text)
   return (
     <pre className={cn('whitespace-pre-wrap font-mono text-[13px] leading-relaxed', className)}>
       {tokens.map((t, i) => (
-        <Fragment key={i}>{renderToken(t, onShotClick, onRefClick)}</Fragment>
+        <Fragment key={i}>{renderToken(t, onShotClick, onRefClick, onRefHover, activeRef)}</Fragment>
       ))}
     </pre>
   )
 }
 
-function renderToken(t: PromptToken, onShotClick?: (n: number) => void, onRefClick?: (label: string, n: number) => void) {
+function renderToken(
+  t: PromptToken,
+  onShotClick?: (n: number) => void,
+  onRefClick?: (label: string, n: number) => void,
+  onRefHover?: (label: string, n: number) => void,
+  activeRef?: { label: string; n: number } | null,
+) {
   switch (t.kind) {
     case 'text':
       return <span className="text-slate-200">{t.text}</span>
     case 'ref': {
       const color = REF_BADGE_COLORS[(t.n - 1) % REF_BADGE_COLORS.length]
+      const active = activeRef?.label === t.label && activeRef.n === t.n
       return (
         <button
           onClick={() => onRefClick?.(t.label, t.n)}
+          onMouseEnter={() => onRefHover?.(t.label, t.n)}
+          onMouseLeave={() => onRefHover?.('', 0)}
           title={onRefClick ? `查看 ${t.label} ${t.n} 对应实体` : undefined}
-          className="mx-0.5 inline-flex cursor-pointer items-center gap-1 rounded-md border border-slate-600 bg-slate-800 px-1 py-px text-blue-300 hover:border-blue-500 hover:bg-slate-700"
+          className={cn(
+            'mx-0.5 inline-flex cursor-pointer items-center gap-1 rounded-md border px-1 py-px text-blue-300 transition-all',
+            active ? 'border-cyan-400 bg-slate-700 ring-2 ring-cyan-400/60' : 'border-slate-600 bg-slate-800 hover:border-blue-500 hover:bg-slate-700',
+          )}
         >
           <span className={cn('rounded px-1 text-[10px] font-bold', color)}>
             {t.label[0]}{t.n}

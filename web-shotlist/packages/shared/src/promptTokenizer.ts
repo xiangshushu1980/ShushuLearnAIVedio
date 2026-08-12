@@ -76,4 +76,31 @@ export function extractSubjectRefs(text: string): number[] {
   return [...refs].sort((a, b) => a - b)
 }
 
+/**
+ * 提示词引用映射解析（渲染输入源用）
+ * Ref2VA 约定：`<Picture M> is the reference image for <Subject N>`；Subject N ↔ role_cards[N-1]
+ */
+export interface RefMapping {
+  pictureN: number
+  subjectN: number
+  /** 映射到的实体 id（由 role_cards 顺序决定，前端传入） */
+  entityId?: string
+}
+
+export function parseRefMapping(prompt: string, roleCards: string[]): RefMapping[] {
+  const map: RefMapping[] = []
+  // <Picture M> is the reference (still )image for <Subject N>（LLM 句式不稳定，两种都兼容；允许后缀）
+  const re = /<Picture\s+(\d+)>\s+is the reference (?:still )?image for <Subject\s+(\d+)>/gi
+  let m: RegExpExecArray | null
+  while ((m = re.exec(prompt)) !== null) {
+    const subjectN = Number(m[2])
+    map.push({
+      pictureN: Number(m[1]),
+      subjectN,
+      entityId: roleCards[subjectN - 1],
+    })
+  }
+  return map
+}
+
 export { REF_BADGE_COLORS, SOUND_LAYER_COLORS }
