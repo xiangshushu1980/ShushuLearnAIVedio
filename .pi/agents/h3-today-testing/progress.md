@@ -22,6 +22,7 @@
 - **T6 结论（定价探明，实测待 key）**：fal H3 = $0.16/秒@768p、$0.26/秒@2K（vs 官方 0.8 元/秒）；1440p/7000 字符/15s；实测需用户注册+API key
 - 产物：output/video/h3v1/（A-K+L/M 共 12 条）+ output/compare/h3v1_round1_768.png、h3v1_round2_1024.png
 - 待用户：目视验收（T1 对比图/视频）、决定是否注册 fal（T6）
+- **用户目视定案（2026-08-11）**：F 细节多 > G 画面简单（v1.0 8step 蒸馏抹细节）；H/D/E 全部糊淘汰；**成片档维持 F（v4-600EMA 8步@1024）不动**，G 留作干净风格备用；fal 未注册（无 key）
 
 ## 下一步
 1. 下载 8step v1.0 comfyui 版 + 4step v1.0 768p comfyui 版到 models/loras/
