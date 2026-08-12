@@ -6,6 +6,16 @@
 - 我负责的文件区：（设计阶段无文件；确定后认领新目录，如 web-shotlist/ 或 tools/shotlist-web/）
 
 ## 进度日志（append-only，每条带日期）
+### 2026-08-12（第八轮：任务队列 + 资源系统 + 门禁 + 角色卡迁移）
+- **单实例任务队列**：extract/art 任务式（提交立即返回 taskId，2s 轮询，运行中冲突 409）；前端 useTaskPoll；extract 实测 done+4 实体
+- **实体资源系统**：data/entities/assets/<id>/（art/voice/file）；multipart 上传/试听/删除/静态服务；设定图生成后 importAsset 移入资产目录；实体列表三态徽章（文字✓/画面✓/声音✓）可观测
+- **渲染门禁**：generate-prompt 前检查引用实体（剧本参数头+拍摄本+audio_refs 三来源，防 LLM 输出丢 role_cards）；文字不合格=422 硬阻塞（无 fallback），画面/声音缺失=警告；实测老项目全链路通（51s 拍摄本 + 163s 六段式）
+- **角色卡迁移**：experiments/shotlist/rolecards → 实体库一键导入（外观节→appearance，行为/场景→description，名称解析修复全角括号）；alya_v1/yuki_v1 已入实体库
+- **实体单体重刷 API**（LLM 按上下文精修单个实体）
+- **踩坑**：①edit 工具 JSON 转义层数——正则 `\s` 被写成 `\s`（字面 s）导致解析失败，改用 python 直接改文件绕开 ②catch 块访问 try 块 const → 静默解析到全局 window.name(void) 报 TS2322，声明提到函数级
+- **MC 任务线孵化**：.pi/agents/mc-test/（节点已 clone custom_nodes/，未重启；测试计划=两段链式 vs 静态锚对比，等 seedance 线释放后重启+跑批）
+- 已 commit；服务常驻 8787/5173
+
 ### 2026-08-12（第七轮：自动策略 + 实体库注入 + 默认 ref2va）
 - **用户决策（讨论确认）**：默认全部 ref2va（一致性靠实体连接=设定图参考图）；fl2va 除非解决一致性不引入；衔接问题暂不考虑；剧本→拍摄本由 Agent 单独转换（分几段/什么镜头/内容）
 - **chain/shot_style 改自动默认**：表单加"自动（推荐）"；工具 A 不写时提示 LLM 自动推断（chain 按段位置：第一段 first_static/多段中间 firstlast_bridge/散段 independent；shot_style 按剧本内容自决）——实测 auto 输出 first_static+2 镜合规
@@ -66,14 +76,13 @@
 - 设计讨论启动（待用户输入需求细节）
 
 ## 下一步
-1. ✅ 脚手架 + 工具 A/B TS 重写 + 三段式骨架 + 标色（2026-08-12 完成）
-2. ✅ 参数头模板化表单 + 自动保存 + 回收站（2026-08-12 完成）
-3. ✅ + 新建 / AI 实体卡 / 工具 A0 创作页（2026-08-12 完成）
-4. ✅ 用户反馈修复（2026-08-12 完成）
-5. ✅ 三大步骤页重构 + 设定图生成（2026-08-12 完成）
-6. ✅ 自动策略（chain/shot_style auto）+ 实体库注入 + 默认 ref2va（2026-08-12 完成）
-7. 待用户确认待测方案（Motion Context？）+ 继续任务队列/实体资源系统
-8. 用户浏览器验收；实体接入提示词参考图映射；V2 视频提交渲染
+1. ✅ 核心管线（工具 A/B/三页/实体/门禁/队列/资源）全部完成（2026-08-12）
+2. 待拍板：关系升级（related 带阶段+自然语言）与故事时间线是否纳入实体抽取模板；A0.5 影视化改写层
+3. 输入源真实化：参考图墙显示实体设定图 + 与拍摄本 hover 联动（docs/22 第 4 步）
+4. 实体 → 提示词参考图映射（<Subject N> ↔ 设定图）
+5. 任务全局可见（顶栏指示）+ 项目重命名 + 导入导出
+6. MC 测试线：等 seedance 释放 → 重启 ComfyUI → 两段对比跑批（mc-test/progress.md）
+7. 用户浏览器验收（http://localhost:5173）
 
 ## 关键链接
 - 相关文档：docs/16_prompt_generator_plan.md（工具 A/B 方案）、docs/17_h3_prompt_writing_rules.md（提示词规则）、docs/21_pipeline_acceptance.md、docs/22_shotlist_web_tool.md（设计+开发计划）
