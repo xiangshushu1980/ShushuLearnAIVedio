@@ -284,3 +284,20 @@
 **d9 异口同声测试（用户验收：效果很好 ✅）**：Yuki 少女声种子 + 云健男声种子同时喊"去！一起去！"——双音色可分辨，异口同声成立；结论=音色差异靠种子差异度（少女 vs 男声极端差异可行）；同句群声之前听不出纯因种子音色太接近
 **测试阶段结论（用户：测试到目前可以了）**：对话语法（S1/S2/<d>/VO 闭嘴/时间锚点）✅、抢话/叠声 ✅、人群背景口号 ✅、同框多角色 ✅、异口同声+双音色 ✅；声音一致性方案=音色种子（弱参考）+ 差异种子 + （远期 TTS/后期替换）
 **协作事故**：d8b/d9 曾生成后于 22:04 被外部清理（疑似 turbo-pilot 线清 output 误删，h3v1 批 14:34 起在跑）；d9 重跑成功（同 seed 切点 3.04 完全一致=可复现）；已提醒清理勿动 h3_dialogue/ 与 h3_gap_test/
+
+### 2026-08-11 T5 收尾：防重绘规则 + 图库归档 + Yuki 场景版（队列占用后释放）
+**① 工具 B 防重绘规则（scripts/h3_prompt_stage2.py）**：
+- i2va instruction line 增强：首句后追加 "The opening frame shows exactly the content of <Picture 1> (the reference image, scene: {scene}); keep it unchanged, do not redraw or alter the opening frame."——scene 从拍摄本顶层字段动态注入（缺省 "as described in the shooting plan"）
+- ref2va 模板新增规则 7：detailed_description 首镜场景必须与拍摄本 scene 一致（防重绘，SSIM 0.99 vs 归零实测依据）
+**② 拍摄本 schema 加 scene 字段（scripts/h3_shotlist_gen.py）**：
+- 顶层 scene: 首帧场景 id（beach/stage/night/classroom...），参数头可传，未传由模型按剧本推断
+- 规则 12 场景一致性（防重绘硬约束）；validate() 增加 scene 必填校验
+- alya_beach.yaml 参数头已加 scene: beach；端到端验证 ✓：工具 A 输出含 scene → 工具 B instruction line 带防重绘句 + scene 注入，校验通过（坑：I2VA_TPL.format 需传 scene 参数，第一次编辑漏改 191 行致 KeyError，已修）
+**③ 图库按场景归档（ComfyUI/input/start/169/）**：
+- 子目录：beach/（alya169 3 变体 + yuki169_beach 新）、stage/（alya169_stage + yuki169_stage 新）、night/（yuki169_night 新）、portrait/（yuki169_stand）、multi/（gen_2p/3p 同框 3 张）
+- 测试残留（res_*/wow_*/dessert/forest 等）未移动；引用点已更新：rolecards alya_v1/yuki_v1 生成约束改指子目录路径
+- 归档前 grep 确认：全项目仅 rolecards 2 处 + docs 描述性引用，ComfyUI 侧零硬引用，移动安全
+**④ Yuki 场景版生图（scripts/anima_scene_batch.py 新建，可复用）**：
+- anima t2i 768×448（anima-base + yuki_suou_v1120706 LoRA，触发词 yuki suou；角色描述用 yuki_v1 角色卡：粉紫双马尾/琥珀眼/猫嘴坏笑）
+- 3 张全成功：beach（warm+82.9 暖亮）/ stage（warm-40.6 暗冷）/ night（warm-88.8 强冷蓝），像素场景特征明确
+- 待用户目检：Yuki 形象三场景一致性（LoRA 训练标签黑发紫瞳 vs 角色卡粉紫双马尾琥珀眼，以用户验收为准）

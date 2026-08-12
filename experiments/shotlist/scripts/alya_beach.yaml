@@ -2,6 +2,7 @@
 title: Alya 的海边黄昏
 style: 日系清新
 ratio: "16:9"
+scene: beach
 duration: 8
 sound: 海边环境音 + 轻快吉他 BGM
 role_cards: [alya_v1]

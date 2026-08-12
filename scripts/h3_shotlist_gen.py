@@ -44,6 +44,7 @@ SYSTEM_TPL = """你是视频导演拍摄本规划器（工具 A 阶段）。输�
 title: 场景标题
 style: 风格（来自参数头）
 ratio: 画幅
+scene: 首帧场景 id（如 beach/stage/night/classroom，对应首帧图库 input/start/169/ 子目录；来自参数头或按剧本推断）
 duration_total: 总时长秒
 role_cards: [角色卡 id 列表]
 chain: first_static | firstlast_bridge | independent（来自参数头）
@@ -93,7 +94,12 @@ shots:
      画外音旁白不受此限，但需在 action 中注明"画面内角色闭嘴"
    - 一句台词一个 dialogue 条目；同一角色连续多句可合并为一条（text 内用句号分隔）
    - 有台词镜头：action 中交代说话者的动作/表情/语气（合成时作为 <d> 外的识别短语）
-12. 输出必须为合法 YAML 纯文本：无前言、无解释、无 markdown fence（``` 禁止）
+12. 场景一致性（scene 字段，防重绘硬约束）：
+   - scene 必须显式写出且与首镜画面一致：首镜 action 的场景元素（环境/光线/色调）必须
+     落在 scene 描述内，不得另写冲突场景（实测：i2v 首帧图与 prompt 场景冲突时模型会
+     重绘首帧，SSIM 归零；一致时 0.99）
+   - scene 值从参数头取（未给则按剧本第一镜场景推断，用简短英文 id：beach/stage/night/classroom/city...）
+13. 输出必须为合法 YAML 纯文本：无前言、无解释、无 markdown fence（``` 禁止）
 ===== 规则结束 =====
 
 {role_cards_block}
@@ -168,6 +174,7 @@ def gen_shotlist(key: str, model: str, script: dict, effort: str = "high", max_t
         f"===== 剧本 =====\n{script['_body']}",
         f"===== 参数 =====\n"
         f"style: {script.get('style','')}\nratio: {script.get('ratio','16:9')}\n"
+        f"scene: {script.get('scene','')}\n"
         f"duration_total: {script.get('duration','8')}s\nsound: {script.get('sound','')}\n"
         f"role_cards: {script.get('role_cards',[])}"
         f"\nchain: {script.get('chain','independent')}\nshot_style: {shot_style}",
@@ -198,6 +205,8 @@ def strip_fence(text: str) -> str:
 def validate(data: dict, duration_total: float) -> list:
     """返回错误列表（空 = 通过）"""
     errs = []
+    if not data.get("scene"):
+        errs.append("缺顶层 scene 字段（首帧场景 id，如 beach/stage/night）")
     shots = data.get("shots")
     if not isinstance(shots, list) or not shots:
         return ["shots 缺失或为空"]

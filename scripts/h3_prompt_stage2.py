@@ -48,6 +48,7 @@ I2VA_TPL = """你是 MiniMax H3 提示词合成器（工具 B 阶段）。输入
 
 ===== 输出模式（i2va 快车道，三核心段）=====
 For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+The opening frame shows exactly the content of <Picture 1> (the reference image, scene: {scene}); keep it unchanged, do not redraw or alter the opening frame.
 
 integrated_multimodal_description: [Shot 1] ...（按拍摄本镜头展开，每镜 `[Shot N]` + 时间戳）
 overall_soundscape: ...（只含 diegetic：环境音+动作声+非语言人声）
@@ -80,7 +81,11 @@ diegetic 声音（环境音/音效/演出音乐）保留在画面与 soundscape 
    first_static → 首句保留 instruction line（首帧静态图锚定）
    firstlast_bridge → 结尾注明尾帧锚定画面
    independent → 无特殊处理
-7. 输出纯文本：无前言、无解释、无 markdown fence
+7. 场景一致性防重绘（2026-08-10 实测硬约束）：
+   - instruction line 已注明首帧画面=<Picture 1> 参考图内容（scene: {scene}），不得重绘/改动首帧
+   - integrated_multimodal_description 首镜描述必须与拍摄本 scene 一致（环境/光线/色调），
+     不得写与参考图冲突的场景——冲突时模型会重绘首帧（SSIM 归零）；一致时 0.99
+8. 输出纯文本：无前言、无解释、无 markdown fence
 
 ===== 官方 IR 输出示例（逐字模仿结构）=====
 {ir_sample}
@@ -124,7 +129,10 @@ non_diegetic_music 一律写 N/A，除非显式要求。diegetic 声音保留。
 4. detailed_description：风格开场 → [Shot N] 时间线（[Shot 1] 无时间戳，N>1 写 At MM:SS.mmm）
 5. 每镜一动作；身份锚点每镜重复；状态跨镜延续；保持屏幕方向
 6. 声音三层进 overall_soundscape（diegetic）；non_diegetic_music 默认 N/A（后期配乐）
-7. 音频参考（拍摄本 audio_refs 字段，有则强制）：
+7. 场景一致性防重绘（拍摄本 scene 字段，2026-08-10 实测）：
+   - detailed_description 首镜场景元素必须与拍摄本 scene 一致（环境/光线/色调），
+     不得与参考图场景冲突（冲突时模型会重绘首帧，SSIM 归零；一致时 0.99）
+8. 音频参考（拍摄本 audio_refs 字段，有则强制）：
    - subject_definitions 写 "<Audio N> is the voice-timbre reference for <Subject N> (Sx)."
      （N 按 audio_refs 顺序从 1 起；Sx 用该角色在对话语法中的稳定 ID）
    - summary 任务类型前缀追加 + audio reference（如 [reference generation + audio reference]）
@@ -180,7 +188,8 @@ def gen(key: str, model: str, mode: str, shotlist_yaml: str, effort: str, max_to
     role_cards = load_role_cards(sl.get("role_cards", []))
     if mode == "i2va":
         ir_sample = IR_SAMPLE.read_text(encoding="utf-8") if IR_SAMPLE.exists() else ""
-        sys_prompt = I2VA_TPL.format(ir_sample=ir_sample)
+        scene = str(sl.get("scene", "")) or "as described in the shooting plan"
+        sys_prompt = I2VA_TPL.format(ir_sample=ir_sample, scene=scene)
     else:
         ref_guide = ""
         for cand in (Path(".pi/skills/h3-prompt-writing/references/ref-en.txt"),
@@ -198,6 +207,7 @@ def gen(key: str, model: str, mode: str, shotlist_yaml: str, effort: str, max_to
     if audio_refs:
         lines = [f"{rid} -> {path}" for rid, path in audio_refs.items()]
         user_lines.insert(1, f"===== 音频参考（音色种子，按顺序编 <Audio N>）=====\n" + "\n".join(lines))
+    scene = str(sl.get("scene", "")) or "as described in the shooting plan"
     body = {
         "model": model,
         "messages": [{"role": "system", "content": sys_prompt},

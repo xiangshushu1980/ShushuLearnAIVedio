@@ -25,6 +25,8 @@
 
 ## 生成约束
 
-- 慢车道：Ref2VA 参考图 ≤4 张（yuki169_stand 等 input/start/169/）
-- 快车道：i2v 首帧需 16:9 场景匹配图（当前仅站姿版，按场景补图）
+## 生成约束
+
+- 慢车道：Ref2VA 参考图 ≤4 张（yuki169_stand 等 input/start/169/portrait/；场景匹配优先用 169/beach|stage|night/ 场景版）
+- 快车道：i2v 首帧需 16:9 场景匹配图（2026-08-11 已补：beach/stage/night 三场景版在 169/ 对应子目录；首帧场景必须与拍摄本 scene 一致，防重绘）
 - 跨段：禁止用生成帧做 first_frame（帧链硬桥锚定 SSIM 0.14-0.52，2026-08-09 补测）

@@ -24,6 +24,6 @@
 
 ## 生成约束
 
-- 快车道：i2v 首帧 = 角色静态图（input/start/alya_768.png / alya_169.png）
-- 慢车道：Ref2VA 参考图 ≤4 张（alya_169 / alya_1024 / alya_768 / alya_768_new）
+- 快车道：i2v 首帧 = 16:9 场景匹配图（input/start/169/beach/alya169_tokidoki_00001_.png 等 3 变体；舞台场景用 169/stage/alya169_stage_00001_.png；首帧场景必须与拍摄本 scene 一致，防重绘）
+- 慢车道：Ref2VA 参考图 ≤4 张（169/beach/ 3 变体 / 169/stage/ 舞台版）
 - 跨段：禁止用生成帧做 first_frame（帧链硬桥锚定 SSIM 0.14-0.52，2026-08-09 补测）
