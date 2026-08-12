@@ -6,42 +6,42 @@ description: ComfyUI 项目操作手册 — Wan2.2 I2V Lightning 快速视频栈
 # ComfyUI 项目手册
 
 ## 环境
-- 服务器: http://127.0.0.1:8188（WSL2 mirror / RTX 4090 24GB / torch 2.13+cu130 / py3.13 / ComfyUI 0.29）
+- 服务器: http://127.0.0.1:8188（WSL2 mirror / RTX 4090 24GB / torch 2.13+cu130 / py3.13 / ComfyUI 0.32.0，2026-08-12 更新）
 - 启动: `cd /home/sean/projects/ComfyUI && ./start.sh`，日志 `/tmp/comfyui_start.log`
 - venv python: `./venv/bin/python`（非系统 python）
 - MCP: pi-mcp-adapter + 项目级 `.mcp.json` → comfyui server（comfyui-mcp v0.48+，181 工具，mcp({search}) 按需发现）
 - comfy-cli: **1.13.0 已装进 ComfyUI 工作区 venv**（`/home/sean/projects/ComfyUI/venv/bin/comfy`），解锁 MCP 内 8 个 `comfy_cli_*` 桥接工具（status/server/jobs/search_nodes/workflow/transfer/models/skills）；comfyui-mcp 探测顺序 PATH → COMFY_CLI_PATH → 工作区 `.venv`/`venv`，装在 venv 里最稳（不依赖 spawn env）
 - 目录: ComfyUI 本体在 `/home/sean/projects/ComfyUI`；工作流/文档/脚本在 `/home/sean/projects/comfy-ops`
 
-## 模型栈（快速视频生成）
+## 模型栈（2026-08-12 盘点后实况；完整清单见 docs/02_models.md）
+
+**主力 = MiniMax H3 视频生成**（FL2VA/Ref2VA + Qwen3-VL-32B TE + H3 双 VAE + turbo LoRA 系列；成片档 v4-600EMA 8步@1024）
 | 组件 | 文件 | 位置 |
 |------|------|------|
-| UNet High | Wan2.2-I2V-A14B-HighNoise-Q4_K_S.gguf | models/unet/ |
-| UNet Low | Wan2.2-I2V-A14B-LowNoise-Q4_K_S.gguf | models/unet/ |
-| Text encoder | umt5-xxl-encoder-Q5_K_S.gguf | models/text_encoders/ |
-| LoRA ×2 | wan2.2_i2v_lightx2v_4steps_lora_v1_{high,low}_noise.safetensors | models/loras/ |
-| VAE | wan_2.1_vae.safetensors | models/vae/ |
+| H3 扩散 | minimax_h3_{fl2va|ref2va}_pruned_{fp8_scaled|int8_convrot} | diffusion_models/ |
+| H3 TE | qwen3vl_32b_minimax_h3_nvfp4_awq | text_encoders/ |
+| H3 VAE | minimax_h3_{video,audio}_vae | vae/ |
+| H3 LoRA | minimax_h3_turbo_v4_step600_ema（成片档）等 6 个 | loras/ |
 | ANIMA 生图 | anima-base-v1.0 + qwen_3_06b_base + qwen_image_vae | diffusion_models/ |
 | KREA 2 生图 | krea2_turbo_fp8 + qwen3vl_4b_fp8_scaled + qwen_image_vae | diffusion_models/ |
-| 角色 LoRA | alisa(Alya) / yuki(Yuki) / anima-highres / anima-turbo-v0.2 | models/loras/ |
+| ACE 生图 | acestep_v1.5_xl_turbo + qwen_{0.6b,4b}_ace15 + ace_1.5_vae | diffusion_models/ + text_encoders/ + vae/ |
+| 角色 LoRA | alisa(Alya)×3 / yuki_suou_v1120706 / anima-highres / anima-turbo-v0.2 | models/loras/ |
 | 抠图 | BiRefNetRMBG 节点（ComfyUI-RMBG，1038lab）+ BiRefNet_toonout | custom_nodes/ + models/RMBG/ |
 | 超分 | 4x-ClearRealityV1 | models/upscale_models/ |
-| 编辑 ✅ | Bernini-R 双模型（Wan2.2 renderer，重打光/重风格化/插主体）| diffusion_models/ |
-| Bernini int8 ✅ | `wan2.2_bernini_r_{high,low}_noise_int8_convrot`（14.54GB×2）— **视频任务默认**（比 fp8 快 21% 画质无损）| diffusion_models/ |
+| 编辑 ⚠️ | **Bernini-R 模型缺失**（2026-08-12 盘点确认磁盘无 int8/fp8/蒸馏 LoRA/umt5 TE；待确认或重下，指引 docs/02）| diffusion_models/ |
+
+- ~~Wan2.2 GGUF 快速栈~~ **已整体清理（用户确认 2026-08-12 有意清理）**：unet GGUF×2、umt5 GGUF、lightx2v LoRA×2 全部删除；`wan_2.1_vae` 已补回（243MB，兜底保留）
 
 - 图像编辑/超分安装细节与 Bernini 官方管线见 docs/06_extras_install.md
 - ⚠️ **Bernini 时长铁律**：源视频时长必须 == 输出时长（10s→5s 会脑补/步伐乱）；cfg 用 1.0 最稳；fps16 官方默认
 
-- ~~Wan2.1 I2V fp8 模型~~ **已删除（2025-08-02）**：Wan2.2 A14B 完全覆盖（原生 480P+720P，2.1 仅 480P），管线已全量切 2.2；**VAE（wan_2.1_vae）保留**，Bernini/2.2 跨版本共用
-- 聪明档：同一 GGUF 去掉 Lightning LoRA + 20 步 cfg 3.5 shift 8 = 原版模式（多动作可行，零下载）
+- ~~Wan2.1/Wan2.2 视频栈~~ **已全部清理（用户确认 2026-08-12 有意清理）**：Wan2.2 GGUF 快速栈 + Wan2.1 fp8 对照栈 + Bernini 配套模型均删除（含 umt5_xxl_fp8 TE，Bernini 必需）
 
 ## 测试工作流（comfy-ops/workflows/）
-- `wan2.2_i2v_lightning_test.json`（API 格式 17 节点）— 主力快速视频
-  - 结构：UnetLoaderGGUF×2 → ModelSamplingSD3(shift=5) → LoraLoaderModelOnly(Hi/Lo LoRA) → CLIPLoaderGGUF(umt5,wan) → CLIPTextEncode 正/负 → WanImageToVideo → KSamplerAdvanced(Hi: 0-2 add_noise) → KSamplerAdvanced(Lo: 2-4 no_add_noise) → VAEDecode → CreateVideo → SaveVideo
-  - 起始图：`input/start/*.png`（语义命名，用原图分辨率直接跑，越大越清晰）
-  - WanImageToVideo **不需要** clip_vision_output（Wan 2.2 I2V 内部处理，2.1 才需要）
+- **H3 系列（主力）**：`minimax_h3_i2v.json` / `minimax_h3_t2v.json` / `minimax_h3_r2v.json` / `minimax_h3_ref2va_img_vid_api.json`（Ref2VA 全链路）/ `h3v1_r2_audio_only.json` / `minimax_h3_t2v_api_nobgm_test.json` 等
 - `anima_t2i_test.json` / `anima_alya_768_t2i.json`（ANIMA 生图，10 节点）
 - `krea2_t2i_test.json`（KREA 生图，8 节点）
+- ~~`wan2.2_i2v_lightning_test.json`~~ **不可用**（模型已清，2026-08-12）；`wan2.1*`/`wan2.2*`/`bernini*`/`pipeline_wan22_*` 同
 - 各工作流详细档案见 [references/workflows.md](references/workflows.md)
 
 ## 操作流程
@@ -51,7 +51,7 @@ description: ComfyUI 项目操作手册 — Wan2.2 I2V Lightning 快速视频栈
 4. 查看：`http://localhost:8188/view?filename=<名>&subfolder=<子目录>&type=output`（Output 浏览器也行）
 5. **文件名规范**：SaveVideo 的 filename_prefix 直接写内容标识（`video/动作_分辨率_帧数`），生成时命名，**绝不要事后重命名**
 6. 验证工作流：`comfyui_validate_workflow`（graph health 检查）
-7. 本地 CLI（bash 直连，无需 MCP）：`python3 run_workflow.py workflows/<文件>.json` 提交现成工作流；`python3 comfy_client.py "prompt" [--image 图] [--steps N]` 快速 Wan I2V 生成
+7. 本地 CLI（bash 直连，无需 MCP）：`python3 run_workflow.py workflows/<文件>.json` 提交现成工作流；~~`python3 comfy_client.py`~~ 已过时（Wan2.1 式工作流，模型已清，勿用）
 
 ## 资源分类规范（之后沿用）
 - **output/ 生成物直接落子目录**：`anima/`(ANIMA 生图) `krea/`(KREA 生图) `compare/`(对比拼图) `video/`(视频) `img_anima|img_krea/`(题材测试集) `res_test/`(分辨率测试)
