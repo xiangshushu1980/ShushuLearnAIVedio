@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@fastify/cors": "^10.0.0",
+    "@fastify/multipart": "^10.1.0",
     "@shotlist/shared": "workspace:*",
     "fastify": "^5.0.0",
     "yaml": "^2.6.0",

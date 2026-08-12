@@ -28,6 +28,8 @@ export function PromptPage({ onGenerate }: Props) {
   const prompt = project?.prompt
   const mode = project?.promptMode
   const check = prompt && mode ? checkPrompt(prompt, project.shotlist?.duration_total, mode === 'ref2va' ? 'ref2va' : 'i2va') : null
+  // 默认 ref2va（用户决策 2026-08-12：默认全部 ref2va，靠实体连接保证一致性）
+  const activeMode: PromptMode = mode ?? 'ref2va'
 
   const copy = async () => {
     if (!prompt) return
@@ -45,8 +47,8 @@ export function PromptPage({ onGenerate }: Props) {
             <div className="flex flex-wrap items-center gap-2">
               <CardTitle className="text-xs text-slate-300">③ H3 提示词（调试/检查）</CardTitle>
               <div className="flex gap-1">
-                <ModeButton active={mode === 'i2va'} onClick={() => onGenerate('i2va')} loading={busy === 'prompt'} label="i2va 快车道" />
-                <ModeButton active={mode === 'ref2va'} onClick={() => onGenerate('ref2va')} loading={busy === 'prompt'} label="ref2va 慢车道" />
+                <ModeButton active={activeMode === 'i2va'} onClick={() => onGenerate('i2va')} loading={busy === 'prompt'} label="i2va 快车道" />
+                <ModeButton active={activeMode === 'ref2va'} onClick={() => onGenerate('ref2va')} loading={busy === 'prompt'} label="ref2va（默认）" />
               </div>
               {check && <CheckBadge check={check} />}
               <div className="ml-auto flex items-center gap-1.5">

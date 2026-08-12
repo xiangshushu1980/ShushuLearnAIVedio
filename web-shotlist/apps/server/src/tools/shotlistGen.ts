@@ -12,7 +12,8 @@ import {
   parseScript,
   validateShotlist,
 } from '@shotlist/shared'
-import { IR_REVERSE_DIR, ROLE_CARD_DIR, RULES_FILE } from '../config.ts'
+import { IR_REVERSE_DIR, RULES_FILE } from '../config.ts'
+import { loadEntityCards } from '../entities.ts'
 import { chatCompletion, stripFence, type Effort } from '../llm.ts'
 import { reviewTemplate, shotlistSystemTemplate } from './templates.ts'
 
@@ -43,11 +44,19 @@ export async function genShotlist(scriptText: string, opts: GenShotlistOptions):
   if (!keyOk) throw new Error('缺少 DeepSeek key：~/.config/mem0_deepseek_key 或 DEEPSEEK_API_KEY')
 
   const duration = Number(script.head.duration ?? 8)
-  const roleBlock = loadRoleCards(script.head.role_cards ?? [])
+  const roleBlock = loadEntityCards(script.head.role_cards ?? [])
   const fewshotBlock = loadFewshot(opts.fewshot ?? [])
   const systemPrompt = shotlistSystemTemplate(CAMERA_TYPES.join(', '), roleBlock, fewshotBlock)
 
   const noBgm = Boolean(script.head.no_bgm) || script.head.bgm === 'N/A'
+  const chain = script.head.chain
+  const chainLine = chain
+    ? `chain: ${chain}  # 跨段策略（执行层；本段镜头规划不受影响）`
+    : 'chain: auto  # 自动推断（第一段→first_static；多段中间→firstlast_bridge；散段→independent）'
+  const shotStyle = opts.shotStyle ?? script.head.shot_style
+  const styleLine = shotStyle
+    ? `shot_style: ${shotStyle}`
+    : 'shot_style: auto  # 按剧本内容自主选择 分镜剪辑 / 长镜头流'
   const userLines = [
     `===== 剧本 =====\n${script.body}`,
     `===== 参数 =====\n` +
@@ -55,7 +64,7 @@ export async function genShotlist(scriptText: string, opts: GenShotlistOptions):
       `scene: ${script.head.scene ?? ''}\n` +
       `duration_total: ${duration}s\nsound: ${script.head.sound ?? ''}\n` +
       `role_cards: ${JSON.stringify(script.head.role_cards ?? [])}` +
-      `\nchain: ${script.head.chain ?? 'independent'}\nshot_style: ${opts.shotStyle ?? script.head.shot_style ?? '分镜剪辑'}\n` +
+      `\n${chainLine}\n${styleLine}\n` +
       `audio_refs: ${JSON.stringify(script.head.audio_refs ?? {})}` +
       `  # 音色种子（角色 id → wav 路径，可选）`,
     `no_bgm: ${noBgm}  # true=本段不要 BGM：bgm 一律 N/A + 镜头情绪中性化`,
@@ -95,18 +104,6 @@ export async function genShotlist(scriptText: string, opts: GenShotlistOptions):
     lastErr = errs.join('；')
   }
   throw new Error(`${retry + 1} 次尝试后仍失败，最后错误: ${lastErr}`)
-}
-
-/** 加载角色卡（experiments/shotlist/rolecards/<id>.md） */
-export function loadRoleCards(ids: string[]): string {
-  if (!ids.length) return '（无角色卡）'
-  const blocks: string[] = []
-  for (const rid of ids) {
-    const f = path.join(ROLE_CARD_DIR, `${rid}.md`)
-    if (fs.existsSync(f)) blocks.push(`===== 角色卡 ${rid} =====\n${fs.readFileSync(f, 'utf-8')}`)
-    else blocks.push(`（角色卡 ${rid} 未找到，忽略）`)
-  }
-  return blocks.join('\n')
 }
 
 /** 从 IR 逆向样本库加载代表样本作为 few-shot（风格锚点，不复制内容） */

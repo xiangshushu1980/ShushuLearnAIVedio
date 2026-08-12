@@ -117,10 +117,10 @@ export default function App() {
   })
 
   const genShotlistMut = useMutation({
-    mutationFn: async () => {
+    mutationFn: async (shotStyle?: string) => {
       const ok = await flushSave()
       if (!ok) throw new Error('剧本保存失败，未生成')
-      return api.generateShotlist(projectId!, { model: 'deepseek-v4-flash', effort: 'high' })
+      return api.generateShotlist(projectId!, { model: 'deepseek-v4-flash', effort: 'high', shotStyle })
     },
     onMutate: () => setBusy('shotlist'),
     onSuccess: async (r) => {
@@ -236,7 +236,7 @@ export default function App() {
         page === 0 ? (
           <div className="grid min-h-0 flex-1 grid-cols-[minmax(0,1fr)_300px] gap-2 p-2">
             <div className="min-h-0">
-              <ScriptPanel onGenerate={() => genShotlistMut.mutate()} />
+              <ScriptPanel onGenerate={() => genShotlistMut.mutate(undefined)} />
             </div>
             <div className="min-h-0 rounded-lg border border-slate-800 bg-slate-900/40 p-2">
               <div className="mb-1.5 text-xs font-semibold text-slate-300">实体库</div>
@@ -245,7 +245,7 @@ export default function App() {
           </div>
         ) : page === 1 ? (
           <ShotListView
-            onRegenerate={() => genShotlistMut.mutate()}
+            onRegenerate={(style) => genShotlistMut.mutate(style)}
             onGoPrompt={() => setPage(2)}
           />
         ) : (

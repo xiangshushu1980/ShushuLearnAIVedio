@@ -131,9 +131,13 @@ export function ScriptHeadForm({ head, headErr, onPatch }: Props) {
         </Field>
         <Field label="chain">
           <select
-            value={head?.chain ?? 'independent'}
-            onChange={(e) => onPatch({ chain: e.target.value as ScriptHead['chain'] })}
+            value={head?.chain ?? 'auto'}
+            onChange={(e) => {
+              const v = e.target.value
+              onPatch(v === 'auto' ? { chain: undefined } : { chain: v as ScriptHead['chain'] })
+            }}
           >
+            <option value="auto">自动（推荐）</option>
             {CHAIN_OPTIONS.map((c) => (
               <option key={c.value} value={c.value} title={c.hint}>
                 {c.label}
@@ -142,7 +146,14 @@ export function ScriptHeadForm({ head, headErr, onPatch }: Props) {
           </select>
         </Field>
         <Field label="shot_style">
-          <select value={head?.shot_style ?? '分镜剪辑'} onChange={(e) => onPatch({ shot_style: e.target.value })}>
+          <select
+            value={head?.shot_style ?? 'auto'}
+            onChange={(e) => {
+              const v = e.target.value
+              onPatch(v === 'auto' ? { shot_style: undefined } : { shot_style: v })
+            }}
+          >
+            <option value="auto">自动（推荐）</option>
             {SHOT_STYLE_OPTIONS.map((s) => (
               <option key={s} value={s}>
                 {s}

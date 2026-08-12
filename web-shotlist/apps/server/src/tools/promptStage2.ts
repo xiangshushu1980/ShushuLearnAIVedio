@@ -11,7 +11,8 @@ import {
   checkPrompt,
   validateShotlist,
 } from '@shotlist/shared'
-import { IR_SAMPLE, REF2VA_GUIDE, ROLE_CARD_DIR } from '../config.ts'
+import { IR_SAMPLE, REF2VA_GUIDE } from '../config.ts'
+import { loadEntityCards } from '../entities.ts'
 import { chatCompletion, stripFence, type Effort } from '../llm.ts'
 import { i2vaSystemTemplate, ref2vaSystemTemplate } from './templates.ts'
 
@@ -39,7 +40,7 @@ export async function genPrompt(shotlistYaml: string, opts: GenPromptOptions): P
   const errs = validateShotlist(sl, Number(sl.duration_total ?? 8))
   if (errs.length) throw new Error(`拍摄本校验失败: ${errs.slice(0, 5).join('；')}`)
 
-  const roleCards = loadRoleCards(sl.role_cards ?? [])
+  const roleCards = loadEntityCards(sl.role_cards ?? [])
   const systemPrompt =
     opts.mode === 'i2va'
       ? i2vaSystemTemplate(fs.existsSync(IR_SAMPLE) ? fs.readFileSync(IR_SAMPLE, 'utf-8') : '')
@@ -74,17 +75,6 @@ export async function genPrompt(shotlistYaml: string, opts: GenPromptOptions): P
     lastIssues = result.issues
   }
   throw new Error(`${retry + 1} 次尝试后仍失败: ${lastIssues.slice(0, 5).join('；')}`)
-}
-
-/** 加载角色卡（experiments/shotlist/rolecards/<id>.md） */
-function loadRoleCards(ids: string[]): string {
-  if (!ids.length) return ''
-  const blocks: string[] = []
-  for (const rid of ids) {
-    const f = path.join(ROLE_CARD_DIR, `${rid}.md`)
-    if (fs.existsSync(f)) blocks.push(fs.readFileSync(f, 'utf-8'))
-  }
-  return blocks.join('\n\n')
 }
 
 /** ref2va 官方参考指南（.pi/skills/h3-prompt-writing/references/ref-en.txt） */

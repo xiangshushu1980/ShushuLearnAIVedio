@@ -15,7 +15,7 @@ import { TimelineBar } from './TimelineBar'
 import { ShotCard } from './ShotCard'
 
 interface Props {
-  onRegenerate: () => void
+  onRegenerate: (shotStyle?: string) => void
   onGoPrompt: () => void
 }
 
@@ -24,8 +24,23 @@ export function ShotListView({ onRegenerate, onGoPrompt }: Props) {
   const shotlist = project?.shotlist
   const [pickFor, setPickFor] = useState<Shot | null>(null)
   const [highlight, setHighlight] = useState<number | null>(null)
+  const [chainSel, setChainSel] = useState(shotlist?.chain ?? 'auto')
+  const [styleSel, setStyleSel] = useState('auto')
   const cardRefs = useRef<Record<number, HTMLDivElement | null>>({})
   const { data: entities = [] } = useQuery({ queryKey: ['entities'], queryFn: api.listEntities })
+
+  // 跨段策略快速切换（微调：仅执行层偏好；auto 不落盘，提示词合成按拍摄本 chain 生效）
+  const applyChain = async (chain: string) => {
+    setChainSel(chain)
+    if (!shotlist || !project || chain === 'auto') return
+    const next: Shotlist = { ...shotlist, chain: chain as Shotlist['chain'] }
+    setProject({ ...project, shotlist: next })
+    try {
+      await api.saveProject(project.meta.id, { shotlist: yamlStringify(next) })
+    } catch (e) {
+      setError(`保存失败: ${(e as Error).message}`)
+    }
+  }
 
   // 跨页跳转：页 2 提示词 [Shot N] → 本页高亮镜头
   useEffect(() => {
@@ -75,9 +90,30 @@ export function ShotListView({ onRegenerate, onGoPrompt }: Props) {
               <Button size="sm" variant="ghost" onClick={() => setPage(0)} title="回剧本修改">
                 ← 回剧本
               </Button>
-              <Button size="sm" variant="secondary" onClick={onRegenerate} loading={busy === 'shotlist'} disabled={!project?.script?.raw}>
+              <select
+                value={styleSel}
+                onChange={(e) => setStyleSel(e.target.value)}
+                title="镜头拆解策略（重新生成时应用）"
+                className="rounded border border-slate-700 bg-slate-950 px-1.5 py-1 text-[11px] text-slate-300"
+              >
+                <option value="auto">镜头策略：自动</option>
+                <option value="分镜剪辑">镜头策略：分镜剪辑</option>
+                <option value="长镜头流">镜头策略：长镜头流</option>
+              </select>
+              <Button size="sm" variant="secondary" onClick={() => onRegenerate(styleSel === 'auto' ? undefined : styleSel)} loading={busy === 'shotlist'} disabled={!project?.script?.raw}>
                 重新生成
               </Button>
+              <select
+                value={chainSel}
+                onChange={(e) => applyChain(e.target.value)}
+                title="跨段策略（执行层偏好，生成后可微调）"
+                className="rounded border border-slate-700 bg-slate-950 px-1.5 py-1 text-[11px] text-slate-300"
+              >
+                <option value="auto">跨段：自动</option>
+                <option value="first_static">跨段：first_static</option>
+                <option value="firstlast_bridge">跨段：firstlast_bridge</option>
+                <option value="independent">跨段：independent</option>
+              </select>
               <Button size="sm" onClick={onGoPrompt} disabled={!shotlist}>
                 生成提示词 →
               </Button>

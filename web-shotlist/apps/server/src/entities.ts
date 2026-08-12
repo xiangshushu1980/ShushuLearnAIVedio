@@ -6,7 +6,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { parse, stringify } from 'yaml'
 import type { Entity, EntityImportance, EntityType } from '@shotlist/shared'
-import { ENTITIES_DIR } from './config.ts'
+import { ENTITIES_DIR, ROLE_CARD_DIR } from './config.ts'
 
 export function entitiesDir(): string {
   fs.mkdirSync(ENTITIES_DIR, { recursive: true })
@@ -121,4 +121,26 @@ function parseFrontmatter(f: string): Record<string, unknown> {
   } catch {
     return {}
   }
+}
+
+/**
+ * 角色卡注入（工具 A/B 共用）：实体库优先（外观/声音/介绍），缺失 fallback experiments/shotlist/rolecards/
+ * 实体连接一致性：ref2va 靠实体（设定图+卡）锚定身份
+ */
+export function loadEntityCards(ids: string[]): string {
+  if (!ids.length) return '（无角色卡）'
+  const blocks: string[] = []
+  for (const rid of ids) {
+    const e = readEntity(rid)
+    if (e) {
+      blocks.push(
+        `===== 角色卡 ${rid} =====\n# ${e.name}（${e.type}·${e.importance === 'core' ? '核心' : '次要'}）\n## 外观\n${e.appearance}\n## 声音\n${e.sound || '无特殊'}\n## 介绍\n${e.description}`,
+      )
+    } else {
+      const f = path.join(ROLE_CARD_DIR, `${rid}.md`)
+      if (fs.existsSync(f)) blocks.push(`===== 角色卡 ${rid} =====\n${fs.readFileSync(f, 'utf-8')}`)
+      else blocks.push(`（角色卡 ${rid} 未找到，忽略）`)
+    }
+  }
+  return blocks.join('\n')
 }
