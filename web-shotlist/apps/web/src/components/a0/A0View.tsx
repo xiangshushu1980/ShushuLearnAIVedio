@@ -41,13 +41,13 @@ export function A0View({ onApply }: { onApply: (script: string, name: string) =>
   }
 
   return (
-    <div className="mx-auto flex h-full w-full max-w-5xl flex-col gap-3 p-4">
-      <div>
-        <h2 className="text-sm font-semibold text-slate-100">✍ 创作（工具 A0）</h2>
+    <div className="flex h-full min-w-0 flex-col gap-3 p-4">
+      <div className="shrink-0">
+        <h2 className="text-sm font-semibold text-slate-100">创作（工具 A0）</h2>
         <p className="text-[11px] text-slate-500">输入几句点子，自动扩展为可选长度的世界观手册和剧本，可应用到新项目继续制作</p>
       </div>
 
-      <div className="grid grid-cols-2 gap-3">
+      <div className="grid min-h-0 flex-1 grid-cols-2 gap-3">
         {/* 输入 */}
         <Card>
           <CardHeader className="pb-2">

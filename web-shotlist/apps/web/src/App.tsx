@@ -150,7 +150,7 @@ export default function App() {
       <header className="flex items-center gap-3 border-b border-slate-800 bg-slate-900/80 px-4 py-2">
         <h1 className="text-sm font-bold text-slate-100">拍摄本看板</h1>
         <Button size="sm" variant={view === 'a0' ? 'default' : 'outline'} onClick={() => setView(view === 'a0' ? 'board' : 'a0')}>
-          ✍ 创作
+          创作
         </Button>
         {view === 'board' && (
           <>

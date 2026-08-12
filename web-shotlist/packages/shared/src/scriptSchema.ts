@@ -24,7 +24,7 @@ export const scriptHeadSchema = z.object({
 
 /** 解析剧本：YAML 参数头（--- ... ---）+ 正文 */
 export function parseScript(text: string): { script?: Script; errs: string[] } {
-  const m = /^---\n(.*?)\n---\n(.*)$/s.exec(text)
+  const m = /^---\s*\n(.*?)\n---\s*\n(.*)$/s.exec(text)
   if (!m) {
     return { errs: ['剧本格式错误（需 --- 参数头 --- 正文）'] }
   }
@@ -57,7 +57,7 @@ const HEAD_KEY_ORDER = [
  * 策略：yaml 解析原参数头 → merge 表单值 → 重序列化；保留未知字段（branch 等），丢弃注释
  */
 export function serializeScript(prevRaw: string, head: ScriptHead): string {
-  const m = /^---\n(.*?)\n---\n(.*)$/s.exec(prevRaw)
+  const m = /^---\s*\n(.*?)\n---\s*\n(.*)$/s.exec(prevRaw)
   if (!m) return prevRaw
   const body = m[2]
   let prevHead: Record<string, unknown> = {}

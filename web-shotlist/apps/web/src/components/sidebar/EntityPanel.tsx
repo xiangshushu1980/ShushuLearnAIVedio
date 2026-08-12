@@ -151,15 +151,19 @@ function EntityDetailDialog({ id, onClose, onChanged }: { id: string; onClose: (
 /** AI 抽取弹层：世界观（可选）+ 当前项目剧本 → 实体卡 */
 function ExtractDialog({ onClose, onDone }: { onClose: () => void; onDone: () => void }) {
   const scriptDraft = useAppStore((s) => s.scriptDraft)
+  const [scriptText, setScriptText] = useState('')
   const [worldview, setWorldview] = useState('')
   const [busy, setBusy] = useState(false)
+  const [result, setResult] = useState<string | null>(null)
+
+  const sourceScript = scriptDraft || scriptText
 
   const run = async () => {
     setBusy(true)
     try {
-      await api.extractEntities({ worldview, script: scriptDraft })
+      const r = await api.extractEntities({ worldview, script: sourceScript })
+      setResult(`已生成 ${r.entities.length} 个实体并保存为文件：${r.entities.map((e) => e.name).join('、')}`)
       onDone()
-      onClose()
     } catch (e) {
       useAppStore.getState().setError((e as Error).message)
     } finally {
@@ -169,29 +173,36 @@ function ExtractDialog({ onClose, onDone }: { onClose: () => void; onDone: () =>
 
   return (
     <Dialog open onClose={onClose} title="AI 抽取实体卡">
-      <p className="mb-2 text-[11px] text-slate-500">基于当前项目剧本{scriptDraft ? '（自动代入）' : '（请粘贴剧本）'} + 世界观分析，生成实体卡并入库。</p>
+      <p className="mb-2 text-[11px] leading-relaxed text-slate-500">
+        实体必须从剧本 + 世界观中获得。基于剧本{scriptDraft ? '（已自动代入当前项目剧本）' : ''}与世界观文本分析，生成实体卡并保存为文件（data/entities/*.md）。
+      </p>
       {!scriptDraft && (
-        <textarea
-          value={worldview}
-          onChange={(e) => setWorldview(e.target.value)}
-          placeholder="剧本文本…"
-          rows={4}
-          className="mb-2 w-full text-xs"
-        />
+        <>
+          <label className="mb-0.5 block text-[10px] font-medium uppercase tracking-wide text-slate-500">剧本文本（必填）</label>
+          <textarea
+            value={scriptText}
+            onChange={(e) => setScriptText(e.target.value)}
+            placeholder="粘贴剧本…（也可先新建/选择项目，自动代入）"
+            rows={4}
+            className="mb-2 w-full text-xs"
+          />
+        </>
       )}
+      <label className="mb-0.5 block text-[10px] font-medium uppercase tracking-wide text-slate-500">世界观手册（建议填写）</label>
       <textarea
         value={worldview}
         onChange={(e) => setWorldview(e.target.value)}
-        placeholder="世界观手册（可选，留空则仅按剧本推断）…"
+        placeholder="粘贴世界观手册…（留空则仅按剧本推断）"
         rows={4}
         className="mb-3 w-full text-xs"
       />
+      {result && <p className="mb-3 rounded border border-emerald-900 bg-emerald-950/40 px-2 py-1.5 text-[11px] text-emerald-300">✓ {result}</p>}
       <div className="flex justify-end gap-2">
         <button onClick={onClose} className="rounded border border-slate-700 px-3 py-1.5 text-xs text-slate-300 hover:bg-slate-800">
-          取消
+          关闭
         </button>
-        <Button onClick={run} loading={busy} disabled={!scriptDraft}>
-          生成
+        <Button onClick={run} loading={busy} disabled={!sourceScript.trim()}>
+          生成并保存
         </Button>
       </div>
     </Dialog>
