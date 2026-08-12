@@ -30,20 +30,25 @@
 4. 温情氛围词（serene/warm smile/calm/nostalgic/twilight mood）× 多镜头 = 触发（V11/C1/D2）；× 单镜头 = 安全（E4 全剂量验证）
 5. **重要发现（2026-08-11 AudioSep 分离验证）**：触发音乐态的音轨 ≈ 纯音乐（music 分离轨与混音相关度 0.986-1.0，残差 -44~-71dB 近静音）——环境音/人声/音效被音乐完全替代，不是混合！所以触发时不存在"要音效"的内容，分离工具无混合可分。
 
-## 音频分离工具（2026-08-11 装好）
-- AudioSep（LA-Sep）：/home/sean/projects/audio-sep + 权重（ckpt 1.26GB + CLAP 2.35GB）
-- 封装脚本：scripts/h3_audio_sep.py（CPU ~7s/8s 音频）
-- 用途："音乐+人声/音效混合轨"去音乐保留其余（如 ref2va 带语音场景）；对纯音乐轨无意义
-- 备选：FlowSep（同团队 2025，rectified flow，效果更好但依赖重）未装
+## 音频分离工具（2026-08-11/12 定案：demucs 6s 是 H3 去 BGM 的正确工具）
+- **生产工具 = demucs htdemucs_6s**（ComfyUI venv 已装；封装 scripts/h3_demucs.py：去音乐=保留 vocals+other、去 drums/bass/guitar/piano，自动合成视频）
+- **实测证据（G1-G5 复杂条目 + F2 演唱会，用户试听确认"效果都很好"）**：
+  - G3 舞台钢琴演奏（diegetic）：6s 把钢琴完整分到 piano stem（-35.4dB=混音全部），去音乐版=几乎全静音 ✓
+  - G5 双人对话+吉他：吉他独立 -24.3dB，对话保留 ✓；G2 雨夜+合成器：音乐进 piano stem，雨声/车流保留 ✓
+  - G4 纯环境音：demucs 不幻觉（全部留在 other）✓；G1 写实对话+钢琴：钢琴独立 -33.9dB ✓
+  - 重建相关度 ~1.0（demucs 是重建式分离）
+- **淘汰 AudioSep/FlowSep（语言引导分离）**：对 H3 音频实测无效（AudioSep 复制整个混音相关 0.99；FlowSep 输出能量低 20dB+内容疑似幻觉）——定位是"任意声源文本提取"（音效库/特定声提取），不是音乐分离；且 LASS 领域 SOTA 已被 Meta SAM Audio 超过（2025.12，但极慢+gated 权重）
+- **备选**：SAM Audio（Meta，text-prompt SOTA 但 4.5min 音频需 5.5h）；AudioShake API（SAM 基准第一，付费）；MUSDB18 基准：htdemucs_ft vocals SDR 10.83dB 仍居开源榜首
 
 ## 后续方向（待做）
 - [x] 温情词"剂量"测试：E4 单镜头+全剂量氛围词=无音乐（单镜头免疫）
 - [x] 舞台触发点定位：舞台/演唱会 × 多镜头均触发（D3/D5/E5）；单镜头免疫（E2）
 - [ ] 持续关注社区：ComfyUI PR #15375（per-token 视频/音频 latent 噪声掩码）、#15439（任意帧音频 guide 锚定）——合并后可能是"音频静音/控制"接口
 - [ ] diffusers `audio_latents` 参数实验（注入静音 latent）——未做
-- [x] 后期分离工具验证：AudioSep（LA-Sep）装好并实测——结论：触发态音轨=纯音乐无混合可分；工具留作"音乐+人声"场景（ref2va 带语音）备用。FlowSep（更优）未装
+- [x] 后期分离工具验证：**demucs 6s 定案**（G1-G5 复杂条目全部验证通过）；AudioSep/FlowSep 淘汰；SAM Audio/AudioShake 列为备选
 - [ ] 每天扫一遍：r/StableDiffusion H3 帖、HF discussions、ComfyUI issues、X #MiniMaxH3
-- [ ] E5 演唱会样本值得留存（舞台×多镜头=触发 的第三个样本）
+- [ ] 生产串联：h3_demucs.py 接入成片管线（快车道出片 → 需要时自动去 BGM）
+- [ ] 后续可测：demucs 对 15s 长段、多段拼接片的效果；htdemucs_ft 与 6s 的 vocals 质量对比
 
 ## 热文件
 - 实验产物：ComfyUI/output/video/h3_verify/（V1-V12, C1-C4, D1-D5）
