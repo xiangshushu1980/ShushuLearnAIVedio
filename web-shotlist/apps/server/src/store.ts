@@ -6,8 +6,8 @@
  */
 import fs from 'node:fs'
 import path from 'node:path'
-import { parseScript, parseShotlistYaml, type InputRef, type Project, type ProjectMeta, type PromptMode } from '@shotlist/shared'
-import { DATA_ROOT, ENTITIES_DIR } from './config.ts'
+import { parseScript, parseShotlistYaml, type InputRef, type Project, type ProjectMeta, type PromptMode, type TrashItem } from '@shotlist/shared'
+import { DATA_ROOT, ENTITIES_DIR, ROLE_CARD_DIR } from './config.ts'
 
 export function projectsRoot(): string {
   const dir = path.join(DATA_ROOT, 'projects')
@@ -149,6 +149,75 @@ export function readEntity(id: string): { entity?: unknown; errs?: string[] } {
   const f = path.join(ENTITIES_DIR, `${id}.md`)
   if (!fs.existsSync(f)) return { errs: [`实体不存在: ${id}`] }
   return { entity: { id, description: fs.readFileSync(f, 'utf-8') } }
+}
+
+// ===== 回收站（软删除：项目目录移入 data/trash/）=====
+function trashRoot(): string {
+  const dir = path.join(DATA_ROOT, 'trash')
+  fs.mkdirSync(dir, { recursive: true })
+  return dir
+}
+
+function inTrash(id: string): boolean {
+  return fs.existsSync(path.join(trashRoot(), id))
+}
+
+/** 删除项目 → 回收站（确认由前端完成）；返回回收站条目 */
+export function trashProject(id: string): TrashItem {
+  const dir = projectDir(id)
+  if (!fs.existsSync(dir)) throw new Error(`项目不存在: ${id}`)
+  if (inTrash(id)) throw new Error(`项目已在回收站: ${id}`)
+  const trashedAt = new Date().toISOString()
+  // 更新 meta 记入回收时间
+  const metaPath = path.join(dir, 'meta.json')
+  const meta = readJson<ProjectMeta>(metaPath) ?? { id, name: id, createdAt: trashedAt }
+  meta.trashedAt = trashedAt
+  writeJson(metaPath, meta)
+  fs.renameSync(dir, path.join(trashRoot(), id))
+  return { id, name: meta.name, trashedAt }
+}
+
+export function listTrash(): TrashItem[] {
+  const root = trashRoot()
+  return fs
+    .readdirSync(root, { withFileTypes: true })
+    .filter((d) => d.isDirectory())
+    .map((d) => {
+      const meta = readJson<ProjectMeta>(path.join(root, d.name, 'meta.json'))
+      return { id: d.name, name: meta?.name ?? d.name, trashedAt: meta?.trashedAt ?? '' }
+    })
+    .sort((a, b) => b.trashedAt.localeCompare(a.trashedAt))
+}
+
+/** 恢复回收站项目 */
+export function restoreProject(id: string): ProjectMeta {
+  const from = path.join(trashRoot(), id)
+  if (!fs.existsSync(from)) throw new Error(`回收站无此项目: ${id}`)
+  const meta = readJson<ProjectMeta>(path.join(from, 'meta.json'))
+  if (!meta) throw new Error(`回收站项目元信息损坏: ${id}`)
+  const to = path.join(projectsRoot(), id)
+  if (fs.existsSync(to)) throw new Error(`目标位置已存在同名项目，无法恢复: ${id}`)
+  delete meta.trashedAt
+  writeJson(path.join(from, 'meta.json'), meta)
+  fs.renameSync(from, to)
+  return meta
+}
+
+/** 永久删除（仅回收站内允许） */
+export function purgeProject(id: string): void {
+  const dir = path.join(trashRoot(), id)
+  if (!fs.existsSync(dir)) throw new Error(`回收站无此项目: ${id}`)
+  fs.rmSync(dir, { recursive: true, force: true })
+}
+
+/** 角色卡 id 列表（工具 A 参数头 role_cards 多选用） */
+export function listRoleCards(): string[] {
+  if (!fs.existsSync(ROLE_CARD_DIR)) return []
+  return fs
+    .readdirSync(ROLE_CARD_DIR)
+    .filter((f) => f.endsWith('.md'))
+    .map((f) => f.slice(0, -3))
+    .sort()
 }
 
 // ===== helpers =====

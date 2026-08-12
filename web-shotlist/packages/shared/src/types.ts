@@ -132,6 +132,14 @@ export interface ProjectMeta {
   createdAt: string
   /** 引用的实体注册表（V1 基础版） */
   entities?: string[]
+  /** 入回收站时间（在回收站时存在） */
+  trashedAt?: string
+}
+
+export interface TrashItem {
+  id: string
+  name: string
+  trashedAt: string
 }
 
 export interface Project {

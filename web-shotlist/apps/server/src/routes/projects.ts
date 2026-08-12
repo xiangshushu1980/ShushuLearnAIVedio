@@ -1,7 +1,7 @@
 /** 项目路由（docs/22 六节 API 设计） */
 import type { FastifyInstance } from 'fastify'
 import { z } from 'zod'
-import { createProject, listProjects, readProject, saveProject } from '../store.ts'
+import { createProject, listProjects, listRoleCards, listTrash, purgeProject, readProject, restoreProject, saveProject, trashProject } from '../store.ts'
 import { genShotlist } from '../tools/shotlistGen.ts'
 import { genPrompt } from '../tools/promptStage2.ts'
 
@@ -113,4 +113,38 @@ export async function projectRoutes(app: FastifyInstance): Promise<void> {
       return reply.code(404).send({ error: (e as Error).message })
     }
   })
+
+  // ===== 回收站（次要入口；删除需前端确认）=====
+  app.get('/trash', async () => listTrash())
+
+  app.post('/projects/:id/trash', async (req, reply) => {
+    const { id } = idParam.parse(req.params)
+    try {
+      return trashProject(id)
+    } catch (e) {
+      return reply.code(400).send({ error: (e as Error).message })
+    }
+  })
+
+  app.post('/projects/:id/restore', async (req, reply) => {
+    const { id } = idParam.parse(req.params)
+    try {
+      return restoreProject(id)
+    } catch (e) {
+      return reply.code(400).send({ error: (e as Error).message })
+    }
+  })
+
+  app.delete('/projects/:id', async (req, reply) => {
+    const { id } = idParam.parse(req.params)
+    try {
+      purgeProject(id)
+      return { ok: true }
+    } catch (e) {
+      return reply.code(400).send({ error: (e as Error).message })
+    }
+  })
+
+  // 角色卡列表（参数头 role_cards 多选用）
+  app.get('/role-cards', async () => listRoleCards())
 }
