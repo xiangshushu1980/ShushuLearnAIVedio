@@ -1,11 +1,11 @@
 # 任务进度：h3-today-testing
 
 > 任务：2026-08-11 H3 今日动态测试（用户指令：依次测试直到出结果）
-> 队列占用声明：2026-08-11 起占用 ComfyUI 队列/显存（[STATE] 已声明），跑批期间其他任务线勿提交
+> 队列占用：2026-08-11 占用期间已在 [STATE] 声明（条目未建成，收尾补建），跑批已结束，队列已释放
 
 ## 任务
 - 目标：依次测试 T1-T6（LightX2V Turbo LoRA v1.0 → 防 OOM flags → Ref2VA 纯音频 → Sage v2 Ada patch → Sol Engine → fal API）
-- 当前状态：🟡
+- 当前状态：✅ 完成（2026-08-12 收尾）
 - 我负责的文件区：`.pi/agents/h3-today-testing/`、ComfyUI models/loras/（minimax_h3_turbo_v1.0 相关）
 
 ## 进度日志
@@ -24,13 +24,16 @@
 - 待用户：目视验收（T1 对比图/视频）、决定是否注册 fal（T6）
 - **用户目视定案（2026-08-11）**：F 细节多 > G 画面简单（v1.0 8step 蒸馏抹细节）；H/D/E 全部糊淘汰；**成片档维持 F（v4-600EMA 8步@1024）不动**，G 留作干净风格备用；fal 未注册（无 key）
 
+### 2026-08-12（收尾）
+- **全部完成**：T1-T6 结论 + 用户目视定案（2026-08-11）已在上面日志；定案 = 成片档维持 F（v4-600EMA 8步@1024）不动、G 留作风备选、H/D/E 糊淘汰、fal 未注册（无 key）
+- **产物状态 ⚠️**：ComfyUI/output/ 目录整体被外部清理误删——h3v1/ 12 条视频（A-K+L/M）从未入库不可恢复；2 张对比图（tracked）已从 git restore 恢复；结论数据完整保留在本文档 + mem0（条目 34c933c9 等），无数据损失
+- [STATE] 补建：本线当初“已声明队列”实际未落库，收尾时 retain 补建 ✅ 条目
+- 交接提示：本线 T1 实测已覆盖 h3-turbo-pilot 的“新武器试点”计划（v1.0/v4 均已测并定案），该线建议合并收口
+
 ## 下一步
-1. 下载 8step v1.0 comfyui 版 + 4step v1.0 768p comfyui 版到 models/loras/
-2. 读 ModelTC/Minimax-H3-Turbo model specs（步数/shift/分辨率/采样器推荐）
-3. 改 minimax_h3_i2v.json 加 LoraLoader 测试
-4. 依次 T2-T6
+- 无（本线收口）
 
 ## 关键链接
 - HF LoRA: https://huggingface.co/lightx2v/Minimax-h3-Turbo
 - 官方规格: https://github.com/ModelTC/Minimax-H3-Turbo#model-specs
-- 相关 mem0：[STATE] h3-today-testing
+- 相关 mem0：经验条目 34c933c9（v1.0 LoRA 测试结论）、4d53abcd（成片档定案）；[STATE] 2026-08-12 agent=h3-today-testing（✅）
