@@ -17,6 +17,7 @@ from pathlib import Path
 API = "http://127.0.0.1:8188"
 BASE = Path(__file__).resolve().parent.parent
 TPL = BASE / "workflows" / "anima_alya_169_t2i.json"
+I2I_TPL = BASE / "workflows" / "anima_alya_169_i2i.json"
 
 # 角色 LoRA 与正提示词模板（{scene_block} 由场景块替换）
 CHARACTERS = {
@@ -44,6 +45,18 @@ SCENES = {
     "night": ("standing at the center of the frame, eye-level frontal view, looking directly at the camera, "
               "straight-on composition, no high angle, night campus street, warm street lamp light, "
               "bokeh city lights background, cool blue night tone"),
+    # 中性背景通用站姿（跨段复用安全：场景特征弱，由 prompt 定场景）
+    "portrait": ("standing at the center of the frame, eye-level frontal view, looking directly at the camera, "
+                 "straight-on composition, no high angle, warm dusk light, soft blurred background, "
+                 "gentle golden hour ambience"),
+}
+
+# 服装变体（覆盖角色 base 的服装描述；None = 用角色 base 默认服装）
+OUTFITS = {
+    "uniform": {
+        "alya": "school uniform, white jacket with gold trim worn open over a dark navy top with white collar and red bow, black pleated skirt, white thighhighs, black loafers",
+        "yuki": "school uniform, dark navy sailor school uniform top, black sailor blouse, white sailor collar and red neckerchief, black pleated skirt, white thighhighs, dark shoes",
+    },
 }
 
 NEG = ("dark face, shaded face, worst quality, low quality, score_1, score_2, score_3, artist name, blurry, "
@@ -79,32 +92,48 @@ def main():
     ap.add_argument("--character", required=True, choices=list(CHARACTERS))
     ap.add_argument("--scenes", required=True, help="逗号分隔场景（beach,stage,night）")
     ap.add_argument("--seed-base", type=int, default=20260811)
+    ap.add_argument("--outfit", default="", help="服装变体（uniform=学园制服，覆盖 base 服装描述）")
+    ap.add_argument("--i2i", default="", help="img2img 输入图（相对 input/ 或绝对路径）；改服装/构图时保留面容")
+    ap.add_argument("--denoise", type=float, default=0.6, help="i2i 重绘强度（改服装 0.5-0.7）")
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--wait", action="store_true", help="提交后轮询等待完成（默认提交即返回）")
     args = ap.parse_args()
 
-    tpl = json.loads(TPL.read_text(encoding="utf-8"))
+    tpl = json.loads((I2I_TPL if args.i2i else TPL).read_text(encoding="utf-8"))
     ch = CHARACTERS[args.character]
+    outfit = OUTFITS.get(args.outfit, {}).get(args.character) if args.outfit else None
     for i, scene in enumerate([s.strip() for s in args.scenes.split(",")]):
         if scene not in SCENES:
             print(f"⚠️ 未知场景 {scene}，跳过")
             continue
         wf = json.loads(json.dumps(tpl))  # 深拷贝
         wf["4"]["inputs"]["lora_name"] = ch["lora"]
+        char_desc = outfit if outfit else ch["base"]
         wf["5"]["inputs"]["text"] = ("masterpiece, best quality, score_9, score_8, score_7, official art, "
-                                     "1girl, solo, clean lineart, detailed eyes, soft shading,\n" + ch["base"] +
+                                     "1girl, solo, clean lineart, detailed eyes, soft shading,\n" + char_desc +
                                      ",\n" + SCENES[scene])
-        wf["7"]["inputs"]["width"] = 768
-        wf["7"]["inputs"]["height"] = 448
-        wf["8"]["inputs"]["seed"] = args.seed_base + i
+        if args.i2i:
+            wf["11"]["inputs"]["image"] = args.i2i
+            wf["7"]["inputs"]["denoise"] = args.denoise
+            seed = args.seed_base + i
+            wf["7"]["inputs"]["seed"] = seed
+        else:
+            wf["7"]["inputs"]["width"] = 768
+            wf["7"]["inputs"]["height"] = 448
+            seed = args.seed_base + i
+            wf["8"]["inputs"]["seed"] = seed
         prefix = f"anima/{args.character}169_{scene}"
+        if args.outfit:
+            prefix += f"_{args.outfit}"
+        if args.i2i:
+            prefix += f"_i2i{int(args.denoise*100)}"
         wf["10"]["inputs"]["filename_prefix"] = prefix
         if args.dry_run:
-            print(f"[dry-run] {args.character} x {scene}: seed={wf['8']['inputs']['seed']} prefix={prefix}")
+            print(f"[dry-run] {args.character} x {scene}: seed={seed} prefix={prefix}")
             print("   prompt:", wf["5"]["inputs"]["text"][:150].replace("\n", " ") + " ...")
             continue
         pid = queue_prompt(wf)
-        print(f"[{args.character} x {scene}] submitted {pid} (seed {wf['8']['inputs']['seed']})")
+        print(f"[{args.character} x {scene}] submitted {pid} (seed {seed})")
         if args.wait:
             wait_done(pid)
 
