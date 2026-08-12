@@ -20,7 +20,7 @@ export function EntityChip({ name, type = '角色', importance = 'core' }: { nam
   )
 }
 
-export function ShotCard({ shot }: { shot: Shot }) {
+export function ShotCard({ shot, onSubjectClick }: { shot: Shot; onSubjectClick?: () => void }) {
   const cam = shot.camera
   const camDesc = [cam.type, cam.amplitude, cam.speed].filter(Boolean).join(' · ')
   return (
@@ -34,10 +34,12 @@ export function ShotCard({ shot }: { shot: Shot }) {
           <Badge variant="outline" className="italic text-fuchsia-300">🎥 {camDesc}</Badge>
         </div>
 
-        {/* 主体 chip */}
+        {/* 主体 chip（点击关联实体） */}
         <div className="flex flex-wrap items-center gap-1.5">
           <span className="text-[11px] uppercase tracking-wide text-slate-500">主体</span>
-          <EntityChip name={shot.subject} />
+          <button onClick={onSubjectClick} title="点击关联/替换实体" className="rounded transition-transform hover:scale-105">
+            <EntityChip name={shot.subject} />
+          </button>
         </div>
 
         {/* 动作 */}

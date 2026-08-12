@@ -1,45 +1,20 @@
 /**
- * ③ 侧栏（docs/22 四节，方案 A）：渲染输入源
- * 参考图卡片墙 + 音频卡 + 高级参数（折叠）
- * V1 只显示清单（解析自拍摄本 audio_refs / 提示词 <Picture N> 引用），不做提交
+ * 渲染输入源侧栏（页 2 右侧）：参考图墙 + 音频卡 + 高级参数（折叠）
+ * V1 只显示清单，不做提交（提交 = V2）
  */
 import { useState } from 'react'
 import type { InputRef, Project } from '@shotlist/shared'
-import { cn } from '@/lib/utils'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { EntityPanel } from './EntityPanel'
 
-export function SidebarPanel({ project }: { project: Project }) {
-  const [tab, setTab] = useState<'inputs' | 'entities'>('inputs')
+export function InputsSidebar({ project }: { project: Project | null }) {
   const [advOpen, setAdvOpen] = useState(false)
-  const images = project.inputs.filter((i): i is Extract<InputRef, { kind: 'image' }> => i.kind === 'image')
-  const audios = project.inputs.filter((i): i is Extract<InputRef, { kind: 'audio' }> => i.kind === 'audio')
+  const inputs = project?.inputs ?? []
+  const images = inputs.filter((i): i is Extract<InputRef, { kind: 'image' }> => i.kind === 'image')
+  const audios = inputs.filter((i): i is Extract<InputRef, { kind: 'audio' }> => i.kind === 'audio')
 
   return (
-    <div className="flex h-full flex-col gap-2">
-      {/* Tab：输入源 / 实体 */}
-      <div className="flex shrink-0 rounded border border-slate-800 bg-slate-900/60 p-0.5">
-        {([['inputs', '输入源'], ['entities', '实体']] as const).map(([k, label]) => (
-          <button
-            key={k}
-            onClick={() => setTab(k)}
-            className={cn(
-              'flex-1 rounded px-2 py-1 text-[11px] transition-colors',
-              tab === k ? 'bg-slate-700 text-slate-100' : 'text-slate-500 hover:text-slate-300',
-            )}
-          >
-            {label}
-          </button>
-        ))}
-      </div>
-
-      {tab === 'entities' ? (
-        <div className="min-h-0 flex-1 overflow-y-auto">
-          <EntityPanel />
-        </div>
-      ) : (
-        <div className="flex min-h-0 flex-1 flex-col gap-3 overflow-y-auto">
+    <div className="flex h-full min-h-0 flex-col gap-2 overflow-y-auto">
       {/* 参考图墙 */}
       <Card>
         <CardHeader className="border-b border-slate-800 pb-2">
@@ -48,9 +23,9 @@ export function SidebarPanel({ project }: { project: Project }) {
         <CardContent className="grid grid-cols-2 gap-2 p-3">
           {images.length === 0 && <p className="col-span-2 text-[11px] text-slate-500">暂无 {'<Picture N>'} 引用</p>}
           {images.map((img) => (
-            <div key={img.n} className="group relative aspect-video overflow-hidden rounded border border-slate-700 bg-slate-950" title={img.label}>
+            <div key={img.n} className="relative aspect-video overflow-hidden rounded border border-slate-700 bg-slate-950" title={img.label}>
               <div className="flex h-full items-center justify-center text-[10px] text-slate-600">
-                <Picture n={img.n} />
+                <span className="font-mono text-blue-400">&lt;Picture {img.n}&gt;</span>
               </div>
               <span className="absolute bottom-0 left-0 right-0 bg-slate-950/80 px-1 py-0.5 text-[9px] leading-tight text-slate-400">
                 {img.label}
@@ -81,17 +56,12 @@ export function SidebarPanel({ project }: { project: Project }) {
 
       {/* 高级参数（折叠） */}
       <Card>
-        <CardHeader
-          className="cursor-pointer border-b border-slate-800 pb-2 select-none"
-          onClick={() => setAdvOpen((v) => !v)}
-        >
-          <CardTitle className="text-xs text-slate-300">
-            高级参数 {advOpen ? '▾' : '▸'}
-          </CardTitle>
+        <CardHeader className="cursor-pointer border-b border-slate-800 pb-2 select-none" onClick={() => setAdvOpen((v) => !v)}>
+          <CardTitle className="text-xs text-slate-300">高级参数 {advOpen ? '▾' : '▸'}</CardTitle>
         </CardHeader>
         {advOpen && (
           <CardContent className="space-y-1.5 p-3 text-[11px] text-slate-400">
-            {project.shotlist ? (
+            {project?.shotlist ? (
               <>
                 <Row k="style" v={project.shotlist.style ?? '—'} />
                 <Row k="ratio" v={project.shotlist.ratio ?? '16:9'} />
@@ -106,8 +76,6 @@ export function SidebarPanel({ project }: { project: Project }) {
           </CardContent>
         )}
       </Card>
-      </div>
-      )}
     </div>
   )
 }
@@ -119,8 +87,4 @@ function Row({ k, v }: { k: string; v: string }) {
       <span className="truncate font-mono text-slate-300">{v}</span>
     </div>
   )
-}
-
-function Picture({ n }: { n: number }) {
-  return <span className="font-mono text-blue-400">&lt;Picture {n}&gt;</span>
 }

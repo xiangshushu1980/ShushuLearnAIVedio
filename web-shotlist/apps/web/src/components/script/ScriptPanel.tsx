@@ -1,5 +1,5 @@
 /**
- * ① 剧本区（docs/22 布局）：参数头表单（模板化字段选择）+ 正文 textarea（可直接改）+ 保存状态
+ * ① 剧本区（页 0）：参数头表单 + 正文 textarea + AI 创作 + 保存状态
  * 双向绑定：表单修改 → 重写参数头文本；文本修改（防抖）→ 解析回填表单
  */
 import { useEffect, useRef, useState } from 'react'
@@ -8,6 +8,7 @@ import { useAppStore } from '@/lib/store'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { ScriptHeadForm } from './ScriptHeadForm'
+import { A0Dialog } from '@/components/a0/A0Dialog'
 
 interface Props {
   onGenerate: () => void
@@ -21,6 +22,7 @@ export function ScriptPanel({ onGenerate }: Props) {
   const [head, setHead] = useState<ScriptHead | null>(null)
   const [headErr, setHeadErr] = useState<string | null>(null)
   const [formOpen, setFormOpen] = useState(true)
+  const [a0Open, setA0Open] = useState(false)
   const draftRef = useRef(scriptDraft)
   draftRef.current = scriptDraft
 
@@ -71,6 +73,9 @@ export function ScriptPanel({ onGenerate }: Props) {
             >
               {saveLabel}
             </span>
+            <Button size="sm" variant="outline" onClick={() => setA0Open(true)}>
+              AI 创作
+            </Button>
             <button
               onClick={() => setFormOpen((v) => !v)}
               className="rounded px-1.5 py-0.5 text-[11px] text-slate-400 hover:bg-slate-800"
@@ -80,7 +85,7 @@ export function ScriptPanel({ onGenerate }: Props) {
             </button>
           </div>
         </div>
-        <p className="text-[11px] text-slate-500">参数表单点选 / 正文直接改文字（自动保存）</p>
+        <p className="text-[11px] text-slate-500">参数表单点选 / 正文直接改文字（自动保存）；AI 创作生成剧本</p>
       </CardHeader>
       <CardContent className="flex min-h-0 flex-1 flex-col gap-2 p-3">
         {formOpen && <ScriptHeadForm head={head} headErr={headErr} onPatch={patchHead} />}
@@ -91,8 +96,9 @@ export function ScriptPanel({ onGenerate }: Props) {
           className="min-h-0 flex-1 resize-none rounded border border-slate-700 bg-slate-950 p-2 font-mono text-[12px] leading-relaxed text-slate-200 placeholder:text-slate-600 focus:border-blue-500 focus:outline-none"
         />
         <Button onClick={onGenerate} loading={busy === 'shotlist'} disabled={!scriptDraft.trim()}>
-          生成拍摄本
+          生成拍摄本 →
         </Button>
+        <A0Dialog open={a0Open} onClose={() => setA0Open(false)} />
       </CardContent>
     </Card>
   )

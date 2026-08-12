@@ -6,37 +6,45 @@ import { Fragment } from 'react'
 import { REF_BADGE_COLORS, SOUND_LAYER_COLORS, tokenizePrompt, type PromptToken } from '@shotlist/shared'
 import { cn } from '@/lib/utils'
 
-export function PromptHighlight({ text, className }: { text: string; className?: string }) {
+export function PromptHighlight({ text, className, onShotClick, onRefClick }: { text: string; className?: string; onShotClick?: (n: number) => void; onRefClick?: (label: string, n: number) => void }) {
   const tokens = tokenizePrompt(text)
   return (
     <pre className={cn('whitespace-pre-wrap font-mono text-[13px] leading-relaxed', className)}>
       {tokens.map((t, i) => (
-        <Fragment key={i}>{renderToken(t)}</Fragment>
+        <Fragment key={i}>{renderToken(t, onShotClick, onRefClick)}</Fragment>
       ))}
     </pre>
   )
 }
 
-function renderToken(t: PromptToken) {
+function renderToken(t: PromptToken, onShotClick?: (n: number) => void, onRefClick?: (label: string, n: number) => void) {
   switch (t.kind) {
     case 'text':
       return <span className="text-slate-200">{t.text}</span>
     case 'ref': {
       const color = REF_BADGE_COLORS[(t.n - 1) % REF_BADGE_COLORS.length]
       return (
-        <span className="mx-0.5 inline-flex items-center gap-1 rounded-md border border-slate-600 bg-slate-800 px-1 py-px text-blue-300">
+        <button
+          onClick={() => onRefClick?.(t.label, t.n)}
+          title={onRefClick ? `查看 ${t.label} ${t.n} 对应实体` : undefined}
+          className="mx-0.5 inline-flex cursor-pointer items-center gap-1 rounded-md border border-slate-600 bg-slate-800 px-1 py-px text-blue-300 hover:border-blue-500 hover:bg-slate-700"
+        >
           <span className={cn('rounded px-1 text-[10px] font-bold', color)}>
             {t.label[0]}{t.n}
           </span>
           {t.text}
-        </span>
+        </button>
       )
     }
     case 'shot':
       return (
-        <span className="mx-0.5 inline-flex items-center gap-1 rounded bg-slate-950 px-1.5 py-px font-semibold text-cyan-300 ring-1 ring-slate-700">
+        <button
+          onClick={() => onShotClick?.(t.n)}
+          title={onShotClick ? `跳转到拍摄本镜头 ${t.n}` : undefined}
+          className="mx-0.5 inline-flex cursor-pointer items-center gap-1 rounded bg-slate-950 px-1.5 py-px font-semibold text-cyan-300 ring-1 ring-slate-700 hover:ring-cyan-500"
+        >
           ⏱ {t.text}
-        </span>
+        </button>
       )
     case 'dialogue':
       return (

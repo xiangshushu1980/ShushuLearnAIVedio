@@ -39,6 +39,10 @@ export const api = {
   updateEntity: (id: string, e: Partial<Entity> & { name: string }) => req<Entity>(`/api/entities/${encodeURIComponent(id)}`, { method: 'PUT', body: JSON.stringify(e) }),
   deleteEntity: (id: string) => req<{ ok: true }>(`/api/entities/${encodeURIComponent(id)}`, { method: 'DELETE' }),
   extractEntities: (body: { worldview: string; script: string }) => req<{ entities: Entity[] }>('/api/entities/extract', { method: 'POST', body: JSON.stringify(body) }),
+  // 设定图（ANIMA t2i）
+  getEntityArt: (id: string) => req<{ images: string[]; comfyOnline: boolean }>(`/api/entities/${encodeURIComponent(id)}/art`),
+  generateEntityArt: (id: string, body: { prompt?: string; seed?: number }) => req<{ ok: true; images: string[] }>(`/api/entities/${encodeURIComponent(id)}/art`, { method: 'POST', body: JSON.stringify(body) }),
+  artUrl: (file: string) => `/api/art/${encodeURIComponent(file)}`,
   // 工具 A0
   genDraft: (body: { idea: string; length: DraftLength; withWorldview: boolean }) => req<{ worldview: string; script: string }>('/api/draft', { method: 'POST', body: JSON.stringify(body) }),
 }
