@@ -375,3 +375,28 @@
 - 其他：Herrgotts-H3-Infinite-Continuation-Suite（⭐16，另一连续性方案）、ComfyUI-MiniMax-H3-LongMedia（⭐16）、animede/Diffusers_minimax-h3（⭐14，diffusers 版）、minimax-h3-short-drama-prompt、TD_MiniMax_H3_Prompt
 **5. 与本地已有设施对照**：custom_nodes 已有 MotionCache（starsFriday，motion-weighted 去噪缓存，非连续性）、Turbo、ClipProj（已判败）
 **6. 工具 A/B 互证**：director 的 common prompt+segment prompt 拼接 = 我们的角色卡+每镜结构（互证）；reinforce_r2v_prompt（漏写 <Picture N> 自动补前缀）→ 工具 B 校验器可借鉴防漏；示例 prompt 短句风格+Audio: 行
+
+### 2026-08-12 社区评价调研 + 技能沉淀盘点 + 交互策略（无队列占用）
+**Motion Context 社区评价**：
+- Reddit r/StableDiffusion 活跃：作者 20h 前发帖（"motion AND audio genuinely continue"）；v0.2.0 更新帖"**No more visible seam**"（pin 帧直接从 latent 取，不再解码-编码往返）；长视频方法学讨论帖（低分辨率多 clip + 最后 upscale，或末帧 + motion context）
+- 生态：43 forks/5 天、430⭐；被 AIMixer Director 插件采纳（段间引导默认 off）；Reddit 有人提"Creator 节点 + Context 节点结合"（生态组合评价正面）
+- 作者实测上限数据：16-clip 4:34 多机位情景喜剧 @736×576 5070Ti ~2h；视频链中位 seam level step 0.905 → 带音频跨载后 0.16
+- **上限判断**：解决"相邻段音画平滑衔接"上限高（远强于我们帧链硬桥）；但 ①链式质量递减（音频高频先损，作者自认，长链需在自然乐句处重开）②分辨率链内锁定（latent 不可 resize）③成本线性堆叠（每段 2-4min GPU）④不解决长距离一致性（角色/场景跨段一致仍靠参考图+角色卡，正交）⑤H3 社区许可覆盖问题（EU/UK/KR/US 未覆盖，商用需注意）
+- 另发现 rundiffusion.com/minimax-h3-prompt-guide（参考图/声音提示词指南）——低优先级观察
+
+**技能沉淀盘点（哪些学/哪些不学）**：
+- ✅ 必沉淀：Motion Context 链式 prompt 纪律（矛盾并集/airlock 气闸/时间码预算 0.92s/静止要有事做/32kHz）→ docs/17 镜头规划节——与成片试跑直接相关
+- ✅ 低成本高价值：Director 的 reinforce_r2v_prompt（prompt 漏写 <Picture N> 自动补前缀）→ 工具 B 校验器加一条
+- 🟡 按需：T8mars 60 案例 selector（docs/16 收集清单 #6 素材源已记录，抽 3-5 条进 community_samples 即可）
+- ❌ 不用管：T2V 电影美学七维系统提示词（Bernini 模板，H3 六段式已覆盖且我们 IR 基准更强）；awesome-minimax-h3-prompts（16 条无 prompt）；rundiffusion guide（观察）
+- 已完成的沉淀不动：benjiyaya 七维框架（docs/17）、BeatAPI 8 精选（experiments/community_samples/）、官方 3 case + 13 IR 样本（docs/18）
+
+**工具文件组成（回答用户）**：
+- 拍摄本 = scripts/h3_shotlist_gen.py（工具 A）+ experiments/shotlist/{rolecards/(alya_v1/yuki_v1), scripts/剧本, *_shotlist.yaml 拍摄本} + docs/17 规则 + .pi/skills/h3-prompt-writing（官方格式参考）
+- IR 模仿 = scripts/h3_prompt_stage2.py（工具 B）+ experiments/ir_samples/（13 条）+ docs/18（拆解）+ docs/17（合成规则）
+- Mem0 角色：非脚本运行时依赖（脚本是确定性 + DeepSeek 调用，不查 mem0）；是 agent 校准层（每次 A/B/验收 retain，[STATE] 同步）。保持现状，不加运行时 mem0 注入（few-shot 由 docs 单一写者维护）
+
+**交互策略（用户目标：AGENT 全程自动）**：
+- 建议：MVP 全自动跑通 + 预留 checkpoint 语义（拍摄本评审点/首条成片验收点，默认跳过）
+- 唯一不可跳过的点=**首条成片人工验收**（建立审美/质量基准，校准自动验收阈值：切点偏差/音频 dB/SSIM/语音活跃），之后自动批量，异常时（自动验收失败）暂停问人
+- 理由：拍摄本错误全链返工（每段 3-5min GPU + IR 费）；质量 gate 需一次人类锚定
