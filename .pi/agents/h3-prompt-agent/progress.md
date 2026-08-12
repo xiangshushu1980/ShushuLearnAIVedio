@@ -358,3 +358,20 @@
 
 **遗留 TODO**：T-20260812-01（Ref2VA 站位冲突主导实测）、T-20260812-02（BGM 正向控制实测）、T3（标志性声音）
 **热文件**：scripts/h3_shotlist_gen.py（audio_refs 透传）、scripts/h3_prompt_stage2.py、scripts/anima_scene_batch.py（i2i 模式）、scripts/h3_gap_runner.py、experiments/shotlist/scripts/agreement_*.yaml、ComfyUI/input/start/169/portrait/（canon 图）
+
+### 2026-08-12 调研：H3 Director 插件链 + 今日 H3 提示词新动态（无队列占用）
+**1. huangserva/ComfyUI_MiniMaxH3_Director（⭐493）**：AIMixer 上游（⭐317，8-12 仍推送）的副本仓库。核心=MiniMaxH3Director 单节点导演台：多段时间轴（PySceneDetect 智能分镜/等分/手动）、逐段 run-select+缓存、common params（角色锁/subject_definitions）+每镜 prompt 拼接、参考槽（图≤9/视频≤3/音频≤3）、v2v/rv2v 音频三选（生成/沿用原声/静音）、运行报告。本地 ComfyUI v0.30.0-42 满足 ≥0.30.0 要求，内置官方 minimax 节点
+**2. 跨段连续性实现（本调研最大价值）**：director 的段间引导来自 NikoDemon80/ComfyUI-H3-Motion-Context（⭐429，8-12 仍推送，"motion and audio genuinely continue across joins"）：
+- **正解 vs 我们帧链硬桥**：我们不把生成帧解码成像素做 first_frame 锚定（SSIM 0.14-0.52 失败、OOD）；它做 **latent 级 interior keyframe pin + 时间坐标重写**（pin 上一段尾部 latent 到下一段 conditioning 头部，采样后 Trim 前缀）——无损直通，模型理解为"本段前缀"而非"参考片段"
+- **音频接缝**：走 reference 机制 = cover band（correlation 0.45）；重写时间坐标到本段时间轴 → 0.95+ 无偏移累积
+- 参数：context_length=22 帧（≈0.92s，可选 5/22/39/56，须整 latent step）；audio_context_length=24（恰好 1s，40Hz 音频网格）；Save/Load Latent 对跨 run 传 latent（clip_index 编号）；裁 22+ 前缀时 prompt 时间码要提前 0.92s
+- **链式写提示词纪律（可直接进 docs/17）**：①模型把矛盾渲染为并集（新段 prompt 勿写与 pin 住画面冲突的构图/人物安排）②**Airlock 气闸**：新段开头约 2s 保持上一段结尾构图+无对话，再切新 setup，接缝比普通硬切更紧 ③静止要有事做（呼吸/重心/视线），否则渲染成冻结 ④turbo LoRA/Spectrum 伤音频，链条上保持关 Spectrum ⑤链式质量递减（音频高频先损，长链在自然乐句处重开）
+- 验收工具：seam_probe.py（音频真延续 or 相似录音）、level_step.py（响度/底噪跳变+采样率）、freeze_detect.py（画面静止检测）
+- 局限：latent 不可 resize（链中分辨率不可变）；H3 音频 32kHz 非 48kHz（流拷贝拼接陷阱）
+**3. 官方 MiniMax-H3 仓库更新（vendor 同步 fa6891f）**：5+ commits 全 docs——h3-prompt-writing 明确 agent-portable（我们用法正确）；其余 8 skill 标注 MiniMax Hub-native 不可移植（仅元数据）。.pi/skills/ 9 镜像已同步 compatibility 字段
+**4. 今日（8-12）H3 提示词新仓库**：
+- **T8mars/comfyui-minimax-h3-prompt-enhancer-T8（⭐107，8-12 推送）**：视觉 LLM（doubao-seed-evolving/gemini-3.5-flash）多模态提示词增强节点，集成官方核心 skill（冻结 commit 093f312）+ **60 案例 selector 库**（catalog.json 406KB 每日更新：产品/漫剧/口播等，每条带 summary/推荐输入/2-5 结构锚点，8 个证据变体）——docs/16 收集清单 #6 现成素材源
+- awesome-minimax-h3-prompts（X 平台 H3 clip+prompt 收集，16 条多为官方公告，prompt 多为 null，价值有限可观察）
+- 其他：Herrgotts-H3-Infinite-Continuation-Suite（⭐16，另一连续性方案）、ComfyUI-MiniMax-H3-LongMedia（⭐16）、animede/Diffusers_minimax-h3（⭐14，diffusers 版）、minimax-h3-short-drama-prompt、TD_MiniMax_H3_Prompt
+**5. 与本地已有设施对照**：custom_nodes 已有 MotionCache（starsFriday，motion-weighted 去噪缓存，非连续性）、Turbo、ClipProj（已判败）
+**6. 工具 A/B 互证**：director 的 common prompt+segment prompt 拼接 = 我们的角色卡+每镜结构（互证）；reinforce_r2v_prompt（漏写 <Picture N> 自动补前缀）→ 工具 B 校验器可借鉴防漏；示例 prompt 短句风格+Audio: 行
