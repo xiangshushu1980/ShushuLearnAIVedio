@@ -333,3 +333,10 @@
 - dark-pop-trio：strict identity reference（faces/hair/wardrobe unchanged）
 - image-1-for-the-character：多图分槽（角色/UI/武器各一图），武器 8 变体全部以参考图为准
 **落地原则**：换装变体=独立设定图（canon 基准图 + 变体图集，拍摄本引用变体 id，retention 用 partially_preserved 声明）；破损等状态变化暂也走"破损版设定图"（先全禁文本微调，跑稳后再评估状态级文本）；记录于 T-20260812-03 上下文
+
+### 2026-08-12 v3 重跑（角色卡对齐参考图：Yuki 白色水手服）
+**背景**：参考图（yuki169_portrait_uniform）上衣白色 vs 角色卡"深色水手服"文本冲突 → 段2 产物黑色（文本赢）；t2i 强化 3 seed + i2i 改色 2 denoise 全被 Yuki LoRA 浅色先验挡住（loRA 训练集 shirt/浅色）
+**决策（用户原则：设定图=source of truth）**：以参考图为准 → 角色卡 yuki_v1.md 服装改"白色水手服上衣+深色领巾（canon=参考图）"
+**结果**：两条提示词服装变 white sailor-style top（与图一致）；v3 出片 190s/180s，切点偏差 ≤0.29s，音频 -15.6/-16.0dB
+**产物**：agreement_v2_seg1_rooftop_00002_.mp4 + agreement_v2_seg2_beach_00002_.mp4
+**待用户验收**：Yuki 白上衣跨段一致？站位/音色/无 BGM 复验；顺带目检 yuki169_portrait_uniform（canon）面容
