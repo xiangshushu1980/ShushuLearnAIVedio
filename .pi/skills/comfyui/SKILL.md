@@ -28,7 +28,7 @@ description: ComfyUI 项目操作手册 — Wan2.2 I2V Lightning 快速视频栈
 | 角色 LoRA | alisa(Alya)×3 / yuki_suou_v1120706 / anima-highres / anima-turbo-v0.2 | models/loras/ |
 | 抠图 | BiRefNetRMBG 节点（ComfyUI-RMBG，1038lab）+ BiRefNet_toonout | custom_nodes/ + models/RMBG/ |
 | 超分 | 4x-ClearRealityV1 | models/upscale_models/ |
-| 编辑 ⚠️ | **Bernini-R 模型缺失**（2026-08-12 盘点确认磁盘无 int8/fp8/蒸馏 LoRA/umt5 TE；待确认或重下，指引 docs/02）| diffusion_models/ |
+| 编辑 ⚠️ | **Bernini-R 模型缺失**（2026-08-12 确认磁盘无；用户决策：暂不找回，后续需要时再下载，指引 docs/02）| diffusion_models/ |
 
 - ~~Wan2.2 GGUF 快速栈~~ **已整体清理（用户确认 2026-08-12 有意清理）**：unet GGUF×2、umt5 GGUF、lightx2v LoRA×2 全部删除；`wan_2.1_vae` 已补回（243MB，兜底保留）
 

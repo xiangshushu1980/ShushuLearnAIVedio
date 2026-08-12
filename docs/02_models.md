@@ -48,7 +48,7 @@ H3 LoRA（models/loras/）：
 | BiRefNet_toonout.safetensors | models/RMBG/BiRefNet/ | 844MB | 抠图（ComfyUI-RMBG 节点）|
 | 4x-ClearRealityV1.pth | models/upscale_models/ | 8.6MB | 超分 4x（768→3072 实测 3.3s）|
 
-> ⚠️ **Bernini-R 模型缺失（2026-08-12 确认）**：`wan2.2_bernini_r_{high,low}_noise_int8_convrot.safetensors`（14.5GB×2）及 fp8 版、蒸馏 LoRA `lightx2v_T2V_14B_cfg_step_distill_v2_lora_rank64_bf16.safetensors`、配套 TE `umt5_xxl_fp8_e4m3fn_scaled.safetensors`（6.3GB）磁盘均不存在（模板/蓝图/测试视频仍在）。用户记得曾下载，待确认位置或重下。下载指引见下方 Bernini-R 节 + docs/06_extras_install.md。
+> ⚠️ **Bernini-R 模型缺失（2026-08-12 确认）**：`wan2.2_bernini_r_{high,low}_noise_int8_convrot.safetensors`（14.5GB×2）及 fp8 版、蒸馏 LoRA `lightx2v_T2V_14B_cfg_step_distill_v2_lora_rank64_bf16.safetensors`、配套 TE `umt5_xxl_fp8_e4m3fn_scaled.safetensors`（6.3GB）磁盘均不存在（模板/蓝图/测试视频仍在）。**用户决策 2026-08-12：暂不找回，后续需要时再下载**（指引见下方 Bernini-R 节 + docs/06_extras_install.md）。
 
 ### 角色 LoRA（CivitAI，models/loras/）
 | 文件 | 说明 |
