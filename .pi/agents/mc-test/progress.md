@@ -7,6 +7,19 @@
 - 背景调研（2026-08-12 h3-prompt-agent 线）：作者实测 16-clip 4:34 多机位情景剧@736×576≈2h；视频链中位 seam level step 0.905→带音频跨载后 0.16；v0.2.0 'No more visible seam'（pin 帧直接从 latent 取）；上限判断：解决相邻段音画平滑衔接上限高，但①链式质量递减（音频高频先损，长链在自然乐句处重开）②分辨率链内锁定 ③成本线性堆叠 ④不解决长距离一致性 ⑤许可 EU/UK/KR/US 未覆盖
 
 ## 进度
+### 2026-08-12 跑批完成（首批：两段 MC 链式 vs 基线静态锚）
+- **ComfyUI 重启**（队列已空，MC 5 节点注册成功含 SeamProbe）
+- **跑批**（scripts/h3_mc_runner.py 新建 + experiments/mc_test/mc_cases.json，ref2va int8 std20 768×448 192帧，seed 20260812，同 agreement_v2 配置）：
+  - seg1_rooftop_latent 185s（存 clip_00001.safetensors）
+  - seg2_beach_mc22 **168s**（MC ctx=22/audio=24，trim 后 170 帧/7.083s，漂移 0.01ms，存 clip_00002）
+  - 显存峰值均 21.9GB 安全；MC patches 安装成功（interior keyframe anchors + keyframe/ref coexistence）
+- **seam_probe 对比**（pin 22 帧）：MC 链 mean corr **0.739**（27/35 窗口 >0.6，lag 漂移 -0.10ms/rms 0.09ms）vs 基线静态锚 mean corr **0.277**（0/35 >0.6，lag 锁边）——MC 音频强延续+零漂移，基线完全不锁相
+- **level_step**：MC 链接缝 broadband 0.405(+7.5dB) vs 基线 0.501(-9.6dB)——两者均 MARGINAL，跳变源于场景差异（天台静→海边响）非接缝机制问题
+- **freeze_detect**：段2 无冻结（头部 motion 0.72x 中位）
+- **坑**：runner 运行中编辑不生效（进程内存旧代码）→ untrimmed 音频缺失 → 用新代码单次重提段2（168s 复现成功，MC 可复现）
+- **产物**：output/video/h3_mc/（seg1 + seg2_ctx22 + untrimmed.flac + mc_chain_preview.mp4）；基线预览 baseline_chain_preview.mp4
+- **待用户验收**：目视接缝（段2 开头是否延续段1 运动/人物位置/音频）+ 与基线对比；通过后跑变体（ctx=5/39/56、audio=0）
+
 ### 2026-08-14 恢复上下文
 - **队列已释放**（seedance-h3-verify 已完成 34 条 AB 对比收尾）：可随时重启 ComfyUI + 跑批，无需再等
 - mem0 已整理：MC 调研/社区评价截断重复版已删（完整版保留）；本线 [STATE] 已建（comfy-ops 池）

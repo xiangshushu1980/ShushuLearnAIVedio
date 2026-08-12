@@ -1,0 +1,45 @@
+{
+  "seed": 20260812,
+  "cases": [
+    {
+      "name": "seg1_rooftop_latent",
+      "mode": "ref2va",
+      "images": [
+        "start/169/portrait/alya169_portrait_uniform_00001_.png",
+        "start/169/portrait/yuki169_portrait_uniform_00001_.png"
+      ],
+      "audios": [
+        "voice_seeds/voice_seed_alya.wav",
+        "voice_seeds/voice_seed_yuki.wav"
+      ],
+      "width": 768,
+      "height": 448,
+      "length": 192,
+      "steps": 20,
+      "prompt": "@/tmp/seg1_rooftop_ref2va.txt",
+      "prefix": "video/h3_mc/agreement_mc_seg1",
+      "save_latent": {"filename_prefix": "h3_context/clip", "clip_index": 1}
+    },
+    {
+      "name": "seg2_beach_mc22",
+      "mode": "ref2va",
+      "images": [
+        "start/169/portrait/alya169_portrait_uniform_00001_.png",
+        "start/169/portrait/yuki169_portrait_uniform_00001_.png"
+      ],
+      "audios": [
+        "voice_seeds/voice_seed_alya.wav",
+        "voice_seeds/voice_seed_yuki.wav"
+      ],
+      "width": 768,
+      "height": 448,
+      "length": 192,
+      "steps": 20,
+      "prompt": "@/tmp/seg2_beach_ref2va.txt",
+      "prefix": "video/h3_mc/agreement_mc_seg2_ctx22",
+      "mc": {"context_length": "22", "audio_context_length": 24,
+             "latent_path": "h3_context", "clip_index": 1},
+      "save_latent": {"filename_prefix": "h3_context/clip", "clip_index": 2}
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+[
+ {
+  "name": "seg1_rooftop_latent",
+  "seconds": 185,
+  "peak_vram_gb": 21.9,
+  "error": null,
+  "video": "/home/sean/projects/ComfyUI/output/video/h3_mc/agreement_mc_seg1_00001_.mp4"
+ },
+ {
+  "name": "seg2_beach_mc22",
+  "seconds": 168,
+  "peak_vram_gb": 21.9,
+  "error": null,
+  "video": "/home/sean/projects/ComfyUI/output/video/h3_mc/agreement_mc_seg2_ctx22_00001_.mp4"
+ }
+]
