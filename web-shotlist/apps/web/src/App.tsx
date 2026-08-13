@@ -5,7 +5,8 @@
  * 页 2 H3 提示词：调试检查（标色/校验），连接视频生成与预览（V2）
  * 顶栏：Tab 导航（主入口）；删除/回收站 = 右侧次要入口
  */
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, type ReactNode } from 'react'
+import * as React from 'react'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import type { PromptMode } from '@shotlist/shared'
 import { api } from '@/lib/api'
@@ -21,6 +22,34 @@ import { EntityDialogHost } from '@/components/entity/EntityDialogs'
 import { ShotListView } from '@/components/shotlist/ShotListView'
 import { PromptPage } from '@/components/prompt/PromptPage'
 import { TrashPanel } from '@/components/trash/TrashPanel'
+
+/** 错误边界：局部组件崩溃不冻结全屏（可刷新恢复） */
+class ErrorBoundary extends React.Component<{ children: ReactNode }, { error: Error | null }> {
+  state = { error: null as Error | null }
+  static getDerivedStateFromError(error: Error) {
+    return { error }
+  }
+  render() {
+    if (this.state.error) {
+      return (
+        <div className="flex h-full flex-col items-center justify-center gap-2 p-8 text-center">
+          <p className="text-sm font-semibold text-red-300">界面出错了</p>
+          <p className="max-w-md break-all text-xs text-slate-400">{this.state.error.message}</p>
+          <button
+            onClick={() => {
+              this.setState({ error: null })
+              window.location.reload()
+            }}
+            className="mt-2 rounded-md bg-blue-600 px-4 py-1.5 text-xs text-white hover:bg-blue-500"
+          >
+            重新加载
+          </button>
+        </div>
+      )
+    }
+    return this.props.children
+  }
+}
 
 const PAGES: Array<{ id: PageId; label: string; hint: string }> = [
   { id: 0, label: '① 剧本', hint: '剧本 · 实体 · 设定图' },
@@ -171,7 +200,8 @@ export default function App() {
   })
 
   return (
-    <div className="flex h-full flex-col">
+    <ErrorBoundary>
+      <div className="flex h-full flex-col">
       {/* 顶栏：Tab 主入口 + 项目选择；删除/回收站右侧次要入口 */}
       <header className="flex items-center gap-2 border-b border-slate-800 bg-slate-900/80 px-4 py-1.5">
         <h1 className="mr-1 text-sm font-bold text-slate-100">拍摄本看板</h1>
@@ -345,6 +375,7 @@ export default function App() {
       />
       <TrashPanel open={trashOpen} onClose={() => setTrashOpen(false)} />
       <EntityDialogHost />
-    </div>
+      </div>
+    </ErrorBoundary>
   )
 }

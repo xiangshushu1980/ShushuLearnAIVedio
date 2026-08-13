@@ -72,24 +72,33 @@ export function EntityDetailPanel({ id, onClose }: { id: string; onClose: () => 
 
   const save = async () => {
     if (!e) return
-    if (isNew) await api.saveEntity(e)
-    else await api.updateEntity(id, e)
-    qc.invalidateQueries({ queryKey: ['entities'] })
-    onClose()
+    try {
+      if (isNew) await api.saveEntity(e)
+      else await api.updateEntity(id, e)
+      qc.invalidateQueries({ queryKey: ['entities'] })
+      onClose()
+    } catch (err) {
+      useAppStore.getState().setError(`保存失败: ${(err as Error).message}`)
+    }
   }
 
   const del = async () => {
-    await api.deleteEntity(id)
-    qc.invalidateQueries({ queryKey: ['entities'] })
-    onClose()
+    try {
+      await api.deleteEntity(id)
+      qc.invalidateQueries({ queryKey: ['entities'] })
+      onClose()
+    } catch (err) {
+      useAppStore.getState().setError(`删除失败: ${(err as Error).message}`)
+    }
   }
 
   return (
     <>
-      {/* 侧滑面板：右侧固定，主视图不遮挡 */}
-      <div className="fixed inset-0 z-40" role="dialog" aria-label="实体详情">
-        <div className="absolute inset-0 bg-black/30" onClick={onClose} />
-        <div className="absolute inset-y-0 right-0 flex w-full max-w-xl flex-col border-l border-slate-700 bg-slate-900 shadow-2xl">
+      {/* 侧滑面板：pointer-events-none 透传 → 主界面保持可见可交互（用户决策 2026-08-14：不关闭前景） */}
+      <div className="pointer-events-none fixed inset-0 z-40" role="dialog" aria-label="实体详情">
+        {/* 极淡遮罩仅视觉区分，不拦截点击 */}
+        <div className="pointer-events-none absolute inset-0 bg-black/10" />
+        <div className="pointer-events-auto absolute inset-y-0 right-0 flex w-full max-w-xl flex-col border-l border-slate-700 bg-slate-900 shadow-2xl">
           <div className="flex items-center justify-between border-b border-slate-800 px-4 py-2.5">
             <h2 className="flex items-center gap-2 text-sm font-semibold text-slate-100">
               {isNew ? '新建实体卡' : `实体卡 · ${entity?.name ?? ''}`}
@@ -134,7 +143,7 @@ export function EntityDetailPanel({ id, onClose }: { id: string; onClose: () => 
                     <button onClick={onClose} className="rounded border border-slate-700 px-3 py-1.5 text-xs text-slate-300 hover:bg-slate-800">
                       取消
                     </button>
-                    <button onClick={save} disabled={!e?.name.trim()} className="rounded-md bg-blue-600 px-3 py-1.5 text-xs text-white hover:bg-blue-500">
+                    <button onClick={save} disabled={!e?.name?.trim()} className="rounded-md bg-blue-600 px-3 py-1.5 text-xs text-white hover:bg-blue-500">
                       保存
                     </button>
                   </div>
