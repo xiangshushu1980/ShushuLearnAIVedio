@@ -1,0 +1,7 @@
+2026-08-14：任务进度目录已迁移！
+
+- 旧路径 .pi/agents/<任务>/progress.md 已废弃（git mv 至 .pi/tasks/）
+- 新路径：.pi/tasks/<任务>/progress.md（模板 .pi/tasks/PROGRESS_TEMPLATE.md）
+- 协作细则（[STATE] 格式/占坑/scoped commit/开场清单）见全局 skill：multi-agent-collab
+- 请勿在此目录重建任务线；延续任务请读 .pi/tasks/<任务>/progress.md
+- 背景：.pi/agents 是 pi 保留的项目级 agent 配置目录，任务进度占用有冲突风险
