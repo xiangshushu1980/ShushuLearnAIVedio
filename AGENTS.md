@@ -4,9 +4,10 @@
 
 1. **声明任务名**：延续任务 → 读 `.pi/tasks/<任务>/progress.md`；新任务 → 建进度文件（模板 `.pi/tasks/PROGRESS_TEMPLATE.md`）；**先校验任务归属当前项目**（cwd 项目池一致，防误放，见 multi-agent-collab skill）
 2. 读 `docs/INDEX.md`（导航，按需读）
-3. `memory_recall`：项目池 `[STATE]`（其他任务线焦点/待办/热文件）+ 任务相关经验
-4. 按需加载 skill / 读 references 分册（要哪段读哪段，不整读大文件）
-5. 完成后直接开始任务
+3. 按需加载 skill / 读 references 分册（要哪段读哪段，不整读大文件）
+4. 完成后直接开始任务
+
+> 开场 recall [STATE] + TODO 对账已上升为全局规则（全局 AGENTS 会话纪律 + multi-agent-collab skill 开场清单），不再在本项目重复定义；池名 = comfy-ops（默认规则自动生效）
 
 ## 内容落盘
 
