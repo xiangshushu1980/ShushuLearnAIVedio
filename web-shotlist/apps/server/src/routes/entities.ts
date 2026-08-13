@@ -1,6 +1,7 @@
 /** 实体卡路由：CRUD + AI 抽取（任务式）+ 设定图（任务式）+ 资源 + 单体重刷 + 门禁 */
 import type { FastifyInstance } from 'fastify'
 import { z } from 'zod'
+import { artGenBody, entityBody, entityIdParam, extractBody, gateBody, refreshEntityBody, styleBody, taskParam, voiceGenBody } from '@shotlist/shared'
 import { deleteAsset, listAssets, readAsset, saveAsset, type AssetKind } from '../assets.ts'
 import { comfyAlive, generateArt, waitArtDone } from '../art.ts'
 import { deleteEntity, importRolecardsToEntities, listEntities, readEntity, saveEntity } from '../entities.ts'
@@ -11,33 +12,11 @@ import { ttsReady } from '../voice.ts'
 import { extractEntities } from '../tools/entityExtract.ts'
 import { chatCompletion, stripFence, type Effort } from '../llm.ts'
 
-const entityBody = z.object({
-  id: z.string().optional(),
-  name: z.string().min(1),
-  type: z.enum(['角色', '场景', '物件', '技能', '组织', '地点']).default('角色'),
-  importance: z.enum(['core', 'secondary']).default('secondary'),
-  stars: z.number().int().min(1).max(5).optional(),
-  appearance: z.string().default(''),
-  sound: z.string().default(''),
-  description: z.string().default(''),
-  source: z.string().optional(),
-  related: z.array(z.object({ id: z.string(), relation: z.string() })).optional(),
-  variants: z.array(z.object({ id: z.string().min(1), name: z.string().min(1), description: z.string().default(''), art: z.array(z.string()).optional() })).optional(),
-})
-
-const styleBody = z.object({ prompt: z.string().max(500).default('') })
-
-const extractBody = z.object({
-  worldview: z.string().default(''),
-  script: z.string().min(1, '需要剧本/世界观文本'),
-  model: z.enum(['deepseek-v4-flash', 'deepseek-v4-pro']).default('deepseek-v4-flash'),
-})
-
 export async function entityRoutes(app: FastifyInstance): Promise<void> {
   app.get('/entities', async () => listEntities())
 
   app.get('/entities/:id', async (req, reply) => {
-    const { id } = z.object({ id: z.string().min(1) }).parse(req.params)
+    const { id } = entityIdParam.parse(req.params)
     const e = readEntity(id)
     if (!e) return reply.code(404).send({ error: `实体不存在: ${id}` })
     return e
@@ -63,7 +42,7 @@ export async function entityRoutes(app: FastifyInstance): Promise<void> {
   })
 
   app.put('/entities/:id', async (req, reply) => {
-    const { id } = z.object({ id: z.string().min(1) }).parse(req.params)
+    const { id } = entityIdParam.parse(req.params)
     if (!readEntity(id)) return reply.code(404).send({ error: `实体不存在: ${id}` })
     const parsed = entityBody.safeParse(req.body)
     if (!parsed.success) return reply.code(400).send({ error: parsed.error.issues.map((i) => i.message).join('；') })
@@ -84,17 +63,8 @@ export async function entityRoutes(app: FastifyInstance): Promise<void> {
   app.get('/tts-ready', async () => ({ ready: ttsReady() }))
 
   app.post('/entities/:id/voice', async (req, reply) => {
-    const { id } = z.object({ id: z.string().min(1) }).parse(req.params)
-    const parsed = z
-      .object({
-        kind: z.enum(['custom', 'design', 'clone']),
-        text: z.string().min(1),
-        speaker: z.string().optional(),
-        instruct: z.string().optional(),
-        refText: z.string().optional(),
-        seed: z.number().optional(),
-      })
-      .safeParse(req.body)
+    const { id } = entityIdParam.parse(req.params)
+    const parsed = voiceGenBody.safeParse(req.body)
     if (!parsed.success) return reply.code(400).send({ error: parsed.error.issues.map((i) => i.message).join('；') })
     if (!readEntity(id)) return reply.code(404).send({ error: `实体不存在: ${id}` })
     if (!ttsReady()) return reply.code(503).send({ error: 'Qwen3-TTS 未就绪（缺脚本或 venv）' })
@@ -104,7 +74,7 @@ export async function entityRoutes(app: FastifyInstance): Promise<void> {
   })
 
   app.delete('/entities/:id', async (req, reply) => {
-    const { id } = z.object({ id: z.string().min(1) }).parse(req.params)
+    const { id } = entityIdParam.parse(req.params)
     try {
       deleteEntity(id)
       return { ok: true }
@@ -136,14 +106,14 @@ export async function entityRoutes(app: FastifyInstance): Promise<void> {
 
   // ===== 任务式：设定图生成（ANIMA；完成后移入实体资产目录）=====
   app.get('/entities/:id/art', async (req, reply) => {
-    const { id } = z.object({ id: z.string().min(1) }).parse(req.params)
+    const { id } = entityIdParam.parse(req.params)
     if (!readEntity(id)) return reply.code(404).send({ error: `实体不存在: ${id}` })
     return { images: listAssets(id).filter((a) => a.kind === 'art').map((a) => a.file), comfyOnline: await comfyAlive() }
   })
 
   app.post('/entities/:id/art', async (req, reply) => {
-    const { id } = z.object({ id: z.string().min(1) }).parse(req.params)
-    const parsed = z.object({ prompt: z.string().optional(), seed: z.number().optional(), variant: z.string().optional() }).safeParse(req.body)
+    const { id } = entityIdParam.parse(req.params)
+    const parsed = artGenBody.safeParse(req.body)
     if (!parsed.success) return reply.code(400).send({ error: parsed.error.issues.map((i) => i.message).join('；') })
     const entity = readEntity(id)
     if (!entity) return reply.code(404).send({ error: `实体不存在: ${id}` })
@@ -163,7 +133,7 @@ export async function entityRoutes(app: FastifyInstance): Promise<void> {
 
   // ===== 任务状态（前端轮询）=====
   app.get('/tasks/:id', async (req, reply) => {
-    const { id } = z.object({ id: z.string().min(1) }).parse(req.params)
+    const { id } = entityIdParam.parse(req.params)
     const t = getTask(id)
     if (!t) return reply.code(404).send({ error: '任务不存在' })
     return {
@@ -180,13 +150,13 @@ export async function entityRoutes(app: FastifyInstance): Promise<void> {
 
   // ===== 实体资源（画面/声音/文件：上传/列表/删除/静态）=====
   app.get('/entities/:id/assets', async (req, reply) => {
-    const { id } = z.object({ id: z.string().min(1) }).parse(req.params)
+    const { id } = entityIdParam.parse(req.params)
     if (!readEntity(id)) return reply.code(404).send({ error: `实体不存在: ${id}` })
     return { assets: listAssets(id) }
   })
 
   app.post('/entities/:id/assets', async (req, reply) => {
-    const { id } = z.object({ id: z.string().min(1) }).parse(req.params)
+    const { id } = entityIdParam.parse(req.params)
     if (!readEntity(id)) return reply.code(404).send({ error: `实体不存在: ${id}` })
     const kind = z.enum(['art', 'voice', 'file']).parse(req.query as { kind?: string })
     const part = await req.file()
@@ -215,8 +185,8 @@ export async function entityRoutes(app: FastifyInstance): Promise<void> {
 
   // ===== 实体单体重刷（LLM 按上下文重写该实体卡；可重刷）=====
   app.post('/entities/:id/refresh', async (req, reply) => {
-    const { id } = z.object({ id: z.string().min(1) }).parse(req.params)
-    const parsed = z.object({ worldview: z.string().default(''), script: z.string().default('') }).safeParse(req.body)
+    const { id } = entityIdParam.parse(req.params)
+    const parsed = refreshEntityBody.safeParse(req.body)
     if (!parsed.success) return reply.code(400).send({ error: parsed.error.issues.map((i) => i.message).join('；') })
     const existing = readEntity(id)
     if (!existing) return reply.code(404).send({ error: `实体不存在: ${id}` })
@@ -242,7 +212,7 @@ export async function entityRoutes(app: FastifyInstance): Promise<void> {
 
   // ===== 渲染门禁：检查引用实体合格 =====
   app.post('/entities/gate', async (req, reply) => {
-    const parsed = z.object({ ids: z.array(z.string()) }).safeParse(req.body)
+    const parsed = gateBody.safeParse(req.body)
     if (!parsed.success) return reply.code(400).send({ error: 'ids 必须为字符串数组' })
     return gateEntities(parsed.data.ids)
   })

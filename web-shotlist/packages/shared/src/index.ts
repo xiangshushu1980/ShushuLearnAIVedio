@@ -1,4 +1,5 @@
 export * from './types.ts'
+export * from './apiSchema.ts'
 export * from './constants.ts'
 export * from './shotlistSchema.ts'
 export * from './scriptSchema.ts'

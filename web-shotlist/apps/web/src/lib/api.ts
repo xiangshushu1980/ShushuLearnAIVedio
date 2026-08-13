@@ -1,5 +1,17 @@
-/** API client（Fastify 后端，/api 前缀经 Vite proxy） */
+/** API client（Fastify 后端，/api 前缀经 Vite proxy）
+ * 方案 A：请求/响应类型一律从 @shotlist/shared 的 zod schema 推导（z.infer），禁止手写重复类型
+ */
 import type { DraftLength, Entity, Project, ProjectMeta, TrashItem } from '@shotlist/shared'
+import type {
+  CreateProjectInput,
+  DraftInput,
+  EntityInput,
+  ExtractInput,
+  GenPromptInput,
+  GenShotlistInput,
+  SaveProjectInput,
+  VoiceGenInput,
+} from '@shotlist/shared'
 
 async function req<T>(path: string, init?: RequestInit): Promise<T> {
   const headers: Record<string, string> = {}
@@ -17,14 +29,13 @@ async function req<T>(path: string, init?: RequestInit): Promise<T> {
 
 export const api = {
   listProjects: () => req<ProjectMeta[]>('/api/projects'),
-  createProject: (body: { name: string; script?: string; shotlist?: string; prompt?: string; promptMode?: 'i2va' | 'ref2va' }) =>
-    req<Project>('/api/projects', { method: 'POST', body: JSON.stringify(body) }),
+  createProject: (body: CreateProjectInput) => req<Project>('/api/projects', { method: 'POST', body: JSON.stringify(body) }),
   getProject: (id: string) => req<Project>(`/api/projects/${id}`),
-  saveProject: (id: string, body: { script?: string; shotlist?: string; prompt?: string; promptMode?: 'i2va' | 'ref2va' }) =>
+  saveProject: (id: string, body: SaveProjectInput) =>
     req<Project>(`/api/projects/${id}`, { method: 'PUT', body: JSON.stringify(body) }),
-  generateShotlist: (id: string, body: { model?: string; effort?: string; shotStyle?: string; fewshot?: string[]; review?: boolean; retry?: number }) =>
+  generateShotlist: (id: string, body: GenShotlistInput) =>
     req<{ attempts: number; review?: string }>(`/api/projects/${id}/generate-shotlist`, { method: 'POST', body: JSON.stringify(body) }),
-  generatePrompt: (id: string, body: { mode: 'i2va' | 'ref2va'; model?: string; effort?: string; retry?: number }) =>
+  generatePrompt: (id: string, body: GenPromptInput) =>
     req<{ mode: string; attempts: number; issues?: string[]; gate?: { warns: string[] } }>(`/api/projects/${id}/generate-prompt`, { method: 'POST', body: JSON.stringify(body) }),
   getInputs: (id: string) => req<{ inputs: Project['inputs'] }>(`/api/projects/${id}/inputs`),
   listTrash: () => req<TrashItem[]>('/api/trash'),
@@ -36,14 +47,14 @@ export const api = {
   importProject: (pack: import('@shotlist/shared').ProjectExport) => req<Project>('/api/projects/import', { method: 'POST', body: JSON.stringify(pack) }),
   listRoleCards: () => req<string[]>('/api/role-cards'),
   // 实体
-  listEntities: () => req<Array<Pick<Entity, 'id' | 'name' | 'type' | 'importance'>>>(`/api/entities`),
+  listEntities: () => req<Array<Pick<Entity, 'id' | 'name' | 'type' | 'importance' | 'stars'>>>(`/api/entities`),
   getEntity: (id: string) => req<Entity>(`/api/entities/${encodeURIComponent(id)}`),
-  saveEntity: (e: Partial<Entity> & { name: string }) => req<Entity>('/api/entities', { method: 'POST', body: JSON.stringify(e) }),
-  updateEntity: (id: string, e: Partial<Entity> & { name: string }) => req<Entity>(`/api/entities/${encodeURIComponent(id)}`, { method: 'PUT', body: JSON.stringify(e) }),
+  saveEntity: (e: EntityInput) => req<Entity>('/api/entities', { method: 'POST', body: JSON.stringify(e) }),
+  updateEntity: (id: string, e: EntityInput) => req<Entity>(`/api/entities/${encodeURIComponent(id)}`, { method: 'PUT', body: JSON.stringify(e) }),
   deleteEntity: (id: string) => req<{ ok: true }>(`/api/entities/${encodeURIComponent(id)}`, { method: 'DELETE' }),
-  extractEntities: (body: { worldview: string; script: string }) => req<{ taskId: string }>('/api/entities/extract', { method: 'POST', body: JSON.stringify(body) }),
+  extractEntities: (body: ExtractInput) => req<{ taskId: string }>('/api/entities/extract', { method: 'POST', body: JSON.stringify(body) }),
   getTask: (id: string) => req<{ id: string; kind: string; status: 'queued' | 'running' | 'done' | 'error'; result?: unknown; error?: string; createdAt: number; startedAt?: number; finishedAt?: number }>(`/api/tasks/${id}`),
-  refreshEntity: (id: string, body: { worldview: string; script: string }) => req<Entity>(`/api/entities/${encodeURIComponent(id)}/refresh`, { method: 'POST', body: JSON.stringify(body) }),
+  refreshEntity: (id: string, body: ExtractInput) => req<Entity>(`/api/entities/${encodeURIComponent(id)}/refresh`, { method: 'POST', body: JSON.stringify(body) }),
   gateEntities: (ids: string[]) => req<{ allTextOk: boolean; blocks: string[]; warns: string[]; checks: Array<{ id: string; name: string; text: { ok: boolean; missing: string[] }; art: { ok: boolean; count: number }; voice: { ok: boolean; count: number } }> }>('/api/entities/gate', { method: 'POST', body: JSON.stringify({ ids }) }),
   importRolecards: () => req<{ imported: number; results: Array<{ id: string; name: string; imported: boolean; error?: string }> }>('/api/entities/import-rolecards', { method: 'POST' }),
   // 实体资源
@@ -63,8 +74,8 @@ export const api = {
   updateStyle: (prompt: string) => req<{ prompt: string; updatedAt?: string }>('/api/style', { method: 'PUT', body: JSON.stringify({ prompt }) }),
   // 音色种子（Qwen3-TTS）
   ttsReady: () => req<{ ready: boolean }>('/api/tts-ready'),
-  generateEntityVoice: (id: string, body: { kind: 'custom' | 'design' | 'clone'; text: string; speaker?: string; instruct?: string; refText?: string; seed?: number }) =>
+  generateEntityVoice: (id: string, body: VoiceGenInput) =>
     req<{ taskId: string }>(`/api/entities/${encodeURIComponent(id)}/voice`, { method: 'POST', body: JSON.stringify(body) }),
   // 工具 A0
-  genDraft: (body: { idea: string; length: DraftLength; withWorldview: boolean }) => req<{ worldview: string; script: string }>('/api/draft', { method: 'POST', body: JSON.stringify(body) }),
+  genDraft: (body: DraftInput) => req<{ worldview: string; script: string }>('/api/draft', { method: 'POST', body: JSON.stringify(body) }),
 }

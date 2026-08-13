@@ -15,7 +15,7 @@ import { TimelineBar } from './TimelineBar'
 import { ShotCard } from './ShotCard'
 
 interface Props {
-  onRegenerate: (shotStyle?: string) => void
+  onRegenerate: (shotStyle?: '分镜剪辑' | '长镜头流') => void
   onGoPrompt: () => void
 }
 
@@ -25,7 +25,7 @@ export function ShotListView({ onRegenerate, onGoPrompt }: Props) {
   const [pickFor, setPickFor] = useState<Shot | null>(null)
   const [highlight, setHighlight] = useState<number | null>(null)
   const [chainSel, setChainSel] = useState(shotlist?.chain ?? 'auto')
-  const [styleSel, setStyleSel] = useState('auto')
+  const [styleSel, setStyleSel] = useState<'auto' | '分镜剪辑' | '长镜头流'>('auto')
   const cardRefs = useRef<Record<number, HTMLDivElement | null>>({})
   const { data: entities = [] } = useQuery({ queryKey: ['entities'], queryFn: api.listEntities })
 
@@ -92,7 +92,7 @@ export function ShotListView({ onRegenerate, onGoPrompt }: Props) {
               </Button>
               <select
                 value={styleSel}
-                onChange={(e) => setStyleSel(e.target.value)}
+                onChange={(e) => setStyleSel(e.target.value as typeof styleSel)}
                 title="镜头拆解策略（重新生成时应用）"
                 className="rounded border border-slate-700 bg-slate-950 px-1.5 py-1 text-[11px] text-slate-300"
               >

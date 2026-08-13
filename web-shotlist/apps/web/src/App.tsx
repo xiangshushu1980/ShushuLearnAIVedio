@@ -165,7 +165,7 @@ export default function App() {
   })
 
   const genShotlistMut = useMutation({
-    mutationFn: async (shotStyle?: string) => {
+    mutationFn: async (shotStyle?: '分镜剪辑' | '长镜头流') => {
       const ok = await flushSave()
       if (!ok) throw new Error('剧本保存失败，未生成')
       return api.generateShotlist(projectId!, { model: 'deepseek-v4-flash', effort: 'high', shotStyle })

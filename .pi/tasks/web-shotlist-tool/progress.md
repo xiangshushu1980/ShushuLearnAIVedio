@@ -6,6 +6,13 @@
 - 我负责的文件区：（设计阶段无文件；确定后认领新目录，如 web-shotlist/ 或 tools/shotlist-web/）
 
 ## 进度日志（append-only，每条带日期）
+### 2026-08-14（方案 A 落地：API schema 单源 + 类型推导）
+- **方案 A 完成**（用户确认：先 A 后 B）：packages/shared/src/apiSchema.ts 建为 API schema 单源；server 三个路由（projects/entities/draft）改为消费 shared schema，删除路由内联 z.object（43 处 → 仅 asset 路径参数保留内联）
+- **前端 api.ts 类型单源**：请求体用 `z.input`（default 字段可选）、类型禁止手写重复；类型推导立刻暴露两个隐藏漏洞（A0Dialog/extract 缺 model 参数、shotStyle 类型是 string 非枚举）已修
+- **踩坑**：zod 4 中 `z.infer` = output（default 已应用=必填），请求体必须用 `z.input`
+- **下一步**：方案 B（@fastify/swagger + openapi-typescript 生成 client）在 API 稳定后做（用户确认尝试）；然后功能继续：参考图多视图（等 mc-test 释放）+ 候选池 + 变体引用闭环 → 排版轮
+- 已 commit（方案 A + 类型修复）；服务常驻 8787/5173
+
 ### 2026-08-14（实体系统升级 + Qwen3-TTS 接入完成）
 - **实体系统升级**（用户决策拍板）：侧滑面板（右滑出，主视图保持可见，替代模态）；星级 1-5（≥4=core 必检，游戏式颜色）；实体内变体（换装/状态，引用写 `实体id:变体id`，变体图生成后自动归属）；关系编辑界面化（选实体+关系词）；全局风格（顶栏 ⚙，data/style.json，只影响设定图）
 - **设定图生成修复**：原来缺省 prompt 只用类型模板没用外观描述——现在 = 外观描述（canon）+ 类型构图 + 全局风格词，对齐描述直接决定形象设定
@@ -100,19 +107,18 @@
 - 设计讨论启动（待用户输入需求细节）
 
 ## 下一步（新对话从这继续）
-1. ✅ 核心管线 + 输入源联动全部完成（2026-08-12）
-2. 待拍板：关系升级（related 带阶段+自然语言）与故事时间线；A0.5 影视化改写层
-3. 体验收尾：任务全局可见（顶栏指示）、项目重命名、导入导出
-4. 设定图按实体类型优化 prompt（角色站姿/场景/物件）
-5. MC 测试线（新会话执行，队列已释放）：重启 ComfyUI → 两段对比跑批（mc-test/progress.md）
+1. ✅ 核心管线 + 输入源联动 + 实体系统升级 + Qwen3-TTS + 方案 A（schema 单源）全部完成
+2. 方案 B：@fastify/swagger + openapi-typescript 生成 client（用户确认尝试，API 稳定后做）
+3. 待拍板：关系升级（related 带阶段+自然语言）与故事时间线；A0.5 影视化改写层
+4. 功能继续：参考图多视图（等 mc-test 释放 ComfyUI；Mickmumpitz 工作流方案已调研）+ 候选池（生成多个切换/删除）+ 变体引用闭环
+5. 功能跑通后统一轮：UI 排版打磨 + 大文件拆分（EntityDialogs 581 行 / App.tsx）+ 方案 B
 6. 用户浏览器验收（http://localhost:5173）
 
 ## 关键链接
 - 相关文档：docs/16_prompt_generator_plan.md（工具 A/B 方案）、docs/17_h3_prompt_writing_rules.md（提示词规则）、docs/21_pipeline_acceptance.md、docs/22_shotlist_web_tool.md（设计+开发计划）
 - 代码：web-shotlist/（monorepo：packages/shared + apps/server + apps/web）
-- 相关脚本（重写源，未改）：scripts/h3_shotlist_gen.py、scripts/h3_prompt_stage2.py、scripts/prompt_validator.py
-- ⚠️ h3_shotlist_gen.py 编译失败（line 191）——h3-prompt-agent 线 WIP 损坏，已提醒
-- 相关 mem0 条目：recall "网页拍摄本 工具"；[STATE] agent=h3-prompt-agent（上游任务线）
+- 架构律令：API schema 单源 = packages/shared/src/apiSchema.ts（禁止路由内联 z.object）；请求体类型用 z.input；前端 api.ts 禁止手写重复类型
+- 相关 mem0 条目：recall "网页拍摄本 工具"；[STATE] agent=web-shotlist-tool
 ### 2026-08-12 全域调研：导演台类工具（设计讨论输入）
 **结论：无现成"剧本→拍摄本→H3 提示词"独立 Web 工具；现有工具分三类，可借鉴 UI 范式但核心链路（LLM 生成拍摄本）需自研**
 **A. ComfyUI 内嵌时间线编辑器（最接近的 UI 参考）**：
