@@ -6,7 +6,7 @@
 ## 任务
 - 目标：依次测试 T1-T6（LightX2V Turbo LoRA v1.0 → 防 OOM flags → Ref2VA 纯音频 → Sage v2 Ada patch → Sol Engine → fal API）
 - 当前状态：✅ 完成（2026-08-12 收尾）
-- 我负责的文件区：`.pi/agents/h3-today-testing/`、ComfyUI models/loras/（minimax_h3_turbo_v1.0 相关）
+- 我负责的文件区：`.pi/tasks/h3-today-testing/`、ComfyUI models/loras/（minimax_h3_turbo_v1.0 相关）
 
 ## 进度日志
 ### 2026-08-11

@@ -5,7 +5,7 @@
 ## 任务
 - 目标：① 15s 档 fp8 内存/耗时复测（旧基线 615s 疑内存压力，≤10s 限制为用户决策 2026-08-05，数据出来后由用户拍板是否放宽）；② 成片档（int8_convrot + v4-600EMA 8步@1024×576）耗时复测（旧基线 125s@8-10 定稿 / 158s@T1 F 档）
 - 当前状态：✅ 完成（2026-08-12）
-- 我负责的文件区：.pi/agents/comfyui-032-verify/、/tmp/verify032_cases.json、产物 video/h3_032verify/
+- 我负责的文件区：.pi/tasks/comfyui-032-verify/、/tmp/verify032_cases.json、产物 video/h3_032verify/
 
 ## 旧基线（对照）
 - fp8 15s 768×448 std20 = 615s（2026-08-05 补测批，WSL 内存顶满疑因）；int8 15s = 503s

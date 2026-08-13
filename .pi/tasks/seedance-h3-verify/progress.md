@@ -8,7 +8,7 @@
 - 当前状态：🟡进行中
 - 我负责的文件区：
   - `experiments/seedance_verify/cases.json` + `.results.json`（测试用例与结果）
-  - `.pi/agents/seedance-h3-verify/progress.md`（本文件）
+  - `.pi/tasks/seedance-h3-verify/progress.md`（本文件）
   - 产出视频：`ComfyUI/output/video/h3_seedance/`
 
 ## 进度日志（append-only，每条带日期）

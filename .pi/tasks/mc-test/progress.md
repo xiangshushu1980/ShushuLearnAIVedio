@@ -55,4 +55,4 @@
 ## 关键链接
 - 节点仓库：NikoDemon80/ComfyUI-H3-Motion-Context
 - 背景：mem0 "Motion Context 社区评价正面…"条目；docs/19 帧链负面结论
-- 上游：.pi/agents/h3-prompt-agent/progress.md（成片试跑产物）
+- 上游：.pi/tasks/h3-prompt-agent/progress.md（成片试跑产物）

@@ -7,7 +7,7 @@
 ## 任务
 - 目标：实测 H3 显式音乐指令的正向控制能力：① 无音乐区（单镜头中性）能否正向触发；② diegetic vs non_diegetic 写法差异；③ 时间 cue 是否可控（TODO 预期不可控待实测）；④ 多镜头中性区 + 显式配乐能否触发
 - 当前状态：✅ 完成（2026-08-12 收尾）
-- 我负责的文件区：.pi/agents/bgm-pos-control/、/tmp/bgmpos_*.txt|json、产物 video/h3_bgm_pos/
+- 我负责的文件区：.pi/tasks/bgm-pos-control/、/tmp/bgmpos_*.txt|json、产物 video/h3_bgm_pos/
 - TODO 编号：T-20260812-02（无认领人，用户指示跟进）
 
 ## 实验设计（2026-08-12）

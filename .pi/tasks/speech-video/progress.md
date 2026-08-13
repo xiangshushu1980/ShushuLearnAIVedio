@@ -12,7 +12,7 @@
 - H3/数字人未用：H3 只能生成自带语音的画面，无法同步用户固定音频；本机无口型模型
 - 补充信息做成画面文字层：开场叠加辩题卡、各环节加时间徽标(2.5/2.5/3/4min)、片尾投票收束
 
-## 产物文件（.pi/agents/speech-video/）
+## 产物文件（.pi/tasks/speech-video/）
 - transcript.json（whisper 时间轴 31 段）、subtitles.srt + subtitles_hms.srt（烧录用，须 HH:MM:SS 格式）
 - narr.wav（音频 16k 单声道转写副本）
 - anima_sample.png / krea_sample.png（风格小样）

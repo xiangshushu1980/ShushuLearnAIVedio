@@ -37,7 +37,7 @@
 - **角色卡迁移**：experiments/shotlist/rolecards → 实体库一键导入（外观节→appearance，行为/场景→description，名称解析修复全角括号）；alya_v1/yuki_v1 已入实体库
 - **实体单体重刷 API**（LLM 按上下文精修单个实体）
 - **踩坑**：①edit 工具 JSON 转义层数——正则 `\s` 被写成 `\s`（字面 s）导致解析失败，改用 python 直接改文件绕开 ②catch 块访问 try 块 const → 静默解析到全局 window.name(void) 报 TS2322，声明提到函数级
-- **MC 任务线孵化**：.pi/agents/mc-test/（节点已 clone custom_nodes/，未重启；测试计划=两段链式 vs 静态锚对比，等 seedance 线释放后重启+跑批）
+- **MC 任务线孵化**：.pi/tasks/mc-test/（节点已 clone custom_nodes/，未重启；测试计划=两段链式 vs 静态锚对比，等 seedance 线释放后重启+跑批）
 - 已 commit；服务常驻 8787/5173
 
 ### 2026-08-12（第七轮：自动策略 + 实体库注入 + 默认 ref2va）

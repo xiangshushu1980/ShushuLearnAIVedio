@@ -1,7 +1,7 @@
 # 22. 拍摄本看板 Web 工具设计（web-shotlist-tool）
 
 > 状态：设计稿 v0.1（2026-08-12 讨论确认，待实现）
-> 任务线：.pi/agents/web-shotlist-tool/progress.md
+> 任务线：.pi/tasks/web-shotlist-tool/progress.md
 > 定位：通用影片引擎的"剧本→拍摄本→提示词→渲染输入"可视化看板；V1 纯看板（只读为主）
 
 ## 一、架构决策（用户确认 2026-08-12）

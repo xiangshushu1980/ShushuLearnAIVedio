@@ -1,7 +1,7 @@
 # 12. 音频+文字 → 生成视频管线（辩论讲解视频实战）
 
 > 目标：把一段**音频旁白 + 演讲文字**制作成"插画分镜 + 逐帧动画 + 字幕 + 背景音乐/音效"的视频。
-> 2026-08-05 实战（comfy-ops，辩论结构讲解 133s）。所有脚本在 `.pi/agents/speech-video/`。
+> 2026-08-05 实战（comfy-ops，辩论结构讲解 133s）。所有脚本在 `.pi/tasks/speech-video/`。
 > 2026-08-11 并入原 docs/13（BGM/音效/混音/降噪）→ 本章 §10-§13。
 
 ## 1. 全流程概览
@@ -25,7 +25,7 @@
 成品
 ```
 
-## 2. 关键脚本（都在 `.pi/agents/speech-video/`）
+## 2. 关键脚本（都在 `.pi/tasks/speech-video/`）
 
 | 脚本 | 用途 |
 |------|------|
@@ -99,7 +99,7 @@ python3 gen_scenes.py scenes_v3.json --prefix img_debate4
 
 - 分镜图：`ComfyUI/output/img_debate4/`（F01~F22）
 - 动画片段：`ComfyUI/output/video/debate_anim/`
-- 脚本产物：`.pi/agents/speech-video/`
+- 脚本产物：`.pi/tasks/speech-video/`
 
 ## 10. BGM 两条路径（本地 MusicGen / ComfyUI ACE-Step）
 

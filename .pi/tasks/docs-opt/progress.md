@@ -5,7 +5,7 @@
 ## 任务
 - 目标：docs 文档优化：合并（13→12、04→06、20→21）、查重（02/06 网络、11 重复标题、词汇库归属矛盾）、09 瘦身、INDEX 重写（收录 16-21 + 维护规则）、等幂（scripts/docs_check.sh + INDEX 维护纪律）、与 mem0 同步（补齐经验 + [STATE]）
 - 当前状态：✅ 完成（2026-08-11）
-- 我负责的文件区：docs/（全部结构变动）、scripts/docs_check.sh（新建）、.pi/agents/docs-opt/progress.md、mem0 comfy-ops 池
+- 我负责的文件区：docs/（全部结构变动）、scripts/docs_check.sh（新建）、.pi/tasks/docs-opt/progress.md、mem0 comfy-ops 池
 - 用户决策 2026-08-11：① sources_skill_手册.md 直接删除（zip 内已有"使用手册-先读这个.md"同内容）；② 其余按合并方案执行
 
 ## 进度日志（append-only，每条带日期）
