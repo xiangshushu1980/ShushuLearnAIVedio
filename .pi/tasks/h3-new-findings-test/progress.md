@@ -92,6 +92,19 @@
 - **用户目视 + 定论**（2026-08-15）：A/C 无字；B 有字在窗子上；D 字被强调、旁边无杂散。→ ①块5 逐字打字=文字生成必要条件（A/C 无字 vs B/D 有字，差异完全来自块5）②块6 否定单用无效（C=A），但**块5+块6 组合质量最佳**（D 主文字清晰+无杂散）③位置控制弱（写 on the wall 实际挂窗户，需更具体定位或接受模型自选）④已落 params.md 提示词控制技巧
 - **本线四类新发现全部收口**：①Hybrid→T-20260815-09 ②Sol-Attn 弃用 ③turnaround 仅动漫/风格化 ④六块文字=块5必要+块6提升；T-20260815-07 完成，接力链B T1 社区技巧调研收口
 
+### 2026-08-15 六块文字补测（针对性：中文×时长×位置，T-20260815-07 延展）
+- 背景：基础矩阵（text_ctrl3）确认块5必要+块6提升后，补测中文/长时长/位置控制边界（用户拍板 2026-08-15）
+- 设计：同首帧（text_ctrl3_firstframe）+ 同 seed 20260815 + 块5+块6 最佳质量写法；4 组：
+  | 组 | 文字 | 时长 | 位置 |
+  |---|---|---|---|
+  | cn_3s | 中文 "深夜食堂" | 62帧/3s | 默认 |
+  | cn_5s | 中文 "深夜食堂" | 124帧/5s | 默认 |
+  | cn_5s_center | 中文 "深夜食堂" | 124帧/5s | centred on the wall |
+  | en_5s_low3 | 英文 "MIDNIGHT CAFE" | 124帧/5s | lower third |
+- 耗时：cn_3s 61.6s / 5s 档各 ~74s
+- 产物：ComfyUI/output/video/text_ctrl4/*.mp4（4 个）；对比图 output/compare/text_ctrl4_matrix.png（行=4 组，列=40%/85% 帧）
+- 待用户目视：①中文 3s vs 5s：时长是否导致字形漂移/变形 ②cn_5s vs cn_5s_center：位置指令（centred）是否生效 ③en_5s_low3：lower third 是否生效（对照 text_ctrl3 D 默认位置）④5s 档中文文字整体可读性
+
 ### 2026-08-15 Hybrid 调研深入 + 任务拆分（用户决策）
 - **原理确认**（scottmudge minimax_h3_analysis.md + smhfacct README 互证）：fl2va/ref2va 两 checkpoint >97% 权重 bit 同或 cos≥0.9997；唯一显著差异=每 block adaln_proj.linear（cos −0.74~−0.81 被训练完全重写）+ final_layer.adaln_proj（最差异张量 cos −0.83，疑似 ref2va 画质差根源）+ 输出头轻度；token_refiner/condition_proj 两模型基本相同→reference pathway 结构上都有，差异在调制层
 - **Hybrid = fl2va 全权重为底 + 后 N 层（b15/20/25/30-49）adaln_proj 换 ref2va**，静态 merge 单文件（20.97GB），推理只 load 一份不翻显存（scottmudge 运行时版 mmap 流式峰值也仅 1 模型量）
