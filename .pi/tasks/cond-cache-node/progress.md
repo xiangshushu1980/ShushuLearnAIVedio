@@ -5,8 +5,8 @@
 
 ## 任务
 - 目标：把「TE 批编码落盘 → DiT 批采样」做成可编排的流水线，免 TE 重载（省 N-1 次 TE 加载）
-- 当前状态：🟡（第一步完成，第二步待设计确认）
-- 我负责的文件区：custom_nodes/ComfyUI-MiniMax-H3-CondCache/、scripts/h3_condcache_verify.py、.pi/tasks/cond-cache-node/
+- 当前状态：✅（第一步节点 + 第二步批处理脚本均完成）
+- 我负责的文件区：custom_nodes/ComfyUI-MiniMax-H3-CondCache/、scripts/h3_condcache_verify.py、scripts/h3_load_cost_probe.py、scripts/h3_sage_breakdown.py、scripts/h3_two_stage_batch.py、.pi/tasks/cond-cache-node/
 
 ## 进度日志（append-only，每条带日期）
 ### 2026-08-16
@@ -34,14 +34,18 @@
   - plain（无注意力 patch）总 77s（采样 51s）/ sage（PathchSageAttentionKJ 节点）总 65s（采样 31s）→ **sage 采样加速 1.65x**
   - 分解（sage）：模型加载 TE+DiT+LoRA ~22s（冷）/ ~7s（热）+ 采样 ~31s + decode ~12s = ~65s
   - **收益模型闭环**：两阶段批处理省 (N-1)×~22s（冷加载）；采样是主成本但两阶段不碰它；N=5 省 ~88s、N=10 省 ~198s
+- ✅ 第二步完成（scripts/h3_two_stage_batch.py，批处理脚本形态，非守护进程）：
+  - 阶段1 一个工作流 = 1×CLIPLoader 喂 N×MiniMaxH3ImageToVideo → N×MiniMaxH3CondSaver；阶段2 = 1×UNETLoader+PathchSageAttentionKJ 喂 N 采样分支（DiT 只载一次）
+  - 实测 N=3（turbo 8步@1024×576 sage）：阶段1 15s（TE 一次编 3 cond）+ 阶段2 143s（DiT 一次采 3）= 总 158s，vs 单任务 3×65s=195s，**省 ~37s**（≈ (N-1)×~19s）
+  - 3 条出片成功；cond 落盘 output/conditioning/ 持久化（跨重启/多 seed 复用）
 - 踩坑（本线实录）：
   - io.ComfyNode 的 OUTPUT_NODE 要写在 io.Schema(is_output_node=True) 里，不是节点类属性（类属性不生效，报 prompt_no_outputs）
   - 新 API STRING 输出不进 /history outputs（只进 websocket executed 的 result）→ 验证脚本用确定性路径（复算计数器）代替读 history
   - SaveVideo 本版出片在 history outputs 的 "images" 键（不是 "videos"），mp4 文件名在 images 列表里
 
 ## 下一步
-1. 第二步：批处理脚本（倾向，待用户确认）——两阶段批处理：TE 加载一次→编码 N prompt→cond 落盘→DiT 加载一次→逐个采样。两班倒守护进程（常驻+任务随时注册+依赖图）按 T2 收益 ~26s/任务评估或过度设计，先不做
-2. docs/10「省 80s TE」前提修正（待用户确认后改，单一写者纪律）
+1. （待做）docs/10「省 80s TE」前提修正为实测值（TE 冷 ~11s/DiT 冷 ~15s，附 swap 污染说明）——单一写者，改前用户确认
+2. （可选）守护进程形态（常驻+任务随时注册）——按 ~22s/任务收益评估已判定过度设计，暂不实施
 
 ## 关键链接
 - 相关文档：docs/10_h3_batch_optimization.md（两阶段方案+前置验证点）
