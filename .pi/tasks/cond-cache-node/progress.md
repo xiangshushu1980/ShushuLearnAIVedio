@@ -30,6 +30,10 @@
   - **定性：cond-roundtrip 的 112s/171s 不可复现，判定为 swap/内存压力污染**（本机有 OOM+swap 史，健康态下真实加载仅 ~11s/~15s）
   - 价值重估：两阶段省的是 ~26s/任务（冷）/~7s/任务（热）的模型加载，**不是 80s**；真瓶颈是采样 ~60s/任务（sage 关）；docs/10「省 80s」前提需修正
   - 对第二步的影响：两班倒守护进程按 ~26s/任务收益评估可能过度设计，倾向改「批处理脚本」（见下一步决策）
+- ✅ 单任务耗时构成定准（scripts/h3_sage_breakdown.py，生产配置 turbo v4 LoRA 8步@1024×576 int8）：
+  - plain（无注意力 patch）总 77s（采样 51s）/ sage（PathchSageAttentionKJ 节点）总 65s（采样 31s）→ **sage 采样加速 1.65x**
+  - 分解（sage）：模型加载 TE+DiT+LoRA ~22s（冷）/ ~7s（热）+ 采样 ~31s + decode ~12s = ~65s
+  - **收益模型闭环**：两阶段批处理省 (N-1)×~22s（冷加载）；采样是主成本但两阶段不碰它；N=5 省 ~88s、N=10 省 ~198s
 - 踩坑（本线实录）：
   - io.ComfyNode 的 OUTPUT_NODE 要写在 io.Schema(is_output_node=True) 里，不是节点类属性（类属性不生效，报 prompt_no_outputs）
   - 新 API STRING 输出不进 /history outputs（只进 websocket executed 的 result）→ 验证脚本用确定性路径（复算计数器）代替读 history
