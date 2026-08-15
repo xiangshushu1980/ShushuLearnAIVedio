@@ -65,7 +65,7 @@ fl2va（MiniMaxH3ImageToVideo）执行 = 三件事：
 | 不同 prompt 批量（提示词探索/筛选）| 每任务 +~22s（冷）/+~7s（热）模型加载 | **两阶段流水线** |
 | 混合（先筛 prompt 再抽卡）| — | 筛选用两阶段，选中后同 prompt 免费 |
 
-### 两阶段流水线（方案，未实现）
+### 两阶段流水线（已实现，2026-08-16）
 
 ```
 阶段一：TE 加载一次（~11s）→ 连续编码 N 个不同 prompt → 每个 cond 落盘（~30-40MB/个 .pt）
@@ -73,10 +73,8 @@ fl2va（MiniMaxH3ImageToVideo）执行 = 三件事：
 ```
 
 - 收益：N 个任务只付 1 次模型加载，省 (N-1)×~22s（冷）；N≥3 就划算（实测 N=3 省 ~37s）
-- 实现路线（ComfyUI 队列任务间不共享中间结果，需二选一）：
-  1. 脚本：直接调 execution 模块编排"TE 批编码→cond 存盘→批采样"（run_workflow.py 进阶版）
-  2. 自定义节点：fl2va 加磁盘缓存（按 prompt+图 hash 存 .pt，命中直接读）
-- 前置验证：cond 序列化格式（NestedTensor + conditioning dict 的 .pt 保存/加载）稳定性
+- **已落地**：custom_nodes/ComfyUI-MiniMax-H3-CondCache（Save/LoadMiniMaxH3Cond 节点，cond 为标准 [(tensor,{attrs})] list）+ scripts/h3_two_stage_batch.py（API 编排，N=3 实测 158s vs 195s）；守护进程形态判定过度设计不实施
+- 前置验证：cond 序列化往返逐位无损（torch.save/load，含 fl2va keyframes latent）已通过（.pi/tasks/cond-roundtrip/）
 
 ## 七、参考
 

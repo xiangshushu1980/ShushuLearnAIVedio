@@ -1,7 +1,7 @@
 # ComfyUI 项目文档索引
 
 > 本机环境：Ubuntu 24.04 (WSL2, mirror 网络模式) / RTX 4090 24GB / Python 3.13 / CUDA 13
-> 最后更新：2026-08-12（新增 22 拍摄本看板工具设计）
+> 最后更新：2026-08-16（10 文档 TE 开销修正为 ~11s 冷/两阶段已落地）
 
 ## 📚 文档导航（按需加载）
 
@@ -13,7 +13,7 @@
 | [07_video_material.md](07_video_material.md) | 视频素材库索引（Pexels 原片/Bernini 预处理版/16:9 首帧图库/ref_lib） | 找 v2v 编辑素材 / 素材管线 |
 | [08_h3_prompt_agent.md](08_h3_prompt_agent.md) | H3 提示词增强方案（官方 IR API 为主路径 + 接入细则） | IR API 调用 / 提示词智能体落地 |
 | [09_h3_test_plan.md](09_h3_test_plan.md) | H3 系统化测试全量数据（速度矩阵/steps/提示词/量化/MC/sage/底图库） | 查 H3 实测数据 / 参数定论依据 |
-| [10_h3_batch_optimization.md](10_h3_batch_optimization.md) | H3 fl2va 机制/TE 加载成本/缓存/两阶段批量方案 | 批量优化 / 理解 80s TE 开销 |
+| [10_h3_batch_optimization.md](10_h3_batch_optimization.md) | H3 fl2va 机制/TE 加载成本/缓存/两阶段批量方案（已落地 CondCache 节点） | 批量优化 / 理解 TE 加载成本（冷 ~11s/热 ~4s） |
 | [11_h3_case_library.md](11_h3_case_library.md) | H3 提示词案例库（C01-C24 / D / E 批 + 目视反馈） | 写提示词参考案例时 |
 | [12_speech_to_video_pipeline.md](12_speech_to_video_pipeline.md) | 音频+文字→视频管线（whisper→分镜→生图→动画→合成→字幕→BGM/混音/音效） | 演讲稿/旁白转视频 / BGM 制作 |
 | [14_skill_governance.md](14_skill_governance.md) | Skill 治理框架（三层划分/经验→mem0 原则/蒸馏管道/升级路径） | 建新 skill / 组织多 skill 时 |

@@ -12,7 +12,7 @@
 ```bash
 cd /home/sean/projects/ComfyUI
 ./start.sh                          # 前台；后台: nohup ./start.sh > /tmp/comfyui_start.log 2>&1 &
-# 停止: pkill -f "[m]ain.py"（[m] 避免匹配自身 shell）
+# 安全停止/重启: bash ~/projects/comfy-ops/scripts/restart_comfyui.sh（精确 PID/等端口释放/健康检查，勿用 pgrep -f 匹配会误杀 bash 包装）
 # 日志: tail -f /tmp/comfyui_start.log（采样进度也打印在这里）
 # 磁盘: df -h /home/sean
 ```

@@ -18,7 +18,8 @@
 
 ### 定位与模型
 - **定位**：Wan2.2 renderer-only **编辑器**（重打光/重风格化/主体插入），in-context 软参考（非 concat 硬锁）→ 生成模式（r2v/t2v）脸部漂移，编辑模式（v2v/i2v）保持好
-- **模型**（`models/diffusion_models/` + `models/loras/`）：
+- ⚠️ **模型当前缺失（2026-08-12 有意清理给 H3 腾空间，用户决策暂不找回）**：下列 Bernini 模型/配套 TE/LoRA 磁盘均不存在（见 docs/02 §已清理记录），需用时按下文下载源重下
+- **模型**（`models/diffusion_models/` + `models/loras/`，缺失待重下）：
   - `wan2.2_bernini_r_{high,low}_noise_fp8_scaled.safetensors`（15.5GB×2，主力）
   - `wan2.2_bernini_r_{high,low}_noise_int8_convrot.safetensors`（14.5GB×2，视频任务快 21% 画质无损，需 ComfyUI 0.29+ convrot）
   - `lightx2v_T2V_14B_cfg_step_distill_v2_lora_rank64_bf16.safetensors`（蒸馏 LoRA）
