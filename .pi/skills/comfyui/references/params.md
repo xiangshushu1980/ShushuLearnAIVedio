@@ -115,6 +115,13 @@
 | **正式成片** | **int8_convrot + sage + v4-600EMA 8步 @1024×576** | **125s/8s** | 最终输出（08-10 定档：int8 消除 960/1024 offload 抖动，fp8 同规格 185-385s）|
 | **长档（15s，2026-08-12 开放）** | int8_convrot + sage + v4-600EMA 8步 @1024×576 ×360帧 | **230-275s/15s** | 长场景/长对话（用户验收通过；≤10s 限制 08-05 决策已放宽；内存峰值 45-51GB 安全）|
 
+### 加速策略（2026-08-15 定稿，start.sh 已去全局 sage 改节点级）
+- **默认 = Sage 节点**（`PathchSageAttentionKJ` sage_attention=auto，KJNodes 实验节点，插在 LoraLoader 后）：实测 @1024×576 8步 124帧 wave 44.3s / dance 43.9s ≈ 纯 attention（91.8s/66.8s）的 **1.5-2x**；与旧全局 sage（45s）一致，行为等价
+- **Sol-Attn 弃用**：耗时与 Sage 持平（44.9s/44.6s，无速度优势）但高动态 dance 鬼畜崩、且首轮 1.07x 对比失真（当时 baseline 实为全局 sage）→ 无存在价值，不再使用
+- **高动态内容**：Sage 有穿帮但明显轻于 Sol（可接受）；极端高动态可选纯 attention 兜底（不插节点即可，代价 1.5-2x 耗时）
+- **马赛克澄清**：首轮"sage 浪头马赛克"未复现（wave 三方式均无马赛克，疑 seed/内容相关），不构成 sage 系统性问题
+- 对比产物：ComfyUI/output/video/attn3way/ + output/compare/attn3way_{wave,dance}.png（行=50%/75%帧，列=plain|sage|sol）
+
 - **模型选择**（官方 README 2026-08-10 查证）：DiT 官方首选 int8_convrot（需 torch cu130，本地 2.13.0+cu130 ✓），fp8_scaled 仅兜底；TE 用 nvfp4_awq（15.7G，官方确认无需 Blackwell，4090 可用 ✓）
 - **旧 base 档参考**（08-04 实测，无 turbo）：fp8+14步 @768×448 = 75s/5s 快速；fp8+20步 @1024×576 = 5s≈2min / 10s≈5min / 15s≈8min 成片；**已被 turbo 三档全面取代**
 
@@ -142,7 +149,7 @@
 - **scheduler/sampler**：simple + res_multistep（官方默认）；**无 cfg**（BasicGuider，CFG-distilled）
 - **分辨率**：1024×576 画质均衡甜点；768×448 快 30-40%；1344×768 10s+ 成本非线性飙升禁用
 - **时长**：5-15s（trained 124-362 帧）；15s 动作较简单；首尾帧双 keyframe +52s
-- **SageAttention 必须开**：10s 快 40%、15s 快 48%（长序列收益大）；768 系列影响小
+- **SageAttention 默认开**（节点级 PathchSageAttentionKJ auto，2026-08-15 起）：10s 快 40%、15s 快 48%（长序列收益大）；768 系列影响小；Sol-Attn 已弃用（无速度优势+高动态崩）
 - **MotionCache**：**14 步下无实用价值**（默认只跳 1/14；激进参数 warmup2/thr0.25/maxskip3 跳 4/14 但 score 开销抵消，净收益 ~3s）；**仅 20 步画质档可作加速选项**（1.25-1.33x）；**音频劣化主因是 MC 跳步**（sage 对音频零影响：0.2 LU 不可辨）
 - **量化**：fp8_scaled（4090/Ada 原生 fp8，画质更好同速）；30系用 int8；GGUF 暂不可行（加载器不支持）
 - **显存**：fp8 驻留 17.1GB / int8 13.9GB + offload；文本编码器 nvfp4_awq 15.7GB 全量入显存
@@ -156,3 +163,17 @@
 - **视频参考必须 CLIPLoader device="cpu"**（否则 24GB 显存打爆卡死；+600s CPU 编码）
 - ref_image_size max 仅对 >2048px 图有增益
 - 声音指令：风/雨等环境声生效；鸟鸣等细粒度弱；`<d>` 标签可触发对话
+
+### Ref2VA Turbo（2026-08-13 lightx2v v0.1，8-14 起本地可测）
+- **规格**：4 步蒸馏（NFE 4）、544p 训练（mixed AR）、shift 12/3、euler + simple scheduler、无 cfg（BasicGuider）、LoraLoaderModelOnly 接入（strength 1.0）
+- **与 FL2V Turbo 区别**：条件=参考图/视频/音频（非首末帧），走 MiniMaxH3ReferenceToVideo 节点；参考图接 ref_image_0~N
+- **官方工作流**：video_minimax_h3_ref2v_lightx2v_turbo.json（默认 960×544 16:9 0.5MP、5s=124 帧）；Ref2VA 图用 ref2va 基础模型（非 fl2va）
+- **官方 ref_image_size 三策略**（ModelTC 仓库）：match=缩到目标像素面积（蒸馏训练一致，推荐）/ max=2048 短边 / diffusers=固定 2048 短边（旧行为）
+- **六段式 prompt 结构**（官方示例）：subject_definitions（定义 Subject N 身份）→ summary → retention_analysis（保留关系）→ detailed_description（分镜）→ overall_soundscape → non_diegetic_music
+- 本地对比：成片档 F（v4-600EMA 8步@1024=158s）为基线；ref2v 4 步预期速度优势待实测
+
+### FaceRefine 精修参数（2026-08-14 实测定论）
+- **管线**：Turbo 4 步出片（40s）→ FaceRefine 精修（30s）= 70s 可验收；FaceRefine 是成片档工具，不进快速档
+- **官方参数原样不可改**（改任何一项→特写马赛克）：LoRA fl2v v0.1 comfy @0.75（非 v1.0 768p）、er_sde + simple 4 步 denoise 0.45、PerFrameDenoise 0.8/0.35、crop 512² factor 3、fallback none
+- 必须传原视频的原始 prompt（占位符劣化重生成）
+- 远处小脸改善方向（未测）：检测阈值 0.35→0.2、crop 上限 768、小脸强度 0.8→1.0

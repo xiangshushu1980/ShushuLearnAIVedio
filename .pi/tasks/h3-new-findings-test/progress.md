@@ -67,10 +67,18 @@
 ### 2026-08-15 三方加速对比跑批（去全局 sage 后首测，真纯 attention 基线）
 - 背景：旧 solattn_baseline 实为全局 sage 结果（start.sh 当时未改），本次为去全局后首轮干净对比
 - 设计：2 场景（wave=surfer 海浪 / dance=breakdance 高动态）× 3 方式（plain 无 patch / sage PathchSageAttentionKJ(auto) / sol SolAttnPatch tau1.3），同 seed 20260814 @1024×576 8步 124帧，v4-600EMA
-- 产物：ComfyUI/output/video/attn3way/{wave,dance}_{plain,sage,sol}_00001_.mp4（6 个）；对比图 output/compare/attn3way_{wave,dance}.png（行=50%/75% 帧，列=plain|sage|sol）
-- 耗时（文件 mtime 间隔）：sage/sol ~60s/个，plain 含首载 ~150s；待更精确计时
-- 待用户目视：①wave 场景 sage 是否仍有海浪马赛克、sol 是否干净 ②dance 场景 sol 是否崩、sage 是否正常（验证"sage 细节马赛克 / sol 高动态崩"两假说）
-- ⚠️ 跑批队列踩坑：POST /prompt 校验即入队，本批误重复排队 10 个，已 clear 清空补删 2 个重复产物；后续校验用 POST /prompt 需谨慎（可用 node 级校验 API 或提交前确认）
+- 产物：ComfyUI/output/video/attn3way/{wave,dance}_{plain,sage,sol}_00001_.mp4；对比图 output/compare/attn3way_{wave,dance}.png（行=50%/75% 帧，列=plain|sage|sol）
+
+### 2026-08-15 三方对比第二轮：排除冷启动精确计时（用户目视反馈后补跑）
+- 用户目视（2026-08-15）：①wave 三方式均无马赛克（首轮"sage 浪头马赛克"未复现，疑 seed/内容相关）②sol dance 鬼畜崩（确认高动态崩）③sage dance 有穿帮但明显轻于 sol
+- 精确计时（模型已加载，日志 Prompt executed，同 seed 20260814 @1024×576 8步 124帧）：
+  | 场景 | 纯 attention | Sage(auto) | Sol(tau1.3) |
+  |---|---|---|---|
+  | wave | 91.8s | 44.3s（2.07x）| 45.0s（2.04x）|
+  | dance | 66.8s | 43.9s（1.52x）| 44.6s（1.50x）|
+- 关键发现：①**sage/sol 耗时几乎持平**（wave ~2x / dance ~1.5x），Sol 无速度优势（首轮 1.07x 对比失真——当时 baseline 实为全局 sage）②sage 第一轮 45s 与本次 44.3s 一致（复现稳定）③wave plain 91.8s vs dance plain 66.8s 差异大，疑内容 tokens 差异
+- **结论：Sol-Attn 无存在价值（无速度优势+高动态崩）；Sage 为默认加速，高动态内容注意穿帮风险（可降级纯 attention）**
+- 队列踩坑：POST /prompt 校验即入队（首轮误重复排队 10 个已 clear；补跑前先确认队列空闲）
 
 ### 2026-08-15 Hybrid 调研深入 + 任务拆分（用户决策）
 - **原理确认**（scottmudge minimax_h3_analysis.md + smhfacct README 互证）：fl2va/ref2va 两 checkpoint >97% 权重 bit 同或 cos≥0.9997；唯一显著差异=每 block adaln_proj.linear（cos −0.74~−0.81 被训练完全重写）+ final_layer.adaln_proj（最差异张量 cos −0.83，疑似 ref2va 画质差根源）+ 输出头轻度；token_refiner/condition_proj 两模型基本相同→reference pathway 结构上都有，差异在调制层
@@ -81,9 +89,9 @@
 - **任务拆分**：Hybrid 深度测试（参考忠实度/写实/身份一致性 + 社区观察）→ 独立任务 T-20260815-09（TODO 已登记，agent 未认领）
 
 ## 下一步
-1. **三方加速对比目视**（用户继续 attention 对话）：产物 ComfyUI/output/video/attn3way/{wave,dance}_{plain,sage,sol}_00001_.mp4 + 对比图 output/compare/attn3way_{wave,dance}.png；验证 sage 海浪马赛克 vs sol 高动态崩两假说
-2. 目视结论回来 → 加速策略落 params.md（含 sage/sol 适用场景矩阵）
-3. Hybrid 深度测试 → 由 T-20260815-09 单独任务承接（本线不再做）
+1. ✅ 三方加速对比目视完成（用户：wave 无马赛克 / sol dance 鬼畜 / sage dance 穿帮轻）+ 精确计时完成（sage/sol 持平，Sol 无价值）
+2. **加速策略落 params.md**：默认 Sage（auto），高动态内容纯 attention 兜底；Sol-Attn 标注弃用（无速度优势+高动态崩）
+3. Hybrid 深度测试 → 由 T-20260815-09 单独任务承接（本线不再做）；六块提示词文字再测（换场景澄清"左好右整体性好"）可并入本线或另开
 
 ## 关键链接
 - 索引：https://github.com/MiniMax-AI/awesome-minimax-h3-integration
