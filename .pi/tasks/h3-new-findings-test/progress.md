@@ -80,6 +80,18 @@
 - **结论：Sol-Attn 无存在价值（无速度优势+高动态崩）；Sage 为默认加速，高动态内容注意穿帮风险（可降级纯 attention）**
 - 队列踩坑：POST /prompt 校验即入队（首轮误重复排队 10 个已 clear；补跑前先确认队列空闲）
 
+### 2026-08-15 六块文字再测（换场景矩阵实验，T-20260815-07 收口项）
+- 背景：前两轮"左好右整体性好（微妙）"不清，换场景+拆变量澄清
+- 设计：首帧=KREA 新生成无文字夜景街道（input/start/text_ctrl3_firstframe.png，1024×576）；I2V fl2va+v4 8步 62帧 同 seed 20260815；四组矩阵同公共六块 prompt（风格/时间线/摄像机/音频）
+  - A_base：公共（无文字描述无否定）
+  - B_block5：+块5 逐字打字（霓虹招牌"MIDNIGHT CAFE" clean sans-serif 全可读）
+  - C_block6：+块6 否定列表（no gibberish/misspelled/extra text/subtitles/watermarks）
+  - D_full：块5+块6 完整
+- 耗时：A 60.5s（含首帧编码）/ B/C/D 各 ~37s
+- 产物：ComfyUI/output/video/text_ctrl3/{A_base,B_block5,C_block6,D_full}_00001_.mp4；对比图 output/compare/text_ctrl3_matrix.png（行=A/B/C/D，列=40%/80% 帧）
+- 待用户目视：①B vs A：打字是否让画面出现正确招牌文字 ②C vs A：否定是否防乱码/防额外文字 ③D vs B：否定是否提升打字清晰度 ④D vs C：打字是否必要
+- 六块结构（atlascloud 指南，已抓 /tmp/h3_guide.html）：1 风格契约/2 时间线/3 摄像机/4 音频/5 文字逐字打出/6 否定列表；块5+6 免费且质量大头
+
 ### 2026-08-15 Hybrid 调研深入 + 任务拆分（用户决策）
 - **原理确认**（scottmudge minimax_h3_analysis.md + smhfacct README 互证）：fl2va/ref2va 两 checkpoint >97% 权重 bit 同或 cos≥0.9997；唯一显著差异=每 block adaln_proj.linear（cos −0.74~−0.81 被训练完全重写）+ final_layer.adaln_proj（最差异张量 cos −0.83，疑似 ref2va 画质差根源）+ 输出头轻度；token_refiner/condition_proj 两模型基本相同→reference pathway 结构上都有，差异在调制层
 - **Hybrid = fl2va 全权重为底 + 后 N 层（b15/20/25/30-49）adaln_proj 换 ref2va**，静态 merge 单文件（20.97GB），推理只 load 一份不翻显存（scottmudge 运行时版 mmap 流式峰值也仅 1 模型量）
@@ -90,8 +102,9 @@
 
 ## 下一步
 1. ✅ 三方加速对比目视完成（用户：wave 无马赛克 / sol dance 鬼畜 / sage dance 穿帮轻）+ 精确计时完成（sage/sol 持平，Sol 无价值）
-2. **加速策略落 params.md**：默认 Sage（auto），高动态内容纯 attention 兜底；Sol-Attn 标注弃用（无速度优势+高动态崩）
-3. Hybrid 深度测试 → 由 T-20260815-09 单独任务承接（本线不再做）；六块提示词文字再测（换场景澄清"左好右整体性好"）可并入本线或另开
+2. ✅ 加速策略已落 params.md（Sage 默认 auto，高动态纯 attention 兜底；Sol-Attn 弃用）
+3. **六块文字再测矩阵目视中**（text_ctrl3 四组，待用户目视后收口本线）
+4. Hybrid 深度测试 → T-20260815-09 承接；文字结论稳定后落 params.md 提示词控制技巧
 
 ## 关键链接
 - 索引：https://github.com/MiniMax-AI/awesome-minimax-h3-integration
