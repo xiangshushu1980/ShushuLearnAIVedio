@@ -5,7 +5,7 @@
 
 ## 任务
 - 目标：依次实测四类新发现——①Hybrid FL2VA+Ref2VA 模型 ②Sol-Attn 加速 ③turnaround LoRA ④六块提示词结构
-- 当前状态：🟡
+- 当前状态：✅ 完成（2026-08-15 四类全部实测收口）
 - 我负责的文件区：ComfyUI/models/diffusion_models/（Hybrid 权重）、ComfyUI/custom_nodes/（Sol-Attn）、ComfyUI/models/loras/（turnaround）、comfy-ops/workflows/ 与 output/ 测试产物
 
 ## 调研结论（2026-08-14）
@@ -89,8 +89,8 @@
   - D_full：块5+块6 完整
 - 耗时：A 60.5s（含首帧编码）/ B/C/D 各 ~37s
 - 产物：ComfyUI/output/video/text_ctrl3/{A_base,B_block5,C_block6,D_full}_00001_.mp4；对比图 output/compare/text_ctrl3_matrix.png（行=A/B/C/D，列=40%/80% 帧）
-- 待用户目视：①B vs A：打字是否让画面出现正确招牌文字 ②C vs A：否定是否防乱码/防额外文字 ③D vs B：否定是否提升打字清晰度 ④D vs C：打字是否必要
-- 六块结构（atlascloud 指南，已抓 /tmp/h3_guide.html）：1 风格契约/2 时间线/3 摄像机/4 音频/5 文字逐字打出/6 否定列表；块5+6 免费且质量大头
+- **用户目视 + 定论**（2026-08-15）：A/C 无字；B 有字在窗子上；D 字被强调、旁边无杂散。→ ①块5 逐字打字=文字生成必要条件（A/C 无字 vs B/D 有字，差异完全来自块5）②块6 否定单用无效（C=A），但**块5+块6 组合质量最佳**（D 主文字清晰+无杂散）③位置控制弱（写 on the wall 实际挂窗户，需更具体定位或接受模型自选）④已落 params.md 提示词控制技巧
+- **本线四类新发现全部收口**：①Hybrid→T-20260815-09 ②Sol-Attn 弃用 ③turnaround 仅动漫/风格化 ④六块文字=块5必要+块6提升；T-20260815-07 完成，接力链B T1 社区技巧调研收口
 
 ### 2026-08-15 Hybrid 调研深入 + 任务拆分（用户决策）
 - **原理确认**（scottmudge minimax_h3_analysis.md + smhfacct README 互证）：fl2va/ref2va 两 checkpoint >97% 权重 bit 同或 cos≥0.9997；唯一显著差异=每 block adaln_proj.linear（cos −0.74~−0.81 被训练完全重写）+ final_layer.adaln_proj（最差异张量 cos −0.83，疑似 ref2va 画质差根源）+ 输出头轻度；token_refiner/condition_proj 两模型基本相同→reference pathway 结构上都有，差异在调制层
@@ -101,10 +101,8 @@
 - **任务拆分**：Hybrid 深度测试（参考忠实度/写实/身份一致性 + 社区观察）→ 独立任务 T-20260815-09（TODO 已登记，agent 未认领）
 
 ## 下一步
-1. ✅ 三方加速对比目视完成（用户：wave 无马赛克 / sol dance 鬼畜 / sage dance 穿帮轻）+ 精确计时完成（sage/sol 持平，Sol 无价值）
-2. ✅ 加速策略已落 params.md（Sage 默认 auto，高动态纯 attention 兜底；Sol-Attn 弃用）
-3. **六块文字再测矩阵目视中**（text_ctrl3 四组，待用户目视后收口本线）
-4. Hybrid 深度测试 → T-20260815-09 承接；文字结论稳定后落 params.md 提示词控制技巧
+✅ 本线全部完成（T-20260815-07 收口）：四类新发现均实测定论——加速策略（params.md Sage 默认/Sol 弃用）+ 六块文字（块5必要+块6提升）+ turnaround（仅动漫）+ Hybrid（拆 T-20260815-09）
+- 接力：链B T1 社区技巧调研收口；Hybrid 深度测试 T-20260815-09 未认领
 
 ## 关键链接
 - 索引：https://github.com/MiniMax-AI/awesome-minimax-h3-integration

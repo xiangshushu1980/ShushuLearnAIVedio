@@ -143,6 +143,7 @@
 - **结构**：I2VA 用官方指令头 `For the target video, at 0.00 seconds, <Picture 1> (from [Shot 1]) is fully referenced.` + 三段核心字段（integrated_multimodal_description / overall_soundscape / non_diegetic_music）；ref 模式六段式（subject_definitions / summary / retention_analysis / detailed_description / overall_soundscape / non_diegetic_music）
 - **声音指令**：环境声（风/雨/海浪/鞭炮/古琴）强；鸟鸣等细粒度弱需 `loud and clear` 强调（C22）；对话用 `<d>[语言] ...</d>`
 - **全英文 prompt**（p7 中文验证无效）；**详细度与速度无关**（六段式 159s = 普通 prompt）→ 写详细不付时间成本
+- **画面内文字控制（2026-08-15 六块矩阵实测，T-20260815-07）**：块5 逐字打字 = 文字生成**必要条件**（A/C 无字 vs B/D 有字）；块6 否定 = 质量提升（D 主文字清晰、无杂散；单用块6 无效）；**位置控制弱**（写 "on the wall" 实际挂窗户上，需更具体定位或接受模型自选）；写法：`A glowing neon sign reading "MIDNIGHT CAFE" in clean sans-serif capital letters, fully legible, correctly spelled` + 否定 `no gibberish text, no misspelled words, no extra on-screen text, no subtitles`；首帧无文字时模型会自选位置挂文字（城市夜景→招牌）；矩阵产物 text_ctrl3/（A基准/B块5/C块6/D完整，同首帧同 seed）
 
 ### 关键参数
 - **steps**：14 步快速看效果（眼睛细节略崩）/ 20 步成片（声音明显更好）；画面 16-20 接近
