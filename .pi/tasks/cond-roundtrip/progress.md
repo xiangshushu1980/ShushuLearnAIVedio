@@ -31,10 +31,12 @@
 ## 下一步
 1. （已完成）试验1 cond 往返 + 试验2 采样链路逐位一致
 2. 落地两阶段流水线：批编码 cond 落盘 → 批采样。形态可选：
-   a. 自定义节点（LoadMiniMaxCond/SaveMiniMaxCond，参考 Conditioning Saver 但适配 H3 cond）
+   a. 自定义节点（LoadMiniMaxCond/SaveMiniMaxCond，参考 Conditioning Saver 但适配 H3 cond）→ **已在 cond-cache-node 任务线落地**（custom_nodes/ComfyUI-MiniMax-H3-CondCache）
    b. 脚本批处理（TE 一次编码 N cond → 落盘 → 逐个采样，comfy 库直调）
-   c. API 工作流 + 缓存节点
+   c. API 工作流 + 缓存节点 → **已验证**（scripts/h3_condcache_verify.py，阶段2 无 TE 出片 PASS）
 3. 收益：N≥3 不同 prompt 批量，省 (N-1)×~90s（TE 冷重载）或 (N-1)×~20s（热重载）
+
+> 注（2026-08-16）：本线（前置验证）已收口，两阶段落地转 cond-cache-node 任务线；"省 80s TE" 的收益基数在 API/动态 VRAM 路径下测得 ~10s 而非 112s，需受控复测，见 cond-cache-node/progress.md。
 
 ## 关键链接
 - 相关文档：docs/10_h3_batch_optimization.md（两阶段方案+前置验证点）
