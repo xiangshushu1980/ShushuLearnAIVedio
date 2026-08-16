@@ -5,7 +5,7 @@
 
 ## 任务
 - 目标：拆解 HKUDS/ViMax（agentic 视频管线开源项目），对标 comfy-ops 剧本→拍摄本→六段式管线（工具 A/B），产出可吸收的设计分析
-- 当前状态：🟡进行中
+- 当前状态：✅完成（阶段1框架 + 阶段2一致性层深入）
 - 执行者：codex（gpt-5.6-luna），pi 侧调度审查
 - 我负责的文件区：`.pi/tasks/vimax-dissect/progress.md`；产出后续交 web-shotlist-tool/h3-prompt-agent
 
@@ -40,10 +40,21 @@
 7. **并行化要建立在兼容性分组上**：ViMax 并行生成兼容镜头和素材；我们的并行边界应放在不共享连续性依赖的镜头组，跨段 Motion Context/首帧链仍保持顺序处理。
 8. **阶段 1 暂不吸收其具体 Agent prompt 或模型实现**：当前只确认模块边界与接口关系，阶段 2 再选择叙事规划、一致性或组装层之一深入，控制 token 与实现发散。
 
+### 2026-08-16 阶段2 决策（宿主 pi）
+- 方向定为「一致性/参考资产层」（references/first frames/continuity）——与当前痛点（角色/场景跨段一致）及 T-20260812-03 设定图体系直接相关
+- 执行者由 codex 改为 flash-worker（deepseek-v4-flash，宿主编排循环试点）
+- GitHub 直连可达，允许 clone 至 /tmp/vimax 读实现代码
+
 ## 下一步
-1. 阶段 1 产出后 pi 审查，决定阶段 2 深入方向
-2. 阶段 2：深入叙事规划/一致性/组装层任一模块
+1. 阶段 1 产出后 pi 审查，决定阶段 2 深入方向 ✅（方向=一致性层）
+2. 阶段 2：深入一致性/参考资产层 ✅（flash-worker 完成，产出 stage2_consistency.md，5 条可吸收建议）
+3. 下游吸收：建议 1/3/5 → T-20260812-05 工具A；建议 2/4 → T-20260812-03 设定图体系 + h3-prompt-agent 工具B
 
 ## 关键链接
 - 关联文档：https://github.com/HKUDS/ViMax
 - 关联 mem0 条目：T-20260814-02（TODO）
+
+### 2026-08-15 阶段2：一致性层深入拆解（flash-worker）
+- 完成：clone 至 /tmp/vimax（commit 05a4894）只读源码，产出 `stage2_consistency.md`（数据建模摘录 + 机制说明 + 5 条可吸收建议）
+- 核心发现：①角色 static/dynamic 特征分离 + 三视图肖像库（front→side/back 级联生成）；②每镜头 ff_desc/lf_desc + ff/lf_vis_char_idxs 双锚点；③相机树父子依赖 + 过渡视频切帧实现站位/场景继承；④参考图两级筛选（文本粗筛→多模态精筛）+ "Image N" 元素级绑定；⑤全中间件幂等落盘断点恢复
+- 建议优先吸收：镜头表加首/尾帧双锚点字段 + depends_on_shot 锚点链（对工具 A/B 都是低成本高收益）
