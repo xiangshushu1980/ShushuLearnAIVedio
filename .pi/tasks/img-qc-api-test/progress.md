@@ -4,7 +4,7 @@
 
 ## 任务
 - 目标：为 ComfyUI 出图后的客观质检（内容/文字/崩图/比例）选定一个便宜可用的线上图片识别 API；测功能、延迟、费用；与本地 LM Studio（Qwen3.8-27B 多模态，免费）互补分层
-- 当前状态：⏸（图片识别已通；剩余测试转新任务/新会话继续）
+- 当前状态：🟡（测试矩阵完成，结论已落 docs/24；剩余项低优先）
 - 我负责的文件区：`.pi/tasks/img-qc-api-test/`、测试脚本（拟 `scripts/img_qc_test.py`）
 
 ## 背景（2026-08-16 定）
@@ -27,12 +27,21 @@
 - 用量：prompt 608 tok（其中图 578）+ completion 947 tok = 1555 tok/张；按 flash 档估算 ~0.003 元/张（可忽略）
 - 踩坑：workflow 的 LoraLoaderModelOnly 里 lora_name 指向已删除的 alisa_mikhailovna_kujou-roshidere-ana-soralz.safetensors → /prompt 400；脚本 img_qc_test.py 加 --lora/--lora-strength 覆盖解决
 
-## 下一步（转新任务继续，本会话收尾）
-1. 视频识别：vision_chat 的 videos 参数（帧识别，无音频，符合“听用本地”原则）
-2. 文字提取：ocr 工具（qwen3.5-ocr）测 output/compare/text_ctrl3_matrix.png 等带字样本
-3. 崩图判定：vision_chat 用质检 prompt（是否脸崩/肢体乱/比例错）
-4. krea2_t2i 生图 → 识别对照（写实路线）
-5. 汇总质量/延迟/费用 → 选型结论（按张成本）落 docs/ + 进 mem0
+### 2026-08-16（二，测试矩阵全闭环）
+- 首次联测通过后（见上），本会话完成剩余测试：
+  - ✅ OCR（qwen3.5-ocr）text_ctrl3_matrix.png → "MIDNIGHT CAFE" 提取正确（无空间定位能力）
+  - ✅ 崩图判定双向验证：好图 h3_facerefine_T1 → 全 PASS 可用；崩图 attn3way_dance（6 格 Sol-Attn）→ 逐格检出全部缺陷总体需重跑（与已知崩坏吻合）
+  - ✅ 视频识别：vision_chat videos 参数 + video_max_frames=6 → 帧采样正常（无音频符合听用本地）
+  - ✅ 写实图识别：krea_scene_city → PASS 描述吻合
+  - ✅ 生图→识别对照：krea2_t2i 生图 20s → 识别 PASS；⚠️ 发现 krea2_t2i_test workflow 实际动漫系 checkpoint（Q 版狐娘，photorealistic 未生效）
+- 费用实测：单图 ~1500 tok <0.001 元/张、6 格大图 ~4000 tok、视频 6 帧 ~1900 tok（单价锚 $0.022/M in + $0.215/M out）→ 可忽略
+- 延迟实测：单次调用 20-30s（含上传+推理），适合异步批处理不适合交互式
+- **选型定论落 docs/24_vl_qc_api.md**（+INDEX 同步）：qwen3-vl-flash 最省档 + qwen3.5-ocr 文字 + vision_chat videos 视频，质检 prompt 模板已固化
+
+## 下一步（剩余低优先，可新会话继续）
+1. 写实人脸样本测试（需换写实 checkpoint workflow；动漫主线非核心）
+2. 质检脚本化：将质检 prompt + 批量识别封装为 scripts/img_qc_check.py（对接 img_qc_test.py 输出）
+3. 接入 ComfyUI 出图后自动质检流程（跑批收口时）
 
 ## 关键链接
 - 相关 skill：qwen-mm-plugins-api（Cloud VL）、qwen-mm-plugins-core（本地读图）
