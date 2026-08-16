@@ -121,6 +121,7 @@
 - **高动态内容**：Sage 有穿帮但明显轻于 Sol（可接受）；极端高动态可选纯 attention 兜底（不插节点即可，代价 1.5-2x 耗时）
 - **马赛克澄清**：首轮"sage 浪头马赛克"未复现（wave 三方式均无马赛克，疑 seed/内容相关），不构成 sage 系统性问题
 - 对比产物：ComfyUI/output/video/attn3way/ + output/compare/attn3way_{wave,dance}.png（行=50%/75%帧，列=plain|sage|sol）
+- **EasyCache（2026-08-16 实测定论，T-20260814-01）**：原生节点（advanced/debug，experimental），参数 reuse_threshold/start_percent/end_percent；测试 0.30/0.20/0.90 成片档 8步@1024×576 124帧同 seed（wave+dance 双场景）——跳 2/8 步，采样 33→24s（wave 1.38x）/ 30→24s（dance 1.25x）；**画质权衡大**：wave 低动态仅轻微模糊/细节损失（可接受），dance 高动态显著劣化（动作失真变形/涂抹伪影鬼影/高光崩溃/关节穿模，VL 初审+用户目测确认）；SSIM All 0.86（Y 0.80-0.82）两场景几乎相同 → 对运动伪影不敏感，目视才是决定项；音频同步被近似（audio cache diff 通道，wave 音量 -28%）；**分档结论：抽卡/低步数档（4/8/14 步）不推荐任何 residual reuse（EasyCache 高动态崩+收益小、MotionCache 14 步无价值）；慢速画质档（20 步 std）MotionCache 1.25-1.33x 保留为备选，EasyCache 20 步未测（Cache-DiT T-20260815-10 官方 1.41-1.50x 待测）**；产物 output/video/easycache_test/ + output/compare/easycache_{wave,dance}.png
 
 - **模型选择**（官方 README 2026-08-10 查证）：DiT 官方首选 int8_convrot（需 torch cu130，本地 2.13.0+cu130 ✓），fp8_scaled 仅兜底；TE 用 nvfp4_awq（15.7G，官方确认无需 Blackwell，4090 可用 ✓）
 - **旧 base 档参考**（08-04 实测，无 turbo）：fp8+14步 @768×448 = 75s/5s 快速；fp8+20步 @1024×576 = 5s≈2min / 10s≈5min / 15s≈8min 成片；**已被 turbo 三档全面取代**
@@ -152,6 +153,7 @@
 - **时长**：5-15s（trained 124-362 帧）；15s 动作较简单；首尾帧双 keyframe +52s
 - **SageAttention 默认开**（节点级 PathchSageAttentionKJ auto，2026-08-15 起）：10s 快 40%、15s 快 48%（长序列收益大）；768 系列影响小；Sol-Attn 已弃用（无速度优势+高动态崩）
 - **MotionCache**：**14 步下无实用价值**（默认只跳 1/14；激进参数 warmup2/thr0.25/maxskip3 跳 4/14 但 score 开销抵消，净收益 ~3s）；**仅 20 步画质档可作加速选项**（1.25-1.33x）；**音频劣化主因是 MC 跳步**（sage 对音频零影响：0.2 LU 不可辨）
+- **EasyCache（residual reuse 家族）**：抽卡/低步数档（4/8/14 步）**不推荐**（8步实测 1.25-1.38x 但高动态崩、SSIM 不敏感目视定胜负）；20 步未测（详见加速策略节）
 - **量化**：fp8_scaled（4090/Ada 原生 fp8，画质更好同速）；30系用 int8；GGUF 暂不可行（加载器不支持）
 - **显存**：fp8 驻留 17.1GB / int8 13.9GB + offload；文本编码器 nvfp4_awq 15.7GB 全量入显存
 - **铁律**：跑批前重启 ComfyUI（内存压力下慢 2 倍）；start.sh 勿加 --enable-asset-hashing（视频多了 RSS 33GB）

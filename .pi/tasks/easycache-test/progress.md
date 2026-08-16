@@ -5,7 +5,7 @@
 
 ## 任务
 - 目标：成片档（int8_convrot + sage + v4-600EMA 8步 @1024×576）同 seed 对比 baseline vs EasyCache(0.30/0.20/0.90)，度量=耗时 + SSIM + 目视
-- 当前状态：🟡 进行中
+- 当前状态：✅ 完成（2026-08-16 用户目测验收通过）
 - 我负责的文件区：
   - scripts/h3_easycache_runner.py（新建，本线专属）
   - workflows/easycache_{wave,dance}.json（从 attn3way_*_sage.json 派生）
@@ -45,8 +45,8 @@
 ## 下一步
 1. ✅ 启动 ComfyUI（--nosage）+ 跑批（wave/dance 双场景 baseline+easycache 已完成，队列已释放）
 2. ✅ runner：scripts/h3_easycache_runner.py；SSIM + 目视初审完成
-3. **等用户目视验收**：output/compare/easycache_{wave,dance}.png + output/video/easycache_test/ 产物
-4. 验收后：结论入 params.md（加速策略节）+ 收尾四步（retain 经验 / progress 归档 / [STATE] ✅ 后删 / TODO 勾掉）
+3. ✅ 用户目视验收通过（2026-08-16）
+4. ✅ 结论入 params.md（加速策略节 EasyCache 小节 + 关键参数节）；收尾四步执行中（retain 经验 / progress 归档 / [STATE] ✅ 后删 / TODO 勾掉）
 
 ## 关键链接
 - 节点源码：/home/sean/projects/ComfyUI/comfy_extras/nodes_easycache.py
