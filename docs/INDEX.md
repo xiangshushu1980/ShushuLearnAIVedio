@@ -1,7 +1,7 @@
 # ComfyUI 项目文档索引
 
 > 本机环境：Ubuntu 24.04 (WSL2, mirror 网络模式) / RTX 4090 24GB / Python 3.13 / CUDA 13
-> 最后更新：2026-08-16（新增 23 设定图体系设计；10 文档 TE 开销修正为 ~11s 冷/两阶段已落地）
+> 最后更新：2026-08-16（新增 23 设定图体系设计 + .pi/ledger 结论谱系；10 文档 TE 开销修正为 ~11s 冷/两阶段已落地）
 
 ## 📚 文档导航（按需加载）
 
@@ -27,7 +27,7 @@
 
 **已归档**（内容已并入他处，git 历史可查）：03（→01）、04（→06）、05（→mem0 [STATE]）、13（→12）、20（→21）
 
-> agent 操作手册（模型栈/参数/踩坑/工作流档案）在 `.pi/skills/comfyui/SKILL.md` 及其 `references/` 分册；共享记忆/经验检索在 Mem0（`memory_recall`）。
+> agent 操作手册（模型栈/参数/踩坑/工作流档案）在 `.pi/skills/comfyui/SKILL.md` 及其 `references/` 分册；共享记忆/经验检索在 Mem0（`memory_recall`）；定论的演进史/覆盖链在 `.pi/ledger/`（结论谱系，append-only）。
 
 ## 🔑 快速速览
 

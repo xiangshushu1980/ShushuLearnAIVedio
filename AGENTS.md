@@ -13,7 +13,8 @@
 
 **判定树权威源：用户级 AGENTS.md + mem0 skill；此处只记项目专属执行要点：**
 - 可查参考（模型清单/工作流结构/参数表/安装要点）→ `docs/` + `.pi/skills/comfyui/`（手册，按需读）
-- 动态经验、踩坑、实测数据、对比结论、偏好 → Mem0：项目专属 → 池 `comfy-ops`；跨界 → `global`；**agent_id=任务名**
+- **定论（实测得出的参数值/加速比/可行性/选型结论）→ 现行值写 `docs/`；演进史/覆盖链/证据锚写 `.pi/ledger/`**（结论谱系，append-only，规则见 `.pi/ledger/README.md`）
+- 动态经验、踩坑、偏好 → Mem0：项目专属 → 池 `comfy-ops`；跨界 → `global`；**agent_id=任务名**
 - **共享状态（焦点/活跃决策/全局待办）→ Mem0 `[STATE]`**（comfy-ops 池，agent_id=任务名）：每任务线一条，收尾 memory_update 维护，不重复 retain；**格式与维护细节见 multi-agent-collab skill**
 - **私有进度 → `.pi/tasks/<任务>/progress.md`**：做什么/做到哪/卡点/负责文件；阶段收尾必更新
 - 拿不准 → 问用户
