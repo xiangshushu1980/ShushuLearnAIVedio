@@ -1,0 +1,74 @@
+{
+ "fl2va_alya_single": {
+  "frames": 62,
+  "median_mad": 3.19,
+  "spike_groups": [
+   "0.33s-1.00s",
+   "2.92s-3.58s"
+  ],
+  "peak_ratio": 3.5,
+  "align": {
+   "first_out_vs_in_ssim": 0.995,
+   "last_out_vs_in_ssim": 0.709
+  }
+ },
+ "fl2va_alya_multi": {
+  "frames": 62,
+  "median_mad": 0.8,
+  "spike_groups": [
+   "0.00s-0.00s",
+   "2.50s-3.67s"
+  ],
+  "peak_ratio": 111.0,
+  "align": {
+   "first_out_vs_in_ssim": 0.994,
+   "last_out_vs_in_ssim": 0.709
+  }
+ },
+ "fl2va_2p_single": {
+  "frames": 62,
+  "median_mad": 9.07,
+  "spike_groups": [
+   "1.17s-1.17s"
+  ],
+  "peak_ratio": 8.9,
+  "align": {
+   "first_out_vs_in_ssim": 0.992,
+   "last_out_vs_in_ssim": 0.621
+  }
+ },
+ "fl2va_2p_multi": {
+  "frames": 62,
+  "median_mad": 6.26,
+  "spike_groups": [
+   "2.50s-2.50s",
+   "3.00s-3.75s"
+  ],
+  "peak_ratio": 16.1,
+  "align": {
+   "first_out_vs_in_ssim": 0.992,
+   "last_out_vs_in_ssim": 0.621
+  }
+ },
+ "t8_water_base": {
+  "frames": 96,
+  "median_mad": 1.33,
+  "spike_groups": [],
+  "peak_ratio": 1.5,
+  "align": null
+ },
+ "t8_water_anchor": {
+  "frames": 96,
+  "median_mad": 5.22,
+  "spike_groups": [
+   "0.00s-0.08s",
+   "0.50s-0.58s",
+   "1.00s-1.92s",
+   "4.00s-4.00s",
+   "6.00s-6.00s",
+   "7.17s-7.25s"
+  ],
+  "peak_ratio": 17.9,
+  "align": null
+ }
+}
