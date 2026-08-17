@@ -2,10 +2,12 @@
 
 ## 新会话开场（每会话自动执行）
 
-1. **声明任务名**：延续任务 → 读 `.pi/tasks/<任务>/progress.md`；新任务 → 建进度文件（模板 `.pi/tasks/PROGRESS_TEMPLATE.md`）；**先校验任务归属当前项目**（cwd 项目池一致，防误放，见 multi-agent-collab skill）
-2. 读 `docs/INDEX.md`（导航，按需读）
-3. 按需加载 skill / 读 references 分册（要哪段读哪段，不整读大文件）
-4. 完成后直接开始任务
+0. **路由：判断会话类型**（首消息是否 `[任务锚点 v1]` 锚点）
+   - 是 → **任务会话**（已接上执行线）：读对应 `.pi/tasks/<任务>/progress.md`，走 1-4
+   - 否 → **自由对话**：读 docs/INDEX.md 等上下文直接工作；**不声明任务线**、不自接
+1. 读 `docs/INDEX.md`（导航，按需读）
+2. 按需加载 skill / 读 references 分册（要哪段读哪段，不整读大文件）
+3. 完成后直接开始任务
 
 > 开场 recall [STATE] + TODO 对账已上升为全局规则（全局 AGENTS 会话纪律 + multi-agent-collab skill 开场清单），不再在本项目重复定义；池名 = comfy-ops（默认规则自动生效）
 
