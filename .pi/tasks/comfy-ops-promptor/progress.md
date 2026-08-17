@@ -33,3 +33,11 @@ docs/17_h3_prompt_writing_rules.md、docs/11_h3_case_library.md、docs/16_prompt
 ## 未做（如需后续）
 - 视频实测两工具输出（需 ComfyUI + API key，未跑）
 - T8 catalog 110 selector 全文翻译/逐条吸收（已归档备查，按需取用）
+
+## P1 视频级实测（2026-08-17 完成）
+
+6 条 8步turbo（seed 20260817，960×544）：FL2VA 2 组素材 × 单镜/多镜 + T8 净水器锚点 base/anchor。
+- FL2VA 单镜偏好 ✅ 成立：单镜无切镜尖峰（peak 3.5/8.9），多镜 2.5s 精确切镜（peak 111/16）；首帧对齐 SSIM 0.99+；尾帧对齐 0.71/0.62 与镜头数无关
+- T8 锚点 ✅ 成立：四状态全执行（滤芯剖面/浑水变清/营地收束视觉确认），首切提前 ~0.5-1s
+- 产物：/home/sean/projects/ComfyUI/output/video/h3_promptor_p1/（脚本 scripts/h3_promptor_p1.py 可复用）
+- ⚠️ 教训：提示词身份描述应与素材实际内容核对（本次写错角色服装，模型以图为准未影响切镜结论）
