@@ -1,7 +1,7 @@
 # ComfyUI 项目文档索引
 
 > 本机环境：Ubuntu 24.04 (WSL2, mirror 网络模式) / RTX 4090 24GB / Python 3.13 / CUDA 13
-> 最后更新：2026-08-16（新增 23 设定图体系设计 + 24 出图质检线上 VL API + .pi/ledger 结论谱系；10 文档 TE 开销修正为 ~11s 冷/两阶段已落地）
+> 最后更新：2026-08-17（新增 25 antirez h3.c 架构研究学习笔记）
 
 ## 📚 文档导航（按需加载）
 
@@ -25,6 +25,7 @@
 | [22_shotlist_web_tool.md](22_shotlist_web_tool.md) | 拍摄本看板 Web 工具设计（全 TS 单栈/三段式/实体系统/标色/输入源） | 看板工具开发 / 工具 A/B 重写 |
 | [23_refimage_system.md](23_refimage_system.md) | 设定图体系设计（角色/场景/道具/技能四类设定图形态/主次/重点控制/自动推导 + 工具 C 决策树） | 生成设定图 / 工具 A/B/C 落地设定图逻辑时 |
 | [24_vl_qc_api.md](24_vl_qc_api.md) | 出图质检线上 VL API 选型与用法（qwen3-vl-flash 最省档/质检 prompt 模板/费用实测） | ComfyUI 出图客观质检（内容/文字/崩图/比例） |
+| [25_h3c_study.md](25_h3c_study.md) | antirez h3.c（h3-metal）架构研究：垂直切片顺序/Metal 内存策略/优化方法论/H3 模型知识 | 借鉴无依赖推理架构思路 / 查 H3 参数坑（帧对齐/RoPE/音频 batch 折叠） |
 
 **已归档**（内容已并入他处，git 历史可查）：03（→01）、04（→06）、05（→mem0 [STATE]）、13（→12）、20（→21）
 
