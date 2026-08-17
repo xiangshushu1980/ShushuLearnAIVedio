@@ -1,0 +1,21 @@
+subject_definitions:
+<Subject 1> is the young woman in the reference image, with short black hair, a red hanfu, and a gentle smile.
+<Picture 1> is the reference image of <Subject 1> and serves as the character reference for her appearance.
+
+summary:
+[reference generation] The target video shows <Subject 1> walking through a rainy night-market street under red lanterns, then turning toward the camera and smiling.
+
+retention_analysis:
+<Subject 1> (appears in [Shot 1], [Shot 2]): fully_preserved - the young woman's short black hair, red hanfu, and gentle smile are retained.
+<Picture 1> (character reference): fully_preserved - the character's appearance is fully preserved in <Subject 1>.
+
+detailed_description:
+The target video uses a cinematic, atmospheric style with warm red lantern light contrasting against cool blue night tones and a soft rain haze.
+[Shot 1] The scene opens on a narrow night-market street in the rain. Red paper lanterns hang in rows above the stalls, casting a warm glow on wet pavement that reflects their light. <Subject 1>, the young woman with short black hair and a red hanfu, walks slowly toward the camera from the far end of the street. Rain falls steadily, catching the lantern light as it passes through the frame. Steam rises from a food stall on the left, and a few blurred figures with umbrellas move in the background. The camera holds steady as she approaches, her red hanfu swaying gently with each step, the fabric darkening slightly where rain soaks it.
+[Shot 2] At 00:05.000, the shot cuts to a medium close-up of <Subject 1> from the front. She stops walking and turns her head directly toward the camera, her short black hair slightly damp and clinging to her temples. She looks into the lens and smiles softly, her eyes crinkling at the corners. Red lantern light flickers across her face, and raindrops glisten on her shoulders and the collar of her red hanfu. The camera holds on her smile for the remaining duration as the rain continues to fall around her.
+
+overall_soundscape:
+Steady rain pattering on pavement and awnings, with distant muffled voices and the occasional clatter of cooking from the night-market stalls.
+
+non_diegetic_music:
+N/A

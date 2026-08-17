@@ -1,0 +1,144 @@
+[
+ {
+  "case": "T1_i2va_nodialogue",
+  "tag": "OLD",
+  "ok": {
+   "has_dialog": true,
+   "dialog_langs": [
+    "English"
+   ],
+   "music": "A gentle guzheng melody at a slow tempo with soft erhu accompaniment, creating a",
+   "music_na": false,
+   "shot_count": 1,
+   "shots": [
+    1
+   ],
+   "fl2va_single": true,
+   "retention_has_sx": false
+  },
+  "output": "For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.\n\nintegrated_multimodal_description: [Shot 1] Live-action, cinematic, the young woman in the red hanfu dress shown in <Picture 1> remains standing beneath the glowing red lanterns, preserving her appearance, clothing, position, and the rainy night-market street layout. The camera holds a st"
+ },
+ {
+  "case": "T1_i2va_nodialogue",
+  "tag": "NEW",
+  "ok": {
+   "has_dialog": false,
+   "dialog_langs": [],
+   "music": "N/A",
+   "music_na": true,
+   "shot_count": 1,
+   "shots": [
+    1
+   ],
+   "fl2va_single": true,
+   "retention_has_sx": false
+  },
+  "output": "For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.\n\nintegrated_multimodal_description: [Shot 1] Live-action, cinematic, a medium shot frames the young woman in the red hanfu dress exactly as shown in <Picture 1>, standing beneath glowing red lanterns on a rainy night-market street. The wet stone pavement reflects the warm lantern light, an"
+ },
+ {
+  "case": "T2_fl2va",
+  "tag": "OLD",
+  "ok": {
+   "has_dialog": false,
+   "dialog_langs": [],
+   "music": "N/A",
+   "music_na": true,
+   "shot_count": 1,
+   "shots": [
+    1
+   ],
+   "fl2va_single": true,
+   "retention_has_sx": false
+  },
+  "output": "How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 1) aligns with the 8.00-second mark of the target video.\n\nintegrated_multimodal_description: [Shot 1] Live-action, cinematic, a rain-soaked cyclist begins in the position and framing established by Picture 1, holding a closed black umbrella bes"
+ },
+ {
+  "case": "T2_fl2va",
+  "tag": "NEW",
+  "ok": {
+   "has_dialog": false,
+   "dialog_langs": [],
+   "music": "N/A",
+   "music_na": true,
+   "shot_count": 1,
+   "shots": [
+    1
+   ],
+   "fl2va_single": true,
+   "retention_has_sx": false
+  },
+  "output": "How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 1) aligns with the 8.00-second mark of the target video.\n\nintegrated_multimodal_description: [Shot 1] Live-action, cinematic, a rain-soaked cyclist begins in the position and framing established by Picture 1, holding a closed black umbrella bes"
+ },
+ {
+  "case": "T3_ref2va",
+  "tag": "OLD",
+  "ok": {
+   "has_dialog": false,
+   "dialog_langs": [],
+   "music": "MISSING",
+   "music_na": false,
+   "shot_count": 3,
+   "shots": [
+    1,
+    2,
+    3
+   ],
+   "fl2va_single": false,
+   "retention_has_sx": false
+  },
+  "output": "# Full-Reference Mode Rewrite Output\n\n## subject_definitions\n\n<Subject 1> is the young woman in the reference image, with short black hair, a red hanfu with gold trim, and a gentle, warm expression.\n\n## summary\n\n[reference generation] The target video shows <Subject 1> walking through a rainy night-market street under red lanterns, then turning toward the camera and smiling. The reference image pr"
+ },
+ {
+  "case": "T3_ref2va",
+  "tag": "NEW",
+  "ok": {
+   "has_dialog": false,
+   "dialog_langs": [],
+   "music": "N/A",
+   "music_na": true,
+   "shot_count": 2,
+   "shots": [
+    1,
+    2
+   ],
+   "fl2va_single": false,
+   "retention_has_sx": false
+  },
+  "output": "subject_definitions:\n<Subject 1> is the young woman in <Picture 1>, with short black hair and a red hanfu with gold trim.\n<Picture 1> is the character reference image for <Subject 1>, defining her appearance, costume, and identity.\n\nsummary:\n[reference generation] The target video shows <Subject 1> walking through a rainy night-market street under red lanterns, then turning toward the camera and s"
+ },
+ {
+  "case": "T4_t2va_music",
+  "tag": "OLD",
+  "ok": {
+   "has_dialog": false,
+   "dialog_langs": [],
+   "music": "Gentle piano notes at a slow, calm tempo, with soft sustained chords that gradua",
+   "music_na": false,
+   "shot_count": 1,
+   "shots": [
+    1
+   ],
+   "fl2va_single": true,
+   "retention_has_sx": false
+  },
+  "output": "integrated_multimodal_description: [Shot 1] Live-action, cinematic, a medium-wide shot frames a middle-aged baker in a flour-dusted apron opening the wooden shutters of a small street bakery before sunrise. The camera holds a static shot as he unlatches the shutters and pushes them outward, letting pale blue dawn light spill across the storefront. He steps inside, picks up a fresh loaf from a wire"
+ },
+ {
+  "case": "T4_t2va_music",
+  "tag": "NEW",
+  "ok": {
+   "has_dialog": false,
+   "dialog_langs": [],
+   "music": "Gentle piano notes at a slow tempo, soft and sparse, creating a calm and peacefu",
+   "music_na": false,
+   "shot_count": 2,
+   "shots": [
+    1,
+    2
+   ],
+   "fl2va_single": false,
+   "retention_has_sx": false
+  },
+  "output": "integrated_multimodal_description: [Shot 1] Live-action, cinematic, a medium-wide shot frames a middle-aged baker opening the wooden shutters of a small street bakery before sunrise. The camera pushes in with small amplitude at slow speed as he places a fresh loaf on the wooden counter, its crust still steaming in the cool morning air. [Shot 2] At 00:05.000, the camera cuts to a close-up of the lo"
+ }
+]

@@ -49,3 +49,19 @@
 - 我方 base-en.txt 契约**缺防虚构句**（T8 COMMON_SYSTEM_RULES 有 "Do not fabricate spoken lines"）→ 已补 17 号 §三
 - 音乐默认差异：17 号用户决策（默认无 BGM）与 T8 balanced/creative 档冲突 → 生成器用 strict 档或显式 no-music 句
 - 1038lab 的 Audio:/Music: 两行收尾 = 可执行性最强的声音契约（防遗漏防跳段）
+
+## P0 文本级回归（2026-08-17 完成，regression/）
+
+设计：同一输入 × 旧契约（base-en/ref-en 原样）vs 新契约（+17 号强化块 HARD_BLOCK），4 输入 × 2 契约 = 8 调用（deepseek-chat, temp 0.4），检查项脚本化。
+
+| 检查项 | OLD | NEW | 判定 |
+|---|---|---|---|
+| T1 无台词 I2VA 不虚构对话 | ✗ 虚构 `<d>[English]` 台词 | ✓ 无对话 | 强化句生效 |
+| T1 未请求音乐 → N/A | ✗ 擅自加 guzheng | ✓ N/A | 强化句生效 |
+| T2 FL2VA 单镜 | ✓ base-en 自带 | ✓ | 无回归 |
+| T4 显式音乐请求 → 配器描述 | ✓ 正向触发正常 | ✓ 未误伤 | 无回归 |
+| T3 Ref2VA 六段格式合规 | ✗ 偶发 markdown 标题+丢音乐段（约 1/3，补跑 2 次均合规） | ✓ | 需合成层自检+重试（入 16 号 §四.1.7） |
+| T3 retention 无 (Sx) | ✓ | ✓ | 稳定 |
+| T3 角色图定义 | ⚠ 偶发多定义 `<Picture 1>`（应只作 Subject） | ⚠ 同 | 17 号 §四已有规则，遵循不稳 |
+
+结论：17 号新增规则句（防虚构台词、音乐默认 N/A）确实压住行为且未误伤显式音乐触发；新增风险点=LLM 偶发格式违规 → 合成层必须做解析校验+重试。

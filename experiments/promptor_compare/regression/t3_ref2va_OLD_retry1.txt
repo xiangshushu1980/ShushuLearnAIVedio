@@ -1,0 +1,24 @@
+```text
+subject_definitions:
+<Subject 1> is the young woman in the reference image, with short black hair and wearing a red hanfu with gold trim.
+<Picture 1> is the reference image of <Subject 1>, used as the character reference for her appearance.
+
+summary:
+[reference generation] The target video shows <Subject 1> walking through a rainy night-market street under red lanterns, then turning toward the camera and smiling. <Picture 1> provides the character reference for her appearance.
+
+retention_analysis:
+<Subject 1> (appears in [Shot 1], [Shot 2], [Shot 3]): fully_preserved - the young woman's short black hair and red hanfu with gold trim are retained.
+<Picture 1> (character reference): fully_preserved - <Subject 1>'s appearance matches the reference image.
+
+detailed_description:
+The target video uses a cinematic, atmospheric style with warm lantern light contrasting against the cool blue of the rainy night.
+[Shot 1] The scene opens on a narrow night-market street in the rain. Red paper lanterns hang in rows overhead, casting a warm glow on wet cobblestones. <Subject 1>, the young woman with short black hair and a red hanfu with gold trim, walks away from the camera down the center of the street. Rain falls steadily, and the hem of her hanfu sways with each step. Her figure is framed by the glowing lanterns and the reflections of their light on the wet ground. The camera follows her at a medium distance, maintaining a steady tracking pace.
+[Shot 2] At 00:04.000, the shot cuts to a side-angle view as <Subject 1> continues walking. The camera pans slightly to keep her centered as she passes under a cluster of red lanterns. Raindrops catch the light as they fall around her, and the red fabric of her hanfu brightens as she moves through the warm glow. She slows her pace slightly, her steps becoming more deliberate.
+[Shot 3] At 00:06.000, the shot cuts to a front-facing medium close-up as <Subject 1> turns toward the camera. She stops, tilts her head slightly, and smiles warmly. The red lanterns behind her create a soft bokeh of warm light, and rain continues to fall around her. The camera holds on her face as her smile widens, and the shot ends on this expression.
+
+overall_soundscape:
+Steady rain falls throughout the video, with the soft patter of raindrops on cobblestones and the occasional distant rumble of thunder. The ambient hum of the night market is faint in the background.
+
+non_diegetic_music:
+N/A
+```
