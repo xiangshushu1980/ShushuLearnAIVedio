@@ -2,6 +2,7 @@
 
 > 定位：提示词生成器（docs/16）合成环节的**规则输入**。来源 = 官方 h3-prompt-writing 指南（base-en/ref-en）+ 官方 README 示例 + 社区 benjiyaya skill 拆解 + IR 样本规律。
 > 本手册是"可执行规则"，词汇库见 docs/18（待建，从 showcase 与 IR 样本蒸馏）。
+> 2026-08-17 对比 1038lab Promptor + T8 enhancer 后强化（抽样见 experiments/promptor_compare/，吸收记录见 docs/11 工具对比节）。
 
 ## 一、模式与输出契约
 
@@ -23,6 +24,9 @@
 
 **时长→镜头数预算**：4-6s→1-2 镜；7-10s→2-3 镜；11-15s→3-5 镜；每镜至少 1.5-2s。
 **切 vs 移**：切必须引入新信息（新主体/新空间/新状态/新视角/新时间）；仅距离/角度变化 → 用镜头运动，不切。
+**模式专属（2026-08-17 吸收，1038lab Promptor 模板 + T8 官方契约交叉验证）**：
+- FL2VA：强烈偏好**单镜连续运镜（无硬切）**，保证首尾帧平滑插值；必须切时按普通切规则
+- I2V/L2VA：[Shot 1] 严格对齐首帧的光/构图/姿态；**不得引入首帧中不可见的角色**
 **一镜一动作**（硬约束）：一个镜头只有一个主导动作；连续动作拆到多个镜头。
 **连续性**：每镜重复身份锚点（外形/服装/道具，换措辞但一致）；状态变化跨镜延续（湿了/脏了/破了就一直保持）；保持屏幕方向。
 
@@ -43,6 +47,7 @@
 - 首次出现给身份锚点（类型/年龄/性别/屏内屏外/音高/音色/语速/口音）
 - 格式：`识别短语 + ID + 语气`在 `<d>` 外，`<d>` 内只有语言标签+原词：`<d>[English] Wait for us!</d>`
 - 对话 verbatim：永不翻译/改写用户原词
+- **不虚构未请求的对话/歌词/台词**（2026-08-17 实测暴露：base-en 契约下 LLM 自动编了 (S1) 台词；T8 契约有显式禁止句）——用户没给的台词一律不写，宁可静默
 - 画外音：用精确短语 "says in an off-screen voiceover" + 立即声明嘴唇闭合 "while his lips remain completely closed."
 - 对话跨切：两端加 `<scenetrans>` + 连续性声明；视频截断说话：`<cutoff>`
 - 画面内文字：英文双引号 verbatim（如 A red neon sign reading "营业中"）
@@ -61,6 +66,12 @@
 4. **detailed_description**：350-500 词；风格开场→`[Shot N]` 时间线；label 首现处插入引用
 5. **overall_soundscape**：1-4 句：环境音+物理动作声+非语言人声；无对话/唱/配乐
 6. **non_diegetic_music**：1-3 句：配器/速度/节奏/动态
+
+**补充防误判（2026-08-17 吸收，T8 冻结官方契约 093f3129）**：
+- retention 标记只限 4 种（fully_preserved / partially_preserved / attribute_transfer / weak_reference）；**新请求的动作或背景不构成 partially_preserved 的证据**
+- summary 任务前缀按**实际关系推断去重**，不按接了哪些输入端口臆断
+- 音频标签独立编号；视频内嵌的普通声音**不自动创建 `<Audio N>` 角色**
+- `<Subject N>` 可合并多素材定义；`<Picture N>` 仅当图本身是帧锚点（见 §四.1）
 
 **常见错误**：把角色参考图当帧锚点（角色卡是 `<Subject>` 不是 `<Picture>`）；发明 label（只能引用已定义）；`(Sx)` 出现在 retention_analysis。
 
@@ -97,6 +108,8 @@
 - [ ] diegetic 音乐在镜头内，non-diegetic 只在配乐段
 - [ ] 无第三方 IP/名人/商标角色名
 - [ ] 开场风格句在 `[Shot 1]` 之前
+- [ ] 无用户未请求的对话/歌词/音乐（LLM 幻觉高发点）
+- [ ] 声音信息完整：环境音+动作声在 soundscape，配乐在 non_diegetic_music（防跳段/防遗漏）
 
 ## 八、参考来源
 

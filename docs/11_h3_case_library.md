@@ -171,3 +171,48 @@ Use @[char ref] as the sole character reference. Preserve the exact identity, fa
 | 负面词 | 高频收尾 | 实测零差异 | 用正面描述替代 |
 | 质量词 | 8K/ultra-detailed 堆叠 | 具体名词 | 用具体灯光/材质词 |
 | 对话 | 原文直接嵌入 | `<d>[English] ...</d>` | T2V 可省标记写原文 |
+
+---
+
+## 提示词工具对比吸收（1038lab Promptor + T8 enhancer，2026-08-17，T-comfy-ops-03）
+
+> 来源：github.com/1038lab/ComfyUI-MiniMax-H3-Promptor（138★，V1.2.0）+ github.com/T8mars/comfyui-minimax-h3-prompt-enhancer-T8（132★，官方 9 skill 冻结 @093f3129 + 110 案例 selector）。
+> 抽样：同一输入（汉服少女×灯笼街雨夜 I2VA 8s）× 三契约 × deepseek-chat，输出见 experiments/promptor_compare/。规则强化已入 docs/17，架构模式已入 docs/16。
+
+### 模式 7：Audio:/Music: 两行收尾（1038lab，✔ 与 17 号音乐决策一致）
+
+LLM 输出强制以 `Audio: `（环境+动作声，无对话/唱/diegetic 音乐）与 `Music: `（配器描述或 N/A）两行收尾。六段式声音段易被 LLM 跳段/缩写，两行契约防遗漏。与 17 号 §三 音乐决策（默认 N/A）完全兼容：抽样中 1038lab 输出 `Music: N/A`。
+
+### 模式 8：结构标签程序注入（1038lab，✔ 生成器架构验证）
+
+LLM 只写 `[Shot N]` 叙事正文，`subject_definitions:` / `summary:` / `retention_analysis` 结构标签由节点代码拼装注入（防 LLM 幻觉/漏字段/顺序错）。与 16 号生成器「分镜表→合成」分层管线同向，见 docs/16 §四新增。
+
+### 模式 9：外部案例模板条目格式（T8 catalog，✔ 可借鉴）
+
+T8 案例条目 = `label（中文名） + summary（一句话机制） + input_format + recommended_input（推荐输入示例） + required_anchors（2-5 条结构锚点）`，110 个 selector 全部按此格式（完整 catalog 归档 experiments/promptor_compare/t8_case_catalog.json 备查，不导入）。
+
+**精选锚点示例**（与本仓 8 个官方场景 skill 相关，未本地实测，引用需标注来源）：
+
+| 模板 | 结构锚点（required_anchors） |
+|---|---|
+| 产品广告｜功能证据递进 | 先结果后证据 / 至少三个可见证明状态且递进 / 结尾明确行动或产品收束 |
+| 3D 角色登场｜细节到全身揭晓 | 从可识别细节逐步扩大 / 一次代表动作 / 全身身份定格 |
+| 手绘实拍｜跨媒介接触三级反应 | 一次跨媒介接触触发三级反应 / 由平面媒介自身完成结尾 |
+| 纸拼贴｜工艺材料覆盖当进度 | 同一材料变量只增不减 / 至少四个阶段 / 完成态可读 |
+| 单人表演弧｜坐起前倾再释放 | 固定直视镜头 / 姿态-手势-释放动作完整弧线 |
+
+### ⚠ 与实测/决策冲突的工具惯例
+
+1. **T8 balanced/creative 档自动注入配乐**（抽样 B 加了笛+古筝）——违反 17 号默认无 BGM 决策（2026-08-10）；生成器必须用 strict 档或显式 no-music 句
+2. **我方 base-en 契约会虚构台词**（抽样 C 编了 "Welcome to the night market." (S1)）——T8 有 "Do not fabricate spoken lines" 禁止句，17 号已补（§三）
+3. T8 中文输出模式（描述中文/字段英文）——本仓维持全英文决策，不吸收
+
+### 工具 vs 本仓写法速查
+
+| 维度 | 1038lab Promptor | T8 enhancer | 本仓现行 | 取用建议 |
+|---|---|---|---|---|
+| 架构 | 视觉分析+格式化解耦 | 单节点 LLM 增强 | 生成器分层管线（16 号） | 结构注入模式入 16 |
+| 输出结构 | 叙事段+两行声音（六段由代码拼） | instruction+三字段/六段式 | 三核心段/六段式 | 保持六段式；两行收尾作自检 |
+| 规则来源 | 自研 system_base | 官方 skill 冻结+哈希校验 | 官方 base-en/ref-en | T8 冻结哈希做法可借鉴（防指南漂移） |
+| 案例库 | 无 | 110 selector+证据变体 | C01-C24 实测 + 社区模式 | 条目格式借鉴，内容以实测为准 |
+| 媒体分析 | Vision Analyzer 节点（可选本地模型） | 同请求多模态 | 参考图+描述 | 不引入额外视觉节点 |

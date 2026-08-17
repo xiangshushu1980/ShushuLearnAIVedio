@@ -1,0 +1,10 @@
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+
+integrated_multimodal_description: 
+[Shot 1] 雨夜集市，年轻女子身着红色汉服，立于红灯笼下。湿漉漉的青石板路倒映着暖黄灯光，雨丝斜织，灯笼轻晃。她缓缓转头，目光投向镜头，嘴角泛起温柔笑意，发丝沾着细密雨珠。
+
+overall_soundscape: 
+雨声淅沥，落在石板与灯笼纸面上，偶有远处摊贩的吆喝与锅铲碰撞声，女子衣料摩擦的窸窣声清晰可闻。
+
+non_diegetic_music: 
+悠扬的笛声与古筝交织，节奏舒缓，旋律婉转，音量渐强，烘托雨夜集市的静谧与温情。

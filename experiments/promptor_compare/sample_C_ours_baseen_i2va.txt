@@ -1,0 +1,7 @@
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+
+integrated_multimodal_description: [Shot 1] Live-action, cinematic, a medium shot frames the young woman in the red hanfu dress exactly as shown in <Picture 1>, standing beneath glowing red lanterns on a rain-soaked night-market street. The wet stone pavement reflects the warm lantern light, and her appearance, clothing, position, and the surrounding stalls remain consistent with the reference image. The camera pushes in with small amplitude at slow speed as she slowly turns her head toward the camera, her dark hair swaying slightly with the motion. Her gentle smile widens as she holds eye contact, the rain continuing to fall softly around her. The young woman with a soft, warm voice (S1) says: <d>[English] Welcome to the night market.</d> She tilts her head slightly, the lantern light catching the moisture on her cheeks.
+
+overall_soundscape: Steady rain patters on the market awnings and the wet stone pavement, while distant chatter and the sizzle of street-food grills create a lively background hum. Her hanfu sleeves rustle softly as she turns, and light footsteps echo on the damp ground.
+
+non_diegetic_music: A gentle guzheng melody at a slow tempo, accompanied by soft pipa plucks and a warm ambient pad that swells slightly as she smiles, then fades into the rain.
