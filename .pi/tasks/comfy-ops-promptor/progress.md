@@ -2,6 +2,10 @@
 
 状态：🟡 产出完成，待用户验收（2026-08-17）
 
+## P0 文本级回归（2026-08-17 追加）
+
+8 调用（4 输入 × 旧/新契约，deepseek-chat）：17 号强化句生效验证——防虚构台词/音乐 N/A 两洞压住，显式音乐请求未误伤，FL2VA 单镜无回归；新发现 Ref2VA 输出偶发 markdown 标题+丢段（~1/3）→ 自检重试机制入 16 号 §四.1.7。归档 experiments/promptor_compare/regression/。
+
 ## 做什么
 对比两个提示词自动化工具（1038lab ComfyUI-MiniMax-H3-Promptor 138★ V1.2.0 + T8mars comfyui-minimax-h3-prompt-enhancer-T8 132★）与现有 17 号规则/工具 B 合成，吸收可用模式进 11 案例库/17 规则。
 
