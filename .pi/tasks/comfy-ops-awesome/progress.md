@@ -2,7 +2,7 @@
 
 ## 任务
 - 目标：吸收 BeatAPI/awesome-minimax-h3-prompts（301 条，108★）cinematic/ads/anime/UGC 提示词库：抽样 10-20 条分析结构规律 → 与 IR（docs/18）/六段式对比 → 有价值模式补进 docs/11 案例库（标注来源）
-- 当前状态：🟡 分析完成，待落盘
+- 当前状态：✅ 完成（2026-08-17，提交 b5d2ab0）
 - 我负责的文件区：docs/11_h3_case_library.md（新增社区模式分节）；本进度文件
 
 ## 进度日志（append-only）
@@ -10,7 +10,7 @@
 - 克隆仓库 /tmp/awesome-minimax-h3-prompts（301 条 JSON，分类：cinematic-story 76 / product-commercial 68 / music-video 47 / anime 21 / cinematic-travel 15 / fashion 14 / action 15 等；243 条 T2V，47 条 Ref2V，15s 232 条）
 - 按任务四类分层抽样 24 条（cinematic 8 / ads 8 / anime 4 / ugc 4），全部精读，识别出 4 大结构族（详见下）
 - 与 docs/18（IR 拆解）+ 六段式（ref-en.txt / C20）+ 本仓实测结论（seedance-h3-verify：T4 负面词零差异、空洞质量词存疑）对照完成
-- 待办：把「社区模式库」分节写入 docs/11，标注来源；更新 mem0 [STATE] + retain 经验
+- ✅ 全部完成：docs/11 新增「社区精选模式」分节（6 模式 + 2 冲突惯例 + 速查表，来源标注）；[STATE] 置 ✅；mem0 retain 经验（comfy-ops 池）；scoped commit b5d2ab0（docs/11 + 本进度文件，未动他人 WIP）
 
 ## 抽样结构规律（24 条）
 
@@ -55,6 +55,7 @@
   7. UGC 反精致指令（smartphone-shot look, not overly retouched）
 
 ## 下一步
-1. 写 docs/11 新分节「社区精选模式（BeatAPI awesome-minimax-h3-prompts）」
-2. mem0 retain（吸收结论）+ 更新 [STATE]
-3. 提交（scoped commit：docs/11 + 本进度文件）
+1. （已完成）写 docs/11 新分节「社区精选模式」——6 模式 + 2 冲突惯例 + 速查表
+2. （已完成）mem0 retain + [STATE] 置 ✅（hive-state CLI）
+3. （已完成）scoped commit b5d2ab0
+4. 可选后续：UGC 反精致指令实拍对照（模式 6 未验证）；@[audio ref] beat-sync 试跑
