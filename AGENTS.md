@@ -9,7 +9,7 @@
 2. 按需加载 skill / 读 references 分册（要哪段读哪段，不整读大文件）
 3. 完成后直接开始任务
 
-> 开场 recall [STATE] + TODO 对账已上升为全局规则（全局 AGENTS 会话纪律 + multi-agent-collab skill 开场清单），不再在本项目重复定义；池名 = comfy-ops（默认规则自动生效）
+> 开场 recall 经验 + `hive-state list` 读协作状态 + TODO 对账已上升为全局规则（全局 AGENTS 会话纪律 + multi-agent-collab skill 开场清单），不再在本项目重复定义；池名 = comfy-ops（默认规则自动生效）
 
 ## 内容落盘
 
@@ -17,7 +17,7 @@
 - 可查参考（模型清单/工作流结构/参数表/安装要点）→ `docs/` + `.pi/skills/comfyui/`（手册，按需读）
 - **定论（实测得出的参数值/加速比/可行性/选型结论）→ 现行值写 `docs/`；演进史/覆盖链/证据锚写 `.pi/ledger/`**（结论谱系，append-only，规则见 `.pi/ledger/README.md`）
 - 动态经验、踩坑、偏好 → Mem0：项目专属 → 池 `comfy-ops`；跨界 → `global`；**agent_id=任务名**
-- **共享状态（焦点/活跃决策/全局待办）→ Mem0 `[STATE]`**（comfy-ops 池，agent_id=任务名）：每任务线一条，收尾 memory_update 维护，不重复 retain；**格式与维护细节见 multi-agent-collab skill**
+- **协作运行态（焦点/占坑/活跃决策）→ `~/.pi/agent/runtime/state.json`**（`hive-state` 维护，2026-08-16 方案 B 起已移出 mem0）：每任务线一条，收尾 ✅ 后删除；**格式与维护细节见 multi-agent-collab skill**
 - **私有进度 → `.pi/tasks/<任务>/progress.md`**：做什么/做到哪/卡点/负责文件；阶段收尾必更新
 - 拿不准 → 问用户
 
@@ -31,4 +31,4 @@
 
 ## 多 PI Agent 协作纪律
 
-完整细则（任务分区认领/scoped commit/共享资源占坑/收尾两更新/不整树操作/[STATE] 维护）→ **加载 `multi-agent-collab` skill**（全局，所有项目通用）。核心速查：只 `git add <自己的文件>` 禁止 `git add -A`；跑批前 [STATE] 声明队列；收尾 progress + [STATE] 两更新缺一不可。
+完整细则（任务分区认领/scoped commit/共享资源占坑/收尾四步/不整树操作/[STATE] 维护）→ **加载 `multi-agent-collab` skill**（全局，所有项目通用）。核心速查：只 `git add <自己的文件>` 禁止 `git add -A`；跑批前 `hive-state set` 声明队列（含热文件），结束释放；收尾四步：结论 retain → progress 归档 → [STATE] ✅ → 删除 [STATE]。
