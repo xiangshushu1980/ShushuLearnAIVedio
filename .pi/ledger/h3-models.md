@@ -14,12 +14,14 @@
 | C-20260816-25 | FaceRefine 精修参数铁律 | ✅现行 | 官方参数原样不可改 |
 | C-20260816-26 | Cache-DiT 加速（官方宣称） | 🟡待验证 | T-20260815-10 待实测 |
 | C-20260816-27 | H3 能力边界（固定音频同步） | ✅现行 | 数字人方案弃用 |
+| C-20260825-01 | H3 TE 精度选型（NVFP4 维持定论） | ✅现行 | 高精度 INT8 无收益/放不下/不支持参考流 |
 
 ---
 
 ### C-20260816-20 | Hybrid b25-49（fl2va+ref2va merge）
 - 状态：🟡待验证（动画域已实测通过，写实域结论待深度测试 T-20260815-09）
-- 现行值：动画域 ref2va 画质提升显著（Laplacian 43→**54，+26%** 清晰度，耗时 80s→60s）；写实域无优势（耗时打平 60s 且没脸待查）；dtype = int8 混合精度（F32/BF16/F16/I8/U8）20.97GB，24GB 可跑；权重选择 merge（非微调），Ref2VA drop-in 替换，作者推荐 b25-49
+- 现状（08-17 用户确认跟踪暂停）：模型在库（models/diffusion_models/，08-15 下载）；深度测试线 T-20260815-09 未在跑，暂挂起；非模型更新，勿当疑似更新排查
+- 现行值：**动机 = ref2va 精度低 + fl2va 画质好 → 融合出精度可接受且仍受 ref 控制的版本**；动画域 ref2va 画质提升显著（Laplacian 43→**54，+26%** 清晰度，耗时 80s→60s）；写实域无优势（耗时打平 60s 且没脸待查）；dtype = int8 混合精度（F32/BF16/F16/I8/U8）20.97GB，24GB 可跑；权重选择 merge（非微调），Ref2VA drop-in 替换，作者推荐 b25-49
 - 时间线：
   - 2026-08-15 提出：三方对比（ref2va_pruned_int8 80s/43 vs hybrid b25-49 60s/54 vs fl2va+RefPatch 56s/46；RefPatch 提升有限；来源任务 T-20260815-07）
   - 2026-08-15 补充：写实域耗时打平且"没脸"→ 拆 T-20260815-09 独立深度测试（写实域状态🟡）
@@ -73,3 +75,10 @@
 - 时间线：
   - 2026-08-07 提出：debate 演讲视频方案选型（来源任务 speech-video）
 - 证据锚：docs/12_speech_to_video_pipeline.md / .pi/tasks/speech-video/progress.md（方案节）
+
+### C-20260825-01 | H3 TE 精度选型（NVFP4 维持定论）
+- 状态：✅现行（valid_from 2026-08-25）
+- 现行值：**H3 TE 维持官方 Qwen3-VL-32B NVFP4/AWQ（15.7GB）**，不换高精度 INT8。理由：① 能放入 24GB 显存的 INT8 备选（SearchingMan pruned-24 15.2GiB / recovered-8B 6.2GiB）均为文本 T2V only，**不支持 image/I2V/first-/last-frame/reference 输入**——与本地 Ref2VA/Ref2V/I2V 主力流不兼容；② 支持参考流的完整 32B INT8（官方 27.1GB / linjian257 25.77GB）超 24GB VRAM，encode 需 spill；③ 同架构 INT8 vs NVFP4 条件连续一致性 cosine **0.99999**（≈无精度收益）；④ NVFP4 在 Ada(4090) 无原生硬件加速（Blackwell 专属），但该代价每次生成只付一次（非逐 step），且 16GB 是唯一能塞进的参考兼容档
+- 时间线：
+  - 2026-08-25 提出：全面排查 INT8 备选（官方/linjian257-uncensored/SearchingMan pruned-24+recovered-8B）+ 量化一致性数据，定论维持 NVFP4（来源：H3 内容巡检会话；上游 ComfyUI 0.33 更新验证顺带）
+- 证据锚：ledger README §INT8 排查 / SearchingMan/MiniMax-H3-Text-Encoders（release_manifest + evidence 表）/ Comfy-Org/MiniMax-H3（TE 体积 15.7/27.1/51.5GB）/ linjian257 repo（license=personal-entertainment-use-only）
