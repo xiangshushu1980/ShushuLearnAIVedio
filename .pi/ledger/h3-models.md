@@ -15,6 +15,7 @@
 | C-20260816-26 | Cache-DiT 加速（官方宣称） | 🟡待验证 | T-20260815-10 待实测 |
 | C-20260816-27 | H3 能力边界（固定音频同步） | ✅现行 | 数字人方案弃用 |
 | C-20260825-01 | H3 TE 精度选型（NVFP4 维持定论） | ✅现行 | 高精度 INT8 无收益/放不下/不支持参考流 |
+| C-20260825-02 | v4-600EMA 无法跨用 ref2va pruned（LoRA 键名不匹配） | ✅现行 | 518 键未加载/0 加载 |
 
 ---
 
@@ -82,3 +83,10 @@
 - 时间线：
   - 2026-08-25 提出：全面排查 INT8 备选（官方/linjian257-uncensored/SearchingMan pruned-24+recovered-8B）+ 量化一致性数据，定论维持 NVFP4（来源：H3 内容巡检会话；上游 ComfyUI 0.33 更新验证顺带）
 - 证据锚：ledger README §INT8 排查 / SearchingMan/MiniMax-H3-Text-Encoders（release_manifest + evidence 表）/ Comfy-Org/MiniMax-H3（TE 体积 15.7/27.1/51.5GB）/ linjian257 repo（license=personal-entertainment-use-only）
+
+### C-20260825-02 | v4-600EMA 无法跨用 ref2va pruned（LoRA 键名不匹配）
+- 状态：✅现行（valid_from 2026-08-25）
+- 现行值：**larryvrh `minimax_h3_turbo_v4_step600_ema` LoRA 无法跨用到本机 `minimax_h3_ref2va_pruned_int8_convrot`**：ComfyUI LoraLoader 实测 **518 条 `lora key not loaded` / 0 条加载**，键名（`blocks.0.adaln_proj/attn.qkv_proj/mlp.*`、`token_refiner.*`、`final_layer.*`）与 pruned int8_convrot 重打包模型的张量名全不匹配。原因：v4 是为非 pruned 标准 FL2VA bf16 布局训练（PulpCut 所称“两 transformer 张量同名同形”仅适用未 pruned 版）。→ ref2v 快车道**跨用通用 LoRA 走不通**，须走整模型 turbo（如 PulpCut Ref2VA Turbo / lightx2v ref2v LoRA）
+- 时间线：
+  - 2026-08-25 提出：零下载交叉实测（v4 8步 单图片参考 ref2v，prompt_id 613dd160，5s/1024×576）；首次提交 OOM 崩（20GB+LoRA 峰值+未释放），去视频引用分支后成功
+- 证据锚：ComfyUI /tmp/comfyui_start.log（lora key not loaded 518 条）/ output/video/h3_ref2va/v4EMA_x_ref2va_8step_test_00001_.mp4 / 上游 PR #15808 会话
