@@ -1,0 +1,59 @@
+{
+ "f4_dance_native": {
+  "dt": 66.4,
+  "sampling": 17,
+  "actual": [],
+  "forecast": [],
+  "passes": 0,
+  "prompt_exec": 62.06,
+  "run_summaries": [],
+  "cfg": {
+   "scene": "dance",
+   "unet": "fl2va",
+   "lora": true,
+   "steps": 4,
+   "res": "768x448"
+  }
+ },
+ "f4_dance_spectrum": {
+  "dt": 62.9,
+  "sampling": 17,
+  "actual": [
+   0,
+   1,
+   2,
+   3
+  ],
+  "forecast": [
+   0,
+   1,
+   2,
+   3
+  ],
+  "passes": 2,
+  "prompt_exec": 56.7,
+  "run_summaries": [
+   {
+    "phase": "offline_first_pass",
+    "wall_s": 26.874,
+    "steps": 4,
+    "actual_steps": 4,
+    "forecast_steps": 0
+   },
+   {
+    "phase": "offline_replay",
+    "wall_s": 0.695,
+    "steps": 4,
+    "actual_steps": 0,
+    "forecast_steps": 0
+   }
+  ],
+  "cfg": {
+   "scene": "dance",
+   "unet": "fl2va",
+   "lora": true,
+   "steps": 4,
+   "res": "768x448"
+  }
+ }
+}

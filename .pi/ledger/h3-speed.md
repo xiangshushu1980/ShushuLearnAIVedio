@@ -100,3 +100,10 @@
 - 时间线：
   - 2026-08-15 提出：同 seed 20260817 同参考图同 prompt 8步@1024×576 对比（来源任务 T-20260815-07）
 - 证据锚：params.md §Ref2VA 参考（ref_image_size max 仅对 >2048px 有增益）/ .pi/tasks/h3-new-findings-test/progress.md
+
+### C-20260828-01 | Spectrum 跳 transformer 加速适用域
+- 状态：✅现行（valid_from 2026-08-28）
+- 现行值：Spectrum v0.2.20（training-free 跳 H3 transformer blocks + anchor 预测，offline_smoothing_replay 默认开）——**仅推荐 std 慢车道 20 步 @1024×576**：采样 1.55x（124→80s）/端到端 1.22x/目视画质反升（replay 双向平滑≈去噪红利）；成片档 8 步采样 1.5-1.55x 但高动态严重劣化（2/10 涂抹/鬼影/面崩）；快速抽卡 8 步 @768×448 抽卡可接受但端到端零收益（固定开销稀释）；4 步档无步可跳零收益。与批量优化（两阶段/CondCache）收益独立可叠加；与 EasyCache/LazyCache 同分支互斥
+- 时间线：
+  - 2026-08-28 实测定论：同 seed 20260814 双臂 A/B（wave 低动态 + dance 高动态双场景 × s8/f4/f8/t20 四档），VL 初审 + 拼图目视（来源任务 T-comfy-ops-11）
+- 证据锚：docs/09_h3_test_plan.md §补测批 E / docs/10_h3_batch_optimization.md §七 / experiments/spectrum_ab/ / output/video/spectrum_test/ / scripts/h3_spectrum_ab_runner.py

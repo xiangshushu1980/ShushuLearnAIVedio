@@ -357,3 +357,36 @@ A_motioncache/ B_steps/ C_quant/ D_prompt/ E_ref/ F_long/ G_res/（文件名语�
 - 手动启动忘 source venv（sqlalchemy ModuleNotFoundError）
 - 重启过渡期提交任务 → runner 轮询误判"完成"（15s 假数据），实际排队执行
 - 重启后 history 持久化（comfyui.db），"无 err 无 videos"是 outputs 解析键错（images 不是 videos）
+
+## 补测批 E：Spectrum 采样加速 A/B（2026-08-28，T-comfy-ops-11，文件 video/spectrum_test/）
+
+> 对象：xmarre/ComfyUI-Spectrum-MiniMax-H3 v0.2.20（528★，training-free 跳 H3 transformer blocks，用 anchor 预测 hidden state；默认参数全默认：blend 0.5/degree 1/offline_smoothing_replay=true）。同 seed 20260814 同 prompt，native vs Spectrum 双臂；runner scripts/h3_spectrum_ab_runner.py，对比拼图 experiments/spectrum_ab/frames/。
+
+### 速度矩阵（干净环境，每条前 /free，采样段=进度条口径）
+
+| 档位 | 配置 | native 采样 | Spectrum 采样 | 采样加速 | 端到端加速 | 调度 |
+|------|------|------------|--------------|---------|-----------|------|
+| std 慢车道 | int8 无LoRA 20步 @1024×576（dance） | 124s | 80s | **1.55x** | 199.7→163.4s **1.22x** | 12 actual + 8 forecast |
+| 成片档 wave | int8+v4 8步 @1024×576（低动态） | 48s | 32s | **1.50x** | 111.8→93.9s **1.19x** | 6A+2F（RES 尾保护） |
+| 成片档 dance | int8+v4 8步 @1024×576（高动态） | 51s | 33s | **1.55x** | 107.9→92.9s **1.16x** | 6A+2F |
+| 快速抽卡 | fp8+v4 8步 @768×448（dance） | 31s | 19s | **1.63x** | 68.9→69.1s **≈1.0x** | 6A+2F |
+| 极速抽卡 | fp8+v4 4步 @768×448（dance） | 17s | 17s | **1.0x（零）** | 66.4→62.9s ≈1.0x | 4A+0F（无步可跳） |
+
+### 目视/VL 初审（对比拼图，动作轨迹分叉属预期内不计缺陷）
+
+| 档位 | 评分 | 发现 |
+|------|------|------|
+| std 20步 dance | **8.5/10** | VL 判 Spectrum 版更清晰锐利（replay 双向平滑≈额外去噪）；结构/细节/反光无伪影 |
+| 成片档 wave | 6.5/10 | 主体/浪花合格，但天空持续**垂直拖影伪影** |
+| 成片档 dance | **2/10** | 高动态下严重涂抹/鬼影/运动拖影/面崩 + 衣色漂移；不可接受 |
+| 快速抽卡 8步 | 7.5/10 | 结构/氛围/构图好，仅锐度略降；抽卡用途完全可接受（但端到端零收益） |
+| 极速 4步 | 6/10 | replay 平滑轻微去噪反而略优；但零加速无使用意义 |
+
+### 结论（定论级）
+
+1. **最佳甜点 = std 慢车道 20 步 @1024×576**：采样 1.55x + 端到端 1.22x，且目视画质不降反升（offline_smoothing_replay 双向平滑的去噪红利）。对 ref2va/std20 用户是净收益，与 MotionCache（1.25-1.33x 仅 20 步档有效）结论同向：跳步家族只在慢速高步数档有价值
+2. **步数越少 forecast 误差越致命**：8 步 @1024 成片档高动态严重劣化（每步 sigma 间隔大，2 步 forecast 的误差被放大）；20 步 anchor 密、forecast 准。与 EasyCache「高动态崩」结论一致，但 Spectrum 在 20 步档规避了该问题
+3. **4 步档无意义**：warmup 1 + bootstrap + RES 三步尾保护吃满 4 步，无步可跳
+4. **端到端收益被固定开销稀释**：小分辨率（768×448）下采样占比仅 ~45%，采样加速对端到端无感；1024×576 20 步档采样占比 62%，端到端收益才可见。Spectrum 不能与批量优化（两阶段/CondCache）叠加省加载——两者收益独立
+5. **调度规则（RES multistep）**：8 步=6A+2F、20 步=12A+8F（README 宣称 11A+9F，实测 RES 尾保护多 1 个 actual）；forecast 步跳过 transformer blocks（sage 也不跑），replay pass transformer-free（20 步 replay 仅 16.8s）
+6. **与 EasyCache/LazyCache 互斥**（同分支检测后自动停用）；v4 turbo LoRA 可叠加（本次全部叠加，无冲突）；节点插桩位置：model 链 Sage 之后、guider/scheduler 之前

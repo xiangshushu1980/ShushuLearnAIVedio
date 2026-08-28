@@ -1,0 +1,32 @@
+{
+ "t20_dance_native": {
+  "dt": 199.7,
+  "sampling": 124,
+  "actual": [],
+  "forecast": [],
+  "passes": 0,
+  "prompt_exec": 190.99,
+  "cfg": {
+   "scene": "dance",
+   "unet": "fl2va",
+   "lora": false,
+   "steps": 20,
+   "res": "1024x576"
+  }
+ },
+ "t20_dance_spectrum": {
+  "dt": 163.4,
+  "sampling": 80,
+  "actual": [],
+  "forecast": [],
+  "passes": 2,
+  "prompt_exec": 157.66,
+  "cfg": {
+   "scene": "dance",
+   "unet": "fl2va",
+   "lora": false,
+   "steps": 20,
+   "res": "1024x576"
+  }
+ }
+}

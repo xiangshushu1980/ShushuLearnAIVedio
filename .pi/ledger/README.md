@@ -37,6 +37,9 @@
 | C-20260816-25 | FaceRefine 精修参数铁律 | ✅现行 | h3-models.md |
 | C-20260816-26 | Cache-DiT 加速（官方宣称） | 🟡待验证 | h3-models.md |
 | C-20260816-27 | H3 能力边界（固定音频同步） | ✅现行 | h3-models.md |
+| C-20260827-01 | OCR 文字流压缩范式与参数定论 | ✅现行 | va-ocr.md |
+| C-20260828-01 | Spectrum 跳 transformer 加速适用域 | ✅现行 | h3-speed.md |
+| C-20260827-02 | P1 OCR 合并逻辑失效（数据实证） | ✅现行 | va-ocr.md |
 
 ---
 
@@ -131,6 +134,7 @@
   - `h3-audio.md`（C-11~C-14）：音乐/音频
   - `h3-prompt.md`（C-15~C-19）：提示词/风格/增强
   - `h3-models.md`（C-20~C-27）：模型/可行性
+  - `va-ocr.md`（C-20260827-01~02）：视频分析/OCR 压缩（fund-video-analysis）
 
 ## 九、设计对标（2026-08-16 调研）
 

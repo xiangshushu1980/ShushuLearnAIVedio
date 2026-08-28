@@ -1,0 +1,128 @@
+{
+ "s8_wave_native": {
+  "dt": 111.8,
+  "sampling": 48,
+  "actual": [],
+  "forecast": [],
+  "passes": 0,
+  "prompt_exec": 106.48,
+  "run_summaries": [],
+  "cfg": {
+   "scene": "wave",
+   "unet": "fl2va",
+   "lora": true,
+   "steps": 8,
+   "res": "1024x576"
+  }
+ },
+ "s8_wave_spectrum": {
+  "dt": 93.9,
+  "sampling": 32,
+  "actual": [
+   0,
+   2,
+   4,
+   5,
+   6,
+   7
+  ],
+  "forecast": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7
+  ],
+  "passes": 2,
+  "prompt_exec": 88.7,
+  "run_summaries": [
+   {
+    "phase": "offline_first_pass",
+    "wall_s": 52.197,
+    "steps": 8,
+    "actual_steps": 6,
+    "forecast_steps": 2
+   },
+   {
+    "phase": "offline_replay",
+    "wall_s": 3.06,
+    "steps": 8,
+    "actual_steps": 0,
+    "forecast_steps": 0
+   }
+  ],
+  "cfg": {
+   "scene": "wave",
+   "unet": "fl2va",
+   "lora": true,
+   "steps": 8,
+   "res": "1024x576"
+  }
+ },
+ "s8_dance_native": {
+  "dt": 107.9,
+  "sampling": 51,
+  "actual": [],
+  "forecast": [],
+  "passes": 0,
+  "prompt_exec": 102.68,
+  "run_summaries": [],
+  "cfg": {
+   "scene": "dance",
+   "unet": "fl2va",
+   "lora": true,
+   "steps": 8,
+   "res": "1024x576"
+  }
+ },
+ "s8_dance_spectrum": {
+  "dt": 92.9,
+  "sampling": 33,
+  "actual": [
+   0,
+   2,
+   4,
+   5,
+   6,
+   7
+  ],
+  "forecast": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7
+  ],
+  "passes": 2,
+  "prompt_exec": 87.13,
+  "run_summaries": [
+   {
+    "phase": "offline_first_pass",
+    "wall_s": 48.814,
+    "steps": 8,
+    "actual_steps": 6,
+    "forecast_steps": 2
+   },
+   {
+    "phase": "offline_replay",
+    "wall_s": 3.489,
+    "steps": 8,
+    "actual_steps": 0,
+    "forecast_steps": 0
+   }
+  ],
+  "cfg": {
+   "scene": "dance",
+   "unet": "fl2va",
+   "lora": true,
+   "steps": 8,
+   "res": "1024x576"
+  }
+ }
+}

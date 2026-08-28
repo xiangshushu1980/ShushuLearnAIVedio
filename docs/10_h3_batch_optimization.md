@@ -76,7 +76,19 @@ fl2va（MiniMaxH3ImageToVideo）执行 = 三件事：
 - **已落地**：custom_nodes/ComfyUI-MiniMax-H3-CondCache（Save/LoadMiniMaxH3Cond 节点，cond 为标准 [(tensor,{attrs})] list）+ scripts/h3_two_stage_batch.py（API 编排，N=3 实测 158s vs 195s）；守护进程形态判定过度设计不实施
 - 前置验证：cond 序列化往返逐位无损（torch.save/load，含 fl2va keyframes latent）已通过（.pi/tasks/cond-roundtrip/）
 
-## 七、参考
+## 七、跳步加速家族现状（2026-08-28 汇总）
+
+| 家族 | 原理 | 20 步 std 档 | 8/14 步低步数档 | 选型结论 |
+|------|------|-------------|----------------|----------|
+| MotionCache | residual reuse | 1.25-1.33x（08-04） | 无价值（14 步 1.08x） | 仅 20 步档备选 |
+| EasyCache | residual reuse | 未测 | 1.25-1.38x 但高动态崩 | 不推荐抽卡档 |
+| Cache-DiT | 官方库，1.41-1.50x | 待测（T-20260815-10） | 待测 | 待实测 |
+| **Spectrum v0.2.20** | **跳 transformer blocks + anchor 预测** | **采样 1.55x/端到端 1.22x，画质反升（定论见 09 批 E）** | 8 步采样 1.5-1.63x 但高动态崩/端到端无感；4 步零收益 | **std 20 步档首选；低步数档不用** |
+
+- 共同规律：跳步/复用家族只在慢速高步数档有价值；低步数档 warmup+尾保护占比大且 forecast 误差被大 sigma 间隔放大
+- Spectrum 与批量优化（两阶段/CondCache）收益独立，可叠加
+
+## 八、参考
 
 - 源码：`ComfyUI/comfy_extras/nodes_minimax_h3.py`（H3 节点）、`ComfyUI/comfy/text_encoders/minimax.py`（TE）、`ComfyUI/comfy_execution/caching.py`（RAMPressureCache）、`execution.py`（缓存初始化）、`comfy/cli_args.py`（--cache-ram 默认）
 - 速度矩阵/测试数据：docs/09_h3_test_plan.md
