@@ -1,7 +1,8 @@
 # ComfyUI 项目文档索引
 
-> 本机环境：Ubuntu 24.04 (WSL2, mirror 网络模式) / RTX 4090 24GB / Python 3.13 / CUDA 13
-> 最后更新：2026-08-22（新增 26 MiniMax Music 3 音质与 Prompt 探索定论）
+> 本文件只做导航和当前入口提示；详细参数、步骤、实验过程按需加载。
+> 环境基线：Ubuntu 24.04 / WSL2 / RTX 4090 24GB / Python 3.13 / CUDA 13。
+> 最后更新：2026-09-05。
 
 ## 📚 文档导航（按需加载）
 
@@ -27,57 +28,24 @@
 | [24_vl_qc_api.md](24_vl_qc_api.md) | 出图质检线上 VL API 选型与用法（qwen3-vl-flash 最省档/质检 prompt 模板/费用实测） | ComfyUI 出图客观质检（内容/文字/崩图/比例） |
 | [25_h3c_study.md](25_h3c_study.md) | antirez h3.c（h3-metal）架构研究：垂直切片顺序/Metal 内存策略/优化方法论/H3 模型知识 | 借鉴无依赖推理架构思路 / 查 H3 参数坑（帧对齐/RoPE/音频 batch 折叠） |
 | [26_music3_audio_quality.md](26_music3_audio_quality.md) | MiniMax Music 3 音质与 Prompt 探索定论（高频持续音杂音规律/台词坑修复/超分+母带链路/产出清单） | 写 Music3 prompt / 处理 Music3 音频 / 生成纯器乐曲子时 |
+| [27_DUIX_Avatar_数字人评估.md](27_DUIX_Avatar_数字人评估.md) | DUIX-Avatar 开源自托管数字人评估（架构/硬件/API/粤语/与LongCat·InfiniteTalk·H3定位对比） | 选本地数字人/口拨分身引擎时 |
+| [28_数字人在线方案_对比与价位.md](28_数字人在线方案_对比与价位.md) | 在线数字人方案对比（LongCat HF Space免费看效果/硅基元镜每日5分钟/HeyGen/可灵0.12元s/D-ID） | 想在线便宜看数字人效果/选按量API时 |
+| [h3-digital-human-research/](h3-digital-human-research/) | MiniMax H3 数字人调查资料：官方事实、开源方案、社区实测、技术推论、未解析线索 | 研究 H3 数字人、长时主持、口型、角色参考和 InfiniteTalk 对照时 |
+| [project/project-handoff.md](project/project-handoff.md) | 项目交接总览：调研、视频生成工作流、数字人方案、代码索引和打包边界 | 项目交接与打包时 |
+| [archive/README.md](archive/README.md) | 历史技术、实验样本和旧交接资料索引 | 遇到旧技术或需要追溯研究细节时 |
 
-**已归档**（内容已并入他处，git 历史可查）：03（→01）、04（→06）、05（→mem0 [STATE]）、13（→12）、20（→21）
+**已归档**（内容已并入他处，git 历史可查）：03（→01）、04（→06）、05（→mem0 [STATE]）、13（→12）、20（→21）；具体历史资料见 [archive/README.md](archive/README.md)。
 
 > agent 操作手册（模型栈/参数/踩坑/工作流档案）在 `.pi/skills/comfyui/SKILL.md` 及其 `references/` 分册；共享记忆/经验检索在 Mem0（`memory_recall`）；定论的演进史/覆盖链在 `.pi/ledger/`（结论谱系，append-only）。
 
-## 🔑 快速速览
+## 当前入口
 
-### 启动 ComfyUI
-```bash
-cd /home/sean/projects/ComfyUI
-./start.sh          # 后台: nohup ./start.sh > /tmp/comfyui_start.log 2>&1 &
-```
-界面: http://localhost:8188 （WSL mirror 模式下 Windows 浏览器可直接访问）
-
-### 模型栈（全部就位）
-- **视频（H3 双轨）**：MiniMax H3 — 快车道 fl2va fp8+turbo / 慢车道 ref2va std14/20（qwen3vl-32B nvfp4_awq TE + 双 VAE）；768×448 5s ≈ 1.6-2min/条（矩阵见 09/19）
-- **视频（老栈）**：Wan2.2 I2V Lightning — GGUF Hi/Lo Q4_K_S + lightx2v 4步 LoRA（480²×33帧 ≈ 10-16s）
-- **图像编辑**：Bernini-R int8_convrot（v2v 快 21% 画质无损，选型背景见 06）
-- **生图**：ANIMA（动漫线稿/高饱和）+ KREA 2 turbo（平滑/写实）+ Alya/Yuki LoRA
-- 完整清单与下载源见 [02_models.md](02_models.md)
-
-### 主力工作流
-- `workflows/minimax_h3_i2v_api.json` / `minimax_h3_t2v_api.json` — H3 图/文生视频（当前主力）
-- `workflows/wan2.2_i2v_lightning_test.json` — Wan2.2 图生视频（480²×33帧×4步，~14s/次）
-- `workflows/anima_alya_768_t2i.json` — Alya 角色 768² 起始图（I2V 标准）
-- `workflows/video_bernini_r_v2v_test.json` — Bernini v2v 编辑（int8 已切默认）
-
-### 资源规范（2025-08-01 起沿用）
-- `output/` 按模型/用途分子目录：anima / krea / compare / video / img_* / res_test（旧验收批 `review/` 已归档至 `output_archive/review/`，2026-08-12）
-- `input/start/` 公用 I2V 起始图（语义命名，用原图分辨率直接跑）；`input/start/169/` H3 首帧 16:9 图库（35 张，规则见 21）；`input/ref_lib/` H3 参考图库（realistic/illustration 121 张）；`input/test/` 测试素材；`input/material(_b)/` v2v 素材（见 07）
-- SaveImage/SaveVideo 的 filename_prefix 直接带子目录，生成即落位
-
-## 📁 目录结构
-
-```
-/home/sean/projects/ComfyUI/          # ComfyUI 本体
-├── main.py / start.sh                # 入口与启动（--enable-assets --use-sage-attention 已固化）
-├── models/                           # 模型（unet/diffusion_models/text_encoders/vae/loras...）
-├── custom_nodes/                     # 自定义节点（Manager、browser、GGUF、WanVideoWrapper 等 8 个）
-├── input/                            # 输入（start/ + start/169/、ref_lib/、test/、material(_b)/）
-├── output/                           # 生成结果（anima/ krea/ compare/ video/ img_*/ res_test/；旧 review/ 已归档 output_archive/）
-└── user/                             # 用户数据（workflows/ comfyui.db assets 索引）
-
-/home/sean/projects/comfy-ops/        # 本项目（工作流/文档/脚本）
-├── docs/                             # 本文档体系（导航见上表；维护规则见下）
-├── workflows/                        # 工作流 JSON（API 格式）
-├── scripts/                          # 脚本（docs_check.sh / h3_* / restart_comfyui.sh ...）
-├── .pi/skills/comfyui/               # agent 手册（SKILL.md + references/ 分册）
-├── run_workflow.py                   # 工作流运行脚本
-└── comfy_client.py                   # API 客户端示例
-```
+- 当前主线：MiniMax H3 本地视频/数字人，优先看 `09`、`10`、`17` 及 `h3-digital-human-research/`。
+- 当前数字人链路：FL2VA/PDD → Motion Context → NativeAudioLock；任务记录见 `.pi/tasks/T-comfy-ops-28/progress.md`。
+- 环境、启动、API：[`01_environment.md`](01_environment.md)。
+- 模型和磁盘清单：[`02_models.md`](02_models.md)。
+- 项目交接和打包边界：[`project/project-handoff.md`](project/project-handoff.md)。
+- 历史实验与归档资料：[`archive/README.md`](archive/README.md)。
 
 ## 📐 文档维护规则（等幂纪律，2026-08-11 起）
 
