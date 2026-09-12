@@ -28,7 +28,9 @@
 - 配置：H3 FL2VA int8、Turbo v4、1024×576、124 帧、8 步、无 SageAttention
 - 结果：成功，H.264/AAC，124 帧，24fps，5.167 秒；输出 `dance_sol_00001_.mp4`
 - 静态检查：`compileall` 通过，SolAttn 节点导入通过
-- 结论：兼容性通过；抽帧未见明显崩坏，但没有足够证据推翻历史“高动态/低步数收益差、正式链不采用”的结论。上游 README 已标记 DEPRECATED，原因是新版 ComfyUI/comfy-kitchen 已内置优化 Sparse Attention。
+- 原生替代回归：ComfyUI 核心 `BlockSparseAttention`（显示名 `Model Sparse Attention`）使用 `sol-attn` 模式，参数通过当前动态组合输入格式传递；同一工作流成功，输出 `dance_sol_00002_.mp4`。
+- 依赖确认：`comfy-kitchen==0.2.33`，与核心 `requirements.txt` 一致；核心源码位于 `comfy_extras/nodes_sparse_attention.py`。
+- 结论：Sparse Attention 已进入 ComfyUI 核心，并由 comfy-kitchen 提供 kernel；旧 SolAttn 不是方向被放弃，而是独立 custom node 被替代。旧目录不删除，保留 Git 远端和基线用于历史复现/差异追踪，但不作为正式工作流节点。
 
 ## 加载检查
 
