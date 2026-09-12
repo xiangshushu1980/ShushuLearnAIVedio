@@ -5,6 +5,7 @@
 - ComfyUI：`v0.35.0-16-g7193f562`
 - 前端包：`1.52.7`
 - 工作流模板：`0.11.59`
+- 工作流模板配套包：`core 0.3.339`、`json 0.1.74`、`media-assets-01 0.1.44`；`pip check` 通过。
 - Transformers：`5.14.1`
 - H3 相关核心更新已包含：PDD LoRA、H3 Fun ControlNet model patch、H3 Max、Reference 节点增强、H3 denoise mask 修复。
 
@@ -34,7 +35,8 @@
 
 ## 加载检查
 
-- 更新后 ComfyUI 日志显示 NativeAudioLock、FaceRefine、ContactSheet、CondCache、Ref-Patch、SolAttn、Spectrum 均成功加载。
+- 归档前 ComfyUI 日志显示 NativeAudioLock、FaceRefine、ContactSheet、CondCache、Ref-Patch、SolAttn、Spectrum 均成功加载；这用于确认旧节点此前可复现。
+- 归档重启后 `SolAttnPatch` 已不再加载，核心 `BlockSparseAttention` 正常注册。
 - RMBG 的 SAM 可选模块仍缺 `segment_anything`、`iopath`；不影响 H3 基础链。
 - 启动时存在 `user/comfyui.db` 锁竞争；不影响当前 HTTP 生成，但后续应避免多实例同时使用同一数据库。
 
