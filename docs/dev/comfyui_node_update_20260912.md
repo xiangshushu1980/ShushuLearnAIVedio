@@ -19,7 +19,7 @@
 | `ComfyUI-H3-ContactSheet` | 旧仓库已迁移至 `matlowai/ComfyUI-MAINodes` | 建立本地基线并绑定迁移后的上游；未覆盖旧目录 | 五视图/转身 LoRA 辅助，暂不替换 |
 | `ComfyUI-MiniMax-H3-CondCache` | 本项目自有节点 | 建立本地基线；提交 `a947666` | 批量条件缓存，可选 |
 | `ComfyUI-MiniMaxH3_Ref-Patch` | `lihaoyun6/ComfyUI-MiniMaxH3_Ref-Patch` | 与上游一致；建立基线 `ed2d172` | 参考图兼容补丁，按工作流需要 |
-| `ComfyUI-SolAttn_triton` | `kijai/ComfyUI-SolAttn_triton` | 与上游最新主分支一致；基线 `c8d99b9` | 实验性/已弃用，不进正式链 |
+| `ComfyUI-SolAttn_triton` | `kijai/ComfyUI-SolAttn_triton` | 已移至 `/home/sean/projects/ComfyUI/archive/custom_nodes/ComfyUI-SolAttn_triton`；保留 Git 基线 `c8d99b9` | 已弃用，不加载、不进正式链 |
 | `comfyui-material-gallery` | 本项目自有修改 | 建立本地基线；提交 `213a8d5` | 本地素材库入口 |
 
 ## SolAttn 回归
@@ -30,7 +30,7 @@
 - 静态检查：`compileall` 通过，SolAttn 节点导入通过
 - 原生替代回归：ComfyUI 核心 `BlockSparseAttention`（显示名 `Model Sparse Attention`）使用 `sol-attn` 模式，参数通过当前动态组合输入格式传递；同一工作流成功，输出 `dance_sol_00002_.mp4`。
 - 依赖确认：`comfy-kitchen==0.2.33`，与核心 `requirements.txt` 一致；核心源码位于 `comfy_extras/nodes_sparse_attention.py`。
-- 结论：Sparse Attention 已进入 ComfyUI 核心，并由 comfy-kitchen 提供 kernel；旧 SolAttn 不是方向被放弃，而是独立 custom node 被替代。旧目录不删除，保留 Git 远端和基线用于历史复现/差异追踪，但不作为正式工作流节点。
+- 结论：Sparse Attention 已进入 ComfyUI 核心，并由 comfy-kitchen 提供 kernel；旧 SolAttn 不是方向被放弃，而是独立 custom node 被替代。旧节点目录和两个活动测试工作流已移入 archive，不再加载；正式工作流只使用原生 `Model Sparse Attention`。
 
 ## 加载检查
 
@@ -44,3 +44,5 @@
 - NativeAudioLock 跟随上游更新后必须跑基础数字人回归。
 - FaceRefine 只在基础成片稳定后做独立后期 POC。
 - SolAttn 仅保留为历史复现，不作为新生产路线。
+- 旧节点归档：`/home/sean/projects/ComfyUI/archive/custom_nodes/ComfyUI-SolAttn_triton`
+- 旧工作流归档：`workflows/archive/solattn-legacy/attn3way_dance_sol.json`、`workflows/archive/solattn-legacy/attn3way_wave_sol.json`
