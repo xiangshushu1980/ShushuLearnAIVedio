@@ -40,6 +40,13 @@
 | C-20260827-01 | OCR 文字流压缩范式与参数定论 | ✅现行 | va-ocr.md |
 | C-20260828-01 | Spectrum 跳 transformer 加速适用域 | ✅现行 | h3-speed.md |
 | C-20260827-02 | P1 OCR 合并逻辑失效（数据实证） | ✅现行 | va-ocr.md |
+| C-20260902-01 | FL2VA PDD 8-step 长段可行性 | ✅现行 | h3-speed.md |
+| C-20260902-02 | NVIDIA H3 Super Acceleration 架构边界 | ✅现行 | h3-speed.md |
+| C-20260905-01 | SageAttention post6 H3 一致性 | ✅现行 | h3-speed.md |
+| C-20260906-01 | H3 20 步 Sage 开关动作差异 | ✅现行 | h3-speed.md |
+| C-20260914-01 | VDN Ref2VA 1024×576 双角色 NativeAudioLock 时长基线 | ✅现行 | h3-speed.md |
+| C-20260914-02 | 普通 Ref2VA Turbo LoRA 1024×576 双角色长时基线 | ✅现行 | h3-speed.md |
+| C-20260915-01 | Ref2VA PDD 8-step 与标准 20-step 5 秒同参对照 | ✅现行 | h3-speed.md |
 
 ---
 

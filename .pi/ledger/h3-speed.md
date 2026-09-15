@@ -107,3 +107,17 @@
 - 时间线：
   - 2026-08-28 实测定论：同 seed 20260814 双臂 A/B（wave 低动态 + dance 高动态双场景 × s8/f4/f8/t20 四档），VL 初审 + 拼图目视（来源任务 T-comfy-ops-11）
 - 证据锚：docs/09_h3_test_plan.md §补测批 E / docs/10_h3_batch_optimization.md §七 / experiments/spectrum_ab/ / output/video/spectrum_test/ / scripts/h3_spectrum_ab_runner.py
+
+### C-20260915-01 | Ref2VA PDD 8-step 与标准 20-step 5 秒同参对照
+- 状态：✅现行（valid_from 2026-09-15）
+- 现行值：RTX 4090 24GB、普通 Ref2VA（`minimax_h3_ref2va_pruned_int8_convrot`）、单张参考图、`NativeAudioLock` 外部 5.000s 粤语音频、768×448、124 帧、shift 12/3，除采样路线外全同参（同参考图/同音频/同六段式 prompt/同 seed `20260914`）：
+  - A 无 LoRA `res_multistep` 20 steps：端到端 90.0s，ComfyUI 内部 **86.50s**，采样 20 步 53s（2.67s/it）
+  - B Ref2VA PDD Acc `nfe=8` + `euler` + 节点 sigmas：端到端 40.0s，ComfyUI 内部 **33.38s**，采样 8 步 19s（2.48s/it），PDD 加载/打补丁约 2s
+  - 加速比：热启动 2.59×（33.38 vs 86.50）；含冷加载端到端 2.25×（40.0 vs 90.0）。**加速来源是步数 20→8 的线性减少，不是单步更快**（单步耗时 2.67 vs 2.48s/it 基本持平），因此 PDD 的价值前提是 8 步画质可接受。
+  - 两者输出规格一致：124 帧 / 5.167s / 768×448 / 24fps / 音频流 163 帧，均无冻结帧。
+- 质量侧（仅客观代理，非定论）：整片 SSIM A-vs-B `0.867`；帧差运动能量 A face 0.70 / body 0.50，B face 0.84 / body 0.36；逐帧面部运动序列相关 0.616；音频包络 vs 面部运动代理相关 A 0.061、B −0.04（弱，只能筛异常）。观察项：PDD 版面部/嘴部运动更活跃而身体更静，**是否更好或更差需人工目视，本机视觉质检通道不可用（DashScope 免费额度耗尽、LM Studio 未启动）**。
+- 通道正确性：PDD 日志 `partition check ok: ref2va file on ref2va model (fl2va 0.0504, ref2va 0.0017)`、`steps=8 blocks=4,4,4,4,4,4,4,4, heads fused`、`50 adaln modules rebased onto the ref2va curve basis`。
+- 时间线：
+  - 2026-09-15 实测（来源任务 T-comfy-ops-33）：跑批成功，质量结论待用户目视验收。
+  - 覆盖关系：与 C-20260905-01（Ref2VA A/B/C 4 秒口型对照，当时 PDD 8 比 20 步快约 26–27%）不矛盾——本轮用官方 5 秒合法档并完整记录分阶段耗时；此前 docs/34 的 VDN Turbo 1024×576 结论是另一条路线，不可与本条混记。
+- 证据锚：`experiments/h3_ref2v/cases_pdd_vs_std20_5s_20260914.json`（配置）、`.json.results.json`（耗时）、`experiments/h3_ref2v/pdd_vs_std20_5s_20260914/`（contact_AB.png + 8 张抽帧 + audio/hk_a_5s.wav）、`output/video/h3_ref2va_pdd_vs_std20_5s/A_std20_5s_00001_.mp4`（md5 `59f855911ecd9de4878fe4a98835be86`）、`.../B_pdd8_5s_00001_.mp4`（md5 `bcadec06570ae0a8ff8423a3fcd01233`）、脚本 `scripts/h3_ref2v_runner.py`（新增 `pdd` 分支）
