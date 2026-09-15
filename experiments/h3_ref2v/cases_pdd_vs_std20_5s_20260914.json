@@ -1,0 +1,37 @@
+[
+  {
+    "name": "A_std20_5s_768x448",
+    "ref_images": [
+      "ref2va_refs/digital_human/01_host_blank_gray_16x9.png"
+    ],
+    "audio_lock": "vdn_audio_test/hk_a_5s.wav",
+    "width": 768,
+    "height": 448,
+    "length": 124,
+    "steps": 20,
+    "sampler": "res_multistep",
+    "shift_video": 12.0,
+    "shift_audio": 3.0,
+    "seed": 20260914,
+    "prompt": "subject_definitions: <Picture 1> is the identity and framing reference: a single photorealistic Cantonese television presenter in a minimalist light-gray studio, horizontal 16:9 waist-up half-body shot, both hands fully visible.\n\nsummary: The presenter speaks continuously to camera in the <Picture 1> studio, holding identity, clothing, framing and lighting stable.\n\nretention_analysis: Keep the exact face, hair, skin tone, gray suit and studio background from <Picture 1>; keep the waist-up framing and camera position.\n\ndetailed_description: A single photorealistic Cantonese television presenter speaks continuously, accurate mouth motion synchronized to the provided speech, natural facial expression, soft blinking, restrained natural hand gestures that stay inside the waist-up framing, stable identity, stable clothing, stable lighting, no cuts, no camera pan, tilt, zoom or dolly, no scene change, no other person enters frame.\n\noverall_soundscape: Quiet studio ambience only, no extra voices, no music, no sound effects beyond the presenter's own voice.\n\nnon_diegetic_music: none",
+    "prefix": "video/h3_ref2va_pdd_vs_std20_5s/A_std20_5s"
+  },
+  {
+    "name": "B_pdd8_5s_768x448",
+    "ref_images": [
+      "ref2va_refs/digital_human/01_host_blank_gray_16x9.png"
+    ],
+    "audio_lock": "vdn_audio_test/hk_a_5s.wav",
+    "width": 768,
+    "height": 448,
+    "length": 124,
+    "pdd": "minimax_h3_ref2va_pdd_acc_8step_comfyui.safetensors",
+    "pdd_nfe": 8,
+    "sampler": "euler",
+    "shift_video": 12.0,
+    "shift_audio": 3.0,
+    "seed": 20260914,
+    "prompt": "subject_definitions: <Picture 1> is the identity and framing reference: a single photorealistic Cantonese television presenter in a minimalist light-gray studio, horizontal 16:9 waist-up half-body shot, both hands fully visible.\n\nsummary: The presenter speaks continuously to camera in the <Picture 1> studio, holding identity, clothing, framing and lighting stable.\n\nretention_analysis: Keep the exact face, hair, skin tone, gray suit and studio background from <Picture 1>; keep the waist-up framing and camera position.\n\ndetailed_description: A single photorealistic Cantonese television presenter speaks continuously, accurate mouth motion synchronized to the provided speech, natural facial expression, soft blinking, restrained natural hand gestures that stay inside the waist-up framing, stable identity, stable clothing, stable lighting, no cuts, no camera pan, tilt, zoom or dolly, no scene change, no other person enters frame.\n\noverall_soundscape: Quiet studio ambience only, no extra voices, no music, no sound effects beyond the presenter's own voice.\n\nnon_diegetic_music: none",
+    "prefix": "video/h3_ref2va_pdd_vs_std20_5s/B_pdd8_5s"
+  }
+]
