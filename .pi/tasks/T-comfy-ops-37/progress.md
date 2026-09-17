@@ -67,3 +67,4 @@
 - 按新约束重跑 SP01 普通人和 SP02 野狼初遇三候选；新输出仍统一 1024×576，旧版服装结果不纳入后续评分。
 - 用户进一步指出当前结果仍偏“中世纪农夫”，要求以 WoW 游戏画面为参照并提高到 2K。已删除旧的 `ComfyUI/output/wow_style_probe/` 全部生成图；夹具基线改为 `2048×1152`，新增 `projects/wow-mage-survival/references/wow_visual_refs.md`，将 Northshire、Stormwind、Westfall、Deadmines 和 Defias 的建筑、服饰、阵营色与场景约束写入。
 - 2K 新基线已实测成功：SP01–SP06 共 16 张新图（SP01 先做 Jibs 单张，其余五类三候选），全部核验为 `2048×1152`；旧 `1024×576/1024×1024` 产物已删除，不纳入比较。2K 首张已明显呈现蓝金守卫、厚重装备、手绘贴图和 WoW 游戏化块面，后续评分以这批新图为准。
+- 已完成 2K 批次的初步评测并写入 `experiments/T-comfy-ops-37/evaluation_v1.md`：Jibs 法术/阵营视觉最强但易英雄化，KREA2 当前整体最平衡且普通人感最好，Gemlight 魔法效果强但人物职业化倾向明显。下一轮按 Jibs `0.6/0.8`、KREA2 `0.8/1.0` 做强度矩阵，并加入 Stormwind/Westfall/Deadmines/Defias 专题图。
