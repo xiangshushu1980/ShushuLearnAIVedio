@@ -70,6 +70,7 @@
 - 参数：`lora_name`、`strength_model`
 - 官方/社区：`[官方]` Wan2.2 官方模板 strength=1.0；lightx2v 有 high/low noise 两个 LoRA 分别挂 Hi/Lo 两个 UNet
 - 本地实测：Alya 角色 alisa@1.0 还原好；anima-highres@0.6 清晰度 +8%
+- **H3 Turbo 官方工作流用法**：LoraLoaderModelOnly 接 UNETLoader 输出 → MiniMaxH3SigmaShift → BasicGuider（ModelTC 官方图即此接法，strength 1.0）
 
 ### CLIPTextEncode
 - 作用：文本 → 条件向量（正/负 prompt）
@@ -95,6 +96,33 @@
 - 参数：clip、vae、prompt、width、height、length(帧)、first_frame/last_frame
 - 官方/社区：`[官方]` 官方模板 1344×768、124-362 帧训练范围、20 步 res_multistep、无 cfg；r2v 支持 ≤9 图 + ≤3 视频 + ≤3 音频参考
 - 本地实测：124 帧 = 5.2s（24fps）；I2V 241s / T2V 353s；音频 VAE 也要加载（VAELoader audio_vae）
+
+### MiniMaxH3ReferenceToVideo（官方核心节点，ComfyUI ≥0.31 内置）
+- 作用：ref2va 参考条件节点——prompt + 参考图/视频/音频 → conditioning + AV latent
+- 输入：ref_images ×9（Autogrow）/ ref_videos ×3 / ref_video_audios ×3（按索引与 ref_video_N 配对）/ ref_audios ×3；ref_image_size 下拉（match/max）
+- **呈现顺序固定**：images → videos（每段音轨 `<Audio j>` 标签在 `<Video k>` 前）→ standalone audio；标签每类型 1-based：`<Picture i>` / `<Video k>` / `<Audio j>`
+- **ref_image_size**：`match`=参考图等比缩到生成像素面积（只降不升，训练一致）；`max`=保持 2048 短边（身份保真最好，参考 token 全程参与采样故可能慢数倍）
+- 参考视频约束：≥5 帧（~0.2s@24fps）、24fps 2-15s、帧数截断到 17n+5、Qwen 以 2fps+时间戳看视频；参考视频帧数超出生成帧数则截断
+- 实现：ref_blocks 经 conditioning `minimax_refs` 注入 DiT payload；ref_items 走 clip.tokenize(minimax_ref_items=) 给 tokenizer 呈现
+- 本地实测（2026-08-14）：视频参考必须 CLIPLoader device="cpu"（否则显存爆）；纯音频参考可用（ref_audios 单接，20 步 -11.3 LUFS 有真语音）
+
+### MiniMaxH3SigmaShift（官方核心节点）
+- 作用：设置 video/audio 双流 shift（ModelSamplingAV）
+- 参数：shift_video 默认 12、shift_audio 默认 3；与 Turbo LoRA 表格严格配对（v1.0 8step=12/3、768p=6/3、ref2v v0.1=12/3）
+- 实现模式：ModelSamplingAV+CONST 子类化 → set_parameters(shift, audio_shift) → 保留原 noise_scale → transformer_options 写 minimax_h3_sigma_shift_video/audio
+
+### H3FaceTrackCrop / H3InjectVideoLatent / H3PerFrameDenoise / H3FaceStitch（ComfyUI-H3-FaceRefine）
+- 作用：逐帧人脸精修——远处小脸合成、特写保细节（脸崩=头部占画面比例小，与分辨率无关）
+- 机制：TrackCrop 检测裁剪(512² crop_factor3 auto_capped_768) → InjectVideoLatent 把 crops 注入 latent → ReferenceToVideo(512 画布+2 身份参考图+原音频 ref_audios+**原视频 prompt**) → PerFrameDenoise 按脸大小调每帧 denoise（noise_mask）→ NativeAudioLock 锁音频 → Stitch face_only 拼接(fade_out)
+- **PerFrameDenoise 语义（源码确认）**：脸越小重绘越强（合成脸）、脸越大越保守（保细节）；strength_small_face 0.8 / strength_large_face 0.35 / absolute_px 30-120px / gamma 1 / smooth 9
+- **必须官方参数原样（2026-08-14 实测）**：LoRA=fl2v_lightx2v_turbo_4step_v0.1_comfy @0.75（⚠️换 v1.0 768p 会产生马赛克——shift 规格不同）、er_sde+simple 4 步 denoise 0.45、fallback_detector='none'（本地无 person 检测器）；本地化=UNET ref2va_pruned_int8_convrot + CLIP qwen3vl_32b
+- 依赖：face_yolov8m.pt 52MB（models/ultralytics/bbox/，源=Bingsu/adetailer HF）、NativeAudioLock 节点（Shrek3OnVH5 仓库 custom_nodes 子目录）、VHS
+- 本地实测：124 帧精修 10-45s/条；改参数（强度/步数/LoRA 版本）全部马赛克，官方原样干净；完整管线=Turbo 4 步 40s + FaceRefine 30s = 70s 可验收
+
+### Florence2ModelLoader / Florence2Run（ComfyUI-Florence2，Kijai）
+- 作用：图片反推（caption/OCR/region 等 15 任务）
+- 模型：microsoft/Florence-2-base-ft 463MB 放 models/LLM/；GPU 1-3s/图；keep_model_loaded=False 用完自动释放显存（ComfyUI 模型管理调度，不挤 H3）
+- 本地实测：粒度只到场景级（"红白衣女子站在店铺前"），不能判断脸部马赛克等细粒度质量；text_input 仅 referring_expression_segmentation/caption_to_phrase_grounding/docvqa 任务支持
 
 ### VAEDecodeAudio
 - 作用：解码 H3 音频 latent → 音频（32kHz 立体声）
