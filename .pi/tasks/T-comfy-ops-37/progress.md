@@ -39,3 +39,10 @@
 - 当前不启动正式小说/短剧项目；`wow-mage-survival` 仅作为轻量概念/参考记录区，保存与风格探索、人物 Ref、技术测试有关的少量上下文。
 - 当前只保留工程层分工：ComfyUI 引擎 → comfy-ops 编辑器控制/插件/资源管线 → 作品相关实验包。内容侧没有常驻世界观/魔法/剧情/美术 Agent。
 - 其他 Agent 只在需要时领取具体任务；稳定方法沉淀为文档或 skill，不按主题预先拆出 Agent。
+
+## ComfyUI 基线同步（2026-09-17）
+
+- ComfyUI `AGENTS.md` 与 `.pi/skills/comfyui/` 已完成按任务索引/分类 references 的重构，`bash scripts/docs_check.sh` 通过。
+- 基线已提交：`f77ad90 [comfyui] route skill through indexed task references`。
+- T37 不重新创建或重开；后续按 `.pi/skills/comfyui/INDEX.md → image/prompt-style.md` 进入 WOW 风格与人物 Ref 探索，必要时再读取 KREA2/工作流分册。
+- `T-comfy-ops-40` 负责通用 Object ref 能力研究并避让 T37；本线继续负责 WOW 概念相关候选风格与人物 Ref 对照。
