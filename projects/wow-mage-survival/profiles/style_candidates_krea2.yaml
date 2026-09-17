@@ -1,0 +1,36 @@
+schema_version: 1
+task_id: T-comfy-ops-37
+base_model: krea2_turbo_fp8.safetensors
+source: Civitai
+
+candidates:
+  - id: jibs_midjourney_fantasy
+    model_id: 1276784
+    version_id: 3176271
+    file: Jibs_Krea_2_Midjourney_Fantasy_Style_V1.safetensors
+    path: /home/sean/projects/ComfyUI/models/loras/Jibs_Krea_2_Midjourney_Fantasy_Style_V1.safetensors
+    trigger_words: [M1djourneyArtStyle]
+    strength_range: [0.75, 1.5]
+    sha256: E406BDC1F42979A413454D0D071201B653E2F51F279C412AD9663C6A9AF1E30A
+  - id: krea2_midjourney
+    model_id: 2751419
+    version_id: 3095398
+    file: KREA_MIDJ_1.safetensors
+    path: /home/sean/projects/ComfyUI/models/loras/KREA_MIDJ_1.safetensors
+    trigger_words: []
+    strength_range: [0.7, 1.0]
+    sha256: AD4A9F0B4D61BA77C5783B51FE3A2B637F8245144C1CE5E6A3FCD8225FD7DF8A
+  - id: gemlight_beyond_the_veil
+    model_id: 2744307
+    version_id: 3148897
+    file: aumirageV2.safetensors
+    path: /home/sean/projects/ComfyUI/models/loras/aumirageV2.safetensors
+    trigger_words: [m1V8]
+    strength_range: [0.8, 1.0]
+    sha256: 73A14F6305B3135AEE5046DCCE6BB7B390ED623DE9C3E7D31B1A63C1B0EDD1CD
+
+policy:
+  compare_same_base: true
+  compare_one_style_lora_at_a_time: true
+  test_strengths: [0.8, 1.0]
+  do_not_rank_by_single_pretty_portrait: true

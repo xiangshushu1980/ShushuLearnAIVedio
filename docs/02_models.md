@@ -60,6 +60,13 @@ H3 LoRA（models/loras/）：
 | anima-highres-aesthetic-boost.safetensors | ANIMA 高清/美学增强（133MB）|
 | anima-turbo-lora-v0.2.safetensors | ANIMA 加速 v0.2（143MB）|
 
+### KREA 2 风格 LoRA（T-comfy-ops-37，2026-09-17 下载并 SHA256 核验）
+| 文件 | 位置 | 来源/版本 | 用途 |
+|------|------|------|------|
+| Jibs_Krea_2_Midjourney_Fantasy_Style_V1.safetensors | models/loras/ | CivitAI 1276784 / version 3176271 | Jibs Midjourney Fantasy Style；trigger `M1djourneyArtStyle`；建议 0.75–1.5 |
+| KREA_MIDJ_1.safetensors | models/loras/ | CivitAI 2751419 / version 3095398 | KREA2 Midjourney；建议 0.7–1.0 |
+| aumirageV2.safetensors | models/loras/ | CivitAI 2744307 / version 3148897 | Gemlight Beyond the veil；trigger `m1V8`；建议 0.8–1.0 |
+
 ### 遗留（无主栈）
 - `wan_2.1_vae.safetensors`（models/vae/，243MB）：**2026-08-12 补回**（hf-mirror，Comfy-Org/Wan_2.1_ComfyUI_repackaged）。Wan 栈已清但 VAE 与 ANIMA 同结构、体积小，保留兜底
 - `clip_vision_h.safetensors`（models/clip_vision/，1.2GB）：Wan2.1 遗留，当前无栈使用，未清

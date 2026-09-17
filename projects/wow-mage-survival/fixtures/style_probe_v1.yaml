@@ -19,13 +19,34 @@ base:
 candidates:
   - id: jibs_midjourney_fantasy
     source: "Civitai model 1276784"
-    local_status: missing
+    version_id: 3176271
+    file: Jibs_Krea_2_Midjourney_Fantasy_Style_V1.safetensors
+    base_model: Krea 2
+    trigger_words: [M1djourneyArtStyle]
+    recommended_strength: "0.75-1.5"
+    local_path: /home/sean/projects/ComfyUI/models/loras/Jibs_Krea_2_Midjourney_Fantasy_Style_V1.safetensors
+    sha256: E406BDC1F42979A413454D0D071201B653E2F51F279C412AD9663C6A9AF1E30A
+    local_status: downloaded_verified
   - id: krea2_midjourney
     source: "Civitai model 2751419"
-    local_status: missing
+    version_id: 3095398
+    file: KREA_MIDJ_1.safetensors
+    base_model: Krea 2
+    trigger_words: []
+    recommended_strength: "0.7-1.0"
+    local_path: /home/sean/projects/ComfyUI/models/loras/KREA_MIDJ_1.safetensors
+    sha256: AD4A9F0B4D61BA77C5783B51FE3A2B637F8245144C1CE5E6A3FCD8225FD7DF8A
+    local_status: downloaded_verified
   - id: gemlight_dream_midjourney
     source: "Civitai model 2744307"
-    local_status: missing
+    version_id: 3148897
+    file: aumirageV2.safetensors
+    base_model: Krea 2
+    trigger_words: [m1V8]
+    recommended_strength: "0.8-1.0"
+    local_path: /home/sean/projects/ComfyUI/models/loras/aumirageV2.safetensors
+    sha256: 73A14F6305B3135AEE5046DCCE6BB7B390ED623DE9C3E7D31B1A63C1B0EDD1CD
+    local_status: downloaded_verified
   - id: local_krea2_darkbrush
     source: "local: krea2_darkbrush.safetensors"
     role: provisional_control
