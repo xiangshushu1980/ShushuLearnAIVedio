@@ -1,14 +1,14 @@
-# wow-mage-survival Comfy-ops 项目包
+# wow-mage-survival Comfy-ops 适配包
 
-这是 `wow-mage-survival` 在 comfy-ops 中的专属工具包。当前承载该作品的插件、工作流、ComfyUI profiles、测试夹具、实验和生成产物索引。
+这是一个轻量的作品相关实验包，不代表正式启动小说/短剧生产。当前只服务风格探索、人物 Ref 和相关技术验证。
 
 ## 目录分工
 
-- `plugins/`：该作品专属的 ComfyUI 节点/插件源；稳定通用后再提升到共享插件层。
-- `workflows/`：角色、场景、法术和 H3 的工作流模板。
+- `plugins/`：当前概念需要的专属 ComfyUI 节点或控制逻辑。
+- `workflows/`：人物 Ref、风格探针和后续必要的 H3 测试模板。
 - `profiles/`：模型、LoRA、权重、尺寸和输出策略。
-- `fixtures/`：来自作品母库的版本化角色/任务/法术测试输入。
+- `fixtures/`：少量与题材相关的测试输入。
 - `experiments/`：候选风格、模型兼容性和参数实验。
-- `artifacts/`：生成结果 manifest、QC 和可追溯索引；正式 canon 仍回到作品项目。
+- `artifacts/`：结果索引和 QC，不是正式美术资产库。
 
-当前项目包的第一项任务是 `T-comfy-ops-37`：使用第一集野狼任务验证总风格，而不是生成正式资产。
+专属插件先放在这里；只有确认可复用于其他项目后，才提升到 comfy-ops 共享层。作品概念资料位于 `/home/sean/projects/wow-mage-survival`，但 comfy-ops 不依赖其未来的正式剧情结构。

@@ -2,7 +2,8 @@ project_id: wow-mage-survival
 content_project: /home/sean/projects/wow-mage-survival
 toolchain_project: /home/sean/projects/comfy-ops
 comfyui_runtime: /home/sean/projects/ComfyUI
-source_of_truth: content_project
+source_of_truth: exploratory_notes_only
 plugin_scope: project_specific_first
 artifact_namespace: wow-mage-survival
-canon_gate: user_acceptance
+project_stage: style_and_tech_exploration
+canon_gate: not_active

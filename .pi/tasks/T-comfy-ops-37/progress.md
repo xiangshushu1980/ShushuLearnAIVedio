@@ -32,3 +32,10 @@
 - 用户是作品总监/产品 Owner。Agent 可以提交 `proposed` 设定、实验结果和工具变更，但只有用户确认后才能升级为 `canon`、锁定总风格或修改时间线。
 - 交互分三类：故事会话维护母库；`T-comfy-ops-*` 任务维护工具/模型/批量实验；集成任务把已确认的角色/法术/场景 ID 映射为 ComfyUI 资产。每个产物记录来源 ID、模型、工作流、seed、参数和 QC 结果。
 - 建议的母库目录：`canon/`、`world/`、`magic/`、`characters/`、`story/`、`art-direction/`、`production/`、`decisions/`、`exports/comfy-ops/`；工具项目继续保留 `workflows/`、`custom_nodes/`、`scripts/`、`experiments/`、`docs/`。
+
+## 用户范围纠正（2026-09-17）
+
+- 上述“母库完整目录、常驻专业 Agent、正式内容生产分层”属于过度设计，暂不执行。
+- 当前不启动正式小说/短剧项目；`wow-mage-survival` 仅作为轻量概念/参考记录区，保存与风格探索、人物 Ref、技术测试有关的少量上下文。
+- 当前只保留工程层分工：ComfyUI 引擎 → comfy-ops 编辑器控制/插件/资源管线 → 作品相关实验包。内容侧没有常驻世界观/魔法/剧情/美术 Agent。
+- 其他 Agent 只在需要时领取具体任务；稳定方法沉淀为文档或 skill，不按主题预先拆出 Agent。
