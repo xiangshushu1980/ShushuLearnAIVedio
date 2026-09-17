@@ -65,3 +65,4 @@
 - SP04/SP05 与 SP01/SP02 已完成三候选对照；当前初步倾向为：Jibs 负责法术/动作表现，KREA2 负责普通人和环境可信度，Gemlight 暂列第三候选。尚未锁定风格，下一步进入同候选的强度 0.6/0.8/1.0 小矩阵，检查 Jibs 与 KREA2 是否能在一个权重区间兼顾两类画面。
 - 用户反馈修正了服装方向：之前的 `modest brown linen clothes` 会把人物推成中世纪农夫；已改为高质量人类奇幻服饰、剪裁羊毛、染色布料、皮革饰边、实用金属件和蓝金联盟色点缀，边境破败主要作用于环境。参考校准对象为暴风城人类视觉、西部荒野、死亡矿井/迪菲亚，而非泛中世纪农庄。
 - 按新约束重跑 SP01 普通人和 SP02 野狼初遇三候选；新输出仍统一 1024×576，旧版服装结果不纳入后续评分。
+- 用户进一步指出当前结果仍偏“中世纪农夫”，要求以 WoW 游戏画面为参照并提高到 2K。已删除旧的 `ComfyUI/output/wow_style_probe/` 全部生成图；夹具基线改为 `2048×1152`，新增 `projects/wow-mage-survival/references/wow_visual_refs.md`，将 Northshire、Stormwind、Westfall、Deadmines 和 Defias 的建筑、服饰、阵营色与场景约束写入。

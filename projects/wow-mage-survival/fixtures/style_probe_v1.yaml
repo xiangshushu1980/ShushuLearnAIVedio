@@ -7,8 +7,8 @@ purpose: "只验证 WOW 概念的风格承载能力，不生成正式角色或�
 base:
   preferred_model: krea2
   workflow: workflows/krea2_t2i_test.json
-  width: 1024
-  height: 576
+  width: 2048
+  height: 1152
   steps: 8
   cfg: 1.0
   sampler: er_sde
@@ -57,13 +57,14 @@ candidates:
     local_status: metadata_unverified
 
 fixed_world_block: >-
-  high fantasy human starting zone inspired by Warcraft's Alliance visual language,
-  a well-built stone monastery and timber village, refined high-quality fantasy
-  clothing even for farmers and villagers, fitted wool, dyed cloth, leather trim,
-  practical metal fittings, recognizable blue-and-gold human heraldic accents,
-  believable scale, readable silhouettes, cinematic game concept art composition,
-  frontier wear belongs mainly to the environment, no generic peasant rags,
-  no modern objects, no text or logo
+  World of Warcraft Classic-inspired in-game fantasy visual language, stylized 3D
+  character proportions, chunky readable silhouettes, hand-painted game textures,
+  saturated but weathered colors, clear Warcraft-like faction shapes and equipment,
+  high-quality fitted clothing even for farmers and villagers, dyed wool, leather
+  trim, metal fittings, blue-and-gold human heraldic accents, believable game-world
+  scale, readable action staging, frontier wear belongs mainly to the environment,
+  no photorealistic medieval drama, no generic peasant rags, no modern objects,
+  no text or logo
 
 cases:
   - id: SP01_MONASTERY_ORDINARY
@@ -72,9 +73,9 @@ cases:
     prompt: >-
       an ordinary young adult man with an average face, wearing well-made practical
       human traveler clothing with a fitted wool tunic, leather belt, neat boots and
-      subtle blue trim, standing uncertainly outside the monastery gate at dawn,
-      well-dressed villagers and blue-and-gold guards continuing their routine around
-      him, he looks alert but inexperienced,
+      subtle blue trim, standing uncertainly outside Northshire Abbey at dawn,
+      well-dressed villagers and blue-and-gold Stormwind-style guards continuing their
+      routine around him, he looks alert but inexperienced,
       {fixed_world_block}
   - id: SP02_WOLF_FIRST_THREAT
     seed: 37102
@@ -82,7 +83,7 @@ cases:
     prompt: >-
       the ordinary young man in well-made but non-heroic human travel clothes backing
       away from a rapidly approaching grey wolf near
-      the monastery road, uneven ground, loose stones and tall grass affecting footing,
+      the Northshire Abbey road, uneven ground, loose stones and tall grass affecting footing,
       fear and calculation visible in the pose, the wolf is close enough to be dangerous,
       {fixed_world_block}
   - id: SP03_FIRE_SHAPING
