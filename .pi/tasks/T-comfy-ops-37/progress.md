@@ -48,4 +48,10 @@
 - `T-comfy-ops-40` 负责通用 Object ref 能力研究并避让 T37；本线继续负责 WOW 概念相关候选风格与人物 Ref 对照。
 - 下一步夹具已建立：`projects/wow-mage-survival/fixtures/style_probe_v1.yaml`。它以第一集野狼任务为背景，固定 KREA2 8-step / CFG 1.0 / 1024×576 / `er_sde` + `simple`，包含修道院普通人、野狼初遇、火焰塑形、冰霜塑形、环境策略和逃生六个 case。
 - 候选远端核查完成：三个 Civitai 编号均为 Krea 2 LoRA，可公平比较。Jibs 使用 version `3176271` / `Jibs_Krea_2_Midjourney_Fantasy_Style_V1.safetensors` / trigger `M1djourneyArtStyle` / strength `0.75-1.5`；KREA2 Midjourney 使用 version `3095398` / `KREA_MIDJ_1.safetensors` / strength `0.7-1.0`；Gemlight 使用最新 `Beyond the veil` version `3148897` / `aumirageV2.safetensors` / trigger `m1V8` / strength `0.8-1.0`。
-- 本地模型核查：上述三个候选尚未下载；另有 `krea2_darkbrush.safetensors`、`krea2_vintagetarot.safetensors`，但元数据未登记，暂只作为 provisional control，不进入正式候选结论。
+- 初次本地模型核查时上述三个候选尚未下载；另有 `krea2_darkbrush.safetensors`、`krea2_vintagetarot.safetensors`，但元数据未登记，暂只作为 provisional control，不进入正式候选结论。
+
+## 2026-09-17 追加
+
+- 三个 Krea2 候选已下载到 ComfyUI `models/loras/`，并以 SHA256 核验；版本、触发词、建议强度和校验值登记在 `projects/wow-mage-survival/profiles/style_candidates_krea2.yaml` 与 `fixtures/style_probe_v1.yaml`，模型清单同步到 `docs/02_models.md`。
+- 新增 `scripts/wow_style_probe.py`：从六 case 夹具读取提示词，逐候选注入一个 `LoraLoaderModelOnly`，支持 `--dry-run` 与 `--submit`；默认只跑 `SP03_FIRE_SHAPING`，用于先验证法术塑形的可读性。
+- runner 已通过 Python 编译和单候选 dry-run；ComfyUI 曾健康启动并完成资源扫描，但后台进程随后退出，尚未提交 GPU smoke test。下一步先解决 ComfyUI 服务持续性，再跑单 case，暂不扩展六 case 全矩阵。
