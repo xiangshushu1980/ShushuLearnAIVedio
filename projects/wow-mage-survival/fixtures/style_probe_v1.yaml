@@ -1,0 +1,102 @@
+schema_version: 1
+project_id: wow-mage-survival
+task_id: T-comfy-ops-37
+status: draft
+purpose: "只验证 WOW 概念的风格承载能力，不生成正式角色或场景资产"
+
+base:
+  preferred_model: krea2
+  workflow: workflows/krea2_t2i_test.json
+  width: 1024
+  height: 576
+  steps: 8
+  cfg: 1.0
+  sampler: er_sde
+  scheduler: simple
+  seed_policy: "同一 case 的所有候选固定 seed；不同 case 使用独立 seed"
+  lora_policy: "每次最多一个总风格 LoRA；不叠加总风格 LoRA"
+
+candidates:
+  - id: jibs_midjourney_fantasy
+    source: "Civitai model 1276784"
+    local_status: missing
+  - id: krea2_midjourney
+    source: "Civitai model 2751419"
+    local_status: missing
+  - id: gemlight_dream_midjourney
+    source: "Civitai model 2744307"
+    local_status: missing
+  - id: local_krea2_darkbrush
+    source: "local: krea2_darkbrush.safetensors"
+    role: provisional_control
+    local_status: metadata_unverified
+  - id: local_krea2_vintagetarot
+    source: "local: krea2_vintagetarot.safetensors"
+    role: provisional_control
+    local_status: metadata_unverified
+
+fixed_world_block: >-
+  high fantasy human starting zone, a weathered stone monastery and timber village,
+  grounded medieval materials, believable scale, readable silhouettes, restrained
+  cinematic composition, no heroic poster pose, no modern objects, no text or logo
+
+cases:
+  - id: SP01_MONASTERY_ORDINARY
+    seed: 37101
+    intent: "确认普通人气质、世界观和画面层次"
+    prompt: >-
+      an ordinary young adult man with an average face and modest brown linen clothes,
+      standing uncertainly outside the monastery gate at dawn, villagers and guards
+      continuing their routine around him, he looks alert but inexperienced,
+      {fixed_world_block}
+  - id: SP02_WOLF_FIRST_THREAT
+    seed: 37102
+    intent: "确认低等级真实危险，而不是英雄海报"
+    prompt: >-
+      the ordinary young man backing away from a rapidly approaching grey wolf near
+      the monastery road, uneven ground, loose stones and tall grass affecting footing,
+      fear and calculation visible in the pose, the wolf is close enough to be dangerous,
+      {fixed_world_block}
+  - id: SP03_FIRE_SHAPING
+    seed: 37103
+    intent: "确认火焰可以成为可控形态和空间工具"
+    prompt: >-
+      the same ordinary young man shaping a thin curved ribbon of fire between his hands,
+      using it as a short-lived barrier rather than a giant fireball, heat distortion,
+      smoke and nearby dry grass reacting with clear cause and effect, cautious imperfect
+      control, {fixed_world_block}
+  - id: SP04_ICE_SHAPING
+    seed: 37104
+    intent: "确认冰霜的结构、重量、摩擦和脆裂感"
+    prompt: >-
+      the same ordinary young man forming a low wedge of translucent ice on the muddy
+      road, one boot braced against it, frost spreading across wet ground and small cracks
+      showing structural stress, the magic is practical and unstable, {fixed_world_block}
+  - id: SP05_ENVIRONMENT_TRICK
+    seed: 37105
+    intent: "确认斗智斗勇和四两拨千斤的画面表达"
+    prompt: >-
+      the ordinary young man luring a wolf toward a narrow muddy slope, a small sheet of
+      ice removes the wolf's footing while a controlled flame ignites a fallen branch to
+      block the escape route, the tactic is legible in one frame, no oversized spell,
+      {fixed_world_block}
+  - id: SP06_ESCAPE
+    seed: 37106
+    intent: "确认移动、空间位置和真实逃生感"
+    prompt: >-
+      the exhausted ordinary young man escaping through a broken wooden fence beside
+      the monastery, a small ice foothold and a brief fire flash create just enough space
+      to survive, wolf silhouettes behind him, debris, breath and dirt communicate effort,
+      {fixed_world_block}
+
+scoring:
+  scale: "1-5; 1=失败, 3=可用, 5=明显优势"
+  dimensions:
+    - ordinary_protagonist
+    - spell_shape_readability
+    - spatial_cause_and_effect
+    - fire_ice_material_response
+    - tactical_action_readability
+    - environment_consistency
+    - likely_h3_reference_compatibility
+  gate: "候选必须在 SP03-SP06 的法术/策略项达到可用，不能只凭 SP01 的漂亮程度胜出"

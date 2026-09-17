@@ -46,3 +46,5 @@
 - 基线已提交：`f77ad90 [comfyui] route skill through indexed task references`。
 - T37 不重新创建或重开；后续按 `.pi/skills/comfyui/INDEX.md → image/prompt-style.md` 进入 WOW 风格与人物 Ref 探索，必要时再读取 KREA2/工作流分册。
 - `T-comfy-ops-40` 负责通用 Object ref 能力研究并避让 T37；本线继续负责 WOW 概念相关候选风格与人物 Ref 对照。
+- 下一步夹具已建立：`projects/wow-mage-survival/fixtures/style_probe_v1.yaml`。它以第一集野狼任务为背景，固定 KREA2 8-step / CFG 1.0 / 1024×576 / `er_sde` + `simple`，包含修道院普通人、野狼初遇、火焰塑形、冰霜塑形、环境策略和逃生六个 case。
+- 本地模型核查：任务候选 Jibs/KREA2 Midjourney/Gemlight 三项目前未发现本地文件；另有 `krea2_darkbrush.safetensors`、`krea2_vintagetarot.safetensors`，但元数据未登记，暂只作为 provisional control，不进入正式候选结论。
