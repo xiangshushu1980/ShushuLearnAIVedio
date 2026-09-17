@@ -62,3 +62,4 @@
 - GPU 可见的执行上下文中，三个候选均被同一 ComfyUI 实例索引成功。修正 runner 让工作流强制写入夹具的 `1024×576` 和 case seed 后，SP03 火焰塑形三候选 smoke test 有效完成；此前生成的 `1024×1024` 版本不纳入比较。
 - SP04 冰霜塑形和 SP05 环境策略已各提交三候选，共 6 张有效输出，位于 `ComfyUI/output/wow_style_probe/{SP04_ICE_SHAPING,SP05_ENVIRONMENT_TRICK}/`。
 - SP03 初步观察：Jibs 的火焰轮廓和动作张力最强；KREA2 更克制写实；Gemlight 火焰层次好但人物更容易法师化。仅为初筛观察，需结合 SP04/SP05 及人物普通感再评分。
+- SP04/SP05 与 SP01/SP02 已完成三候选对照；当前初步倾向为：Jibs 负责法术/动作表现，KREA2 负责普通人和环境可信度，Gemlight 暂列第三候选。尚未锁定风格，下一步进入同候选的强度 0.6/0.8/1.0 小矩阵，检查 Jibs 与 KREA2 是否能在一个权重区间兼顾两类画面。
