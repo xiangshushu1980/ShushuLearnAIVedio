@@ -55,3 +55,10 @@
 - 三个 Krea2 候选已下载到 ComfyUI `models/loras/`，并以 SHA256 核验；版本、触发词、建议强度和校验值登记在 `projects/wow-mage-survival/profiles/style_candidates_krea2.yaml` 与 `fixtures/style_probe_v1.yaml`，模型清单同步到 `docs/02_models.md`。
 - 新增 `scripts/wow_style_probe.py`：从六 case 夹具读取提示词，逐候选注入一个 `LoraLoaderModelOnly`，支持 `--dry-run` 与 `--submit`；默认只跑 `SP03_FIRE_SHAPING`，用于先验证法术塑形的可读性。
 - runner 已通过 Python 编译和单候选 dry-run；ComfyUI 曾健康启动并完成资源扫描，但后台进程随后退出，尚未提交 GPU smoke test。下一步先解决 ComfyUI 服务持续性，再跑单 case，暂不扩展六 case 全矩阵。
+
+## 2026-09-17 运行记录
+
+- 已确认应使用单实例：PID `154190`，唯一监听 `127.0.0.1:8188`，使用默认 `user/comfyui.db`；独立数据库仅是排查 SQLite 锁时的临时方案，未作为项目架构落地。
+- GPU 可见的执行上下文中，三个候选均被同一 ComfyUI 实例索引成功。修正 runner 让工作流强制写入夹具的 `1024×576` 和 case seed 后，SP03 火焰塑形三候选 smoke test 有效完成；此前生成的 `1024×1024` 版本不纳入比较。
+- SP04 冰霜塑形和 SP05 环境策略已各提交三候选，共 6 张有效输出，位于 `ComfyUI/output/wow_style_probe/{SP04_ICE_SHAPING,SP05_ENVIRONMENT_TRICK}/`。
+- SP03 初步观察：Jibs 的火焰轮廓和动作张力最强；KREA2 更克制写实；Gemlight 火焰层次好但人物更容易法师化。仅为初筛观察，需结合 SP04/SP05 及人物普通感再评分。

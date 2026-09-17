@@ -30,6 +30,8 @@ def build_workflow(
     candidate: dict,
     strength: float,
     fixed_world_block: str,
+    width: int,
+    height: int,
 ) -> dict:
     wf = json.loads(base_path.read_text())
     prompt = case["prompt"].replace("{fixed_world_block}", fixed_world_block)
@@ -47,6 +49,9 @@ def build_workflow(
         },
     }
     wf["6"]["inputs"]["model"] = ["9", 0]
+    wf["5"]["inputs"]["width"] = width
+    wf["5"]["inputs"]["height"] = height
+    wf["6"]["inputs"]["seed"] = case["seed"]
     for node in wf.values():
         if node["class_type"] == "CLIPTextEncode":
             node["inputs"]["text"] = prompt
@@ -106,6 +111,8 @@ def main():
             candidate,
             args.strength,
             fixture["fixed_world_block"],
+            fixture["base"]["width"],
+            fixture["base"]["height"],
         )
         if not args.submit:
             print(
