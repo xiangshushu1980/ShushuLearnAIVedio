@@ -57,24 +57,31 @@ candidates:
     local_status: metadata_unverified
 
 fixed_world_block: >-
-  high fantasy human starting zone, a weathered stone monastery and timber village,
-  grounded medieval materials, believable scale, readable silhouettes, restrained
-  cinematic composition, no heroic poster pose, no modern objects, no text or logo
+  high fantasy human starting zone inspired by Warcraft's Alliance visual language,
+  a well-built stone monastery and timber village, refined high-quality fantasy
+  clothing even for farmers and villagers, fitted wool, dyed cloth, leather trim,
+  practical metal fittings, recognizable blue-and-gold human heraldic accents,
+  believable scale, readable silhouettes, cinematic game concept art composition,
+  frontier wear belongs mainly to the environment, no generic peasant rags,
+  no modern objects, no text or logo
 
 cases:
   - id: SP01_MONASTERY_ORDINARY
     seed: 37101
     intent: "确认普通人气质、世界观和画面层次"
     prompt: >-
-      an ordinary young adult man with an average face and modest brown linen clothes,
-      standing uncertainly outside the monastery gate at dawn, villagers and guards
-      continuing their routine around him, he looks alert but inexperienced,
+      an ordinary young adult man with an average face, wearing well-made practical
+      human traveler clothing with a fitted wool tunic, leather belt, neat boots and
+      subtle blue trim, standing uncertainly outside the monastery gate at dawn,
+      well-dressed villagers and blue-and-gold guards continuing their routine around
+      him, he looks alert but inexperienced,
       {fixed_world_block}
   - id: SP02_WOLF_FIRST_THREAT
     seed: 37102
     intent: "确认低等级真实危险，而不是英雄海报"
     prompt: >-
-      the ordinary young man backing away from a rapidly approaching grey wolf near
+      the ordinary young man in well-made but non-heroic human travel clothes backing
+      away from a rapidly approaching grey wolf near
       the monastery road, uneven ground, loose stones and tall grass affecting footing,
       fear and calculation visible in the pose, the wolf is close enough to be dangerous,
       {fixed_world_block}
