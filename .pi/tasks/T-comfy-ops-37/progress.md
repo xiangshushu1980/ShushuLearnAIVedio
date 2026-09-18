@@ -79,3 +79,12 @@
 - Jibs 已完成标志性世界/生物探测：精灵主城、血精灵主城、海加尔山、元素生物、火焰元素、冰霜元素（SP11–SP16）。整体结论：Jibs 对 WoW 式阵营建筑、巨型树木/山体、元素生物轮廓、火焰与冰块材质都很强，适合作为当前世界观和法术视觉基线。
 - SP17/SP18 的 Jibs 结果再次暴露同一限制：法术轮廓和接触点清楚，但 prompt-only 容易自动增加第二人物或围观者；冰霜场景尤其容易生成群像。下一轮法术测试改成更近的单主体构图，优先验证“一个普通人 + 一个明确法术接触点 + 一个环境反应”，而不是继续扩大场景。
 - 当前服务仍为共享单实例 ComfyUI；本轮未重启、未切换数据库、未创建第二实例。所有有效输出保持 2048×1152。
+
+## 2026-09-18 Object Ref 试生成
+
+- 使用 Shushu 头像的外观描述作为角色提示词，生成 3 张独立 Object Ref：
+  - `OR01_SHUSHU_CHARACTER_OBJECT`：普通男性、反戴黑帽、蓝黑联盟风格服饰、正面全身对象卡。
+  - `OR02_FIRE_ELEMENTAL_OBJECT`：独立火元素对象，火焰、黑色火山岩和熔岩裂隙分层清楚。
+  - `OR03_EMBER_RUINS_SCENE_OBJECT`：无人物火元素战斗环境，石桥、浅溪、湿石和草地空间关系清楚。
+- 有效输出位于 `ComfyUI/output/wow_style_probe/OR01_*` 至 `OR03_*`，均为 2048×1152，使用 Jibs strength 0.6。
+- 首次使用通用 `img_qc_test.py` 时发现该工作流没有正确替换提示词/LoRA，生成了默认狐耳女孩；3 张错误产物已移至 `ComfyUI/output/wow_object_ref/discard/invalid_script_injection/`，不纳入测试。

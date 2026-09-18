@@ -216,6 +216,35 @@ cases:
       a charging beast, one boot slipping while the ice fractures under weight, frost
       spreading across puddles, the spell is a temporary physical tool rather than a
       giant ice blast, readable movement and survival tension, {fixed_world_block}
+  - id: OR01_SHUSHU_CHARACTER_OBJECT
+    seed: 37201
+    intent: "Object Ref 角色：以 Shushu 头像为外观描述基础的普通男性奇幻角色"
+    prompt: >-
+      exactly one ordinary adult human male traveler, East Asian facial features, short
+      dark hair, light mustache and short stubble, calm neutral expression, black baseball
+      cap worn backward, practical well-made blue and charcoal Alliance-inspired fantasy
+      clothing, fitted wool coat, leather belt and boots, no armor, no weapon, full body
+      character object reference, centered, facing camera, neutral standing pose, clean
+      readable silhouette, simple muted gray studio background, no other people, no text,
+      no logo, no watermark, {fixed_world_block}
+  - id: OR02_FIRE_ELEMENTAL_OBJECT
+    seed: 37202
+    intent: "Object Ref 火元素：独立、清晰、可被视频模型识别的元素对象"
+    prompt: >-
+      single fire elemental object reference, humanoid creature made of dark volcanic rock
+      and bright orange molten cracks, controlled flame crown and flame shoulders, clear
+      hands and feet, stable iconic silhouette, standing alone on a dark stone floor,
+      centered three-quarter view, neutral presentation pose, readable separation between
+      rock, molten core and flame, blue-black neutral background, no human, no extra
+      creatures, no text, no logo, no watermark, {fixed_world_block}
+  - id: OR03_EMBER_RUINS_SCENE_OBJECT
+    seed: 37203
+    intent: "Object Ref 场景：火元素战斗可消费的空环境参考"
+    prompt: >-
+      single empty fantasy environment object reference, abandoned Alliance border outpost
+      beside a shallow stream, scorched stone bridge, wet rocks, patches of grass, clear
+      navigable space, strong foreground middle ground background separation, wide 16:9
+      composition, no characters, no creatures, no text, no logo, no watermark, {fixed_world_block}
 
 scoring:
   scale: "1-5; 1=失败, 3=可用, 5=明显优势"
