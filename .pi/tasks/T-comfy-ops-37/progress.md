@@ -69,3 +69,4 @@
 - 2K 新基线已实测成功：SP01–SP06 共 16 张新图（SP01 先做 Jibs 单张，其余五类三候选），全部核验为 `2048×1152`；旧 `1024×576/1024×1024` 产物已删除，不纳入比较。2K 首张已明显呈现蓝金守卫、厚重装备、手绘贴图和 WoW 游戏化块面，后续评分以这批新图为准。
 - 已完成 2K 批次的初步评测并写入 `experiments/T-comfy-ops-37/evaluation_v1.md`：Jibs 法术/阵营视觉最强但易英雄化，KREA2 当前整体最平衡且普通人感最好，Gemlight 魔法效果强但人物职业化倾向明显。下一轮按 Jibs `0.6/0.8`、KREA2 `0.8/1.0` 做强度矩阵，并加入 Stormwind/Westfall/Deadmines/Defias 专题图。
 - 用户目测复核后修正排序：Gemlight 最合适，Jibs 较风格化，KREA2 最差。确认本轮没有使用参考图；SP02/SP05 已提供同 prompt/seed/尺寸/工作流的横向控制，因此 KREA2 不再扩展大矩阵，后续资源集中 Gemlight 与 Jibs。
+- Gemlight/Jibs 的四个 WoW 专题场景已完成 2K 生成：Stormwind、Westfall、Deadmines、Defias，各 2 张，结果登记在 `experiments/T-comfy-ops-37/evaluation_v1.md`。当前主视觉基线确定为 Gemlight；Jibs 作为法术/动作强化候选，不叠加使用。

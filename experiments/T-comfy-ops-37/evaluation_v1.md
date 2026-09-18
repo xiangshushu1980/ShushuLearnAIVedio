@@ -24,3 +24,16 @@
 - 用户观察到同一模型在不同场景的草地表现波动，说明环境材质受 case prompt 和 LoRA 共同影响；SP02 野狼与 SP05 环境策略已经是同 prompt/seed/分辨率/工作流的候选横向控制，不需要再重复完整 KREA2 矩阵。
 - 用户目测排序：Gemlight 最合适，Jibs 较风格化，KREA2 效果最差。采纳为当前探索排序：Gemlight 主候选，Jibs 风格化候选，KREA2 仅保留对照。
 - 后续测试资源优先给 Gemlight 与 Jibs；除非出现明确的提示词诊断需求，不再扩展 KREA2。
+
+## WoW 专题场景评测 v2（2026-09-18）
+
+条件：2048×1152、KREA2 8 steps、CFG 1.0、固定 case seed；Gemlight strength 0.8，Jibs strength 0.6。
+
+| 场景 | Gemlight | Jibs | 结论 |
+|---|---|---|---|
+| Stormwind | 蓝金联盟建筑、守卫和城市入口识别稳定，画面较完整 | 更鲜艳、更夸张，守卫和旗帜更像宣传插画 | Gemlight 主线，Jibs 视觉强化 |
+| Westfall | 风车、黄草、破栅栏和边境道路成立，人物不过度英雄化 | 色块和装备更强，环境更像风格化概念图 | Gemlight 更适合世界建立 |
+| Deadmines | 木梁、矿轨、火把、潮湿岩洞和机械设备均成立 | 工业结构更厚重，光影更戏剧化 | Gemlight 主线，Jibs 危险/动作镜头 |
+| Defias | 红面巾、深色皮革、弩和组队巡逻识别清楚 | 强对比、轮廓更硬，战斗感更强 | Gemlight 保持阵营真实性，Jibs 做冲突镜头 |
+
+结论：Gemlight 作为主视觉基线，Jibs 作为法术和动作的风格化补充。暂不再扩展 KREA2，也不叠加两个总风格 LoRA。
