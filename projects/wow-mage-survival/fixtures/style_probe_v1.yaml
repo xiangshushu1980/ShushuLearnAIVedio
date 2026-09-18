@@ -149,6 +149,71 @@ cases:
       dark leather armor, short blades and crossbows, coordinated silhouettes near a
       broken farm gate, the ordinary young human traveler concealed behind a stone wall,
       planning an escape route instead of fighting directly, {fixed_world_block}
+  - id: SP11_ELVEN_CAPITAL
+    seed: 37111
+    intent: "测试 Jibs 对高幻想精灵主城、古老建筑和魔法秩序的承载"
+    prompt: >-
+      a vast ancient elven capital built around enormous silver trees, elegant white
+      stone towers, arched bridges, glowing blue arcane crystals, moonlit fountains,
+      graceful elven citizens and sentinels, the ordinary human traveler appears tiny
+      and out of place at the edge of the avenue, iconic high fantasy city vista,
+      {fixed_world_block}
+  - id: SP12_BLOOD_ELF_CAPITAL
+    seed: 37112
+    intent: "测试血精灵主城的金色建筑、红色旗帜和奥术奢华"
+    prompt: >-
+      a magnificent blood elf capital with golden domes, red banners, polished marble,
+      floating arcane ornaments, ornate spires and warm sunset light, elegant blood elf
+      magisters and guards moving through a ceremonial plaza, high fantasy opulence and
+      controlled magic, {fixed_world_block}
+  - id: SP13_HYJAL_MOUNTAIN
+    seed: 37113
+    intent: "测试海加尔山的远古巨树、山岳尺度和自然神圣感"
+    prompt: >-
+      Mount Hyjal at dawn, colossal ancient world tree rising above misty mountain
+      terraces, druidic stone ruins, enormous roots, waterfalls and distant birds,
+      a lone human traveler standing on a high ledge to show impossible scale, sacred
+      primeval wilderness, {fixed_world_block}
+  - id: SP14_ELEMENTAL_CREATURE
+    seed: 37114
+    intent: "测试元素怪的轮廓、材质和环境关联"
+    prompt: >-
+      a hostile elemental creature formed from cracked earth, glowing embers and ash,
+      standing beside a ruined road after a fire, chunks of stone orbiting its core,
+      heat haze and scorched grass showing physical cause and effect, the ordinary human
+      traveler keeps distance and studies its movement, {fixed_world_block}
+  - id: SP15_FIRE_ELEMENTAL
+    seed: 37115
+    intent: "测试火焰生物与火焰塑形的差异"
+    prompt: >-
+      a compact fire elemental made of layered flame, coal-black stone and bright molten
+      cracks, its silhouette readable against a dark ruin, sparks rising with convection,
+      the ordinary human traveler uses a thin curved fire barrier to redirect its charge,
+      tactical scale rather than a giant explosion, {fixed_world_block}
+  - id: SP16_FROST_ELEMENTAL
+    seed: 37116
+    intent: "测试冰霜生物的透明结构、重量和脆裂"
+    prompt: >-
+      a frost elemental made of translucent blue ice, packed snow and frozen stone,
+      standing in a muddy forest clearing, visible internal cracks and heavy footprints,
+      the ordinary human traveler creates a low ice wedge to change its footing, cold
+      vapor and broken ice showing material response, {fixed_world_block}
+  - id: SP17_FIRE_SPELL_TACTIC
+    seed: 37117
+    intent: "法术专项：火焰塑形、热量和地形互动"
+    prompt: >-
+      the ordinary human traveler in well-made Alliance-style clothing using a narrow
+      curved ribbon of fire to ignite a fallen branch and create a temporary visual
+      barrier, smoke rising, dry grass catching only at the edge, the fire shape is
+      controlled and imperfect, clear spatial cause and effect, {fixed_world_block}
+  - id: SP18_ICE_SPELL_TACTIC
+    seed: 37118
+    intent: "法术专项：冰面、摩擦、结构和逃生"
+    prompt: >-
+      the ordinary human traveler forming a thin ice ramp across wet stones to escape
+      a charging beast, one boot slipping while the ice fractures under weight, frost
+      spreading across puddles, the spell is a temporary physical tool rather than a
+      giant ice blast, readable movement and survival tension, {fixed_world_block}
 
 scoring:
   scale: "1-5; 1=失败, 3=可用, 5=明显优势"
