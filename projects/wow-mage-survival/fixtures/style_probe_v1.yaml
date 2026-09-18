@@ -202,7 +202,8 @@ cases:
     seed: 37117
     intent: "法术专项：火焰塑形、热量和地形互动"
     prompt: >-
-      the ordinary human traveler in well-made Alliance-style clothing using a narrow
+      exactly one ordinary human traveler in well-made Alliance-style clothing, no other
+      people, no companions, low-level practical gear, using a narrow
       curved ribbon of fire to ignite a fallen branch and create a temporary visual
       barrier, smoke rising, dry grass catching only at the edge, the fire shape is
       controlled and imperfect, clear spatial cause and effect, {fixed_world_block}
@@ -210,7 +211,8 @@ cases:
     seed: 37118
     intent: "法术专项：冰面、摩擦、结构和逃生"
     prompt: >-
-      the ordinary human traveler forming a thin ice ramp across wet stones to escape
+      exactly one ordinary human traveler in well-made Alliance-style clothing, no other
+      people, no companions, low-level practical gear, forming a thin ice ramp across wet stones to escape
       a charging beast, one boot slipping while the ice fractures under weight, frost
       spreading across puddles, the spell is a temporary physical tool rather than a
       giant ice blast, readable movement and survival tension, {fixed_world_block}
