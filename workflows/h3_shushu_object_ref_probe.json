@@ -1,0 +1,16 @@
+{
+  "u": {"class_type": "UNETLoader", "inputs": {"unet_name": "minimax_h3_ref2va_pruned_int8_convrot.safetensors", "weight_dtype": "default"}},
+  "lo": {"class_type": "LoraLoaderModelOnly", "inputs": {"lora_name": "minimax_h3_five_view_512_s1500.safetensors", "strength_model": 1.0, "model": ["u", 0]}},
+  "c": {"class_type": "CLIPLoader", "inputs": {"clip_name": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors", "type": "minimax", "device": "default"}},
+  "v": {"class_type": "VAELoader", "inputs": {"vae_name": "minimax_h3_video_vae_fp16.safetensors"}},
+  "img": {"class_type": "LoadImage", "inputs": {"image": "ref2va_refs/fellow/processed/shushu_identity_rebuilt_v2_cap.png"}},
+  "cs": {"class_type": "H3ContactSheet", "inputs": {"clip": ["c", 0], "vae": ["v", 0], "prompt": "<Picture 1> is the identity reference for the single ordinary adult male traveler. Generate a fantasy character object reference: preserve his facial identity, short dark hair, light mustache and short stubble, black baseball cap worn backward, and ordinary adult proportions. Dress him in practical blue and charcoal Alliance-inspired fantasy clothing, full body, front-facing neutral standing pose, clean gray studio background, painted fantasy game concept art. No other people, no text, no logo.", "ref_image": ["img", 0], "size": 768}},
+  "g": {"class_type": "BasicGuider", "inputs": {"model": ["lo", 0], "conditioning": ["cs", 0]}},
+  "sch": {"class_type": "BasicScheduler", "inputs": {"model": ["lo", 0], "scheduler": "simple", "steps": 28, "denoise": 1.0}},
+  "ks": {"class_type": "KSamplerSelect", "inputs": {"sampler_name": "res_multistep"}},
+  "n": {"class_type": "RandomNoise", "inputs": {"noise_seed": 37210}},
+  "s": {"class_type": "SamplerCustomAdvanced", "inputs": {"noise": ["n", 0], "guider": ["g", 0], "sampler": ["ks", 0], "sigmas": ["sch", 0], "latent_image": ["cs", 1]}},
+  "dec": {"class_type": "H3ContactSheetDecode", "inputs": {"vae": ["v", 0], "samples": ["s", 0]}},
+  "save": {"class_type": "SaveImage", "inputs": {"images": ["dec", 1], "filename_prefix": "wow_object_ref/shushu_h3_reference_probe"}},
+  "save2": {"class_type": "SaveImage", "inputs": {"images": ["dec", 0], "filename_prefix": "wow_object_ref/shushu_h3_reference_probe_views"}}
+}
