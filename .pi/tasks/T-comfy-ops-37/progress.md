@@ -71,3 +71,4 @@
 - 用户目测复核后修正排序：Gemlight 最合适，Jibs 较风格化，KREA2 最差。确认本轮没有使用参考图；SP02/SP05 已提供同 prompt/seed/尺寸/工作流的横向控制，因此 KREA2 不再扩展大矩阵，后续资源集中 Gemlight 与 Jibs。
 - Gemlight/Jibs 的四个 WoW 专题场景已完成 2K 生成：Stormwind、Westfall、Deadmines、Defias，各 2 张，结果登记在 `experiments/T-comfy-ops-37/evaluation_v1.md`。当前主视觉基线确定为 Gemlight；Jibs 作为法术/动作强化候选，不叠加使用。
 - 用户决策更新：Jibs 风格固定为当前项目视觉基线；Gemlight 不锁定，后续切换候选风格/LoRA 探索。当前所有测试均为 prompt-only，KREA2 工作流只有 UNET/CLIP/VAE/文本编码/空 latent/KSampler，没有输入参考图或图像条件节点。
+- 法术专项 SP17/SP18 已完成 Jibs/Gemlight 对照：Jibs 的火焰/冰面材质和游戏化轮廓更强，但会增加人物、提高英雄化程度；Gemlight 有火焰氛围优势但角色职业化、冰霜物理较弱。下一轮加入单一主角、无第二人物、低装备等级和明确法术接触点约束。
