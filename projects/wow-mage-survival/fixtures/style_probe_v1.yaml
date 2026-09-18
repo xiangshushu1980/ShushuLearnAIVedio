@@ -117,6 +117,38 @@ cases:
       the monastery, a small ice foothold and a brief fire flash create just enough space
       to survive, wolf silhouettes behind him, debris, breath and dirt communicate effort,
       {fixed_world_block}
+  - id: SP07_STORMWIND_GATE
+    seed: 37107
+    intent: "确认暴风城人类联盟建筑、守卫装备和城市尺度"
+    prompt: >-
+      an ordinary young human traveler arriving beneath the massive gates of Stormwind,
+      pale limestone walls, blue rooftops, blue-and-gold Alliance banners, human guards
+      in recognizable blue plate and tabards, busy market street beyond the bridge,
+      he feels small and overwhelmed rather than heroic, {fixed_world_block}
+  - id: SP08_WESTFALL_FRONTIER
+    seed: 37108
+    intent: "确认西部荒野的边境、农场和战争后的荒凉感"
+    prompt: >-
+      the ordinary young human traveler crossing a Westfall frontier road, windmill,
+      abandoned farm buildings, broken fences, dry yellow grass, distant watchtower,
+      battered but well-made human clothing, broad empty sky and a dangerous borderland
+      atmosphere, no heroic pose, {fixed_world_block}
+  - id: SP09_DEADMINES_ENTRANCE
+    seed: 37109
+    intent: "确认死亡矿井的矿洞工业、木梁、矿轨和火把"
+    prompt: >-
+      the ordinary young human traveler hiding at the entrance to the Deadmines,
+      rough mine tunnel, heavy timber supports, iron rails, wooden platforms, crates,
+      ropes, torchlight, damp rock and a distant goblin-built machine, he studies patrol
+      routes before entering, readable stealth and danger, {fixed_world_block}
+  - id: SP10_DEFIAS_BANDITS
+    seed: 37110
+    intent: "确认迪菲亚兄弟会的红面巾、皮革、轻型护具和组队巡逻"
+    prompt: >-
+      three Defias Brotherhood bandits patrolling a ruined Westfall road, red cloth masks,
+      dark leather armor, short blades and crossbows, coordinated silhouettes near a
+      broken farm gate, the ordinary young human traveler concealed behind a stone wall,
+      planning an escape route instead of fighting directly, {fixed_world_block}
 
 scoring:
   scale: "1-5; 1=失败, 3=可用, 5=明显优势"
