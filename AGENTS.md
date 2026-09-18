@@ -8,6 +8,13 @@
 2. 任务匹配 `.pi/skills/` 下的项目 skill 时，显式读取其 `SKILL.md`；再按任务读取所需 references。宿主 catalog 未列出项目 skill 不代表已加载。
 3. 开始任务；TODO 只按关键词或 T-ID 检索，不全量读入。
 
+## ComfyUI 权限边界
+
+- 禁止在沙箱权限下启动、重启、停止或直接操作 ComfyUI；也不要把沙箱内访问不到 `127.0.0.1:8188`、GPU、进程或模型目录解释为 ComfyUI 离线。
+- 需要查询、提交生成、读取队列/模型、访问 GPU 或操作 `/home/sean/projects/ComfyUI` 时，先请求宿主提供全局权限；权限不足就暂停并等待用户授权，不在沙箱内绕过或尝试替代启动。
+- ComfyUI 默认视为共享单实例服务：先检查共享 Agent 状态和队列，禁止擅自重启、切换数据库或创建第二实例。
+- 该规则只约束操作纪律，不授予权限；实际权限由 Codex 宿主/会话的 approval policy 和 sandbox profile 决定。
+
 ## H3 测试与提示词硬规则
 
 - 任何 MiniMax H3 视频测试、生成、提示词编写、修改或审查，**先读 `.pi/skills/h3-prompt-writing/SKILL.md`、对应模式的参考文件和 `docs/17_h3_prompt_writing_rules.md`**。先判定 T2VA、I2VA、FL2VA、L2VA 或 Ref2VA；字段、标签、顺序和时间线以该模式官方参考为准。
