@@ -90,3 +90,9 @@
 - 首次使用通用 `img_qc_test.py` 时发现该工作流没有正确替换提示词/LoRA，生成了默认狐耳女孩；3 张错误产物已移至 `ComfyUI/output/wow_object_ref/discard/invalid_script_injection/`，不纳入测试。
 - 参考图链最小验证已完成：使用 H3 `H3ContactSheet` 真正接入 `shushu_identity_rebuilt_v2_cap.png`，生成的角色保留了 Shushu 的脸部特征、反戴黑帽和普通成年男性比例，再转换为蓝色联盟风格服装。结果明显比纯提示词接近，说明“不像”的主要原因确实是此前没有图像条件，而不是 fantasy 风格本身完全不能保留人物。
 - 当前 KREA2/Jibs T2I 工作流没有参考图节点，因此尚未伪造 Jibs 0.3/0.6 的参考图对照；已新增 `workflows/h3_shushu_object_ref_probe.json` 作为参考图链路验证样本。后续若要做严格三档对照，需要接入 KREA2 兼容的参考图/IP-Adapter/主体参考节点。
+
+## 2026-09-18 KREA2 Reference 方法核查
+
+- 核查确认：KREA2 官方支持 Style Reference；ComfyUI 官方模板为 `Krea-2 Turbo style reference`，使用专用 `krea2_style_reference.safetensors` 与 `krea2_turbo_int8_convrot.safetensors`。本机当前缺少这两个权重，因此官方风格参考模板暂不能直接运行。
+- 获取社区 `ComfyUI-Krea2-Reference` 源码到 ComfyUI `custom_nodes/ComfyUI-Krea2-Reference`（commit `bae20b3`）。其 `TextEncodeKrea2Reference` 支持角色/风格分工：`character1` 作为 Shushu 身份，`style1` 作为 WoW 插画风格；并配套 `krea2_reference_v1` 参考 LoRA，理论上可再叠加 Jibs。
+- 当前共享 ComfyUI 未重启，API 尚未加载新节点；本机也只有 `qwen3vl_4b_fp8_scaled.safetensors`，社区工作流要求 BF16 Qwen3-VL 视觉路径。下一步需要补齐兼容权重后，才能做“Shushu + WoW 风格图 + Jibs”的真实对照。
