@@ -11,6 +11,7 @@
 | C-ID | 主题 | 状态 | 所在文件 |
 |---|---|---|---|
 | C-20260822-01 | 协作三时点分层（建任务体检 / 自由对话轻检 / 锚点注入） | ✅现行 | collab-governance.md |
+| C-20260907-01 | Conductor Worker 失败回报与重试契约 | ✅现行 | T-32 验证 |
 
 ---
 
@@ -21,3 +22,12 @@
   - 2026-08-22 提出并拍板：用户提议「全询问式（不自动建任务/不主动查询）」→ 讨论修正为三时点分层 → Codex（gpt-5.6-terra）评审修正（补执行承诺漏检、体检五分类结构化、信号可观测化+审计、ledger 元数据）→ 拍板「只建议不阻止 + 指标靠审计日志」；来源：自由对话讨论 + Codex 评审（无任务 T-ID）
   - 2026-08-22 落地：AGENTS.md 新增建任务决策点体检 + 自由对话默认不查（commit 879fc90）；multi-agent-collab skill 同步 + Codex 优化重写 206→191 行压缩 45%（commit 72582fc，独立会话实测 16 机制点全保留）
 - 证据锚：~/.pi/agent/AGENTS.md（创建与启动节/查询与跨项目节）/ ~/.pi/agent/skills/multi-agent-collab/SKILL.md / git pi-agent-config 879fc90, 72582fc / mem0 global「用户级文件修改纪律」通告
+
+
+### C-20260907-01 | Conductor Worker 失败回报与重试契约
+- 状态：✅现行（valid_from 2026-09-07，09-08 复测）
+- 现行值：**Worker 失败必须显式回报 FAILED 并由 Conductor 重试，不静默吞掉**——不存在 Source 文件触发 `FileNotFoundError` 时，Run `d71e4c11-5bec-4c16-ae3d-7d43e7bbf5f8` 由 Worker 回报 FAILED，Conductor 按契约重试该 Source 并保留失败轨迹。
+- 时间线：
+  - 2026-09-07 提出：T-comfy-ops-32 首次验证 Worker 失败回报与重试机制（来源任务 T-comfy-ops-32）
+  - 2026-09-08 复测：同场景再次验证一致（来源任务 T-comfy-ops-32）
+- 证据锚：.pi/tasks/T-comfy-ops-32/progress.md / mem0 b0b33c26

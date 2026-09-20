@@ -11,6 +11,7 @@
 | C-20260816-17 | Seedance 7 条经验 H3 适用性 | ✅现行 | 适用 2.5/7 |
 | C-20260816-18 | 提示词增强在线 IR API 选型 | ✅现行 | 在线胜出 |
 | C-20260816-19 | turnaround LoRA 适用域 | ✅现行 | 仅动漫/风格化 |
+| C-20260918-01 | 多 Subject 技能参考绑定与双人物一致性 | 🟡待验证 | 拆分绑定优于整图 |
 
 ---
 
@@ -52,3 +53,10 @@
   - 2026-08-14 提出：功能验证通过（动画域 512/1024 两档；来源任务 T-20260815-07）
   - 2026-08-15 修正：写实照片 OOD 验证失败 → 适用域限定动漫/风格化（覆盖 08-14 未限定版本）
 - 证据锚：output/img_turnaround/ / workflows/turnaround_test.json / .pi/tasks/h3-new-findings-test/progress.md
+
+### C-20260918-01 | 多 Subject 技能参考绑定与双人物一致性
+- 状态：🟡待验证（valid_from 2026-09-18）
+- 现行值：① **参考图拆分绑定优于整图**：把帽子裁成独立参考图，身份/帽子/服装/场景分别绑定为四个 Subject；帽子在 retention 与 detailed_description 中标记为 `fully_preserved` + `mandatory visible accessory`，保持效果最好；② 双人物场景「CC 在左、shushu 在右」五点抽帧**身份保持区分、无脸部混合**；③ **风险：身份源图背景会与场景竞争**——A 片首个抽样点短暂泄漏原始居家背景/动物，随后回到演播室，需强化场景排除或使用更干净的身份图；④ 外部音频锁定与五 Subject（身份/帽子/服装/场景/蓝色能量球）可同时提交 A/B 成功；⑤ 声音链路控制样本：因无 shushu 本人声音，使用既有数字人短语音 `audio_control_sample_s1.wav`，**明确不作 shushu 音色结论**
+- 时间线：
+  - 2026-09-18 提出：T-comfy-ops-38 双人物 A/B、四 Subject 绑定、五 Subject+外音锁定、声音链路控制样本同批实测（来源任务 T-comfy-ops-38）
+- 证据锚：.pi/tasks/T-comfy-ops-38/progress.md / mem0 195e471b、9a722ee4、ead5f12c、2f144b9a
