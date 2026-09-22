@@ -1,0 +1,78 @@
+{
+  "prompt": {
+    "1": {
+      "class_type": "UNETLoader",
+      "inputs": {
+        "unet_name": "krea2_turbo_fp8.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    "2": {
+      "class_type": "CLIPLoader",
+      "inputs": {
+        "clip_name": "qwen3vl_4b_fp8_scaled.safetensors",
+        "type": "krea2",
+        "device": "default"
+      }
+    },
+    "3": {
+      "class_type": "VAELoader",
+      "inputs": {
+        "vae_name": "qwen_image_vae.safetensors"
+      }
+    },
+    "4": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": ["2", 0],
+        "text": "M1djourneyArtStyle, original grimdark fantasy game environment concept art, a human frontier abbey overtaken by a void-born chaotic corruption, the architecture still reads as a white-stone hill monastery with a central tower, two low wings, a broad stairway and a fortified entrance, but the stone is blackened and split by glowing crimson and violet fissures, red banners and rusted iron ornaments, a deep crimson sky breaking through storm clouds, three corrupted human defenders in the foreground wearing massive red-black baroque plate armor with horned pauldrons, brutal layered metal, chains, spikes and worn leather, medieval weapons only, no guns, beside a human priest in heavy red-black ceremonial robes holding a twisted staff and a dim violet void flame, their faces human but exhausted and contaminated, a few frightened ordinary villagers sheltering near the side buildings, dramatic wide establishing shot, readable silhouettes, strong red color theme, grimdark baroque war-fantasy, ancient stone, ash, smoke, rain, red reflected light, high detail but clear game-design shapes, cinematic composition, 2048x1152 landscape, no famous characters, no existing faction emblems, no readable text, no watermark, no direct recreation of any existing game location, no modern science-fiction technology, no spaceships, no photorealistic historical drama, no anime, no cute style"
+      }
+    },
+    "5": {
+      "class_type": "EmptyLatentImage",
+      "inputs": {
+        "width": 2048,
+        "height": 1152,
+        "batch_size": 1
+      }
+    },
+    "6": {
+      "class_type": "KSampler",
+      "inputs": {
+        "model": ["9", 0],
+        "positive": ["4", 0],
+        "negative": ["4", 0],
+        "latent_image": ["5", 0],
+        "seed": 37231,
+        "steps": 8,
+        "cfg": 1.0,
+        "sampler_name": "er_sde",
+        "scheduler": "simple",
+        "denoise": 1.0
+      }
+    },
+    "7": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": ["6", 0],
+        "vae": ["3", 0]
+      }
+    },
+    "8": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": ["7", 0],
+        "filename_prefix": "krea2_jibs_chaos_abbey_probe/chaos_abbey_red_human_guard_priest"
+      }
+    },
+    "9": {
+      "class_type": "LoraLoaderModelOnly",
+      "inputs": {
+        "model": ["1", 0],
+        "lora_name": "Jibs_Krea_2_Midjourney_Fantasy_Style_V1.safetensors",
+        "strength_model": 1.0
+      }
+    }
+  },
+  "client_id": "krea2-jibs-chaos-abbey-probe"
+}
