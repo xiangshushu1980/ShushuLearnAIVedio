@@ -7,6 +7,10 @@
 ## 参考对象
 
 - [Northshire Valley 游戏截图](https://www.wsgf.org/dr/world-warcraft)：白石修道院、绿色起始区、木制摊位和清晰的游戏内构图。
+- [Northshire Abbey 原作建筑图](https://warcraft.wiki.gg/wiki/Northshire_Abbey)：白石建筑、中央塔楼、入口台阶、彩窗、屋顶分区和林间空地；用于确认原作空间骨架，不作为最终建筑设计。
+- [Northshire Abbey 夜景](https://cynwise.wordpress.com/2009/07/29/pvp-etiquette-primer/)：入口灯光、夜间能见度、台阶和树线关系；用于研究危险感和安全感的反差。
+- [Northshire Abbey 3D 模型参考](https://www.hiveworkshop.com/threads/northshire-abbey.342283/)：从侧面观察中央塔楼、两侧建筑体量、屋顶和入口结构。
+- [Northshire Abbey UE5 粉丝重建](https://forums.unrealengine.com/t/world-of-warcraft-northshire-abbey-environment-fan-art/1439587)：用于观察原作建筑被重新搭建成现代实时场景后的空间层次，不代表我们的最终风格。
 - [Stormwind bridge / human guard](https://www.warcrafttavern.com/wow-classic/guides/pve-holy-paladin-talents-amp-builds/)：浅色石材、蓝色守卫制服、金色/红色装备和高识别度阵营建筑。
 - [Westfall 区域资料](https://www.mmo-champion.com/content/1085-Westfall)：开阔荒地、农场、风车、低饱和天空和边境衰败感。
 - [Deadmines Defias patrol](https://www.hcguides.com/dungeons/the-deadmines)：矿洞木梁、矿轨、火把、潮湿岩壁，以及红面巾/深色皮革的迪菲亚识别度。
