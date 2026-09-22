@@ -2,6 +2,8 @@
 
 这是一个轻量的作品相关实验包，不代表正式启动小说/短剧生产。当前只服务风格探索、人物 Ref 和相关技术验证。
 
+故事讨论边界见 [`references/story_constraints_v1.md`](references/story_constraints_v1.md)：只借用 WOW 的任务功能和世界结构，不直接使用任何现有 NPC，也不直接复制标志性视觉元素。
+
 ## 目录分工
 
 - `plugins/`：当前概念需要的专属 ComfyUI 节点或控制逻辑。
