@@ -63,6 +63,33 @@ def find_output(prefix):
     return cands[-1] if cands else None
 
 
+def legal_h3_frames(n):
+    """H3 video frame lengths: 17*k+5 (the MC/latent phase must close)."""
+    return n >= 5 and (n - 5) % 17 == 0
+
+
+def latent_file_exists(c):
+    sl = c.get("save_latent")
+    if not sl:
+        return True
+    p = sl.get("filename_prefix", "h3_context/clip")
+    # Motion Context SaveLatent writes into ComfyUI output and appends _00001.
+    return bool(glob(os.path.join(OUTPUT_DIR, p + "_*.safetensors")))
+
+
+def probe_video(path):
+    if not path:
+        return {}
+    try:
+        raw = subprocess.check_output([
+            "ffprobe", "-v", "error", "-select_streams", "v:0",
+            "-show_entries", "stream=nb_frames,duration,r_frame_rate",
+            "-of", "json", path], text=True)
+        return json.loads(raw).get("streams", [{}])[0]
+    except Exception:
+        return {}
+
+
 def build_wf(c):
     """ref2va 工作流（对齐 h3_gap_runner 节点布局，1-15 不动），
     16+ 为 MC 专属节点。"""
@@ -96,43 +123,59 @@ def build_wf(c):
         inp[f"ref_audios.ref_audio_{i}"] = [str(node_id), 0]
     wf["6"] = {"class_type": "MiniMaxH3ReferenceToVideo", "inputs": inp}
 
+    audio_lock = c.get("audio_lock")
+    if audio_lock:
+        audio_path = audio_lock if isinstance(audio_lock, str) else c.get("audios", [])[0]
+        wf["19"] = {"class_type": "LoadAudio", "inputs": {"audio": audio_path}}
+        wf["20"] = {"class_type": "MiniMaxH3NativeAudioLock", "inputs": {
+            "model": ["1", 0], "av_latent": ["6", 1], "audio_vae": ["4", 0], "audio": ["19", 0]}}
+        base_model = ["20", 0]
+        base_latent = ["20", 1]
+    else:
+        base_model = ["1", 0]
+        base_latent = ["6", 1]
+
     wf["7"] = {"class_type": "KSamplerSelect", "inputs": {"sampler_name": "res_multistep"}}
     wf["8"] = {"class_type": "BasicScheduler", "inputs": {
-        "model": ["1", 0], "scheduler": "simple",
+        "model": base_model, "scheduler": "simple",
         "steps": c.get("steps", 20), "denoise": 1.0}}
-    wf["9"] = {"class_type": "BasicGuider", "inputs": {"model": ["1", 0], "conditioning": ["6", 0]}}
+    wf["9"] = {"class_type": "BasicGuider", "inputs": {"model": base_model, "conditioning": ["6", 0]}}
     wf["10"] = {"class_type": "RandomNoise", "inputs": {"noise_seed": c.get("seed", 20260812)}}
     wf["11"] = {"class_type": "SamplerCustomAdvanced", "inputs": {
         "noise": ["10", 0], "guider": ["9", 0], "sampler": ["7", 0],
-        "sigmas": ["8", 0], "latent_image": ["6", 1]}}
+        "sigmas": ["8", 0], "latent_image": base_latent}}
 
     mc = c.get("mc")
     trim = None
     if mc:
         # 16 LoadLatent -> 17 MotionContext -> 9 BasicGuider / 18 Trim
-        wf["16"] = {"class_type": "MiniMaxH3MotionContextLoadLatent", "inputs": {
+        load_id = "21" if audio_lock else "16"
+        mc_id = "22" if audio_lock else "17"
+        trim_id = "23" if audio_lock else "18"
+        wf[load_id] = {"class_type": "MiniMaxH3MotionContextLoadLatent", "inputs": {
             "latent_path": mc.get("latent_path", "h3_context"),
             "clip_index": mc.get("clip_index", 1)}}
-        wf["17"] = {"class_type": "MiniMaxH3MotionContext", "inputs": {
+        wf[mc_id] = {"class_type": "MiniMaxH3MotionContext", "inputs": {
             "conditioning": ["6", 0],
             "vae": ["3", 0],
-            "latent": ["6", 1],
+            "latent": base_latent,
             "context_length": mc.get("context_length", "22"),
             "audio_context_length": mc.get("audio_context_length", 24),
-            "context_latent": ["16", 0]}}
-        wf["9"]["inputs"]["conditioning"] = ["17", 0]
-        trim = "18"
+            "context_latent": [load_id, 0]}}
+        wf["9"]["inputs"]["conditioning"] = [mc_id, 0]
+        if c.get("trim", True):
+            trim = trim_id
 
     wf["12"] = {"class_type": "VAEDecode", "inputs": {"samples": ["11", 0], "vae": ["3", 0]}}
     wf["13"] = {"class_type": "VAEDecodeAudio", "inputs": {"samples": ["11", 0], "vae": ["4", 0]}}
 
     if trim:
         # Trim 去掉 pin 头部（trim_frames 从 MC 节点 output1 取），音画同步裁
-        wf["18"] = {"class_type": "MiniMaxH3MotionContextTrim", "inputs": {
-            "images": ["12", 0], "trim_frames": ["17", 1],
+        wf[trim] = {"class_type": "MiniMaxH3MotionContextTrim", "inputs": {
+            "images": ["12", 0], "trim_frames": [mc_id, 1],
             "audio": ["13", 0], "fps": 24.0, "match_tail": True}}
         wf["14"] = {"class_type": "CreateVideo", "inputs": {
-            "images": ["18", 0], "fps": 24, "audio": ["18", 1], "bit_depth": 8}}
+            "images": [trim, 0], "fps": 24, "audio": [trim, 1], "bit_depth": 8}}
     else:
         wf["14"] = {"class_type": "CreateVideo", "inputs": {
             "images": ["12", 0], "fps": 24, "audio": ["13", 0], "bit_depth": 8}}
@@ -142,13 +185,15 @@ def build_wf(c):
 
     if trim:
         # seam_probe 需要 trim 前的音频（VAEDecodeAudio 直出，不经过 Trim）
-        wf["20"] = {"class_type": "SaveAudioAdvanced", "inputs": {
+        seam_audio_id = "25" if audio_lock else "20"
+        wf[seam_audio_id] = {"class_type": "SaveAudioAdvanced", "inputs": {
             "audio": ["13", 0], "filename_prefix": c.get("prefix") + "_untrimmed", "format": "flac"}}
 
     sl = c.get("save_latent")
     if sl:
         # 采样器 latent -> SaveLatent（段1 存 clip1，段2 存 clip2，供链式续跑）
-        wf["19"] = {"class_type": "MiniMaxH3MotionContextSaveLatent", "inputs": {
+        latent_save_id = "24" if audio_lock else "19"
+        wf[latent_save_id] = {"class_type": "MiniMaxH3MotionContextSaveLatent", "inputs": {
             "latent": ["11", 0],
             "filename_prefix": sl.get("filename_prefix", "h3_context/clip"),
             "clip_index": sl.get("clip_index", 1)}}
@@ -163,6 +208,14 @@ def main():
     for c in cases:
         c.setdefault("prompt", top_prompt)
         c.setdefault("seed", top_seed)
+        if not legal_h3_frames(int(c["length"])):
+            raise SystemExit(
+                f"{c['name']}: 非法 H3 length={c['length']}；必须满足 17*k+5，"
+                "例如 124/141/243。禁止用 146 等长度做 MC 链。")
+        if c.get("mc") and not c.get("save_latent"):
+            raise SystemExit(
+                f"{c['name']}: MC continuation 必须声明 save_latent，"
+                "否则下一段无法可靠接续。")
     interval = 10
     if "--interval" in sys.argv:
         interval = int(sys.argv[sys.argv.index("--interval") + 1])
@@ -177,8 +230,11 @@ def main():
             if prev.get("error") and "skipped (OOM abort)" not in prev["error"]:
                 print(f"[{c['name']}] 上次失败({prev['error'][:60]}...)，重跑", flush=True)
             else:
-                print(f"[{c['name']}] 已存在结果，跳过", flush=True)
-                continue
+                if c.get("save_latent") and not latent_file_exists(c):
+                    print(f"[{c['name']}] 结果存在但 latent 缺失，重跑", flush=True)
+                else:
+                    print(f"[{c['name']}] 已存在结果，跳过", flush=True)
+                    continue
         if aborted:
             print(f"[{c['name']}] ⛔ OOM abort，跳过", flush=True)
             results.append({"name": c["name"], "error": "skipped (OOM abort)"})
@@ -216,7 +272,7 @@ def main():
         else:
             print(f"[{c['name']}] ✅ {t1-t0:.0f}s 峰值显存 {peak:.1f}GB -> {video}", flush=True)
         rec = {"name": c["name"], "seconds": round(t1 - t0), "peak_vram_gb": round(peak, 1),
-               "error": err, "video": video}
+               "error": err, "video": video, "video_meta": probe_video(video)}
         results.append(rec)
         done[c["name"]] = rec
         if err and ("out of memory" in err.lower() or "cuda" in err.lower() and "memory" in err.lower()):

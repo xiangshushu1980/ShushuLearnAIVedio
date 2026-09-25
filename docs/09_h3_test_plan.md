@@ -253,6 +253,29 @@ A_motioncache/ B_steps/ C_quant/ D_prompt/ E_ref/ F_long/ G_res/（文件名语�
 - **管线固化**：
   - 快速抽卡：fp8 + sage + MC + 14 步 @ 768×448（画面安全，声音差无所谓）→ 预计 <1.5min/条
   - 正式成片：fp8 + sage + 20 步 @ 1024×576（画面+声音双保）→ 5s≈2min / 10s≈5min / 15s≈8min
+
+## H3 Sparse Attention 与 SageAttention 当前证据边界（2026-09-19）
+
+目前没有严格同条件的“原生 H3 + Sparse”与“原生 H3 + SageAttention”历史 A/B：已有数据来自不同日期、prompt、音频、模型驻留状态或工作流版本，不能合并成单一速度结论。
+
+方向性数据：历史原生 H3 + Sage 的 1024×576/10s 约295–303s；本次无 Sage、原生20-step、H3Memory、H3 Sparse30 为10s 235.2s、20s 545.5s。二者条件不同，只能说明 Sparse 有独立价值，不能宣称全面胜过 Sage。
+
+同条件短测：1024×576/5s/原生20-step/无 Sage/H3Memory 下，Sparse 140.1s，Dense 190.7s，约快26.5%。因此当前只能确认 Sparse 是原生 H3 Dense 的有效降算力路径；不能替代 PDD+Sage。显式 Sage 与 H3 Sparse 叠加会触发 `existing_dense` fallback，应避免叠加。
+
+## H3MemoryOptimization 跨流程验证（2026-09-19）
+
+`H3MemoryOptimization(chunk_rows=4096, Preserve native, QKV Auto)` 已在 PDD 流程和原生标准20-step流程中成功使用。PDD + Sage + H3Memory 的标准 Ref2VA 1024×576/20s 约320–337s；原生 H3 + H3Memory 的 Dense 1024×576/5s 190.7s，Sparse 分支也成功。
+
+当前结论：H3MemoryOptimization 可作为 PDD 和原生标准流程的可选显存/执行优化；PDD 组合的视频质量筛查通过，但音频有轻微力度/音质劣化迹象，不能强制作为音频优先默认。复杂动作仍需人工验收。
+
+## Sources 复核：Sparse 的使用条件与 LoRA 关系（2026-09-19）
+
+- 本地 `H3-Optimizations` 的普通 `H3SparseAttention` 不要求特殊 LoRA；它是推理阶段的视频 attention 稀疏化节点，推荐先用 `H3MemoryOptimization`，需要更快时再加 Sparse。
+- 官方说明明确：Sparse 不是无损加速；较低 video attention budget 可能影响 prompt adherence、动作、细节和构图，H3 对早期采样尤其敏感，因此保留 `Denser Early`。
+- SLA / Sparse-Linear Attention 是另一条路线，通常需要与经过稀疏 attention 适配的 SLA/Turbo LoRA 以及对应 kernel 配套，不能与普通 H3 Sparse 混为一谈。
+- H3Memory 与普通 H3 Sparse 可以组合；显式 SageAttention 与当前 Sparse backend 不应组合，本机已验证会 fallback 到 existing dense。
+- 选型：正式出片仍优先 `PDD + SageAttention`；原生 H3 需要降算力/显存时使用 `H3MemoryOptimization + H3SparseAttention`。特殊 SLA LoRA 暂不引入。
+- Sources： [H3-Optimizations](https://github.com/Zironic/H3-Optimizations)、[MiniMax H3 官方仓库](https://github.com/MiniMax-AI/MiniMax-H3)、[SLA LoRA 配对说明](https://huggingface.co/Smite79/MiniMax-H3-Longvideos/commit/9f31ba49200b24dae3e5573fddc19aba4a3ed769)、[H3 集成资料汇总](https://github.com/MiniMax-AI/awesome-minimax-h3-integration)。
 - 声音专项（后续）：sage/MC 对音频频谱影响、成片档声音基线
 
 ### 社区做法调研：提示词控制强度 / 参考图强度 / 导演台（2026-08-04）
@@ -360,7 +383,7 @@ A_motioncache/ B_steps/ C_quant/ D_prompt/ E_ref/ F_long/ G_res/（文件名语�
 
 ## 补测批 E：Spectrum 采样加速 A/B（2026-08-28，T-comfy-ops-11，文件 video/spectrum_test/）
 
-> 对象：xmarre/ComfyUI-Spectrum-MiniMax-H3 v0.2.20（528★，training-free 跳 H3 transformer blocks，用 anchor 预测 hidden state；默认参数全默认：blend 0.5/degree 1/offline_smoothing_replay=true）。同 seed 20260814 同 prompt，native vs Spectrum 双臂；runner scripts/h3_spectrum_ab_runner.py，对比拼图 experiments/spectrum_ab/frames/。
+> 对象：xmarre/ComfyUI-Spectrum-MiniMax-H3 v0.2.20（528★，training-free 跳 H3 transformer blocks，用 anchor 预测 hidden state；默认参数全默认：blend 0.5/degree 1/offline_smoothing_replay=true）。同 seed 20260814 同 prompt，native vs Spectrum 双臂；历史 runner 见 `scripts/archive/historical/h3_spectrum_ab_runner.py`，对比结果已提炼到本页和 `docs/10_h3_batch_optimization.md`。
 
 ### 速度矩阵（干净环境，每条前 /free，采样段=进度条口径）
 
@@ -390,3 +413,26 @@ A_motioncache/ B_steps/ C_quant/ D_prompt/ E_ref/ F_long/ G_res/（文件名语�
 4. **端到端收益被固定开销稀释**：小分辨率（768×448）下采样占比仅 ~45%，采样加速对端到端无感；1024×576 20 步档采样占比 62%，端到端收益才可见。Spectrum 不能与批量优化（两阶段/CondCache）叠加省加载——两者收益独立
 5. **调度规则（RES multistep）**：8 步=6A+2F、20 步=12A+8F（README 宣称 11A+9F，实测 RES 尾保护多 1 个 actual）；forecast 步跳过 transformer blocks（sage 也不跑），replay pass transformer-free（20 步 replay 仅 16.8s）
 6. **与 EasyCache/LazyCache 互斥**（同分支检测后自动停用）；v4 turbo LoRA 可叠加（本次全部叠加，无冲突）；节点插桩位置：model 链 Sage 之后、guider/scheduler 之前
+
+## SageAttention post6 构建与 H3 一致性（2026-09-05）
+
+- 构建：`woct0rdho/SageAttention` 提交 `e147939`，Torch `2.13.0+cu130`，CUDA Toolkit `13.0`，RTX 4090 `sm89`。
+- 修复：CUDA 边界加载由 `kNoFill` 改为 `kFillZero`，覆盖短序列及非整除序列，避免 NaN/黑屏/噪点。
+- 边界 smoke test：序列长度 `1/9/12/63/64/65/503` 全部 finite，余弦相似度 `≥0.99936`，对照 PyTorch SDPA 通过。
+- H3 端到端：固定 `1024×576 / 124 帧 / 8 步 / seed 20260814` 工作流，新旧构建输出视频解码流 MD5 均为 `a848b09c21260cc46e06b3fc2ed0cb1f`，音频解码流 MD5 均为 `34d028a8284eec2cc02f00bc1933c468`；画面与音频完全一致。
+- 时间仅作参考：post6 首次运行 `161.19s`、旧构建 `79.4s`，受模型/磁盘缓存状态影响，不能作为性能结论；需另做同缓存状态 A/B。
+
+### 20 步补测（2026-09-06）
+
+- 原版 20 步工作流文件保留未改：`workflows/minimax_h3_t2v_api.json`。
+- post6 固定测试：复用 `attn3way_dance_sage.json`，仅将 scheduler steps 改为 `20`，其余 seed/prompt/分辨率不变；耗时 `118.61s`。
+- 产物：`/home/sean/projects/ComfyUI/output/video/attn3way/post6_20step_dance_00001_.mp4`。
+- 说明：原版 SageAttention 的 20 步旧构建副本已被临时目录清理，未继续强行重装；因此本轮不宣称新旧 20 步速度差异，只保留 post6 20 步基线。
+
+### 20 步 Sage 开关动作 A/B（2026-09-06）
+
+- 条件：同一 H3 int8_convrot + v4-600 LoRA、同一提示词/seed `20260814`、`1024×576`、124 帧、`res_multistep`、20 步；仅切换全局 SageAttention。
+- Sage 开：`118.61s`，产物 `output/video/attn3way/post6_20step_dance_00001_.mp4`。
+- Sage 关：`164.0s`，产物 `output/video/attn3way/nosage_20step_dance_00001_.mp4`。
+- 画面对比：PSNR `20.63dB`、SSIM `0.7089`；抽帧检查显示动作轨迹明显分叉，无 Sage 版本主观上更接近连续舞蹈动作，Sage 版本部分动作段有姿态/运动差异。
+- 结论：Sage 仍保留为默认速度方案，但高动态舞蹈成片应增加 Sage on/off 质量抽检；不能仅凭速度判断最优。

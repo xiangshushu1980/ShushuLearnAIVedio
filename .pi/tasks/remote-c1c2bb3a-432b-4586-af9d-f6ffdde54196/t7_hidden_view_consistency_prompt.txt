@@ -1,0 +1,17 @@
+subject_definitions:
+<Subject 1> is the single female elf archer defined by <Picture 1> and <Picture 2>. <Picture 1> is the authoritative close-up identity reference for her face and hair. <Picture 2> is the same character's face-suppressed wardrobe and body-silhouette reference. All pictures describe one person.
+
+summary:
+[reference generation] Generate one continuous single-character slow turn to the requested endpoint while preserving hidden costume and hair details across the viewpoint change.
+
+retention_analysis:
+<Subject 1> (appears in [Shot 1]): fully_preserved - preserve the same identity, pale hair, pointed ears, dark teal hooded armor, shoulder plates, belts, pouches, bow, quiver, cape silhouette, trousers, and boots through the turn and at the endpoint.
+
+detailed_description:
+The target video is a restrained fantasy character consistency test on a plain gray studio background. [Shot 1] The single female elf archer begins in a centered frontal medium-full view and slowly turns her head and body to the left, ending at the requested endpoint. The motion is continuous, slow, and without a cut. Keep the same person, proportions, outfit, hair construction, bow, quiver, cape silhouette, belts, pouches, and boots throughout the turn. Hidden-side details must remain a coherent continuation of the visible wardrobe rather than being redesigned during the motion. She remains the only person in the frame. Keep the camera stable and the background plain. Do not copy a reference-board layout, add labels or text, introduce another character, add new accessories, or change the wardrobe. For the Q condition, end at a clear approximately 45-degree three-quarter view with both eyes visible. For the S condition, end at a strict left profile. For the B condition, end at a direct rear view with the face not visible.
+
+overall_soundscape:
+Quiet studio room tone with soft cloth, leather, and bow movement, no speech.
+
+non_diegetic_music:
+N/A

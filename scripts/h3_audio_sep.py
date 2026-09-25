@@ -24,6 +24,7 @@ import sys
 import tempfile
 
 REPO = "/home/sean/projects/audio-sep"
+PYTHON = "/home/sean/miniconda3/bin/python3"  # 含 torch 的系统环境（PATH 可能不含 miniconda）
 
 
 def main():
@@ -35,7 +36,7 @@ def main():
 
     with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as f:
         wav = f.name
-    subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", src, "-ac", "1", "-ar", "32000", wav], check=True)
+    subprocess.run(["/home/sean/miniconda3/bin/ffmpeg", "-y", "-v", "error", "-i", src, "-ac", "1", "-ar", "32000", wav], check=True)
 
     code = f"""
 import sys
@@ -48,7 +49,7 @@ model = build_audiosep(
 separate_audio(model, {wav!r}, {query!r}, {out!r}, device='cpu')
 print('OK ->', {out!r})
 """
-    subprocess.run([sys.executable, "-c", code], check=True, cwd=REPO)
+    subprocess.run([PYTHON, "-c", code], check=True, cwd=REPO)
     print(f"分离完成: {out}")
 
 

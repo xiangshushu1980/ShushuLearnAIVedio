@@ -37,8 +37,11 @@ def gen_image(prompt, seed, workflow="workflows/anima_alya_768_t2i.json",
 
     # 正提示词统一替换（CLIPTextEncode 节点 text 字段）
     pos_done = False
+    first_text_node = None
     for nid, node in wf.items():
         if node.get("class_type") == "CLIPTextEncode":
+            if first_text_node is None:
+                first_text_node = node
             txt = str(node["inputs"].get("text", ""))
             if not pos_done and ("1girl" in txt or "score_9" in txt or txt == "" or "masterpiece" in txt or "best quality" in txt):
                 node["inputs"]["text"] = prompt
@@ -52,6 +55,11 @@ def gen_image(prompt, seed, workflow="workflows/anima_alya_768_t2i.json",
                 node["inputs"]["lora_name"] = lora
             if lora_strength is not None:
                 node["inputs"]["strength_model"] = float(lora_strength)
+
+    # Krea2 workflows may use a neutral example prompt without the legacy
+    # keywords above. In that case the first text encoder is the positive node.
+    if not pos_done and first_text_node is not None:
+        first_text_node["inputs"]["text"] = prompt
 
     client_id = str(uuid.uuid4())
     res = _post("/prompt", {"prompt": wf, "client_id": client_id})

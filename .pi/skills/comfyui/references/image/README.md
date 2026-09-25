@@ -4,7 +4,7 @@
 
 | 目标 | 入口 |
 |---|---|
-| KREA 2 基础生图 | [krea2.md](krea2.md) |
+| KREA 2 基础生图 | [krea2.md](krea2.md)；人物身份/提示词管线见项目 [docs/40](../../../../docs/40_krea2_prompt_and_identity_pipeline.md) |
 | ANIMA 基础生图 | 旧版 [workflows.md](../workflows.md) 的 ANIMA 小节 |
 | 统一世界观/风格提示词 | [prompt-style.md](prompt-style.md) |
 | 图片分析和批量对比 | [workflows/batch-qc.md](../workflows/batch-qc.md) |

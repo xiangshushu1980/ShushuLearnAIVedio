@@ -45,6 +45,8 @@
 - 中心构图：加 "standing at the center of the frame" + base 30 步 → 主体居中明显
 
 ## KREA 2 生图参数（实测）
+
+> 本节是普通 KREA 2 文生图历史基线，不是人物 Identity Edit 基线。人物身份三模式和当前 Prompt 契约见项目 [docs/40_krea2_prompt_and_identity_pipeline.md](../../../docs/40_krea2_prompt_and_identity_pipeline.md)。
 - 8 步 / cfg 1.0 / **er_sde**/simple / CLIPLoader type=krea2 / qwen3vl_4b_fp8_scaled / qwen_image_vae
 - 对比实测：清晰度 525 vs ANIMA 1036（KREA 渲染更平滑）、中心/边缘比 2.33（构图居中达标）、饱和度 33（色调偏素）
 - 支持 Ideogram 风格 JSON 区域提示（Ideogram4PromptBuilderKJ）

@@ -1,0 +1,17 @@
+subject_definitions:
+<Subject 1> is the single female elf archer defined by <Picture 1>, <Picture 2>, and <Picture 3>. <Picture 1> is the authoritative close-up identity reference for her face and hair. <Picture 2> is the same character's face-suppressed wardrobe and body-silhouette reference. <Picture 3> is the same character's strict left-side view for the turning endpoint. All pictures describe one person.
+
+summary:
+[reference generation] Generate one single-character turning reference shot ending in a strict left profile while preserving the same identity and wardrobe.
+
+retention_analysis:
+<Subject 1> (appears in [Shot 1]): fully_preserved - preserve the same face, pale hair, pointed ears, dark teal hooded armor, belts, pouches, bow, trousers, and boots while the viewpoint changes to the referenced left profile.
+
+detailed_description:
+The target video is a restrained fantasy character reference shot on a plain gray studio background. [Shot 1] The single female elf archer starts in a centered frontal medium-full view and slowly turns her body and head to the left until she reaches a clear strict left profile. She remains the only person in the frame. The motion is continuous and slow, with no cut and no change of outfit. Preserve the face, pale hair, pointed ear, hood, layered armor, crossed straps, belt pouches, bow, quiver, trousers, and boots from <Subject 1>. The final left profile must match the viewpoint and silhouette in <Picture 3>. Do not copy any reference-board grid, panel layout, labels, or borders. Keep the background plain and stable, with no additional characters, creatures, text, or environmental objects.
+
+overall_soundscape:
+Quiet room tone with soft cloth and leather movement, no speech.
+
+non_diegetic_music:
+N/A

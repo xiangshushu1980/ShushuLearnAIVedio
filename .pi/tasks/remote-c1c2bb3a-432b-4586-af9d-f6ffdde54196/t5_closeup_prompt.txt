@@ -1,0 +1,17 @@
+subject_definitions:
+<Subject 1> is the single female elf archer defined by <Picture 1> and <Picture 2>. <Picture 1> is the authoritative close-up identity reference for her face and hair. <Picture 2> is the same character's wardrobe and body reference. All pictures describe one person.
+
+summary:
+[reference generation] Generate a single-character close-up identity shot with subtle natural facial motion while preserving the same face and wardrobe context.
+
+retention_analysis:
+<Subject 1> (appears in [Shot 1]): fully_preserved - preserve the same facial identity, facial proportions, pale hair, pointed ears, and recognizable dark teal costume context.
+
+detailed_description:
+The target video is a restrained fantasy character identity test on a plain gray studio background. [Shot 1] The single female elf archer is shown in a stable head-and-shoulders close-up, facing mostly forward with a slight natural three-quarter angle. She makes subtle eye and breathing movements and a small natural mouth movement without audible dialogue; there is no spoken line to invent. The camera remains nearly static and keeps the face large and sharply readable. Preserve the same face, eye shape and spacing, nose, mouth, jawline, hairline, pointed ears, pale hair, and recognizable dark teal hooded armor context from <Subject 1>. Keep her as the only person. Do not introduce a second character, reference-board grid, panel layout, labels, borders, text, new accessories, facial markings, or a change of identity. Use one continuous shot with stable neutral lighting and a plain gray background.
+
+overall_soundscape:
+Quiet studio room tone with faint breathing and subtle cloth movement, no speech.
+
+non_diegetic_music:
+N/A

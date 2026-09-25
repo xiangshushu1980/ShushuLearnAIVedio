@@ -177,7 +177,7 @@ Use @[char ref] as the sole character reference. Preserve the exact identity, fa
 ## 提示词工具对比吸收（1038lab Promptor + T8 enhancer，2026-08-17，T-comfy-ops-03）
 
 > 来源：github.com/1038lab/ComfyUI-MiniMax-H3-Promptor（138★，V1.2.0）+ github.com/T8mars/comfyui-minimax-h3-prompt-enhancer-T8（132★，官方 9 skill 冻结 @093f3129 + 110 案例 selector）。
-> 抽样：同一输入（汉服少女×灯笼街雨夜 I2VA 8s）× 三契约 × deepseek-chat，输出见 experiments/promptor_compare/。规则强化已入 docs/17，架构模式已入 docs/16。
+> 抽样：同一输入（汉服少女×灯笼街雨夜 I2VA 8s）× 三契约 × deepseek-chat，原始输出见 `experiments/archive/promptor_compare/`。规则强化已入 docs/17，架构模式已入 docs/16。
 
 ### 模式 7：Audio:/Music: 两行收尾（1038lab，✔ 与 17 号音乐决策一致）
 
@@ -189,13 +189,13 @@ LLM 只写 `[Shot N]` 叙事正文，`subject_definitions:` / `summary:` / `rete
 
 ### 模式 9：外部案例模板条目格式（T8 catalog，✔ 可借鉴）
 
-T8 案例条目 = `label（中文名） + summary（一句话机制） + input_format + recommended_input（推荐输入示例） + required_anchors（2-5 条结构锚点）`，110 个 selector 全部按此格式（完整 catalog 归档 experiments/promptor_compare/t8_case_catalog.json 备查，不导入）。
+T8 案例条目 = `label（中文名） + summary（一句话机制） + input_format + recommended_input（推荐输入示例） + required_anchors（2-5 条结构锚点）`，110 个 selector 全部按此格式（完整 catalog 归档 `experiments/archive/promptor_compare/t8_case_catalog.json` 备查，不导入）。
 
 **精选锚点示例**（与本仓 8 个官方场景 skill 相关，未本地实测，引用需标注来源）：
 
 | 模板 | 结构锚点（required_anchors） |
 |---|---|
-| 产品广告｜功能证据递进 | 先结果后证据 / 至少三个可见证明状态且递进 / 结尾明确行动或产品收束（**✅ 2026-08-17 视频实测成立**：8s T2V 四状态全执行，见 experiments/promptor_compare/p1_video/） |
+| 产品广告｜功能证据递进 | 先结果后证据 / 至少三个可见证明状态且递进 / 结尾明确行动或产品收束（**✅ 2026-08-17 视频实测成立**：8s T2V 四状态全执行，见 `experiments/archive/promptor_compare/p1_video/`） |
 | 3D 角色登场｜细节到全身揭晓 | 从可识别细节逐步扩大 / 一次代表动作 / 全身身份定格 |
 | 手绘实拍｜跨媒介接触三级反应 | 一次跨媒介接触触发三级反应 / 由平面媒介自身完成结尾 |
 | 纸拼贴｜工艺材料覆盖当进度 | 同一材料变量只增不减 / 至少四个阶段 / 完成态可读 |
@@ -207,7 +207,7 @@ T8 案例条目 = `label（中文名） + summary（一句话机制） + input_f
 2. **我方 base-en 契约会虚构台词**（抽样 C 编了 "Welcome to the night market." (S1)）——T8 有 "Do not fabricate spoken lines" 禁止句，17 号已补（§三）
 3. T8 中文输出模式（描述中文/字段英文）——本仓维持全英文决策，不吸收
 
-### 视频实测补充（2026-08-17 P1，experiments/promptor_compare/p1_video/）
+### 视频实测补充（2026-08-17 P1，`experiments/archive/promptor_compare/p1_video/`）
 
 - **FL2VA 单镜偏好验证成立**：单镜版无切镜尖峰、多镜版 2.5s 处精确切镜（帧差峰值比 111 vs 3.5）；首帧对齐 SSIM 0.99+，尾帧对齐 0.6-0.7 且单镜/多镜无差异（FL2VA 能力边界，与镜头数无关）→ 17 号规则无需回退
 - **T8 锚点「产品广告｜功能证据递进」实测成立**：8s T2V 四状态（结果/滤芯剖面/浑水变清/营地收束）全部执行，首切点提前 ~0.5-1s（时间 cue 半可控，与既往实测一致）

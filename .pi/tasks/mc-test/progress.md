@@ -64,3 +64,33 @@
 - 节点仓库：NikoDemon80/ComfyUI-H3-Motion-Context
 - 背景：mem0 "Motion Context 社区评价正面…"条目；docs/19 帧链负面结论
 - 上游：.pi/tasks/h3-prompt-agent/progress.md（成片试跑产物）
+
+### 2026-08-17 接力会话：验收材料恢复（视频产物丢失事件）
+- **发现**：output/video/h3_mc/、h3_mc_same/ 视频产物全盘丢失（8-16 07:19 目录变动后消失）；但 AV latent 完好（output/h3_context/clip_00001/2、h3_ctx_same/clip_00001/2）
+- **恢复**（scripts/h3_mc_recover.py 新建）：latent → 标准 .latent → API 解码（零重采样），4 条 12-32s 完成：agreement_mc_seg1 / agreement_mc_seg2_ctx22（trim 22 帧→7.08s）/ agreement_same_seg1 / agreement_same_seg2_chain（trim→7.08s）；same_seg2_baseline 无 latent 存档 → 重跑 151s 恢复（8.00s 无 trim 正确）
+- **重拼对比**：h3_concat.py 重拼 same_mc_chain / same_base_chain / mc_chain_preview / baseline_chain_preview（基线用 h3_dialogue/agreement_v2_seg2_beach_00002）
+- **验证**：时长/分辨率/音频流规格全对；signalstats 亮度正常非坏档；内容=原 latent 解码，与当时跑批一致
+- **队列已释放**：恢复完毕 ComfyUI 空闲
+- **待用户验收**：output/video/h3_mc_same/same_mc_chain.mp4 vs same_base_chain.mp4（重点段2 开头 Alya 走步/位置衔接）
+
+### 2026-08-20 接力会话：验收材料二次恢复（视频产物再丢失）
+- **发现**：output/video/ 整个目录再次消失（不只 h3_mc/h3_mc_same，连 08-17 尚存的 h3_dialogue 旧基线 agreement_v2_seg2_beach_00002 也没了）；AV latent 完好
+- **恢复**：scripts/h3_mc_recover.py 跑 4 条（需用 ComfyUI venv python，本机 python3 缺 safetensors），12-18s/条：agreement_mc_seg1(8.00s) / agreement_mc_seg2_ctx22(7.08s trim) / agreement_same_seg1(8.00s) / agreement_same_seg2_chain(7.08s)；--baseline 重跑 same_seg2_base 405s（8.00s 无 trim，prompt 文本 /tmp/same_scene_seg2_baseline.txt 尚存）
+- **重拼对比**：h3_concat.py 拼 same_mc_chain(15.08s) / same_base_chain(16.00s)；baseline_chain_preview 无法重拼——基线源 h3_dialogue/ 已随目录消失（08-17 时还在）
+- **验证**：7 条 ffprobe 规格全对（768×448@24fps / aac 32kHz 双声道）；YAVG 107-130 非坏档；队列已释放
+- **待用户验收**：same_mc_chain.mp4 vs same_base_chain.mp4（重点段2 开头 Alya 走步/位置衔接）
+
+### 2026-08-20 接力会话：MC 音效连续性测试批（用户反馈"连续性察觉不明显，需音效连续片段再测"）
+- **设计**：夜街独行（Alya 右→左匀速走路，脚步声+街道环境音跨接缝），seed 20260820，ref2va int8 std20 768×448 192帧；seg1 结尾脚步进行中未完，seg2_chain 从 clip_00001 latent 延续（MC ctx=22 audio=24），seg2_base 独立静态锚
+- **跑批**（scripts/h3_mc_runner.py，ComfyUI venv python）：walk_seg1 250s / walk_seg2_chain 180s / walk_seg2_base 143s，峰值显存 22.0/21.8/23.3GB 无 OOM，队列已释放
+- **产物**：output/video/h3_mc_sfx/ 下 3 单条 + 2 对比链（stream-copy 拼接）：walk_mc_chain(15.12s) / walk_base_chain(16.03s)，顺序 seg1 在前
+- **验证**：5 条 ffprobe 全对（768×448@24fps / aac 32kHz 双声道）；额外产出 walk_seg2_chain_untrimmed flac（MC 未裁剪音频段）
+- **待用户验收**：walk_mc_chain.mp4 vs walk_base_chain.mp4（重点：接缝处脚步节奏/街道环境音是否连续不中断）
+
+### 2026-08-20 接力会话：MC 音效连续性批2（变化型场景，由远及近走向镜头）
+- **设计（变化型）**：固定机位 + Alya 由远及近走向镜头（画面人物从小到大，变化可感知），脚步声由远及近持续渐强跨接缝；seed 20260821，ref2va int8 std20 768×448 192帧
+- **跑批**（scripts/h3_mc_runner.py，ComfyUI venv python，先重启清显存后跑）：walk2_seg1 184s(23.2GB) / walk2_seg2_chain 174s(23.1GB) / walk2_seg2_base 143s(21.6GB)，无 OOM（峰值均 <23.6 警戒），队列已释放
+- **产物**：output/video/h3_mc_sfx2/ 下 3 单条 + 2 对比链（stream-copy 拼接）：walk2_mc_chain(15.12s) / walk2_base_chain(16.03s)，seg1 在前；额外 walk2_seg2_chain_untrimmed.flac
+- **验证**：5 条 ffprobe 全对（768×448@24fps / aac 32kHz 双声道）
+- **音量分段（每0.5s RMS）**：MC chain 谐波从 -61dB(0-1s) 平滑推进到接缝处(约8s) -37.8dB，接缝后保持高响度无缝降落——脚步渐强跨接缝可感知；BASE chain 在接缝后(8-11s)回落更深（-46dB vs chain -37.8dB），接缝断开感更明显，且 base 尾段持续高响(-35dB)不像连续走近收尾；两条 chain 前半0-8s共用 seg1 完全一致
+- **待用户验收**：walk2_mc_chain.mp4 vs walk2_base_chain.mp4（重点：接缝处脚步由远及近渐强是否连续、画面 Alya 从小到大是否连贯）

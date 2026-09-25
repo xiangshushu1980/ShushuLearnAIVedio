@@ -34,6 +34,8 @@ H3 LoRA（models/loras/）：
 | qwen3vl_4b_fp8_scaled.safetensors | models/text_encoders/ | 4.9GB | KREA 文本编码器 |
 | qwen_image_vae.safetensors | models/vae/ | 243MB | ANIMA/KREA VAE |
 
+> Krea2 人物身份三模式和 Raw/Turbo 选择见 [40_krea2_prompt_and_identity_pipeline.md](40_krea2_prompt_and_identity_pipeline.md)。当前本机只登记/安装 Turbo；`krea2_raw_fp8_scaled.safetensors` 尚未下载，因此 `identity_remove` 只能做配置校验，不能作为已实测基线。
+
 ### 生图（ACE 栈，2026-08-12 盘点补记，此前文档未收录）
 | 文件 | 位置 | 大小 |
 |------|------|------|
@@ -104,6 +106,13 @@ H3 LoRA（models/loras/）：
 
 ### CivitAI（需 token）
 - 角色/风格 LoRA：civitai.com 搜索，token 在 `.mcp.json`（**pi MCP 不读新增 env → 用 curl 绕行下载**，见 SKILL troubleshooting）
+
+#### Civitai.com / Civitai.red 选择说明（2026-09-18）
+- `civitai.red` 是 Civitai 的成人/自由内容入口，不是专门的风格、法术或暗黑奇幻模型库；普通风格、魔法特效、奇幻环境仍优先按底模兼容性和模型实测选择。
+- 对黑暗题材，`dark fantasy`、`grimdark`、`horror`、`occult`、`necromancer`、`undead`、`battle damage`、`blood effects` 等方向可能有可用资源，但平台并不保证 `.red` 有独占优势。
+- `.red` 也不等于血腥暴力放行区。官方 Safety Center 将 graphic violence、gore、severe injuries、human death 等列为禁止或会被移除的内容；明确肢解、内脏、重度尸体/死亡表现不应作为稳定的 Civitai 资源依赖。
+- 接入策略：暂不做独立 Red provider；Civitai provider 保留可配置域名/下载 URL 的扩展位，默认走 `.com`。只有明确需要成人内容检索时才启用 `.red`，并默认关闭 NSFW。
+- 参考：[Civitai.red Safety Center](https://civitai.red/safety)、[Civitai 多域名实现说明](https://github.com/civitai/civitai/blob/main/docs/multi-host-domain-aliases.md)、[Civitai API 文档](https://github.com/civitai/civitai-developer-docs)
 
 ## ⚠️ 关键经验
 

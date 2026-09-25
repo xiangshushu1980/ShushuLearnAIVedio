@@ -1,0 +1,20 @@
+{
+  "schema_version": "daily-video/evidence.v1",
+  "topic": "一个新技术趋势正在改变创作者的工作方式",
+  "evidence": [
+    {
+      "id": "ev_001",
+      "claim": "公开资料显示，越来越多内容生产工具把研究、脚本、素材和剪辑拆成可观察的阶段。",
+      "source": {
+        "name": "POC 示例资料",
+        "url": "https://example.com/source",
+        "published_at": "2026-09-07",
+        "captured_at": "2026-09-07"
+      },
+      "quote": {"text": "示例证据片段", "locator": "paragraph:1"},
+      "quality": {"tier": "secondary", "confidence": 0.7},
+      "rights": {"mode": "link_only", "note": "仅作为演示证据"},
+      "media_refs": []
+    }
+  ]
+}

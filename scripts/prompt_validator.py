@@ -2,7 +2,7 @@
 """H3 提示词规则校验器（生成器规则校验层，docs/16 设计组件）
 
 确定性规则检查（IR 输出实测基准 + docs/17 规则手册）：
-  1. 三核心段齐全且字段名精确（i2v 模式额外查 instruction line）
+  1. 基础模式检查三核心段；Ref2VA 检查六段式
   2. 字段冒号存在
   3. [Shot 1] 不带时间戳
   4. 第 N 镜（N>1）切点式时间戳 `At MM:SS.mmm`，递增且在时长内
@@ -19,6 +19,14 @@ import sys
 from pathlib import Path
 
 FIELDS = ["integrated_multimodal_description", "overall_soundscape", "non_diegetic_music"]
+REF_FIELDS = [
+    "subject_definitions",
+    "summary",
+    "retention_analysis",
+    "detailed_description",
+    "overall_soundscape",
+    "non_diegetic_music",
+]
 IP_PATTERN = re.compile(r"\b(Warcraft|Marvel|Star Wars|Pok[eé]mon|Disney|Nintendo|Batman|Superman)\b", re.I)
 
 
@@ -26,8 +34,19 @@ def check(text: str, duration: int = None, mode: str = None) -> dict:
     issues, warns = [], []
     t = text.strip()
 
+    if mode == "auto" or mode is None:
+        if t.startswith("subject_definitions:"):
+            mode = "ref2va"
+        elif t.startswith("For the target video"):
+            mode = "i2va"
+        elif t.startswith("How the reference pictures align"):
+            mode = "fl2va" if "Picture 2" in t.splitlines()[0] else "l2va"
+        else:
+            mode = "t2va"
+
     # 1. 字段齐全 + 冒号
-    for f in FIELDS:
+    expected_fields = REF_FIELDS if mode == "ref2va" else FIELDS
+    for f in expected_fields:
         if f not in t:
             issues.append(f"缺字段: {f}")
         elif not re.search(rf"{f}\s*:", t):
@@ -50,7 +69,7 @@ def check(text: str, duration: int = None, mode: str = None) -> dict:
         m1 = re.search(r"\[Shot 1\]([^\[]*?)(?:\[Shot 2\]|\Z)", t, re.S)
         if m1 and re.search(r"At\s*0*:\d", m1.group(1)):
             # IR 实测：i2v 输出为 [Shot 1] 段内嵌切点（无 [Shot 2] 标签），t2v 才有标签
-            if mode == "i2va":
+            if mode in {"i2va", "fl2va", "l2va"}:
                 warns.append("Shot 1 段内嵌切点（i2v 与 IR 实测同构，软要求）")
             else:
                 issues.append("Shot 1 段落内出现时间戳（t2v 应带 [Shot N] 标签切点）")
@@ -75,9 +94,15 @@ def check(text: str, duration: int = None, mode: str = None) -> dict:
 
     # 3. 无前言
     first_line = t.splitlines()[0]
-    if not re.match(r"^integrated_multimodal_description\s*:", first_line):
-        if not (mode == "i2va" and first_line.startswith("For the target video")):
-            warns.append(f"首行非字段开头（有前言?）: {first_line[:60]!r}")
+    valid_first_line = {
+        "ref2va": r"^subject_definitions\s*:",
+        "i2va": r"^For the target video",
+        "fl2va": r"^How the reference pictures align",
+        "l2va": r"^How the reference pictures align",
+        "t2va": r"^integrated_multimodal_description\s*:",
+    }[mode]
+    if not re.match(valid_first_line, first_line):
+        warns.append(f"首行非字段开头（有前言?）: {first_line[:60]!r}")
 
     # 4. 无 fence / IP
     if "```" in t:
@@ -99,8 +124,12 @@ def check(text: str, duration: int = None, mode: str = None) -> dict:
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("files", nargs="+")
-    ap.add_argument("--duration", type=int, default=10)
-    ap.add_argument("--mode", default="t2va", choices=["t2va", "i2va", "auto"])
+    ap.add_argument("--duration", type=int, help="已知目标时长（秒）；不传则不检查镜头预算/超时")
+    ap.add_argument(
+        "--mode",
+        default="auto",
+        choices=["t2va", "i2va", "fl2va", "l2va", "ref2va", "auto"],
+    )
     ap.add_argument("--json", action="store_true")
     ap.add_argument("--allow-warn", action="store_true", help="warn 级也视为通过（exit 0），仅 fail 阻断")
     args = ap.parse_args()
@@ -109,10 +138,7 @@ def main():
     results = {}
     for f in args.files:
         t = Path(f).read_text()
-        mode = args.mode
-        if mode == "auto":
-            mode = "i2va" if t.startswith("For the target video") else "t2va"
-        r = check(t, duration=args.duration, mode=mode)
+        r = check(t, duration=args.duration, mode=args.mode)
         results[f] = r
         if r["level"] != "pass":
             all_pass = False
@@ -124,7 +150,11 @@ def main():
                 print(f"    ❌ {i}")
     if args.json:
         print(json.dumps(results, ensure_ascii=False, indent=1))
-    sys.exit(0 if all_pass else (1 if any(r["level"] == "warn" for r in results.values()) and not args.allow_warn else (2 if any(r["level"] == "fail" for r in results.values()) else 0)))
+    if any(r["level"] == "fail" for r in results.values()):
+        sys.exit(2)
+    if any(r["level"] == "warn" for r in results.values()) and not args.allow_warn:
+        sys.exit(1)
+    sys.exit(0)
 
 
 if __name__ == "__main__":

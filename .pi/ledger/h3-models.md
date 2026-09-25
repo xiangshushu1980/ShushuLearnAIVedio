@@ -16,8 +16,29 @@
 | C-20260816-27 | H3 能力边界（固定音频同步） | ✅现行 | 数字人方案弃用 |
 | C-20260825-01 | H3 TE 精度选型（NVFP4 维持定论） | ✅现行 | 高精度 INT8 无收益/放不下/不支持参考流 |
 | C-20260825-02 | v4-600EMA 无法跨用 ref2va pruned（LoRA 键名不匹配） | ✅现行 | 518 键未加载/0 加载 |
+| C-20260917-01 | VDN Ref2VA 1024×576/20s + NativeAudioLock 验收基线 | ✅现行 | T-comfy-ops-VDN-01 |
+| C-20260922-01 | H3 FaceRefine 远景小脸稳定性与分辨率边界 | ✅现行 | T-comfy-ops-47 |
+| C-20260922-02 | VOSR2 本地安装与图像/短批次 smoke | 🟡待验证 | 图像质量通过；长视频时序未验收 |
 
 ---
+
+### C-20260922-01 | H3 FaceRefine 远景小脸稳定性与分辨率边界
+- 状态：✅现行（valid_from 2026-09-22）
+- 现行值：**当前默认采用局部 latent FaceRefine + H3InjectVideoLatent + face-only rectangular stitch；ClipVision 负责非真人/插画角色身份跟踪，完整人物图只给 H3 object reference，face-only 图只给跟踪。** 保守参数为 768 crop、crop_factor 3.0、8 steps、base denoise 0.28、per-frame 0.65/.25、smooth 15。该链路在中景至正常远景能明显抑制劣化和跳脸；脸缩小到约 20–35px 后 face detector 掉检，不能恢复不存在的身份细节。
+- 时间线：
+  - 2026-09-22 提出：旧基线使用 768 crop、denoise 0.40、per-frame 1.0/.35、smooth 9。
+  - 2026-09-22 修正：保守参数 0.28 / .65/.25 / 15 在 124 帧旧 1344 母片和 241 帧 10 秒远拉源片上更稳定；768 长片约 260.1s，1024x1024 约 610.3s 且未见明显锐度收益，native 1344x768 约 616.0s 也未解决软化，故更大画布不作为默认值。
+  - 2026-09-22 边界确认：全人物 YOLO/mask 可把跟踪延伸到远景，但主要保证连续性；face-only 与人物 refine 的选择必须分开比较，不把人物 mask 当作细节恢复方案。
+- 证据锚：`.pi/tasks/T-comfy-ops-47/progress.md`；产物 `/home/sean/projects/ComfyUI/output/face_solution/t47_face1344_10s_clipvision_faceonly_20260922_00001_.mp4`、`t47_person1344_10s_fullcrop_rect_20260922_00001_.mp4`；观测 `e38ecab4-ca30-4edb-9b30-a9219c9b360e`、`59967e24-1ba7-4345-a9a5-9520b66f7c2c`。
+
+### C-20260922-02 | VOSR2 本地安装与图像/短批次 smoke
+- 状态：🟡待验证（valid_from 2026-09-22）
+- 现行值：VOSR2 1.4B 本地节点与权重已安装并被 ComfyUI 识别；`fp16 + wavelet + DiT 512/64 + VAE 1024/128` 下，1024² 输入 2x/4x 单图分别成功输出 2048²/4096²，约 12.9s/24.6s；3 帧 512x288 视频批次 2x 成功输出 3 张 1024x576 图像。当前结论仅覆盖安装、加载、显存可行性和短批次链路，不覆盖长视频帧间一致性。
+- 时间线：
+  - 2026-09-22：主 checkpoint、Qwen-Image 2D VAE、DINOv2-L 落盘；修正 `args.json` 层级并完成 DINO safetensors 转换；ComfyUI 重启后 object info 注册成功。
+  - 2026-09-22：单图 2x、4x、seed 43 对照和 3 帧视频 batch smoke 全部成功；目视未见明显 tile seam，seed 改变会带来轻微生成细节变化。
+- 适用边界：VOSR2 当前作为生成后图像/短批次细节重建候选；不能据此替代 H3 latent 二采或宣称长视频 temporal consistency，后续需用连续长段做闪烁、身份漂移和动作保持验收。
+- 证据锚：`docs/39_h3_latent_upscale_face_research.md`；`.pi/tasks/T-comfy-ops-47/progress.md`；产物 `/home/sean/projects/ComfyUI/output/vosr2_quick_2x_00001_.png`、`vosr2_quick_4x_00001_.png`、`vosr2_quick_2x_seed43_00001_.png`、`vosr2_quick_clip_3frames_2x_00001_.png`–`00003_.png`。
 
 ### C-20260816-20 | Hybrid b25-49（fl2va+ref2va merge）
 - 状态：🟡待验证（动画域已实测通过，写实域结论待深度测试 T-20260815-09）
@@ -90,3 +111,38 @@
 - 时间线：
   - 2026-08-25 提出：零下载交叉实测（v4 8步 单图片参考 ref2v，prompt_id 613dd160，5s/1024×576）；首次提交 OOM 崩（20GB+LoRA 峰值+未释放），去视频引用分支后成功
 - 证据锚：ComfyUI /tmp/comfyui_start.log（lora key not loaded 518 条）/ output/video/h3_ref2va/v4EMA_x_ref2va_8step_test_00001_.mp4 / 上游 PR #15808 会话
+
+### C-20260917-01 | VDN Ref2VA 1024×576/20s + NativeAudioLock 验收基线
+- 状态：✅现行（valid_from 2026-09-17）
+- 现行值：RTX 4090 单卡上，VDN Ref2VA + 三张参考图 + INT8 ConvRot + 8 steps + `stream/retain_buffers=off/grouped` + NativeAudioLock 可稳定完成 1024×576、约20秒视频；当前端到端约380–411秒。Breeze 固定声线严格约20秒对白作为外部音频真值，视频/音频同步正常。
+- 时间线：
+  - 2026-09-16 提出：清理后严格20秒 VDN成功，431秒（来源任务 T-comfy-ops-VDN-01）
+  - 2026-09-16 修正：简化中远景 prompt 复测成功，380秒；确认CPU staging是主要资源边界（来源任务 T-comfy-ops-VDN-01）
+  - 2026-09-17 验收：标准 H3 Ref2VA 六段式 + NativeAudioLock 成功410秒；分段镜头/特效 prompt 成功411秒，特效时序有效但景别仍为软约束（来源任务 T-comfy-ops-VDN-01）
+- 适用条件：启动前系统可用内存至少约40GiB、Swap基本空闲；采样峰值约23.9/24.6GiB显存、约52GiB已用系统内存。VDN v1.5.2保障adapter metadata兼容，不等同于显存/内存优化。
+- 证据锚：`docs/35_vdn_h3_ref2va_route.md` §2026-09-17；`.pi/tasks/T-comfy-ops-VDN-01/progress.md`；产物 `/home/sean/projects/ComfyUI/output/video/h3_vdn_ref2va/breeze_clone_1024x576_20s_shot_timed_effects_20260917_00001_.mp4`；git `ComfyUI-VDN-H3` commit `3eb6349`。
+
+### C-20260920-02 | H3 完整视频 latent 两阶段放大远景脸验证
+- 状态：🟡待验证（链路和资源通过；远景保真相对当前 FaceRefine 的最终选型仍需更长动作对照）
+- 现行值：本地 RTX 4090 可运行 `MinimaxH3LatentUpscaler3DRefineHandoff`：768×448 一采完整视频 latent → 本地 BF16 learned 3D latent upscale → 4 步、denoise 0.40 H3 二采 → 输出视频；49 帧 smoke 约 130.5s，124 帧/5.17s 正式对照约 125.1s，峰值观测约 22.9/24.6GiB，无 OOM。目标 1344×768 在当前 H3 latent/VAE 对齐路径实际输出 1376×800。
+- 时间线：
+  - 2026-09-20 提出：根据社区复核，将“完整视频 latent 两阶段”列为第一优先测试（来源 T-comfy-ops-45）。
+  - 2026-09-20 实测：节点注册、BF16 权重、49 帧 smoke、124 帧正式生成均成功；同正向提示词的一采源片与二采成片均保持远景构图，二采未出现明显跳脸/错误近景重画，远景细节提升有限（来源 T-comfy-ops-45）。
+- 证据锚：`docs/39_h3_latent_upscale_face_research.md`；`.pi/tasks/T-comfy-ops-45/progress.md`；脚本 `scripts/h3_ref2v_latent_two_pass_runner.py`；产物 `/home/sean/projects/ComfyUI/output/face_solution/sylvanas_hero_latent_two_pass_768_to_1344_full_00001_.mp4`、`sylvanas_hero_latent_two_pass_768_to_1344_smoke_00001_.mp4`。
+
+### C-20260922-03 | FaceRefine + VOSR2 远景阈值与最终优化定位
+- 状态：🟡待验证（当前生成优化手段已确定，阈值门控仍需受控视频 A/B）
+- 现行值：VOSR2 作为**可选最终生成优化**接在局部 H3 FaceRefine decode 后，仅增强已 refine 的局部 crop，再缩回 stitch 画布；不替代人脸跟踪、不修复 detector 丢失、不增强背景。旧 1344 中景实测 H3-only 137.1s，H3+VOSR2 2x 635.4s（约 4.6x），有轻微中景眼缘/边缘锐化，远景尾段未恢复可读脸细节。
+- 阈值初测：同一 1344×768、10s 拉远片的 `face_yolov8m` 原始检测显示，约 35–40px 仍可靠；约 30px 开始进入劣化/降置信区；25–27px 置信度快速下降；约 20px 主要为低置信或误检；<20px 不应继续依赖脸部 refine。候选门控：`>35–40px` 不 refine或极低强度，`30–35px` 开始 refine，`25–30px` 保守 refine，`<25px` 停止脸部 refine并保留原帧，`<20px` 如需连续性改用人物框/人物 mask。
+- 关键限制：当前 `H3FaceStitch=fade_out` 并不停止 H3 计算，丢检帧仍进入采样，只是贴回权重淡出；实现真正节省计算的 per-frame/segment gate 是下一步测试内容。`H3PerFrameDenoise.face_px_small=30` 只是 denoise 曲线阈值，不是识别截止线。
+- 证据锚：`.pi/tasks/T-comfy-ops-47/progress.md`（2026-09-22 VOSR2/threshold）；产物 `/home/sean/projects/ComfyUI/output/face_solution/t47_old1344_faceonly_vosr2_2x_no_preview_20260922_00001_.mp4`、`t47_far_tail_person_vosr2_20260922_00001_.mp4`。
+- 补充：同一长拉远片中，用户标定的开始劣化第94帧对应源脸高约68px/原图VAE约8.5 latent px，但此时 detector confidence约0.82、跟踪稳定；真正默认人脸跟踪停止约第156帧，对应约26px/3.25 latent px。因此 `refine_start` 与 `face_track_stop` 必须是两个独立阈值，不能用丢脸检测作为首次劣化指标。证据：`experiments/h3_face_solution/t47_face_threshold_metrics_20260922.csv`。
+- 跨分辨率初测：同一内容缩放到 1344×768、960×548、768×438 后，第94帧脸高 68/48/38px，但占画面高度均约 8.7–8.9%；跟踪终点附近脸高 26/18/14px，占画面高度约 3.2–3.4%。因此跨分辨率候选指标应是 `face_h/frame_height`，不是固定px，也不是原图VAE latent px（后者随输出分辨率变化）。初始候选：比例约 0.088 启动 refine；跟踪失败硬停止并保留原帧。仍需真正不同分辨率生成片复核。
+
+### C-20260907-01 | Ref2VA 中文口型测试必须接 NativeAudioLock
+- 状态：🟡待验证（有效组合已跑通，最终口型/接缝待用户目视确认）
+- 现行值：Ref2VA 仅把外部 Breeze WAV 作为 `ref_audios` 参考时，最终回挂同一母带不能保证逐帧口型；有效对照组合为 **Ref2VA + NativeAudioLock + Motion Context**。该组合在中文 Breeze 30 秒 A/B/C 测试中三段成功，标准 20 步，峰值显存约 20.0–20.6GB。
+- 时间线：
+  - 2026-09-07 提出：Ref2VA+MC 30s 初版用户确认口型未对上（来源 T-comfy-ops-28）
+  - 2026-09-07 修正：补接 NativeAudioLock 并修复 runner 节点编号冲突，A/B/C 全部完成；后续转 T-comfy-ops-31 验证 Extender 2.0 的多参考连续性
+- 证据锚：`.pi/tasks/T-comfy-ops-28/progress.md`；`experiments/h3_digital_human/zh_breeze_ref2va_audio_lock_mc_30s_cases.json.results.json`；产物 `/home/sean/projects/ComfyUI/output/video/h3_avatar_zh_breeze_ref2va_audio_lock_mc_30s/joined_30s_master_audio_timeline_fixed.mp4`

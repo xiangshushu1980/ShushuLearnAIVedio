@@ -5,7 +5,7 @@
 - ComfyUI：`/home/sean/projects/ComfyUI`
 - 项目工作流、脚本、实验：`/home/sean/projects/comfy-ops`
 - 服务：`http://127.0.0.1:8188`
-- 启动：`cd /home/sean/projects/ComfyUI && ./start.sh`
+- 启动：`cd /home/sean/projects/comfy-ops && ./scripts/comfy-stack.sh start`
 - Python：`/home/sean/projects/ComfyUI/venv/bin/python`
 - 当前版本以运行时探测为准；skill 记录的环境基线为 Ubuntu/WSL2、RTX 4090 24GB、Python 3.13。
 

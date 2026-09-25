@@ -28,7 +28,7 @@ description: 在 comfy-ops 中操作 ComfyUI 环境、节点、API、图像或�
 - ComfyUI 本体：`/home/sean/projects/ComfyUI`
 - 项目工作区：`/home/sean/projects/comfy-ops`
 - 服务：`http://127.0.0.1:8188`
-- 启动：`cd /home/sean/projects/ComfyUI && ./start.sh`
+- 启动：`cd /home/sean/projects/comfy-ops && ./scripts/comfy-stack.sh start`
 - Python：`/home/sean/projects/ComfyUI/venv/bin/python`
 - 本机基线：WSL2 / RTX 4090 24GB / Python 3.13；版本以运行时探测为准。
 

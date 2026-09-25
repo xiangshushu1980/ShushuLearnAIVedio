@@ -29,7 +29,7 @@
 - ⚠️ **2025-08-02 实测：连续跑 Bernini 大任务（尤其 40 步无 LoRA 质量模式）后，ComfyUI python 进程内存飙到 ~30GB → 触发系统 OOM killer → dockerd panic → 整个 WSL2 需重启**
   - 日志证据：`journalctl -b -1` 显示 `Out of memory: Killed process python3 total-vm:177917948kB anon-rss:30888192kB` + `dockerd: panic: runtime error`
 - **防护**：① 大任务之间 sleep 30-60s 让缓存回收 ② 不要连续多个 40 步任务 ③ 每任务后 `nvidia-smi` + `free -h` 确认内存回落 ④ 重启后 history 清空（内存态），重跑丢失任务
-- **重启命令**：`cd /home/sean/projects/ComfyUI && setsid ./start.sh > /tmp/comfyui_start.log 2>&1 < /dev/null &`（nohup 在会话结束时可能被杀，setsid 更稳）；日志文件被清空过（启动时截断）
+- **重启命令**：`cd /home/sean/projects/comfy-ops && ./scripts/comfy-stack.sh restart`；日志仍写入 `/tmp/comfyui_start.log`。
 
 ## 下载（HF/CivitAI）
 - ⚠️ HF 下载频繁断线 → `curl -L -C -` 断点续传 + 循环重试脚本（setsid 脱离会话）；直连/mirror 波动时测速切换（hf-mirror.com vs huggingface.co）

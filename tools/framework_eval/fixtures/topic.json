@@ -1,0 +1,13 @@
+{
+  "schema_version": "daily-video/framework-eval-input.v1",
+  "topic": "框架评估最小流程",
+  "evidence": [
+    {
+      "id": "ev_eval_001",
+      "claim": "统一的任务、产物和事件契约可以让不同语言的 Worker 接入同一个编排器。",
+      "source": {"name": "local fixture", "url": "https://example.invalid/eval", "captured_at": "2026-09-07"},
+      "quality": {"tier": "test", "confidence": 1.0},
+      "rights": {"mode": "internal_test"}
+    }
+  ]
+}

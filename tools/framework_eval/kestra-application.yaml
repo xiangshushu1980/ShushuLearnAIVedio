@@ -1,0 +1,17 @@
+kestra:
+  url: http://localhost:8080/
+  server:
+    basic-auth:
+      enabled: false
+      username: "admin@kestra.io"
+      password: kestra
+  tutorial-flows:
+    enabled: false
+  storage:
+    type: local
+    local:
+      base-path: /app/storage
+  repository:
+    type: h2
+  queue:
+    type: h2

@@ -1,7 +1,8 @@
 ---
 name: co-op-game-intro-generator
-compatibility: Requires the MiniMax Hub agent (canvas workspace and MiniMax H3 generation); not portable to generic agent harnesses.
 description: For users creating a two-player co-op game menu or opening animation. Users provide two player names, a game title, a target visual style, and optional character reference images. The Skill locks identity cues, generates an approval image from a fixed menu framework with coordinated color, buttons, icons, and typography, then uses the approved result to rebuild the character, UI-copy, and event timing instructions for the final video. It outputs a co-op game intro featuring two characters, player cards, and menu interaction motion. Best for game concepts, character-led menus, and social content; not for playable game development, complex multi-page UI, exact brand-logo replication, or generic character-free title sequences.
+metadata:
+  compatibility: Requires MiniMax Hub canvas and MiniMax H3 generation. Other hosts may only produce prompts and a pre-production plan.
 ---
 
 # Co-op Game Intro Generator

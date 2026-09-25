@@ -10,9 +10,12 @@
 ## 启动与维护
 
 ```bash
-cd /home/sean/projects/ComfyUI
-./start.sh                          # 前台；后台: nohup ./start.sh > /tmp/comfyui_start.log 2>&1 &
-# 安全停止/重启: bash ~/projects/comfy-ops/scripts/restart_comfyui.sh（精确 PID/等端口释放/健康检查，勿用 pgrep -f 匹配会误杀 bash 包装）
+cd /home/sean/projects/comfy-ops
+./scripts/comfy-stack.sh start     # 唯一入口；自动复用已有健康实例
+./scripts/comfy-stack.sh status
+./scripts/comfy-stack.sh restart
+./scripts/comfy-stack.sh stop
+# 旧的 `scripts/restart_comfyui.sh` 仅保留作兼容参考；日常停止/重启统一使用上面的 `comfy-stack.sh`。
 # 日志: tail -f /tmp/comfyui_start.log（采样进度也打印在这里）
 # 磁盘: df -h /home/sean
 ```

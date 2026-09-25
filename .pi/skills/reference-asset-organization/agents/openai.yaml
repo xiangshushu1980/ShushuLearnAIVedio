@@ -1,0 +1,4 @@
+interface:
+  display_name: "Reference Asset Organization"
+  short_description: "Plan, organize, and select H3 reference assets"
+  default_prompt: "Use $reference-asset-organization to plan and organize reference images for this object."

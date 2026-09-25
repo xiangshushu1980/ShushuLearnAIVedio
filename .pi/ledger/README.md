@@ -47,6 +47,8 @@
 | C-20260914-01 | VDN Ref2VA 1024×576 双角色 NativeAudioLock 时长基线 | ✅现行 | h3-speed.md |
 | C-20260914-02 | 普通 Ref2VA Turbo LoRA 1024×576 双角色长时基线 | ✅现行 | h3-speed.md |
 | C-20260915-01 | Ref2VA PDD 8-step 与标准 20-step 5 秒同参对照 | ✅现行 | h3-speed.md |
+| C-20260920-02 | H3 完整视频 latent 两阶段放大远景脸 smoke/5s 验证 | 🟡待验证 | h3-models.md |
+| C-20260922-02 | VOSR2 本地安装与图像/短批次 smoke | 🟡待验证 | h3-models.md |
 
 ---
 
@@ -142,6 +144,8 @@
   - `h3-prompt.md`（C-15~C-19）：提示词/风格/增强
   - `h3-models.md`（C-20~C-27）：模型/可行性
   - `va-ocr.md`（C-20260827-01~02）：视频分析/OCR 压缩（fund-video-analysis）
+
+  - `h3-speed.md`（C-20260920-01）：H3 Ref2VA + SelfLift 在 RTX 4090 上的证据边界
 
 ## 九、设计对标（2026-08-16 调研）
 

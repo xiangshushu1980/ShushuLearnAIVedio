@@ -1,0 +1,17 @@
+subject_definitions:
+<Subject 1> is the single moonlit stone observatory chamber defined by <Picture 1>. <Picture 1> is the canonical establishing view.
+
+summary:
+[reference generation] Generate one continuous environment reference shot with a slow camera orbit through the observatory chamber.
+
+retention_analysis:
+<Subject 1> (appears in [Shot 1]): fully_preserved - preserve the same circular stone chamber, arched windows, columns, two stone pedestals, moonlit blue-gray lighting, mist, and spatial layout while the camera moves.
+
+detailed_description:
+The target video is a continuous empty-environment reference shot inside the same circular stone observatory at night. [Shot 1] The camera begins facing the canonical arrangement of the arched windows and two stone pedestals, then makes a slow smooth orbit around the chamber, revealing the side relationships between windows, columns, pedestals, circular floor stones, and the moonlit exterior before settling back into the room. Keep the same architecture, number and placement logic of the arches and columns, two pedestals, circular floor, blue-gray moonlight, mist, and scale from <Subject 1>. No characters, creatures, new props, different location, time-of-day change, text, labels, watermark, or sudden cut.
+
+overall_soundscape:
+Quiet stone interior ambience with distant wind through the arches and soft room reverberation, no speech.
+
+non_diegetic_music:
+N/A

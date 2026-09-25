@@ -1,0 +1,17 @@
+subject_definitions:
+<Subject 1> is the single brass compass defined by <Picture 1> and, when present, <Picture 2>. <Picture 1> is the canonical object reference; <Picture 2> is the same compass's side-orbit structure reference.
+
+summary:
+[reference generation] Generate one continuous product-style action shot of the compass slowly rotating through a controlled orbit while its strap settles naturally.
+
+retention_analysis:
+<Subject 1> (appears in [Shot 1]): fully_preserved - preserve the same brass casing, engraved rim, blue glass center, winding crown, leather strap, material, markings, and object identity while allowing natural rotation and minor strap motion.
+
+detailed_description:
+The target video is a clean studio object reference on a neutral light gray background. [Shot 1] The single brass compass begins in a readable three-quarter top view. The camera makes a slow controlled orbit around the compass, revealing its cylindrical side wall, engraved rim thickness, winding crown, leather strap attachment, and then returning toward the top view. The compass itself rotates slightly in place while remaining centered and fully visible. The leather strap settles with subtle natural movement but does not multiply or change material. Preserve the exact same object, brass color, blue glass center, engraved markings, crown, strap, scale, and proportions from <Subject 1>. No hand, person, extra object, duplicate compass, redesign, text, label, watermark, or background change.
+
+overall_soundscape:
+Quiet studio room tone with a soft leather movement and subtle metal handling sound, no speech.
+
+non_diegetic_music:
+N/A

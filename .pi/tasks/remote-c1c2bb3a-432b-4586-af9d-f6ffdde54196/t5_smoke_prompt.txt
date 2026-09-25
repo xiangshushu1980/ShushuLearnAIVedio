@@ -1,0 +1,17 @@
+subject_definitions:
+<Subject 1> is the single female elf archer defined by <Picture 1> and <Picture 2>. <Picture 1> is the authoritative close-up identity reference for her face, eyes, hairline, and facial structure. <Picture 2> is the same character's wardrobe and body-silhouette reference; preserve the dark teal hooded outfit, layered armor, belts, pouches, bow, boots, and proportions. The two pictures describe one person, not two people.
+
+summary:
+[reference generation] Generate one quiet single-character medium shot using <Subject 1>. Preserve the character identity and wardrobe while allowing a natural small movement.
+
+retention_analysis:
+<Subject 1> (appears in [Shot 1]): fully_preserved - preserve the same face, hair, outfit, body silhouette, bow, belts, pouches, and boots from the selected references.
+
+detailed_description:
+The target video is a restrained fantasy character reference shot with neutral studio lighting and a plain gray background. [Shot 1] The single female elf archer stands alone in a centered medium-full composition, facing the camera with her full upper body and most of her legs visible. She remains the only person in the frame. Her expression is calm and neutral. The camera performs a very small slow push in while she makes only a subtle breathing movement and a slight natural shift of posture. Keep the face, pale hair, pointed ears, dark teal hooded armor, layered shoulder pieces, crossed chest straps, belt pouches, bow, quiver, dark trousers, and tall boots visually consistent with <Subject 1>. Do not copy any reference-board grid, panel layout, labels, or borders. Keep the background plain and stable, with no additional characters, creatures, weapons, text, or environmental objects.
+
+overall_soundscape:
+Quiet room tone with very soft cloth movement and no distinct speech.
+
+non_diegetic_music:
+N/A

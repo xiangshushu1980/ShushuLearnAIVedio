@@ -43,7 +43,7 @@ IR 定位：**降级为可选精修层**（黑盒但强，效果不满意时丢�
 - endpoint：`https://api.deepseek.com`
 - 敏感内容策略：**敏感/擦边场景走本地生成器，不依赖 IR**（IR 有 1026 敏感拦截；2026-08-08 实测 A 场景第一次被拦）
 
-### 四.1 对抗幻觉机制（2026-08-17 吸收 1038lab + T8，见 experiments/promptor_compare/）
+### 四.1 对抗幻觉机制（2026-08-17 吸收 1038lab + T8，原始样本见 `experiments/archive/promptor_compare/`）
 
 1. **结构标签程序注入**（1038lab）：LLM 只写 `[Shot N]` 叙事正文 + 声音两行，`subject_definitions:`/`summary:`/`retention_analysis` 等结构标签由合成层代码拼装注入——防漏字段/顺序错/幻觉，且省 token（抽样：1038lab 1393 tok vs 我方 3958 tok）。合成层=控制点 2 的职责加强
 2. **防虚构句入 system prompt**：显式禁止句「不虚构用户未提供的台词/歌词/品牌文案/数据」+ 验证清单（实测 base-en 契约下 LLM 编了台词）
@@ -59,14 +59,16 @@ IR 定位：**降级为可选精修层**（黑盒但强，效果不满意时丢�
 |---|---|---|---|
 | 1 | IR 输出样本库 | 10-20 条多场景真实输出（每条~1毛），逐条拆解标注六要素 | ✅ 13条（8 新 + 3 官方 + 2 旧 A/B，experiments/ir_samples/） |
 | 2 | IR 输出拆解文档 | 结构规律：多镜头/细节密度/时间点/声音三层 | ✅ docs/18（i2v 4条待补） |
-| 3 | 社区开源 prompt skill | benjiyaya/Minimax-H3-Prompt-AgentSkill(53★)、kuronzzhan-droid、imagineVid/Awesome 案例合集 | 🟡 benjiyaya 已拆（7维框架/格式规范/showcase）；kuronzzhan、imagineVid 待拆 |
+| 3 | 社区开源 prompt skill | benjiyaya/Minimax-H3-Prompt-AgentSkill、T8mars/minimax-h3-prompt-skill-T8、kuronzzhan-droid、imagineVid/Awesome 案例合集 | 🟡 benjiyaya 已拆（7维框架/格式规范/showcase）；T8 Creative DNA 已确认是案例/Skill 库，后续只精选导入，不替代官方格式；kuronzzhan、imagineVid 待拆 |
 | 4 | 官方示例 | 模型卡 README full-2k 示例 + scripts/readme IR 调用脚本 | ✅ 3 case 已入库 + 官方脚本格式已确认（媒体嵌套结构） |
 | 5 | 镜头词汇表 | SeeDance 镜头体系（取词汇不取模板）+ 英文标准术语（dolly/pan/tilt/crane/arc） | 🟡 H3 运动词汇已入 docs/17（type+amplitude+speed）；SeeDance 另表待建 |
 | 6 | 风格词汇库 | 光线/色调/质感描述词（golden hour/noir/soft light...） | 🟡 部分实测词在 docs/18 §四；完整词库落 docs/18 附录（待建）|
 | 7 | 声音词汇 | 环境音/氛围/BGM 描述词 | 🟡 三层结构+实例在 docs/18；词库落 docs/18 附录（待建）|
 | 8 | 成功案例 | docs 09 本地实测 + B站优质案例 | 待收集 |
 | 9 | 经验蒸馏 | mem0 音频/动作规律 → 生成器规则（如：安静类词+turbo→静音，需 soundscape 兜底） | ✅ 已有素材（docs/18 §四 规则 3） |
-| 10 | 指南文本 | base-en.txt(222行) + ref-en.txt(341行) + h3-prompt-writing skill | ✅ 已装 |
+| 10 | 指南文本 | base-en.txt(222行) + ref-en.txt(341行) + h3-prompt-writing skill | ✅ 已装；上游近期补充 4–15s 时长、标签一致、具体描述、首尾帧时间线连接提示，已同步本地镜像 |
+
+| 11 | 最新案例 Skill | T8mars/minimax-h3-prompt-skill-T8 Creative DNA（v1.4.2，案例机制 + 来源 + 可安装 Skill） | 🟡 只作精选案例源；不整库安装、不把案例模板当 H3 契约 |
 
 **不做**：敏感词规避表（用户拍板：敏感场景走本地生成器，不需要绕过 IR 拦截）。
 
@@ -79,6 +81,6 @@ IR 定位：**降级为可选精修层**（黑盒但强，效果不满意时丢�
 ## 七、相关
 
 - 格式宪法：`.pi/skills/h3-prompt-writing/references/{base-en,ref-en}.txt`（官方）
-- IR 调用：`scripts/h3_ir_rewrite.py`；A/B 提交：`scripts/h3_ab_submit.py` / `h3_ab_turbo_submit.py`
+- IR 调用：`scripts/h3_ir_rewrite.py`；A/B 提交：`scripts/h3_ab_submit.py`；旧 Turbo 提交脚本见 `scripts/archive/historical/h3_ab_turbo_submit.py`
 - 实测基准：docs/09（H3 测试计划）+ mem0（音频/动作规律）
 - 上游跟踪：vendor/minimax-h3（commit 8d8824e 起）

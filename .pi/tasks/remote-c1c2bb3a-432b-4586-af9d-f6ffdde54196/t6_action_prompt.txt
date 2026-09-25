@@ -1,0 +1,17 @@
+subject_definitions:
+<Subject 1> is the single female elf archer defined by <Picture 1> and <Picture 2>. <Picture 1> is the authoritative close-up identity reference for her face and hair. <Picture 2> is the same character's face-suppressed wardrobe and body-silhouette reference. All pictures describe one person.
+
+summary:
+[reference generation] Generate one continuous single-character action reference shot of the archer drawing her bow while turning into a three-quarter stance.
+
+retention_analysis:
+<Subject 1> (appears in [Shot 1]): fully_preserved - preserve the same face, pale hair, pointed ears, dark teal hooded armor, belts, pouches, bow, trousers, boots, proportions, and identity through the action and partial self-occlusion.
+
+detailed_description:
+The target video is a restrained fantasy action reference shot on a plain gray studio background. [Shot 1] The single female elf archer begins in a centered medium-full frontal stance with the bow lowered. She raises the bow, turns her torso and head approximately 45 degrees to the left, and draws the string into a stable aiming pose. The motion is continuous with no cut. During the action, her near forearm, bow and string naturally pass in front of part of the torso and briefly overlap the lower edge of the face without covering both eyes. The camera makes a small slow lateral move while keeping the entire character readable. Preserve the same face, pale hair, pointed ear, hood, layered armor, crossed straps, belt pouches, bow, quiver, trousers, and boots from <Subject 1>. She remains the only person. Keep the background plain and stable. Do not add a second character, creatures, text, labels, a reference-board layout, or new accessories. Do not melt the bow into the body, exchange hands, duplicate the face, or lose the legs during the movement.
+
+overall_soundscape:
+Quiet studio room tone with controlled cloth, leather, bow handling, and a soft bowstring movement sound, no speech.
+
+non_diegetic_music:
+N/A

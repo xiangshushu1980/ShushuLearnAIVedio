@@ -1,5 +1,7 @@
 # KREA 2 生图
 
+> Krea2 人物身份、风格化脸和 H3/Ref2VA 前置参考图不在本页维护；唯一入口是 [docs/40_krea2_prompt_and_identity_pipeline.md](../../../../docs/40_krea2_prompt_and_identity_pipeline.md)，实际 Prompt 唯一来源是 [tools/krea2_prompt_profiles.py](../../../../tools/krea2_prompt_profiles.py)。
+
 ## 资源
 
 - 扩散模型：`krea2_turbo_fp8.safetensors`
