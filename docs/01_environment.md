@@ -17,6 +17,8 @@ cd /home/sean/projects/ComfyUI
 # 磁盘: df -h /home/sean
 ```
 
+`comfy-stack.sh` 是 ComfyUI 共享实例的唯一启动入口，但进程生命周期由用户级 `comfyui.service` 统一管理：wrapper 的 `start`、`stop`、`restart` 分别调用 `systemctl --user start|stop|restart comfyui.service`。wrapper 只负责 `flock` 单操作锁、健康检查、孤立进程/端口防重复判断和状态观测，不再直接 fork 或向 ComfyUI PID 发送信号。`status` 同时显示 systemd unit 状态、HTTP 健康状态和 `nvidia-smi` GPU 显存/利用率。Agent/MCP 由 `.mcp.json` 的客户端生命周期管理，不由该脚本再次启动；Hive 资源中心只用于服务登记、资源预检和具体生成任务的 GPU lease。
+
 - 界面 http://localhost:8188；局域网/远程需 `--listen 0.0.0.0`（无鉴权，勿公网暴露）
 - 模型首载较慢（Anima 4GB ~6s / Krea 12.9GB ~16s / Wan GGUF ~45s），同模型任务有缓存
 
