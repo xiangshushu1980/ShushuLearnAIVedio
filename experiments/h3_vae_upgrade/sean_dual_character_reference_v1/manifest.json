@@ -1,0 +1,92 @@
+{
+  "owner": "Sean",
+  "package_id": "sean_dual_character_reference_v1",
+  "package_version": "v1",
+  "object_type": "character_pair",
+  "status": "accepted_for_medium_two_person_ref2va",
+  "created_at": "2026-09-26",
+  "selection_policy": "Independent semantic references are canonical. Pair/total boards are auxiliary or negative-control inputs only.",
+  "characters": [
+    {
+      "object_id": "character_a_silver_elf_archer",
+      "display_name": "Character A",
+      "role": "identity_front",
+      "canonical_asset": "/home/sean/projects/ComfyUI/input/sean_t2_a_identity_front.png",
+      "derived_assets": [
+        {
+          "role": "face_closeup",
+          "path": "/home/sean/projects/ComfyUI/input/sean_t2_a_face_closeup.png",
+          "use_when": "close-up, speaking close-up, or face-sensitive shot"
+        },
+        {
+          "role": "same_object_board",
+          "path": "/home/sean/projects/ComfyUI/input/sean_t2_a_character_board.png",
+          "use_when": "optional auxiliary side/back identity aid; never the only input"
+        }
+      ],
+      "contains": ["face", "silver hair", "pointed ears", "dark teal cloak", "dark armor", "single recurve bow"],
+      "excluded": ["character_b", "observatory_scene", "spell", "compass"],
+      "qc": {
+        "identity_consistent": true,
+        "wardrobe_consistent": true,
+        "wrong_object_leak": false,
+        "background_clean": true,
+        "human_reviewed": true,
+        "status": "accepted"
+      }
+    },
+    {
+      "object_id": "character_b_red_haired_woman",
+      "display_name": "Character B",
+      "role": "identity_front",
+      "canonical_asset": "/home/sean/projects/ComfyUI/input/sean_t2_b_identity.png",
+      "derived_assets": [],
+      "contains": ["face", "auburn asymmetrical hair", "burgundy leather coat", "brass shoulder armor", "gloves", "boots"],
+      "excluded": ["character_a", "observatory_scene", "spell", "compass"],
+      "qc": {
+        "identity_consistent": true,
+        "wardrobe_consistent": true,
+        "wrong_object_leak": false,
+        "background_clean": true,
+        "human_reviewed": true,
+        "status": "accepted"
+      },
+      "coverage_note": "No independent face close-up or side/back view is currently available; add one only for a close-up or exposed side/back shot."
+    }
+  ],
+  "optional_non_character_assets": {
+    "scene": "/home/sean/projects/ComfyUI/input/sean_t2_scene_observatory.png",
+    "scene_role": "clean environment reference, not a frame anchor",
+    "scene_note": "Square clean scene is accepted for current medium shots; a clean 16:9 scene source matching the target camera layout is the next scene-stability improvement.",
+    "spell": "/home/sean/projects/ComfyUI/input/sean_t2_spell_cyan_ribbon.png",
+    "prop": "/home/sean/projects/ComfyUI/input/sean_t2_object_brass_compass.png"
+  },
+  "shot_selection": {
+    "two_person_medium": [
+      "character_a_silver_elf_archer.identity_front",
+      "character_b_red_haired_woman.identity_front",
+      "scene"
+    ],
+    "a_speaking_closeup": [
+      "character_a_silver_elf_archer.identity_front",
+      "character_a_silver_elf_archer.face_closeup"
+    ],
+    "b_speaking_closeup": [
+      "character_b_red_haired_woman.identity_front",
+      "scene"
+    ],
+    "two_person_spell_shot": [
+      "character_a_silver_elf_archer.identity_front",
+      "character_b_red_haired_woman.identity_front",
+      "scene",
+      "spell",
+      "prop"
+    ]
+  },
+  "h3_binding": {
+    "subject_1": "Character A defined by Picture 1; Picture 1 is authoritative for identity, face, wardrobe, silhouette, and the single bow.",
+    "subject_2": "Character B defined by Picture 2; Picture 2 is authoritative for identity, face, wardrobe, and silhouette.",
+    "subject_3": "The observatory environment defined by Picture 3; it is not part of either character identity.",
+    "rule": "Use Subject labels in all six Ref2VA sections. Treat character images as Subject references, not Picture frame anchors."
+  }
+}

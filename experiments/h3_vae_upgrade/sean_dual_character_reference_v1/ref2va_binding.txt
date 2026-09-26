@@ -1,0 +1,23 @@
+owner: Sean
+
+subject_definitions
+<Subject 1> is Character A, the silver-haired elven archer defined by <Picture 1>. <Picture 1> is authoritative for her identity, face, wardrobe, silhouette, and one single recurve bow.
+<Subject 2> is Character B, the red-haired woman defined by <Picture 2>. <Picture 2> is authoritative for her identity, face, wardrobe, and silhouette.
+<Subject 3> is the clean observatory environment defined by <Picture 3>; it defines layout and lighting only and does not define either character.
+
+summary
+[reference generation] Generate a continuous two-person shot using <Subject 1>, <Subject 2>, and <Subject 3>. Keep each identity independent; do not copy a board or contact-sheet layout.
+
+retention_analysis
+<Subject 1>: fully_preserved - identity, wardrobe, silhouette, and the single bow remain bound to Character A.
+<Subject 2>: fully_preserved - identity, wardrobe, and silhouette remain bound to Character B.
+<Subject 3>: fully_preserved - the observatory layout and moonlit lighting are the scene reference, not a character attribute.
+
+detailed_description
+Use one continuous shot with stable screen direction and a restrained camera move. Keep Character A and Character B as two distinct subjects with no identity blending. Preserve the observatory's arches, circular floor, pedestals, moonlight direction, and mist as one unchanged environment. Reference images provide identity and environment guidance only; none is a first frame or target-frame anchor.
+
+overall_soundscape
+Use the requested dialogue and continuous room ambience. Keep footsteps, fabric movement, and prop sounds spatially tied to the correct character.
+
+non_diegetic_music
+N/A
