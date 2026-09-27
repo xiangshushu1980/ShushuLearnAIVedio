@@ -6,7 +6,7 @@ Owner: Sean
 
 Stabilize the fixed three-view and four-view layouts first. DynamicCharacterSheet is deferred. The user-facing home for this run is this directory: prompts, `manifest.json`, QC, and the selected image under `outputs/`. ComfyUI's original output path is retained in the manifest as provenance.
 
-The red mage result for `D_threeview_front_threequarter_back` has been confirmed by Sean as having the desired three-quarter angle. The current single-image review is `outputs/sean_t48_A2_waistup_shoulders_red_mage.png`: the prompt asks for a waist-up first view with shoulders and upper arms, without face-close-up emphasis. See `QC.md` for the observed crop and review gate.
+The red mage result for `D_threeview_front_threequarter_back` has been confirmed by Sean as having the desired three-quarter angle. The A2 prompt-only attempt still clipped the left shoulder. The current single-image review is `outputs/sean_t48_A3_upperbody_crop_left_red_mage.png`: the upper half of the full-body front panel is cropped and placed at the far left at the original scale. Both shoulders are visible. See `QC.md` for details and the review gate.
 
 ## Parameters
 

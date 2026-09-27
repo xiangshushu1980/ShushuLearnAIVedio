@@ -26,11 +26,11 @@ No variant is currently approved as a stable standard. Review one named image at
 
 ## Current single image for review
 
-- Variant: `A2_waistup_shoulders`
+- Variant: `A3_upperbody_crop_left`
 - Case: `red_mage`
-- File: `outputs/sean_t48_A2_waistup_shoulders_red_mage.png`
-- Prompt: removed face-close-up emphasis; requested a waist-up first panel with shoulders and upper arms.
-- Visual note: the panel extends to the waist and shows the shoulder armor, but the left shoulder armor is clipped at the image edge. Await Sean review before calling this sufficient.
+- File: `outputs/sean_t48_A3_upperbody_crop_left_red_mage.png`
+- Construction: cropped the head-to-waist upper half from A2's full-body front panel (source box x=432..828, y=0..520) and placed it in the far-left panel at the same scale. This is a deterministic crop/composite, not another model generation.
+- Visual assessment: both shoulder armor pieces and upper arms are fully inside the left panel. A2's generated bust was insufficient because the left shoulder armor was clipped.
 
 ## Review sheets
 
