@@ -23,7 +23,8 @@
     "D_threeview_front_threequarter_back": "prompts/D_threeview_front_threequarter_back.md",
     "E_threeview_front_strict_side_back": "prompts/E_threeview_front_strict_side_back.md",
     "A2_waistup_shoulders": "prompts/A2_waistup_shoulders.md",
-    "F_face_focus_wide_left": "prompts/F_face_focus_wide_left.md"
+    "F_face_focus_wide_left": "prompts/F_face_focus_wide_left.md",
+    "G_face_focus_60_left": "prompts/G_face_focus_60_left.md"
   },
   "cases": [
     {
@@ -625,6 +626,24 @@
         "identity_costume_consistency": "pass; the staff is present in the original front reference and is naturally not visible in the back view",
         "overall": "partial; face enlargement and reference prop are good, but requested 52/24/24 panel width did not hold"
       }
+    },
+    {
+      "variant": "G_face_focus_60_left",
+      "case_id": "red_mage",
+      "seed": 4801002,
+      "prompt_id": "765adc5b-5cc8-40ab-8042-64b77f52a813",
+      "output": "outputs/sean_t48_G_face_focus_60_left_red_mage.png",
+      "comfyui_output": "/home/sean/projects/ComfyUI/output/sean_t48_quadview_stability_20260927_v1/G_face_focus_60_left/red_mage/result_00001_.png",
+      "seconds": 27.4,
+      "status": "generated_visual_qc",
+      "prompt_used": "Three views of the same character: a dominant, very large face close-up filling the left 60% of the canvas; a full-body front view in the center 20%; a full-body back view in the right 20%. Keep both full-body views fully visible. Preserve identity and outfit.",
+      "visual_assessment": {
+        "face_scale_vs_F": "larger; face fills more of the left panel than the prior 52/24/24 prompt",
+        "left_panel_width": "still approximately 36%; changing the requested ratio from 52% to 60% did not widen the panel",
+        "front_back_full_body": "both remain fully visible and coherent",
+        "props": "the front-view staff matches the source anchor",
+        "overall": "face enlargement pass for this single red-mage sample; panel-width control still fails; cross-character stability untested"
+      }
     }
   ],
   "qc": {
@@ -659,14 +678,15 @@
       "Prior E stability claim withdrawn pending individual review."
     ],
     "current_single_review": {
-      "variant": "F_face_focus_wide_left",
+      "variant": "G_face_focus_60_left",
       "case_id": "red_mage",
-      "output": "outputs/sean_t48_F_face_focus_wide_left_red_mage.png",
+      "output": "outputs/sean_t48_G_face_focus_60_left_red_mage.png",
       "assistant_visual_assessment": {
-        "face_closeup": "pass; face is clearly large and readable",
-        "requested_panel_ratio_52_24_24": "fail; visually approximately 36/32/32",
-        "front_back_views": "present",
-        "staff": "matches the original red-mage anchor; not an added prop"
+        "face_scale_vs_F": "larger; face fills more of the left panel than the prior 52/24/24 prompt",
+        "left_panel_width": "still approximately 36%; changing the requested ratio from 52% to 60% did not widen the panel",
+        "front_back_full_body": "both remain fully visible and coherent",
+        "props": "the front-view staff matches the source anchor",
+        "overall": "face enlargement pass for this single red-mage sample; panel-width control still fails; cross-character stability untested"
       }
     },
     "next_gate": "Wait for Sean review; do not generate another batch or start H3 yet.",

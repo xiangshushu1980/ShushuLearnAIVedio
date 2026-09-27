@@ -32,7 +32,7 @@ Sean rejected half-body as the target: a crop from the full-body panel does not 
 
 The earlier `52/24/24` face-focused single preview showed a visibly larger face while retaining the front/back full-body views. This was a visual improvement in one preview, not a stable width result: the later comparison across `43/28.5/28.5`, `52/24/24`, and `60/20/20` returned to near-equal panel widths. Sean also judged the recent B/B2/C results insufficient to read as face close-ups.
 
-## Current single face-width sample
+## Previous single face-width sample (F)
 
 - Variant: `F_face_focus_wide_left`
 - Case: `red_mage`, seed `4801002`
@@ -54,3 +54,13 @@ Contact sheets are retained as navigation aids only and must not be used to asse
 ## Next gate
 
 Wait for Sean's review of the single named image. Do not generate another batch or start H3 yet. The experiment directory is the user-facing home for this run: prompts, manifest, QC, and selected outputs live together under this directory. After individual references are approved, crop each selected view into an independent image (never feed the composite sheet to H3) and follow the H3 validation gate before canonical packaging. DynamicCharacterSheet remains deferred.
+
+
+## Current single face-scale retest (G)
+
+- Variant: `G_face_focus_60_left`
+- Case: `red_mage`, seed `4801002`
+- File: `outputs/sean_t48_G_face_focus_60_left_red_mage.png`
+- Compared with F, the face fills more of the left panel. The panel itself remains approximately 36% of the image width even though the prompt requests 60%.
+- Front/back full-body views remain visible; the staff matches the source anchor.
+- Assessment: face-scale increase passes for this one image. Pixel-level panel-width control still fails. Cross-character stability is untested.
