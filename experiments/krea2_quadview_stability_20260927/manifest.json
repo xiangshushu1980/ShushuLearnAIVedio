@@ -1,7 +1,7 @@
 {
   "owner": "Sean",
   "batch_id": "sean_t48_quadview_stability_20260927_v1",
-  "status": "awaiting_single_image_review",
+  "status": "awaiting_face_focus_decision",
   "lora": "QuadView_krea2_v1.safetensors",
   "lora_strength": 1.0,
   "parameters": {
@@ -639,13 +639,7 @@
       "D_threeview_front_threequarter_back: red_mage has a visible three-quarter view; this is one example, not stability evidence.",
       "Prior E stability claim withdrawn pending individual review."
     ],
-    "current_single_review": {
-      "variant": "A3_upperbody_crop_left",
-      "case_id": "red_mage",
-      "output": "outputs/sean_t48_A3_upperbody_crop_left_red_mage.png",
-      "purpose": "Apply Sean’s proposed composition: crop the upper half from the full-body front view and place it in the far-left panel.",
-      "assistant_visual_assessment": "Both shoulders are fully inside the left panel; A2 generated bust did not meet this criterion."
-    },
+    "current_single_review": null,
     "next_gate": "Wait for Sean review; do not generate another batch or start H3 yet.",
     "confirmed_examples": [
       {
@@ -653,6 +647,13 @@
         "case_id": "red_mage",
         "assessment": "Sean confirmed the three-quarter view meets expectations."
       }
-    ]
+    ],
+    "bust_branch": "abandoned by Sean; A2 prompt-only bust and A3 crop composite are excluded from candidate layouts.",
+    "face_width_status": {
+      "single_preview": "A prior 52/24/24 face-focused preview was reported in docs/46 as visibly enlarging the face while retaining the front/back full-body views.",
+      "stable_width_control": "not passed; later 43/28.5/28.5, 52/24/24, and 60/20/20 layouts tended back toward near-equal columns.",
+      "current_batch_face_closeup": "not passed in Sean’s visual review of the recent B/B2/C results.",
+      "next_step": "If resuming, review one fresh face-focused 52/24/24 sample at a time; do not batch until that sample passes."
+    }
   }
 }

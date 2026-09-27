@@ -24,13 +24,15 @@ No variant is currently approved as a stable standard. Review one named image at
 - Case: `red_mage`
 - Sean confirmed that its three-quarter angle meets expectations.
 
-## Current single image for review
+## Abandoned bust branch
 
-- Variant: `A3_upperbody_crop_left`
-- Case: `red_mage`
-- File: `outputs/sean_t48_A3_upperbody_crop_left_red_mage.png`
-- Construction: cropped the head-to-waist upper half from A2's full-body front panel (source box x=432..828, y=0..520) and placed it in the far-left panel at the same scale. This is a deterministic crop/composite, not another model generation.
-- Visual assessment: both shoulder armor pieces and upper arms are fully inside the left panel. A2's generated bust was insufficient because the left shoulder armor was clipped.
+Sean rejected half-body as the target: a crop from the full-body panel does not add generated detail. A2's generated bust also failed because the left shoulder armor was clipped. A3 is only a crop mock-up and is excluded from candidate layouts.
+
+## Face-width status
+
+The earlier `52/24/24` face-focused single preview showed a visibly larger face while retaining the front/back full-body views. This was a visual improvement in one preview, not a stable width result: the later comparison across `43/28.5/28.5`, `52/24/24`, and `60/20/20` returned to near-equal panel widths. Sean also judged the recent B/B2/C results insufficient to read as face close-ups.
+
+No image is currently awaiting review. If resumed, test one fresh face-focused `52/24/24` image, then judge the face size and whether the front/back views remain intact before any multi-character run.
 
 ## Review sheets
 
