@@ -2,21 +2,17 @@
 
 Owner: Sean
 
-## Scope
+## Current focus
 
-First stabilize compact prompt variants for `QuadView_krea2_v1`: (A) upper-body portrait with both shoulders visible, (B2) face-focused portrait with a three-quarter side view, and (C) face-focused portrait with a strict side view. The sheet retains four panels: first portrait, then front, side, and back full-body views. Compare three-view front/three-quarter/back with a front/strict-side/back variant.
+Stabilize the fixed three-view and four-view layouts first. DynamicCharacterSheet is deferred. The user-facing home for this run is this directory: prompts, `manifest.json`, QC, and the selected image under `outputs/`. ComfyUI's original output path is retained in the manifest as provenance.
 
-The same four source anchors, dimensions, sampler settings, and per-character seed are used across all three variants. This isolates prompt wording. DynamicCharacterSheet is deferred.
+The red mage result for `D_threeview_front_threequarter_back` has been confirmed by Sean as having the desired three-quarter angle. The current single-image review is `outputs/sean_t48_A2_waistup_shoulders_red_mage.png`: the prompt asks for a waist-up first view with shoulders and upper arms, without face-close-up emphasis. See `QC.md` for the observed crop and review gate.
 
 ## Parameters
 
 - LoRA: `QuadView_krea2_v1.safetensors`, strength 1.0
 - Canvas: 1536×1024; 10 steps; CFG 1; Euler/simple; ref boost 1
-- Cases: eastern swordswoman, red mage, dwarf engineer, ice wolf
-- Seeds: fixed per character and shared across prompt variants
+- Current single case: red mage, seed 4801002
+- Earlier 24-image batch conditions and provenance: `manifest.json` and `run.log`
 
-## Review
-
-Review identity and costume consistency, first-panel crop (both shoulders for A; clear face for B/C), side angle for B/C, view order, duplicate/missing panels, and crop usability. These are previews only and cannot become canonical without H3 Ref2VA review.
-
-See `manifest.json` and `prompts/` for exact inputs and prompt text.
+See `manifest.json`, `prompts/`, and `QC.md` for exact inputs, results, and status.

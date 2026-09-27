@@ -13,17 +13,24 @@ The earlier contact-sheet assessment was unreliable. The thumbnails made it diff
 - `A_shoulders_strict_side`: shoulders were not adequately visible. Do not treat this as a passing shoulder-bust result.
 - `B_face_three_quarter_side` and `B2_face_threequarter_not_profile`: the outputs did not provide a clear three-quarter face as previously claimed.
 - `C_face_strict_side`: the supposed face close-up is not clear; the result reads more like bust/full-body views.
-- `D_threeview_front_threequarter_back`: the red mage result below does show a three-quarter view. This is one useful example, not evidence that the prompt is stable across characters.
+- `D_threeview_front_threequarter_back`: Sean confirmed the red mage result shows the desired three-quarter view. This is one useful example, not evidence that the prompt is stable across characters.
 - `E_threeview_front_strict_side_back`: prior stability claim is withdrawn pending individual review.
 
-No variant is currently approved as a stable standard. Review one named image at a time; after Sean confirms the D/red-mage example, choose the next single image or a focused prompt change. Keep Dynamic deferred.
+No variant is currently approved as a stable standard. Review one named image at a time. Dynamic remains deferred.
 
-## Current single image for review
+## Confirmed example
 
 - Variant: `D_threeview_front_threequarter_back`
 - Case: `red_mage`
-- File: `/home/sean/projects/ComfyUI/output/sean_t48_quadview_stability_20260927_v1/D_threeview_front_threequarter_back/red_mage/result_00001_.png`
-- Purpose: confirm whether this is the desired three-quarter angle before proceeding.
+- Sean confirmed that its three-quarter angle meets expectations.
+
+## Current single image for review
+
+- Variant: `A2_waistup_shoulders`
+- Case: `red_mage`
+- File: `outputs/sean_t48_A2_waistup_shoulders_red_mage.png`
+- Prompt: removed face-close-up emphasis; requested a waist-up first panel with shoulders and upper arms.
+- Visual note: the panel extends to the waist and shows the shoulder armor, but the left shoulder armor is clipped at the image edge. Await Sean review before calling this sufficient.
 
 ## Review sheets
 
@@ -38,4 +45,4 @@ Contact sheets are retained as navigation aids only and must not be used to asse
 
 ## Next gate
 
-Wait for Sean's review of the single named image. Do not generate another batch or start H3 yet. After individual references are approved, crop each selected view into an independent image (never feed a composite sheet to H3) and follow the H3 validation gate before canonical packaging. DynamicCharacterSheet remains deferred.
+Wait for Sean's review of the single named image. Do not generate another batch or start H3 yet. The experiment directory is the user-facing home for this run: prompts, manifest, QC, and selected outputs live together under this directory. After individual references are approved, crop each selected view into an independent image (never feed the composite sheet to H3) and follow the H3 validation gate before canonical packaging. DynamicCharacterSheet remains deferred.

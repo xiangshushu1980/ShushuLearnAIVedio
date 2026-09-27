@@ -21,7 +21,8 @@
     "B2_face_threequarter_not_profile": "prompts/B2_face_threequarter_not_profile.md",
     "C_face_strict_side": "prompts/C_face_strict_side.md",
     "D_threeview_front_threequarter_back": "prompts/D_threeview_front_threequarter_back.md",
-    "E_threeview_front_strict_side_back": "prompts/E_threeview_front_strict_side_back.md"
+    "E_threeview_front_strict_side_back": "prompts/E_threeview_front_strict_side_back.md",
+    "A2_waistup_shoulders": "prompts/A2_waistup_shoulders.md"
   },
   "cases": [
     {
@@ -573,6 +574,17 @@
           ]
         }
       }
+    },
+    {
+      "variant": "A2_waistup_shoulders",
+      "case_id": "red_mage",
+      "seed": 4801002,
+      "prompt_id": "7063b161-0337-4aa4-96e9-0ea14201cb0d",
+      "output": "experiments/krea2_quadview_stability_20260927/outputs/sean_t48_A2_waistup_shoulders_red_mage.png",
+      "comfyui_output": "/home/sean/projects/ComfyUI/output/sean_t48_quadview_stability_20260927_v1/A2_waistup_shoulders/red_mage/result_00001_.png",
+      "seconds": 24.51,
+      "status": "success",
+      "prompt_used": "Four views of the same character: first, a waist-up front view with both shoulders and upper arms fully in frame; then full-body front, side, and back views. No face close-up. Preserve the reference identity, clothing, colors, and proportions."
     }
   ],
   "qc": {
@@ -607,10 +619,18 @@
       "Prior E stability claim withdrawn pending individual review."
     ],
     "current_single_review": {
-      "variant": "D_threeview_front_threequarter_back",
+      "variant": "A2_waistup_shoulders",
       "case_id": "red_mage",
-      "output": "/home/sean/projects/ComfyUI/output/sean_t48_quadview_stability_20260927_v1/D_threeview_front_threequarter_back/red_mage/result_00001_.png"
+      "output": "experiments/krea2_quadview_stability_20260927/outputs/sean_t48_A2_waistup_shoulders_red_mage.png",
+      "purpose": "Check if the shoulder and upper-body crop is sufficient. Prompt removes close-up emphasis; the left shoulder armor still touches/crops at the panel edge."
     },
-    "next_gate": "Wait for Sean review; do not generate another batch or start H3 yet."
+    "next_gate": "Wait for Sean review; do not generate another batch or start H3 yet.",
+    "confirmed_examples": [
+      {
+        "variant": "D_threeview_front_threequarter_back",
+        "case_id": "red_mage",
+        "assessment": "Sean confirmed the three-quarter view meets expectations."
+      }
+    ]
   }
 }
