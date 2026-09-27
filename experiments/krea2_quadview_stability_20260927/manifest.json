@@ -1,7 +1,7 @@
 {
   "owner": "Sean",
   "batch_id": "sean_t48_quadview_stability_20260927_v1",
-  "status": "awaiting_sean_review",
+  "status": "awaiting_single_image_review",
   "lora": "QuadView_krea2_v1.safetensors",
   "lora_strength": 1.0,
   "parameters": {
@@ -595,5 +595,22 @@
       "E_threeview_front_strict_side_back": "4/4 distinct three-panel front/side/back layouts"
     },
     "canonical": false
+  },
+  "sean_feedback": {
+    "review_mode": "one_image_at_a_time",
+    "supersedes_initial_contact_sheet_assessment": true,
+    "comments": [
+      "A_shoulders_strict_side: shoulders did not adequately appear.",
+      "B and B2: no clear three-quarter face as previously claimed.",
+      "C: face close-up unclear; output reads more like bust/full-body views.",
+      "D_threeview_front_threequarter_back: red_mage has a visible three-quarter view; this is one example, not stability evidence.",
+      "Prior E stability claim withdrawn pending individual review."
+    ],
+    "current_single_review": {
+      "variant": "D_threeview_front_threequarter_back",
+      "case_id": "red_mage",
+      "output": "/home/sean/projects/ComfyUI/output/sean_t48_quadview_stability_20260927_v1/D_threeview_front_threequarter_back/red_mage/result_00001_.png"
+    },
+    "next_gate": "Wait for Sean review; do not generate another batch or start H3 yet."
   }
 }
