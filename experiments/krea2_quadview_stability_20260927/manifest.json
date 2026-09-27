@@ -1,7 +1,7 @@
 {
   "owner": "Sean",
   "batch_id": "sean_t48_quadview_stability_20260927_v1",
-  "status": "awaiting_face_focus_decision",
+  "status": "awaiting_single_image_review",
   "lora": "QuadView_krea2_v1.safetensors",
   "lora_strength": 1.0,
   "parameters": {
@@ -22,7 +22,8 @@
     "C_face_strict_side": "prompts/C_face_strict_side.md",
     "D_threeview_front_threequarter_back": "prompts/D_threeview_front_threequarter_back.md",
     "E_threeview_front_strict_side_back": "prompts/E_threeview_front_strict_side_back.md",
-    "A2_waistup_shoulders": "prompts/A2_waistup_shoulders.md"
+    "A2_waistup_shoulders": "prompts/A2_waistup_shoulders.md",
+    "F_face_focus_wide_left": "prompts/F_face_focus_wide_left.md"
   },
   "cases": [
     {
@@ -606,6 +607,24 @@
       ],
       "destination_left_panel_width": 432,
       "assessment": "Both shoulder armor pieces and upper arms are fully visible in the leftmost upper-body panel."
+    },
+    {
+      "variant": "F_face_focus_wide_left",
+      "case_id": "red_mage",
+      "seed": 4801002,
+      "prompt_id": "db9f765f-894d-436f-9de3-93a15839b04d",
+      "output": "outputs/sean_t48_F_face_focus_wide_left_red_mage.png",
+      "comfyui_output": "/home/sean/projects/ComfyUI/output/sean_t48_quadview_stability_20260927_v1/F_face_focus_wide_left/red_mage/result_00001_.png",
+      "seconds": 27.4,
+      "status": "generated_visual_qc",
+      "prompt_used": "Three views of the same character: a large face close-up on the left, a full-body front view in the center, and a full-body back view on the right. Give the left face panel about 52% of the canvas width; keep the front and back panels about 24% each and fully visible. Preserve identity and outfit.",
+      "visual_assessment": {
+        "face_closeup": "pass",
+        "requested_panel_ratio_52_24_24": "fail; visually approximately 36/32/32",
+        "front_back_full_body": "present",
+        "identity_costume_consistency": "pass; the staff is present in the original front reference and is naturally not visible in the back view",
+        "overall": "partial; face enlargement and reference prop are good, but requested 52/24/24 panel width did not hold"
+      }
     }
   ],
   "qc": {
@@ -639,7 +658,17 @@
       "D_threeview_front_threequarter_back: red_mage has a visible three-quarter view; this is one example, not stability evidence.",
       "Prior E stability claim withdrawn pending individual review."
     ],
-    "current_single_review": null,
+    "current_single_review": {
+      "variant": "F_face_focus_wide_left",
+      "case_id": "red_mage",
+      "output": "outputs/sean_t48_F_face_focus_wide_left_red_mage.png",
+      "assistant_visual_assessment": {
+        "face_closeup": "pass; face is clearly large and readable",
+        "requested_panel_ratio_52_24_24": "fail; visually approximately 36/32/32",
+        "front_back_views": "present",
+        "staff": "matches the original red-mage anchor; not an added prop"
+      }
+    },
     "next_gate": "Wait for Sean review; do not generate another batch or start H3 yet.",
     "confirmed_examples": [
       {

@@ -32,7 +32,13 @@ Sean rejected half-body as the target: a crop from the full-body panel does not 
 
 The earlier `52/24/24` face-focused single preview showed a visibly larger face while retaining the front/back full-body views. This was a visual improvement in one preview, not a stable width result: the later comparison across `43/28.5/28.5`, `52/24/24`, and `60/20/20` returned to near-equal panel widths. Sean also judged the recent B/B2/C results insufficient to read as face close-ups.
 
-No image is currently awaiting review. If resumed, test one fresh face-focused `52/24/24` image, then judge the face size and whether the front/back views remain intact before any multi-character run.
+## Current single face-width sample
+
+- Variant: `F_face_focus_wide_left`
+- Case: `red_mage`, seed `4801002`
+- File: `outputs/sean_t48_F_face_focus_wide_left_red_mage.png`
+- Visual assessment: face close-up is clearly readable and enlarged. The requested `52/24/24` panel ratio did not hold; the output looks approximately `36/32/32`. The full-body front and back views are present. The staff appears in the front view and matches the original red-mage anchor; it is naturally hidden from the back view.
+- Overall: face scale passes this single visual check; controlled 52/24/24 panel width does not. The prop matches the source. Cross-character stability remains untested.
 
 ## Review sheets
 
