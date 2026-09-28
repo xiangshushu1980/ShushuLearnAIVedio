@@ -1,0 +1,178 @@
+{
+  "owner": "Sean",
+  "task": "T-comfy-ops-48",
+  "batch_id": "sean_t48_four_view_matched_20260928_v1",
+  "view_count": 4,
+  "status": "awaiting_visual_qc",
+  "prompt_file": "prompt.md",
+  "prompt": "Convert the character in the image to a Character Sheet showing a face close-up, front full body, side full body and back full body views. Exactly four views of the same character; preserve the same face, hair, clothing, colors, body proportions, and signature equipment in every view. Do not add any other characters or views.",
+  "parameters": {
+    "unet": "krea2_turbo_fp8.safetensors",
+    "lora": "QuadView_krea2_v1.safetensors",
+    "lora_strength": 1.0,
+    "width": 1536,
+    "height": 1024,
+    "steps": 10,
+    "cfg": 1.0,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "ref_boost": 1.0,
+    "grounding_px": 768,
+    "positive_grounding_px": 0
+  },
+  "cases": [
+    {
+      "id": "eastern_swordswoman",
+      "source": "../role_anchors/outputs/sean_eastern_swordswoman_role_front_seed4803001.png",
+      "seed": 4803101
+    },
+    {
+      "id": "red_mage",
+      "source": "../role_anchors/outputs/sean_red_mage_role_front_seed4803002.png",
+      "seed": 4803102
+    },
+    {
+      "id": "eastern_swordswoman_seed2",
+      "source": "../role_anchors/outputs/sean_eastern_swordswoman_role_front_seed4803001.png",
+      "seed": 4803111
+    },
+    {
+      "id": "red_mage_seed2",
+      "source": "../role_anchors/outputs/sean_red_mage_role_front_seed4803002.png",
+      "seed": 4803112
+    },
+    {
+      "id": "dwarf_engineer",
+      "source": "../role_anchors/outputs/sean_dwarf_engineer_role_front_seed4803003.png",
+      "seed": 4803121
+    },
+    {
+      "id": "horned_lizard_warrior",
+      "source": "../role_anchors/outputs/sean_horned_lizard_warrior_role_front_seed4803004.png",
+      "seed": 4803122
+    },
+    {
+      "id": "dwarf_engineer_seed2",
+      "source": "../role_anchors/outputs/sean_dwarf_engineer_role_front_seed4803003.png",
+      "seed": 4803131
+    },
+    {
+      "id": "horned_lizard_warrior_seed2",
+      "source": "../role_anchors/outputs/sean_horned_lizard_warrior_role_front_seed4803004.png",
+      "seed": 4803132
+    },
+    {
+      "id": "horned_lizard_v2_anchor",
+      "source": "../role_anchors/outputs/sean_horned_lizard_warrior_front_v2_role_front_seed4803005.png",
+      "seed": 4803141
+    },
+    {
+      "id": "horned_lizard_v2_anchor_seed2",
+      "source": "../role_anchors/outputs/sean_horned_lizard_warrior_front_v2_role_front_seed4803005.png",
+      "seed": 4803142
+    }
+  ],
+  "results": [
+    {
+      "id": "eastern_swordswoman",
+      "seed": 4803101,
+      "source_sha256": "1017619397ae67070ac4ac8f72d9eca76d9f7902331c8ab9c9663a5f138e76da",
+      "status": "success",
+      "prompt_id": "9ea68e3a-db1e-4739-af04-c641ec067693",
+      "output": "outputs/sean_eastern_swordswoman_4view_seed4803101.png",
+      "seconds": 21.07,
+      "visual_qc": "Exactly four panels with a clear strict side profile; face, outfit and sword coherent. Pass."
+    },
+    {
+      "id": "red_mage",
+      "seed": 4803102,
+      "source_sha256": "07934d7e56f6dc7fb70820d0cf9b1da53eca49ada9f2dd715e98cc81d1e9a9b2",
+      "status": "success",
+      "prompt_id": "4a5ba77d-78c3-409a-80fb-d23bfe5a0d72",
+      "output": "outputs/sean_red_mage_4view_seed4803102.png",
+      "seconds": 21.07,
+      "visual_qc": "Exactly four panels with a clear strict side profile; face and outfit match, but signature staff is omitted from the whole sheet. Fail equipment fidelity."
+    },
+    {
+      "id": "eastern_swordswoman_seed2",
+      "seed": 4803111,
+      "source_sha256": "1017619397ae67070ac4ac8f72d9eca76d9f7902331c8ab9c9663a5f138e76da",
+      "status": "success",
+      "prompt_id": "986be9a3-04ca-45b7-b91a-22789195cdad",
+      "output": "outputs/sean_eastern_swordswoman_seed2_4view_seed4803111.png",
+      "seconds": 21.08,
+      "visual_qc": "Exactly four panels with a clear strict side profile; face, outfit and sword coherent. Pass."
+    },
+    {
+      "id": "red_mage_seed2",
+      "seed": 4803112,
+      "source_sha256": "07934d7e56f6dc7fb70820d0cf9b1da53eca49ada9f2dd715e98cc81d1e9a9b2",
+      "status": "success",
+      "prompt_id": "cb4d3c6a-9026-4484-8392-eaba2935d870",
+      "output": "outputs/sean_red_mage_seed2_4view_seed4803112.png",
+      "seconds": 21.07,
+      "visual_qc": "Exactly four panels with a clear strict side profile; face and outfit match, but signature staff is omitted from the whole sheet. Fail equipment fidelity."
+    },
+    {
+      "id": "dwarf_engineer",
+      "seed": 4803121,
+      "source_sha256": "5ef90408cff2da5c8003feb44393123dfd4811e08432899b572aaf6fbc359141",
+      "status": "success",
+      "prompt_id": "e4659423-322b-40d5-97f7-3d87144ff657",
+      "output": "outputs/sean_dwarf_engineer_4view_seed4803121.png",
+      "seconds": 21.08,
+      "visual_qc": "Exactly four panels; dwarf identity, beard, cap and tools coherent; tool kit appears around front/side/back. Pass."
+    },
+    {
+      "id": "horned_lizard_warrior",
+      "seed": 4803122,
+      "source_sha256": "fa997dca2471cc4b4df2cc6e074a974ca4bde04197507551e80106e1ed83454d",
+      "status": "success",
+      "prompt_id": "f53df45f-11d0-4171-8768-24e7cf198270",
+      "output": "outputs/sean_horned_lizard_warrior_4view_seed4803122.png",
+      "seconds": 21.07,
+      "visual_qc": "Exactly four panels; lizard identity, horns, scales, armor and tail match, but spear and shield are absent from the generated sheet. Fail equipment fidelity."
+    },
+    {
+      "id": "dwarf_engineer_seed2",
+      "seed": 4803131,
+      "source_sha256": "5ef90408cff2da5c8003feb44393123dfd4811e08432899b572aaf6fbc359141",
+      "status": "success",
+      "prompt_id": "cf30c779-2e46-4bf4-9d76-030026a465a4",
+      "output": "outputs/sean_dwarf_engineer_seed2_4view_seed4803131.png",
+      "seconds": 21.07,
+      "visual_qc": "Exactly four panels; dwarf identity, beard, cap and tools coherent; tool kit appears around front/side/back. Pass."
+    },
+    {
+      "id": "horned_lizard_warrior_seed2",
+      "seed": 4803132,
+      "source_sha256": "fa997dca2471cc4b4df2cc6e074a974ca4bde04197507551e80106e1ed83454d",
+      "status": "success",
+      "prompt_id": "2b1500e7-4e91-4f2a-8ba3-cccf6700c788",
+      "output": "outputs/sean_horned_lizard_warrior_seed2_4view_seed4803132.png",
+      "seconds": 21.07,
+      "visual_qc": "Exactly four panels; lizard identity, horns, scales, armor and tail match, but spear and shield are absent from the generated sheet. Fail equipment fidelity."
+    },
+    {
+      "id": "horned_lizard_v2_anchor",
+      "seed": 4803141,
+      "source_sha256": "6ac19c40f5c4be7d64d6bc07e221cecb11df0698140560670e7eaa14b9d05eca",
+      "status": "success",
+      "prompt_id": "43b0f190-1e41-4a28-84c3-3ea59df7523b",
+      "output": "outputs/sean_horned_lizard_v2_anchor_4view_seed4803141.png",
+      "seconds": 21.07,
+      "visual_qc": "Exactly four panels; corrected source still loses spear and shield in all views. Fail equipment fidelity."
+    },
+    {
+      "id": "horned_lizard_v2_anchor_seed2",
+      "seed": 4803142,
+      "source_sha256": "6ac19c40f5c4be7d64d6bc07e221cecb11df0698140560670e7eaa14b9d05eca",
+      "status": "success",
+      "prompt_id": "0f9addea-c702-49b2-aca3-571a8ff61daf",
+      "output": "outputs/sean_horned_lizard_v2_anchor_seed2_4view_seed4803142.png",
+      "seconds": 21.07,
+      "visual_qc": "Exactly four panels; corrected source still loses spear and shield in all views. Fail equipment fidelity."
+    }
+  ],
+  "visual_qc_status": "reviewed_10_of_10_exact_panel_count; staff lost 2_of_2 mage seeds and spear_shield lost 4_of_4 lizard seeds"
+}

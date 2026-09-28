@@ -1,0 +1,178 @@
+{
+  "owner": "Sean",
+  "task": "T-comfy-ops-48",
+  "batch_id": "sean_t48_three_view_matched_20260928_v1",
+  "view_count": 3,
+  "status": "awaiting_visual_qc",
+  "prompt_file": "prompt.md",
+  "prompt": "Three-view Character Sheet: left face close-up, center full-body front, right full-body back. Exactly three views total, no side view, no extra pose, no repeated view. Preserve the same character identity, hair, costume, and equipment in every view.",
+  "parameters": {
+    "unet": "krea2_turbo_fp8.safetensors",
+    "lora": "QuadView_krea2_v1.safetensors",
+    "lora_strength": 1.0,
+    "width": 1536,
+    "height": 1024,
+    "steps": 10,
+    "cfg": 1.0,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "ref_boost": 1.0,
+    "grounding_px": 768,
+    "positive_grounding_px": 0
+  },
+  "cases": [
+    {
+      "id": "eastern_swordswoman",
+      "source": "../role_anchors/outputs/sean_eastern_swordswoman_role_front_seed4803001.png",
+      "seed": 4803101
+    },
+    {
+      "id": "red_mage",
+      "source": "../role_anchors/outputs/sean_red_mage_role_front_seed4803002.png",
+      "seed": 4803102
+    },
+    {
+      "id": "eastern_swordswoman_seed2",
+      "source": "../role_anchors/outputs/sean_eastern_swordswoman_role_front_seed4803001.png",
+      "seed": 4803111
+    },
+    {
+      "id": "red_mage_seed2",
+      "source": "../role_anchors/outputs/sean_red_mage_role_front_seed4803002.png",
+      "seed": 4803112
+    },
+    {
+      "id": "dwarf_engineer",
+      "source": "../role_anchors/outputs/sean_dwarf_engineer_role_front_seed4803003.png",
+      "seed": 4803121
+    },
+    {
+      "id": "horned_lizard_warrior",
+      "source": "../role_anchors/outputs/sean_horned_lizard_warrior_role_front_seed4803004.png",
+      "seed": 4803122
+    },
+    {
+      "id": "dwarf_engineer_seed2",
+      "source": "../role_anchors/outputs/sean_dwarf_engineer_role_front_seed4803003.png",
+      "seed": 4803131
+    },
+    {
+      "id": "horned_lizard_warrior_seed2",
+      "source": "../role_anchors/outputs/sean_horned_lizard_warrior_role_front_seed4803004.png",
+      "seed": 4803132
+    },
+    {
+      "id": "horned_lizard_v2_anchor",
+      "source": "../role_anchors/outputs/sean_horned_lizard_warrior_front_v2_role_front_seed4803005.png",
+      "seed": 4803141
+    },
+    {
+      "id": "horned_lizard_v2_anchor_seed2",
+      "source": "../role_anchors/outputs/sean_horned_lizard_warrior_front_v2_role_front_seed4803005.png",
+      "seed": 4803142
+    }
+  ],
+  "results": [
+    {
+      "id": "eastern_swordswoman",
+      "seed": 4803101,
+      "source_sha256": "1017619397ae67070ac4ac8f72d9eca76d9f7902331c8ab9c9663a5f138e76da",
+      "status": "success",
+      "prompt_id": "678c6c71-7037-42c1-8755-cb4cdc7c8e8f",
+      "output": "outputs/sean_eastern_swordswoman_3view_seed4803101.png",
+      "seconds": 27.1,
+      "visual_qc": "Exactly three distinct panels; face, front and back identity/outfit coherent; sword remains represented. Pass."
+    },
+    {
+      "id": "red_mage",
+      "seed": 4803102,
+      "source_sha256": "07934d7e56f6dc7fb70820d0cf9b1da53eca49ada9f2dd715e98cc81d1e9a9b2",
+      "status": "success",
+      "prompt_id": "a74aa89e-e267-44ff-b0ca-9fc35fc478a1",
+      "output": "outputs/sean_red_mage_3view_seed4803102.png",
+      "seconds": 21.07,
+      "visual_qc": "Exactly three distinct panels; face and outfit match; staff visible in front view. Pass."
+    },
+    {
+      "id": "eastern_swordswoman_seed2",
+      "seed": 4803111,
+      "source_sha256": "1017619397ae67070ac4ac8f72d9eca76d9f7902331c8ab9c9663a5f138e76da",
+      "status": "success",
+      "prompt_id": "129e0fc4-4e8c-4445-a01b-a449702847ee",
+      "output": "outputs/sean_eastern_swordswoman_seed2_3view_seed4803111.png",
+      "seconds": 21.07,
+      "visual_qc": "Exactly three distinct panels; face, front and back identity/outfit coherent; sword remains represented. Pass."
+    },
+    {
+      "id": "red_mage_seed2",
+      "seed": 4803112,
+      "source_sha256": "07934d7e56f6dc7fb70820d0cf9b1da53eca49ada9f2dd715e98cc81d1e9a9b2",
+      "status": "success",
+      "prompt_id": "8c641b67-7d0f-4b1c-9d24-f014f6e7cc8b",
+      "output": "outputs/sean_red_mage_seed2_3view_seed4803112.png",
+      "seconds": 21.08,
+      "visual_qc": "Exactly three distinct panels; face and outfit match; staff visible in front view. Pass."
+    },
+    {
+      "id": "dwarf_engineer",
+      "seed": 4803121,
+      "source_sha256": "5ef90408cff2da5c8003feb44393123dfd4811e08432899b572aaf6fbc359141",
+      "status": "success",
+      "prompt_id": "59f5eeea-a928-4fdf-b1a4-2664fbee3158",
+      "output": "outputs/sean_dwarf_engineer_3view_seed4803121.png",
+      "seconds": 27.08,
+      "visual_qc": "Exactly three panels; identity, beard, cap and tools coherent; tool pack visible from back. Pass."
+    },
+    {
+      "id": "horned_lizard_warrior",
+      "seed": 4803122,
+      "source_sha256": "fa997dca2471cc4b4df2cc6e074a974ca4bde04197507551e80106e1ed83454d",
+      "status": "success",
+      "prompt_id": "1e5a51f8-f6ed-4585-ade7-c06a990e58b5",
+      "output": "outputs/sean_horned_lizard_warrior_3view_seed4803122.png",
+      "seconds": 21.08,
+      "visual_qc": "Exactly three panels; lizard identity, horns, scales, armor, tail, spear and shield match. Center front angle drifts to three-quarter."
+    },
+    {
+      "id": "dwarf_engineer_seed2",
+      "seed": 4803131,
+      "source_sha256": "5ef90408cff2da5c8003feb44393123dfd4811e08432899b572aaf6fbc359141",
+      "status": "success",
+      "prompt_id": "ec25cfed-60b5-4725-bb6d-e3c0f97e9da8",
+      "output": "outputs/sean_dwarf_engineer_seed2_3view_seed4803131.png",
+      "seconds": 21.07,
+      "visual_qc": "Exactly three panels; identity, beard, cap and tools coherent; tool pack visible from back. Pass."
+    },
+    {
+      "id": "horned_lizard_warrior_seed2",
+      "seed": 4803132,
+      "source_sha256": "fa997dca2471cc4b4df2cc6e074a974ca4bde04197507551e80106e1ed83454d",
+      "status": "success",
+      "prompt_id": "06bb3f09-1827-4011-a16f-21ab932094e4",
+      "output": "outputs/sean_horned_lizard_warrior_seed2_3view_seed4803132.png",
+      "seconds": 21.07,
+      "visual_qc": "Exactly three panels; lizard identity, horns, scales, armor, tail, spear and shield match. Center front angle drifts to three-quarter."
+    },
+    {
+      "id": "horned_lizard_v2_anchor",
+      "seed": 4803141,
+      "source_sha256": "6ac19c40f5c4be7d64d6bc07e221cecb11df0698140560670e7eaa14b9d05eca",
+      "status": "success",
+      "prompt_id": "61487d96-6efc-4e89-93f5-bce4fa8cc5f5",
+      "output": "outputs/sean_horned_lizard_v2_anchor_3view_seed4803141.png",
+      "seconds": 27.1,
+      "visual_qc": "Exactly three panels; corrected source yields the requested straight-on front; horns, scales, armor, tail, spear and shield match. Pass."
+    },
+    {
+      "id": "horned_lizard_v2_anchor_seed2",
+      "seed": 4803142,
+      "source_sha256": "6ac19c40f5c4be7d64d6bc07e221cecb11df0698140560670e7eaa14b9d05eca",
+      "status": "success",
+      "prompt_id": "00173ca4-7751-4570-a24f-fc3ebc1af2e7",
+      "output": "outputs/sean_horned_lizard_v2_anchor_seed2_3view_seed4803142.png",
+      "seconds": 21.07,
+      "visual_qc": "Exactly three panels; corrected source yields the requested straight-on front; horns, scales, armor, tail, spear and shield match. Pass."
+    }
+  ],
+  "visual_qc_status": "reviewed_10_of_10_exact_panel_count_and_signature_items; angled-source front drift corrected with v2 anchor"
+}
