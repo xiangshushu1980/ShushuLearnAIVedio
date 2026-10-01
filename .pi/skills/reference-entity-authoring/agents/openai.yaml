@@ -1,0 +1,4 @@
+interface:
+  display_name: "Reference Entity Authoring"
+  short_description: "Draft entity introductions and Krea2 image prompts"
+  default_prompt: "Use $reference-entity-authoring to draft or revise this entity's introduction and concept/main-appearance prompts."
