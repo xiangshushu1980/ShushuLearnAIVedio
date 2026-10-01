@@ -8,9 +8,9 @@
   </defs>
   <rect width="1600" height="1000" fill="url(#bg)"/><rect width="1600" height="70" fill="#111c25"/><path d="M0 69H1600" class="line"/>
   <rect x="28" y="17" width="36" height="36" rx="11" fill="#36cbbb"/><path d="M39 35h14M46 28v14" stroke="#102027" stroke-width="3" stroke-linecap="round"/>
-  <text x="78" y="43" font-size="17" font-weight="700">Reference 工作台</text><text x="292" y="43" class="small muted">工作台总览</text><text x="420" y="43" class="small accent">创建与编辑</text><path d="M416 62h83" stroke="#56e2d0" stroke-width="2"/>
+  <text x="78" y="43" font-size="17" font-weight="700">Reference 工作台</text><text x="292" y="43" class="small accent">创建与编辑</text><path d="M288 62h83" stroke="#56e2d0" stroke-width="2"/>
   <text x="1312" y="42" class="small muted">草稿已保存 · 10:24</text>
-  <text x="34" y="105" class="small muted">工作台总览　/　林岚　/　创建与编辑</text>
+  <text x="34" y="105" class="small muted">参考实体　/　林岚　/　创建与编辑　/　概念图</text>
   <text x="34" y="144" class="title">林岚 · 参考资料创作</text><text x="34" y="170" class="small muted">按依赖逐步建立 Reference；当前步骤的输入、运行与结果审核集中在右侧。</text>
   <rect x="1270" y="91" width="296" height="43" rx="10" fill="#17242d" stroke="#3a4a55"/><text x="1300" y="118" class="small">↗　可选：查看 ComfyUI 本次运行</text>
 
@@ -31,7 +31,7 @@
   <path d="M410 505 Q570 420 680 475 T920 440V570H410Z" fill="#405b62" opacity=".8"/><path d="M410 470 Q550 386 660 440 T920 405V460Q770 500 670 466T410 518Z" fill="#253a43"/><circle cx="783" cy="355" r="28" fill="#efb46c" opacity=".8"/><path d="M410 520 540 438 635 516 745 424 920 519" fill="none" stroke="#91a6a6" stroke-width="3" opacity=".7"/><text x="432" y="548" class="small">候选预览 · 运行 R-024</text>
   <rect x="942" y="280" width="590" height="290" rx="12" fill="#101a22" stroke="#354651"/>
   <text x="968" y="316" class="label">提示词</text><rect x="968" y="330" width="538" height="112" rx="8" class="field"/><text x="985" y="359" class="small">雾港中的年轻东方女性探险者，深青外套与暗橙围巾，</text><text x="985" y="382" class="small">冷色调、电影感写实风格。主体清晰，保留港口雾气氛围。</text><text x="985" y="421" class="tiny muted">派生自设定 v3 · 可编辑并保存新版本</text>
-  <text x="968" y="477" class="label">生成输入</text><rect x="968" y="491" width="254" height="58" rx="8" class="field"/><text x="983" y="514" class="tiny muted">主参考图（必选）</text><text x="983" y="536" class="small">设定图 · 林岚半身</text><rect x="1234" y="491" width="272" height="58" rx="8" class="field"/><text x="1249" y="514" class="tiny muted">第二参考图（可选）</text><text x="1249" y="536" class="small">＋ 选择一项</text>
+  <text x="968" y="477" class="label">本次参考图</text><rect x="968" y="491" width="254" height="58" rx="8" class="field"/><text x="983" y="514" class="tiny muted">主参考图（必选）</text><text x="983" y="536" class="small">林岚半身 · 设定图 02 v3　⌄</text><rect x="1234" y="491" width="272" height="58" rx="8" class="field"/><text x="1249" y="514" class="tiny muted">第二参考图（可选）</text><text x="1249" y="536" class="small">＋ 从已收集资料中选择</text><text x="968" y="565" class="tiny muted">只使用这里选中的图片；其它已关联资料不会自动参与本次生成。</text>
   <text x="410" y="608" class="label">生成设置</text><rect x="410" y="625" width="252" height="51" rx="9" class="field"/><text x="426" y="646" class="tiny muted">风格配置</text><text x="426" y="666" class="small">JIBS · 暖电影感　⌄</text><rect x="676" y="625" width="252" height="51" rx="9" class="field"/><text x="692" y="646" class="tiny muted">画幅</text><text x="692" y="666" class="small">16:9　⌄</text>
   <rect x="948" y="625" width="584" height="51" rx="9" fill="#18363b" stroke="#3a7270"/><text x="971" y="656" class="small accent">运行由工作台管理；固定模板概念图 · v1</text>
   <rect x="410" y="698" width="1122" height="1" fill="#2c3b46"/><text x="410" y="731" class="label">结果与审核</text><text x="517" y="731" class="small muted">生成完成后，候选进入待确认；当前确认版本继续有效。</text>
