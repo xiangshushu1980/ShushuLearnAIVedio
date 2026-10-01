@@ -1,0 +1,43 @@
+<!-- Owner: Sean | Reference 创建/编辑工作区与生成面板 -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+  <defs>
+    <linearGradient id="bg" x2="0" y2="1"><stop stop-color="#101923"/><stop offset="1" stop-color="#0b121a"/></linearGradient>
+    <style>
+      text{font-family:Inter,'Noto Sans CJK SC','Microsoft YaHei',sans-serif;fill:#e8f0f3}.muted{fill:#99abb6}.tiny{font-size:11px}.small{font-size:13px}.label{font-size:14px;font-weight:600}.title{font-size:23px;font-weight:700}.section{font-size:17px;font-weight:650}.accent{fill:#58e0cf}.line{stroke:#2c3b46;stroke-width:1}.card{fill:#14212b;stroke:#2c3c47}.field{fill:#101a22;stroke:#354651}.current{fill:#183238;stroke:#4bd5c4}.done{fill:#14302f;stroke:#285a55}.disabled{fill:#18232c;stroke:#293640}
+    </style>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/><rect width="1600" height="70" fill="#111c25"/><path d="M0 69H1600" class="line"/>
+  <rect x="28" y="17" width="36" height="36" rx="11" fill="#36cbbb"/><path d="M39 35h14M46 28v14" stroke="#102027" stroke-width="3" stroke-linecap="round"/>
+  <text x="78" y="43" font-size="17" font-weight="700">Reference 工作台</text><text x="292" y="43" class="small muted">工作台总览</text><text x="420" y="43" class="small accent">创建与编辑</text><path d="M416 62h83" stroke="#56e2d0" stroke-width="2"/>
+  <text x="1312" y="42" class="small muted">草稿已保存 · 10:24</text>
+  <text x="34" y="105" class="small muted">工作台总览　/　林岚　/　创建与编辑</text>
+  <text x="34" y="144" class="title">林岚 · 参考资料创作</text><text x="34" y="170" class="small muted">按依赖逐步建立 Reference；当前步骤的输入、运行与结果审核集中在右侧。</text>
+  <rect x="1270" y="91" width="296" height="43" rx="10" fill="#17242d" stroke="#3a4a55"/><text x="1300" y="118" class="small">↗　可选：查看 ComfyUI 本次运行</text>
+
+  <rect x="34" y="194" width="326" height="770" rx="16" class="card"/>
+  <text x="58" y="233" class="section">创作步骤</text><text x="58" y="257" class="tiny muted">声音可以与视觉流程并行</text>
+  <rect x="52" y="279" width="290" height="83" rx="12" class="done"/><circle cx="76" cy="307" r="11" fill="#37cbbb"/><path d="m71 307 4 4 7-9" fill="none" stroke="#102027" stroke-width="2"/><text x="98" y="306" class="label">设定收集</text><text x="98" y="331" class="small muted">介绍已保存 · 4 项资料</text><text x="309" y="319" class="accent">✓</text>
+  <rect x="52" y="373" width="290" height="86" rx="12" class="current"/><circle cx="76" cy="401" r="11" fill="#56e2d0"/><text x="72" y="406" font-size="12" font-weight="700" fill="#102027">2</text><text x="98" y="400" class="label">概念图</text><text x="98" y="425" class="small" fill="#f3bf57">生成中 · 68%</text><rect x="98" y="439" width="203" height="5" rx="3" fill="#31464b"/><rect x="98" y="439" width="138" height="5" rx="3" fill="#e7b94e"/>
+  <rect x="52" y="470" width="290" height="75" rx="12" class="disabled"/><circle cx="76" cy="496" r="11" fill="#51636d"/><text x="72" y="501" class="small">3</text><text x="98" y="495" class="label">主形象</text><text x="98" y="520" class="small muted">等待概念图确认</text>
+  <rect x="52" y="556" width="290" height="75" rx="12" class="disabled"/><circle cx="76" cy="582" r="11" fill="#51636d"/><text x="72" y="587" class="small">4</text><text x="98" y="581" class="label">三视图</text><text x="98" y="606" class="small muted">等待主形象确认</text>
+  <rect x="52" y="642" width="290" height="75" rx="12" class="card"/><circle cx="76" cy="668" r="11" fill="#24464a"/><text x="72" y="673" class="small accent">5</text><text x="98" y="667" class="label">声音</text><text x="98" y="692" class="small accent">可独立开始</text>
+  <path d="M58 746h242" class="line"/><text x="58" y="776" class="small muted">当前确认版本</text><rect x="58" y="792" width="244" height="82" rx="10" fill="#101a22" stroke="#34444f"/><rect x="70" y="804" width="57" height="57" rx="8" fill="#314450"/><circle cx="98" cy="824" r="12" fill="#b3c8c5"/><path d="M75 854q23-33 46 0" fill="#476c70"/><text x="140" y="823" class="small">概念图 v2</text><text x="140" y="846" class="tiny accent">已确认 · 可恢复</text>
+  <text x="58" y="918" class="tiny muted">候选不会替换已确认资料</text>
+
+  <rect x="380" y="194" width="1186" height="770" rx="16" class="card"/>
+  <text x="410" y="232" class="section">概念图</text><text x="410" y="257" class="small muted">确定角色整体气质、风格和氛围；确认后可用于主形象生成。</text>
+  <rect x="1306" y="212" width="226" height="32" rx="16" fill="#2b2920" stroke="#776039"/><circle cx="1323" cy="228" r="4" fill="#e6b84c"/><text x="1336" y="233" class="small" fill="#f3bf57">生成中 · 68% · 约 12 秒</text>
+  <rect x="410" y="280" width="510" height="290" rx="12" fill="#253843" stroke="#4a616b"/>
+  <path d="M410 505 Q570 420 680 475 T920 440V570H410Z" fill="#405b62" opacity=".8"/><path d="M410 470 Q550 386 660 440 T920 405V460Q770 500 670 466T410 518Z" fill="#253a43"/><circle cx="783" cy="355" r="28" fill="#efb46c" opacity=".8"/><path d="M410 520 540 438 635 516 745 424 920 519" fill="none" stroke="#91a6a6" stroke-width="3" opacity=".7"/><text x="432" y="548" class="small">候选预览 · 运行 R-024</text>
+  <rect x="942" y="280" width="590" height="290" rx="12" fill="#101a22" stroke="#354651"/>
+  <text x="968" y="316" class="label">提示词</text><rect x="968" y="330" width="538" height="112" rx="8" class="field"/><text x="985" y="359" class="small">雾港中的年轻东方女性探险者，深青外套与暗橙围巾，</text><text x="985" y="382" class="small">冷色调、电影感写实风格。主体清晰，保留港口雾气氛围。</text><text x="985" y="421" class="tiny muted">派生自设定 v3 · 可编辑并保存新版本</text>
+  <text x="968" y="477" class="label">生成输入</text><rect x="968" y="491" width="254" height="58" rx="8" class="field"/><text x="983" y="514" class="tiny muted">主参考图（必选）</text><text x="983" y="536" class="small">设定图 · 林岚半身</text><rect x="1234" y="491" width="272" height="58" rx="8" class="field"/><text x="1249" y="514" class="tiny muted">第二参考图（可选）</text><text x="1249" y="536" class="small">＋ 选择一项</text>
+  <text x="410" y="608" class="label">生成设置</text><rect x="410" y="625" width="252" height="51" rx="9" class="field"/><text x="426" y="646" class="tiny muted">风格配置</text><text x="426" y="666" class="small">JIBS · 暖电影感　⌄</text><rect x="676" y="625" width="252" height="51" rx="9" class="field"/><text x="692" y="646" class="tiny muted">画幅</text><text x="692" y="666" class="small">16:9　⌄</text>
+  <rect x="948" y="625" width="584" height="51" rx="9" fill="#18363b" stroke="#3a7270"/><text x="971" y="656" class="small accent">运行由工作台管理；固定模板概念图 · v1</text>
+  <rect x="410" y="698" width="1122" height="1" fill="#2c3b46"/><text x="410" y="731" class="label">结果与审核</text><text x="517" y="731" class="small muted">生成完成后，候选进入待确认；当前确认版本继续有效。</text>
+  <rect x="410" y="750" width="350" height="102" rx="10" fill="#101a22" stroke="#3d4d58"/><rect x="426" y="766" width="75" height="70" rx="7" fill="#334a54"/><circle cx="463" cy="789" r="13" fill="#bdd0ca"/><path d="M433 830q30-40 59 0" fill="#52747a"/><text x="517" y="783" class="small">当前确认 · 概念图 v2</text><text x="517" y="809" class="tiny accent">可恢复为当前版本</text><text x="517" y="833" class="tiny muted">来源：运行 R-018</text>
+  <rect x="778" y="750" width="350" height="102" rx="10" fill="#101a22" stroke="#8e733b"/><rect x="794" y="766" width="75" height="70" rx="7" fill="#435457"/><path d="M794 820 824 786 850 819 869 787V836H794Z" fill="#799294"/><text x="885" y="783" class="small">本次候选 · 运行中</text><text x="885" y="809" class="tiny" fill="#edc05b">完成后待审核</text><text x="885" y="833" class="tiny muted">输入快照将随运行保留</text>
+  <rect x="1150" y="755" width="180" height="44" rx="10" fill="#26323b" stroke="#465660"/><text x="1180" y="783" class="small muted">确认本次结果</text><rect x="1342" y="755" width="190" height="44" rx="10" fill="#26323b" stroke="#465660"/><text x="1371" y="783" class="small muted">恢复当前确认版</text>
+  <rect x="1150" y="808" width="382" height="42" rx="10" fill="#18383b" stroke="#3d7772"/><text x="1218" y="835" class="small accent">打开 ComfyUI 运行详情（可选） ↗</text>
+  <rect x="410" y="879" width="1122" height="55" rx="10" fill="#111c25" stroke="#2d3d47"/><text x="430" y="902" class="tiny muted">统一面板顺序：输入与参数 → 状态/进度 → 输出预览 → 确认/恢复 → 可选 ComfyUI 详情</text><text x="430" y="922" class="tiny muted">该布局适用于设定收集、概念图、主形象、三视图与声音；依赖未满足时显示原因与可执行的下一步。</text>
+</svg>
