@@ -1,0 +1,102 @@
+{
+  "owner": "Sean",
+  "taskId": "remote-47938b21-ae2e-4c9c-b3ba-12d6696b3375",
+  "entityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+  "date": "2026-10-02",
+  "runtime": {
+    "node": "24.18.0",
+    "react": "19.3.0",
+    "vite": "8.3.2"
+  },
+  "runs": [
+    {
+      "id": "ae5a56dc-42b2-404b-b45b-5fcf9f4acecc",
+      "status": "succeeded",
+      "promptId": "89727a62-3a8d-463b-9945-a66b5aee1d29",
+      "createdAt": "2026-10-02T15:32:11.213Z",
+      "completedAt": "2026-10-02T15:32:49.700Z",
+      "referenceCount": 4,
+      "referenceKinds": [
+        "setting",
+        "setting",
+        "setting",
+        "setting"
+      ],
+      "locked": true,
+      "output": "sean_concept_01.png",
+      "sha256": "df20a30c62bf979ff04d2773b1757620847d3b485b580095b429031b5ea2d04b",
+      "snapshot": "sean_run_01.json",
+      "workflow": "sean_workflow_01.json",
+      "templateHash": null
+    },
+    {
+      "id": "f92b92be-d9ec-49c3-9b7b-2e04118f910d",
+      "status": "succeeded",
+      "promptId": "d32fef22-2718-4e94-8730-cf8b0ecb4e7a",
+      "createdAt": "2026-10-02T15:35:16.244Z",
+      "completedAt": "2026-10-02T15:35:34.597Z",
+      "referenceCount": 1,
+      "referenceKinds": [
+        "concept"
+      ],
+      "locked": true,
+      "output": "sean_concept_02.png",
+      "sha256": "a49d34488de84019b2c45e54f5e6597a4986859d61874f9e8b4236f9267503e2",
+      "snapshot": "sean_run_02.json",
+      "workflow": "sean_workflow_02.json",
+      "templateHash": null
+    },
+    {
+      "id": "2afd0f21-457c-4caf-8fa8-9b9cc8f81a6f",
+      "status": "succeeded",
+      "promptId": "2ea3e178-f834-4253-afff-9d7cf4264279",
+      "createdAt": "2026-10-02T15:36:56.490Z",
+      "completedAt": "2026-10-02T15:37:13.622Z",
+      "referenceCount": 1,
+      "referenceKinds": [
+        "concept"
+      ],
+      "locked": true,
+      "output": "sean_concept_03.png",
+      "sha256": "0b337fa541525d78d044f76888a40e472ff9810b511a8dd79027263b33f8e35d",
+      "snapshot": "sean_run_03.json",
+      "workflow": "sean_workflow_03.json",
+      "templateHash": "ff56cf7134b69f84749120bba48e546964c3e7c38ee19ae6856606c71295ab46"
+    }
+  ],
+  "checks": {
+    "unitTests": {
+      "passed": 7,
+      "failed": 0
+    },
+    "http": {
+      "unknown_model": "passed",
+      "unknown_parameter": "passed",
+      "duplicate_references": "passed",
+      "cross_origin_mutation": "passed",
+      "stale_draft_rejected": "passed",
+      "locked_image_delete_rejected": "passed"
+    },
+    "browser": {
+      "desktop": [
+        1600,
+        1000
+      ],
+      "mobile": [
+        390,
+        844
+      ],
+      "mobileHorizontalOverflow": false,
+      "finalConsoleErrors": 0
+    },
+    "restartDuringExecution": {
+      "runId": "2afd0f21-457c-4caf-8fa8-9b9cc8f81a6f",
+      "promptIdBeforeRestart": "2ea3e178-f834-4253-afff-9d7cf4264279",
+      "promptIdAfterRestart": "2ea3e178-f834-4253-afff-9d7cf4264279",
+      "statusBeforeRestart": "running",
+      "statusAfterRestart": "succeeded",
+      "duplicateSubmissionCreatedOneRun": true
+    }
+  },
+  "mediaPolicy": "PNG files and app .data are local; manifests, snapshots and workflow evidence are tracked."
+}

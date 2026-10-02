@@ -1,0 +1,3 @@
+# Owner: Sean — local browser artifacts; evidence is referenced by manifest.
+.playwright-cli/
+*.png

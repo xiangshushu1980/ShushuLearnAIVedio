@@ -1,0 +1,9 @@
+{
+  "owner": "Sean",
+  "version": 1,
+  "styles": [
+    { "id": "original", "name": "原始提示词", "version": 1, "promptSuffix": "" },
+    { "id": "cinematic", "name": "电影感写实", "version": 1, "promptSuffix": "Cinematic lighting, realistic materials, coherent color grading." },
+    { "id": "concept", "name": "概念设定", "version": 1, "promptSuffix": "A clear concept design illustration, readable silhouette, careful material and shape design." }
+  ]
+}

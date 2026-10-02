@@ -1,0 +1,193 @@
+{
+  "id": "f92b92be-d9ec-49c3-9b7b-2e04118f910d",
+  "entityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+  "status": "succeeded",
+  "snapshot": {
+    "owner": "Sean",
+    "entity": {
+      "id": "5821d6dd-2041-40a3-a789-74989c6edd90",
+      "name": "一期验收 · 四图概念探索",
+      "context": {
+        "owner": "Sean",
+        "purpose": "phase1 acceptance"
+      }
+    },
+    "model": {
+      "id": "qwen-image-2.1",
+      "name": "Qwen Image 2.1",
+      "version": 1,
+      "adapter": "comfy",
+      "enabled": true,
+      "references": {
+        "min": 0,
+        "max": 16,
+        "instruction": "按所选顺序对应 Image 1、Image 2…，在提示词中明确每张图的职责。节点支持 0–16 张；已有四图组合实验。"
+      },
+      "fields": {
+        "size": {
+          "type": "select",
+          "label": "画幅",
+          "default": "1536x1024",
+          "options": [
+            {
+              "value": "1536x1024",
+              "label": "3:2 · 1536 × 1024"
+            },
+            {
+              "value": "1024x1024",
+              "label": "1:1 · 1024 × 1024"
+            },
+            {
+              "value": "1344x768",
+              "label": "16:9 · 1344 × 768"
+            },
+            {
+              "value": "768x1344",
+              "label": "9:16 · 768 × 1344"
+            }
+          ]
+        },
+        "seed": {
+          "type": "integer",
+          "label": "随机种子",
+          "default": 42,
+          "min": 0,
+          "max": 2147483647
+        },
+        "steps": {
+          "type": "integer",
+          "label": "采样步数",
+          "default": 25,
+          "min": 1,
+          "max": 50
+        }
+      },
+      "localGpu": true
+    },
+    "style": {
+      "id": "original",
+      "name": "原始提示词",
+      "version": 1,
+      "promptSuffix": ""
+    },
+    "prompt": "Image 1 is the authoritative character design. Show exactly the same adult woman, navy uniform, silver armor, ponytail, and one sheathed black katana. Keep her identity, outfit and equipment unchanged. Full body front view standing in soft cool studio lighting against a plain light gray background. No text, no extra people, no extra weapons.",
+    "purpose": "一期验收：仅引用上一轮概念图历史；运行期间重启工作台，恢复同一 prompt_id",
+    "effectivePrompt": "Image 1 is the authoritative character design. Show exactly the same adult woman, navy uniform, silver armor, ponytail, and one sheathed black katana. Keep her identity, outfit and equipment unchanged. Full body front view standing in soft cool studio lighting against a plain light gray background. No text, no extra people, no extra weapons.",
+    "parameters": {
+      "size": "1536x1024",
+      "seed": 42,
+      "steps": 25
+    },
+    "references": [
+      {
+        "id": "af9823e0-1b27-48b7-a469-47ddcf4b7534",
+        "hash": "df20a30c62bf979ff04d2773b1757620847d3b485b580095b429031b5ea2d04b",
+        "kind": "concept",
+        "name": "概念图 ae5a56dc · 1",
+        "runId": "ae5a56dc-42b2-404b-b45b-5fcf9f4acecc",
+        "createdAt": "2026-10-02T15:32:49.700Z"
+      }
+    ],
+    "template": {
+      "id": "qwen-image-2.1.1-refs",
+      "version": 1
+    }
+  },
+  "progress": 100,
+  "phase": "生成完成 · 已加入历史",
+  "promptId": "d32fef22-2718-4e94-8730-cf8b0ecb4e7a",
+  "error": null,
+  "createdAt": "2026-10-02T15:35:16.244Z",
+  "updatedAt": "2026-10-02T15:35:34.597Z",
+  "completedAt": "2026-10-02T15:35:34.597Z",
+  "references": [
+    {
+      "id": "af9823e0-1b27-48b7-a469-47ddcf4b7534",
+      "entityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+      "kind": "concept",
+      "name": "概念图 ae5a56dc · 1",
+      "mime": "image/png",
+      "hash": "df20a30c62bf979ff04d2773b1757620847d3b485b580095b429031b5ea2d04b",
+      "width": 1536,
+      "height": 1024,
+      "locked": true,
+      "protected": false,
+      "everConfirmed": false,
+      "description": "",
+      "descriptionSource": "empty",
+      "metadata": {
+        "source": "generation",
+        "template": {
+          "id": "qwen-image-2.1.4-refs",
+          "version": 1
+        },
+        "outputIndex": 0,
+        "inputAssetIds": [
+          "2c200b94-f1f9-4809-b4c0-4f688c35b7ab",
+          "af650f76-c276-4705-9a56-1ff461124615",
+          "f722cf73-cfc7-4a1d-a87e-688fff040a23",
+          "f2c5174c-63ad-46d1-8103-46f99f4ec451"
+        ],
+        "provider": "comfy",
+        "promptId": "89727a62-3a8d-463b-9945-a66b5aee1d29",
+        "outputFiles": [
+          {
+            "filename": "concept_00001_.png",
+            "subfolder": "sean_reference_workspace/ae5a56dc-42b2-404b-b45b-5fcf9f4acecc",
+            "type": "output",
+            "id": "fcf7534a-830d-424c-bdf6-263505bf449f"
+          }
+        ],
+        "owner": "Sean"
+      },
+      "runId": "ae5a56dc-42b2-404b-b45b-5fcf9f4acecc",
+      "createdAt": "2026-10-02T15:32:49.700Z",
+      "deletedAt": null,
+      "url": "/api/assets/af9823e0-1b27-48b7-a469-47ddcf4b7534/content",
+      "position": 0
+    }
+  ],
+  "outputs": [
+    {
+      "id": "a46b7bef-c587-4f78-a791-f04680705c1b",
+      "entityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+      "kind": "concept",
+      "name": "概念图 f92b92be · 1",
+      "mime": "image/png",
+      "hash": "a49d34488de84019b2c45e54f5e6597a4986859d61874f9e8b4236f9267503e2",
+      "width": 1536,
+      "height": 1024,
+      "locked": true,
+      "protected": false,
+      "everConfirmed": false,
+      "description": "",
+      "descriptionSource": "empty",
+      "metadata": {
+        "source": "generation",
+        "template": {
+          "id": "qwen-image-2.1.1-refs",
+          "version": 1
+        },
+        "outputIndex": 0,
+        "inputAssetIds": [
+          "af9823e0-1b27-48b7-a469-47ddcf4b7534"
+        ],
+        "provider": "comfy",
+        "promptId": "d32fef22-2718-4e94-8730-cf8b0ecb4e7a",
+        "outputFiles": [
+          {
+            "filename": "concept_00001_.png",
+            "subfolder": "sean_reference_workspace/f92b92be-d9ec-49c3-9b7b-2e04118f910d",
+            "type": "output",
+            "id": "6efed6c1-0654-4be9-b810-b9f6fbb3e674"
+          }
+        ],
+        "owner": "Sean"
+      },
+      "runId": "f92b92be-d9ec-49c3-9b7b-2e04118f910d",
+      "createdAt": "2026-10-02T15:35:34.597Z",
+      "deletedAt": null,
+      "url": "/api/assets/a46b7bef-c587-4f78-a791-f04680705c1b/content"
+    }
+  ]
+}

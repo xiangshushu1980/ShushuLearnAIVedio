@@ -1,0 +1,192 @@
+{
+  "id": "2afd0f21-457c-4caf-8fa8-9b9cc8f81a6f",
+  "entityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+  "status": "succeeded",
+  "snapshot": {
+    "owner": "Sean",
+    "entity": {
+      "id": "5821d6dd-2041-40a3-a789-74989c6edd90",
+      "name": "一期验收 · 四图概念探索",
+      "context": {
+        "owner": "Sean",
+        "purpose": "phase1 acceptance"
+      }
+    },
+    "model": {
+      "id": "qwen-image-2.1",
+      "name": "Qwen Image 2.1",
+      "version": 1,
+      "adapter": "comfy",
+      "enabled": true,
+      "references": {
+        "min": 0,
+        "max": 16,
+        "instruction": "按所选顺序对应 Image 1、Image 2…，在提示词中明确每张图的职责。节点支持 0–16 张；已有四图组合实验。"
+      },
+      "fields": {
+        "size": {
+          "type": "select",
+          "label": "画幅",
+          "default": "1536x1024",
+          "options": [
+            {
+              "value": "1536x1024",
+              "label": "3:2 · 1536 × 1024"
+            },
+            {
+              "value": "1024x1024",
+              "label": "1:1 · 1024 × 1024"
+            },
+            {
+              "value": "1344x768",
+              "label": "16:9 · 1344 × 768"
+            },
+            {
+              "value": "768x1344",
+              "label": "9:16 · 768 × 1344"
+            }
+          ]
+        },
+        "seed": {
+          "type": "integer",
+          "label": "随机种子",
+          "default": 42,
+          "min": 0,
+          "max": 2147483647
+        },
+        "steps": {
+          "type": "integer",
+          "label": "采样步数",
+          "default": 25,
+          "min": 1,
+          "max": 50
+        }
+      },
+      "localGpu": true
+    },
+    "style": {
+      "id": "original",
+      "name": "原始提示词",
+      "version": 1,
+      "promptSuffix": ""
+    },
+    "prompt": "Image 1 defines the exact adult woman and her complete uniform, silver guards and single sheathed katana. Preserve her identity and all equipment. Produce one full body front facing concept photograph with subtle warm studio lighting on a plain gray background. No text, no extra people, no extra weapons.",
+    "purpose": "一期验收：提交幂等性与运行中重启恢复",
+    "effectivePrompt": "Image 1 defines the exact adult woman and her complete uniform, silver guards and single sheathed katana. Preserve her identity and all equipment. Produce one full body front facing concept photograph with subtle warm studio lighting on a plain gray background. No text, no extra people, no extra weapons.",
+    "parameters": {
+      "size": "1536x1024",
+      "seed": 43,
+      "steps": 25
+    },
+    "references": [
+      {
+        "id": "a46b7bef-c587-4f78-a791-f04680705c1b",
+        "hash": "a49d34488de84019b2c45e54f5e6597a4986859d61874f9e8b4236f9267503e2",
+        "kind": "concept",
+        "name": "概念图 f92b92be · 1",
+        "runId": "f92b92be-d9ec-49c3-9b7b-2e04118f910d",
+        "createdAt": "2026-10-02T15:35:34.597Z"
+      }
+    ],
+    "template": {
+      "id": "qwen-image-2.1.1-refs",
+      "version": 1,
+      "hash": "ff56cf7134b69f84749120bba48e546964c3e7c38ee19ae6856606c71295ab46"
+    }
+  },
+  "progress": 100,
+  "phase": "生成完成 · 已加入历史",
+  "promptId": "2ea3e178-f834-4253-afff-9d7cf4264279",
+  "error": null,
+  "createdAt": "2026-10-02T15:36:56.490Z",
+  "updatedAt": "2026-10-02T15:37:13.622Z",
+  "completedAt": "2026-10-02T15:37:13.622Z",
+  "references": [
+    {
+      "id": "a46b7bef-c587-4f78-a791-f04680705c1b",
+      "entityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+      "kind": "concept",
+      "name": "概念图 f92b92be · 1",
+      "mime": "image/png",
+      "hash": "a49d34488de84019b2c45e54f5e6597a4986859d61874f9e8b4236f9267503e2",
+      "width": 1536,
+      "height": 1024,
+      "locked": true,
+      "protected": false,
+      "everConfirmed": false,
+      "description": "",
+      "descriptionSource": "empty",
+      "metadata": {
+        "source": "generation",
+        "template": {
+          "id": "qwen-image-2.1.1-refs",
+          "version": 1
+        },
+        "outputIndex": 0,
+        "inputAssetIds": [
+          "af9823e0-1b27-48b7-a469-47ddcf4b7534"
+        ],
+        "provider": "comfy",
+        "promptId": "d32fef22-2718-4e94-8730-cf8b0ecb4e7a",
+        "outputFiles": [
+          {
+            "filename": "concept_00001_.png",
+            "subfolder": "sean_reference_workspace/f92b92be-d9ec-49c3-9b7b-2e04118f910d",
+            "type": "output",
+            "id": "6efed6c1-0654-4be9-b810-b9f6fbb3e674"
+          }
+        ],
+        "owner": "Sean"
+      },
+      "runId": "f92b92be-d9ec-49c3-9b7b-2e04118f910d",
+      "createdAt": "2026-10-02T15:35:34.597Z",
+      "deletedAt": null,
+      "url": "/api/assets/a46b7bef-c587-4f78-a791-f04680705c1b/content",
+      "position": 0
+    }
+  ],
+  "outputs": [
+    {
+      "id": "4e6cd501-8126-4709-bbf1-f42eea8d0f6a",
+      "entityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+      "kind": "concept",
+      "name": "概念图 2afd0f21 · 1",
+      "mime": "image/png",
+      "hash": "0b337fa541525d78d044f76888a40e472ff9810b511a8dd79027263b33f8e35d",
+      "width": 1536,
+      "height": 1024,
+      "locked": true,
+      "protected": false,
+      "everConfirmed": false,
+      "description": "",
+      "descriptionSource": "empty",
+      "metadata": {
+        "source": "generation",
+        "template": {
+          "id": "qwen-image-2.1.1-refs",
+          "version": 1,
+          "hash": "ff56cf7134b69f84749120bba48e546964c3e7c38ee19ae6856606c71295ab46"
+        },
+        "outputIndex": 0,
+        "inputAssetIds": [
+          "a46b7bef-c587-4f78-a791-f04680705c1b"
+        ],
+        "provider": "comfy",
+        "promptId": "2ea3e178-f834-4253-afff-9d7cf4264279",
+        "outputFiles": [
+          {
+            "filename": "concept_00001_.png",
+            "subfolder": "sean_reference_workspace/2afd0f21-457c-4caf-8fa8-9b9cc8f81a6f",
+            "type": "output",
+            "id": "1fba0baf-13e6-4aa1-8185-9771ae7606e1"
+          }
+        ],
+        "owner": "Sean"
+      },
+      "runId": "2afd0f21-457c-4caf-8fa8-9b9cc8f81a6f",
+      "createdAt": "2026-10-02T15:37:13.621Z",
+      "deletedAt": null,
+      "url": "/api/assets/4e6cd501-8126-4709-bbf1-f42eea8d0f6a/content"
+    }
+  ]
+}

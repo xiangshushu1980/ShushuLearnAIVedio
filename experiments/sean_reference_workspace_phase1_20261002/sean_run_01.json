@@ -1,0 +1,279 @@
+{
+  "id": "ae5a56dc-42b2-404b-b45b-5fcf9f4acecc",
+  "entityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+  "status": "succeeded",
+  "snapshot": {
+    "owner": "Sean",
+    "entity": {
+      "id": "5821d6dd-2041-40a3-a789-74989c6edd90",
+      "name": "一期验收 · 四图概念探索",
+      "context": {
+        "owner": "Sean",
+        "purpose": "phase1 acceptance"
+      }
+    },
+    "model": {
+      "id": "qwen-image-2.1",
+      "name": "Qwen Image 2.1",
+      "version": 1,
+      "adapter": "comfy",
+      "enabled": true,
+      "references": {
+        "min": 0,
+        "max": 16,
+        "instruction": "按所选顺序对应 Image 1、Image 2…，在提示词中明确每张图的职责。节点支持 0–16 张；已有四图组合实验。"
+      },
+      "fields": {
+        "size": {
+          "type": "select",
+          "label": "画幅",
+          "default": "1536x1024",
+          "options": [
+            {
+              "value": "1536x1024",
+              "label": "3:2 · 1536 × 1024"
+            },
+            {
+              "value": "1024x1024",
+              "label": "1:1 · 1024 × 1024"
+            },
+            {
+              "value": "1344x768",
+              "label": "16:9 · 1344 × 768"
+            },
+            {
+              "value": "768x1344",
+              "label": "9:16 · 768 × 1344"
+            }
+          ]
+        },
+        "seed": {
+          "type": "integer",
+          "label": "随机种子",
+          "default": 42,
+          "min": 0,
+          "max": 2147483647
+        },
+        "steps": {
+          "type": "integer",
+          "label": "采样步数",
+          "default": 25,
+          "min": 1,
+          "max": 50
+        }
+      },
+      "localGpu": true
+    },
+    "style": {
+      "id": "original",
+      "name": "原始提示词",
+      "version": 1,
+      "promptSuffix": ""
+    },
+    "prompt": "Create one full-body adult East Asian woman character concept. Image 1 defines her face and ponytail, Image 2 defines the navy uniform and boots, Image 3 defines silver shoulder and forearm armor, and Image 4 defines one black sheathed katana. Preserve those roles. Front-facing relaxed standing pose, head to boots visible, hands relaxed, exactly one katana attached at the waist. Plain warm off-white studio background, realistic materials and soft lighting. No text, no extra people or weapons.",
+    "purpose": "一期端到端验收：四张显式设定图 → Qwen 概念图，验证历史回流",
+    "effectivePrompt": "Create one full-body adult East Asian woman character concept. Image 1 defines her face and ponytail, Image 2 defines the navy uniform and boots, Image 3 defines silver shoulder and forearm armor, and Image 4 defines one black sheathed katana. Preserve those roles. Front-facing relaxed standing pose, head to boots visible, hands relaxed, exactly one katana attached at the waist. Plain warm off-white studio background, realistic materials and soft lighting. No text, no extra people or weapons.",
+    "parameters": {
+      "size": "1536x1024",
+      "seed": 42,
+      "steps": 25
+    },
+    "references": [
+      {
+        "id": "2c200b94-f1f9-4809-b4c0-4f688c35b7ab",
+        "hash": "dd243ababb460a28d2467debde21e5140b5951410247f044ce50d604946d1bc0",
+        "kind": "setting",
+        "name": "face_identity.png",
+        "runId": null,
+        "createdAt": "2026-10-02T15:31:20.321Z"
+      },
+      {
+        "id": "af650f76-c276-4705-9a56-1ff461124615",
+        "hash": "761b8a0c587a9f41643101217ff65563f3a818bd2bf690e70a1bde25531fe28d",
+        "kind": "setting",
+        "name": "uniform_clothing.png",
+        "runId": null,
+        "createdAt": "2026-10-02T15:31:20.324Z"
+      },
+      {
+        "id": "f722cf73-cfc7-4a1d-a87e-688fff040a23",
+        "hash": "c1ad7893d5468a6e0ba790417be6172e79865ec05cd501e898440efae9b6c7cc",
+        "kind": "setting",
+        "name": "silver_armor_gear.png",
+        "runId": null,
+        "createdAt": "2026-10-02T15:31:20.327Z"
+      },
+      {
+        "id": "f2c5174c-63ad-46d1-8103-46f99f4ec451",
+        "hash": "2525dec4c395b493607653781225ed33eecfed05c4ac3c6d45045eea8b5b7374",
+        "kind": "setting",
+        "name": "katana_item.png",
+        "runId": null,
+        "createdAt": "2026-10-02T15:31:20.329Z"
+      }
+    ],
+    "template": {
+      "id": "qwen-image-2.1.4-refs",
+      "version": 1
+    }
+  },
+  "progress": 100,
+  "phase": "生成完成 · 已加入历史",
+  "promptId": "89727a62-3a8d-463b-9945-a66b5aee1d29",
+  "error": null,
+  "createdAt": "2026-10-02T15:32:11.213Z",
+  "updatedAt": "2026-10-02T15:32:49.701Z",
+  "completedAt": "2026-10-02T15:32:49.700Z",
+  "references": [
+    {
+      "id": "2c200b94-f1f9-4809-b4c0-4f688c35b7ab",
+      "entityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+      "kind": "setting",
+      "name": "face_identity.png",
+      "mime": "image/png",
+      "hash": "dd243ababb460a28d2467debde21e5140b5951410247f044ce50d604946d1bc0",
+      "width": 1536,
+      "height": 1024,
+      "locked": false,
+      "protected": false,
+      "everConfirmed": false,
+      "description": "",
+      "descriptionSource": "empty",
+      "metadata": {
+        "source": "directory-import",
+        "importedAt": "2026-10-02T15:31:20.317Z",
+        "originalFilename": "face_identity.png",
+        "owner": "Sean"
+      },
+      "runId": null,
+      "createdAt": "2026-10-02T15:31:20.321Z",
+      "deletedAt": null,
+      "url": "/api/assets/2c200b94-f1f9-4809-b4c0-4f688c35b7ab/content",
+      "position": 0
+    },
+    {
+      "id": "af650f76-c276-4705-9a56-1ff461124615",
+      "entityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+      "kind": "setting",
+      "name": "uniform_clothing.png",
+      "mime": "image/png",
+      "hash": "761b8a0c587a9f41643101217ff65563f3a818bd2bf690e70a1bde25531fe28d",
+      "width": 1536,
+      "height": 1024,
+      "locked": false,
+      "protected": false,
+      "everConfirmed": false,
+      "description": "",
+      "descriptionSource": "empty",
+      "metadata": {
+        "source": "directory-import",
+        "importedAt": "2026-10-02T15:31:20.321Z",
+        "originalFilename": "uniform_clothing.png",
+        "owner": "Sean"
+      },
+      "runId": null,
+      "createdAt": "2026-10-02T15:31:20.324Z",
+      "deletedAt": null,
+      "url": "/api/assets/af650f76-c276-4705-9a56-1ff461124615/content",
+      "position": 1
+    },
+    {
+      "id": "f722cf73-cfc7-4a1d-a87e-688fff040a23",
+      "entityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+      "kind": "setting",
+      "name": "silver_armor_gear.png",
+      "mime": "image/png",
+      "hash": "c1ad7893d5468a6e0ba790417be6172e79865ec05cd501e898440efae9b6c7cc",
+      "width": 1536,
+      "height": 1024,
+      "locked": false,
+      "protected": false,
+      "everConfirmed": false,
+      "description": "",
+      "descriptionSource": "empty",
+      "metadata": {
+        "source": "directory-import",
+        "importedAt": "2026-10-02T15:31:20.324Z",
+        "originalFilename": "silver_armor_gear.png",
+        "owner": "Sean"
+      },
+      "runId": null,
+      "createdAt": "2026-10-02T15:31:20.327Z",
+      "deletedAt": null,
+      "url": "/api/assets/f722cf73-cfc7-4a1d-a87e-688fff040a23/content",
+      "position": 2
+    },
+    {
+      "id": "f2c5174c-63ad-46d1-8103-46f99f4ec451",
+      "entityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+      "kind": "setting",
+      "name": "katana_item.png",
+      "mime": "image/png",
+      "hash": "2525dec4c395b493607653781225ed33eecfed05c4ac3c6d45045eea8b5b7374",
+      "width": 1536,
+      "height": 1024,
+      "locked": false,
+      "protected": false,
+      "everConfirmed": false,
+      "description": "",
+      "descriptionSource": "empty",
+      "metadata": {
+        "source": "directory-import",
+        "importedAt": "2026-10-02T15:31:20.327Z",
+        "originalFilename": "katana_item.png",
+        "owner": "Sean"
+      },
+      "runId": null,
+      "createdAt": "2026-10-02T15:31:20.329Z",
+      "deletedAt": null,
+      "url": "/api/assets/f2c5174c-63ad-46d1-8103-46f99f4ec451/content",
+      "position": 3
+    }
+  ],
+  "outputs": [
+    {
+      "id": "af9823e0-1b27-48b7-a469-47ddcf4b7534",
+      "entityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+      "kind": "concept",
+      "name": "概念图 ae5a56dc · 1",
+      "mime": "image/png",
+      "hash": "df20a30c62bf979ff04d2773b1757620847d3b485b580095b429031b5ea2d04b",
+      "width": 1536,
+      "height": 1024,
+      "locked": true,
+      "protected": false,
+      "everConfirmed": false,
+      "description": "",
+      "descriptionSource": "empty",
+      "metadata": {
+        "source": "generation",
+        "template": {
+          "id": "qwen-image-2.1.4-refs",
+          "version": 1
+        },
+        "outputIndex": 0,
+        "inputAssetIds": [
+          "2c200b94-f1f9-4809-b4c0-4f688c35b7ab",
+          "af650f76-c276-4705-9a56-1ff461124615",
+          "f722cf73-cfc7-4a1d-a87e-688fff040a23",
+          "f2c5174c-63ad-46d1-8103-46f99f4ec451"
+        ],
+        "provider": "comfy",
+        "promptId": "89727a62-3a8d-463b-9945-a66b5aee1d29",
+        "outputFiles": [
+          {
+            "filename": "concept_00001_.png",
+            "subfolder": "sean_reference_workspace/ae5a56dc-42b2-404b-b45b-5fcf9f4acecc",
+            "type": "output",
+            "id": "fcf7534a-830d-424c-bdf6-263505bf449f"
+          }
+        ],
+        "owner": "Sean"
+      },
+      "runId": "ae5a56dc-42b2-404b-b45b-5fcf9f4acecc",
+      "createdAt": "2026-10-02T15:32:49.700Z",
+      "deletedAt": null,
+      "url": "/api/assets/af9823e0-1b27-48b7-a469-47ddcf4b7534/content"
+    }
+  ]
+}
