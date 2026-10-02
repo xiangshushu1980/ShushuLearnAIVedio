@@ -3,7 +3,8 @@ import { execFile } from 'node:child_process';
 import { promisify, isDeepStrictEqual } from 'node:util';
 import { unlinkSync, existsSync } from 'node:fs';
 import { resolve, sep } from 'node:path';
-import { validateRun, workflowTemplate, buildComfyWorkflow } from './catalog.mjs';
+import { validateRun, workflowTemplate, buildComfyWorkflow, modelFor } from './catalog.mjs';
+import { z } from 'zod';
 import { comfyUrl, comfyRequest, prepareComfy, submitComfy, readComfyResult, downloadComfy } from './adapters.mjs';
 import { HttpError, now } from './store.mjs';
 
@@ -23,7 +24,7 @@ export function createRunService(store) {
     // Early phase-one records predate template hashes. Require the entire submitted graph to match.
     const graph = recordedWorkflow(run);
     if (!graph) return false;
-    const first = model.id === 'qwen-image-2.1' ? 10 : 30;
+    const first = model.id === 'qwen-image-2.1' || model.stage === 'multiview' ? 10 : 30;
     const names = run.snapshot.references.map((_, index) => graph[String(first + index)]?.inputs.image);
     if (names.some(name => typeof name !== 'string')) return false;
     return isDeepStrictEqual(graph, buildComfyWorkflow(run.snapshot, names, run.id));
@@ -35,6 +36,13 @@ export function createRunService(store) {
   function snapshot(entityId, body) {
     const { input, model, style } = validateRun(body);
     const entity = store.entity(entityId);
+    let appearance = null;
+    if (model.stage === 'multiview') {
+      const current = store.visualState(entityId).appearance;
+      if (!current || input.appearanceId !== current.id) throw new HttpError(409, '请选定当前主形象；主形象改变后需重新载入输入');
+      if (input.references.length !== 1 || input.references[0] !== current.assetId) throw new HttpError(400, '多视图只能引用当前主形象');
+      appearance = { id: current.id, version: current.version, assetId: current.assetId, assetHash: current.assetHash, sourceRunId: current.sourceRunId };
+    } else if (input.appearanceId || input.notes) throw new HttpError(400, '概念图不使用多视图输入');
     if (input.sourceRunId) {
       const source = store.run(input.sourceRunId);
       if (source.entityId !== entityId) throw new HttpError(400, '历史工作流不属于当前实体');
@@ -53,6 +61,7 @@ export function createRunService(store) {
       model: modelSnapshot, style: structuredClone(style), prompt: input.prompt, purpose: input.purpose,
       effectivePrompt: [input.prompt, style.promptSuffix].filter(Boolean).join('\n\n'),
       parameters: input.parameters, references, ...(input.sourceRunId ? { sourceRunId: input.sourceRunId } : {}),
+      ...(appearance ? { stage: 'multiview', layout: model.layout, appearance, notes: input.notes || '' } : {}),
       template: { id: `${model.id}.${references.length}-refs`, version: model.version, hash: workflowTemplate(model.id).hash } };
   }
   function watchProgress(runId, clientId, state) {
@@ -75,8 +84,10 @@ export function createRunService(store) {
   async function saveOutputs(run, buffers, outputContext) {
     const stages = [];
     try {
-      for (let i = 0; i < buffers.length; i++) stages.push(await store.stageImage(buffers[i], `概念图 ${run.id.slice(0, 8)} · ${i + 1}`,
-        run.entityId, 'concept', run.id, { source: 'generation', template: run.snapshot.template,
+      const kind = run.snapshot.stage === 'multiview' ? 'multiview' : 'concept';
+      const label = kind === 'concept' ? '概念图' : run.snapshot.layout === 'three' ? '三视图' : '表情＋正侧背';
+      for (let i = 0; i < buffers.length; i++) stages.push(await store.stageImage(buffers[i], `${label} ${run.id.slice(0, 8)} · ${i + 1}`,
+        run.entityId, kind, run.id, { source: 'generation', template: run.snapshot.template, ...(run.snapshot.appearance ? { appearance: run.snapshot.appearance, layout: run.snapshot.layout } : {}),
           outputIndex: i, inputAssetIds: run.snapshot.references.map(r => r.id), ...outputContext }));
       store.transaction(() => {
         store.registerStages(stages);
@@ -217,7 +228,8 @@ export function createRunService(store) {
     restore(runId) {
       const run = store.run(runId), source = run.snapshot;
       const input = { modelId: source.model.id, styleId: source.style.id, prompt: source.prompt, purpose: source.purpose,
-        references: source.references.map(asset => asset.id), parameters: source.parameters, sourceRunId: run.id };
+        references: source.references.map(asset => asset.id), parameters: source.parameters, sourceRunId: run.id,
+        ...(source.appearance ? { appearanceId: source.appearance.id, notes: source.notes || '' } : {}) };
       let compatible = true, reason = null;
       try {
         const { model, style } = validateRun(input);
@@ -231,12 +243,29 @@ export function createRunService(store) {
       if (saved.created) void execute(saved.run.id);
       return saved.run;
     },
+    startMultiview(entityId, body, key) {
+      const result = z.object({ layout: z.enum(['three', 'four']), appearanceId: z.string().uuid(),
+        parameters: z.record(z.string(), z.union([z.string(), z.number()])), purpose: z.string().max(2000).default(''),
+        notes: z.string().max(2000).default(''), sourceRunId: z.string().uuid().optional() }).strict().safeParse(body);
+      if (!result.success) throw new HttpError(400, '多视图输入格式不正确', result.error.flatten());
+      const input = result.data, model = modelFor(`qwen-v3-simple-${input.layout}`);
+      const current = store.visualState(entityId).appearance;
+      if (!current || current.id !== input.appearanceId) throw new HttpError(409, '主形象已改变，请载入当前主形象');
+      const basePrompt = workflowTemplate(model.id).layoutPrompts[input.layout];
+      const request = { modelId: model.id, styleId: 'original', prompt: [basePrompt, input.notes.trim()].filter(Boolean).join('\n\n'),
+        purpose: input.purpose, notes: input.notes, appearanceId: current.id, references: [current.assetId], parameters: input.parameters,
+        ...(input.sourceRunId ? { sourceRunId: input.sourceRunId } : {}) };
+      const saved = store.createRun(entityId, snapshot(entityId, request), key);
+      if (saved.created) void execute(saved.run.id);
+      return saved.run;
+    },
     retry(runId, key) {
       const run = store.run(runId);
       if (!['failed', 'cancelled'].includes(run.status)) throw new HttpError(409, '只有失败或取消的运行可以重试');
       // Validate against the current capability catalog; never silently reuse a changed template.
       const validated = snapshot(run.entityId, { modelId: run.snapshot.model.id, styleId: run.snapshot.style.id,
-        prompt: run.snapshot.prompt, purpose: run.snapshot.purpose, references: run.snapshot.references.map(a => a.id), parameters: run.snapshot.parameters });
+        prompt: run.snapshot.prompt, purpose: run.snapshot.purpose, references: run.snapshot.references.map(a => a.id), parameters: run.snapshot.parameters,
+        ...(run.snapshot.appearance ? { appearanceId: run.snapshot.appearance.id, notes: run.snapshot.notes || '' } : {}) });
       if (JSON.stringify(validated.model) !== JSON.stringify(run.snapshot.model) || JSON.stringify(validated.style) !== JSON.stringify(run.snapshot.style))
         throw new HttpError(409, '模型或风格配置已变化，请检查输入后创建新运行');
       if (run.snapshot.template.hash && run.snapshot.template.hash !== validated.template.hash)

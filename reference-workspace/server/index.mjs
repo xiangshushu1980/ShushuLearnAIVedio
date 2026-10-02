@@ -57,8 +57,40 @@ app.get('/api/entities/:entityId/workspace', (req, res) => {
   const assets = store.db.prepare('SELECT * FROM assets WHERE entity_id=? AND deleted_at IS NULL ORDER BY created_at DESC,id').all(entity.id).map(store.assetView);
   const history = store.db.prepare('SELECT * FROM runs WHERE entity_id=? ORDER BY created_at DESC,id').all(entity.id).map(store.runView);
   const draft = store.db.prepare('SELECT value,updated_at FROM drafts WHERE entity_id=?').get(entity.id);
-  res.json({ entity, assets, runs: history, draft: draft ? { value: JSON.parse(draft.value), updatedAt: draft.updated_at } : null });
+  const multiviewDraft = store.db.prepare('SELECT value,updated_at FROM multiview_drafts WHERE entity_id=?').get(entity.id);
+  res.json({ entity, assets, runs: history, visualState: store.visualState(entity.id),
+    multiviewDraft: multiviewDraft ? { value: JSON.parse(multiviewDraft.value), updatedAt: multiviewDraft.updated_at } : null,
+    draft: draft ? { value: JSON.parse(draft.value), updatedAt: draft.updated_at } : null });
 });
+app.post('/api/entities/:entityId/appearance', (req, res) => {
+  const body = check(z.object({ assetId: z.string().uuid(), expectedAppearanceId: z.string().uuid().nullable() }).strict(), req.body);
+  res.json(store.confirmAppearance(req.params.entityId, body.assetId, body.expectedAppearanceId));
+});
+app.post('/api/entities/:entityId/multiview/confirm', (req, res) => {
+  const body = check(z.object({ assetId: z.string().uuid(), expectedAppearanceId: z.string().uuid() }).strict(), req.body);
+  res.json(store.confirmView(req.params.entityId, body.assetId, body.expectedAppearanceId));
+});
+app.put('/api/entities/:entityId/multiview/draft', (req, res) => {
+  const entityId = store.entity(req.params.entityId).id;
+  const body = check(z.object({ expectedUpdatedAt: z.string().nullable(), value: z.object({
+    layout: z.enum(['three', 'four']), appearanceId: z.string().uuid().nullable(),
+    parameters: z.record(z.string(), z.union([z.string(), z.number()])), purpose: z.string().max(2000), notes: z.string().max(2000),
+    sourceRunId: z.string().uuid().optional()
+  }).strict() }).strict(), req.body);
+  if (body.value.appearanceId && store.visualState(entityId).appearanceHistory.every(v => v.id !== body.value.appearanceId))
+    throw new HttpError(400, '主形象版本不属于当前实体');
+  if (body.value.sourceRunId && store.run(body.value.sourceRunId).entityId !== entityId) throw new HttpError(400, '历史运行不属于当前实体');
+  const updatedAt = store.transaction(() => {
+    const current = store.db.prepare('SELECT updated_at FROM multiview_drafts WHERE entity_id=?').get(entityId);
+    if ((current?.updated_at || null) !== body.expectedUpdatedAt) throw new HttpError(409, '多视图输入已在另一页面更新，请重新载入');
+    const timestamp = new Date(Math.max(Date.now(), current ? Date.parse(current.updated_at) + 1 : 0)).toISOString();
+    store.db.prepare('INSERT INTO multiview_drafts VALUES (?,?,?) ON CONFLICT(entity_id) DO UPDATE SET value=excluded.value,updated_at=excluded.updated_at')
+      .run(entityId, JSON.stringify(body.value), timestamp);
+    return timestamp;
+  });
+  res.json({ updatedAt });
+});
+app.post('/api/entities/:entityId/multiview/runs', (req, res) => res.status(201).json(runs.startMultiview(req.params.entityId, req.body, key(req))));
 app.put('/api/entities/:entityId/draft', (req, res) => {
   const entityId = store.entity(req.params.entityId).id;
   const body = check(z.object({ expectedUpdatedAt: z.string().nullable(), value: z.object({
@@ -100,8 +132,8 @@ app.get('/api/assets/:assetId/content', (req, res) => {
 app.patch('/api/assets/:assetId/lock', (req, res) => {
   const asset = store.asset(req.params.assetId);
   const { locked } = check(z.object({ locked: z.boolean() }).strict(), req.body);
-  if (asset.protected && !locked) throw new HttpError(409, '当前主形象来源受保护');
-  if (asset.kind !== 'concept') throw new HttpError(400, '只有概念图历史使用锁定操作');
+  if (asset.protected && !locked) throw new HttpError(409, '当前定稿来源受保护');
+  if (!['concept', 'multiview'].includes(asset.kind)) throw new HttpError(400, '只有生成历史使用锁定操作');
   store.db.prepare('UPDATE assets SET locked=? WHERE id=?').run(locked ? 1 : 0, asset.id);
   res.json(store.asset(asset.id));
 });
@@ -110,7 +142,10 @@ app.delete('/api/assets/:assetId', (req, res) => {
   store.deleteAsset(req.params.assetId, confirmUsed);
   res.status(204).end();
 });
-app.post('/api/entities/:entityId/runs', (req, res) => res.status(201).json(runs.start(req.params.entityId, req.body, key(req))));
+app.post('/api/entities/:entityId/runs', (req, res) => {
+  if (catalog.models.find(model => model.id === req.body.modelId)?.stage === 'multiview') throw new HttpError(400, '请使用多视图生成入口');
+  res.status(201).json(runs.start(req.params.entityId, req.body, key(req)));
+});
 app.get('/api/runs/:runId', (req, res) => res.json(store.run(req.params.runId)));
 app.get('/api/runs/:runId/input', (req, res) => res.json(runs.restore(req.params.runId)));
 app.get('/api/runs/:runId/workflow', (req, res) => {

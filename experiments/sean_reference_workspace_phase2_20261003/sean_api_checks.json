@@ -1,0 +1,54 @@
+{
+  "owner": "Sean",
+  "checks": [
+    {
+      "name": "stale-appearance",
+      "status": 409,
+      "response": {
+        "error": "主形象已在其他页面改变，请刷新后选择"
+      }
+    },
+    {
+      "name": "cross-entity-appearance",
+      "status": 400,
+      "response": {
+        "error": "请从当前实体的概念图结果中选择"
+      }
+    },
+    {
+      "name": "unlock-current-appearance",
+      "status": 409,
+      "response": {
+        "error": "当前定稿来源受保护"
+      }
+    },
+    {
+      "name": "delete-current-view",
+      "status": 409,
+      "response": {
+        "error": "当前定稿来源受保护"
+      }
+    },
+    {
+      "name": "stale-view-confirm",
+      "status": 409,
+      "response": {
+        "error": "主形象已改变，请刷新后核对视图来源"
+      }
+    },
+    {
+      "name": "stale-multiview-input",
+      "status": 409,
+      "response": {
+        "error": "主形象已改变，请载入当前主形象"
+      }
+    },
+    {
+      "name": "concept-endpoint-cannot-submit-view",
+      "status": 400,
+      "response": {
+        "error": "请使用多视图生成入口"
+      }
+    }
+  ]
+}

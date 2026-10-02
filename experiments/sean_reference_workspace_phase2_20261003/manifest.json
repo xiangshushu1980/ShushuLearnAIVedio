@@ -1,0 +1,63 @@
+{
+  "owner": "Sean",
+  "taskId": "remote-36099f27-c228-4d8d-a84d-09deee97331e",
+  "date": "2026-10-03",
+  "reviewTarget": "PC",
+  "sourceWorkflow": "../qwen_image_2_1_civitai_character_sheet_20261002/source_workflow_v3/v3_simple_static_adapted_api.json",
+  "template": "../../reference-workspace/catalog/qwen-multiview.v3-simple.json",
+  "runs": [
+    {
+      "layout": "three",
+      "runId": "d2fde352-9a1b-4c8b-83ef-766e73972e6b",
+      "promptId": "23a2cf06-eaed-40bb-ac4d-e12db88d3b5f",
+      "status": "succeeded",
+      "appearanceId": "4e1b9ef4-326f-40cb-be07-4b974f4a8129",
+      "inputAssetId": "af9823e0-1b27-48b7-a469-47ddcf4b7534",
+      "inputHash": "df20a30c62bf979ff04d2773b1757620847d3b485b580095b429031b5ea2d04b",
+      "parameters": {
+        "size": "1536x1024",
+        "seed": 6200605,
+        "steps": 25
+      },
+      "outputAssetId": "35478ed6-3fb0-46ec-99a6-046de9f5737f",
+      "output": "sean_three.png",
+      "inputSnapshot": "sean_run_three.json",
+      "workflow": "sean_workflow_three.json",
+      "createdAt": "2026-10-02T16:56:53.299Z",
+      "completedAt": "2026-10-02T16:57:20.095Z"
+    },
+    {
+      "layout": "four",
+      "runId": "3547aa4f-9e72-4c7c-9694-3b74e2a733d5",
+      "promptId": "cd5ec8f3-0eb5-4751-a555-8192bc9037c3",
+      "status": "succeeded",
+      "appearanceId": "4e1b9ef4-326f-40cb-be07-4b974f4a8129",
+      "inputAssetId": "af9823e0-1b27-48b7-a469-47ddcf4b7534",
+      "inputHash": "df20a30c62bf979ff04d2773b1757620847d3b485b580095b429031b5ea2d04b",
+      "parameters": {
+        "size": "1536x1024",
+        "seed": 6200605,
+        "steps": 25
+      },
+      "outputAssetId": "432cfa98-83f2-416e-b600-01090075fb73",
+      "output": "sean_four.png",
+      "inputSnapshot": "sean_run_four.json",
+      "workflow": "sean_workflow_four.json",
+      "createdAt": "2026-10-02T16:58:38.993Z",
+      "completedAt": "2026-10-02T16:58:57.304Z"
+    }
+  ],
+  "checks": {
+    "build": "passed",
+    "browser": "PC 1440px; main selection, draft persistence, both runs, confirmation replacement, history loading",
+    "consoleErrors": 0,
+    "apiRejections": "sean_api_checks.json",
+    "gpuLeasesReleased": true
+  },
+  "limitations": [
+    "one character, one run per layout",
+    "four-expression layout succeeded but joy expression was not followed",
+    "no H3 downstream or canonical acceptance",
+    "mobile excluded"
+  ]
+}

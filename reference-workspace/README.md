@@ -1,8 +1,8 @@
-# Reference 工作台 · 一期
+# Reference 工作台 · 概念图与多视图
 
 Owner: Sean。独立 React + Vite 8 应用，自己的 Node API、SQLite 数据库与图片存储。
 
-一期只实现**设定图片**和**概念图**。产品依据是[设计交接](../.pi/tasks/remote-3d1bfef4-93c7-4b19-93e8-1090a7405e04/handoff.md)和[已确认设计说明](../docs/design/sean_h3_reference_workspace_design_v1.md)；部署边界见[架构](../docs/49_h3_reference_workspace_architecture.md)。主形象、三视图、声音和实体管理界面留后续。
+一期**设定图片**和**概念图**已获用户验收；二期实现**主形象选择**和**三／四视图**。产品依据是[设计交接](../.pi/tasks/remote-3d1bfef4-93c7-4b19-93e8-1090a7405e04/handoff.md)和[已确认设计说明](../docs/design/sean_h3_reference_workspace_design_v1.md)；部署边界见[架构](../docs/49_h3_reference_workspace_architecture.md)。声音和实体管理界面留后续。
 
 2026-10-03 用户确认先跑通 PC 网页；当前验收与后续迭代仅针对 PC，手机端适配和检查暂缓。
 
@@ -47,6 +47,27 @@ npm start
 
 ## 模型与固定模板
 
+### 选定主形象与多视图
+
+概念图结果可直接“设为主形象”，也可在主形象面板挑选；不另行生成主形象。每次更换建立不可变主形象版本，保存源图 ID/hash 和概念 run。当前源图锁定、受保护；旧版保留，源图自动锁定并带“曾定稿”标记，可明确解锁后按历史删除规则处理。
+
+多视图有独立草稿和生成历史，仅引用已选定的主形象。布局可选：
+
+| 布局 | 提示词与结果 |
+| --- | --- |
+| 三视图 | 正面／侧面／背面三个等比例全身视角，沿用 V3 Simple 的画风与一致性约束 |
+| 四视图 | 按用户确认保留 V3 Simple 原版：左侧中性／喜／怒／哀四个特写，右侧正／侧／背 |
+
+固定基础提示词可展开查看；补充要求单独追加。沿用用户提供 `experiments/qwen_image_2_1_civitai_character_sheet_20261002/source_workflow_v3/v3_simple_static_adapted_api.json` 的本地 int8 配置，25 步、CFG 1、Euler/simple、1536×1024，默认 seed 6200605。工作台模板 `catalog/qwen-multiview.v3-simple.json` 保存来源 hash 与两种布局提示词；没有接入自动提示词增强或新增模型依赖。这是已有本地适配，不等同于上游 BF16 / DeGrid / 更高分辨率全配置。
+
+生成时保存确切主形象版本、源图 hash、布局、完整提示词、参数和提交图；输出自动锁定。点击历史记录载入原输入和工作流，旧主形象的结果会显示其来源版本；主形象已更换时须明确“引用当前主形象”后才能开始新一轮。
+
+合成图作为一项完整结果，可“设为当前视图”。确认记录独立版本；换图后旧结果自动锁定。更换主形象会清空当前视图指针，旧输出和确认记录均保留，需为新主形象生成或选择对应视图。概念图生成、主形象选择、视图确认三个操作保持独立。
+
+二期仅对 PC 做浏览器与真实运行检查。两次实跑分别成功输出三视图、原版表情栏合成图；**这次四视图没有严格给出喜悦表情**，布局成功不代表每种表情或身份细节已获质量验收。结果由用户挑选；没有 H3 下游验证或 canonical 晋升。证据见[二期记录](../experiments/sean_reference_workspace_phase2_20261003/QC.md)。
+
+### 概念图模型
+
 首选 **Qwen Image 2.1 本地工作流**，使用用户提供且已生成过的 CivitAI / 分阶段人物实验配置。`catalog/qwen-concept.v1.json` 保存独立、无实体提示词的固定基础图；服务只映射本轮提示词、实际引用、尺寸、seed、steps 和输出前缀。
 
 | 内容 | 当前配置 |
@@ -77,6 +98,10 @@ Krea 2 文本与 Edit 作为备选工作流保留，能力上限分别是 0 张�
 | `GET /api/entities/:id/workspace` | 只读实体上下文、图片、草稿、运行历史 |
 | `PUT /api/entities/:id/draft` | 保存 `{value, expectedUpdatedAt}` 草稿，避免静默覆盖 |
 | `POST /api/entities/:id/settings` | multipart `images` 多选导入 |
+| `POST /api/entities/:id/appearance` | `{assetId, expectedAppearanceId}` 选定主形象；初次 expected=null |
+| `PUT /api/entities/:id/multiview/draft` | 独立的多视图草稿，使用 expectedUpdatedAt 防止覆盖 |
+| `POST /api/entities/:id/multiview/runs` | `{layout, appearanceId, parameters, purpose, notes, sourceRunId?}`；layout=three/four，带 Idempotency-Key |
+| `POST /api/entities/:id/multiview/confirm` | `{assetId, expectedAppearanceId}` 确认当前版本的视图 |
 | `POST /api/entities/:id/runs` | 运行输入；必须带 `Idempotency-Key` |
 | `GET /api/runs/:id` | 执行状态、实际输入与输出 |
 | `GET /api/runs/:id/input` | 历史完整输入、原始提交图及当前配置兼容结果 |
@@ -87,6 +112,8 @@ Krea 2 文本与 Edit 作为备选工作流保留，能力上限分别是 0 张�
 | `DELETE /api/assets/:id` | `{confirmUsed}` 删除图片并保留来源墓碑 |
 
 新库先提供“参考实体”以便打开创作页面；实体创建、介绍和关系管理界面未纳入一期。可用 `?entity=<id>` 进入特定实体。
+
+已有数据库启动时添加主形象版本、视图确认、当前视觉状态及多视图草稿表，保留原实体、概念草稿、运行与文件。`workspace` 响应提供 `visualState` 和 `multiviewDraft`；SQLite 及原图仍以整个 `.data` 目录为备份单位。
 
 ## 验证
 

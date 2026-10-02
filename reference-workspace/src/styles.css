@@ -740,6 +740,15 @@
                                                                                                                                                                                                                                                                                                                                                                     }
 
 /* Owner: Sean — equal reference inputs and separate historical results. */
+.appearance-current { display: flex; align-items: center; gap: 24px; padding: 18px; margin: 20px 0; background: #101a22; border: 1px solid #39796e; border-radius: 12px; }
+.appearance-current > img { width: 180px; height: 180px; object-fit: contain; border-radius: 8px; background: #1b2d36; }
+.input-missing { display: grid; place-items: center; width: 180px; height: 180px; background: #1b2d36; color: var(--muted); }
+.appearance-current p { margin: 10px 0; }
+.appearance-preview { aspect-ratio: 3/2; max-height: 540px; }
+.appearance-version { display: flex; gap: 18px; padding: 15px 0; border-bottom: 1px solid var(--border); font-size: 12px; }
+.fixed-prompt { margin: 16px 0 20px; padding: 12px; background: #14212b; border-radius: 8px; }
+.multiview-output-grid { grid-template-columns: repeat(auto-fill, minmax(180px, 240px)); margin: 16px 0; }
+.generation-settings .generate-actions > span { margin-right: auto; align-self: center; font-size: 12px; }
 .current-references, .result-section { margin: 24px 0; }
 .current-references .section-head button { flex-shrink: 0; }
 .current-reference-grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }

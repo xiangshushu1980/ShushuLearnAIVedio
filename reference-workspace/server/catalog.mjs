@@ -16,6 +16,13 @@ const fields = {
   seed: { type: 'integer', label: '随机种子', default: 42, min: 0, max: 2147483647 },
   steps: { type: 'integer', label: '采样步数', default: 8, min: 1, max: 30 }
 };
+const multiviewModels = ['three', 'four'].map(layout => ({
+  id: `qwen-v3-simple-${layout}`, name: `Qwen V3 Simple · ${layout === 'three' ? '三视图' : '表情＋正侧背'}`,
+  version: 3, adapter: 'comfy', enabled: true, stage: 'multiview', layout, localGpu: true,
+  references: { min: 1, max: 1, instruction: '只引用已选定的主形象，保留其身份、服装、装备和画风。' },
+  fields: { size: { ...size, options: [size.options[0]] }, seed: { ...fields.seed, default: 6200605 },
+    steps: { ...fields.steps, default: 25, max: 50 } }
+}));
 const models = [
   { id: 'qwen-image-2.1', name: 'Qwen Image 2.1', version: 1, adapter: 'comfy', enabled: true,
     references: { min: 0, max: 16, instruction: '按所选顺序对应 Image 1、Image 2…，在提示词中明确每张图的职责。节点支持 0–16 张；已有四图组合实验。' },
@@ -25,11 +32,13 @@ const models = [
     fields, localGpu: true },
   { id: 'krea2-t2i', name: 'Krea 2 · 文本概念图', version: 1, adapter: 'comfy', enabled: true,
     references: { min: 0, max: 0, instruction: '此工作流只使用提示词。需要引用图片时请选择其他模型。' },
-    fields, localGpu: true }
+    fields, localGpu: true },
+  ...multiviewModels
 ];
 
 export const catalog = {
-  models: models.map(({ endpoint, ...model }) => model), styles: profiles.styles
+  models: models.map(({ endpoint, ...model }) => model), styles: profiles.styles,
+  multiview: multiviewModels.map(model => ({ ...model, prompt: workflowTemplate(model.id).layoutPrompts[model.layout] }))
 };
 export function modelFor(modelId) {
   const model = models.find(m => m.id === modelId);
@@ -41,6 +50,7 @@ const requestSchema = z.object({
   modelId: z.string(), styleId: z.string(), prompt: z.string().trim().min(1).max(16000),
   purpose: z.string().max(2000).default(''), references: z.array(z.string().uuid()).max(16),
   sourceRunId: z.string().uuid().optional(),
+  appearanceId: z.string().uuid().optional(), notes: z.string().max(2000).optional(),
   parameters: z.record(z.string(), z.union([z.string(), z.number()]))
 }).strict();
 export function validateRun(body) {
@@ -66,7 +76,7 @@ export function validateRun(body) {
 }
 
 export function workflowTemplate(modelId) {
-  const path = modelId === 'qwen-image-2.1' ? '../catalog/qwen-concept.v1.json' : '../catalog/krea-concept.v1.json';
+  const path = modelId.startsWith('qwen-v3-simple-') ? '../catalog/qwen-multiview.v3-simple.json' : modelId === 'qwen-image-2.1' ? '../catalog/qwen-concept.v1.json' : '../catalog/krea-concept.v1.json';
   const bytes = readFileSync(new URL(path, import.meta.url));
   return { ...JSON.parse(bytes), hash: createHash('sha256').update(bytes).digest('hex') };
 }
@@ -75,12 +85,12 @@ export function buildComfyWorkflow(snapshot, uploadedNames, runId) {
   const [width, height] = snapshot.parameters.size.split('x').map(Number);
   const template = workflowTemplate(snapshot.model.id);
   if (snapshot.template.hash && snapshot.template.hash !== template.hash) throw new HttpError(409, '模板内容已变化，请检查配置后新建运行');
-  if (snapshot.model.id === 'qwen-image-2.1') {
+  if (snapshot.model.id === 'qwen-image-2.1' || snapshot.model.stage === 'multiview') {
     const graph = template.graph;
     graph['5'].inputs.prompt = snapshot.effectivePrompt;
     Object.assign(graph['6'].inputs, { width, height });
     Object.assign(graph['7'].inputs, { seed: snapshot.parameters.seed, steps: snapshot.parameters.steps });
-    graph['9'].inputs.filename_prefix = `sean_reference_workspace/${runId}/concept`;
+    graph['9'].inputs.filename_prefix = `sean_reference_workspace/${runId}/${snapshot.model.stage === 'multiview' ? 'multiview' : 'concept'}`;
     uploadedNames.forEach((name, index) => {
       const nodeId = String(10 + index);
       graph[nodeId] = { class_type: 'LoadImage', inputs: { image: name } };

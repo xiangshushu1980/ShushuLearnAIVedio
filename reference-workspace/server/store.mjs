@@ -33,6 +33,19 @@ export function createStore(dataDir) {
     CREATE INDEX IF NOT EXISTS assets_entity ON assets(entity_id, created_at);
     CREATE INDEX IF NOT EXISTS runs_entity ON runs(entity_id, created_at);
     CREATE INDEX IF NOT EXISTS input_asset ON run_inputs(asset_id);`);
+  db.exec(`CREATE TABLE IF NOT EXISTS appearance_versions (
+    id TEXT PRIMARY KEY, entity_id TEXT NOT NULL REFERENCES entities(id), asset_id TEXT NOT NULL REFERENCES assets(id),
+    source_run_id TEXT, asset_hash TEXT NOT NULL, version INTEGER NOT NULL, created_at TEXT NOT NULL,
+    UNIQUE(entity_id,version));
+    CREATE TABLE IF NOT EXISTS entity_visual_state (
+      entity_id TEXT PRIMARY KEY REFERENCES entities(id), appearance_id TEXT REFERENCES appearance_versions(id),
+      view_asset_id TEXT REFERENCES assets(id), updated_at TEXT NOT NULL);
+    CREATE TABLE IF NOT EXISTS multiview_drafts (
+      entity_id TEXT PRIMARY KEY REFERENCES entities(id), value TEXT NOT NULL, updated_at TEXT NOT NULL);
+    CREATE TABLE IF NOT EXISTS view_confirmations (
+      id TEXT PRIMARY KEY, entity_id TEXT NOT NULL REFERENCES entities(id), appearance_id TEXT NOT NULL REFERENCES appearance_versions(id),
+      asset_id TEXT NOT NULL REFERENCES assets(id), version INTEGER NOT NULL, created_at TEXT NOT NULL,
+      UNIQUE(entity_id,version));`);
   const transaction = (fn) => {
     db.exec('BEGIN IMMEDIATE');
     try { const value = fn(); db.exec('COMMIT'); return value; }
@@ -85,7 +98,7 @@ export function createStore(dataDir) {
     const insert = db.prepare(`INSERT INTO assets (id,entity_id,kind,name,file,mime,hash,width,height,locked,metadata,run_id,created_at)
       VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)`);
     for (const s of stages) insert.run(s.assetId, s.entityId, s.kind, s.name, s.file, s.mime, s.hash, s.width, s.height,
-      s.kind === 'concept' ? 1 : 0, JSON.stringify(s.metadata), s.runId, s.createdAt);
+      ['concept', 'multiview'].includes(s.kind) ? 1 : 0, JSON.stringify(s.metadata), s.runId, s.createdAt);
     return stages.map(s => asset(s.assetId));
   }
   function createRun(entityId, snapshot, key) {
@@ -118,7 +131,7 @@ export function createStore(dataDir) {
   function deleteAsset(assetId, confirmUsed = false) {
     const result = transaction(() => {
       const a = asset(assetId);
-      if (a.protected) throw new HttpError(409, '当前主形象来源受保护');
+      if (a.protected) throw new HttpError(409, '当前定稿来源受保护');
       if (a.locked) throw new HttpError(409, '请先明确解锁图片');
       const usages = db.prepare(`SELECT runs.id,runs.status FROM run_inputs JOIN runs ON runs.id=run_inputs.run_id WHERE asset_id=?`).all(assetId);
       if (usages.some(r => ['queued', 'running'].includes(r.status))) throw new HttpError(409, '图片仍被未结束运行引用，请等待运行结束');
@@ -129,8 +142,56 @@ export function createStore(dataDir) {
     // A tombstone is committed before touching bytes; history never loses the asset identity.
     if (existsSync(join(media, result))) unlinkSync(join(media, result));
   }
+  function appearanceView(row) {
+    return row && { id: row.id, entityId: row.entity_id, assetId: row.asset_id, sourceRunId: row.source_run_id,
+      assetHash: row.asset_hash, version: row.version, createdAt: row.created_at, asset: asset(row.asset_id, true) };
+  }
+  function visualState(entityId) {
+    entity(entityId);
+    const state = db.prepare('SELECT * FROM entity_visual_state WHERE entity_id=?').get(entityId);
+    const versions = db.prepare('SELECT * FROM appearance_versions WHERE entity_id=? ORDER BY version DESC').all(entityId).map(appearanceView);
+    const confirmations = db.prepare('SELECT * FROM view_confirmations WHERE entity_id=? ORDER BY version DESC').all(entityId)
+      .map(row => ({ id: row.id, assetId: row.asset_id, appearanceId: row.appearance_id, version: row.version, createdAt: row.created_at }));
+    return { appearance: versions.find(v => v.id === state?.appearance_id) || null, appearanceHistory: versions, viewHistory: confirmations,
+      view: state?.view_asset_id ? asset(state.view_asset_id, true) : null, updatedAt: state?.updated_at || null };
+  }
+  function confirmAppearance(entityId, assetId, expectedAppearanceId) {
+    return transaction(() => {
+      const current = visualState(entityId), candidate = asset(assetId);
+      if ((current.appearance?.id || null) !== expectedAppearanceId) throw new HttpError(409, '主形象已在其他页面改变，请刷新后选择');
+      if (candidate.entityId !== entityId || candidate.kind !== 'concept') throw new HttpError(400, '请从当前实体的概念图结果中选择');
+      if (candidate.runId && run(candidate.runId).status !== 'succeeded') throw new HttpError(409, '请选择已完成生成的概念图');
+      if (current.appearance?.assetId === assetId) return current;
+      const versionId = id(), timestamp = now();
+      for (const old of [current.appearance?.asset, current.view].filter(Boolean))
+        db.prepare('UPDATE assets SET protected=0,locked=1 WHERE id=?').run(old.id);
+      db.prepare('INSERT INTO appearance_versions VALUES (?,?,?,?,?,?,?)').run(versionId, entityId, assetId, candidate.runId,
+        candidate.hash, (current.appearanceHistory[0]?.version || 0) + 1, timestamp);
+      db.prepare('UPDATE assets SET protected=1,locked=1,ever_confirmed=1 WHERE id=?').run(assetId);
+      db.prepare(`INSERT INTO entity_visual_state VALUES (?,?,NULL,?) ON CONFLICT(entity_id)
+        DO UPDATE SET appearance_id=excluded.appearance_id,view_asset_id=NULL,updated_at=excluded.updated_at`).run(entityId, versionId, timestamp);
+      return visualState(entityId);
+    });
+  }
+  function confirmView(entityId, assetId, expectedAppearanceId) {
+    return transaction(() => {
+      const current = visualState(entityId), candidate = asset(assetId);
+      if (!current.appearance || current.appearance.id !== expectedAppearanceId) throw new HttpError(409, '主形象已改变，请刷新后核对视图来源');
+      if (candidate.entityId !== entityId || candidate.kind !== 'multiview' || !candidate.runId) throw new HttpError(400, '请选择当前实体的多视图结果');
+      const source = run(candidate.runId);
+      if (source.status !== 'succeeded' || source.snapshot.appearance?.id !== current.appearance.id)
+        throw new HttpError(409, '这张视图来自其他主形象版本，请为当前主形象重新生成或选择对应结果');
+      if (current.view?.id === assetId) return current;
+      if (current.view && current.view.id !== assetId) db.prepare('UPDATE assets SET protected=0,locked=1 WHERE id=?').run(current.view.id);
+      db.prepare('UPDATE assets SET protected=1,locked=1,ever_confirmed=1 WHERE id=?').run(assetId);
+      db.prepare('INSERT INTO view_confirmations VALUES (?,?,?,?,?,?)').run(id(), entityId, current.appearance.id, assetId,
+        (current.viewHistory[0]?.version || 0) + 1, now());
+      db.prepare('UPDATE entity_visual_state SET view_asset_id=?,updated_at=? WHERE entity_id=?').run(assetId, now(), entityId);
+      return visualState(entityId);
+    });
+  }
   return { db, root, media, transaction, entity, asset, run, runView, assetView, stageImage, discardStage, registerStages,
-    createRun, updateRun, deleteAsset,
+    createRun, updateRun, deleteAsset, visualState, confirmAppearance, confirmView,
     assetPath: (assetId) => { asset(assetId); return join(media, db.prepare('SELECT file FROM assets WHERE id=?').get(assetId).file); },
     assetBytes: (assetId) => readFileSync(join(media, db.prepare('SELECT file FROM assets WHERE id=?').get(assetId).file)) };
 }
