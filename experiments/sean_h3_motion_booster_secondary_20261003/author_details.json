@@ -1,0 +1,93 @@
+{
+  "owner": "Sean",
+  "source_urls": {
+    "model": "https://civitai.com/api/v1/models/2840146",
+    "selected_version": "https://civitai.com/api/v1/model-versions/3246346"
+  },
+  "model": {
+    "id": 2840146,
+    "name": "Faster! Harder! Shake Harder! | H3 Motion Booster(ANIME Edition Update)",
+    "creator": {
+      "username": "FourBunny",
+      "image": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/948e64a6-102b-4b48-9f99-76b1a5b130e0/width=96/FourBunny.jpeg"
+    }
+  },
+  "versions": [
+    {
+      "id": 3228867,
+      "name": "V0.2",
+      "baseModel": "MiniMax H3",
+      "createdAt": "2026-08-14T18:33:15.916Z",
+      "publishedAt": "2026-08-19T18:51:05.816Z"
+    },
+    {
+      "id": 3299686,
+      "name": "ANIME Edition",
+      "baseModel": "MiniMax H3",
+      "createdAt": "2026-09-05T20:48:30.385Z",
+      "publishedAt": "2026-09-05T20:57:37.495Z"
+    },
+    {
+      "id": 3246346,
+      "name": "V0.2 REF2VA",
+      "baseModel": "MiniMax H3",
+      "createdAt": "2026-08-19T20:10:14.201Z",
+      "publishedAt": "2026-08-19T20:14:53.538Z"
+    },
+    {
+      "id": 3205912,
+      "name": "V0.1",
+      "baseModel": "MiniMax H3",
+      "createdAt": "2026-08-07T08:44:05.842Z",
+      "publishedAt": "2026-08-07T08:55:50.314Z"
+    }
+  ],
+  "selected_version": {
+    "id": 3246346,
+    "name": "V0.2 REF2VA",
+    "baseModel": "MiniMax H3",
+    "trainedWords": [
+      "dynv2"
+    ],
+    "files": [
+      {
+        "id": 3129119,
+        "sizeKB": 151474.890625,
+        "name": "ref2VA_Motion_v2.safetensors",
+        "type": "Model",
+        "pickleScanResult": "Success",
+        "pickleScanMessage": null,
+        "virusScanResult": "Success",
+        "virusScanMessage": null,
+        "scannedAt": "2026-08-19T20:11:49.464",
+        "metadata": {
+          "format": "SafeTensor",
+          "fp": "bf16"
+        },
+        "hashes": {
+          "AutoV1": "C486ACD3",
+          "AutoV2": "B48CF96EBB",
+          "SHA256": "B48CF96EBB14985789528449FE61985BABF786FEB658740A82A88AC685167FD9",
+          "CRC32": "532D5850",
+          "BLAKE3": "8DEA36913735A8E962EB6039AA3EABE4C34893860421904EAFECB6A9018BEB37",
+          "AutoV3": "514194D4D3EA",
+          "SHA256_12": "B48CF96EBB14"
+        },
+        "primary": true,
+        "downloadUrl": "https://civitai.com/api/download/models/3246346?fileId=3129119"
+      }
+    ]
+  },
+  "note": "Technical metadata snapshot only; author prose and scope interpretation are summarized with links in author_notes.md. Explicit example prompts omitted.",
+  "installed_lora_metadata": {
+    "training_info": "{\"step\": 2000, \"epoch\": 18}",
+    "software": "{\"name\": \"ai-toolkit\", \"repo\": \"https://github.com/ostris/ai-toolkit\", \"version\": \"1.18.2\"}",
+    "ss_output_name": "ref_dov2",
+    "sshs_model_hash": "514194d4d3ea9552a3798a630706a76cc56f130ecdc8fdcbe104562ec7e09f29",
+    "version": "1.0",
+    "ss_base_model_version": "minimax_h3_ref2va",
+    "format": "pt",
+    "sshs_legacy_hash": "b5124c08",
+    "name": "ref_dov2"
+  }
+}

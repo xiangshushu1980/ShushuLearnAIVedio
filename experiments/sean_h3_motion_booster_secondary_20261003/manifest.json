@@ -187,5 +187,11 @@
     "python": "setup/run_cases/qc_secondary compile",
     "side_bands": "0/0.7 full width; 1.0 content466-468x448 with black sides",
     "resource": "GPU lease released; original ComfyUI output files cleaned"
-  }
+  },
+  "user_feedback_move": {
+    "motion_07": "用户观察动作有穿帮",
+    "motion_10": "用户观察动作还好",
+    "causal_status": "用户询问是否LoRA导致；没有多seed或重复复测，未确定故障机制"
+  },
+  "author_research": "author_notes.md"
 }

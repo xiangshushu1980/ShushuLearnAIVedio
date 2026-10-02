@@ -1,0 +1,33 @@
+{
+  "owner": "Sean",
+  "source_url": "https://civitai.com/api/v1/models?username=FourBunny&limit=100",
+  "related_models": [
+    {
+      "id": 2890788,
+      "name": "BUNNY General Motion Continuity Repair",
+      "versions": [
+        {
+          "id": 3366092,
+          "name": "V2",
+          "baseModel": "MiniMax H3"
+        },
+        {
+          "id": 3268186,
+          "name": "v1.0",
+          "baseModel": "MiniMax H3"
+        }
+      ]
+    },
+    {
+      "id": 2956102,
+      "name": "BUNNY SelfLift | 12GB Direct 1080P | High Motion + LoRA Sharp Hybrid Workflow",
+      "versions": [
+        {
+          "id": 3348503,
+          "name": "v1.0",
+          "baseModel": "MiniMax H3"
+        }
+      ]
+    }
+  ]
+}
