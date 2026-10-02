@@ -4,6 +4,8 @@ Owner: Sean。独立 React + Vite 8 应用，自己的 Node API、SQLite 数据�
 
 一期只实现**设定图片**和**概念图**。产品依据是[设计交接](../.pi/tasks/remote-3d1bfef4-93c7-4b19-93e8-1090a7405e04/handoff.md)和[已确认设计说明](../docs/design/sean_h3_reference_workspace_design_v1.md)；部署边界见[架构](../docs/49_h3_reference_workspace_architecture.md)。主形象、三视图、声音和实体管理界面留后续。
 
+2026-10-03 用户确认先跑通 PC 网页；当前验收与后续迭代仅针对 PC，手机端适配和检查暂缓。
+
 ## 启动
 
 本机 Node 24.18.0；最低 Node 24。SQLite 使用 Node 自带的 `node:sqlite`，前后端由一个进程在同一端口提供。Vite 8 的 Node 要求及 SQLite API 分别参见 [Vite 文档](https://vite.dev/guide/)和 [Node SQLite 文档](https://nodejs.org/docs/latest-v24.x/api/sqlite.html)。
