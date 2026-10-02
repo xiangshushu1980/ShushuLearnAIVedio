@@ -1,0 +1,10 @@
+Owner: Sean. Generated with built-in imagegen.
+Use case: stylized-concept
+Asset type: landscape character reference for a motion comparison video.
+Primary request: one adult fantasy forest spirit with very long loose pale silver hair, clearly visible thin brown root tendrils attached at the forearms and waist, and two long crimson silk ribbons attached at the shoulders. These three flexible materials are visually distinct and separated enough to track their motion.
+Scene/backdrop: an open mossy stone terrace at the edge of a sparse forest, subtle muted green trees and gray stones, the environment fills the entire wide image.
+Subject: one graceful adult forest spirit wearing a modest fitted dark teal tunic and trousers, bare face, upright neutral balanced standing pose, arms slightly away from the torso. Silver hair reaches below the knees, several slender woody brown root strands curve downward, crimson ribbons hang loosely to calf level. Hair, root strands and ribbons remain visibly separate rather than fused.
+Style/medium: polished anime fantasy illustration with clean forms and restrained fine detail.
+Composition/framing: landscape 12:7 image, full body including feet, person occupies about 70 percent of image height in the middle, generous space on both sides for subsequent movement. All strands and ribbon tips stay inside the frame. Straight-on eye-level camera.
+Lighting/mood: soft overcast daylight, calm before the wind.
+Constraints: one character only, no text or watermark, no border, no white margins, no collage, no duplicated limbs, no glowing effects or particles, no motion blur. The landscape must extend naturally all the way to both horizontal edges.

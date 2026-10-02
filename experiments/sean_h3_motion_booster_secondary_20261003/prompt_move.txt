@@ -1,0 +1,23 @@
+subject_definitions:
+<Subject 1> is the adult forest spirit defined by <Picture 1>, including the long silver hair, attached brown root tendrils, crimson shoulder ribbons, clothing, and identity.
+<Subject 2> is the stone terrace and surrounding landscape defined by <Picture 1>, providing environment layout and lighting.
+
+summary:
+[reference generation] Generate an eight-second continuous full-body shot of <Subject 1> on <Subject 2>. Large alternating pivot turns drive secondary follow-through with very little ambient wind. Use the image as the authority for appearance and environment rather than an exact opening frame.
+
+retention_analysis:
+<Subject 1> (appears in [Shot 1]): fully_preserved - Preserve identity, costume, and the attachment points and separate materials of the hair, root tendrils, and ribbons.
+<Subject 2> (appears in [Shot 1]): fully_preserved - Preserve the terrace layout, landscape, and lighting throughout the shot.
+
+detailed_description:
+Detailed fantasy character rendering matching the reference image, with readable material motion under soft overcast daylight. The source image guides appearance and landscape rather than requiring a frozen first-frame copy.
+[Shot 1] dynv2. A static wide full-body shot frames <Subject 1> near the center of <Subject 2>, with the complete head, hands, feet, and all flexible material tips visible. The terrace floor is level and its stone joints provide fixed spatial markers. Keep the landscape extending naturally across the entire wide frame, with ample space around the character for the sweeping material arcs. The camera holds one static shot for the complete eight seconds, with unchanged lens and viewpoint. There are no cuts, camera tracking, zooms, or slow-motion segments. Ambient airflow is weak, so that the secondary movement is driven primarily by the character's body.
+From the opening to the final frame, <Subject 1> performs one continuous exercise: large alternating whole-body pivot turns around the standing position. Begin facing the camera, rotate the hips and shoulders briskly toward screen left, then reverse toward screen right, and repeat the same left-right pattern at a steady ordinary-speed cadence. Each half-turn reaches a clear three-quarter profile rather than spinning through a complete revolution. The feet pivot and make short repositioning contacts on the stones, while the knees soften slightly at each direction reversal. The torso leads each turn, and the comfortably bent arms counterbalance without covering the face. The center of the body remains close to its initial position and the feet maintain believable contact with the ground. Show multiple complete reversal cycles during the eight seconds, using approximately two seconds for each full left-right cycle.
+At every reversal, the attached materials briefly continue traveling in the previous direction before following the new direction of the shoulders and hips. Long hair sweeps through wide trailing arcs and breaks into several distinct strand groups. The ribbon ends fly outward in broad curved loops, with a visible delay between the shoulder turn and the changing direction of the free tips. The attached root tendrils trace narrower, slower arcs because they are heavier and stiffer. Preserve their woody branching shapes and attachment points, and show a brief elastic recovery after each reversal rather than making them rigid or weightless. Hair, root strands, and silk remain separate throughout the movement. Their trails should clearly follow the same turning body instead of independently orbiting it.
+Keep the reference-defined face and costume recognizable as the head turns with the shoulders, without adding another character, prop, or action. Preserve correct limb arrangement and the broad full-body silhouette even when strands overlap briefly. The background remains stable while each successive turn continues at consistent tempo through the ending. Short boot scuffs and contacts correspond to the pivots, with silk flutter and material rustle occurring just after each reversal. The character does not speak; the final frame remains within the ongoing alternating exercise.
+
+overall_soundscape:
+Quiet outdoor air, rhythmic boot contacts and scuffs on stone, and silk flutter and material rustle following each turn. No spoken dialogue.
+
+non_diegetic_music:
+N/A

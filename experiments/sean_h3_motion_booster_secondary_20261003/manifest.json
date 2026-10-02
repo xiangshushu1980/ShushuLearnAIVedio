@@ -1,0 +1,191 @@
+{
+  "owner": "Sean",
+  "experiment": "H3 Motion Booster V0.2 secondary hair/root/ribbon motion",
+  "status": "tested_waiting_user_review",
+  "model_version_id": 3246346,
+  "model_file": "ref2VA_Motion_v2.safetensors",
+  "expected_sha256": "B48CF96EBB14985789528449FE61985BABF786FEB658740A82A88AC685167FD9",
+  "model_download": {
+    "authenticated": true,
+    "sha256_verified": true,
+    "bytes": 155110288,
+    "path": "/home/sean/projects/ComfyUI/models/loras/ref2VA_Motion_v2.safetensors"
+  },
+  "trigger": "dynv2",
+  "parameters": {
+    "mode": "Ref2VA",
+    "width": 768,
+    "height": 448,
+    "frames": 192,
+    "fps": 24,
+    "expected_duration_seconds": 8.0,
+    "steps": 20,
+    "sampler": "res_multistep",
+    "scheduler": "simple",
+    "guider": "BasicGuider",
+    "denoise": 1.0,
+    "seed": 2026100302,
+    "ref_image_size": "match",
+    "acceleration_lora": null,
+    "attention": "native",
+    "video_vae": "minimax_h3_video_vae_int8_convrot.safetensors"
+  },
+  "reference": {
+    "experiment_file": "reference.png",
+    "comfy_input": "sean_h3_secondary_reference_20261003.png",
+    "source": "built-in imagegen",
+    "sha256": "589559b06b3cb8276bd2c6928efdd0cefc1b65066f7d5d9a58d1d52486f60e3c",
+    "size": [
+      1642,
+      958
+    ]
+  },
+  "comparison_rule": "Within each wind/move pair, identical reference, prompt including dynv2, seed, duration, sampler and steps; only add Motion Booster at strength 0.7. Single seed exploratory comparison, no physics benchmark.",
+  "cases": [
+    {
+      "id": "wind_base",
+      "group": "wind",
+      "motion_lora_strength": 0,
+      "workflow": "workflows/wind_base.json",
+      "status": "success",
+      "prompt_id": "4a1973c7-2644-444d-93f3-0f91462d5041",
+      "submitted_at": 1790958879.9899158,
+      "completed_at": 1790959035.448195,
+      "peak_vram_mib": 23116,
+      "output": "wind_base.mp4",
+      "sha256": "c7c63c6d99e5fa309bf2f63ea52da6607402ff7eb12f87d9159bfc59e6f31035",
+      "comfy_seconds": 154.446,
+      "output_cleaned": true,
+      "lora_unmatched_log_count": 0,
+      "lora_matching_status": "no_unmatched_key_warnings_in_runtime_log"
+    },
+    {
+      "id": "wind_motion",
+      "group": "wind",
+      "motion_lora_strength": 0.7,
+      "workflow": "workflows/wind_motion.json",
+      "status": "success",
+      "prompt_id": "f3e5d61b-17d8-4d61-8089-06f750c99388",
+      "submitted_at": 1790959035.718917,
+      "completed_at": 1790959168.111886,
+      "peak_vram_mib": 23804,
+      "output": "wind_motion.mp4",
+      "sha256": "1dd621f3381b5b1ac63c7eb7080a379e06ff6902d0eaea82220d122748b83dd2",
+      "comfy_seconds": 130.697,
+      "output_cleaned": true,
+      "lora_unmatched_log_count": 0,
+      "lora_matching_status": "no_unmatched_key_warnings_in_runtime_log"
+    },
+    {
+      "id": "move_base",
+      "group": "move",
+      "motion_lora_strength": 0,
+      "workflow": "workflows/move_base.json",
+      "status": "success",
+      "prompt_id": "6fbdb636-b12f-422d-9ec6-1803d8706b38",
+      "submitted_at": 1790959168.1719227,
+      "completed_at": 1790959306.5534434,
+      "peak_vram_mib": 23116,
+      "output": "move_base.mp4",
+      "sha256": "62f968f84e95e4c325a59a3a7c5a2508d157ba9416ff40ca0d281e02599a8f56",
+      "comfy_seconds": 135.951,
+      "output_cleaned": true,
+      "lora_unmatched_log_count": 0,
+      "lora_matching_status": "no_unmatched_key_warnings_in_runtime_log"
+    },
+    {
+      "id": "move_motion",
+      "group": "move",
+      "motion_lora_strength": 0.7,
+      "workflow": "workflows/move_motion.json",
+      "status": "success",
+      "prompt_id": "c378b4b2-ac5c-4387-89fe-f555414feed1",
+      "submitted_at": 1790959306.6141405,
+      "completed_at": 1790959438.3910906,
+      "peak_vram_mib": 23804,
+      "output": "move_motion.mp4",
+      "sha256": "541992f3ed85991849557b26e906afba062aaf480fc81d036a8b6bb052da1ee7",
+      "comfy_seconds": 131.314,
+      "output_cleaned": true,
+      "lora_unmatched_log_count": 0,
+      "lora_matching_status": "no_unmatched_key_warnings_in_runtime_log"
+    },
+    {
+      "id": "move_motion10",
+      "group": "move",
+      "motion_lora_strength": 1.0,
+      "workflow": "workflows/move_motion10.json",
+      "status": "success",
+      "difference_from_move_motion": "Only raise Motion Booster strength from 0.7 to 1.0; same eight-second large pivot action prompt, reference and seed.",
+      "prompt_id": "6b81104a-3a88-4ef2-8799-318cc72c18a9",
+      "submitted_at": 1790959653.7783124,
+      "completed_at": 1790959785.5009751,
+      "peak_vram_mib": 23804,
+      "output": "move_motion10.mp4",
+      "sha256": "41b41bcf0498b363d313fd93496b928b496ce2a0b83de20f4e6300dd8fafb693",
+      "comfy_seconds": 130.545,
+      "output_cleaned": true,
+      "lora_unmatched_log_count": 0,
+      "lora_matching_status": "no_unmatched_key_warnings_in_runtime_log"
+    }
+  ],
+  "results": [
+    {
+      "case": "wind_base",
+      "status": "success",
+      "output": "wind_base.mp4",
+      "comfy_seconds": 154.446,
+      "peak_vram_mib": 23116
+    },
+    {
+      "case": "wind_motion",
+      "status": "success",
+      "output": "wind_motion.mp4",
+      "comfy_seconds": 130.697,
+      "peak_vram_mib": 23804
+    },
+    {
+      "case": "move_base",
+      "status": "success",
+      "output": "move_base.mp4",
+      "comfy_seconds": 135.951,
+      "peak_vram_mib": 23116
+    },
+    {
+      "case": "move_motion",
+      "status": "success",
+      "output": "move_motion.mp4",
+      "comfy_seconds": 131.314,
+      "peak_vram_mib": 23804
+    },
+    {
+      "case": "move_motion10",
+      "status": "success",
+      "output": "move_motion10.mp4",
+      "comfy_seconds": 130.545,
+      "peak_vram_mib": 23804
+    }
+  ],
+  "gpu_lease_id": "3c301677-449d-40c2-8962-17e3a3d2677b",
+  "gpu_lease_released": true,
+  "artifacts": {
+    "integrity": "integrity.json",
+    "wind_comparison": "wind_comparison.mp4",
+    "wind_contact": "wind_contact.png",
+    "move_comparison": "move_comparison.mp4",
+    "move_contact": "move_contact.png",
+    "move_strength_comparison": "move_strength_comparison.mp4",
+    "move_strength_contact": "move_strength_contact.png"
+  },
+  "user_feedback_07": "用户认为两张差不多，要求权重1.0的人物动作与飘带补测。",
+  "qc": "QC.md",
+  "completed_at_iso": "2026-10-03T00:53:49.034537+08:00",
+  "quality_summary": "0.7 looks close to baseline to user. Motion1.0 changes turn timing and ribbon trajectory, no clear stable amplitude gain; same landscape reference produces near-square content plus 150-151px black sides at 1.0. No production baseline change.",
+  "validation": {
+    "all_videos": "Five originals pass SHA256 and full ffmpeg decode; 768x448/192frames/24fps/8s with 8s audio",
+    "paired_workflows": "After normalizing only LoRA and output metadata, workflows within each group are identical",
+    "python": "setup/run_cases/qc_secondary compile",
+    "side_bands": "0/0.7 full width; 1.0 content466-468x448 with black sides",
+    "resource": "GPU lease released; original ComfyUI output files cleaned"
+  }
+}

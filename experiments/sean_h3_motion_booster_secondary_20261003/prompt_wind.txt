@@ -1,0 +1,23 @@
+subject_definitions:
+<Subject 1> is the adult forest spirit defined by <Picture 1>, including the long silver hair, attached brown root tendrils, crimson shoulder ribbons, clothing, and identity.
+<Subject 2> is the stone terrace and surrounding landscape defined by <Picture 1>, providing environment layout and lighting.
+
+summary:
+[reference generation] Generate an eight-second continuous full-body shot of <Subject 1> on <Subject 2>. A left-to-right wind gust drives the secondary materials while the character stays planted. Use the image as the authority for appearance and environment rather than an exact opening frame.
+
+retention_analysis:
+<Subject 1> (appears in [Shot 1]): fully_preserved - Preserve identity, costume, and the attachment points and separate materials of the hair, root tendrils, and ribbons.
+<Subject 2> (appears in [Shot 1]): fully_preserved - Preserve the terrace layout, landscape, and lighting throughout the shot.
+
+detailed_description:
+Detailed fantasy character rendering matching the reference image, with readable material motion under soft overcast daylight. The source image guides appearance and landscape rather than requiring a frozen first-frame copy.
+[Shot 1] dynv2. A static wide full-body shot places <Subject 1> near the center of <Subject 2>, with both feet and every free material tip visible. The stone floor anchors the character, and the surrounding terrace and distant landscape extend continuously to both edges of the wide frame. Leave generous empty space on either side so that windblown strands remain inside the image. The camera maintains a static shot with unchanged lens, amplitude, and speed throughout all eight seconds. There are no cuts, zooms, or changes of viewpoint. Keep the background geographically fixed so that material movement can be judged against stable stone edges.
+The single dominant action is a sustained wind gust blowing from screen left toward screen right while <Subject 1> remains standing. From the beginning through the first second, a gentle airflow lifts the free ribbon ends and loosely separates the outer hair strands. The feet stay firmly planted, the torso stays upright, and the arms hang comfortably clear of the body. The face remains neutral and the character does not perform a separate gesture or step. At approximately one second, the wind increases smoothly and reaches a strong, sustained level by two seconds. This change should be visible in the attached materials, rather than represented by camera movement or a change of location.
+From two to six seconds, the long hair streams toward screen right in several distinct flowing groups. Fine hair tips respond readily, while the heavier sections form broad delayed waves. The free root tendrils bend to the same side in slower, smaller arcs, retaining their branching shapes and original attachment points. They behave as flexible woody strands with more resistance than the hair, rather than becoming smooth cloth. The two ribbons rise into large looping curves and flutter at their free ends, with brief traveling ripples passing from the shoulders toward the tips. Keep all three materials visually distinguishable and let their different stiffness produce different responses to the same airflow. Preserve the character's face, hands, costume, and limb arrangement throughout this sustained gust.
+From six seconds to the eight-second end, the wind gradually weakens. The ribbon ends drop and flutter with smaller oscillations, the hair swings back toward its resting position, and the root tendrils settle more slowly with a short residual bend. These settling motions remain connected to the anchored body. Leaves in the distant trees can sway subtly without obscuring the silhouette. A continuous wind rush grows and fades with the gust, with light silk flutter and hair rustle nearby. The character remains silent and in the same standing location through the final frame.
+
+overall_soundscape:
+Outdoor air and a wind rush that grows and fades, with nearby silk flutter and material rustle. No spoken dialogue.
+
+non_diegetic_music:
+N/A

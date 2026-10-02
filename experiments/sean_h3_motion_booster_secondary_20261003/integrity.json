@@ -1,0 +1,196 @@
+{
+  "owner": "Sean",
+  "method": "All frames decoded; white side columns require >98% pixels in all channels >245; black requires >98% pixels in all channels <10. Band removal width is a frame-content proxy, not a semantic quality score. Sampling timing from final 20/20 progress, separate from whole-job loading/encoding time. Audio peak measured after decoding AAC, not a listening evaluation.",
+  "results": [
+    {
+      "case": "wind_base",
+      "frames": 192,
+      "fps": 24.0,
+      "video_seconds": 8.0,
+      "size": [
+        768,
+        448
+      ],
+      "max_white_side_band_px": [
+        0,
+        0
+      ],
+      "black_side_band_range_px": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "median_black_side_band_px": [
+        0.0,
+        0.0
+      ],
+      "nonband_content_width_range_px": [
+        768,
+        768
+      ],
+      "audio_seconds": 8.0,
+      "decoded_audio_peak": 0.03994616121053696,
+      "near_full_scale_fraction": 0.0,
+      "sampling_progress": "02:01<00:00,  6.08s/it",
+      "decode": "ffmpeg full decode passed",
+      "unmatched_lora_warnings": 0
+    },
+    {
+      "case": "wind_motion",
+      "frames": 192,
+      "fps": 24.0,
+      "video_seconds": 8.0,
+      "size": [
+        768,
+        448
+      ],
+      "max_white_side_band_px": [
+        0,
+        0
+      ],
+      "black_side_band_range_px": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "median_black_side_band_px": [
+        0.0,
+        0.0
+      ],
+      "nonband_content_width_range_px": [
+        768,
+        768
+      ],
+      "audio_seconds": 8.0,
+      "decoded_audio_peak": 0.09079569578170776,
+      "near_full_scale_fraction": 0.0,
+      "sampling_progress": "02:02<00:00,  6.12s/it",
+      "decode": "ffmpeg full decode passed",
+      "unmatched_lora_warnings": 0
+    },
+    {
+      "case": "move_base",
+      "frames": 192,
+      "fps": 24.0,
+      "video_seconds": 8.0,
+      "size": [
+        768,
+        448
+      ],
+      "max_white_side_band_px": [
+        0,
+        0
+      ],
+      "black_side_band_range_px": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "median_black_side_band_px": [
+        0.0,
+        0.0
+      ],
+      "nonband_content_width_range_px": [
+        768,
+        768
+      ],
+      "audio_seconds": 8.0,
+      "decoded_audio_peak": 0.731599748134613,
+      "near_full_scale_fraction": 0.0,
+      "sampling_progress": "02:02<00:00,  6.11s/it",
+      "decode": "ffmpeg full decode passed",
+      "unmatched_lora_warnings": 0
+    },
+    {
+      "case": "move_motion",
+      "frames": 192,
+      "fps": 24.0,
+      "video_seconds": 8.0,
+      "size": [
+        768,
+        448
+      ],
+      "max_white_side_band_px": [
+        0,
+        0
+      ],
+      "black_side_band_range_px": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "median_black_side_band_px": [
+        0.0,
+        0.0
+      ],
+      "nonband_content_width_range_px": [
+        768,
+        768
+      ],
+      "audio_seconds": 8.0,
+      "decoded_audio_peak": 0.667970597743988,
+      "near_full_scale_fraction": 0.0,
+      "sampling_progress": "02:02<00:00,  6.13s/it",
+      "decode": "ffmpeg full decode passed",
+      "unmatched_lora_warnings": 0
+    },
+    {
+      "case": "move_motion10",
+      "frames": 192,
+      "fps": 24.0,
+      "video_seconds": 8.0,
+      "size": [
+        768,
+        448
+      ],
+      "max_white_side_band_px": [
+        0,
+        0
+      ],
+      "black_side_band_range_px": [
+        [
+          150,
+          150
+        ],
+        [
+          151,
+          151
+        ]
+      ],
+      "median_black_side_band_px": [
+        151.0,
+        150.0
+      ],
+      "nonband_content_width_range_px": [
+        466,
+        468
+      ],
+      "audio_seconds": 8.0,
+      "decoded_audio_peak": 0.693476140499115,
+      "near_full_scale_fraction": 0.0,
+      "sampling_progress": "02:02<00:00,  6.10s/it",
+      "decode": "ffmpeg full decode passed",
+      "unmatched_lora_warnings": 0
+    }
+  ]
+}
