@@ -1,0 +1,177 @@
+{
+  "owner": "Sean",
+  "experiment": "H3 Motion Booster V0.2 REF2VA matched strength comparison",
+  "status": "tested_waiting_user_review",
+  "model_version_id": 3246346,
+  "model_file": "ref2VA_Motion_v2.safetensors",
+  "expected_sha256": "B48CF96EBB14985789528449FE61985BABF786FEB658740A82A88AC685167FD9",
+  "trigger": "dynv2",
+  "parameters": {
+    "mode": "Ref2VA",
+    "width": 768,
+    "height": 448,
+    "frames": 124,
+    "fps": 24,
+    "expected_duration_seconds": 5.166666666666667,
+    "steps": 20,
+    "sampler": "res_multistep",
+    "scheduler": "simple",
+    "guider": "BasicGuider",
+    "denoise": 1.0,
+    "seed": 2026100201,
+    "ref_image_size": "match",
+    "acceleration_lora": null,
+    "attention": "native",
+    "video_vae": "minimax_h3_video_vae_int8_convrot.safetensors"
+  },
+  "reference": {
+    "experiment_file": "reference.png",
+    "comfy_input": "ref_red_mage.png",
+    "sha256": "c9b6b2a7a7ffa34a1c0b3b9c7ec250aab14d5ae96b5667ce9762e77145496599"
+  },
+  "prompt": "prompt.txt",
+  "comparison_rule": "Identical prompt (including dynv2), image, seed, sampler, steps and resolution; vary only motion LoRA strength. No accelerated LoRA stacking. Single seed exploratory result, not a general quality ranking.",
+  "cases": [
+    {
+      "id": "baseline",
+      "motion_lora_strength": 0,
+      "workflow": "workflows/baseline.json",
+      "status": "success",
+      "prompt_id": "2198e1bd-1d6a-46d6-b2bf-65f927d61f34",
+      "submitted_at": 1790955926.1309106,
+      "completed_at": 1790956044.7958145,
+      "output": "baseline.mp4",
+      "comfy_seconds": 94.296,
+      "sha256": "6d38107fce09a025a8da2b1ec1b966c237a88cb142ec5365cb3a5fd87f1c1d91"
+    },
+    {
+      "id": "motion_07",
+      "motion_lora_strength": 0.7,
+      "workflow": "workflows/motion_07.json",
+      "status": "success",
+      "prompt_id": "c2832df8-f516-4182-8b8f-b2676b8d14ed",
+      "submitted_at": 1790956808.714779,
+      "completed_at": 1790956876.4435565,
+      "peak_vram_mib": 23530,
+      "output": "motion_07.mp4",
+      "sha256": "9115bdc9b4e70864e766291001a06c6fc4d705fb8602d988fdd3706af98fa0d7",
+      "comfy_seconds": 67.257,
+      "output_cleaned": true,
+      "lora_unmatched_log_count": 0,
+      "lora_matching_status": "no_unmatched_key_warnings_in_runtime_log"
+    },
+    {
+      "id": "motion_08",
+      "motion_lora_strength": 0.8,
+      "workflow": "workflows/motion_08.json",
+      "status": "success",
+      "prompt_id": "0e80c13a-75c3-49ae-a73b-27a5c6725f4c",
+      "submitted_at": 1790956876.7101634,
+      "completed_at": 1790956944.037739,
+      "peak_vram_mib": 23530,
+      "output": "motion_08.mp4",
+      "sha256": "4a752b9ba1702157bce27174d8c9577fdb3f01d66577575f6bda5333310049f6",
+      "comfy_seconds": 66.89,
+      "output_cleaned": true,
+      "lora_unmatched_log_count": 0,
+      "lora_matching_status": "no_unmatched_key_warnings_in_runtime_log"
+    }
+  ],
+  "results": [
+    {
+      "case": "baseline",
+      "status": "success",
+      "output": "baseline.mp4",
+      "comfy_seconds": 94.296,
+      "peak_vram_mib": 23038
+    },
+    {
+      "case": "motion_07",
+      "status": "success",
+      "output": "motion_07.mp4",
+      "comfy_seconds": 67.257,
+      "peak_vram_mib": 23530
+    },
+    {
+      "case": "motion_08",
+      "status": "success",
+      "output": "motion_08.mp4",
+      "comfy_seconds": 66.89,
+      "peak_vram_mib": 23530
+    }
+  ],
+  "gpu_lease_id": "bc2e36d7-fde8-4b8a-b580-dbc9d5d3d642",
+  "baseline_peak_vram_mib": 23038,
+  "runtime": {
+    "os": "linux",
+    "ram_total": 62138269696,
+    "ram_free": 13746421760,
+    "comfyui_version": "0.37.0",
+    "required_frontend_version": "1.52.7",
+    "installed_templates_version": "0.11.66",
+    "required_templates_version": "0.11.66",
+    "comfy_package_versions": [
+      {
+        "name": "comfyui-frontend-package",
+        "installed": "1.52.7",
+        "required": "1.52.7"
+      },
+      {
+        "name": "comfyui-workflow-templates",
+        "installed": "0.11.66",
+        "required": "0.11.66"
+      },
+      {
+        "name": "comfyui-embedded-docs",
+        "installed": "0.5.12",
+        "required": "0.5.12"
+      },
+      {
+        "name": "comfy-kitchen",
+        "installed": "0.2.35",
+        "required": "0.2.35"
+      },
+      {
+        "name": "comfy-aimdo",
+        "installed": "0.5.5",
+        "required": "0.5.5"
+      }
+    ],
+    "python_version": "3.13.13 | packaged by Anaconda, Inc. | (main, Apr 14 2026, 06:19:41) [GCC 14.3.0]",
+    "pytorch_version": "2.13.0+cu130",
+    "embedded_python": false,
+    "deploy_environment": "local-git",
+    "argv": [
+      "main.py",
+      "--enable-assets",
+      "--enable-cors-header",
+      "--fast",
+      "fp16_accumulation"
+    ]
+  },
+  "baseline_output_cleaned": true,
+  "gpu_lease_released": true,
+  "qc": "QC.md",
+  "model_download": {
+    "authenticated": true,
+    "sha256_verified": true,
+    "bytes": 155110288,
+    "path": "/home/sean/projects/ComfyUI/models/loras/ref2VA_Motion_v2.safetensors"
+  },
+  "completed_at_iso": "2026-10-03T00:05:02.111896+08:00",
+  "artifacts": {
+    "comparison_video": "comparison.mp4",
+    "comparison_contact": "comparison_contact.png",
+    "motion_metrics": "motion_metrics.json",
+    "audio_levels": "audio_levels.json",
+    "native_lora_parser": "lora_native_parser_check.json",
+    "qc": "QC.md"
+  },
+  "quality_summary": "Single-seed side-step case: both LoRA strengths produce white side margins; centroid spread rises ~8% at 0.7 and ~26% at 0.8; this is not evidence of general quality improvement. Keep baseline unchanged.",
+  "validation": {
+    "video_integrity": "All 3 hashes, 768x448 / 124 frames / 24fps and audio streams verified",
+    "native_lora_parser": "208/208 parsed; no unmatched runtime warnings",
+    "python_compile": "run_cases.py and analyze.py pass",
+    "docs_check": "Failed on pre-existing docs/47_h3_reference_workbench_redesign.md INDEX coverage; new references and skill checks passed"
+  }
+}

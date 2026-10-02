@@ -1,0 +1,40 @@
+{
+  "owner": "Sean",
+  "filename": "ref2VA_Motion_v2.safetensors",
+  "bytes": 155110288,
+  "sha256": "b48cf96ebb14985789528449fe61985babf786feb658740a82a88ac685167fd9",
+  "tensor_count": 416,
+  "tensor_keys_preview": [
+    "diffusion_model.blocks.0.attn.out_proj.lora_A.weight",
+    "diffusion_model.blocks.0.attn.out_proj.lora_B.weight",
+    "diffusion_model.blocks.0.attn.qkv_proj.lora_A.weight",
+    "diffusion_model.blocks.0.attn.qkv_proj.lora_B.weight",
+    "diffusion_model.blocks.0.mlp.fc1.lora_A.weight",
+    "diffusion_model.blocks.0.mlp.fc1.lora_B.weight",
+    "diffusion_model.blocks.0.mlp.fc2.lora_A.weight",
+    "diffusion_model.blocks.0.mlp.fc2.lora_B.weight",
+    "diffusion_model.blocks.1.attn.out_proj.lora_A.weight",
+    "diffusion_model.blocks.1.attn.out_proj.lora_B.weight",
+    "diffusion_model.blocks.1.attn.qkv_proj.lora_A.weight",
+    "diffusion_model.blocks.1.attn.qkv_proj.lora_B.weight",
+    "diffusion_model.blocks.1.mlp.fc1.lora_A.weight",
+    "diffusion_model.blocks.1.mlp.fc1.lora_B.weight",
+    "diffusion_model.blocks.1.mlp.fc2.lora_A.weight",
+    "diffusion_model.blocks.1.mlp.fc2.lora_B.weight",
+    "diffusion_model.blocks.10.attn.out_proj.lora_A.weight",
+    "diffusion_model.blocks.10.attn.out_proj.lora_B.weight",
+    "diffusion_model.blocks.10.attn.qkv_proj.lora_A.weight",
+    "diffusion_model.blocks.10.attn.qkv_proj.lora_B.weight"
+  ],
+  "metadata": {
+    "training_info": "{\"step\": 2000, \"epoch\": 18}",
+    "software": "{\"name\": \"ai-toolkit\", \"repo\": \"https://github.com/ostris/ai-toolkit\", \"version\": \"1.18.2\"}",
+    "ss_output_name": "ref_dov2",
+    "sshs_model_hash": "514194d4d3ea9552a3798a630706a76cc56f130ecdc8fdcbe104562ec7e09f29",
+    "version": "1.0",
+    "ss_base_model_version": "minimax_h3_ref2va",
+    "format": "pt",
+    "sshs_legacy_hash": "b5124c08",
+    "name": "ref_dov2"
+  }
+}

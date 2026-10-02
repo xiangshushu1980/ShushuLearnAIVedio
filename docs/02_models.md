@@ -1,6 +1,7 @@
 # 02 模型与下载
 
 > 最后更新：2026-08-12 — 全面盘点（ComfyUI v0.32.0 更新时发现文档与磁盘脱节，逐目录核对修正）
+> Owner: Sean。2026-10-03 增补 Motion Booster REF2VA 与当前 Civitai 凭证入口；其他条目的历史盘点日期不变。
 > ⚠️ 本清单以磁盘实况为准。新增/删除模型后请同步更新本文件。
 
 ## 磁盘实况（2026-08-12 盘点）
@@ -24,6 +25,7 @@ H3 LoRA（models/loras/）：
 | minimax_h3_turbo_v4_step600_ema.safetensors | 744MB | **成片档主力**（v4-600EMA 8步@1024，用户决策 2026-08-11）|
 | minimax_h3_turbo_4step_ckpt500_pruned_comfyui.safetensors | 592MB | 4 步试点 ckpt500（淘汰档）|
 | minimax_h3_turbo_4step_ema_ckpt850_pruned_comfyui.safetensors | 592MB | 4 步试点 ckpt850（淘汰档）|
+| ref2VA_Motion_v2.safetensors | 147.9 MiB | Motion Booster V0.2 REF2VA；Civitai 2840146 / version 3246346；触发 `dynv2`；SHA256、原生解析与生成已验证；0.7/0.8 单 seed 侧步均出现白边，暂不替换基线；[实验与 QC](../experiments/sean_h3_motion_booster_ref2va_20261002/README.md) |
 
 ### 生图（ANIMA + KREA）
 | 文件 | 位置 | 大小 | 用途 |
@@ -105,7 +107,7 @@ H3 LoRA（models/loras/）：
 - KREA 2：HF 搜 `krea2_turbo_fp8`；编码器 `qwen3vl_4b_fp8_scaled`
 
 ### CivitAI（需 token）
-- 角色/风格 LoRA：civitai.com 搜索，token 在 `.mcp.json`（**pi MCP 不读新增 env → 用 curl 绕行下载**，见 SKILL troubleshooting）
+- 角色/风格 LoRA：civitai.com 搜索。当前 Civitai API Key 保存于 `/home/sean/.config/civitai/api-key`（权限 `600`），下载时从文件读取；密钥值不进入命令行参数、日志或 Git。作者限制登录下载的文件需认证，公开模型元数据可访问不代表文件可匿名下载。
 
 #### Civitai.com / Civitai.red 选择说明（2026-09-18）
 - `civitai.red` 是 Civitai 的成人/自由内容入口，不是专门的风格、法术或暗黑奇幻模型库；普通风格、魔法特效、奇幻环境仍优先按底模兼容性和模型实测选择。

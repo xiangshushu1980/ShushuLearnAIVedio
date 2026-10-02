@@ -1,0 +1,3335 @@
+{
+  "owner": "Sean",
+  "method": "Header-only native target name and matrix shape comparison; runtime patch application still required",
+  "targets": [
+    {
+      "target": "blocks.0.attn.out_proj.weight",
+      "a_shape": [
+        16,
+        7168
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        7168
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.0.attn.qkv_proj.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        21504,
+        16
+      ],
+      "target_shape": [
+        21504,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.0.mlp.fc1.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        28672,
+        16
+      ],
+      "target_shape": [
+        28672,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.0.mlp.fc2.weight",
+      "a_shape": [
+        16,
+        14336
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        14336
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.1.attn.out_proj.weight",
+      "a_shape": [
+        16,
+        7168
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        7168
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.1.attn.qkv_proj.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        21504,
+        16
+      ],
+      "target_shape": [
+        21504,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.1.mlp.fc1.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        28672,
+        16
+      ],
+      "target_shape": [
+        28672,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.1.mlp.fc2.weight",
+      "a_shape": [
+        16,
+        14336
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        14336
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.10.attn.out_proj.weight",
+      "a_shape": [
+        16,
+        7168
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        7168
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.10.attn.qkv_proj.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        21504,
+        16
+      ],
+      "target_shape": [
+        21504,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.10.mlp.fc1.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        28672,
+        16
+      ],
+      "target_shape": [
+        28672,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.10.mlp.fc2.weight",
+      "a_shape": [
+        16,
+        14336
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        14336
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.11.attn.out_proj.weight",
+      "a_shape": [
+        16,
+        7168
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        7168
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.11.attn.qkv_proj.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        21504,
+        16
+      ],
+      "target_shape": [
+        21504,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.11.mlp.fc1.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        28672,
+        16
+      ],
+      "target_shape": [
+        28672,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.11.mlp.fc2.weight",
+      "a_shape": [
+        16,
+        14336
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        14336
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.12.attn.out_proj.weight",
+      "a_shape": [
+        16,
+        7168
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        7168
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.12.attn.qkv_proj.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        21504,
+        16
+      ],
+      "target_shape": [
+        21504,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.12.mlp.fc1.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        28672,
+        16
+      ],
+      "target_shape": [
+        28672,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.12.mlp.fc2.weight",
+      "a_shape": [
+        16,
+        14336
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        14336
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.13.attn.out_proj.weight",
+      "a_shape": [
+        16,
+        7168
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        7168
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.13.attn.qkv_proj.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        21504,
+        16
+      ],
+      "target_shape": [
+        21504,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.13.mlp.fc1.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        28672,
+        16
+      ],
+      "target_shape": [
+        28672,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.13.mlp.fc2.weight",
+      "a_shape": [
+        16,
+        14336
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        14336
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.14.attn.out_proj.weight",
+      "a_shape": [
+        16,
+        7168
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        7168
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.14.attn.qkv_proj.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        21504,
+        16
+      ],
+      "target_shape": [
+        21504,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.14.mlp.fc1.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        28672,
+        16
+      ],
+      "target_shape": [
+        28672,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.14.mlp.fc2.weight",
+      "a_shape": [
+        16,
+        14336
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        14336
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.15.attn.out_proj.weight",
+      "a_shape": [
+        16,
+        7168
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        7168
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.15.attn.qkv_proj.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        21504,
+        16
+      ],
+      "target_shape": [
+        21504,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.15.mlp.fc1.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        28672,
+        16
+      ],
+      "target_shape": [
+        28672,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.15.mlp.fc2.weight",
+      "a_shape": [
+        16,
+        14336
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        14336
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.16.attn.out_proj.weight",
+      "a_shape": [
+        16,
+        7168
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        7168
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.16.attn.qkv_proj.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        21504,
+        16
+      ],
+      "target_shape": [
+        21504,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.16.mlp.fc1.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        28672,
+        16
+      ],
+      "target_shape": [
+        28672,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.16.mlp.fc2.weight",
+      "a_shape": [
+        16,
+        14336
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        14336
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.17.attn.out_proj.weight",
+      "a_shape": [
+        16,
+        7168
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        7168
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.17.attn.qkv_proj.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        21504,
+        16
+      ],
+      "target_shape": [
+        21504,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.17.mlp.fc1.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        28672,
+        16
+      ],
+      "target_shape": [
+        28672,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.17.mlp.fc2.weight",
+      "a_shape": [
+        16,
+        14336
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        14336
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.18.attn.out_proj.weight",
+      "a_shape": [
+        16,
+        7168
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        7168
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.18.attn.qkv_proj.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        21504,
+        16
+      ],
+      "target_shape": [
+        21504,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.18.mlp.fc1.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        28672,
+        16
+      ],
+      "target_shape": [
+        28672,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.18.mlp.fc2.weight",
+      "a_shape": [
+        16,
+        14336
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        14336
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.19.attn.out_proj.weight",
+      "a_shape": [
+        16,
+        7168
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        7168
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.19.attn.qkv_proj.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        21504,
+        16
+      ],
+      "target_shape": [
+        21504,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.19.mlp.fc1.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        28672,
+        16
+      ],
+      "target_shape": [
+        28672,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.19.mlp.fc2.weight",
+      "a_shape": [
+        16,
+        14336
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        14336
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.2.attn.out_proj.weight",
+      "a_shape": [
+        16,
+        7168
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        7168
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.2.attn.qkv_proj.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        21504,
+        16
+      ],
+      "target_shape": [
+        21504,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.2.mlp.fc1.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        28672,
+        16
+      ],
+      "target_shape": [
+        28672,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.2.mlp.fc2.weight",
+      "a_shape": [
+        16,
+        14336
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        14336
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.20.attn.out_proj.weight",
+      "a_shape": [
+        16,
+        7168
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        7168
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.20.attn.qkv_proj.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        21504,
+        16
+      ],
+      "target_shape": [
+        21504,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.20.mlp.fc1.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        28672,
+        16
+      ],
+      "target_shape": [
+        28672,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.20.mlp.fc2.weight",
+      "a_shape": [
+        16,
+        14336
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        14336
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.21.attn.out_proj.weight",
+      "a_shape": [
+        16,
+        7168
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        7168
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.21.attn.qkv_proj.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        21504,
+        16
+      ],
+      "target_shape": [
+        21504,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.21.mlp.fc1.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        28672,
+        16
+      ],
+      "target_shape": [
+        28672,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.21.mlp.fc2.weight",
+      "a_shape": [
+        16,
+        14336
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        14336
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.22.attn.out_proj.weight",
+      "a_shape": [
+        16,
+        7168
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        7168
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.22.attn.qkv_proj.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        21504,
+        16
+      ],
+      "target_shape": [
+        21504,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.22.mlp.fc1.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        28672,
+        16
+      ],
+      "target_shape": [
+        28672,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.22.mlp.fc2.weight",
+      "a_shape": [
+        16,
+        14336
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        14336
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.23.attn.out_proj.weight",
+      "a_shape": [
+        16,
+        7168
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        7168
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.23.attn.qkv_proj.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        21504,
+        16
+      ],
+      "target_shape": [
+        21504,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.23.mlp.fc1.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        28672,
+        16
+      ],
+      "target_shape": [
+        28672,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.23.mlp.fc2.weight",
+      "a_shape": [
+        16,
+        14336
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        14336
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.24.attn.out_proj.weight",
+      "a_shape": [
+        16,
+        7168
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        7168
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.24.attn.qkv_proj.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        21504,
+        16
+      ],
+      "target_shape": [
+        21504,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.24.mlp.fc1.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        28672,
+        16
+      ],
+      "target_shape": [
+        28672,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.24.mlp.fc2.weight",
+      "a_shape": [
+        16,
+        14336
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        14336
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.25.attn.out_proj.weight",
+      "a_shape": [
+        16,
+        7168
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        7168
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.25.attn.qkv_proj.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        21504,
+        16
+      ],
+      "target_shape": [
+        21504,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.25.mlp.fc1.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        28672,
+        16
+      ],
+      "target_shape": [
+        28672,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.25.mlp.fc2.weight",
+      "a_shape": [
+        16,
+        14336
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        14336
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.26.attn.out_proj.weight",
+      "a_shape": [
+        16,
+        7168
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        7168
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.26.attn.qkv_proj.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        21504,
+        16
+      ],
+      "target_shape": [
+        21504,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.26.mlp.fc1.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        28672,
+        16
+      ],
+      "target_shape": [
+        28672,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.26.mlp.fc2.weight",
+      "a_shape": [
+        16,
+        14336
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        14336
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.27.attn.out_proj.weight",
+      "a_shape": [
+        16,
+        7168
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        7168
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.27.attn.qkv_proj.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        21504,
+        16
+      ],
+      "target_shape": [
+        21504,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.27.mlp.fc1.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        28672,
+        16
+      ],
+      "target_shape": [
+        28672,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.27.mlp.fc2.weight",
+      "a_shape": [
+        16,
+        14336
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        14336
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.28.attn.out_proj.weight",
+      "a_shape": [
+        16,
+        7168
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        7168
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.28.attn.qkv_proj.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        21504,
+        16
+      ],
+      "target_shape": [
+        21504,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.28.mlp.fc1.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        28672,
+        16
+      ],
+      "target_shape": [
+        28672,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.28.mlp.fc2.weight",
+      "a_shape": [
+        16,
+        14336
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        14336
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.29.attn.out_proj.weight",
+      "a_shape": [
+        16,
+        7168
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        7168
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.29.attn.qkv_proj.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        21504,
+        16
+      ],
+      "target_shape": [
+        21504,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.29.mlp.fc1.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        28672,
+        16
+      ],
+      "target_shape": [
+        28672,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.29.mlp.fc2.weight",
+      "a_shape": [
+        16,
+        14336
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        14336
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.3.attn.out_proj.weight",
+      "a_shape": [
+        16,
+        7168
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        7168
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.3.attn.qkv_proj.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        21504,
+        16
+      ],
+      "target_shape": [
+        21504,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.3.mlp.fc1.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        28672,
+        16
+      ],
+      "target_shape": [
+        28672,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.3.mlp.fc2.weight",
+      "a_shape": [
+        16,
+        14336
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        14336
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.30.attn.out_proj.weight",
+      "a_shape": [
+        16,
+        7168
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        7168
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.30.attn.qkv_proj.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        21504,
+        16
+      ],
+      "target_shape": [
+        21504,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.30.mlp.fc1.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        28672,
+        16
+      ],
+      "target_shape": [
+        28672,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.30.mlp.fc2.weight",
+      "a_shape": [
+        16,
+        14336
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        14336
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.31.attn.out_proj.weight",
+      "a_shape": [
+        16,
+        7168
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        7168
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.31.attn.qkv_proj.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        21504,
+        16
+      ],
+      "target_shape": [
+        21504,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.31.mlp.fc1.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        28672,
+        16
+      ],
+      "target_shape": [
+        28672,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.31.mlp.fc2.weight",
+      "a_shape": [
+        16,
+        14336
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        14336
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.32.attn.out_proj.weight",
+      "a_shape": [
+        16,
+        7168
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        7168
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.32.attn.qkv_proj.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        21504,
+        16
+      ],
+      "target_shape": [
+        21504,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.32.mlp.fc1.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        28672,
+        16
+      ],
+      "target_shape": [
+        28672,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.32.mlp.fc2.weight",
+      "a_shape": [
+        16,
+        14336
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        14336
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.33.attn.out_proj.weight",
+      "a_shape": [
+        16,
+        7168
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        7168
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.33.attn.qkv_proj.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        21504,
+        16
+      ],
+      "target_shape": [
+        21504,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.33.mlp.fc1.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        28672,
+        16
+      ],
+      "target_shape": [
+        28672,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.33.mlp.fc2.weight",
+      "a_shape": [
+        16,
+        14336
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        14336
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.34.attn.out_proj.weight",
+      "a_shape": [
+        16,
+        7168
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        7168
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.34.attn.qkv_proj.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        21504,
+        16
+      ],
+      "target_shape": [
+        21504,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.34.mlp.fc1.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        28672,
+        16
+      ],
+      "target_shape": [
+        28672,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.34.mlp.fc2.weight",
+      "a_shape": [
+        16,
+        14336
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        14336
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.35.attn.out_proj.weight",
+      "a_shape": [
+        16,
+        7168
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        7168
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.35.attn.qkv_proj.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        21504,
+        16
+      ],
+      "target_shape": [
+        21504,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.35.mlp.fc1.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        28672,
+        16
+      ],
+      "target_shape": [
+        28672,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.35.mlp.fc2.weight",
+      "a_shape": [
+        16,
+        14336
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        14336
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.36.attn.out_proj.weight",
+      "a_shape": [
+        16,
+        7168
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        7168
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.36.attn.qkv_proj.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        21504,
+        16
+      ],
+      "target_shape": [
+        21504,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.36.mlp.fc1.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        28672,
+        16
+      ],
+      "target_shape": [
+        28672,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.36.mlp.fc2.weight",
+      "a_shape": [
+        16,
+        14336
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        14336
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.37.attn.out_proj.weight",
+      "a_shape": [
+        16,
+        7168
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        7168
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.37.attn.qkv_proj.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        21504,
+        16
+      ],
+      "target_shape": [
+        21504,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.37.mlp.fc1.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        28672,
+        16
+      ],
+      "target_shape": [
+        28672,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.37.mlp.fc2.weight",
+      "a_shape": [
+        16,
+        14336
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        14336
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.38.attn.out_proj.weight",
+      "a_shape": [
+        16,
+        7168
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        7168
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.38.attn.qkv_proj.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        21504,
+        16
+      ],
+      "target_shape": [
+        21504,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.38.mlp.fc1.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        28672,
+        16
+      ],
+      "target_shape": [
+        28672,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.38.mlp.fc2.weight",
+      "a_shape": [
+        16,
+        14336
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        14336
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.39.attn.out_proj.weight",
+      "a_shape": [
+        16,
+        7168
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        7168
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.39.attn.qkv_proj.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        21504,
+        16
+      ],
+      "target_shape": [
+        21504,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.39.mlp.fc1.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        28672,
+        16
+      ],
+      "target_shape": [
+        28672,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.39.mlp.fc2.weight",
+      "a_shape": [
+        16,
+        14336
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        14336
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.4.attn.out_proj.weight",
+      "a_shape": [
+        16,
+        7168
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        7168
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.4.attn.qkv_proj.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        21504,
+        16
+      ],
+      "target_shape": [
+        21504,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.4.mlp.fc1.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        28672,
+        16
+      ],
+      "target_shape": [
+        28672,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.4.mlp.fc2.weight",
+      "a_shape": [
+        16,
+        14336
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        14336
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.40.attn.out_proj.weight",
+      "a_shape": [
+        16,
+        7168
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        7168
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.40.attn.qkv_proj.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        21504,
+        16
+      ],
+      "target_shape": [
+        21504,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.40.mlp.fc1.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        28672,
+        16
+      ],
+      "target_shape": [
+        28672,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.40.mlp.fc2.weight",
+      "a_shape": [
+        16,
+        14336
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        14336
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.41.attn.out_proj.weight",
+      "a_shape": [
+        16,
+        7168
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        7168
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.41.attn.qkv_proj.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        21504,
+        16
+      ],
+      "target_shape": [
+        21504,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.41.mlp.fc1.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        28672,
+        16
+      ],
+      "target_shape": [
+        28672,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.41.mlp.fc2.weight",
+      "a_shape": [
+        16,
+        14336
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        14336
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.42.attn.out_proj.weight",
+      "a_shape": [
+        16,
+        7168
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        7168
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.42.attn.qkv_proj.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        21504,
+        16
+      ],
+      "target_shape": [
+        21504,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.42.mlp.fc1.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        28672,
+        16
+      ],
+      "target_shape": [
+        28672,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.42.mlp.fc2.weight",
+      "a_shape": [
+        16,
+        14336
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        14336
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.43.attn.out_proj.weight",
+      "a_shape": [
+        16,
+        7168
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        7168
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.43.attn.qkv_proj.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        21504,
+        16
+      ],
+      "target_shape": [
+        21504,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.43.mlp.fc1.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        28672,
+        16
+      ],
+      "target_shape": [
+        28672,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.43.mlp.fc2.weight",
+      "a_shape": [
+        16,
+        14336
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        14336
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.44.attn.out_proj.weight",
+      "a_shape": [
+        16,
+        7168
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        7168
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.44.attn.qkv_proj.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        21504,
+        16
+      ],
+      "target_shape": [
+        21504,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.44.mlp.fc1.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        28672,
+        16
+      ],
+      "target_shape": [
+        28672,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.44.mlp.fc2.weight",
+      "a_shape": [
+        16,
+        14336
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        14336
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.45.attn.out_proj.weight",
+      "a_shape": [
+        16,
+        7168
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        7168
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.45.attn.qkv_proj.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        21504,
+        16
+      ],
+      "target_shape": [
+        21504,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.45.mlp.fc1.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        28672,
+        16
+      ],
+      "target_shape": [
+        28672,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.45.mlp.fc2.weight",
+      "a_shape": [
+        16,
+        14336
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        14336
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.46.attn.out_proj.weight",
+      "a_shape": [
+        16,
+        7168
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        7168
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.46.attn.qkv_proj.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        21504,
+        16
+      ],
+      "target_shape": [
+        21504,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.46.mlp.fc1.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        28672,
+        16
+      ],
+      "target_shape": [
+        28672,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.46.mlp.fc2.weight",
+      "a_shape": [
+        16,
+        14336
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        14336
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.47.attn.out_proj.weight",
+      "a_shape": [
+        16,
+        7168
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        7168
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.47.attn.qkv_proj.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        21504,
+        16
+      ],
+      "target_shape": [
+        21504,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.47.mlp.fc1.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        28672,
+        16
+      ],
+      "target_shape": [
+        28672,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.47.mlp.fc2.weight",
+      "a_shape": [
+        16,
+        14336
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        14336
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.48.attn.out_proj.weight",
+      "a_shape": [
+        16,
+        7168
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        7168
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.48.attn.qkv_proj.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        21504,
+        16
+      ],
+      "target_shape": [
+        21504,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.48.mlp.fc1.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        28672,
+        16
+      ],
+      "target_shape": [
+        28672,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.48.mlp.fc2.weight",
+      "a_shape": [
+        16,
+        14336
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        14336
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.49.attn.out_proj.weight",
+      "a_shape": [
+        16,
+        7168
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        7168
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.49.attn.qkv_proj.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        21504,
+        16
+      ],
+      "target_shape": [
+        21504,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.49.mlp.fc1.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        28672,
+        16
+      ],
+      "target_shape": [
+        28672,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.49.mlp.fc2.weight",
+      "a_shape": [
+        16,
+        14336
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        14336
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.5.attn.out_proj.weight",
+      "a_shape": [
+        16,
+        7168
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        7168
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.5.attn.qkv_proj.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        21504,
+        16
+      ],
+      "target_shape": [
+        21504,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.5.mlp.fc1.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        28672,
+        16
+      ],
+      "target_shape": [
+        28672,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.5.mlp.fc2.weight",
+      "a_shape": [
+        16,
+        14336
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        14336
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.6.attn.out_proj.weight",
+      "a_shape": [
+        16,
+        7168
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        7168
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.6.attn.qkv_proj.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        21504,
+        16
+      ],
+      "target_shape": [
+        21504,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.6.mlp.fc1.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        28672,
+        16
+      ],
+      "target_shape": [
+        28672,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.6.mlp.fc2.weight",
+      "a_shape": [
+        16,
+        14336
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        14336
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.7.attn.out_proj.weight",
+      "a_shape": [
+        16,
+        7168
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        7168
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.7.attn.qkv_proj.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        21504,
+        16
+      ],
+      "target_shape": [
+        21504,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.7.mlp.fc1.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        28672,
+        16
+      ],
+      "target_shape": [
+        28672,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.7.mlp.fc2.weight",
+      "a_shape": [
+        16,
+        14336
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        14336
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.8.attn.out_proj.weight",
+      "a_shape": [
+        16,
+        7168
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        7168
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.8.attn.qkv_proj.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        21504,
+        16
+      ],
+      "target_shape": [
+        21504,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.8.mlp.fc1.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        28672,
+        16
+      ],
+      "target_shape": [
+        28672,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.8.mlp.fc2.weight",
+      "a_shape": [
+        16,
+        14336
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        14336
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.9.attn.out_proj.weight",
+      "a_shape": [
+        16,
+        7168
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        7168
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.9.attn.qkv_proj.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        21504,
+        16
+      ],
+      "target_shape": [
+        21504,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.9.mlp.fc1.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        28672,
+        16
+      ],
+      "target_shape": [
+        28672,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "blocks.9.mlp.fc2.weight",
+      "a_shape": [
+        16,
+        14336
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        14336
+      ],
+      "compatible": true
+    },
+    {
+      "target": "token_refiner.blocks.0.attn.out_proj.weight",
+      "a_shape": [
+        16,
+        7168
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        7168
+      ],
+      "compatible": true
+    },
+    {
+      "target": "token_refiner.blocks.0.attn.qkv_proj.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        21504,
+        16
+      ],
+      "target_shape": [
+        21504,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "token_refiner.blocks.0.mlp.fc1.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        28672,
+        16
+      ],
+      "target_shape": [
+        28672,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "token_refiner.blocks.0.mlp.fc2.weight",
+      "a_shape": [
+        16,
+        14336
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        14336
+      ],
+      "compatible": true
+    },
+    {
+      "target": "token_refiner.blocks.1.attn.out_proj.weight",
+      "a_shape": [
+        16,
+        7168
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        7168
+      ],
+      "compatible": true
+    },
+    {
+      "target": "token_refiner.blocks.1.attn.qkv_proj.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        21504,
+        16
+      ],
+      "target_shape": [
+        21504,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "token_refiner.blocks.1.mlp.fc1.weight",
+      "a_shape": [
+        16,
+        5376
+      ],
+      "b_shape": [
+        28672,
+        16
+      ],
+      "target_shape": [
+        28672,
+        5376
+      ],
+      "compatible": true
+    },
+    {
+      "target": "token_refiner.blocks.1.mlp.fc2.weight",
+      "a_shape": [
+        16,
+        14336
+      ],
+      "b_shape": [
+        5376,
+        16
+      ],
+      "target_shape": [
+        5376,
+        14336
+      ],
+      "compatible": true
+    }
+  ],
+  "compatible_count": 208
+}

@@ -1,0 +1,20 @@
+subject_definitions:
+<Subject 1> is the character defined by <Picture 1>. <Picture 1> is the authoritative reference for this subject's identity and visual appearance, including clothing and the held staff.
+
+summary:
+[reference generation] Generate a 5.167-second continuous full-body shot of <Subject 1> performing fast repeated lateral training steps while holding the staff. Use the source image for character identity and appearance; the studio floor and movement are newly generated.
+
+retention_analysis:
+<Subject 1> (appears in [Shot 1]): fully_preserved - Preserve the source character's identity, clothing, hairstyle, equipment, and visual appearance throughout the exercise.
+
+detailed_description:
+Realistic fantasy character rendering with clearly readable body motion and steady neutral studio lighting. The image defines character identity rather than an exact opening-frame pose.
+[Shot 1] dynv2. A static wide full-body shot frames <Subject 1> at the center of a spacious light-gray studio, with both boots and the entire staff visible. The floor is matte, with a consistent soft contact shadow below the feet. Leave room on both sides of the subject for lateral motion, and keep the head, hands, and feet within the image for the complete 5.167-second shot. The background stays spatially fixed so that movement of the character can be distinguished from movement of the camera.
+From the beginning, <Subject 1> performs one continuous exercise: fast repeated lateral side steps between two nearby positions. The body moves right, pushes back left, and repeats the same alternating pattern throughout the clip. Each direction reversal is immediate and visible. The feet lift, travel sideways, and land on the floor in a readable sequence, while the knees bend slightly on contact and extend for the next step. The lateral travel stays within approximately one shoulder width on either side of the initial position. Maintain a brisk and consistent cadence rather than gradually accelerating. Each step causes a short compression followed by a clear rebound, with lateral torso displacement and a small vertical bounce. Show several complete left-right cycles at ordinary playback speed.
+The held staff moves with the hand while its tip remains clear of the ground during each side step; it does not change shape or disappear. The free arm counterbalances the lateral movement. The shoulders follow each change of direction, and the braid and coat ends continue slightly beyond the torso before settling toward the next direction. Keep this secondary motion visibly linked to the feet and body movement. Preserve the reference-defined face and all reference-defined clothing and equipment across the entire shot. The camera holds a static shot with unchanged lens and framing; there are no cuts or slow-motion intervals. The feet create alternating boot taps, with soft fabric movement at the direction reversals. The character does not speak. Continue the same exercise through the final frame without adding another action, a new character, or a separate scene.
+
+overall_soundscape:
+Quiet studio room tone, brisk alternating boot contacts on a solid floor, and light clothing rustle synchronized with the side steps. No spoken dialogue.
+
+non_diegetic_music:
+N/A

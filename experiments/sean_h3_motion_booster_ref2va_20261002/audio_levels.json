@@ -1,0 +1,27 @@
+{
+  "owner": "Sean",
+  "note": "Level measurements only; no listening-based judgment",
+  "cases": [
+    {
+      "case": "baseline",
+      "mean_volume": -33.5,
+      "max_volume": -8.1,
+      "decoded_absolute_peak": 0.39529886841773987,
+      "fraction_samples_at_or_above_0999": 0.0
+    },
+    {
+      "case": "motion_07",
+      "mean_volume": -36.4,
+      "max_volume": -8.3,
+      "decoded_absolute_peak": 0.38308268785476685,
+      "fraction_samples_at_or_above_0999": 0.0
+    },
+    {
+      "case": "motion_08",
+      "mean_volume": -32.0,
+      "max_volume": 0.0,
+      "decoded_absolute_peak": 1.0513218641281128,
+      "fraction_samples_at_or_above_0999": 2.4112654320987653e-05
+    }
+  ]
+}

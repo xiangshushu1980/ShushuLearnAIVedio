@@ -1,0 +1,63 @@
+{
+  "id": 3246346,
+  "modelId": 2840146,
+  "name": "V0.2 REF2VA",
+  "nsfwLevel": 60,
+  "createdAt": "2026-08-19T20:10:14.201Z",
+  "updatedAt": "2026-09-07T08:05:48.349Z",
+  "status": "Published",
+  "publishedAt": "2026-08-19T20:14:53.538Z",
+  "trainedWords": [
+    "dynv2"
+  ],
+  "trainingStatus": null,
+  "trainingDetails": null,
+  "baseModel": "MiniMax H3",
+  "baseModelType": "Standard",
+  "description": "<p><strong>Ref2VA Edition</strong></p><p>A few users have reported that  V2 already works very well with the FL2VA/Ref2VA Hybrid model, so this version is not intended to replace it.</p><p>This is a native Ref2VA-trained variant. In my testing, it provides better reference character consistency, with some trade-offs in image quality and overall stability.</p><p>Since it's already finished, I'm releasing it so you can try both and choose whichever works better for your workflow.</p>",
+  "uploadType": "Created",
+  "usageControl": "Download",
+  "licensingFee": null,
+  "paidAccess": null,
+  "air": "urn:air:minimaxh3:lora:civitai:2840146@3246346",
+  "stats": {
+    "downloadCount": 7070,
+    "thumbsUpCount": 214
+  },
+  "model": {
+    "name": "Faster! Harder! Shake Harder! | H3 Motion Booster(ANIME Edition Update)",
+    "type": "LORA",
+    "nsfw": true,
+    "poi": false
+  },
+  "files": [
+    {
+      "id": 3129119,
+      "sizeKB": 151474.890625,
+      "name": "ref2VA_Motion_v2.safetensors",
+      "type": "Model",
+      "pickleScanResult": "Success",
+      "pickleScanMessage": null,
+      "virusScanResult": "Success",
+      "virusScanMessage": null,
+      "scannedAt": "2026-08-19T20:11:49.464",
+      "metadata": {
+        "format": "SafeTensor",
+        "fp": "bf16"
+      },
+      "hashes": {
+        "AutoV1": "C486ACD3",
+        "AutoV2": "B48CF96EBB",
+        "SHA256": "B48CF96EBB14985789528449FE61985BABF786FEB658740A82A88AC685167FD9",
+        "CRC32": "532D5850",
+        "BLAKE3": "8DEA36913735A8E962EB6039AA3EABE4C34893860421904EAFECB6A9018BEB37",
+        "AutoV3": "514194D4D3EA",
+        "SHA256_12": "B48CF96EBB14"
+      },
+      "primary": true,
+      "downloadUrl": "https://civitai.com/api/download/models/3246346?fileId=3129119"
+    }
+  ],
+  "downloadUrl": "https://civitai.com/api/download/models/3246346",
+  "owner": "Sean"
+}
