@@ -40,6 +40,7 @@ export function modelFor(modelId) {
 const requestSchema = z.object({
   modelId: z.string(), styleId: z.string(), prompt: z.string().trim().min(1).max(16000),
   purpose: z.string().max(2000).default(''), references: z.array(z.string().uuid()).max(16),
+  sourceRunId: z.string().uuid().optional(),
   parameters: z.record(z.string(), z.union([z.string(), z.number()]))
 }).strict();
 export function validateRun(body) {

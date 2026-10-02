@@ -738,3 +738,38 @@
                                                                                                                                                                                                                                                                                                                                                                     .completion-glow{
                                                                                                                                                                                                                                                                                                                                                                       display:none}
                                                                                                                                                                                                                                                                                                                                                                     }
+
+/* Owner: Sean — equal reference inputs and separate historical results. */
+.current-references, .result-section { margin: 24px 0; }
+.current-references .section-head button { flex-shrink: 0; }
+.current-reference-grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
+.image-number { padding: 3px 8px; width: auto; }
+.current-references .capability-note { display: block; margin-top: 12px; }
+.prompt-guide { color: var(--muted); font-size: 12px; margin: -4px 0 18px; }
+.result-section { padding-top: 24px; border-top: 1px solid var(--border); }
+.result-section .large-preview { aspect-ratio: 3/2; max-height: 600px; }
+.preview-caption { align-items: center; flex-wrap: wrap; }
+.loaded-workflow { padding: 14px; border: 1px solid #39796e; border-radius: 8px; background: #12302d; margin-bottom: 18px; display: grid; gap: 8px; font-size: 12px; }
+.loaded-workflow pre { max-height: 320px; overflow: auto; max-width: 100%; font-size: 11px; }
+.run-card { cursor: pointer; }
+.run-card.loaded { border-color: var(--accent); }
+.history-load { display: flex; align-items: center; gap: 16px; width: 100%; border: none; text-align: left; background: transparent; padding: 0; }
+.history-load .run-heading { flex: 1; min-width: 0; }
+.history-thumbnail { width: 100px; height: 75px; object-fit: contain; background: #182833; border-radius: 6px; flex-shrink: 0; }
+.workspace-dialog { background: #14212b; color: #e8f0f3; border: 1px solid #42605e; border-radius: 16px; padding: 24px; width: min(1000px, calc(100% - 32px)); max-height: calc(100dvh - 40px); overflow: auto; }
+.workspace-dialog::backdrop { background: #030b12cc; backdrop-filter: blur(3px); }
+.workspace-dialog .section-head { margin-bottom: 12px; }
+.picker-content { margin: 18px 0; }
+.picker-footer { display: flex; align-items: center; gap: 12px; position: sticky; bottom: -24px; background: #14212b; padding: 18px 0 8px; border-top: 1px solid var(--border); }
+.picker-footer span { margin-right: auto; font-size: 12px; color: var(--muted); }
+.lightbox { width: min(1200px, calc(100% - 32px)); }
+.lightbox > img { display: block; width: 100%; height: min(68dvh, 750px); object-fit: contain; margin-bottom: 16px; }
+@media(max-width:720px) {
+  .current-reference-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .current-references .section-head { flex-wrap: wrap; }
+  .workspace-dialog { padding: 16px; width: calc(100% - 20px); }
+  .picker-footer { bottom: -16px; flex-wrap: wrap; }
+  .history-load { gap: 10px; align-items: flex-start; }
+  .history-thumbnail { width: 72px; height: 54px; }
+  .history-load .run-heading { gap: 6px; }
+}

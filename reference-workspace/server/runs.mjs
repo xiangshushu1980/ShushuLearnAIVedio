@@ -1,9 +1,9 @@
 // Owner: Sean — durable run orchestration, restart recovery and shared GPU arbitration.
 import { execFile } from 'node:child_process';
-import { promisify } from 'node:util';
+import { promisify, isDeepStrictEqual } from 'node:util';
 import { unlinkSync, existsSync } from 'node:fs';
 import { resolve, sep } from 'node:path';
-import { validateRun, workflowTemplate } from './catalog.mjs';
+import { validateRun, workflowTemplate, buildComfyWorkflow } from './catalog.mjs';
 import { comfyUrl, comfyRequest, prepareComfy, submitComfy, readComfyResult, downloadComfy } from './adapters.mjs';
 import { HttpError, now } from './store.mjs';
 
@@ -13,6 +13,21 @@ const active = new Map();
 const ended = run => ['succeeded', 'failed', 'cancelled'].includes(run.status);
 
 export function createRunService(store) {
+  function recordedWorkflow(run) {
+    const row = store.db.prepare('SELECT execution FROM runs WHERE id=?').get(run.id);
+    return row.execution ? JSON.parse(row.execution).workflow : null;
+  }
+  function sameTemplate(run, model) {
+    if (run.snapshot.model.id !== model.id || run.snapshot.model.version !== model.version) return false;
+    if (run.snapshot.template.hash) return run.snapshot.template.hash === workflowTemplate(model.id).hash;
+    // Early phase-one records predate template hashes. Require the entire submitted graph to match.
+    const graph = recordedWorkflow(run);
+    if (!graph) return false;
+    const first = model.id === 'qwen-image-2.1' ? 10 : 30;
+    const names = run.snapshot.references.map((_, index) => graph[String(first + index)]?.inputs.image);
+    if (names.some(name => typeof name !== 'string')) return false;
+    return isDeepStrictEqual(graph, buildComfyWorkflow(run.snapshot, names, run.id));
+  }
   const resource = async (...args) => {
     const { stdout } = await exec('hive-resource', args, { timeout: 15_000 });
     return stdout;
@@ -20,6 +35,14 @@ export function createRunService(store) {
   function snapshot(entityId, body) {
     const { input, model, style } = validateRun(body);
     const entity = store.entity(entityId);
+    if (input.sourceRunId) {
+      const source = store.run(input.sourceRunId);
+      if (source.entityId !== entityId) throw new HttpError(400, '历史工作流不属于当前实体');
+      if (!sameTemplate(source, model))
+        throw new HttpError(409, '历史工作流版本已变化，请明确选择当前模型后重新检查输入');
+      if (source.snapshot.style.id === style.id && !isDeepStrictEqual(source.snapshot.style, style))
+        throw new HttpError(409, '历史风格配置已变化，请明确选择当前模型后重新检查风格和提示词');
+    }
     const references = input.references.map(assetId => {
       const asset = store.asset(assetId);
       if (asset.entityId !== entityId) throw new HttpError(400, '引用图片不属于当前实体');
@@ -29,7 +52,8 @@ export function createRunService(store) {
     return { owner: 'Sean', entity: { id: entity.id, name: entity.name, context: entity.context },
       model: modelSnapshot, style: structuredClone(style), prompt: input.prompt, purpose: input.purpose,
       effectivePrompt: [input.prompt, style.promptSuffix].filter(Boolean).join('\n\n'),
-      parameters: input.parameters, references, template: { id: `${model.id}.${references.length}-refs`, version: model.version, hash: workflowTemplate(model.id).hash } };
+      parameters: input.parameters, references, ...(input.sourceRunId ? { sourceRunId: input.sourceRunId } : {}),
+      template: { id: `${model.id}.${references.length}-refs`, version: model.version, hash: workflowTemplate(model.id).hash } };
   }
   function watchProgress(runId, clientId, state) {
     const url = comfyUrl.replace(/^http/, 'ws') + `/ws?clientId=${encodeURIComponent(clientId)}`;
@@ -190,6 +214,18 @@ export function createRunService(store) {
     }
   }
   return {
+    restore(runId) {
+      const run = store.run(runId), source = run.snapshot;
+      const input = { modelId: source.model.id, styleId: source.style.id, prompt: source.prompt, purpose: source.purpose,
+        references: source.references.map(asset => asset.id), parameters: source.parameters, sourceRunId: run.id };
+      let compatible = true, reason = null;
+      try {
+        const { model, style } = validateRun(input);
+        if (!isDeepStrictEqual(model, source.model) || !isDeepStrictEqual(style, source.style) || !sameTemplate(run, model))
+          throw new Error('历史模型、风格或工作流版本已变化，请重新选择当前配置后检查输入');
+      } catch (error) { compatible = false; reason = error.message; }
+      return { input, workflow: recordedWorkflow(run), compatible, reason };
+    },
     start(entityId, body, key) {
       const saved = store.createRun(entityId, snapshot(entityId, body), key);
       if (saved.created) void execute(saved.run.id);

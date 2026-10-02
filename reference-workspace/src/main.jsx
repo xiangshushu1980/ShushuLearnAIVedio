@@ -17,11 +17,11 @@ const time = value => new Date(value).toLocaleString('zh-CN', { month: '2-digit'
 const defaults = (model) => Object.fromEntries(Object.entries(model.fields).map(([key, field]) => [key, field.default]));
 const newDraft = catalog => ({ modelId: catalog.models[0].id, styleId: catalog.styles[0].id, prompt: '', purpose: '', references: [], parameters: defaults(catalog.models[0]) });
 
-function Picture({ asset, onClick, selected, index, children }) {
+function Picture({ asset, onClick, selected, index, actionLabel, children }) {
   return <div className={`picture ${selected ? 'selected' : ''}`}>
-    <button className="picture-image" onClick={onClick} aria-label={`${selected ? '取消选择' : '选择'} ${asset.name}`} disabled={!onClick}>
+    <button className="picture-image" onClick={onClick} aria-label={`${actionLabel || (selected ? '取消选择' : '选择')} ${asset.name}`} disabled={!onClick}>
       {asset.url ? <img src={asset.url} alt={asset.name} loading="lazy" /> : <span className="deleted-picture">来源图已删除</span>}
-      {index != null && <span className="image-number">{index + 1}</span>}
+      {index != null && <span className="image-number">Image {index + 1}</span>}
       {selected && <span className="selection-check">✓</span>}
     </button>
     <div className="picture-caption"><strong title={asset.name}>{asset.name}</strong>
@@ -30,12 +30,21 @@ function Picture({ asset, onClick, selected, index, children }) {
   </div>;
 }
 
+function Modal({ title, onClose, children, className = '' }) {
+  const dialog = useRef(null);
+  useEffect(() => { dialog.current.showModal(); }, []);
+  return <dialog className={`workspace-dialog ${className}`} ref={dialog} aria-label={title} onCancel={event => { event.preventDefault(); onClose(); }} onClick={event => { if (event.target === event.currentTarget) onClose(); }}>
+    <div className="section-head"><h2>{title}</h2><button className="quiet" onClick={onClose} aria-label={`关闭${title}`}>×</button></div>{children}
+  </dialog>;
+}
+
 function App() {
   const [catalog, setCatalog] = useState(null), [entities, setEntities] = useState([]), [entityId, setEntityId] = useState('');
   const [workspace, setWorkspace] = useState(null), [tab, setTab] = useState('settings'), [draft, setDraft] = useState(null);
   const [savedValue, setSavedValue] = useState(''), [draftAt, setDraftAt] = useState(null);
   const [message, setMessage] = useState(null), [busy, setBusy] = useState(''), [pending, setPending] = useState([]);
-  const [importIds, setImportIds] = useState([]), [preview, setPreview] = useState(null), [status, setStatus] = useState(null);
+  const [importIds, setImportIds] = useState([]), [status, setStatus] = useState(null);
+  const [picker, setPicker] = useState(null), [lightbox, setLightbox] = useState(null), [restored, setRestored] = useState(null);
   const [glow, setGlow] = useState(''), [muted, setMuted] = useState(localStorage.getItem('reference-muted') === '1');
   const fileInput = useRef(null), knownRuns = useRef(new Map()), audio = useRef(null), generationRequest = useRef(null);
   const currentEntity = useRef(entityId), pendingRef = useRef([]);
@@ -47,7 +56,8 @@ function App() {
   const visibleConcepts = assets.filter(a => a.kind === 'concept');
   const settings = assets.filter(a => a.kind === 'setting');
   const latestResult = runs.find(r => r.outputs.some(a => !a.deletedAt));
-  const previewAsset = preview || latestResult?.outputs.find(a => !a.deletedAt);
+  const loadedRun = runs.find(run => run.id === draft?.sourceRunId);
+  const previewAsset = (loadedRun || latestResult)?.outputs.find(a => !a.deletedAt);
 
   function notify(text, error = false) { setMessage({ text, error }); }
   function enableAudio() {
@@ -75,10 +85,6 @@ function App() {
       knownRuns.current.set(run.id, run.status);
     }
     setWorkspace(value);
-    if (preview) {
-      const current = value.assets.find(a => a.id === preview.id);
-      setPreview(current || null);
-    }
     return value;
   }
   useEffect(() => {
@@ -92,7 +98,7 @@ function App() {
   useEffect(() => {
     if (!entityId || !catalog) return;
     currentEntity.current = entityId;
-    setWorkspace(null); setPreview(null); setDraft(null); knownRuns.current.clear();
+    setWorkspace(null); setDraft(null); setRestored(null); setPicker(null); setLightbox(null); knownRuns.current.clear();
     refresh(entityId, true).then(value => {
       if (!value || currentEntity.current !== entityId) return;
       const valueDraft = value.draft?.value || newDraft(catalog);
@@ -110,11 +116,32 @@ function App() {
     const warn = event => { if (dirty || pending.length) { event.preventDefault(); event.returnValue = ''; } };
     addEventListener('beforeunload', warn); return () => removeEventListener('beforeunload', warn);
   }, [dirty, pending.length]);
+  useEffect(() => {
+    if (!draft?.sourceRunId) { setRestored(null); return; }
+    let cancelled = false;
+    setRestored(null);
+    api(`/runs/${draft.sourceRunId}/input`).then(value => { if (!cancelled) setRestored(value); })
+      .catch(error => { if (!cancelled) setRestored({ compatible: false, reason: error.message }); });
+    return () => { cancelled = true; };
+  }, [draft?.sourceRunId]);
+  useEffect(() => {
+    if (!picker && !lightbox) return;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    const escape = event => { if (event.key === 'Escape') { setPicker(null); setLightbox(null); } };
+    addEventListener('keydown', escape);
+    return () => { document.body.style.overflow = previous; removeEventListener('keydown', escape); };
+  }, [picker, lightbox]);
 
   function patch(values) { setDraft(value => ({ ...value, ...values })); }
   function toggleReference(assetId) {
     if (selected.includes(assetId)) patch({ references: selected.filter(value => value !== assetId) });
     else if (selected.length < model.references.max) patch({ references: [...selected, assetId] });
+    else notify(`所选模型最多支持 ${model.references.max} 张引用图片`, true);
+  }
+  function pickReference(assetId) {
+    if (picker.includes(assetId)) setPicker(picker.filter(id => id !== assetId));
+    else if (picker.length < model.references.max) setPicker([...picker, assetId]);
     else notify(`所选模型最多支持 ${model.references.max} 张引用图片`, true);
   }
   function moveReference(index, direction) {
@@ -159,7 +186,7 @@ function App() {
       if (generationRequest.current?.body !== body) generationRequest.current = { body, key: crypto.randomUUID() };
       const run = await api(`/entities/${entityId}/runs`, { method: 'POST', body, headers: { 'Idempotency-Key': generationRequest.current.key } });
       knownRuns.current.set(run.id, run.status); generationRequest.current = null;
-      setPreview(null); await refresh(); notify('本轮输入已快照保存，正在准备生成');
+      patch({ sourceRunId: undefined }); await refresh(); notify('本轮输入已快照保存，正在准备生成');
     } catch (error) { notify(error.message, true); }
     finally { setBusy(''); }
   }
@@ -192,17 +219,23 @@ function App() {
     pendingRef.current.forEach(p => URL.revokeObjectURL(p.url)); pendingRef.current = [];
     setPending([]); setImportIds([]); setEntityId(value); generationRequest.current = null;
   }
-  function reuseRun(run) {
+  async function reuseRun(run) {
     if (dirty && !confirm('用这次运行输入替换当前未保存的草稿？')) return;
-    const source = run.snapshot;
-    patch({ modelId: source.model.id, styleId: source.style.id, prompt: source.prompt, purpose: source.purpose,
-      parameters: source.parameters, references: source.references.map(a => a.id) });
-    notify('已载入历史输入，请检查后再运行'); window.scrollTo({ top: 0, behavior: 'smooth' });
+    const forEntity = entityId;
+    setBusy('restore');
+    try {
+      const value = await api(`/runs/${run.id}/input`);
+      if (currentEntity.current !== forEntity) return;
+      setDraft(value.input); setRestored(value); setTab('concept');
+      notify(value.compatible ? '已载入历史工作流、提示词和引用图片，请检查后再运行' : value.reason, !value.compatible);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } catch (error) { notify(error.message, true); }
+    finally { setBusy(''); }
   }
 
   if (!catalog || !workspace || !draft) return <main className="loading"><span className="brand-mark">＋</span><h1>Reference 工作台</h1><p>{message?.text || '正在加载参考资料…'}</p></main>;
   const badReferences = selected.some(value => !assets.some(a => a.id === value));
-  const canGenerate = model?.enabled && draft.prompt.trim() && selected.length >= model.references.min && selected.length <= model.references.max && !badReferences && !activeRun;
+  const canGenerate = model?.enabled && draft.prompt.trim() && selected.length >= model.references.min && selected.length <= model.references.max && !badReferences && !activeRun && (!draft.sourceRunId || restored?.compatible);
   return <>
     <header className="topbar"><div className="brand"><span className="brand-mark">＋</span><b>Reference 工作台</b><span className="top-tab">创建与编辑</span></div>
       <div className="header-actions"><button className="quiet" onClick={() => { setMuted(!muted); localStorage.setItem('reference-muted', muted ? '0' : '1'); }}>{muted ? '提示音已关闭' : '提示音已开启'}</button>
@@ -225,46 +258,52 @@ function App() {
             <div className="import-footer"><span>已选 {importIds.length} 张 · 加入后可在概念图阶段引用</span><button className="primary" disabled={!importIds.length || !!busy} onClick={importPictures}>{busy === 'import' ? '正在导入…' : '加入设定图片'}</button></div>
           </section>}
           <div className="section-head"><h3>已导入 <span className="muted">{settings.length} 张</span></h3>{settings.length > 0 && <button className="quiet accent" onClick={() => setTab('concept')}>前往概念图 →</button>}</div>
-          {settings.length ? <div className="picture-grid">{settings.map(asset => <Picture key={asset.id} asset={asset} onClick={() => { setPreview(asset); setTab('concept'); }}>
+          {settings.length ? <div className="picture-grid">{settings.map(asset => <Picture key={asset.id} asset={asset} actionLabel="放大" onClick={() => setLightbox(asset)}>
             <div className="card-actions"><button className="quiet danger" onClick={() => removeAsset(asset)} disabled={!!busy}>删除</button></div>
           </Picture>)}</div> : <div className="empty"><span className="empty-icon">▧</span><h3>从一张设定图片开始</h3><p>选择人物、服装、物品或环境图片，供概念探索时引用。</p><button onClick={() => fileInput.current.click()}>选择图片</button></div>}
         </> : <>
           <div className="section-head"><div><h2>概念图试验区</h2><p>选取引用图片，调整提示词与风格，逐轮探索形象。</p></div><span className="pill">{activeRun ? `${activeRun.phase}${activeRun.progress != null ? ` · ${Math.round(activeRun.progress)}%` : ''}` : `${visibleConcepts.length} 张历史结果`}</span></div>
-          <div className="concept-layout"><section className="concept-preview">
-            <div className="large-preview">{previewAsset?.url ? <img src={previewAsset.url} alt={previewAsset.name} /> : <div className="empty"><span className="empty-icon">◇</span><h3>下一轮，从这里开始</h3><p>生成结果将在这里显示。</p></div>}</div>
-            <div className="preview-caption"><span>{previewAsset?.name || '候选预览'}</span>{previewAsset?.url && <a href={previewAsset.url} target="_blank" rel="noreferrer">查看原图 ↗</a>}</div>
-            {previewAsset?.kind === 'concept' && <p className="muted">{previewAsset.locked ? '已自动锁定并加入试验历史' : '已解锁'} · 可选为下一轮输入</p>}
-          </section><section className="input-panel">
+          <section className="current-references"><div className="section-head"><div><h3>本轮引用 <span className="accent">{selected.length} 张</span></h3><p>所有引用同等地位；Image 编号只表示输入顺序。</p></div><button onClick={() => setPicker([...selected])} disabled={!!busy}>＋ 添加引用</button></div>
+            {selected.length ? <div className="reference-grid current-reference-grid">{selected.map((assetId, index) => {
+              const asset = assets.find(a => a.id === assetId) || { id: assetId, name: '来源图已删除' };
+              return <Picture key={assetId} asset={asset} index={index} actionLabel="放大" onClick={asset.url ? () => setLightbox(asset) : undefined}>
+                <div className="card-actions"><button className="quiet" aria-label={`Image ${index + 1} 向前移动`} disabled={index === 0} onClick={() => moveReference(index, -1)}>←</button><button className="quiet" aria-label={`Image ${index + 1} 向后移动`} disabled={index === selected.length - 1} onClick={() => moveReference(index, 1)}>→</button><button className="quiet" aria-label={`移除 Image ${index + 1}`} onClick={() => toggleReference(assetId)}>移除</button></div>
+              </Picture>;
+            })}</div> : <div className="reference-placeholder">添加设定图片或历史结果作为引用，也可仅用文字生成。</div>}
+            <small className="capability-note">{model?.references.instruction}</small>
+          </section>
+          <section className="input-panel">
+            {draft.sourceRunId && <div className="loaded-workflow"><b>已载入历史 · {draft.sourceRunId.slice(0, 8)}</b><span>提示词、引用顺序、模型、风格与参数已恢复</span>
+              {restored?.workflow ? <details><summary>查看历史原始工作流</summary><a href={`/api/runs/${draft.sourceRunId}/workflow`} target="_blank" rel="noreferrer">打开完整工作流 ↗</a><pre>{JSON.stringify(restored.workflow, null, 2)}</pre></details> : <small className="muted">{restored ? '该记录尚未构建提交工作流' : '正在读取历史工作流…'}</small>}
+              <small className="muted">可继续调整输入；开始生成会创建新的一轮，保留原历史记录。</small>
+              {restored && !restored.compatible && <p className="error-text">{restored.reason}</p>}
+              {restored && !restored.compatible && <button onClick={() => {
+                if (confirm('改用当前模型、风格与工作流配置？请重新检查提示词和引用图片，再开始生成。')) patch({ sourceRunId: undefined });
+              }}>改用当前配置</button>}
+            </div>}
             <label>模型<select value={draft.modelId} onChange={e => {
               const next = catalog.models.find(m => m.id === e.target.value);
-              patch({ modelId: next.id, parameters: defaults(next) });
+              patch({ modelId: next.id, parameters: defaults(next), sourceRunId: undefined });
             }}>{catalog.models.map(m => <option value={m.id} key={m.id} disabled={!m.enabled}>{m.name}</option>)}</select></label>
             <label>提示词<textarea rows={6} value={draft.prompt} onChange={e => patch({ prompt: e.target.value })} placeholder="描述本轮想得到的概念图；有引用时，明确 Image 1、Image 2 各自提供什么。" maxLength={16000} /></label>
+            <p className="prompt-guide">Image 1 只指上方第一张已选图。多张素材请逐张说明用途，例如 Image 1 提供脸，Image 2 提供服装，Image 3 提供装备，Image 4 提供武器。只有引用已经合成的整个人物图时，才可由一张图同时提供这些信息。新草稿的提示词为空；已保存的文字会原样保留。</p>
             <label>本轮目的 <span className="muted">（选填）</span><input value={draft.purpose} onChange={e => patch({ purpose: e.target.value })} placeholder="这一轮想验证什么？" maxLength={2000} /></label>
-            <div className="field-title">本次引用图片 <span className="accent">{selected.length} 张</span></div>
-            {selected.length ? <ol className="selected-references">{selected.map((assetId, index) => {
-              const asset = assets.find(a => a.id === assetId);
-              return <li key={assetId}>{asset?.url && <img src={asset.url} alt="" />}<span><b>Image {index + 1}</b><small>{asset?.name || '来源图已删除'}</small></span>
-                <button className="quiet" aria-label="向前移动" disabled={index === 0} onClick={() => moveReference(index, -1)}>↑</button>
-                <button className="quiet" aria-label="向后移动" disabled={index === selected.length - 1} onClick={() => moveReference(index, 1)}>↓</button>
-                <button className="quiet" aria-label="移除引用" onClick={() => toggleReference(assetId)}>×</button></li>;
-            })}</ol> : <div className="reference-placeholder">在下方选择设定图片或概念图历史。</div>}
-            <small className="capability-note">{model?.references.instruction}</small>
-          </section></div>
+          </section>
           <section className="generation-settings"><h3>生成设置</h3><div className="fields-row"><label>已保存风格<select value={draft.styleId} onChange={e => patch({ styleId: e.target.value })}>{catalog.styles.map(style => <option key={style.id} value={style.id}>{style.name}</option>)}</select></label>
             {Object.entries(model?.fields || {}).map(([key, field]) => <label key={key}>{field.label}{field.type === 'select' ? <select value={draft.parameters[key] ?? field.default} onChange={e => patch({ parameters: { ...draft.parameters, [key]: e.target.value } })}>{field.options.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}</select> : <input type="number" min={field.min} max={field.max} step="1" value={draft.parameters[key] ?? field.default} onChange={e => patch({ parameters: { ...draft.parameters, [key]: e.target.value === '' ? '' : Number(e.target.value) } })} />}</label>)}
           </div><div className="generate-actions"><button onClick={saveDraft} disabled={!!busy || !dirty}>保存本轮输入</button><button className="primary" onClick={generate} disabled={!canGenerate || !!busy}>{busy === 'generate' ? '正在提交…' : activeRun ? '本轮生成中' : '开始生成概念图'}</button></div>
             {badReferences && <p className="error-text">有来源图已删除，请移除后再生成。</p>}
             {selected.length > model.references.max && <p className="error-text">引用数量超过所选模型能力，请减少引用。</p>}
           </section>
-          <section className="references-section"><div className="section-head"><h3>选择引用图片</h3><span className="muted">点击图片加入 / 移除本次输入</span></div><h4>设定图片 · {settings.length}</h4>
-            {settings.length ? <div className="reference-grid">{settings.map(asset => <Picture key={asset.id} asset={asset} selected={selected.includes(asset.id)} onClick={() => toggleReference(asset.id)} />)}</div> : <p className="muted">暂无设定图片。可先导入，也可用文字生成第一张概念图。</p>}
-            <h4>概念图历史 · {visibleConcepts.length}</h4><div className="reference-grid">{visibleConcepts.map(asset => <Picture key={asset.id} asset={asset} selected={selected.includes(asset.id)} onClick={() => toggleReference(asset.id)}>
-              <div className="card-actions"><button className="quiet" onClick={() => setPreview(asset)}>预览</button><button className="quiet" disabled={!!busy || asset.protected} onClick={() => action(`/assets/${asset.id}/lock`, 'PATCH', { locked: !asset.locked })}>{asset.locked ? '解锁' : '锁定'}</button><button className="quiet danger" disabled={!!busy || asset.locked || asset.protected} onClick={() => removeAsset(asset)}>删除</button></div>
-            </Picture>)}</div>
+          <section className="result-section"><div className="section-head"><div><h3>生成结果</h3><p>{loadedRun ? `历史运行 ${loadedRun.id.slice(0, 8)} 的结果` : '最近一次生成的结果'}</p></div>{previewAsset?.url && <a href={previewAsset.url} target="_blank" rel="noreferrer">查看原图 ↗</a>}</div>
+            <div className="large-preview">{previewAsset?.url ? <img src={previewAsset.url} alt={previewAsset.name} /> : <div className="empty"><span className="empty-icon">◇</span><h3>{loadedRun ? '该运行暂无可用结果' : '等待第一张概念图'}</h3><p>生成完成后，结果会显示在这里。</p></div>}</div>
+            {previewAsset && <div className="preview-caption"><span>{previewAsset.name}</span><div className="card-actions"><button className="quiet" onClick={() => toggleReference(previewAsset.id)}>{selected.includes(previewAsset.id) ? '移除本轮引用' : '加入本轮引用'}</button><button className="quiet" disabled={!!busy || previewAsset.protected} onClick={() => action(`/assets/${previewAsset.id}/lock`, 'PATCH', { locked: !previewAsset.locked })}>{previewAsset.locked ? '解锁' : '锁定'}</button><button className="quiet danger" disabled={!!busy || previewAsset.locked || previewAsset.protected} onClick={() => removeAsset(previewAsset)}>删除</button></div></div>}
           </section>
-          <section className="run-history"><div className="section-head"><h3>运行记录</h3><span className="muted">目的、输入与配置随每次运行保留</span></div>
-            {runs.length ? runs.map(run => <article className={`run-card ${run.status}`} key={run.id}><div className="run-heading"><span className={`status-dot ${run.status}`} /><b>{statuses[run.status]}</b><span className="muted">{time(run.createdAt)} · {run.id.slice(0, 8)}</span><span className="run-model">{run.snapshot.model.name}</span></div>
+          <section className="run-history"><div className="section-head"><h3>生成历史</h3><span className="muted">点击记录，载入工作流和全部输入</span></div>
+            {runs.length ? runs.map(run => <article className={`run-card ${run.status} ${draft.sourceRunId === run.id ? 'loaded' : ''}`} key={run.id} onClick={event => {
+              if (!busy && !event.target.closest('button,a,details,input,select,textarea')) void reuseRun(run);
+            }}><button className="history-load" aria-label={`载入历史 ${run.id.slice(0, 8)}`} onClick={() => reuseRun(run)} disabled={!!busy}>
+              {run.outputs.find(a => !a.deletedAt)?.url && <img className="history-thumbnail" src={run.outputs.find(a => !a.deletedAt).url} alt="" loading="lazy" />}<span className="run-heading"><span className={`status-dot ${run.status}`} /><b>{statuses[run.status]}</b><span className="muted">{time(run.createdAt)} · {run.id.slice(0, 8)}</span><span className="run-model">{run.snapshot.model.name}</span><span className="accent">{draft.sourceRunId === run.id ? '已载入' : '载入 →'}</span></span></button>
               <p>{run.snapshot.purpose || '未填写本轮目的'}</p><div className="run-phase">{run.phase}{!terminal(run.status) && run.progress != null ? ` · ${Math.round(run.progress)}%` : ''}</div>
               {!terminal(run.status) && <div className={`progress ${run.progress == null ? 'indeterminate' : ''}`}><span style={{ width: `${run.progress ?? 35}%` }} /></div>}
               {run.error && <p className="error-text">{run.error}</p>}
@@ -282,7 +321,13 @@ function App() {
           </section>
         </>}
       </section></div>
-    </main>{glow && <div className={`completion-glow ${glow}`} aria-hidden="true" />}
+    </main>
+    {picker && <Modal title="添加引用图片" onClose={() => setPicker(null)}><p className="muted">只使用明确选中的图片。编号对应提示词中的 Image 1、Image 2…。</p><div className="picker-content">
+      <h4>设定图片 · {settings.length}</h4>{settings.length ? <div className="reference-grid">{settings.map(asset => <Picture key={asset.id} asset={asset} selected={picker.includes(asset.id)} index={picker.includes(asset.id) ? picker.indexOf(asset.id) : undefined} onClick={() => pickReference(asset.id)} />)}</div> : <p className="muted">暂无设定图片，请先在设定图片阶段导入。</p>}
+      <h4>历史结果 · {visibleConcepts.length}</h4>{visibleConcepts.length ? <div className="reference-grid">{visibleConcepts.map(asset => <Picture key={asset.id} asset={asset} selected={picker.includes(asset.id)} index={picker.includes(asset.id) ? picker.indexOf(asset.id) : undefined} onClick={() => pickReference(asset.id)} />)}</div> : <p className="muted">暂无历史结果。</p>}
+    </div><div className="picker-footer"><span>已选 {picker.length} / {model.references.max} 张</span><button onClick={() => setPicker(null)}>取消</button><button className="primary" onClick={() => { patch({ references: picker }); setPicker(null); }}>使用 {picker.length} 张引用</button></div></Modal>}
+    {lightbox && <Modal title={lightbox.name} onClose={() => setLightbox(null)} className="lightbox"><img src={lightbox.url} alt={lightbox.name} /><a href={lightbox.url} target="_blank" rel="noreferrer">查看原图 ↗</a></Modal>}
+    {glow && <div className={`completion-glow ${glow}`} aria-hidden="true" />}
   </>;
 }
 

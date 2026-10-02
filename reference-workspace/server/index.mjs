@@ -63,10 +63,13 @@ app.put('/api/entities/:entityId/draft', (req, res) => {
   const entityId = store.entity(req.params.entityId).id;
   const body = check(z.object({ expectedUpdatedAt: z.string().nullable(), value: z.object({
     modelId: z.string().max(100), styleId: z.string().max(100), prompt: z.string().max(16000), purpose: z.string().max(2000),
-    references: z.array(z.string().uuid()).max(16), parameters: z.record(z.string(), z.union([z.string(), z.number()]))
+    references: z.array(z.string().uuid()).max(16), parameters: z.record(z.string(), z.union([z.string(), z.number()])),
+    sourceRunId: z.string().uuid().optional()
   }).strict() }).strict(), req.body);
   if (!catalog.models.some(m => m.id === body.value.modelId) || !catalog.styles.some(s => s.id === body.value.styleId))
     throw new HttpError(400, '草稿的模型或风格不可用');
+  if (body.value.sourceRunId && store.run(body.value.sourceRunId).entityId !== entityId)
+    throw new HttpError(400, '历史工作流不属于当前实体');
   const updatedAt = store.transaction(() => {
     const current = store.db.prepare('SELECT updated_at FROM drafts WHERE entity_id=?').get(entityId);
     if ((current?.updated_at || null) !== body.expectedUpdatedAt) throw new HttpError(409, '草稿已在另一页面更新，请重新载入后比较');
@@ -109,6 +112,7 @@ app.delete('/api/assets/:assetId', (req, res) => {
 });
 app.post('/api/entities/:entityId/runs', (req, res) => res.status(201).json(runs.start(req.params.entityId, req.body, key(req))));
 app.get('/api/runs/:runId', (req, res) => res.json(store.run(req.params.runId)));
+app.get('/api/runs/:runId/input', (req, res) => res.json(runs.restore(req.params.runId)));
 app.get('/api/runs/:runId/workflow', (req, res) => {
   store.run(req.params.runId);
   const row = store.db.prepare('SELECT execution FROM runs WHERE id=?').get(req.params.runId);
