@@ -1,0 +1,61 @@
+<!-- Owner: Sean | 设定图片选择 -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+  <defs>
+    <linearGradient id="bg" x2="0" y2="1"><stop stop-color="#101923"/><stop offset="1" stop-color="#0b121a"/></linearGradient>
+    <style>
+      text{font-family:Inter,'Noto Sans CJK SC','Microsoft YaHei',sans-serif;fill:#e8f0f3}.muted{fill:#99abb6}.tiny{font-size:11px}.small{font-size:13px}.label{font-size:14px;font-weight:600}.title{font-size:23px;font-weight:700}.section{font-size:17px;font-weight:650}.accent{fill:#58e0cf}.line{stroke:#2c3b46;stroke-width:1}.card{fill:#14212b;stroke:#2c3c47}.field{fill:#101a22;stroke:#354651}.selected{fill:#183238;stroke:#4bd5c4;stroke-width:1.5}
+    </style>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/><rect width="1600" height="70" fill="#111c25"/><path d="M0 69H1600" class="line"/>
+  <rect x="28" y="17" width="36" height="36" rx="11" fill="#36cbbb"/><path d="M39 35h14M46 28v14" stroke="#102027" stroke-width="3" stroke-linecap="round"/>
+  <text x="78" y="43" font-size="17" font-weight="700">Reference 工作台</text><text x="292" y="43" class="small accent">创建与编辑</text><text x="1312" y="42" class="small muted">草稿已保存 · 11:06</text>
+  <text x="34" y="105" class="small muted">参考实体　/　林岚　/　创建与编辑　/　设定图片</text>
+  <text x="34" y="145" class="title">林岚 · 设定图片</text><text x="34" y="171" class="small muted">选择已有图片，供概念图试验时引用。</text>
+
+  <rect x="34" y="194" width="326" height="770" rx="16" class="card"/><text x="58" y="233" class="section">创作步骤</text><text x="58" y="257" class="tiny muted">声音可以与视觉流程并行</text>
+  <rect x="52" y="279" width="290" height="83" rx="12" class="selected"/><circle cx="76" cy="307" r="11" fill="#56e2d0"/><text x="72" y="312" font-size="12" font-weight="700" fill="#102027">1</text><text x="98" y="306" class="label">设定图片</text><text x="98" y="331" class="small muted">4 张图片 · 可多选</text>
+  <rect x="52" y="373" width="290" height="75" rx="12" class="field"/><circle cx="76" cy="399" r="11" fill="#51636d"/><text x="72" y="404" class="small">2</text><text x="98" y="398" class="label">概念图试验区</text><text x="98" y="423" class="small muted">引用所选图片并生成</text>
+  <rect x="52" y="459" width="290" height="75" rx="12" class="field"/><circle cx="76" cy="485" r="11" fill="#51636d"/><text x="72" y="490" class="small">3</text><text x="98" y="484" class="label">主形象</text><text x="98" y="509" class="small muted">从概念图中选择定稿</text>
+  <rect x="52" y="545" width="290" height="75" rx="12" class="field"/><circle cx="76" cy="571" r="11" fill="#51636d"/><text x="72" y="576" class="small">4</text><text x="98" y="570" class="label">三视图</text><text x="98" y="595" class="small muted">等待主形象定稿</text>
+  <rect x="52" y="631" width="290" height="75" rx="12" class="field"/><circle cx="76" cy="657" r="11" fill="#24464a"/><text x="72" y="662" class="small accent">5</text><text x="98" y="656" class="label">声音</text><text x="98" y="681" class="small accent">可独立开始</text>
+  <path d="M58 736h242" class="line"/><text x="58" y="767" class="small muted">本步骤</text><text x="58" y="798" class="tiny muted">只选择图片；所有生图</text><text x="58" y="817" class="tiny muted">统一在概念图阶段进行。</text>
+
+  <rect x="380" y="194" width="1186" height="770" rx="16" class="card"/>
+  <text x="410" y="233" class="section">设定图片</text><text x="410" y="258" class="small muted">从当前目录选择图片，可一次多选。</text>
+  <rect x="1296" y="211" width="240" height="42" rx="10" fill="#36cbbb"/><path d="M1320 232h16m-8-8v16" stroke="#102027" stroke-width="2" stroke-linecap="round"/><text x="1347" y="237" class="label" fill="#102027">选择图片</text>
+  <path d="M410 279h1126" class="line"/>
+  <text x="410" y="312" class="label">本次选择</text><text x="500" y="312" class="small accent">3 张图片</text><text x="1378" y="312" class="tiny muted">点击卡片选择 / 取消</text>
+
+  <!-- Selected image cards -->
+  <g>
+    <rect x="410" y="336" width="260" height="270" rx="12" class="selected"/>
+    <rect x="422" y="348" width="236" height="190" rx="8" fill="#43575a"/><circle cx="535" cy="398" r="31" fill="#d2b28e"/><path d="M446 525q89-133 178 0" fill="#45696a"/><path d="M510 470l49-69 20 86-53 41Z" fill="#2d4047"/>
+    <circle cx="642" cy="366" r="11" fill="#56e2d0"/><path d="m637 366 4 4 7-9" fill="none" stroke="#102027" stroke-width="2"/>
+    <text x="426" y="565" class="small">人物正面设定</text><text x="426" y="588" class="tiny muted">已选择</text>
+  </g>
+  <g>
+    <rect x="686" y="336" width="260" height="270" rx="12" class="selected"/>
+    <rect x="698" y="348" width="236" height="190" rx="8" fill="#394b4e"/><path d="M698 515 759 408 807 473 851 385 934 461V538H698Z" fill="#718a89"/><path d="M807 473 851 385 870 538H786Z" fill="#496d72"/>
+    <circle cx="918" cy="366" r="11" fill="#56e2d0"/><path d="m913 366 4 4 7-9" fill="none" stroke="#102027" stroke-width="2"/>
+    <text x="702" y="565" class="small">雾港环境氛围</text><text x="702" y="588" class="tiny muted">已选择</text>
+  </g>
+  <g>
+    <rect x="962" y="336" width="260" height="270" rx="12" class="selected"/>
+    <rect x="974" y="348" width="236" height="190" rx="8" fill="#483a35"/><path d="M974 520 1024 429 1064 484 1127 380 1210 465V538H974Z" fill="#956d5b"/><path d="M1127 380 1157 538H1088Z" fill="#c29a75"/>
+    <circle cx="1194" cy="366" r="11" fill="#56e2d0"/><path d="m1189 366 4 4 7-9" fill="none" stroke="#102027" stroke-width="2"/>
+    <text x="978" y="565" class="small">旅行装备细节</text><text x="978" y="588" class="tiny muted">已选择</text>
+  </g>
+  <g>
+    <rect x="1238" y="336" width="260" height="270" rx="12" class="field"/>
+    <rect x="1250" y="348" width="236" height="190" rx="8" fill="#34434b"/><path d="M1250 510 1317 424 1361 482 1415 399 1486 466V538H1250Z" fill="#647d82"/><circle cx="1374" cy="404" r="22" fill="#a7bdba"/>
+    <circle cx="1470" cy="366" r="11" fill="#23333a" stroke="#73858c"/><text x="1262" y="565" class="small">侧面服装参考</text><text x="1262" y="588" class="tiny muted">未选择</text>
+  </g>
+
+  <rect x="410" y="650" width="1126" height="1" class="line"/>
+  <rect x="410" y="681" width="1126" height="82" rx="11" fill="#101a22" stroke="#354651"/>
+  <circle cx="440" cy="722" r="12" fill="#163b38"/><path d="m434 722 4 4 8-9" fill="none" stroke="#58e0cf" stroke-width="2"/>
+  <text x="466" y="716" class="small">已选 3 张图片</text><text x="466" y="740" class="tiny muted">加入后可在概念图试验阶段选择引用。</text>
+  <rect x="1272" y="697" width="240" height="48" rx="10" fill="#36cbbb"/><text x="1331" y="727" class="label" fill="#102027">加入设定图片</text>
+  <text x="410" y="811" class="tiny muted">此步骤只导入图片；备注与来源信息由系统在后续流程中维护。</text>
+  <rect x="410" y="850" width="1126" height="62" rx="10" fill="#12302d" stroke="#2d8274"/><circle cx="438" cy="881" r="4" fill="#62ead3"/><text x="454" y="886" class="small accent">导入完成　·　3 张图片已加入设定资料</text>
+</svg>
