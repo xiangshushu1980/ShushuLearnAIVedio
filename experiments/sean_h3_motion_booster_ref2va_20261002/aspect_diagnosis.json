@@ -1,0 +1,90 @@
+{
+  "owner": "Sean",
+  "reference_size": [
+    1344,
+    1536
+  ],
+  "ref_image_match_resized_size": [
+    544,
+    640
+  ],
+  "video_size": [
+    768,
+    448
+  ],
+  "method": "Side column classified as white when >98% of pixels have all decoded RGB channels >245. Band widths measured across all frames. Not a semantic crop or a quality metric.",
+  "results": [
+    {
+      "case": "baseline",
+      "height_px": 448,
+      "median_left_white_px": 0.0,
+      "median_right_white_px": 0.0,
+      "median_nonwhite_width_px": 768.0,
+      "nonwhite_width_range_px": [
+        768,
+        768
+      ],
+      "median_visible_aspect_ratio": 1.7142857142857142
+    },
+    {
+      "case": "motion_07",
+      "height_px": 448,
+      "median_left_white_px": 164.0,
+      "median_right_white_px": 162.0,
+      "median_nonwhite_width_px": 442.0,
+      "nonwhite_width_range_px": [
+        440,
+        445
+      ],
+      "median_visible_aspect_ratio": 0.9866071428571429
+    },
+    {
+      "case": "motion_08",
+      "height_px": 448,
+      "median_left_white_px": 164.0,
+      "median_right_white_px": 162.0,
+      "median_nonwhite_width_px": 442.0,
+      "nonwhite_width_range_px": [
+        441,
+        445
+      ],
+      "median_visible_aspect_ratio": 0.9866071428571429
+    },
+    {
+      "case": "motion_07_no_ref_latent",
+      "height_px": 448,
+      "median_left_white_px": 160.0,
+      "median_right_white_px": 160.0,
+      "median_nonwhite_width_px": 448.0,
+      "nonwhite_width_range_px": [
+        446,
+        448
+      ],
+      "median_visible_aspect_ratio": 1.0
+    },
+    {
+      "case": "motion_07_fullwidth_prompt",
+      "height_px": 448,
+      "median_left_white_px": 160.0,
+      "median_right_white_px": 160.0,
+      "median_nonwhite_width_px": 448.0,
+      "nonwhite_width_range_px": [
+        447,
+        448
+      ],
+      "median_visible_aspect_ratio": 1.0
+    },
+    {
+      "case": "motion_07_landscape_ref",
+      "height_px": 448,
+      "median_left_white_px": 0.0,
+      "median_right_white_px": 0.0,
+      "median_nonwhite_width_px": 768.0,
+      "nonwhite_width_range_px": [
+        768,
+        768
+      ],
+      "median_visible_aspect_ratio": 1.7142857142857142
+    }
+  ]
+}

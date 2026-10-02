@@ -25,7 +25,7 @@ H3 LoRA（models/loras/）：
 | minimax_h3_turbo_v4_step600_ema.safetensors | 744MB | **成片档主力**（v4-600EMA 8步@1024，用户决策 2026-08-11）|
 | minimax_h3_turbo_4step_ckpt500_pruned_comfyui.safetensors | 592MB | 4 步试点 ckpt500（淘汰档）|
 | minimax_h3_turbo_4step_ema_ckpt850_pruned_comfyui.safetensors | 592MB | 4 步试点 ckpt850（淘汰档）|
-| ref2VA_Motion_v2.safetensors | 147.9 MiB | Motion Booster V0.2 REF2VA；Civitai 2840146 / version 3246346；触发 `dynv2`；SHA256、原生解析与生成已验证；0.7/0.8 单 seed 侧步均出现白边，暂不替换基线；[实验与 QC](../experiments/sean_h3_motion_booster_ref2va_20261002/README.md) |
+| ref2VA_Motion_v2.safetensors | 147.9 MiB | Motion Booster V0.2 REF2VA；Civitai 2840146 / version 3246346；触发 `dynv2`；兼容与生成已验证；竖图输入0.7/0.8有白边，0.7换目标比例横幅参考后全幅正常；优先准备目标比例参考，普适画质待验收；[实验与 QC](../experiments/sean_h3_motion_booster_ref2va_20261002/README.md) |
 
 ### 生图（ANIMA + KREA）
 | 文件 | 位置 | 大小 | 用途 |

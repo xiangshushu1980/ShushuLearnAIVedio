@@ -1,0 +1,48 @@
+{
+  "owner": "Sean",
+  "method": "Final native tqdm 20/20 progress line, second-rounded elapsed; no repeated randomized speed benchmark",
+  "results": [
+    {
+      "case": "baseline",
+      "steps": 20,
+      "sampling_progress_elapsed_seconds_rounded": 60,
+      "seconds_per_step": 3.03,
+      "comfy_total_seconds": 94.296
+    },
+    {
+      "case": "motion_07",
+      "steps": 20,
+      "sampling_progress_elapsed_seconds_rounded": 60,
+      "seconds_per_step": 3.03,
+      "comfy_total_seconds": 67.257
+    },
+    {
+      "case": "motion_08",
+      "steps": 20,
+      "sampling_progress_elapsed_seconds_rounded": 60,
+      "seconds_per_step": 3.04,
+      "comfy_total_seconds": 66.89
+    },
+    {
+      "case": "motion_07_no_ref_latent",
+      "steps": 20,
+      "sampling_progress_elapsed_seconds_rounded": 57,
+      "seconds_per_step": 2.9,
+      "comfy_total_seconds": 67.476
+    },
+    {
+      "case": "motion_07_fullwidth_prompt",
+      "steps": 20,
+      "sampling_progress_elapsed_seconds_rounded": 61,
+      "seconds_per_step": 3.06,
+      "comfy_total_seconds": 70.375
+    },
+    {
+      "case": "motion_07_landscape_ref",
+      "steps": 20,
+      "sampling_progress_elapsed_seconds_rounded": 60,
+      "seconds_per_step": 3.02,
+      "comfy_total_seconds": 69.487
+    }
+  ]
+}

@@ -75,6 +75,71 @@
       "output_cleaned": true,
       "lora_unmatched_log_count": 0,
       "lora_matching_status": "no_unmatched_key_warnings_in_runtime_log"
+    },
+    {
+      "id": "motion_07_no_ref_latent",
+      "motion_lora_strength": 0.7,
+      "workflow": "workflows/motion_07_no_ref_latent.json",
+      "status": "success",
+      "comparison_group": "reference_vae_ablation",
+      "difference_from_motion_07": "Remove only the optional video VAE from MiniMaxH3ReferenceToVideo; keep image conditioning in Qwen, same image, prompt, seed, and sampler. Decoder VAEs unchanged.",
+      "prompt_id": "66d62923-5a80-4e4a-99e5-e4ec79ed87b5",
+      "submitted_at": 1790957446.9419742,
+      "completed_at": 1790957517.3557844,
+      "peak_vram_mib": 23066,
+      "output": "motion_07_no_ref_latent.mp4",
+      "sha256": "36f385815c7ecc8400bf903219659ce66a846fe7698e28aab6aaa8552ab44a40",
+      "comfy_seconds": 67.476,
+      "output_cleaned": true,
+      "lora_unmatched_log_count": 0,
+      "lora_matching_status": "no_unmatched_key_warnings_in_runtime_log"
+    },
+    {
+      "id": "motion_07_fullwidth_prompt",
+      "motion_lora_strength": 0.7,
+      "workflow": "workflows/motion_07_fullwidth_prompt.json",
+      "status": "success",
+      "comparison_group": "landscape_prompt_ablation",
+      "difference_from_motion_07": "Add only explicit landscape frame and continuous edge-to-edge studio background sentences in detailed_description. Image VAE condition enabled as in original. All other inputs unchanged.",
+      "prompt_id": "3b036ee9-7616-40d2-9bf0-b7f929fa35e3",
+      "submitted_at": 1790957618.1908262,
+      "completed_at": 1790957689.0935097,
+      "peak_vram_mib": 23090,
+      "output": "motion_07_fullwidth_prompt.mp4",
+      "sha256": "372e41d147cdc8a06bf171fb0b0f5883075ed921f7afe712593bc118109366e9",
+      "comfy_seconds": 70.375,
+      "output_cleaned": true,
+      "lora_unmatched_log_count": 0,
+      "lora_matching_status": "no_unmatched_key_warnings_in_runtime_log"
+    },
+    {
+      "id": "motion_07_landscape_ref",
+      "motion_lora_strength": 0.7,
+      "workflow": "workflows/motion_07_landscape_ref.json",
+      "status": "success",
+      "comparison_group": "reference_layout_ablation",
+      "difference_from_motion_07": "Replace only LoadImage input with the full 768x448 first frame from baseline video. Same original prompt, model, sampler, seed, steps and output resolution. Source layout and rendered appearance both change, so not a pure aspect-ratio intervention.",
+      "reference": {
+        "owner": "Sean",
+        "experiment_file": "reference_landscape.png",
+        "comfy_input": "sean_h3_motion_booster_landscape_ref_20261003.png",
+        "source": "baseline.mp4 decoded first frame, uncropped",
+        "sha256": "34b46a4c60330e1a34edcaed84042503530dd272dc1f2b40a97d961cf2e9e6f9",
+        "size": [
+          768,
+          448
+        ]
+      },
+      "prompt_id": "54a4457c-a11b-488e-b908-887f0d17acf8",
+      "submitted_at": 1790957815.0733616,
+      "completed_at": 1790957885.4607248,
+      "peak_vram_mib": 23114,
+      "output": "motion_07_landscape_ref.mp4",
+      "sha256": "7bc5ea55292429def757fbe81564435825224e28895be533fec1b24c7857f10a",
+      "comfy_seconds": 69.487,
+      "output_cleaned": true,
+      "lora_unmatched_log_count": 0,
+      "lora_matching_status": "no_unmatched_key_warnings_in_runtime_log"
     }
   ],
   "results": [
@@ -98,9 +163,30 @@
       "output": "motion_08.mp4",
       "comfy_seconds": 66.89,
       "peak_vram_mib": 23530
+    },
+    {
+      "case": "motion_07_no_ref_latent",
+      "status": "success",
+      "output": "motion_07_no_ref_latent.mp4",
+      "comfy_seconds": 67.476,
+      "peak_vram_mib": 23066
+    },
+    {
+      "case": "motion_07_fullwidth_prompt",
+      "status": "success",
+      "output": "motion_07_fullwidth_prompt.mp4",
+      "comfy_seconds": 70.375,
+      "peak_vram_mib": 23090
+    },
+    {
+      "case": "motion_07_landscape_ref",
+      "status": "success",
+      "output": "motion_07_landscape_ref.mp4",
+      "comfy_seconds": 69.487,
+      "peak_vram_mib": 23114
     }
   ],
-  "gpu_lease_id": "bc2e36d7-fde8-4b8a-b580-dbc9d5d3d642",
+  "gpu_lease_id": "f1ba677f-1ebc-4219-b09f-012a9122c433",
   "baseline_peak_vram_mib": 23038,
   "runtime": {
     "os": "linux",
@@ -158,7 +244,7 @@
     "bytes": 155110288,
     "path": "/home/sean/projects/ComfyUI/models/loras/ref2VA_Motion_v2.safetensors"
   },
-  "completed_at_iso": "2026-10-03T00:05:02.111896+08:00",
+  "completed_at_iso": "2026-10-03T00:20:43.801379+08:00",
   "artifacts": {
     "comparison_video": "comparison.mp4",
     "comparison_contact": "comparison_contact.png",
@@ -167,11 +253,24 @@
     "native_lora_parser": "lora_native_parser_check.json",
     "qc": "QC.md"
   },
-  "quality_summary": "Single-seed side-step case: both LoRA strengths produce white side margins; centroid spread rises ~8% at 0.7 and ~26% at 0.8; this is not evidence of general quality improvement. Keep baseline unchanged.",
+  "quality_summary": "Portrait-reference 0.7/0.8 cases show square content and white sides. A landscape-reference 0.7 case renders full 768x448 without white sides; white bands are not a mandatory LoRA property. General quality and default production suitability remain unverified.",
   "validation": {
     "video_integrity": "All 3 hashes, 768x448 / 124 frames / 24fps and audio streams verified",
     "native_lora_parser": "208/208 parsed; no unmatched runtime warnings",
     "python_compile": "run_cases.py and analyze.py pass",
-    "docs_check": "Failed on pre-existing docs/47_h3_reference_workbench_redesign.md INDEX coverage; new references and skill checks passed"
-  }
+    "docs_check": "Failed on pre-existing docs/47_h3_reference_workbench_redesign.md INDEX coverage; new references and skill checks passed",
+    "all_cases_video_integrity": "All six current cases verified separately"
+  },
+  "aspect_diagnosis": {
+    "artifact": "aspect_diagnosis.json",
+    "contact_sheet": "aspect_diagnosis_contact.png",
+    "tested_cases": [
+      "motion_07_no_ref_latent",
+      "motion_07_fullwidth_prompt",
+      "motion_07_landscape_ref"
+    ],
+    "result": "768x448 container is unchanged. VAE removal and explicit landscape prompt retained square content plus white sides. Replacing the portrait reference with baseline first frame at 768x448 produced full-frame output with no detected white side columns in any of 124 frames.",
+    "causal_limit": "Reference replacement changes aspect/layout plus rendered appearance. Supports reference-conditioned interaction and disproves a mandatory square-output restriction; does not isolate aspect ratio as the sole cause or prove general quality."
+  },
+  "sampling_timing": "sampling_timing.json"
 }

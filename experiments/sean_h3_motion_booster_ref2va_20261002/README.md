@@ -25,3 +25,5 @@ Owner: Sean。`run_cases.py --lease <lease-id>` 在既有共享实例上串行�
 视频、参考图、contact sheet 和模型保留本机，Git 仅交付脚本、工作流、提示词、元数据与 QC。并排视频为静音，原始三档视频保留各自原生音频。三档耗时受冷热加载和条件缓存影响，不能解释为 LoRA 加速。
 
 验证：三档视频 hash、帧数、尺寸与音频流均通过；两个 Python 脚本编译通过。`bash scripts/docs_check.sh` 在已有 `47_h3_reference_workbench_redesign.md` INDEX 收录问题上失败；本次新增引用检查通过，未修改该任务线文档。
+
+2026-10-03 画幅诊断补测：原有效画面确实接近1:1，但更换为 baseline 首帧的完整768×448横幅参考后，0.7输出铺满全横幅且白边消失。去参考VAE与加强横幅prompt均未解决。详见 [QC补测](QC.md)、[诊断抽帧](aspect_diagnosis_contact.png) 与 [横幅参考版视频](motion_07_landscape_ref.mp4)。这修正了将白边视为LoRA固有副作用的归因；不构成普适画質结论。

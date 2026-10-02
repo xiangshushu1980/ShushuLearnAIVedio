@@ -39,7 +39,7 @@ def command(*args):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--lease", required=True)
-    parser.add_argument("--case", action="append", choices=["motion_07", "motion_08"])
+    parser.add_argument("--case", action="append", choices=["motion_07", "motion_08", "motion_07_no_ref_latent", "motion_07_fullwidth_prompt", "motion_07_landscape_ref"])
     args = parser.parse_args()
     manifest = json.loads((ROOT / "manifest.json").read_text())
     model = pathlib.Path(manifest["model_download"]["path"])
