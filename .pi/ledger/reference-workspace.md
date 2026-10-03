@@ -28,3 +28,7 @@
 - Owner: Sean。当前操作基线见 `reference-workspace/README.md` 声音节，模板 `catalog/breeze-voice.v1.json`。
 - 本机 Breeze ComfyUI BF16/CUDA/SDPA/cuda_graphs，经工作台实际生成并回收中文三段系统试听，24kHz 单声道 WAV，3.92/3.84/4.24 秒；端到端约31秒，仅此短样例，不作为性能基线。
 - 证据：`experiments/sean_reference_workspace_voice_20261003/manifest.json`、`QC.md`。PC播放器、音源导入/转写确认、历史/草稿恢复可用；没有人工声音质量验收，真实录音克隆及英文生成待实跑，样例保持未定稿。
+
+## C-20261003-04 固定基础音色与预制模板（Owner: Sean）
+
+用户纠正：人物音色固定，不同情绪只展现同一音质。当前声音模板改 v2：design/clone 各中性一段；reference 全部共享同一基础音源/逐字转写，并保留 anchor ID/hash；情绪结果不能定稿或再作为基础引用。12 声音模板、8 特征、5 试听题材。v1 hash/历史原图保留，旧三段设计载入提示迁移、直接 retry 拒绝。PC 1440×1000 与构建检查通过；只读构图 evidence experiments/sean_reference_workspace_voice_20261003/sean_voice_v2_workflow_review.json（submitted=false），不构成声音质量定论。本轮未新增生成、单元测试或改变用户版本；真实跨情绪音色与克隆质量待试听。远程任务 remote-1eae8efb-cdeb-416b-8bee-7daf781801af generation 2。

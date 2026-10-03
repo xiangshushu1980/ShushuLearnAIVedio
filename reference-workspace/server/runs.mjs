@@ -96,7 +96,7 @@ export function createRunService(store) {
         stages.push(await (kind === 'voice' ? store.stageAudio : store.stageImage)(buffers[i],
           `${sample ? `声音 · ${sample.label}` : label} ${run.id.slice(0, 8)} · ${i + 1}`,
           run.entityId, kind, run.id, { source: 'generation', template: run.snapshot.template,
-            ...(sample ? { sampleIndex, sampleText: sample.text, sampleLabel: sample.label, instruction: sample.instruction, mode: run.snapshot.mode } : {}),
+            ...(sample ? { sampleIndex, sampleText: sample.text, sampleLabel: sample.label, voiceRole: run.snapshot.voiceRole, anchor: run.snapshot.anchor, instruction: sample.instruction, mode: run.snapshot.mode } : {}),
             ...(run.snapshot.appearance ? { appearance: run.snapshot.appearance, layout: run.snapshot.layout } : {}),
             outputIndex: i, inputAssetIds: run.snapshot.references.map(r => r.id), ...outputContext }));
       }
@@ -282,6 +282,8 @@ export function createRunService(store) {
       const run = store.run(runId);
       if (!['failed', 'cancelled'].includes(run.status)) throw new HttpError(409, '只有失败或取消的运行可以重试');
       if (run.snapshot.stage === 'voice') {
+        if (!run.snapshot.voiceRole && run.snapshot.mode === 'design' && run.snapshot.samples.length > 1)
+          throw new HttpError(409, '旧版多情绪文字设计已停用，请载入历史，先生成基础音色再固定音源试听');
         if (!voiceCompatible(run.snapshot)) throw new HttpError(409, '声音配置已变化，请检查后创建新运行');
         createVoiceSnapshot(store, run.entityId, { ...run.snapshot.voiceInput, sourceRunId: run.id });
         const saved = store.createRun(run.entityId, run.snapshot, key);

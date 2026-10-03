@@ -795,3 +795,7 @@
 .voice-scripts p { margin-bottom: 0; }
 .transcript-confirm { display: flex; align-items: center; gap: 9px; margin-top: 12px; }
 .transcript-confirm input { width: auto; }
+
+/* Owner: Sean — PC voice trait controls. */
+.voice-features { grid-template-columns: repeat(4,minmax(0,1fr)); margin-bottom: 20px; }
+.voice-design { padding: 18px; margin: 16px 0; border: 1px solid #323b50; border-radius: 12px; }

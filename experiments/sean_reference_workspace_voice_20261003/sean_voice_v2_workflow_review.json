@@ -1,0 +1,467 @@
+{
+  "observations": {
+    "owner": "Sean",
+    "inspectionOnly": true,
+    "submitted": false,
+    "baseSamples": 1,
+    "baseRole": "base",
+    "cloneSamples": 1,
+    "cloneRole": "base",
+    "emotionRole": "emotion",
+    "anchor": {
+      "assetId": "47f47dc6-b855-4b62-82ee-fec79ace1704",
+      "hash": "43745dfa3fff3df94c6b5ebacfc026973e157dc00acab34467e966129d63abc3",
+      "transcript": "你好，很高兴见到你。我们慢慢说，不用着急。"
+    },
+    "referenceAudio": [
+      [
+        "2",
+        0
+      ],
+      [
+        "2",
+        0
+      ],
+      [
+        "2",
+        0
+      ]
+    ],
+    "referenceTexts": [
+      "你好，很高兴见到你。我们慢慢说，不用着急。",
+      "你好，很高兴见到你。我们慢慢说，不用着急。",
+      "你好，很高兴见到你。我们慢慢说，不用着急。"
+    ],
+    "instructions": [
+      "保持参考说话人的身份和音色，只改变情绪表达。\n自然、平静，像面对面聊天。",
+      "保持参考说话人的身份和音色，只改变情绪表达。\n轻微喜悦，自然口语，不唱歌。",
+      "保持参考说话人的身份和音色，只改变情绪表达。\n认真坚定，吐字清楚，不喊叫。"
+    ],
+    "legacyCompatible": true,
+    "presets": 12,
+    "features": 8,
+    "templates": 5,
+    "qualityEvaluated": false
+  },
+  "baseSnapshot": {
+    "owner": "Sean",
+    "stage": "voice",
+    "entity": {
+      "id": "5821d6dd-2041-40a3-a789-74989c6edd90",
+      "name": "一期验收 · 四图概念探索",
+      "context": {
+        "owner": "Sean",
+        "purpose": "phase1 acceptance"
+      }
+    },
+    "model": {
+      "id": "breeze-tts-2",
+      "name": "Breeze TTS 2",
+      "version": 1,
+      "stage": "voice",
+      "adapter": "comfy",
+      "localGpu": true
+    },
+    "voiceInput": {
+      "mode": "design",
+      "language": "zh",
+      "templateId": "daily",
+      "sampleCount": 1,
+      "instruction": "",
+      "referenceAssetId": null,
+      "referenceText": "",
+      "transcriptConfirmed": false,
+      "purpose": "",
+      "parameters": {
+        "seed": 42,
+        "cfgScale": 1.5
+      },
+      "features": {
+        "gender": "male",
+        "age": "mature",
+        "pitch": "low",
+        "texture": "husky",
+        "resonance": "chest",
+        "pace": "medium",
+        "articulation": "natural",
+        "character": "rough"
+      },
+      "presetId": "rugged-warrior"
+    },
+    "parameters": {
+      "seed": 42,
+      "cfgScale": 1.5
+    },
+    "voiceRole": "base",
+    "anchor": null,
+    "prompt": "成年男性声音；成熟成年人的声音；音调偏低；音质略带沙哑；温厚的胸腔共鸣；基础语速适中；自然口语化吐字；基础气质粗犷爽朗；普通话自然清晰，正常说话，不唱歌。",
+    "purpose": "",
+    "mode": "design",
+    "language": "zh",
+    "samples": [
+      {
+        "id": "base",
+        "label": "基础音色 · 中性样音",
+        "text": "你好，很高兴见到你。今天我们一起出发，慢慢认识这个世界。",
+        "direction": "以自然、中性的语气正常说话，情绪平稳，不唱歌，不夸张表演。",
+        "index": 0,
+        "instruction": "成年男性声音；成熟成年人的声音；音调偏低；音质略带沙哑；温厚的胸腔共鸣；基础语速适中；自然口语化吐字；基础气质粗犷爽朗；普通话自然清晰，正常说话，不唱歌。\n以自然、中性的语气正常说话，情绪平稳，不唱歌，不夸张表演。"
+      }
+    ],
+    "references": [],
+    "template": {
+      "id": "breeze-reference-voice",
+      "version": 2,
+      "hash": "984e093b4b4b3e0162dda12a72305314595c2bc1e97d1fea3df0e761aaa4a3f2"
+    }
+  },
+  "cloneSnapshot": {
+    "owner": "Sean",
+    "stage": "voice",
+    "entity": {
+      "id": "5821d6dd-2041-40a3-a789-74989c6edd90",
+      "name": "一期验收 · 四图概念探索",
+      "context": {
+        "owner": "Sean",
+        "purpose": "phase1 acceptance"
+      }
+    },
+    "model": {
+      "id": "breeze-tts-2",
+      "name": "Breeze TTS 2",
+      "version": 1,
+      "stage": "voice",
+      "adapter": "comfy",
+      "localGpu": true
+    },
+    "voiceInput": {
+      "mode": "clone",
+      "language": "zh",
+      "templateId": "daily",
+      "sampleCount": 1,
+      "instruction": "此字段在情绪阶段不改变音色",
+      "referenceAssetId": "47f47dc6-b855-4b62-82ee-fec79ace1704",
+      "referenceText": "你好，很高兴见到你。我们慢慢说，不用着急。",
+      "transcriptConfirmed": true,
+      "purpose": "",
+      "parameters": {
+        "seed": 42,
+        "cfgScale": 1.5
+      },
+      "features": {
+        "gender": "male",
+        "age": "mature",
+        "pitch": "low",
+        "texture": "husky",
+        "resonance": "chest",
+        "pace": "medium",
+        "articulation": "natural",
+        "character": "rough"
+      },
+      "presetId": "rugged-warrior"
+    },
+    "parameters": {
+      "seed": 42,
+      "cfgScale": 1.5
+    },
+    "voiceRole": "base",
+    "anchor": {
+      "assetId": "47f47dc6-b855-4b62-82ee-fec79ace1704",
+      "hash": "43745dfa3fff3df94c6b5ebacfc026973e157dc00acab34467e966129d63abc3",
+      "transcript": "你好，很高兴见到你。我们慢慢说，不用着急。"
+    },
+    "prompt": "",
+    "purpose": "",
+    "mode": "clone",
+    "language": "zh",
+    "samples": [
+      {
+        "id": "base",
+        "label": "基础音色 · 中性样音",
+        "text": "你好，很高兴见到你。今天我们一起出发，慢慢认识这个世界。",
+        "direction": "以自然、中性的语气正常说话，情绪平稳，不唱歌，不夸张表演。",
+        "index": 0,
+        "instruction": "保持参考说话人的身份和音色，只改变情绪表达。\n以自然、中性的语气正常说话，情绪平稳，不唱歌，不夸张表演。"
+      }
+    ],
+    "references": [
+      {
+        "id": "47f47dc6-b855-4b62-82ee-fec79ace1704",
+        "hash": "43745dfa3fff3df94c6b5ebacfc026973e157dc00acab34467e966129d63abc3",
+        "kind": "voice",
+        "name": "声音 · 平静 698812b4 · 1",
+        "runId": "698812b4-38b6-4c12-b91a-0877b23955f4",
+        "createdAt": "2026-10-03T03:29:34.422Z"
+      }
+    ],
+    "template": {
+      "id": "breeze-reference-voice",
+      "version": 2,
+      "hash": "984e093b4b4b3e0162dda12a72305314595c2bc1e97d1fea3df0e761aaa4a3f2"
+    }
+  },
+  "emotionSnapshot": {
+    "owner": "Sean",
+    "stage": "voice",
+    "entity": {
+      "id": "5821d6dd-2041-40a3-a789-74989c6edd90",
+      "name": "一期验收 · 四图概念探索",
+      "context": {
+        "owner": "Sean",
+        "purpose": "phase1 acceptance"
+      }
+    },
+    "model": {
+      "id": "breeze-tts-2",
+      "name": "Breeze TTS 2",
+      "version": 1,
+      "stage": "voice",
+      "adapter": "comfy",
+      "localGpu": true
+    },
+    "voiceInput": {
+      "mode": "reference",
+      "language": "zh",
+      "templateId": "daily",
+      "sampleCount": 3,
+      "instruction": "此字段在情绪阶段不改变音色",
+      "referenceAssetId": "47f47dc6-b855-4b62-82ee-fec79ace1704",
+      "referenceText": "你好，很高兴见到你。我们慢慢说，不用着急。",
+      "transcriptConfirmed": true,
+      "purpose": "",
+      "parameters": {
+        "seed": 42,
+        "cfgScale": 1.5
+      },
+      "features": {
+        "gender": "male",
+        "age": "mature",
+        "pitch": "low",
+        "texture": "husky",
+        "resonance": "chest",
+        "pace": "medium",
+        "articulation": "natural",
+        "character": "rough"
+      },
+      "presetId": "rugged-warrior"
+    },
+    "parameters": {
+      "seed": 42,
+      "cfgScale": 1.5
+    },
+    "voiceRole": "emotion",
+    "anchor": {
+      "assetId": "47f47dc6-b855-4b62-82ee-fec79ace1704",
+      "hash": "43745dfa3fff3df94c6b5ebacfc026973e157dc00acab34467e966129d63abc3",
+      "transcript": "你好，很高兴见到你。我们慢慢说，不用着急。"
+    },
+    "prompt": "",
+    "purpose": "",
+    "mode": "reference",
+    "language": "zh",
+    "samples": [
+      {
+        "label": "平静",
+        "text": "你好，很高兴见到你。我们慢慢说，不用着急。",
+        "direction": "自然、平静，像面对面聊天。",
+        "index": 0,
+        "instruction": "保持参考说话人的身份和音色，只改变情绪表达。\n自然、平静，像面对面聊天。"
+      },
+      {
+        "label": "喜悦",
+        "text": "太好了，这件事终于完成了。我想把这个好消息告诉你。",
+        "direction": "轻微喜悦，自然口语，不唱歌。",
+        "index": 1,
+        "instruction": "保持参考说话人的身份和音色，只改变情绪表达。\n轻微喜悦，自然口语，不唱歌。"
+      },
+      {
+        "label": "认真",
+        "text": "请先听我说完，这件事很重要，我们需要一起想办法。",
+        "direction": "认真坚定，吐字清楚，不喊叫。",
+        "index": 2,
+        "instruction": "保持参考说话人的身份和音色，只改变情绪表达。\n认真坚定，吐字清楚，不喊叫。"
+      }
+    ],
+    "references": [
+      {
+        "id": "47f47dc6-b855-4b62-82ee-fec79ace1704",
+        "hash": "43745dfa3fff3df94c6b5ebacfc026973e157dc00acab34467e966129d63abc3",
+        "kind": "voice",
+        "name": "声音 · 平静 698812b4 · 1",
+        "runId": "698812b4-38b6-4c12-b91a-0877b23955f4",
+        "createdAt": "2026-10-03T03:29:34.422Z"
+      }
+    ],
+    "template": {
+      "id": "breeze-reference-voice",
+      "version": 2,
+      "hash": "984e093b4b4b3e0162dda12a72305314595c2bc1e97d1fea3df0e761aaa4a3f2"
+    }
+  },
+  "emotionWorkflow": {
+    "1": {
+      "class_type": "BreezeTTS2LoadModel",
+      "inputs": {
+        "model": "bf16 (best quality)",
+        "dtype": "auto",
+        "device": "cuda",
+        "attention": "sdpa",
+        "decode_mode": "cuda_graphs",
+        "download_if_missing": false
+      }
+    },
+    "2": {
+      "class_type": "LoadAudio",
+      "inputs": {
+        "audio": "inspection-only.wav"
+      }
+    },
+    "10": {
+      "class_type": "BreezeTTS2Speaker",
+      "inputs": {
+        "name": "SeanReference",
+        "audio": "none",
+        "reference_text": "你好，很高兴见到你。我们慢慢说，不用着急。",
+        "auto_transcribe_if_empty": false,
+        "instruction": "保持参考说话人的身份和音色，只改变情绪表达。\n自然、平静，像面对面聊天。",
+        "cfg_scale": 1.5,
+        "reference_audio": [
+          "2",
+          0
+        ]
+      }
+    },
+    "11": {
+      "class_type": "BreezeTTS2MultiSpeaker",
+      "inputs": {
+        "pause_between_speakers": 0.3,
+        "max_new_tokens": 384,
+        "temperature": 0.9,
+        "top_k": 50,
+        "top_p": 1,
+        "repetition_penalty": 1.1,
+        "depth_temperature": 0.9,
+        "depth_top_k": 50,
+        "depth_top_p": 1,
+        "breeze_model": [
+          "1",
+          0
+        ],
+        "speaker_1": [
+          "10",
+          0
+        ],
+        "text": "[{\"speaker\":\"SeanReference\",\"text\":\"你好，很高兴见到你。我们慢慢说，不用着急。\"}]",
+        "seed": 42
+      }
+    },
+    "12": {
+      "class_type": "SaveAudio",
+      "inputs": {
+        "audio": [
+          "11",
+          0
+        ],
+        "filename_prefix": "sean_reference_workspace/inspection-only/voice_1"
+      }
+    },
+    "13": {
+      "class_type": "BreezeTTS2Speaker",
+      "inputs": {
+        "name": "SeanReference",
+        "audio": "none",
+        "reference_text": "你好，很高兴见到你。我们慢慢说，不用着急。",
+        "auto_transcribe_if_empty": false,
+        "instruction": "保持参考说话人的身份和音色，只改变情绪表达。\n轻微喜悦，自然口语，不唱歌。",
+        "cfg_scale": 1.5,
+        "reference_audio": [
+          "2",
+          0
+        ]
+      }
+    },
+    "14": {
+      "class_type": "BreezeTTS2MultiSpeaker",
+      "inputs": {
+        "pause_between_speakers": 0.3,
+        "max_new_tokens": 384,
+        "temperature": 0.9,
+        "top_k": 50,
+        "top_p": 1,
+        "repetition_penalty": 1.1,
+        "depth_temperature": 0.9,
+        "depth_top_k": 50,
+        "depth_top_p": 1,
+        "breeze_model": [
+          "1",
+          0
+        ],
+        "speaker_1": [
+          "13",
+          0
+        ],
+        "text": "[{\"speaker\":\"SeanReference\",\"text\":\"太好了，这件事终于完成了。我想把这个好消息告诉你。\"}]",
+        "seed": 42
+      }
+    },
+    "15": {
+      "class_type": "SaveAudio",
+      "inputs": {
+        "audio": [
+          "14",
+          0
+        ],
+        "filename_prefix": "sean_reference_workspace/inspection-only/voice_2"
+      }
+    },
+    "16": {
+      "class_type": "BreezeTTS2Speaker",
+      "inputs": {
+        "name": "SeanReference",
+        "audio": "none",
+        "reference_text": "你好，很高兴见到你。我们慢慢说，不用着急。",
+        "auto_transcribe_if_empty": false,
+        "instruction": "保持参考说话人的身份和音色，只改变情绪表达。\n认真坚定，吐字清楚，不喊叫。",
+        "cfg_scale": 1.5,
+        "reference_audio": [
+          "2",
+          0
+        ]
+      }
+    },
+    "17": {
+      "class_type": "BreezeTTS2MultiSpeaker",
+      "inputs": {
+        "pause_between_speakers": 0.3,
+        "max_new_tokens": 384,
+        "temperature": 0.9,
+        "top_k": 50,
+        "top_p": 1,
+        "repetition_penalty": 1.1,
+        "depth_temperature": 0.9,
+        "depth_top_k": 50,
+        "depth_top_p": 1,
+        "breeze_model": [
+          "1",
+          0
+        ],
+        "speaker_1": [
+          "16",
+          0
+        ],
+        "text": "[{\"speaker\":\"SeanReference\",\"text\":\"请先听我说完，这件事很重要，我们需要一起想办法。\"}]",
+        "seed": 42
+      }
+    },
+    "18": {
+      "class_type": "SaveAudio",
+      "inputs": {
+        "audio": [
+          "17",
+          0
+        ],
+        "filename_prefix": "sean_reference_workspace/inspection-only/voice_3"
+      }
+    }
+  }
+}

@@ -245,6 +245,7 @@ export function createStore(dataDir) {
       if ((state.current?.id || null) !== expectedVoiceId) throw new HttpError(409, '当前声音已在其他页面改变，请刷新后选择');
       if (candidate.entityId !== entityId || candidate.kind !== 'voice' || !candidate.runId || run(candidate.runId).status !== 'succeeded')
         throw new HttpError(400, '请选择当前实体已完成生成的声音候选');
+      if (candidate.metadata.voiceRole === 'emotion') throw new HttpError(400, '情绪样音展示基础音色，不能替换人物基础声音');
       if (state.current?.assetId === candidate.id) return state;
       if (state.current) db.prepare('UPDATE assets SET protected=0,locked=1 WHERE id=?').run(state.current.assetId);
       const versionId = id(), timestamp = now();

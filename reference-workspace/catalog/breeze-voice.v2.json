@@ -1,0 +1,788 @@
+{
+  "owner": "Sean",
+  "id": "breeze-reference-voice",
+  "version": 2,
+  "model": {
+    "id": "breeze-tts-2",
+    "name": "Breeze TTS 2",
+    "version": 1,
+    "stage": "voice",
+    "adapter": "comfy",
+    "localGpu": true
+  },
+  "modes": [
+    {
+      "id": "design",
+      "name": "① 设计基础音色"
+    },
+    {
+      "id": "clone",
+      "name": "① 导入音源 · 建立基础样音"
+    },
+    {
+      "id": "reference",
+      "name": "② 固定音色 · 情绪试听"
+    }
+  ],
+  "languages": [
+    {
+      "id": "zh",
+      "name": "中文"
+    },
+    {
+      "id": "en",
+      "name": "English"
+    }
+  ],
+  "defaults": {
+    "mode": "design",
+    "language": "zh",
+    "templateId": "daily",
+    "sampleCount": 1,
+    "instruction": "",
+    "referenceAssetId": null,
+    "referenceText": "",
+    "transcriptConfirmed": false,
+    "purpose": "",
+    "parameters": {
+      "seed": 42,
+      "cfgScale": 1.5
+    },
+    "features": {
+      "gender": "female",
+      "age": "young",
+      "pitch": "medium",
+      "texture": "clear",
+      "resonance": "balanced",
+      "pace": "medium",
+      "articulation": "natural",
+      "character": "warm"
+    },
+    "presetId": "custom"
+  },
+  "fields": {
+    "seed": {
+      "label": "随机种子",
+      "min": 1,
+      "max": 2147483647,
+      "step": 1,
+      "default": 42
+    },
+    "cfgScale": {
+      "label": "提示词影响",
+      "min": 0.1,
+      "max": 6,
+      "step": 0.1,
+      "default": 1.5
+    }
+  },
+  "templates": [
+    {
+      "id": "daily",
+      "name": "日常交流",
+      "version": 1,
+      "languages": {
+        "zh": [
+          {
+            "label": "平静",
+            "text": "你好，很高兴见到你。我们慢慢说，不用着急。",
+            "direction": "自然、平静，像面对面聊天。"
+          },
+          {
+            "label": "喜悦",
+            "text": "太好了，这件事终于完成了。我想把这个好消息告诉你。",
+            "direction": "轻微喜悦，自然口语，不唱歌。"
+          },
+          {
+            "label": "认真",
+            "text": "请先听我说完，这件事很重要，我们需要一起想办法。",
+            "direction": "认真坚定，吐字清楚，不喊叫。"
+          }
+        ],
+        "en": [
+          {
+            "label": "Calm",
+            "text": "Hello. It is good to see you. Take your time, there is no rush.",
+            "direction": "Speak naturally and calmly, like a face-to-face conversation."
+          },
+          {
+            "label": "Happy",
+            "text": "That is wonderful. We finally finished it, and I wanted to share the good news.",
+            "direction": "Gently cheerful natural speech. Do not sing."
+          },
+          {
+            "label": "Serious",
+            "text": "Please hear me out. This matters, and we need to find a way forward together.",
+            "direction": "Serious and clear, without shouting."
+          }
+        ]
+      }
+    },
+    {
+      "id": "drama",
+      "name": "剧情对白",
+      "version": 1,
+      "languages": {
+        "zh": [
+          {
+            "label": "平静",
+            "text": "你终于回来了。我一直在这里等你。",
+            "direction": "平静克制，像自然的剧情对白。"
+          },
+          {
+            "label": "坚定",
+            "text": "我已经想好了。无论发生什么，我都会走下去。",
+            "direction": "坚定但不过分激动，不喊叫。"
+          },
+          {
+            "label": "低落",
+            "text": "我明白你的意思，只是还有些话，不知道该怎么说。",
+            "direction": "轻微失落，低声但吐字清楚。"
+          }
+        ],
+        "en": [
+          {
+            "label": "Calm",
+            "text": "You are finally back. I have been waiting here for you.",
+            "direction": "Calm, restrained, natural dialogue."
+          },
+          {
+            "label": "Determined",
+            "text": "I have made up my mind. Whatever happens, I will keep going.",
+            "direction": "Firm and determined, without shouting."
+          },
+          {
+            "label": "Sad",
+            "text": "I understand what you mean. There are still things I do not know how to say.",
+            "direction": "Gently sad, quiet but clear speech."
+          }
+        ]
+      }
+    },
+    {
+      "id": "narration",
+      "name": "解说旁白",
+      "version": 1,
+      "languages": {
+        "zh": [
+          {
+            "label": "讲述",
+            "text": "清晨的光照进房间，新的一天从这里开始。",
+            "direction": "自然的旁白，语速适中。"
+          },
+          {
+            "label": "说明",
+            "text": "接下来，我们会用三个简单的步骤，说明这个过程。",
+            "direction": "清楚易懂的说明，不夸张。"
+          },
+          {
+            "label": "收束",
+            "text": "感谢你听到这里，我们下次再见。",
+            "direction": "温和自然地结束，保留完整句尾。"
+          }
+        ],
+        "en": [
+          {
+            "label": "Narration",
+            "text": "Morning light fills the room. A new day begins here.",
+            "direction": "Natural narration at a moderate pace."
+          },
+          {
+            "label": "Explanation",
+            "text": "Next, we will explain this process in three simple steps.",
+            "direction": "Clear, accessible explanation without exaggeration."
+          },
+          {
+            "label": "Closing",
+            "text": "Thank you for listening. I look forward to seeing you next time.",
+            "direction": "Warm natural closing. Finish the last word clearly."
+          }
+        ]
+      }
+    },
+    {
+      "id": "hero",
+      "name": "冒险与决心",
+      "version": 1,
+      "languages": {
+        "zh": [
+          {
+            "id": "calm",
+            "label": "平静",
+            "text": "前面的路还很长，我们先休息一下。",
+            "direction": "自然平静地说话。"
+          },
+          {
+            "id": "excited",
+            "label": "兴奋",
+            "text": "看到了吗？我们终于找到它了！",
+            "direction": "兴奋但不尖叫，自然说话。"
+          },
+          {
+            "id": "firm",
+            "label": "坚定",
+            "text": "我会守住这里，你们放心向前走。",
+            "direction": "语气坚定沉着，不吼叫。"
+          }
+        ],
+        "en": [
+          {
+            "id": "calm",
+            "label": "平静",
+            "text": "The road ahead is long. Let us rest for a moment.",
+            "direction": "Speak calmly and naturally."
+          },
+          {
+            "id": "excited",
+            "label": "兴奋",
+            "text": "Did you see that? We finally found it!",
+            "direction": "Sound excited without shouting."
+          },
+          {
+            "id": "firm",
+            "label": "坚定",
+            "text": "I will hold this place. Keep moving forward.",
+            "direction": "Sound firm and composed without shouting."
+          }
+        ]
+      }
+    },
+    {
+      "id": "intimate",
+      "name": "关心与安慰",
+      "version": 1,
+      "languages": {
+        "zh": [
+          {
+            "id": "care",
+            "label": "关心",
+            "text": "你今天是不是很累？先坐下来休息一会儿。",
+            "direction": "关心对方，自然温柔。"
+          },
+          {
+            "id": "comfort",
+            "label": "安慰",
+            "text": "没关系，我会陪着你，我们慢慢来。",
+            "direction": "轻柔安慰，不哭泣。"
+          },
+          {
+            "id": "relief",
+            "label": "释然",
+            "text": "听到你这么说，我终于可以放心了。",
+            "direction": "轻微释然，语气放松。"
+          }
+        ],
+        "en": [
+          {
+            "id": "care",
+            "label": "关心",
+            "text": "Are you tired today? Sit down and rest for a while.",
+            "direction": "Sound caring and natural."
+          },
+          {
+            "id": "comfort",
+            "label": "安慰",
+            "text": "It is all right. I will stay with you. We can take our time.",
+            "direction": "Gently reassure without crying."
+          },
+          {
+            "id": "relief",
+            "label": "释然",
+            "text": "Hearing you say that, I can finally relax.",
+            "direction": "Sound relieved and relaxed."
+          }
+        ]
+      }
+    }
+  ],
+  "graph": {
+    "loader": {
+      "class_type": "BreezeTTS2LoadModel",
+      "inputs": {
+        "model": "bf16 (best quality)",
+        "dtype": "auto",
+        "device": "cuda",
+        "attention": "sdpa",
+        "decode_mode": "cuda_graphs",
+        "download_if_missing": false
+      }
+    },
+    "controls": {
+      "pause_between_speakers": 0.3,
+      "max_new_tokens": 384,
+      "temperature": 0.9,
+      "top_k": 50,
+      "top_p": 1.0,
+      "repetition_penalty": 1.1,
+      "depth_temperature": 0.9,
+      "depth_top_k": 50,
+      "depth_top_p": 1.0
+    }
+  },
+  "features": [
+    {
+      "id": "gender",
+      "name": "声音性别",
+      "options": [
+        {
+          "id": "female",
+          "name": "女声",
+          "prompt": {
+            "zh": "成年女性声音",
+            "en": "adult female voice"
+          }
+        },
+        {
+          "id": "male",
+          "name": "男声",
+          "prompt": {
+            "zh": "成年男性声音",
+            "en": "adult male voice"
+          }
+        },
+        {
+          "id": "neutral",
+          "name": "中性",
+          "prompt": {
+            "zh": "中性声音",
+            "en": "androgynous voice"
+          }
+        }
+      ]
+    },
+    {
+      "id": "age",
+      "name": "年龄感",
+      "options": [
+        {
+          "id": "young",
+          "name": "年轻",
+          "prompt": {
+            "zh": "年轻成年人的声音",
+            "en": "young adult voice"
+          }
+        },
+        {
+          "id": "mature",
+          "name": "成熟",
+          "prompt": {
+            "zh": "成熟成年人的声音",
+            "en": "mature adult voice"
+          }
+        },
+        {
+          "id": "older",
+          "name": "年长",
+          "prompt": {
+            "zh": "年长成年人的声音",
+            "en": "older adult voice"
+          }
+        }
+      ]
+    },
+    {
+      "id": "pitch",
+      "name": "音高",
+      "options": [
+        {
+          "id": "low",
+          "name": "偏低",
+          "prompt": {
+            "zh": "音调偏低",
+            "en": "low pitch"
+          }
+        },
+        {
+          "id": "medium",
+          "name": "中等",
+          "prompt": {
+            "zh": "音调适中",
+            "en": "medium pitch"
+          }
+        },
+        {
+          "id": "high",
+          "name": "偏高",
+          "prompt": {
+            "zh": "音调偏高",
+            "en": "higher pitch"
+          }
+        }
+      ]
+    },
+    {
+      "id": "texture",
+      "name": "音质",
+      "options": [
+        {
+          "id": "clear",
+          "name": "清澈",
+          "prompt": {
+            "zh": "音质清澈干净",
+            "en": "clear clean timbre"
+          }
+        },
+        {
+          "id": "soft",
+          "name": "柔和",
+          "prompt": {
+            "zh": "音质柔和细腻",
+            "en": "soft smooth timbre"
+          }
+        },
+        {
+          "id": "husky",
+          "name": "微沙哑",
+          "prompt": {
+            "zh": "音质略带沙哑",
+            "en": "slightly husky timbre"
+          }
+        },
+        {
+          "id": "bright",
+          "name": "明亮",
+          "prompt": {
+            "zh": "音质明亮通透",
+            "en": "bright resonant timbre"
+          }
+        },
+        {
+          "id": "rich",
+          "name": "醇厚",
+          "prompt": {
+            "zh": "音质醇厚饱满",
+            "en": "rich full timbre"
+          }
+        }
+      ]
+    },
+    {
+      "id": "resonance",
+      "name": "共鸣",
+      "options": [
+        {
+          "id": "balanced",
+          "name": "均衡",
+          "prompt": {
+            "zh": "共鸣自然均衡",
+            "en": "natural balanced resonance"
+          }
+        },
+        {
+          "id": "chest",
+          "name": "胸腔感",
+          "prompt": {
+            "zh": "温厚的胸腔共鸣",
+            "en": "warm chest resonance"
+          }
+        },
+        {
+          "id": "airy",
+          "name": "轻气声",
+          "prompt": {
+            "zh": "轻微气声，吐字仍清晰",
+            "en": "slightly airy, with clear articulation"
+          }
+        }
+      ]
+    },
+    {
+      "id": "pace",
+      "name": "基础语速",
+      "options": [
+        {
+          "id": "slow",
+          "name": "舒缓",
+          "prompt": {
+            "zh": "基础语速舒缓",
+            "en": "relaxed baseline pace"
+          }
+        },
+        {
+          "id": "medium",
+          "name": "适中",
+          "prompt": {
+            "zh": "基础语速适中",
+            "en": "moderate baseline pace"
+          }
+        },
+        {
+          "id": "fast",
+          "name": "轻快",
+          "prompt": {
+            "zh": "基础语速轻快",
+            "en": "brisk baseline pace"
+          }
+        }
+      ]
+    },
+    {
+      "id": "articulation",
+      "name": "吐字",
+      "options": [
+        {
+          "id": "natural",
+          "name": "自然口语",
+          "prompt": {
+            "zh": "自然口语化吐字",
+            "en": "natural conversational articulation"
+          }
+        },
+        {
+          "id": "precise",
+          "name": "清晰利落",
+          "prompt": {
+            "zh": "吐字清晰利落",
+            "en": "crisp precise articulation"
+          }
+        },
+        {
+          "id": "gentle",
+          "name": "柔和连贯",
+          "prompt": {
+            "zh": "吐字柔和连贯",
+            "en": "gentle flowing articulation"
+          }
+        }
+      ]
+    },
+    {
+      "id": "character",
+      "name": "气质",
+      "options": [
+        {
+          "id": "warm",
+          "name": "温暖亲切",
+          "prompt": {
+            "zh": "基础气质温暖亲切",
+            "en": "warm approachable character"
+          }
+        },
+        {
+          "id": "cool",
+          "name": "清冷克制",
+          "prompt": {
+            "zh": "基础气质清冷克制",
+            "en": "cool restrained character"
+          }
+        },
+        {
+          "id": "steady",
+          "name": "沉稳可靠",
+          "prompt": {
+            "zh": "基础气质沉稳可靠",
+            "en": "steady dependable character"
+          }
+        },
+        {
+          "id": "lively",
+          "name": "活泼灵动",
+          "prompt": {
+            "zh": "基础气质活泼灵动",
+            "en": "lively animated character"
+          }
+        },
+        {
+          "id": "elegant",
+          "name": "优雅知性",
+          "prompt": {
+            "zh": "基础气质优雅知性",
+            "en": "elegant thoughtful character"
+          }
+        },
+        {
+          "id": "rough",
+          "name": "粗犷爽朗",
+          "prompt": {
+            "zh": "基础气质粗犷爽朗",
+            "en": "rugged hearty character"
+          }
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "id": "warm-female",
+      "name": "温柔陪伴女声",
+      "features": {
+        "gender": "female",
+        "age": "young",
+        "pitch": "medium",
+        "texture": "soft",
+        "resonance": "airy",
+        "pace": "slow",
+        "articulation": "natural",
+        "character": "warm"
+      }
+    },
+    {
+      "id": "cool-knight",
+      "name": "清冷女骑士",
+      "features": {
+        "gender": "female",
+        "age": "young",
+        "pitch": "low",
+        "texture": "clear",
+        "resonance": "balanced",
+        "pace": "medium",
+        "articulation": "precise",
+        "character": "cool"
+      }
+    },
+    {
+      "id": "bright-adventurer",
+      "name": "元气女冒险家",
+      "features": {
+        "gender": "female",
+        "age": "young",
+        "pitch": "medium",
+        "texture": "bright",
+        "resonance": "balanced",
+        "pace": "fast",
+        "articulation": "natural",
+        "character": "lively"
+      }
+    },
+    {
+      "id": "elegant-narrator",
+      "name": "知性女旁白",
+      "features": {
+        "gender": "female",
+        "age": "mature",
+        "pitch": "medium",
+        "texture": "rich",
+        "resonance": "balanced",
+        "pace": "medium",
+        "articulation": "precise",
+        "character": "elegant"
+      }
+    },
+    {
+      "id": "husky-female",
+      "name": "微沙哑成熟女声",
+      "features": {
+        "gender": "female",
+        "age": "mature",
+        "pitch": "low",
+        "texture": "husky",
+        "resonance": "balanced",
+        "pace": "medium",
+        "articulation": "natural",
+        "character": "steady"
+      }
+    },
+    {
+      "id": "light-spirit",
+      "name": "轻盈精灵女声",
+      "features": {
+        "gender": "female",
+        "age": "young",
+        "pitch": "high",
+        "texture": "bright",
+        "resonance": "airy",
+        "pace": "medium",
+        "articulation": "natural",
+        "character": "lively"
+      }
+    },
+    {
+      "id": "warm-male",
+      "name": "温厚可靠男声",
+      "features": {
+        "gender": "male",
+        "age": "mature",
+        "pitch": "low",
+        "texture": "rich",
+        "resonance": "chest",
+        "pace": "medium",
+        "articulation": "natural",
+        "character": "steady"
+      }
+    },
+    {
+      "id": "young-hero",
+      "name": "清爽青年男主",
+      "features": {
+        "gender": "male",
+        "age": "young",
+        "pitch": "medium",
+        "texture": "clear",
+        "resonance": "balanced",
+        "pace": "medium",
+        "articulation": "precise",
+        "character": "steady"
+      }
+    },
+    {
+      "id": "rugged-warrior",
+      "name": "沙哑战士男声",
+      "features": {
+        "gender": "male",
+        "age": "mature",
+        "pitch": "low",
+        "texture": "husky",
+        "resonance": "chest",
+        "pace": "medium",
+        "articulation": "natural",
+        "character": "rough"
+      }
+    },
+    {
+      "id": "scholar",
+      "name": "儒雅学者男声",
+      "features": {
+        "gender": "male",
+        "age": "mature",
+        "pitch": "medium",
+        "texture": "clear",
+        "resonance": "balanced",
+        "pace": "slow",
+        "articulation": "precise",
+        "character": "elegant"
+      }
+    },
+    {
+      "id": "elder-storyteller",
+      "name": "醇厚年长讲述者",
+      "features": {
+        "gender": "male",
+        "age": "older",
+        "pitch": "low",
+        "texture": "rich",
+        "resonance": "balanced",
+        "pace": "slow",
+        "articulation": "natural",
+        "character": "warm"
+      }
+    },
+    {
+      "id": "neutral-guide",
+      "name": "清澈中性引导声",
+      "features": {
+        "gender": "neutral",
+        "age": "young",
+        "pitch": "medium",
+        "texture": "clear",
+        "resonance": "balanced",
+        "pace": "medium",
+        "articulation": "precise",
+        "character": "cool"
+      }
+    }
+  ],
+  "baseSample": {
+    "zh": {
+      "id": "base",
+      "label": "基础音色 · 中性样音",
+      "text": "你好，很高兴见到你。今天我们一起出发，慢慢认识这个世界。",
+      "direction": "以自然、中性的语气正常说话，情绪平稳，不唱歌，不夸张表演。"
+    },
+    "en": {
+      "id": "base",
+      "label": "基础音色 · 中性样音",
+      "text": "Hello, it is nice to meet you. Today we set out together and get to know this world.",
+      "direction": "Speak naturally with neutral, steady emotion. Do not sing or exaggerate."
+    }
+  }
+}
