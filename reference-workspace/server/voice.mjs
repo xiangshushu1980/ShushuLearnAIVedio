@@ -46,6 +46,8 @@ export function validateVoiceDraft(store, entityId, body, generating = false) {
     if (generating && !voiceCompatible(source.snapshot)) throw new HttpError(409, '历史声音工作流已变化，请检查后改用当前配置');
   }
   if (generating) {
+    if (input.mode === 'reference' && store.voiceState(entityId).current?.assetId !== input.referenceAssetId)
+      throw new HttpError(409, '请先确认当前声音，情绪试听只能引用已确认的当前声音');
     if (input.mode !== 'reference' && input.sampleCount !== 1) throw new HttpError(400, '先生成一段基础音色，选定样音后再进行多段情绪试听');
     if (input.mode === 'design' && !input.instruction.trim() && !Object.keys(input.features || {}).length) throw new HttpError(400, '请描述希望生成的声音');
     if (input.mode !== 'design' && (!input.referenceAssetId || !input.referenceText.trim() || !input.transcriptConfirmed))

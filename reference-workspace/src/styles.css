@@ -799,3 +799,33 @@
 /* Owner: Sean — PC voice trait controls. */
 .voice-features { grid-template-columns: repeat(4,minmax(0,1fr)); margin-bottom: 20px; }
 .voice-design { padding: 18px; margin: 16px 0; border: 1px solid #323b50; border-radius: 12px; }
+/* Owner: Sean — ordered PC voice workspace and current selection. */
+.voice-workspace { --voice-yellow: #f0ca65; }
+.voice-stage { padding: 24px; margin: 0 0 24px; background: #171c28; border: 1px solid #323b50; border-radius: 14px; scroll-margin-top: 20px; }
+.voice-stage-heading { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+.voice-stage-heading h3 { margin: 0 0 5px; }
+.voice-stage-heading p { margin: 0; color: var(--muted); }
+.voice-stage-heading > .voice-yellow-mark { margin-left: auto; }
+.voice-step { display: grid; place-items: center; width: 34px; height: 34px; flex-shrink: 0; border: 1px solid #57617c; border-radius: 10px; background: #242c40; color: #c6d5ff; font-size: 17px; font-weight: 700; }
+.voice-overview-grid { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.3fr); gap: 24px; }
+.voice-current-card, .voice-emotion-list { padding: 18px; border: 1px solid #343d53; border-radius: 12px; min-width: 0; }
+.voice-current-card h4, .voice-emotion-list h4 { margin: 0 0 14px; }
+.voice-current-card > b { display: block; overflow-wrap: anywhere; }
+.voice-current-card > button { margin-top: 16px; }
+.voice-emotion-clips { display: grid; gap: 12px; }
+.voice-emotion-clips > div { padding: 12px; border-radius: 10px; background: #202738; }
+.voice-emotion-clips .audio-clip { margin-top: 8px; }
+.voice-create-tabs { display: flex; gap: 10px; margin-bottom: 20px; }
+.voice-create-tabs [aria-selected="true"] { color: #dbe5ff; background: #2e4165; border-color: #7798e2; }
+.voice-stage .input-panel { border: 0; padding: 0; background: transparent; }
+.voice-stage .voice-design { border: 0; padding: 0; }
+.voice-yellow-mark { display: inline-flex; align-items: center; padding: 5px 10px; border-radius: 7px; border: 1px solid #89702e; background: #3e3420; color: var(--voice-yellow); font-weight: 600; font-size: 12px; white-space: nowrap; }
+.voice-workspace .voice-selected { border-color: #b39343; background: #25241e; }
+.voice-workspace .voice-selected-button { color: var(--voice-yellow); border-color: #89702e; opacity: 1; }
+.voice-stage-locked { opacity: .75; }
+.voice-anchor-summary { padding: 12px 16px; border-left: 3px solid var(--voice-yellow); background: #2b291f; }
+.voice-history-details { margin-top: 16px; }
+.voice-history-details summary { color: #aebbd4; cursor: pointer; }
+.voice-history-details .appearance-version { padding: 12px; }
+.voice-workspace .run-card > .section-head { margin-bottom: 16px; }
+.voice-workspace .voice-candidates { margin-top: 14px; }

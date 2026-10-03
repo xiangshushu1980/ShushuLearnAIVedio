@@ -32,3 +32,7 @@
 ## C-20261003-04 固定基础音色与预制模板（Owner: Sean）
 
 用户纠正：人物音色固定，不同情绪只展现同一音质。当前声音模板改 v2：design/clone 各中性一段；reference 全部共享同一基础音源/逐字转写，并保留 anchor ID/hash；情绪结果不能定稿或再作为基础引用。12 声音模板、8 特征、5 试听题材。v1 hash/历史原图保留，旧三段设计载入提示迁移、直接 retry 拒绝。PC 1440×1000 与构建检查通过；只读构图 evidence experiments/sean_reference_workspace_voice_20261003/sean_voice_v2_workflow_review.json（submitted=false），不构成声音质量定论。本轮未新增生成、单元测试或改变用户版本；真实跨情绪音色与克隆质量待试听。远程任务 remote-1eae8efb-cdeb-416b-8bee-7daf781801af generation 2。
+
+## C-20261003-05 声音页顺序与选用标记（Owner: Sean）
+
+按用户指定重排 0 当前声音与关联情绪、1 模板/上传创建、2 当前声音确认后的情绪设置、3 历史选择。基础声音从历史选用，条目与样音标黄色；版本/上传源折叠。情绪引用已确认当前声音，UI/API 拒绝其他音源，顶部仅当前 anchor 的最新结果。构建和1440px PC检查通过，无新生成/单元测试，不构成声音质量定论。task remote-1eae8efb-cdeb-416b-8bee-7daf781801af generation3。
