@@ -129,3 +129,7 @@ npm run build
 ```
 
 验证使用临时数据库和本机 ephemeral HTTP 服务，不启动/重启/提交 ComfyUI。覆盖默认确认筛选、范围/归属、未知ID与字段级400、schema、脱敏、不递归、同来源 hash、编辑/删素材/服务重建后快照一致、禁止改快照、正确MIME/字节/Range、本机Host/Origin和任意路径拒绝。
+
+## 可选项目上下文（2026-10-03）
+
+Owner: Sean。manifest 请求新增可选 `projectId`，返回可选 `projectContext` 和每个所选实体的 `projectRole`。`direct` 返回两端都已选中的设定关系和指定项目剧情关系；未传项目仍兼容旧全局导出，不改旧快照。完整字段、请求示例和缺失能力见[项目工作区 v2](project-workspace-v2.md#短片工具导出)。下游需要显式读取新增字段，本次不修改视频应用。

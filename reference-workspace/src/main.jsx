@@ -5,6 +5,7 @@ import { createRoot } from 'react-dom/client';
 import './styles.css';
 import { AppearancePanel, MultiViewPanel } from './VisualPanels.jsx';
 import { VoicePanel } from './VoicePanel.jsx';
+import { ProjectWorkspace } from './ProjectWorkspace.jsx';
 import { EntityManager } from './EntityManager.jsx';
 import { EntityReferencePicker } from './EntityReferencePicker.jsx';
 
@@ -13,7 +14,7 @@ async function api(path, options = {}) {
     headers: { ...(options.body && !(options.body instanceof FormData) ? { 'Content-Type': 'application/json' } : {}), ...options.headers } });
   if (response.status === 204) return null;
   const result = await response.json();
-  if (!response.ok) { const error = new Error(result.error || '请求失败'); error.details = result.details; throw error; }
+  if (!response.ok) { const error = new Error(result.error || '请求失败'); error.details = result.details; error.status = response.status; throw error; }
   return result;
 }
 const statuses = { queued: '等待生成', running: '生成中', succeeded: '生成完成', failed: '生成失败', cancelled: '已取消' };
@@ -44,7 +45,8 @@ function Modal({ title, onClose, children, className = '' }) {
 }
 
 function App() {
-  const [view, setView] = useState(() => new URLSearchParams(location.search).get('view') || (new URLSearchParams(location.search).has('entity') ? 'create' : 'manage'));
+  const [view, setView] = useState(() => new URLSearchParams(location.search).get('view') || (new URLSearchParams(location.search).has('entity') ? 'create' : 'projects'));
+  const [projectId,setProjectId]=useState(()=>new URLSearchParams(location.search).get('project')||localStorage.getItem('sean.reference.agentProject')||''),[projects,setProjects]=useState([]);
   const [entityReferenceOpen, setEntityReferenceOpen] = useState(false);
   const [managerDirty, setManagerDirty] = useState(false), [managerEntityId, setManagerEntityId] = useState('');
   const [catalog, setCatalog] = useState(null), [entities, setEntities] = useState([]), [entityId, setEntityId] = useState('');
@@ -98,15 +100,17 @@ function App() {
     return value;
   }
   useEffect(() => {
-    Promise.all([api('/catalog'), api('/entities')]).then(([config, list]) => {
+    Promise.all([api('/catalog'), api('/entities'),api('/projects')]).then(([config, list,p]) => {
+      setProjects(p.projects);if(!p.projects.some(x=>x.id===projectId))setProjectId(p.projects[0]?.id||'');
       setCatalog(config); setEntities(list);
       const requested = new URLSearchParams(location.search).get('entity');
       setEntityId(list.some(e => e.id === requested) ? requested : list[0]?.id || '');
     }).catch(error => notify(error.message, true));
     return () => pendingRef.current.forEach(p => URL.revokeObjectURL(p.url));
   }, []);
+  useEffect(()=>{if(view!=='create')return;let gone=false;api(projectId?`/projects/${projectId}/entities`:'/entities').then(r=>{if(gone)return;const es=Array.isArray(r)?r:r.entities;setEntities(es);if(!es.some(e=>e.id===entityId)){setEntityId(es[0]?.id||'');if(!es.length)setView('manage');}}).catch(e=>notify(e.message,true));return()=>{gone=true;};},[projectId,view]);
   useEffect(() => {
-    if (!entityId || !catalog) return;
+    if (!entityId || !catalog || view!=='create') return;
     currentEntity.current = entityId;
     setWorkspace(null); setDraft(null); setRestored(null); setEntityReferenceOpen(false); setPicker(null); setLightbox(null); knownRuns.current.clear();
     refresh(entityId, true).then(value => {
@@ -117,11 +121,12 @@ function App() {
     if(new URLSearchParams(location.search).get('view')!=='manage'){const url = new URL(location.href); url.searchParams.set('entity', entityId); history.replaceState(null, '', url);}
     const timer = setInterval(() => refresh(entityId).catch(error => notify(error.message, true)), 2500);
     return () => clearInterval(timer);
-  }, [entityId, catalog]);
+  }, [entityId, catalog,view]);
   useEffect(() => {
+    if(view!=='create')return;
     const check = () => api('/execution-status').then(setStatus).catch(() => setStatus({ connected: false }));
     void check(); const timer = setInterval(check, 10000); return () => clearInterval(timer);
-  }, []);
+  }, [view]);
   useEffect(() => {
     const warn = event => { if (dirty || spatialDirty || pending.length) { event.preventDefault(); event.returnValue = ''; } };
     addEventListener('beforeunload', warn); return () => removeEventListener('beforeunload', warn);
@@ -258,7 +263,7 @@ function App() {
     if ((managerDirty || dirty || mvDirty || voiceDirty || spatialDirty || pending.length) && !confirm('离开当前页面？未保存的编辑不会保存。')) return;
     if (view === 'create') {
       pendingRef.current.forEach(p => URL.revokeObjectURL(p.url)); pendingRef.current = []; setPending([]); setImportIds([]);
-      const valueDraft = workspace.draft?.value || newDraft(catalog); setDraft(valueDraft); setSavedValue(JSON.stringify(valueDraft));
+      const valueDraft = workspace?.draft?.value || newDraft(catalog); setDraft(valueDraft); setSavedValue(JSON.stringify(valueDraft));
       setMvDirty(false); setVoiceDirty(false);setSpatialDirty(false);
     }
     if(value==='create'&&managerEntityId)setEntityId(managerEntityId);
@@ -267,13 +272,26 @@ function App() {
   }
   function openCreation(id, nextTab) {
     setEntityId(id); setTab(nextTab); setView('create'); setManagerDirty(false);
-    api('/entities').then(setEntities).catch(error => notify(error.message, true));
+    const selectedProject=view==='library'?null:projectId;
+    if(view==='library')setProjectId('');
+    if(selectedProject)void api(`/projects/${selectedProject}`).then(p=>setProjects(v=>v.map(x=>x.id===p.id?p:x))).catch(e=>notify(e.message,true));
+    api(selectedProject?`/projects/${selectedProject}/entities`:'/entities').then(r=>setEntities(Array.isArray(r)?r:r.entities)).catch(error => notify(error.message, true));
     const url = new URL(location.href); url.searchParams.set('entity', id); url.searchParams.set('view','create'); history.replaceState(null, '', url);
   }
-  const navigation = <><button className={`top-tab ${view === 'manage' ? 'active' : ''}`} onClick={() => changeView('manage')}>实体浏览与管理</button><button className={`top-tab ${view === 'create' ? 'active' : ''}`} onClick={() => changeView('create')}>创建与编辑</button></>;
-  if (view === 'manage') return <><header className="topbar"><div className="brand"><span className="brand-mark">＋</span><b>Reference 工作台</b>{navigation}</div></header>
-    <EntityManager api={api} notify={notify} onOpenCreate={openCreation} onDirtyChange={setManagerDirty} onSelect={setManagerEntityId} initialEntityId={entityId} />
-    {message && <div className={`entity-notice ${message.error ? 'error' : ''}`} role="status">{message.text}<button className="quiet" onClick={() => setMessage(null)}>×</button></div>}</>;
+  function selectProject(value,afterSave=false){
+    if(!afterSave&&(managerDirty||dirty||mvDirty||voiceDirty||spatialDirty||pending.length)&&!confirm('切换项目？未保存的编辑会放弃。'))return;
+    setManagerDirty(false);setProjectId(value);setView('projects');setMvDirty(false);setVoiceDirty(false);setSpatialDirty(false);setManagerEntityId('');setDraft(null);setSavedValue('');
+    localStorage.setItem('sean.reference.agentProject',value);const url=new URL(location.href);url.searchParams.set('project',value);url.searchParams.set('view','projects');url.searchParams.delete('entity');history.replaceState(null,'',url);
+    void api('/projects').then(r=>setProjects(r.projects)).catch(e=>notify(e.message,true));
+  }
+  const currentProject=projects.find(p=>p.id===projectId);
+  const creationProjectId=currentProject?.entityIds.includes(entityId)?projectId:null;
+  const navigation = <><button className={`top-tab ${view==='projects'?'active':''}`} onClick={()=>changeView('projects')}>项目工作区</button><select className="project-root-select" aria-label="当前项目" value={projectId} onChange={e=>selectProject(e.target.value)}><option value="">未选择项目</option>{projects.map(p=><option key={p.id} value={p.id}>{p.name}</option>)}</select><button disabled={!projectId} className={`top-tab ${view === 'manage' ? 'active' : ''}`} onClick={() => changeView('manage')}>项目实体</button><button disabled={!entityId&&!managerEntityId} className={`top-tab ${view === 'create' ? 'active' : ''}`} onClick={() => changeView('create')}>创建与编辑</button><button className={`top-tab ${view==='library'?'active':''}`} onClick={()=>changeView('library')}>资料库</button></>;
+  const notices=message&&<div className={`entity-notice ${message.error?'error':''}`} role="status">{message.text}<button className="quiet" onClick={()=>setMessage(null)}>×</button></div>;
+  const simpleHeader=<header className="topbar"><div className="brand"><span className="brand-mark">＋</span><b>Reference 工作台</b>{navigation}</div></header>;
+  if(view==='projects')return <>{simpleHeader}<ProjectWorkspace projectId={projectId} api={api} notify={notify} onSelectProject={selectProject} onDirtyChange={setManagerDirty} onOpenEntities={id=>{setManagerEntityId(id||'');setEntityId(id||'');setView('manage');const url=new URL(location.href);url.searchParams.set('view','manage');if(id)url.searchParams.set('entity',id);else url.searchParams.delete('entity');history.replaceState(null,'',url);}}/>{notices}</>;
+  if (view === 'manage'||view==='library') return <>{simpleHeader}
+    <EntityManager key={view+projectId} projectId={view==='manage'?projectId:null} api={api} notify={notify} onOpenCreate={openCreation} onDirtyChange={setManagerDirty} onSelect={setManagerEntityId} initialEntityId={view==='manage'?managerEntityId:entityId} />{notices}</>;
 
   if (!catalog || !workspace || !draft) return <main className="loading"><span className="brand-mark">＋</span><h1>Reference 工作台</h1><p>{message?.text || '正在加载参考资料…'}</p></main>;
   const badReferences = selected.some(value => !assets.some(a => a.id === value));
@@ -283,9 +301,9 @@ function App() {
       <div className="header-actions"><button className="quiet" onClick={() => { setMuted(!muted); localStorage.setItem('reference-muted', muted ? '0' : '1'); }}>{muted ? '提示音已关闭' : '提示音已开启'}</button>
         <span className={`connection ${status?.connected ? 'online' : ''}`}>{status?.connected ? `ComfyUI 已连接${status.running || status.queued ? ' · 共享队列忙碌' : ''}` : 'ComfyUI 未连接'}</span></div>
     </header>
-    <main className="workspace"><div className="creation-entity-reference"><button disabled={!!busy} onClick={() => setEntityReferenceOpen(true)}>引用其他实体／建立设定关系</button></div><div className="breadcrumb">参考实体 / <select aria-label="选择实体" value={entityId} onChange={e => switchEntity(e.target.value)} disabled={!!busy}>{entities.map(e => <option key={e.id} value={e.id}>{e.name}</option>)}</select> / 创建与编辑 / {{ settings: '设定图片', concept: '概念图', appearance: '主形象', views: '多视图', voice: '声音' }[tab]}</div>
+    <main className="workspace"><div className="creation-entity-reference"><button disabled={!!busy} onClick={() => setEntityReferenceOpen(true)}>引用其他实体／建立设定关系</button></div><div className="breadcrumb">{creationProjectId?currentProject.name:'资料库'} / <select aria-label="选择实体" value={entityId} onChange={e => switchEntity(e.target.value)} disabled={!!busy}>{entities.map(e => <option key={e.id} value={e.id}>{e.name}</option>)}</select> / 创建与编辑 / {{ settings: '设定图片', concept: '概念图', appearance: '主形象', views: '多视图', voice: '声音' }[tab]}</div>
       <div className="page-title"><div><h1>{workspace.entity.name} <span>· 参考资料创作</span></h1><p>从设定资料出发，选定形象与声音，生成多视图。</p></div><span className="save-state">{tab === 'voice' ? voiceDirty ? '声音输入有未保存修改' : workspace.voiceDraft?.updatedAt ? `声音输入已保存 · ${time(workspace.voiceDraft.updatedAt)}` : '准备本轮声音' : tab === 'views' ? mvDirty ? '多视图输入有未保存修改' : workspace.multiviewDraft?.updatedAt ? `输入已保存 · ${time(workspace.multiviewDraft.updatedAt)}` : '准备本轮多视图' : tab === 'appearance' ? '选定后作为多视图输入' : dirty ? '本轮输入有未保存修改' : draftAt ? `输入已保存 · ${time(draftAt)}` : '请选择图片或准备本轮输入'}</span></div>
-      {((Array.isArray(workspace.entity.context.flags)&&workspace.entity.context.flags.includes('场景'))||['scene','location','场景'].includes(workspace.entity.context.type))&&<div className="panel"><EntitySpatialEditor key={entityId} entityId={entityId} api={api} notify={notify} onDirtyChange={setSpatialDirty} disabled={!!busy}/></div>}
+      {((Array.isArray(workspace.entity.context.flags)&&workspace.entity.context.flags.includes('场景'))||['scene','location','场景'].includes(workspace.entity.context.type))&&<div className="panel"><EntitySpatialEditor key={entityId} entityId={entityId} projectId={creationProjectId} api={api} notify={notify} onDirtyChange={setSpatialDirty} disabled={!!busy}/></div>}
       <div className="workspace-layout"><aside className="steps-panel panel"><h2>创作步骤</h2><p className="muted">当前阶段 · {{ settings: '设定图片', concept: '概念图', appearance: '选定主形象', views: '多视图', voice: '声音' }[tab]}</p>
         <button className={`step ${tab === 'settings' ? 'current' : ''}`} onClick={() => setTab('settings')}><span className="step-index">1</span><span><b>设定图片</b><small>{settings.length ? `已导入 ${settings.length} 张图片` : '选择已有图片'}</small></span></button>
         <button className={`step ${tab === 'concept' ? 'current' : ''}`} onClick={() => setTab('concept')}><span className="step-index">2</span><span><b>概念图</b><small>{activeRun && !['multiview', 'voice'].includes(activeRun.snapshot.stage) ? activeRun.phase : visibleConcepts.length ? `${visibleConcepts.length} 张试验结果` : '引用图片，探索形象'}</small></span></button>

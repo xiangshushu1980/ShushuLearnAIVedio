@@ -65,9 +65,10 @@ export function createEntityManagement(store) {
     return { flags: allFlags, entities: entries.filter(e => (!q || (e.name+' '+e.description+' '+e.flags.join(' ')).toLocaleLowerCase().includes(q))
       && (!selected.length || (query.match === 'any' ? selected.some(f => e.flags.includes(f)) : selected.every(f => e.flags.includes(f))))) };
   }
-  function create(body) {
+  function create(body, { inTransaction = false } = {}) {
     const input = parse(profile, body), entityId = id();
-    store.transaction(() => store.db.prepare('INSERT INTO entities VALUES (?,?,?,?)').run(entityId, input.name, JSON.stringify({ owner: 'Sean', ...Object.fromEntries(Object.entries(input).filter(([k]) => k !== 'name')) }), now()));
+    const write = () => store.db.prepare('INSERT INTO entities VALUES (?,?,?,?)').run(entityId, input.name, JSON.stringify({ owner: 'Sean', ...Object.fromEntries(Object.entries(input).filter(([k]) => k !== 'name')) }), now());
+    if (inTransaction) write(); else store.transaction(write);
     return detail(entityId);
   }
   function update(entityId, body) {
@@ -108,7 +109,7 @@ export function createEntityManagement(store) {
       }
     });return detail(entityId);
   }
-  function derive(baseId, body) {
+  function derive(baseId, body, { onCreated = () => {} } = {}) {
     const input = parse(profile.extend({ copyProfile: z.boolean().default(true), copyReference: z.boolean().default(true), reuseVoice: z.boolean().default(false),
       copySettingRelations: z.boolean().default(true), changes: z.string().max(8000).default(''), expectedBaseRevision: z.string() }).strict(), body);
     const base = detail(baseId), entityId = id(), timestamp = now(), stages = [];
@@ -156,6 +157,7 @@ export function createEntityManagement(store) {
         if(input.copySettingRelations) for(const r of base.relations.filter(r=>r.sourceEntityId===baseId&&r.category==='setting'&&r.type!=='派生自')) {
           store.db.prepare('INSERT INTO entity_relations VALUES (?,?,?,?,?,?,?,?,?,?)').run(id(),entityId,r.targetEntityId,r.category,r.type,r.description,'active',revision(r.targetEntityId),timestamp,timestamp);
         }
+        onCreated(entityId);
       });
     } catch(error) { for(const stage of stages) if(existsSync(join(store.media,stage.file))) unlinkSync(join(store.media,stage.file));throw error; }
     return detail(entityId);

@@ -1,20 +1,21 @@
 # 应用内 Agent 接入手册 v1
 
-Owner: Sean。2026-10-03。适用：Node 24、Pi SDK 0.86.0、本机单用户应用。当前用例是 Reference 场景空间助手；后续人物、声音等流程复用本手册的运行、上下文和工具契约。实施过程与版本注意事项单独保存在 [Agent 接入经验记录](../../.pi/ledger/reference-agent.md)。
+Owner: Sean。2026-10-03。适用：Node 24、Pi SDK 0.86.0、本机单用户应用。当前用例是 Reference 项目创作与场景空间助手；后续人物、声音等流程复用本手册的运行、上下文和工具契约。实施过程与版本注意事项单独保存在 [Agent 接入经验记录](../../.pi/ledger/reference-agent.md)。
 
 ## 分层与复用
 
 ```text
 业务页面 → Agent Workspace 服务 → Pi Runtime 适配器 → 已配置模型
                   ↓
-          工程资料 / 会话 / 运行快照 / 事件 / 候选提案
+          项目资料 / 会话 / 运行快照 / 事件 / 候选提案
                   ↓ 用户应用与确认
              Reference 场景空间版本 → 既有只读 manifest 导出
 ```
 
 - `server/pi-agent-runtime.mjs`：SDK、模型/认证、受限资源加载、会话恢复。未来可以增加同契约的 Codex 适配器，业务界面不直接依赖其协议。
-- `server/agent-profiles.mjs`：用途 ID、名称、提示词版本、方法包/skill 版本。当前仅 scene-spatial；不生成多个自主协作 Agent。
-- `server/agent-workspace.mjs`：工程成员、共用资料、会话、运行、工具、提案、版本冲突及业务持久化。
+- `server/agent-profiles.mjs`：用途 ID、名称、提示词版本、方法包/skill 版本。当前 project-authoring 与 scene-spatial，共用项目核心提示词，各有方法包；不生成多个自主协作 Agent。
+- `server/project-workspace.mjs`：项目介绍、成员、实体剧情作用和项目剧情关系的业务真源。
+- `server/agent-workspace.mjs`：会话、运行快照、工具、提案、版本冲突及业务持久化。
 - `src/SceneAgentPanel.jsx`：选图、对话、提案、人工复核；在管理和创建流程共用的空间编辑器中打开。
 
 运行框架与模型分开。Pi 不限定一个模型提供方，但第一版只列出当前可用且声明支持图片输入的模型。可用凭据不代表真实推理已验证；工具调用质量与图片理解需通过实际讨论验收。
@@ -49,13 +50,13 @@ npm start
 
 使用专用 API 配置时，在启动服务的环境中设置对应 key；不要求通过聊天传递 key。环境变量须在启动前设置，修改配置后需重启 Reference 服务。不得因此操作 ComfyUI。应用不会发起登录、安装全局扩展或后台预热模型。
 
-首次打开助手：新建工程/选择工程 → 将场景加入工程 → 选择参考图 → 选择模型、新建对话 → 发送用途或布局要求。模型配置缺失显示说明，其余实体功能不受阻。
+首次使用：在项目工作区新建/选择项目 → 加入或新建实体 → 打开通用创作助手，或从场景打开空间模式 → 选择模型、新建对话 → 发送讨论要求。空间模式需要参考图，通用模式无需图片。模型配置缺失显示说明，其余实体功能不受阻。
 
 ## 工程上下文与会话
 
-工程保存名称、世界观/风格/约束 brief、人工编辑的决定 decisions、明确选用的 entityIds。一个实体可加入多个工程，实体权威资料仍保存在 Reference；工程成员不迁移或复制实体。工程编辑采用整数 revision 比较。
+项目结构、字段、成员与关系归属、索引和迁移的当前契约见 [项目工作区 v2](project-workspace-v2.md)，不在本手册重复定义。
 
-会话由 projectId + entityId + purpose 关联，并固定创建时的 provider/model；更换模型通过新建对话表达。工程选择浏览器只记 ID，其他内容保存在 SQLite。不同用途共用工程资料，各自保存讨论记录。
+会话按 projectId + 可空 entityId + purpose 隔离，并固定创建时的 provider/model；更换模型通过新建对话表达。浏览器只记项目 ID，资料与讨论保存在 SQLite。不同用途继承同一项目的最新资料，各自保存讨论记录。
 
 每轮保存：请求 UUID、用户消息、当前工程/实体/空间/参考图的修订哈希、提示词/skill 版本、模型与创建时间。`agent_run_contexts` 保存送给工具的上下文快照：当前场景完整资料，其他工程实体的简短说明和修订。工程有大量资料时不把所有其他实体的长文和所有历史会话送入模型。所有可见对话和 Pi 的 compaction-aware 会话条目分别持久化；中断恢复继续使用最后完整的轮次记录，未完成回复在 UI 中明确显示。
 
@@ -67,6 +68,10 @@ npm start
 
 | 工具 | 范围 |
 | --- | --- |
+| get_project_context | 自动注入项目设置后，读取本轮捕获的共用上下文及用户消息 |
+| get_project_entity | 读取项目内一个实体的完整资料，补充默认索引摘要 |
+| propose_project_review | 保存带实体 ID、覆盖范围和来源版本的检查报告，不改事实 |
+| propose_project_update | 通用创作模式提出项目资料修改，网页逐字段审阅并应用 |
 | get_scene_context | 当前运行捕获的工程资料、当前场景空间、用户消息 ID、最近候选提案 |
 | view_reference_image | 用户本轮选定的当前实体图片 ID，验证归属/内容哈希，缩放供模型观察 |
 | load_authoring_skill | 读取当前用途登记的方法包 ID/版本；不接受任意路径 |

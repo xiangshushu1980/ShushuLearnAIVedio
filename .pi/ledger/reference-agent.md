@@ -23,3 +23,16 @@ Owner: Sean。独立保存 Agent 接入的演进和证据；稳定操作入口�
 - 安装观察：手动将根 lock 的嵌套 brace-expansion 改为 5.0.12 后，npm ci 仍按照 SDK 自带 shrinkwrap 安装 5.0.9。最终采用根直接固定 5.0.12，加版本受限的应用 postinstall 将嵌套包替换为相同兼容补丁并更新 node_modules 安装库存。根 lock 保持 5.0.12，实际 npm ls 确认嵌套补丁；随后 npm audit 返回零已知漏洞。此方法只针对 SDK 0.86.0，升级须重新评估。
 - 新增安全边界：受控工具把业务字段错误返回模型以便修订，非业务异常只返回通用错误，避免文件/提供方异常携带绝对路径或凭据。没有把错误原文放入聊天、事件或日志。
 - 服务已启动 4188。构建、静态语法和依赖扫描通过；未进行自动化测试、浏览器操作、真实看图/工具调用、生成或 ComfyUI 操作。待用户实际讨论验收后追加质量与失败恢复结果，不能提前记为已验证。
+
+## 2026-10-03 — 项目工作区与共用上下文 v2
+
+Owner: Sean。任务 remote-8ac0f653-9980-494d-ba73-42ac4e97b71a。
+
+- 把工程资料从场景助手对话窗提升为独立项目入口，沿用 agent_projects ID 与旧 brief。项目剧情作用和剧情关系按 project_id 保存；旧全局 story 不自动归属。
+- 应用是资料真源，Pi 的会话/压缩摘要只是讨论历史。每轮自动注入项目设置与实体索引，用只读工具按 ID 取完整实体，来源 hash 变化使提案失效；不能只靠模型“记住”最新世界设定。
+- 项目级会话需要真实 nullable entity_id，不用虚构场景占位。SQLite 重建会话表时 foreign_keys 只在迁移外暂时关闭，保留子表 FK 指向原表名，事务复制/替换并恢复检查。新旧服务不能同时写共享库。
+- 场景是 purpose/方法/工具的一种专项模式，共用 core prompt/runtime/SSE/持久化。项目资料建议需网页逐字段接受；空间布局另行应用并人工图文确认，两者不混同。
+- 一致性报告记录完整读取实体覆盖范围；默认摘要不视作完整审阅。保存实体只改变索引/修订，不自动触发模型；人工触发检查再收费。
+- 导出 projectId 是可选适配；projectContext + projectRole + 项目剧情关系进入不可变 manifest，不递归加入其他实体，不重写旧快照。下游必须显式消费新增字段。
+- 本阶段证据：PC Vite build、7 个服务模块 node --check、scoped diff 检查通过。未运行测试或 LLM、ComfyUI，不声称模型质量/完整交互已验收。已用 VACUUM INTO 备份本机 Reference 数据库，原服务无活跃 Agent/生成任务，Reference 服务按同端口更新启动。
+- 当前契约正文：reference-workspace/docs/project-workspace-v2.md；共用接入手册 reference-workspace/docs/agent-integration-v1.md。

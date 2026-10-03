@@ -5,7 +5,7 @@ import { SceneAgentPanel } from './SceneAgentPanel.jsx';
 const newId=prefix=>prefix+'_'+crypto.randomUUID().slice(0,8);
 const stateLabel={missing:'待建立',draft:'草稿待确认',confirmed:'已确认',needs_review:'资料变化，需复核'};
 const kinds={area:'区域',structure:'建筑结构',object:'固定物体'};
-export function EntitySpatialEditor({entityId,api,notify,onDirtyChange,disabled=false}){
+export function EntitySpatialEditor({entityId,projectId,api,notify,onDirtyChange,disabled=false}){
   const [record,setRecord]=useState(null),[doc,setDoc]=useState(null),[baseline,setBaseline]=useState(''),[images,setImages]=useState([]);
   const [editing,setEditing]=useState(false),[busy,setBusy]=useState(false),[ack,setAck]=useState(false),[importText,setImportText]=useState('');
   const [agentOpen,setAgentOpen]=useState(false),[agentDirty,setAgentDirty]=useState(false);
@@ -26,7 +26,7 @@ export function EntitySpatialEditor({entityId,api,notify,onDirtyChange,disabled=
   const statusField=(item,key)=><label className="transcript-confirm"><input type="checkbox" checked={item.status==='known'} onChange={e=>key==='frame'?change({frame:{...doc.frame,status:e.target.checked?'known':'pending'}}):patchItem(key,item.id,{status:e.target.checked?'known':'pending'})}/>这项有资料依据（否则保留待补充）</label>;
   const selectAnchor=(value,onChange,label)=><label>{label}<select value={value} onChange={e=>onChange(e.target.value)}><option value="">请选择锚点</option>{doc.elements.map(e=><option key={e.id} value={e.id}>{e.label||'未命名'} [{e.id}]</option>)}</select></label>;
   if(!record||!doc)return <section className="scene-spatial"><h3>场景空间设定</h3><p className="muted">正在读取…</p></section>;
-  return <section className="scene-spatial"><div className="section-head"><div><h3>场景空间设定 <span className="pill">{stateLabel[record.summary.status]}</span></h3><p>保存固定布局，供多个独立镜头重复引用。</p></div>{!editing&&<div className="card-actions"><button className="primary" disabled={disabled||busy} onClick={()=>setAgentOpen(true)}>与助手讨论空间布局</button><button disabled={disabled||busy} onClick={edit}>手工精修</button></div>}</div>
+  return <section className="scene-spatial"><div className="section-head"><div><h3>场景空间设定 <span className="pill">{stateLabel[record.summary.status]}</span></h3><p>保存固定布局，供多个独立镜头重复引用。</p></div>{!editing&&<div className="card-actions"><button className="primary" disabled={disabled||busy||!projectId} title={!projectId?'请先选择项目并加入场景':undefined} onClick={()=>setAgentOpen(true)}>与助手讨论空间布局</button><button disabled={disabled||busy} onClick={edit}>手工精修</button></div>}</div>
     <p className="muted">只登记固定区域、建筑和物体。角色当前站位、朝向、移动和物品转移留在拍摄本。</p>
     {!editing?<><p className="entity-text">{record.summary.frame?.description||'尚无可用的已确认方向基准。'}</p>
       {record.summary.elements.map(e=><article className="spatial-summary" key={e.id}><b>{e.label}</b> <code>{e.id}</code><p>{e.description}</p>{e.position&&<p>位置：{e.position}</p>}{e.orientation&&<p>朝向：{e.orientation}</p>}{e.scale&&<p>尺度：{e.scale}</p>}</article>)}
@@ -53,6 +53,6 @@ export function EntitySpatialEditor({entityId,api,notify,onDirtyChange,disabled=
       <div className="card-actions"><button className="primary" disabled={busy||disabled||!dirty} onClick={save}>保存空间草稿</button><button disabled={busy} onClick={()=>{if(dirty&&!confirm('放弃未保存的空间设定？'))return;setEditing(false);setDoc(record.document);setBaseline(JSON.stringify(record.document));setImportText('');setAck(false);}}>关闭编辑</button></div>
       {dirty?<p className="muted">先保存草稿，再核对确认；修改不会自动变为固定事实。</p>:<><label className="transcript-confirm"><input type="checkbox" checked={ack} disabled={busy} onChange={e=>setAck(e.target.checked)}/>我已对照所选参考图与实体文字，确认勾选有依据的项目一致；未知内容仍为待补充，未将角色动态固化为场景事实。</label><button disabled={busy||disabled||!ack||!record.expectedVersionId} onClick={confirmFacts}>确认固定空间事实</button></>}
     </div>}
-    {agentOpen&&<SceneAgentPanel entityId={entityId} api={api} notify={notify} onDirtyChange={setAgentDirty} onClose={()=>{setAgentOpen(false);setAgentDirty(false);}} onSaved={()=>{api(`/manage/entities/${entityId}/spatial`).then(r=>{setRecord(r);setDoc(r.document);setBaseline(JSON.stringify(r.document));}).catch(e=>notify(e.message,true));}}/>}
+    {agentOpen&&<SceneAgentPanel projectId={projectId} entityId={entityId} api={api} notify={notify} onDirtyChange={setAgentDirty} onClose={()=>{setAgentOpen(false);setAgentDirty(false);}} onSaved={()=>{api(`/manage/entities/${entityId}/spatial`).then(r=>{setRecord(r);setDoc(r.document);setBaseline(JSON.stringify(r.document));}).catch(e=>notify(e.message,true));}}/>}
   </section>;
 }

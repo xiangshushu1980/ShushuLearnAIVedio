@@ -170,3 +170,7 @@ npm run build
 七项测试覆盖显式引用顺序/数量、模型参数、模板 hash、保护与解锁删除、来源墓碑、事务、跨实体拒绝和提交幂等性。浏览器检查覆盖多选导入、实际图片预览、草稿重载、桌面/390px 手机视图。真实 Qwen 三轮生成和进行中重启恢复证据见 [一期 manifest](../experiments/sean_reference_workspace_phase1_20261002/manifest.json)，结论及限制见 [QC](../experiments/sean_reference_workspace_phase1_20261002/QC.md)。
 
 2026-10-03 布局与历史载入调整的构建、页面检查见[复核记录](../experiments/sean_reference_workspace_phase1_20261002/sean_review_20261003.md)。本轮没有新增生成或运行单元测试。
+
+## 项目工作区（2026-10-03）
+
+Owner: Sean。默认入口为「项目工作区」：项目介绍、故事梗概、世界规则、风格和决定 → 项目实体及其剧情作用 → 设定关系与项目剧情关系 → 通用创作或场景空间工作模式。现有实体资料库、图片/声音生成和空间确认沿用原流程。助手每轮自动继承最新项目资料，一致性检查由用户发起，项目修改建议先预览后应用。结构、API、导出兼容及当前限制见 [项目工作区 v2](docs/project-workspace-v2.md)。

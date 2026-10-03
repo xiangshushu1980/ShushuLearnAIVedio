@@ -6,10 +6,12 @@ import { existsSync, realpathSync, statSync, readFileSync } from 'node:fs';
 import { relative, isAbsolute, sep } from 'node:path';
 import { HttpError } from './store.mjs';
 import { canonicalJSON,contentHash } from './content-hash.mjs';
+import { createProjectWorkspace } from './project-workspace.mjs';
 import { sceneSpatialView,isSceneEntity } from './scene-spatial.mjs';
 
 export const assetRoles = ['setting', 'concept', 'main_appearance', 'three_view', 'voice', 'voice_emotion', 'voice_source', 'sound_effect'];
 export const manifestRequestSchema = z.object({
+  projectId: z.string().uuid().optional(),
   entityIds: z.array(z.string().uuid()).min(1).max(100),
   includeRelations: z.enum(['none', 'direct']).default('none'),
   assetRoles: z.array(z.enum(assetRoles)).min(1).max(assetRoles.length).default(['main_appearance', 'three_view', 'voice', 'sound_effect']),
@@ -54,20 +56,23 @@ export function createReferenceExport(store) {
     CREATE TRIGGER IF NOT EXISTS reference_manifests_no_update BEFORE UPDATE ON reference_manifests BEGIN SELECT RAISE(ABORT, 'immutable manifest'); END;
     CREATE TRIGGER IF NOT EXISTS reference_manifests_no_delete BEFORE DELETE ON reference_manifests BEGIN SELECT RAISE(ABORT, 'immutable manifest'); END;`);
   const hasTable = name => !!store.db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name=?").get(name);
+  const projectService=hasTable('agent_projects')?createProjectWorkspace(store):null;
   function exportCapabilities() {
     const managed = hasTable('entity_relations');
-    return { ...capabilities, sceneSpatial: {supported:hasTable('scene_spatial_versions'),schemaVersion:1,fixedFactsRequireConfirmation:true,stableIds:'entityId#id',dynamicState:'shooting script',automaticImageUnderstanding:false}, entityManagement: managed, flags: { supported: managed },
+    return { ...capabilities, projectContext:{supported:!!projectService,selection:'optional projectId',legacyStoryRelations:'unassigned; exported only without projectId',scope:'project settings plus explicitly selected entities; no graph expansion'}, sceneSpatial: {supported:hasTable('scene_spatial_versions'),schemaVersion:1,fixedFactsRequireConfirmation:true,stableIds:'entityId#id',dynamicState:'shooting script',automaticImageUnderstanding:false}, entityManagement: managed, flags: { supported: managed },
       entityText: { ...capabilities.entityText, formalSchema: managed, validatedFields: managed ? ['description','appearance','voiceDescription'] : [], typeEditing: false },
       derivation: { supported: hasTable('entity_derivations'), independentEntities: true, changeNotifications: false },
       relations: managed ? { supported: true, categories: ['setting','story'], directScope: 'both endpoints must be explicitly selected' } : capabilities.relations };
   }
-  function exportedRelations(ids) {
+  function exportedRelations(ids,projectId) {
     if (!hasTable('entity_relations')) return [];
     const placeholders=ids.map(()=>'?').join(',');
-    return store.db.prepare(`SELECT * FROM entity_relations WHERE status='active' AND source_entity_id IN (${placeholders}) AND target_entity_id IN (${placeholders}) ORDER BY id`).all(...ids,...ids).map(row=>{
+    const global=store.db.prepare(`SELECT * FROM entity_relations WHERE status='active' AND source_entity_id IN (${placeholders}) AND target_entity_id IN (${placeholders}) ORDER BY id`).all(...ids,...ids).map(row=>{
       const value={relationId:row.id,sourceEntityId:row.source_entity_id,targetEntityId:row.target_entity_id,category:row.category,type:text(row.type),description:text(row.description),status:row.status,targetRevision:row.target_revision,createdAt:row.created_at,updatedAt:row.updated_at};
       return {...value,contentHash:contentHash(value),sourceRevision:contentHash(value)};
-    });
+    }).filter(r=>!projectId||r.category==='setting');
+    const story=projectId?projectService.relations(projectId).filter(r=>ids.includes(r.sourceEntityId)&&ids.includes(r.targetEntityId)).map(r=>{const value={relationId:r.relationId,projectId,sourceEntityId:r.sourceEntityId,targetEntityId:r.targetEntityId,category:'story',type:text(r.type),description:text(r.description),status:r.status,createdAt:r.createdAt,updatedAt:r.updatedAt};return {...value,contentHash:contentHash(value),sourceRevision:r.sourceRevision};}):[];
+    return [...global,...story].sort((a,b)=>a.relationId.localeCompare(b.relationId));
   }
   function file(assetId) {
     const asset = store.asset(assetId), path = store.assetPath(assetId);
@@ -150,6 +155,14 @@ export function createReferenceExport(store) {
   function create(body) {
     const selection = parseRequest(body);
     return store.transaction(() => {
+      let projectContext;
+      if(selection.projectId){
+        if(!projectService)throw new HttpError(404,'项目不存在');
+        const p=projectService.project(selection.projectId);for(const e of selection.entityIds)projectService.member(p.id,e);
+        const fields=Object.fromEntries(['name','brief','synopsis','worldRules','visualStyle','decisions'].map(k=>[k,text(p[k])]));
+        projectContext={owner:'Sean',projectId:p.id,...fields,revision:p.revision,updatedAt:p.updatedAt,missingFields:['brief','synopsis','worldRules','visualStyle'].filter(k=>!p[k].trim())};
+        projectContext.sourceRevision=contentHash(projectContext);
+      }
       const all = selection.entityIds.map(collect), selectedAssets = selection.assetIds && new Set(selection.assetIds);
       if (selectedAssets) for (const assetId of selectedAssets) {
         const a = store.asset(assetId);
@@ -166,7 +179,9 @@ export function createReferenceExport(store) {
           if (fileHash(readFileSync(path)) !== asset.hash) throw new HttpError(409, '素材内容与登记哈希不一致，请恢复原始素材');
           return true;
         });
-        return { ...e, sceneSpatial:sceneSpatialView(store,e.entityId,{includeUnconfirmed:selection.includeUnconfirmed,sanitize:text}), assets, prompts: e.prompts.filter(p => assets.some(a => a.sourceRunId === p.sourceRunId))
+        const projectRole=selection.projectId?projectService.role(selection.projectId,e.entityId):null;
+        const scoped=projectRole?{projectRole:{projectId:selection.projectId,role:text(projectRole.role),plotNotes:text(projectRole.plotNotes),revision:projectRole.revision,sourceRevision:projectRole.sourceRevision,updatedAt:projectRole.updatedAt},sourceRevision:contentHash({entityRevision:e.sourceRevision,projectRoleRevision:projectRole.sourceRevision})}:{};
+        return { ...e,...scoped, ...(projectRole?{contentHash:scoped.sourceRevision}:{}), sceneSpatial:sceneSpatialView(store,e.entityId,{includeUnconfirmed:selection.includeUnconfirmed,sanitize:text}), assets, prompts: e.prompts.filter(p => assets.some(a => a.sourceRunId === p.sourceRunId))
           .map(p => {
             const { contentHash: oldHash, sourceRevision, ...fields } = p;
             const value = { ...fields, assetIds: p.assetIds.filter(id => assets.some(a => a.assetId === id)) };
@@ -174,7 +189,7 @@ export function createReferenceExport(store) {
           }) };
       });
       const caps=exportCapabilities();
-      const payload = { format: 'reference-manifest', schemaVersion: 1, owner: 'Sean', capabilities:caps, selection, entities, relations: selection.includeRelations==='direct'?exportedRelations(selection.entityIds):[],
+      const payload = { format: 'reference-manifest', schemaVersion: 1, owner: 'Sean', capabilities:caps, selection, ...(projectContext?{projectContext}:{}), entities, relations: selection.includeRelations==='direct'?exportedRelations(selection.entityIds,selection.projectId):[],
         omissions, missingCapabilities: [...(!caps.relations.supported?['relations']:[]),'sound_effect', 'review_status', 'prompt_version'] };
       const snapshot = { ...payload, manifestId: randomUUID(), createdAt: new Date().toISOString(), contentHash: contentHash(payload) };
       const bytes = canonicalJSON(snapshot);
