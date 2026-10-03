@@ -27,3 +27,13 @@ Owner: Sean。2026-10-03。
 默认服务 `127.0.0.1:4188`，样例 `?entity=5821d6dd-2041-40a3-a789-74989c6edd90`。完整数据备份 `reference-workspace/.data`。最终构建成功、PC console 0 errors、GPU leases 为空，未重启 ComfyUI；本批 output 已回收清理。图片、截图、SQLite、dist、依赖留本机，源码／模板／元数据／文档 scoped 提交；不混合推送已有 main 的其他任务提交。
 
 限制：一角色每布局一轮；四视图喜悦表情没有严格生成，需用户挑选；未做 H3 下游或 canonical 验收，声音／管理页／手机未实现。
+
+## 2026-10-03 用户追加：脸部＋正背侧与风格
+
+Owner: Sean。用户要求新增“脸部＋front＋back＋size”，已确认 size 指 side。任务 reopen／claim 后本会话 generation 2 继续执行，四表情原版仍保留。
+
+- 增加 `face-front-back-side` 布局：左侧一张中性脸部特写，右侧正面／背面／侧面全身。独立 `qwen-multiview.v3-simple-face.json` 从 V3 Simple 的本地图派生；旧模板保持内容/hash，旧 run 兼容结果为 true。
+- 概念图和多视图同用八种风格，新增摄影写实、日系动画、3D 动画、水彩和水墨。保留已有三个风格快照对象；original 在多视图显示“原图风格”。非 original 多视图替换“严格匹配原图画风”要求，保留服装装备约束，并追加风格词。
+- 多视图草稿和生成接口接收 styleId，旧草稿默认 original；历史恢复原风格，结果/历史显示运行时风格。选项与固定提示词均由服务端提供。
+- 构建成功；1440px PC 手动页面检查无横向溢出、console 0 errors/warnings，新增布局＋anime 保存与重载正常，原四视图历史恢复 four/original。截图 `sean_face_style_pc.png` 留本机（忽略）。样例草稿目前是 face-front-back-side/anime，先前已确认视图仍保持。
+- 这次未增加生成，未运行/新增单元测试。新增布局和风格效果未实跑；只更新工作台服务 4188，未操作 ComfyUI。详细证据见 `sean_layout_style_review.md`。

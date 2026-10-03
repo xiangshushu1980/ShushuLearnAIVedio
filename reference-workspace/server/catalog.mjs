@@ -16,8 +16,8 @@ const fields = {
   seed: { type: 'integer', label: '随机种子', default: 42, min: 0, max: 2147483647 },
   steps: { type: 'integer', label: '采样步数', default: 8, min: 1, max: 30 }
 };
-const multiviewModels = ['three', 'four'].map(layout => ({
-  id: `qwen-v3-simple-${layout}`, name: `Qwen V3 Simple · ${layout === 'three' ? '三视图' : '表情＋正侧背'}`,
+const multiviewModels = ['three', 'four', 'face-front-back-side'].map(layout => ({
+  id: `qwen-v3-simple-${layout}`, name: `Qwen V3 Simple · ${{ three: '三视图', four: '表情＋正侧背', 'face-front-back-side': '脸部＋正面／背面／侧面' }[layout]}`,
   version: 3, adapter: 'comfy', enabled: true, stage: 'multiview', layout, localGpu: true,
   references: { min: 1, max: 1, instruction: '只引用已选定的主形象，保留其身份、服装、装备和画风。' },
   fields: { size: { ...size, options: [size.options[0]] }, seed: { ...fields.seed, default: 6200605 },
@@ -38,8 +38,20 @@ const models = [
 
 export const catalog = {
   models: models.map(({ endpoint, ...model }) => model), styles: profiles.styles,
-  multiview: multiviewModels.map(model => ({ ...model, prompt: workflowTemplate(model.id).layoutPrompts[model.layout] }))
+  multiview: multiviewModels.map(model => ({ ...model, prompt: workflowTemplate(model.id).layoutPrompts[model.layout],
+    promptsByStyle: Object.fromEntries(profiles.styles.map(style => [style.id, multiviewPrompt(model.id, style.id)])) }))
 };
+export function multiviewPrompt(modelId, styleId, notes = '') {
+  const model = modelFor(modelId);
+  const style = profiles.styles.find(style => style.id === styleId);
+  if (!style) throw new HttpError(400, '请选择已保存的风格');
+  let prompt = workflowTemplate(modelId).layoutPrompts[model.layout];
+  if (style.promptSuffix) prompt = prompt
+    .replace('Rendering style, line weight, texture, and shading must strictly match the reference image.',
+      'Use the selected rendering style consistently across every portrait and full-body view. Preserve the reference subject\'s identity, proportions, clothing, colors, equipment, and accessories while changing only the rendering style.')
+    .replace('or style drift.', 'or inconsistent rendering between views.');
+  return [prompt, notes.trim()].filter(Boolean).join('\n\n');
+}
 export function modelFor(modelId) {
   const model = models.find(m => m.id === modelId);
   if (!model) throw new HttpError(400, '未知模型配置');
@@ -76,7 +88,9 @@ export function validateRun(body) {
 }
 
 export function workflowTemplate(modelId) {
-  const path = modelId.startsWith('qwen-v3-simple-') ? '../catalog/qwen-multiview.v3-simple.json' : modelId === 'qwen-image-2.1' ? '../catalog/qwen-concept.v1.json' : '../catalog/krea-concept.v1.json';
+  const path = modelId === 'qwen-v3-simple-face-front-back-side' ? '../catalog/qwen-multiview.v3-simple-face.json'
+    : modelId.startsWith('qwen-v3-simple-') ? '../catalog/qwen-multiview.v3-simple.json'
+      : modelId === 'qwen-image-2.1' ? '../catalog/qwen-concept.v1.json' : '../catalog/krea-concept.v1.json';
   const bytes = readFileSync(new URL(path, import.meta.url));
   return { ...JSON.parse(bytes), hash: createHash('sha256').update(bytes).digest('hex') };
 }

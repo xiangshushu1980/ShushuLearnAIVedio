@@ -73,10 +73,12 @@ app.post('/api/entities/:entityId/multiview/confirm', (req, res) => {
 app.put('/api/entities/:entityId/multiview/draft', (req, res) => {
   const entityId = store.entity(req.params.entityId).id;
   const body = check(z.object({ expectedUpdatedAt: z.string().nullable(), value: z.object({
-    layout: z.enum(['three', 'four']), appearanceId: z.string().uuid().nullable(),
+    layout: z.enum(['three', 'four', 'face-front-back-side']), appearanceId: z.string().uuid().nullable(),
+    styleId: z.string().default('original'),
     parameters: z.record(z.string(), z.union([z.string(), z.number()])), purpose: z.string().max(2000), notes: z.string().max(2000),
     sourceRunId: z.string().uuid().optional()
   }).strict() }).strict(), req.body);
+  if (!catalog.styles.some(style => style.id === body.value.styleId)) throw new HttpError(400, '草稿风格不可用');
   if (body.value.appearanceId && store.visualState(entityId).appearanceHistory.every(v => v.id !== body.value.appearanceId))
     throw new HttpError(400, '主形象版本不属于当前实体');
   if (body.value.sourceRunId && store.run(body.value.sourceRunId).entityId !== entityId) throw new HttpError(400, '历史运行不属于当前实体');

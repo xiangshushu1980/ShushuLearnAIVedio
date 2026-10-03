@@ -21,17 +21,22 @@ export function MultiViewPanel({ workspace, catalog, Picture, api, refresh, noti
   const current = workspace.visualState?.appearance;
   const models = catalog.multiview || [];
   const defaults = model => Object.fromEntries(Object.entries(model?.fields || {}).map(([key, field]) => [key, field.default]));
-  const initial = () => workspace.multiviewDraft?.value || { layout: 'three', appearanceId: current?.id || null,
-    parameters: defaults(models.find(model => model.layout === 'three')), purpose: '', notes: '' };
+  const initial = () => ({ styleId: 'original', ...(workspace.multiviewDraft?.value || { layout: 'three', appearanceId: current?.id || null,
+    parameters: defaults(models.find(model => model.layout === 'three')), purpose: '', notes: '' }) });
   const [draft, setDraft] = useState(initial), [saved, setSaved] = useState(() => JSON.stringify(initial()));
   const [draftAt, setDraftAt] = useState(workspace.multiviewDraft?.updatedAt || null), [busy, setBusy] = useState('');
   const [loaded, setLoaded] = useState(null), [previewId, setPreviewId] = useState(null);
   const request = useRef(null);
   const dirty = JSON.stringify(draft) !== saved;
   const model = models.find(model => model.layout === draft.layout);
+  const style = catalog.styles.find(style => style.id === draft.styleId);
+  const styleName = style => style.id === 'original' ? '原图风格' : style.name;
+  const layoutName = layout => models.find(model => model.layout === layout)?.name.replace('Qwen V3 Simple · ', '') || layout;
+  const layoutDescription = { three: '三个等比例全身视角。', four: '沿用 V3 Simple：左侧四种表情特写，右侧正／侧／背。',
+    'face-front-back-side': '左侧一张中性脸部特写，右侧依次是正面／背面／侧面全身。' };
   const runs = workspace.runs.filter(run => run.snapshot.stage === 'multiview');
   const sourceRun = runs.find(run => run.id === draft.sourceRunId);
-  const displayedRun = previewId ? runs.find(run => run.outputs.some(asset => asset.id === previewId)) : sourceRun || runs.find(run => run.snapshot.appearance?.id === current?.id && run.snapshot.layout === draft.layout && run.outputs.some(asset => !asset.deletedAt));
+  const displayedRun = previewId ? runs.find(run => run.outputs.some(asset => asset.id === previewId)) : sourceRun || runs.find(run => run.snapshot.appearance?.id === current?.id && run.snapshot.layout === draft.layout && run.snapshot.style.id === draft.styleId && run.outputs.some(asset => !asset.deletedAt));
   const result = displayedRun?.outputs.find(asset => !asset.deletedAt && (!previewId || asset.id === previewId));
   const inputCurrent = !!current && draft.appearanceId === current.id;
   const resultCurrent = !!current && displayedRun?.snapshot.appearance?.id === current.id;
@@ -80,9 +85,9 @@ export function MultiViewPanel({ workspace, catalog, Picture, api, refresh, noti
     setBusy('load');
     try {
       const value = await api(`/runs/${run.id}/input`);
-      setDraft({ layout: run.snapshot.layout, appearanceId: value.input.appearanceId, parameters: value.input.parameters,
+      setDraft({ layout: run.snapshot.layout, styleId: value.input.styleId || 'original', appearanceId: value.input.appearanceId, parameters: value.input.parameters,
         purpose: value.input.purpose, notes: value.input.notes || '', sourceRunId: run.id });
-      setLoaded(value); setPreviewId(null); notify('已载入多视图历史输入及其主形象版本');
+      setLoaded(value); setPreviewId(null); notify('已载入历史布局、风格、参数及主形象版本');
     } catch (error) { notify(error.message, true); }
     finally { setBusy(''); }
   }
@@ -114,27 +119,30 @@ export function MultiViewPanel({ workspace, catalog, Picture, api, refresh, noti
     {current ? <div className="appearance-current">{inputAsset?.url ? <img src={inputAsset.url} alt={inputAsset.name} /> : <span className="input-missing">来源图已删除</span>}<div><b>输入主形象 · 版本 {inputAppearance?.version || current.version}</b><p>{inputAsset?.name || '来源图不可用'}</p><button onClick={onAppearance}>更换主形象</button>{!inputCurrent && <><p className="error-text">当前主形象是版本 {current.version}，请更新本轮输入。</p><button className="primary" onClick={() => { patch({ appearanceId: current.id, sourceRunId: undefined }); setPreviewId(null); }}>引用当前主形象</button></>}</div></div> : <div className="empty"><h3>先选定主形象</h3><p>从概念图结果选一张即可。</p><button className="primary" onClick={onAppearance}>选择主形象</button></div>}
     {workspace.visualState?.view && <div className="notice"><span>当前已确认：{workspace.visualState.view.name}</span><button className="quiet" onClick={() => setPreviewId(workspace.visualState.view.id)}>查看</button></div>}
     <section className="input-panel"><label>视图布局<select value={draft.layout} onChange={event => { patch({ layout: event.target.value, sourceRunId: undefined }); setPreviewId(null); }}>
-      <option value="three">三视图 · 正面／侧面／背面</option><option value="four">四视图 · 表情特写＋正面／侧面／背面</option></select></label>
-      <p className="muted">{draft.layout === 'three' ? '三个等比例全身视角。' : '沿用 V3 Simple：左侧四种表情特写，右侧正／侧／背。'}保持主形象的服装、装备和画风。</p>
-      <details className="fixed-prompt"><summary>查看固定提示词</summary><p className="saved-prompt">{model?.prompt || '工作流配置尚未就绪'}</p></details>
+      <option value="three">三视图 · 正面／侧面／背面</option><option value="four">四视图 · 表情特写＋正面／侧面／背面</option>
+      <option value="face-front-back-side">四视图 · 脸部＋正面／背面／侧面</option></select></label>
+      <p className="muted">{layoutDescription[draft.layout]}保留主形象的身份、服装和装备。</p>
+      <details className="fixed-prompt"><summary>查看布局与风格提示词</summary><p className="saved-prompt">{[model?.promptsByStyle?.[draft.styleId] || model?.prompt || '工作流配置尚未就绪', style?.promptSuffix].filter(Boolean).join('\n\n')}</p></details>
       <label>补充要求 <span className="muted">（选填）</span><textarea rows={3} value={draft.notes} maxLength={2000} placeholder="例如：保留腰间的刀鞘，不添加其他武器。" onChange={event => patch({ notes: event.target.value })} /></label>
       <label>本轮目的 <span className="muted">（选填）</span><input value={draft.purpose} maxLength={2000} onChange={event => patch({ purpose: event.target.value })} /></label>
       {sourceRun && <div className="loaded-workflow"><b>已载入历史 · {sourceRun.id.slice(0, 8)}</b><a href={`/api/runs/${sourceRun.id}/workflow`} target="_blank" rel="noreferrer">查看历史原始工作流 ↗</a>{loaded && !loaded.compatible && <><p className="error-text">{loaded.reason}</p><button onClick={() => { if (confirm('改用当前固定工作流？请检查输入后再生成。')) patch({ sourceRunId: undefined }); }}>改用当前工作流</button></>}</div>}
     </section>
-    <section className="generation-settings"><h3>生成设置</h3><div className="fields-row">{Object.entries(model?.fields || {}).map(([key, field]) => <label key={key}>{field.label}{field.type === 'select' ? <select value={draft.parameters[key] ?? field.default} onChange={event => patch({ parameters: { ...draft.parameters, [key]: event.target.value } })}>{field.options.map(option => <option key={option.value} value={option.value}>{option.label}</option>)}</select> : <input type="number" min={field.min} max={field.max} step={1} value={draft.parameters[key] ?? field.default} onChange={event => patch({ parameters: { ...draft.parameters, [key]: event.target.value === '' ? '' : Number(event.target.value) } })} />}</label>)}</div>
+    <section className="generation-settings"><h3>生成设置</h3><div className="fields-row"><label>生成风格<select value={draft.styleId} onChange={event => { patch({ styleId: event.target.value }); setPreviewId(null); }}>{catalog.styles.map(style => <option key={style.id} value={style.id}>{styleName(style)}</option>)}</select></label>
+      {Object.entries(model?.fields || {}).map(([key, field]) => <label key={key}>{field.label}{field.type === 'select' ? <select value={draft.parameters[key] ?? field.default} onChange={event => patch({ parameters: { ...draft.parameters, [key]: event.target.value } })}>{field.options.map(option => <option key={option.value} value={option.value}>{option.label}</option>)}</select> : <input type="number" min={field.min} max={field.max} step={1} value={draft.parameters[key] ?? field.default} onChange={event => patch({ parameters: { ...draft.parameters, [key]: event.target.value === '' ? '' : Number(event.target.value) } })} />}</label>)}</div>
+      <p className="muted">原图风格沿用主形象的画风；其他风格改变绘制方式，各视角使用同一风格。</p>
       <div className="generate-actions"><span className="muted">{dirty ? '多视图输入有未保存修改' : draftAt ? '输入已保存' : ''}</span><button disabled={!dirty || !!busy} onClick={save}>保存本轮输入</button><button className="primary" disabled={!inputCurrent || !model?.enabled || !!activeRun || !!busy || (!!draft.sourceRunId && !loaded?.compatible)} onClick={generate}>{activeRun?.snapshot.stage === 'multiview' ? activeRun.phase : busy === 'generate' ? '正在提交…' : '开始生成多视图'}</button></div>
       {activeRun?.snapshot.stage === 'multiview' && <p className="muted">{activeRun.phase}{activeRun.progress != null ? ` · ${Math.round(activeRun.progress)}%` : ''}</p>}
     </section>
-    <section className="result-section"><div className="section-head"><div><h3>生成结果</h3>{displayedRun && <p>主形象版本 {displayedRun.snapshot.appearance.version} · {displayedRun.snapshot.layout === 'three' ? '三视图' : '四视图'}{!resultCurrent ? ' · 来自旧版主形象' : ''}</p>}</div></div>
+    <section className="result-section"><div className="section-head"><div><h3>生成结果</h3>{displayedRun && <p>主形象版本 {displayedRun.snapshot.appearance.version} · {layoutName(displayedRun.snapshot.layout)} · {styleName(displayedRun.snapshot.style)}{!resultCurrent ? ' · 来自旧版主形象' : ''}</p>}</div></div>
       <div className="large-preview">{result?.url ? <img src={result.url} alt={result.name} /> : <div className="empty"><h3>生成后在这里确认视图</h3><p>合成图作为一个完整结果保留。</p></div>}</div>
       {result && <div className="preview-caption"><span>{result.name}</span><div className="card-actions"><button onClick={() => onPreview(result)}>放大</button><button className="primary" onClick={confirmResult} disabled={!!busy || !resultCurrent || result.protected}>{result.protected ? '当前视图' : '设为当前视图'}</button></div></div>}
     </section>
     <section className="run-history"><div className="section-head"><h3>多视图历史</h3><span className="muted">点击载入该次输入，旧主形象来源保留</span></div>
       {runs.map(run => <article className={`run-card ${draft.sourceRunId === run.id ? 'loaded' : ''}`} key={run.id} onClick={event => { if (!busy && !event.target.closest('button,a,details')) void load(run); }}>
-        <button className="history-load" aria-label={`载入多视图历史 ${run.id.slice(0, 8)}`} onClick={() => load(run)} disabled={!!busy}><span className="run-heading"><b>{{queued:'等待生成',running:'生成中',succeeded:'已生成',failed:'失败',cancelled:'已取消'}[run.status]}</b><span>{run.snapshot.layout === 'three' ? '三视图' : '四视图'} · 主形象版本 {run.snapshot.appearance.version}</span><span className="muted">{new Date(run.createdAt).toLocaleString('zh-CN')} · {run.id.slice(0, 8)}</span><span className="accent">载入 →</span></span></button>
+        <button className="history-load" aria-label={`载入多视图历史 ${run.id.slice(0, 8)}`} onClick={() => load(run)} disabled={!!busy}><span className="run-heading"><b>{{queued:'等待生成',running:'生成中',succeeded:'已生成',failed:'失败',cancelled:'已取消'}[run.status]}</b><span>{layoutName(run.snapshot.layout)} · {styleName(run.snapshot.style)} · 主形象版本 {run.snapshot.appearance.version}</span><span className="muted">{new Date(run.createdAt).toLocaleString('zh-CN')} · {run.id.slice(0, 8)}</span><span className="accent">载入 →</span></span></button>
         <p>{run.snapshot.purpose || run.phase}</p>{run.error && <p className="error-text">{run.error}</p>}
         <div className="reference-grid multiview-output-grid">{run.outputs.map(asset => <Picture key={asset.id} asset={asset} actionLabel="载入历史" onClick={() => load(run)}><div className="card-actions"><button className="quiet" disabled={!!busy || asset.protected || !!asset.deletedAt} onClick={() => lock(asset)}>{asset.locked ? '解锁' : '锁定'}</button><button className="quiet danger" disabled={!!busy || asset.locked || asset.protected || !!asset.deletedAt} onClick={() => onDelete(asset)}>删除</button></div></Picture>)}</div>
-        <details><summary>查看本轮输入</summary><p className="saved-prompt">{run.snapshot.prompt}</p><p className="muted">{JSON.stringify(run.snapshot.parameters)}</p><p>来源：主形象版本 {run.snapshot.appearance.version} · {run.references[0]?.name}{run.references[0]?.deletedAt ? ' · 来源图已删除' : ''}</p>{run.promptId && <a href={`/api/runs/${run.id}/workflow`} target="_blank" rel="noreferrer">原始工作流 ↗</a>}</details>
+        <details><summary>查看本轮输入</summary><p className="saved-prompt">{run.snapshot.effectivePrompt}</p><p className="muted">风格：{styleName(run.snapshot.style)} · {JSON.stringify(run.snapshot.parameters)}</p><p>来源：主形象版本 {run.snapshot.appearance.version} · {run.references[0]?.name}{run.references[0]?.deletedAt ? ' · 来源图已删除' : ''}</p>{run.promptId && <a href={`/api/runs/${run.id}/workflow`} target="_blank" rel="noreferrer">原始工作流 ↗</a>}</details>
         <div className="run-actions">{['failed', 'cancelled'].includes(run.status) && <button disabled={!!busy || !!activeRun || run.snapshot.appearance?.id !== current?.id} onClick={() => runAction(run, 'retry')}>重新运行</button>}{run.status === 'queued' && run.promptId && <button className="quiet" disabled={!!busy} onClick={() => runAction(run, 'cancel')}>取消排队</button>}</div>
       </article>)}{!runs.length && <p className="muted">暂无多视图生成记录。</p>}
     </section>

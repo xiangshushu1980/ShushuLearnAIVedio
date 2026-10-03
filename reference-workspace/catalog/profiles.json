@@ -2,8 +2,53 @@
   "owner": "Sean",
   "version": 1,
   "styles": [
-    { "id": "original", "name": "原始提示词", "version": 1, "promptSuffix": "" },
-    { "id": "cinematic", "name": "电影感写实", "version": 1, "promptSuffix": "Cinematic lighting, realistic materials, coherent color grading." },
-    { "id": "concept", "name": "概念设定", "version": 1, "promptSuffix": "A clear concept design illustration, readable silhouette, careful material and shape design." }
+    {
+      "id": "original",
+      "name": "原始提示词",
+      "version": 1,
+      "promptSuffix": ""
+    },
+    {
+      "id": "cinematic",
+      "name": "电影感写实",
+      "version": 1,
+      "promptSuffix": "Cinematic lighting, realistic materials, coherent color grading."
+    },
+    {
+      "id": "concept",
+      "name": "概念设定",
+      "version": 1,
+      "promptSuffix": "A clear concept design illustration, readable silhouette, careful material and shape design."
+    },
+    {
+      "id": "photoreal",
+      "name": "摄影写实",
+      "version": 1,
+      "promptSuffix": "Photorealistic rendering, natural skin texture, physically plausible materials, fine photographic detail."
+    },
+    {
+      "id": "anime",
+      "name": "日系动画",
+      "version": 1,
+      "promptSuffix": "Japanese anime character art, clean controlled linework, cel shading, crisp colors, clear facial features."
+    },
+    {
+      "id": "three-dimensional",
+      "name": "3D 动画",
+      "version": 1,
+      "promptSuffix": "Polished 3D animated character rendering, sculpted forms, physically based materials, clean soft shading."
+    },
+    {
+      "id": "watercolor",
+      "name": "水彩插画",
+      "version": 1,
+      "promptSuffix": "Watercolor illustration, translucent pigment washes, subtle paper grain, soft painted edges, readable character details."
+    },
+    {
+      "id": "ink",
+      "name": "水墨插画",
+      "version": 1,
+      "promptSuffix": "Chinese ink wash illustration, expressive controlled brushwork, restrained color accents, readable facial and costume details."
+    }
   ]
 }

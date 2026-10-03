@@ -57,10 +57,15 @@ npm start
 | --- | --- |
 | 三视图 | 正面／侧面／背面三个等比例全身视角，沿用 V3 Simple 的画风与一致性约束 |
 | 四视图 | 按用户确认保留 V3 Simple 原版：左侧中性／喜／怒／哀四个特写，右侧正／侧／背 |
+| 脸部＋正背侧 | 左侧一张中性脸部特写；右侧依次为正面／背面／侧面三个等比例全身视角，不含表情栏 |
 
 固定基础提示词可展开查看；补充要求单独追加。沿用用户提供 `experiments/qwen_image_2_1_civitai_character_sheet_20261002/source_workflow_v3/v3_simple_static_adapted_api.json` 的本地 int8 配置，25 步、CFG 1、Euler/simple、1536×1024，默认 seed 6200605。工作台模板 `catalog/qwen-multiview.v3-simple.json` 保存来源 hash 与两种布局提示词；没有接入自动提示词增强或新增模型依赖。这是已有本地适配，不等同于上游 BF16 / DeGrid / 更高分辨率全配置。
 
-生成时保存确切主形象版本、源图 hash、布局、完整提示词、参数和提交图；输出自动锁定。点击历史记录载入原输入和工作流，旧主形象的结果会显示其来源版本；主形象已更换时须明确“引用当前主形象”后才能开始新一轮。
+新增脸部布局使用独立模板 `catalog/qwen-multiview.v3-simple-face.json`：沿用同一 V3 Simple 本地模型与采样图，布局提示词由 Sean 调整；原三／四视图模板及 hash 保留，旧历史可继续载入。2026-10-03 用户确认此前的 `size` 指 `side`（侧面）。新增布局尚未实跑生图。
+
+概念图和多视图均可选择生成风格：原图风格、电影感写实、概念设定、摄影写实、日系动画、3D 动画、水彩插画、水墨插画。多视图默认“原图风格”，保持原版提示词；其他风格将严格匹配原图画风的要求改为统一使用所选绘制风格，同时保留身份、比例、服装、颜色及装备约束。风格词由服务端追加，不增加参考图片、模型或 LoRA。各风格的生成效果需实际选图确认。
+
+生成时保存确切主形象版本、源图 hash、布局、风格、完整提示词、参数和提交图；输出自动锁定。点击历史记录载入原输入、风格和工作流，旧主形象的结果会显示其来源版本；主形象已更换时须明确“引用当前主形象”后才能开始新一轮。旧多视图草稿没有 styleId 时按 original 恢复。
 
 合成图作为一项完整结果，可“设为当前视图”。确认记录独立版本；换图后旧结果自动锁定。更换主形象会清空当前视图指针，旧输出和确认记录均保留，需为新主形象生成或选择对应视图。概念图生成、主形象选择、视图确认三个操作保持独立。
 
@@ -80,7 +85,7 @@ npm start
 | 引用映射 | `images.image_1`…`images.image_16`；只建立已选图的 LoadImage 节点 |
 | 能力证据 | 本机 TextEncode 节点声明 0–16 张；一期端到端实跑覆盖四张设定图及一张历史图，未声称测过 16 张质量 |
 
-Krea 2 文本与 Edit 作为备选工作流保留，能力上限分别是 0 张、1–2 张。Krea 的参考一致性仍需用户评审；本期真实生成验收使用 Qwen。已保存风格位于 `catalog/profiles.json`，当前提供原始提示词、电影感写实和概念设定三种文本配置；不自动加入风格参考图片或 LoRA。
+Krea 2 文本与 Edit 作为备选工作流保留，能力上限分别是 0 张、1–2 张。Krea 的参考一致性仍需用户评审；本期真实生成验收使用 Qwen。已保存风格位于 `catalog/profiles.json`，概念图与多视图使用同一份风格目录；不自动加入风格参考图片或 LoRA。概念图的 original 表示按用户提示词生成，不追加风格词。
 
 模型能力与参数由后端目录提供，前端展示同一份 schema。每条运行记录保存模型/风格/模板版本、模板内容 hash、原始与生效提示词、目的、参数、实体上下文、实际输入图片 ID/hash，以及提交时的完整工作流。
 
@@ -100,7 +105,7 @@ Krea 2 文本与 Edit 作为备选工作流保留，能力上限分别是 0 张�
 | `POST /api/entities/:id/settings` | multipart `images` 多选导入 |
 | `POST /api/entities/:id/appearance` | `{assetId, expectedAppearanceId}` 选定主形象；初次 expected=null |
 | `PUT /api/entities/:id/multiview/draft` | 独立的多视图草稿，使用 expectedUpdatedAt 防止覆盖 |
-| `POST /api/entities/:id/multiview/runs` | `{layout, appearanceId, parameters, purpose, notes, sourceRunId?}`；layout=three/four，带 Idempotency-Key |
+| `POST /api/entities/:id/multiview/runs` | `{layout, styleId?, appearanceId, parameters, purpose, notes, sourceRunId?}`；layout=three/four/face-front-back-side，styleId 默认 original，带 Idempotency-Key |
 | `POST /api/entities/:id/multiview/confirm` | `{assetId, expectedAppearanceId}` 确认当前版本的视图 |
 | `POST /api/entities/:id/runs` | 运行输入；必须带 `Idempotency-Key` |
 | `GET /api/runs/:id` | 执行状态、实际输入与输出 |

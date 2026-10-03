@@ -3,7 +3,7 @@ import { execFile } from 'node:child_process';
 import { promisify, isDeepStrictEqual } from 'node:util';
 import { unlinkSync, existsSync } from 'node:fs';
 import { resolve, sep } from 'node:path';
-import { validateRun, workflowTemplate, buildComfyWorkflow, modelFor } from './catalog.mjs';
+import { validateRun, workflowTemplate, buildComfyWorkflow, modelFor, multiviewPrompt } from './catalog.mjs';
 import { z } from 'zod';
 import { comfyUrl, comfyRequest, prepareComfy, submitComfy, readComfyResult, downloadComfy } from './adapters.mjs';
 import { HttpError, now } from './store.mjs';
@@ -85,7 +85,7 @@ export function createRunService(store) {
     const stages = [];
     try {
       const kind = run.snapshot.stage === 'multiview' ? 'multiview' : 'concept';
-      const label = kind === 'concept' ? '概念图' : run.snapshot.layout === 'three' ? '三视图' : '表情＋正侧背';
+      const label = kind === 'concept' ? '概念图' : { three: '三视图', four: '表情＋正侧背', 'face-front-back-side': '脸部＋正背侧' }[run.snapshot.layout];
       for (let i = 0; i < buffers.length; i++) stages.push(await store.stageImage(buffers[i], `${label} ${run.id.slice(0, 8)} · ${i + 1}`,
         run.entityId, kind, run.id, { source: 'generation', template: run.snapshot.template, ...(run.snapshot.appearance ? { appearance: run.snapshot.appearance, layout: run.snapshot.layout } : {}),
           outputIndex: i, inputAssetIds: run.snapshot.references.map(r => r.id), ...outputContext }));
@@ -244,15 +244,15 @@ export function createRunService(store) {
       return saved.run;
     },
     startMultiview(entityId, body, key) {
-      const result = z.object({ layout: z.enum(['three', 'four']), appearanceId: z.string().uuid(),
+      const result = z.object({ layout: z.enum(['three', 'four', 'face-front-back-side']), appearanceId: z.string().uuid(),
+        styleId: z.string().default('original'),
         parameters: z.record(z.string(), z.union([z.string(), z.number()])), purpose: z.string().max(2000).default(''),
         notes: z.string().max(2000).default(''), sourceRunId: z.string().uuid().optional() }).strict().safeParse(body);
       if (!result.success) throw new HttpError(400, '多视图输入格式不正确', result.error.flatten());
       const input = result.data, model = modelFor(`qwen-v3-simple-${input.layout}`);
       const current = store.visualState(entityId).appearance;
       if (!current || current.id !== input.appearanceId) throw new HttpError(409, '主形象已改变，请载入当前主形象');
-      const basePrompt = workflowTemplate(model.id).layoutPrompts[input.layout];
-      const request = { modelId: model.id, styleId: 'original', prompt: [basePrompt, input.notes.trim()].filter(Boolean).join('\n\n'),
+      const request = { modelId: model.id, styleId: input.styleId, prompt: multiviewPrompt(model.id, input.styleId, input.notes),
         purpose: input.purpose, notes: input.notes, appearanceId: current.id, references: [current.assetId], parameters: input.parameters,
         ...(input.sourceRunId ? { sourceRunId: input.sourceRunId } : {}) };
       const saved = store.createRun(entityId, snapshot(entityId, request), key);
