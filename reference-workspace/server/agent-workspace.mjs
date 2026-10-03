@@ -11,7 +11,7 @@ import { spatialDocumentSchema, spatialDocumentShape } from './spatial-schema.mj
 import { sceneProfile, agentProfiles } from './agent-profiles.mjs';
 import { createPiRuntime } from './pi-agent-runtime.mjs';
 import { createProjectWorkspace } from './project-workspace.mjs';
-import { createEntityAuthoring,authoringPlanSchema } from './entity-authoring.mjs';
+import { createEntityAuthoring,authoringPlanSchema,existingImagesSchema } from './entity-authoring.mjs';
 import {imageReviewSchema,imageReviewSources} from './image-feedback.mjs';
 import {createEntityChangeProposals,entityChangeSchema} from './entity-change-proposals.mjs';
 import { catalog } from './catalog.mjs';
@@ -32,7 +32,7 @@ const proposalSchema = z.object({ document: spatialDocumentSchema, summary: z.st
   questions: z.array(z.string().trim().min(1).max(2000)).max(3), sources: z.array(sourceSchema).max(500) }).strict();
 const jsonTool = value => ({ content: [{ type: 'text', text: canonicalJSON(value) }], details: {} });
 const terminal = status => status !== 'running';
-const labels = {propose_entity_update:'提出实体文字修改', get_image_consistency_review:'读取图片检验报告与步骤来源',get_entity_workflow_step:'读取图片步骤完整版本',propose_image_step_revision:'提出图片步骤修订', propose_entity_workflow:'整理实体与变体创作方案', get_entity_workflow_catalog:'读取可用图片工作流', get_entity_workflow_plans:'读取已保存创作方案', get_project_context: '读取项目最新资料', get_project_entity: '读取项目实体详情', propose_project_review: '整理项目检查结果', propose_project_update: '整理项目资料建议', get_scene_context: '读取工程和场景资料', view_reference_image: '查看参考图',
+const labels = {propose_existing_entity_images:'规划已有实体新图片步骤',propose_entity_update:'提出实体文字修改', get_image_consistency_review:'读取图片检验报告与步骤来源',get_entity_workflow_step:'读取图片步骤完整版本',propose_image_step_revision:'提出图片步骤修订', propose_entity_workflow:'整理实体与变体创作方案', get_entity_workflow_catalog:'读取可用图片工作流', get_entity_workflow_plans:'读取已保存创作方案', get_project_context: '读取项目最新资料', get_project_entity: '读取项目实体详情', propose_project_review: '整理项目检查结果', propose_project_update: '整理项目资料建议', get_scene_context: '读取工程和场景资料', view_reference_image: '查看参考图',
   load_authoring_skill: '读取当前工作模式的方法', propose_scene_spatial: '整理空间提案' };
 
 export function createAgentWorkspace(store, { runtime = createPiRuntime(store.root), projectService = createProjectWorkspace(store), authoringService = createEntityAuthoring(store,{projectService}) } = {}) {
@@ -260,6 +260,7 @@ export function createAgentWorkspace(store, { runtime = createPiRuntime(store.ro
     tools.push(tool('propose_project_review','保存带实体引用的项目一致性检查报告；不会自动修改事实。',{type:'object',properties:{summary:{type:'string'},issues:{type:'array',maxItems:30,items:{type:'object',properties:{entityIds:{type:'array',items:{type:'string',format:'uuid'}},category:{type:'string',enum:['conflict','missing','suggestion']},description:{type:'string'},suggestion:{type:'string'}},required:['entityIds','category','description','suggestion'],additionalProperties:false}}},required:['summary','issues'],additionalProperties:false},raw=>jsonTool(projectProposal(s,run,'review',raw,reviewedEntities,seenImages))));
     tools.push(tool('propose_image_consistency_review','保存逐张实际观察的图片检验。问题可用 assetIds 指明已检查图片；系统记录实际生成步骤来源。不是确认。',z.toJSONSchema(imageReviewSchema),raw=>jsonTool(projectProposal(s,run,'image-review',raw,reviewedEntities,seenImages,seenSteps))));
     if(s.purpose==='project-authoring'){
+      tools.push(tool('propose_existing_entity_images','对已读取的项目实体增加图片工作流候选，不重复创建实体，不修改文字、关系、空间或选图。',z.toJSONSchema(existingImagesSchema),raw=>{const input=parse(existingImagesSchema,raw);if(!reviewedEntities.has(input.entityId))throw new HttpError(400,'请先读取目标实体完整资料');if(contentHash(basis(s,run.basis.referenceAssetIds))!==contentHash(run.basis))throw new HttpError(409,'本轮资料已变化，请重新讨论');for(const im of input.images)for(const a of im.referenceAssetIds)if(!run.basis.referenceAssetIds.includes(a))throw new HttpError(400,'新步骤参考图必须是本轮用户明确选图');const proposal=authoringService.saveExistingImages(s.project_id,input,{sessionId:s.id,runId:run.id,expectedBasis:{contextHash:context(s.project_id).contentHash}});emit(run.id,'proposal',{proposalId:proposal.id,kind:'entity-workflow'});return jsonTool({planId:proposal.id,savedAs:'proposal-only',generationSubmitted:false});}));
       tools.push(tool('propose_entity_update','对已读取的当前项目实体提出文字字段修改，只保存提案，网页人工接受后写入全局实体资料。',z.toJSONSchema(entityChangeSchema),raw=>{const input=parse(entityChangeSchema,raw);if(!reviewedEntities.has(input.entityId))throw new HttpError(400,'请先读取目标实体完整资料再提出修改');if(contentHash(basis(s,run.basis.referenceAssetIds))!==contentHash(run.basis))throw new HttpError(409,'本轮资料已变化，请重新讨论');const proposal=entityChanges.save(s.project_id,input,{sessionId:s.id,runId:run.id});emit(run.id,'proposal',{proposalId:proposal.id,kind:'entity-update'});return jsonTool({proposalId:proposal.id,savedAs:'proposal-only',generationSubmitted:false});}));
       tools.push(tool('get_image_consistency_review','按报告 ID 读取当前项目图片检验与生成步骤来源；报告修订前必须读取。',z.toJSONSchema(z.object({reviewId:uuid}).strict()),raw=>{const {reviewId}=parse(z.object({reviewId:uuid}).strict(),raw);const report=authoringService.imageReview(s.project_id,reviewId);seenReviews.set(reviewId,report.contentHash);return jsonTool(report);}));
       tools.push(tool('get_entity_workflow_catalog','读取当前可用概念图与 V3 多视图模型、布局提示词、风格、参数和工作流约束，不调用生成服务。',{type:'object',properties:{},additionalProperties:false},()=>jsonTool({owner:'Sean',models:catalog.models,multiview:catalog.multiview,styles:catalog.styles,sceneImages:'同一实体可安排总览、其他角度、细节；不强制三视图',characterViews:'three_view 使用 V3 模型，useMainAppearance:true 依赖本实体主图；批次等待人工选图后恢复',schemaVersion:1})));
@@ -275,7 +276,7 @@ export function createAgentWorkspace(store, { runtime = createPiRuntime(store.ro
       }));
       tools.push(tool('propose_entity_workflow','保存完整的人物/场景及多个实验变体的创建方案，包含关系、每张图的提示词、模型/风格、参考图、固定不变量和待补充。不创建实体或提交生成。',z.toJSONSchema(authoringPlanSchema),raw=>{
         if(contentHash(basis(s,run.basis.referenceAssetIds))!==contentHash(run.basis))throw new HttpError(409,'本轮资料已变化，请重新讨论');
-        const proposed=parse(authoringPlanSchema,raw);
+        const proposed=parse(authoringPlanSchema,raw);for(const c of proposed.candidates)if(c.existingEntityId&&!reviewedEntities.has(c.existingEntityId))throw new HttpError(400,'接续已有实体前必须先读取完整资料');
         for(const c of proposed.candidates)for(const im of c.images)for(const assetId of im.referenceAssetIds)if(!run.basis.referenceAssetIds.includes(assetId))throw new HttpError(400,'方案参考图必须是用户本轮明确选定的图片');
         const result=authoringService.save(s.project_id,proposed,{sessionId:s.id,runId:run.id,expectedBasis:{contextHash:context(s.project_id).contentHash}});
         emit(run.id,'proposal',{proposalId:result.id,kind:'entity-workflow'});return jsonTool({planId:result.id,title:result.title,savedAs:'proposal-only',review:'项目工作区的实体创作工作流中逐项审阅、修改后应用'});

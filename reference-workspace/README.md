@@ -190,3 +190,5 @@ Owner: Sean。项目工作区可建立固定版本的图片实验批次、显式
 已有实体通过自然语言提出文字修改并预览接受，见 [实体修改提案](docs/entity-change-proposals-v1.md)。Owner: Sean。
 
 人物创作方案可编排 V3 三种多视图布局，见 [V3 创作步骤](docs/authoring-multiview-v1.md)。Owner: Sean。
+
+已有实体可通过自然语言接续新图片步骤，不重复创建。Owner: Sean。详见 [已有实体图片接续](docs/existing-entity-image-plans-v1.md)。
