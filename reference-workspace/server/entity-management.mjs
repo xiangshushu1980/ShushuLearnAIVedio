@@ -73,14 +73,16 @@ export function createEntityManagement(store) {
     if (inTransaction) write(); else store.transaction(write);
     return detail(entityId);
   }
-  function update(entityId, body) {
-    const { expectedRevision, ...input } = parse(profile.extend({ expectedRevision: z.string() }).strict(), body);
-    store.transaction(() => {
+  function update(entityId, body, {inTransaction=false,partial=false}={}) {
+    const patch=z.object({name:profile.shape.name.optional(),description:z.string().max(8000).optional(),appearance:z.string().max(8000).optional(),voiceDescription:z.string().max(4000).optional(),expectedRevision:z.string()}).strict();
+    const { expectedRevision, ...input } = parse(partial?patch:profile.extend({ expectedRevision: z.string() }).strict(), body);
+    const write=() => {
       const e = store.entity(entityId);
       if (revision(entityId) !== expectedRevision) throw new HttpError(409, '实体资料已变化，请重新载入后编辑');
       const { name, ...fields } = input;
-      store.db.prepare('UPDATE entities SET name=?,context=? WHERE id=?').run(name, JSON.stringify({ ...e.context, ...fields }), entityId);
-    });
+      store.db.prepare('UPDATE entities SET name=?,context=? WHERE id=?').run(name===undefined?e.name:name, JSON.stringify({ ...e.context, ...fields }), entityId);
+    };
+    if(inTransaction)write();else store.transaction(write);
     return detail(entityId);
   }
   function addRelation(entityId, body) {

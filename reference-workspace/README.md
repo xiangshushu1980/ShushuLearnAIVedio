@@ -186,3 +186,5 @@ Owner: Sean。项目工作区可建立固定版本的图片实验批次、显式
 图片结果的检验报告可关联原工作流并提出修订，PC 使用及接口见 [图片检验与修订衔接](docs/image-feedback-v1.md)。Owner: Sean。
 
 场景变体的基础图片依赖、空间草稿沿用与兼容规则见 [场景变体 v1](docs/scene-variants-v1.md)。Owner: Sean。
+
+已有实体通过自然语言提出文字修改并预览接受，见 [实体修改提案](docs/entity-change-proposals-v1.md)。Owner: Sean。

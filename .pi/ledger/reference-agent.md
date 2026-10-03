@@ -73,3 +73,7 @@ Owner: Sean。持续 goal 为人物/场景的完整创作与变体实验，不�
 ### 2026-10-04 Owner Sean：场景变体基础参考与空间草稿
 
 新增场景变体依赖基础主图，可沿用空间草稿；全部待核对、不继承确认和核对图，sourceSpatialVersionId 持久化。旧方案基于规则版本保留原行为。47项测试/build与隔离PC/API验证通过，默认导出未确认事实为空。来源 scene-variants-v1.md 与 experiments/sean_reference_authoring_goal_20261004/scene-variant-*。未调用模型或ComfyUI，真实质量仍未证明。
+
+### 2026-10-04 Owner Sean：已有实体文字提案
+
+Agent必须完整读取当前项目实体后提案，人工接受以事务更新明确字段并保存应用修订；不覆盖未指定字段，不把声音样本派生说明写回文字。51测试/build及隔离PC验证通过，步骤stale、重复应用/过期拒绝/事务回滚有证据。手册 reference-workspace/docs/entity-change-proposals-v1.md；模拟PC产物 experiments/sean_reference_authoring_goal_20261004/entity-change-*。未调用模型或ComfyUI，不证明真实语义质量。
