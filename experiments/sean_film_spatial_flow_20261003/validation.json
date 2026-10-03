@@ -1,0 +1,124 @@
+{
+  "owner": "Sean",
+  "projectId": "5269e95a-d8b7-4c66-b8fd-603be396ef4c",
+  "revision": 5,
+  "approved": true,
+  "stages": {
+    "script": "confirmed",
+    "shots": "confirmed",
+    "spatial": "confirmed",
+    "prompts": [
+      {
+        "shotId": "8f0c1a7e-6b2d-4c9a-9f31-2d5e7a1b3c40",
+        "status": "confirmed"
+      },
+      {
+        "shotId": "4d2b8c1f-9a3e-47d6-b5c2-1f8e6a9d0b73",
+        "status": "confirmed"
+      },
+      {
+        "shotId": "c7a1e9d4-3f6b-4a8c-92d1-5e0b7c2f4a68",
+        "status": "confirmed"
+      },
+      {
+        "shotId": "1b5d8e2a-7c4f-49b3-a6e8-3d0f1c9b7a52",
+        "status": "confirmed"
+      },
+      {
+        "shotId": "6e3a9c7b-2d1f-4b8a-8c5e-7a0d4f6b9c21",
+        "status": "confirmed"
+      }
+    ],
+    "ready": true
+  },
+  "jobStatus": "succeeded",
+  "appliedAt": "2026-10-03T12:33:12.845Z",
+  "versionCount": 6,
+  "original": {
+    "revision": 18,
+    "cut": "0d73de4e-0110-4eb3-b727-ae015a1d94bd",
+    "approved": true
+  },
+  "llmElapsedSec": 98.508,
+  "usage": {
+    "prompt_tokens": 21837,
+    "completion_tokens": 25971,
+    "total_tokens": 47808,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 18350
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 21837
+  },
+  "prompts": [
+    {
+      "index": 1,
+      "id": "8f0c1a7e-6b2d-4c9a-9f31-2d5e7a1b3c40",
+      "hash": "5f359f6011584f3b9765edf1ceb30f5d0e17b1b5150658bde2c0e149ef1b3146",
+      "words": 453,
+      "anchors": [
+        "T1",
+        "Z1",
+        "P1"
+      ],
+      "southCamera": true,
+      "bodyFacing": true
+    },
+    {
+      "index": 2,
+      "id": "4d2b8c1f-9a3e-47d6-b5c2-1f8e6a9d0b73",
+      "hash": "19d220488d99edd9efeb0f8cecee4ee67fd3203328f02804f331da4d1297d3c6",
+      "words": 401,
+      "anchors": [
+        "T1",
+        "Z1",
+        "P1"
+      ],
+      "southCamera": true,
+      "bodyFacing": true
+    },
+    {
+      "index": 3,
+      "id": "c7a1e9d4-3f6b-4a8c-92d1-5e0b7c2f4a68",
+      "hash": "1f65b1c00f886094f1461457cd11eb634def6c47bdeb7f81e604b13e46caed50",
+      "words": 425,
+      "anchors": [
+        "T1",
+        "Z1",
+        "P1"
+      ],
+      "southCamera": true,
+      "bodyFacing": true
+    },
+    {
+      "index": 4,
+      "id": "1b5d8e2a-7c4f-49b3-a6e8-3d0f1c9b7a52",
+      "hash": "e45be4509cae88585af4ded9cd6cad7411b07bce38fe5d57bf1ea8833fb82581",
+      "words": 396,
+      "anchors": [
+        "T1",
+        "Z1",
+        "P1"
+      ],
+      "southCamera": true,
+      "bodyFacing": true
+    },
+    {
+      "index": 5,
+      "id": "6e3a9c7b-2d1f-4b8a-8c5e-7a0d4f6b9c21",
+      "hash": "1371c229738a9fd00e01c9fdcc6752a99b8c1eae2c819eec855221526a96b004",
+      "words": 388,
+      "anchors": [
+        "T1",
+        "Z1",
+        "P1"
+      ],
+      "southCamera": true,
+      "bodyFacing": true
+    }
+  ],
+  "gpuRequests": 0
+}

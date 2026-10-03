@@ -1,0 +1,11 @@
+{
+  "owner": "Sean",
+  "projectId": "5269e95a-d8b7-4c66-b8fd-603be396ef4c",
+  "sourceProjectId": "2cf7756a-c652-4423-9302-0aa71ffda6c5",
+  "sourceRevision": 18,
+  "createdAt": "2026-10-03T12:24:39.863Z",
+  "sceneText": "[Owner: Sean；模拟测试空间设定，不是 Reference 的正式修订，也未重新生成场景图]\n这是同一个现代图书馆阅读室。浅木色落地书墙位于北侧和西侧，浅木色长方阅读桌与灰绿色椅子、木地板，柔和均匀照明。所有镜头只使用主阅读桌 T1；T1 长边东西向，西端座位 C1 与东端座位 C2 对向，椅子的正面均朝向桌面。T1 北侧是固定书墙 S1，南侧是摄像机可使用的通道 P1。入口 E1 位于西南侧、主画面之外，入口到 T1 西端的移动通道 P2 保持畅通。T1 东端旁的通道 P3 通向画面右侧出口区域。桌面交互点 M1 位于 T1 中央，桌面较近西端的放置点 M2 为 A 的交互区域。桌旁备用椅 C3 位于 T1 南侧靠东端，供本片放置衣物。桌南侧西端外有空位 Z1，供 A 站立、换装、原地转身，距桌边约半步。家具在所有镜头中固定不动。其他阅读桌只作为北侧背景，不插在 A/B 所使用的 T1 两端之间。镜头始终在 T1 南侧 P1 拍摄、向北看，西端呈画面左、东端呈画面右，禁止跨越东西向人物交互轴线；局部弧形运镜也留在南侧。不添加未列出的台灯、大窗、招牌或隔断。房间方位是本次测试约定，不是图片测量结果。",
+  "scenePrompt": "An empty modern library reading room with light wood floor-to-ceiling bookshelves along the north and west walls, pale wooden reading tables, muted grey-green chairs and a clean wooden floor under soft even illumination. The designated rectangular table T1 extends east-west. Chair C1 faces into its west end and chair C2 faces into its east end. The north bookshelf wall S1 remains behind T1. The clear south aisle P1 is the camera side, looking north: T1 west appears screen left and east appears screen right. The entry E1 lies southwest outside the master view; P2 connects it to the west end. P3 runs by the east end toward the right exit area. A spare chair C3 stands on the south side near the east end. A clear standing area Z1 lies beside the west end on the south side. M1 denotes the center of the tabletop; M2 denotes its western placement area. Keep these same anchors, proportions and relations in all views. No people, printed anchor labels, new lamps, large windows, partitions or signs. Owner: Sean. This is a simulated source prompt for a text-pipeline test; the existing scene image is reused and has not been regenerated to prove this layout.",
+  "referenceImageReused": true,
+  "visualVerification": false
+}
