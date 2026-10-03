@@ -97,3 +97,5 @@ Owner: Sean。2026-10-04。新场景变体默认依赖基础场景主图，已�
 Owner: Sean。2026-10-04。创作助手可提出已有实体字段修改，由网页逐字段预览并人工接受；只更新明确字段，保留素材/关系/确认流程。51测试及隔离PC验证通过。见 [实体修改提案](entity-change-proposals-v1.md)。模型内容和真实图片质量仍需验证。
 
 已有实体可通过自然语言接续新图片步骤，不重复创建。Owner: Sean。详见 [已有实体图片接续](existing-entity-image-plans-v1.md)。
+
+Owner: Sean。真实 Pi 对话与文字报告证据范围：[验证与尚未解决的问题](authoring-real-dialogue-verification.md)。结构通过不等于场景提示词语义可靠。
