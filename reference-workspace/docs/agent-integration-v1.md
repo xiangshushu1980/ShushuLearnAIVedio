@@ -124,3 +124,7 @@ SDK `noTools:'builtin'` 加显式工具 allowlist；ResourceLoader 关闭全局/
 SDK 0.86.0 的 npm-shrinkwrap 锁定有漏洞的 brace-expansion 5.0.9，普通根 overrides/更新无效。应用直接固定兼容补丁 5.0.12，并在 postinstall 由 `scripts/patch-pi-dependency.mjs` 更新嵌套包及安装库存；不修改 SDK 的功能代码。应用 package-lock 同样登记真实补丁。升级 SDK 时脚本会因版本不符停止，必须重新审视补丁。使用 `npm ci`，不跳过根 postinstall；忽略脚本安装后要显式运行此脚本。重新生成 lock 后应检查嵌套补丁登记和扫描结果，不能只看 overrides。
 
 后续验收建议：读图整理已有锚点 → 用户指定未知入口 → 提案应用与人工确认 → manifest 读取；再检查刷新恢复、取消、资料变更后的 409、另一页面修改工程的 409。此处仅记录步骤，没有执行这些测试。
+
+## 实体创作与视觉检查接入
+
+Owner: Sean。2026-10-04。项目创作模式新增 entity-workflow 方法、结构化创作方案与真实看图范围约束的视觉报告，权限仍为提出候选。人工应用、图片模板预览和输入准备由 `server/entity-authoring.mjs` 负责；契约及持续目标差距见[自然语言实体创作工作流 v1](entity-authoring-workflow-v1.md)。通用项目会话可显式选择项目内多实体图片，便于变体对比，不允许隐式引用全部图像。

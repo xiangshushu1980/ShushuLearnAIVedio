@@ -7,6 +7,7 @@ import { validateRun, workflowTemplate, buildComfyWorkflow, modelFor, multiviewP
 import { z } from 'zod';
 import { createVoiceSnapshot, voiceCompatible } from './voice.mjs';
 import { comfyUrl, comfyRequest, prepareComfy, submitComfy, readComfyResult, downloadComfy } from './adapters.mjs';
+import { contentHash } from './content-hash.mjs';
 import { HttpError, now } from './store.mjs';
 
 const exec = promisify(execFile);
@@ -58,9 +59,14 @@ export function createRunService(store) {
       if (asset.mediaType !== 'image') throw new HttpError(400, '图像生成只能引用图片');
       return { id: asset.id, hash: asset.hash, kind: asset.kind, name: asset.name, runId: asset.runId, createdAt: asset.createdAt };
     });
+    let authoring=null;
+    if(store.db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name='entity_authoring_draft_links'").get()){
+      const link=store.db.prepare('SELECT l.step_id,l.draft_updated_at,d.value,d.updated_at,s.plan_id,s.body,s.content_hash FROM entity_authoring_draft_links l JOIN drafts d ON d.entity_id=l.entity_id JOIN entity_workflow_steps s ON s.id=l.step_id WHERE l.entity_id=?').get(entityId);
+      if(link&&link.draft_updated_at===link.updated_at){const prior=JSON.parse(link.value),fields=['modelId','styleId','prompt','purpose','references','parameters'];if(contentHash(Object.fromEntries(fields.map(k=>[k,prior[k]])))===contentHash(Object.fromEntries(fields.map(k=>[k,input[k]])))){const step=JSON.parse(link.body);authoring={stepId:link.step_id,planId:link.plan_id,sourceRevision:link.content_hash,role:step.role,label:step.label,invariants:step.invariants,unknowns:step.unknowns};}}
+    }
     const { endpoint, ...modelSnapshot } = model;
     return { owner: 'Sean', entity: { id: entity.id, name: entity.name, context: entity.context },
-      model: modelSnapshot, style: structuredClone(style), prompt: input.prompt, purpose: input.purpose,
+      ...(authoring?{authoring}:{}), model: modelSnapshot, style: structuredClone(style), prompt: input.prompt, purpose: input.purpose,
       effectivePrompt: [input.prompt, style.promptSuffix].filter(Boolean).join('\n\n'),
       parameters: input.parameters, references, ...(input.sourceRunId ? { sourceRunId: input.sourceRunId } : {}),
       ...(appearance ? { stage: 'multiview', layout: model.layout, appearance, notes: input.notes || '' } : {}),
@@ -95,7 +101,7 @@ export function createRunService(store) {
         if (kind === 'voice' && !sample) throw new Error('无法确定样音对应的试听台词');
         stages.push(await (kind === 'voice' ? store.stageAudio : store.stageImage)(buffers[i],
           `${sample ? `声音 · ${sample.label}` : label} ${run.id.slice(0, 8)} · ${i + 1}`,
-          run.entityId, kind, run.id, { source: 'generation', template: run.snapshot.template,
+          run.entityId, kind, run.id, { source: 'generation', template: run.snapshot.template,...(run.snapshot.authoring?{authoring:run.snapshot.authoring}:{}),
             ...(sample ? { sampleIndex, sampleText: sample.text, sampleLabel: sample.label, voiceRole: run.snapshot.voiceRole, anchor: run.snapshot.anchor, instruction: sample.instruction, mode: run.snapshot.mode } : {}),
             ...(run.snapshot.appearance ? { appearance: run.snapshot.appearance, layout: run.snapshot.layout } : {}),
             outputIndex: i, inputAssetIds: run.snapshot.references.map(r => r.id), ...outputContext }));

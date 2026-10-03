@@ -36,3 +36,18 @@ Owner: Sean。任务 remote-8ac0f653-9980-494d-ba73-42ac4e97b71a。
 - 导出 projectId 是可选适配；projectContext + projectRole + 项目剧情关系进入不可变 manifest，不递归加入其他实体，不重写旧快照。下游必须显式消费新增字段。
 - 本阶段证据：PC Vite build、7 个服务模块 node --check、scoped diff 检查通过。未运行测试或 LLM、ComfyUI，不声称模型质量/完整交互已验收。已用 VACUUM INTO 备份本机 Reference 数据库，原服务无活跃 Agent/生成任务，Reference 服务按同端口更新启动。
 - 当前契约正文：reference-workspace/docs/project-workspace-v2.md；共用接入手册 reference-workspace/docs/agent-integration-v1.md。
+
+## 2026-10-04 — 自然语言实体创作工作流阶段推进
+
+Owner: Sean。持续 goal 为人物/场景的完整创作与变体实验，不标记目标完成。
+
+- 开始按 Task Center 查询当前任务与设计/外部 skill 任务：未发现同范围活跃代码实现；未修改其他任务生命周期，也未为未授权立项的新阶段自动建任务。
+- Agent 只保存不可变结构化方案，人工接受后一次事务建立实体/角色/关系/变体来源/图片步骤。流程输出独立持久化，聊天不作事实真源。
+- 图片步骤由现有 catalog/template 编译，参考图使用稳定 ID，并按来源复制到目标实体。工作流预览不等于真实执行；运行与输出记录步骤 provenance。手工生成输入如果脱离所载入的步骤，不冒充原方案执行。
+- 视觉报告 reviewedAssetIds 必须是观察工具本轮实际看过的图，coverage 保存实际范围；不能把结构约束测试当模型质量或图文一致性证据。
+- 验证证据：Vite build、新隔离测试 6 项、全部测试 18 项通过。使用临时数据库、模拟 Pi runtime、极小纯色测试 fixture，无真实提供方/ComfyUI/GPU调用。
+- 缺口：真实 NL 对话与浏览器验证、自动批次执行/依赖恢复/反馈修订、步骤独立修订、三视图与声音编排、场景多图确认导出、实际生成视觉质量。权威正文 reference-workspace/docs/entity-authoring-workflow-v1.md。
+
+### 2026-10-04 实体创作真实对话复核（Owner: Sean）
+
+两次隔离 Pi deepseek-flash 对话均持久化并应用 3 候选、5 图片步骤，生成运行为 0。首轮发现相邻/连通被推为 between，人物变体仅凭文字保持身份；强化不推断空间规则并加入基础实体主图依赖后，第二轮明确保留排列/方向/尺寸未知，变体等待基础主图。证据：experiments/sean_reference_authoring_goal_20261004/conversation-{evidence,after-source-fix}.json。仅此测试请求有效，不代表图片一致性质量已验证；整体 Goal 保持 active。

@@ -13,6 +13,7 @@ import { validateVoiceDraft } from './voice.mjs';
 import { referenceExportRouter } from './reference-export.mjs';
 import { localAccess } from './local-access.mjs';
 import { entityManagementRouter } from './entity-management.mjs';
+import { createEntityAuthoring,entityAuthoringRouter } from './entity-authoring.mjs';
 import { createProjectWorkspace, projectWorkspaceRouter } from './project-workspace.mjs';
 import { createAgentWorkspace, agentWorkspaceRouter } from './agent-workspace.mjs';
 
@@ -45,7 +46,9 @@ const key = req => {
 app.use('/api/manage', entityManagementRouter(store));
 const projectService = createProjectWorkspace(store);
 app.use('/api/projects', projectWorkspaceRouter(projectService));
-const agents = createAgentWorkspace(store, { projectService });
+const authoringService = createEntityAuthoring(store, { projectService });
+app.use('/api/authoring', entityAuthoringRouter(authoringService));
+const agents = createAgentWorkspace(store, { projectService, authoringService });
 app.use('/api/agents', agentWorkspaceRouter(agents));
 app.use('/api/reference/v1', referenceExportRouter(store));
 app.get('/api/health', (_req, res) => res.json({ ok: true, owner: 'Sean', version: 1 }));
