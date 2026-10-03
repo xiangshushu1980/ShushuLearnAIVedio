@@ -36,3 +36,7 @@
 ## C-20261003-05 声音页顺序与选用标记（Owner: Sean）
 
 按用户指定重排 0 当前声音与关联情绪、1 模板/上传创建、2 当前声音确认后的情绪设置、3 历史选择。基础声音从历史选用，条目与样音标黄色；版本/上传源折叠。情绪引用已确认当前声音，UI/API 拒绝其他音源，顶部仅当前 anchor 的最新结果。构建和1440px PC检查通过，无新生成/单元测试，不构成声音质量定论。task remote-1eae8efb-cdeb-416b-8bee-7daf781801af generation3。
+
+## C-20261003-06 Reference只读导出API v1（Owner: Sean）
+
+四端点在/api/reference/v1：entities列表、POST manifests创建、GET manifests/:manifestId读取、GET assets/:assetId/content下载。现有实体/资产UUID、内容hash、run提示词和主形象/多视图/声音真实确认映射；无关系/音效/审核/独立提示词版本，nullable说明与capabilities如实声明。默认仅真实确认，locked不作为确认；角色/assetIds限定选中实体，无图谱扩展。独立manifest表+不可变触发器；原素材不复制，删除后下载404，下游须及时保存字节。保留本机访问边界，无绝对路径/密钥或任意读文件；Range/MIME/字段错误。5新测试+7现有共12通过、构建成功、实际HTTP/schema/快照重读/音频Range206成功；无ComfyUI操作。契约reference-workspace/docs/reference-export-v1.md；交付上下文.pi/tasks/reference-export-v1/handoff.md、validation.json。只读接口用户明确授权，未立项新远程任务；不改实体管理/生成流程。

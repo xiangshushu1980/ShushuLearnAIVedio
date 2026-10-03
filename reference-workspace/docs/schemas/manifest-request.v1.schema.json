@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "entityIds": {
+      "minItems": 1,
+      "maxItems": 100,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid",
+        "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+      },
+      "uniqueItems": true
+    },
+    "includeRelations": {
+      "default": "none",
+      "type": "string",
+      "enum": [
+        "none",
+        "direct"
+      ]
+    },
+    "assetRoles": {
+      "default": [
+        "main_appearance",
+        "three_view",
+        "voice",
+        "sound_effect"
+      ],
+      "minItems": 1,
+      "maxItems": 8,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "setting",
+          "concept",
+          "main_appearance",
+          "three_view",
+          "voice",
+          "voice_emotion",
+          "voice_source",
+          "sound_effect"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "includeUnconfirmed": {
+      "default": false,
+      "type": "boolean"
+    },
+    "assetIds": {
+      "maxItems": 500,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid",
+        "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+      },
+      "uniqueItems": true
+    }
+  },
+  "required": [
+    "entityIds",
+    "includeRelations",
+    "assetRoles",
+    "includeUnconfirmed"
+  ],
+  "additionalProperties": false,
+  "$comment": "Owner: Sean"
+}

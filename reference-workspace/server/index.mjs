@@ -10,6 +10,8 @@ import { catalog } from './catalog.mjs';
 import { createRunService } from './runs.mjs';
 import { comfyRequest } from './adapters.mjs';
 import { validateVoiceDraft } from './voice.mjs';
+import { referenceExportRouter } from './reference-export.mjs';
+import { localAccess } from './local-access.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const port = Number(process.env.REFERENCE_PORT || 4188);
@@ -21,13 +23,8 @@ if (!store.db.prepare('SELECT id FROM entities LIMIT 1').get()) {
 const app = express();
 app.disable('x-powered-by');
 // The first release is a local application. Mutation requests must originate from its own UI.
-app.use((req, res, next) => {
-  if (!/^(127\.0\.0\.1|localhost)(:\d+)?$/.test(req.headers.host || '')) return next(new HttpError(403, '仅支持本机访问'));
-  if (!['GET', 'HEAD', 'OPTIONS'].includes(req.method) && req.headers.origin) {
-    try {
-      if (new URL(req.headers.origin).host !== req.headers.host) return next(new HttpError(403, '请求来源与工作台不一致'));
-    } catch { return next(new HttpError(403, '请求来源无效')); }
-  }
+app.use(localAccess);
+app.use((_req, res, next) => {
   res.set('X-Content-Type-Options', 'nosniff');
   next();
 });
@@ -42,6 +39,7 @@ const key = req => {
   if (!value || value.length > 120) throw new HttpError(400, '缺少有效的重复提交标识');
   return value;
 };
+app.use('/api/reference/v1', referenceExportRouter(store));
 app.get('/api/health', (_req, res) => res.json({ ok: true, owner: 'Sean', version: 1 }));
 app.get('/api/catalog', (_req, res) => res.json(catalog));
 app.get('/api/entities', (_req, res) => res.json(store.db.prepare('SELECT id,name,created_at AS createdAt FROM entities ORDER BY created_at').all()));
@@ -206,6 +204,8 @@ if (process.argv.includes('--dev')) {
   app.get('/{*path}', (_req, res) => res.sendFile(resolve(root, 'dist/index.html')));
 }
 app.use((error, _req, res, _next) => {
+  if (_req.path.startsWith('/api/reference/') && error.type === 'entity.parse.failed')
+    return res.status(400).json({ error: '无效 JSON 请求', details: { fieldErrors: { body: ['请求体须为有效 JSON'] } } });
   const status = error instanceof multer.MulterError ? 400 : error.status || 500;
   if (status === 500) console.error(error);
   res.status(status).json({ error: status === 500 ? '服务操作失败，请查看服务日志' : error.message, details: error.details });

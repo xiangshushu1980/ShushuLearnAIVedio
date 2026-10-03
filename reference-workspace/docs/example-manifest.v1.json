@@ -1,0 +1,174 @@
+{
+  "capabilities": {
+    "assetContent": {
+      "deletedContentReturns": 404,
+      "range": true,
+      "snapshotRetainsBytes": false,
+      "stableIds": true
+    },
+    "confirmation": {
+      "lockedIsConfirmation": false,
+      "source": "appearance_versions / view_confirmations / voice_versions",
+      "supported": true,
+      "supportedRoles": [
+        "main_appearance",
+        "three_view",
+        "voice"
+      ],
+      "unsupportedRoles": [
+        "setting",
+        "concept",
+        "voice_emotion",
+        "voice_source",
+        "sound_effect"
+      ]
+    },
+    "entityManagement": false,
+    "entityText": {
+      "fields": [
+        "type",
+        "description",
+        "appearance",
+        "voiceDescription"
+      ],
+      "formalSchema": false,
+      "storage": "optional explicit string fields in entities.context"
+    },
+    "owner": "Sean",
+    "promptVersions": {
+      "source": "immutable run snapshot; use contentHash and sourceRunId",
+      "supported": false
+    },
+    "relations": {
+      "directScope": "both endpoints must be explicitly selected",
+      "reason": "当前 Reference 数据层没有关系表；不解析任意 context.relations",
+      "supported": false
+    },
+    "reviewStatus": {
+      "supported": false
+    },
+    "soundEffects": {
+      "reason": "当前没有音效素材模型或登记入口",
+      "supported": false
+    }
+  },
+  "contentHash": "296fe521b55e6d349ba65fbb63aa04b82c43f3139a539c0d4b5f6b9cb2597a28",
+  "createdAt": "2026-10-03T05:34:04.512Z",
+  "entities": [
+    {
+      "appearance": null,
+      "assets": [
+        {
+          "assetId": "1c1bc7de-03a0-4771-b81e-d2ba1d3b0c96",
+          "available": true,
+          "confirmation": {
+            "isCurrent": true,
+            "records": [
+              {
+                "confirmationId": "fa15c10a-7d38-43ae-a8cd-76e56ee1bdf8",
+                "createdAt": "2026-10-03T05:34:04.501Z",
+                "kind": "appearance",
+                "version": 1
+              }
+            ],
+            "status": "confirmed"
+          },
+          "contentHash": "45eb8c8f35176f68f1660454e85b1476719485a06b19a11d95f78e702e74d40d",
+          "contentUrl": "/api/reference/v1/assets/1c1bc7de-03a0-4771-b81e-d2ba1d3b0c96/content",
+          "createdAt": "2026-10-03T05:34:04.497Z",
+          "description": null,
+          "durationSec": null,
+          "entityId": "6a1eef5f-f7f9-4054-896a-0b6b9ab5f7ea",
+          "fileSize": 137,
+          "height": 32,
+          "layout": null,
+          "mediaType": "image",
+          "mime": "image/png",
+          "name": "演示主形象.png",
+          "reviewStatus": null,
+          "role": "main_appearance",
+          "sourceRevision": "95b32c68eae057839a7727fa7b18767ccf912f9508834d272ca1e3be33d002b9",
+          "sourceRunId": "aa8875b7-b46a-42d5-b49b-edf27b8763bc",
+          "width": 32
+        }
+      ],
+      "contentHash": "76b300c663c4b01aa760d3f9803303267757712a652a0749c8f96c823a09ca12",
+      "createdAt": "2026-10-03T05:34:04.489Z",
+      "currentAppearance": {
+        "assetId": "1c1bc7de-03a0-4771-b81e-d2ba1d3b0c96",
+        "confirmationId": "fa15c10a-7d38-43ae-a8cd-76e56ee1bdf8",
+        "contentHash": "45eb8c8f35176f68f1660454e85b1476719485a06b19a11d95f78e702e74d40d",
+        "version": 1
+      },
+      "currentVoice": null,
+      "description": "仅用于导出契约示例；并非用户数据或审核结论。",
+      "entityId": "6a1eef5f-f7f9-4054-896a-0b6b9ab5f7ea",
+      "fieldSources": {
+        "appearance": null,
+        "description": {
+          "contentHash": "974f760cec3dd16e58c0d3762990c6f53eb39d05b336d6bb34b1521453820260",
+          "source": "entities.context.description"
+        },
+        "type": null,
+        "voiceDescription": null
+      },
+      "missingFields": [
+        "type",
+        "appearance",
+        "voiceDescription"
+      ],
+      "name": "Sean 演示实体",
+      "prompts": [
+        {
+          "assetIds": [
+            "1c1bc7de-03a0-4771-b81e-d2ba1d3b0c96"
+          ],
+          "contentHash": "cb9811fc1899a95be790dd6a3584c78c01e1c1e3a48ca16f181051f9ed3550e4",
+          "createdAt": "2026-10-03T05:34:04.492Z",
+          "effectiveText": "An adult fictional adventurer in a neutral pose.",
+          "promptId": "run:aa8875b7-b46a-42d5-b49b-edf27b8763bc",
+          "purpose": "主形象候选",
+          "samples": [],
+          "sourceRevision": "cb9811fc1899a95be790dd6a3584c78c01e1c1e3a48ca16f181051f9ed3550e4",
+          "sourceRunId": "aa8875b7-b46a-42d5-b49b-edf27b8763bc",
+          "stage": "concept",
+          "text": "An adult fictional adventurer in a neutral pose.",
+          "version": null,
+          "workflow": {
+            "contentHash": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+            "id": "sean-example",
+            "version": 1
+          }
+        }
+      ],
+      "sourceRevision": "76b300c663c4b01aa760d3f9803303267757712a652a0749c8f96c823a09ca12",
+      "type": null,
+      "voiceDescription": null
+    }
+  ],
+  "format": "reference-manifest",
+  "manifestId": "66baae1c-4d60-4b28-ad22-3edde619e49b",
+  "missingCapabilities": [
+    "relations",
+    "sound_effect",
+    "review_status",
+    "prompt_version"
+  ],
+  "omissions": [],
+  "owner": "Sean",
+  "relations": [],
+  "schemaVersion": 1,
+  "selection": {
+    "assetRoles": [
+      "main_appearance",
+      "three_view",
+      "voice",
+      "sound_effect"
+    ],
+    "entityIds": [
+      "6a1eef5f-f7f9-4054-896a-0b6b9ab5f7ea"
+    ],
+    "includeRelations": "direct",
+    "includeUnconfirmed": false
+  }
+}

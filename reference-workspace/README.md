@@ -89,6 +89,10 @@ Krea 2 文本与 Edit 作为备选工作流保留，能力上限分别是 0 张�
 
 模型能力与参数由后端目录提供，前端展示同一份 schema。每条运行记录保存模型/风格/模板版本、模板内容 hash、原始与生效提示词、目的、参数、实体上下文、实际输入图片 ID/hash，以及提交时的完整工作流。
 
+## AI 短片工具只读导出
+
+Owner: Sean。新增 `/api/reference/v1/entities`、`POST /api/reference/v1/manifests`、`GET /api/reference/v1/manifests/:manifestId`、`GET /api/reference/v1/assets/:assetId/content`。快照持久化且不可修改，素材使用稳定 ID/内容 hash/相对 URL；仅现有真实确认资料默认可导出。类型/正式介绍、关系、音效和审核等缺失如实声明，不改实体编辑或生成流程。契约、schema、完整示例、缺口、调用及验证见 [只读导出 API v1](docs/reference-export-v1.md)。
+
 ## 运行恢复与接口
 
 ### 声音生成与试听

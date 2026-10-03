@@ -1,0 +1,35 @@
+{
+  "owner": "Sean",
+  "createdAt": "2026-10-03T05:33:10.158Z",
+  "entityCount": 2,
+  "manifestId": "5629ce2a-a44d-411e-a3f2-94cad9baeb6a",
+  "contentHash": "30960f666081085725a61ba7700694abb52b1b6a6a6c01c5083f3212b92d71e3",
+  "selectedAssets": [
+    {
+      "assetId": "1e2f367f-132f-4c92-93d7-660422eaf8be",
+      "role": "voice",
+      "isCurrent": true
+    },
+    {
+      "assetId": "35478ed6-3fb0-46ec-99a6-046de9f5737f",
+      "role": "three_view",
+      "isCurrent": false
+    },
+    {
+      "assetId": "432cfa98-83f2-416e-b600-01090075fb73",
+      "role": "three_view",
+      "isCurrent": true
+    },
+    {
+      "assetId": "47f47dc6-b855-4b62-82ee-fec79ace1704",
+      "role": "voice",
+      "isCurrent": false
+    }
+  ],
+  "getMatchesPost": true,
+  "rangeStatus": 206,
+  "rangeMime": "audio/wav",
+  "malformedJSONStatus": 400,
+  "comfyOperations": 0,
+  "editableDataMutations": 0
+}

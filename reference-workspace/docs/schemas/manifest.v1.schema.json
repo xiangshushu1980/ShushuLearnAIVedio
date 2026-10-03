@@ -1,0 +1,838 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "format": {
+      "type": "string",
+      "const": "reference-manifest"
+    },
+    "schemaVersion": {
+      "type": "number",
+      "const": 1
+    },
+    "owner": {
+      "type": "string",
+      "const": "Sean"
+    },
+    "manifestId": {
+      "type": "string",
+      "format": "uuid",
+      "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+    },
+    "createdAt": {
+      "type": "string"
+    },
+    "contentHash": {
+      "type": "string"
+    },
+    "capabilities": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string"
+      },
+      "additionalProperties": {
+        "$ref": "#/$defs/__schema0"
+      }
+    },
+    "selection": {
+      "type": "object",
+      "properties": {
+        "entityIds": {
+          "minItems": 1,
+          "maxItems": 100,
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          }
+        },
+        "includeRelations": {
+          "default": "none",
+          "type": "string",
+          "enum": [
+            "none",
+            "direct"
+          ]
+        },
+        "assetRoles": {
+          "default": [
+            "main_appearance",
+            "three_view",
+            "voice",
+            "sound_effect"
+          ],
+          "minItems": 1,
+          "maxItems": 8,
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "setting",
+              "concept",
+              "main_appearance",
+              "three_view",
+              "voice",
+              "voice_emotion",
+              "voice_source",
+              "sound_effect"
+            ]
+          }
+        },
+        "includeUnconfirmed": {
+          "default": false,
+          "type": "boolean"
+        },
+        "assetIds": {
+          "maxItems": 500,
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          }
+        }
+      },
+      "required": [
+        "entityIds",
+        "includeRelations",
+        "assetRoles",
+        "includeUnconfirmed"
+      ],
+      "additionalProperties": false
+    },
+    "entities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "entityId": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "name": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "type": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "contentHash": {
+            "type": "string"
+          },
+          "sourceRevision": {
+            "type": "string"
+          },
+          "missingFields": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "appearance": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "voiceDescription": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "createdAt": {
+            "type": "string"
+          },
+          "fieldSources": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "source": {
+                        "type": "string"
+                      },
+                      "contentHash": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "source",
+                      "contentHash"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "description": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "source": {
+                        "type": "string"
+                      },
+                      "contentHash": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "source",
+                      "contentHash"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "appearance": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "source": {
+                        "type": "string"
+                      },
+                      "contentHash": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "source",
+                      "contentHash"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "voiceDescription": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "source": {
+                        "type": "string"
+                      },
+                      "contentHash": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "source",
+                      "contentHash"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "type",
+              "description",
+              "appearance",
+              "voiceDescription"
+            ],
+            "additionalProperties": false
+          },
+          "currentAppearance": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "confirmationId": {
+                    "type": "string",
+                    "format": "uuid",
+                    "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                  },
+                  "version": {
+                    "type": "integer",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  },
+                  "assetId": {
+                    "type": "string",
+                    "format": "uuid",
+                    "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                  },
+                  "contentHash": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "confirmationId",
+                  "version",
+                  "assetId",
+                  "contentHash"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "currentVoice": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "confirmationId": {
+                    "type": "string",
+                    "format": "uuid",
+                    "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                  },
+                  "version": {
+                    "type": "integer",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  },
+                  "assetId": {
+                    "type": "string",
+                    "format": "uuid",
+                    "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                  },
+                  "contentHash": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "confirmationId",
+                  "version",
+                  "assetId",
+                  "contentHash"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "assets": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "assetId": {
+                  "type": "string",
+                  "format": "uuid",
+                  "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                },
+                "entityId": {
+                  "type": "string",
+                  "format": "uuid",
+                  "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                },
+                "name": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "role": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "enum": [
+                        "setting",
+                        "concept",
+                        "main_appearance",
+                        "three_view",
+                        "voice",
+                        "voice_emotion",
+                        "voice_source",
+                        "sound_effect"
+                      ]
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "mediaType": {
+                  "type": "string",
+                  "enum": [
+                    "image",
+                    "audio"
+                  ]
+                },
+                "mime": {
+                  "type": "string"
+                },
+                "fileSize": {
+                  "anyOf": [
+                    {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 9007199254740991
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "contentHash": {
+                  "type": "string"
+                },
+                "sourceRevision": {
+                  "type": "string"
+                },
+                "contentUrl": {
+                  "type": "string"
+                },
+                "createdAt": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "layout": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "width": {
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                },
+                "height": {
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                },
+                "durationSec": {
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                },
+                "confirmation": {
+                  "anyOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "status": {
+                          "type": "string",
+                          "enum": [
+                            "confirmed",
+                            "unconfirmed"
+                          ]
+                        },
+                        "isCurrent": {
+                          "type": "boolean"
+                        },
+                        "records": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "kind": {
+                                "type": "string",
+                                "enum": [
+                                  "appearance",
+                                  "view",
+                                  "voice"
+                                ]
+                              },
+                              "confirmationId": {
+                                "type": "string",
+                                "format": "uuid",
+                                "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                              },
+                              "version": {
+                                "type": "integer",
+                                "minimum": -9007199254740991,
+                                "maximum": 9007199254740991
+                              },
+                              "createdAt": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "kind",
+                              "confirmationId",
+                              "version",
+                              "createdAt"
+                            ],
+                            "additionalProperties": false
+                          }
+                        }
+                      },
+                      "required": [
+                        "status",
+                        "isCurrent",
+                        "records"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "reviewStatus": {
+                  "type": "null"
+                },
+                "sourceRunId": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "format": "uuid",
+                      "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "available": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "assetId",
+                "entityId",
+                "name",
+                "role",
+                "mediaType",
+                "mime",
+                "fileSize",
+                "contentHash",
+                "sourceRevision",
+                "contentUrl",
+                "createdAt",
+                "description",
+                "layout",
+                "width",
+                "height",
+                "durationSec",
+                "confirmation",
+                "reviewStatus",
+                "sourceRunId",
+                "available"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "prompts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "promptId": {
+                  "type": "string"
+                },
+                "sourceRunId": {
+                  "type": "string",
+                  "format": "uuid",
+                  "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                },
+                "stage": {
+                  "type": "string"
+                },
+                "version": {
+                  "type": "null"
+                },
+                "text": {
+                  "type": "string"
+                },
+                "effectiveText": {
+                  "type": "string"
+                },
+                "purpose": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "workflow": {
+                  "anyOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": [
+                            "string",
+                            "null"
+                          ]
+                        },
+                        "version": {
+                          "type": [
+                            "number",
+                            "string",
+                            "null"
+                          ]
+                        },
+                        "contentHash": {
+                          "type": [
+                            "string",
+                            "null"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "version",
+                        "contentHash"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "samples": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "text": {
+                        "type": [
+                          "string",
+                          "null"
+                        ]
+                      },
+                      "direction": {
+                        "type": [
+                          "string",
+                          "null"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "text",
+                      "direction"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "createdAt": {
+                  "type": "string"
+                },
+                "assetIds": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "format": "uuid",
+                    "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                  }
+                },
+                "contentHash": {
+                  "type": "string"
+                },
+                "sourceRevision": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "promptId",
+                "sourceRunId",
+                "stage",
+                "version",
+                "text",
+                "effectiveText",
+                "purpose",
+                "workflow",
+                "samples",
+                "createdAt",
+                "assetIds",
+                "contentHash",
+                "sourceRevision"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "entityId",
+          "name",
+          "type",
+          "description",
+          "contentHash",
+          "sourceRevision",
+          "missingFields",
+          "appearance",
+          "voiceDescription",
+          "createdAt",
+          "fieldSources",
+          "currentAppearance",
+          "currentVoice",
+          "assets",
+          "prompts"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "relations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "relationId": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "sourceEntityId": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "targetEntityId": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "type": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "status": {
+            "type": "string"
+          },
+          "contentHash": {
+            "type": "string"
+          },
+          "sourceRevision": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "relationId",
+          "sourceEntityId",
+          "targetEntityId",
+          "type",
+          "description",
+          "contentHash",
+          "sourceRevision"
+        ],
+        "additionalProperties": false
+      },
+      "description": "当前没有关系数据层，返回 [] 并声明不支持；不伪造记录"
+    },
+    "omissions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "entityId": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "assetId": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "reason": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "entityId",
+          "assetId",
+          "reason"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "missingCapabilities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "format",
+    "schemaVersion",
+    "owner",
+    "manifestId",
+    "createdAt",
+    "contentHash",
+    "capabilities",
+    "selection",
+    "entities",
+    "relations",
+    "omissions",
+    "missingCapabilities"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "__schema0": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "number"
+        },
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/__schema0"
+          }
+        },
+        {
+          "type": "object",
+          "propertyNames": {
+            "type": "string"
+          },
+          "additionalProperties": {
+            "$ref": "#/$defs/__schema0"
+          }
+        }
+      ]
+    }
+  },
+  "$comment": "Owner: Sean"
+}
