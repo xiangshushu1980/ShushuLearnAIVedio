@@ -876,3 +876,13 @@
 .entity-reference-images img { width: 100%; height: 125px; object-fit: contain; display: block; }
 .entity-reference-images small { display: block; max-height: 36px; overflow: hidden; overflow-wrap: anywhere; }
 .entity-reference-images .selected { border-color: #52cabc; background: #28443f; }
+
+/* Owner: Sean — PC scene-space authoring within existing entity/detail and creation pages. */
+.scene-spatial { margin-top:24px;padding-top:20px;border-top:1px solid var(--border); }
+.scene-spatial h3 { margin:0; }.scene-spatial h4 { margin:16px 0 10px; }
+.spatial-edit-form label { display:block;margin:12px 0; }.spatial-edit-form textarea,.spatial-edit-form input:not([type=checkbox]),.spatial-edit-form select { width:100%; }
+.spatial-card,.spatial-summary { border:1px solid var(--border);border-radius:10px;padding:14px;margin:12px 0;overflow-wrap:anywhere; }
+.spatial-inline { display:grid;grid-template-columns:1fr 1fr;gap:16px; }.scene-spatial code { color:var(--accent);font-size:12px; }
+.scene-spatial details { margin:12px 0; }.spatial-pending { color:#e9be68; }.spatial-evidence-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:12px; }
+.spatial-evidence-grid label { border:1px solid var(--border);border-radius:8px;padding:10px;font-size:12px;overflow-wrap:anywhere; }.spatial-evidence-grid img { display:block;width:100%;height:100px;object-fit:contain; }
+.spatial-evidence-grid input[type=checkbox],.scene-spatial input[type=checkbox] { width:auto; }.scene-spatial p { white-space:pre-wrap;overflow-wrap:anywhere; }

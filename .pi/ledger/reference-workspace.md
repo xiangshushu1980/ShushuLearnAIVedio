@@ -46,3 +46,9 @@
 Owner: Sean。新增 PC 三栏管理页、名称/描述/flag 搜索、全部/任一 flag 筛选、新建和资料编辑、当前主形象/多视图及声音预览；设定/剧情关系共用新增 entity_relations，入向只读、来源可编辑/软解除。派生建立独立实体与来源修订，新主形象/多视图不自动确认；声音可复制原字节为独立已选版本，真实原 run 为来源，无虚假生成。创作页可引用其他实体图片，并显式指定关系或仅作引用。新增表为增量建表，原生成/确认流程沿用。
 
 基础引用变化提醒后续实现；当前记录 sourceEntityId/sourceAssetId/sourceHash/sourceRevision、派生base_revision及关系targetRevision，不自动传播。只读v1导出新增可选flag/派生来源/继承素材溯源及direct有效关系，旧持久化manifest不变。缺口包括单值type、音效、审核、独立提示词版本。构建/隔离1440×1000 PC操作/接口手动复核通过；未运行单元测试或生成，生产角色资料与定稿未修改。入口 http://127.0.0.1:4188/?view=manage；权威说明 reference-workspace/docs/entity-management-v1.md，证据 .pi/tasks/entity-management-v1/validation.json。
+
+## 2026-10-03 场景固定空间 v1
+
+Owner: Sean。新增 scene_spatial_versions 不可变版本及状态指针，方向基准、稳定空间锚点、固定关系、通路、待补充与参考图绑定；管理/创作复用编辑器，JSON草稿批量导入减小手工填写。整份图文一致确认与单项known/pending分开；依据变化needs_review，固定事实导出暂停，动态字段严格拒绝但自然语言仍需人工核对。既有v1manifest增加可选sceneSpatial，旧快照不变；来源hash包含空间修订；film-editor inventory/exportedFacts已原样保留扩展，无下游改动。
+
+当前图书馆仅外观短句和单张已选参考图。实际看图后另存空间草稿（阅读区/两侧书架/两桌/右侧边界待确认）；原文字/图片/定稿选择未改，生产草稿未代用户确认；入口、精确尺寸/朝向/通路明确待补充。构建/隔离PC及HTTP/schema手动复核通过，无单元测试/LLM/GPU/ComfyUI操作。权威文档 reference-workspace/docs/scene-spatial-v1.md，证据 .pi/tasks/scene-spatial-v1/validation.json。

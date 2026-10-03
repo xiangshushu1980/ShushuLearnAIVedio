@@ -1,14 +1,16 @@
 // Owner: Sean — one PC workspace for flags, entity profiles, derivation and two relation categories.
 import React, { useEffect, useState } from 'react';
+import { EntitySpatialEditor } from './EntitySpatialEditor.jsx';
 const emptyProfile = { name: '', flags: [], description: '', appearance: '', voiceDescription: '' };
 const relationTypes = { setting: ['穿着','使用','拥有','掌握','使用时显现','位于'], story: ['同伴','敌对','合作','师徒','亲属','相识'] };
 export function EntityManager({ api, notify, onOpenCreate, onDirtyChange, onSelect, initialEntityId }) {
   const [list,setList]=useState({entities:[],flags:[]}),[all,setAll]=useState([]),[selected,setSelected]=useState(initialEntityId || new URLSearchParams(location.search).get('entity') || ''),[detail,setDetail]=useState(null);
   const [query,setQuery]=useState(''),[filter,setFilter]=useState([]),[match,setMatch]=useState('all'),[busy,setBusy]=useState(false);
   const [editing,setEditing]=useState(false),[creating,setCreating]=useState(false),[form,setForm]=useState(emptyProfile),[saved,setSaved]=useState('');
+  const [spatialDirty,setSpatialDirty]=useState(false);
   const [flagInput,setFlagInput]=useState(''),[category,setCategory]=useState('setting'),[relation,setRelation]=useState(null),[derive,setDerive]=useState(null),[zoom,setZoom]=useState(null);
   useEffect(()=>{if(selected&&!creating){onSelect(selected);const url=new URL(location.href);url.searchParams.set('entity',selected);url.searchParams.set('view','manage');history.replaceState(null,'',url);}},[selected,creating,onSelect]);
-  const dirty=editing&&JSON.stringify(form)!==saved || !!relation || !!derive;
+  const dirty=editing&&JSON.stringify(form)!==saved || !!relation || !!derive || spatialDirty;
   useEffect(()=>{onDirtyChange(!!dirty);},[dirty,onDirtyChange]);
   useEffect(()=>{const warn=e=>{if(dirty){e.preventDefault();e.returnValue='';}};addEventListener('beforeunload',warn);return()=>removeEventListener('beforeunload',warn);},[dirty]);
   useEffect(()=>{const escape=e=>{if(e.key==='Escape')setZoom(null);};addEventListener('keydown',escape);return()=>removeEventListener('keydown',escape);},[]);
@@ -21,9 +23,9 @@ export function EntityManager({ api, notify, onOpenCreate, onDirtyChange, onSele
   }).catch(e=>notify(e.message,true));return()=>{disposed=true;};},[query,filter.join(','),match]);
   useEffect(()=>{if(!selected||creating)return;let disposed=false;setDetail(null);api(`/manage/entities/${selected}`).then(value=>{if(!disposed){setDetail(value);setForm(value.profile);setSaved(JSON.stringify(value.profile));}}).catch(e=>notify(e.message,true));return()=>{disposed=true;};},[selected,creating]);
   function abandon(){return !dirty||confirm('当前有未保存的资料、关系或派生设置，放弃修改？');}
-  function choose(id){if(!abandon())return;setEditing(false);setCreating(false);setRelation(null);setDerive(null);setSelected(id);}
+  function choose(id){if(!abandon())return;setSpatialDirty(false);setEditing(false);setCreating(false);setRelation(null);setDerive(null);setSelected(id);}
   function patch(values){setForm(f=>({...f,...values}));}
-  function newEntity(){if(!abandon())return;setCreating(true);setEditing(true);setDetail(null);setForm({...emptyProfile});setSaved(JSON.stringify(emptyProfile));setRelation(null);setDerive(null);}
+  function newEntity(){if(!abandon())return;setSpatialDirty(false);setCreating(true);setEditing(true);setDetail(null);setForm({...emptyProfile});setSaved(JSON.stringify(emptyProfile));setRelation(null);setDerive(null);}
   async function saveProfile(){setBusy(true);try{
     const value=await api(creating?'/manage/entities':`/manage/entities/${selected}`,{method:creating?'POST':'PATCH',body:JSON.stringify({...form,...(!creating?{expectedRevision:detail.revision}:{})})});
     setDetail(value);setSelected(value.entity.id);setCreating(false);setEditing(false);setSaved(JSON.stringify(value.profile));setForm(value.profile);await loadList();notify('实体资料已保存');
@@ -76,6 +78,7 @@ export function EntityManager({ api, notify, onOpenCreate, onDirtyChange, onSele
             </section>
             {!!detail.descendants.length&&<section className="entity-preview"><h3>派生实体</h3><div className="entity-flags">{detail.descendants.map(e=><button key={e.entityId} onClick={()=>choose(e.entityId)}>{e.name} ↗</button>)}</div></section>}
           </>}
+          {!creating&&detail&&(detail.profile.flags.includes('场景')||['scene','location','场景'].includes(detail.entity.context.type)||detail.sceneSpatial?.version>0)&&<EntitySpatialEditor key={selected} entityId={selected} api={api} notify={notify} onDirtyChange={setSpatialDirty} disabled={editing||busy}/> }
         </>:<div className="empty"><h2>选择或新建实体</h2><p>资料、三视图和声音会集中显示在这里。</p></div>}
       </section>
       <aside className="entity-relations panel"><h2>实体关系</h2><div className="entity-relation-tabs">{[['setting','设定关系'],['story','剧情关系']].map(([value,label])=><button key={value} className={category===value?'selected':''} onClick={()=>{if(relation&&!confirm('放弃未保存的关系编辑？'))return;setCategory(value);setRelation(null);}}>{label}</button>)}</div>

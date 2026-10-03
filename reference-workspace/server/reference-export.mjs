@@ -5,6 +5,8 @@ import { createHash, randomUUID } from 'node:crypto';
 import { existsSync, realpathSync, statSync, readFileSync } from 'node:fs';
 import { relative, isAbsolute, sep } from 'node:path';
 import { HttpError } from './store.mjs';
+import { canonicalJSON,contentHash } from './content-hash.mjs';
+import { sceneSpatialView,isSceneEntity } from './scene-spatial.mjs';
 
 export const assetRoles = ['setting', 'concept', 'main_appearance', 'three_view', 'voice', 'voice_emotion', 'voice_source', 'sound_effect'];
 export const manifestRequestSchema = z.object({
@@ -17,9 +19,7 @@ export const manifestRequestSchema = z.object({
   for (const key of ['entityIds', 'assetRoles', 'assetIds']) if (value[key] && new Set(value[key]).size !== value[key].length)
     ctx.addIssue({ code: 'custom', path: [key], message: '不允许重复值' });
 });
-export const canonicalJSON = value => JSON.stringify(value, (_key, item) => item && typeof item === 'object' && !Array.isArray(item)
-  ? Object.fromEntries(Object.keys(item).sort().map(key => [key, item[key]])) : item);
-export const contentHash = value => createHash('sha256').update(canonicalJSON(value)).digest('hex');
+export { canonicalJSON,contentHash } from './content-hash.mjs';
 const fileHash = bytes => createHash('sha256').update(bytes).digest('hex');
 // Only documented text is exposed; arbitrary context, metadata, execution and credentials stay private.
 const text = value => typeof value === 'string' ? value
@@ -56,7 +56,7 @@ export function createReferenceExport(store) {
   const hasTable = name => !!store.db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name=?").get(name);
   function exportCapabilities() {
     const managed = hasTable('entity_relations');
-    return { ...capabilities, entityManagement: managed, flags: { supported: managed },
+    return { ...capabilities, sceneSpatial: {supported:hasTable('scene_spatial_versions'),schemaVersion:1,fixedFactsRequireConfirmation:true,stableIds:'entityId#id',dynamicState:'shooting script',automaticImageUnderstanding:false}, entityManagement: managed, flags: { supported: managed },
       entityText: { ...capabilities.entityText, formalSchema: managed, validatedFields: managed ? ['description','appearance','voiceDescription'] : [], typeEditing: false },
       derivation: { supported: hasTable('entity_derivations'), independentEntities: true, changeNotifications: false },
       relations: managed ? { supported: true, categories: ['setting','story'], directScope: 'both endpoints must be explicitly selected' } : capabilities.relations };
@@ -130,11 +130,12 @@ export function createReferenceExport(store) {
       source: key === 'voiceDescription' && !entity.context.voiceDescription ? 'current voice source run' : `entities.context.${key}`, contentHash: contentHash(value) }]));
     const derivation=hasTable('entity_derivations')?store.db.prepare('SELECT * FROM entity_derivations WHERE entity_id=?').get(entityId):null;
     const relationRevisions=hasTable('entity_relations')?store.db.prepare("SELECT * FROM entity_relations WHERE (source_entity_id=? OR target_entity_id=?) AND status='active' ORDER BY id").all(entityId,entityId).map(contentHash):[];
-    const result = { flags: Array.isArray(entity.context.flags)?entity.context.flags.filter(f=>typeof f==='string').map(text):[],
+    const spatial=sceneSpatialView(store,entityId,{includeUnconfirmed:false,sanitize:text});
+    const result = { sceneSpatial:spatial, flags: Array.isArray(entity.context.flags)?entity.context.flags.filter(f=>typeof f==='string').map(text):[],
       derivedFrom:derivation?{entityId:derivation.base_entity_id,sourceRevision:derivation.base_revision,description:text(derivation.description),createdAt:derivation.created_at}:null, relationRevisions, entityId: entity.id, name: text(entity.name), ...fields, createdAt: entity.createdAt, fieldSources,
       currentAppearance: visual.appearance ? { confirmationId: visual.appearance.id, version: visual.appearance.version, assetId: visual.appearance.assetId, contentHash: visual.appearance.assetHash } : null,
       currentVoice: voices.current ? { confirmationId: voices.current.id, version: voices.current.version, assetId: voices.current.assetId, contentHash: voices.current.assetHash } : null,
-      missingFields: Object.entries(fields).filter(([, v]) => v === null).map(([k]) => k), assets, prompts };
+      missingFields: [...Object.entries(fields).filter(([, v]) => v === null).map(([k]) => k),...(isSceneEntity(entity)&&spatial.status==='missing'?['sceneSpatial']:[])], assets, prompts };
     result.contentHash = contentHash(result); result.sourceRevision = result.contentHash;
     return result;
   }
@@ -165,7 +166,7 @@ export function createReferenceExport(store) {
           if (fileHash(readFileSync(path)) !== asset.hash) throw new HttpError(409, '素材内容与登记哈希不一致，请恢复原始素材');
           return true;
         });
-        return { ...e, assets, prompts: e.prompts.filter(p => assets.some(a => a.sourceRunId === p.sourceRunId))
+        return { ...e, sceneSpatial:sceneSpatialView(store,e.entityId,{includeUnconfirmed:selection.includeUnconfirmed,sanitize:text}), assets, prompts: e.prompts.filter(p => assets.some(a => a.sourceRunId === p.sourceRunId))
           .map(p => {
             const { contentHash: oldHash, sourceRevision, ...fields } = p;
             const value = { ...fields, assetIds: p.assetIds.filter(id => assets.some(a => a.assetId === id)) };

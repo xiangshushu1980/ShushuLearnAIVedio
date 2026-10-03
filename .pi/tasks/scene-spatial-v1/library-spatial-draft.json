@@ -1,0 +1,98 @@
+{
+  "owner": "Sean",
+  "schemaVersion": 1,
+  "scope": "fixed_scene_space",
+  "frame": {
+    "description": "约定以 near_table（近侧阅读桌）朝向 back_shelf（后方书架）为前向，反向为后向；左侧为 left_shelf 所在一侧。此为依据当前参考图定义的局部空间方向，不代表地理东南西北，拍摄角度变化时仍按此基准引用。",
+    "status": "known"
+  },
+  "elements": [
+    {
+      "id": "reading_area",
+      "kind": "area",
+      "label": "阅读区",
+      "description": "现代简洁的阅读空间；浅色地面，浅木色书架，顶面可见平行条状结构和线性灯；阅读桌和座椅布置在书架围合的一侧。只描述当前参考图可见范围。",
+      "position": "在 left_shelf 和 back_shelf 围合的可见区域内。",
+      "orientation": "",
+      "scale": "",
+      "status": "known"
+    },
+    {
+      "id": "left_shelf",
+      "kind": "structure",
+      "label": "左侧高书架",
+      "description": "浅木色分格书架，多个横向层板和竖向分隔，书籍沿层板陈列；左边近景至后方转角连续可见。",
+      "position": "阅读区的左侧边界；在参考图中由近景延伸至后方书架交会处。",
+      "orientation": "",
+      "scale": "",
+      "status": "known"
+    },
+    {
+      "id": "back_shelf",
+      "kind": "structure",
+      "label": "远端高书架",
+      "description": "浅木色分格书架，位于参考图阅读桌的较远处；在可见转角处与左侧书架交会。不推断转角精确角度或不可见延伸。",
+      "position": "以 near_table 朝向本书架定义的前方边界。",
+      "orientation": "",
+      "scale": "",
+      "status": "known"
+    },
+    {
+      "id": "near_table",
+      "kind": "object",
+      "label": "近侧阅读桌",
+      "description": "参考图中间偏下、桌面大部分可见的浅木色长桌，使用细长深色桌腿，周边有灰绿色座椅。桌面小物品不作为固定空间事实。",
+      "position": "reading_area 内，位于 far_table 沿约定后向的一侧；相比 far_table 更靠近参考图观察位置。",
+      "orientation": "",
+      "scale": "长方形桌面；精确长宽高及与书架间距未提供。",
+      "status": "known"
+    },
+    {
+      "id": "far_table",
+      "kind": "object",
+      "label": "远侧阅读桌",
+      "description": "参考图较深处可见的浅木色长桌，配有灰绿色座椅；不确认精确座椅数量。",
+      "position": "reading_area 内，位于 near_table 沿约定前向的一侧，更接近 back_shelf。",
+      "orientation": "",
+      "scale": "",
+      "status": "known"
+    },
+    {
+      "id": "right_boundary",
+      "kind": "structure",
+      "label": "右侧边界待确认",
+      "description": "参考图最右侧露出带框的浅色结构，范围不完整；无法确认是窗、玻璃隔断或其他结构。",
+      "position": "参考图右边缘。",
+      "orientation": "",
+      "scale": "",
+      "status": "pending"
+    }
+  ],
+  "links": [
+    {
+      "id": "shelf_join",
+      "from": "left_shelf",
+      "to": "back_shelf",
+      "description": "两侧书架在参考图可见后方转角处交会；转角角度待补充。",
+      "status": "known"
+    },
+    {
+      "id": "table_order",
+      "from": "near_table",
+      "to": "far_table",
+      "description": "按约定前向，从 near_table 朝 back_shelf 看，far_table 位于 near_table 前方，且更接近 back_shelf。",
+      "status": "known"
+    }
+  ],
+  "routes": [],
+  "unknowns": [
+    "房间总尺寸、层高、桌面尺寸、通道宽度和固定物体精确间距尚无资料。",
+    "入口、出口、背面和参考图不可见区域布局待补充；不能根据单张图推断完整平面图。",
+    "书架正面相对于约定方向的精确朝向、桌面长轴方向待确认。",
+    "各桌之间可通行路线、椅子是否阻挡、右侧是否连接其他区域待补充；目前不登记已确认通路。",
+    "桌面书本、杯子、纸张及角色站位不属于固定事实，由各段拍摄本指定。"
+  ],
+  "referenceAssetIds": [
+    "25958405-ac83-454f-909e-f4aeba33f9a4"
+  ]
+}

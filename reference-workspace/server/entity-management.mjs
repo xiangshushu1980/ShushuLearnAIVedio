@@ -6,7 +6,8 @@ import { join } from 'node:path';
 import { createHash } from 'node:crypto';
 import { id, now, HttpError } from './store.mjs';
 import { catalog } from './catalog.mjs';
-import { contentHash } from './reference-export.mjs';
+import { contentHash } from './content-hash.mjs';
+import { createSceneSpatial, sceneSpatialView } from './scene-spatial.mjs';
 
 const flags = z.array(z.string().trim().min(1).max(40).refine(v=>!v.includes(','),'flag不能包含逗号')).max(30).refine(a => new Set(a).size === a.length, 'flag不能重复');
 const profile = z.object({ name: z.string().trim().min(1).max(100), flags: flags.default([]), description: z.string().max(8000).default(''),
@@ -18,6 +19,7 @@ function parse(schema, body) {
   return r.data;
 }
 export function createEntityManagement(store) {
+  const spatial=createSceneSpatial(store);
   store.db.exec(`CREATE TABLE IF NOT EXISTS entity_relations (
     id TEXT PRIMARY KEY, source_entity_id TEXT NOT NULL REFERENCES entities(id), target_entity_id TEXT NOT NULL REFERENCES entities(id),
     category TEXT NOT NULL CHECK(category IN ('setting','story')), type TEXT NOT NULL, description TEXT NOT NULL DEFAULT '',
@@ -31,6 +33,7 @@ export function createEntityManagement(store) {
     const e = store.entity(entityId), v = store.visualState(entityId), a = store.voiceState(entityId);
     return contentHash({ id: e.id, name: e.name, context: e.context, appearance: v.appearance?.assetHash || null,
       view: v.view?.hash || null, voice: a.current?.assetHash || null,
+      spatial: sceneSpatialView(store,entityId,{includeUnconfirmed:false}).sourceRevision,
       relations: store.db.prepare("SELECT * FROM entity_relations WHERE source_entity_id=? AND status='active' ORDER BY id").all(entityId) });
   }
   const relationView = row => ({ relationId: row.id, sourceEntityId: row.source_entity_id, targetEntityId: row.target_entity_id,
@@ -45,7 +48,7 @@ export function createEntityManagement(store) {
     const derivation = store.db.prepare('SELECT * FROM entity_derivations WHERE entity_id=?').get(entityId);
     return { entity: e, profile: { name: e.name, flags: Array.isArray(e.context.flags) ? e.context.flags.filter(f=>typeof f==='string') : [], description: typeof e.context.description==='string'?e.context.description:'',
       appearance: typeof e.context.appearance==='string'?e.context.appearance:'', voiceDescription: typeof e.context.voiceDescription==='string'&&e.context.voiceDescription ? e.context.voiceDescription : (voiceState.current ? store.run(voiceState.current.sourceRunId).snapshot.prompt || '' : '') },
-      revision: revision(entityId), visualState, voiceState, relations: relations(entityId),
+      revision: revision(entityId), visualState, voiceState, sceneSpatial: sceneSpatialView(store,entityId), relations: relations(entityId),
       derivedFrom: derivation ? { entityId: derivation.base_entity_id, name: store.entity(derivation.base_entity_id).name, sourceRevision: derivation.base_revision,
         description: derivation.description, options: JSON.parse(derivation.options), createdAt: derivation.created_at } : null,
       descendants: store.db.prepare('SELECT entity_id FROM entity_derivations WHERE base_entity_id=? ORDER BY created_at').all(entityId).map(r => ({ entityId: r.entity_id, name: store.entity(r.entity_id).name })) };
@@ -144,6 +147,7 @@ export function createEntityManagement(store) {
           const draft={modelId:model.id,styleId:'original',purpose:'派生实体形象创作',prompt:input.changes?(referenceStage?'以 Image 1 作为角色身份参考，按以下变化要求创作新的形象。\n':'')+input.changes:'',references:referenceStage?[referenceStage.assetId]:[],parameters:Object.fromEntries(Object.entries(model.fields).map(([key,value])=>[key,value.default]))};
           store.db.prepare('INSERT INTO drafts VALUES (?,?,?)').run(entityId,JSON.stringify(draft),timestamp);
         }
+        if(input.copyProfile) spatial.cloneDraft(baseId,entityId,new Map(referenceStage?[[base.visualState.appearance.assetId,referenceStage.assetId]]:[]));
         if(voiceStage) {
           const voiceId=id();store.db.prepare('INSERT INTO voice_versions VALUES (?,?,?,?,?,?,?)').run(voiceId,entityId,voiceStage.assetId,base.voiceState.current.sourceRunId,voiceStage.hash,1,timestamp);
           store.db.prepare('INSERT INTO entity_voice_state VALUES (?,?,?)').run(entityId,voiceId,timestamp);
@@ -177,7 +181,7 @@ export function createEntityManagement(store) {
       });return imported;
     } catch(error) {if(existsSync(join(store.media,file)))unlinkSync(join(store.media,file));throw error;}
   }
-  return {list,detail,create,update,addRelation,changeRelation,derive,importReference};
+  return {list,detail,create,update,addRelation,changeRelation,derive,importReference,spatial};
 }
 export function entityManagementRouter(store) {
   const service=createEntityManagement(store),r=Router();
@@ -185,6 +189,9 @@ export function entityManagementRouter(store) {
   r.param('relationId',(req,_res,next,value)=>{if(!z.string().uuid().safeParse(value).success)return next(new HttpError(400,'无效关系ID',{fieldErrors:{relationId:['须为UUID']}}));next();});
   r.get('/entities',(req,res)=>res.json(service.list(req.query)));
   r.post('/entities',(req,res)=>res.status(201).json(service.create(req.body)));
+  r.get('/entities/:id/spatial',(req,res)=>res.json(service.spatial.get(req.params.id)));
+  r.put('/entities/:id/spatial',(req,res)=>res.json(service.spatial.save(req.params.id,req.body)));
+  r.post('/entities/:id/spatial/confirm',(req,res)=>res.json(service.spatial.confirm(req.params.id,req.body)));
   r.get('/entities/:id',(req,res)=>res.json(service.detail(req.params.id)));
   r.patch('/entities/:id',(req,res)=>res.json(service.update(req.params.id,req.body)));
   r.post('/entities/:id/derive',(req,res)=>res.status(201).json(service.derive(req.params.id,req.body)));

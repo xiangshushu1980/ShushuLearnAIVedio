@@ -1,5 +1,6 @@
 // Owner: Sean — machine-readable v1 response contracts; request schema is shared with runtime.
 import { z } from 'zod';
+import { spatialExportSchema } from './spatial-schema.mjs';
 import { manifestRequestSchema, assetRoles } from './reference-export.mjs';
 const uuid = z.string().uuid(), hash = z.string(), nullableText = z.string().nullable();
 const source = z.object({ source: z.string(), contentHash: hash }).strict();
@@ -16,7 +17,7 @@ const prompt = z.object({ promptId: z.string(), sourceRunId: uuid, sourceEntityI
 const current = z.object({ confirmationId: uuid, version: z.number().int(), assetId: uuid, contentHash: hash }).strict().nullable();
 const derivedFrom=z.object({entityId:uuid,sourceRevision:hash,description:nullableText,createdAt:z.string()}).strict().nullable();
 const fields = { flags:z.array(z.string()).optional(),derivedFrom:derivedFrom.optional(), entityId: uuid, name: nullableText, type: nullableText, description: nullableText, contentHash: hash, sourceRevision: hash, missingFields: z.array(z.string()) };
-const entity = z.object({ ...fields, relationRevisions:z.array(hash).optional(), appearance: nullableText, voiceDescription: nullableText, createdAt: z.string(),
+const entity = z.object({ ...fields, sceneSpatial:spatialExportSchema.optional(), relationRevisions:z.array(hash).optional(), appearance: nullableText, voiceDescription: nullableText, createdAt: z.string(),
   fieldSources: z.object({ type: source.nullable(), description: source.nullable(), appearance: source.nullable(), voiceDescription: source.nullable() }).strict(),
   currentAppearance: current, currentVoice: current, assets: z.array(asset), prompts: z.array(prompt) }).strict();
 const capabilities = z.record(z.string(), z.json());

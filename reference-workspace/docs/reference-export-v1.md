@@ -92,6 +92,10 @@ includeUnconfirmed=false 仅接受实际主形象/多视图/声音确认记录�
 
 提示词来自被导出素材关联的不可变生成 run，而非正在编辑的草稿：promptId=run:<UUID>、sourceRunId、用途、原始/生效提示词、实际台词和引导、workflow id/version/hash、内容哈希。没有独立提示词版本号，version=null；不能用 workflow.version 假装提示词版本。
 
+### 场景空间扩展
+
+实体新增可选 `sceneSpatial`，契约见[场景空间 v1](scene-spatial-v1.md)。外层仍 schemaVersion=1，空间结构单独版本化；旧快照不改写。capabilities.sceneSpatial 声明固定事实必须确认、entityId#id 稳定引用和不支持自动图像语义核验。只有 confirmed 状态的 known 项进入 frame/elements/links/routes/promptContext；draft/needs_review 的事实为空，未知信息明确列入 unknowns。includeUnconfirmed=true 才带独立 draft，仍不将其当固定事实。空间修订进入实体 sourceRevision，Reference 原始图片/文字变化会标记需复核，但下游已导入快照仍保持不变。
+
 ### 修订与不可变性
 
 - manifest.contentHash：除 manifestId/createdAt/contentHash 外的完整 payload，按对象 key 递归排序、数组保留顺序、UTF-8紧凑 JSON 后 SHA-256。可使用 server/reference-export.mjs 的 canonicalJSON/contentHash 验证。同一来源/选择可产生不同 manifestId，但 contentHash 相同。

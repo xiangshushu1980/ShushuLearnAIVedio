@@ -1,0 +1,38 @@
+{
+  "owner": "Sean",
+  "checkedAt": "2026-10-03T12:21:13.001Z",
+  "method": "隔离HTTP/schema手动复核；无单元测试、无生成",
+  "checks": {
+    "schemaValid": true,
+    "draftNotFacts": true,
+    "confirmedFacts": true,
+    "pendingExcluded": true,
+    "unknownsExported": true,
+    "stableReferenceScope": true,
+    "danglingAnchorRejected": true,
+    "dynamicFieldsRejected": true,
+    "staleVersionRejected": true,
+    "changedSourceNeedsReview": true,
+    "changedSourceNotFacts": true,
+    "staleAcknowledgmentRejected": true,
+    "oldManifestUnchanged": true,
+    "derivedSceneIndependentDraft": true,
+    "existingVideoContextRetainsSpatialExtensions": true,
+    "deletedReferenceNeedsReview": true,
+    "immutableSpatialVersions": true,
+    "confirmationRequiresCurrentAppearance": true,
+    "confirmationWithCurrentAppearance": true
+  },
+  "pc": {
+    "width": 1440,
+    "height": 1000,
+    "confirmationFlow": true,
+    "noHorizontalOverflow": true,
+    "consoleErrors": 0
+  },
+  "production": {
+    "librarySavedAsDraft": true,
+    "originalProfileAndImageSelectionsPreserved": true,
+    "userConfirmationNotPerformed": true
+  }
+}

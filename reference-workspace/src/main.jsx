@@ -1,3 +1,4 @@
+import { EntitySpatialEditor } from './EntitySpatialEditor.jsx';
 // Owner: Sean — settings import and concept iteration UI.
 import React, { useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
@@ -52,7 +53,7 @@ function App() {
   const [message, setMessage] = useState(null), [busy, setBusy] = useState(''), [pending, setPending] = useState([]);
   const [importIds, setImportIds] = useState([]), [status, setStatus] = useState(null);
   const [picker, setPicker] = useState(null), [lightbox, setLightbox] = useState(null), [restored, setRestored] = useState(null);
-  const [mvDirty, setMvDirty] = useState(false), [voiceDirty, setVoiceDirty] = useState(false);
+  const [mvDirty, setMvDirty] = useState(false), [voiceDirty, setVoiceDirty] = useState(false), [spatialDirty,setSpatialDirty]=useState(false);
   const [glow, setGlow] = useState(''), [muted, setMuted] = useState(localStorage.getItem('reference-muted') === '1');
   const fileInput = useRef(null), knownRuns = useRef(new Map()), audio = useRef(null), generationRequest = useRef(null);
   const currentEntity = useRef(entityId), pendingRef = useRef([]);
@@ -122,9 +123,9 @@ function App() {
     void check(); const timer = setInterval(check, 10000); return () => clearInterval(timer);
   }, []);
   useEffect(() => {
-    const warn = event => { if (dirty || pending.length) { event.preventDefault(); event.returnValue = ''; } };
+    const warn = event => { if (dirty || spatialDirty || pending.length) { event.preventDefault(); event.returnValue = ''; } };
     addEventListener('beforeunload', warn); return () => removeEventListener('beforeunload', warn);
-  }, [dirty, pending.length]);
+  }, [dirty, spatialDirty, pending.length]);
   useEffect(() => {
     if (!draft?.sourceRunId) { setRestored(null); return; }
     let cancelled = false;
@@ -224,9 +225,9 @@ function App() {
     finally { setBusy(''); }
   }
   function switchEntity(value) {
-    if ((dirty || mvDirty || voiceDirty || pending.length) && !confirm('有未保存输入或未导入图片，仍要切换实体？')) return;
+    if ((dirty || mvDirty || voiceDirty || spatialDirty || pending.length) && !confirm('有未保存输入或未导入图片，仍要切换实体？')) return;
     pendingRef.current.forEach(p => URL.revokeObjectURL(p.url)); pendingRef.current = [];
-    setPending([]); setImportIds([]); setEntityId(value); generationRequest.current = null;
+    setSpatialDirty(false); setPending([]); setImportIds([]); setEntityId(value); generationRequest.current = null;
   }
   async function reuseRun(run) {
     if (dirty && !confirm('用这次运行输入替换当前未保存的草稿？')) return;
@@ -254,11 +255,11 @@ function App() {
 
   function changeView(value) {
     if (value === view) return;
-    if ((managerDirty || dirty || mvDirty || voiceDirty || pending.length) && !confirm('离开当前页面？未保存的编辑不会保存。')) return;
+    if ((managerDirty || dirty || mvDirty || voiceDirty || spatialDirty || pending.length) && !confirm('离开当前页面？未保存的编辑不会保存。')) return;
     if (view === 'create') {
       pendingRef.current.forEach(p => URL.revokeObjectURL(p.url)); pendingRef.current = []; setPending([]); setImportIds([]);
       const valueDraft = workspace.draft?.value || newDraft(catalog); setDraft(valueDraft); setSavedValue(JSON.stringify(valueDraft));
-      setMvDirty(false); setVoiceDirty(false);
+      setMvDirty(false); setVoiceDirty(false);setSpatialDirty(false);
     }
     if(value==='create'&&managerEntityId)setEntityId(managerEntityId);
     setManagerDirty(false); setView(value);
@@ -284,6 +285,7 @@ function App() {
     </header>
     <main className="workspace"><div className="creation-entity-reference"><button disabled={!!busy} onClick={() => setEntityReferenceOpen(true)}>引用其他实体／建立设定关系</button></div><div className="breadcrumb">参考实体 / <select aria-label="选择实体" value={entityId} onChange={e => switchEntity(e.target.value)} disabled={!!busy}>{entities.map(e => <option key={e.id} value={e.id}>{e.name}</option>)}</select> / 创建与编辑 / {{ settings: '设定图片', concept: '概念图', appearance: '主形象', views: '多视图', voice: '声音' }[tab]}</div>
       <div className="page-title"><div><h1>{workspace.entity.name} <span>· 参考资料创作</span></h1><p>从设定资料出发，选定形象与声音，生成多视图。</p></div><span className="save-state">{tab === 'voice' ? voiceDirty ? '声音输入有未保存修改' : workspace.voiceDraft?.updatedAt ? `声音输入已保存 · ${time(workspace.voiceDraft.updatedAt)}` : '准备本轮声音' : tab === 'views' ? mvDirty ? '多视图输入有未保存修改' : workspace.multiviewDraft?.updatedAt ? `输入已保存 · ${time(workspace.multiviewDraft.updatedAt)}` : '准备本轮多视图' : tab === 'appearance' ? '选定后作为多视图输入' : dirty ? '本轮输入有未保存修改' : draftAt ? `输入已保存 · ${time(draftAt)}` : '请选择图片或准备本轮输入'}</span></div>
+      {((Array.isArray(workspace.entity.context.flags)&&workspace.entity.context.flags.includes('场景'))||['scene','location','场景'].includes(workspace.entity.context.type))&&<div className="panel"><EntitySpatialEditor key={entityId} entityId={entityId} api={api} notify={notify} onDirtyChange={setSpatialDirty} disabled={!!busy}/></div>}
       <div className="workspace-layout"><aside className="steps-panel panel"><h2>创作步骤</h2><p className="muted">当前阶段 · {{ settings: '设定图片', concept: '概念图', appearance: '选定主形象', views: '多视图', voice: '声音' }[tab]}</p>
         <button className={`step ${tab === 'settings' ? 'current' : ''}`} onClick={() => setTab('settings')}><span className="step-index">1</span><span><b>设定图片</b><small>{settings.length ? `已导入 ${settings.length} 张图片` : '选择已有图片'}</small></span></button>
         <button className={`step ${tab === 'concept' ? 'current' : ''}`} onClick={() => setTab('concept')}><span className="step-index">2</span><span><b>概念图</b><small>{activeRun && !['multiview', 'voice'].includes(activeRun.snapshot.stage) ? activeRun.phase : visibleConcepts.length ? `${visibleConcepts.length} 张试验结果` : '引用图片，探索形象'}</small></span></button>

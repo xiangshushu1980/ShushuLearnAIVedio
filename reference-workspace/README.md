@@ -89,6 +89,10 @@ Krea 2 文本与 Edit 作为备选工作流保留，能力上限分别是 0 张�
 
 模型能力与参数由后端目录提供，前端展示同一份 schema。每条运行记录保存模型/风格/模板版本、模板内容 hash、原始与生效提示词、目的、参数、实体上下文、实际输入图片 ID/hash，以及提交时的完整工作流。
 
+## 场景空间设定
+
+“场景”实体在管理和创建页有共用空间编辑器：方向基准、稳定锚点、空间关系、通路及待补充。保存草稿后对照参考图明确确认；资料变化需复核。空间版本持久化，经现有 manifest 的 `sceneSpatial` 传入下游；角色动态留给拍摄本。详见[场景空间 v1](docs/scene-spatial-v1.md)。
+
 ## AI 短片工具只读导出
 
 Owner: Sean。新增 `/api/reference/v1/entities`、`POST /api/reference/v1/manifests`、`GET /api/reference/v1/manifests/:manifestId`、`GET /api/reference/v1/assets/:assetId/content`。快照持久化且不可修改，素材使用稳定 ID/内容 hash/相对 URL；仅现有真实确认资料默认可导出。导出已有资料、flag、派生来源和设定／剧情关系；正式 type、音效与审核等缺失如实声明。契约、schema、完整示例、缺口、调用及验证见 [只读导出 API v1](docs/reference-export-v1.md)。
