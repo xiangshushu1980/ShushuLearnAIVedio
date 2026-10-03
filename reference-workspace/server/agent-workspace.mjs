@@ -12,6 +12,7 @@ import { sceneProfile, agentProfiles } from './agent-profiles.mjs';
 import { createPiRuntime } from './pi-agent-runtime.mjs';
 import { createProjectWorkspace } from './project-workspace.mjs';
 import { createEntityAuthoring,authoringPlanSchema } from './entity-authoring.mjs';
+import {imageReviewSchema,imageReviewSources} from './image-feedback.mjs';
 import { catalog } from './catalog.mjs';
 
 const parse = (schema, body) => {
@@ -30,7 +31,7 @@ const proposalSchema = z.object({ document: spatialDocumentSchema, summary: z.st
   questions: z.array(z.string().trim().min(1).max(2000)).max(3), sources: z.array(sourceSchema).max(500) }).strict();
 const jsonTool = value => ({ content: [{ type: 'text', text: canonicalJSON(value) }], details: {} });
 const terminal = status => status !== 'running';
-const labels = { get_entity_workflow_step:'读取图片步骤完整版本',propose_image_step_revision:'提出图片步骤修订', propose_entity_workflow:'整理实体与变体创作方案', get_entity_workflow_catalog:'读取可用图片工作流', get_entity_workflow_plans:'读取已保存创作方案', get_project_context: '读取项目最新资料', get_project_entity: '读取项目实体详情', propose_project_review: '整理项目检查结果', propose_project_update: '整理项目资料建议', get_scene_context: '读取工程和场景资料', view_reference_image: '查看参考图',
+const labels = { get_image_consistency_review:'读取图片检验报告与步骤来源',get_entity_workflow_step:'读取图片步骤完整版本',propose_image_step_revision:'提出图片步骤修订', propose_entity_workflow:'整理实体与变体创作方案', get_entity_workflow_catalog:'读取可用图片工作流', get_entity_workflow_plans:'读取已保存创作方案', get_project_context: '读取项目最新资料', get_project_entity: '读取项目实体详情', propose_project_review: '整理项目检查结果', propose_project_update: '整理项目资料建议', get_scene_context: '读取工程和场景资料', view_reference_image: '查看参考图',
   load_authoring_skill: '读取当前工作模式的方法', propose_scene_spatial: '整理空间提案' };
 
 export function createAgentWorkspace(store, { runtime = createPiRuntime(store.root), projectService = createProjectWorkspace(store), authoringService = createEntityAuthoring(store,{projectService}) } = {}) {
@@ -80,7 +81,7 @@ export function createAgentWorkspace(store, { runtime = createPiRuntime(store.ro
       provider: s.provider, modelId: s.model_id, createdAt: s.created_at,
       messages: db.prepare('SELECT id,role,text,created_at AS createdAt,run_id AS runId FROM agent_messages WHERE session_id=? ORDER BY created_at,rowid').all(sessionId),
       runs: db.prepare('SELECT id,status,error,created_at AS createdAt FROM agent_runs WHERE session_id=? ORDER BY created_at,rowid').all(sessionId),
-      stepRevisions:authoringService.steps(s.project_id).filter(step=>step.sessionId===s.id).map(({id,rootStepId,entityName,label,version,reason,revisionStatus,stale})=>({id,rootStepId,entityName,label,version,reason,revisionStatus,stale})),
+      stepRevisions:authoringService.steps(s.project_id).filter(step=>step.sessionId===s.id).map(({id,rootStepId,entityName,label,version,reason,revisionStatus,stale,revisionBasis})=>({id,rootStepId,entityName,label,version,reason,revisionStatus,stale,feedback:revisionBasis?.feedback||null})),
       authoringPlans:authoringService.list(s.project_id).filter(p=>p.sessionId===s.id).map(p=>({id:p.id,title:p.title,summary:p.summary,stale:p.stale,applied:!!p.applied,candidateCount:p.candidates.length})),
       projectProposals: db.prepare('SELECT * FROM agent_project_proposals WHERE session_id=? ORDER BY rowid').all(sessionId).map(row=>{const run=runRow(row.run_id);let stale=true;try{stale=contentHash(basis(s,run.basis.referenceAssetIds))!==contentHash(run.basis);}catch{}return {id:row.id,runId:row.run_id,kind:row.kind,...JSON.parse(row.body),contentHash:row.content_hash,appliedRevision:row.applied_revision,createdAt:row.created_at,stale:!row.applied_revision&&stale};}),
       proposals: rows.map(row => ({id:row.id,runId:row.run_id,...JSON.parse(row.body),contentHash:row.content_hash,
@@ -130,15 +131,15 @@ export function createAgentWorkspace(store, { runtime = createPiRuntime(store.ro
       otherEntities:indexed.filter(e=>e.entityId!==s.entity_id),
       spatial:s.entity_id?management.spatial.get(s.entity_id):null};
   }
-  function projectProposal(s,run,kind,raw,reviewedEntities=new Set(),seenImages=new Set()) {
+  function projectProposal(s,run,kind,raw,reviewedEntities=new Set(),seenImages=new Set(),seenSteps=new Map()) {
     if(contentHash(basis(s,run.basis.referenceAssetIds))!==contentHash(run.basis))throw new HttpError(409,'项目资料已变化，请基于最新资料重新提出建议');
     const review=z.object({summary:z.string().trim().min(1).max(4000),issues:z.array(z.object({entityIds:z.array(uuid).max(100),category:z.enum(['conflict','missing','suggestion']),description:z.string().trim().min(1).max(4000),suggestion:z.string().max(4000)}).strict()).max(30)}).strict();
     const update=z.object({summary:z.string().trim().min(1).max(4000),changes:z.object({brief:z.string().max(12000).optional(),synopsis:z.string().max(12000).optional(),worldRules:z.string().max(12000).optional(),visualStyle:z.string().max(12000).optional(),decisions:z.string().max(12000).optional()}).strict().refine(v=>Object.keys(v).length>0,'至少提出一项修改')}).strict();
-    const imageReview=review.extend({reviewedAssetIds:z.array(uuid).min(1).max(8),conclusion:z.enum(['consistent','conflicts','inconclusive'])}).strict();
+    const imageReview=imageReviewSchema;
     const input=parse(kind==='review'?review:kind==='image-review'?imageReview:update,raw);
-    if(kind==='image-review'){if(new Set(input.reviewedAssetIds).size!==input.reviewedAssetIds.length||input.reviewedAssetIds.some(a=>!seenImages.has(a)))throw new HttpError(400,'视觉检验必须逐张调用图片观察工具，不能把未看图片列为已检查');if(input.conclusion==='consistent'&&input.issues.some(i=>i.category==='conflict'))throw new HttpError(400,'有冲突不能标为一致');}
+    if(kind==='image-review'){if(new Set(input.reviewedAssetIds).size!==input.reviewedAssetIds.length||input.reviewedAssetIds.some(a=>!seenImages.has(a)))throw new HttpError(400,'视觉检验必须逐张调用图片观察工具，不能把未看图片列为已检查');for(const issue of input.issues)if(issue.assetIds?.some(a=>!input.reviewedAssetIds.includes(a)))throw new HttpError(400,'问题引用的图片必须已经在此报告中检查');if(input.conclusion==='conflicts'&&!input.issues.some(i=>i.category==='conflict'))throw new HttpError(400,'冲突结论需列出具体冲突');if(input.conclusion==='consistent'&&input.issues.some(i=>i.category==='conflict'))throw new HttpError(400,'有冲突不能标为一致');}
     if(kind==='review'||kind==='image-review')for(const issue of input.issues)for(const e of issue.entityIds)projectService.member(s.project_id,e);
-    const proposalId=id(),body={owner:'Sean',...input,...(['review','image-review'].includes(kind)?{coverage:{reviewedEntityIds:[...reviewedEntities].sort(),projectEntityCount:project(s.project_id).entityIds.length,selectedImageAssetIds:run.basis.referenceAssetIds,viewedImageAssetIds:[...seenImages].sort(),scope:'project text and indexed entities; full entity details only for reviewedEntityIds; images require separate view tool'}}:{}),basis:run.basis};
+    const proposalId=id(),body={owner:'Sean',...input,...(kind==='image-review'?{workflowSources:imageReviewSources(store,authoringService,s.project_id,input.reviewedAssetIds,seenSteps)}:{}),...(['review','image-review'].includes(kind)?{coverage:{reviewedEntityIds:[...reviewedEntities].sort(),projectEntityCount:project(s.project_id).entityIds.length,selectedImageAssetIds:run.basis.referenceAssetIds,viewedImageAssetIds:[...seenImages].sort(),scope:'project text and indexed entities; full entity details only for reviewedEntityIds; images require separate view tool'}}:{}),basis:run.basis};
     db.prepare('INSERT INTO agent_project_proposals VALUES (?,?,?,?,?,?,?,?)').run(proposalId,run.id,s.id,kind,canonicalJSON(body),contentHash(body),null,now());
     emit(run.id,'proposal',{proposalId,kind});return {proposalId,savedAs:'proposal-only',confirmation:'requires-user'};
   }
@@ -221,6 +222,7 @@ export function createAgentWorkspace(store, { runtime = createPiRuntime(store.ro
           return jsonTool({error:'工具未能读取或保存当前资料，请核对参考图后继续。',instruction:'不要声称此工具已成功执行。'});
         }
       } });
+    const seenReviews=new Map();
     const tools = [
       tool(s.purpose==='scene-spatial'?'get_scene_context':'get_project_context','读取当前工程共用设定、实体关系、空间文档及可引用用户消息。',{type:'object',properties:{},additionalProperties:false},()=>{
         if(contentHash(basis(s,run.basis.referenceAssetIds))!==contentHash(run.basis))throw new HttpError(409,'资料已在本轮期间变化，请停止本轮并继续讨论最新版本');
@@ -253,18 +255,18 @@ export function createAgentWorkspace(store, { runtime = createPiRuntime(store.ro
     if(s.purpose!=='scene-spatial')tools.pop();
     tools.push(tool('get_project_entity','按稳定 ID 读取当前项目内一个实体的完整文字、空间和关系；用于核对摘要之外的细节。',z.toJSONSchema(z.object({entityId:uuid}).strict()),raw=>{const {entityId}=parse(z.object({entityId:uuid}).strict(),raw);projectService.member(s.project_id,entityId);if(contentHash(basis(s,run.basis.referenceAssetIds))!==contentHash(run.basis))throw new HttpError(409,'资料已变化，请重新讨论最新版本');reviewedEntities.add(entityId);return jsonTool(context(s.project_id).entities.find(e=>e.entityId===entityId));}));
     tools.push(tool('propose_project_review','保存带实体引用的项目一致性检查报告；不会自动修改事实。',{type:'object',properties:{summary:{type:'string'},issues:{type:'array',maxItems:30,items:{type:'object',properties:{entityIds:{type:'array',items:{type:'string',format:'uuid'}},category:{type:'string',enum:['conflict','missing','suggestion']},description:{type:'string'},suggestion:{type:'string'}},required:['entityIds','category','description','suggestion'],additionalProperties:false}}},required:['summary','issues'],additionalProperties:false},raw=>jsonTool(projectProposal(s,run,'review',raw,reviewedEntities,seenImages))));
-    tools.push(tool('propose_image_consistency_review','保存已经逐张实际观察的图片一致性报告，核对实体设定、变体差异、人物身份/服装装备或场景固定空间。没有审核确认权限。',{
-      type:'object',properties:{summary:{type:'string'},reviewedAssetIds:{type:'array',items:{type:'string',format:'uuid'},minItems:1,maxItems:8},conclusion:{type:'string',enum:['consistent','conflicts','inconclusive']},issues:{type:'array',maxItems:30,items:{type:'object',properties:{entityIds:{type:'array',items:{type:'string',format:'uuid'}},category:{type:'string',enum:['conflict','missing','suggestion']},description:{type:'string'},suggestion:{type:'string'}},required:['entityIds','category','description','suggestion'],additionalProperties:false}}},required:['summary','reviewedAssetIds','conclusion','issues'],additionalProperties:false
-    },raw=>jsonTool(projectProposal(s,run,'image-review',raw,reviewedEntities,seenImages))));
+    tools.push(tool('propose_image_consistency_review','保存逐张实际观察的图片检验。问题可用 assetIds 指明已检查图片；系统记录实际生成步骤来源。不是确认。',z.toJSONSchema(imageReviewSchema),raw=>jsonTool(projectProposal(s,run,'image-review',raw,reviewedEntities,seenImages,seenSteps))));
     if(s.purpose==='project-authoring'){
+      tools.push(tool('get_image_consistency_review','按报告 ID 读取当前项目图片检验与生成步骤来源；报告修订前必须读取。',z.toJSONSchema(z.object({reviewId:uuid}).strict()),raw=>{const {reviewId}=parse(z.object({reviewId:uuid}).strict(),raw);const report=authoringService.imageReview(s.project_id,reviewId);seenReviews.set(reviewId,report.contentHash);return jsonTool(report);}));
       tools.push(tool('get_entity_workflow_catalog','读取当前可用概念图模型、风格、参数和工作流约束，不调用生成服务。',{type:'object',properties:{},additionalProperties:false},()=>jsonTool({owner:'Sean',models:catalog.models.filter(m=>m.stage!=='multiview'),styles:catalog.styles,sceneImages:'同一实体可安排总览、其他角度、细节；不强制三视图',characterViews:'选定主形象后接续现有 V3 多视图',schemaVersion:1})));
       tools.push(tool('get_entity_workflow_plans','读取当前项目已保存的实体创作方案和已应用的候选映射。',{type:'object',properties:{},additionalProperties:false},()=>jsonTool({plans:authoringService.list(s.project_id).slice(0,3),steps:authoringService.steps(s.project_id).map(({prompt,parameters,...step})=>step)})));
-      tools.push(tool('get_entity_workflow_step','读取图片步骤完整提示词、参数、引用、保持项、版本及当前选择。修订前必须读取。',z.toJSONSchema(z.object({stepId:uuid}).strict()),raw=>{const {stepId}=parse(z.object({stepId:uuid}).strict(),raw);if(contentHash(basis(s,run.basis.referenceAssetIds))!==contentHash(run.basis))throw new HttpError(409,'本轮资料已变化，请重新讨论');const step=authoringService.getStep(s.project_id,stepId);seenSteps.set(stepId,{hash:step.contentHash,active:step.activeStepId});return jsonTool(step);}));
+      tools.push(tool('get_entity_workflow_step','读取图片步骤完整提示词、参数、引用、保持项、版本及当前选择。修订前必须读取。',z.toJSONSchema(z.object({stepId:uuid}).strict()),raw=>{const {stepId}=parse(z.object({stepId:uuid}).strict(),raw);if(contentHash(basis(s,run.basis.referenceAssetIds))!==contentHash(run.basis))throw new HttpError(409,'本轮资料已变化，请重新讨论');const step=authoringService.getStep(s.project_id,stepId);seenSteps.set(stepId,{hash:step.contentHash,active:step.activeStepId,sourceRefs:step.sourceReferenceAssetIds});return jsonTool(step);}));
       tools.push(tool('propose_image_step_revision','保存已应用图片步骤的修订候选，保留原实体和生成历史。只提案，不采用或生成。',z.toJSONSchema(authoringService.stepRevisionSchema.omit({expectedContextHash:true}).extend({stepId:uuid})),raw=>{
         if(contentHash(basis(s,run.basis.referenceAssetIds))!==contentHash(run.basis))throw new HttpError(409,'本轮资料已变化，请重新讨论');
         const {stepId,...input}=parse(authoringService.stepRevisionSchema.omit({expectedContextHash:true}).extend({stepId:uuid}),raw);
         const observed=seenSteps.get(stepId);if(!observed||observed.hash!==input.expectedStepHash||observed.active!==input.expectedActiveStepId)throw new HttpError(400,'请先读取这个步骤的完整版本再修订');
-        for(const assetId of input.image.referenceAssetIds)if(!run.basis.referenceAssetIds.includes(assetId))throw new HttpError(400,'修订引用必须是本轮用户明确选图');
+        if(input.feedback&&seenReviews.get(input.feedback.reviewId)!==input.feedback.expectedReviewHash)throw new HttpError(400,'请先读取完整图片检验报告再提出关联修订');
+        for(const assetId of input.image.referenceAssetIds)if(!run.basis.referenceAssetIds.includes(assetId)&&!observed.sourceRefs.includes(assetId))throw new HttpError(400,'新增修订引用必须是本轮用户明确选图；原步骤明确引用可保留');
         const result=authoringService.reviseStep(s.project_id,stepId,{...input,expectedContextHash:context(s.project_id).contentHash},{sessionId:s.id,runId:run.id});emit(run.id,'proposal',{proposalId:result.stepId,kind:'image-step-revision'});return jsonTool({...result,review:'返回项目工作区比较图片步骤版本，由用户明确采用'});
       }));
       tools.push(tool('propose_entity_workflow','保存完整的人物/场景及多个实验变体的创建方案，包含关系、每张图的提示词、模型/风格、参考图、固定不变量和待补充。不创建实体或提交生成。',z.toJSONSchema(authoringPlanSchema),raw=>{

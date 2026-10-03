@@ -4,10 +4,11 @@ import {z} from 'zod';
 import {id,now,HttpError} from './store.mjs';
 import {canonicalJSON,contentHash} from './content-hash.mjs';
 import {projectInput} from './project-workspace.mjs';
+import {imageFeedbackSchema,correctionEvidence} from './image-feedback.mjs';
 
 export function createWorkflowStepRevisions(store,{projectService,management,basis,validate,imageSchema}){
   const db=store.db;
-  const revisionSchema=z.object({expectedStepHash:z.string().length(64),expectedActiveStepId:z.string().uuid(),expectedContextHash:z.string().length(64),reason:z.string().trim().min(1).max(4000),image:imageSchema}).strict();
+  const revisionSchema=z.object({expectedStepHash:z.string().length(64),expectedActiveStepId:z.string().uuid(),expectedContextHash:z.string().length(64),reason:z.string().trim().min(1).max(4000),image:imageSchema,feedback:imageFeedbackSchema.optional()}).strict();
   db.exec(`CREATE TABLE IF NOT EXISTS entity_workflow_step_revisions(step_id TEXT PRIMARY KEY REFERENCES entity_workflow_steps(id),parent_step_id TEXT NOT NULL REFERENCES entity_workflow_steps(id),root_step_id TEXT NOT NULL REFERENCES entity_workflow_steps(id),version INTEGER NOT NULL,reason TEXT NOT NULL,session_id TEXT,run_id TEXT,basis TEXT NOT NULL,UNIQUE(root_step_id,version));
     CREATE TABLE IF NOT EXISTS entity_workflow_step_heads(root_step_id TEXT PRIMARY KEY REFERENCES entity_workflow_steps(id),step_id TEXT NOT NULL REFERENCES entity_workflow_steps(id));
     CREATE TABLE IF NOT EXISTS entity_workflow_step_selections(id TEXT PRIMARY KEY,root_step_id TEXT NOT NULL REFERENCES entity_workflow_steps(id),from_step_id TEXT NOT NULL,to_step_id TEXT NOT NULL,created_at TEXT NOT NULL);
@@ -24,7 +25,8 @@ export function createWorkflowStepRevisions(store,{projectService,management,bas
     const d=management.detail(old.entity_id),derived=db.prepare('SELECT * FROM entity_derivations WHERE entity_id=?').get(old.entity_id);
     const candidate={key:oldBody.candidateKey,kind:oldBody.candidateKind,profile:d.profile,baseEntityId:derived?.base_entity_id||null,variationOf:null,changes:derived?.description||'',projectRole:{role:'',plotNotes:''},unknowns:[],images:[input.image]};
     const checked=validate(projectId,{title:'图片步骤修订',summary:input.reason,candidates:[candidate],relations:[],questions:[]}).candidates[0].images[0];
-    const captured={...current,imageHashes:hashes(checked.referenceAssetIds)},stepIdNew=id(),version=(db.prepare('SELECT max(version) AS n FROM entity_workflow_step_revisions WHERE root_step_id=?').get(meta.rootStepId).n||1)+1;
+    const feedback=input.feedback?correctionEvidence(store,projectService,projectId,old,meta,input.feedback,runId):null;
+    const captured={...current,imageHashes:hashes(checked.referenceAssetIds),...(feedback?{feedback}:{})},stepIdNew=id(),version=(db.prepare('SELECT max(version) AS n FROM entity_workflow_step_revisions WHERE root_step_id=?').get(meta.rootStepId).n||1)+1;
     const body={...checked,candidateKey:oldBody.candidateKey,candidateKind:oldBody.candidateKind,entityRevision:d.revision};
     db.prepare('INSERT INTO entity_workflow_steps VALUES (?,?,?,?,?,?,?)').run(stepIdNew,old.plan_id,projectId,old.entity_id,canonicalJSON(body),contentHash(body),now());
     db.prepare('INSERT INTO entity_workflow_step_revisions VALUES (?,?,?,?,?,?,?,?)').run(stepIdNew,stepId,meta.rootStepId,version,input.reason,sessionId,runId,canonicalJSON(captured));
@@ -39,6 +41,7 @@ export function createWorkflowStepRevisions(store,{projectService,management,bas
     if(meta.runId&&db.prepare('SELECT status FROM agent_runs WHERE id=?').get(meta.runId)?.status!=='succeeded')throw new HttpError(409,'等待助手对话完整结束后采用');
     if(meta.revisionBasis&&meta.revisionStatus==='proposal'&&meta.revisionBasis.contextHash!==basis(projectId).contextHash)throw new HttpError(409,'项目依据已变化，请重新讨论修订');
     const captured=meta.revisionBasis||JSON.parse(db.prepare('SELECT basis FROM entity_authoring_plans WHERE id=?').get(r.plan_id).basis);
+    if(meta.revisionStatus==='proposal'&&captured.feedback)correctionEvidence(store,projectService,projectId,r,meta,{reviewId:captured.feedback.reviewId,expectedReviewHash:captured.feedback.reviewHash,assetIds:captured.feedback.assets.map(a=>a.assetId)});
     for(const [a,hash] of Object.entries(captured.imageHashes)){projectService.member(projectId,store.asset(a).entityId);if(createHash('sha256').update(store.assetBytes(a)).digest('hex')!==hash)throw new HttpError(409,'参考图内容已变化');}
     db.prepare('INSERT INTO entity_workflow_step_heads VALUES (?,?) ON CONFLICT(root_step_id) DO UPDATE SET step_id=excluded.step_id').run(meta.rootStepId,stepId);
     db.prepare('INSERT INTO entity_workflow_step_selections VALUES (?,?,?,?,?)').run(id(),meta.rootStepId,meta.activeStepId,stepId,now());

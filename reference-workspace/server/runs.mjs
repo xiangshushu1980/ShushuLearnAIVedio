@@ -36,6 +36,7 @@ export function createRunService(store) {
     const { stdout } = await exec('hive-resource', args, { timeout: 15_000 });
     return stdout;
   };
+  function feedbackForStep(stepId){const table=store.db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name='entity_workflow_step_revisions'").get();if(!table)return null;const row=store.db.prepare('SELECT basis FROM entity_workflow_step_revisions WHERE step_id=?').get(stepId);const feedback=row?JSON.parse(row.basis).feedback:null;return feedback?{reviewId:feedback.reviewId,reviewHash:feedback.reviewHash}:null;}
   function snapshot(entityId, body, readDraftOrigin=true) {
     const { input, model, style } = validateRun(body);
     const entity = store.entity(entityId);
@@ -69,7 +70,7 @@ export function createRunService(store) {
           const current=store.db.prepare('SELECT step_id FROM entity_workflow_step_heads WHERE root_step_id=?').get(revision.rootStepId)?.step_id||revision.rootStepId;
           if(current!==link.step_id)throw new HttpError(409,'图片步骤选用版本已变化，请重新载入当前版本的生成输入');
         }
-        authoring={stepId:link.step_id,...revision,planId:link.plan_id,sourceRevision:link.content_hash,role:step.role,label:step.label,invariants:step.invariants,unknowns:step.unknowns};}}
+        authoring={stepId:link.step_id,...revision,planId:link.plan_id,sourceRevision:link.content_hash,role:step.role,label:step.label,invariants:step.invariants,unknowns:step.unknowns,...(feedbackForStep(link.step_id)?{feedback:feedbackForStep(link.step_id)}:{})};}}
     }
     const { endpoint, ...modelSnapshot } = model;
     return { owner: 'Sean', entity: { id: entity.id, name: entity.name, context: entity.context },
@@ -260,7 +261,7 @@ export function createRunService(store) {
       if(step.useMainAppearance||step.useBaseAppearance){const sourceEntity=step.useBaseAppearance?store.db.prepare('SELECT base_entity_id FROM entity_derivations WHERE entity_id=?').get(entityId)?.base_entity_id:entityId;const main=sourceEntity?store.visualState(sourceEntity).appearance:null;if(!main)throw new HttpError(409,'依赖主图未选定');sourceIds=[main.assetId];}
       if(current.references.length!==sourceIds.length)throw new HttpError(409,'批次引用数量与选定步骤不符');
       current.references.forEach((a,n)=>{const ref=store.asset(a),source=store.asset(sourceIds[n]);if(ref.entityId!==entityId||ref.hash!==source.hash||(ref.id!==source.id&&ref.metadata.inheritance?.sourceAssetId!==source.id)||createHash('sha256').update(store.assetBytes(a)).digest('hex')!==ref.hash)throw new HttpError(409,'批次引用与选定来源不符');});
-      const value=snapshot(entityId,body,false);value.authoring={stepId:row.id,rootStepId:root,version:revision?.version||1,planId:row.plan_id,sourceRevision:row.content_hash,role:step.role,label:step.label,invariants:step.invariants,unknowns:step.unknowns,batchId:origin.batchId,batchItemId:origin.itemId};
+      const value=snapshot(entityId,body,false);value.authoring={stepId:row.id,rootStepId:root,version:revision?.version||1,planId:row.plan_id,sourceRevision:row.content_hash,role:step.role,label:step.label,invariants:step.invariants,unknowns:step.unknowns,batchId:origin.batchId,batchItemId:origin.itemId,...(feedbackForStep(row.id)?{feedback:feedbackForStep(row.id)}:{})};
       return value;
   }
   return {
