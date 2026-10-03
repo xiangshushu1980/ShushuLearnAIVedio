@@ -1,4 +1,5 @@
 // Owner: Sean — durable natural-language authoring plans, variants and fixed image workflow steps.
+import {isSceneEntity} from './scene-spatial.mjs';
 import {getImageReview} from './image-feedback.mjs';
 import { createWorkflowStepRevisions } from './workflow-step-revisions.mjs';
 import { Router } from 'express';
@@ -13,7 +14,7 @@ const uuid=z.string().uuid(),key=z.string().regex(/^[a-zA-Z][a-zA-Z0-9_-]{0,59}$
 const text=z.string().max(8000);
 const profile=z.object({name:z.string().trim().min(1).max(100),description:text,appearance:text,voiceDescription:z.string().max(4000),flags:z.array(z.string().trim().min(1).max(40).refine(v=>!v.includes(','),'flag不能包含逗号')).max(30).refine(v=>new Set(v).size===v.length,'flag不能重复')}).strict();
 export const authoringImageSchema=z.object({key,label:z.string().trim().min(1).max(100),role:z.enum(['concept','scene_overview','scene_angle','scene_detail']),prompt:z.string().trim().min(1).max(16000),purpose:z.string().max(2000),modelId:z.string().max(100),styleId:z.string().max(100),referenceAssetIds:z.array(uuid).max(16),useMainAppearance:z.boolean(),useBaseAppearance:z.boolean().default(false),parameters:z.record(z.string(),z.union([z.string(),z.number()])),invariants:z.array(z.string().trim().min(1).max(2000)).max(30),unknowns:z.array(z.string().trim().min(1).max(2000)).max(30)}).strict();
-const candidate=z.object({key,kind:z.enum(['character','scene','object']),profile,baseEntityId:uuid.nullable(),variationOf:key.nullable(),changes:z.string().max(8000),projectRole:z.object({role:z.string().max(2000),plotNotes:text}).strict(),unknowns:z.array(z.string().trim().min(1).max(2000)).max(30),images:z.array(authoringImageSchema).min(1).max(12)}).strict();
+const candidate=z.object({key,kind:z.enum(['character','scene','object']),profile,baseEntityId:uuid.nullable(),variationOf:key.nullable(),changes:z.string().max(8000),copySpatialDraft:z.boolean().optional(),projectRole:z.object({role:z.string().max(2000),plotNotes:text}).strict(),unknowns:z.array(z.string().trim().min(1).max(2000)).max(30),images:z.array(authoringImageSchema).min(1).max(12)}).strict();
 const target=z.object({candidateKey:key.nullable(),entityId:uuid.nullable()}).strict().refine(v=>!!v.candidateKey!==!!v.entityId,'只选择候选 key 或实体 ID');
 export const authoringPlanSchema=z.object({title:z.string().trim().min(1).max(100),summary:z.string().trim().min(1).max(4000),candidates:z.array(candidate).min(1).max(12),relations:z.array(z.object({sourceKey:key,target,category:z.enum(['setting','story']),type:z.string().trim().min(1).max(60),description:z.string().max(4000)}).strict()).max(100),questions:z.array(z.string().trim().min(1).max(2000)).max(5)}).strict();
 const applySchema=z.object({expectedContentHash:z.string().length(64),acknowledgeNewDesign:z.literal(true)}).strict();
@@ -25,12 +26,16 @@ export function createEntityAuthoring(store,{projectService=createProjectWorkspa
     CREATE TABLE IF NOT EXISTS entity_authoring_draft_links(entity_id TEXT PRIMARY KEY REFERENCES entities(id),step_id TEXT NOT NULL REFERENCES entity_workflow_steps(id),draft_updated_at TEXT NOT NULL);
     CREATE TRIGGER IF NOT EXISTS entity_workflow_step_immutable BEFORE UPDATE ON entity_workflow_steps BEGIN SELECT RAISE(ABORT,'immutable image plan');END;`);
   function basis(projectId){const c=projectService.context(projectId);return {projectRevision:c.project.revision,contextHash:c.contentHash};}
-  function validate(projectId,raw){
+  function validate(projectId,raw,{sceneVariantDefaults=true}={}){
     const input=projectInput(authoringPlanSchema,raw),keys=new Set();if(Buffer.byteLength(canonicalJSON(input))>240*1024)throw new HttpError(400,'方案过大，请分组讨论',{fieldErrors:{candidates:['请减少单组候选或图片步骤']}});
     for(const c of input.candidates){if(keys.has(c.key))throw new HttpError(400,'候选 key 不能重复');keys.add(c.key);}
     const edges=new Map();
     for(const c of input.candidates){
       if(c.baseEntityId)projectService.member(projectId,c.baseEntityId);
+      const derived=!!(c.baseEntityId||c.variationOf);
+      c.copySpatialDraft??=sceneVariantDefaults&&c.kind==='scene'&&derived;
+      if(c.copySpatialDraft&&(c.kind!=='scene'||!derived))throw new HttpError(400,'空间草稿沿用仅适用于场景变体',{fieldErrors:{copySpatialDraft:['请选择基础场景或关闭沿用']}});
+      if(sceneVariantDefaults&&c.kind==='scene'&&((c.baseEntityId&&!isSceneEntity(store.entity(c.baseEntityId)))||(c.variationOf&&input.candidates.find(v=>v.key===c.variationOf)?.kind!=='scene')))throw new HttpError(400,'场景变体的基础必须是场景',{fieldErrors:{baseEntityId:['请选择场景实体'],variationOf:['请选择场景候选']}});
       if(c.baseEntityId&&c.variationOf)throw new HttpError(400,'变体只能选择一个基础来源');
       if(c.variationOf){if(!keys.has(c.variationOf)||c.variationOf===c.key)throw new HttpError(400,'变体基础候选无效');edges.set(c.key,c.variationOf);}
       if((c.baseEntityId||c.variationOf)&&!c.changes.trim())throw new HttpError(400,'变体需明确变化说明');
@@ -39,7 +44,7 @@ export function createEntityAuthoring(store,{projectService=createProjectWorkspa
       for(const im of c.images){
         if(imageKeys.has(im.key))throw new HttpError(400,'同一候选的图片步骤 key 不能重复');imageKeys.add(im.key);
         if(c.kind!=='scene'&&im.role!=='concept')throw new HttpError(400,'场景视角步骤只适用于场景');
-        if(c.kind==='character'&&(c.baseEntityId||c.variationOf)&&!im.referenceAssetIds.length&&!im.useMainAppearance)im.useBaseAppearance=true;
+        if((c.kind==='character'||(sceneVariantDefaults&&c.kind==='scene'))&&(c.baseEntityId||c.variationOf)&&!im.referenceAssetIds.length&&!im.useMainAppearance)im.useBaseAppearance=true;
         if(im.useBaseAppearance&&!c.baseEntityId&&!c.variationOf)throw new HttpError(400,'基础形象依赖只适用于变体');
         if(im.useBaseAppearance&&im.useMainAppearance)throw new HttpError(400,'基础形象依赖与当前主形象不能并用');
         if((im.useMainAppearance||im.useBaseAppearance)&&im.referenceAssetIds.length)throw new HttpError(400,'主形象依赖与指定参考图不能同时使用');
@@ -58,7 +63,7 @@ export function createEntityAuthoring(store,{projectService=createProjectWorkspa
   function save(projectId,raw,{sessionId=null,runId=null,expectedBasis=null}={}){return store.transaction(()=>{
     const current=basis(projectId);if(expectedBasis&&current.contextHash!==expectedBasis.contextHash)throw new HttpError(409,'项目资料已变化，请重新讨论');
     const body=validate(projectId,raw),planId=id();const imageHashes=Object.fromEntries(body.candidates.flatMap(c=>c.images.flatMap(im=>im.referenceAssetIds)).map(a=>{const asset=store.asset(a),hash=createHash('sha256').update(store.assetBytes(a)).digest('hex');if(hash!==asset.hash)throw new HttpError(409,'参考图内容已变化，请重新导入');return [a,hash];}));
-    const captured={...current,imageHashes};db.prepare('INSERT INTO entity_authoring_plans VALUES (?,?,?,?,?,?,?,?,?)').run(planId,projectId,sessionId,runId,canonicalJSON(body),canonicalJSON(captured),contentHash(body),null,now());return get(projectId,planId);
+    const captured={...current,imageHashes,workflowRulesVersion:2};db.prepare('INSERT INTO entity_authoring_plans VALUES (?,?,?,?,?,?,?,?,?)').run(planId,projectId,sessionId,runId,canonicalJSON(body),canonicalJSON(captured),contentHash(body),null,now());return get(projectId,planId);
   });}
   function planRow(projectId,planId){projectService.project(projectId);const row=db.prepare('SELECT * FROM entity_authoring_plans WHERE id=? AND project_id=?').get(planId,projectId);if(!row)throw new HttpError(404,'创作方案不存在');return row;}
   function fresh(row){const b=JSON.parse(row.basis);if(b.contextHash!==basis(row.project_id).contextHash)return false;try{return Object.entries(b.imageHashes).every(([a,h])=>createHash('sha256').update(store.assetBytes(a)).digest('hex')===h);}catch{return false;}}
@@ -68,12 +73,12 @@ export function createEntityAuthoring(store,{projectService=createProjectWorkspa
   function apply(projectId,planId,body){const input=projectInput(applySchema,body);return store.transaction(()=>{
     const row=planRow(projectId,planId);if(row.content_hash!==input.expectedContentHash)throw new HttpError(409,'方案版本不匹配');if(row.applied)return JSON.parse(row.applied);if(!fresh(row))throw new HttpError(409,'项目或参考图已变化，请重新讨论');
     if(row.run_id){const run=db.prepare('SELECT status FROM agent_runs WHERE id=?').get(row.run_id);if(run?.status!=='succeeded')throw new HttpError(409,'等待助手本轮完整结束后应用');}
-    const plan=validate(projectId,JSON.parse(row.body)),p=projectService.project(projectId);if(p.entityIds.length+plan.candidates.length>100)throw new HttpError(400,'项目实体数量超过 100');
+    const plan=validate(projectId,JSON.parse(row.body),{sceneVariantDefaults:JSON.parse(row.basis).workflowRulesVersion>=2}),p=projectService.project(projectId);if(p.entityIds.length+plan.candidates.length>100)throw new HttpError(400,'项目实体数量超过 100');
     const mapping={},stamp=now();
     for(const c of plan.candidates){const flags=[...new Set([...c.profile.flags,c.kind==='scene'?'场景':c.kind==='character'?'人物':'物品'])];const d=management.create({...c.profile,flags},{inTransaction:true});mapping[c.key]=d.entity.id;const e=d.entity;db.prepare('UPDATE entities SET context=? WHERE id=?').run(canonicalJSON({...e.context,type:c.kind==='character'?'character':c.kind==='scene'?'scene':'object',authoring:{planId,candidateKey:c.key,unknowns:c.unknowns,newDesign:true}}),e.id);db.prepare('INSERT INTO project_entity_roles VALUES (?,?,?,?,?)').run(projectId,e.id,canonicalJSON(c.projectRole),1,stamp);}
     for(const r of plan.relations){const sourceId=mapping[r.sourceKey],targetId=r.target.entityId||mapping[r.target.candidateKey],relationId=id();if(r.category==='story')db.prepare('INSERT INTO project_relations VALUES (?,?,?,?,?,?,?,?,?,?)').run(relationId,projectId,sourceId,targetId,r.type,r.description,'active',1,stamp,stamp);else db.prepare('INSERT INTO entity_relations VALUES (?,?,?,?,?,?,?,?,?,?)').run(relationId,sourceId,targetId,'setting',r.type,r.description,'active',management.detail(targetId).revision,stamp,stamp);}
     const ordered=[];const visited=new Set();function visit(c){if(visited.has(c.key))return;if(c.variationOf)visit(plan.candidates.find(v=>v.key===c.variationOf));visited.add(c.key);ordered.push(c);}for(const c of plan.candidates)visit(c);
-    for(const c of ordered){const entityId=mapping[c.key],baseId=c.baseEntityId||(c.variationOf?mapping[c.variationOf]:null);if(baseId){const d=management.detail(baseId);db.prepare('INSERT INTO entity_derivations VALUES (?,?,?,?,?,?)').run(entityId,baseId,d.revision,canonicalJSON({copyProfile:false,copyReference:false,reuseVoice:false,copySettingRelations:false,authoringPlanId:planId}),c.changes,stamp);db.prepare('INSERT INTO entity_relations VALUES (?,?,?,?,?,?,?,?,?,?)').run(id(),entityId,baseId,'setting','派生自',c.changes,'active',d.revision,stamp,stamp);}}
+    for(const c of ordered){const entityId=mapping[c.key],baseId=c.baseEntityId||(c.variationOf?mapping[c.variationOf]:null);if(baseId){const d=management.detail(baseId);if(c.copySpatialDraft)management.spatial.cloneDraft(baseId,entityId,new Map(),{reviewAll:true,changes:c.changes});db.prepare('INSERT INTO entity_derivations VALUES (?,?,?,?,?,?)').run(entityId,baseId,d.revision,canonicalJSON({copyProfile:false,copyReference:false,reuseVoice:false,copySettingRelations:false,copySpatialDraft:c.copySpatialDraft,sourceSpatialVersionId:c.copySpatialDraft?management.spatial.get(baseId).expectedVersionId:null,authoringPlanId:planId}),c.changes,stamp);db.prepare('INSERT INTO entity_relations VALUES (?,?,?,?,?,?,?,?,?,?)').run(id(),entityId,baseId,'setting','派生自',c.changes,'active',d.revision,stamp,stamp);}}
     const steps=[];for(const c of plan.candidates)for(const im of c.images){const stepId=id(),values={...im,candidateKey:c.key,candidateKind:c.kind,unknowns:im.unknowns,entityRevision:management.detail(mapping[c.key]).revision};db.prepare('INSERT INTO entity_workflow_steps VALUES (?,?,?,?,?,?,?)').run(stepId,planId,projectId,mapping[c.key],canonicalJSON(values),contentHash(values),stamp);steps.push({stepId,entityId:mapping[c.key],label:im.label});}
     const fields=Object.fromEntries(['name','brief','synopsis','worldRules','visualStyle','decisions','entityIds'].map(k=>[k,p[k]]));db.prepare('UPDATE agent_projects SET body=?,revision=revision+1,updated_at=? WHERE id=?').run(canonicalJSON({...fields,entityIds:[...p.entityIds,...Object.values(mapping)]}),stamp,projectId);
     const result={owner:'Sean',planId,entities:mapping,steps,appliedAt:stamp};db.prepare('UPDATE entity_authoring_plans SET applied=? WHERE id=?').run(canonicalJSON(result),planId);return result;

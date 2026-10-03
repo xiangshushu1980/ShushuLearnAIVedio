@@ -69,3 +69,7 @@ Owner: Sean。持续 goal 为人物/场景的完整创作与变体实验，不�
 报告由服务记录真实 run/步骤/hash 来源，修订 basis 保留反馈依据；校验项目/逻辑步骤/字节/对话状态。隔离工具测试及 PC 模拟证明报告→待审阅版本→人工采用→明确新批次的衔接；未调用模型或 ComfyUI，不证明图像质量。接口权威正文 reference-workspace/docs/image-feedback-v1.md；浏览器证据 experiments/sean_reference_authoring_goal_20261004/feedback-*。
 
 本阶段最终验证：42/42 测试、Vite build 通过；模拟 PC 对话刷新保留v2及报告依据，控制台0错误、无横向溢出。完整目标未完成。
+
+### 2026-10-04 Owner Sean：场景变体基础参考与空间草稿
+
+新增场景变体依赖基础主图，可沿用空间草稿；全部待核对、不继承确认和核对图，sourceSpatialVersionId 持久化。旧方案基于规则版本保留原行为。47项测试/build与隔离PC/API验证通过，默认导出未确认事实为空。来源 scene-variants-v1.md 与 experiments/sean_reference_authoring_goal_20261004/scene-variant-*。未调用模型或ComfyUI，真实质量仍未证明。
