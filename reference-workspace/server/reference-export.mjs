@@ -7,14 +7,15 @@ import { relative, isAbsolute, sep } from 'node:path';
 import { HttpError } from './store.mjs';
 import { canonicalJSON,contentHash } from './content-hash.mjs';
 import { createProjectWorkspace } from './project-workspace.mjs';
+import { sceneImageSetView,sceneImageRoles } from './scene-images.mjs';
 import { sceneSpatialView,isSceneEntity } from './scene-spatial.mjs';
 
-export const assetRoles = ['setting', 'concept', 'main_appearance', 'three_view', 'voice', 'voice_emotion', 'voice_source', 'sound_effect'];
+export const assetRoles = ['setting', 'concept', 'main_appearance', 'three_view', 'voice', 'voice_emotion', 'voice_source', 'sound_effect',...sceneImageRoles];
 export const manifestRequestSchema = z.object({
   projectId: z.string().uuid().optional(),
   entityIds: z.array(z.string().uuid()).min(1).max(100),
   includeRelations: z.enum(['none', 'direct']).default('none'),
-  assetRoles: z.array(z.enum(assetRoles)).min(1).max(assetRoles.length).default(['main_appearance', 'three_view', 'voice', 'sound_effect']),
+  assetRoles: z.array(z.enum(assetRoles)).min(1).max(assetRoles.length).default(['main_appearance', 'three_view', 'voice', 'sound_effect',...sceneImageRoles]),
   includeUnconfirmed: z.boolean().default(false),
   assetIds: z.array(z.string().uuid()).max(500).optional()
 }).strict().superRefine((value, ctx) => {
@@ -59,7 +60,7 @@ export function createReferenceExport(store) {
   const projectService=hasTable('agent_projects')?createProjectWorkspace(store):null;
   function exportCapabilities() {
     const managed = hasTable('entity_relations');
-    return { ...capabilities, projectContext:{supported:!!projectService,selection:'optional projectId',legacyStoryRelations:'unassigned; exported only without projectId',scope:'project settings plus explicitly selected entities; no graph expansion'}, sceneSpatial: {supported:hasTable('scene_spatial_versions'),schemaVersion:1,fixedFactsRequireConfirmation:true,stableIds:'entityId#id',dynamicState:'shooting script',automaticImageUnderstanding:false}, entityManagement: managed, flags: { supported: managed },
+    return { ...capabilities, sceneImages:{supported:hasTable('scene_image_versions'),roles:sceneImageRoles,fixedFacts:'sceneSpatial',confirmation:'explicit user image-set check; stale set excluded by default'}, confirmation:{...capabilities.confirmation,supportedRoles:[...capabilities.confirmation.supportedRoles,...(hasTable('scene_image_versions')?sceneImageRoles:[])]}, projectContext:{supported:!!projectService,selection:'optional projectId',legacyStoryRelations:'unassigned; exported only without projectId',scope:'project settings plus explicitly selected entities; no graph expansion'}, sceneSpatial: {supported:hasTable('scene_spatial_versions'),schemaVersion:1,fixedFactsRequireConfirmation:true,stableIds:'entityId#id',dynamicState:'shooting script',automaticImageUnderstanding:false}, entityManagement: managed, flags: { supported: managed },
       entityText: { ...capabilities.entityText, formalSchema: managed, validatedFields: managed ? ['description','appearance','voiceDescription'] : [], typeEditing: false },
       derivation: { supported: hasTable('entity_derivations'), independentEntities: true, changeNotifications: false },
       relations: managed ? { supported: true, categories: ['setting','story'], directScope: 'both endpoints must be explicitly selected' } : capabilities.relations };
@@ -84,6 +85,7 @@ export function createReferenceExport(store) {
   }
   function collect(entityId) {
     const entity = store.entity(entityId), visual = store.visualState(entityId), voices = store.voiceState(entityId);
+    const sceneImages=sceneImageSetView(store,entityId,{includeUnconfirmed:true,sanitize:text});
     const records = new Map();
     function add(assetId, kind, record, isCurrent) {
       const asset = store.asset(assetId, true);
@@ -96,9 +98,10 @@ export function createReferenceExport(store) {
     for (const v of visual.viewHistory) add(v.assetId, 'view', v, v.assetId === visual.view?.id && v.appearanceId === visual.appearance?.id);
     for (const v of voices.history) add(v.assetId, 'voice', v, v.id === voices.current?.id);
     const assets = store.db.prepare('SELECT * FROM assets WHERE entity_id=? AND deleted_at IS NULL ORDER BY id').all(entityId).map(store.assetView).map(a => {
-      const confirmation = records.get(a.id);
-      const role = a.kind === 'concept' && confirmation?.records.some(r => r.kind === 'appearance') ? 'main_appearance'
-        : ({ setting: 'setting', concept: 'concept', multiview: 'three_view', voice: a.metadata.voiceRole === 'emotion' ? 'voice_emotion' : 'voice', 'voice-source': 'voice_source' })[a.kind];
+      const setImage=sceneImages.images.find(i=>i.assetId===a.id);
+      const confirmation = setImage ? {status:sceneImages.status==='confirmed'?'confirmed':sceneImages.status==='needs_review'?'needs_review':'unconfirmed',isCurrent:sceneImages.status==='confirmed',records:sceneImages.status==='confirmed'?[{kind:'scene_image_set',confirmationId:sceneImages.versionId,version:sceneImages.version,createdAt:sceneImages.confirmedAt}]:[]} : records.get(a.id);
+      const role = setImage?.role || (a.kind === 'concept' && confirmation?.records.some(r => r.kind === 'appearance') ? 'main_appearance'
+        : ({ setting: 'setting', concept: 'concept', multiview: 'three_view', voice: a.metadata.voiceRole === 'emotion' ? 'voice_emotion' : 'voice', 'voice-source': 'voice_source' })[a.kind]);
       let size = null;
       try { size = file(a.id).size; } catch (error) { if (error.status !== 404) throw error; }
       const exported = { assetId: a.id, entityId, name: text(a.name), role: role || null, mediaType: a.mediaType, mime: a.mime, fileSize: size,
@@ -136,7 +139,7 @@ export function createReferenceExport(store) {
     const derivation=hasTable('entity_derivations')?store.db.prepare('SELECT * FROM entity_derivations WHERE entity_id=?').get(entityId):null;
     const relationRevisions=hasTable('entity_relations')?store.db.prepare("SELECT * FROM entity_relations WHERE (source_entity_id=? OR target_entity_id=?) AND status='active' ORDER BY id").all(entityId,entityId).map(contentHash):[];
     const spatial=sceneSpatialView(store,entityId,{includeUnconfirmed:false,sanitize:text});
-    const result = { sceneSpatial:spatial, flags: Array.isArray(entity.context.flags)?entity.context.flags.filter(f=>typeof f==='string').map(text):[],
+    const result = { sceneImages:sceneImageSetView(store,entityId,{sanitize:text}), sceneSpatial:spatial, flags: Array.isArray(entity.context.flags)?entity.context.flags.filter(f=>typeof f==='string').map(text):[],
       derivedFrom:derivation?{entityId:derivation.base_entity_id,sourceRevision:derivation.base_revision,description:text(derivation.description),createdAt:derivation.created_at}:null, relationRevisions, entityId: entity.id, name: text(entity.name), ...fields, createdAt: entity.createdAt, fieldSources,
       currentAppearance: visual.appearance ? { confirmationId: visual.appearance.id, version: visual.appearance.version, assetId: visual.appearance.assetId, contentHash: visual.appearance.assetHash } : null,
       currentVoice: voices.current ? { confirmationId: voices.current.id, version: voices.current.version, assetId: voices.current.assetId, contentHash: voices.current.assetHash } : null,
@@ -170,7 +173,7 @@ export function createReferenceExport(store) {
       }
       const omissions = [];
       const entities = all.map(e => {
-        const assets = e.assets.filter(a => {
+        const assets = e.assets.map(a=>a.role==='scene_overview'&&e.currentAppearance?.assetId===a.assetId&&selection.assetRoles.includes('main_appearance')&&!selection.assetRoles.includes('scene_overview')?{...a,role:'main_appearance'}:a).filter(a => {
           if (selectedAssets && !selectedAssets.has(a.assetId)) return false;
           let reason = !selection.assetRoles.includes(a.role) ? 'role_not_requested' : !a.available ? 'content_missing'
             : !selection.includeUnconfirmed && a.confirmation?.status !== 'confirmed' ? 'not_confirmed' : null;
@@ -181,7 +184,7 @@ export function createReferenceExport(store) {
         });
         const projectRole=selection.projectId?projectService.role(selection.projectId,e.entityId):null;
         const scoped=projectRole?{projectRole:{projectId:selection.projectId,role:text(projectRole.role),plotNotes:text(projectRole.plotNotes),revision:projectRole.revision,sourceRevision:projectRole.sourceRevision,updatedAt:projectRole.updatedAt},sourceRevision:contentHash({entityRevision:e.sourceRevision,projectRoleRevision:projectRole.sourceRevision})}:{};
-        return { ...e,...scoped, ...(projectRole?{contentHash:scoped.sourceRevision}:{}), sceneSpatial:sceneSpatialView(store,e.entityId,{includeUnconfirmed:selection.includeUnconfirmed,sanitize:text}), assets, prompts: e.prompts.filter(p => assets.some(a => a.sourceRunId === p.sourceRunId))
+        return { ...e,...scoped, ...(projectRole?{contentHash:scoped.sourceRevision}:{}), sceneSpatial:sceneSpatialView(store,e.entityId,{includeUnconfirmed:selection.includeUnconfirmed,sanitize:text}), sceneImages:{...sceneImageSetView(store,e.entityId,{includeUnconfirmed:selection.includeUnconfirmed,sanitize:text}),images:sceneImageSetView(store,e.entityId,{includeUnconfirmed:selection.includeUnconfirmed,sanitize:text}).images.filter(i=>assets.some(a=>a.assetId===i.assetId))}, assets, prompts: e.prompts.filter(p => assets.some(a => a.sourceRunId === p.sourceRunId))
           .map(p => {
             const { contentHash: oldHash, sourceRevision, ...fields } = p;
             const value = { ...fields, assetIds: p.assetIds.filter(id => assets.some(a => a.assetId === id)) };

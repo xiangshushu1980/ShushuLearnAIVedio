@@ -147,10 +147,13 @@
             "main_appearance",
             "three_view",
             "voice",
-            "sound_effect"
+            "sound_effect",
+            "scene_overview",
+            "scene_angle",
+            "scene_detail"
           ],
           "minItems": 1,
-          "maxItems": 8,
+          "maxItems": 11,
           "type": "array",
           "items": {
             "type": "string",
@@ -162,7 +165,10 @@
               "voice",
               "voice_emotion",
               "voice_source",
-              "sound_effect"
+              "sound_effect",
+              "scene_overview",
+              "scene_angle",
+              "scene_detail"
             ]
           }
         },
@@ -844,6 +850,120 @@
             ],
             "additionalProperties": false
           },
+          "sceneImages": {
+            "type": "object",
+            "properties": {
+              "schemaVersion": {
+                "type": "number",
+                "const": 1
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "missing",
+                  "draft",
+                  "needs_review",
+                  "confirmed"
+                ]
+              },
+              "versionId": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "format": "uuid",
+                    "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "version": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "contentHash": {
+                "type": "string"
+              },
+              "sourceRevision": {
+                "type": "string"
+              },
+              "confirmedAt": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "images": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "assetId": {
+                      "type": "string",
+                      "format": "uuid",
+                      "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                    },
+                    "role": {
+                      "type": "string",
+                      "enum": [
+                        "scene_overview",
+                        "scene_angle",
+                        "scene_detail"
+                      ]
+                    },
+                    "label": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "anchorIds": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "required": [
+                    "assetId",
+                    "role",
+                    "label",
+                    "description",
+                    "anchorIds"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "notes": {
+                "type": "string"
+              },
+              "issues": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "usage": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "schemaVersion",
+              "status",
+              "versionId",
+              "version",
+              "contentHash",
+              "sourceRevision",
+              "confirmedAt",
+              "images",
+              "notes",
+              "issues",
+              "usage"
+            ],
+            "additionalProperties": false
+          },
           "relationRevisions": {
             "type": "array",
             "items": {
@@ -1076,7 +1196,10 @@
                         "voice",
                         "voice_emotion",
                         "voice_source",
-                        "sound_effect"
+                        "sound_effect",
+                        "scene_overview",
+                        "scene_angle",
+                        "scene_detail"
                       ]
                     },
                     {
@@ -1157,7 +1280,8 @@
                           "type": "string",
                           "enum": [
                             "confirmed",
-                            "unconfirmed"
+                            "unconfirmed",
+                            "needs_review"
                           ]
                         },
                         "isCurrent": {
@@ -1173,7 +1297,8 @@
                                 "enum": [
                                   "appearance",
                                   "view",
-                                  "voice"
+                                  "voice",
+                                  "scene_image_set"
                                 ]
                               },
                               "confirmationId": {

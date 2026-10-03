@@ -4,8 +4,8 @@ import { spatialExportSchema } from './spatial-schema.mjs';
 import { manifestRequestSchema, assetRoles } from './reference-export.mjs';
 const uuid = z.string().uuid(), hash = z.string(), nullableText = z.string().nullable();
 const source = z.object({ source: z.string(), contentHash: hash }).strict();
-const confirmation = z.object({ status: z.enum(['confirmed', 'unconfirmed']), isCurrent: z.boolean(),
-  records: z.array(z.object({ kind: z.enum(['appearance', 'view', 'voice']), confirmationId: uuid, version: z.number().int(), createdAt: z.string() }).strict()) }).strict().nullable();
+const confirmation = z.object({ status: z.enum(['confirmed', 'unconfirmed', 'needs_review']), isCurrent: z.boolean(),
+  records: z.array(z.object({ kind: z.enum(['appearance', 'view', 'voice', 'scene_image_set']), confirmationId: uuid, version: z.number().int(), createdAt: z.string() }).strict()) }).strict().nullable();
 const asset = z.object({ assetId: uuid, entityId: uuid, name: nullableText, role: z.enum(assetRoles).nullable(), mediaType: z.enum(['image', 'audio']), mime: z.string(),
   fileSize: z.number().int().nonnegative().nullable(), contentHash: hash, sourceRevision: hash, contentUrl: z.string(), createdAt: z.string(), description: nullableText,
   layout: nullableText, width: z.number().nullable(), height: z.number().nullable(), durationSec: z.number().nullable(), confirmation,
@@ -19,7 +19,8 @@ const derivedFrom=z.object({entityId:uuid,sourceRevision:hash,description:nullab
 const fields = { flags:z.array(z.string()).optional(),derivedFrom:derivedFrom.optional(), entityId: uuid, name: nullableText, type: nullableText, description: nullableText, contentHash: hash, sourceRevision: hash, missingFields: z.array(z.string()) };
 const projectRole=z.object({projectId:uuid,role:nullableText,plotNotes:nullableText,revision:z.number().int().nonnegative(),sourceRevision:hash,updatedAt:nullableText}).strict();
 const projectContext=z.object({owner:z.literal('Sean'),projectId:uuid,name:nullableText,brief:nullableText,synopsis:nullableText,worldRules:nullableText,visualStyle:nullableText,decisions:nullableText,revision:z.number().int().positive(),updatedAt:z.string(),sourceRevision:hash,missingFields:z.array(z.string())}).strict();
-const entity = z.object({ ...fields,projectRole:projectRole.optional(), sceneSpatial:spatialExportSchema.optional(), relationRevisions:z.array(hash).optional(), appearance: nullableText, voiceDescription: nullableText, createdAt: z.string(),
+const sceneImages=z.object({schemaVersion:z.literal(1),status:z.enum(['missing','draft','needs_review','confirmed']),versionId:uuid.nullable(),version:z.number().int(),contentHash:hash,sourceRevision:hash,confirmedAt:nullableText,images:z.array(z.object({assetId:uuid,role:z.enum(['scene_overview','scene_angle','scene_detail']),label:z.string(),description:z.string(),anchorIds:z.array(z.string())}).strict()),notes:z.string(),issues:z.array(z.string()),usage:z.string()}).strict();
+const entity = z.object({ ...fields,projectRole:projectRole.optional(), sceneSpatial:spatialExportSchema.optional(), sceneImages:sceneImages.optional(), relationRevisions:z.array(hash).optional(), appearance: nullableText, voiceDescription: nullableText, createdAt: z.string(),
   fieldSources: z.object({ type: source.nullable(), description: source.nullable(), appearance: source.nullable(), voiceDescription: source.nullable() }).strict(),
   currentAppearance: current, currentVoice: current, assets: z.array(asset), prompts: z.array(prompt) }).strict();
 const capabilities = z.record(z.string(), z.json());

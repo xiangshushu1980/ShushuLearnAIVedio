@@ -5,6 +5,7 @@ import { writeFileSync, unlinkSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { createHash } from 'node:crypto';
 import { id, now, HttpError } from './store.mjs';
+import { createSceneImages, sceneImageSetView } from './scene-images.mjs';
 import { catalog } from './catalog.mjs';
 import { contentHash } from './content-hash.mjs';
 import { createSceneSpatial, sceneSpatialView } from './scene-spatial.mjs';
@@ -19,7 +20,7 @@ function parse(schema, body) {
   return r.data;
 }
 export function createEntityManagement(store) {
-  const spatial=createSceneSpatial(store);
+  const spatial=createSceneSpatial(store),sceneImages=createSceneImages(store);
   store.db.exec(`CREATE TABLE IF NOT EXISTS entity_relations (
     id TEXT PRIMARY KEY, source_entity_id TEXT NOT NULL REFERENCES entities(id), target_entity_id TEXT NOT NULL REFERENCES entities(id),
     category TEXT NOT NULL CHECK(category IN ('setting','story')), type TEXT NOT NULL, description TEXT NOT NULL DEFAULT '',
@@ -34,6 +35,7 @@ export function createEntityManagement(store) {
     return contentHash({ id: e.id, name: e.name, context: e.context, appearance: v.appearance?.assetHash || null,
       view: v.view?.hash || null, voice: a.current?.assetHash || null,
       spatial: sceneSpatialView(store,entityId,{includeUnconfirmed:false}).sourceRevision,
+      sceneImages: sceneImageSetView(store,entityId).sourceRevision,
       relations: store.db.prepare("SELECT * FROM entity_relations WHERE source_entity_id=? AND status='active' ORDER BY id").all(entityId) });
   }
   const relationView = row => ({ relationId: row.id, sourceEntityId: row.source_entity_id, targetEntityId: row.target_entity_id,
@@ -48,7 +50,7 @@ export function createEntityManagement(store) {
     const derivation = store.db.prepare('SELECT * FROM entity_derivations WHERE entity_id=?').get(entityId);
     return { entity: e, profile: { name: e.name, flags: Array.isArray(e.context.flags) ? e.context.flags.filter(f=>typeof f==='string') : [], description: typeof e.context.description==='string'?e.context.description:'',
       appearance: typeof e.context.appearance==='string'?e.context.appearance:'', voiceDescription: typeof e.context.voiceDescription==='string'&&e.context.voiceDescription ? e.context.voiceDescription : (voiceState.current ? store.run(voiceState.current.sourceRunId).snapshot.prompt || '' : '') },
-      revision: revision(entityId), visualState, voiceState, sceneSpatial: sceneSpatialView(store,entityId), relations: relations(entityId),
+      revision: revision(entityId), visualState, voiceState, sceneSpatial: sceneSpatialView(store,entityId), sceneImages:sceneImageSetView(store,entityId,{includeUnconfirmed:true}), relations: relations(entityId),
       derivedFrom: derivation ? { entityId: derivation.base_entity_id, name: store.entity(derivation.base_entity_id).name, sourceRevision: derivation.base_revision,
         description: derivation.description, options: JSON.parse(derivation.options), createdAt: derivation.created_at } : null,
       descendants: store.db.prepare('SELECT entity_id FROM entity_derivations WHERE base_entity_id=? ORDER BY created_at').all(entityId).map(r => ({ entityId: r.entity_id, name: store.entity(r.entity_id).name })) };
@@ -183,7 +185,7 @@ export function createEntityManagement(store) {
       });return imported;
     } catch(error) {if(existsSync(join(store.media,file)))unlinkSync(join(store.media,file));throw error;}
   }
-  return {list,detail,create,update,addRelation,changeRelation,derive,importReference,spatial};
+  return {list,detail,create,update,addRelation,changeRelation,derive,importReference,spatial,sceneImages};
 }
 export function entityManagementRouter(store) {
   const service=createEntityManagement(store),r=Router();
@@ -191,6 +193,9 @@ export function entityManagementRouter(store) {
   r.param('relationId',(req,_res,next,value)=>{if(!z.string().uuid().safeParse(value).success)return next(new HttpError(400,'无效关系ID',{fieldErrors:{relationId:['须为UUID']}}));next();});
   r.get('/entities',(req,res)=>res.json(service.list(req.query)));
   r.post('/entities',(req,res)=>res.status(201).json(service.create(req.body)));
+  r.get('/entities/:id/scene-images',(req,res)=>res.json(service.sceneImages.get(req.params.id)));
+  r.put('/entities/:id/scene-images',(req,res)=>res.json(service.sceneImages.save(req.params.id,req.body)));
+  r.post('/entities/:id/scene-images/confirm',(req,res)=>res.json(service.sceneImages.confirm(req.params.id,req.body)));
   r.get('/entities/:id/spatial',(req,res)=>res.json(service.spatial.get(req.params.id)));
   r.put('/entities/:id/spatial',(req,res)=>res.json(service.spatial.save(req.params.id,req.body)));
   r.post('/entities/:id/spatial/confirm',(req,res)=>res.json(service.spatial.confirm(req.params.id,req.body)));

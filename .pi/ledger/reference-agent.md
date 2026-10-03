@@ -51,3 +51,7 @@ Owner: Sean。持续 goal 为人物/场景的完整创作与变体实验，不�
 ### 2026-10-04 实体创作真实对话复核（Owner: Sean）
 
 两次隔离 Pi deepseek-flash 对话均持久化并应用 3 候选、5 图片步骤，生成运行为 0。首轮发现相邻/连通被推为 between，人物变体仅凭文字保持身份；强化不推断空间规则并加入基础实体主图依赖后，第二轮明确保留排列/方向/尺寸未知，变体等待基础主图。证据：experiments/sean_reference_authoring_goal_20261004/conversation-{evidence,after-source-fix}.json。仅此测试请求有效，不代表图片一致性质量已验证；整体 Goal 保持 active。
+
+### 2026-10-04 场景图片组确认与导出（Owner: Sean）
+
+新增不可变场景图片组与人工确认，以文字/主图/空间修订/真实图像哈希为依据；默认导出排除 draft/needs_review。三种 scene_* 角色及现有主图请求兼容，明确素材选择不扩大；图片组不确认为空间事实。24 测试/build通过，隔离PC三图选择/保存/确认/放大/刷新操作通过，0控制台错误。证据 experiments/sean_reference_authoring_goal_20261004/scene-image-set-{pc.png,manifest.json}，权威说明 reference-workspace/docs/scene-images-v1.md。色块测试只验证数据和界面，不证明真实生成质量；完整 Goal 保持 active。

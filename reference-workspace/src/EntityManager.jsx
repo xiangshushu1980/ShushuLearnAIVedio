@@ -1,6 +1,7 @@
 // Owner: Sean — one PC workspace for flags, entity profiles, derivation and two relation categories.
 import React, { useEffect, useState } from 'react';
 import { SceneAgentPanel } from './SceneAgentPanel.jsx';
+import { SceneImageSetEditor } from './SceneImageSetEditor.jsx';
 import { EntitySpatialEditor } from './EntitySpatialEditor.jsx';
 const emptyProfile = { name: '', flags: [], description: '', appearance: '', voiceDescription: '' };
 const relationTypes = { setting: ['穿着','使用','拥有','掌握','使用时显现','位于'], story: ['同伴','敌对','合作','师徒','亲属','相识'] };
@@ -8,11 +9,11 @@ export function EntityManager({ projectId=null, api, notify, onOpenCreate, onDir
   const [list,setList]=useState({entities:[],flags:[]}),[all,setAll]=useState([]),[selected,setSelected]=useState(initialEntityId || new URLSearchParams(location.search).get('entity') || ''),[detail,setDetail]=useState(null);
   const [query,setQuery]=useState(''),[filter,setFilter]=useState([]),[match,setMatch]=useState('all'),[busy,setBusy]=useState(false);
   const [editing,setEditing]=useState(false),[creating,setCreating]=useState(false),[form,setForm]=useState(emptyProfile),[saved,setSaved]=useState('');
-  const [spatialDirty,setSpatialDirty]=useState(false),[project,setProject]=useState(null),[projectRole,setProjectRole]=useState(null),[roleForm,setRoleForm]=useState(null),[storyRelations,setStoryRelations]=useState([]),[assistant,setAssistant]=useState(false),[agentDirty,setAgentDirty]=useState(false);
+  const [spatialDirty,setSpatialDirty]=useState(false),[imageSetDirty,setImageSetDirty]=useState(false),[project,setProject]=useState(null),[projectRole,setProjectRole]=useState(null),[roleForm,setRoleForm]=useState(null),[storyRelations,setStoryRelations]=useState([]),[assistant,setAssistant]=useState(false),[agentDirty,setAgentDirty]=useState(false);
   const listPath=projectId?`/projects/${projectId}/entities`:'/manage/entities';
   const [flagInput,setFlagInput]=useState(''),[category,setCategory]=useState('setting'),[relation,setRelation]=useState(null),[derive,setDerive]=useState(null),[zoom,setZoom]=useState(null);
   useEffect(()=>{if(selected&&!creating){onSelect(selected);const url=new URL(location.href);url.searchParams.set('entity',selected);url.searchParams.set('view',projectId?'manage':'library');history.replaceState(null,'',url);}},[selected,creating,onSelect]);
-  const dirty=editing&&JSON.stringify(form)!==saved || !!relation || !!derive || spatialDirty || agentDirty || !!roleForm;
+  const dirty=editing&&JSON.stringify(form)!==saved || !!relation || !!derive || spatialDirty || imageSetDirty || agentDirty || !!roleForm;
   useEffect(()=>{onDirtyChange(!!dirty);},[dirty,onDirtyChange]);
   useEffect(()=>{const warn=e=>{if(dirty){e.preventDefault();e.returnValue='';}};addEventListener('beforeunload',warn);return()=>removeEventListener('beforeunload',warn);},[dirty]);
   useEffect(()=>{const escape=e=>{if(e.key==='Escape')setZoom(null);};addEventListener('keydown',escape);return()=>removeEventListener('keydown',escape);},[]);
@@ -81,15 +82,16 @@ export function EntityManager({ projectId=null, api, notify, onOpenCreate, onDir
             <p className="entity-text">{detail.profile.description||'尚未填写实体介绍。'}</p>{detail.profile.appearance&&<p className="entity-text"><b>外观：</b>{detail.profile.appearance}</p>}
             <div className="card-actions">{projectId&&<button disabled={!!roleForm} onClick={()=>setAssistant(true)}>与创作助手讨论</button>}<button className="primary" onClick={()=>openCreate()}>进入素材创作</button><button onClick={()=>{if(!abandon())return;setDerive({name:detail.entity.name+' · 派生',changes:'',copyProfile:true,copyReference:!!v?.appearance,reuseVoice:!!voice,copySettingRelations:true});}}>创建派生实体</button></div>
             {projectId&&<section className="project-role"><div className="section-head"><h3>本项目的剧情作用</h3><button disabled={busy} onClick={()=>setRoleForm({role:projectRole?.role||'',plotNotes:projectRole?.plotNotes||''})}>编辑剧情作用</button></div>{roleForm?<><label>剧情作用<textarea rows={2} value={roleForm.role} onChange={e=>setRoleForm({...roleForm,role:e.target.value})}/></label><label>剧情背景／约束<textarea rows={3} value={roleForm.plotNotes} onChange={e=>setRoleForm({...roleForm,plotNotes:e.target.value})}/></label><div className="card-actions"><button disabled={busy} onClick={saveRole}>保存剧情作用</button><button onClick={()=>setRoleForm(null)}>取消</button></div></>:<><p className="entity-text">{projectRole?.role||'待补充：这个实体如何参与当前故事？'}</p><p className="entity-text">{projectRole?.plotNotes}</p></>}</section>}
-            <section className="entity-preview"><div className="section-head"><h3>三视图／形象</h3><button onClick={()=>openCreate('views')}>创作多视图</button></div>
+            <section className="entity-preview"><div className="section-head"><h3>{detail.profile.flags.includes('场景')||detail.entity.context.type==='scene'?'场景主图':'三视图／形象'}</h3><button onClick={()=>openCreate(detail.profile.flags.includes('场景')||detail.entity.context.type==='scene'?'concept':'views')}>{detail.profile.flags.includes('场景')||detail.entity.context.type==='scene'?'创作场景图片':'创作多视图'}</button></div>
               {v?.view?.url||v?.appearance?.asset.url?<button className="entity-preview-image" onClick={()=>setZoom(v.view||v.appearance.asset)}><img src={v.view?.url||v.appearance.asset.url} alt={v.view?'当前多视图':'当前主形象'} /></button>:<div className="empty"><p>暂无确认形象或多视图。</p></div>}
-              {!v?.view&&v?.appearance&&<p className="muted">当前展示主形象，多视图尚未确认。</p>}
+              {!v?.view&&v?.appearance&&!detail.profile.flags.includes('场景')&&detail.entity.context.type!=='scene'&&<p className="muted">当前展示主形象，多视图尚未确认。</p>}
             </section>
             <section className="entity-preview"><div className="section-head"><h3>声音</h3><button onClick={()=>openCreate('voice')}>创作声音</button></div><p className="entity-text">{detail.profile.voiceDescription||'尚未填写声音描述。'}</p>
               {voice?.asset.url?<><audio controls preload="metadata" src={voice.asset.url} onPlay={e=>document.querySelectorAll('audio').forEach(a=>{if(a!==e.currentTarget)a.pause();})} />{voice.asset.metadata.inheritance&&<p className="muted">沿用基础声音 · 独立素材快照</p>}</>:<p className="muted">暂无选定声音。</p>}
             </section>
             {!!detail.descendants.length&&<section className="entity-preview"><h3>派生实体</h3><div className="entity-flags">{detail.descendants.map(e=><button key={e.entityId} onClick={()=>choose(e.entityId)}>{e.name} ↗</button>)}</div></section>}
           </>}
+          {!creating&&detail&&(detail.profile.flags.includes('场景')||['scene','location','场景'].includes(detail.entity.context.type))&&<SceneImageSetEditor key={'images-'+selected} entityId={selected} api={api} notify={notify} onDirtyChange={setImageSetDirty} disabled={editing||busy}/> }
           {!creating&&detail&&(detail.profile.flags.includes('场景')||['scene','location','场景'].includes(detail.entity.context.type)||detail.sceneSpatial?.version>0)&&<EntitySpatialEditor key={selected} projectId={projectId} entityId={selected} api={api} notify={notify} onDirtyChange={setSpatialDirty} disabled={editing||busy}/> }
         </>:<div className="empty"><h2>选择或新建实体</h2><p>资料、三视图和声音会集中显示在这里。</p></div>}
       </section>

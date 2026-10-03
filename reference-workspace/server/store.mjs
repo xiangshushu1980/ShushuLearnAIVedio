@@ -172,6 +172,10 @@ export function createStore(dataDir) {
   function deleteAsset(assetId, confirmUsed = false) {
     const result = transaction(() => {
       const a = asset(assetId);
+      if(db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name='scene_image_versions'").get()){
+        const set=db.prepare('SELECT v.document,v.confirmation FROM entity_scene_image_state s JOIN scene_image_versions v ON v.id=s.version_id WHERE s.entity_id=?').get(a.entityId);
+        if(set?.confirmation&&JSON.parse(set.document).images.some(i=>i.assetId===assetId))throw new HttpError(409,'素材属于当前已确认场景图片组，请先调整并保存图片组');
+      }
       if (a.protected) throw new HttpError(409, '当前定稿来源受保护');
       if (a.locked) throw new HttpError(409, '请先明确解锁素材');
       const usages = db.prepare(`SELECT runs.id,runs.status FROM run_inputs JOIN runs ON runs.id=run_inputs.run_id WHERE asset_id=?`).all(assetId);

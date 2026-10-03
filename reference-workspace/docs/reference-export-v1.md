@@ -43,7 +43,7 @@ npm start
 
 entityIds 为 1–100 个无重复 UUID。includeRelations 默认 none；direct 仅指两端均在明确选中实体里的直接关系，不扩展实体列表、不递归图谱。实体管理已提供关系表：none 返回 []，direct 返回两端均明确选中的 active 关系，包括 setting/story 两类与派生来源关系。
 
-assetRoles 默认 main_appearance / three_view / voice / sound_effect。可用角色：
+assetRoles 默认 main_appearance / three_view / voice / sound_effect / scene_overview / scene_angle / scene_detail。可用角色：
 
 | 角色 | 现有字段映射 |
 | --- | --- |
@@ -54,6 +54,7 @@ assetRoles 默认 main_appearance / three_view / voice / sound_effect。可用�
 | voice | 基础 voice 样音；兼容旧版没有 voiceRole 的 voice |
 | voice_emotion | voiceRole=emotion 的样音；未实现单独确认机制 |
 | voice_source | voice-source 原始参考音源；未实现确认机制 |
+| scene_overview / scene_angle / scene_detail | 场景图片组的总览、其他角度、细节；须人工确认，资料变化会要求复核 |
 | sound_effect | 合法请求角色，但当前没有音效登记/数据模型，返回空结果和能力缺失 |
 
 includeUnconfirmed=false 仅接受实际主形象/多视图/声音确认记录，**锁定不等于确认**。包括仍存在的历史已确认素材；通过 confirmation.isCurrent 判断当前选用。未确认或不支持确认的素材默认排除，omissions 给出 not_confirmed/content_missing。需要候选、设定图或情绪样音时显式开启 includeUnconfirmed=true。
@@ -124,7 +125,7 @@ curl -H 'Range: bytes=0-31' http://127.0.0.1:4188/api/reference/v1/assets/ASSET_
 ```bash
 cd /home/sean/projects/comfy-ops/reference-workspace
 node --test server/reference-export.test.mjs  # 5项最小自动化验证
-npm test                                   # 现有12项全部通过
+npm test                                   # 当前24项全部通过
 npm run build
 ```
 
@@ -133,3 +134,7 @@ npm run build
 ## 可选项目上下文（2026-10-03）
 
 Owner: Sean。manifest 请求新增可选 `projectId`，返回可选 `projectContext` 和每个所选实体的 `projectRole`。`direct` 返回两端都已选中的设定关系和指定项目剧情关系；未传项目仍兼容旧全局导出，不改旧快照。完整字段、请求示例和缺失能力见[项目工作区 v2](project-workspace-v2.md#短片工具导出)。下游需要显式读取新增字段，本次不修改视频应用。
+
+## 场景参考图片组（2026-10-04）
+
+新增三种 scene_* 素材角色和可选 sceneImages，详见[场景图片组 v1](scene-images-v1.md)。confirmed 组提供真实 scene_image_set 确认记录；draft/needs_review 默认排除，显式包含时如实说明状态。图片组不能扩大 assetIds 范围，也不确认新的空间事实。新 schema 的 sceneImages 为可选，旧快照可继续读取。

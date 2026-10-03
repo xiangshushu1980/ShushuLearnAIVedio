@@ -1,0 +1,26 @@
+// Owner: Sean — choose and confirm a scene's overview, angle and detail references.
+import React,{useEffect,useState} from 'react';
+const roles={scene_overview:'总览',scene_angle:'其他角度',scene_detail:'细节'};
+export function SceneImageSetEditor({entityId,api,notify,onDirtyChange,disabled=false}){
+  const [state,setState]=useState(null),[draft,setDraft]=useState(null),[busy,setBusy]=useState(false),[ack,setAck]=useState(false),[zoom,setZoom]=useState(null);
+  const dirty=!!draft||busy;
+  useEffect(()=>{onDirtyChange(dirty);return()=>onDirtyChange(false);},[dirty,onDirtyChange]);
+  async function refresh(){const s=await api(`/manage/entities/${entityId}/scene-images`);setState(s);setAck(false);}
+  useEffect(()=>{let gone=false;api(`/manage/entities/${entityId}/scene-images`).then(s=>{if(!gone)setState(s);}).catch(e=>notify(e.message,true));return()=>{gone=true;};},[entityId]);
+  useEffect(()=>{const f=e=>{if(e.key==='Escape')setZoom(null);};addEventListener('keydown',f);return()=>removeEventListener('keydown',f);},[]);
+  const doc=draft||state?.document,summary=state?.summary;
+  function toggle(a){setAck(false);setDraft(d=>{const v=structuredClone(d||state.document);if(v.images.some(i=>i.assetId===a.id))v.images=v.images.filter(i=>i.assetId!==a.id);else v.images.push({assetId:a.id,role:roles[a.metadata.authoring?.role]?a.metadata.authoring.role:(v.images.length?'scene_angle':'scene_overview'),label:a.name,description:'',anchorIds:[]});return v;});}
+  function patch(assetId,values){setDraft(d=>({...d,images:d.images.map(i=>i.assetId===assetId?{...i,...values}:i)}));}
+  async function save(){setBusy(true);try{const s=await api(`/manage/entities/${entityId}/scene-images`,{method:'PUT',body:JSON.stringify({expectedVersionId:state.expectedVersionId,document:draft})});setState(s);setDraft(null);setAck(false);notify('场景图片组草稿已保存，请核对后确认');}catch(e){notify(e.message,true);}finally{setBusy(false);}}
+  async function confirmSet(){setBusy(true);try{setState(await api(`/manage/entities/${entityId}/scene-images/confirm`,{method:'POST',body:JSON.stringify({expectedVersionId:state.expectedVersionId,expectedContentHash:summary.contentHash,expectedEvidenceHash:state.evidenceHash,acknowledgeConsistency:ack})}));setAck(false);notify('场景图片组已确认，可通过实体导出接口读取');}catch(e){notify(e.message,true);}finally{setBusy(false);}}
+  if(!state)return <p className="muted">载入场景图片组…</p>;
+  return <section className="scene-image-set entity-preview"><div className="section-head"><h3>场景参考图片组</h3><div className="card-actions"><button disabled={busy||disabled||!!draft} onClick={()=>{setDraft(structuredClone(state.document));setAck(false);}}>调整图片组</button><button disabled={busy||!!draft} onClick={()=>void refresh().catch(e=>notify(e.message,true))}>刷新</button></div></div>
+    <p>总览、不同角度与细节共同描述同一场景。确认图片一致性后可供短片工具引用；空间事实仍在下方空间设定中确认。</p>
+    <p className="pill">{{missing:'未建立',draft:'待核对',confirmed:'已确认',needs_review:'资料变化，须复核'}[summary.status]} · 版本 {summary.version}</p>{summary.issues.map((s,i)=><p className="agent-notice" key={i}>{s}</p>)}
+    {draft&&<div className="scene-image-choices">{state.candidates.map(a=><label key={a.id}><input type="checkbox" disabled={busy||disabled} checked={draft.images.some(i=>i.assetId===a.id)} onChange={()=>toggle(a)}/><img src={a.url} alt={a.name}/><span>{a.name}</span></label>)}</div>}
+    <div className="scene-image-grid">{doc.images.map(i=>{const a=state.candidates.find(a=>a.id===i.assetId);return <article key={i.assetId}>{a?<button className="entity-preview-image" onClick={()=>setZoom(a)}><img src={a.url} alt={i.label}/></button>:<p className="agent-notice">图片已不可用</p>}{draft?<><label>用途<select value={i.role} disabled={busy} onChange={e=>patch(i.assetId,{role:e.target.value})}>{Object.entries(roles).map(([v,n])=><option key={v} value={v}>{n}</option>)}</select></label><label>名称<input disabled={busy} value={i.label} onChange={e=>patch(i.assetId,{label:e.target.value})}/></label><label>参考说明<textarea disabled={busy} rows={2} value={i.description} onChange={e=>patch(i.assetId,{description:e.target.value})}/></label></>:<><b>{roles[i.role]} · {i.label}</b><p>{i.description}</p>{i.anchorIds.length>0&&<small>锚点：{i.anchorIds.join('、')}</small>}</>}</article>;})}</div>
+    {draft?<><label>图片组说明<textarea disabled={busy} rows={2} value={draft.notes} onChange={e=>setDraft({...draft,notes:e.target.value})}/></label><div className="card-actions"><button className="primary" disabled={busy||disabled} onClick={save}>保存图片组草稿</button><button disabled={busy} onClick={()=>setDraft(null)}>取消调整</button></div></>:<><p>{doc.notes}</p>{summary.status!=='confirmed'&&doc.images.length>0&&<><label className="transcript-confirm"><input type="checkbox" disabled={busy||disabled} checked={ack} onChange={e=>setAck(e.target.checked)}/>我已对照图片与场景设定，确认这些图片属于同一场景；未说明或不可见的信息仍待补充。</label><button className="primary" disabled={busy||disabled||!ack} onClick={confirmSet}>确认场景图片组</button></>}</>}
+    {!doc.images.length&&!draft&&<p className="muted">选择已有总览、角度和细节图组成参考组。</p>}
+    {zoom&&<div className="scene-image-zoom" role="dialog" aria-modal="true" aria-label="场景图片预览" onClick={()=>setZoom(null)}><button onClick={()=>setZoom(null)}>关闭</button><img src={zoom.url} alt={zoom.name}/></div>}
+  </section>;
+}

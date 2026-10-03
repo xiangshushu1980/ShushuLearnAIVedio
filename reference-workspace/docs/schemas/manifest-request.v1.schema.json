@@ -31,10 +31,13 @@
         "main_appearance",
         "three_view",
         "voice",
-        "sound_effect"
+        "sound_effect",
+        "scene_overview",
+        "scene_angle",
+        "scene_detail"
       ],
       "minItems": 1,
-      "maxItems": 8,
+      "maxItems": 11,
       "type": "array",
       "items": {
         "type": "string",
@@ -46,7 +49,10 @@
           "voice",
           "voice_emotion",
           "voice_source",
-          "sound_effect"
+          "sound_effect",
+          "scene_overview",
+          "scene_angle",
+          "scene_detail"
         ]
       },
       "uniqueItems": true
