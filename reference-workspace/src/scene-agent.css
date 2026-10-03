@@ -1,0 +1,35 @@
+/* Owner: Sean — desktop scene authoring workspace. */
+.scene-agent-backdrop {position:fixed;inset:0;z-index:120;background:#10131ddd;padding:22px;display:flex;align-items:stretch;justify-content:center}
+.scene-agent-window {width:min(1660px,100%);min-width:0;background:var(--panel,#171d2b);color:var(--text,#edf1ff);border:1px solid #394358;border-radius:14px;display:flex;flex-direction:column;padding:18px;box-shadow:0 20px 70px #0009;overflow:hidden}
+.scene-agent-window>header {flex:none;padding-bottom:12px;border-bottom:1px solid #394358}
+.scene-agent-window h2,.scene-agent-window h3 {margin:0 0 10px}
+.scene-agent-grid {display:grid;grid-template-columns:minmax(230px,.8fr) minmax(320px,1.35fr) minmax(280px,1fr);gap:18px;flex:1;min-height:0;padding-top:16px}
+.scene-agent-context,.scene-agent-proposal {overflow-y:auto;min-width:0;padding-right:10px;overscroll-behavior:contain}
+.scene-agent-conversation {display:flex;flex-direction:column;min-width:0;min-height:0;border-left:1px solid #394358;border-right:1px solid #394358;padding:0 16px}
+.scene-agent-window label {display:block;margin:8px 0}
+.scene-agent-window input:not([type=checkbox]),.scene-agent-window select,.scene-agent-window textarea {box-sizing:border-box;width:100%;min-width:0}
+.scene-agent-window .transcript-confirm {display:flex;align-items:flex-start;gap:8px}
+.scene-agent-window p {overflow-wrap:anywhere}
+.scene-agent-window button {white-space:normal}
+.agent-project-form {border:1px solid #394358;border-radius:8px;padding:12px;margin:12px 0}
+.agent-project-form details {max-height:240px;overflow:auto}
+.agent-image-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.agent-image-grid label {margin:0;border:2px solid transparent;border-radius:8px;padding:5px;background:#ffffff07;cursor:pointer;min-width:0}
+.agent-image-grid label.selected {border-color:#c9a94d;background:#c9a94d15}
+.agent-image-grid img {width:100%;height:130px;object-fit:contain;background:#0003;border-radius:4px}
+.agent-image-grid span {display:block;font-size:12px;overflow-wrap:anywhere}
+.agent-chat-log {flex:1;overflow-y:auto;min-height:0;overscroll-behavior:contain;padding:10px 0}
+.agent-message {padding:12px;border-radius:10px;margin:10px 0;background:#ffffff09;border:1px solid #ffffff0d}
+.agent-message.user {background:#759af018;margin-left:25px}
+.agent-message.assistant {margin-right:15px}
+.agent-message p {white-space:pre-wrap;margin:8px 0 0;line-height:1.65}
+.agent-session-controls,.agent-composer {flex:none}
+.agent-composer {border-top:1px solid #394358;padding-top:12px}
+.agent-model-row {display:flex;gap:8px}
+.agent-model-row select {flex:1}
+.agent-model-row button {flex:none}
+.agent-notice {border-left:3px solid #c9a94d;background:#c9a94d0d;padding:10px;font-size:13px;white-space:pre-wrap}
+.agent-confirm {margin:14px 0;padding:12px;border:1px solid #c9a94d;border-radius:8px}
+.scene-agent-proposal details {margin:10px 0}
+.scene-agent-proposal code {overflow-wrap:anywhere;white-space:normal}
+.scene-agent-proposal>.primary {width:100%;margin-top:12px}

@@ -13,6 +13,7 @@ import { validateVoiceDraft } from './voice.mjs';
 import { referenceExportRouter } from './reference-export.mjs';
 import { localAccess } from './local-access.mjs';
 import { entityManagementRouter } from './entity-management.mjs';
+import { createAgentWorkspace, agentWorkspaceRouter } from './agent-workspace.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const port = Number(process.env.REFERENCE_PORT || 4188);
@@ -41,6 +42,8 @@ const key = req => {
   return value;
 };
 app.use('/api/manage', entityManagementRouter(store));
+const agents = createAgentWorkspace(store);
+app.use('/api/agents', agentWorkspaceRouter(agents));
 app.use('/api/reference/v1', referenceExportRouter(store));
 app.get('/api/health', (_req, res) => res.json({ ok: true, owner: 'Sean', version: 1 }));
 app.get('/api/catalog', (_req, res) => res.json(catalog));
@@ -214,8 +217,19 @@ app.use((error, _req, res, _next) => {
 });
 const server = app.listen(port, '127.0.0.1', () => {
   console.log(`Owner: Sean — Reference 工作台 http://127.0.0.1:${port}`);
+  agents.recover();
   runs.recover();
 });
 server.on('error', error => { console.error(error.message); process.exit(1); });
-process.on('SIGTERM', () => { server.close(); process.exit(0); });
-process.on('SIGINT', () => { server.close(); process.exit(0); });
+let shuttingDown = false;
+async function shutdown() {
+  if (shuttingDown) return;
+  shuttingDown = true;
+  server.close();
+  const deadline = setTimeout(() => process.exit(0), 5000);
+  await agents.close();
+  clearTimeout(deadline);
+  process.exit(0);
+}
+process.on('SIGTERM', shutdown);
+process.on('SIGINT', shutdown);

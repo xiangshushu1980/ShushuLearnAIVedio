@@ -1,0 +1,25 @@
+# Reference Agent 接入经验记录
+
+Owner: Sean。独立保存 Agent 接入的演进和证据；稳定操作入口：[应用内 Agent 接入手册](../../reference-workspace/docs/agent-integration-v1.md)。后续追加条目，通过 incdoc 检索，不全量重读。
+
+## 2026-10-03 · Pi SDK 0.86.0 初次接入
+
+任务：remote-2ce27201-5559-4f60-9bfd-0a4fc402dac7。用例：Reference 场景空间布局对话。来源：本机已安装 SDK docs/sdk.md、dist/core/*.d.ts 与对应实现；应用构建输出。此记录区分源码核对、构建结果和待运行验证，不把未调用的模型结果记为实测结论。
+
+- 源码核对：实际包名是 `@earendil-works/pi-coding-agent`，版本 0.86.0；不能按早期 `@mariozechner/...` 的示例直接复制接入代码。模型/凭据由 ModelRuntime 管理，自定义工具支持普通 JSON Schema。
+- 源码核对：默认 ResourceLoader 会发现用户及项目的扩展、skill、AGENTS 和设置。网页业务助手使用应用独立目录、SettingsManager.inMemory 和关闭自动发现；系统提示词通过 systemPromptOverride，工具同时设置 noTools=builtin 和显式 allowlist。避免业务助手继承开发 Agent 的 shell/编辑能力。
+- 源码核对：`cacheWarming` 在本版本是字符串枚举 off/streaming/idle。错误填写 `{enabled:false}` 会被 SDK 判为无效并回退 streaming。必须使用 `cacheWarming:'off'`，防止业务网页产生不期望的预热请求。提供方 retry 和 Agent retry 分别设置，不只关其中一个。
+- 源码核对：SessionManager.inMemory 支持恢复保存的 header+entries；原始 entries 不提供给网页。SDK 在 message_end 通知订阅者后才 appendMessage，因此不能直接在该回调中保存“已完成消息”的 entries。应用在完整 turn_end 后和运行 finally 保存，重启时保留中断标记，不自动重发。
+- 设计选择：共用上下文是工程资料+实体修订+明确决定，讨论记录按工程/实体/用途分别保存。送入模型的是当前场景全文与其他成员摘要；数据源版本在运行时捕获。候选提案与权威空间版本分别存储，并使用来源比较拒绝过期写回。
+- 设计选择：模型实际查看过的图才可作为 image 来源。图像缩放仅供观察，不推断真实尺度；用户补充使用用户消息 ID。候选来源引用校验无法替代语义核对，正式确认仍由用户点击。
+- 已构建：新增三列 PC 页面（工程/选图、对话、提案）；npm run build 通过。静态 node --check 通过。未运行测试、浏览器或真实模型推理；质量与运行边界仍待验收。
+- 依赖注意：SDK 自带 npm-shrinkwrap，初次安装锁定 brace-expansion 5.0.9。npm update / audit fix / 根 overrides 未自动改掉嵌套版本。安全补丁处理及最终安装/扫描结果在后续条目记录，不能只看 package.json 声明。
+
+后续扩展：新增用途先定义提示词/方法包版本、只读资料工具、候选输出 schema、人工应用边界和上下文装配范围，再复用 runtime/session/event 基础设施；不要让新增 skill 隐式获得新工具权限。
+
+## 2026-10-03 · 凭据复用与依赖补丁收尾
+
+- 用户明确选择复用本机 Pi 模型与登录。只复制所需 auth/models/模型缓存到 Reference 私有数据目录，从设置提取默认模型 ID；不复制全局扩展、skill、提示词、聊天或整份设置，不修改原用户文件。能力接口返回 200、两个已配置看图模型、无配置缺失说明；此项是配置读取结果，尚未调用真实推理。
+- 安装观察：手动将根 lock 的嵌套 brace-expansion 改为 5.0.12 后，npm ci 仍按照 SDK 自带 shrinkwrap 安装 5.0.9。最终采用根直接固定 5.0.12，加版本受限的应用 postinstall 将嵌套包替换为相同兼容补丁并更新 node_modules 安装库存。根 lock 保持 5.0.12，实际 npm ls 确认嵌套补丁；随后 npm audit 返回零已知漏洞。此方法只针对 SDK 0.86.0，升级须重新评估。
+- 新增安全边界：受控工具把业务字段错误返回模型以便修订，非业务异常只返回通用错误，避免文件/提供方异常携带绝对路径或凭据。没有把错误原文放入聊天、事件或日志。
+- 服务已启动 4188。构建、静态语法和依赖扫描通过；未进行自动化测试、浏览器操作、真实看图/工具调用、生成或 ComfyUI 操作。待用户实际讨论验收后追加质量与失败恢复结果，不能提前记为已验证。
