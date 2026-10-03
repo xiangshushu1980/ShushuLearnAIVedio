@@ -1,0 +1,42 @@
+{
+  "owner": "Sean",
+  "checkedAt": "2026-10-03T06:42:47.004Z",
+  "method": "隔离数据库的PC操作与接口手动复核；未新增或运行单元测试，未提交生成",
+  "checks": {
+    "schemaValid": true,
+    "immutableManifest": true,
+    "independentVoice": true,
+    "voiceHash": true,
+    "mime": "audio/wav",
+    "noRecursiveRelations": true,
+    "parentVoiceUnchanged": true,
+    "derivedHasNoConfirmedView": true,
+    "sourceRevisionsCaptured": true,
+    "settingRelationsCopied": true,
+    "storyNotCopied": true,
+    "staleUpdateStatus": 409,
+    "invalidInputStatus": 400,
+    "plainReferenceAddsNoRelation": true,
+    "plainReferenceIndependent": true,
+    "exportedCategories": [
+      "setting"
+    ],
+    "storyRelationshipCreated": true,
+    "storyRelationshipExported": true
+  },
+  "pc": {
+    "width": 1440,
+    "height": 1000,
+    "operations": [
+      "新建",
+      "资料编辑和自定义flag",
+      "关键词和多flag任一/全部筛选",
+      "剧情关系新增",
+      "设定关系编辑和解除",
+      "派生沿用独立声音",
+      "进入既有声音页",
+      "创作引用并明确关系用途"
+    ]
+  },
+  "note": "生产实体资料与选择未修改；基础来源变化提醒后续实现"
+}

@@ -4,6 +4,8 @@ import { createRoot } from 'react-dom/client';
 import './styles.css';
 import { AppearancePanel, MultiViewPanel } from './VisualPanels.jsx';
 import { VoicePanel } from './VoicePanel.jsx';
+import { EntityManager } from './EntityManager.jsx';
+import { EntityReferencePicker } from './EntityReferencePicker.jsx';
 
 async function api(path, options = {}) {
   const response = await fetch(`/api${path}`, { ...options,
@@ -41,6 +43,9 @@ function Modal({ title, onClose, children, className = '' }) {
 }
 
 function App() {
+  const [view, setView] = useState(() => new URLSearchParams(location.search).get('view') || (new URLSearchParams(location.search).has('entity') ? 'create' : 'manage'));
+  const [entityReferenceOpen, setEntityReferenceOpen] = useState(false);
+  const [managerDirty, setManagerDirty] = useState(false), [managerEntityId, setManagerEntityId] = useState('');
   const [catalog, setCatalog] = useState(null), [entities, setEntities] = useState([]), [entityId, setEntityId] = useState('');
   const [workspace, setWorkspace] = useState(null), [tab, setTab] = useState('settings'), [draft, setDraft] = useState(null);
   const [savedValue, setSavedValue] = useState(''), [draftAt, setDraftAt] = useState(null);
@@ -102,13 +107,13 @@ function App() {
   useEffect(() => {
     if (!entityId || !catalog) return;
     currentEntity.current = entityId;
-    setWorkspace(null); setDraft(null); setRestored(null); setPicker(null); setLightbox(null); knownRuns.current.clear();
+    setWorkspace(null); setDraft(null); setRestored(null); setEntityReferenceOpen(false); setPicker(null); setLightbox(null); knownRuns.current.clear();
     refresh(entityId, true).then(value => {
       if (!value || currentEntity.current !== entityId) return;
       const valueDraft = value.draft?.value || newDraft(catalog);
       setDraft(valueDraft); setSavedValue(JSON.stringify(valueDraft)); setDraftAt(value.draft?.updatedAt || null);
     }).catch(error => notify(error.message, true));
-    const url = new URL(location.href); url.searchParams.set('entity', entityId); history.replaceState(null, '', url);
+    if(new URLSearchParams(location.search).get('view')!=='manage'){const url = new URL(location.href); url.searchParams.set('entity', entityId); history.replaceState(null, '', url);}
     const timer = setInterval(() => refresh(entityId).catch(error => notify(error.message, true)), 2500);
     return () => clearInterval(timer);
   }, [entityId, catalog]);
@@ -247,15 +252,37 @@ function App() {
     finally { setBusy(''); }
   }
 
+  function changeView(value) {
+    if (value === view) return;
+    if ((managerDirty || dirty || mvDirty || voiceDirty || pending.length) && !confirm('离开当前页面？未保存的编辑不会保存。')) return;
+    if (view === 'create') {
+      pendingRef.current.forEach(p => URL.revokeObjectURL(p.url)); pendingRef.current = []; setPending([]); setImportIds([]);
+      const valueDraft = workspace.draft?.value || newDraft(catalog); setDraft(valueDraft); setSavedValue(JSON.stringify(valueDraft));
+      setMvDirty(false); setVoiceDirty(false);
+    }
+    if(value==='create'&&managerEntityId)setEntityId(managerEntityId);
+    setManagerDirty(false); setView(value);
+    const url = new URL(location.href); url.searchParams.set('view', value); history.replaceState(null, '', url);
+  }
+  function openCreation(id, nextTab) {
+    setEntityId(id); setTab(nextTab); setView('create'); setManagerDirty(false);
+    api('/entities').then(setEntities).catch(error => notify(error.message, true));
+    const url = new URL(location.href); url.searchParams.set('entity', id); url.searchParams.set('view','create'); history.replaceState(null, '', url);
+  }
+  const navigation = <><button className={`top-tab ${view === 'manage' ? 'active' : ''}`} onClick={() => changeView('manage')}>实体浏览与管理</button><button className={`top-tab ${view === 'create' ? 'active' : ''}`} onClick={() => changeView('create')}>创建与编辑</button></>;
+  if (view === 'manage') return <><header className="topbar"><div className="brand"><span className="brand-mark">＋</span><b>Reference 工作台</b>{navigation}</div></header>
+    <EntityManager api={api} notify={notify} onOpenCreate={openCreation} onDirtyChange={setManagerDirty} onSelect={setManagerEntityId} initialEntityId={entityId} />
+    {message && <div className={`entity-notice ${message.error ? 'error' : ''}`} role="status">{message.text}<button className="quiet" onClick={() => setMessage(null)}>×</button></div>}</>;
+
   if (!catalog || !workspace || !draft) return <main className="loading"><span className="brand-mark">＋</span><h1>Reference 工作台</h1><p>{message?.text || '正在加载参考资料…'}</p></main>;
   const badReferences = selected.some(value => !assets.some(a => a.id === value));
   const canGenerate = model?.enabled && draft.prompt.trim() && selected.length >= model.references.min && selected.length <= model.references.max && !badReferences && !activeRun && (!draft.sourceRunId || restored?.compatible);
   return <>
-    <header className="topbar"><div className="brand"><span className="brand-mark">＋</span><b>Reference 工作台</b><span className="top-tab">创建与编辑</span></div>
+    <header className="topbar"><div className="brand"><span className="brand-mark">＋</span><b>Reference 工作台</b>{navigation}</div>
       <div className="header-actions"><button className="quiet" onClick={() => { setMuted(!muted); localStorage.setItem('reference-muted', muted ? '0' : '1'); }}>{muted ? '提示音已关闭' : '提示音已开启'}</button>
         <span className={`connection ${status?.connected ? 'online' : ''}`}>{status?.connected ? `ComfyUI 已连接${status.running || status.queued ? ' · 共享队列忙碌' : ''}` : 'ComfyUI 未连接'}</span></div>
     </header>
-    <main className="workspace"><div className="breadcrumb">参考实体 / <select aria-label="选择实体" value={entityId} onChange={e => switchEntity(e.target.value)} disabled={!!busy}>{entities.map(e => <option key={e.id} value={e.id}>{e.name}</option>)}</select> / 创建与编辑 / {{ settings: '设定图片', concept: '概念图', appearance: '主形象', views: '多视图', voice: '声音' }[tab]}</div>
+    <main className="workspace"><div className="creation-entity-reference"><button disabled={!!busy} onClick={() => setEntityReferenceOpen(true)}>引用其他实体／建立设定关系</button></div><div className="breadcrumb">参考实体 / <select aria-label="选择实体" value={entityId} onChange={e => switchEntity(e.target.value)} disabled={!!busy}>{entities.map(e => <option key={e.id} value={e.id}>{e.name}</option>)}</select> / 创建与编辑 / {{ settings: '设定图片', concept: '概念图', appearance: '主形象', views: '多视图', voice: '声音' }[tab]}</div>
       <div className="page-title"><div><h1>{workspace.entity.name} <span>· 参考资料创作</span></h1><p>从设定资料出发，选定形象与声音，生成多视图。</p></div><span className="save-state">{tab === 'voice' ? voiceDirty ? '声音输入有未保存修改' : workspace.voiceDraft?.updatedAt ? `声音输入已保存 · ${time(workspace.voiceDraft.updatedAt)}` : '准备本轮声音' : tab === 'views' ? mvDirty ? '多视图输入有未保存修改' : workspace.multiviewDraft?.updatedAt ? `输入已保存 · ${time(workspace.multiviewDraft.updatedAt)}` : '准备本轮多视图' : tab === 'appearance' ? '选定后作为多视图输入' : dirty ? '本轮输入有未保存修改' : draftAt ? `输入已保存 · ${time(draftAt)}` : '请选择图片或准备本轮输入'}</span></div>
       <div className="workspace-layout"><aside className="steps-panel panel"><h2>创作步骤</h2><p className="muted">当前阶段 · {{ settings: '设定图片', concept: '概念图', appearance: '选定主形象', views: '多视图', voice: '声音' }[tab]}</p>
         <button className={`step ${tab === 'settings' ? 'current' : ''}`} onClick={() => setTab('settings')}><span className="step-index">1</span><span><b>设定图片</b><small>{settings.length ? `已导入 ${settings.length} 张图片` : '选择已有图片'}</small></span></button>
@@ -340,6 +367,9 @@ function App() {
         </>}
       </section></div>
     </main>
+    {entityReferenceOpen && <EntityReferencePicker entityId={entityId} api={api} notify={notify} onClose={() => setEntityReferenceOpen(false)} onImported={async asset => {
+      await refresh(); if(tab==='concept'&&selected.length<model.references.max)patch({references:[...selected,asset.id]});
+    }} />}
     {picker && <Modal title="添加引用图片" onClose={() => setPicker(null)}><p className="muted">只使用明确选中的图片。编号对应提示词中的 Image 1、Image 2…。</p><div className="picker-content">
       <h4>设定图片 · {settings.length}</h4>{settings.length ? <div className="reference-grid">{settings.map(asset => <Picture key={asset.id} asset={asset} selected={picker.includes(asset.id)} index={picker.includes(asset.id) ? picker.indexOf(asset.id) : undefined} onClick={() => pickReference(asset.id)} />)}</div> : <p className="muted">暂无设定图片，请先在设定图片阶段导入。</p>}
       <h4>历史结果 · {visibleConcepts.length}</h4>{visibleConcepts.length ? <div className="reference-grid">{visibleConcepts.map(asset => <Picture key={asset.id} asset={asset} selected={picker.includes(asset.id)} index={picker.includes(asset.id) ? picker.indexOf(asset.id) : undefined} onClick={() => pickReference(asset.id)} />)}</div> : <p className="muted">暂无历史结果。</p>}

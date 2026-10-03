@@ -40,3 +40,9 @@
 ## C-20261003-06 Reference只读导出API v1（Owner: Sean）
 
 四端点在/api/reference/v1：entities列表、POST manifests创建、GET manifests/:manifestId读取、GET assets/:assetId/content下载。现有实体/资产UUID、内容hash、run提示词和主形象/多视图/声音真实确认映射；无关系/音效/审核/独立提示词版本，nullable说明与capabilities如实声明。默认仅真实确认，locked不作为确认；角色/assetIds限定选中实体，无图谱扩展。独立manifest表+不可变触发器；原素材不复制，删除后下载404，下游须及时保存字节。保留本机访问边界，无绝对路径/密钥或任意读文件；Range/MIME/字段错误。5新测试+7现有共12通过、构建成功、实际HTTP/schema/快照重读/音频Range206成功；无ComfyUI操作。契约reference-workspace/docs/reference-export-v1.md；交付上下文.pi/tasks/reference-export-v1/handoff.md、validation.json。只读接口用户明确授权，未立项新远程任务；不改实体管理/生成流程。
+
+## 2026-10-03 实体浏览、两类关系与独立派生 v1
+
+Owner: Sean。新增 PC 三栏管理页、名称/描述/flag 搜索、全部/任一 flag 筛选、新建和资料编辑、当前主形象/多视图及声音预览；设定/剧情关系共用新增 entity_relations，入向只读、来源可编辑/软解除。派生建立独立实体与来源修订，新主形象/多视图不自动确认；声音可复制原字节为独立已选版本，真实原 run 为来源，无虚假生成。创作页可引用其他实体图片，并显式指定关系或仅作引用。新增表为增量建表，原生成/确认流程沿用。
+
+基础引用变化提醒后续实现；当前记录 sourceEntityId/sourceAssetId/sourceHash/sourceRevision、派生base_revision及关系targetRevision，不自动传播。只读v1导出新增可选flag/派生来源/继承素材溯源及direct有效关系，旧持久化manifest不变。缺口包括单值type、音效、审核、独立提示词版本。构建/隔离1440×1000 PC操作/接口手动复核通过；未运行单元测试或生成，生产角色资料与定稿未修改。入口 http://127.0.0.1:4188/?view=manage；权威说明 reference-workspace/docs/entity-management-v1.md，证据 .pi/tasks/entity-management-v1/validation.json。

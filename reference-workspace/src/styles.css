@@ -829,3 +829,50 @@
 .voice-history-details .appearance-version { padding: 12px; }
 .voice-workspace .run-card > .section-head { margin-bottom: 16px; }
 .voice-workspace .voice-candidates { margin-top: 14px; }
+/* Owner: Sean — PC entity browser, combined detail and relationship workspace. */
+.topbar .top-tab { background: transparent; border: 0; border-bottom: 2px solid transparent; border-radius: 0; color: var(--muted); }
+.topbar .top-tab.active { border-bottom-color: #32c6b5; color: #51dace; }
+.entity-management { max-width: 1800px; margin: 0 auto; padding: 30px 28px; }
+.entity-management-grid { display: grid; grid-template-columns: 265px minmax(0,1fr) 300px; gap: 20px; align-items: start; }
+.entity-management-grid > .panel { padding: 22px; min-width: 0; }
+.entity-management-grid h2 { margin: 0; font-size: 19px; }
+.entity-management .page-title { margin-bottom: 22px; }
+.entity-browser-list { display: grid; gap: 10px; max-height: 68vh; overflow: auto; }
+.entity-browser-item { display: flex; text-align: left; align-items: center; gap: 10px; padding: 10px; width: 100%; min-width: 0; }
+.entity-browser-item > span:last-child { display: grid; gap: 5px; min-width: 0; }
+.entity-browser-item b { overflow-wrap: anywhere; }
+.entity-browser-item small { color: var(--muted); font-size: 11px; }
+.entity-browser-item img,.entity-avatar { width: 48px; height: 60px; object-fit: cover; border-radius: 7px; flex-shrink: 0; }
+.entity-avatar { display: grid; place-items: center; background: #202e3a; font-size: 25px; }
+.entity-browser-item.selected,.entity-flag-filters button.selected,.entity-relation-tabs button.selected { border-color: #46b8aa; background: #233d44; }
+.entity-flags,.entity-flag-filters { display: flex; flex-wrap: wrap; gap: 7px; margin: 12px 0; }
+.entity-flags button,.entity-flag-filters button { padding: 5px 9px; font-size: 12px; }
+.entity-inline-input { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+.entity-inline-input input { min-width: 0; flex: 1; }
+.entity-detail { min-height: 600px; }
+.entity-text { white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.7; }
+.entity-preview { margin-top: 24px; padding-top: 18px; border-top: 1px solid var(--border); }
+.entity-preview-image { display: block; width: 100%; padding: 0; border: 0; background: #101923; }
+.entity-preview-image img { display: block; width: 100%; max-height: 320px; object-fit: contain; }
+.entity-preview audio { width: 100%; }
+.entity-lineage { border-left: 3px solid #ba9c51; background: #2b2c22; padding: 9px; }
+.entity-relation-tabs { display: flex; gap: 6px; margin: 18px 0; }
+.entity-relation-tabs button { flex: 1; padding: 8px 5px; }
+.entity-relation-form { padding-top: 18px; }
+.entity-relation-list article { border-top: 1px solid var(--border); padding-top: 15px; margin-top: 20px; }
+.entity-relation-list article > p { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.entity-modal-backdrop { position: fixed; inset: 0; background: #050911c9; z-index: 90; display: grid; place-items: center; padding: 24px; overflow: auto; }
+.entity-modal { width: min(620px,95vw); padding: 28px; border: 1px solid #405668; border-radius: 16px; background: #17232f; max-height: 90vh; overflow: auto; }
+.entity-image-modal { width: min(1200px,95vw); max-height: 95vh; padding: 15px; background: #111c25; }
+.entity-image-modal img { display: block; width: 100%; max-height: 85vh; object-fit: contain; }
+.entity-notice { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: #243b40; border: 1px solid #57b6a7; border-radius: 10px; padding: 10px 18px; z-index: 100; }
+.entity-notice.error { border-color: #d47878; background: #482e35; }
+.entity-relations .card-actions { gap: 6px; }
+/* Owner: Sean — entity references in the existing creation flow. */
+.creation-entity-reference { float: right; margin-bottom: 15px; }
+.entity-reference-picker { width: min(850px,95vw); }
+.entity-reference-images { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 10px; max-height: 300px; overflow: auto; margin: 16px 0; }
+.entity-reference-images button { padding: 5px; min-width: 0; }
+.entity-reference-images img { width: 100%; height: 125px; object-fit: contain; display: block; }
+.entity-reference-images small { display: block; max-height: 36px; overflow: hidden; overflow-wrap: anywhere; }
+.entity-reference-images .selected { border-color: #52cabc; background: #28443f; }

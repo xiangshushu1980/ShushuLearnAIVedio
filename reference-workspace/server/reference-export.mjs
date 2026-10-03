@@ -53,6 +53,22 @@ export function createReferenceExport(store) {
   store.db.exec(`CREATE TABLE IF NOT EXISTS reference_manifests (id TEXT PRIMARY KEY, payload TEXT NOT NULL, created_at TEXT NOT NULL);
     CREATE TRIGGER IF NOT EXISTS reference_manifests_no_update BEFORE UPDATE ON reference_manifests BEGIN SELECT RAISE(ABORT, 'immutable manifest'); END;
     CREATE TRIGGER IF NOT EXISTS reference_manifests_no_delete BEFORE DELETE ON reference_manifests BEGIN SELECT RAISE(ABORT, 'immutable manifest'); END;`);
+  const hasTable = name => !!store.db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name=?").get(name);
+  function exportCapabilities() {
+    const managed = hasTable('entity_relations');
+    return { ...capabilities, entityManagement: managed, flags: { supported: managed },
+      entityText: { ...capabilities.entityText, formalSchema: managed, validatedFields: managed ? ['description','appearance','voiceDescription'] : [], typeEditing: false },
+      derivation: { supported: hasTable('entity_derivations'), independentEntities: true, changeNotifications: false },
+      relations: managed ? { supported: true, categories: ['setting','story'], directScope: 'both endpoints must be explicitly selected' } : capabilities.relations };
+  }
+  function exportedRelations(ids) {
+    if (!hasTable('entity_relations')) return [];
+    const placeholders=ids.map(()=>'?').join(',');
+    return store.db.prepare(`SELECT * FROM entity_relations WHERE status='active' AND source_entity_id IN (${placeholders}) AND target_entity_id IN (${placeholders}) ORDER BY id`).all(...ids,...ids).map(row=>{
+      const value={relationId:row.id,sourceEntityId:row.source_entity_id,targetEntityId:row.target_entity_id,category:row.category,type:text(row.type),description:text(row.description),status:row.status,targetRevision:row.target_revision,createdAt:row.created_at,updatedAt:row.updated_at};
+      return {...value,contentHash:contentHash(value),sourceRevision:contentHash(value)};
+    });
+  }
   function file(assetId) {
     const asset = store.asset(assetId), path = store.assetPath(assetId);
     if (!existsSync(path)) throw new HttpError(404, '素材内容已删除或不存在');
@@ -85,15 +101,22 @@ export function createReferenceExport(store) {
         createdAt: a.createdAt, description: text(a.description) || null, layout: typeof a.metadata.layout === 'string' ? text(a.metadata.layout) : null,
         width: a.width || null, height: a.height || null, durationSec: a.durationSec,
         confirmation: confirmation || (['three_view', 'voice'].includes(role) ? { status: 'unconfirmed', isCurrent: false, records: [] } : null),
-        reviewStatus: null, sourceRunId: a.runId, available: size !== null };
+        reviewStatus: null, sourceRunId: a.runId || a.metadata.inheritance?.sourceRunId || null,
+        inheritance: a.metadata.inheritance ? Object.fromEntries(['sourceEntityId','sourceAssetId','sourceHash','sourceRevision','sourceVoiceId','sourceRunId','sourceRunEntityId'].filter(k=>a.metadata.inheritance[k]).map(k=>[k,a.metadata.inheritance[k]])) : null, available: size !== null };
       return { ...exported, sourceRevision: contentHash(exported) };
     });
     const prompts = [];
     for (const runId of [...new Set(assets.map(a => a.sourceRunId).filter(Boolean))].sort()) {
       const run = store.run(runId);
-      if (run.entityId !== entityId) throw new HttpError(409, '提示词来源的实体归属不一致');
+      if (run.entityId !== entityId) {
+        for (const a of assets.filter(a=>a.sourceRunId===runId)) {
+          const origin=a.inheritance?.sourceVoiceId && store.db.prepare('SELECT * FROM voice_versions WHERE id=?').get(a.inheritance.sourceVoiceId);
+          if (!origin || origin.entity_id!==a.inheritance.sourceEntityId || origin.asset_id!==a.inheritance.sourceAssetId || origin.source_run_id!==runId)
+            throw new HttpError(409, '提示词来源的实体归属不一致');
+        }
+      }
       const s = run.snapshot;
-      const p = { promptId: `run:${runId}`, sourceRunId: runId, stage: s.stage || 'concept', version: null,
+      const p = { promptId: `run:${runId}`, sourceRunId: runId, sourceEntityId: run.entityId, stage: s.stage || 'concept', version: null,
         text: text(s.prompt) || '', effectiveText: text(s.effectivePrompt || s.prompt) || '', purpose: text(s.purpose) || null,
         workflow: s.template ? { id: text(s.template.id), version: s.template.version ?? null, contentHash: s.template.hash ?? null } : null,
         samples: (s.samples || []).map(sample => ({ text: text(sample.text), direction: text(sample.instruction || sample.direction) })),
@@ -105,7 +128,10 @@ export function createReferenceExport(store) {
       voiceDescription: text(entity.context.voiceDescription) || text(voiceRun?.prompt) || null };
     const fieldSources = Object.fromEntries(Object.entries(fields).map(([key, value]) => [key, value === null ? null : {
       source: key === 'voiceDescription' && !entity.context.voiceDescription ? 'current voice source run' : `entities.context.${key}`, contentHash: contentHash(value) }]));
-    const result = { entityId: entity.id, name: text(entity.name), ...fields, createdAt: entity.createdAt, fieldSources,
+    const derivation=hasTable('entity_derivations')?store.db.prepare('SELECT * FROM entity_derivations WHERE entity_id=?').get(entityId):null;
+    const relationRevisions=hasTable('entity_relations')?store.db.prepare("SELECT * FROM entity_relations WHERE (source_entity_id=? OR target_entity_id=?) AND status='active' ORDER BY id").all(entityId,entityId).map(contentHash):[];
+    const result = { flags: Array.isArray(entity.context.flags)?entity.context.flags.filter(f=>typeof f==='string').map(text):[],
+      derivedFrom:derivation?{entityId:derivation.base_entity_id,sourceRevision:derivation.base_revision,description:text(derivation.description),createdAt:derivation.created_at}:null, relationRevisions, entityId: entity.id, name: text(entity.name), ...fields, createdAt: entity.createdAt, fieldSources,
       currentAppearance: visual.appearance ? { confirmationId: visual.appearance.id, version: visual.appearance.version, assetId: visual.appearance.assetId, contentHash: visual.appearance.assetHash } : null,
       currentVoice: voices.current ? { confirmationId: voices.current.id, version: voices.current.version, assetId: voices.current.assetId, contentHash: voices.current.assetHash } : null,
       missingFields: Object.entries(fields).filter(([, v]) => v === null).map(([k]) => k), assets, prompts };
@@ -113,10 +139,10 @@ export function createReferenceExport(store) {
     return result;
   }
   function list() {
-    return store.transaction(() => ({ format: 'reference-entity-list', schemaVersion: 1, owner: 'Sean', capabilities,
+    return store.transaction(() => ({ format: 'reference-entity-list', schemaVersion: 1, owner: 'Sean', capabilities: exportCapabilities(),
       entities: store.db.prepare('SELECT id FROM entities ORDER BY created_at,id').all().map(({ id }) => {
         const e = collect(id);
-        return { entityId: e.entityId, name: e.name, type: e.type, description: e.description?.slice(0, 240) ?? null,
+        return { entityId: e.entityId, name: e.name, flags:e.flags, derivedFrom:e.derivedFrom, type: e.type, description: e.description?.slice(0, 240) ?? null,
           contentHash: e.contentHash, sourceRevision: e.sourceRevision, missingFields: e.missingFields };
       }) }));
   }
@@ -146,8 +172,9 @@ export function createReferenceExport(store) {
             return { ...value, contentHash: contentHash(value), sourceRevision };
           }) };
       });
-      const payload = { format: 'reference-manifest', schemaVersion: 1, owner: 'Sean', capabilities, selection, entities, relations: [],
-        omissions, missingCapabilities: ['relations', 'sound_effect', 'review_status', 'prompt_version'] };
+      const caps=exportCapabilities();
+      const payload = { format: 'reference-manifest', schemaVersion: 1, owner: 'Sean', capabilities:caps, selection, entities, relations: selection.includeRelations==='direct'?exportedRelations(selection.entityIds):[],
+        omissions, missingCapabilities: [...(!caps.relations.supported?['relations']:[]),'sound_effect', 'review_status', 'prompt_version'] };
       const snapshot = { ...payload, manifestId: randomUUID(), createdAt: new Date().toISOString(), contentHash: contentHash(payload) };
       const bytes = canonicalJSON(snapshot);
       store.db.prepare('INSERT INTO reference_manifests VALUES (?,?,?)').run(snapshot.manifestId, bytes, snapshot.createdAt);

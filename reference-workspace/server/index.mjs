@@ -12,6 +12,7 @@ import { comfyRequest } from './adapters.mjs';
 import { validateVoiceDraft } from './voice.mjs';
 import { referenceExportRouter } from './reference-export.mjs';
 import { localAccess } from './local-access.mjs';
+import { entityManagementRouter } from './entity-management.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const port = Number(process.env.REFERENCE_PORT || 4188);
@@ -39,6 +40,7 @@ const key = req => {
   if (!value || value.length > 120) throw new HttpError(400, '缺少有效的重复提交标识');
   return value;
 };
+app.use('/api/manage', entityManagementRouter(store));
 app.use('/api/reference/v1', referenceExportRouter(store));
 app.get('/api/health', (_req, res) => res.json({ ok: true, owner: 'Sean', version: 1 }));
 app.get('/api/catalog', (_req, res) => res.json(catalog));

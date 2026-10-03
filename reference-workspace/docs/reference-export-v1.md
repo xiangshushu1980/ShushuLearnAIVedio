@@ -1,6 +1,6 @@
 # Reference 只读导出 API v1
 
-Owner: Sean。Reference 是实体和素材的唯一权威来源。短片工具通过此接口读取，导入后自行保存 manifest 与素材字节，不读取 Reference 数据库或磁盘路径。创建、命名、关系编辑界面留实体浏览/管理阶段；本次不改编辑和生成流程。
+Owner: Sean。Reference 是实体和素材的唯一权威来源。短片工具通过此接口读取，导入后自行保存 manifest 与素材字节，不读取 Reference 数据库或磁盘路径。创建、命名和关系编辑已接入[实体管理 v1](entity-management-v1.md)；导出仍为只读来源快照。
 
 ## 启动与边界
 
@@ -41,7 +41,7 @@ npm start
 }
 ```
 
-entityIds 为 1–100 个无重复 UUID。includeRelations 默认 none；direct 仅指两端均在明确选中实体里的直接关系，不扩展实体列表、不递归图谱。当前没有关系表，none/direct 都返回 []，同时声明不支持。
+entityIds 为 1–100 个无重复 UUID。includeRelations 默认 none；direct 仅指两端均在明确选中实体里的直接关系，不扩展实体列表、不递归图谱。实体管理已提供关系表：none 返回 []，direct 返回两端均明确选中的 active 关系，包括 setting/story 两类与派生来源关系。
 
 assetRoles 默认 main_appearance / three_view / voice / sound_effect。可用角色：
 
@@ -62,7 +62,7 @@ includeUnconfirmed=false 仅接受实际主形象/多视图/声音确认记录�
 
 ## 响应与来源
 
-完整可机读示例见 [example-manifest.v1.json](example-manifest.v1.json)，JSON Schema 见 [schemas](schemas/manifest.v1.schema.json)、[请求 schema](schemas/manifest-request.v1.schema.json)、[实体列表 schema](schemas/entity-list.v1.schema.json)。示例是生成的演示数据，不代表新增了业务字段或用户验收。
+完整可机读示例见 [example-manifest.v1.json](example-manifest.v1.json)，JSON Schema 见 [schemas](schemas/manifest.v1.schema.json)、[请求 schema](schemas/manifest-request.v1.schema.json)、[实体列表 schema](schemas/entity-list.v1.schema.json)。示例保留导出初版的演示数据与当时能力声明；旧快照不会改写。现行 schema 新增可选字段兼容旧快照，不代表生成效果验收。
 
 列表形状：
 
@@ -71,7 +71,7 @@ includeUnconfirmed=false 仅接受实际主形象/多视图/声音确认记录�
   "format": "reference-entity-list",
   "schemaVersion": 1,
   "owner": "Sean",
-  "capabilities": {"relations":{"supported":false}},
+  "capabilities": {"relations":{"supported":true,"categories":["setting","story"]}},
   "entities": [{
     "entityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
     "name": "一期验收 · 四图概念探索",
@@ -102,9 +102,9 @@ includeUnconfirmed=false 仅接受实际主形象/多视图/声音确认记录�
 
 ## 缺失字段与能力
 
-当前实体表只有 id/name/context/created_at。创建/命名基础后端已有，但管理 UI 与正式实体类型、介绍/外观 schema 未实现；当前实际实体没有 type/description/appearance 时返回 null 和 missingFields。已有主形象和图像仍能导出。
+实体表沿用 id/name/context/created_at；管理 UI 已提供名称、flag、description、appearance、voiceDescription 的编辑与校验。正式单值 type 未实现；flag 不猜作 type。旧实体未填写的描述仍返回 null/missingFields，已有主形象和图像仍能导出。
 
-没有正式实体关系模型、关系 ID/类型/描述/状态；不解析临时任意 context.relations，也不凭空生成关系。没有音效素材类型/管理。没有人工审核状态、审核时间/人员或独立提示词版本；没有实体递增 revision，用内容哈希。情绪样音/上传音源/设定图无单独确认机制；不能把生成成功或 locked/protected 充当审核。
+已有 entity_relations 与 entity_derivations：稳定关系 ID、类别、类型、说明、active/removed 状态及来源修订；仅导出 active。实体包含 flags、derivedFrom、relationRevisions；复制素材包含 inheritance，沿用声音保留真实原生成 prompt.sourceEntityId，不制造生成记录。能力信息 entityManagement/flags/relations/derivation 为真实支持；基础来源变化提醒 changeNotifications=false。没有音效素材类型/管理。没有人工审核状态、审核时间/人员或独立提示词版本；没有实体递增 revision，用内容哈希。情绪样音/上传音源/设定图无单独确认机制；不能把生成成功或 locked/protected 充当审核。
 
 ## 调用与验证
 

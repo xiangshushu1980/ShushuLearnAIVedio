@@ -2,7 +2,7 @@
 
 Owner: Sean。独立 React + Vite 8 应用，自己的 Node API、SQLite 数据库与图片存储。
 
-一期**设定图片**和**概念图**已获用户验收；二期实现**主形象选择**和**三／四视图**；三期接入**声音生成、试听与定稿**。产品依据是[设计交接](../.pi/tasks/remote-3d1bfef4-93c7-4b19-93e8-1090a7405e04/handoff.md)和[已确认设计说明](../docs/design/sean_h3_reference_workspace_design_v1.md)；部署边界见[架构](../docs/49_h3_reference_workspace_architecture.md)。实体管理界面留后续。
+一期**设定图片**和**概念图**已获用户验收；二期实现**主形象选择**和**三／四视图**；三期接入**声音生成、试听与定稿**。产品依据是[设计交接](../.pi/tasks/remote-3d1bfef4-93c7-4b19-93e8-1090a7405e04/handoff.md)和[已确认设计说明](../docs/design/sean_h3_reference_workspace_design_v1.md)；部署边界见[架构](../docs/49_h3_reference_workspace_architecture.md)。实体浏览、flag、资料、关系与独立派生现已接入，详见[实体管理 v1](docs/entity-management-v1.md)。
 
 2026-10-03 用户确认先跑通 PC 网页；当前验收与后续迭代仅针对 PC，手机端适配和检查暂缓。
 
@@ -91,7 +91,7 @@ Krea 2 文本与 Edit 作为备选工作流保留，能力上限分别是 0 张�
 
 ## AI 短片工具只读导出
 
-Owner: Sean。新增 `/api/reference/v1/entities`、`POST /api/reference/v1/manifests`、`GET /api/reference/v1/manifests/:manifestId`、`GET /api/reference/v1/assets/:assetId/content`。快照持久化且不可修改，素材使用稳定 ID/内容 hash/相对 URL；仅现有真实确认资料默认可导出。类型/正式介绍、关系、音效和审核等缺失如实声明，不改实体编辑或生成流程。契约、schema、完整示例、缺口、调用及验证见 [只读导出 API v1](docs/reference-export-v1.md)。
+Owner: Sean。新增 `/api/reference/v1/entities`、`POST /api/reference/v1/manifests`、`GET /api/reference/v1/manifests/:manifestId`、`GET /api/reference/v1/assets/:assetId/content`。快照持久化且不可修改，素材使用稳定 ID/内容 hash/相对 URL；仅现有真实确认资料默认可导出。导出已有资料、flag、派生来源和设定／剧情关系；正式 type、音效与审核等缺失如实声明。契约、schema、完整示例、缺口、调用及验证见 [只读导出 API v1](docs/reference-export-v1.md)。
 
 ## 运行恢复与接口
 
@@ -150,7 +150,7 @@ PC 声音页按用户确认的顺序组织：**0 当前声音和情绪试听 →
 | `PATCH /api/assets/:id/lock` | `{locked}` 显式锁定/解锁历史 |
 | `DELETE /api/assets/:id` | `{confirmUsed}` 删除图片并保留来源墓碑 |
 
-新库先提供“参考实体”以便打开创作页面；实体创建、介绍和关系管理界面未纳入一期。可用 `?entity=<id>` 进入特定实体。
+新库先提供“参考实体”。默认打开实体管理页，可新建、命名、编辑介绍/外观/声音描述、设置 flag、关系及派生。`?view=manage&entity=<id>` 打开实体详情，`?view=create&entity=<id>` 打开现有创作页。
 
 已有数据库启动时添加主形象版本、视图确认、当前视觉状态及多视图草稿表，保留原实体、概念草稿、运行与文件。`workspace` 响应提供 `visualState` 和 `multiviewDraft`；SQLite 及原图仍以整个 `.data` 目录为备份单位。
 
