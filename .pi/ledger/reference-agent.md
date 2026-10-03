@@ -59,3 +59,7 @@ Owner: Sean。持续 goal 为人物/场景的完整创作与变体实验，不�
 ### 2026-10-04 图片步骤独立修订与人工反馈（Owner: Sean）
 
 新稳定stepId对应不可变版本；逻辑root保持实体/key/方案，人工采用/恢复使用CAS，原输出和运行保留。Agent必须本轮读取完整步骤才能提出修订，新引用仅明确选图；旧绑定草稿在版本切换后生成入队前409拒绝。28测试/build、隔离PC修订/采用2/刷新/恢复1通过，0console错误。仅验证版本链路和模拟Agent，不代表真实生成或模型反馈效果。权威 reference-workspace/docs/workflow-step-revisions-v1.md，证据 experiments/sean_reference_authoring_goal_20261004/step-revision-*。完整Goal仍active。
+
+### 2026-10-04 图片批次与依赖恢复（Owner: Sean）
+
+持久化固定步骤/项目/实体/引用事实与模板，串行调用既有生成服务；主图缺失等待，选定后由用户恢复。准备输入不覆盖人工草稿，requestKey与runId恢复避免新建重复Reference run；暂停/取消不全局中断共享ComfyUI，重启不自动提交新步骤。36测试/build、隔离2步PC保存/模拟总览/等待/选图/恢复细节/刷新完成/勾选比较通过，0console错误。实际生成桥接正向纯预览和篡改拒绝验证，未调用ComfyUI/真实模型。权威 reference-workspace/docs/authoring-batches-v1.md，证据 experiments/sean_reference_authoring_goal_20261004/batch-*。整体Goal仍active，真实图像与反馈质量、V3/声音编排待做。

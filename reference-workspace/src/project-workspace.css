@@ -5,3 +5,6 @@
 
 /* Owner: Sean — PC scene image group review. */
 .scene-image-grid,.scene-image-choices{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}.scene-image-grid article{padding:10px;border:1px solid var(--border,#d6d8de);border-radius:8px}.scene-image-grid img{max-height:220px;object-fit:contain}.scene-image-choices label{display:grid;grid-template-columns:24px 1fr;gap:6px;padding:8px}.scene-image-choices img{width:100%;height:100px;object-fit:contain}.scene-image-choices span{grid-column:2;overflow-wrap:anywhere}.scene-image-zoom{position:fixed;inset:0;z-index:1100;background:#101018ed;display:flex;align-items:center;justify-content:center}.scene-image-zoom img{max-width:90vw;max-height:90vh;object-fit:contain}.scene-image-zoom button{position:absolute;top:20px;right:30px}
+
+/* Owner: Sean — batch progress and experiment comparison controls. */
+.authoring-batches{margin-top:24px;padding-top:20px;border-top:1px solid #314750}.authoring-batch{margin-top:16px;padding:16px;border:1px solid #314750;border-radius:10px}.authoring-batch-item{padding-top:12px;margin-top:12px;border-top:1px solid #263b45}.authoring-batches .agent-image-grid input{width:18px;height:18px;margin:0 8px 0 0;vertical-align:middle}.authoring-batches .agent-image-grid span{display:flex;align-items:center;padding:8px}

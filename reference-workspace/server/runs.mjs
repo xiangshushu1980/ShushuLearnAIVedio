@@ -1,4 +1,5 @@
 // Owner: Sean — durable run orchestration, restart recovery and shared GPU arbitration.
+import {createHash} from 'node:crypto';
 import { execFile } from 'node:child_process';
 import { promisify, isDeepStrictEqual } from 'node:util';
 import { unlinkSync, existsSync } from 'node:fs';
@@ -35,7 +36,7 @@ export function createRunService(store) {
     const { stdout } = await exec('hive-resource', args, { timeout: 15_000 });
     return stdout;
   };
-  function snapshot(entityId, body) {
+  function snapshot(entityId, body, readDraftOrigin=true) {
     const { input, model, style } = validateRun(body);
     const entity = store.entity(entityId);
     let appearance = null;
@@ -60,7 +61,7 @@ export function createRunService(store) {
       return { id: asset.id, hash: asset.hash, kind: asset.kind, name: asset.name, runId: asset.runId, createdAt: asset.createdAt };
     });
     let authoring=null;
-    if(store.db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name='entity_authoring_draft_links'").get()){
+    if(readDraftOrigin&&store.db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name='entity_authoring_draft_links'").get()){
       const link=store.db.prepare('SELECT l.step_id,l.draft_updated_at,d.value,d.updated_at,s.plan_id,s.body,s.content_hash FROM entity_authoring_draft_links l JOIN drafts d ON d.entity_id=l.entity_id JOIN entity_workflow_steps s ON s.id=l.step_id WHERE l.entity_id=?').get(entityId);
       if(link&&link.draft_updated_at===link.updated_at){const prior=JSON.parse(link.value),fields=['modelId','styleId','prompt','purpose','references','parameters'];if(contentHash(Object.fromEntries(fields.map(k=>[k,prior[k]])))===contentHash(Object.fromEntries(fields.map(k=>[k,input[k]])))){const step=JSON.parse(link.body);let revision={rootStepId:link.step_id,version:1};
         if(store.db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name='entity_workflow_step_heads'").get()){
@@ -248,6 +249,20 @@ export function createRunService(store) {
       active.delete(runId);
     }
   }
+  function preparedSnapshot(entityId,body,origin){
+      const row=store.db.prepare('SELECT * FROM entity_workflow_steps WHERE id=? AND entity_id=?').get(origin.stepId,entityId);
+      if(!row||row.content_hash!==origin.stepHash)throw new HttpError(409,'批次步骤来源不匹配');
+      const step=JSON.parse(row.body),revision=store.db.prepare('SELECT root_step_id,version FROM entity_workflow_step_revisions WHERE step_id=?').get(row.id),root=revision?.root_step_id||row.id;
+      if((store.db.prepare('SELECT step_id FROM entity_workflow_step_heads WHERE root_step_id=?').get(root)?.step_id||root)!==row.id)throw new HttpError(409,'步骤选用版本已变化');
+      const expected=validateRun({modelId:step.modelId,styleId:step.styleId,prompt:step.prompt,purpose:step.purpose,parameters:step.parameters,references:body.references}).input;
+      const current=validateRun(body).input;if(!isDeepStrictEqual(expected,current))throw new HttpError(409,'批次输入与选定步骤不符');
+      let sourceIds=step.referenceAssetIds;
+      if(step.useMainAppearance||step.useBaseAppearance){const sourceEntity=step.useBaseAppearance?store.db.prepare('SELECT base_entity_id FROM entity_derivations WHERE entity_id=?').get(entityId)?.base_entity_id:entityId;const main=sourceEntity?store.visualState(sourceEntity).appearance:null;if(!main)throw new HttpError(409,'依赖主图未选定');sourceIds=[main.assetId];}
+      if(current.references.length!==sourceIds.length)throw new HttpError(409,'批次引用数量与选定步骤不符');
+      current.references.forEach((a,n)=>{const ref=store.asset(a),source=store.asset(sourceIds[n]);if(ref.entityId!==entityId||ref.hash!==source.hash||(ref.id!==source.id&&ref.metadata.inheritance?.sourceAssetId!==source.id)||createHash('sha256').update(store.assetBytes(a)).digest('hex')!==ref.hash)throw new HttpError(409,'批次引用与选定来源不符');});
+      const value=snapshot(entityId,body,false);value.authoring={stepId:row.id,rootStepId:root,version:revision?.version||1,planId:row.plan_id,sourceRevision:row.content_hash,role:step.role,label:step.label,invariants:step.invariants,unknowns:step.unknowns,batchId:origin.batchId,batchItemId:origin.itemId};
+      return value;
+  }
   return {
     restore(runId) {
       const run = store.run(runId), source = run.snapshot;
@@ -264,6 +279,8 @@ export function createRunService(store) {
       } catch (error) { compatible = false; reason = error.message; }
       return { input, workflow: recordedWorkflow(run), compatible, reason };
     },
+    previewPrepared(entityId,body,origin){const value=preparedSnapshot(entityId,body,origin);return {previewOnly:true,authoring:value.authoring,template:value.template,effectivePrompt:value.effectivePrompt};},
+    startPrepared(entityId,body,key,origin){const value=preparedSnapshot(entityId,body,origin);const saved=store.createRun(entityId,value,key);if(saved.created)void execute(saved.run.id);return saved.run;},
     start(entityId, body, key) {
       const saved = store.createRun(entityId, snapshot(entityId, body), key);
       if (saved.created) void execute(saved.run.id);
