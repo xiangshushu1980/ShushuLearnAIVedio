@@ -22,7 +22,7 @@ Owner: Sean。日期：2026-10-04。Task Center：remote-92ecb0d7-d1db-4bd5-8a3e
 
 视频和图片保留本地，代码/文档使用scoped commit。应用专用模型凭据不属于实验交付，不复制进仓库；临时DB不能直接并入主应用DB，因为快照ID与原项目有共同来源。失败基线保留，用后续反馈修订结果作对照。
 
-恢复副本保存在本目录 `runtime-data/film.sqlite` 与 `runtime-data/blobs/`，SQLite备份integrity_check为ok，包含revision34、8个终态Agent运行、完整会话及候选/素材/版本；不含agent凭据目录。仅作为独立数据目录使用，禁止合并主库。可复制到新的FILM_DATA_DIR，在独立端口启动film-editor，配置应用自有模型凭据后续接；GPU操作仍需资源协调。隔离测试服务空闲后停止，主服务4190继续运行。
+恢复副本保存在本目录 `runtime-data/film.sqlite` 与 `runtime-data/blobs/`，当前SQLite备份integrity_check为ok，revision52、13个终态Agent运行、10个成功视频候选及完整素材/会话/版本；初始revision34备份另存film-rev34.sqlite，不含agent凭据目录。仅作为独立数据目录使用，禁止合并主库。可复制到新的FILM_DATA_DIR，在独立端口启动film-editor，配置应用自有模型凭据后续接；GPU操作仍需资源协调。主服务4190继续运行。
 
 
 ## 具体衔接帧对照
@@ -32,3 +32,6 @@ Owner: Sean。日期：2026-10-04。Task Center：remote-92ecb0d7-d1db-4bd5-8a3e
 修复后运行 3d074b58-6871-4977-816d-1cb078ca22d8：读取真实 S4 尾帧 → 固定 LLM revision job 1729cefb-3c56-4d07-bfca-7185817fd5e8 → 修复505词警告 → 校验/采用 → 真正生成新 S5 candidate 2ec41dd5-1f33-4f2f-b3cf-10601343667e（12.25秒）。输入含7张真实图片，最后一张来自 S4 candidate414f8436-1205-4a97-95a6-71ec8d9b00b7 的6.433333秒帧，PNG SHA-256 fa0c8b002863d03452f9289b59c8dae8b9d6f62a96d2328d85fc593487ecaa49。完整会话及修订版本见 `sean_pi_continuity_anchor_test.json`，媒体/图片/工作流见 manifest；没有选用新片或重合成。
 
 `collect-video-evidence.mjs` 是只读证据采集器，核对视频/图片字节哈希、保存实际输入/工作流/ffprobe/抽帧，不提交模型或 GPU 请求。`frames/sean_anchor_s05_motion_contact.png` 另保存12个时间点的换装/转身观察；不能用三帧证明完整运动或声音。主服务4190当前由 transient systemd unit恢复，能访问用户项目但不代表配置了开机启动；用户原项目仍revision18。
+
+
+顺序衔接新增 S2/S3/S4 对照见 `sean_pi_continuity_anchor_s02_test.json`、`sean_pi_continuity_anchor_s03_test.json`、`sean_pi_continuity_anchor_s04_test.json`。已在隔离副本选用新S2/S3，S4尚未选用，S5旧锚点因S4输入变化过期。S1→S4的实际抽帧保留A左/B右、同一主桌/书墙与刀/外套状态链，S4补充六点帧显示拿刀转移及远侧离场；仍需新S5接续当前S4并检查完整运动/音色，不代表全片验收完成。
