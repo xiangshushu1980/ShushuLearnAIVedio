@@ -2,7 +2,7 @@
 
 Owner: Sean。日期：2026-10-04。Task Center：remote-92ecb0d7-d1db-4bd5-8a3e-83732b7404f1。
 
-此实验使用独立 SQLite/素材目录 `/tmp/sean-film-pi-real-gjEYqk` 和端口4194。来源项目为5269e95a-d8b7-4c66-b8fd-603be396ef4c revision18；不写用户原项目或 Reference。测试项目70338d49-e494-433f-a753-738fbd3dafc9。Pi使用应用专用配置、DeepSeek远程模型和受限工作流工具，视频由既有共享ComfyUI和资源租约生成。
+此实验最初使用独立 SQLite/素材目录 `/tmp/sean-film-pi-real-gjEYqk` 和端口4194；临时目录被清理后从本目录恢复副本续接，目前独立目录为 `/tmp/sean-film-anchor-real-UCUEcQ`。来源项目为5269e95a-d8b7-4c66-b8fd-603be396ef4c revision18；不写用户原项目或 Reference。测试项目70338d49-e494-433f-a753-738fbd3dafc9。Pi使用应用专用配置、DeepSeek远程模型和受限工作流工具，视频由既有共享ComfyUI和资源租约生成。
 
 真实操作链：读完整叙事与实体/看场景图 → 固定LLM生成全片空间提案 → 校验提示词格式/绑定并修复 → 明确测试用调度和换装要求 → 采用版本 → 生成五镜 → 看帧 → 选片 → 合成诊断样片。第五镜为换装及转身测试由7秒改为12秒，记录为独立修订版本；对白、角色身份和引用保持。已有基线空间/衣物/刀的偏差，详见 [QC.md](QC.md)，不能当作视觉验收通过。
 
@@ -23,3 +23,12 @@ Owner: Sean。日期：2026-10-04。Task Center：remote-92ecb0d7-d1db-4bd5-8a3e
 视频和图片保留本地，代码/文档使用scoped commit。应用专用模型凭据不属于实验交付，不复制进仓库；临时DB不能直接并入主应用DB，因为快照ID与原项目有共同来源。失败基线保留，用后续反馈修订结果作对照。
 
 恢复副本保存在本目录 `runtime-data/film.sqlite` 与 `runtime-data/blobs/`，SQLite备份integrity_check为ok，包含revision34、8个终态Agent运行、完整会话及候选/素材/版本；不含agent凭据目录。仅作为独立数据目录使用，禁止合并主库。可复制到新的FILM_DATA_DIR，在独立端口启动film-editor，配置应用自有模型凭据后续接；GPU操作仍需资源协调。隔离测试服务空闲后停止，主服务4190继续运行。
+
+
+## 具体衔接帧对照
+
+方法 v3 将真实前镜尾帧作为最后一个独立 Picture，通过应用自有接口冻结来源与字节，并要求固定 LLM 使用具体开场构图。首轮运行 eeb26bc4-208f-40ab-ac25-38c498e9f8fe 暴露单镜校验隐藏前序上下文的问题，未提交 LLM/GPU，取消后修复并加入回归。证据 `sean_pi_continuity_anchor_first_attempt.json`。
+
+修复后运行 3d074b58-6871-4977-816d-1cb078ca22d8：读取真实 S4 尾帧 → 固定 LLM revision job 1729cefb-3c56-4d07-bfca-7185817fd5e8 → 修复505词警告 → 校验/采用 → 真正生成新 S5 candidate 2ec41dd5-1f33-4f2f-b3cf-10601343667e（12.25秒）。输入含7张真实图片，最后一张来自 S4 candidate414f8436-1205-4a97-95a6-71ec8d9b00b7 的6.433333秒帧，PNG SHA-256 fa0c8b002863d03452f9289b59c8dae8b9d6f62a96d2328d85fc593487ecaa49。完整会话及修订版本见 `sean_pi_continuity_anchor_test.json`，媒体/图片/工作流见 manifest；没有选用新片或重合成。
+
+`collect-video-evidence.mjs` 是只读证据采集器，核对视频/图片字节哈希、保存实际输入/工作流/ffprobe/抽帧，不提交模型或 GPU 请求。`frames/sean_anchor_s05_motion_contact.png` 另保存12个时间点的换装/转身观察；不能用三帧证明完整运动或声音。主服务4190当前由 transient systemd unit恢复，能访问用户项目但不代表配置了开机启动；用户原项目仍revision18。
