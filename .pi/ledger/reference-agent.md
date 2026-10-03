@@ -77,3 +77,5 @@ Owner: Sean。持续 goal 为人物/场景的完整创作与变体实验，不�
 ### 2026-10-04 Owner Sean：已有实体文字提案
 
 Agent必须完整读取当前项目实体后提案，人工接受以事务更新明确字段并保存应用修订；不覆盖未指定字段，不把声音样本派生说明写回文字。51测试/build及隔离PC验证通过，步骤stale、重复应用/过期拒绝/事务回滚有证据。手册 reference-workspace/docs/entity-change-proposals-v1.md；模拟PC产物 experiments/sean_reference_authoring_goal_20261004/entity-change-*。未调用模型或ComfyUI，不证明真实语义质量。
+
+2026-10-04 Owner: Sean — V3 三种多视图布局新增 three_view 创作步骤，概念图/变体与本实体主图依赖、实验批次、逐张检验衔接。56 tests/build 与临时库 PC 三布局等待→人工选图→恢复→3/3 模拟输出通过；零真实生成/模型调用。文档 reference-workspace/docs/authoring-multiview-v1.md。持续目标 active，声音编排及真实图片质量仍待完成。

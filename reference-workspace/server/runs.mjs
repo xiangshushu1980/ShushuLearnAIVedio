@@ -255,7 +255,7 @@ export function createRunService(store) {
       if(!row||row.content_hash!==origin.stepHash)throw new HttpError(409,'批次步骤来源不匹配');
       const step=JSON.parse(row.body),revision=store.db.prepare('SELECT root_step_id,version FROM entity_workflow_step_revisions WHERE step_id=?').get(row.id),root=revision?.root_step_id||row.id;
       if((store.db.prepare('SELECT step_id FROM entity_workflow_step_heads WHERE root_step_id=?').get(root)?.step_id||root)!==row.id)throw new HttpError(409,'步骤选用版本已变化');
-      const expected=validateRun({modelId:step.modelId,styleId:step.styleId,prompt:step.prompt,purpose:step.purpose,parameters:step.parameters,references:body.references}).input;
+      const expected=validateRun({modelId:step.modelId,styleId:step.styleId,prompt:step.prompt,purpose:step.purpose,parameters:step.parameters,references:body.references,...(step.role==='three_view'?{appearanceId:store.visualState(entityId).appearance?.id}: {})}).input;
       const current=validateRun(body).input;if(!isDeepStrictEqual(expected,current))throw new HttpError(409,'批次输入与选定步骤不符');
       let sourceIds=step.referenceAssetIds;
       if(step.useMainAppearance||step.useBaseAppearance){const sourceEntity=step.useBaseAppearance?store.db.prepare('SELECT base_entity_id FROM entity_derivations WHERE entity_id=?').get(entityId)?.base_entity_id:entityId;const main=sourceEntity?store.visualState(sourceEntity).appearance:null;if(!main)throw new HttpError(409,'依赖主图未选定');sourceIds=[main.assetId];}
