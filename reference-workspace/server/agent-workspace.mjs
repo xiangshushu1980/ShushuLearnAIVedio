@@ -30,7 +30,7 @@ const proposalSchema = z.object({ document: spatialDocumentSchema, summary: z.st
   questions: z.array(z.string().trim().min(1).max(2000)).max(3), sources: z.array(sourceSchema).max(500) }).strict();
 const jsonTool = value => ({ content: [{ type: 'text', text: canonicalJSON(value) }], details: {} });
 const terminal = status => status !== 'running';
-const labels = { propose_entity_workflow:'整理实体与变体创作方案', get_entity_workflow_catalog:'读取可用图片工作流', get_entity_workflow_plans:'读取已保存创作方案', get_project_context: '读取项目最新资料', get_project_entity: '读取项目实体详情', propose_project_review: '整理项目检查结果', propose_project_update: '整理项目资料建议', get_scene_context: '读取工程和场景资料', view_reference_image: '查看参考图',
+const labels = { get_entity_workflow_step:'读取图片步骤完整版本',propose_image_step_revision:'提出图片步骤修订', propose_entity_workflow:'整理实体与变体创作方案', get_entity_workflow_catalog:'读取可用图片工作流', get_entity_workflow_plans:'读取已保存创作方案', get_project_context: '读取项目最新资料', get_project_entity: '读取项目实体详情', propose_project_review: '整理项目检查结果', propose_project_update: '整理项目资料建议', get_scene_context: '读取工程和场景资料', view_reference_image: '查看参考图',
   load_authoring_skill: '读取当前工作模式的方法', propose_scene_spatial: '整理空间提案' };
 
 export function createAgentWorkspace(store, { runtime = createPiRuntime(store.root), projectService = createProjectWorkspace(store), authoringService = createEntityAuthoring(store,{projectService}) } = {}) {
@@ -80,6 +80,7 @@ export function createAgentWorkspace(store, { runtime = createPiRuntime(store.ro
       provider: s.provider, modelId: s.model_id, createdAt: s.created_at,
       messages: db.prepare('SELECT id,role,text,created_at AS createdAt,run_id AS runId FROM agent_messages WHERE session_id=? ORDER BY created_at,rowid').all(sessionId),
       runs: db.prepare('SELECT id,status,error,created_at AS createdAt FROM agent_runs WHERE session_id=? ORDER BY created_at,rowid').all(sessionId),
+      stepRevisions:authoringService.steps(s.project_id).filter(step=>step.sessionId===s.id).map(({id,rootStepId,entityName,label,version,reason,revisionStatus,stale})=>({id,rootStepId,entityName,label,version,reason,revisionStatus,stale})),
       authoringPlans:authoringService.list(s.project_id).filter(p=>p.sessionId===s.id).map(p=>({id:p.id,title:p.title,summary:p.summary,stale:p.stale,applied:!!p.applied,candidateCount:p.candidates.length})),
       projectProposals: db.prepare('SELECT * FROM agent_project_proposals WHERE session_id=? ORDER BY rowid').all(sessionId).map(row=>{const run=runRow(row.run_id);let stale=true;try{stale=contentHash(basis(s,run.basis.referenceAssetIds))!==contentHash(run.basis);}catch{}return {id:row.id,runId:row.run_id,kind:row.kind,...JSON.parse(row.body),contentHash:row.content_hash,appliedRevision:row.applied_revision,createdAt:row.created_at,stale:!row.applied_revision&&stale};}),
       proposals: rows.map(row => ({id:row.id,runId:row.run_id,...JSON.parse(row.body),contentHash:row.content_hash,
@@ -209,7 +210,7 @@ export function createAgentWorkspace(store, { runtime = createPiRuntime(store.ro
     const run = runRow(runId), s = sessionRow(run.session_id), state = active.get(runId);
     let opened, unsubscribe, timer;
     const seenImages = new Set(),reviewedEntities=new Set(s.entity_id?[s.entity_id]:[]);
-    const imageCache = new Map();
+    const imageCache = new Map(),seenSteps=new Map();
     let calls = 0;
     const tool = (name,description,parameters,fn) => ({ name, label: labels[name], description, parameters,
       execute: async (_callId, args) => {
@@ -258,6 +259,14 @@ export function createAgentWorkspace(store, { runtime = createPiRuntime(store.ro
     if(s.purpose==='project-authoring'){
       tools.push(tool('get_entity_workflow_catalog','读取当前可用概念图模型、风格、参数和工作流约束，不调用生成服务。',{type:'object',properties:{},additionalProperties:false},()=>jsonTool({owner:'Sean',models:catalog.models.filter(m=>m.stage!=='multiview'),styles:catalog.styles,sceneImages:'同一实体可安排总览、其他角度、细节；不强制三视图',characterViews:'选定主形象后接续现有 V3 多视图',schemaVersion:1})));
       tools.push(tool('get_entity_workflow_plans','读取当前项目已保存的实体创作方案和已应用的候选映射。',{type:'object',properties:{},additionalProperties:false},()=>jsonTool({plans:authoringService.list(s.project_id).slice(0,3),steps:authoringService.steps(s.project_id).map(({prompt,parameters,...step})=>step)})));
+      tools.push(tool('get_entity_workflow_step','读取图片步骤完整提示词、参数、引用、保持项、版本及当前选择。修订前必须读取。',z.toJSONSchema(z.object({stepId:uuid}).strict()),raw=>{const {stepId}=parse(z.object({stepId:uuid}).strict(),raw);if(contentHash(basis(s,run.basis.referenceAssetIds))!==contentHash(run.basis))throw new HttpError(409,'本轮资料已变化，请重新讨论');const step=authoringService.getStep(s.project_id,stepId);seenSteps.set(stepId,{hash:step.contentHash,active:step.activeStepId});return jsonTool(step);}));
+      tools.push(tool('propose_image_step_revision','保存已应用图片步骤的修订候选，保留原实体和生成历史。只提案，不采用或生成。',z.toJSONSchema(authoringService.stepRevisionSchema.omit({expectedContextHash:true}).extend({stepId:uuid})),raw=>{
+        if(contentHash(basis(s,run.basis.referenceAssetIds))!==contentHash(run.basis))throw new HttpError(409,'本轮资料已变化，请重新讨论');
+        const {stepId,...input}=parse(authoringService.stepRevisionSchema.omit({expectedContextHash:true}).extend({stepId:uuid}),raw);
+        const observed=seenSteps.get(stepId);if(!observed||observed.hash!==input.expectedStepHash||observed.active!==input.expectedActiveStepId)throw new HttpError(400,'请先读取这个步骤的完整版本再修订');
+        for(const assetId of input.image.referenceAssetIds)if(!run.basis.referenceAssetIds.includes(assetId))throw new HttpError(400,'修订引用必须是本轮用户明确选图');
+        const result=authoringService.reviseStep(s.project_id,stepId,{...input,expectedContextHash:context(s.project_id).contentHash},{sessionId:s.id,runId:run.id});emit(run.id,'proposal',{proposalId:result.stepId,kind:'image-step-revision'});return jsonTool({...result,review:'返回项目工作区比较图片步骤版本，由用户明确采用'});
+      }));
       tools.push(tool('propose_entity_workflow','保存完整的人物/场景及多个实验变体的创建方案，包含关系、每张图的提示词、模型/风格、参考图、固定不变量和待补充。不创建实体或提交生成。',z.toJSONSchema(authoringPlanSchema),raw=>{
         if(contentHash(basis(s,run.basis.referenceAssetIds))!==contentHash(run.basis))throw new HttpError(409,'本轮资料已变化，请重新讨论');
         const proposed=parse(authoringPlanSchema,raw);

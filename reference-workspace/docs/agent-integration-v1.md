@@ -128,3 +128,7 @@ SDK 0.86.0 的 npm-shrinkwrap 锁定有漏洞的 brace-expansion 5.0.9，普通�
 ## 实体创作与视觉检查接入
 
 Owner: Sean。2026-10-04。项目创作模式新增 entity-workflow 方法、结构化创作方案与真实看图范围约束的视觉报告，权限仍为提出候选。人工应用、图片模板预览和输入准备由 `server/entity-authoring.mjs` 负责；契约及持续目标差距见[自然语言实体创作工作流 v1](entity-authoring-workflow-v1.md)。通用项目会话可显式选择项目内多实体图片，便于变体对比，不允许隐式引用全部图像。
+
+## 图片步骤反馈修订（2026-10-04）
+
+Owner: Sean。项目助手新增 get_entity_workflow_step 与 propose_image_step_revision，实际读取记录作为本轮提案门槛；修订保存候选，由人工比较、采用，不创建实体或生成。契约与证据见[步骤修订 v1](workflow-step-revisions-v1.md)。

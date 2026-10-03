@@ -55,3 +55,7 @@ Owner: Sean。持续 goal 为人物/场景的完整创作与变体实验，不�
 ### 2026-10-04 场景图片组确认与导出（Owner: Sean）
 
 新增不可变场景图片组与人工确认，以文字/主图/空间修订/真实图像哈希为依据；默认导出排除 draft/needs_review。三种 scene_* 角色及现有主图请求兼容，明确素材选择不扩大；图片组不确认为空间事实。24 测试/build通过，隔离PC三图选择/保存/确认/放大/刷新操作通过，0控制台错误。证据 experiments/sean_reference_authoring_goal_20261004/scene-image-set-{pc.png,manifest.json}，权威说明 reference-workspace/docs/scene-images-v1.md。色块测试只验证数据和界面，不证明真实生成质量；完整 Goal 保持 active。
+
+### 2026-10-04 图片步骤独立修订与人工反馈（Owner: Sean）
+
+新稳定stepId对应不可变版本；逻辑root保持实体/key/方案，人工采用/恢复使用CAS，原输出和运行保留。Agent必须本轮读取完整步骤才能提出修订，新引用仅明确选图；旧绑定草稿在版本切换后生成入队前409拒绝。28测试/build、隔离PC修订/采用2/刷新/恢复1通过，0console错误。仅验证版本链路和模拟Agent，不代表真实生成或模型反馈效果。权威 reference-workspace/docs/workflow-step-revisions-v1.md，证据 experiments/sean_reference_authoring_goal_20261004/step-revision-*。完整Goal仍active。

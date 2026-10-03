@@ -62,7 +62,13 @@ export function createRunService(store) {
     let authoring=null;
     if(store.db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name='entity_authoring_draft_links'").get()){
       const link=store.db.prepare('SELECT l.step_id,l.draft_updated_at,d.value,d.updated_at,s.plan_id,s.body,s.content_hash FROM entity_authoring_draft_links l JOIN drafts d ON d.entity_id=l.entity_id JOIN entity_workflow_steps s ON s.id=l.step_id WHERE l.entity_id=?').get(entityId);
-      if(link&&link.draft_updated_at===link.updated_at){const prior=JSON.parse(link.value),fields=['modelId','styleId','prompt','purpose','references','parameters'];if(contentHash(Object.fromEntries(fields.map(k=>[k,prior[k]])))===contentHash(Object.fromEntries(fields.map(k=>[k,input[k]])))){const step=JSON.parse(link.body);authoring={stepId:link.step_id,planId:link.plan_id,sourceRevision:link.content_hash,role:step.role,label:step.label,invariants:step.invariants,unknowns:step.unknowns};}}
+      if(link&&link.draft_updated_at===link.updated_at){const prior=JSON.parse(link.value),fields=['modelId','styleId','prompt','purpose','references','parameters'];if(contentHash(Object.fromEntries(fields.map(k=>[k,prior[k]])))===contentHash(Object.fromEntries(fields.map(k=>[k,input[k]])))){const step=JSON.parse(link.body);let revision={rootStepId:link.step_id,version:1};
+        if(store.db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name='entity_workflow_step_heads'").get()){
+          const r=store.db.prepare('SELECT root_step_id,version FROM entity_workflow_step_revisions WHERE step_id=?').get(link.step_id);revision={rootStepId:r?.root_step_id||link.step_id,version:r?.version||1};
+          const current=store.db.prepare('SELECT step_id FROM entity_workflow_step_heads WHERE root_step_id=?').get(revision.rootStepId)?.step_id||revision.rootStepId;
+          if(current!==link.step_id)throw new HttpError(409,'图片步骤选用版本已变化，请重新载入当前版本的生成输入');
+        }
+        authoring={stepId:link.step_id,...revision,planId:link.plan_id,sourceRevision:link.content_hash,role:step.role,label:step.label,invariants:step.invariants,unknowns:step.unknowns};}}
     }
     const { endpoint, ...modelSnapshot } = model;
     return { owner: 'Sean', entity: { id: entity.id, name: entity.name, context: entity.context },
