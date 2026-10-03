@@ -9,6 +9,7 @@ import { createStore, HttpError, id, now } from './store.mjs';
 import { catalog } from './catalog.mjs';
 import { createRunService } from './runs.mjs';
 import { comfyRequest } from './adapters.mjs';
+import { validateVoiceDraft } from './voice.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const port = Number(process.env.REFERENCE_PORT || 4188);
@@ -58,7 +59,9 @@ app.get('/api/entities/:entityId/workspace', (req, res) => {
   const history = store.db.prepare('SELECT * FROM runs WHERE entity_id=? ORDER BY created_at DESC,id').all(entity.id).map(store.runView);
   const draft = store.db.prepare('SELECT value,updated_at FROM drafts WHERE entity_id=?').get(entity.id);
   const multiviewDraft = store.db.prepare('SELECT value,updated_at FROM multiview_drafts WHERE entity_id=?').get(entity.id);
+  const voiceDraft = store.db.prepare('SELECT value,updated_at FROM voice_drafts WHERE entity_id=?').get(entity.id);
   res.json({ entity, assets, runs: history, visualState: store.visualState(entity.id),
+    voiceState: store.voiceState(entity.id), voiceDraft: voiceDraft ? { value: JSON.parse(voiceDraft.value), updatedAt: voiceDraft.updated_at } : null,
     multiviewDraft: multiviewDraft ? { value: JSON.parse(multiviewDraft.value), updatedAt: multiviewDraft.updated_at } : null,
     draft: draft ? { value: JSON.parse(draft.value), updatedAt: draft.updated_at } : null });
 });
@@ -93,6 +96,25 @@ app.put('/api/entities/:entityId/multiview/draft', (req, res) => {
   res.json({ updatedAt });
 });
 app.post('/api/entities/:entityId/multiview/runs', (req, res) => res.status(201).json(runs.startMultiview(req.params.entityId, req.body, key(req))));
+app.put('/api/entities/:entityId/voice/draft', (req, res) => {
+  const entityId = store.entity(req.params.entityId).id;
+  const body = check(z.object({ expectedUpdatedAt: z.string().nullable(), value: z.unknown() }).strict(), req.body);
+  const value = validateVoiceDraft(store, entityId, body.value);
+  const updatedAt = store.transaction(() => {
+    const current = store.db.prepare('SELECT updated_at FROM voice_drafts WHERE entity_id=?').get(entityId);
+    if ((current?.updated_at || null) !== body.expectedUpdatedAt) throw new HttpError(409, '声音输入已在另一页面更新，请重新载入');
+    const timestamp = new Date(Math.max(Date.now(), current ? Date.parse(current.updated_at) + 1 : 0)).toISOString();
+    store.db.prepare('INSERT INTO voice_drafts VALUES (?,?,?) ON CONFLICT(entity_id) DO UPDATE SET value=excluded.value,updated_at=excluded.updated_at')
+      .run(entityId, JSON.stringify(value), timestamp);
+    return timestamp;
+  });
+  res.json({ updatedAt });
+});
+app.post('/api/entities/:entityId/voice/runs', (req, res) => res.status(201).json(runs.startVoice(req.params.entityId, req.body, key(req))));
+app.post('/api/entities/:entityId/voice/confirm', (req, res) => {
+  const body = check(z.object({ assetId: z.string().uuid(), expectedVoiceId: z.string().uuid().nullable() }).strict(), req.body);
+  res.json(store.confirmVoice(req.params.entityId, body.assetId, body.expectedVoiceId));
+});
 app.put('/api/entities/:entityId/draft', (req, res) => {
   const entityId = store.entity(req.params.entityId).id;
   const body = check(z.object({ expectedUpdatedAt: z.string().nullable(), value: z.object({
@@ -115,6 +137,15 @@ app.put('/api/entities/:entityId/draft', (req, res) => {
   res.json({ updatedAt });
 });
 const upload = multer({ storage: multer.memoryStorage(), limits: { files: 16, fileSize: 25 * 1024 * 1024, fields: 0 } });
+const audioUpload = multer({ storage: multer.memoryStorage(), limits: { files: 1, fileSize: 25 * 1024 * 1024, fields: 0 } });
+app.post('/api/entities/:entityId/voice/sources', audioUpload.single('audio'), async (req, res) => {
+  const entityId = store.entity(req.params.entityId).id;
+  if (!req.file) throw new HttpError(400, '请选择一段声音音源');
+  const stage = await store.stageAudio(req.file.buffer, Buffer.from(req.file.originalname, 'latin1').toString('utf8'), entityId,
+    'voice-source', null, { source: 'audio-import', importedAt: now() });
+  try { res.status(201).json(store.transaction(() => store.registerStages([stage]))[0]); }
+  catch (error) { store.discardStage(stage); throw error; }
+});
 app.post('/api/entities/:entityId/settings', upload.array('images', 16), async (req, res) => {
   const entityId = store.entity(req.params.entityId).id;
   if (!req.files?.length) throw new HttpError(400, '请选择图片');
@@ -135,7 +166,7 @@ app.patch('/api/assets/:assetId/lock', (req, res) => {
   const asset = store.asset(req.params.assetId);
   const { locked } = check(z.object({ locked: z.boolean() }).strict(), req.body);
   if (asset.protected && !locked) throw new HttpError(409, '当前定稿来源受保护');
-  if (!['concept', 'multiview'].includes(asset.kind)) throw new HttpError(400, '只有生成历史使用锁定操作');
+  if (!['concept', 'multiview', 'voice', 'voice-source'].includes(asset.kind)) throw new HttpError(400, '只有生成历史和声音素材使用锁定操作');
   store.db.prepare('UPDATE assets SET locked=? WHERE id=?').run(locked ? 1 : 0, asset.id);
   res.json(store.asset(asset.id));
 });

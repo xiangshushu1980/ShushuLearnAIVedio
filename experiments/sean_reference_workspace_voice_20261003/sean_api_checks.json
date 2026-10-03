@@ -1,0 +1,16 @@
+{
+  "owner": "Sean",
+  "checks": [
+    {
+      "case": "unconfirmed-transcript",
+      "status": 400,
+      "body": {
+        "error": "请提供音源，并听音校对、确认准确转写"
+      }
+    }
+  ],
+  "importedSourceId": "5e0b45d8-917a-40f0-bc3e-79e66b28cf98",
+  "importedSourceDurationSec": 3.92,
+  "sourceRemovedAfterCheck": true,
+  "scope": "Import/transcript gating only; no clone generation or voice quality approval."
+}

@@ -1,0 +1,288 @@
+{
+  "owner": "Sean",
+  "data": {
+    "id": "698812b4-38b6-4c12-b91a-0877b23955f4",
+    "entityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+    "status": "succeeded",
+    "snapshot": {
+      "owner": "Sean",
+      "stage": "voice",
+      "entity": {
+        "id": "5821d6dd-2041-40a3-a789-74989c6edd90",
+        "name": "一期验收 · 四图概念探索",
+        "context": {
+          "owner": "Sean",
+          "purpose": "phase1 acceptance"
+        }
+      },
+      "model": {
+        "id": "breeze-tts-2",
+        "name": "Breeze TTS 2",
+        "version": 1,
+        "stage": "voice",
+        "adapter": "comfy",
+        "localGpu": true
+      },
+      "voiceInput": {
+        "mode": "design",
+        "language": "zh",
+        "templateId": "daily",
+        "sampleCount": 3,
+        "instruction": "成年女性，声音清晰温和，普通话自然，语速适中，正常说话，不唱歌。",
+        "referenceAssetId": null,
+        "referenceText": "",
+        "transcriptConfirmed": false,
+        "purpose": "声音阶段 PC 生成链路检查：三段系统试听台词",
+        "parameters": {
+          "seed": 42,
+          "cfgScale": 1.5
+        }
+      },
+      "parameters": {
+        "seed": 42,
+        "cfgScale": 1.5
+      },
+      "prompt": "成年女性，声音清晰温和，普通话自然，语速适中，正常说话，不唱歌。",
+      "purpose": "声音阶段 PC 生成链路检查：三段系统试听台词",
+      "mode": "design",
+      "language": "zh",
+      "samples": [
+        {
+          "label": "平静",
+          "text": "你好，很高兴见到你。我们慢慢说，不用着急。",
+          "direction": "自然、平静，像面对面聊天。",
+          "index": 0,
+          "instruction": "成年女性，声音清晰温和，普通话自然，语速适中，正常说话，不唱歌。\n自然、平静，像面对面聊天。"
+        },
+        {
+          "label": "喜悦",
+          "text": "太好了，这件事终于完成了。我想把这个好消息告诉你。",
+          "direction": "轻微喜悦，自然口语，不唱歌。",
+          "index": 1,
+          "instruction": "成年女性，声音清晰温和，普通话自然，语速适中，正常说话，不唱歌。\n轻微喜悦，自然口语，不唱歌。"
+        },
+        {
+          "label": "认真",
+          "text": "请先听我说完，这件事很重要，我们需要一起想办法。",
+          "direction": "认真坚定，吐字清楚，不喊叫。",
+          "index": 2,
+          "instruction": "成年女性，声音清晰温和，普通话自然，语速适中，正常说话，不唱歌。\n认真坚定，吐字清楚，不喊叫。"
+        }
+      ],
+      "references": [],
+      "template": {
+        "id": "breeze-reference-voice",
+        "version": 1,
+        "hash": "348c975545678f2ff7c3ba23e83cb69cb7031a3560770b094b0321a04f3dfb17"
+      }
+    },
+    "progress": 100,
+    "phase": "生成完成 · 已加入历史",
+    "promptId": "dda9827f-5108-4832-84cf-04881b38202c",
+    "error": null,
+    "createdAt": "2026-10-03T03:29:03.405Z",
+    "updatedAt": "2026-10-03T03:29:34.583Z",
+    "completedAt": "2026-10-03T03:29:34.583Z",
+    "references": [],
+    "outputs": [
+      {
+        "id": "47f47dc6-b855-4b62-82ee-fec79ace1704",
+        "entityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+        "kind": "voice",
+        "name": "声音 · 平静 698812b4 · 1",
+        "mime": "audio/wav",
+        "hash": "43745dfa3fff3df94c6b5ebacfc026973e157dc00acab34467e966129d63abc3",
+        "width": 0,
+        "height": 0,
+        "locked": true,
+        "protected": false,
+        "everConfirmed": false,
+        "description": "",
+        "descriptionSource": "empty",
+        "metadata": {
+          "source": "generation",
+          "template": {
+            "id": "breeze-reference-voice",
+            "version": 1,
+            "hash": "348c975545678f2ff7c3ba23e83cb69cb7031a3560770b094b0321a04f3dfb17"
+          },
+          "sampleIndex": 0,
+          "sampleText": "你好，很高兴见到你。我们慢慢说，不用着急。",
+          "sampleLabel": "平静",
+          "instruction": "成年女性，声音清晰温和，普通话自然，语速适中，正常说话，不唱歌。\n自然、平静，像面对面聊天。",
+          "mode": "design",
+          "outputIndex": 0,
+          "inputAssetIds": [],
+          "provider": "comfy",
+          "promptId": "dda9827f-5108-4832-84cf-04881b38202c",
+          "outputFiles": [
+            {
+              "filename": "voice_1_00001.flac",
+              "subfolder": "sean_reference_workspace/698812b4-38b6-4c12-b91a-0877b23955f4",
+              "type": "output",
+              "id": "c37c12ff-866c-4aaf-acb1-b4221a671f2d",
+              "nodeId": "12"
+            },
+            {
+              "filename": "voice_2_00001.flac",
+              "subfolder": "sean_reference_workspace/698812b4-38b6-4c12-b91a-0877b23955f4",
+              "type": "output",
+              "id": "1a38e070-7573-4e63-90bb-6eedc4dc3777",
+              "nodeId": "15"
+            },
+            {
+              "filename": "voice_3_00001.flac",
+              "subfolder": "sean_reference_workspace/698812b4-38b6-4c12-b91a-0877b23955f4",
+              "type": "output",
+              "id": "cecaf226-ddce-4904-b2f3-cb992d483f77",
+              "nodeId": "18"
+            }
+          ],
+          "owner": "Sean",
+          "durationSec": 3.92,
+          "sampleRate": 24000,
+          "channels": 1,
+          "originalHash": "01dfe870c714b0c8cf5b86cf470bf6805495759bc23073cbb88830d32ddaf64f"
+        },
+        "mediaType": "audio",
+        "durationSec": 3.92,
+        "runId": "698812b4-38b6-4c12-b91a-0877b23955f4",
+        "createdAt": "2026-10-03T03:29:34.422Z",
+        "deletedAt": null,
+        "url": "/api/assets/47f47dc6-b855-4b62-82ee-fec79ace1704/content"
+      },
+      {
+        "id": "0b94cb65-078d-449d-a611-187a8da00f33",
+        "entityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+        "kind": "voice",
+        "name": "声音 · 喜悦 698812b4 · 2",
+        "mime": "audio/wav",
+        "hash": "5b561f1c1636805d09640f71014ddbf778a62dd82a6bf9eaeaf8019b61668323",
+        "width": 0,
+        "height": 0,
+        "locked": true,
+        "protected": false,
+        "everConfirmed": false,
+        "description": "",
+        "descriptionSource": "empty",
+        "metadata": {
+          "source": "generation",
+          "template": {
+            "id": "breeze-reference-voice",
+            "version": 1,
+            "hash": "348c975545678f2ff7c3ba23e83cb69cb7031a3560770b094b0321a04f3dfb17"
+          },
+          "sampleIndex": 1,
+          "sampleText": "太好了，这件事终于完成了。我想把这个好消息告诉你。",
+          "sampleLabel": "喜悦",
+          "instruction": "成年女性，声音清晰温和，普通话自然，语速适中，正常说话，不唱歌。\n轻微喜悦，自然口语，不唱歌。",
+          "mode": "design",
+          "outputIndex": 1,
+          "inputAssetIds": [],
+          "provider": "comfy",
+          "promptId": "dda9827f-5108-4832-84cf-04881b38202c",
+          "outputFiles": [
+            {
+              "filename": "voice_1_00001.flac",
+              "subfolder": "sean_reference_workspace/698812b4-38b6-4c12-b91a-0877b23955f4",
+              "type": "output",
+              "id": "c37c12ff-866c-4aaf-acb1-b4221a671f2d",
+              "nodeId": "12"
+            },
+            {
+              "filename": "voice_2_00001.flac",
+              "subfolder": "sean_reference_workspace/698812b4-38b6-4c12-b91a-0877b23955f4",
+              "type": "output",
+              "id": "1a38e070-7573-4e63-90bb-6eedc4dc3777",
+              "nodeId": "15"
+            },
+            {
+              "filename": "voice_3_00001.flac",
+              "subfolder": "sean_reference_workspace/698812b4-38b6-4c12-b91a-0877b23955f4",
+              "type": "output",
+              "id": "cecaf226-ddce-4904-b2f3-cb992d483f77",
+              "nodeId": "18"
+            }
+          ],
+          "owner": "Sean",
+          "durationSec": 3.84,
+          "sampleRate": 24000,
+          "channels": 1,
+          "originalHash": "620a88552695fc9845e5259892fb857cf2f0d36006501b2d766be269935da8d3"
+        },
+        "mediaType": "audio",
+        "durationSec": 3.84,
+        "runId": "698812b4-38b6-4c12-b91a-0877b23955f4",
+        "createdAt": "2026-10-03T03:29:34.502Z",
+        "deletedAt": null,
+        "url": "/api/assets/0b94cb65-078d-449d-a611-187a8da00f33/content"
+      },
+      {
+        "id": "04114477-baa1-4d57-97b7-22d5ff8202ad",
+        "entityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+        "kind": "voice",
+        "name": "声音 · 认真 698812b4 · 3",
+        "mime": "audio/wav",
+        "hash": "a0b180efe85729d9577ab967c5dc01f1a1a37026a5268c361195112942217077",
+        "width": 0,
+        "height": 0,
+        "locked": true,
+        "protected": false,
+        "everConfirmed": false,
+        "description": "",
+        "descriptionSource": "empty",
+        "metadata": {
+          "source": "generation",
+          "template": {
+            "id": "breeze-reference-voice",
+            "version": 1,
+            "hash": "348c975545678f2ff7c3ba23e83cb69cb7031a3560770b094b0321a04f3dfb17"
+          },
+          "sampleIndex": 2,
+          "sampleText": "请先听我说完，这件事很重要，我们需要一起想办法。",
+          "sampleLabel": "认真",
+          "instruction": "成年女性，声音清晰温和，普通话自然，语速适中，正常说话，不唱歌。\n认真坚定，吐字清楚，不喊叫。",
+          "mode": "design",
+          "outputIndex": 2,
+          "inputAssetIds": [],
+          "provider": "comfy",
+          "promptId": "dda9827f-5108-4832-84cf-04881b38202c",
+          "outputFiles": [
+            {
+              "filename": "voice_1_00001.flac",
+              "subfolder": "sean_reference_workspace/698812b4-38b6-4c12-b91a-0877b23955f4",
+              "type": "output",
+              "id": "c37c12ff-866c-4aaf-acb1-b4221a671f2d",
+              "nodeId": "12"
+            },
+            {
+              "filename": "voice_2_00001.flac",
+              "subfolder": "sean_reference_workspace/698812b4-38b6-4c12-b91a-0877b23955f4",
+              "type": "output",
+              "id": "1a38e070-7573-4e63-90bb-6eedc4dc3777",
+              "nodeId": "15"
+            },
+            {
+              "filename": "voice_3_00001.flac",
+              "subfolder": "sean_reference_workspace/698812b4-38b6-4c12-b91a-0877b23955f4",
+              "type": "output",
+              "id": "cecaf226-ddce-4904-b2f3-cb992d483f77",
+              "nodeId": "18"
+            }
+          ],
+          "owner": "Sean",
+          "durationSec": 4.24,
+          "sampleRate": 24000,
+          "channels": 1,
+          "originalHash": "7857bcc5f81935d0386b9bdae1256df8b5ecf211b2f4f17de5197fb9ab919f2b"
+        },
+        "mediaType": "audio",
+        "durationSec": 4.24,
+        "runId": "698812b4-38b6-4c12-b91a-0877b23955f4",
+        "createdAt": "2026-10-03T03:29:34.582Z",
+        "deletedAt": null,
+        "url": "/api/assets/04114477-baa1-4d57-97b7-22d5ff8202ad/content"
+      }
+    ]
+  }
+}

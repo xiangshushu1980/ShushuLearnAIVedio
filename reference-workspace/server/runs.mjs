@@ -5,6 +5,7 @@ import { unlinkSync, existsSync } from 'node:fs';
 import { resolve, sep } from 'node:path';
 import { validateRun, workflowTemplate, buildComfyWorkflow, modelFor, multiviewPrompt } from './catalog.mjs';
 import { z } from 'zod';
+import { createVoiceSnapshot, voiceCompatible } from './voice.mjs';
 import { comfyUrl, comfyRequest, prepareComfy, submitComfy, readComfyResult, downloadComfy } from './adapters.mjs';
 import { HttpError, now } from './store.mjs';
 
@@ -54,6 +55,7 @@ export function createRunService(store) {
     const references = input.references.map(assetId => {
       const asset = store.asset(assetId);
       if (asset.entityId !== entityId) throw new HttpError(400, '引用图片不属于当前实体');
+      if (asset.mediaType !== 'image') throw new HttpError(400, '图像生成只能引用图片');
       return { id: asset.id, hash: asset.hash, kind: asset.kind, name: asset.name, runId: asset.runId, createdAt: asset.createdAt };
     });
     const { endpoint, ...modelSnapshot } = model;
@@ -84,11 +86,20 @@ export function createRunService(store) {
   async function saveOutputs(run, buffers, outputContext) {
     const stages = [];
     try {
-      const kind = run.snapshot.stage === 'multiview' ? 'multiview' : 'concept';
+      const kind = run.snapshot.stage === 'voice' ? 'voice' : run.snapshot.stage === 'multiview' ? 'multiview' : 'concept';
       const label = kind === 'concept' ? '概念图' : { three: '三视图', four: '表情＋正侧背', 'face-front-back-side': '脸部＋正背侧' }[run.snapshot.layout];
-      for (let i = 0; i < buffers.length; i++) stages.push(await store.stageImage(buffers[i], `${label} ${run.id.slice(0, 8)} · ${i + 1}`,
-        run.entityId, kind, run.id, { source: 'generation', template: run.snapshot.template, ...(run.snapshot.appearance ? { appearance: run.snapshot.appearance, layout: run.snapshot.layout } : {}),
-          outputIndex: i, inputAssetIds: run.snapshot.references.map(r => r.id), ...outputContext }));
+      if (kind === 'voice' && buffers.length !== run.snapshot.samples.length) throw new Error('生成样音数量与试听模板不一致');
+      for (let i = 0; i < buffers.length; i++) {
+        const sampleIndex = kind === 'voice' ? (Number(outputContext.outputFiles[i].nodeId) - 12) / 3 : i;
+        const sample = kind === 'voice' ? run.snapshot.samples[sampleIndex] : null;
+        if (kind === 'voice' && !sample) throw new Error('无法确定样音对应的试听台词');
+        stages.push(await (kind === 'voice' ? store.stageAudio : store.stageImage)(buffers[i],
+          `${sample ? `声音 · ${sample.label}` : label} ${run.id.slice(0, 8)} · ${i + 1}`,
+          run.entityId, kind, run.id, { source: 'generation', template: run.snapshot.template,
+            ...(sample ? { sampleIndex, sampleText: sample.text, sampleLabel: sample.label, instruction: sample.instruction, mode: run.snapshot.mode } : {}),
+            ...(run.snapshot.appearance ? { appearance: run.snapshot.appearance, layout: run.snapshot.layout } : {}),
+            outputIndex: i, inputAssetIds: run.snapshot.references.map(r => r.id), ...outputContext }));
+      }
       store.transaction(() => {
         store.registerStages(stages);
         store.updateRun(run.id, { status: 'succeeded', progress: 100, phase: '生成完成 · 已加入历史', error: null, completed_at: now() });
@@ -109,6 +120,7 @@ export function createRunService(store) {
     try {
       let run = store.run(runId);
       if (ended(run)) return;
+      const mediaType = run.snapshot.stage === 'voice' ? 'audio' : 'image';
       const executionRow = store.db.prepare('SELECT execution FROM runs WHERE id=?').get(runId);
       let execution = executionRow.execution ? JSON.parse(executionRow.execution) : null;
       if (recovery && !run.promptId) {
@@ -122,7 +134,7 @@ export function createRunService(store) {
       }
       let recoveredResult = null;
       if (recovery && run.promptId) {
-        try { recoveredResult = await readComfyResult(run.promptId); }
+        try { recoveredResult = await readComfyResult(run.promptId, mediaType); }
         catch (error) { if (!/fetch failed|timeout|ECONNREFUSED/i.test(error.message)) throw error; }
       }
       // A completed job needs file recovery only; another worker's GPU lease cannot block it.
@@ -152,7 +164,7 @@ export function createRunService(store) {
         } catch { /* a resource-center outage cannot block CPU-only file recovery */ }
       }
       if (!run.promptId) {
-        store.updateRun(runId, { phase: '准备所选引用图片' });
+        store.updateRun(runId, { phase: mediaType === 'audio' ? '准备声音输入与试听模板' : '准备所选引用图片' });
         execution = await prepareComfy(store, run);
         store.updateRun(runId, { execution: JSON.stringify(execution), phase: '提交到 ComfyUI' });
         let response;
@@ -169,7 +181,7 @@ export function createRunService(store) {
       let missing = 0;
       while (!ended(store.run(runId))) {
         let result;
-        try { result = recoveredResult || await readComfyResult(run.promptId); recoveredResult = null; }
+        try { result = recoveredResult || await readComfyResult(run.promptId, mediaType); recoveredResult = null; }
         catch (error) {
           if (/fetch failed|timeout|ECONNREFUSED/i.test(error.message)) {
             store.updateRun(runId, { phase: '连接中断 · 正在恢复连接' });
@@ -227,6 +239,8 @@ export function createRunService(store) {
   return {
     restore(runId) {
       const run = store.run(runId), source = run.snapshot;
+      if (source.stage === 'voice') return { input: { ...source.voiceInput, sourceRunId: run.id }, workflow: recordedWorkflow(run),
+        compatible: voiceCompatible(source), reason: voiceCompatible(source) ? null : '历史声音配置已变化，请检查后改用当前工作流' };
       const input = { modelId: source.model.id, styleId: source.style.id, prompt: source.prompt, purpose: source.purpose,
         references: source.references.map(asset => asset.id), parameters: source.parameters, sourceRunId: run.id,
         ...(source.appearance ? { appearanceId: source.appearance.id, notes: source.notes || '' } : {}) };
@@ -240,6 +254,11 @@ export function createRunService(store) {
     },
     start(entityId, body, key) {
       const saved = store.createRun(entityId, snapshot(entityId, body), key);
+      if (saved.created) void execute(saved.run.id);
+      return saved.run;
+    },
+    startVoice(entityId, body, key) {
+      const saved = store.createRun(entityId, createVoiceSnapshot(store, entityId, body), key);
       if (saved.created) void execute(saved.run.id);
       return saved.run;
     },
@@ -262,6 +281,13 @@ export function createRunService(store) {
     retry(runId, key) {
       const run = store.run(runId);
       if (!['failed', 'cancelled'].includes(run.status)) throw new HttpError(409, '只有失败或取消的运行可以重试');
+      if (run.snapshot.stage === 'voice') {
+        if (!voiceCompatible(run.snapshot)) throw new HttpError(409, '声音配置已变化，请检查后创建新运行');
+        createVoiceSnapshot(store, run.entityId, { ...run.snapshot.voiceInput, sourceRunId: run.id });
+        const saved = store.createRun(run.entityId, run.snapshot, key);
+        if (saved.created) void execute(saved.run.id);
+        return saved.run;
+      }
       // Validate against the current capability catalog; never silently reuse a changed template.
       const validated = snapshot(run.entityId, { modelId: run.snapshot.model.id, styleId: run.snapshot.style.id,
         prompt: run.snapshot.prompt, purpose: run.snapshot.purpose, references: run.snapshot.references.map(a => a.id), parameters: run.snapshot.parameters,
@@ -280,7 +306,7 @@ export function createRunService(store) {
       const queue = await comfyRequest('/queue');
       if (!queue.queue_pending.some(item => item[1] === run.promptId)) throw new HttpError(409, '运行已经开始，不能使用共享实例的全局中断');
       await comfyRequest('/queue', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ delete: [run.promptId] }) });
-      const after = await readComfyResult(run.promptId);
+      const after = await readComfyResult(run.promptId, run.snapshot.stage === 'voice' ? 'audio' : 'image');
       if (after.state !== 'unknown' || ended(store.run(runId))) throw new HttpError(409, '运行状态已改变，请刷新后查看结果');
       store.updateRun(runId, { status: 'cancelled', phase: '已取消排队', completed_at: now() });
     },

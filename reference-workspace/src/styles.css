@@ -782,3 +782,16 @@
   .history-thumbnail { width: 72px; height: 54px; }
   .history-load .run-heading { gap: 6px; }
 }
+.voice-current,.voice-reference { padding: 20px; background: #181d2b; border: 1px solid #323b50; border-radius: 12px; margin-bottom: 20px; }
+.voice-current { border-color: #536a9f; }
+.audio-clip { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin: 14px 0; }
+.audio-clip audio { width: min(100%, 420px); height: 42px; }
+.audio-clip a { color: #a5bfff; }
+.voice-candidates { display: grid; gap: 16px; }
+.voice-candidate { border: 1px solid #343d53; padding: 18px; border-radius: 12px; margin-bottom: 12px; }
+.voice-candidate.confirmed { border-color: #748edf; }
+.voice-scripts { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 14px; margin: 18px 0; }
+.voice-scripts > div { padding: 14px; background: #191f2d; border: 1px solid #30394b; border-radius: 10px; }
+.voice-scripts p { margin-bottom: 0; }
+.transcript-confirm { display: flex; align-items: center; gap: 9px; margin-top: 12px; }
+.transcript-confirm input { width: auto; }

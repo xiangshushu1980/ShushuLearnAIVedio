@@ -1,0 +1,29 @@
+{
+  "owner": "Sean",
+  "voiceState": {
+    "current": null,
+    "history": [],
+    "updatedAt": null
+  },
+  "voiceDraft": {
+    "value": {
+      "mode": "design",
+      "language": "zh",
+      "templateId": "daily",
+      "sampleCount": 3,
+      "instruction": "成年女性，声音清晰温和，普通话自然，语速适中，正常说话，不唱歌。",
+      "referenceAssetId": null,
+      "referenceText": "",
+      "transcriptConfirmed": false,
+      "purpose": "声音阶段 PC 生成链路检查：三段系统试听台词",
+      "parameters": {
+        "seed": 42,
+        "cfgScale": 1.5
+      },
+      "sourceRunId": "698812b4-38b6-4c12-b91a-0877b23955f4"
+    },
+    "updatedAt": "2026-10-03T03:34:08.758Z"
+  },
+  "visualAppearanceId": "4e1b9ef4-326f-40cb-be07-4b974f4a8129",
+  "visualViewId": "432cfa98-83f2-416e-b600-01090075fb73"
+}

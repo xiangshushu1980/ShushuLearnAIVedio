@@ -3,6 +3,7 @@ import { readFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { z } from 'zod';
 import { HttpError } from './store.mjs';
+import { voiceCatalog, buildVoiceWorkflow } from './voice.mjs';
 
 const profiles = JSON.parse(readFileSync(new URL('../catalog/profiles.json', import.meta.url)));
 const size = { type: 'select', label: '画幅', default: '1536x1024', options: [
@@ -37,6 +38,7 @@ const models = [
 ];
 
 export const catalog = {
+  voice: voiceCatalog,
   models: models.map(({ endpoint, ...model }) => model), styles: profiles.styles,
   multiview: multiviewModels.map(model => ({ ...model, prompt: workflowTemplate(model.id).layoutPrompts[model.layout],
     promptsByStyle: Object.fromEntries(profiles.styles.map(style => [style.id, multiviewPrompt(model.id, style.id)])) }))
@@ -96,6 +98,7 @@ export function workflowTemplate(modelId) {
 }
 
 export function buildComfyWorkflow(snapshot, uploadedNames, runId) {
+  if (snapshot.stage === 'voice') return buildVoiceWorkflow(snapshot, uploadedNames, runId);
   const [width, height] = snapshot.parameters.size.split('x').map(Number);
   const template = workflowTemplate(snapshot.model.id);
   if (snapshot.template.hash && snapshot.template.hash !== template.hash) throw new HttpError(409, '模板内容已变化，请检查配置后新建运行');

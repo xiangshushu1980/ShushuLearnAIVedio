@@ -1,0 +1,151 @@
+{
+  "owner": "Sean",
+  "data": {
+    "1": {
+      "class_type": "BreezeTTS2LoadModel",
+      "inputs": {
+        "model": "bf16 (best quality)",
+        "dtype": "auto",
+        "device": "cuda",
+        "attention": "sdpa",
+        "decode_mode": "cuda_graphs",
+        "download_if_missing": false
+      }
+    },
+    "10": {
+      "class_type": "BreezeTTS2Speaker",
+      "inputs": {
+        "name": "SeanReference",
+        "audio": "none",
+        "reference_text": "",
+        "auto_transcribe_if_empty": false,
+        "instruction": "成年女性，声音清晰温和，普通话自然，语速适中，正常说话，不唱歌。\n自然、平静，像面对面聊天。",
+        "cfg_scale": 1.5
+      }
+    },
+    "11": {
+      "class_type": "BreezeTTS2MultiSpeaker",
+      "inputs": {
+        "pause_between_speakers": 0.3,
+        "max_new_tokens": 384,
+        "temperature": 0.9,
+        "top_k": 50,
+        "top_p": 1,
+        "repetition_penalty": 1.1,
+        "depth_temperature": 0.9,
+        "depth_top_k": 50,
+        "depth_top_p": 1,
+        "breeze_model": [
+          "1",
+          0
+        ],
+        "speaker_1": [
+          "10",
+          0
+        ],
+        "text": "[{\"speaker\":\"SeanReference\",\"text\":\"你好，很高兴见到你。我们慢慢说，不用着急。\"}]",
+        "seed": 42
+      }
+    },
+    "12": {
+      "class_type": "SaveAudio",
+      "inputs": {
+        "audio": [
+          "11",
+          0
+        ],
+        "filename_prefix": "sean_reference_workspace/698812b4-38b6-4c12-b91a-0877b23955f4/voice_1"
+      }
+    },
+    "13": {
+      "class_type": "BreezeTTS2Speaker",
+      "inputs": {
+        "name": "SeanReference",
+        "audio": "none",
+        "reference_text": "",
+        "auto_transcribe_if_empty": false,
+        "instruction": "成年女性，声音清晰温和，普通话自然，语速适中，正常说话，不唱歌。\n轻微喜悦，自然口语，不唱歌。",
+        "cfg_scale": 1.5
+      }
+    },
+    "14": {
+      "class_type": "BreezeTTS2MultiSpeaker",
+      "inputs": {
+        "pause_between_speakers": 0.3,
+        "max_new_tokens": 384,
+        "temperature": 0.9,
+        "top_k": 50,
+        "top_p": 1,
+        "repetition_penalty": 1.1,
+        "depth_temperature": 0.9,
+        "depth_top_k": 50,
+        "depth_top_p": 1,
+        "breeze_model": [
+          "1",
+          0
+        ],
+        "speaker_1": [
+          "13",
+          0
+        ],
+        "text": "[{\"speaker\":\"SeanReference\",\"text\":\"太好了，这件事终于完成了。我想把这个好消息告诉你。\"}]",
+        "seed": 42
+      }
+    },
+    "15": {
+      "class_type": "SaveAudio",
+      "inputs": {
+        "audio": [
+          "14",
+          0
+        ],
+        "filename_prefix": "sean_reference_workspace/698812b4-38b6-4c12-b91a-0877b23955f4/voice_2"
+      }
+    },
+    "16": {
+      "class_type": "BreezeTTS2Speaker",
+      "inputs": {
+        "name": "SeanReference",
+        "audio": "none",
+        "reference_text": "",
+        "auto_transcribe_if_empty": false,
+        "instruction": "成年女性，声音清晰温和，普通话自然，语速适中，正常说话，不唱歌。\n认真坚定，吐字清楚，不喊叫。",
+        "cfg_scale": 1.5
+      }
+    },
+    "17": {
+      "class_type": "BreezeTTS2MultiSpeaker",
+      "inputs": {
+        "pause_between_speakers": 0.3,
+        "max_new_tokens": 384,
+        "temperature": 0.9,
+        "top_k": 50,
+        "top_p": 1,
+        "repetition_penalty": 1.1,
+        "depth_temperature": 0.9,
+        "depth_top_k": 50,
+        "depth_top_p": 1,
+        "breeze_model": [
+          "1",
+          0
+        ],
+        "speaker_1": [
+          "16",
+          0
+        ],
+        "text": "[{\"speaker\":\"SeanReference\",\"text\":\"请先听我说完，这件事很重要，我们需要一起想办法。\"}]",
+        "seed": 42
+      }
+    },
+    "18": {
+      "class_type": "SaveAudio",
+      "inputs": {
+        "audio": [
+          "17",
+          0
+        ],
+        "filename_prefix": "sean_reference_workspace/698812b4-38b6-4c12-b91a-0877b23955f4/voice_3"
+      }
+    }
+  }
+}

@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import './styles.css';
 import { AppearancePanel, MultiViewPanel } from './VisualPanels.jsx';
+import { VoicePanel } from './VoicePanel.jsx';
 
 async function api(path, options = {}) {
   const response = await fetch(`/api${path}`, { ...options,
@@ -46,14 +47,14 @@ function App() {
   const [message, setMessage] = useState(null), [busy, setBusy] = useState(''), [pending, setPending] = useState([]);
   const [importIds, setImportIds] = useState([]), [status, setStatus] = useState(null);
   const [picker, setPicker] = useState(null), [lightbox, setLightbox] = useState(null), [restored, setRestored] = useState(null);
-  const [mvDirty, setMvDirty] = useState(false);
+  const [mvDirty, setMvDirty] = useState(false), [voiceDirty, setVoiceDirty] = useState(false);
   const [glow, setGlow] = useState(''), [muted, setMuted] = useState(localStorage.getItem('reference-muted') === '1');
   const fileInput = useRef(null), knownRuns = useRef(new Map()), audio = useRef(null), generationRequest = useRef(null);
   const currentEntity = useRef(entityId), pendingRef = useRef([]);
   const dirty = draft && JSON.stringify(draft) !== savedValue;
   const model = catalog?.models.find(m => m.id === draft?.modelId);
   const assets = workspace?.assets || [], allRuns = workspace?.runs || [];
-  const runs = allRuns.filter(run => run.snapshot.stage !== 'multiview');
+  const runs = allRuns.filter(run => !['multiview', 'voice'].includes(run.snapshot.stage));
   const activeRun = allRuns.find(r => !terminal(r.status));
   const selected = draft?.references || [];
   const visibleConcepts = assets.filter(a => a.kind === 'concept');
@@ -218,7 +219,7 @@ function App() {
     finally { setBusy(''); }
   }
   function switchEntity(value) {
-    if ((dirty || mvDirty || pending.length) && !confirm('有未保存输入或未导入图片，仍要切换实体？')) return;
+    if ((dirty || mvDirty || voiceDirty || pending.length) && !confirm('有未保存输入或未导入图片，仍要切换实体？')) return;
     pendingRef.current.forEach(p => URL.revokeObjectURL(p.url)); pendingRef.current = [];
     setPending([]); setImportIds([]); setEntityId(value); generationRequest.current = null;
   }
@@ -254,18 +255,19 @@ function App() {
       <div className="header-actions"><button className="quiet" onClick={() => { setMuted(!muted); localStorage.setItem('reference-muted', muted ? '0' : '1'); }}>{muted ? '提示音已关闭' : '提示音已开启'}</button>
         <span className={`connection ${status?.connected ? 'online' : ''}`}>{status?.connected ? `ComfyUI 已连接${status.running || status.queued ? ' · 共享队列忙碌' : ''}` : 'ComfyUI 未连接'}</span></div>
     </header>
-    <main className="workspace"><div className="breadcrumb">参考实体 / <select aria-label="选择实体" value={entityId} onChange={e => switchEntity(e.target.value)} disabled={!!busy}>{entities.map(e => <option key={e.id} value={e.id}>{e.name}</option>)}</select> / 创建与编辑 / {{ settings: '设定图片', concept: '概念图', appearance: '主形象', views: '多视图' }[tab]}</div>
-      <div className="page-title"><div><h1>{workspace.entity.name} <span>· 参考资料创作</span></h1><p>从设定资料出发，选定形象，生成多视图。</p></div><span className="save-state">{tab === 'views' ? mvDirty ? '多视图输入有未保存修改' : workspace.multiviewDraft?.updatedAt ? `输入已保存 · ${time(workspace.multiviewDraft.updatedAt)}` : '准备本轮多视图' : tab === 'appearance' ? '选定后作为多视图输入' : dirty ? '本轮输入有未保存修改' : draftAt ? `输入已保存 · ${time(draftAt)}` : '请选择图片或准备本轮输入'}</span></div>
-      <div className="workspace-layout"><aside className="steps-panel panel"><h2>创作步骤</h2><p className="muted">当前阶段 · {{ settings: '设定图片', concept: '概念图', appearance: '选定主形象', views: '多视图' }[tab]}</p>
+    <main className="workspace"><div className="breadcrumb">参考实体 / <select aria-label="选择实体" value={entityId} onChange={e => switchEntity(e.target.value)} disabled={!!busy}>{entities.map(e => <option key={e.id} value={e.id}>{e.name}</option>)}</select> / 创建与编辑 / {{ settings: '设定图片', concept: '概念图', appearance: '主形象', views: '多视图', voice: '声音' }[tab]}</div>
+      <div className="page-title"><div><h1>{workspace.entity.name} <span>· 参考资料创作</span></h1><p>从设定资料出发，选定形象与声音，生成多视图。</p></div><span className="save-state">{tab === 'voice' ? voiceDirty ? '声音输入有未保存修改' : workspace.voiceDraft?.updatedAt ? `声音输入已保存 · ${time(workspace.voiceDraft.updatedAt)}` : '准备本轮声音' : tab === 'views' ? mvDirty ? '多视图输入有未保存修改' : workspace.multiviewDraft?.updatedAt ? `输入已保存 · ${time(workspace.multiviewDraft.updatedAt)}` : '准备本轮多视图' : tab === 'appearance' ? '选定后作为多视图输入' : dirty ? '本轮输入有未保存修改' : draftAt ? `输入已保存 · ${time(draftAt)}` : '请选择图片或准备本轮输入'}</span></div>
+      <div className="workspace-layout"><aside className="steps-panel panel"><h2>创作步骤</h2><p className="muted">当前阶段 · {{ settings: '设定图片', concept: '概念图', appearance: '选定主形象', views: '多视图', voice: '声音' }[tab]}</p>
         <button className={`step ${tab === 'settings' ? 'current' : ''}`} onClick={() => setTab('settings')}><span className="step-index">1</span><span><b>设定图片</b><small>{settings.length ? `已导入 ${settings.length} 张图片` : '选择已有图片'}</small></span></button>
-        <button className={`step ${tab === 'concept' ? 'current' : ''}`} onClick={() => setTab('concept')}><span className="step-index">2</span><span><b>概念图</b><small>{activeRun && activeRun.snapshot.stage !== 'multiview' ? activeRun.phase : visibleConcepts.length ? `${visibleConcepts.length} 张试验结果` : '引用图片，探索形象'}</small></span></button>
+        <button className={`step ${tab === 'concept' ? 'current' : ''}`} onClick={() => setTab('concept')}><span className="step-index">2</span><span><b>概念图</b><small>{activeRun && !['multiview', 'voice'].includes(activeRun.snapshot.stage) ? activeRun.phase : visibleConcepts.length ? `${visibleConcepts.length} 张试验结果` : '引用图片，探索形象'}</small></span></button>
         <button className={`step ${tab === 'appearance' ? 'current' : ''}`} onClick={() => setTab('appearance')}><span className="step-index">3</span><span><b>主形象</b><small>{workspace.visualState?.appearance ? `已选定 · 版本 ${workspace.visualState.appearance.version}` : '从概念图中选定'}</small></span></button>
         <button className={`step ${tab === 'views' ? 'current' : ''}`} onClick={() => setTab('views')}><span className="step-index">4</span><span><b>三视图／四视图</b><small>{activeRun?.snapshot.stage === 'multiview' ? activeRun.phase : workspace.visualState?.appearance ? '以主形象生成' : '等待选定主形象'}</small></span></button>
-        <div className="step unavailable"><span className="step-index">5</span><span><b>声音</b><small>后续阶段</small></span></div>
-        <div className="step-note">{tab === 'settings' ? <>设定图片仅负责导入。<br/>图片生成在概念图中进行。</> : tab === 'views' ? <>多视图引用已选定主形象。<br/>每轮保留输入版本与历史。</> : tab === 'appearance' ? <>选定主形象后开始多视图。<br/>旧版本与来源会保留。</> : <>历史结果可直接用于下一轮。<br/>未选图片不参与生成。</>}</div>
+        <button className={`step ${tab === 'voice' ? 'current' : ''}`} onClick={() => setTab('voice')}><span className="step-index">5</span><span><b>声音</b><small>{activeRun?.snapshot.stage === 'voice' ? activeRun.phase : workspace.voiceState?.current ? `已选定 · 版本 ${workspace.voiceState.current.version}` : '独立生成并试听'}</small></span></button>
+        <div className="step-note">{tab === 'voice' ? <>声音可独立于视觉流程开始。<br/>试听后选定当前声音。</> : tab === 'settings' ? <>设定图片仅负责导入。<br/>图片生成在概念图中进行。</> : tab === 'views' ? <>多视图引用已选定主形象。<br/>每轮保留输入版本与历史。</> : tab === 'appearance' ? <>选定主形象后开始多视图。<br/>旧版本与来源会保留。</> : <>历史结果可直接用于下一轮。<br/>未选图片不参与生成。</>}</div>
       </aside><section className="main-panel panel">
         {message && <div role={message.error ? 'alert' : 'status'} className={`notice ${message.error ? 'error' : ''}`}><span>{message.text}</span><button className="quiet" onClick={() => setMessage(null)} aria-label="关闭提示">×</button></div>}
         <div hidden={tab !== 'views'}><MultiViewPanel workspace={workspace} catalog={catalog} Picture={Picture} api={api} refresh={refresh} notify={notify} onPreview={setLightbox} onAppearance={() => setTab('appearance')} activeRun={activeRun} onGenerate={enableAudio} onDirtyChange={setMvDirty} onDelete={removeAsset} /></div>
+        <div hidden={tab !== 'voice'}><VoicePanel workspace={workspace} catalog={catalog} api={api} refresh={refresh} notify={notify} activeRun={activeRun} onGenerate={enableAudio} onDirtyChange={setVoiceDirty} /></div>
         {tab === 'settings' ? <>
           <div className="section-head"><div><h2>设定图片</h2><p>从当前目录选择图片，可一次多选。</p></div><button className="primary" onClick={() => fileInput.current.click()} disabled={!!busy}>＋ 选择图片</button></div>
           <input ref={fileInput} type="file" accept="image/png,image/jpeg,image/webp" multiple hidden onChange={e => { pickFiles(e.target.files); e.target.value = ''; }} />
@@ -277,7 +279,7 @@ function App() {
           {settings.length ? <div className="picture-grid">{settings.map(asset => <Picture key={asset.id} asset={asset} actionLabel="放大" onClick={() => setLightbox(asset)}>
             <div className="card-actions"><button className="quiet danger" onClick={() => removeAsset(asset)} disabled={!!busy}>删除</button></div>
           </Picture>)}</div> : <div className="empty"><span className="empty-icon">▧</span><h3>从一张设定图片开始</h3><p>选择人物、服装、物品或环境图片，供概念探索时引用。</p><button onClick={() => fileInput.current.click()}>选择图片</button></div>}
-        </> : tab === 'appearance' ? <AppearancePanel workspace={workspace} Picture={Picture} onPreview={setLightbox} onConfirm={confirmMain} busy={busy} onViews={() => setTab('views')} /> : tab === 'views' ? null : <>
+        </> : tab === 'appearance' ? <AppearancePanel workspace={workspace} Picture={Picture} onPreview={setLightbox} onConfirm={confirmMain} busy={busy} onViews={() => setTab('views')} /> : ['views', 'voice'].includes(tab) ? null : <>
           <div className="section-head"><div><h2>概念图试验区</h2><p>选取引用图片，调整提示词与风格，逐轮探索形象。</p></div><span className="pill">{activeRun ? `${activeRun.phase}${activeRun.progress != null ? ` · ${Math.round(activeRun.progress)}%` : ''}` : `${visibleConcepts.length} 张历史结果`}</span></div>
           <section className="current-references"><div className="section-head"><div><h3>本轮引用 <span className="accent">{selected.length} 张</span></h3><p>所有引用同等地位；Image 编号只表示输入顺序。</p></div><button onClick={() => setPicker([...selected])} disabled={!!busy}>＋ 添加引用</button></div>
             {selected.length ? <div className="reference-grid current-reference-grid">{selected.map((assetId, index) => {

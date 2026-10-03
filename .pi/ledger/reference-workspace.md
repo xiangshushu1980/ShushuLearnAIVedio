@@ -22,3 +22,9 @@
 - 接入用户提供的 V3 Simple 本地 int8 静态 API 图，1536×1024、25 步、CFG1、Euler/simple、seed6200605。三视图只保留正侧背；四视图按用户确认保留四特写表情栏。没有新增模型或依赖。
 - 一个角色、每布局一次：三视图 run `d2fde352`、四视图 run `3547aa4f` 均成功。PC 页面选主形象、两轮触发／回收／确认、独立草稿重载、历史载入通过；7 类错误请求被拒绝，最终 console 无错误、GPU leases 为空。
 - 质量限制：四视图布局完整，但没有严格输出喜悦表情；没有用户质量验收、H3 下游验证或 canonical 晋升。证据：`experiments/sean_reference_workspace_phase2_20261003/manifest.json`、`QC.md`。操作权威仍为 README。
+
+## C-20261003-03 | Breeze 声音工作台接入
+
+- Owner: Sean。当前操作基线见 `reference-workspace/README.md` 声音节，模板 `catalog/breeze-voice.v1.json`。
+- 本机 Breeze ComfyUI BF16/CUDA/SDPA/cuda_graphs，经工作台实际生成并回收中文三段系统试听，24kHz 单声道 WAV，3.92/3.84/4.24 秒；端到端约31秒，仅此短样例，不作为性能基线。
+- 证据：`experiments/sean_reference_workspace_voice_20261003/manifest.json`、`QC.md`。PC播放器、音源导入/转写确认、历史/草稿恢复可用；没有人工声音质量验收，真实录音克隆及英文生成待实跑，样例保持未定稿。

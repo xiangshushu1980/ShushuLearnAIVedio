@@ -1,0 +1,213 @@
+{
+  "owner": "Sean",
+  "id": "breeze-reference-voice",
+  "version": 1,
+  "model": {
+    "id": "breeze-tts-2",
+    "name": "Breeze TTS 2",
+    "version": 1,
+    "stage": "voice",
+    "adapter": "comfy",
+    "localGpu": true
+  },
+  "modes": [
+    {
+      "id": "design",
+      "name": "文字设计声音"
+    },
+    {
+      "id": "reference",
+      "name": "音源克隆／声音引导"
+    }
+  ],
+  "languages": [
+    {
+      "id": "zh",
+      "name": "中文"
+    },
+    {
+      "id": "en",
+      "name": "English"
+    }
+  ],
+  "defaults": {
+    "mode": "design",
+    "language": "zh",
+    "templateId": "daily",
+    "sampleCount": 3,
+    "instruction": "",
+    "referenceAssetId": null,
+    "referenceText": "",
+    "transcriptConfirmed": false,
+    "purpose": "",
+    "parameters": {
+      "seed": 42,
+      "cfgScale": 1.5
+    }
+  },
+  "fields": {
+    "seed": {
+      "label": "随机种子",
+      "min": 1,
+      "max": 2147483647,
+      "step": 1,
+      "default": 42
+    },
+    "cfgScale": {
+      "label": "提示词影响",
+      "min": 0.1,
+      "max": 6,
+      "step": 0.1,
+      "default": 1.5
+    }
+  },
+  "templates": [
+    {
+      "id": "daily",
+      "name": "日常交流",
+      "version": 1,
+      "languages": {
+        "zh": [
+          {
+            "label": "平静",
+            "text": "你好，很高兴见到你。我们慢慢说，不用着急。",
+            "direction": "自然、平静，像面对面聊天。"
+          },
+          {
+            "label": "喜悦",
+            "text": "太好了，这件事终于完成了。我想把这个好消息告诉你。",
+            "direction": "轻微喜悦，自然口语，不唱歌。"
+          },
+          {
+            "label": "认真",
+            "text": "请先听我说完，这件事很重要，我们需要一起想办法。",
+            "direction": "认真坚定，吐字清楚，不喊叫。"
+          }
+        ],
+        "en": [
+          {
+            "label": "Calm",
+            "text": "Hello. It is good to see you. Take your time, there is no rush.",
+            "direction": "Speak naturally and calmly, like a face-to-face conversation."
+          },
+          {
+            "label": "Happy",
+            "text": "That is wonderful. We finally finished it, and I wanted to share the good news.",
+            "direction": "Gently cheerful natural speech. Do not sing."
+          },
+          {
+            "label": "Serious",
+            "text": "Please hear me out. This matters, and we need to find a way forward together.",
+            "direction": "Serious and clear, without shouting."
+          }
+        ]
+      }
+    },
+    {
+      "id": "drama",
+      "name": "剧情对白",
+      "version": 1,
+      "languages": {
+        "zh": [
+          {
+            "label": "平静",
+            "text": "你终于回来了。我一直在这里等你。",
+            "direction": "平静克制，像自然的剧情对白。"
+          },
+          {
+            "label": "坚定",
+            "text": "我已经想好了。无论发生什么，我都会走下去。",
+            "direction": "坚定但不过分激动，不喊叫。"
+          },
+          {
+            "label": "低落",
+            "text": "我明白你的意思，只是还有些话，不知道该怎么说。",
+            "direction": "轻微失落，低声但吐字清楚。"
+          }
+        ],
+        "en": [
+          {
+            "label": "Calm",
+            "text": "You are finally back. I have been waiting here for you.",
+            "direction": "Calm, restrained, natural dialogue."
+          },
+          {
+            "label": "Determined",
+            "text": "I have made up my mind. Whatever happens, I will keep going.",
+            "direction": "Firm and determined, without shouting."
+          },
+          {
+            "label": "Sad",
+            "text": "I understand what you mean. There are still things I do not know how to say.",
+            "direction": "Gently sad, quiet but clear speech."
+          }
+        ]
+      }
+    },
+    {
+      "id": "narration",
+      "name": "解说旁白",
+      "version": 1,
+      "languages": {
+        "zh": [
+          {
+            "label": "讲述",
+            "text": "清晨的光照进房间，新的一天从这里开始。",
+            "direction": "自然的旁白，语速适中。"
+          },
+          {
+            "label": "说明",
+            "text": "接下来，我们会用三个简单的步骤，说明这个过程。",
+            "direction": "清楚易懂的说明，不夸张。"
+          },
+          {
+            "label": "收束",
+            "text": "感谢你听到这里，我们下次再见。",
+            "direction": "温和自然地结束，保留完整句尾。"
+          }
+        ],
+        "en": [
+          {
+            "label": "Narration",
+            "text": "Morning light fills the room. A new day begins here.",
+            "direction": "Natural narration at a moderate pace."
+          },
+          {
+            "label": "Explanation",
+            "text": "Next, we will explain this process in three simple steps.",
+            "direction": "Clear, accessible explanation without exaggeration."
+          },
+          {
+            "label": "Closing",
+            "text": "Thank you for listening. I look forward to seeing you next time.",
+            "direction": "Warm natural closing. Finish the last word clearly."
+          }
+        ]
+      }
+    }
+  ],
+  "graph": {
+    "loader": {
+      "class_type": "BreezeTTS2LoadModel",
+      "inputs": {
+        "model": "bf16 (best quality)",
+        "dtype": "auto",
+        "device": "cuda",
+        "attention": "sdpa",
+        "decode_mode": "cuda_graphs",
+        "download_if_missing": false
+      }
+    },
+    "controls": {
+      "pause_between_speakers": 0.3,
+      "max_new_tokens": 384,
+      "temperature": 0.9,
+      "top_k": 50,
+      "top_p": 1.0,
+      "repetition_penalty": 1.1,
+      "depth_temperature": 0.9,
+      "depth_top_k": 50,
+      "depth_top_p": 1.0
+    }
+  }
+}

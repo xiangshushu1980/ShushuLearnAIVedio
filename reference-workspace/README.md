@@ -1,8 +1,8 @@
-# Reference 工作台 · 概念图与多视图
+# Reference 工作台 · 图片与声音
 
 Owner: Sean。独立 React + Vite 8 应用，自己的 Node API、SQLite 数据库与图片存储。
 
-一期**设定图片**和**概念图**已获用户验收；二期实现**主形象选择**和**三／四视图**。产品依据是[设计交接](../.pi/tasks/remote-3d1bfef4-93c7-4b19-93e8-1090a7405e04/handoff.md)和[已确认设计说明](../docs/design/sean_h3_reference_workspace_design_v1.md)；部署边界见[架构](../docs/49_h3_reference_workspace_architecture.md)。声音和实体管理界面留后续。
+一期**设定图片**和**概念图**已获用户验收；二期实现**主形象选择**和**三／四视图**；三期接入**声音生成、试听与定稿**。产品依据是[设计交接](../.pi/tasks/remote-3d1bfef4-93c7-4b19-93e8-1090a7405e04/handoff.md)和[已确认设计说明](../docs/design/sean_h3_reference_workspace_design_v1.md)；部署边界见[架构](../docs/49_h3_reference_workspace_architecture.md)。实体管理界面留后续。
 
 2026-10-03 用户确认先跑通 PC 网页；当前验收与后续迭代仅针对 PC，手机端适配和检查暂缓。
 
@@ -91,6 +91,25 @@ Krea 2 文本与 Edit 作为备选工作流保留，能力上限分别是 0 张�
 
 ## 运行恢复与接口
 
+### 声音生成与试听
+
+声音可独立于主形象与多视图开始；共享 GPU 同时只执行受租约保护的生成。使用当前已安装的 Breeze TTS 2 ComfyUI 节点，沿用[本机标准流程](../docs/breeze-tts-standard.md)：BF16、CUDA、SDPA、cuda_graphs。模板 `catalog/breeze-voice.v1.json` 固定模型、采样设置、中文／英文试听台词及情绪引导，不自动下载模型。
+
+| 输入方式 | 必需输入 |
+| --- | --- |
+| 文字设计声音 | 声音描述 |
+| 音源克隆／声音引导 | 音源、准确逐字转写、听音校对确认；声音引导可选 |
+
+导入支持 WAV、FLAC、MP3，最大 25 MB、30 秒，使用宿主已有 ffprobe/ffmpeg 校验和统一为 24kHz 单声道 PCM WAV。转写由用户填写；本阶段未接入自动转写。修改音源或转写会清除确认标记，未经确认后端拒绝生成。可选择已生成样音作参考，但其转写仍须听音核对。
+
+系统提供日常交流、剧情对白、解说旁白三组试听台词；可选“基础一句”或“三段情绪试听”，不编辑台词。每段单独输出，可播放、下载并比较。文字设计默认 CFG 1.5，音源模式初选 CFG 1；种子、CFG 可调整。使用相同种子与声音设置不等于已验证跨段音色一致，须逐段试听。
+
+候选自动锁定。点击“试听通过，设为当前声音”建立独立声音版本，当前样音锁定并受保护；换版后旧样音保留、自动锁定，明确解锁后可删除。声音定稿不改变主形象或视图。删除文件保留 hash、资产 ID、运行与定稿来源；运行中的音源不能删除，历史引用音源删除须确认。
+
+声音草稿单独保存，使用 expectedUpdatedAt 防止其他页面覆盖。历史载入恢复声音描述、音源、准确转写、确认标记、语言、试听模板、范围、种子和 CFG；每次生成保留完整输入、每段实际台词/引导、模板内容 hash、提交图、输出及来源。配置变化时需明确改用当前工作流。进行中重启、未知提交和队列取消沿用图片运行机制。
+
+本阶段实际跑通一轮中文文字声音设计、三段样音回收及浏览器播放，服务重启后历史与草稿保留。音源导入和转写确认已检查；真实录音克隆/引导、英文生成及人工声音质量尚未实跑验收。样例三段保持未定稿，供用户试听选择；证据见[声音阶段 QC](../experiments/sean_reference_workspace_voice_20261003/QC.md)。BGM、环境音、H3 下游和手机不在范围。
+
 保存 `prompt_id` 后重启工作台，会恢复观察同一次 ComfyUI 执行，并续接本 run 的资源租约。提交与保存 ID 之间出现崩溃或传输错误时，标记“提交结果未知”，由用户核对队列与历史后显式决定是否重试；不自动重复提交。失败重试产生新 run，原 run 保留。只能取消尚在队列的本次运行，不能使用共享实例的全局中断。
 
 目前提供“查看本次提交工作流”与原始 `prompt_id`。ComfyUI 原生 UI 的同次运行深链尚未验证，界面没有把普通首页链接标成“本次运行详情”。
@@ -107,6 +126,10 @@ Krea 2 文本与 Edit 作为备选工作流保留，能力上限分别是 0 张�
 | `PUT /api/entities/:id/multiview/draft` | 独立的多视图草稿，使用 expectedUpdatedAt 防止覆盖 |
 | `POST /api/entities/:id/multiview/runs` | `{layout, styleId?, appearanceId, parameters, purpose, notes, sourceRunId?}`；layout=three/four/face-front-back-side，styleId 默认 original，带 Idempotency-Key |
 | `POST /api/entities/:id/multiview/confirm` | `{assetId, expectedAppearanceId}` 确认当前版本的视图 |
+| `POST /api/entities/:id/voice/sources` | multipart `audio` 导入参考音源 |
+| `PUT /api/entities/:id/voice/draft` | `{value, expectedUpdatedAt}` 保存独立声音草稿 |
+| `POST /api/entities/:id/voice/runs` | 声音输入、系统试听模板与参数，带 Idempotency-Key |
+| `POST /api/entities/:id/voice/confirm` | `{assetId, expectedVoiceId}` 选定当前声音；首次 expected=null |
 | `POST /api/entities/:id/runs` | 运行输入；必须带 `Idempotency-Key` |
 | `GET /api/runs/:id` | 执行状态、实际输入与输出 |
 | `GET /api/runs/:id/input` | 历史完整输入、原始提交图及当前配置兼容结果 |
@@ -119,6 +142,8 @@ Krea 2 文本与 Edit 作为备选工作流保留，能力上限分别是 0 张�
 新库先提供“参考实体”以便打开创作页面；实体创建、介绍和关系管理界面未纳入一期。可用 `?entity=<id>` 进入特定实体。
 
 已有数据库启动时添加主形象版本、视图确认、当前视觉状态及多视图草稿表，保留原实体、概念草稿、运行与文件。`workspace` 响应提供 `visualState` 和 `multiviewDraft`；SQLite 及原图仍以整个 `.data` 目录为备份单位。
+
+声音阶段增量添加 voice_drafts、voice_versions、entity_voice_state；`workspace` 同时提供 voiceDraft、voiceState。音频复用资产与运行表，以 mediaType=audio 表示，尺寸字段为 0，metadata 保存时长、采样率、单声道与原文件 hash。备份整个 `.data` 同时包含图片、音频和数据库。
 
 ## 验证
 
