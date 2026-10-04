@@ -6,7 +6,7 @@ Owner: Sean
 
 ## 数据与调用
 
-`sceneIntent: {focusText, anchorIds, cameraAnchorId?}`：focusText 必须是当前介绍或外观原文片段；锚点和可选相机位置只能引用本场景已确认锚点。细节必须有目标。角度及细节必须依赖本场景主图、基础场景主图或明确选择本场景参考图。
+`sceneIntent: {focusText, anchorIds, cameraAnchorId?, viewpoint?, shotScale?}`：focusText 必须是当前介绍或外观原文片段；锚点和可选相机位置只能引用本场景已确认锚点。细节必须有目标。角度及细节必须依赖本场景主图、基础场景主图或明确选择本场景参考图。
 
 `POST /api/authoring/:projectId/entities/:entityId/scene-image-preview` 接收完整图片步骤，返回编译后的步骤；不保存、不生成。PC 界面支持选择文字目标、已确认锚点、预览及保存新版本。编译提示词和规则只读。
 
@@ -23,3 +23,9 @@ Owner: Sean
 73 项自动化测试通过；Vite 构建通过。隔离 PC 页面完成目标从长凳区改为入口、预览、保存新版本、应用与刷新持久化检查。
 
 真实 Pi 单次接续实验保存在本地 experiments/sean_reference_authoring_goal_20261004/real-authoring-scenarios-1791107859766.json：模型选择入口和长凳区，服务端提示词未保留模型先前补写的木材、磨损和灯光。该实验运行于开发中的编译器，早于最终 projectRulesHash 命名和可选相机字段；这些最终字段由自动化测试覆盖。没有提交 ComfyUI，没有证明实际图像空间一致性。
+
+## 可选取景控制与真实证据（2026-10-04）
+
+viewpoint 可选 model_choice / eye_level / high_angle / overhead / isometric；shotScale 可选 model_choice / wide / medium / close_up。默认省略保持原行为。PC界面提供两个选择，服务端将取景要求放在来源原文之前；这些字段不写回固定空间，任意自由相机字段仍拒绝。
+
+取景字段已有自动化覆盖，当前全回归87项、构建通过。真实实验中平视和长凳近景提示词确实进入工作流，但结果仍是俯视全景。因此当前只证明输入链路有效，未证明模型服从取景。检查和修订仍需真实图像反馈，不能把结构校验通过当作视角生成成功。详见 [完整目标审计](authoring-goal-audit.md)。

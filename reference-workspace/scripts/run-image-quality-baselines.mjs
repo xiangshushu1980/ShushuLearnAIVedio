@@ -23,10 +23,16 @@ try{
     state={owner:'Sean',createdAt:new Date().toISOString(),projectId:project.id,planId:plan.id,entities:applied.entities,maxBaselineGenerations:8,maxCorrectionGenerations:1,productionWrites:false,runs:[],status:'initial-baselines'};
     writeFileSync(stateFile,JSON.stringify(state,null,2));
   }
-  // Two independent first images only. All remaining steps retain their manual main-image gate.
-  for(const key of ['base-concept','hall-overview']){
-    const step=authoring.steps(state.projectId).find(s=>s.key===key);
-    const prior=store.db.prepare('SELECT id,snapshot FROM runs').all().find(r=>JSON.parse(r.snapshot).authoring?.stepId===step.id);
+  // Explicitly selected steps retain their manual main-image dependency gate.
+  const agentTable=store.db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name='agent_runs'").get();
+  if(agentTable&&store.db.prepare("SELECT count(*) n FROM agent_runs WHERE status='running'").get().n)throw new Error('Agent dialogue is running; generating now would invalidate its source context.');
+  const keys=(process.argv.find(s=>s.startsWith('--steps='))?.slice(8)||'base-concept,hall-overview').split(',');
+  const allowed=['base-concept','hall-overview','base-v3','variant-concept','hall-angle','hall-detail','hall-variant-overview','hall-variant-angle'];
+  if(!keys.length||new Set(keys).size!==keys.length||keys.some(k=>!allowed.includes(k)))throw new Error('Invalid baseline step selection.');
+  for(const key of keys){
+    const step=authoring.steps(state.projectId).find(s=>s.key===key&&s.isCurrent);
+    if(!step)throw new Error('Current step missing.');
+    const prior=store.db.prepare('SELECT id,snapshot FROM runs').all().find(r=>{const a=JSON.parse(r.snapshot).authoring;return a&&(a.rootStepId||a.stepId)===step.rootStepId;});
     if(prior){const previous=store.run(prior.id);console.log(JSON.stringify({key,status:previous.status,notice:'Existing attempt preserved; no retry.'}));if(previous.status!=='succeeded')throw new Error('Existing attempt needs explicit recovery or review; no resubmission.');continue;}
     if(store.db.prepare('SELECT count(*) n FROM runs').get().n>=8)throw new Error('Baseline generation cap reached.');
     const queue=await (await fetch('http://127.0.0.1:8188/queue',{signal:AbortSignal.timeout(10000)})).json();
@@ -53,7 +59,7 @@ try{
       await new Promise(r=>setTimeout(r,2000));
     }
   }
-  state.status='awaiting-human-main-selection';state.updatedAt=new Date().toISOString();
+  state.status='awaiting-human-image-review';state.updatedAt=new Date().toISOString();
   writeFileSync(stateFile,JSON.stringify(state,null,2));
   console.log(JSON.stringify({owner:'Sean',status:state.status,root,runCount:store.db.prepare('SELECT count(*) n FROM runs').get().n}));
 }catch(error){if(state){state.status='stopped';state.error=error.message;state.updatedAt=new Date().toISOString();writeFileSync(stateFile,JSON.stringify(state,null,2));}throw error;}

@@ -38,7 +38,7 @@ async function fixture(t){
 test('observed report links original step; assistant correction remains pending until user adoption and explicit new batch',async t=>{
   const f=await fixture(t),report=await f.review();assert.equal(report.stale,false);assert.equal(report.workflowSources[0].workflow.stepId,f.step.id);assert.equal(report.workflowSources[0].workflow.fullStepRead,true);
   let unread,result;
-  await f.turn(async tools=>{await f.call(tools,'get_entity_workflow_step',{stepId:f.step.id});const {expectedContextHash,...input}=f.revision(report);unread=await f.call(tools,'propose_image_step_revision',{stepId:f.step.id,...input});await f.call(tools,'get_image_consistency_review',{reviewId:report.id});result=await f.call(tools,'propose_image_step_revision',{stepId:f.step.id,...input});assert.equal(result.savedAs,'proposal-only');const next=f.authoring.getStep(f.p.id,result.stepId);assert.throws(()=>f.authoring.adoptStep(f.p.id,next.id,{expectedStepHash:next.contentHash,expectedActiveStepId:f.step.id,acknowledgeReview:true}),e=>e.status===409);});
+  await f.turn(async tools=>{await f.call(tools,'get_entity_workflow_step',{stepId:f.step.id});const {expectedContextHash,...input}=f.revision(report);unread=await f.call(tools,'propose_image_step_revision',{stepId:f.step.id,...input});await f.call(tools,'get_image_consistency_review',{reviewId:report.id});result=await f.call(tools,'propose_image_step_revision',{stepId:f.step.id,...input});assert.equal(result.savedAs,'proposal-only');assert.equal(result.generationInputChanged,true);assert.ok(result.changedFields.includes('prompt'));assert.equal(result.effectiveImage.prompt,input.image.prompt);const next=f.authoring.getStep(f.p.id,result.stepId);assert.throws(()=>f.authoring.adoptStep(f.p.id,next.id,{expectedStepHash:next.contentHash,expectedActiveStepId:f.step.id,acknowledgeReview:true}),e=>e.status===409);});
   assert.equal(unread.status,400);const next=f.authoring.getStep(f.p.id,result.stepId);assert.equal(next.revisionStatus,'proposal');assert.equal(next.revisionBasis.feedback.reviewId,report.id);assert.equal(next.revisionBasis.feedback.assets[0].workflow.version,1);assert.equal(f.authoring.getStep(f.p.id,f.step.id).isCurrent,true);
   f.authoring.adoptStep(f.p.id,next.id,{expectedStepHash:next.contentHash,expectedActiveStepId:f.step.id,acknowledgeReview:true});
   const prepared=f.authoring.prepareRun(f.p.id,next.id,next.contentHash),preview=createRunService(f.store).previewPrepared(next.entityId,prepared.input,{stepId:next.id,stepHash:next.contentHash});assert.equal(preview.authoring.feedback.reviewId,report.id);
@@ -133,4 +133,21 @@ test('review records entity and asset labels as historical evidence rather than 
  assert.equal(source.entityName,'Station');assert.equal(source.assetName,'Mock output only');
  f.store.db.prepare('UPDATE entities SET name=? WHERE id=?').run('Renamed later',f.step.entityId);
  const historical=f.authoring.imageReview(f.p.id,report.id);assert.equal(historical.stale,true);assert.equal(historical.workflowSources[0].entityName,'Station');assert.equal(historical.contentHash,report.contentHash);
+});
+
+
+test('revision tool reports unchanged effective input instead of implying a correction',async t=>{
+  const f=await fixture(t);let result;
+  await f.turn(async tools=>{
+    const old=await f.call(tools,'get_entity_workflow_step',{stepId:f.step.id});
+    const {expectedContextHash,feedback,...raw}=f.revision({id:id(),contentHash:'0'.repeat(64)});
+    raw.image.prompt=old.prompt;
+    result=await f.call(tools,'propose_image_step_revision',{stepId:f.step.id,...raw});
+  });
+  assert.equal(result.savedAs,'proposal-only');
+  assert.equal(result.generationInputChanged,false);
+  assert.deepEqual(result.changedFields,[]);
+  assert.equal(result.effectiveImage.prompt,f.step.prompt);
+  assert.match(result.warning,/没有变化/);
+  assert.equal(f.authoring.getStep(f.p.id,f.step.id).isCurrent,true);
 });

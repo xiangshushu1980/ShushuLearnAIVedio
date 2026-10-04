@@ -294,7 +294,10 @@ export function createAgentWorkspace(store, { runtime = createPiRuntime(store.ro
         const observed=seenSteps.get(stepId);if(!observed||observed.hash!==input.expectedStepHash||observed.active!==input.expectedActiveStepId)throw new HttpError(400,'请先读取这个步骤的完整版本再修订');
         if(input.feedback&&seenReviews.get(input.feedback.reviewId)!==input.feedback.expectedReviewHash)throw new HttpError(400,'请先读取完整图片检验报告再提出关联修订');
         for(const assetId of input.image.referenceAssetIds)if(!run.basis.referenceAssetIds.includes(assetId)&&!observed.sourceRefs.includes(assetId))throw new HttpError(400,'新增修订引用必须是本轮用户明确选图；原步骤明确引用可保留');
-        const result=authoringService.reviseStep(s.project_id,stepId,{...input,expectedContextHash:context(s.project_id).contentHash},{sessionId:s.id,runId:run.id});emit(run.id,'proposal',{proposalId:result.stepId,kind:'image-step-revision'});return jsonTool({...result,review:'返回项目工作区比较图片步骤版本，由用户明确采用'});
+        const result=authoringService.reviseStep(s.project_id,stepId,{...input,expectedContextHash:context(s.project_id).contentHash},{sessionId:s.id,runId:run.id});const saved=authoringService.getStep(s.project_id,result.stepId),previous=authoringService.getStep(s.project_id,stepId);
+        const effectiveFields=['prompt','invariants','unknowns','sceneIntent','modelId','styleId','parameters','sourceReferenceAssetIds','useMainAppearance','useBaseAppearance'];
+        const changedFields=effectiveFields.filter(key=>contentHash(saved[key]??null)!==contentHash(previous[key]??null));
+        emit(run.id,'proposal',{proposalId:result.stepId,kind:'image-step-revision'});return jsonTool({...result,effectiveImage:{prompt:saved.prompt,invariants:saved.invariants,unknowns:saved.unknowns,sceneIntent:saved.sceneIntent},changedFields,generationInputChanged:changedFields.length>0,compilerReplacedSubmittedPrompt:saved.prompt!==input.image.prompt,warning:changedFields.length?null:'实际生成字段没有变化；不得宣称已修正提示词，也不要据此重复生成。',review:'以 effectiveImage 为实际保存内容；场景编译器会替换自由文本。返回项目工作区比较图片步骤版本，由用户明确采用'});
       }));
       tools.push(tool('propose_entity_workflow','保存完整的人物/场景及多个实验变体的创建方案，包含关系、每张图的提示词、模型/风格、参考图、固定不变量和待补充。不创建实体或提交生成。',z.toJSONSchema(authoringPlanSchema),raw=>{
         if(contentHash(basis(s,run.basis.referenceAssetIds))!==contentHash(run.basis))throw new HttpError(409,'本轮资料已变化，请重新讨论');
