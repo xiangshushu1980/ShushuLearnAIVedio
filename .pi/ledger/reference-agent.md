@@ -99,3 +99,7 @@ consistent 报告要求完整读取所观察图片所属实体和每个已登记
 ## 2026-10-04 同会话真实文字修订闭环（Owner: Sean）
 
 真实Pi deepseek-flash：三个实体两关系的报告→仅worldRules提案→临时脚本模拟人工接受→同session重检。原报告stale，新规则允许电子设备后重检不再报腕表冲突；实体/关系原样，0生成。证据 real-authoring-scenarios-1791109177957.json；另单轮关系引用证据1791109090087。用户显式测试选择规则变更，不是Agent擅改规则。小案例有提示线索，不能推广为全项目质量通过，图片闭环未验证。手册reference-workspace/docs/authoring-real-dialogue-verification.md。
+
+## 2026-10-04 Pi 图片内容格式修复（Owner: Sean）
+
+发现 Reference view_reference_image 使用source封装，与本机 Pi ImageContent(data/mimeType)不符；已修正，旧session回放转换旧块不改数据库。真实Pi deepseek-flash识别未从文字泄露的诊断图红2/绿1/蓝3，报告存已看图范围，0生成；本地pixel-observation-1791109440534.json/png。80测试通过（可解码图片、缓存、旧历史）。仅基础像素输送识别证据，真实人物场景一致性仍未验证。规范见reference-workspace/docs/agent-integration-v1.md。

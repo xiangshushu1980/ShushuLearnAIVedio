@@ -115,3 +115,14 @@ test('imported pictures compare with entity text without fabricated generation-s
   const report=f.authoring.imageReview(f.p.id,result.proposalId);
   assert.equal(report.comparisonCoverage.status,'complete');assert.deepEqual(report.comparisonCoverage.stepIds,[]);assert.deepEqual(report.comparisonCoverage.untrackedAssetIds,[asset.id]);
 });
+
+
+test('image observation returns Pi SDK data/mimeType content with decodable pixels and repeat-view cache',async t=>{
+ const f=await fixture(t);await f.turn(async tools=>{
+  const view=tools.find(v=>v.name==='view_reference_image');
+  const result=await view.execute(id(),{assetId:f.asset.id}),image=result.content.find(v=>v.type==='image');
+  assert.equal(image.mimeType,'image/png');assert.equal(typeof image.data,'string');assert.equal(image.source,undefined);
+  const metadata=await sharp(Buffer.from(image.data,'base64')).metadata();assert.equal(metadata.width,3);assert.equal(metadata.height,3);
+  const again=await view.execute(id(),{assetId:f.asset.id});assert.ok(!again.content.some(v=>v.type==='image'));assert.equal(JSON.parse(again.content[0].text).alreadyViewed,true);
+ });
+});

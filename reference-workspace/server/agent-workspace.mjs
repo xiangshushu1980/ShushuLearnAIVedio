@@ -263,7 +263,7 @@ export function createAgentWorkspace(store, { runtime = createPiRuntime(store.ro
         seenImages.add(assetId);
         imageCache.set(assetId,true);
         return {content:[{type:'text',text:`assetId=${assetId}；名称=${a.name}；来源哈希=${a.hash}；缩放仅供观察，不证明绝对尺度。`},
-          {type:'image',source:{type:'base64',mediaType:'image/png',data:bytes.toString('base64')}}],details:{}};
+          {type:'image',mimeType:'image/png',data:bytes.toString('base64')}],details:{}};
       }),
       tool('load_authoring_skill','读取场景固定空间设定方法。',z.toJSONSchema(z.object({skillId:z.enum(profileFor(s).skills.map(k=>k.id))}).strict()),raw=>{
         const {skillId}=parse(z.object({skillId:z.enum(profileFor(s).skills.map(k=>k.id))}).strict(),raw);return jsonTool(profileFor(s).skills.find(k=>k.id===skillId));

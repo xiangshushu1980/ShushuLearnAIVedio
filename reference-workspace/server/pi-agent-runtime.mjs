@@ -3,6 +3,14 @@ import { join } from 'node:path';
 import { mkdirSync, readFileSync } from 'node:fs';
 let sdkPromise;
 const sdk = () => sdkPromise ||= import('@earendil-works/pi-coding-agent');
+// Preserve saved history; translate only the old image envelope when replaying to Pi.
+export function normalizePiSessionEntries(entries){
+ return entries.map(entry=>{
+  if(!Array.isArray(entry.message?.content))return entry;
+  const content=entry.message.content.map(block=>block.type==='image'&&block.data===undefined&&block.source?.type==='base64'&&typeof block.source.data==='string'&&typeof block.source.mediaType==='string'?{type:'image',data:block.source.data,mimeType:block.source.mediaType}:block);
+  return {...entry,message:{...entry.message,content}};
+ });
+}
 export function createPiRuntime(root) {
   const agentDir = join(root, 'agent');
   mkdirSync(agentDir, { recursive: true });
@@ -38,7 +46,7 @@ export function createPiRuntime(root) {
       noExtensions: true, noSkills: true, noPromptTemplates: true, noThemes: true, noContextFiles: true,
       systemPromptOverride: () => prompt, appendSystemPromptOverride: () => [] });
     await resourceLoader.reload();
-    const manager = SessionManager.inMemory(agentDir, { id: sessionId }, entries || []);
+    const manager = SessionManager.inMemory(agentDir, { id: sessionId }, normalizePiSessionEntries(entries || []));
     const { session } = await createAgentSession({ cwd: agentDir, agentDir, modelRuntime: r, model,
       thinkingLevel: 'medium', settingsManager, resourceLoader, sessionManager: manager,
       noTools: 'builtin', tools: tools.map(t => t.name), customTools: tools });

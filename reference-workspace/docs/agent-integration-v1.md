@@ -132,3 +132,13 @@ Owner: Sean。2026-10-04。项目创作模式新增 entity-workflow 方法、结
 ## 图片步骤反馈修订（2026-10-04）
 
 Owner: Sean。项目助手新增 get_entity_workflow_step 与 propose_image_step_revision，实际读取记录作为本轮提案门槛；修订保存候选，由人工比较、采用，不创建实体或生成。契约与证据见[步骤修订 v1](workflow-step-revisions-v1.md)。
+
+## Pi 图片内容契约与诊断（2026-10-04）
+
+Owner: Sean。Pi SDK 0.86.0 的 ImageContent 使用 `{type:'image',data:'<base64>',mimeType:'image/png'}`。Reference 观察工具此前误用 Anthropic 风格的 source 包装，模拟工具调用成功不足以证明像素送达；现已按本机 SDK types.d.ts 修正。不要把提供方 API 的图片包装直接作为 Pi 工具内容。
+
+历史会话回放时仅转换已识别的旧 base64 图片块为 Pi 格式，保留消息 ID、文字和角色，不覆盖原数据库记录。新内容、非消息条目及其他块保持原语义。
+
+`node scripts/verify-image-observation.mjs` 使用私有临时库和应用已有凭据，调用实际模型（消耗额度），生成一张本地色块/圆点诊断图。实体和用户消息不提供颜色与圆点数量，要求实际调用图片工具后保存结构化观察。当前已通过 deepseek/deepseek-flash：左红2、中绿1、右蓝3；报告记录已看图 ID，0生成运行。证据本地 experiments/sean_reference_authoring_goal_20261004/pixel-observation-1791109440534.json 及同名PNG。
+
+80项测试通过，新增检查可解码的 Pi 图片内容、重复观察缓存及旧历史格式转换。诊断只证明此次输入链路与基本视觉识别可用，不能证明真实人物身份、透视、空间锚点、材质或多视图一致性检验。没有调用 ComfyUI 或任何图片生成提供方。
