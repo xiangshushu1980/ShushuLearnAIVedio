@@ -48,3 +48,13 @@ PC 隔离模拟验证：报告入口只填文字（后台仍只有原一轮、0�
 复现：在 reference-workspace 中先 `npm run build`，再 `REFERENCE_FEEDBACK_FIXTURE=1 node scripts/scene-images-ui-fixture.mjs`，打开输出 workflowUrl →「与项目助手讨论」。该可选入口使用真实 API 与模拟 Agent、临时数据库，不读取凭据，不调用模型或 ComfyUI。普通隔离场景 fixture 不启用模拟 Agent。
 
 完整目标仍需要真实人物/场景图像质量、一致性反馈效果及再生成实验验证。V3与声音已有手工流程，后续编排还需继续实现。
+
+## 图文对照读取范围（2026-10-04）
+
+Owner: Sean。新报告增加服务端计算的 `comparisonCoverage`，包含 entityIds、missingEntityIds、stepIds、unreadStepIds、untrackedAssetIds、status 和 scope。范围仅覆盖 reviewedAssetIds 对应实体及其已登记生成步骤，不递归要求读取全项目。
+
+`consistent` 要求本轮完整读取图片所属实体，且读取每个可溯源生成步骤；否则工具返回 400、字段级 conclusion 错误和缺失范围，助手需补读或保存 inconclusive。冲突或证据不足的观察仍可保存，界面显示读取缺口。无生成步骤的导入图可以对照实体文字，但来源明确标记为空，不虚构步骤。旧报告不补写不可变内容，界面提示重新检验补齐范围。
+
+此范围只是访问证据，不是视觉正确性证明，也不意味着人工确认、全项目审核或已检验所有关系。
+
+验证：76 项测试及构建通过。新增 3 项隔离测试覆盖未读所属实体、未读生成步骤、多视图步骤分别读取、导入图无来源。原观察工具测试补全实体读取。模拟 PC 报告显示范围，无横向溢出，控制台 0 错误；本地截图 experiments/sean_reference_authoring_goal_20261004/review-comparison-coverage-pc.png。没有真实模型调用或 ComfyUI 生成。

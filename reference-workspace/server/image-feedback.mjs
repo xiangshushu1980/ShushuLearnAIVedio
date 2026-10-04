@@ -28,6 +28,18 @@ export function imageReviewSources(store,authoring,projectId,assetIds,readSteps=
   });
 }
 
+// Read coverage is evidence of context access, not proof of visual correctness.
+export function imageComparisonCoverage(sources,reviewedEntities){
+  const entityIds=[...new Set(sources.map(a=>a.entityId))].sort();
+  const steps=[...new Map(sources.filter(a=>a.workflow).map(a=>[a.workflow.stepId,a.workflow])).values()];
+  const missingEntityIds=entityIds.filter(e=>!reviewedEntities.has(e));
+  const unreadStepIds=steps.filter(s=>!s.fullStepRead).map(s=>s.stepId).sort();
+  return {entityIds,missingEntityIds,stepIds:steps.map(s=>s.stepId).sort(),unreadStepIds,
+    untrackedAssetIds:sources.filter(a=>!a.workflow).map(a=>a.assetId).sort(),
+    status:missingEntityIds.length||unreadStepIds.length?'incomplete':'complete',
+    scope:'reviewed images versus their fully read registered entity data and available generation steps; not an approval or proof of image quality'};
+}
+
 export function getImageReview(store,projects,projectId,reviewId){
   projects.project(projectId);
   const exists=store.db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name='agent_project_proposals'").get();

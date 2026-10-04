@@ -68,3 +68,50 @@ test('assistant may retain previously explicit references, but may not silently 
 test('uploaded image metadata cannot fabricate a generation workflow source',async t=>{
   const f=await fixture(t),stage=await f.store.stageImage(f.bytes,'Imported fixture',f.step.entityId,'setting',null,{authoring:{stepId:f.step.id,sourceRevision:f.step.contentHash}}),a=f.store.transaction(()=>f.store.registerStages([stage]))[0];const source=imageReviewSources(f.store,f.authoring,f.p.id,[a.id])[0];assert.equal(source.workflow,null);assert.equal(source.runId,null);
 });
+
+test('consistent image reports require full owner and source-step reads, while inconclusive observations remain saveable',async t=>{
+  const f=await fixture(t);let missingOwner,missingStep,complete;
+  await f.turn(async tools=>{
+    await tools.find(v=>v.name==='view_reference_image').execute(id(),{assetId:f.asset.id});
+    const input={summary:'Fixture read coverage only',reviewedAssetIds:[f.asset.id],conclusion:'consistent',issues:[]};
+    missingOwner=await f.call(tools,'propose_image_consistency_review',input);
+    const partial=await f.call(tools,'propose_image_consistency_review',{...input,conclusion:'inconclusive'});
+    assert.ok(partial.proposalId);
+    await f.call(tools,'get_project_entity',{entityId:f.step.entityId});
+    missingStep=await f.call(tools,'propose_image_consistency_review',input);
+    await f.call(tools,'get_entity_workflow_step',{stepId:f.step.id});
+    complete=await f.call(tools,'propose_image_consistency_review',input);
+  });
+  assert.equal(missingOwner.status,400);assert.equal(missingStep.status,400);
+  assert.equal(missingOwner.details.comparisonCoverage.missingEntityIds[0],f.step.entityId);
+  assert.equal(missingStep.details.comparisonCoverage.unreadStepIds[0],f.step.id);
+  const saved=f.authoring.imageReview(f.p.id,complete.proposalId);
+  assert.equal(saved.comparisonCoverage.status,'complete');assert.deepEqual(saved.comparisonCoverage.unreadStepIds,[]);
+  assert.equal(f.store.db.prepare('SELECT count(*) n FROM runs').get().n,2);
+});
+
+test('every observed output source step is required; reading one view cannot cover another',async t=>{
+  const f=await fixture(t);let partial,complete;
+  await f.turn(async tools=>{
+    await f.call(tools,'get_project_entity',{entityId:f.step.entityId});
+    await f.call(tools,'get_entity_workflow_step',{stepId:f.step.id});
+    for(const asset of [f.asset,f.otherAsset])await tools.find(v=>v.name==='view_reference_image').execute(id(),{assetId:asset.id});
+    const input={summary:'Two-view fixture',reviewedAssetIds:[f.asset.id,f.otherAsset.id],conclusion:'consistent',issues:[]};
+    partial=await f.call(tools,'propose_image_consistency_review',input);
+    await f.call(tools,'get_entity_workflow_step',{stepId:f.other.id});
+    complete=await f.call(tools,'propose_image_consistency_review',input);
+  },[f.asset.id,f.otherAsset.id]);
+  assert.equal(partial.status,400);assert.deepEqual(partial.details.comparisonCoverage.unreadStepIds,[f.other.id]);
+  assert.equal(f.authoring.imageReview(f.p.id,complete.proposalId).comparisonCoverage.stepIds.length,2);
+});
+
+test('imported pictures compare with entity text without fabricated generation-step provenance',async t=>{
+  const f=await fixture(t),stage=await f.store.stageImage(f.bytes,'Imported coverage fixture',f.step.entityId,'setting'),asset=f.store.transaction(()=>f.store.registerStages([stage]))[0];let result;
+  await f.turn(async tools=>{
+    await f.call(tools,'get_project_entity',{entityId:f.step.entityId});
+    await tools.find(v=>v.name==='view_reference_image').execute(id(),{assetId:asset.id});
+    result=await f.call(tools,'propose_image_consistency_review',{summary:'Registered text comparison only',reviewedAssetIds:[asset.id],conclusion:'consistent',issues:[]});
+  },[asset.id]);
+  const report=f.authoring.imageReview(f.p.id,result.proposalId);
+  assert.equal(report.comparisonCoverage.status,'complete');assert.deepEqual(report.comparisonCoverage.stepIds,[]);assert.deepEqual(report.comparisonCoverage.untrackedAssetIds,[asset.id]);
+});

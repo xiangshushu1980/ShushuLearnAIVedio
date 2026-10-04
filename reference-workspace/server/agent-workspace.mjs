@@ -12,7 +12,7 @@ import { sceneProfile, agentProfiles } from './agent-profiles.mjs';
 import { createPiRuntime } from './pi-agent-runtime.mjs';
 import { createProjectWorkspace } from './project-workspace.mjs';
 import { createEntityAuthoring,authoringPlanSchema,existingImagesSchema } from './entity-authoring.mjs';
-import {imageReviewSchema,imageReviewSources} from './image-feedback.mjs';
+import {imageReviewSchema,imageReviewSources,imageComparisonCoverage} from './image-feedback.mjs';
 import {createEntityChangeProposals,entityChangeSchema} from './entity-change-proposals.mjs';
 import { catalog } from './catalog.mjs';
 
@@ -142,7 +142,10 @@ export function createAgentWorkspace(store, { runtime = createPiRuntime(store.ro
     const input=parse(kind==='review'?review:kind==='image-review'?imageReview:update,raw);
     if(kind==='image-review'){if(new Set(input.reviewedAssetIds).size!==input.reviewedAssetIds.length||input.reviewedAssetIds.some(a=>!seenImages.has(a)))throw new HttpError(400,'视觉检验必须逐张调用图片观察工具，不能把未看图片列为已检查');for(const issue of input.issues)if(issue.assetIds?.some(a=>!input.reviewedAssetIds.includes(a)))throw new HttpError(400,'问题引用的图片必须已经在此报告中检查');if(input.conclusion==='conflicts'&&!input.issues.some(i=>i.category==='conflict'))throw new HttpError(400,'冲突结论需列出具体冲突');if(input.conclusion==='consistent'&&input.issues.some(i=>i.category==='conflict'))throw new HttpError(400,'有冲突不能标为一致');}
     if(kind==='review'||kind==='image-review')for(const issue of input.issues)for(const e of issue.entityIds){projectService.member(s.project_id,e);if(kind==='review'&&!reviewedEntities.has(e))throw new HttpError(400,'文字检查引用的实体必须先完整读取',{fieldErrors:{entityIds:['先调用 get_project_entity，不能只根据索引摘要报告实体问题']}});}
-    const proposalId=id(),body={owner:'Sean',...input,...(kind==='image-review'?{workflowSources:imageReviewSources(store,authoringService,s.project_id,input.reviewedAssetIds,seenSteps)}:{}),...(['review','image-review'].includes(kind)?{coverage:{reviewedEntityIds:[...reviewedEntities].sort(),projectEntityCount:project(s.project_id).entityIds.length,unreviewedEntityIds:project(s.project_id).entityIds.filter(e=>!reviewedEntities.has(e)).sort(),entityCoverage:project(s.project_id).entityIds.every(e=>reviewedEntities.has(e))?'complete':'partial',selectedImageAssetIds:run.basis.referenceAssetIds,viewedImageAssetIds:[...seenImages].sort(),scope:'project text and indexed entities; full entity details only for reviewedEntityIds; images require separate view tool'}}:{}),basis:run.basis};
+    const workflowSources=kind==='image-review'?imageReviewSources(store,authoringService,s.project_id,input.reviewedAssetIds,seenSteps):null;
+    const comparisonCoverage=workflowSources?imageComparisonCoverage(workflowSources,reviewedEntities):null;
+    if(input.conclusion==='consistent'&&comparisonCoverage?.status!=='complete')throw new HttpError(400,'一致结论需要完整读取已检查图片所属实体及已有生成步骤；否则保存证据不足报告',{fieldErrors:{conclusion:['先 get_project_entity 和 get_entity_workflow_step，或使用 inconclusive']},comparisonCoverage});
+    const proposalId=id(),body={owner:'Sean',...input,...(kind==='image-review'?{workflowSources,comparisonCoverage}:{}),...(['review','image-review'].includes(kind)?{coverage:{reviewedEntityIds:[...reviewedEntities].sort(),projectEntityCount:project(s.project_id).entityIds.length,unreviewedEntityIds:project(s.project_id).entityIds.filter(e=>!reviewedEntities.has(e)).sort(),entityCoverage:project(s.project_id).entityIds.every(e=>reviewedEntities.has(e))?'complete':'partial',selectedImageAssetIds:run.basis.referenceAssetIds,viewedImageAssetIds:[...seenImages].sort(),scope:'project text and indexed entities; full entity details only for reviewedEntityIds; images require separate view tool'}}:{}),basis:run.basis};
     db.prepare('INSERT INTO agent_project_proposals VALUES (?,?,?,?,?,?,?,?)').run(proposalId,run.id,s.id,kind,canonicalJSON(body),contentHash(body),null,now());
     emit(run.id,'proposal',{proposalId,kind});return {proposalId,savedAs:'proposal-only',confirmation:'requires-user'};
   }
