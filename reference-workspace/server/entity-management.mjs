@@ -96,13 +96,13 @@ export function createEntityManagement(store) {
     });
     return detail(entityId);
   }
-  function changeRelation(entityId, relationId, body, removing = false) {
+  function changeRelation(entityId, relationId, body, removing = false, {inTransaction=false}={}) {
     const row = store.db.prepare("SELECT * FROM entity_relations WHERE id=? AND source_entity_id=? AND status='active'").get(relationId,entityId);
     if (!row) throw new HttpError(404, '关系不存在或请从来源实体编辑');
     if (row.type === '派生自') throw new HttpError(400, '派生来源不可修改或解除');
     const timestamp = new Date(Math.max(Date.now(), Date.parse(row.updated_at)+1)).toISOString();
     const value = parse(removing ? z.object({ expectedUpdatedAt: z.string() }).strict() : relationInput.extend({ expectedUpdatedAt: z.string() }).strict(), body);
-    store.transaction(() => {
+    const write=() => {
       if (store.db.prepare('SELECT updated_at FROM entity_relations WHERE id=?').get(relationId)?.updated_at !== value.expectedUpdatedAt) throw new HttpError(409,'关系已改变，请刷新');
       if (removing) store.db.prepare("UPDATE entity_relations SET status='removed',updated_at=? WHERE id=?").run(timestamp,relationId);
       else {
@@ -111,7 +111,7 @@ export function createEntityManagement(store) {
         if (store.db.prepare("SELECT id FROM entity_relations WHERE source_entity_id=? AND target_entity_id=? AND category=? AND type=? AND status='active' AND id<>?").get(entityId,value.targetEntityId,value.category,value.type,relationId)) throw new HttpError(409,'相同关系已存在');
         store.db.prepare('UPDATE entity_relations SET target_entity_id=?,category=?,type=?,description=?,target_revision=?,updated_at=? WHERE id=?').run(value.targetEntityId,value.category,value.type,value.description,revision(value.targetEntityId),timestamp,relationId);
       }
-    });return detail(entityId);
+    };if(inTransaction)write();else store.transaction(write);return detail(entityId);
   }
   function derive(baseId, body, { onCreated = () => {} } = {}) {
     const input = parse(profile.extend({ copyProfile: z.boolean().default(true), copyReference: z.boolean().default(true), reuseVoice: z.boolean().default(false),

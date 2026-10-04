@@ -107,3 +107,7 @@ consistent 报告要求完整读取所观察图片所属实体和每个已登记
 ## 2026-10-04 报告图片并排观察（Owner: Sean）
 
 报告已检查图按顺序双列显示与弹窗放大；标实体/素材/步骤版本及指向该图问题。新报告保存名称快照，旧名称不重算，过期与不可用明确显示；不改变输入或确认。81测试/build/隔离两实体色块PC加载放大Escape0错误无溢出通过。正文reference-workspace/docs/image-feedback-v1.md。未调用模型/Comfy，不证明真实图像质量。
+
+## 2026-10-04 关系修订提案（Owner: Sean）
+
+propose_relation_update先读两个项目内端点，只改已有关系type/description。不可变候选、人工接受、来源CAS、幂等接受、关系与receipt同事务回滚。设定全局/剧情项目范围分开，不改ID端点分类，不动派生来源/历史未分配关系。86测试/build/模拟PC差异接受刷新通过；真实新工具模型调用未验证，0Comfy。规范reference-workspace/docs/relation-change-proposals-v1.md。

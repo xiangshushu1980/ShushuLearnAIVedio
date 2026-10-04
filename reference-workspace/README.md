@@ -198,3 +198,5 @@ Owner: Sean。真实 Pi 对话与文字报告证据范围：[验证与尚未解�
 Owner: Sean。已有场景取景与来源校验见 [场景提示词编译 v1](docs/scene-prompt-compilation-v1.md)。
 
 Owner: Sean。关系报告来源与范围见 [关系检查证据](docs/relation-review-v1.md)。
+
+Owner: Sean。助手可提出已有关系类型/说明修订，由人工接受：[关系修订提案](docs/relation-change-proposals-v1.md)。

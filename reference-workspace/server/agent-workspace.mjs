@@ -14,6 +14,7 @@ import { createProjectWorkspace } from './project-workspace.mjs';
 import { createEntityAuthoring,authoringPlanSchema,existingImagesSchema } from './entity-authoring.mjs';
 import {imageReviewSchema,imageReviewSources,imageComparisonCoverage} from './image-feedback.mjs';
 import {createEntityChangeProposals,entityChangeSchema} from './entity-change-proposals.mjs';
+import {createRelationChangeProposals,relationChangeSchema} from './relation-change-proposals.mjs';
 import { catalog } from './catalog.mjs';
 
 const parse = (schema, body) => {
@@ -32,7 +33,7 @@ const proposalSchema = z.object({ document: spatialDocumentSchema, summary: z.st
   questions: z.array(z.string().trim().min(1).max(2000)).max(3), sources: z.array(sourceSchema).max(500) }).strict();
 const jsonTool = value => ({ content: [{ type: 'text', text: canonicalJSON(value) }], details: {} });
 const terminal = status => status !== 'running';
-const labels = {propose_existing_entity_images:'规划已有实体新图片步骤',propose_entity_update:'提出实体文字修改', get_image_consistency_review:'读取图片检验报告与步骤来源',get_entity_workflow_step:'读取图片步骤完整版本',propose_image_step_revision:'提出图片步骤修订', propose_entity_workflow:'整理实体与变体创作方案', get_entity_workflow_catalog:'读取可用图片工作流', get_entity_workflow_plans:'读取已保存创作方案', get_project_context: '读取项目最新资料', get_project_entity: '读取项目实体详情', propose_project_review: '整理项目检查结果', propose_project_update: '整理项目资料建议', get_scene_context: '读取工程和场景资料', view_reference_image: '查看参考图',
+const labels = {propose_relation_update:'提出关系内容修改',propose_existing_entity_images:'规划已有实体新图片步骤',propose_entity_update:'提出实体文字修改', get_image_consistency_review:'读取图片检验报告与步骤来源',get_entity_workflow_step:'读取图片步骤完整版本',propose_image_step_revision:'提出图片步骤修订', propose_entity_workflow:'整理实体与变体创作方案', get_entity_workflow_catalog:'读取可用图片工作流', get_entity_workflow_plans:'读取已保存创作方案', get_project_context: '读取项目最新资料', get_project_entity: '读取项目实体详情', propose_project_review: '整理项目检查结果', propose_project_update: '整理项目资料建议', get_scene_context: '读取工程和场景资料', view_reference_image: '查看参考图',
   load_authoring_skill: '读取当前工作模式的方法', propose_scene_spatial: '整理空间提案' };
 
 export function createAgentWorkspace(store, { runtime = createPiRuntime(store.root), projectService = createProjectWorkspace(store), authoringService = createEntityAuthoring(store,{projectService}) } = {}) {
@@ -59,6 +60,7 @@ export function createAgentWorkspace(store, { runtime = createPiRuntime(store.ro
   db.exec(`CREATE TABLE IF NOT EXISTS agent_project_proposals(id TEXT PRIMARY KEY,run_id TEXT NOT NULL REFERENCES agent_runs(id),session_id TEXT NOT NULL REFERENCES agent_sessions(id),kind TEXT NOT NULL,body TEXT NOT NULL,content_hash TEXT NOT NULL,applied_revision INTEGER,created_at TEXT NOT NULL);
     CREATE TRIGGER IF NOT EXISTS agent_project_proposal_immutable BEFORE UPDATE OF body,content_hash,kind ON agent_project_proposals BEGIN SELECT RAISE(ABORT,'immutable project proposal');END;`);
   const entityChanges=createEntityChangeProposals(store,{projects:projectService,management});
+  const relationChanges=createRelationChangeProposals(store,{projects:projectService,management});
   const {project,projects,saveProject,context}=projectService;
   const profileFor=s=>agentProfiles.find(p=>p.id===s.purpose)||sceneProfile;
   function sessionRow(sessionId) {
@@ -83,6 +85,7 @@ export function createAgentWorkspace(store, { runtime = createPiRuntime(store.ro
       provider: s.provider, modelId: s.model_id, createdAt: s.created_at,
       messages: db.prepare('SELECT id,role,text,created_at AS createdAt,run_id AS runId FROM agent_messages WHERE session_id=? ORDER BY created_at,rowid').all(sessionId),
       runs: db.prepare('SELECT id,status,error,created_at AS createdAt FROM agent_runs WHERE session_id=? ORDER BY created_at,rowid').all(sessionId),
+      relationProposals:relationChanges.list(s.project_id,s.id),
       entityProposals:entityChanges.list(s.project_id,s.id),
       stepRevisions:authoringService.steps(s.project_id).filter(step=>step.sessionId===s.id).map(({id,rootStepId,entityName,label,version,reason,revisionStatus,stale,revisionBasis})=>({id,rootStepId,entityName,label,version,reason,revisionStatus,stale,feedback:revisionBasis?.feedback||null})),
       authoringPlans:authoringService.list(s.project_id).filter(p=>p.sessionId===s.id).map(p=>({id:p.id,title:p.title,summary:p.summary,stale:p.stale,applied:!!p.applied,candidateCount:p.candidates.length})),
@@ -279,6 +282,7 @@ export function createAgentWorkspace(store, { runtime = createPiRuntime(store.ro
     tools.push(tool('propose_image_consistency_review','保存逐张实际观察的图片检验。问题可用 assetIds 指明已检查图片；系统记录实际生成步骤来源。不是确认。',z.toJSONSchema(imageReviewSchema),raw=>jsonTool(projectProposal(s,run,'image-review',raw,reviewedEntities,seenImages,seenSteps))));
     if(s.purpose==='project-authoring'){
       tools.push(tool('propose_existing_entity_images','对已读取的项目实体增加图片工作流候选，不重复创建实体，不修改文字、关系、空间或选图。',z.toJSONSchema(existingImagesSchema),raw=>{const input=parse(existingImagesSchema,raw);if(input.kind==='scene'&&input.images.some(im=>!im.sceneIntent))throw new HttpError(400,'已有场景使用资料编译模式',{fieldErrors:{sceneIntent:['为每张图提供 focusText（已有场景文字原文或空串）和 anchorIds（已确认锚点 ID 或空数组）；细节必须选目标。提示词由服务器生成。']}});if(!reviewedEntities.has(input.entityId))throw new HttpError(400,'请先读取目标实体完整资料');if(contentHash(basis(s,run.basis.referenceAssetIds))!==contentHash(run.basis))throw new HttpError(409,'本轮资料已变化，请重新讨论');for(const im of input.images)for(const a of im.referenceAssetIds)if(!run.basis.referenceAssetIds.includes(a))throw new HttpError(400,'新步骤参考图必须是本轮用户明确选图');const proposal=authoringService.saveExistingImages(s.project_id,input,{sessionId:s.id,runId:run.id,expectedBasis:{contextHash:context(s.project_id).contentHash}});emit(run.id,'proposal',{proposalId:proposal.id,kind:'entity-workflow'});return jsonTool({planId:proposal.id,savedAs:'proposal-only',generationSubmitted:false});}));
+      tools.push(tool('propose_relation_update','提出当前项目已有设定或剧情关系的类型/说明修改，不改变两端、不直接应用。',z.toJSONSchema(relationChangeSchema),raw=>{const input=parse(relationChangeSchema,raw),r=relationChanges.source(s.project_id,input.relationId,input.scope);if(![r.sourceEntityId,r.targetEntityId].every(e=>reviewedEntities.has(e)))throw new HttpError(400,'先完整读取关系两端实体');if(contentHash(basis(s,run.basis.referenceAssetIds))!==contentHash(run.basis))throw new HttpError(409,'本轮依据已变化，请重新讨论');const proposal=relationChanges.save(s.project_id,input,{sessionId:s.id,runId:run.id});emit(run.id,'proposal',{proposalId:proposal.id,kind:'relation-update'});return jsonTool({proposalId:proposal.id,savedAs:'proposal-only',generationSubmitted:false});}));
       tools.push(tool('propose_entity_update','对已读取的当前项目实体提出文字字段修改，只保存提案，网页人工接受后写入全局实体资料。',z.toJSONSchema(entityChangeSchema),raw=>{const input=parse(entityChangeSchema,raw);if(!reviewedEntities.has(input.entityId))throw new HttpError(400,'请先读取目标实体完整资料再提出修改');if(contentHash(basis(s,run.basis.referenceAssetIds))!==contentHash(run.basis))throw new HttpError(409,'本轮资料已变化，请重新讨论');const proposal=entityChanges.save(s.project_id,input,{sessionId:s.id,runId:run.id});emit(run.id,'proposal',{proposalId:proposal.id,kind:'entity-update'});return jsonTool({proposalId:proposal.id,savedAs:'proposal-only',generationSubmitted:false});}));
       tools.push(tool('get_image_consistency_review','按报告 ID 读取当前项目图片检验与生成步骤来源；报告修订前必须读取。',z.toJSONSchema(z.object({reviewId:uuid}).strict()),raw=>{const {reviewId}=parse(z.object({reviewId:uuid}).strict(),raw);const report=authoringService.imageReview(s.project_id,reviewId);seenReviews.set(reviewId,report.contentHash);return jsonTool(report);}));
       tools.push(tool('get_entity_workflow_catalog','读取当前可用概念图与 V3 多视图模型、布局提示词、风格、参数和工作流约束，不调用生成服务。',{type:'object',properties:{},additionalProperties:false},()=>jsonTool({owner:'Sean',models:catalog.models,multiview:catalog.multiview,styles:catalog.styles,sceneImages:'同一实体可安排总览、其他角度、细节；不强制三视图',characterViews:'three_view 使用 V3 模型，useMainAppearance:true 依赖本实体主图；批次等待人工选图后恢复',schemaVersion:1})));
@@ -396,7 +400,7 @@ export function createAgentWorkspace(store, { runtime = createPiRuntime(store.ro
   }
   function events(runId, after) { runRow(runId);return db.prepare('SELECT seq,type,body FROM agent_events WHERE run_id=? AND seq>? ORDER BY seq LIMIT 300').all(runId,after).map(r=>({...r,body:JSON.parse(r.body)})); }
   return { projects,project,saveProject,context,sessions,session,createSession,start,cancel,applyProposal,applyProjectProposal,events,run:runRow,
-    applyEntityProposal:entityChanges.apply,models:runtime.models,profiles:agentProfiles.map(({prompt,skills,...p})=>({...p,skills:skills.map(({text,...skill})=>skill)})),
+    applyRelationProposal:relationChanges.apply,applyEntityProposal:entityChanges.apply,models:runtime.models,profiles:agentProfiles.map(({prompt,skills,...p})=>({...p,skills:skills.map(({text,...skill})=>skill)})),
     recover() {db.prepare("UPDATE agent_runs SET status='interrupted',error='服务停止时对话未结束，请继续讨论',completed_at=? WHERE status='running'").run(now());},
     async close() { await Promise.allSettled([...active.keys()].map(cancel)); } };
 }
@@ -434,6 +438,7 @@ export function agentWorkspaceRouter(service) {
     }
     const timer=setInterval(send,600);res.on('close',()=>{closed=true;clearInterval(timer);});send();
   });
+  r.post('/relation-proposals/:proposalId/apply',(req,res)=>res.json(service.applyRelationProposal(req.params.proposalId,req.body)));
   r.post('/entity-proposals/:proposalId/apply',(req,res)=>res.json(service.applyEntityProposal(req.params.proposalId,req.body)));
   r.post('/project-proposals/:proposalId/apply',(req,res)=>res.json(service.applyProjectProposal(req.params.proposalId,req.body)));
   r.post('/proposals/:proposalId/apply',(req,res)=>res.json(service.applyProposal(req.params.proposalId,req.body)));

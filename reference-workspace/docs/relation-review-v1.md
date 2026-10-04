@@ -13,3 +13,5 @@ PC 报告可展开查看关系依据。报告只是审阅意见，不修改、�
 验证：78 项测试、Vite build 通过；隔离模拟 PC 关系详情展开、刷新后重新打开、0 控制台错误及无横向溢出通过。新增测试覆盖两端读取、错误范围、重复引用、固定/剧情/历史范围和关系变化后报告保留旧内容并过期。没有模型、ComfyUI 或 GPU 调用。
 
 复现 PC：在 reference-workspace 运行 `npm run build`，再运行 `REFERENCE_PROJECT_REVIEW_FIXTURE=1 REFERENCE_RELATION_REVIEW_FIXTURE=1 node scripts/scene-images-ui-fixture.mjs`；打开输出 workflowUrl 并进入项目助手。临时数据库与模拟 Agent，不读取凭据。
+
+Owner: Sean。已有关系的自然语言修订与人工接受见 [关系修订提案](relation-change-proposals-v1.md)。
