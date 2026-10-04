@@ -9,7 +9,7 @@ export const imageReviewSchema=z.object({
   summary:z.string().trim().min(1).max(4000),
   reviewedAssetIds:z.array(uuid).min(1).max(8),
   conclusion:z.enum(['consistent','conflicts','inconclusive']),
-  issues:z.array(z.object({entityIds:z.array(uuid).max(100),assetIds:z.array(uuid).max(8).optional(),category:z.enum(['conflict','missing','suggestion']),description:z.string().trim().min(1).max(4000),suggestion:z.string().max(4000)}).strict()).max(30)
+  issues:z.array(z.object({entityIds:z.array(uuid).max(100),relationIds:z.array(uuid).max(30).optional(),assetIds:z.array(uuid).max(8).optional(),category:z.enum(['conflict','missing','suggestion']),description:z.string().trim().min(1).max(4000),suggestion:z.string().max(4000)}).strict()).max(30)
 }).strict();
 export const imageFeedbackSchema=z.object({reviewId:uuid,expectedReviewHash:z.string().length(64),assetIds:z.array(uuid).min(1).max(8).refine(a=>new Set(a).size===a.length,'图片不能重复')}).strict();
 

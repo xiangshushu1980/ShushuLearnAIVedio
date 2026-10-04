@@ -14,3 +14,26 @@ test('partial and complete coverage record exact unread IDs without asserting im
 test('project-wide missing fields may be reported without attributing findings to unread entities',async t=>{const f=await fixture(t),r=await f.submit([],[{...issue([]),description:'World rules missing'}]);assert.equal(r.reports.length,1);assert.equal(r.reports[0].coverage.entityCoverage,'partial');assert.deepEqual(r.reports[0].coverage.unreviewedEntityIds.sort(),[f.first,f.second].sort());});
 
 test('selecting an entity does not count as having read its full context',async t=>{const f=await fixture(t,{selected:true}),r=await f.submit([],[issue([f.first])]);assert.equal(r.result.status,400);assert.equal(r.reports.length,0);});
+
+test('relation findings require two fully read endpoints and persist the actual project story source',async t=>{
+ const f=await fixture(t),saved=f.projects.saveRelation(f.p.id,null,{sourceEntityId:f.first,targetEntityId:f.second,type:'进入',description:'Character enters scene',expectedRevision:f.projects.project(f.p.id).revision}),r=saved.relations[0];
+ const finding={...issue([f.first,f.second]),relationIds:[r.relationId]};
+ let turn=await f.submit([f.first],[finding]);assert.equal(turn.result.status,400);
+ turn=await f.submit([f.first,f.second],[{...finding,entityIds:[f.first]}]);assert.equal(turn.result.status,400);
+ turn=await f.submit([f.first,f.second],[finding]);assert.equal(turn.reports.length,1);
+ const report=turn.reports[0],source=report.relationSources[0];assert.equal(source.scope,'project-story');assert.equal(source.description,r.description);assert.equal(source.relationId,r.relationId);assert.equal(source.contentHash.length,64);
+ f.projects.saveRelation(f.p.id,r.relationId,{sourceEntityId:f.first,targetEntityId:f.second,type:'离开',description:'Revised plot',expectedRevision:f.projects.project(f.p.id).revision});
+ const historical=f.agents.session(f.agents.sessions(f.p.id,null,'project-authoring')[0].id).projectProposals[0];assert.equal(historical.stale,true);assert.equal(historical.relationSources[0].description,'Character enters scene');
+});
+
+test('unknown, duplicate, foreign and out-of-project setting relation references are rejected',async t=>{
+ const f=await fixture(t),{createEntityManagement}=await import('./entity-management.mjs'),management=createEntityManagement(f.store);
+ const details=management.addRelation(f.first,{targetEntityId:f.second,category:'setting',type:'关联',description:'Stable fixture link'}),r=details.relations[0];
+ let turn=await f.submit([f.first,f.second],[{...issue([f.first,f.second]),relationIds:[r.relationId]}]);assert.equal(turn.reports[0].relationSources[0].scope,'entity-setting');
+ for(const ids of [[id()],[r.relationId,r.relationId]]){turn=await f.submit([f.first,f.second],[{...issue([f.first,f.second]),relationIds:ids}]);assert.ok([400,404].includes(turn.result.status));}
+ const external=management.create({name:'Outside'}).entity.id,outside=management.addRelation(f.first,{targetEntityId:external,category:'setting',type:'外部',description:''}).relations.find(r=>r.targetEntityId===external);
+ turn=await f.submit([f.first,f.second],[{...issue([f.first,f.second]),relationIds:[outside.relationId]}]);assert.equal(turn.result.status,404);
+ const legacy=management.addRelation(f.first,{targetEntityId:f.second,category:'story',type:'历史剧情',description:'Not assigned to this project'}).relations.find(r=>r.category==='story');
+ turn=await f.submit([f.first,f.second],[{...issue([f.first,f.second]),relationIds:[legacy.relationId]}]);assert.equal(turn.reports.at(-1).relationSources[0].scope,'legacy-unassigned-story');
+ assert.equal(f.store.db.prepare('SELECT count(*) n FROM runs').get().n,0);
+});

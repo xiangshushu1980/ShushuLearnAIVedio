@@ -91,3 +91,7 @@ Agent必须完整读取当前项目实体后提案，人工接受以事务更新
 ## 2026-10-04 图片对照依据范围（Owner: Sean）
 
 consistent 报告要求完整读取所观察图片所属实体和每个已登记生成步骤；inconclusive/conflicts 保留观察入口，服务端记录 comparisonCoverage，PC 显示缺口。导入图明确无步骤来源，旧不可变报告不重写。76 测试与 build、模拟 PC 通过。只是读取证据，实际图像质量仍未验证。正文见 reference-workspace/docs/image-feedback-v1.md。
+
+## 2026-10-04 关系检验证据（Owner: Sean）
+
+报告问题可引用 relationIds，先完整读取项目内两个端点；服务端保存 actual relationSources 并区分 entity-setting/project-story/legacy-unassigned-story。修改关系后旧报告保持来源内容并过期。78测试/build、隔离PC展开刷新通过；没有真实模型或Comfy调用。规范见 reference-workspace/docs/relation-review-v1.md。
