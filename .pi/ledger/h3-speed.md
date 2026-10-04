@@ -21,6 +21,8 @@
 | C-20260915-01 | Ref2VA PDD 8-step 与标准 20-step 5 秒同参对照 | ✅现行 | valid_from 09-15 |
 | C-20260915-02 | H3 Ref2VA 双角色正式生成分辨率与路线选型 | ✅现行 | valid_from 09-15 |
 | C-20260915-03 | PDD + Sage + KJNodes 低显存节点冲刺 1024×576/20s | ✅现行 | valid_from 09-15 |
+| C-20260925-01 | Continuum Timeline 多 chunk 长片一采链路与资源边界 | ✅现行 | valid_from 09-25 |
+| C-20260926-02 | Continuum 二采 + NativeAudioLock 验收与人脸边界 | 🟡部分待验证 | valid_from 09-26 |
 
 ---
 
@@ -261,3 +263,29 @@ C-20260914-02 | 普通 Ref2VA Turbo LoRA 1024×576 双角色长时基线 | 2026-
 - 时间线：
 - 2026-09-20 提出：社区已有 SelfLift H3 实验节点、Ref2VA/SelfLift 工作流接口和 4090 单独 Ref2VA 证据，但组合证据不足（来源任务 T-comfy-ops-42）。
 - 证据锚：`docs/38_h3_selflift_ref2va_4090_research.md`；[comfyui-SelfLift](https://github.com/facok/comfyui-SelfLift)；[X-MinimaxH3 validation](https://github.com/PullMyBoots/X-MinimaxH3/blob/main/VALIDATION.md)；[X-MinimaxH3 SelfLift constraints](https://github.com/PullMyBoots/X-MinimaxH3/blob/main/docs/SELFLIFT_PROGRESSIVE_GENERATION.md)。
+
+### C-20260925-01 | Continuum Timeline 多 chunk 长片一采链路与资源边界
+- 状态：✅实测（valid_from 2026-09-25）
+- 现行值：长片一采由社区 Continuum 节点包（V3.4）承担多 chunk 拼接，生成仍走正式档 PDD Ref2VA Acc 8-step + Sage Attention + KJ Low-Mem Attention/FFN，1024×576，Native Masked Strong 39 frames，INT8 VAE 与 `--fast fp16_accumulation`；不接 Plus 二采时即为交付一采。
+- 实测（RTX 4090 24GB、同环境、Ref2VA 参考人物+场景）：
+  - 1×5s：120 帧 / 4.998s，约 39.98s，峰值显存约 23060 MiB
+  - 2×10s：480 帧 / 19.998s，约 223.2s，峰值显存约 23108 MiB，主机内存峰值约 51.5 GiB
+  - 3×8s：576 帧 / 23.999s，约 293.3s（纯文本 3×8s 约 261.8s），峰值显存约 23078 MiB，主机内存峰值约 52.1 GiB
+  - 4×8s：768 帧 / 31.999s，约 399.6s，峰值显存约 23110 MiB，主机内存峰值约 54.3 GiB、最低可用约 5.0 GiB
+- 结论：显存峰值基本不随 chunk 数增长（稳定在约 23.1 GiB），**主要上限是主机内存最低可用量**，继续加 chunk 或参考图应优先观察 Assemble 阶段 RAM；参考人物+场景相较纯文本主要增加耗时与内存驻留，不显著抬高显存。
+- 提示词契约：Timeline header 必须单独占行并对齐 `chunk_seconds`（`[0-8s]`、`[8-16s]`…），每段自包含完整六段式 Ref2VA prompt，一个 chunk 设计成一个连续 shot；详见 `docs/33_h3_mc_engineering.md`。
+- 时间线：
+  - 2026-09-25 提出并跑通 1×5/2×10/3×8/4×8（来源任务 T-comfy-ops-47 与 Continuum 系列测量）。
+- 证据锚：`experiments/h3_vae_upgrade/sean_continuum_sage_1x5_1024_20260925.md`、`sean_continuum_sage_2x10_1024_20260925.md`、`sean_ref2va_continuum_3x8_1024_20260925.md`、`sean_ref2va_continuum_4x8_1024_20260925.md`、`sean_ref2va_continuum_4x8_chunked_prompt_research_20260925.md`；产物在 `ComfyUI/output/video/`。
+- 覆盖关系：不覆盖 PDD + Sage + KJ 单段正式基线（C-20260915-03/16-05）；本条只界定多 chunk 长片的可用范围与资源属性。
+
+### C-20260926-02 | Continuum 二采（latent upscale）+ NativeAudioLock 验收与人脸边界
+- 状态：🟡一采/二采链路与音频锁定通过；人脸 refine 与逐音素同步未定论（valid_from 2026-09-26）
+- 现行值：Continuum Plus 的 `refine_state` + `MinimaxH3LatentUpscaler3DRefineHandoff`（BF16，`lock_audio=true`）可在 768×448 一采后输出 1376×800（节点按 32 对齐，目标 1344×768）、约 32 秒成片；4×8 双角色流程并入 5 张 reference picture、中文 `<d>` 台词与 NativeAudioLock 外部对白音频，最终媒体保留原音频轨且视频条件随音频生成。
+- 实测：一采 768×448/768 帧/31.998s；二采 1376×800/768 帧/31.998s，总耗时 676.69s（墙钟约 670.7s），峰值显存 23574 / 24564 MiB，**主机可用内存最低 326 MB**（未 OOM 但已接近上限）。
+- 边界：32 秒整段 FaceRefine 在开始采样前因主机内存压力主动中止（非显存 OOM），本流程明确排除 FaceRefine；8 秒分段 refine 成功（红发 c1 275.1s、c2 228.2s），双人远景 `face-index=1` 仍锁错目标（精灵段锁定红发角色而作废），身份匹配模式多次返回“没有可 refine 的 subject”。
+- 口型结论：音频轨覆盖完整 32 秒、视频随音频条件生成，定性通过；**未量化逐音素同步率**。
+- 时间线：
+  - 2026-09-26 独立验收已完成产物，未重复提交 32 秒任务（避免共享实例二采阶段 RAM 风险）。
+- 证据锚：`experiments/h3_vae_upgrade/sean_continuum_768_native_audio_lock_independent_verification_20260926.md`、`sean_ref2va_continuum_dialogue_4x8_1344_face_20260926.md`；产物 `ComfyUI/output/video/sean_ref2va_continuum_dialogue_4x8_1344_00001_.mp4`；人脸边界并入 `docs/43_h3_facerefine_current_state.md`。
+- 覆盖关系：补充 C-20260925-01 的后处理与音频锁定范围；不改变其显存/内存结论，不把未量化的口型结果写成同步率定论。

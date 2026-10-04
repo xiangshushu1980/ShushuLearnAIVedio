@@ -49,6 +49,9 @@
 | C-20260915-01 | Ref2VA PDD 8-step 与标准 20-step 5 秒同参对照 | ✅现行 | h3-speed.md |
 | C-20260920-02 | H3 完整视频 latent 两阶段放大远景脸 smoke/5s 验证 | 🟡待验证 | h3-models.md |
 | C-20260922-02 | VOSR2 本地安装与图像/短批次 smoke | 🟡待验证 | h3-models.md |
+| C-20260925-01 | Continuum Timeline 多 chunk 长片一采链路与资源边界 | ✅现行 | h3-speed.md |
+| C-20260926-01 | 角色 reference 生成链统一为主图→H3全视角→抽帧 | ✅现行 | h3-prompt.md |
+| C-20260926-02 | Continuum 二采 + NativeAudioLock 验收与人脸边界 | 🟡部分待验证 | h3-speed.md |
 
 ---
 

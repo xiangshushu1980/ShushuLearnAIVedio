@@ -44,4 +44,4 @@ H3 的合法视频长度必须满足 `17*k+5`，常用值为 `124、141、243`�
 - 结构：一个 chunk 设计成一个连续 shot；chunk 内多 shot 会让 chunk 边界与 shot 边界混杂，难以定位接缝来源。
 - 实测（1024×576、4090 24GB）：1×5s 与 2×5s 烟难、2×10s 约 223s、3×8s（24s 成片）约 262s、4×8s（32s）约 538s；显存峰值约 23.1GiB，主机内存峰值可达约 51.7GiB（3×8s），瓶颈在主机内存而非 chunk 数。
 - 已知问题：chunk 边界音频环境声可能变化（Native Masked 只锁 latent 尾部），听感需人工验收；全片 FaceRefine （32s）会因主机内存压力中止，需分段处理。
-- 证据：[experiments/h3_vae_upgrade/](../experiments/h3_vae_upgrade/)（continuum_3x8/4x8、chunked_prompt_research、dialogue_4x8_1344）与 mem0 comfy-ops 池（2026-09-25 条目）。MC 链仍适用于单段可控续接和数字人对白场景。
+- 证据：`experiments/h3_vae_upgrade/`（continuum_3x8/4x8、chunked_prompt_research、dialogue_4x8_1344）；定论谱系见 [`.pi/ledger/h3-speed.md`](../.pi/ledger/h3-speed.md) `C-20260925-01`（一采链路与资源）与 `C-20260926-02`（二采 + NativeAudioLock 验收与人脸边界）。MC 链仍适用于单段可控续接和数字人对白场景。
