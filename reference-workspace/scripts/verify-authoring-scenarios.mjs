@@ -26,13 +26,26 @@ async function talk(label,text,existingSessionId=null){
  console.log(JSON.stringify({owner:'Sean',scenario:label,runId:liveRun,status:'running'}));
  const deadline=Date.now()+300000;while(agents.run(liveRun).status==='running'&&Date.now()<deadline)await new Promise(resolve=>setTimeout(resolve,500));
  if(agents.run(liveRun).status==='running')await agents.cancel(liveRun);
- const state=agents.run(liveRun),chat=agents.session(s.id),record={label,sessionId:s.id,runId:liveRun,runStatus:state.status,error:state.error,messages:chat.messages,events:agents.events(liveRun,0),plans:authoring.list(p.id).filter(plan=>plan.sessionId===s.id),reviews:chat.projectProposals.filter(v=>v.runId===liveRun)};
+ const state=agents.run(liveRun),chat=agents.session(s.id),record={label,sessionId:s.id,runId:liveRun,runStatus:state.status,error:state.error,messages:chat.messages,events:agents.events(liveRun,0),plans:authoring.list(p.id).filter(plan=>plan.sessionId===s.id),reviews:chat.projectProposals.filter(v=>v.runId===liveRun),relationProposals:chat.relationProposals.filter(v=>v.runId===liveRun)};
  evidence.scenarios.push(record);persist();assert.equal(state.status,'succeeded');return record;
 }
 function persist(){evidence.generationRunCount=store.db.prepare('SELECT count(*) n FROM runs').get().n;writeFileSync(output,JSON.stringify(evidence,null,2));}
 try{
  const models=await agents.models(),m=models.find(m=>m.provider==='deepseek'&&m.id==='deepseek-flash')||models[0];if(!m)throw new Error('No configured model');evidence.provider=m.provider;evidence.modelId=m.id;
- if(process.env.REFERENCE_VERIFY_RELATIONS_ONLY==='1'||process.env.REFERENCE_VERIFY_RELATION_REPAIR==='1'){
+ if(process.env.REFERENCE_VERIFY_RELATION_UPDATE==='1'){
+ const itemId=add('电子腕表','object',['物品'],'电子显示和电池供电的腕表。','黑色电子屏幕。');
+ const setting=management.addRelation(characterId,{targetEntityId:itemId,category:'setting',type:'携带',description:'林岚携带电子腕表，待核对世界规则。'}).relations.find(r=>r.targetEntityId===itemId);
+ const story=projects.saveRelation(p.id,null,{sourceEntityId:characterId,targetEntityId:sceneId,type:'值守',description:'林岚在候车厅值守。',expectedRevision:projects.project(p.id).revision}).relations[0];
+ const entityRows=()=>store.db.prepare('SELECT id,name,context FROM entities ORDER BY id').all(),originalEntities=entityRows();let sessionId=null;
+ for(const [scope,relation,description] of [['entity-setting',setting,'林岚随身携带电子腕表；与世界规则的冲突尚待人工处理。'],['project-story',story,'林岚负责候车厅夜间值守；具体站位和动作由拍摄本记录。']]){
+  const before=projects.context(p.id),record=await talk('relation-update-'+scope,`请完整读取当前项目及关系两端实体，使用关系修订提案工具修改已有关系 ${relation.relationId}，scope=${scope}。只把 description 改为「${description}」，保持关系类型、ID、两端、分类、全部实体文字与项目规则原样；不声称电子设备规则冲突已经解决。保存可在网页人工接受的提案，不直接应用，不新建，不生成。`,sessionId);sessionId=record.sessionId;
+  assert.equal(record.relationProposals.length,1);const proposal=record.relationProposals[0];assert.equal(proposal.relationId,relation.relationId);assert.equal(proposal.scope,scope);assert.deepEqual(proposal.changes,{description});assert.deepEqual(projects.context(p.id),before);
+  record.acceptance=agents.applyRelationProposal(proposal.id,{expectedContentHash:proposal.contentHash,acknowledgeUpdate:true});const after=projects.context(p.id),source=scope==='project-story'?projects.relations(p.id).find(r=>r.relationId===relation.relationId):management.detail(characterId).relations.find(r=>r.relationId===relation.relationId);
+  assert.equal(source.description,description);assert.equal(source.type,relation.type);assert.equal(source.sourceEntityId,relation.sourceEntityId);assert.equal(source.targetEntityId,relation.targetEntityId);assert.equal(source.category,relation.category);assert.deepEqual(entityRows(),originalEntities);assert.equal(after.project.worldRules,before.project.worldRules);
+  if(scope==='entity-setting')assert.deepEqual(after.storyRelations,before.storyRelations);else assert.deepEqual(after.entities,before.entities);
+  record.verifiedRelation=source;record.entityRowsUnchanged=true;record.otherScopeUnchanged=true;persist();
+ }
+ }else if(process.env.REFERENCE_VERIFY_RELATIONS_ONLY==='1'||process.env.REFERENCE_VERIFY_RELATION_REPAIR==='1'){
  const forbiddenId=add('电子腕表','object',['物品'],'电子显示和电池供电的腕表。','黑色电子屏幕。');
  const equipment=management.addRelation(characterId,{targetEntityId:forbiddenId,category:'setting',type:'携带',description:'林岚携带电子腕表；这条导入关系需要核对世界规则。'}).relations.find(r=>r.targetEntityId===forbiddenId);
  const story=projects.saveRelation(p.id,null,{sourceEntityId:characterId,targetEntityId:sceneId,type:'值守',description:'林岚在候车厅值守，属于本项目剧情，不固定当前站位。',expectedRevision:projects.project(p.id).revision}).relations[0];

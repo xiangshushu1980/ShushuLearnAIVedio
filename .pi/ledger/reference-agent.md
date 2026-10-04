@@ -111,3 +111,7 @@ consistent 报告要求完整读取所观察图片所属实体和每个已登记
 ## 2026-10-04 关系修订提案（Owner: Sean）
 
 propose_relation_update先读两个项目内端点，只改已有关系type/description。不可变候选、人工接受、来源CAS、幂等接受、关系与receipt同事务回滚。设定全局/剧情项目范围分开，不改ID端点分类，不动派生来源/历史未分配关系。86测试/build/模拟PC差异接受刷新通过；真实新工具模型调用未验证，0Comfy。规范reference-workspace/docs/relation-change-proposals-v1.md。
+
+## 2026-10-04 真实关系修订工具（Owner: Sean）
+
+deepseek-flash同session两轮分别修订 entity-setting/project-story 的description，逐字遵守指定说明，只提案不自动写；临时脚本模拟接受后ID类型两端分类/实体原始文字/worldRules不变，另一范围未变，0生成。第二轮读到第一轮已接受，并保留规则冲突尚未解决说明。证据 real-authoring-scenarios-1791110380987.json；命令 REFERENCE_VERIFY_RELATION_UPDATE=1 node scripts/verify-authoring-scenarios.mjs。具体受控字段修改证据，不推断自主语义或图像质量完成。正文reference-workspace/docs/relation-change-proposals-v1.md。
