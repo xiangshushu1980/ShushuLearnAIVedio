@@ -83,3 +83,7 @@ Agent必须完整读取当前项目实体后提案，人工接受以事务更新
 2026-10-04 Owner: Sean — 已有项目实体图片接续：Agent读取完整实体后规划，网页只读字段+可改图片，接受保留原实体ID/主图/文字/空间/声音。混合新旧候选可明确新增关系，重复key/自身关系/旧关系拒绝。63tests/build及隔离PC调整→接受→刷新验证通过，前后entity detail与project context完全一致、createdEntityIds=[]。未调用模型或ComfyUI；持续目标active。说明 reference-workspace/docs/existing-entity-image-plans-v1.md。
 
 2026-10-04 Owner: Sean — 完成 deepseek/deepseek-flash 三真实对话（已有实体/V3接续、腕伤+绷带关系、世界规则审阅），临时库5步骤、零图片生成。发现未知几何被写成否定、无伤断言等来源问题；收紧方法后单次接续重测人物改进，但场景仍自行指定未知材质/照明，语义质量未通过。文字报告新增本轮完整读取引用约束与partial/complete/unreviewed IDs，67tests/build与PC部分范围显示通过。详见 reference-workspace/docs/authoring-real-dialogue-verification.md；完整目标active。
+
+## 2026-10-04 已有场景来源编译（Owner: Sean）
+
+已有场景 Agent 方案使用 sceneIntent，由服务端替换自由提示词。只引用登记原文、确认空间和项目规则，源变更阻断旧步骤准备和提交。73 测试通过，PC 保存应用刷新通过，真实 Pi 单次目标选择通过；未运行图像生成，不能推断图像一致性。规范见 reference-workspace/docs/scene-prompt-compilation-v1.md。

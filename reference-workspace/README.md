@@ -194,3 +194,5 @@ Owner: Sean。项目工作区可建立固定版本的图片实验批次、显式
 已有实体可通过自然语言接续新图片步骤，不重复创建。Owner: Sean。详见 [已有实体图片接续](docs/existing-entity-image-plans-v1.md)。
 
 Owner: Sean。真实 Pi 对话与文字报告证据范围：[验证与尚未解决的问题](docs/authoring-real-dialogue-verification.md)。结构通过不等于场景提示词语义可靠。
+
+Owner: Sean。已有场景取景与来源校验见 [场景提示词编译 v1](docs/scene-prompt-compilation-v1.md)。

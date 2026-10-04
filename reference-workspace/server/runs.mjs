@@ -1,3 +1,4 @@
+import {assertScenePromptSources} from './scene-prompt-compiler.mjs';
 // Owner: Sean — durable run orchestration, restart recovery and shared GPU arbitration.
 import {createHash} from 'node:crypto';
 import { execFile } from 'node:child_process';
@@ -63,8 +64,8 @@ export function createRunService(store) {
     });
     let authoring=null;
     if(readDraftOrigin&&store.db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name='entity_authoring_draft_links'").get()){
-      const link=store.db.prepare('SELECT l.step_id,l.draft_updated_at,d.value,d.updated_at,s.plan_id,s.body,s.content_hash FROM entity_authoring_draft_links l JOIN drafts d ON d.entity_id=l.entity_id JOIN entity_workflow_steps s ON s.id=l.step_id WHERE l.entity_id=?').get(entityId);
-      if(link&&link.draft_updated_at===link.updated_at){const prior=JSON.parse(link.value),fields=['modelId','styleId','prompt','purpose','references','parameters'];if(contentHash(Object.fromEntries(fields.map(k=>[k,prior[k]])))===contentHash(Object.fromEntries(fields.map(k=>[k,input[k]])))){const step=JSON.parse(link.body);let revision={rootStepId:link.step_id,version:1};
+      const link=store.db.prepare('SELECT l.step_id,l.draft_updated_at,d.value,d.updated_at,s.plan_id,s.project_id,s.body,s.content_hash FROM entity_authoring_draft_links l JOIN drafts d ON d.entity_id=l.entity_id JOIN entity_workflow_steps s ON s.id=l.step_id WHERE l.entity_id=?').get(entityId);
+      if(link&&link.draft_updated_at===link.updated_at){const prior=JSON.parse(link.value),fields=['modelId','styleId','prompt','purpose','references','parameters'];if(contentHash(Object.fromEntries(fields.map(k=>[k,prior[k]])))===contentHash(Object.fromEntries(fields.map(k=>[k,input[k]])))){const step=JSON.parse(link.body);assertScenePromptSources(store,link.project_id,entityId,step.scenePromptBasis);let revision={rootStepId:link.step_id,version:1};
         if(store.db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name='entity_workflow_step_heads'").get()){
           const r=store.db.prepare('SELECT root_step_id,version FROM entity_workflow_step_revisions WHERE step_id=?').get(link.step_id);revision={rootStepId:r?.root_step_id||link.step_id,version:r?.version||1};
           const current=store.db.prepare('SELECT step_id FROM entity_workflow_step_heads WHERE root_step_id=?').get(revision.rootStepId)?.step_id||revision.rootStepId;
@@ -255,6 +256,7 @@ export function createRunService(store) {
       if(!row||row.content_hash!==origin.stepHash)throw new HttpError(409,'批次步骤来源不匹配');
       const step=JSON.parse(row.body),revision=store.db.prepare('SELECT root_step_id,version FROM entity_workflow_step_revisions WHERE step_id=?').get(row.id),root=revision?.root_step_id||row.id;
       if((store.db.prepare('SELECT step_id FROM entity_workflow_step_heads WHERE root_step_id=?').get(root)?.step_id||root)!==row.id)throw new HttpError(409,'步骤选用版本已变化');
+      assertScenePromptSources(store,row.project_id,entityId,step.scenePromptBasis);
       const expected=validateRun({modelId:step.modelId,styleId:step.styleId,prompt:step.prompt,purpose:step.purpose,parameters:step.parameters,references:body.references,...(step.role==='three_view'?{appearanceId:store.visualState(entityId).appearance?.id}: {})}).input;
       const current=validateRun(body).input;if(!isDeepStrictEqual(expected,current))throw new HttpError(409,'批次输入与选定步骤不符');
       let sourceIds=step.referenceAssetIds;

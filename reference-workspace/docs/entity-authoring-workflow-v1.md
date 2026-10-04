@@ -99,3 +99,5 @@ Owner: Sean。2026-10-04。创作助手可提出已有实体字段修改，由�
 已有实体可通过自然语言接续新图片步骤，不重复创建。Owner: Sean。详见 [已有实体图片接续](existing-entity-image-plans-v1.md)。
 
 Owner: Sean。真实 Pi 对话与文字报告证据范围：[验证与尚未解决的问题](authoring-real-dialogue-verification.md)。结构通过不等于场景提示词语义可靠。
+
+Owner: Sean。已有场景取景与来源校验见 [场景提示词编译 v1](scene-prompt-compilation-v1.md)。

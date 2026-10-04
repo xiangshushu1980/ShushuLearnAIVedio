@@ -24,7 +24,8 @@ export function createWorkflowStepRevisions(store,{projectService,management,bas
     if(input.image.key!==oldBody.key)throw new HttpError(400,'修订不能改变逻辑步骤 key',{fieldErrors:{'image.key':['请保留原步骤 key']}});
     const d=management.detail(old.entity_id),derived=db.prepare('SELECT * FROM entity_derivations WHERE entity_id=?').get(old.entity_id);
     const candidate={key:oldBody.candidateKey,kind:oldBody.candidateKind,profile:d.profile,baseEntityId:derived?.base_entity_id||null,variationOf:null,changes:derived?.description||'',projectRole:{role:'',plotNotes:''},unknowns:[],images:[input.image]};
-    const checked=validate(projectId,{title:'图片步骤修订',summary:input.reason,candidates:[candidate],relations:[],questions:[]}).candidates[0].images[0];
+    if(oldBody.sceneIntent&&!input.image.sceneIntent)throw new HttpError(400,'此步骤需保留资料编译模式，请调整取景目标而非取消来源');
+    const checked=validate(projectId,{title:'图片步骤修订',summary:input.reason,candidates:[candidate],relations:[],questions:[]},{compilationEntityId:old.entity_id}).candidates[0].images[0];
     const feedback=input.feedback?correctionEvidence(store,projectService,projectId,old,meta,input.feedback,runId):null;
     const captured={...current,imageHashes:hashes(checked.referenceAssetIds),...(feedback?{feedback}:{})},stepIdNew=id(),version=(db.prepare('SELECT max(version) AS n FROM entity_workflow_step_revisions WHERE root_step_id=?').get(meta.rootStepId).n||1)+1;
     const body={...checked,candidateKey:oldBody.candidateKey,candidateKind:oldBody.candidateKind,entityRevision:d.revision};
