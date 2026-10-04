@@ -200,3 +200,5 @@ Owner: Sean。已有场景取景与来源校验见 [场景提示词编译 v1](do
 Owner: Sean。关系报告来源与范围见 [关系检查证据](docs/relation-review-v1.md)。
 
 Owner: Sean。助手可提出已有关系类型/说明修订，由人工接受：[关系修订提案](docs/relation-change-proposals-v1.md)。
+
+Owner: Sean。当前完整目标验证范围与待授权出图计划见 [创作目标核对](docs/authoring-goal-audit.md)。
