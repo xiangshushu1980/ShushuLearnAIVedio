@@ -174,7 +174,8 @@
 
 ## 待确认的默认参数（已被生产双轨定论取代，2026-08-11 删明细）
 
-> 最终双轨配置：快车道 fl2va fp8 + turbo（docs/19）、慢车道 ref2va std14/20（docs/19）、全链路验收（docs/21）、活跃决策（mem0 [STATE]）。
+> 历史双轨配置：快车道 fl2va fp8 + turbo（docs/19）、慢车道 ref2va std14/20（docs/19）、全链路验收（docs/21）。
+> 2026-10-04 更正：生产正式路线已改为 Ref2VA + PDD Acc 8-step + SageAttention + KJ 低显存双节点，见 [34 §0](34_ref2va_generation_guide.md) 与 `.pi/ledger/h3-speed.md`；本文件的双轨矩阵保留为历史数据。
 
 ### 补测：MotionCache 音频专项（2026-08-04，文件 video/h3_audio/）
 - voice_nocache vs voice_motioncache（同 prompt 含人声+钢琴+鸟鸣，同 seed）

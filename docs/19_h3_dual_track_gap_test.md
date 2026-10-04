@@ -1,5 +1,7 @@
 # 19 H3 双轨盲区补测（2026-08-09）
 
+> 2026-10-04 状态标注：本文是当时（2026-08）双轨定档配置的快/显存/兼容性实测记录，其中的 fl2va fp8 + turbo 快车道、ref2va int8 free赛道步数档（std14/20）已被后续定论取代：现行生产路线为 Ref2VA + PDD Acc 8-step + SageAttention + KJ 低显存双节点（见 [34 §0](34_ref2va_generation_guide.md)、ledger C-20260915-01/03）。帧链硬桥不可靠、i2v 首帧 16:9 铁律等负面/操作结论仍然有效。
+
 > 任务线：h3-prompt-agent。目的：生产双轨（快车道 i2v+turbo 帧链跨段 / 慢车道 Ref2VA 多图）在**最终定档配置**下的速度/显存/兼容性验证——纯客观参数，无目测。
 > 环境：RTX 4090 24GB / ComfyUI 0.30（sage 已启）/ fl2va fp8 + ref2va int8 / qwen3vl-32B TE
 > 条件：seed 20260809 统一，prompt = IR 级三段式（experiments/ir_samples/i2v_alya_beach.txt，~1600 tokens），768×448 或 1024×576，24fps

@@ -1,8 +1,9 @@
 # VDN-H3 Ref2VA 路线与资源维护
 
-> 当前定位：MiniMax H3 Ref2VA 的独立实验路线。本文是 VDN-H3 的唯一维护入口；后续下载、参数、兼容性和实测结论追加到此处。生产主线仍为原生 H3 + PDD/Spectrum/Sage + Motion Context + NativeAudioLock。
+> 当前定位：MiniMax H3 Ref2VA 的独立实验路线，**不是生产正式路线**。本文是 VDN-H3 的唯一维护入口；后续下载、参数、兼容性和实测结论追加到此处。
+> 生产主线为原生 H3 Ref2VA + PDD Acc 8-step + SageAttention + KJ 低显存双节点（`docs/34 §0`、`.pi/ledger/h3-speed.md`）。VDN 已知不能与 KJ `MiniMaxLowVRAMAttention` 叠加（采样阶段报 `'list' object has no attribute 'shape'`），1344×768/15s 与 1024×576/25s 已在采样阶段撞资源边界而被取消；1024×576/20s（395s）仍可复现，仅作遗留对照。
 >
-> 最后更新：2026-09-25
+> 最后更新：2026-10-04
 
 ## 1. 路线判断
 

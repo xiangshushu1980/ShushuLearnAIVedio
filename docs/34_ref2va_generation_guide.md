@@ -1,6 +1,31 @@
 # H3 普通 Ref2VA 生成手册
 
 > 普通 Ref2VA 的唯一日常入口。历史矩阵见 [09](09_h3_test_plan.md)、[19](19_h3_dual_track_gap_test.md)，提示词细则见 [17](17_h3_prompt_writing_rules.md)，连续视频见 [33](33_h3_mc_engineering.md)，VDN 独立路线见 [35](35_vdn_h3_ref2va_route.md)。
+> 最后更新：2026-10-04（正式路线更正：PDD + SageAttention + KJ 低显存双节点取代 VDN，见第 0 节与文末历史节标注）。
+
+## 0. 当前正式路线（2026-10 更正）
+
+普通 Ref2VA 成片的现行链条：
+
+```
+Ref2VA int8 convrot 底模
+  → PDD Acc（8 nfe，euler，节点 sigmas）
+  → PatchSageAttentionKJ（sage_attention=auto）
+  → MiniMax H3 Low VRAM Attention（head_chunks=4）
+  → MiniMax H3 Chunk FeedForward（chunks=4，seq_threshold=4096）
+  → MiniMaxH3NativeAudioLock（外部台词锁口型时）
+  → VRAM_Debug(unload_all_models) → VAEDecodeTiled
+```
+
+| 档 | 画布 | 采样 | 加速组件 | 实测 |
+|---|---|---|---|---|
+| 筛选 | 768×448 | Turbo/LightX2V 4 或 8 步 | 可不加 | 4 步约 19.5s、8 步约 30.1s（5s 片段） |
+| 正式成片 | 1024×576 | PDD Acc 8 步 | Sage + KJ 双节点 + NativeAudioLock | 20s 约 342s；22s 约 380s；23s 约 425s |
+| 短片测试 | 1344×768 | PDD 8 步 | + H3MemoryOptimization + tiled VAE | 15s 约 516s，仅短测 |
+
+正式档内部有两个并行组合，2026-09-16 起以 **KJ LowVRAM 路线为画面稳定性优先方案**：`H3MemoryOptimization + H3 专用 Sage patch` 组合曾出现松树侵入/枝叶贴脸的画面污染（`.pi/ledger/h3-speed.md` C-20260916-03/04），同条件 KJ LowVRAM 未复现。
+
+现行值与兼容边界以 [ledger h3-speed.md](../.pi/ledger/h3-speed.md) 为准（证据链），本文只保留日常入口。筛选档只用于构图、参考图和动作粗筛，不能据此判断动作时序或二采价值。
 
 ## 第一次生成清单
 
@@ -28,19 +53,20 @@ Ref2VA 是 H3 的多参考条件生成：文字提示结合角色、场景、道
 - 底模：`ComfyUI/models/diffusion_models/minimax_h3_ref2va_pruned_int8_convrot.safetensors`
 - 文本编码器：`ComfyUI/models/text_encoders/qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors`
 - 视频/音频 VAE：`minimax_h3_video_vae_int8_convrot.safetensors` / `minimax_h3_audio_vae_fp32.safetensors`
-- 可选 LoRA：`minimax_h3_ref2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors`、`minimax_h3_ref2v_turbo_4step_v0.1_comfyui_bf16.safetensors`
+- 可选 LoRA（筛选档）：`minimax_h3_ref2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors`、`minimax_h3_ref2v_turbo_4step_v0.1_comfyui_bf16.safetensors`、`ComfyUI-H3-LightX2V` Ref2VA Turbo 4/8-step
+- 正式档加速组件：PDD Acc（核心自带 LoRA/patch 路线）、`PatchSageAttentionKJ`、KJ `MiniMax H3 Low VRAM Attention`、KJ `MiniMax H3 Chunk FeedForward`；原生 H3 Sparse 只作备用，且不与显式 SageAttention 叠加
 - 运行器：`scripts/h3_ref2v_runner.py`；批量用例：`experiments/h3_ref2v/`
 
 节点输入和 shift/sigma 配对见 [.pi/skills/comfyui/references/nodes.md](../.pi/skills/comfyui/references/nodes.md) 与 [params.md](../.pi/skills/comfyui/references/params.md)。
 
 ## 4090 参数基线
 
-| 档位 | 画布 | 步数/采样器 | LoRA | 用途 |
+| 档位 | 画布 | 步数/采样器 | 加速/LoRA | 用途 |
 |---|---:|---|---|---|
 | 预览 | 768×448 | 4 / `euler` | Ref2V Turbo 4-step | 构图和大致动作 |
-| 快速抽卡 | 768×448 | 8 / `res_multistep` | Ref2V Turbo 8-step | 日常筛选 |
-| 质量基线 | 768×448 | 20 / `res_multistep` | 无 | 质量对照 |
-| 成片对照 | 1024×576 | 20 / `res_multistep` | 无 | 显存允许时使用 |
+| 快速抽卡 | 768×448 | 8 / `res_multistep` | Ref2V Turbo 8-step（或 LightX2V 4/8-step） | 日常筛选 |
+| 质量对照 | 768×448 | 20 / `res_multistep` | 无 LoRA + Sage | 与加速档做画质对照的基线 |
+| 正式成片 | 1024×576 | 8 / PDD 节点 sigmas | PDD Acc + Sage + KJ 低显存双节点 | 默认出片路线（第 0 节） |
 
 H3 帧数按 `17k+5` 网格对齐；请求帧数不一定等于输出帧数，时长必须以实际帧数和帧率为准。`1024×576` 在 24GB 卡上可行，但不作为首次抽卡默认值。
 
@@ -61,7 +87,8 @@ H3 帧数按 `17k+5` 网格对齐；请求帧数不一定等于输出帧数，�
 
 ## 当前结论与资料边界
 
-- 无 LoRA 20 steps 是稳妥质量基线；8-step 适合筛选，4-step 只适合预览。
+- 无 LoRA 20 steps 仍是画质对照基线；出片默认走第 0 节的 PDD 8 步正式路线；Turbo 8/4 步只用于筛选与预览。
+- VDN 不是正式路线：与 KJ `MiniMaxLowVRAMAttention` 不兼容（采样阶段报 `'list' object has no attribute 'shape'`），且 1344×768/15s、1024×576/25s 在采样阶段撞资源边界被取消；详见 [35](35_vdn_h3_ref2va_route.md) 与 ledger C-20260915-06/07、C-20260916-02。
 - 4090 上 768×448 是首次生成默认尺寸；1024×576 可行但吞吐和显存压力更高。
 - 普通 Ref2VA、VDN、FL2VA、MC 是不同实验维度；比较时记录底模、参考图、帧数、seed、steps、采样器、LoRA、显存和 decode 时间。
 - 新增稳定参数/流程进入本文；历史实验留在专题文档；单次耗时、画质印象和踩坑经验同步到 Mem0，并带日期与适用条件。
@@ -69,16 +96,17 @@ H3 帧数按 `17k+5` 网格对齐；请求帧数不一定等于输出帧数，�
 
 ### 2026-09-19 H3Memory 与 Sparse 路线补充
 
-- `H3MemoryOptimization(chunk_rows=4096, Preserve native, QKV Auto)` 已验证可用于 PDD 流程和原生标准20-step流程。
+- `H3MemoryOptimization(chunk_rows=4096, Preserve native, QKV Auto)` 已验证可用于 PDD 流程和原生标准20-step流程；但与 H3 专用 Sage patch 组合时出现过画面污染（见第 0 节），默认仍选 KJ LowVRAM 路线。
 - H3 Sparse 使用 `Comfy Kitchen INT8 Sparse` 时必须独立使用，不能和显式 SageAttention 叠加；后者会使 Sparse fallback 到 existing dense。
 - 当前正式速度优先仍为 `PDD + SageAttention`；原生备用路线为 `H3MemoryOptimization + H3SparseAttention(30%)`，其优势是相对原生 Dense 降低视频注意力计算，不是替代 PDD。
 
-### 2026-09-15 正式生成选型
+### 2026-09-15 正式生成选型（历史：VDN 曾被列为长片主力，2026-10 已更正）
 
+> 本节以下三条已被顶部第 0 节取代：正式成片默认 PDD + SageAttention + KJ 低显存双节点（1024×576/20s 约 342s），VDN 保留为可复现的遗留对照，不再是长片主力。
 - 默认正式画布：**1024×576（严格 16:9）**。
-- 默认正式路线：**VDN + 8 steps + NativeAudioLock**；1024×576 下 10/15/20 秒均已跑通，20 秒约 392 秒，是当前长片主力方案。
+- 当时默认正式路线：**VDN + 8 steps + NativeAudioLock**；1024×576 下 10/15/20 秒均已跑通，20 秒约 392 秒（2026-10 起不再作为正式路线）。
 - 快速试错：**768×448**；VDN 5/10/15/20 秒均跑通，约 90/140/190/230 秒，但该画布不是严格 16:9，主要用于构图、参考图和动作筛选。
-- PDD + SageAttention：1024×576/15 秒已成功（约 235 秒）；叠加 KJNodes 的 `MiniMax H3 Low VRAM Attention`（head_chunks=4）与 `MiniMax H3 Chunk FeedForward`（chunks=4、seq_threshold=4096）后，1024×576/20 秒也成功（端到端约 342 秒）。该组合成为速度优先的正式候选，但需要人工确认画质/动作与 VDN 20 秒的一致性。
+- PDD + SageAttention：1024×576/15 秒已成功（约 235 秒）；叠加 KJNodes 的 `MiniMax H3 Low VRAM Attention`（head_chunks=4）与 `MiniMax H3 Chunk FeedForward`（chunks=4、seq_threshold=4096）后，1024×576/20 秒也成功（端到端约 342 秒）。该组合已成为正式成片默认路线。
 - 1344×768（约 1 MP）仅建议短片测试：5/10 秒可跑，12 秒开始出现明显系统内存搬运风险，15 秒以上不适合作为当前 24GB 卡的正式路线。
 - 当前无需继续补测其他分辨率的长时长；只有在需要把 PDD + SageAttention 作为 20 秒正式替代方案时，再单独补一条 1024×576/20 秒即可。
 

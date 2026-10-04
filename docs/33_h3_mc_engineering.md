@@ -34,3 +34,14 @@ H3 的合法视频长度必须满足 `17*k+5`，常用值为 `124、141、243`�
 ## Runner 防错
 
 `scripts/h3_mc_runner.py` 在提交前拒绝非法 H3 length，要求 MC 段声明 `save_latent`，并在结果中记录输出媒体元数据；已有结果但声明的 latent 文件缺失时会自动重跑，避免 B 无 latent 却被跳过。
+
+## 现行长片路线：Continuum Timeline（2026-09-25 起）
+
+多 chunk 长片的当前做法已从逐段 MC 链转为社区 Continuum 节点包（V3.4 / Plus）拼接，生成仍走正式档：PDD Acc 8 步 + Sage + KJ Low-Mem Attention/FFN。
+
+- Prompt 路由：Timeline header 必须单独占行（`[0-8s]`、`[8-16s]`），时间范围与 `chunk_seconds` 对齐；每段自包含完整六段式 Ref2VA prompt，不依赖全局文本重复。
+- 连续性：Native Masked（Strong 39 frames）负责 AV latent 续接，替代手写 Motion Context 链；官方示例要求每段从上一段 exact final state 继续。
+- 结构：一个 chunk 设计成一个连续 shot；chunk 内多 shot 会让 chunk 边界与 shot 边界混杂，难以定位接缝来源。
+- 实测（1024×576、4090 24GB）：1×5s 与 2×5s 烟难、2×10s 约 223s、3×8s（24s 成片）约 262s、4×8s（32s）约 538s；显存峰值约 23.1GiB，主机内存峰值可达约 51.7GiB（3×8s），瓶颈在主机内存而非 chunk 数。
+- 已知问题：chunk 边界音频环境声可能变化（Native Masked 只锁 latent 尾部），听感需人工验收；全片 FaceRefine （32s）会因主机内存压力中止，需分段处理。
+- 证据：[experiments/h3_vae_upgrade/](../experiments/h3_vae_upgrade/)（continuum_3x8/4x8、chunked_prompt_research、dialogue_4x8_1344）与 mem0 comfy-ops 池（2026-09-25 条目）。MC 链仍适用于单段可控续接和数字人对白场景。
