@@ -46,3 +46,27 @@ project consistency 报告的问题引用实体时，必须在本轮完整读取
 - `REFERENCE_VERIFY_CONTINUATION_ONLY=1 node scripts/verify-authoring-scenarios.mjs`：只跑第一场景，用于限定复测费用。
 
 真实脚本只检查结构、引用、临时库应用和基本冲突分类；即使输出 verified，仍需逐句审阅 prompts/invariants/unknowns 的语义矛盾。当前完整目标保持 active；下一步需要让来源核对和修订形成更可靠的闭环，并在得到生成授权后验证真实图片。
+
+## 具体关系引用：真实 Pi 验证（2026-10-04）
+
+Owner: Sean。`REFERENCE_VERIFY_RELATIONS_ONLY=1 node scripts/verify-authoring-scenarios.mjs` 限定运行关系检查。新增临时电子腕表、角色携带的设定关系及角色值守场景的项目剧情关系，均不是生产资料。
+
+真实 deepseek/deepseek-flash 已完整读取三个实体，在报告中以 relationIds 引用实际关系，并由服务端保存两种 scope 的 relationSources。报告正确识别电子设备与世界规则的冲突，将无固定空间资料列为 missing，没有声称看图；提出机械替代或规则例外的建议，均未自动采用。项目上下文前后相同、生成运行数 0。
+
+原始本地证据：experiments/sean_reference_authoring_goal_20261004/real-authoring-scenarios-1791109090087.json。该测试请求明确给出关系 ID 与禁止电子设备的矛盾线索，不证明模型能在大型项目中独立找出全部问题。
+
+此前场景自由提示词的补写问题已有后续来源编译，见 [场景提示词编译](scene-prompt-compilation-v1.md)；图像模型实际结果仍未验证。
+
+## 同一对话：报告 → 规则提案 → 人工接受 → 重检
+
+`REFERENCE_VERIFY_RELATION_REPAIR=1 node scripts/verify-authoring-scenarios.mjs` 在同一项目、同一 session 连续运行三轮真实 Pi 对话。测试用户明确决定把世界规则修改为「普通现实城市，无魔法；允许现实存在的机械、手工和电子设备；伤势不改变人物身份与已有服装。」这是测试资料的主动设定变更，不是 Agent 自行放宽规则。
+
+真实结果：
+
+1. 完整读取三个实体，保存电子腕表与原规则冲突的报告，引用设定及剧情关系。
+2. 只保存 worldRules 项目修改提案，内容与测试用户要求逐字一致；未自动应用。测试脚本调用与网页相同的 applyProjectProposal 模拟人工接受，未操作真实用户项目。
+3. 接受后旧报告因上下文变化标为 stale；同一对话再完整读取三个实体，新报告不再列电子设备冲突。前后实体及项目剧情关系完全相同；其他不足继续标为 missing 或 suggestion。
+
+本地证据：experiments/sean_reference_authoring_goal_20261004/real-authoring-scenarios-1791109177957.json。全部三轮 succeeded、同一 session、0 生成运行。脚本现在按 runId 切分保存的报告，避免把上一轮报告误当作本轮结果。生产应用与凭据未修改；临时数据库及凭据副本已清理。
+
+范围限制：只有一个三实体、两关系、明确提示冲突线索的受控案例。报告中的建议仍需人工判断；读取证据不等于全部语义正确。此次不含真实图片观察、再生成、多个实验变体的视觉比较。

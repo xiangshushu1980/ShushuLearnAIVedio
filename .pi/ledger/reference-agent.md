@@ -95,3 +95,7 @@ consistent 报告要求完整读取所观察图片所属实体和每个已登记
 ## 2026-10-04 关系检验证据（Owner: Sean）
 
 报告问题可引用 relationIds，先完整读取项目内两个端点；服务端保存 actual relationSources 并区分 entity-setting/project-story/legacy-unassigned-story。修改关系后旧报告保持来源内容并过期。78测试/build、隔离PC展开刷新通过；没有真实模型或Comfy调用。规范见 reference-workspace/docs/relation-review-v1.md。
+
+## 2026-10-04 同会话真实文字修订闭环（Owner: Sean）
+
+真实Pi deepseek-flash：三个实体两关系的报告→仅worldRules提案→临时脚本模拟人工接受→同session重检。原报告stale，新规则允许电子设备后重检不再报腕表冲突；实体/关系原样，0生成。证据 real-authoring-scenarios-1791109177957.json；另单轮关系引用证据1791109090087。用户显式测试选择规则变更，不是Agent擅改规则。小案例有提示线索，不能推广为全项目质量通过，图片闭环未验证。手册reference-workspace/docs/authoring-real-dialogue-verification.md。
