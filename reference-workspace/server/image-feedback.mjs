@@ -15,7 +15,7 @@ export const imageFeedbackSchema=z.object({reviewId:uuid,expectedReviewHash:z.st
 
 export function imageReviewSources(store,authoring,projectId,assetIds,readSteps=new Map()){
   return assetIds.map(assetId=>{
-    const asset=store.asset(assetId),source={assetId,entityId:asset.entityId,contentHash:asset.hash,runId:asset.runId||null,workflow:null};
+    const asset=store.asset(assetId),source={assetId,assetName:asset.name,entityId:asset.entityId,entityName:store.entity(asset.entityId).name,contentHash:asset.hash,runId:asset.runId||null,workflow:null};
     if(!asset.runId)return source;
     const run=store.run(asset.runId),origin=run.snapshot.authoring;
     if(run.entityId!==asset.entityId||!origin?.stepId)return source;

@@ -58,3 +58,13 @@ Owner: Sean。新报告增加服务端计算的 `comparisonCoverage`，包含 en
 此范围只是访问证据，不是视觉正确性证明，也不意味着人工确认、全项目审核或已检验所有关系。
 
 验证：76 项测试及构建通过。新增 3 项隔离测试覆盖未读所属实体、未读生成步骤、多视图步骤分别读取、导入图无来源。原观察工具测试补全实体读取。模拟 PC 报告显示范围，无横向溢出，控制台 0 错误；本地截图 experiments/sean_reference_authoring_goal_20261004/review-comparison-coverage-pc.png。没有真实模型调用或 ComfyUI 生成。
+
+## 人工图片并排对照（2026-10-04）
+
+Owner: Sean。报告直接显示 reviewedAssetIds 对应图片，按报告顺序排列；每张图显示所属实体、素材名称、已登记生成步骤及版本，并显示明确引用该 assetId 的问题。按钮「并排放大比较」在当前网页弹出较大的双列对照，可按 Escape 或关闭按钮返回。最多沿用报告的8张图，不隐式增加参考图，不改变生成输入、确认状态或任何实体资料。
+
+新报告 workflowSources 保存 assetName、entityName 的来源快照。实体后来改名不重写旧报告，旧记录缺少名称时显示已有 ID。图片不可访问时提示重新核对，报告过期时明确提示当前图片不能作为旧结论的有效确认；显示不是图像历史字节快照。
+
+验证：81项测试、构建通过；新增测试证明历史名称不会随实体改名重算。隔离 PC 两实体的模拟图片同时加载，所属实体/步骤/具体观察显示、放大、Escape关闭通过，无控制台错误或横向溢出。截图 experiments/sean_reference_authoring_goal_20261004/review-images-comparison-pc.png 为色块模拟，不能证明图像逻辑质量。
+
+复现：`REFERENCE_FEEDBACK_FIXTURE=1 REFERENCE_REVIEW_GALLERY_FIXTURE=1 node scripts/scene-images-ui-fixture.mjs`，打开输出 workflowUrl，进入项目助手，点击并排放大比较。测试临时库及模拟Agent，无模型或生成调用。

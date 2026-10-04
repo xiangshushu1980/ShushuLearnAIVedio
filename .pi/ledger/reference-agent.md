@@ -103,3 +103,7 @@ consistent 报告要求完整读取所观察图片所属实体和每个已登记
 ## 2026-10-04 Pi 图片内容格式修复（Owner: Sean）
 
 发现 Reference view_reference_image 使用source封装，与本机 Pi ImageContent(data/mimeType)不符；已修正，旧session回放转换旧块不改数据库。真实Pi deepseek-flash识别未从文字泄露的诊断图红2/绿1/蓝3，报告存已看图范围，0生成；本地pixel-observation-1791109440534.json/png。80测试通过（可解码图片、缓存、旧历史）。仅基础像素输送识别证据，真实人物场景一致性仍未验证。规范见reference-workspace/docs/agent-integration-v1.md。
+
+## 2026-10-04 报告图片并排观察（Owner: Sean）
+
+报告已检查图按顺序双列显示与弹窗放大；标实体/素材/步骤版本及指向该图问题。新报告保存名称快照，旧名称不重算，过期与不可用明确显示；不改变输入或确认。81测试/build/隔离两实体色块PC加载放大Escape0错误无溢出通过。正文reference-workspace/docs/image-feedback-v1.md。未调用模型/Comfy，不证明真实图像质量。

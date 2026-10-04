@@ -126,3 +126,11 @@ test('image observation returns Pi SDK data/mimeType content with decodable pixe
   const again=await view.execute(id(),{assetId:f.asset.id});assert.ok(!again.content.some(v=>v.type==='image'));assert.equal(JSON.parse(again.content[0].text).alreadyViewed,true);
  });
 });
+
+
+test('review records entity and asset labels as historical evidence rather than recomputing live names',async t=>{
+ const f=await fixture(t),report=await f.review(),source=report.workflowSources[0];
+ assert.equal(source.entityName,'Station');assert.equal(source.assetName,'Mock output only');
+ f.store.db.prepare('UPDATE entities SET name=? WHERE id=?').run('Renamed later',f.step.entityId);
+ const historical=f.authoring.imageReview(f.p.id,report.id);assert.equal(historical.stale,true);assert.equal(historical.workflowSources[0].entityName,'Station');assert.equal(historical.contentHash,report.contentHash);
+});
