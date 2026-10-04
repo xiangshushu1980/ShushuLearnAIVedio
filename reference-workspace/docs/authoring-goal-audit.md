@@ -66,3 +66,10 @@ Agent 接着保存6个不可变工作流修订；重复图片引用与主图依�
 核对实际步骤API发现，模型声称追加的提示词与不变量被场景编译器替换，v3实际prompt/invariants与v2相同。这是反馈执行缺口，不是修订成功。新增工具回传effectiveImage、changedFields、generationInputChanged及编译替换标记；无实际变化时明确警告不得声称修正或重复生成。测试覆盖有变化和无变化两种响应。此修复仍需后续真实模型重检，并需要提升受限取景表达，使自然语言修改确实进入生成输入。
 
 隔离服务复用了既有应用模型配置，未复制或暴露凭据。浏览器记录在本地 .playwright-cli，实验DB/media不提交；服务不操作ComfyUI。空间草稿及人工选图权限保持原边界。
+
+
+### 有效取景修订的真实复核
+
+随后升级编译器2与方法10，加入composition=reframe，允许按输出任务重新构图而保留固定结构。隔离服务器确认0活跃Agent/生成后重新加载，未重启生产Reference或ComfyUI。通过同一真实PC对话发送反馈，运行6cb285b1-7756-4ce1-813f-ffb46b1907ac成功保存候选85feb24e-3ecb-4dcd-b8d0-0f150c361015（v4，parent仍为v2）。Agent重新读取保存步骤，实际prompt与sceneIntent变化，编译依据为2；它明确撤回上轮追加自由文本已保存的说法。实体、关系、主图和空间状态未改变。
+
+本地pc-reframe-revision-evidence.json记录实际数据库步骤、运行和事件；断言v3/v2提示词相同、v4不同且composition=reframe、运行succeeded、生成数仍7。v4尚未采用或生成，因此不能称取景图像已改善。89项回归与构建通过，包含重新构图、完整来源保留、未知字段拒绝、旧编译器依据409失效和不改变实体资料的测试。

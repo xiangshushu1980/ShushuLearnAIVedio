@@ -37,3 +37,21 @@ test('bounded viewpoint and shot scale change framing without adding spatial fac
  for(const sceneIntent of [{...im.sceneIntent,viewpoint:'north entrance'}, {...im.sceneIntent,shotScale:'new room'}, {...im.sceneIntent,cameraNotes:'Invent a marble wall'}])assert.throws(()=>compileScenePrompt(f.store,f.projects,f.p.id,f.entityId,{...im,sceneIntent}),e=>e.status===400);
  assert.equal(f.store.db.prepare('SELECT count(*) n FROM runs').get().n,0);
 });
+
+
+test('reframe changes actual prompt, preserves source prose and blocks old compiler basis',t=>{
+ const f=fixture(t),before=f.store.entity(f.entityId);
+ const base=compileScenePrompt(f.store,f.projects,f.p.id,f.entityId,f.image);
+ const next=compileScenePrompt(f.store,f.projects,f.p.id,f.entityId,{...f.image,sceneIntent:{...f.image.sceneIntent,composition:'reframe',viewpoint:'eye_level',shotScale:'close_up'}});
+ assert.notEqual(next.prompt,base.prompt);
+ assert.match(next.prompt,/RECOMPOSE THE CAMERA VIEW/);
+ assert.match(next.prompt,/do not deliver an overhead cutaway/);
+ assert.match(next.prompt,/target dominate the frame/);
+ assert.ok(next.prompt.includes(before.context.description));
+ assert.deepEqual(f.store.entity(f.entityId).context,before.context);
+ assert.equal(next.scenePromptBasis.compilerVersion,2);
+ assert.throws(()=>assertScenePromptSources(f.store,f.p.id,f.entityId,{...base.scenePromptBasis,compilerVersion:1}),e=>e.status===409);
+ assert.doesNotThrow(()=>assertScenePromptSources(f.store,f.p.id,f.entityId,next.scenePromptBasis));
+ assert.throws(()=>compileScenePrompt(f.store,f.projects,f.p.id,f.entityId,{...f.image,sceneIntent:{...f.image.sceneIntent,composition:'invent_new_room'}}),e=>e.status===400);
+ assert.equal(f.store.db.prepare('SELECT count(*) n FROM runs').get().n,0);
+});

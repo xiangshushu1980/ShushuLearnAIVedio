@@ -6,11 +6,11 @@ Owner: Sean
 
 ## 数据与调用
 
-`sceneIntent: {focusText, anchorIds, cameraAnchorId?, viewpoint?, shotScale?}`：focusText 必须是当前介绍或外观原文片段；锚点和可选相机位置只能引用本场景已确认锚点。细节必须有目标。角度及细节必须依赖本场景主图、基础场景主图或明确选择本场景参考图。
+`sceneIntent: {focusText, anchorIds, cameraAnchorId?, viewpoint?, shotScale?, composition?}`：focusText 必须是当前介绍或外观原文片段；锚点和可选相机位置只能引用本场景已确认锚点。细节必须有目标。角度及细节必须依赖本场景主图、基础场景主图或明确选择本场景参考图。
 
 `POST /api/authoring/:projectId/entities/:entityId/scene-image-preview` 接收完整图片步骤，返回编译后的步骤；不保存、不生成。PC 界面支持选择文字目标、已确认锚点、预览及保存新版本。编译提示词和规则只读。
 
-返回 `scenePromptBasis` 包含 compilerVersion=1、entityId、textHash、spatialHash、spatialStatus、projectRulesHash。项目哈希覆盖 worldRules、visualStyle、decisions。登记介绍、外观、确认空间及项目规则原文进入提示词；未确认空间不会升级成事实。相邻、连通不推断共线；未知也不意味着禁止参考图中的布局。取景位置和临时人物行为不会写回固定空间。
+返回 `scenePromptBasis` 包含 compilerVersion=2（旧版本1仍可解析，但生成前要求按当前编译器修订）、entityId、textHash、spatialHash、spatialStatus、projectRulesHash。项目哈希覆盖 worldRules、visualStyle、decisions。登记介绍、外观、确认空间及项目规则原文进入提示词；未确认空间不会升级成事实。相邻、连通不推断共线；未知也不意味着禁止参考图中的布局。取景位置和临时人物行为不会写回固定空间。
 
 源资料改变后，工作流预览、输入准备、匹配该步骤的草稿生成和预备批次提交均拒绝旧版本，需按当前资料修订。编译来源超过 16000 字符会明确报错，不静默截断。
 
@@ -29,3 +29,10 @@ Owner: Sean
 viewpoint 可选 model_choice / eye_level / high_angle / overhead / isometric；shotScale 可选 model_choice / wide / medium / close_up。默认省略保持原行为。PC界面提供两个选择，服务端将取景要求放在来源原文之前；这些字段不写回固定空间，任意自由相机字段仍拒绝。
 
 取景字段已有自动化覆盖，当前全回归87项、构建通过。真实实验中平视和长凳近景提示词确实进入工作流，但结果仍是俯视全景。因此当前只证明输入链路有效，未证明模型服从取景。检查和修订仍需真实图像反馈，不能把结构校验通过当作视角生成成功。详见 [完整目标审计](authoring-goal-audit.md)。
+
+
+## 重新构图（编译器2）
+
+composition 为 reference（或省略）/ reframe。reframe 将参考图作为布局依据，明确原资料中“俯视、剖切、画面上方”等是来源图描述，而非输出构图命令。平视要求观察者在室内、墙面竖直与地面透视；近景要求目标占主要画面，只保留紧邻环境。源资料不截断、未知结构不补写，输出要求在来源正文前后明确。相机控制不会变成实体固定事实。
+
+PC可选择“参考原图构图”或“按取景要求重新构图”，Agent使用同一枚举。旧快照与历史步骤仍可读取；编译器版本1的来源在预览/提交时失效，必须另存修订并审阅，不能悄悄改变旧步骤输入。89项测试、构建通过；真实图像能否服从新指令仍需实际生成验证。
