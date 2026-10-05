@@ -1,0 +1,41 @@
+{
+  "owner": "Sean",
+  "services": [
+    {
+      "port": 4190,
+      "pid": 101335,
+      "profileVersion": 13,
+      "modelCount": 2,
+      "backup": "/home/sean/projects/comfy-ops/experiments/sean_film_agent_20261004/sean-before-delivery-4190.sqlite",
+      "projectsUnchanged": [
+        [
+          "5269e95a-d8b7-4c66-b8fd-603be396ef4c",
+          18
+        ],
+        [
+          "2cf7756a-c652-4423-9302-0aa71ffda6c5",
+          18
+        ]
+      ],
+      "finalRuntimeIncludesWriteJournal": true
+    },
+    {
+      "port": 4194,
+      "pid": 101354,
+      "profileVersion": 13,
+      "modelCount": 2,
+      "backup": "/home/sean/projects/comfy-ops/experiments/sean_film_agent_20261004/sean-before-delivery-4194.sqlite",
+      "projectsUnchanged": [
+        [
+          "d6ae53a8-54c0-4a50-9810-fde682b45b29",
+          3
+        ],
+        [
+          "538005c3-16bd-4709-aa4e-70831b960a24",
+          83
+        ]
+      ],
+      "finalRuntimeIncludesWriteJournal": true
+    }
+  ]
+}
