@@ -10,3 +10,7 @@ Owner: Sean。当前操作契约只写在 film-editor 文档，本文件记录�
 - 部署：4190 和 4194 均为 profile13/method10。原项目5269 revision18及旧隔离538 revision83保持。凭据、SQLite、blobs、日志与历史视频留本地；未推送远端。
 - 证据：`.pi/tasks/remote-92ecb0d7-d1db-4bd5-8a3e-83732b7404f1/delivery.md`及两份sean JSON；验收项目d6ae53a8 revision3在4194。
 - 当前契约：[工作流改进与调试](../../film-editor/WORKFLOW_IMPROVEMENT.md)。保留问题：[目标与效果登记](../../film-editor/WORKFLOW_GOAL.md)。
+
+## 2026-10-05 · 助手入口可发现性修正
+
+用户未找到导航下方折叠入口；新增右上角「制作助手」按钮，直接展开并定位。构建通过，4190 实际浏览器点击验证从关闭变为展开、发送按钮可见。只更新前端静态产物，服务与项目内容不变。

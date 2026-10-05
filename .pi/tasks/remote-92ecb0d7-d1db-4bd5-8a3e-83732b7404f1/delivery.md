@@ -22,3 +22,7 @@ Owner: Sean。2026-10-05。T-ID `remote-92ecb0d7-d1db-4bd5-8a3e-83732b7404f1`。
 - 部署前 SQLite 在线备份位于 `experiments/sean_film_agent_20261004/sean-before-delivery-{4190,4194}.sqlite`。部署记录见 sean-workflow-improvement-deployment.json。4190 浏览器验证助手、方法、程序入口及日志查询可用；原项目版本相同。
 
 代码与证据 scoped commit 后提交 Task Center 待验收。未推送远端；SQLite、blobs、日志和历史媒体保留本地实验/运行目录。
+
+## 验收反馈：找不到助手入口
+
+新增页面右上角「制作助手」按钮，点击直接展开并滚动定位到现有面板。构建与4190真实浏览器点击通过（原折叠状态 false → true，发送按钮可见）。静态文件已更新，无需重启后端；原功能、项目和历史不变。
