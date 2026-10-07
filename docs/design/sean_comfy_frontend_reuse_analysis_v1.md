@@ -86,7 +86,7 @@
 
 ## 8. 后续设计与施工检查点
 
-设计阶段继续落定：独立仓库名与部署、锁定前端版本及所需 Qwen 节点、UI/API 模板资产、业务 schema/API、原生 PiWeb 消息协议与工具限制。实验小说仍按已确认两章两场路径后续编写。
+后续细化已汇总到 [首期施工设计](sean_entity_canvas_build_plan_v1.md)，包含候选锁定版本、Qwen 模板资产、业务 schema/API 与网关；[PI 协议](sean_entity_canvas_pi_transport_v1.md) 已分析原生消息和工具限制，[临时小说](sean_entity_canvas_experiment_story_v1.md) 已提供两章两场草案。以下仍是施工阶段检查点，尚未执行。
 
 用户确认整体方案并启动施工后，首先验证：
 

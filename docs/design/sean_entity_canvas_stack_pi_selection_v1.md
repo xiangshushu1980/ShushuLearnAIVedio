@@ -14,13 +14,13 @@
 
 以下 React 组件对照保留为历史评估依据，第 3 节 React Flow 方案已被本决定取代，不作为施工基线。“快速”同时考虑开发与交互响应，尚无性能实测。
 
-## 2. 当前框架兼容性
+## 2. 旧 React 框架兼容性（历史评估）
 
 本地 `reference-workspace/package.json` 与 `film-editor/package.json` 均声明 React/React DOM 19.3.0、Vite 8.3.2、Node >=24、Express 5.2.1。两端使用 React 页面，无需因画布组件重写应用框架。以下版本来自本次 npm 元数据查询，正式施工锁定版本与 lockfile。
 
 | 组件 | 本次版本 / React peer | 许可 | 适配判断 |
 |---|---|---|---|
-| @xyflow/react | 12.12.0 / >=17 | MIT | 首选：任意 React 卡片、表单、图片、状态与选择交互 |
+| @xyflow/react | 12.12.0 / >=17 | MIT | 原 React 方案优先项，现已退出首选 |
 | @excalidraw/excalidraw | 0.18.1 / 17、18、19 | MIT | 版本兼容，更适合手绘白板；业务卡片集成成本较高 |
 | tldraw | 5.5.2 / ^18.2.0 或 ^19.2.1 | 自有 SDK 许可 | React 兼容；生产需有效许可证，不按宽松开源组件采用 |
 | react-konva | 19.3.0 / ^19.3.0 | MIT | 版本兼容；底层绘制灵活，业务表单、布局和可访问性需更多开发 |
@@ -88,4 +88,4 @@ PI 原生宿主可能具有 read/bash/write 等内置工具。业务扩展的受
 
 ## 6. 施工前剩余决策
 
-已确认技术方向：独立项目 + Vue/TypeScript + ComfyUI 前端流程能力；PI 参考视频端原生 PiWeb 与扩展模式。仍需在后续设计中落定前端复用方式、创作层与执行图边界、唯一数据库边界、消息协议、原生工具限制、具体 API/schema 与部署方式。正式施工首个检查点再核验锁定依赖的构建、卡片交互、流式重连与真实素材性能；本轮没有执行这些验证。
+已确认技术方向：独立项目 + Vue/TypeScript + ComfyUI 前端流程能力；PI 参考视频端原生 PiWeb 与扩展模式。前端有限改造、创作/执行分图、独立业务库、消息协议、工具限制及 API/schema 已汇总为 [首期施工设计](sean_entity_canvas_build_plan_v1.md)，原生消息分析见 [PI 协议](sean_entity_canvas_pi_transport_v1.md)。正式施工首个检查点再核验锁定依赖的构建、卡片交互、流式重连与真实素材性能；本轮没有执行这些验证。
