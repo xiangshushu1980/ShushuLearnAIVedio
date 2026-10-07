@@ -1,6 +1,6 @@
 # 实体画布实验：项目结构、交互与数据契约 v0.1
 
-> Owner: Sean。2026-10-07。用户已确认实验路径与规模；本文是该路径的详细设计草案，不代表施工已批准。总体架构见 [实体画布设计](sean_entity_canvas_pi_v1.md)。
+> Owner: Sean。2026-10-07。用户已确认实验路径与规模；本文是该路径的详细设计草案，不代表施工已批准。总体架构见 [实体画布设计](sean_entity_canvas_pi_v1.md)。组件与 PI 原生接入见 [选型说明](sean_entity_canvas_stack_pi_selection_v1.md)。
 
 ## 1. 已确认的实验
 
