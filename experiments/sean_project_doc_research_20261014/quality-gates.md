@@ -15,7 +15,7 @@ skill 采用按变更触发的检查菜单：改名/移动后查入口与入链�
 
 ## 下载与许可证
 
-均于 2026-10-14 shallow clone 至 `/tmp/sean-project-doc-research-20261014/`，仅阅读文件，无安装、构建或执行测试。
+均于 2026-10-14 shallow clone 至 `/home/sean/research/sean-project-doc-research-20261014/`，仅阅读文件，无安装、构建或执行测试。
 
 | 仓库 | HEAD | 许可证正文 | 角色 |
 |---|---|---|---|

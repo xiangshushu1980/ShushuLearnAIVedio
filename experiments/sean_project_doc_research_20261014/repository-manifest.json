@@ -1,0 +1,92 @@
+{
+  "owner": "Sean",
+  "observed_at": "2026-10-14",
+  "method": "shallow-clone-and-static-inspection",
+  "runtime_validation": false,
+  "repositories": [
+    {
+      "repository": "adr-tools",
+      "url": "git@github.com:npryce/adr-tools",
+      "commit": "b3279baf9be2207d1a4f4bbd608fd0b591c72aee",
+      "local_path": "/home/sean/research/sean-project-doc-research-20261014/adr-tools",
+      "license_files": [
+        "LICENSE.txt"
+      ]
+    },
+    {
+      "repository": "diataxis-documentation-framework",
+      "url": "git@github.com:evildmp/diataxis-documentation-framework",
+      "commit": "957c09ca40b4a1edc23874f713e01937d50d54d5",
+      "local_path": "/home/sean/research/sean-project-doc-research-20261014/diataxis-documentation-framework",
+      "license_files": [
+        "LICENSE.rst"
+      ]
+    },
+    {
+      "repository": "doorstop",
+      "url": "git@github.com:doorstop-dev/doorstop.git",
+      "commit": "7cec21eca4ea09c243c03b3fcd01ec55d742ebf5",
+      "local_path": "/home/sean/research/sean-project-doc-research-20261014/doorstop",
+      "license_files": [
+        "LICENSE.md"
+      ]
+    },
+    {
+      "repository": "lychee",
+      "url": "git@github.com:lycheeverse/lychee.git",
+      "commit": "54f8bf47ffbd35973b8eb016ccbc67221c75ba5f",
+      "local_path": "/home/sean/research/sean-project-doc-research-20261014/lychee",
+      "license_files": [
+        "LICENSE-APACHE",
+        "LICENSE-MIT"
+      ]
+    },
+    {
+      "repository": "madr",
+      "url": "git@github.com:adr/madr",
+      "commit": "ba75bb1b20d42af5746b246ad348c202419ae681",
+      "local_path": "/home/sean/research/sean-project-doc-research-20261014/madr",
+      "license_files": [
+        "LICENSE",
+        "LICENSE.CC0-1.0",
+        "LICENSE.MIT"
+      ]
+    },
+    {
+      "repository": "mkdocs",
+      "url": "git@github.com:mkdocs/mkdocs.git",
+      "commit": "2862536793b3c67d9d83c33e0dd6d50a791928f8",
+      "local_path": "/home/sean/research/sean-project-doc-research-20261014/mkdocs",
+      "license_files": [
+        "LICENSE"
+      ]
+    },
+    {
+      "repository": "sphinx-needs",
+      "url": "git@github.com:useblocks/sphinx-needs.git",
+      "commit": "8b7a465824b932516ec7e35a7e69482c8d313773",
+      "local_path": "/home/sean/research/sean-project-doc-research-20261014/sphinx-needs",
+      "license_files": [
+        "LICENSE"
+      ]
+    },
+    {
+      "repository": "strictdoc",
+      "url": "git@github.com:strictdoc-project/strictdoc.git",
+      "commit": "cc8be791316a92a708be4940e40a245803e5e88e",
+      "local_path": "/home/sean/research/sean-project-doc-research-20261014/strictdoc",
+      "license_files": [
+        "LICENSE"
+      ]
+    },
+    {
+      "repository": "vale",
+      "url": "git@github.com:vale-cli/vale.git",
+      "commit": "cfb21a4ce87238bcfb44b90e8e0db9e0e91d6c09",
+      "local_path": "/home/sean/research/sean-project-doc-research-20261014/vale",
+      "license_files": [
+        "LICENSE"
+      ]
+    }
+  ]
+}

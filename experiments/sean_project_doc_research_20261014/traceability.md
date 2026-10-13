@@ -14,9 +14,9 @@ StrictDoc 适合有明确需求层级、需求到源码覆盖与交换格式需�
 
 | 工具 | 官方仓库与本次 commit | 许可证 | 下载位置 |
 |---|---|---|---|
-| Doorstop | https://github.com/doorstop-dev/doorstop/tree/7cec21eca4ea09c243c03b3fcd01ec55d742ebf5 | LGPL-3.0（LICENSE.md，实际文件应以仓库为准） | `/tmp/sean-project-doc-research-20261014/doorstop` |
-| StrictDoc | https://github.com/strictdoc-project/strictdoc/tree/cc8be791316a92a708be4940e40a245803e5e88e | Apache-2.0 | `/tmp/sean-project-doc-research-20261014/strictdoc` |
-| Sphinx-Needs | https://github.com/useblocks/sphinx-needs/tree/8b7a465824b932516ec7e35a7e69482c8d313773 | MIT | `/tmp/sean-project-doc-research-20261014/sphinx-needs` |
+| Doorstop | https://github.com/doorstop-dev/doorstop/tree/7cec21eca4ea09c243c03b3fcd01ec55d742ebf5 | LGPL-3.0（LICENSE.md，实际文件应以仓库为准） | `/home/sean/research/sean-project-doc-research-20261014/doorstop` |
+| StrictDoc | https://github.com/strictdoc-project/strictdoc/tree/cc8be791316a92a708be4940e40a245803e5e88e | Apache-2.0 | `/home/sean/research/sean-project-doc-research-20261014/strictdoc` |
+| Sphinx-Needs | https://github.com/useblocks/sphinx-needs/tree/8b7a465824b932516ec7e35a7e69482c8d313773 | MIT | `/home/sean/research/sean-project-doc-research-20261014/sphinx-needs` |
 
 这是按当天默认分支取得的快照，不能用当前 master/main 链接代替本次证据。Sphinx-Needs 已采用 packages monorepo；网络搜索还命中旧根目录布局，因此需要以本次克隆校正。
 

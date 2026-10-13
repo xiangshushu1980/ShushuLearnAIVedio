@@ -2,10 +2,12 @@
 owner: Sean
 observed_at: 2026-10-14
 scope: project-doc-system skill 开源方案总览
-status: overview-complete; source-deep-dives-pending
+status: overview-complete
 ---
 
 # 项目文档系统：开源方案总览
+
+阶段说明：本文保留总览时的候选判断；三组深研现已完成，源码确认、取舍与改造结果以同目录专题报告和 [synthesis.md](synthesis.md) 为准。
 
 ## 结论与筛选依据
 
@@ -69,7 +71,7 @@ Clone：
 
 源码问题：lychee 本地文件/锚点与外部网络失败的区别，ignore/重试/缓存是否掩盖失效；Vale 的 Markdown 排除作用域和机器输出；strict 如何区分导航丢失与断链接。最终是可选检查菜单或简短人工检查流程，不默认 CI、不默认安装新工具、不把风格问题当事实问题。
 
-Clone 统一落 /tmp/sean-project-doc-research-20261014/；每个深研记录 git HEAD、观察日期、许可证原文、源码路径和结论适用条件，不执行仓库安装脚本。
+Clone 统一落 /home/sean/research/sean-project-doc-research-20261014/；每个深研记录 git HEAD、观察日期、许可证原文、源码路径和结论适用条件，不执行仓库安装脚本。
 
 ## 覆盖、失败与未覆盖
 
