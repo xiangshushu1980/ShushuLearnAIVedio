@@ -1,4 +1,4 @@
-# ComfyUI 节点来源与更新记录（2026-09-12）
+# ComfyUI 节点来源与更新记录（Owner: Sean）
 
 ## ComfyUI 核心
 
@@ -48,3 +48,12 @@
 - SolAttn 仅保留为历史复现，不作为新生产路线。
 - 旧节点归档：`/home/sean/projects/ComfyUI/archive/custom_nodes/ComfyUI-SolAttn_triton`
 - 旧工作流归档：`workflows/archive/solattn-legacy/attn3way_dance_sol.json`、`workflows/archive/solattn-legacy/attn3way_wave_sol.json`
+
+## 2026-10-13 ComfyUI 核心更新
+
+- 更新前：`v0.37.0`，commit `73c9bad4d21e7addbe1d13bc92eee0f1431b017d`；Torch `2.13.0+cu130`；前端 `1.52.7`；工作流模板 `0.11.66`；嵌入文档 `0.5.12`；`comfy-kitchen 0.2.35`。
+- 更新后：官方 `v0.39.2`，commit `3c1b7a17fdf239d35ce98cc777756f572d089795`；前端 `1.53.10`；工作流模板 `0.11.78`（core `0.3.369`、json `0.1.104`、assets-01 `0.1.48`、assets-02 `0.1.11`）；嵌入文档 `0.5.13`；`comfy-kitchen 0.2.37`。Torch/CUDA 未变，仍为 `2.13.0+cu130` / CUDA `13.0`。
+- H3 相关核心变更包含 MiniMax-H3 采样前释放 embedding 临时张量以降低峰值显存、修复 H3 VAE offload，以及 H3 VAE tile 与邻接块融合；需通过服务启动和代表性 H3 工作流回归确认本机效果。
+- 安装检查：`pip check` 通过。ComfyUI 服务更新前为停止状态；本轮临时启动后 `/system_stats` 健康检查通过，随后已恢复停止。未运行代表性 H3 工作流，因此生成回归和画质/音频影响尚未验证。
+- GPU 可见性：本轮 WSL `nvidia-smi` 与 ComfyUI venv 的 PyTorch 均只枚举到 RTX 4090（24 GiB）。第二张显卡当前没有暴露给此运行环境。
+- 工作树保留升级前已有的删除 `input/example.png`、`output/_output_images_will_be_put_here` 及未跟踪目录/文件，没有清理或覆盖这些内容。

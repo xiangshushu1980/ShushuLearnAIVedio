@@ -1,7 +1,7 @@
 # [Sean] ComfyUI 与 H3 升级参考 Runbook
 
 > 用途：后续升级 ComfyUI、本体依赖、H3 节点、模型或优化组件时，提供单一入口。
-> 更新时间：2026-09-26
+> 更新时间：2026-10-13
 > 适用环境：WSL2 / RTX 4090 24GB / Python 3.13；实际版本以运行时探测为准。
 
 ## 1. 先判断升级对象
@@ -162,6 +162,10 @@
 - [Comfy-Org MiniMax-H3 model repository](https://huggingface.co/Comfy-Org/MiniMax-H3)
 - [MiniMax-H3 latest model commit](https://huggingface.co/Comfy-Org/MiniMax-H3/commit/bf92c4091e333e69b8ca1998e0a669f15cb0832b)
 - [MiniMax-H3 preceding model commit](https://huggingface.co/Comfy-Org/MiniMax-H3/commit/8bd883dd07e101e219eb3c554cbbc45c255b7b86)
+
+### 2026-10-13 本机核心更新
+
+本机 ComfyUI 核心已更新至官方 `v0.39.2`（commit `3c1b7a17`），依赖与检查记录见[节点来源与更新记录](dev/comfyui_node_update_20260912.md#2026-10-13-comfyui-核心更新)。`pip check` 和临时启动时的 `/system_stats` 健康检查均通过；服务已恢复升级前的停止状态，未运行 H3 工作流回归。当前 WSL/PyTorch 只识别到 RTX 4090，第二张显卡尚未暴露给 ComfyUI。
 
 ## 9. 收尾检查
 
