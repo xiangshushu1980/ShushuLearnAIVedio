@@ -17,6 +17,17 @@ Ref2VA int8 convrot 底模
   → VRAM_Debug(unload_all_models) → VAEDecodeTiled
 ```
 
+### 快车道 / 慢车道（Ref2VA 采样对照的简称）
+
+本文及后续讨论中，**快车道**特指普通 Ref2VA 的 PDD 8 步路线；**慢车道**特指原生标准 20 步路线。不要把这里的“快车道”与 Turbo/LightX2V 4/8 步预览档混为一谈。历史同参对照见 [ledger C-20260915-01](../.pi/ledger/h3-speed.md)。
+
+| 路线 | 采样过程 | 节点/组件 | 定位 |
+|---|---|---|---|
+| 快车道 | Ref2VA int8 ConvRot → PDD Acc（`nfe=8`）→ `euler` + PDD 节点 sigmas → 8 步采样 | `PDD Acc`；正式出片链再加 `PatchSageAttentionKJ`、KJ `MiniMax H3 Low VRAM Attention(head_chunks=4)`、`MiniMax H3 Chunk FeedForward(chunks=4, seq_threshold=4096)`；需要外部音频锁口型时接 `MiniMaxH3NativeAudioLock` | 少步数快速生成；当前默认正式出片路线是在此基础上叠加加速/显存组件 |
+| 慢车道 | 同一 Ref2VA 底模 → `res_multistep` + `simple` scheduler → 20 步标准采样 | 标准 `KSamplerSelect`、`BasicScheduler`、`BasicGuider`、`SamplerCustomAdvanced`；可接 `PatchSageAttentionKJ`。若测试目标是隔离采样差异，其他条件保持一致 | 高步数质量对照基线，不代表默认正式出片配置 |
+
+两条路线共用参考条件编码、latent 初始化和输出解码；进行快慢车道对照时，两边都使用 SageAttention 并尽量保持其他条件一致。采样后可按显存情况加入 `VRAM_Debug(unload_all_models)` 与视频 `VAEDecodeTiled`。PDD 对照实测的主要提速来自步数从 20 降至 8，单步耗时近似；PDD 8 步的画质仍应按具体素材验收。KJ 双节点用于降低正式成片的显存峰值，不是快车道定义本身的必要条件。
+
 | 档 | 画布 | 采样 | 加速组件 | 实测 |
 |---|---|---|---|---|
 | 筛选 | 768×448 | Turbo/LightX2V 4 或 8 步 | 可不加 | 4 步约 19.5s、8 步约 30.1s（5s 片段） |

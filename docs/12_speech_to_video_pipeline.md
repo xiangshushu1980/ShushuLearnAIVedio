@@ -101,12 +101,12 @@ python3 gen_scenes.py scenes_v3.json --prefix img_debate4
 - 动画片段：`ComfyUI/output/video/debate_anim/`
 - 脚本产物：`.pi/tasks/speech-video/`
 
-## 10. BGM 两条路径（本地 MusicGen / ComfyUI ACE-Step）
+## 10. BGM 路径（本地 MusicGen；ACE-Step 已停用）
 
 | 路径 | 模型 | 位置 | 质量/速度 |
 |------|------|------|-----------|
 | **A. 本地 MusicGen-small** | `facebook/musicgen-small` | transformers CPU，模型已缓存 | 好，30s≈3min |
-| **B. ComfyUI ACE-Step 1.5** | `ace_step_1.5_ComfyUI_files` | ComfyUI generate_audio | 更高，需4个模型 |
+| **B. ComfyUI ACE-Step 1.5** | 已停用；本地模型已删除 | ComfyUI generate_audio | 不可直接运行 |
 
 ### 路径 A：本地 MusicGen-small（实战用的）
 
@@ -126,6 +126,8 @@ audio = model.generate(**inputs, max_new_tokens=1500)[0,0].cpu().numpy()  # 30s
 - ⚠️ `scipy` 未装，写 wav 用标准库 `wave`，别用 scipy.io.wavfile
 
 ### 路径 B：ComfyUI ACE-Step 1.5
+
+> **已停用（2026-10-11）**：Sean 决定删除本地 ACE-Step XL Turbo 主模型、配套文本编码器和 VAE（约 18.5 GiB），改用 H3 Music 及其他现有音乐方案。不要在运行时自动重新下载；只有用户明确要求恢复 ACE-Step 时才按下方历史记录重装。
 
 - 工具：`comfyui_generate_audio`（model_family="ace_step_1.5"）
 - 模型 4 个（`Comfy-Org/ace_step_1.5_ComfyUI_files`，放 `models/` 对应目录，**已下载且校验通过 2026-08-07**）：

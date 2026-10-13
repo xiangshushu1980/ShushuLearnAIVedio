@@ -1,15 +1,21 @@
 # 02 模型与下载
 
-> 最后更新：2026-08-12 — 全面盘点（ComfyUI v0.32.0 更新时发现文档与磁盘脱节，逐目录核对修正）
-> Owner: Sean。2026-10-03 增补 Motion Booster REF2VA 与当前 Civitai 凭证入口；其他条目的历史盘点日期不变。
+> 最后全面盘点：2026-08-12（ComfyUI v0.32.0 更新时发现文档与磁盘脱节，逐目录核对修正）
+> Owner: Sean。2026-10-03 增补 Motion Booster REF2VA 与当前 Civitai 凭证入口；2026-10-11 局部记录 H3 模型清理。
 > ⚠️ 本清单以磁盘实况为准。新增/删除模型后请同步更新本文件。
+
+## 2026-10-11 H3 本地模型清理提醒
+
+- `models/diffusion_models/minimax_h3_fl2va_pruned_fp8_scaled.safetensors` 已删除。后续运行脚本时**不要自动重新下载**；只有 Sean 明确要求时才恢复下载。
+- `scripts/h3_promptor_p1.py` 和 `scripts/h3_gap_runner.py` 仍把上述 FP8 scaled 文件设为默认模型。下次运行这两个脚本前，先直接修改它们的默认模型配置，使用届时确认可用的本地模型；不要为满足旧默认值而重下 FP8 模型。
+- `models/diffusion_models/minimax_h3_ref2va_pruned_turbo_int8_convrot.dl` 也已删除。
+- ACE-Step 本地 XL Turbo 栈已整体删除（主模型、两个文本编码器、VAE，合计约 18.5 GiB）。后续**不要自动重新下载**；配乐优先考虑 H3 Music 和其他现有方案。`scripts/ace_t2i_probe.py` 仍引用这些文件，运行前需先改脚本或明确决定恢复模型。
 
 ## 磁盘实况（2026-08-12 盘点）
 
 ### 视频生成（MiniMax H3，主力）
 | 文件 | 位置 | 大小 | 用途 |
 |------|------|------|------|
-| minimax_h3_fl2va_pruned_fp8_scaled.safetensors | models/diffusion_models/ | 20GB | H3 FL2VA（首/尾帧→视频+音频，fp8）|
 | minimax_h3_fl2va_pruned_int8_convrot.safetensors | models/diffusion_models/ | 20GB | H3 FL2VA int8（速度/显存更优）|
 | minimax_h3_ref2va_pruned_int8_convrot.safetensors | models/diffusion_models/ | 20GB | H3 Ref2VA（视频+音频参考→视频+音频）|
 | qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors | models/text_encoders/ | 15GB | H3 文本编码器（Qwen3-VL-32B nvfp4_awq 官方推荐）|
@@ -37,14 +43,6 @@ H3 LoRA（models/loras/）：
 | qwen_image_vae.safetensors | models/vae/ | 243MB | ANIMA/KREA VAE |
 
 > Krea2 人物身份三模式和 Raw/Turbo 选择见 [40_krea2_prompt_and_identity_pipeline.md](40_krea2_prompt_and_identity_pipeline.md)。当前本机只登记/安装 Turbo；`krea2_raw_fp8_scaled.safetensors` 尚未下载，因此 `identity_remove` 只能做配置校验，不能作为已实测基线。
-
-### 生图（ACE 栈，2026-08-12 盘点补记，此前文档未收录）
-| 文件 | 位置 | 大小 |
-|------|------|------|
-| acestep_v1.5_xl_turbo_bf16.safetensors | models/diffusion_models/ | 9.3GB |
-| qwen_4b_ace15.safetensors | models/text_encoders/ | 7.9GB |
-| qwen_0.6b_ace15.safetensors | models/text_encoders/ | 1.2GB |
-| ace_1.5_vae.safetensors | models/vae/ | 322MB |
 
 ### 图像编辑/超分
 | 文件 | 位置 | 大小 | 用途 |

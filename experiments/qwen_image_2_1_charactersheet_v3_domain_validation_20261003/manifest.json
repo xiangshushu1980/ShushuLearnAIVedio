@@ -1,0 +1,405 @@
+{
+  "owner": "Sean",
+  "experiment": "qwen_image_2_1_charactersheet_v3_domain_validation_20261003",
+  "status": "review",
+  "workflow": "Qwen Image 2.1 Character Design Sheet Maker V3 Simple, adapted static prompt",
+  "runtime": {
+    "comfyui": "http://127.0.0.1:8188",
+    "unet": "qwen_image_2.1_int8_convrot.safetensors",
+    "clip": "qwen3vl_8b_int8_convrot.safetensors",
+    "vae": "qwen_image_2.1_vae_bf16.safetensors",
+    "lora": null,
+    "output_size": "1536x1024",
+    "steps": 25,
+    "cfg": 1.0,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "reference_resolution": 1024,
+    "decode": "standard VAE; VAEDeGrid unavailable"
+  },
+  "results": [
+    {
+      "prompt_id": "f2d6a9dc-3e35-4014-8d1b-ae058f07ed1b",
+      "seconds": 24.31,
+      "output": "outputs/character/seed_2026100300.png",
+      "comfy_image": {
+        "filename": "sheet_1_00001_.png",
+        "subfolder": "sean_qwen_v3_domain_validation_20261003/character",
+        "type": "output",
+        "id": "526b07b6-512f-489c-8e99-cef5ce4edd25"
+      },
+      "id": "character_sheet_1",
+      "seed": 2026100300
+    },
+    {
+      "prompt_id": "14735240-9823-4187-8a46-e672f56ad50e",
+      "seconds": 14.4,
+      "output": "outputs/character/seed_2026100301.png",
+      "comfy_image": {
+        "filename": "sheet_2_00001_.png",
+        "subfolder": "sean_qwen_v3_domain_validation_20261003/character",
+        "type": "output",
+        "id": "82722faf-f16b-41fd-a5a7-a0c86ebba00d"
+      },
+      "id": "character_sheet_2",
+      "seed": 2026100301
+    },
+    {
+      "prompt_id": "f84a899b-c12a-4962-8589-ee3cfe1f6b5f",
+      "seconds": 16.02,
+      "output": "outputs/character/seed_2026100302.png",
+      "comfy_image": {
+        "filename": "sheet_3_00001_.png",
+        "subfolder": "sean_qwen_v3_domain_validation_20261003/character",
+        "type": "output",
+        "id": "351b57cd-8788-46fe-a8c0-2f27ba9ec068"
+      },
+      "id": "character_sheet_3",
+      "seed": 2026100302
+    },
+    {
+      "prompt_id": "75fb605d-ab73-498b-945b-3fe1fc3a9c1b",
+      "seconds": 14.02,
+      "output": "inputs/prop_katana_source.png",
+      "comfy_image": {
+        "filename": "source_00001_.png",
+        "subfolder": "sean_qwen_v3_domain_validation_20261003/prop_katana",
+        "type": "output",
+        "id": "9e910c47-9186-413f-a90f-40843e1612d1"
+      },
+      "id": "prop_katana_source"
+    },
+    {
+      "prompt_id": "292f89f9-8016-42fd-85d8-8d02efed5b9b",
+      "seconds": 18.03,
+      "output": "outputs/prop_katana/seed_2026100320.png",
+      "comfy_image": {
+        "filename": "sheet_1_00001_.png",
+        "subfolder": "sean_qwen_v3_domain_validation_20261003/prop_katana",
+        "type": "output",
+        "id": "f2cc0213-d92a-40c5-a827-db3811440d14"
+      },
+      "id": "prop_katana_sheet_1",
+      "seed": 2026100320
+    },
+    {
+      "prompt_id": "059ed05d-39c2-4fb7-a5f9-615f57e6216c",
+      "seconds": 14.31,
+      "output": "outputs/prop_katana/seed_2026100321.png",
+      "comfy_image": {
+        "filename": "sheet_2_00001_.png",
+        "subfolder": "sean_qwen_v3_domain_validation_20261003/prop_katana",
+        "type": "output",
+        "id": "1511ac57-b7a6-4f23-80aa-fc585694351a"
+      },
+      "id": "prop_katana_sheet_2",
+      "seed": 2026100321
+    },
+    {
+      "prompt_id": "09bd7e89-9cd2-4e70-996d-01ff586aa5d2",
+      "seconds": 14.14,
+      "output": "outputs/prop_katana/seed_2026100322.png",
+      "comfy_image": {
+        "filename": "sheet_3_00001_.png",
+        "subfolder": "sean_qwen_v3_domain_validation_20261003/prop_katana",
+        "type": "output",
+        "id": "43d655b6-6ff9-4ebe-a4f6-559e268eb9e6"
+      },
+      "id": "prop_katana_sheet_3",
+      "seed": 2026100322
+    },
+    {
+      "prompt_id": "6ac89ec7-bb33-4d9a-b37c-6148be5f4642",
+      "seconds": 10.02,
+      "output": "inputs/object_lantern_source.png",
+      "comfy_image": {
+        "filename": "source_00001_.png",
+        "subfolder": "sean_qwen_v3_domain_validation_20261003/object_lantern",
+        "type": "output",
+        "id": "a7162f8b-30f2-42c1-aabb-61817eb26a46"
+      },
+      "id": "object_lantern_source"
+    },
+    {
+      "prompt_id": "7e09952c-e575-4aa1-a194-f30da6e9a1d3",
+      "seconds": 16.38,
+      "output": "outputs/object_lantern/seed_2026100340.png",
+      "comfy_image": {
+        "filename": "sheet_1_00001_.png",
+        "subfolder": "sean_qwen_v3_domain_validation_20261003/object_lantern",
+        "type": "output",
+        "id": "737db456-b082-40f6-8add-40aa8d386fc6"
+      },
+      "id": "object_lantern_sheet_1",
+      "seed": 2026100340
+    },
+    {
+      "prompt_id": "d21e4dfa-8c59-4ebf-97af-f88cd9d054d4",
+      "seconds": 14.09,
+      "output": "outputs/object_lantern/seed_2026100341.png",
+      "comfy_image": {
+        "filename": "sheet_2_00001_.png",
+        "subfolder": "sean_qwen_v3_domain_validation_20261003/object_lantern",
+        "type": "output",
+        "id": "bb1f8265-fc9f-4461-8ad5-4f9dd916c839"
+      },
+      "id": "object_lantern_sheet_2",
+      "seed": 2026100341
+    },
+    {
+      "prompt_id": "1c60ce6b-fa02-4e6b-abe0-558bb09e2850",
+      "seconds": 16.02,
+      "output": "outputs/object_lantern/seed_2026100342.png",
+      "comfy_image": {
+        "filename": "sheet_3_00001_.png",
+        "subfolder": "sean_qwen_v3_domain_validation_20261003/object_lantern",
+        "type": "output",
+        "id": "9a9ecc87-561b-4620-b02f-bd1c8e86d32b"
+      },
+      "id": "object_lantern_sheet_3",
+      "seed": 2026100342
+    },
+    {
+      "prompt_id": "8a1e73aa-1ae8-436c-a109-e2ff21dc84de",
+      "seconds": 10.02,
+      "output": "inputs/scene_shrine_source.png",
+      "comfy_image": {
+        "filename": "source_00001_.png",
+        "subfolder": "sean_qwen_v3_domain_validation_20261003/scene_shrine",
+        "type": "output",
+        "id": "1b32cf30-f246-4b62-9a07-a683a6dc2044"
+      },
+      "id": "scene_shrine_source"
+    },
+    {
+      "prompt_id": "d1268278-48f1-43ac-9684-e9728968daeb",
+      "seconds": 18.03,
+      "output": "outputs/scene_shrine/seed_2026100360.png",
+      "comfy_image": {
+        "filename": "sheet_1_00001_.png",
+        "subfolder": "sean_qwen_v3_domain_validation_20261003/scene_shrine",
+        "type": "output",
+        "id": "b316fdb5-f9f6-4ce3-a79b-b8151e044173"
+      },
+      "id": "scene_shrine_sheet_1",
+      "seed": 2026100360
+    },
+    {
+      "prompt_id": "8074bb6f-7d5c-47d3-ac7d-61a5e95b0d50",
+      "seconds": 16.12,
+      "output": "outputs/scene_shrine/seed_2026100361.png",
+      "comfy_image": {
+        "filename": "sheet_2_00001_.png",
+        "subfolder": "sean_qwen_v3_domain_validation_20261003/scene_shrine",
+        "type": "output",
+        "id": "f3ac5a3f-eae1-4d4c-8472-224503e738e2"
+      },
+      "id": "scene_shrine_sheet_2",
+      "seed": 2026100361
+    },
+    {
+      "prompt_id": "aeeac987-f694-4704-8792-387e6a1fdc6c",
+      "seconds": 16.03,
+      "output": "outputs/scene_shrine/seed_2026100362.png",
+      "comfy_image": {
+        "filename": "sheet_3_00001_.png",
+        "subfolder": "sean_qwen_v3_domain_validation_20261003/scene_shrine",
+        "type": "output",
+        "id": "6576ba5d-37c7-44a9-b3d6-d2f87def55f5"
+      },
+      "id": "scene_shrine_sheet_3",
+      "seed": 2026100362
+    },
+    {
+      "prompt_id": "1c191dec-539b-4210-b5a0-9c09e2521ba2",
+      "seconds": 18.04,
+      "output": "inputs/prop_katana_sheathed_source.png",
+      "comfy_image": {
+        "filename": "source_00001_.png",
+        "subfolder": "sean_qwen_v3_domain_validation_20261003/retry/prop_katana_sheathed",
+        "type": "output",
+        "id": "3b1384b5-5746-4174-802d-f600011f10f1"
+      },
+      "id": "prop_katana_sheathed_source"
+    },
+    {
+      "prompt_id": "58fc47eb-8c00-4197-9869-9ce0d50cc54f",
+      "seconds": 10.02,
+      "output": "inputs/prop_shield_source.png",
+      "comfy_image": {
+        "filename": "source_00001_.png",
+        "subfolder": "sean_qwen_v3_domain_validation_20261003/prop_shield",
+        "type": "output",
+        "id": "fdd9bd4b-32f1-4c9e-9554-e3e0379af56c"
+      },
+      "id": "prop_shield_source"
+    }
+  ],
+  "qc": [
+    {
+      "case": "character_face_threeview",
+      "pass": 3,
+      "total": 3,
+      "note": "Face portrait plus front, side, back full-body views; consistent identity and wardrobe."
+    },
+    {
+      "case": "prop_katana",
+      "pass": 1,
+      "total": 3,
+      "note": "Long thin geometry and sheathed/unsheathed state did not remain consistent across all panels."
+    },
+    {
+      "case": "prop_round_shield",
+      "pass": 3,
+      "total": 3,
+      "note": "Views and broad geometry stable; one seed varied rear straps."
+    },
+    {
+      "case": "object_lantern",
+      "pass": 3,
+      "total": 3,
+      "note": "Product views coherent; minor small-part variation."
+    },
+    {
+      "case": "scene_shrine_v2",
+      "pass": 3,
+      "total": 3,
+      "note": "Entrance, side, and overhead views distinct with key landmarks generally preserved; not metrically locked."
+    }
+  ],
+  "retries": [
+    {
+      "prompt_id": "9bede14c-935a-4341-bf7e-427096f3231d",
+      "seconds": 22.04,
+      "output": "outputs/retry/prop_katana_sheathed/seed_2026100370.png",
+      "comfy_image": {
+        "filename": "sheet_1_00001_.png",
+        "subfolder": "sean_qwen_v3_domain_validation_20261003/retry/prop_katana_sheathed",
+        "type": "output",
+        "id": "ae4397c2-36d7-480f-abb6-cee591723c6b"
+      },
+      "id": "prop_katana_sheathed_sheet_1",
+      "seed": 2026100370
+    },
+    {
+      "prompt_id": "993f54d0-47bd-499c-a006-ed6eaf3d4531",
+      "seconds": 14.34,
+      "output": "outputs/retry/prop_katana_sheathed/seed_2026100371.png",
+      "comfy_image": {
+        "filename": "sheet_2_00001_.png",
+        "subfolder": "sean_qwen_v3_domain_validation_20261003/retry/prop_katana_sheathed",
+        "type": "output",
+        "id": "ba5b31d4-161a-41ec-b8df-98000f41787e"
+      },
+      "id": "prop_katana_sheathed_sheet_2",
+      "seed": 2026100371
+    },
+    {
+      "prompt_id": "f0de8d72-8e6f-47bd-969e-6945548c98be",
+      "seconds": 14.39,
+      "output": "outputs/retry/prop_katana_sheathed/seed_2026100372.png",
+      "comfy_image": {
+        "filename": "sheet_3_00001_.png",
+        "subfolder": "sean_qwen_v3_domain_validation_20261003/retry/prop_katana_sheathed",
+        "type": "output",
+        "id": "7d66a974-9147-46e7-b48c-ff419a91e48c"
+      },
+      "id": "prop_katana_sheathed_sheet_3",
+      "seed": 2026100372
+    },
+    {
+      "prompt_id": "93e3e3e6-d67a-4a5e-b61e-36df81ea98aa",
+      "seconds": 18.03,
+      "output": "outputs/retry/scene_shrine_v2/seed_2026100380.png",
+      "comfy_image": {
+        "filename": "sheet_1_00001_.png",
+        "subfolder": "sean_qwen_v3_domain_validation_20261003/retry/scene_shrine_v2",
+        "type": "output",
+        "id": "f33b239e-4aa4-44e6-9079-907dca213466"
+      },
+      "id": "scene_shrine_v2_sheet_1",
+      "seed": 2026100380
+    },
+    {
+      "prompt_id": "c3e1643c-8e1b-4e09-bc96-141b2bb4d964",
+      "seconds": 16.03,
+      "output": "outputs/retry/scene_shrine_v2/seed_2026100381.png",
+      "comfy_image": {
+        "filename": "sheet_2_00001_.png",
+        "subfolder": "sean_qwen_v3_domain_validation_20261003/retry/scene_shrine_v2",
+        "type": "output",
+        "id": "ee722ac6-ada9-4064-8c65-38896bcf06f0"
+      },
+      "id": "scene_shrine_v2_sheet_2",
+      "seed": 2026100381
+    },
+    {
+      "prompt_id": "4f838b40-62e3-45f3-866a-a2049741fbaa",
+      "seconds": 16.02,
+      "output": "outputs/retry/scene_shrine_v2/seed_2026100382.png",
+      "comfy_image": {
+        "filename": "sheet_3_00001_.png",
+        "subfolder": "sean_qwen_v3_domain_validation_20261003/retry/scene_shrine_v2",
+        "type": "output",
+        "id": "08377ace-7e71-4781-bcd1-a010182ba5fe"
+      },
+      "id": "scene_shrine_v2_sheet_3",
+      "seed": 2026100382
+    },
+    {
+      "prompt_id": "75455089-f6df-401a-bee7-e707398a3d5f",
+      "seconds": 16.35,
+      "output": "outputs/prop_shield/seed_2026100391.png",
+      "comfy_image": {
+        "filename": "sheet_1_00001_.png",
+        "subfolder": "sean_qwen_v3_domain_validation_20261003/prop_shield",
+        "type": "output",
+        "id": "d1492b3f-83ac-4654-bae1-8e97bd86cde6"
+      },
+      "id": "prop_shield_sheet_1",
+      "seed": 2026100391
+    },
+    {
+      "prompt_id": "6705fdd9-e5c2-4f6a-8247-7192327d85bc",
+      "seconds": 14.08,
+      "output": "outputs/prop_shield/seed_2026100392.png",
+      "comfy_image": {
+        "filename": "sheet_2_00001_.png",
+        "subfolder": "sean_qwen_v3_domain_validation_20261003/prop_shield",
+        "type": "output",
+        "id": "75e17be7-6b41-4427-af69-af00265f0726"
+      },
+      "id": "prop_shield_sheet_2",
+      "seed": 2026100392
+    },
+    {
+      "prompt_id": "6ca90733-9758-402b-90db-a87f3d525b1f",
+      "seconds": 16.02,
+      "output": "outputs/prop_shield/seed_2026100393.png",
+      "comfy_image": {
+        "filename": "sheet_3_00001_.png",
+        "subfolder": "sean_qwen_v3_domain_validation_20261003/prop_shield",
+        "type": "output",
+        "id": "5329d5df-f68b-403d-a192-0610a2f1feee"
+      },
+      "id": "prop_shield_sheet_3",
+      "seed": 2026100393
+    }
+  ],
+  "retry_status": "qc_complete",
+  "qc_summary": "Visual review complete. Character, lantern, shield, and revised scene cases pass for exploratory design sheets; katana geometry remains unreliable. No canonical promotion.",
+  "source_manifest": "../qwen_image_2_1_civitai_character_sheet_20261002/manifest.json",
+  "source_workflow": {
+    "title": "[Qwen Image 2.1] Character Design Sheet Maker V3.0 Simple",
+    "version_id": 3377047,
+    "url": "https://civitai.com/models/2960750/qwen-image-21-character-design-sheet-maker-workflow?modelVersionId=3377047"
+  },
+  "evidence": [
+    "README.md",
+    "QC.md",
+    "prompts/",
+    "run_validation.py",
+    "run_retries.py"
+  ],
+  "canonical_doc": null
+}

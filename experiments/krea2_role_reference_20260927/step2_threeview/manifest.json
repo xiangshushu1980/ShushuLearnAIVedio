@@ -1,0 +1,53 @@
+{
+  "owner": "Sean",
+  "task": "T-comfy-ops-48",
+  "status": "reviewed_with_issue",
+  "prompt": "Convert the character in the image to a Character Sheet showing a face close-up, front full body and back full body views.",
+  "parameters": {
+    "unet": "krea2_turbo_fp8.safetensors",
+    "lora": "QuadView_krea2_v1.safetensors",
+    "lora_strength": 1.0,
+    "width": 1536,
+    "height": 1024,
+    "steps": 10,
+    "cfg": 1.0,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "ref_boost": 1.0,
+    "grounding_px": 768,
+    "positive_grounding_px": 0
+  },
+  "cases": [
+    {
+      "id": "eastern_swordswoman",
+      "source": "/home/sean/projects/comfy-ops/experiments/krea2_role_reference_20260927/step1_role_t2i/outputs/sean_eastern_swordswoman_role_front_seed4802001.png",
+      "seed": 4812001
+    },
+    {
+      "id": "red_mage",
+      "source": "/home/sean/projects/comfy-ops/experiments/krea2_role_reference_20260927/step1_role_t2i/outputs/sean_red_mage_role_front_seed4802002.png",
+      "seed": 4812002
+    }
+  ],
+  "results": [
+    {
+      "id": "eastern_swordswoman",
+      "seed": 4812001,
+      "seconds": 27.08,
+      "status": "success",
+      "prompt_id": "071f6913-5049-4781-9f9a-86e6d095c3ba",
+      "output": "outputs/sean_eastern_swordswoman_threeview_seed4812001.png",
+      "visual_qc": "Three distinct views; face remains distinct; front and back outfit/swords remain coherent. Pass for the current two-step trial."
+    },
+    {
+      "id": "red_mage",
+      "seed": 4812002,
+      "seconds": 21.08,
+      "status": "success",
+      "prompt_id": "b790e649-e193-4012-978e-9b804080b564",
+      "output": "outputs/sean_red_mage_threeview_seed4812002.png",
+      "visual_qc": "Three distinct views and distinct face/outfit; staff remains clipped at the frame edge inherited from Stage 1. Regenerate Stage 1 with framing margin, then rerun this stage."
+    }
+  ],
+  "visual_qc_status": "layout_pass_both_identity_distinct_but_red_mage_requires_stage1_revision"
+}

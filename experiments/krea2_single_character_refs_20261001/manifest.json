@@ -1,0 +1,582 @@
+{
+  "owner": "Sean",
+  "experiment": "krea2_single_character_refs_20261001",
+  "status": "review",
+  "purpose": "Compare how face, clothing, equipment, and scene references affect one character while holding the Krea2 style, identity anchor, prompt intent, dimensions, sampler, and seeds constant.",
+  "inputs": {
+    "character_anchor": "../krea2_quadview_stability_20260928/role_anchors/outputs/sean_eastern_swordswoman_role_front_seed4803001.png",
+    "face_crop": {
+      "x": 256,
+      "y": 0,
+      "width": 512,
+      "height": 512
+    },
+    "clothing_crop": {
+      "x": 120,
+      "y": 320,
+      "width": 760,
+      "height": 760,
+      "note": "Same illustrated source; crop contains outfit and some adjacent armor/weapon context."
+    },
+    "equipment_crop": {
+      "x": 500,
+      "y": 420,
+      "width": 480,
+      "height": 820,
+      "note": "Same illustrated source; crop emphasizes katana and includes adjacent costume context."
+    },
+    "scene_reference": "../krea2_multi_reference_20261001/outputs/scene_ref_01.png"
+  },
+  "conditions": [
+    {
+      "id": "face_only",
+      "references": [
+        "face"
+      ],
+      "layout_split": 0.0,
+      "seeds": [
+        6200101,
+        6200102
+      ]
+    },
+    {
+      "id": "face_clothing",
+      "references": [
+        "face",
+        "clothing"
+      ],
+      "layout_split": 0.0,
+      "seeds": [
+        6200101,
+        6200102
+      ]
+    },
+    {
+      "id": "face_equipment",
+      "references": [
+        "face",
+        "equipment"
+      ],
+      "layout_split": 0.0,
+      "seeds": [
+        6200101,
+        6200102
+      ]
+    },
+    {
+      "id": "face_scene",
+      "references": [
+        "face",
+        "scene"
+      ],
+      "layout_split": 0.0,
+      "seeds": [
+        6200101,
+        6200102
+      ]
+    },
+    {
+      "id": "all_references",
+      "references": [
+        "face",
+        "clothing",
+        "equipment",
+        "scene"
+      ],
+      "layout_split": 0.0,
+      "seeds": [
+        6200101,
+        6200102
+      ]
+    },
+    {
+      "id": "face_only_split025",
+      "references": [
+        "face"
+      ],
+      "layout_split": 0.25,
+      "seeds": [
+        6200101,
+        6200102
+      ]
+    },
+    {
+      "id": "face_clothing_split025",
+      "references": [
+        "face",
+        "clothing"
+      ],
+      "layout_split": 0.25,
+      "seeds": [
+        6200101,
+        6200102
+      ]
+    },
+    {
+      "id": "face_equipment_split025",
+      "references": [
+        "face",
+        "equipment"
+      ],
+      "layout_split": 0.25,
+      "seeds": [
+        6200101,
+        6200102
+      ]
+    },
+    {
+      "id": "face_scene_split025",
+      "references": [
+        "face",
+        "scene"
+      ],
+      "layout_split": 0.25,
+      "seeds": [
+        6200101,
+        6200102
+      ]
+    },
+    {
+      "id": "all_references_split025",
+      "references": [
+        "face",
+        "clothing",
+        "equipment",
+        "scene"
+      ],
+      "layout_split": 0.25,
+      "seeds": [
+        6200101,
+        6200102
+      ]
+    }
+  ],
+  "runtime": {
+    "comfyui": "shared instance http://127.0.0.1:8188",
+    "custom_node": "ComfyUI-Krea2-Reference / TextEncodeKrea2Reference",
+    "unet": "krea2_turbo_fp8.safetensors",
+    "clip": "qwen3vl_4b_bf16.safetensors",
+    "vae": "qwen_image_vae.safetensors",
+    "reference_lora": "krea2_style_reference.safetensors",
+    "reference_lora_strength_text_fusion": 1.0,
+    "reference_lora_strength_dit_body": 0.0,
+    "steps": 8,
+    "cfg": 1.0,
+    "sampler": "er_sde",
+    "scheduler": "simple",
+    "width": 1024,
+    "height": 1024,
+    "seeds": [
+      6200101,
+      6200102
+    ]
+  },
+  "results": [
+    {
+      "id": "face_only_seed6200101",
+      "prompt_id": "1df28efd-ffa6-40ba-a1c5-c7d690937f0c",
+      "seed": 6200101,
+      "seconds": 22.07,
+      "output": "outputs/face_only_seed6200101_01.png",
+      "comfy_image": {
+        "filename": "face_only_seed6200101_00001_.png",
+        "subfolder": "sean_krea2_single_refs",
+        "type": "output",
+        "id": "03198fe3-30c3-4a04-a737-faf8f016df82"
+      },
+      "condition": "face_only",
+      "references": [
+        "face"
+      ],
+      "prompt": "Create one coherent square fantasy game concept-art illustration in the exact same painterly rendering style as the reference images. Reference image 1 is the face reference; use it specifically to preserve that feature on this one character. Show exactly one adult East Asian swordswoman, full body from head to boots, standing naturally in a three-quarter view, face clearly visible. Preserve her recognizable face: softly tapered oval face, almond-shaped dark-brown eyes, straight brows, small nose, calm confident expression, black hair in a high ponytail tied with a red silk cord, two cheek-length locks. She wears the same ivory wrapped tunic, deep navy split riding coat with red lining, lacquered black shoulder guard, red waist sash, dark trousers and black boots. A single long katana in a black lacquer scabbard hangs at her left hip; preserve its dark grip, restrained bronze fittings and curved silhouette. Place her naturally within a moonlit stone courtyard with a ruined archway, worn flagstones and scattered red autumn leaves; the environment surrounds her as one continuous space, with architecture visible behind her. Keep the face, hair, clothing, armor and katana belonging to this one same character. One image, no extra people, no duplicate weapons, no inset panels, no reference board, no borders, no labels, no text, no watermark. Consistent painterly edges, rich but restrained colors, detailed fantasy game illustration, unified night lighting and perspective."
+    },
+    {
+      "id": "face_only_seed6200102",
+      "prompt_id": "1165f573-b48d-496f-a789-4f32f76b45fb",
+      "seed": 6200102,
+      "seconds": 8.01,
+      "output": "outputs/face_only_seed6200102_01.png",
+      "comfy_image": {
+        "filename": "face_only_seed6200102_00001_.png",
+        "subfolder": "sean_krea2_single_refs",
+        "type": "output",
+        "id": "8de195db-e216-4c33-8d26-3f1c7dd357a1"
+      },
+      "condition": "face_only",
+      "references": [
+        "face"
+      ],
+      "prompt": "Create one coherent square fantasy game concept-art illustration in the exact same painterly rendering style as the reference images. Reference image 1 is the face reference; use it specifically to preserve that feature on this one character. Show exactly one adult East Asian swordswoman, full body from head to boots, standing naturally in a three-quarter view, face clearly visible. Preserve her recognizable face: softly tapered oval face, almond-shaped dark-brown eyes, straight brows, small nose, calm confident expression, black hair in a high ponytail tied with a red silk cord, two cheek-length locks. She wears the same ivory wrapped tunic, deep navy split riding coat with red lining, lacquered black shoulder guard, red waist sash, dark trousers and black boots. A single long katana in a black lacquer scabbard hangs at her left hip; preserve its dark grip, restrained bronze fittings and curved silhouette. Place her naturally within a moonlit stone courtyard with a ruined archway, worn flagstones and scattered red autumn leaves; the environment surrounds her as one continuous space, with architecture visible behind her. Keep the face, hair, clothing, armor and katana belonging to this one same character. One image, no extra people, no duplicate weapons, no inset panels, no reference board, no borders, no labels, no text, no watermark. Consistent painterly edges, rich but restrained colors, detailed fantasy game illustration, unified night lighting and perspective."
+    },
+    {
+      "id": "face_clothing_seed6200101",
+      "prompt_id": "72dc80fd-6876-49b1-9e67-e896f21a0ea3",
+      "seed": 6200101,
+      "seconds": 12.02,
+      "output": "outputs/face_clothing_seed6200101_01.png",
+      "comfy_image": {
+        "filename": "face_clothing_seed6200101_00001_.png",
+        "subfolder": "sean_krea2_single_refs",
+        "type": "output",
+        "id": "3a77faa4-cab0-4e8f-a456-3d1c13f37a40"
+      },
+      "condition": "face_clothing",
+      "references": [
+        "face",
+        "clothing"
+      ],
+      "prompt": "Create one coherent square fantasy game concept-art illustration in the exact same painterly rendering style as the reference images. Reference image 1 is the face reference; use it specifically to preserve that feature on this one character. Reference image 2 is the clothing reference; use it specifically to preserve that feature on this one character. Show exactly one adult East Asian swordswoman, full body from head to boots, standing naturally in a three-quarter view, face clearly visible. Preserve her recognizable face: softly tapered oval face, almond-shaped dark-brown eyes, straight brows, small nose, calm confident expression, black hair in a high ponytail tied with a red silk cord, two cheek-length locks. She wears the same ivory wrapped tunic, deep navy split riding coat with red lining, lacquered black shoulder guard, red waist sash, dark trousers and black boots. A single long katana in a black lacquer scabbard hangs at her left hip; preserve its dark grip, restrained bronze fittings and curved silhouette. Place her naturally within a moonlit stone courtyard with a ruined archway, worn flagstones and scattered red autumn leaves; the environment surrounds her as one continuous space, with architecture visible behind her. Keep the face, hair, clothing, armor and katana belonging to this one same character. One image, no extra people, no duplicate weapons, no inset panels, no reference board, no borders, no labels, no text, no watermark. Consistent painterly edges, rich but restrained colors, detailed fantasy game illustration, unified night lighting and perspective."
+    },
+    {
+      "id": "face_clothing_seed6200102",
+      "prompt_id": "f8994d2b-3103-4e0e-a268-50d5d3612c9a",
+      "seed": 6200102,
+      "seconds": 10.01,
+      "output": "outputs/face_clothing_seed6200102_01.png",
+      "comfy_image": {
+        "filename": "face_clothing_seed6200102_00001_.png",
+        "subfolder": "sean_krea2_single_refs",
+        "type": "output",
+        "id": "f6f8650b-5e34-4386-9ce1-b2066dd00a31"
+      },
+      "condition": "face_clothing",
+      "references": [
+        "face",
+        "clothing"
+      ],
+      "prompt": "Create one coherent square fantasy game concept-art illustration in the exact same painterly rendering style as the reference images. Reference image 1 is the face reference; use it specifically to preserve that feature on this one character. Reference image 2 is the clothing reference; use it specifically to preserve that feature on this one character. Show exactly one adult East Asian swordswoman, full body from head to boots, standing naturally in a three-quarter view, face clearly visible. Preserve her recognizable face: softly tapered oval face, almond-shaped dark-brown eyes, straight brows, small nose, calm confident expression, black hair in a high ponytail tied with a red silk cord, two cheek-length locks. She wears the same ivory wrapped tunic, deep navy split riding coat with red lining, lacquered black shoulder guard, red waist sash, dark trousers and black boots. A single long katana in a black lacquer scabbard hangs at her left hip; preserve its dark grip, restrained bronze fittings and curved silhouette. Place her naturally within a moonlit stone courtyard with a ruined archway, worn flagstones and scattered red autumn leaves; the environment surrounds her as one continuous space, with architecture visible behind her. Keep the face, hair, clothing, armor and katana belonging to this one same character. One image, no extra people, no duplicate weapons, no inset panels, no reference board, no borders, no labels, no text, no watermark. Consistent painterly edges, rich but restrained colors, detailed fantasy game illustration, unified night lighting and perspective."
+    },
+    {
+      "id": "face_equipment_seed6200101",
+      "prompt_id": "36b274c0-da60-46c0-86df-85796bf9ac46",
+      "seed": 6200101,
+      "seconds": 10.32,
+      "output": "outputs/face_equipment_seed6200101_01.png",
+      "comfy_image": {
+        "filename": "face_equipment_seed6200101_00001_.png",
+        "subfolder": "sean_krea2_single_refs",
+        "type": "output",
+        "id": "e5f1358a-032a-4b95-b9eb-73b30983ae48"
+      },
+      "condition": "face_equipment",
+      "references": [
+        "face",
+        "equipment"
+      ],
+      "prompt": "Create one coherent square fantasy game concept-art illustration in the exact same painterly rendering style as the reference images. Reference image 1 is the face reference; use it specifically to preserve that feature on this one character. Reference image 2 is the equipment reference; use it specifically to preserve that feature on this one character. Show exactly one adult East Asian swordswoman, full body from head to boots, standing naturally in a three-quarter view, face clearly visible. Preserve her recognizable face: softly tapered oval face, almond-shaped dark-brown eyes, straight brows, small nose, calm confident expression, black hair in a high ponytail tied with a red silk cord, two cheek-length locks. She wears the same ivory wrapped tunic, deep navy split riding coat with red lining, lacquered black shoulder guard, red waist sash, dark trousers and black boots. A single long katana in a black lacquer scabbard hangs at her left hip; preserve its dark grip, restrained bronze fittings and curved silhouette. Place her naturally within a moonlit stone courtyard with a ruined archway, worn flagstones and scattered red autumn leaves; the environment surrounds her as one continuous space, with architecture visible behind her. Keep the face, hair, clothing, armor and katana belonging to this one same character. One image, no extra people, no duplicate weapons, no inset panels, no reference board, no borders, no labels, no text, no watermark. Consistent painterly edges, rich but restrained colors, detailed fantasy game illustration, unified night lighting and perspective."
+    },
+    {
+      "id": "face_equipment_seed6200102",
+      "prompt_id": "d5e5a2be-58da-4451-803b-e387c1b20c26",
+      "seed": 6200102,
+      "seconds": 10.02,
+      "output": "outputs/face_equipment_seed6200102_01.png",
+      "comfy_image": {
+        "filename": "face_equipment_seed6200102_00001_.png",
+        "subfolder": "sean_krea2_single_refs",
+        "type": "output",
+        "id": "96ff41c9-d7b1-419e-b95f-9660ce5512a1"
+      },
+      "condition": "face_equipment",
+      "references": [
+        "face",
+        "equipment"
+      ],
+      "prompt": "Create one coherent square fantasy game concept-art illustration in the exact same painterly rendering style as the reference images. Reference image 1 is the face reference; use it specifically to preserve that feature on this one character. Reference image 2 is the equipment reference; use it specifically to preserve that feature on this one character. Show exactly one adult East Asian swordswoman, full body from head to boots, standing naturally in a three-quarter view, face clearly visible. Preserve her recognizable face: softly tapered oval face, almond-shaped dark-brown eyes, straight brows, small nose, calm confident expression, black hair in a high ponytail tied with a red silk cord, two cheek-length locks. She wears the same ivory wrapped tunic, deep navy split riding coat with red lining, lacquered black shoulder guard, red waist sash, dark trousers and black boots. A single long katana in a black lacquer scabbard hangs at her left hip; preserve its dark grip, restrained bronze fittings and curved silhouette. Place her naturally within a moonlit stone courtyard with a ruined archway, worn flagstones and scattered red autumn leaves; the environment surrounds her as one continuous space, with architecture visible behind her. Keep the face, hair, clothing, armor and katana belonging to this one same character. One image, no extra people, no duplicate weapons, no inset panels, no reference board, no borders, no labels, no text, no watermark. Consistent painterly edges, rich but restrained colors, detailed fantasy game illustration, unified night lighting and perspective."
+    },
+    {
+      "id": "face_scene_seed6200101",
+      "prompt_id": "266b4f3a-7a20-4842-906e-bdb8d45d6811",
+      "seed": 6200101,
+      "seconds": 10.01,
+      "output": "outputs/face_scene_seed6200101_01.png",
+      "comfy_image": {
+        "filename": "face_scene_seed6200101_00001_.png",
+        "subfolder": "sean_krea2_single_refs",
+        "type": "output",
+        "id": "b607ee1d-ba6a-4b6f-b91e-7bb5f8ec31b7"
+      },
+      "condition": "face_scene",
+      "references": [
+        "face",
+        "scene"
+      ],
+      "prompt": "Create one coherent square fantasy game concept-art illustration in the exact same painterly rendering style as the reference images. Reference image 1 is the face reference; use it specifically to preserve that feature on this one character. Reference image 2 is the scene reference; use it specifically to preserve that feature on this one character. Show exactly one adult East Asian swordswoman, full body from head to boots, standing naturally in a three-quarter view, face clearly visible. Preserve her recognizable face: softly tapered oval face, almond-shaped dark-brown eyes, straight brows, small nose, calm confident expression, black hair in a high ponytail tied with a red silk cord, two cheek-length locks. She wears the same ivory wrapped tunic, deep navy split riding coat with red lining, lacquered black shoulder guard, red waist sash, dark trousers and black boots. A single long katana in a black lacquer scabbard hangs at her left hip; preserve its dark grip, restrained bronze fittings and curved silhouette. Place her naturally within the moonlit courtyard shown in reference image 2; the environment surrounds her as one continuous space, with architecture visible behind her. Keep the face, hair, clothing, armor and katana belonging to this one same character. One image, no extra people, no duplicate weapons, no inset panels, no reference board, no borders, no labels, no text, no watermark. Consistent painterly edges, rich but restrained colors, detailed fantasy game illustration, unified night lighting and perspective."
+    },
+    {
+      "id": "face_scene_seed6200102",
+      "prompt_id": "98340ebe-e31b-49b6-a30a-d6b1a7a893f9",
+      "seed": 6200102,
+      "seconds": 8.01,
+      "output": "outputs/face_scene_seed6200102_01.png",
+      "comfy_image": {
+        "filename": "face_scene_seed6200102_00001_.png",
+        "subfolder": "sean_krea2_single_refs",
+        "type": "output",
+        "id": "d0861f48-6a13-4948-af40-33d0582ef507"
+      },
+      "condition": "face_scene",
+      "references": [
+        "face",
+        "scene"
+      ],
+      "prompt": "Create one coherent square fantasy game concept-art illustration in the exact same painterly rendering style as the reference images. Reference image 1 is the face reference; use it specifically to preserve that feature on this one character. Reference image 2 is the scene reference; use it specifically to preserve that feature on this one character. Show exactly one adult East Asian swordswoman, full body from head to boots, standing naturally in a three-quarter view, face clearly visible. Preserve her recognizable face: softly tapered oval face, almond-shaped dark-brown eyes, straight brows, small nose, calm confident expression, black hair in a high ponytail tied with a red silk cord, two cheek-length locks. She wears the same ivory wrapped tunic, deep navy split riding coat with red lining, lacquered black shoulder guard, red waist sash, dark trousers and black boots. A single long katana in a black lacquer scabbard hangs at her left hip; preserve its dark grip, restrained bronze fittings and curved silhouette. Place her naturally within the moonlit courtyard shown in reference image 2; the environment surrounds her as one continuous space, with architecture visible behind her. Keep the face, hair, clothing, armor and katana belonging to this one same character. One image, no extra people, no duplicate weapons, no inset panels, no reference board, no borders, no labels, no text, no watermark. Consistent painterly edges, rich but restrained colors, detailed fantasy game illustration, unified night lighting and perspective."
+    },
+    {
+      "id": "all_references_seed6200101",
+      "prompt_id": "7d78716e-e813-4d2f-84b5-5ed8c0884be8",
+      "seed": 6200101,
+      "seconds": 14.02,
+      "output": "outputs/all_references_seed6200101_01.png",
+      "comfy_image": {
+        "filename": "all_references_seed6200101_00001_.png",
+        "subfolder": "sean_krea2_single_refs",
+        "type": "output",
+        "id": "b3e80a6e-b671-4577-a9a8-e5c57176bde2"
+      },
+      "condition": "all_references",
+      "references": [
+        "face",
+        "clothing",
+        "equipment",
+        "scene"
+      ],
+      "prompt": "Create one coherent square fantasy game concept-art illustration in the exact same painterly rendering style as the reference images. Reference image 1 is the face reference; use it specifically to preserve that feature on this one character. Reference image 2 is the clothing reference; use it specifically to preserve that feature on this one character. Reference image 3 is the equipment reference; use it specifically to preserve that feature on this one character. Reference image 4 is the scene reference; use it specifically to preserve that feature on this one character. Show exactly one adult East Asian swordswoman, full body from head to boots, standing naturally in a three-quarter view, face clearly visible. Preserve her recognizable face: softly tapered oval face, almond-shaped dark-brown eyes, straight brows, small nose, calm confident expression, black hair in a high ponytail tied with a red silk cord, two cheek-length locks. She wears the same ivory wrapped tunic, deep navy split riding coat with red lining, lacquered black shoulder guard, red waist sash, dark trousers and black boots. A single long katana in a black lacquer scabbard hangs at her left hip; preserve its dark grip, restrained bronze fittings and curved silhouette. Place her naturally within the moonlit courtyard shown in reference image 4; the environment surrounds her as one continuous space, with architecture visible behind her. Keep the face, hair, clothing, armor and katana belonging to this one same character. One image, no extra people, no duplicate weapons, no inset panels, no reference board, no borders, no labels, no text, no watermark. Consistent painterly edges, rich but restrained colors, detailed fantasy game illustration, unified night lighting and perspective."
+    },
+    {
+      "id": "all_references_seed6200102",
+      "prompt_id": "e455c42b-2a23-4552-a3a9-3f8104b7bf7a",
+      "seed": 6200102,
+      "seconds": 12.02,
+      "output": "outputs/all_references_seed6200102_01.png",
+      "comfy_image": {
+        "filename": "all_references_seed6200102_00001_.png",
+        "subfolder": "sean_krea2_single_refs",
+        "type": "output",
+        "id": "a2328b3f-1d44-421a-9c50-79a8977b3894"
+      },
+      "condition": "all_references",
+      "references": [
+        "face",
+        "clothing",
+        "equipment",
+        "scene"
+      ],
+      "prompt": "Create one coherent square fantasy game concept-art illustration in the exact same painterly rendering style as the reference images. Reference image 1 is the face reference; use it specifically to preserve that feature on this one character. Reference image 2 is the clothing reference; use it specifically to preserve that feature on this one character. Reference image 3 is the equipment reference; use it specifically to preserve that feature on this one character. Reference image 4 is the scene reference; use it specifically to preserve that feature on this one character. Show exactly one adult East Asian swordswoman, full body from head to boots, standing naturally in a three-quarter view, face clearly visible. Preserve her recognizable face: softly tapered oval face, almond-shaped dark-brown eyes, straight brows, small nose, calm confident expression, black hair in a high ponytail tied with a red silk cord, two cheek-length locks. She wears the same ivory wrapped tunic, deep navy split riding coat with red lining, lacquered black shoulder guard, red waist sash, dark trousers and black boots. A single long katana in a black lacquer scabbard hangs at her left hip; preserve its dark grip, restrained bronze fittings and curved silhouette. Place her naturally within the moonlit courtyard shown in reference image 4; the environment surrounds her as one continuous space, with architecture visible behind her. Keep the face, hair, clothing, armor and katana belonging to this one same character. One image, no extra people, no duplicate weapons, no inset panels, no reference board, no borders, no labels, no text, no watermark. Consistent painterly edges, rich but restrained colors, detailed fantasy game illustration, unified night lighting and perspective."
+    },
+    {
+      "id": "face_only_split0.25_seed6200101",
+      "prompt_id": "298d237f-d476-4381-bcf8-ea82e9dd4a25",
+      "seed": 6200101,
+      "seconds": 10.02,
+      "output": "outputs/face_only_split0.25_seed6200101_01.png",
+      "comfy_image": {
+        "filename": "face_only_split0.25_seed6200101_00001_.png",
+        "subfolder": "sean_krea2_single_refs",
+        "type": "output",
+        "id": "b011127d-9c24-4e04-a49b-0e8860a9b806"
+      },
+      "condition": "face_only",
+      "references": [
+        "face"
+      ],
+      "layout_split": 0.25,
+      "prompt": "Create one coherent square fantasy game concept-art illustration in the exact same painterly rendering style as the reference images. Reference image 1 is the face reference; use it specifically to preserve that feature on this one character. Show exactly one adult East Asian swordswoman, full body from head to boots, standing naturally in a three-quarter view, face clearly visible. Preserve her recognizable face: softly tapered oval face, almond-shaped dark-brown eyes, straight brows, small nose, calm confident expression, black hair in a high ponytail tied with a red silk cord, two cheek-length locks. She wears the same ivory wrapped tunic, deep navy split riding coat with red lining, lacquered black shoulder guard, red waist sash, dark trousers and black boots. A single long katana in a black lacquer scabbard hangs at her left hip; preserve its dark grip, restrained bronze fittings and curved silhouette. Place her naturally within a moonlit stone courtyard with a ruined archway, worn flagstones and scattered red autumn leaves; the environment surrounds her as one continuous space, with architecture visible behind her. Keep the face, hair, clothing, armor and katana belonging to this one same character. One image, no extra people, no duplicate weapons, no inset panels, no reference board, no borders, no labels, no text, no watermark. Consistent painterly edges, rich but restrained colors, detailed fantasy game illustration, unified night lighting and perspective."
+    },
+    {
+      "id": "face_only_split0.25_seed6200102",
+      "prompt_id": "ec1f3d8d-d368-46d2-8a6a-a6ab4255c59a",
+      "seed": 6200102,
+      "seconds": 8.01,
+      "output": "outputs/face_only_split0.25_seed6200102_01.png",
+      "comfy_image": {
+        "filename": "face_only_split0.25_seed6200102_00001_.png",
+        "subfolder": "sean_krea2_single_refs",
+        "type": "output",
+        "id": "36c3e9e1-5707-457c-b96a-25dc6b5f0804"
+      },
+      "condition": "face_only",
+      "references": [
+        "face"
+      ],
+      "layout_split": 0.25,
+      "prompt": "Create one coherent square fantasy game concept-art illustration in the exact same painterly rendering style as the reference images. Reference image 1 is the face reference; use it specifically to preserve that feature on this one character. Show exactly one adult East Asian swordswoman, full body from head to boots, standing naturally in a three-quarter view, face clearly visible. Preserve her recognizable face: softly tapered oval face, almond-shaped dark-brown eyes, straight brows, small nose, calm confident expression, black hair in a high ponytail tied with a red silk cord, two cheek-length locks. She wears the same ivory wrapped tunic, deep navy split riding coat with red lining, lacquered black shoulder guard, red waist sash, dark trousers and black boots. A single long katana in a black lacquer scabbard hangs at her left hip; preserve its dark grip, restrained bronze fittings and curved silhouette. Place her naturally within a moonlit stone courtyard with a ruined archway, worn flagstones and scattered red autumn leaves; the environment surrounds her as one continuous space, with architecture visible behind her. Keep the face, hair, clothing, armor and katana belonging to this one same character. One image, no extra people, no duplicate weapons, no inset panels, no reference board, no borders, no labels, no text, no watermark. Consistent painterly edges, rich but restrained colors, detailed fantasy game illustration, unified night lighting and perspective."
+    },
+    {
+      "id": "all_references_split0.25_seed6200101",
+      "prompt_id": "ef7efd9d-7c0d-4092-a7e1-f40fa89a2341",
+      "seed": 6200101,
+      "seconds": 14.02,
+      "output": "outputs/all_references_split0.25_seed6200101_01.png",
+      "comfy_image": {
+        "filename": "all_references_split0.25_seed6200101_00001_.png",
+        "subfolder": "sean_krea2_single_refs",
+        "type": "output",
+        "id": "95f5f0cd-ed9a-422c-910a-6eeaf580ed6e"
+      },
+      "condition": "all_references",
+      "references": [
+        "face",
+        "clothing",
+        "equipment",
+        "scene"
+      ],
+      "layout_split": 0.25,
+      "prompt": "Create one coherent square fantasy game concept-art illustration in the exact same painterly rendering style as the reference images. Reference image 1 is the face reference; use it specifically to preserve that feature on this one character. Reference image 2 is the clothing reference; use it specifically to preserve that feature on this one character. Reference image 3 is the equipment reference; use it specifically to preserve that feature on this one character. Reference image 4 is the scene reference; use it specifically to preserve that feature on this one character. Show exactly one adult East Asian swordswoman, full body from head to boots, standing naturally in a three-quarter view, face clearly visible. Preserve her recognizable face: softly tapered oval face, almond-shaped dark-brown eyes, straight brows, small nose, calm confident expression, black hair in a high ponytail tied with a red silk cord, two cheek-length locks. She wears the same ivory wrapped tunic, deep navy split riding coat with red lining, lacquered black shoulder guard, red waist sash, dark trousers and black boots. A single long katana in a black lacquer scabbard hangs at her left hip; preserve its dark grip, restrained bronze fittings and curved silhouette. Place her naturally within the moonlit courtyard shown in reference image 4; the environment surrounds her as one continuous space, with architecture visible behind her. Keep the face, hair, clothing, armor and katana belonging to this one same character. One image, no extra people, no duplicate weapons, no inset panels, no reference board, no borders, no labels, no text, no watermark. Consistent painterly edges, rich but restrained colors, detailed fantasy game illustration, unified night lighting and perspective."
+    },
+    {
+      "id": "all_references_split0.25_seed6200102",
+      "prompt_id": "31cb8544-bf45-4ea9-aa45-368c5fe097db",
+      "seed": 6200102,
+      "seconds": 12.02,
+      "output": "outputs/all_references_split0.25_seed6200102_01.png",
+      "comfy_image": {
+        "filename": "all_references_split0.25_seed6200102_00001_.png",
+        "subfolder": "sean_krea2_single_refs",
+        "type": "output",
+        "id": "001038c3-c3e1-4a6f-8114-0199193e327f"
+      },
+      "condition": "all_references",
+      "references": [
+        "face",
+        "clothing",
+        "equipment",
+        "scene"
+      ],
+      "layout_split": 0.25,
+      "prompt": "Create one coherent square fantasy game concept-art illustration in the exact same painterly rendering style as the reference images. Reference image 1 is the face reference; use it specifically to preserve that feature on this one character. Reference image 2 is the clothing reference; use it specifically to preserve that feature on this one character. Reference image 3 is the equipment reference; use it specifically to preserve that feature on this one character. Reference image 4 is the scene reference; use it specifically to preserve that feature on this one character. Show exactly one adult East Asian swordswoman, full body from head to boots, standing naturally in a three-quarter view, face clearly visible. Preserve her recognizable face: softly tapered oval face, almond-shaped dark-brown eyes, straight brows, small nose, calm confident expression, black hair in a high ponytail tied with a red silk cord, two cheek-length locks. She wears the same ivory wrapped tunic, deep navy split riding coat with red lining, lacquered black shoulder guard, red waist sash, dark trousers and black boots. A single long katana in a black lacquer scabbard hangs at her left hip; preserve its dark grip, restrained bronze fittings and curved silhouette. Place her naturally within the moonlit courtyard shown in reference image 4; the environment surrounds her as one continuous space, with architecture visible behind her. Keep the face, hair, clothing, armor and katana belonging to this one same character. One image, no extra people, no duplicate weapons, no inset panels, no reference board, no borders, no labels, no text, no watermark. Consistent painterly edges, rich but restrained colors, detailed fantasy game illustration, unified night lighting and perspective."
+    },
+    {
+      "id": "face_clothing_split0.25_seed6200101",
+      "prompt_id": "c467a375-620f-43e7-9bdf-ad807a1f1d77",
+      "seed": 6200101,
+      "seconds": 12.02,
+      "output": "outputs/face_clothing_split0.25_seed6200101_01.png",
+      "comfy_image": {
+        "filename": "face_clothing_split0.25_seed6200101_00001_.png",
+        "subfolder": "sean_krea2_single_refs",
+        "type": "output",
+        "id": "f0d3fd0e-1e54-4dd1-92ab-bd3db311ef37"
+      },
+      "condition": "face_clothing",
+      "references": [
+        "face",
+        "clothing"
+      ],
+      "layout_split": 0.25,
+      "prompt": "Create one coherent square fantasy game concept-art illustration in the exact same painterly rendering style as the reference images. Reference image 1 is the face reference; use it specifically to preserve that feature on this one character. Reference image 2 is the clothing reference; use it specifically to preserve that feature on this one character. Show exactly one adult East Asian swordswoman, full body from head to boots, standing naturally in a three-quarter view, face clearly visible. Preserve her recognizable face: softly tapered oval face, almond-shaped dark-brown eyes, straight brows, small nose, calm confident expression, black hair in a high ponytail tied with a red silk cord, two cheek-length locks. She wears the same ivory wrapped tunic, deep navy split riding coat with red lining, lacquered black shoulder guard, red waist sash, dark trousers and black boots. A single long katana in a black lacquer scabbard hangs at her left hip; preserve its dark grip, restrained bronze fittings and curved silhouette. Place her naturally within a moonlit stone courtyard with a ruined archway, worn flagstones and scattered red autumn leaves; the environment surrounds her as one continuous space, with architecture visible behind her. Keep the face, hair, clothing, armor and katana belonging to this one same character. One image, no extra people, no duplicate weapons, no inset panels, no reference board, no borders, no labels, no text, no watermark. Consistent painterly edges, rich but restrained colors, detailed fantasy game illustration, unified night lighting and perspective."
+    },
+    {
+      "id": "face_clothing_split0.25_seed6200102",
+      "prompt_id": "38ad1bfa-a798-43dc-93ab-2b3d399c527c",
+      "seed": 6200102,
+      "seconds": 10.01,
+      "output": "outputs/face_clothing_split0.25_seed6200102_01.png",
+      "comfy_image": {
+        "filename": "face_clothing_split0.25_seed6200102_00001_.png",
+        "subfolder": "sean_krea2_single_refs",
+        "type": "output",
+        "id": "d122d353-cb00-4b19-a340-57dfdd2f726a"
+      },
+      "condition": "face_clothing",
+      "references": [
+        "face",
+        "clothing"
+      ],
+      "layout_split": 0.25,
+      "prompt": "Create one coherent square fantasy game concept-art illustration in the exact same painterly rendering style as the reference images. Reference image 1 is the face reference; use it specifically to preserve that feature on this one character. Reference image 2 is the clothing reference; use it specifically to preserve that feature on this one character. Show exactly one adult East Asian swordswoman, full body from head to boots, standing naturally in a three-quarter view, face clearly visible. Preserve her recognizable face: softly tapered oval face, almond-shaped dark-brown eyes, straight brows, small nose, calm confident expression, black hair in a high ponytail tied with a red silk cord, two cheek-length locks. She wears the same ivory wrapped tunic, deep navy split riding coat with red lining, lacquered black shoulder guard, red waist sash, dark trousers and black boots. A single long katana in a black lacquer scabbard hangs at her left hip; preserve its dark grip, restrained bronze fittings and curved silhouette. Place her naturally within a moonlit stone courtyard with a ruined archway, worn flagstones and scattered red autumn leaves; the environment surrounds her as one continuous space, with architecture visible behind her. Keep the face, hair, clothing, armor and katana belonging to this one same character. One image, no extra people, no duplicate weapons, no inset panels, no reference board, no borders, no labels, no text, no watermark. Consistent painterly edges, rich but restrained colors, detailed fantasy game illustration, unified night lighting and perspective."
+    },
+    {
+      "id": "face_equipment_split0.25_seed6200101",
+      "prompt_id": "4175354d-c5e7-4332-9ae7-8bfea2f2564c",
+      "seed": 6200101,
+      "seconds": 10.43,
+      "output": "outputs/face_equipment_split0.25_seed6200101_01.png",
+      "comfy_image": {
+        "filename": "face_equipment_split0.25_seed6200101_00001_.png",
+        "subfolder": "sean_krea2_single_refs",
+        "type": "output",
+        "id": "bdf4102d-b890-4406-b9b7-fcff4995d18d"
+      },
+      "condition": "face_equipment",
+      "references": [
+        "face",
+        "equipment"
+      ],
+      "layout_split": 0.25,
+      "prompt": "Create one coherent square fantasy game concept-art illustration in the exact same painterly rendering style as the reference images. Reference image 1 is the face reference; use it specifically to preserve that feature on this one character. Reference image 2 is the equipment reference; use it specifically to preserve that feature on this one character. Show exactly one adult East Asian swordswoman, full body from head to boots, standing naturally in a three-quarter view, face clearly visible. Preserve her recognizable face: softly tapered oval face, almond-shaped dark-brown eyes, straight brows, small nose, calm confident expression, black hair in a high ponytail tied with a red silk cord, two cheek-length locks. She wears the same ivory wrapped tunic, deep navy split riding coat with red lining, lacquered black shoulder guard, red waist sash, dark trousers and black boots. A single long katana in a black lacquer scabbard hangs at her left hip; preserve its dark grip, restrained bronze fittings and curved silhouette. Place her naturally within a moonlit stone courtyard with a ruined archway, worn flagstones and scattered red autumn leaves; the environment surrounds her as one continuous space, with architecture visible behind her. Keep the face, hair, clothing, armor and katana belonging to this one same character. One image, no extra people, no duplicate weapons, no inset panels, no reference board, no borders, no labels, no text, no watermark. Consistent painterly edges, rich but restrained colors, detailed fantasy game illustration, unified night lighting and perspective."
+    },
+    {
+      "id": "face_equipment_split0.25_seed6200102",
+      "prompt_id": "bc916584-557b-464b-850d-fbf23db0c028",
+      "seed": 6200102,
+      "seconds": 10.01,
+      "output": "outputs/face_equipment_split0.25_seed6200102_01.png",
+      "comfy_image": {
+        "filename": "face_equipment_split0.25_seed6200102_00001_.png",
+        "subfolder": "sean_krea2_single_refs",
+        "type": "output",
+        "id": "b18c22d9-a389-45e7-bd4e-29091035553b"
+      },
+      "condition": "face_equipment",
+      "references": [
+        "face",
+        "equipment"
+      ],
+      "layout_split": 0.25,
+      "prompt": "Create one coherent square fantasy game concept-art illustration in the exact same painterly rendering style as the reference images. Reference image 1 is the face reference; use it specifically to preserve that feature on this one character. Reference image 2 is the equipment reference; use it specifically to preserve that feature on this one character. Show exactly one adult East Asian swordswoman, full body from head to boots, standing naturally in a three-quarter view, face clearly visible. Preserve her recognizable face: softly tapered oval face, almond-shaped dark-brown eyes, straight brows, small nose, calm confident expression, black hair in a high ponytail tied with a red silk cord, two cheek-length locks. She wears the same ivory wrapped tunic, deep navy split riding coat with red lining, lacquered black shoulder guard, red waist sash, dark trousers and black boots. A single long katana in a black lacquer scabbard hangs at her left hip; preserve its dark grip, restrained bronze fittings and curved silhouette. Place her naturally within a moonlit stone courtyard with a ruined archway, worn flagstones and scattered red autumn leaves; the environment surrounds her as one continuous space, with architecture visible behind her. Keep the face, hair, clothing, armor and katana belonging to this one same character. One image, no extra people, no duplicate weapons, no inset panels, no reference board, no borders, no labels, no text, no watermark. Consistent painterly edges, rich but restrained colors, detailed fantasy game illustration, unified night lighting and perspective."
+    },
+    {
+      "id": "face_scene_split0.25_seed6200101",
+      "prompt_id": "bc5a95eb-94b0-4e9d-afbf-8d1859fa4089",
+      "seed": 6200101,
+      "seconds": 10.01,
+      "output": "outputs/face_scene_split0.25_seed6200101_01.png",
+      "comfy_image": {
+        "filename": "face_scene_split0.25_seed6200101_00001_.png",
+        "subfolder": "sean_krea2_single_refs",
+        "type": "output",
+        "id": "8794c183-f910-408a-8e5d-0b7bf308a24a"
+      },
+      "condition": "face_scene",
+      "references": [
+        "face",
+        "scene"
+      ],
+      "layout_split": 0.25,
+      "prompt": "Create one coherent square fantasy game concept-art illustration in the exact same painterly rendering style as the reference images. Reference image 1 is the face reference; use it specifically to preserve that feature on this one character. Reference image 2 is the scene reference; use it specifically to preserve that feature on this one character. Show exactly one adult East Asian swordswoman, full body from head to boots, standing naturally in a three-quarter view, face clearly visible. Preserve her recognizable face: softly tapered oval face, almond-shaped dark-brown eyes, straight brows, small nose, calm confident expression, black hair in a high ponytail tied with a red silk cord, two cheek-length locks. She wears the same ivory wrapped tunic, deep navy split riding coat with red lining, lacquered black shoulder guard, red waist sash, dark trousers and black boots. A single long katana in a black lacquer scabbard hangs at her left hip; preserve its dark grip, restrained bronze fittings and curved silhouette. Place her naturally within the moonlit courtyard shown in reference image 2; the environment surrounds her as one continuous space, with architecture visible behind her. Keep the face, hair, clothing, armor and katana belonging to this one same character. One image, no extra people, no duplicate weapons, no inset panels, no reference board, no borders, no labels, no text, no watermark. Consistent painterly edges, rich but restrained colors, detailed fantasy game illustration, unified night lighting and perspective."
+    },
+    {
+      "id": "face_scene_split0.25_seed6200102",
+      "prompt_id": "a8668f46-f448-493b-9e8f-049fdb290d0a",
+      "seed": 6200102,
+      "seconds": 8.01,
+      "output": "outputs/face_scene_split0.25_seed6200102_01.png",
+      "comfy_image": {
+        "filename": "face_scene_split0.25_seed6200102_00001_.png",
+        "subfolder": "sean_krea2_single_refs",
+        "type": "output",
+        "id": "80097546-b483-41f8-b6c9-64a390403408"
+      },
+      "condition": "face_scene",
+      "references": [
+        "face",
+        "scene"
+      ],
+      "layout_split": 0.25,
+      "prompt": "Create one coherent square fantasy game concept-art illustration in the exact same painterly rendering style as the reference images. Reference image 1 is the face reference; use it specifically to preserve that feature on this one character. Reference image 2 is the scene reference; use it specifically to preserve that feature on this one character. Show exactly one adult East Asian swordswoman, full body from head to boots, standing naturally in a three-quarter view, face clearly visible. Preserve her recognizable face: softly tapered oval face, almond-shaped dark-brown eyes, straight brows, small nose, calm confident expression, black hair in a high ponytail tied with a red silk cord, two cheek-length locks. She wears the same ivory wrapped tunic, deep navy split riding coat with red lining, lacquered black shoulder guard, red waist sash, dark trousers and black boots. A single long katana in a black lacquer scabbard hangs at her left hip; preserve its dark grip, restrained bronze fittings and curved silhouette. Place her naturally within the moonlit courtyard shown in reference image 2; the environment surrounds her as one continuous space, with architecture visible behind her. Keep the face, hair, clothing, armor and katana belonging to this one same character. One image, no extra people, no duplicate weapons, no inset panels, no reference board, no borders, no labels, no text, no watermark. Consistent painterly edges, rich but restrained colors, detailed fantasy game illustration, unified night lighting and perspective."
+    }
+  ],
+  "visual_qc_status": "reviewed",
+  "visual_qc": {
+    "reviewer": "Codex",
+    "date": "2026-10-01",
+    "report": "QC.md"
+  },
+  "summary": {
+    "output_count": 20,
+    "condition_count": 10,
+    "visual_qc_status": "reviewed",
+    "key_observation": "layout_split=0.25 improved single-person framing for face-only and face+clothing (2/2 each); all four references remained collage-like (0/2). Scene semantics transferred better than scene geometry."
+  }
+}

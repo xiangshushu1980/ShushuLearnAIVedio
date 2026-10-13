@@ -1,0 +1,600 @@
+{
+  "owner": "Sean",
+  "test_id": "remote-c1c2bb3a-432b-4586-af9d-f6ffdde54196",
+  "asset_set": "sean_h3_character_reference_test_v1",
+  "source_pipeline": "Krea2 single anchor -> H3 I2VA five-shot hard-cut turnaround -> extracted frames",
+  "krea2": {
+    "model": "krea2_turbo_fp8.safetensors",
+    "resolution": "1024x576",
+    "steps": 8,
+    "cfg": 1.0,
+    "seed": 20260923,
+    "file": "krea2_anchor_v1_00001_.png"
+  },
+  "h3": {
+    "mode": "I2VA",
+    "model": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+    "resolution": "1216x672",
+    "frames": 124,
+    "fps": 24,
+    "steps": 20,
+    "sampler": "res_multistep",
+    "scheduler": "simple",
+    "seed": 20260923,
+    "prompt_id": "39fd1154-38da-484f-9cfb-61f6a0445749",
+    "file": "h3_turnaround_v1_00001_.mp4",
+    "shots": [
+      "full body front",
+      "head and shoulders front",
+      "strict left profile",
+      "strict right profile",
+      "direct rear view"
+    ]
+  },
+  "extracted_assets": {
+    "identity_front": "sean_identity_front.png",
+    "face_closeup": "sean_face_closeup.png",
+    "view_left": "sean_view_left.png",
+    "view_right": "sean_view_right.png",
+    "view_back": "sean_view_back.png",
+    "character_board": "sean_character_reference_board_v1.png",
+    "contact_sheet": "sean_turnaround_contact_sheet.png"
+  },
+  "t0_smoke": {
+    "resolution": "768x448",
+    "frames": 124,
+    "steps": 8,
+    "seed": 20260923,
+    "scheme_a": {
+      "name": "independent",
+      "refs": [
+        "sean_t0_identity_front.png",
+        "sean_t0_face_closeup.png"
+      ],
+      "prompt_file": "sean_t0_A_independent_prompt.txt",
+      "video": "t0_A_independent_seed20260923_s8_768x448_00001_.mp4"
+    },
+    "scheme_b": {
+      "name": "board_plus_face",
+      "refs": [
+        "sean_t0_character_board.png",
+        "sean_t0_face_closeup.png"
+      ],
+      "prompt_file": "sean_t0_B_board_face_prompt.txt",
+      "video": "t0_B_board_face_seed20260923_s8_768x448_00001_.mp4"
+    },
+    "comparison_contact_sheet": "sean_t0_A_B_first_mid_last.png",
+    "status": "success_no_workflow_errors"
+  },
+  "t1_quality_review": {
+    "resolution": "768x448",
+    "frames": 124,
+    "steps": 20,
+    "seeds": [
+      20260923,
+      20260924,
+      20260925
+    ],
+    "scheme_a": {
+      "name": "independent",
+      "videos": [
+        "t1_A_independent_seed20260923_s20_768x448_00001_.mp4",
+        "t1_A_independent_seed20260924_s20_768x448_00001_.mp4",
+        "t1_A_independent_seed20260925_s20_768x448_00001_.mp4"
+      ],
+      "review_grid": "sean_t1_A_seeds_first_mid_last.png"
+    },
+    "scheme_b": {
+      "name": "board_plus_face",
+      "videos": [
+        "t1_B_board_face_seed20260923_s20_768x448_00001_.mp4",
+        "t1_B_board_face_seed20260924_s20_768x448_00001_.mp4",
+        "t1_B_board_face_seed20260925_s20_768x448_00001_.mp4"
+      ],
+      "review_grid": "sean_t1_B_seeds_first_mid_last.png"
+    },
+    "resource_observation_id": "968632bd-b30c-4548-8415-35abe2a68d42",
+    "status": "success_no_workflow_errors",
+    "preliminary_review": [
+      "All six runs completed successfully with stable GPU memory and no workflow errors.",
+      "Across three seeds, both schemes retained the same character identity and outfit; no obvious identity swap or reference-board layout copying was observed.",
+      "In this static medium-shot test, independent refs and board-plus-face refs are visually close; the result is not yet a final preference for complex motion or multi-object scenes."
+    ]
+  },
+  "t2_assets": {
+    "generation": "Krea2 single-image assets, fixed before H3 comparison",
+    "prompts_file": "sean_t2_asset_prompts.txt",
+    "assets": {
+      "character_b_identity": "sean_t2_character_b_identity_00001_.png",
+      "scene_observatory": "sean_t2_scene_observatory_00001_.png",
+      "spell_cyan_ribbon": "sean_t2_spell_cyan_ribbon_00001_.png",
+      "object_brass_compass": "sean_t2_object_brass_compass_00001_.png"
+    },
+    "status": "visually_checked_and_accepted_for_t2",
+    "note": "An initial script substitution bug produced default demo images; those files were moved to _discarded_t2_invalid and excluded. The script was fixed to replace the first positive text encoder when legacy keywords are absent."
+  },
+  "t2_multi_object": {
+    "resolution": "768x448",
+    "frames": 124,
+    "fps": 24,
+    "seed": 20260923,
+    "screening_steps": 8,
+    "quality_steps": 20,
+    "reference_slot_contract": {
+      "A": "R1 A identity, R2 A face, R3 B identity, R4 scene, R5 spell, R6 object",
+      "C": "R1 dual-character total board, R2 A identity, R3 B identity, R4 scene, R5 spell, R6 object",
+      "D": "R1 A character board, R2 A face, R3 B identity, R4 scene, R5 spell, R6 object",
+      "E": "R1 total board containing A, B, scene, spell, and object"
+    },
+    "screening": {
+      "videos": {
+        "A": "t2_A_multi_object_s8_00001_.mp4",
+        "C": "t2_C_multi_object_s8_00001_.mp4",
+        "D": "t2_D_multi_object_s8_00001_.mp4",
+        "E": "t2_E_multi_object_s8_00001_.mp4"
+      },
+      "prompt_ids": {
+        "A": "8a3bd253-2080-4323-8883-90fb9ed88854",
+        "C": "ea35eaf7-ba39-401a-81e0-7d59fd78816f",
+        "D": "1ccd1b54-43b7-48e0-aca5-81419acf8ee5",
+        "E": "af59c1bb-4efd-444d-9c63-fae9b22af472"
+      },
+      "comparison_grid": "sean_t2_A_C_D_E_first_mid_last.png"
+    },
+    "quality_review": {
+      "videos": {
+        "A": "t2_A_multi_object_s20_00001_.mp4",
+        "C": "t2_C_multi_object_s20_00001_.mp4",
+        "D": "t2_D_multi_object_s20_00001_.mp4",
+        "E": "t2_E_multi_object_s20_00001_.mp4"
+      },
+      "prompt_ids": {
+        "A": "3964ac44-1420-4e03-99ae-60a93f88f194",
+        "C": "cd9a10c5-3c02-414a-9b92-f30d99ccd3c4",
+        "D": "f66cbfac-bbde-40a0-a6ae-2821a4d06e5c",
+        "E": "cdff924c-a34b-473a-bc9f-18f23599a720"
+      },
+      "comparison_grid": "sean_t2_A_C_D_E_s20_first_mid_last.png"
+    },
+    "preliminary_review": [
+      "All four schemes completed both 8-step screening and 20-step quality generation with no workflow errors or decode failures.",
+      "A, C, and D preserve the two distinct identities, left-right staging, cyan spell attachment to Subject 2, and brass compass binding in the sampled frames.",
+      "E also completes, but the total-board compression creates the weakest semantic separation and is retained as a negative-control reference rather than a default candidate.",
+      "This is one seed and a restrained low-motion scene; the result is a preliminary T2 binding result, not the final multi-seed ranking."
+    ],
+    "status": "completed_single_seed_pair_and_screening"
+  },
+  "t2_multiseed_quality": {
+    "seeds": [
+      20260923,
+      20260924,
+      20260925,
+      20260926,
+      20260927
+    ],
+    "quality_steps": 20,
+    "videos": {
+      "A": [
+        "t2_A_multi_object_s20_00001_.mp4",
+        "t2_A_multi_object_seed20260924_s20_00001_.mp4",
+        "t2_A_multi_object_seed20260925_s20_00001_.mp4",
+        "t2_A_multi_object_seed20260926_s20_00001_.mp4",
+        "t2_A_multi_object_seed20260927_s20_00001_.mp4"
+      ],
+      "C": [
+        "t2_C_multi_object_s20_00001_.mp4",
+        "t2_C_multi_object_seed20260924_s20_00001_.mp4",
+        "t2_C_multi_object_seed20260925_s20_00001_.mp4",
+        "t2_C_multi_object_seed20260926_s20_00001_.mp4",
+        "t2_C_multi_object_seed20260927_s20_00001_.mp4"
+      ],
+      "D": [
+        "t2_D_multi_object_s20_00001_.mp4",
+        "t2_D_multi_object_seed20260924_s20_00001_.mp4",
+        "t2_D_multi_object_seed20260925_s20_00001_.mp4",
+        "t2_D_multi_object_seed20260926_s20_00001_.mp4",
+        "t2_D_multi_object_seed20260927_s20_00001_.mp4"
+      ],
+      "E": [
+        "t2_E_multi_object_s20_00001_.mp4",
+        "t2_E_multi_object_seed20260924_s20_00001_.mp4",
+        "t2_E_multi_object_seed20260925_s20_00001_.mp4",
+        "t2_E_multi_object_seed20260926_s20_00001_.mp4",
+        "t2_E_multi_object_seed20260927_s20_00001_.mp4"
+      ]
+    },
+    "review_grids": {
+      "mid_all": "sean_t2_multiseed_mid_grid.png",
+      "A": "sean_t2_A_five_seed_mid_grid.png",
+      "C": "sean_t2_C_five_seed_mid_grid.png",
+      "D": "sean_t2_D_five_seed_mid_grid.png",
+      "E": "sean_t2_E_five_seed_mid_grid.png"
+    },
+    "resource_observation_id": "9ac2c834-0380-4130-9446-2af15dc92638",
+    "status": "completed_five_seed_quality_matrix",
+    "preliminary_review": [
+      "All 20 quality videos completed successfully across four schemes and five seeds.",
+      "Across the sampled mid-shot frames, A, C, and D retain distinct identities and the intended spell/object associations; no recurring identity swap was observed.",
+      "E remains usable as a negative control but has the weakest semantic separation because all categories compete inside one compressed total board.",
+      "The next decision should focus on A versus D for the default route; C remains a staging-specific option, while E should not be the default."
+    ]
+  },
+  "t3_complex_scene": {
+    "resolution": "768x448",
+    "frames": 124,
+    "fps": 24,
+    "seeds": [
+      20260930,
+      20260931
+    ],
+    "schemes_run": [
+      "A",
+      "D",
+      "E"
+    ],
+    "screening_steps": 8,
+    "quality_steps": 20,
+    "videos": {
+      "A": [
+        "t3_A_complex_seed20260930_s8_00001_.mp4",
+        "t3_A_complex_seed20260931_s8_00001_.mp4",
+        "t3_A_complex_seed20260930_s20_00001_.mp4",
+        "t3_A_complex_seed20260931_s20_00001_.mp4"
+      ],
+      "D": [
+        "t3_D_complex_seed20260930_s8_00001_.mp4",
+        "t3_D_complex_seed20260931_s8_00001_.mp4",
+        "t3_D_complex_seed20260930_s20_00001_.mp4",
+        "t3_D_complex_seed20260931_s20_00001_.mp4"
+      ],
+      "E": [
+        "t3_E_complex_seed20260930_s8_00001_.mp4",
+        "t3_E_complex_seed20260931_s8_00001_.mp4",
+        "t3_E_complex_seed20260930_s20_00001_.mp4",
+        "t3_E_complex_seed20260931_s20_00001_.mp4"
+      ]
+    },
+    "review_grid": "sean_t3_A_D_E_mid_grid.png",
+    "guide_scheme": {
+      "name": "D-guide",
+      "status": "not_executed",
+      "reason": "The installed MiniMaxH3ReferenceToVideo node exposes ref_images/ref_videos/ref_audios but no independent guide input; scene-as-reference would not be a valid guide comparison."
+    },
+    "resource_observation_id": "bf7d85c5-318a-45ad-9850-69e68fb6fd7a",
+    "status": "completed_preliminary_two_seed_quality_matrix",
+    "preliminary_review": [
+      "All 12 A/D/E T3 runs completed successfully with no workflow errors or decode failures.",
+      "The sampled mid-frames retain distinct character identities, left-right staging, cyan spell ownership by Subject 2, and compass ownership by Subject 1 across A, D, and E.",
+      "This first T3 scene did not expose a recurring identity swap; the two-seed result is preliminary because the action remains restrained and does not include a high-contact handoff or fast camera movement.",
+      "D-guide is an explicit capability gap in the current ordinary Ref2VA node, not a failed visual result."
+    ]
+  },
+  "t4_reference_quantity_ablation": {
+    "resolution": "768x448",
+    "frames": 124,
+    "fps": 24,
+    "seeds": [
+      20260940,
+      20260941,
+      20260942
+    ],
+    "quality_steps": 20,
+    "cells": [
+      "id_only",
+      "id_wardrobe",
+      "id_wardrobe_scene",
+      "board_face_scene",
+      "complex_D",
+      "D_minus_spell",
+      "D_minus_object"
+    ],
+    "initial_batch": {
+      "status": "partially_invalid",
+      "invalid_cells": [
+        "id_only",
+        "id_wardrobe",
+        "id_wardrobe_scene",
+        "board_face_scene"
+      ],
+      "invalid_runs": 12,
+      "reason": "The single-person prompt accidentally mentioned Subject 2's appearance in a generic retention sentence, causing an unintended second-person generation. Reference slots were correct; the prompt was invalid for the intended single-person cell.",
+      "valid_cells": [
+        "complex_D",
+        "D_minus_spell",
+        "D_minus_object"
+      ],
+      "valid_runs": 9,
+      "comparison_grid": "sean_t4_quantity_ablation_mid_grid.png",
+      "resource_observation_id": "fb7a0193-fe46-4b4b-b835-b38c238b2cf2"
+    },
+    "corrected_single_person_batch": {
+      "status": "success",
+      "runs": 12,
+      "videos": {
+        "id_only": [
+          "t4_id_only_retry_seed20260940_s20_00001_.mp4",
+          "t4_id_only_retry_seed20260941_s20_00001_.mp4",
+          "t4_id_only_retry_seed20260942_s20_00001_.mp4"
+        ],
+        "id_wardrobe": [
+          "t4_id_wardrobe_retry_seed20260940_s20_00001_.mp4",
+          "t4_id_wardrobe_retry_seed20260941_s20_00001_.mp4",
+          "t4_id_wardrobe_retry_seed20260942_s20_00001_.mp4"
+        ],
+        "id_wardrobe_scene": [
+          "t4_id_wardrobe_scene_retry_seed20260940_s20_00001_.mp4",
+          "t4_id_wardrobe_scene_retry_seed20260941_s20_00001_.mp4",
+          "t4_id_wardrobe_scene_retry_seed20260942_s20_00001_.mp4"
+        ],
+        "board_face_scene": [
+          "t4_board_face_scene_retry_seed20260940_s20_00001_.mp4",
+          "t4_board_face_scene_retry_seed20260941_s20_00001_.mp4",
+          "t4_board_face_scene_retry_seed20260942_s20_00001_.mp4"
+        ]
+      },
+      "comparison_grid": "sean_t4_single_person_retry_mid_grid.png",
+      "resource_observation_id": "375ef09e-85b3-426c-9590-7f284d705df8"
+    },
+    "preliminary_review": [
+      "The corrected single-person cells contain one character across the reviewed mid-frames; the accidental second-person issue is not a reference-slot failure.",
+      "Identity-only gives the cleanest face control but does not supply wardrobe, body silhouette, or scene control.",
+      "Adding wardrobe and then scene increases controllable information while retaining the same ranger identity in the reviewed samples.",
+      "The board-plus-face-plus-scene cell retained one character and scene in the reviewed samples; no recurring board-layout copy was observed in this small matrix.",
+      "Complex_D and the spell/object deletion cells completed successfully; detailed blind scoring is still required before turning the ablation into a numeric quality winner."
+    ],
+    "guide_ablation": {
+      "status": "not_executed",
+      "reason": "The installed ordinary MiniMaxH3ReferenceToVideo node has no independent guide input."
+    },
+    "status": "completed_with_prompt_correction"
+  },
+  "cleanup": {
+    "date": "2026-09-23",
+    "status": "completed",
+    "retained": [
+      "manifest",
+      "source character/scene/spell/object assets",
+      "T0/T1/T2/T3/T4 comparison grids",
+      "one representative quality video per key scheme/cell"
+    ],
+    "removed": [
+      "duplicate seed videos",
+      "individual first/mid/last frame extracts",
+      "duplicate comparison grids",
+      "initial invalid_prompt T4 videos and frames",
+      "_discarded_t2_invalid directory"
+    ],
+    "note": "Historical run metadata, prompt IDs, and full pre-cleanup artifact names remain in this manifest; retained media is the compact evidence set."
+  },
+  "notes": [
+    "Single original dark-fantasy hoodless undead high-elf ranger anchor; no franchise name in generation prompt.",
+    "User visually approved the v1 asset set as highly consistent.",
+    "T0 A/B smoke completed successfully; 8-step output is screening evidence, not the final identity conclusion.",
+    "Output directory is /home/sean/projects/ComfyUI/output/sean_h3_character_reference_test."
+  ],
+  "t5_reference_role_conflict": {
+    "status": "phase_1_complete_preliminary",
+    "assets_manifest": "t5_reference_roles/t5_asset_manifest.json",
+    "smoke_cases": ".pi/tasks/remote-c1c2bb3a-432b-4586-af9d-f6ffdde54196/t5_smoke_cases.json.results.json",
+    "quality_cases": ".pi/tasks/remote-c1c2bb3a-432b-4586-af9d-f6ffdde54196/t5_ab_quality_cases.json.results.json",
+    "conditions": {
+      "resolution": "768x448",
+      "frames": 124,
+      "steps": 20,
+      "sampler": "res_multistep",
+      "seeds": [
+        20260924,
+        20260925,
+        20260926
+      ]
+    },
+    "cells": {
+      "T5-A": [
+        "F_face_identity",
+        "W_wardrobe_full"
+      ],
+      "T5-B": [
+        "F_face_identity",
+        "WB_wardrobe_body"
+      ]
+    },
+    "runs": 6,
+    "successful": 6,
+    "preliminary_observation": "WB showed no obvious identity swap or extra person in sampled frames; some samples had larger subject/clearer wardrobe detail, but composition and subject-occupancy confounds remain.",
+    "not_a_conclusion": "Do not promote wardrobe_body to the skill baseline before anonymous scoring and view-trigger cells T5-C/T5-D/T5-E.",
+    "view_trigger_phase": {
+      "D": [
+        "F_face_identity",
+        "WB_wardrobe_body",
+        "S_view_side"
+      ],
+      "E": [
+        "F_face_identity",
+        "WB_wardrobe_body",
+        "B_view_back"
+      ],
+      "quality_runs": 6,
+      "successful": 6,
+      "observation": "The side/back endpoints were reached in sampled frames without obvious identity drift; causal benefit over no side/back reference remains untested and requires D0/E0.",
+      "results": ".pi/tasks/remote-c1c2bb3a-432b-4586-af9d-f6ffdde54196/t5_de_quality_cases.json.results.json"
+    },
+    "no_view_ablation_phase": {
+      "cells": {
+        "D0": [
+          "F_face_identity",
+          "WB_wardrobe_body"
+        ],
+        "E0": [
+          "F_face_identity",
+          "WB_wardrobe_body"
+        ]
+      },
+      "quality_runs": 6,
+      "successful": 6,
+      "results": ".pi/tasks/remote-c1c2bb3a-432b-4586-af9d-f6ffdde54196/t5_d0e0_quality_cases.json.results.json",
+      "observation": "Without dedicated side/back reference images, D0 and E0 still reached reasonable strict-side and direct-back endpoints in all sampled formal runs; seed-to-seed framing/scale varied, but no obvious identity or wardrobe failure was observed.",
+      "interpretation": "For this restrained static turn, dedicated side/back references are not yet shown necessary. Their benefit remains plausible for difficult poses, occlusion, dynamic action, or exact rear/side accessory detail.",
+      "status": "phase_2_complete_preliminary"
+    },
+    "three_quarter_asset_phase": {
+      "status": "asset_valid_but_h3_endpoint_control_unproven",
+      "attempt": "local Krea2 Identity Edit from accepted front reference",
+      "output": "t5_q_krea2_3q_00001_.png",
+      "qc": "failed: output remained near-front rather than an approximately 45-degree three-quarter view",
+      "h3_runs_started": 0,
+      "h3_quality_cases": ".pi/tasks/remote-c1c2bb3a-432b-4586-af9d-f6ffdde54196/t5_q_quality_cases.json.results.json",
+      "h3_runs": 6,
+      "h3_successful": 6,
+      "endpoint_observation": "Q and no-Q conditions both tended toward a side-facing endpoint; Q did not reliably preserve the approximately 45-degree target across seeds.",
+      "interpretation": "The Q image was accepted as a valid asset and did not cause obvious identity or wardrobe failure, but this batch does not demonstrate causal endpoint-angle control or a quality gain from Q.",
+      "next": "do not promote Q as mandatory; use a more explicit endpoint/shot test only if three-quarter control is production-critical"
+    },
+    "full_wardrobe_plus_three_quarter_phase": {
+      "cell": "F+W+Q",
+      "results": ".pi/tasks/remote-c1c2bb3a-432b-4586-af9d-f6ffdde54196/t5_f_quality_cases.json.results.json",
+      "runs": 3,
+      "successful": 3,
+      "observation": "Adding ordinary full-body W alongside face F and three-quarter Q did not show a clear endpoint or identity/wardrobe benefit over the F+WB+Q comparison under the same restrained turn setup.",
+      "status": "phase_3_complete_preliminary"
+    },
+    "closeup_face_phase": {
+      "cells": [
+        "F+W",
+        "F+WB"
+      ],
+      "results": ".pi/tasks/remote-c1c2bb3a-432b-4586-af9d-f6ffdde54196/t5_closeup_quality_cases.json.results.json",
+      "runs": 6,
+      "successful": 6,
+      "conditions": {
+        "resolution": "768x448",
+        "frames": 124,
+        "steps": 20,
+        "sampler": "res_multistep",
+        "seeds": [
+          20260924,
+          20260925,
+          20260926
+        ]
+      },
+      "observation": "In sampled close-up frames, F+W and F+WB showed very similar face identity, eyes, nose, mouth, hairline, and pointed-ear stability; no obvious WB degradation or clear improvement was observed.",
+      "status": "phase_4_complete_preliminary"
+    },
+    "anonymous_scoring_phase": {
+      "status": "preliminary_manual_complete",
+      "scoring_file": ".pi/tasks/remote-c1c2bb3a-432b-4586-af9d-f6ffdde54196/t5_anonymous_scoring.json",
+      "scope": "all completed T5 cells, anonymized before condition reveal",
+      "summary": "No hard failures in the reviewed samples. WB sometimes improved subject occupancy/wardrobe readability in full-body shots, but close-up F+W and F+WB were effectively tied; dedicated Q/S/B and repeated W did not show stable gains in the restrained slow-turn setup.",
+      "limitation": "Manual ordinal review by one reviewer; not a population-level statistical claim.",
+      "next": "Move to difficult-action/occlusion validation or obtain a second reviewer before making WB a formal skill baseline."
+    },
+    "t6_difficult_action_phase": {
+      "cells": {
+        "T6-A": [
+          "F_face_identity",
+          "WB_wardrobe_body"
+        ],
+        "T6-B": [
+          "F_face_identity",
+          "WB_wardrobe_body",
+          "S_view_side"
+        ]
+      },
+      "results": ".pi/tasks/remote-c1c2bb3a-432b-4586-af9d-f6ffdde54196/t6_action_quality_cases.json.results.json",
+      "runs": 6,
+      "successful": 6,
+      "conditions": {
+        "resolution": "768x448",
+        "frames": 124,
+        "steps": 20,
+        "sampler": "res_multistep",
+        "seeds": [
+          20260924,
+          20260925,
+          20260926
+        ]
+      },
+      "observation": "In the bow-drawing and self-occlusion action, adding S did not produce more stable action/endpoint behavior. Sampled B outputs were sometimes smaller in frame or had weaker composition than the F+WB baseline.",
+      "interpretation": "This first difficult-action cell does not support adding a side reference by default; a harder occlusion or exact side-detail task may still justify a dedicated view image.",
+      "status": "phase_5_complete_preliminary"
+    },
+    "t7_hidden_view_consistency_phase": {
+      "status": "phase_1_seed_complete_preliminary",
+      "invalid_first_batch": ".pi/tasks/remote-c1c2bb3a-432b-4586-af9d-f6ffdde54196/t7_hidden_view_consistency_cases.json.results.json (first run; prompt leakage, exclude from scoring)",
+      "corrected_cases": ".pi/tasks/remote-c1c2bb3a-432b-4586-af9d-f6ffdde54196/t7_hidden_view_consistency_cases.json",
+      "corrected_runs": 6,
+      "successful": 6,
+      "seed_scope": [
+        20260924
+      ],
+      "observation": "At the corrected seed, B0/B1 showed similar broad rear silhouette but different accessory visibility and framing; Q0 tended toward a side-like endpoint while Q1 also did not reliably preserve the intended 45-degree endpoint. This supports the hidden-detail divergence hypothesis but is not yet a multi-seed conclusion.",
+      "s_consistency_extension": {
+        "results": ".pi/tasks/remote-c1c2bb3a-432b-4586-af9d-f6ffdde54196/t7_s_consistency_cases_25_26.json.results.json",
+        "runs": 4,
+        "successful": 4,
+        "observation": "Across the three corrected S seed pairs, no-S side endpoints varied substantially in crop and bow placement; with-S outputs more consistently approached a strict side silhouette and stabilized bow/body relation, but often reduced subject occupancy.",
+        "status": "preliminary_signal"
+      },
+      "q_consistency_extension": {
+        "results": ".pi/tasks/remote-c1c2bb3a-432b-4586-af9d-f6ffdde54196/t7_q_consistency_cases_25_26.json.results.json",
+        "runs": 4,
+        "successful": 4,
+        "observation": "Across three corrected Q seed pairs, no-Q endpoints varied from front/three-quarter to side-like views; with-Q outputs more consistently trended toward a side-facing silhouette, but did not reliably reproduce the approximately 45-degree target. Bow/wardrobe identity stayed broadly coherent while framing and occupancy shifted.",
+        "status": "preliminary_signal"
+      },
+      "b_consistency_extension": {
+        "results": ".pi/tasks/remote-c1c2bb3a-432b-4586-af9d-f6ffdde54196/t7_b_consistency_cases_25_26.json.results.json",
+        "runs": 4,
+        "successful": 4,
+        "observation": "Across three corrected B seed pairs, no-B outputs freely varied in quiver/arrows, hair tie/shape, accessory visibility, and crop; with-B outputs converged on the same broad rear costume configuration and accessory binding.",
+        "status": "positive_preliminary_signal"
+      },
+      "cross_video_consistency_conclusion": "B shows the clearest evidence of improving hidden-view asset consistency; S shows a weaker side-structure/bow-binding signal with occupancy cost; Q mainly biases turn direction/side-facing silhouette and does not reliably lock a 45-degree endpoint.",
+      "next": "Do not make Q mandatory; consider B conditional for shots where exact rear costume/accessory identity matters, and keep S conditional pending production framing priorities."
+    },
+    "wb_head_processing_phase": {
+      "assets": [
+        "WB_wardrobe_body (legacy rectangular crop)",
+        "WB_face_erased",
+        "WB_head_removed"
+      ],
+      "smoke_results": ".pi/tasks/remote-c1c2bb3a-432b-4586-af9d-f6ffdde54196/wb_variant_smoke_cases.json.results.json",
+      "runs": 3,
+      "successful": 3,
+      "observation": "The two mask/inpaint-derived variants reduced the obvious face/head leakage of the legacy crop in the smoke comparison; head_removed is the cleanest separation, while face_erased preserves rear-head/ear/shoulder context.",
+      "formal_results": ".pi/tasks/remote-c1c2bb3a-432b-4586-af9d-f6ffdde54196/wb_variant_quality_cases.json.results.json",
+      "formal_runs": 9,
+      "formal_successful": 9,
+      "observation_formal": "Both mask/inpaint-derived WB variants reduced redundant face information in the reference asset, but H3 still generated the face from F_face_identity as intended. The new variants often reduced subject occupancy; head_removed produced an occasional black-edge/composition artifact. No quality win over the legacy crop is established.",
+      "candidate_preference": "WB_face_erased is the safer next candidate because it retains rear-head/ear/shoulder context; WB_head_removed remains experimental pending a cleaner mask/inpaint plate.",
+      "status": "formal_complete_preliminary",
+      "source_model": "built-in image generation edit; not yet a local ComfyUI mask-node production baseline",
+      "next": "use neck_only vs face_erased findings to design the next WB asset; do not replace the skill default until local mask/inpaint is validated"
+    },
+    "wb_neck_anchor_phase": {
+      "cells": [
+        "WB_face_erased",
+        "WB_neck_only"
+      ],
+      "results": ".pi/tasks/remote-c1c2bb3a-432b-4586-af9d-f6ffdde54196/wb_neck_vs_head_quality_cases.json.results.json",
+      "runs": 6,
+      "successful": 6,
+      "conditions": {
+        "resolution": "768x448",
+        "frames": 124,
+        "steps": 20,
+        "sampler": "res_multistep",
+        "seeds": [
+          20260924,
+          20260925,
+          20260926
+        ]
+      },
+      "observation": "With F_face_identity supplying the face, both face_erased and neck_only reconnected the head/face to the torso without obvious floating-head or gross proportion failure in sampled endpoints. neck_only did not fail from lacking a full head; face_erased retained more rear-head context.",
+      "status": "formal_complete_preliminary",
+      "scoring": ".pi/tasks/remote-c1c2bb3a-432b-4586-af9d-f6ffdde54196/wb_neck_focus_scoring.json",
+      "score_observation": "Both variants passed the focused review with no hard failures; face_erased retained richer rear-head/hair context, while neck_only provided cleaner role separation. No clear quality winner in this action cell.",
+      "next": "keep both as conditional candidates; do not replace the skill baseline without a static/close-up control and local mask/inpaint validation"
+    },
+    "owner": "Sean"
+  }
+}

@@ -53,5 +53,4 @@ input/
 
 ## 预览服务
 - 网页预览：http://127.0.0.1:8000（scripts/video_gallery.py）
-- ComfyUI 菜单按钮："素材库"（插件 comfyui-material-gallery，点击启动并跳转）
-- 刷新 ComfyUI 页面后菜单出现按钮
+- 独立 ComfyUI 菜单插件已从当前实例移除；需要时可安装 [Sean Material Gallery 包](../packages/sean_material_gallery.zip)

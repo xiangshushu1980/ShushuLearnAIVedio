@@ -1,0 +1,73 @@
+{
+  "owner": "Sean",
+  "test_id": "remote-c1c2bb3a-432b-4586-af9d-f6ffdde54196",
+  "test": "T5_reference_role_conflict",
+  "source_of_truth": "accepted T0/T1 assets; no new identity generation",
+  "assets": [
+    {
+      "role": "F_face_identity",
+      "source": "sean_face_closeup.png",
+      "path": "F_face_identity.png",
+      "size": [
+        1216,
+        672
+      ]
+    },
+    {
+      "role": "W_wardrobe_full",
+      "source": "sean_identity_front.png",
+      "path": "W_wardrobe_full.png",
+      "size": [
+        1216,
+        672
+      ]
+    },
+    {
+      "role": "WB_wardrobe_body",
+      "source": "sean_identity_front.png",
+      "crop_box": [
+        380,
+        145,
+        850,
+        672
+      ],
+      "path": "WB_wardrobe_body.png",
+      "size": [
+        470,
+        527
+      ]
+    },
+    {
+      "role": "S_view_side",
+      "source": "sean_view_left.png",
+      "path": "S_view_side.png",
+      "size": [
+        1216,
+        672
+      ]
+    },
+    {
+      "role": "B_view_back",
+      "source": "sean_view_back.png",
+      "path": "B_view_back.png",
+      "size": [
+        1216,
+        672
+      ]
+    },
+    {
+      "role": "BOARD_existing",
+      "source": "sean_character_reference_board_v1.png",
+      "path": "BOARD_existing.png",
+      "size": [
+        1216,
+        1008
+      ]
+    }
+  ],
+  "notes": [
+    "WB is a front wardrobe/body crop and intentionally does not preserve a frontal face.",
+    "The back-of-head/back-wardrobe evidence remains available as B_view_back.",
+    "WB must pass human QC for neck/shoulder continuity before H3 runs."
+  ]
+}

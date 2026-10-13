@@ -1,0 +1,426 @@
+{
+  "owner": "Sean",
+  "experiment": "qwen_image_2_1_shared_costume_weapon_20261002",
+  "status": "review",
+  "purpose": "Repeat the Krea2 shared-uniform/shared-weapon comparison in Qwen-Image-2.1 using the same two identities, uniform and weapon references, prompt intent, and seeds.",
+  "source_experiment": "../krea2_shared_costume_weapon_20261002/",
+  "conditions": [
+    {
+      "id": "faces_prompt_only",
+      "references": [
+        "face1",
+        "face2"
+      ],
+      "seeds": [
+        6200211,
+        6200212
+      ]
+    },
+    {
+      "id": "faces_plus_uniform",
+      "references": [
+        "face1",
+        "face2",
+        "uniform"
+      ],
+      "seeds": [
+        6200211,
+        6200212
+      ]
+    },
+    {
+      "id": "faces_plus_weapon",
+      "references": [
+        "face1",
+        "face2",
+        "weapon"
+      ],
+      "seeds": [
+        6200211,
+        6200212
+      ]
+    },
+    {
+      "id": "faces_plus_uniform_weapon",
+      "references": [
+        "face1",
+        "face2",
+        "uniform",
+        "weapon"
+      ],
+      "seeds": [
+        6200211,
+        6200212
+      ]
+    },
+    {
+      "id": "faces_plus_uniform_weapon_single_sheathed",
+      "references": [
+        "face1",
+        "face2",
+        "uniform",
+        "weapon"
+      ],
+      "seeds": [
+        6200211,
+        6200212
+      ],
+      "note": "Prompt refinement: one fully sheathed katana at each waist; prohibit drawn blades and duplicate components."
+    },
+    {
+      "id": "faces_uniform_prompt_single_katana",
+      "references": [
+        "face1",
+        "face2",
+        "uniform"
+      ],
+      "seeds": [
+        6200213,
+        6200214
+      ],
+      "note": "Tight item definition in prompt; no weapon image ref."
+    },
+    {
+      "id": "faces_uniform_weapon_prompt_single_katana",
+      "references": [
+        "face1",
+        "face2",
+        "uniform",
+        "weapon"
+      ],
+      "seeds": [
+        6200213,
+        6200214
+      ],
+      "note": "Same tight item definition with weapon image ref."
+    }
+  ],
+  "runtime": {
+    "comfyui": "shared instance http://127.0.0.1:8188",
+    "unet": "qwen_image_2.1_int8_convrot.safetensors",
+    "clip": "qwen3vl_8b_int8_convrot.safetensors",
+    "vae": "qwen_image_2.1_vae_bf16.safetensors",
+    "steps": 25,
+    "cfg": 1.0,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "resolution_node": 1024,
+    "target_ratio": "3:2 landscape, requested in prompt",
+    "match_design": "Same face crops, Krea-generated uniform/weapon references, prompt intent and seed IDs as Krea2 counterpart"
+  },
+  "results": [
+    {
+      "id": "faces_prompt_only_seed6200211",
+      "prompt_id": "707c6cfe-ace9-48cd-a9b7-454c5d894a15",
+      "seconds": 30.02,
+      "output": "outputs/faces_prompt_only_seed6200211.png",
+      "comfy_image": {
+        "filename": "faces_prompt_only_seed6200211_00001_.png",
+        "subfolder": "sean_qwen21_shared_costume_weapon_20261002",
+        "type": "output",
+        "id": "a0210c9f-159e-48a6-b119-2ead058694ea"
+      },
+      "kind": "scored_output",
+      "condition": "faces_prompt_only",
+      "seed": 6200211,
+      "references": [
+        "face1",
+        "face2"
+      ],
+      "prompt": "Use <image1> only as the left woman’s face and hairstyle identity, and <image2> only as the right woman’s face and hairstyle identity. Do not copy clothing or armor from these cropped identity references. Create one coherent wide landscape fantasy game concept-art illustration, target aspect ratio 3:2, a single continuous studio scene. Show exactly two adult women, full body from head to boots, standing side by side at equal scale with clear space between them. The left woman has the East Asian face, almond-shaped dark-brown eyes and black high ponytail tied with red cord from <image1>. The right woman has the freckled oval face, green-hazel eyes and copper-red braided ponytail from <image2>. Keep these two identities and hairstyles distinct. Both women wear exactly the same uniform: identical ivory high-collar tunic, deep navy fitted split coat with red lining, red waist sash, dark trousers, black knee boots, and one simple lacquered shoulder guard. Match the cut, colors, materials, proportions and details between both women. Each woman carries exactly one matching curved katana in her hands. Both weapons have the same black lacquer scabbard, dark wrapped grip and restrained bronze fittings. Show one weapon per person, clearly separated and fully visible. Use a simple warm-gray studio backdrop, coherent painterly fantasy game concept art, unified light and perspective, both full silhouettes inside frame. Do not add other people, extra weapons, costume variations, floating garments, panels, borders, labels, text or watermark."
+    },
+    {
+      "id": "faces_prompt_only_seed6200212",
+      "prompt_id": "86bf79d6-04ae-45be-b9bb-05b7e23e37cd",
+      "seconds": 18.02,
+      "output": "outputs/faces_prompt_only_seed6200212.png",
+      "comfy_image": {
+        "filename": "faces_prompt_only_seed6200212_00001_.png",
+        "subfolder": "sean_qwen21_shared_costume_weapon_20261002",
+        "type": "output",
+        "id": "11154c38-00a8-4891-93ea-60ec8903267c"
+      },
+      "kind": "scored_output",
+      "condition": "faces_prompt_only",
+      "seed": 6200212,
+      "references": [
+        "face1",
+        "face2"
+      ],
+      "prompt": "Use <image1> only as the left woman’s face and hairstyle identity, and <image2> only as the right woman’s face and hairstyle identity. Do not copy clothing or armor from these cropped identity references. Create one coherent wide landscape fantasy game concept-art illustration, target aspect ratio 3:2, a single continuous studio scene. Show exactly two adult women, full body from head to boots, standing side by side at equal scale with clear space between them. The left woman has the East Asian face, almond-shaped dark-brown eyes and black high ponytail tied with red cord from <image1>. The right woman has the freckled oval face, green-hazel eyes and copper-red braided ponytail from <image2>. Keep these two identities and hairstyles distinct. Both women wear exactly the same uniform: identical ivory high-collar tunic, deep navy fitted split coat with red lining, red waist sash, dark trousers, black knee boots, and one simple lacquered shoulder guard. Match the cut, colors, materials, proportions and details between both women. Each woman carries exactly one matching curved katana in her hands. Both weapons have the same black lacquer scabbard, dark wrapped grip and restrained bronze fittings. Show one weapon per person, clearly separated and fully visible. Use a simple warm-gray studio backdrop, coherent painterly fantasy game concept art, unified light and perspective, both full silhouettes inside frame. Do not add other people, extra weapons, costume variations, floating garments, panels, borders, labels, text or watermark."
+    },
+    {
+      "id": "faces_plus_uniform_seed6200211",
+      "prompt_id": "995d7290-dcc4-4412-b83a-8712140cefe4",
+      "seconds": 30.03,
+      "output": "outputs/faces_plus_uniform_seed6200211.png",
+      "comfy_image": {
+        "filename": "faces_plus_uniform_seed6200211_00001_.png",
+        "subfolder": "sean_qwen21_shared_costume_weapon_20261002",
+        "type": "output",
+        "id": "62eb9954-5f8e-4e48-915a-09d87ed25e97"
+      },
+      "kind": "scored_output",
+      "condition": "faces_plus_uniform",
+      "seed": 6200211,
+      "references": [
+        "face1",
+        "face2",
+        "uniform"
+      ],
+      "prompt": "Use <image1> only as the left woman’s face and hairstyle identity, and <image2> only as the right woman’s face and hairstyle identity. Do not copy clothing or armor from these cropped identity references. Use <image3> only as the exact shared uniform design; put the same uniform on both women. Create one coherent wide landscape fantasy game concept-art illustration, target aspect ratio 3:2, a single continuous studio scene. Show exactly two adult women, full body from head to boots, standing side by side at equal scale with clear space between them. The left woman has the East Asian face, almond-shaped dark-brown eyes and black high ponytail tied with red cord from <image1>. The right woman has the freckled oval face, green-hazel eyes and copper-red braided ponytail from <image2>. Keep these two identities and hairstyles distinct. Both women wear exactly the same uniform: identical ivory high-collar tunic, deep navy fitted split coat with red lining, red waist sash, dark trousers, black knee boots, and one simple lacquered shoulder guard. Match the cut, colors, materials, proportions and details between both women. Each woman carries exactly one matching curved katana in her hands. Both weapons have the same black lacquer scabbard, dark wrapped grip and restrained bronze fittings. Show one weapon per person, clearly separated and fully visible. Use a simple warm-gray studio backdrop, coherent painterly fantasy game concept art, unified light and perspective, both full silhouettes inside frame. Do not add other people, extra weapons, costume variations, floating garments, panels, borders, labels, text or watermark."
+    },
+    {
+      "id": "faces_plus_uniform_seed6200212",
+      "prompt_id": "da990ea2-f64f-4f7d-83ae-495a88b077fe",
+      "seconds": 24.02,
+      "output": "outputs/faces_plus_uniform_seed6200212.png",
+      "comfy_image": {
+        "filename": "faces_plus_uniform_seed6200212_00001_.png",
+        "subfolder": "sean_qwen21_shared_costume_weapon_20261002",
+        "type": "output",
+        "id": "25f54703-6a7d-4575-aa0f-3f1aa4219958"
+      },
+      "kind": "scored_output",
+      "condition": "faces_plus_uniform",
+      "seed": 6200212,
+      "references": [
+        "face1",
+        "face2",
+        "uniform"
+      ],
+      "prompt": "Use <image1> only as the left woman’s face and hairstyle identity, and <image2> only as the right woman’s face and hairstyle identity. Do not copy clothing or armor from these cropped identity references. Use <image3> only as the exact shared uniform design; put the same uniform on both women. Create one coherent wide landscape fantasy game concept-art illustration, target aspect ratio 3:2, a single continuous studio scene. Show exactly two adult women, full body from head to boots, standing side by side at equal scale with clear space between them. The left woman has the East Asian face, almond-shaped dark-brown eyes and black high ponytail tied with red cord from <image1>. The right woman has the freckled oval face, green-hazel eyes and copper-red braided ponytail from <image2>. Keep these two identities and hairstyles distinct. Both women wear exactly the same uniform: identical ivory high-collar tunic, deep navy fitted split coat with red lining, red waist sash, dark trousers, black knee boots, and one simple lacquered shoulder guard. Match the cut, colors, materials, proportions and details between both women. Each woman carries exactly one matching curved katana in her hands. Both weapons have the same black lacquer scabbard, dark wrapped grip and restrained bronze fittings. Show one weapon per person, clearly separated and fully visible. Use a simple warm-gray studio backdrop, coherent painterly fantasy game concept art, unified light and perspective, both full silhouettes inside frame. Do not add other people, extra weapons, costume variations, floating garments, panels, borders, labels, text or watermark."
+    },
+    {
+      "id": "faces_plus_weapon_seed6200211",
+      "prompt_id": "50efc18a-d2d5-4b55-ac71-75d5cca10eff",
+      "seconds": 30.03,
+      "output": "outputs/faces_plus_weapon_seed6200211.png",
+      "comfy_image": {
+        "filename": "faces_plus_weapon_seed6200211_00001_.png",
+        "subfolder": "sean_qwen21_shared_costume_weapon_20261002",
+        "type": "output",
+        "id": "aedd236c-dd9c-40b9-807a-33adf0735fcb"
+      },
+      "kind": "scored_output",
+      "condition": "faces_plus_weapon",
+      "seed": 6200211,
+      "references": [
+        "face1",
+        "face2",
+        "weapon"
+      ],
+      "prompt": "Use <image1> only as the left woman’s face and hairstyle identity, and <image2> only as the right woman’s face and hairstyle identity. Do not copy clothing or armor from these cropped identity references. Use <image3> only as the exact katana design; make one identical copy for each woman. Create one coherent wide landscape fantasy game concept-art illustration, target aspect ratio 3:2, a single continuous studio scene. Show exactly two adult women, full body from head to boots, standing side by side at equal scale with clear space between them. The left woman has the East Asian face, almond-shaped dark-brown eyes and black high ponytail tied with red cord from <image1>. The right woman has the freckled oval face, green-hazel eyes and copper-red braided ponytail from <image2>. Keep these two identities and hairstyles distinct. Both women wear exactly the same uniform: identical ivory high-collar tunic, deep navy fitted split coat with red lining, red waist sash, dark trousers, black knee boots, and one simple lacquered shoulder guard. Match the cut, colors, materials, proportions and details between both women. Each woman carries exactly one matching curved katana in her hands. Both weapons have the same black lacquer scabbard, dark wrapped grip and restrained bronze fittings. Show one weapon per person, clearly separated and fully visible. Use a simple warm-gray studio backdrop, coherent painterly fantasy game concept art, unified light and perspective, both full silhouettes inside frame. Do not add other people, extra weapons, costume variations, floating garments, panels, borders, labels, text or watermark."
+    },
+    {
+      "id": "faces_plus_weapon_seed6200212",
+      "prompt_id": "7b3e5cf6-5e77-45e9-8f52-e3d59aa22d8b",
+      "seconds": 24.02,
+      "output": "outputs/faces_plus_weapon_seed6200212.png",
+      "comfy_image": {
+        "filename": "faces_plus_weapon_seed6200212_00001_.png",
+        "subfolder": "sean_qwen21_shared_costume_weapon_20261002",
+        "type": "output",
+        "id": "ac0f6084-e20f-4d7b-8362-0e20195821ff"
+      },
+      "kind": "scored_output",
+      "condition": "faces_plus_weapon",
+      "seed": 6200212,
+      "references": [
+        "face1",
+        "face2",
+        "weapon"
+      ],
+      "prompt": "Use <image1> only as the left woman’s face and hairstyle identity, and <image2> only as the right woman’s face and hairstyle identity. Do not copy clothing or armor from these cropped identity references. Use <image3> only as the exact katana design; make one identical copy for each woman. Create one coherent wide landscape fantasy game concept-art illustration, target aspect ratio 3:2, a single continuous studio scene. Show exactly two adult women, full body from head to boots, standing side by side at equal scale with clear space between them. The left woman has the East Asian face, almond-shaped dark-brown eyes and black high ponytail tied with red cord from <image1>. The right woman has the freckled oval face, green-hazel eyes and copper-red braided ponytail from <image2>. Keep these two identities and hairstyles distinct. Both women wear exactly the same uniform: identical ivory high-collar tunic, deep navy fitted split coat with red lining, red waist sash, dark trousers, black knee boots, and one simple lacquered shoulder guard. Match the cut, colors, materials, proportions and details between both women. Each woman carries exactly one matching curved katana in her hands. Both weapons have the same black lacquer scabbard, dark wrapped grip and restrained bronze fittings. Show one weapon per person, clearly separated and fully visible. Use a simple warm-gray studio backdrop, coherent painterly fantasy game concept art, unified light and perspective, both full silhouettes inside frame. Do not add other people, extra weapons, costume variations, floating garments, panels, borders, labels, text or watermark."
+    },
+    {
+      "id": "faces_plus_uniform_weapon_seed6200211",
+      "prompt_id": "0cb6684f-8c46-4bb6-9e7e-9afb0bd4d969",
+      "seconds": 39.03,
+      "output": "outputs/faces_plus_uniform_weapon_seed6200211.png",
+      "comfy_image": {
+        "filename": "faces_plus_uniform_weapon_seed6200211_00001_.png",
+        "subfolder": "sean_qwen21_shared_costume_weapon_20261002",
+        "type": "output",
+        "id": "68c4daf4-9bb0-4186-9fb0-36996b28b9a1"
+      },
+      "kind": "scored_output",
+      "condition": "faces_plus_uniform_weapon",
+      "seed": 6200211,
+      "references": [
+        "face1",
+        "face2",
+        "uniform",
+        "weapon"
+      ],
+      "prompt": "Use <image1> only as the left woman’s face and hairstyle identity, and <image2> only as the right woman’s face and hairstyle identity. Do not copy clothing or armor from these cropped identity references. Use <image3> only as the exact shared uniform design; put the same uniform on both women. Use <image4> only as the exact katana design; make one identical copy for each woman. Create one coherent wide landscape fantasy game concept-art illustration, target aspect ratio 3:2, a single continuous studio scene. Show exactly two adult women, full body from head to boots, standing side by side at equal scale with clear space between them. The left woman has the East Asian face, almond-shaped dark-brown eyes and black high ponytail tied with red cord from <image1>. The right woman has the freckled oval face, green-hazel eyes and copper-red braided ponytail from <image2>. Keep these two identities and hairstyles distinct. Both women wear exactly the same uniform: identical ivory high-collar tunic, deep navy fitted split coat with red lining, red waist sash, dark trousers, black knee boots, and one simple lacquered shoulder guard. Match the cut, colors, materials, proportions and details between both women. Each woman carries exactly one matching curved katana in her hands. Both weapons have the same black lacquer scabbard, dark wrapped grip and restrained bronze fittings. Show one weapon per person, clearly separated and fully visible. Use a simple warm-gray studio backdrop, coherent painterly fantasy game concept art, unified light and perspective, both full silhouettes inside frame. Do not add other people, extra weapons, costume variations, floating garments, panels, borders, labels, text or watermark."
+    },
+    {
+      "id": "faces_plus_uniform_weapon_seed6200212",
+      "prompt_id": "99daf019-902e-437a-87e9-8726bf2aed13",
+      "seconds": 33.03,
+      "output": "outputs/faces_plus_uniform_weapon_seed6200212.png",
+      "comfy_image": {
+        "filename": "faces_plus_uniform_weapon_seed6200212_00001_.png",
+        "subfolder": "sean_qwen21_shared_costume_weapon_20261002",
+        "type": "output",
+        "id": "c42f48b5-157b-457c-8c4a-b0326e29a59d"
+      },
+      "kind": "scored_output",
+      "condition": "faces_plus_uniform_weapon",
+      "seed": 6200212,
+      "references": [
+        "face1",
+        "face2",
+        "uniform",
+        "weapon"
+      ],
+      "prompt": "Use <image1> only as the left woman’s face and hairstyle identity, and <image2> only as the right woman’s face and hairstyle identity. Do not copy clothing or armor from these cropped identity references. Use <image3> only as the exact shared uniform design; put the same uniform on both women. Use <image4> only as the exact katana design; make one identical copy for each woman. Create one coherent wide landscape fantasy game concept-art illustration, target aspect ratio 3:2, a single continuous studio scene. Show exactly two adult women, full body from head to boots, standing side by side at equal scale with clear space between them. The left woman has the East Asian face, almond-shaped dark-brown eyes and black high ponytail tied with red cord from <image1>. The right woman has the freckled oval face, green-hazel eyes and copper-red braided ponytail from <image2>. Keep these two identities and hairstyles distinct. Both women wear exactly the same uniform: identical ivory high-collar tunic, deep navy fitted split coat with red lining, red waist sash, dark trousers, black knee boots, and one simple lacquered shoulder guard. Match the cut, colors, materials, proportions and details between both women. Each woman carries exactly one matching curved katana in her hands. Both weapons have the same black lacquer scabbard, dark wrapped grip and restrained bronze fittings. Show one weapon per person, clearly separated and fully visible. Use a simple warm-gray studio backdrop, coherent painterly fantasy game concept art, unified light and perspective, both full silhouettes inside frame. Do not add other people, extra weapons, costume variations, floating garments, panels, borders, labels, text or watermark."
+    },
+    {
+      "id": "faces_plus_uniform_weapon_single_sheathed_seed6200211",
+      "prompt_id": "ba2adacb-ef71-454c-90f5-d5add4872b93",
+      "seconds": 39.03,
+      "output": "outputs/faces_plus_uniform_weapon_single_sheathed_seed6200211.png",
+      "comfy_image": {
+        "filename": "faces_plus_uniform_weapon_single_sheathed_seed6200211_00001_.png",
+        "subfolder": "sean_qwen21_shared_costume_weapon_20261002",
+        "type": "output",
+        "id": "3494d6d4-c1b0-4041-a0dc-7dcae9f8b173"
+      },
+      "kind": "scored_output",
+      "condition": "faces_plus_uniform_weapon_single_sheathed",
+      "seed": 6200211,
+      "references": [
+        "face1",
+        "face2",
+        "uniform",
+        "weapon"
+      ],
+      "prompt": "Use <image1> only as the left woman’s face and hairstyle identity, and <image2> only as the right woman’s face and hairstyle identity. Do not copy clothing or armor from these cropped identity references. Use <image3> only as the exact shared uniform design; put the same uniform on both women. Use <image4> only as the exact katana design; put one identical, fully sheathed katana at each woman’s left hip. Create one coherent wide landscape fantasy game concept-art illustration, target aspect ratio 3:2, a single continuous studio scene. Show exactly two adult women, full body from head to boots, standing side by side at equal scale with clear space between them. The left woman has the East Asian face, almond-shaped dark-brown eyes and black high ponytail tied with red cord from <image1>. The right woman has the freckled oval face, green-hazel eyes and copper-red braided ponytail from <image2>. Keep these two identities and hairstyles distinct. Both women wear exactly the same uniform: identical ivory high-collar tunic, deep navy fitted split coat with red lining, red waist sash, dark trousers, black knee boots, and one simple lacquered shoulder guard. Match the cut, colors, materials, proportions and details between both women. Each woman wears exactly one complete katana at her left hip, fully inside its black lacquer scabbard. The two sheathed katanas have matching curved silhouettes, dark wrapped grips and restrained bronze fittings. No drawn blade, no hand-held weapon, no second sword, no additional sheath, and no other weapon parts. Use a simple warm-gray studio backdrop, coherent painterly fantasy game concept art, unified light and perspective, both full silhouettes inside frame. Do not add other people, extra weapons, costume variations, floating garments, panels, borders, labels, text or watermark."
+    },
+    {
+      "id": "faces_plus_uniform_weapon_single_sheathed_seed6200212",
+      "prompt_id": "94a6b253-1ea6-4bc7-b939-e93a87bc1642",
+      "seconds": 30.24,
+      "output": "outputs/faces_plus_uniform_weapon_single_sheathed_seed6200212.png",
+      "comfy_image": {
+        "filename": "faces_plus_uniform_weapon_single_sheathed_seed6200212_00001_.png",
+        "subfolder": "sean_qwen21_shared_costume_weapon_20261002",
+        "type": "output",
+        "id": "80d25e5e-9c07-443c-be99-5e0612b672d1"
+      },
+      "kind": "scored_output",
+      "condition": "faces_plus_uniform_weapon_single_sheathed",
+      "seed": 6200212,
+      "references": [
+        "face1",
+        "face2",
+        "uniform",
+        "weapon"
+      ],
+      "prompt": "Use <image1> only as the left woman’s face and hairstyle identity, and <image2> only as the right woman’s face and hairstyle identity. Do not copy clothing or armor from these cropped identity references. Use <image3> only as the exact shared uniform design; put the same uniform on both women. Use <image4> only as the exact katana design; put one identical, fully sheathed katana at each woman’s left hip. Create one coherent wide landscape fantasy game concept-art illustration, target aspect ratio 3:2, a single continuous studio scene. Show exactly two adult women, full body from head to boots, standing side by side at equal scale with clear space between them. The left woman has the East Asian face, almond-shaped dark-brown eyes and black high ponytail tied with red cord from <image1>. The right woman has the freckled oval face, green-hazel eyes and copper-red braided ponytail from <image2>. Keep these two identities and hairstyles distinct. Both women wear exactly the same uniform: identical ivory high-collar tunic, deep navy fitted split coat with red lining, red waist sash, dark trousers, black knee boots, and one simple lacquered shoulder guard. Match the cut, colors, materials, proportions and details between both women. Each woman wears exactly one complete katana at her left hip, fully inside its black lacquer scabbard. The two sheathed katanas have matching curved silhouettes, dark wrapped grips and restrained bronze fittings. No drawn blade, no hand-held weapon, no second sword, no additional sheath, and no other weapon parts. Use a simple warm-gray studio backdrop, coherent painterly fantasy game concept art, unified light and perspective, both full silhouettes inside frame. Do not add other people, extra weapons, costume variations, floating garments, panels, borders, labels, text or watermark."
+    },
+    {
+      "id": "faces_uniform_prompt_single_katana_seed6200213",
+      "prompt_id": "9d9990d3-b881-4324-82a1-5d8c82d9bd76",
+      "seconds": 30.02,
+      "output": "outputs/faces_uniform_prompt_single_katana_seed6200213.png",
+      "comfy_image": {
+        "filename": "faces_uniform_prompt_single_katana_seed6200213_00001_.png",
+        "subfolder": "sean_qwen21_shared_costume_weapon_20261002",
+        "type": "output",
+        "id": "eb8a0590-6982-4478-bb37-a1ebfc043d77"
+      },
+      "kind": "scored_output",
+      "condition": "faces_uniform_prompt_single_katana",
+      "seed": 6200213,
+      "references": [
+        "face1",
+        "face2",
+        "uniform"
+      ],
+      "prompt": "Use <image1> only as the left woman’s face and hairstyle identity, and <image2> only as the right woman’s face and hairstyle identity. Use <image3> only as the exact shared uniform design; put the same uniform on both women. For each woman, show exactly one complete katana, fully sheathed and worn at her left hip. The visible grip, guard and scabbard are parts of this one sheathed sword. Create one coherent fantasy game concept-art illustration with exactly two adult women, full body from head to boots, standing side by side at equal scale. The left woman has the East Asian face, almond-shaped dark-brown eyes and black high ponytail tied with red cord from <image1>. The right woman has the freckled oval face, green-hazel eyes and copper-red braided ponytail from <image2>. Keep the two identities distinct. Both women wear exactly the same ivory high-collar tunic, deep navy fitted split coat with red lining, red waist sash, dark trousers, black knee boots and one lacquered shoulder guard. Match all outfit cuts, colors and details. There are exactly two weapons in the whole image: one katana worn at the left hip of each woman. Each is fully sheathed; show one grip and guard connected to its own single black lacquer scabbard. Do not draw either blade. Do not put a sword in either hand. Do not add a second hilt, sword, sheath, dagger, wakizashi or back-mounted weapon. Keep the hilt and scabbard visually connected as one item on the same belt. Use a plain warm-gray studio background, unified painterly rendering and light. Keep both full silhouettes inside the square image. No extra people, detached props, panels, borders, labels, text or watermark."
+    },
+    {
+      "id": "faces_uniform_prompt_single_katana_seed6200214",
+      "prompt_id": "b87cb0b2-0e71-49cb-a3e4-122a20e0702a",
+      "seconds": 24.02,
+      "output": "outputs/faces_uniform_prompt_single_katana_seed6200214.png",
+      "comfy_image": {
+        "filename": "faces_uniform_prompt_single_katana_seed6200214_00001_.png",
+        "subfolder": "sean_qwen21_shared_costume_weapon_20261002",
+        "type": "output",
+        "id": "37f96e33-7d39-42da-a63c-628b9ef524f5"
+      },
+      "kind": "scored_output",
+      "condition": "faces_uniform_prompt_single_katana",
+      "seed": 6200214,
+      "references": [
+        "face1",
+        "face2",
+        "uniform"
+      ],
+      "prompt": "Use <image1> only as the left woman’s face and hairstyle identity, and <image2> only as the right woman’s face and hairstyle identity. Use <image3> only as the exact shared uniform design; put the same uniform on both women. For each woman, show exactly one complete katana, fully sheathed and worn at her left hip. The visible grip, guard and scabbard are parts of this one sheathed sword. Create one coherent fantasy game concept-art illustration with exactly two adult women, full body from head to boots, standing side by side at equal scale. The left woman has the East Asian face, almond-shaped dark-brown eyes and black high ponytail tied with red cord from <image1>. The right woman has the freckled oval face, green-hazel eyes and copper-red braided ponytail from <image2>. Keep the two identities distinct. Both women wear exactly the same ivory high-collar tunic, deep navy fitted split coat with red lining, red waist sash, dark trousers, black knee boots and one lacquered shoulder guard. Match all outfit cuts, colors and details. There are exactly two weapons in the whole image: one katana worn at the left hip of each woman. Each is fully sheathed; show one grip and guard connected to its own single black lacquer scabbard. Do not draw either blade. Do not put a sword in either hand. Do not add a second hilt, sword, sheath, dagger, wakizashi or back-mounted weapon. Keep the hilt and scabbard visually connected as one item on the same belt. Use a plain warm-gray studio background, unified painterly rendering and light. Keep both full silhouettes inside the square image. No extra people, detached props, panels, borders, labels, text or watermark."
+    },
+    {
+      "id": "faces_uniform_weapon_prompt_single_katana_seed6200213",
+      "prompt_id": "7084b666-b297-4e21-b8f9-48c2a32fb995",
+      "seconds": 39.03,
+      "output": "outputs/faces_uniform_weapon_prompt_single_katana_seed6200213.png",
+      "comfy_image": {
+        "filename": "faces_uniform_weapon_prompt_single_katana_seed6200213_00001_.png",
+        "subfolder": "sean_qwen21_shared_costume_weapon_20261002",
+        "type": "output",
+        "id": "2a27c6b2-3568-4ad9-bcfa-ce8cca44ca66"
+      },
+      "kind": "scored_output",
+      "condition": "faces_uniform_weapon_prompt_single_katana",
+      "seed": 6200213,
+      "references": [
+        "face1",
+        "face2",
+        "uniform",
+        "weapon"
+      ],
+      "prompt": "Use <image1> only as the left woman’s face and hairstyle identity, and <image2> only as the right woman’s face and hairstyle identity. Use <image3> only as the exact shared uniform design; put the same uniform on both women. Use <image4> only as the design of the single katana each woman wears fully sheathed at her left hip. Each sword is one complete assembly: one visible grip and guard attached to one scabbard containing the blade. Create one coherent fantasy game concept-art illustration with exactly two adult women, full body from head to boots, standing side by side at equal scale. The left woman has the East Asian face, almond-shaped dark-brown eyes and black high ponytail tied with red cord from <image1>. The right woman has the freckled oval face, green-hazel eyes and copper-red braided ponytail from <image2>. Keep the two identities distinct. Both women wear exactly the same ivory high-collar tunic, deep navy fitted split coat with red lining, red waist sash, dark trousers, black knee boots and one lacquered shoulder guard. Match all outfit cuts, colors and details. There are exactly two weapons in the whole image: one katana worn at the left hip of each woman. Each is fully sheathed; show one grip and guard connected to its own single black lacquer scabbard. Do not draw either blade. Do not put a sword in either hand. Do not add a second hilt, sword, sheath, dagger, wakizashi or back-mounted weapon. Keep the hilt and scabbard visually connected as one item on the same belt. Use a plain warm-gray studio background, unified painterly rendering and light. Keep both full silhouettes inside the square image. No extra people, detached props, panels, borders, labels, text or watermark."
+    },
+    {
+      "id": "faces_uniform_weapon_prompt_single_katana_seed6200214",
+      "prompt_id": "ccae75fe-ec03-4eb7-a85c-ef45bbda3bf2",
+      "seconds": 30.35,
+      "output": "outputs/faces_uniform_weapon_prompt_single_katana_seed6200214.png",
+      "comfy_image": {
+        "filename": "faces_uniform_weapon_prompt_single_katana_seed6200214_00001_.png",
+        "subfolder": "sean_qwen21_shared_costume_weapon_20261002",
+        "type": "output",
+        "id": "559d3387-8386-49ac-b9a9-5a6543aa84b4"
+      },
+      "kind": "scored_output",
+      "condition": "faces_uniform_weapon_prompt_single_katana",
+      "seed": 6200214,
+      "references": [
+        "face1",
+        "face2",
+        "uniform",
+        "weapon"
+      ],
+      "prompt": "Use <image1> only as the left woman’s face and hairstyle identity, and <image2> only as the right woman’s face and hairstyle identity. Use <image3> only as the exact shared uniform design; put the same uniform on both women. Use <image4> only as the design of the single katana each woman wears fully sheathed at her left hip. Each sword is one complete assembly: one visible grip and guard attached to one scabbard containing the blade. Create one coherent fantasy game concept-art illustration with exactly two adult women, full body from head to boots, standing side by side at equal scale. The left woman has the East Asian face, almond-shaped dark-brown eyes and black high ponytail tied with red cord from <image1>. The right woman has the freckled oval face, green-hazel eyes and copper-red braided ponytail from <image2>. Keep the two identities distinct. Both women wear exactly the same ivory high-collar tunic, deep navy fitted split coat with red lining, red waist sash, dark trousers, black knee boots and one lacquered shoulder guard. Match all outfit cuts, colors and details. There are exactly two weapons in the whole image: one katana worn at the left hip of each woman. Each is fully sheathed; show one grip and guard connected to its own single black lacquer scabbard. Do not draw either blade. Do not put a sword in either hand. Do not add a second hilt, sword, sheath, dagger, wakizashi or back-mounted weapon. Keep the hilt and scabbard visually connected as one item on the same belt. Use a plain warm-gray studio background, unified painterly rendering and light. Keep both full silhouettes inside the square image. No extra people, detached props, panels, borders, labels, text or watermark."
+    }
+  ],
+  "visual_qc_status": "reviewed",
+  "visual_qc": {
+    "reviewer": "Codex",
+    "date": "2026-10-02",
+    "report": "QC.md",
+    "contact_sheet": "outputs/contact_sheet.png"
+  },
+  "summary": {
+    "scored_output_count": 14,
+    "principal_condition_count": 4,
+    "principal_seeds_per_condition": 2,
+    "followup_single_sword_outputs": 4,
+    "followup_result": "With face+uniform refs and a precise positive prompt for one complete sheathed katana, both seeds produced one sword each. Adding the separate weapon image caused a duplicate-looking extra sword in one of two seeds and reduced placement/detail consistency.",
+    "recommendation": "For this scene use two face refs plus the shared uniform ref, omit the weapon image, and specify one fully sheathed katana at each left hip as one complete assembly."
+  }
+}

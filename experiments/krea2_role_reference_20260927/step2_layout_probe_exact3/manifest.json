@@ -1,0 +1,37 @@
+{
+  "owner": "Sean",
+  "task": "T-comfy-ops-48",
+  "status": "awaiting_visual_qc",
+  "prompt": "Create exactly three views of the same character in this order: a large face close-up on the left, one full-body front view in the center, and one full-body back view on the right. Use one panel per view only. Do not include a side or three-quarter view, do not duplicate any view, and do not add any extra panel. Preserve the same face, hair, outfit, colors, accessories, and body proportions from the input image.",
+  "parameters": {
+    "unet": "krea2_turbo_fp8.safetensors",
+    "lora": "QuadView_krea2_v1.safetensors",
+    "lora_strength": 1.0,
+    "width": 1536,
+    "height": 1024,
+    "steps": 10,
+    "cfg": 1.0,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "ref_boost": 1.0,
+    "grounding_px": 768,
+    "positive_grounding_px": 0
+  },
+  "cases": [
+    {
+      "id": "red_mage",
+      "source": "/home/sean/projects/comfy-ops/experiments/krea2_role_reference_20260927/step1_red_mage_framing_retry/outputs/sean_red_mage_role_front_seed4802012.png",
+      "seed": 4812012
+    }
+  ],
+  "results": [
+    {
+      "id": "red_mage",
+      "seed": 4812012,
+      "seconds": 21.08,
+      "status": "success",
+      "prompt_id": "d14af425-e59a-4582-979a-22d519330472",
+      "output": "outputs/sean_red_mage_threeview_seed4812012.png"
+    }
+  ]
+}

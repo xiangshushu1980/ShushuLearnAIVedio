@@ -1,0 +1,41 @@
+{
+  "owner": "Sean",
+  "task": "T-comfy-ops-48",
+  "status": "awaiting_visual_qc",
+  "purpose": "Red mage Stage 1 framing correction; pure text-to-image with Jibs style LoRA, no image reference.",
+  "parameters": {
+    "unet": "krea2_turbo_fp8.safetensors",
+    "clip": "qwen3vl_4b_fp8_scaled.safetensors",
+    "vae": "qwen_image_vae.safetensors",
+    "lora": "Jibs_Krea_2_Midjourney_Fantasy_Style_V1.safetensors",
+    "lora_strength": 1.0,
+    "style_trigger": "M1djourneyArtStyle",
+    "style_prompt": "original Midjourney-inspired fantasy character concept art, detailed painterly game illustration, polished material rendering, clear readable design",
+    "composition_prompt": "One character only, full-body front view, standing neutrally with arms relaxed, character occupies about 78 percent of the canvas height, with generous empty space above the head and below both boot soles. Keep the entire held staff beside the character and fully inside the image, including its top and bottom ends with visible margins. Center the full silhouette on a clean warm-gray studio background, soft even studio light, crisp readable design, no cropping, no text, no watermark, no extra characters.",
+    "width": 1024,
+    "height": 1536,
+    "steps": 8,
+    "cfg": 1.0,
+    "sampler": "er_sde",
+    "scheduler": "simple",
+    "timeout": 1200
+  },
+  "cases": [
+    {
+      "id": "red_mage",
+      "seed": 4802012,
+      "character_prompt": "An adult woman battle mage with a distinct oval face, warm freckled skin, green-hazel eyes, and a composed expression. Copper-red hair in a high braided ponytail, three thin temple braids and loose jaw-length curls. Ivory high-collar blouse, burgundy velvet waistcoat, long asymmetrical wine-red coat with split tails and embroidered cuffs, charcoal pleated trousers, dark knee boots, narrow brass shoulder plates, wide leather belt with potion loops. Cobalt crystal pendant at the sternum, brass rings on the right hand, red belt tassel, carved ash staff topped with a blue glass orb and a small spellbook pouch at the left hip."
+    }
+  ],
+  "results": [
+    {
+      "id": "red_mage",
+      "seed": 4802012,
+      "prompt_id": "dd7fb5ee-d15e-4c33-b481-5931ef01ed1f",
+      "status": "success",
+      "seconds": 15.02,
+      "output": "outputs/sean_red_mage_role_front_seed4802012.png",
+      "character_prompt": "An adult woman battle mage with a distinct oval face, warm freckled skin, green-hazel eyes, and a composed expression. Copper-red hair in a high braided ponytail, three thin temple braids and loose jaw-length curls. Ivory high-collar blouse, burgundy velvet waistcoat, long asymmetrical wine-red coat with split tails and embroidered cuffs, charcoal pleated trousers, dark knee boots, narrow brass shoulder plates, wide leather belt with potion loops. Cobalt crystal pendant at the sternum, brass rings on the right hand, red belt tassel, carved ash staff topped with a blue glass orb and a small spellbook pouch at the left hip."
+    }
+  ]
+}

@@ -1,0 +1,403 @@
+{
+  "owner": "Sean",
+  "experiment": "krea2_multi_reference_20261001",
+  "status": "review",
+  "purpose": "Evaluate Krea 2 multi-reference synthesis for two distinct face identities, a scene, and a separate prop in one generated image.",
+  "runtime": {
+    "comfyui": "shared instance http://127.0.0.1:8188",
+    "custom_node": "ComfyUI-Krea2-Reference / TextEncodeKrea2Reference",
+    "unet": "krea2_turbo_fp8.safetensors",
+    "clip": "qwen3vl_4b_bf16.safetensors",
+    "vae": "qwen_image_vae.safetensors",
+    "reference_lora": "krea2_style_reference.safetensors",
+    "reference_lora_strength_text_fusion": 1.0,
+    "reference_lora_strength_dit_body": 0.0,
+    "reference_encoder_bytes": 8875719384,
+    "reference_encoder_sha256": "36f3ff447ef59201722e8f9ce6020c9819fdcfba6aa2608c4e09b1c0ce114e34",
+    "steps": 8,
+    "cfg": 1.0,
+    "sampler": "er_sde",
+    "scheduler": "simple",
+    "width": 1280,
+    "height": 832,
+    "seeds": [
+      6100101,
+      6100102
+    ]
+  },
+  "inputs": {
+    "character1_source": "../krea2_quadview_stability_20260928/role_anchors/outputs/sean_eastern_swordswoman_role_front_seed4803001.png",
+    "character1_crop": {
+      "node": "ImageCrop",
+      "x": 256,
+      "y": 0,
+      "width": 512,
+      "height": 512,
+      "detail": "high"
+    },
+    "character2_source": "../krea2_quadview_stability_20260928/role_anchors/outputs/sean_red_mage_role_front_seed4803002.png",
+    "character2_crop": {
+      "node": "ImageCrop",
+      "x": 256,
+      "y": 0,
+      "width": 512,
+      "height": 512,
+      "detail": "high"
+    },
+    "scene_source": "outputs/scene_ref_01.png (text-only Krea2 Turbo + Jibs)",
+    "prop_source": "outputs/prop_ref_01.png (text-only Krea2 Turbo + Jibs)"
+  },
+  "conditions": [
+    {
+      "id": "one_face",
+      "references": [
+        "character1"
+      ],
+      "layout_split": 0.0,
+      "seeds": [
+        6100101,
+        6100102
+      ]
+    },
+    {
+      "id": "two_faces",
+      "references": [
+        "character1",
+        "character2"
+      ],
+      "layout_split": 0.0,
+      "seeds": [
+        6100101,
+        6100102
+      ]
+    },
+    {
+      "id": "two_faces_scene",
+      "references": [
+        "character1",
+        "character2",
+        "scene"
+      ],
+      "layout_split": 0.0,
+      "seeds": [
+        6100101,
+        6100102
+      ]
+    },
+    {
+      "id": "two_faces_scene_prop",
+      "references": [
+        "character1",
+        "character2",
+        "scene",
+        "prop"
+      ],
+      "layout_split": 0.0,
+      "seeds": [
+        6100101,
+        6100102
+      ]
+    },
+    {
+      "id": "two_faces_scene_prop_layout_split",
+      "references": [
+        "character1",
+        "character2",
+        "scene",
+        "prop"
+      ],
+      "layout_split": 0.25,
+      "seeds": [
+        6100101,
+        6100102
+      ]
+    }
+  ],
+  "results": [
+    {
+      "prompt_id": "54bce583-0d41-46d1-8fe0-53b6649765d9",
+      "seconds": 20.03,
+      "outputs": [
+        "outputs/scene_ref_01.png"
+      ],
+      "comfy_images": [
+        {
+          "filename": "scene_ref_00001_.png",
+          "subfolder": "sean_krea2_multiref_inputs",
+          "type": "output",
+          "id": "91f8fc33-dec5-49e4-8ec7-cb07695518ed"
+        }
+      ],
+      "id": "scene_ref",
+      "prompt": "M1djourneyArtStyle, a wide empty moonlit fantasy courtyard beside a ruined stone bridge, old weathered pale-gray masonry, worn flagstone path leading toward a distant arched gate, a few red autumn leaves, soft cool-blue night light with a small warm lantern glow, painterly high-end fantasy game concept art, no people, no characters, no weapons, no text, no collage, cinematic 3:2 environment establishing view"
+    },
+    {
+      "prompt_id": "e256877d-a601-4135-a356-0431de535ca3",
+      "seconds": 6.01,
+      "outputs": [
+        "outputs/prop_ref_01.png"
+      ],
+      "comfy_images": [
+        {
+          "filename": "prop_ref_00001_.png",
+          "subfolder": "sean_krea2_multiref_inputs",
+          "type": "output",
+          "id": "b76158bf-f5a9-488c-98d5-03e2f8d720f2"
+        }
+      ],
+      "id": "prop_ref",
+      "prompt": "M1djourneyArtStyle, a single complete upright wizard staff displayed alone against a clean warm-gray studio background, long dark carved ash-wood shaft with restrained bronze fittings, ornate forked bronze crown holding one luminous cobalt-blue glass orb, full object visible from tip to base, centered product reference, crisp readable silhouette, painterly high-end fantasy game concept art, no person, no hand, no extra objects, no text"
+    },
+    {
+      "prompt_id": "d61f384a-6035-4297-b791-9333691b30d0",
+      "seconds": 14.02,
+      "outputs": [
+        "outputs/one_face_seed6100101_01.png"
+      ],
+      "comfy_images": [
+        {
+          "filename": "one_face_seed6100101_00001_.png",
+          "subfolder": "sean_krea2_multiref",
+          "type": "output",
+          "id": "8c4fba7b-9c9e-40d1-b139-7d2bbd94503a"
+        }
+      ],
+      "id": "one_face_seed6100101",
+      "condition": "one_face",
+      "seed": 6100101,
+      "references": [
+        "character1"
+      ],
+      "layout_split": 0.0,
+      "prompt": "Make one coherent full-color fantasy game illustration, a single wide scene, not a reference board. Show exactly two adult women together, full body from head to boots, at equal scale, standing side by side with clear space between them. On the left is the woman swordswoman from character1: preserve her East Asian face, almond-shaped dark-brown eyes, straight brows, black high ponytail tied with a red silk cord and cheek-length locks. She wears an ivory wrapped tunic, deep-navy split riding coat with red lining, lacquered black shoulder guard, red sash, dark trousers and black boots; a long katana in a black lacquer scabbard hangs at her left hip. On the right is a second adult woman battle mage with warm freckled skin, green-hazel eyes, copper-red braided ponytail, thin temple braids and loose jaw-length curls: preserve her oval freckled face, green-hazel eyes, copper-red braided ponytail and jaw-length curls. She wears an ivory high-collar blouse, burgundy velvet waistcoat, long asymmetrical wine-red coat, charcoal trousers and dark knee boots; she carries a long carved ash-wood staff topped with one luminous cobalt-blue glass orb and restrained bronze fittings. Keep the two women unmistakably different: black hair and navy-red samurai outfit on the left; copper hair and burgundy mage outfit on the right. Place both characters naturally inside an empty moonlit stone courtyard with a ruined bridge and distant arched gate; keep the architecture behind them and visible around their silhouettes. Eye-level medium-wide camera, natural relaxed stance, faces readable, no overlapping bodies, no duplicate people, no extra panels, no borders, no labels, no text, no watermark. Detailed painterly fantasy game concept art, coherent lighting and perspective across characters and environment."
+    },
+    {
+      "prompt_id": "d87fc7ae-53c4-446f-95f7-ef7b2961eadc",
+      "seconds": 8.01,
+      "outputs": [
+        "outputs/one_face_seed6100102_01.png"
+      ],
+      "comfy_images": [
+        {
+          "filename": "one_face_seed6100102_00001_.png",
+          "subfolder": "sean_krea2_multiref",
+          "type": "output",
+          "id": "b5e223ba-2ce5-4213-8a53-e355f0f6571f"
+        }
+      ],
+      "id": "one_face_seed6100102",
+      "condition": "one_face",
+      "seed": 6100102,
+      "references": [
+        "character1"
+      ],
+      "layout_split": 0.0,
+      "prompt": "Make one coherent full-color fantasy game illustration, a single wide scene, not a reference board. Show exactly two adult women together, full body from head to boots, at equal scale, standing side by side with clear space between them. On the left is the woman swordswoman from character1: preserve her East Asian face, almond-shaped dark-brown eyes, straight brows, black high ponytail tied with a red silk cord and cheek-length locks. She wears an ivory wrapped tunic, deep-navy split riding coat with red lining, lacquered black shoulder guard, red sash, dark trousers and black boots; a long katana in a black lacquer scabbard hangs at her left hip. On the right is a second adult woman battle mage with warm freckled skin, green-hazel eyes, copper-red braided ponytail, thin temple braids and loose jaw-length curls: preserve her oval freckled face, green-hazel eyes, copper-red braided ponytail and jaw-length curls. She wears an ivory high-collar blouse, burgundy velvet waistcoat, long asymmetrical wine-red coat, charcoal trousers and dark knee boots; she carries a long carved ash-wood staff topped with one luminous cobalt-blue glass orb and restrained bronze fittings. Keep the two women unmistakably different: black hair and navy-red samurai outfit on the left; copper hair and burgundy mage outfit on the right. Place both characters naturally inside an empty moonlit stone courtyard with a ruined bridge and distant arched gate; keep the architecture behind them and visible around their silhouettes. Eye-level medium-wide camera, natural relaxed stance, faces readable, no overlapping bodies, no duplicate people, no extra panels, no borders, no labels, no text, no watermark. Detailed painterly fantasy game concept art, coherent lighting and perspective across characters and environment."
+    },
+    {
+      "prompt_id": "fd3bb310-5112-460b-9fba-01f2635e6e6d",
+      "seconds": 12.02,
+      "outputs": [
+        "outputs/two_faces_seed6100101_01.png"
+      ],
+      "comfy_images": [
+        {
+          "filename": "two_faces_seed6100101_00001_.png",
+          "subfolder": "sean_krea2_multiref",
+          "type": "output",
+          "id": "914242ae-90dc-41aa-914f-f9a8b4c18b6a"
+        }
+      ],
+      "id": "two_faces_seed6100101",
+      "condition": "two_faces",
+      "seed": 6100101,
+      "references": [
+        "character1",
+        "character2"
+      ],
+      "layout_split": 0.0,
+      "prompt": "Make one coherent full-color fantasy game illustration, a single wide scene, not a reference board. Show exactly two adult women together, full body from head to boots, at equal scale, standing side by side with clear space between them. On the left is the woman swordswoman from character1: preserve her East Asian face, almond-shaped dark-brown eyes, straight brows, black high ponytail tied with a red silk cord and cheek-length locks. She wears an ivory wrapped tunic, deep-navy split riding coat with red lining, lacquered black shoulder guard, red sash, dark trousers and black boots; a long katana in a black lacquer scabbard hangs at her left hip. On the right is the woman from character2: preserve her oval freckled face, green-hazel eyes, copper-red braided ponytail and jaw-length curls. She wears an ivory high-collar blouse, burgundy velvet waistcoat, long asymmetrical wine-red coat, charcoal trousers and dark knee boots; she carries a long carved ash-wood staff topped with one luminous cobalt-blue glass orb and restrained bronze fittings. Keep the two women unmistakably different: black hair and navy-red samurai outfit on the left; copper hair and burgundy mage outfit on the right. Place both characters naturally inside an empty moonlit stone courtyard with a ruined bridge and distant arched gate; keep the architecture behind them and visible around their silhouettes. Eye-level medium-wide camera, natural relaxed stance, faces readable, no overlapping bodies, no duplicate people, no extra panels, no borders, no labels, no text, no watermark. Detailed painterly fantasy game concept art, coherent lighting and perspective across characters and environment."
+    },
+    {
+      "prompt_id": "179028ad-37ed-44a3-b308-139f8a45f40b",
+      "seconds": 10.02,
+      "outputs": [
+        "outputs/two_faces_seed6100102_01.png"
+      ],
+      "comfy_images": [
+        {
+          "filename": "two_faces_seed6100102_00001_.png",
+          "subfolder": "sean_krea2_multiref",
+          "type": "output",
+          "id": "95172aae-e65f-4273-89c2-e2b1c5163b3d"
+        }
+      ],
+      "id": "two_faces_seed6100102",
+      "condition": "two_faces",
+      "seed": 6100102,
+      "references": [
+        "character1",
+        "character2"
+      ],
+      "layout_split": 0.0,
+      "prompt": "Make one coherent full-color fantasy game illustration, a single wide scene, not a reference board. Show exactly two adult women together, full body from head to boots, at equal scale, standing side by side with clear space between them. On the left is the woman swordswoman from character1: preserve her East Asian face, almond-shaped dark-brown eyes, straight brows, black high ponytail tied with a red silk cord and cheek-length locks. She wears an ivory wrapped tunic, deep-navy split riding coat with red lining, lacquered black shoulder guard, red sash, dark trousers and black boots; a long katana in a black lacquer scabbard hangs at her left hip. On the right is the woman from character2: preserve her oval freckled face, green-hazel eyes, copper-red braided ponytail and jaw-length curls. She wears an ivory high-collar blouse, burgundy velvet waistcoat, long asymmetrical wine-red coat, charcoal trousers and dark knee boots; she carries a long carved ash-wood staff topped with one luminous cobalt-blue glass orb and restrained bronze fittings. Keep the two women unmistakably different: black hair and navy-red samurai outfit on the left; copper hair and burgundy mage outfit on the right. Place both characters naturally inside an empty moonlit stone courtyard with a ruined bridge and distant arched gate; keep the architecture behind them and visible around their silhouettes. Eye-level medium-wide camera, natural relaxed stance, faces readable, no overlapping bodies, no duplicate people, no extra panels, no borders, no labels, no text, no watermark. Detailed painterly fantasy game concept art, coherent lighting and perspective across characters and environment."
+    },
+    {
+      "prompt_id": "da143ec7-4f61-4cdb-9b90-42670901077a",
+      "seconds": 12.02,
+      "outputs": [
+        "outputs/two_faces_scene_seed6100101_01.png"
+      ],
+      "comfy_images": [
+        {
+          "filename": "two_faces_scene_seed6100101_00001_.png",
+          "subfolder": "sean_krea2_multiref",
+          "type": "output",
+          "id": "b0df02c4-7766-4638-a673-b5763f86fc96"
+        }
+      ],
+      "id": "two_faces_scene_seed6100101",
+      "condition": "two_faces_scene",
+      "seed": 6100101,
+      "references": [
+        "character1",
+        "character2",
+        "scene"
+      ],
+      "layout_split": 0.0,
+      "prompt": "Make one coherent full-color fantasy game illustration, a single wide scene, not a reference board. Show exactly two adult women together, full body from head to boots, at equal scale, standing side by side with clear space between them. On the left is the woman swordswoman from character1: preserve her East Asian face, almond-shaped dark-brown eyes, straight brows, black high ponytail tied with a red silk cord and cheek-length locks. She wears an ivory wrapped tunic, deep-navy split riding coat with red lining, lacquered black shoulder guard, red sash, dark trousers and black boots; a long katana in a black lacquer scabbard hangs at her left hip. On the right is the woman from character2: preserve her oval freckled face, green-hazel eyes, copper-red braided ponytail and jaw-length curls. She wears an ivory high-collar blouse, burgundy velvet waistcoat, long asymmetrical wine-red coat, charcoal trousers and dark knee boots; she carries a long carved ash-wood staff topped with one luminous cobalt-blue glass orb and restrained bronze fittings. Keep the two women unmistakably different: black hair and navy-red samurai outfit on the left; copper hair and burgundy mage outfit on the right. Place both characters naturally inside the moonlit stone courtyard shown in image3; keep the architecture behind them and visible around their silhouettes. Eye-level medium-wide camera, natural relaxed stance, faces readable, no overlapping bodies, no duplicate people, no extra panels, no borders, no labels, no text, no watermark. Detailed painterly fantasy game concept art, coherent lighting and perspective across characters and environment."
+    },
+    {
+      "prompt_id": "7a487ba2-e6e6-43de-ba81-499b6e58f37e",
+      "seconds": 10.13,
+      "outputs": [
+        "outputs/two_faces_scene_seed6100102_01.png"
+      ],
+      "comfy_images": [
+        {
+          "filename": "two_faces_scene_seed6100102_00001_.png",
+          "subfolder": "sean_krea2_multiref",
+          "type": "output",
+          "id": "9a8d1df6-97aa-4a61-91c9-78b324aaa7c0"
+        }
+      ],
+      "id": "two_faces_scene_seed6100102",
+      "condition": "two_faces_scene",
+      "seed": 6100102,
+      "references": [
+        "character1",
+        "character2",
+        "scene"
+      ],
+      "layout_split": 0.0,
+      "prompt": "Make one coherent full-color fantasy game illustration, a single wide scene, not a reference board. Show exactly two adult women together, full body from head to boots, at equal scale, standing side by side with clear space between them. On the left is the woman swordswoman from character1: preserve her East Asian face, almond-shaped dark-brown eyes, straight brows, black high ponytail tied with a red silk cord and cheek-length locks. She wears an ivory wrapped tunic, deep-navy split riding coat with red lining, lacquered black shoulder guard, red sash, dark trousers and black boots; a long katana in a black lacquer scabbard hangs at her left hip. On the right is the woman from character2: preserve her oval freckled face, green-hazel eyes, copper-red braided ponytail and jaw-length curls. She wears an ivory high-collar blouse, burgundy velvet waistcoat, long asymmetrical wine-red coat, charcoal trousers and dark knee boots; she carries a long carved ash-wood staff topped with one luminous cobalt-blue glass orb and restrained bronze fittings. Keep the two women unmistakably different: black hair and navy-red samurai outfit on the left; copper hair and burgundy mage outfit on the right. Place both characters naturally inside the moonlit stone courtyard shown in image3; keep the architecture behind them and visible around their silhouettes. Eye-level medium-wide camera, natural relaxed stance, faces readable, no overlapping bodies, no duplicate people, no extra panels, no borders, no labels, no text, no watermark. Detailed painterly fantasy game concept art, coherent lighting and perspective across characters and environment."
+    },
+    {
+      "prompt_id": "d32bde6a-e25b-49d0-b04b-d3a72d60f304",
+      "seconds": 14.02,
+      "outputs": [
+        "outputs/two_faces_scene_prop_seed6100101_01.png"
+      ],
+      "comfy_images": [
+        {
+          "filename": "two_faces_scene_prop_seed6100101_00001_.png",
+          "subfolder": "sean_krea2_multiref",
+          "type": "output",
+          "id": "a40feb7d-a43d-4e4f-b4f1-9efa6f0d70e1"
+        }
+      ],
+      "id": "two_faces_scene_prop_seed6100101",
+      "condition": "two_faces_scene_prop",
+      "seed": 6100101,
+      "references": [
+        "character1",
+        "character2",
+        "scene",
+        "prop"
+      ],
+      "layout_split": 0.0,
+      "prompt": "Make one coherent full-color fantasy game illustration, a single wide scene, not a reference board. Show exactly two adult women together, full body from head to boots, at equal scale, standing side by side with clear space between them. On the left is the woman swordswoman from character1: preserve her East Asian face, almond-shaped dark-brown eyes, straight brows, black high ponytail tied with a red silk cord and cheek-length locks. She wears an ivory wrapped tunic, deep-navy split riding coat with red lining, lacquered black shoulder guard, red sash, dark trousers and black boots; a long katana in a black lacquer scabbard hangs at her left hip. On the right is the woman from character2: preserve her oval freckled face, green-hazel eyes, copper-red braided ponytail and jaw-length curls. She wears an ivory high-collar blouse, burgundy velvet waistcoat, long asymmetrical wine-red coat, charcoal trousers and dark knee boots; she carries the staff design shown in image4. Keep the two women unmistakably different: black hair and navy-red samurai outfit on the left; copper hair and burgundy mage outfit on the right. Place both characters naturally inside the moonlit stone courtyard shown in image3; keep the architecture behind them and visible around their silhouettes. Eye-level medium-wide camera, natural relaxed stance, faces readable, no overlapping bodies, no duplicate people, no extra panels, no borders, no labels, no text, no watermark. Detailed painterly fantasy game concept art, coherent lighting and perspective across characters and environment."
+    },
+    {
+      "prompt_id": "2967766f-e554-4d02-a92f-1faea614d8a7",
+      "seconds": 12.02,
+      "outputs": [
+        "outputs/two_faces_scene_prop_seed6100102_01.png"
+      ],
+      "comfy_images": [
+        {
+          "filename": "two_faces_scene_prop_seed6100102_00001_.png",
+          "subfolder": "sean_krea2_multiref",
+          "type": "output",
+          "id": "dfe8b6e1-c921-4de3-ae6e-7299e775151b"
+        }
+      ],
+      "id": "two_faces_scene_prop_seed6100102",
+      "condition": "two_faces_scene_prop",
+      "seed": 6100102,
+      "references": [
+        "character1",
+        "character2",
+        "scene",
+        "prop"
+      ],
+      "layout_split": 0.0,
+      "prompt": "Make one coherent full-color fantasy game illustration, a single wide scene, not a reference board. Show exactly two adult women together, full body from head to boots, at equal scale, standing side by side with clear space between them. On the left is the woman swordswoman from character1: preserve her East Asian face, almond-shaped dark-brown eyes, straight brows, black high ponytail tied with a red silk cord and cheek-length locks. She wears an ivory wrapped tunic, deep-navy split riding coat with red lining, lacquered black shoulder guard, red sash, dark trousers and black boots; a long katana in a black lacquer scabbard hangs at her left hip. On the right is the woman from character2: preserve her oval freckled face, green-hazel eyes, copper-red braided ponytail and jaw-length curls. She wears an ivory high-collar blouse, burgundy velvet waistcoat, long asymmetrical wine-red coat, charcoal trousers and dark knee boots; she carries the staff design shown in image4. Keep the two women unmistakably different: black hair and navy-red samurai outfit on the left; copper hair and burgundy mage outfit on the right. Place both characters naturally inside the moonlit stone courtyard shown in image3; keep the architecture behind them and visible around their silhouettes. Eye-level medium-wide camera, natural relaxed stance, faces readable, no overlapping bodies, no duplicate people, no extra panels, no borders, no labels, no text, no watermark. Detailed painterly fantasy game concept art, coherent lighting and perspective across characters and environment."
+    },
+    {
+      "prompt_id": "1986c70e-7f7c-47f7-8b0e-fcf382d1601f",
+      "seconds": 14.02,
+      "outputs": [
+        "outputs/two_faces_scene_prop_split025_seed6100101_01.png"
+      ],
+      "comfy_images": [
+        {
+          "filename": "two_faces_scene_prop_split025_seed6100101_00001_.png",
+          "subfolder": "sean_krea2_multiref",
+          "type": "output",
+          "id": "dfd58f12-9421-4eee-93ac-f929e9437e35"
+        }
+      ],
+      "id": "two_faces_scene_prop_split025_seed6100101",
+      "condition": "two_faces_scene_prop_split025",
+      "seed": 6100101,
+      "references": [
+        "character1",
+        "character2",
+        "scene",
+        "prop"
+      ],
+      "layout_split": 0.25,
+      "prompt": "Make one coherent full-color fantasy game illustration, a single wide scene, not a reference board. Show exactly two adult women together, full body from head to boots, at equal scale, standing side by side with clear space between them. On the left is the woman swordswoman from character1: preserve her East Asian face, almond-shaped dark-brown eyes, straight brows, black high ponytail tied with a red silk cord and cheek-length locks. She wears an ivory wrapped tunic, deep-navy split riding coat with red lining, lacquered black shoulder guard, red sash, dark trousers and black boots; a long katana in a black lacquer scabbard hangs at her left hip. On the right is the woman from character2: preserve her oval freckled face, green-hazel eyes, copper-red braided ponytail and jaw-length curls. She wears an ivory high-collar blouse, burgundy velvet waistcoat, long asymmetrical wine-red coat, charcoal trousers and dark knee boots; she carries the staff design shown in image4. Keep the two women unmistakably different: black hair and navy-red samurai outfit on the left; copper hair and burgundy mage outfit on the right. Place both characters naturally inside the moonlit stone courtyard shown in image3; keep the architecture behind them and visible around their silhouettes. Eye-level medium-wide camera, natural relaxed stance, faces readable, no overlapping bodies, no duplicate people, no extra panels, no borders, no labels, no text, no watermark. Detailed painterly fantasy game concept art, coherent lighting and perspective across characters and environment."
+    },
+    {
+      "prompt_id": "25792f4d-a574-4e9d-ad9a-cfddf9f17e0c",
+      "seconds": 12.02,
+      "outputs": [
+        "outputs/two_faces_scene_prop_split025_seed6100102_01.png"
+      ],
+      "comfy_images": [
+        {
+          "filename": "two_faces_scene_prop_split025_seed6100102_00001_.png",
+          "subfolder": "sean_krea2_multiref",
+          "type": "output",
+          "id": "01fe2298-e235-43ef-b74c-4a57f3890e13"
+        }
+      ],
+      "id": "two_faces_scene_prop_split025_seed6100102",
+      "condition": "two_faces_scene_prop_split025",
+      "seed": 6100102,
+      "references": [
+        "character1",
+        "character2",
+        "scene",
+        "prop"
+      ],
+      "layout_split": 0.25,
+      "prompt": "Make one coherent full-color fantasy game illustration, a single wide scene, not a reference board. Show exactly two adult women together, full body from head to boots, at equal scale, standing side by side with clear space between them. On the left is the woman swordswoman from character1: preserve her East Asian face, almond-shaped dark-brown eyes, straight brows, black high ponytail tied with a red silk cord and cheek-length locks. She wears an ivory wrapped tunic, deep-navy split riding coat with red lining, lacquered black shoulder guard, red sash, dark trousers and black boots; a long katana in a black lacquer scabbard hangs at her left hip. On the right is the woman from character2: preserve her oval freckled face, green-hazel eyes, copper-red braided ponytail and jaw-length curls. She wears an ivory high-collar blouse, burgundy velvet waistcoat, long asymmetrical wine-red coat, charcoal trousers and dark knee boots; she carries the staff design shown in image4. Keep the two women unmistakably different: black hair and navy-red samurai outfit on the left; copper hair and burgundy mage outfit on the right. Place both characters naturally inside the moonlit stone courtyard shown in image3; keep the architecture behind them and visible around their silhouettes. Eye-level medium-wide camera, natural relaxed stance, faces readable, no overlapping bodies, no duplicate people, no extra panels, no borders, no labels, no text, no watermark. Detailed painterly fantasy game concept art, coherent lighting and perspective across characters and environment."
+    }
+  ],
+  "visual_qc_status": "reviewed_by_agent",
+  "qc": "QC.md",
+  "conclusion": "Two face references and a scene reference fused coherently in both tested seeds. A fourth standalone prop reference caused an isolated duplicate display-panel artifact in both seeds; layout_split=0.25 fully resolved it in only one of two seeds. Experimental only; no canonical promotion."
+}

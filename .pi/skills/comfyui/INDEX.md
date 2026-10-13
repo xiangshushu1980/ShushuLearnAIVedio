@@ -7,6 +7,7 @@
 | 任务 | 先读 | 然后按需读 |
 |---|---|---|
 | 了解本机环境、模型、启动/API | [core/environment.md](references/core/environment.md) | `docs/01_environment.md`、`docs/02_models.md` |
+| 升级 ComfyUI/H3 或做版本回归 | `docs/44_comfyui_h3_upgrade_runbook.md` | [core/environment.md](references/core/environment.md)、[video/h3.md](references/video/h3.md)、[video/ref2va.md](references/video/ref2va.md) |
 | 查通用节点含义和输入输出 | [core/nodes.md](references/core/nodes.md) | 旧版完整节点档案 [nodes.md](references/nodes.md) |
 | KREA 2 / ANIMA 文生图 | [image/README.md](references/image/README.md) | [image/krea2.md](references/image/krea2.md)、[image/prompt-style.md](references/image/prompt-style.md) |
 | 研究统一风格、Object ref | [image/prompt-style.md](references/image/prompt-style.md) | `experiments/` 与 `T-comfy-ops-40` progress |

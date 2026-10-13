@@ -1,0 +1,37 @@
+{
+  "owner": "Sean",
+  "task": "T-comfy-ops-48",
+  "status": "awaiting_visual_qc",
+  "prompt": "Convert the character in the image to a Character Sheet showing a face close-up, front full body and back full body views.",
+  "parameters": {
+    "unet": "krea2_turbo_fp8.safetensors",
+    "lora": "QuadView_krea2_v1.safetensors",
+    "lora_strength": 1.0,
+    "width": 1536,
+    "height": 1024,
+    "steps": 10,
+    "cfg": 1.0,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "ref_boost": 1.0,
+    "grounding_px": 768,
+    "positive_grounding_px": 0
+  },
+  "cases": [
+    {
+      "id": "red_mage",
+      "source": "/home/sean/projects/comfy-ops/experiments/krea2_role_reference_20260927/step1_red_mage_framing_retry/outputs/sean_red_mage_role_front_seed4802012.png",
+      "seed": 4812012
+    }
+  ],
+  "results": [
+    {
+      "id": "red_mage",
+      "seed": 4812012,
+      "seconds": 27.1,
+      "status": "success",
+      "prompt_id": "84273c5b-59c2-494b-809b-95513e02fadc",
+      "output": "outputs/sean_red_mage_threeview_seed4812012.png"
+    }
+  ]
+}

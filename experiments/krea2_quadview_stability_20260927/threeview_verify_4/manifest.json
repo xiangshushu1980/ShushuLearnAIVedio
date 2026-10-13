@@ -1,0 +1,82 @@
+{
+  "owner": "Sean",
+  "task": "T-comfy-ops-48",
+  "status": "reviewed_pass",
+  "prompt_file": "../threeview_verify_2/prompt.md",
+  "prompt": "Convert the character in the image to a Character Sheet showing a face close-up, front full body and back full body views.",
+  "parameters": {
+    "unet": "krea2_turbo_fp8.safetensors",
+    "lora": "QuadView_krea2_v1.safetensors",
+    "lora_strength": 1.0,
+    "width": 1536,
+    "height": 1024,
+    "steps": 10,
+    "cfg": 1.0,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "ref_boost": 1.0,
+    "grounding_px": 768,
+    "positive_grounding_px": 0
+  },
+  "cases": [
+    {
+      "id": "red_mage",
+      "source": "/home/sean/projects/ComfyUI/input/ref_red_mage.png",
+      "seed": 4801002
+    },
+    {
+      "id": "elf_archer",
+      "source": "/home/sean/projects/ComfyUI/input/ref_elf_archer.png",
+      "seed": 4801005
+    },
+    {
+      "id": "horned_lizard_monster",
+      "source": "/home/sean/projects/ComfyUI/input/ref_horned_lizard.png",
+      "seed": 4801006
+    },
+    {
+      "id": "ice_wolf",
+      "source": "/home/sean/projects/ComfyUI/input/ref_ice_wolf.png",
+      "seed": 4801004
+    }
+  ],
+  "results": [
+    {
+      "id": "red_mage",
+      "seed": 4801002,
+      "seconds": 24.24,
+      "status": "success",
+      "prompt_id": "50e2787c-574c-4e86-9e4e-4789df7b0797",
+      "output": "outputs/sean_red_mage_threeview_seed4801002.png",
+      "visual_qc": "Three distinct requested views; face close-up clear, front/back full body."
+    },
+    {
+      "id": "elf_archer",
+      "seed": 4801005,
+      "seconds": 24.16,
+      "status": "success",
+      "prompt_id": "24633197-a7c5-4a83-90ba-06a900267814",
+      "output": "outputs/sean_elf_archer_threeview_seed4801005.png",
+      "visual_qc": "Three distinct requested views; face close-up clear, front/back full body."
+    },
+    {
+      "id": "horned_lizard_monster",
+      "seed": 4801006,
+      "seconds": 24.25,
+      "status": "success",
+      "prompt_id": "64195531-8da1-48f3-82af-0f84c8d9e1f8",
+      "output": "outputs/sean_horned_lizard_monster_threeview_seed4801006.png",
+      "visual_qc": "Three distinct requested views; face close-up clear, front/back full body."
+    },
+    {
+      "id": "ice_wolf",
+      "seed": 4801004,
+      "seconds": 24.26,
+      "status": "success",
+      "prompt_id": "de23b540-ae56-438f-858b-85761a4478e7",
+      "output": "outputs/sean_ice_wolf_threeview_seed4801004.png",
+      "visual_qc": "Three distinct requested views; face close-up clear, front/back full body."
+    }
+  ],
+  "visual_qc_status": "reviewed_pass_3_of_3_views"
+}

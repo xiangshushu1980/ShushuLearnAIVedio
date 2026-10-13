@@ -4,8 +4,71 @@
 # 本地数据库（MCP 生成的 generations 记录）
 comfyui-mcp/
 
-# 输出产物（AI 生成图/视频，体积大且非项目源码）
+# 输出产物（AI 生成图/视频/音频，体积大且非项目源码）
+output/
 outputs/
+
+# 本地个人素材与运行时资产
+assets/
+
+# 本地分析/推理虚拟环境
+scripts/.venv-vlm/
+
+# 浏览器自动化记录与本地索引
+**/.playwright-cli/
+**/.playwright-mcp/
+.codegraph/
+**/node_modules/
+**/.venv/
+**/venv/
+
+# 本地运行状态与数据库
+**/.data/
+**/runtime-data/
+**/runtime-restored-*/
+*.sqlite
+*.sqlite-*
+*.db
+*.db-*
+*.ses
+*.log
+*.tmp
+*.temp
+*.bak
+
+# 资源文件、下载包与本地模型
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.gif
+*.svg
+*.webm
+*.mp4
+*.mov
+*.mkv
+*.avi
+*.wav
+*.mp3
+*.flac
+*.ogg
+*.aac
+*.tif
+*.tiff
+*.bmp
+*.zip
+*.7z
+*.rar
+*.tar
+*.gz
+*.exe
+*.dll
+*.bin
+*.pt
+*.ckpt
+*.onnx
+models/
+vendor/**/.git/
 
 # 实验资产（个人创作媒体，不公开）
 experiments/speech-video/assets/

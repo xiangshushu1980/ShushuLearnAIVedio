@@ -1,0 +1,54 @@
+{
+  "owner": "Sean",
+  "task": "T-comfy-ops-48",
+  "status": "reviewed_pass",
+  "prompt_file": "prompt.md",
+  "prompt": "Convert the character in the image to a Character Sheet showing a face close-up, front full body and back full body views.",
+  "parameters": {
+    "unet": "krea2_turbo_fp8.safetensors",
+    "lora": "QuadView_krea2_v1.safetensors",
+    "lora_strength": 1.0,
+    "width": 1536,
+    "height": 1024,
+    "steps": 10,
+    "cfg": 1.0,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "ref_boost": 1.0,
+    "grounding_px": 768,
+    "positive_grounding_px": 0
+  },
+  "cases": [
+    {
+      "id": "eastern_swordswoman",
+      "source": "/home/sean/projects/ComfyUI/input/ref_swordswoman.png",
+      "seed": 4801001
+    },
+    {
+      "id": "dwarf_engineer",
+      "source": "/home/sean/projects/ComfyUI/input/ref_dwarf_engineer.png",
+      "seed": 4801003
+    }
+  ],
+  "results": [
+    {
+      "id": "eastern_swordswoman",
+      "seed": 4801001,
+      "seconds": 24.33,
+      "status": "success",
+      "prompt_id": "254d71a0-1abe-457e-ae12-d9cf046d66b4",
+      "output": "outputs/sean_eastern_swordswoman_threeview_seed4801001.png",
+      "visual_qc": "Three distinct requested views; face close-up clear, front/back full body."
+    },
+    {
+      "id": "dwarf_engineer",
+      "seed": 4801003,
+      "seconds": 24.21,
+      "status": "success",
+      "prompt_id": "3e6eace4-0dfd-4511-a667-bbf91ea20b45",
+      "output": "outputs/sean_dwarf_engineer_threeview_seed4801003.png",
+      "visual_qc": "Three distinct requested views; face close-up clear, front/back full body."
+    }
+  ],
+  "visual_qc_status": "reviewed_pass_3_of_3_views"
+}

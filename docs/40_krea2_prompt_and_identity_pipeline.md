@@ -1,5 +1,7 @@
 # Krea2 提示词与人物身份管线
 
+> **职责契约（Reference Pipeline v1）**：Krea2 只负责“统一提示词 → 主图”。人物 F/W/WB/S/Q/B 正式 reference 必须继续走“主图 → H3 全视角 → 抽帧”链，详见 [`docs/45_ref_asset_handbook.md`](45_ref_asset_handbook.md)。不得用宿主通用 image generator 或 Krea2 独立逐视角出图替代。
+
 > 状态：研究基线，2026-09-21。本文区分官方 Krea2 能力、社区 Identity Edit 能力和本地实测；未实跑的 Raw 参数不视为本地定论。
 
 ## 目标
@@ -48,7 +50,7 @@
 
 runner：`tools/krea2_identity_edit_runner.py`；Prompt 唯一来源：`tools/krea2_prompt_profiles.py`。
 
-本文只记录 Prompt 的用途和参数契约，不复制完整 Prompt 文本；修改 Prompt 时先改 `krea2_prompt_profiles.py`，再在本文件更新版本说明。
+本文只记录 Prompt 的用途和参数契约，不复制完整 Prompt 文本；修改 Prompt 时先改 `krea2_prompt_profiles.py`，再在本文件更新版本说明。Krea2 主图入口为 `tools/krea2_identity_edit_runner.py`；全视角入口不在本 runner，而在 H3 工作流。
 
 ### 1. `identity_portrait`
 
@@ -85,11 +87,9 @@ runner：`tools/krea2_identity_edit_runner.py`；Prompt 唯一来源：`tools/kr
 
 默认参数：Turbo / 10 steps / CFG 1 / Jibs 1.0 / ref_boost 4 / grounding_px 1024 / 1024×1024。Jibs 强度 1.0 是本任务本地选择，不是 Krea 官方参数；0.6 与 1.5 仍属于对照实验档。
 
-## 视频参考图阶段
+## 与 Reference 手册的边界
 
-身份头像和风格头像确认后，再生成统一人物参考图。构图 profile：`VIDEO_REFERENCE`，见 [`tools/krea2_prompt_profiles.py`](../tools/krea2_prompt_profiles.py)。它只控制统一景别、姿态和背景，不重新设计脸。
-
-进入人物场景时，社区 workflow 的输入顺序固定为：场景图 image 1，人物图 image 2；不能交换。完成后再将人物参考图交给 H3 Ref2VA。
+本文只负责 Krea2 的主图/身份编辑研究。主图确认后，必须转入 [`docs/45_ref_asset_handbook.md`](45_ref_asset_handbook.md) 的 H3 全视角链；本文件不再定义 F/W/WB/S/Q/B 的独立生成方法。
 
 ## 本地状态与限制
 

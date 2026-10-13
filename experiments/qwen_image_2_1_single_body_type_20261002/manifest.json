@@ -1,0 +1,184 @@
+{
+  "owner": "Sean",
+  "experiment": "qwen_image_2_1_single_body_type_20261002",
+  "status": "review",
+  "purpose": "Test prompt control of a single character's body build while holding identity, clothing, weapon, and scene references fixed.",
+  "source_experiments": [
+    "../qwen_image_2_1_bare_face_uniform_20261002/",
+    "../qwen_image_2_1_shared_costume_weapon_20261002/",
+    "../krea2_multi_reference_20261001/"
+  ],
+  "inputs": {
+    "identity_face": "inputs/identity_face.png",
+    "uniform_reference": "inputs/uniform_reference.png",
+    "katana_reference": "inputs/katana_reference.png",
+    "courtyard_scene": "inputs/courtyard_scene.png"
+  },
+  "conditions": [
+    {
+      "id": "slender",
+      "description": "Slender build; narrow shoulders and hips; slim arms and legs; long silhouette.",
+      "seeds": [
+        6200511,
+        6200512
+      ]
+    },
+    {
+      "id": "athletic",
+      "description": "Athletic build; moderately broad shoulders; firm waist; defined forearms and thighs; not bulky.",
+      "seeds": [
+        6200511,
+        6200512
+      ]
+    },
+    {
+      "id": "powerful",
+      "description": "Powerful compact build; broad shoulders; solid torso; thick forearms and muscular thighs and calves.",
+      "seeds": [
+        6200511,
+        6200512
+      ]
+    }
+  ],
+  "runtime": {
+    "comfyui": "shared instance http://127.0.0.1:8188",
+    "unet": "qwen_image_2.1_int8_convrot.safetensors",
+    "clip": "qwen3vl_8b_int8_convrot.safetensors",
+    "vae": "qwen_image_2.1_vae_bf16.safetensors",
+    "steps": 25,
+    "cfg": 1.0,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "resolution_node": 1024
+  },
+  "results": [
+    {
+      "id": "slender_seed6200511",
+      "prompt_id": "bb4aac0f-cdd5-454c-a8ad-21e279fbaffe",
+      "seconds": 39.11,
+      "output": "outputs/slender_seed6200511.png",
+      "comfy_image": {
+        "filename": "slender_seed6200511_00001_.png",
+        "subfolder": "sean_qwen_single_body_type_20261002",
+        "type": "output",
+        "id": "2026b1ec-dde3-4b8c-a90f-813ebc20cf34"
+      },
+      "condition": "slender",
+      "seed": 6200511,
+      "references": [
+        "identity_face",
+        "uniform_reference",
+        "katana_reference",
+        "courtyard_scene"
+      ],
+      "prompt": "Use <image1> only for the woman’s face and hairstyle. Use <image2> only for the uniform design, <image3> for the katana design, and <image4> for the moonlit stone courtyard. Create one adult East Asian swordswoman, full body from head to boots, standing upright in a relaxed three-quarter view. Keep the pose, camera distance, apparent height, face, uniform, sword, and scene the same across results. She wears the uniform and carries exactly one sheathed black katana at her left hip. Single coherent painterly fantasy game illustration; no extra people, duplicate weapons, inset panels, or text. Body build: slender and fine-boned, narrow shoulders and hips, slim arms and legs, long lean silhouette."
+    },
+    {
+      "id": "slender_seed6200512",
+      "prompt_id": "999df75f-86cc-4346-a25e-0319f8694f13",
+      "seconds": 30.03,
+      "output": "outputs/slender_seed6200512.png",
+      "comfy_image": {
+        "filename": "slender_seed6200512_00001_.png",
+        "subfolder": "sean_qwen_single_body_type_20261002",
+        "type": "output",
+        "id": "042088e0-d3ce-4550-af93-19d85a097394"
+      },
+      "condition": "slender",
+      "seed": 6200512,
+      "references": [
+        "identity_face",
+        "uniform_reference",
+        "katana_reference",
+        "courtyard_scene"
+      ],
+      "prompt": "Use <image1> only for the woman’s face and hairstyle. Use <image2> only for the uniform design, <image3> for the katana design, and <image4> for the moonlit stone courtyard. Create one adult East Asian swordswoman, full body from head to boots, standing upright in a relaxed three-quarter view. Keep the pose, camera distance, apparent height, face, uniform, sword, and scene the same across results. She wears the uniform and carries exactly one sheathed black katana at her left hip. Single coherent painterly fantasy game illustration; no extra people, duplicate weapons, inset panels, or text. Body build: slender and fine-boned, narrow shoulders and hips, slim arms and legs, long lean silhouette."
+    },
+    {
+      "id": "athletic_seed6200511",
+      "prompt_id": "198fd7a6-798d-410d-96fc-43341201eb46",
+      "seconds": 39.03,
+      "output": "outputs/athletic_seed6200511.png",
+      "comfy_image": {
+        "filename": "athletic_seed6200511_00001_.png",
+        "subfolder": "sean_qwen_single_body_type_20261002",
+        "type": "output",
+        "id": "0671f3eb-8f26-4874-835f-80b96798845b"
+      },
+      "condition": "athletic",
+      "seed": 6200511,
+      "references": [
+        "identity_face",
+        "uniform_reference",
+        "katana_reference",
+        "courtyard_scene"
+      ],
+      "prompt": "Use <image1> only for the woman’s face and hairstyle. Use <image2> only for the uniform design, <image3> for the katana design, and <image4> for the moonlit stone courtyard. Create one adult East Asian swordswoman, full body from head to boots, standing upright in a relaxed three-quarter view. Keep the pose, camera distance, apparent height, face, uniform, sword, and scene the same across results. She wears the uniform and carries exactly one sheathed black katana at her left hip. Single coherent painterly fantasy game illustration; no extra people, duplicate weapons, inset panels, or text. Body build: athletic and fit, moderately broad shoulders, firm waist, defined forearms and thighs, balanced limbs, not bulky."
+    },
+    {
+      "id": "athletic_seed6200512",
+      "prompt_id": "d379020f-5085-4fdd-a443-564bacd80ca4",
+      "seconds": 30.02,
+      "output": "outputs/athletic_seed6200512.png",
+      "comfy_image": {
+        "filename": "athletic_seed6200512_00001_.png",
+        "subfolder": "sean_qwen_single_body_type_20261002",
+        "type": "output",
+        "id": "d66200fe-ca47-4a62-9c3b-bd24bd867678"
+      },
+      "condition": "athletic",
+      "seed": 6200512,
+      "references": [
+        "identity_face",
+        "uniform_reference",
+        "katana_reference",
+        "courtyard_scene"
+      ],
+      "prompt": "Use <image1> only for the woman’s face and hairstyle. Use <image2> only for the uniform design, <image3> for the katana design, and <image4> for the moonlit stone courtyard. Create one adult East Asian swordswoman, full body from head to boots, standing upright in a relaxed three-quarter view. Keep the pose, camera distance, apparent height, face, uniform, sword, and scene the same across results. She wears the uniform and carries exactly one sheathed black katana at her left hip. Single coherent painterly fantasy game illustration; no extra people, duplicate weapons, inset panels, or text. Body build: athletic and fit, moderately broad shoulders, firm waist, defined forearms and thighs, balanced limbs, not bulky."
+    },
+    {
+      "id": "powerful_seed6200511",
+      "prompt_id": "3e4652e1-8071-4254-bafc-a83597e52843",
+      "seconds": 39.03,
+      "output": "outputs/powerful_seed6200511.png",
+      "comfy_image": {
+        "filename": "powerful_seed6200511_00001_.png",
+        "subfolder": "sean_qwen_single_body_type_20261002",
+        "type": "output",
+        "id": "c9ad8bb3-a4a8-4094-a29a-e1cab32812b5"
+      },
+      "condition": "powerful",
+      "seed": 6200511,
+      "references": [
+        "identity_face",
+        "uniform_reference",
+        "katana_reference",
+        "courtyard_scene"
+      ],
+      "prompt": "Use <image1> only for the woman’s face and hairstyle. Use <image2> only for the uniform design, <image3> for the katana design, and <image4> for the moonlit stone courtyard. Create one adult East Asian swordswoman, full body from head to boots, standing upright in a relaxed three-quarter view. Keep the pose, camera distance, apparent height, face, uniform, sword, and scene the same across results. She wears the uniform and carries exactly one sheathed black katana at her left hip. Single coherent painterly fantasy game illustration; no extra people, duplicate weapons, inset panels, or text. Body build: powerful and compact, broad shoulders, solid torso, thick forearms, muscular thighs and calves."
+    },
+    {
+      "id": "powerful_seed6200512",
+      "prompt_id": "b86882e3-1fec-4ea0-8637-4987414b0007",
+      "seconds": 30.02,
+      "output": "outputs/powerful_seed6200512.png",
+      "comfy_image": {
+        "filename": "powerful_seed6200512_00001_.png",
+        "subfolder": "sean_qwen_single_body_type_20261002",
+        "type": "output",
+        "id": "4ba2faa3-7cfa-4d86-962a-2f40346135a6"
+      },
+      "condition": "powerful",
+      "seed": 6200512,
+      "references": [
+        "identity_face",
+        "uniform_reference",
+        "katana_reference",
+        "courtyard_scene"
+      ],
+      "prompt": "Use <image1> only for the woman’s face and hairstyle. Use <image2> only for the uniform design, <image3> for the katana design, and <image4> for the moonlit stone courtyard. Create one adult East Asian swordswoman, full body from head to boots, standing upright in a relaxed three-quarter view. Keep the pose, camera distance, apparent height, face, uniform, sword, and scene the same across results. She wears the uniform and carries exactly one sheathed black katana at her left hip. Single coherent painterly fantasy game illustration; no extra people, duplicate weapons, inset panels, or text. Body build: powerful and compact, broad shoulders, solid torso, thick forearms, muscular thighs and calves."
+    }
+  ],
+  "comparison_sheet":"outputs/body_type_comparison_seed_aligned.png",
+  "summary":"All three written body builds are visibly distinguished in both seeds, especially the powerful build. Identity, uniform design family, one katana, scene elements, and style remain recognizable; camera/pose/scale and fine details vary. Visual QC only."
+}

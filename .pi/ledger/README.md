@@ -6,52 +6,35 @@
 
 ---
 
-## 〇、条目索引（全量，2026-08-16 回填）
+## 〇、按主题查账本
 
-| C-ID | 主题 | 状态 | 所在文件 |
+每个主题文件维护自己的条目索引；本页只索引主题文件和解决旧 ID 冲突，避免复制一份容易过期的全量条目表。
+
+| 主题 | 账本 |
+|---|---|
+| H3 速度、采样与生成管线 | [h3-speed.md](h3-speed.md) |
+| H3 模型、可行性与 FaceRefine | [h3-models.md](h3-models.md) |
+| H3 音频与 Breeze TTS | [h3-audio.md](h3-audio.md) |
+| H3 提示词与 Reference 测试 | [h3-prompt.md](h3-prompt.md) |
+| Motion Booster | [h3-motion-booster.md](h3-motion-booster.md) |
+| 视频分析与 OCR | [va-ocr.md](va-ocr.md) |
+| 多 Agent 协作治理 | [collab-governance.md](collab-governance.md) |
+| Film Editor | [film-editor.md](film-editor.md) |
+| Reference Agent | [reference-agent.md](reference-agent.md) |
+| Reference 工作区 | [reference-workspace.md](reference-workspace.md) |
+
+## 〇-A、历史重复 ID 的无歧义映射
+
+历史条目保持原样。引用下列结论时使用“规范 ID”；旧 ID 仅在对应账本文件内有效。新结论统一采用 `C-<DOMAIN>-YYYYMMDD-NN`，DOMAIN 使用稳定主题缩写。
+
+| 旧 ID（仅文件内有效） | 规范 ID | 条目 | 文件 |
 |---|---|---|---|
-| C-20260816-01 | H3 管线三档 + 15s 长档 | ✅现行 | h3-speed.md |
-| C-20260816-02 | TE/DiT 模型加载时间（80s→~11s） | ✅现行 | h3-speed.md |
-| C-20260816-03 | SageAttention 加速 | ✅现行 | h3-speed.md |
-| C-20260816-04 | Sol-Attn 弃用 | ✅现行 | h3-speed.md |
-| C-20260816-05 | MotionCache 适用域 | ✅现行 | h3-speed.md |
-| C-20260816-06 | H3 两阶段流水线（cond 缓存） | ✅现行 | h3-speed.md |
-| C-20260816-07 | ComfyUI 0.32.0 修复验证 | ✅现行 | h3-speed.md |
-| C-20260816-08 | fl2v Turbo LoRA 代际定案 | ✅现行 | h3-speed.md |
-| C-20260816-09 | Ref2VA Turbo 4 步速度 | ✅现行 | h3-speed.md |
-| C-20260816-10 | Ref2VA ref_image_size 策略 | ✅现行 | h3-speed.md |
-| C-20260816-11 | H3 BGM 触发条件 | ✅现行 | h3-audio.md |
-| C-20260816-12 | 音乐先验恒定 + 去 BGM 工具（demucs） | ✅现行 | h3-audio.md |
-| C-20260816-13 | Ref2VA 纯音频参考可用 | ✅现行 | h3-audio.md |
-| C-20260816-14 | 音频劣化归因（sage/MC） | ✅现行 | h3-audio.md |
-| C-20260816-15 | 渲染风格词主导 | ✅现行 | h3-prompt.md |
-| C-20260816-16 | 画面内文字控制（六块矩阵） | ✅现行 | h3-prompt.md |
-| C-20260816-17 | Seedance 7 条经验 H3 适用性 | ✅现行 | h3-prompt.md |
-| C-20260816-18 | 提示词增强在线 IR API 选型 | ✅现行 | h3-prompt.md |
-| C-20260816-19 | turnaround LoRA 适用域 | ✅现行 | h3-prompt.md |
-| C-20260816-20 | Hybrid b25-49（fl2va+ref2va） | 🟡待验证 | h3-models.md |
-| C-20260816-21 | 防 OOM flags 全退 | ✅现行 | h3-models.md |
-| C-20260816-22 | SageAttention v2 无需 patch | ✅现行 | h3-models.md |
-| C-20260816-23 | Sol Engine 未开源 | ✅现行 | h3-models.md |
-| C-20260816-24 | fal H3 定价 | ✅现行 | h3-models.md |
-| C-20260816-25 | FaceRefine 精修参数铁律 | ✅现行 | h3-models.md |
-| C-20260816-26 | Cache-DiT 加速（官方宣称） | 🟡待验证 | h3-models.md |
-| C-20260816-27 | H3 能力边界（固定音频同步） | ✅现行 | h3-models.md |
-| C-20260827-01 | OCR 文字流压缩范式与参数定论 | ✅现行 | va-ocr.md |
-| C-20260828-01 | Spectrum 跳 transformer 加速适用域 | ✅现行 | h3-speed.md |
-| C-20260827-02 | P1 OCR 合并逻辑失效（数据实证） | ✅现行 | va-ocr.md |
-| C-20260902-01 | FL2VA PDD 8-step 长段可行性 | ✅现行 | h3-speed.md |
-| C-20260902-02 | NVIDIA H3 Super Acceleration 架构边界 | ✅现行 | h3-speed.md |
-| C-20260905-01 | SageAttention post6 H3 一致性 | ✅现行 | h3-speed.md |
-| C-20260906-01 | H3 20 步 Sage 开关动作差异 | ✅现行 | h3-speed.md |
-| C-20260914-01 | VDN Ref2VA 1024×576 双角色 NativeAudioLock 时长基线 | ✅现行 | h3-speed.md |
-| C-20260914-02 | 普通 Ref2VA Turbo LoRA 1024×576 双角色长时基线 | ✅现行 | h3-speed.md |
-| C-20260915-01 | Ref2VA PDD 8-step 与标准 20-step 5 秒同参对照 | ✅现行 | h3-speed.md |
-| C-20260920-02 | H3 完整视频 latent 两阶段放大远景脸 smoke/5s 验证 | 🟡待验证 | h3-models.md |
-| C-20260922-02 | VOSR2 本地安装与图像/短批次 smoke | 🟡待验证 | h3-models.md |
-| C-20260925-01 | Continuum Timeline 多 chunk 长片一采链路与资源边界 | ✅现行 | h3-speed.md |
-| C-20260926-01 | 角色 reference 生成链统一为主图→H3全视角→抽帧 | ✅现行 | h3-prompt.md |
-| C-20260926-02 | Continuum 二采 + NativeAudioLock 验收与人脸边界 | 🟡部分待验证 | h3-speed.md |
+| `C-20260907-01` | `C-COLLAB-20260907-01` | Conductor Worker 失败回报与重试契约 | [collab-governance.md](collab-governance.md) |
+| `C-20260907-01` | `C-H3MODELS-20260907-01` | Ref2VA 中文口型测试必须接 NativeAudioLock | [h3-models.md](h3-models.md) |
+| `C-20260917-01` | `C-H3AUDIO-20260917-01` | Breeze TTS 2 标准流程与运行模式 | [h3-audio.md](h3-audio.md) |
+| `C-20260917-01` | `C-H3MODELS-20260917-01` | VDN Ref2VA 1024×576/20s + NativeAudioLock 验收基线 | [h3-models.md](h3-models.md) |
+| `C-20260926-01` | `C-H3PROMPT-20260926-01` | 角色 Reference 生成链统一为主图→H3全视角→抽帧 | [h3-prompt.md](h3-prompt.md) |
+| `C-20260926-01` | `C-H3MODELS-20260926-01` | FaceRefine 分段慢车道与目标锁定边界 | [h3-models.md](h3-models.md) |
 
 ---
 
@@ -79,7 +62,7 @@
 ## 三、条目模板
 
 ```
-### C-YYYYMMDD-NN | <主题一句话>
+### C-<DOMAIN>-YYYYMMDD-NN | <主题一句话>
 - 状态：✅现行（valid_from YYYY-MM-DD）/ 🟡待验证 / 📝已修正（被 C-YYY 取代）/ ❌已推翻（被 C-YYY 取代，原因）
 - 现行值：<一句话当前结论>
 - 时间线（append-only，只追加不删）：
@@ -114,7 +97,8 @@
 
 ## 五、ID 与溯源（和 TODO 不撞）
 
-- 结论 ID：`C-YYYYMMDD-NN`；任务 ID：`T-YYYYMMDD-NN`——前缀区分，无冲突
+- 新结论 ID：`C-<DOMAIN>-YYYYMMDD-NN`；DOMAIN 使用账本主题缩写（如 `H3MODELS`、`H3AUDIO`、`COLLAB`），保证跨文件唯一。已有无主题前缀的 ID 作为 legacy ID 保留；重复项按本 README 的迁移表解析。
+- 任务 ID：`T-YYYYMMDD-NN`。引用结论时使用规范 ID；引用尚未迁移的唯一 legacy ID 时同时给出账本文件路径。
 - 每条结论**引用来源任务 T-ID**（谁得出它）+ 覆盖时引用覆盖来源任务 T-ID
 - 溯源链：`结论 C-XXX ← 任务 T-AAA（提出）← 任务 T-BBB（覆盖）`，git/TODO 都能顺着查
 

@@ -1,0 +1,104 @@
+{
+  "owner": "Sean",
+  "experiment": "qwen_image_2_1_style_sheet_variants_20261002",
+  "status": "review",
+  "purpose": "Compare Qwen rendering styles on one full-body character main-image candidate intended for later H3 video-reference derivation. These are experimental main-image candidates, not canonical H3 reference assets.",
+  "source_image": "inputs/source_fullbody.png",
+  "style_variants": [
+    {
+      "id": "style_anime_cel",
+      "style": "anime_cel",
+      "prompt_id": "06c6b507-b193-46b5-879d-0d24570c6c2f",
+      "seed": 6200801,
+      "seconds": 16.37,
+      "output": "outputs/style_anime_cel.png",
+      "comfy_image": {
+        "filename": "style_anime_cel_00001_.png",
+        "subfolder": "sean_qwen_style_sheet_variants_20261002",
+        "type": "output",
+        "id": "1114e008-b5bf-4b4f-94ff-e0e596912465"
+      },
+      "output_size": "1536x1024"
+    },
+    {
+      "id": "style_painterly_concept",
+      "style": "painterly_concept",
+      "prompt_id": "93ab031e-71dc-4905-aa59-d33ae68eb029",
+      "seed": 6200801,
+      "seconds": 16.02,
+      "output": "outputs/style_painterly_concept.png",
+      "comfy_image": {
+        "filename": "style_painterly_concept_00001_.png",
+        "subfolder": "sean_qwen_style_sheet_variants_20261002",
+        "type": "output",
+        "id": "deaddb19-6dd0-4c20-9060-3c2862d5619f"
+      },
+      "output_size": "1536x1024"
+    },
+    {
+      "id": "style_3d_game_render",
+      "style": "3d_game_render",
+      "prompt_id": "0f4eb412-c70a-496c-8a7d-2b66e8f56d59",
+      "seed": 6200801,
+      "seconds": 16.02,
+      "output": "outputs/style_3d_game_render.png",
+      "comfy_image": {
+        "filename": "style_3d_game_render_00001_.png",
+        "subfolder": "sean_qwen_style_sheet_variants_20261002",
+        "type": "output",
+        "id": "fc62d888-f27c-49dd-8f0f-c4adadf18137"
+      },
+      "output_size": "1536x1024"
+    },
+    {
+      "id": "style_graphic_novel",
+      "style": "graphic_novel",
+      "prompt_id": "a7f562b2-8897-49c2-ad1d-376c9756e11a",
+      "seed": 6200801,
+      "seconds": 16.02,
+      "output": "outputs/style_graphic_novel.png",
+      "comfy_image": {
+        "filename": "style_graphic_novel_00001_.png",
+        "subfolder": "sean_qwen_style_sheet_variants_20261002",
+        "type": "output",
+        "id": "efb5c650-31d2-4969-b932-0146695d0e64"
+      },
+      "output_size": "1536x1024"
+    },
+    {
+      "id": "style_watercolor_gouache",
+      "style": "watercolor_gouache",
+      "prompt_id": "dcf6078a-ad00-40e4-8501-91eefd63e633",
+      "seed": 6200801,
+      "seconds": 16.02,
+      "output": "outputs/style_watercolor_gouache.png",
+      "comfy_image": {
+        "filename": "style_watercolor_gouache_00001_.png",
+        "subfolder": "sean_qwen_style_sheet_variants_20261002",
+        "type": "output",
+        "id": "6ba20bea-0c0e-40d5-a651-ffa818e33724"
+      },
+      "output_size": "1536x1024"
+    }
+  ],
+  "runtime": {
+    "comfyui": "http://127.0.0.1:8188",
+    "unet": "qwen_image_2.1_int8_convrot.safetensors",
+    "clip": "qwen3vl_8b_int8_convrot.safetensors",
+    "vae": "qwen_image_2.1_vae_bf16.safetensors",
+    "krea2_used": false,
+    "lora": null,
+    "size": "1536x1024",
+    "steps": 25,
+    "cfg": 1.0,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "seed": 6200801
+  },
+  "peak_vram_measured": false,
+  "metrics": {
+    "generation_count": 5,
+    "sum_of_generation_seconds": 80.45,
+    "peak_vram_measured": false
+  }
+}

@@ -1,0 +1,182 @@
+{
+  "owner": "Sean",
+  "experiment": "qwen_image_2_1_bare_face_uniform_20261002",
+  "status": "review",
+  "purpose": "Test whether neutral bare-neck/head-and-shoulders identity references reduce clothing bleed and stabilize two-person shared-uniform images, using shorter prompts.",
+  "source_experiments": [
+    "../qwen_image_2_1_shared_costume_weapon_20261002/",
+    "../krea2_quadview_stability_20260928/role_anchors/manifest.json"
+  ],
+  "conditions": [
+    {
+      "id": "clothed_face_crops",
+      "references": [
+        "face_crop_1",
+        "face_crop_2",
+        "uniform"
+      ],
+      "seeds": [
+        6200301,
+        6200302
+      ]
+    },
+    {
+      "id": "bare_neck_portraits",
+      "references": [
+        "bare_portrait_1",
+        "bare_portrait_2",
+        "uniform"
+      ],
+      "seeds": [
+        6200301,
+        6200302
+      ]
+    }
+  ],
+  "runtime": {
+    "comfyui": "shared instance http://127.0.0.1:8188",
+    "unet": "qwen_image_2.1_int8_convrot.safetensors",
+    "clip": "qwen3vl_8b_int8_convrot.safetensors",
+    "vae": "qwen_image_2.1_vae_bf16.safetensors",
+    "steps": 25,
+    "cfg": 1.0,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "resolution_node": 1024
+  },
+  "results": [
+    {
+      "id": "face1_bare_portrait",
+      "prompt_id": "e5b4189a-4943-411c-9aa6-7aedfe823585",
+      "seconds": 12.32,
+      "output": "outputs/face1_bare_portrait.png",
+      "comfy_image": {
+        "filename": "face1_bare_shoulders_00001_.png",
+        "subfolder": "sean_qwen_bare_face_uniform_20261002",
+        "type": "output",
+        "id": "1024d21a-ec20-4902-b63b-8d637518d046"
+      },
+      "kind": "identity_reference",
+      "source": "inputs/face1_clothed_crop.png",
+      "prompt": "Keep the exact face, hairstyle, expression and head-to-shoulder proportions from the input image. Make a neutral head-and-shoulders identity portrait on plain gray. Show bare neck and shoulders, with no clothing, armor, jewelry or props visible."
+    },
+    {
+      "id": "face2_bare_portrait",
+      "prompt_id": "4931e12d-02bf-4445-8e32-0c7b53fe5a94",
+      "seconds": 12.01,
+      "output": "outputs/face2_bare_portrait.png",
+      "comfy_image": {
+        "filename": "face2_bare_shoulders_00001_.png",
+        "subfolder": "sean_qwen_bare_face_uniform_20261002",
+        "type": "output",
+        "id": "434b7d3e-2bfb-40e3-8f9d-cdb4416c721f"
+      },
+      "kind": "identity_reference",
+      "source": "inputs/face2_clothed_crop.png",
+      "prompt": "Keep the exact face, hairstyle, expression and head-to-shoulder proportions from the input image. Make a neutral head-and-shoulders identity portrait on plain gray. Show bare neck and shoulders, with no clothing, armor, jewelry or props visible."
+    },
+    {
+      "id": "clothed_face_crops_seed6200301",
+      "prompt_id": "2c00650b-8c5a-4f67-a62a-d96b5adf617f",
+      "seconds": 30.02,
+      "output": "outputs/clothed_face_crops_seed6200301.png",
+      "comfy_image": {
+        "filename": "clothed_face_crops_seed6200301_00001_.png",
+        "subfolder": "sean_qwen_bare_face_uniform_20261002",
+        "type": "output",
+        "id": "5bc61867-a063-4297-98b4-f6b04c5c9127"
+      },
+      "kind": "duo_output",
+      "condition": "clothed_face_crops",
+      "seed": 6200301,
+      "references": [
+        "face1_clothed_crop",
+        "face2_clothed_crop",
+        "shared_uniform"
+      ],
+      "prompt": "Use <image1> as the left woman’s identity and <image2> as the right woman’s identity. Both wear the same uniform from <image3>. Exactly two adult women, full-body, front-facing. Arms slightly away; hands visible and empty. Plain studio background. No objects."
+    },
+    {
+      "id": "clothed_face_crops_seed6200302",
+      "prompt_id": "88aabe3d-eb6e-441e-9346-bd7a64618a43",
+      "seconds": 24.02,
+      "output": "outputs/clothed_face_crops_seed6200302.png",
+      "comfy_image": {
+        "filename": "clothed_face_crops_seed6200302_00001_.png",
+        "subfolder": "sean_qwen_bare_face_uniform_20261002",
+        "type": "output",
+        "id": "1ecfa4a9-3936-47c2-b0ae-544f7d26c9c7"
+      },
+      "kind": "duo_output",
+      "condition": "clothed_face_crops",
+      "seed": 6200302,
+      "references": [
+        "face1_clothed_crop",
+        "face2_clothed_crop",
+        "shared_uniform"
+      ],
+      "prompt": "Use <image1> as the left woman’s identity and <image2> as the right woman’s identity. Both wear the same uniform from <image3>. Exactly two adult women, full-body, front-facing. Arms slightly away; hands visible and empty. Plain studio background. No objects."
+    },
+    {
+      "id": "bare_neck_portraits_seed6200301",
+      "prompt_id": "d3c67594-8626-4f74-b0d2-de329bf4320c",
+      "seconds": 30.02,
+      "output": "outputs/bare_neck_portraits_seed6200301.png",
+      "comfy_image": {
+        "filename": "bare_neck_portraits_seed6200301_00001_.png",
+        "subfolder": "sean_qwen_bare_face_uniform_20261002",
+        "type": "output",
+        "id": "bc1bf9c4-a0a6-4d30-928e-cb91c6fdcadc"
+      },
+      "kind": "duo_output",
+      "condition": "bare_neck_portraits",
+      "seed": 6200301,
+      "references": [
+        "face1_bare_portrait",
+        "face2_bare_portrait",
+        "shared_uniform"
+      ],
+      "prompt": "Use <image1> as the left woman’s identity and <image2> as the right woman’s identity. Both wear the same uniform from <image3>. Exactly two adult women, full-body, front-facing. Arms slightly away; hands visible and empty. Plain studio background. No objects."
+    },
+    {
+      "id": "bare_neck_portraits_seed6200302",
+      "prompt_id": "4953a977-a1c2-4124-87b4-92ff6225289b",
+      "seconds": 24.02,
+      "output": "outputs/bare_neck_portraits_seed6200302.png",
+      "comfy_image": {
+        "filename": "bare_neck_portraits_seed6200302_00001_.png",
+        "subfolder": "sean_qwen_bare_face_uniform_20261002",
+        "type": "output",
+        "id": "0ac22adf-df3c-4e1e-9aac-982c70738f01"
+      },
+      "kind": "duo_output",
+      "condition": "bare_neck_portraits",
+      "seed": 6200302,
+      "references": [
+        "face1_bare_portrait",
+        "face2_bare_portrait",
+        "shared_uniform"
+      ],
+      "prompt": "Use <image1> as the left woman’s identity and <image2> as the right woman’s identity. Both wear the same uniform from <image3>. Exactly two adult women, full-body, front-facing. Arms slightly away; hands visible and empty. Plain studio background. No objects."
+    }
+  ],
+  "visual_qc_status": "reviewed",
+  "visual_qc": {
+    "reviewer": "Codex",
+    "date": "2026-10-02",
+    "report": "QC.md",
+    "identity_reference_review": "outputs/identity_reference_review.png",
+    "duo_comparison": "outputs/duo_comparison.png"
+  },
+  "summary": {
+    "duo_output_count": 4,
+    "identity_reference_edit_count": 2,
+    "seeds_per_condition": 2,
+    "clothed_crop_shared_uniform": "0/2",
+    "bare_shoulder_ref_shared_uniform": "2/2",
+    "two_people_and_distinct_faces": "4/4",
+    "hands_visible": "4/4",
+    "observation": "The original face crops retained outfit/armor cues; edited neutral head-and-shoulders identity refs improved uniform transfer and visually aligned head scale for this pair.",
+    "scope": "Short prompt, shared uniform reference, no weapons or accessories; two-seed feasibility check."
+  }
+}

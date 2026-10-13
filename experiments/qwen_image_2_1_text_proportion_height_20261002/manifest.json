@@ -1,0 +1,143 @@
+{
+  "owner": "Sean",
+  "experiment": "qwen_image_2_1_text_proportion_height_20261002",
+  "status": "review",
+  "purpose": "Test whether direct prompt constraints for head count and relative height can replace a separate body-proportion guide.",
+  "source_experiment": "../qwen_image_2_1_duo_proportion_20261002/",
+  "inputs": {
+    "left_identity": "../qwen_image_2_1_bare_face_uniform_20261002/inputs/face1_bare_portrait.png",
+    "right_identity": "../qwen_image_2_1_bare_face_uniform_20261002/inputs/face2_bare_portrait.png",
+    "shared_uniform": "../qwen_image_2_1_bare_face_uniform_20261002/inputs/shared_uniform.png"
+  },
+  "conditions": [
+    {
+      "id": "8v9_same_height",
+      "description": "Left 8 heads / 170 cm; right 9 heads / 170 cm",
+      "seeds": [
+        6200411,
+        6200412
+      ]
+    },
+    {
+      "id": "9v9_different_height",
+      "description": "Left 9 heads / 160 cm; right 9 heads / 180 cm",
+      "seeds": [
+        6200411,
+        6200412
+      ]
+    },
+    {
+      "id": "8v9_different_height",
+      "description": "Left 8 heads / 160 cm; right 9 heads / 180 cm",
+      "seeds": [
+        6200411,
+        6200412
+      ]
+    }
+  ],
+  "runtime": {
+    "comfyui": "shared instance http://127.0.0.1:8188",
+    "unet": "qwen_image_2.1_int8_convrot.safetensors",
+    "clip": "qwen3vl_8b_int8_convrot.safetensors",
+    "vae": "qwen_image_2.1_vae_bf16.safetensors",
+    "steps": 25,
+    "cfg": 1.0,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "resolution_node": 1024
+  },
+  "results": [
+    {
+      "id": "8v9_same_height_seed6200411",
+      "prompt_id": "83fab8f6-6229-4ca7-9989-a1003d41f406",
+      "seconds": 30.02,
+      "output": "outputs/8v9_same_height_seed6200411.png",
+      "comfy_image": {
+        "filename": "8v9_same_height_seed6200411_00001_.png",
+        "subfolder": "sean_qwen_propheight_20261002",
+        "type": "output",
+        "id": "af96eb72-c302-4633-852b-aacff3dbd407"
+      },
+      "condition": "8v9_same_height",
+      "seed": 6200411,
+      "prompt": "Use <image1> as the left identity and <image2> as the right identity. Both wear the uniform from <image3>. Exactly two full-body women, front view, side by side, same total height and same ground line. Left woman: exactly 8 heads tall, 170 cm. Right woman: exactly 9 heads tall, 170 cm. Hands visible. Plain studio."
+    },
+    {
+      "id": "8v9_same_height_seed6200412",
+      "prompt_id": "df4b2530-4f82-41be-89c4-f0edd587cb45",
+      "seconds": 24.02,
+      "output": "outputs/8v9_same_height_seed6200412.png",
+      "comfy_image": {
+        "filename": "8v9_same_height_seed6200412_00001_.png",
+        "subfolder": "sean_qwen_propheight_20261002",
+        "type": "output",
+        "id": "21c2e559-d430-4c50-ad77-ee44900076f4"
+      },
+      "condition": "8v9_same_height",
+      "seed": 6200412,
+      "prompt": "Use <image1> as the left identity and <image2> as the right identity. Both wear the uniform from <image3>. Exactly two full-body women, front view, side by side, same total height and same ground line. Left woman: exactly 8 heads tall, 170 cm. Right woman: exactly 9 heads tall, 170 cm. Hands visible. Plain studio."
+    },
+    {
+      "id": "9v9_different_height_seed6200411",
+      "prompt_id": "1b7b78cd-7be6-425c-86ed-8e784ae3d5f8",
+      "seconds": 30.03,
+      "output": "outputs/9v9_different_height_seed6200411.png",
+      "comfy_image": {
+        "filename": "9v9_different_height_seed6200411_00001_.png",
+        "subfolder": "sean_qwen_propheight_20261002",
+        "type": "output",
+        "id": "07a54565-7f16-4c4f-b957-d4e913bc877f"
+      },
+      "condition": "9v9_different_height",
+      "seed": 6200411,
+      "prompt": "Use <image1> as the left identity and <image2> as the right identity. Both wear the uniform from <image3>. Exactly two full-body women, front view, side by side; both exactly 9 heads tall. Left woman is 160 cm tall; right woman is 180 cm tall. Show the height difference clearly, with feet on the same ground line. Hands visible. Plain studio."
+    },
+    {
+      "id": "9v9_different_height_seed6200412",
+      "prompt_id": "4a90ce61-0a22-4c82-9d93-dc9d32c5e2bd",
+      "seconds": 24.02,
+      "output": "outputs/9v9_different_height_seed6200412.png",
+      "comfy_image": {
+        "filename": "9v9_different_height_seed6200412_00001_.png",
+        "subfolder": "sean_qwen_propheight_20261002",
+        "type": "output",
+        "id": "8478903c-90a9-4732-b426-906f289edb87"
+      },
+      "condition": "9v9_different_height",
+      "seed": 6200412,
+      "prompt": "Use <image1> as the left identity and <image2> as the right identity. Both wear the uniform from <image3>. Exactly two full-body women, front view, side by side; both exactly 9 heads tall. Left woman is 160 cm tall; right woman is 180 cm tall. Show the height difference clearly, with feet on the same ground line. Hands visible. Plain studio."
+    },
+    {
+      "id": "8v9_different_height_seed6200411",
+      "prompt_id": "c392e2f5-f4c2-4eb6-950e-f76811b6606c",
+      "seconds": 30.02,
+      "output": "outputs/8v9_different_height_seed6200411.png",
+      "comfy_image": {
+        "filename": "8v9_different_height_seed6200411_00001_.png",
+        "subfolder": "sean_qwen_propheight_20261002",
+        "type": "output",
+        "id": "bc56fb4e-b4a6-4a0c-b88c-66929bcc8649"
+      },
+      "condition": "8v9_different_height",
+      "seed": 6200411,
+      "prompt": "Use <image1> as the left identity and <image2> as the right identity. Both wear the uniform from <image3>. Exactly two full-body women, front view, side by side, feet on the same ground line. Left woman: exactly 8 heads tall, 160 cm. Right woman: exactly 9 heads tall, 180 cm. Show the height difference clearly. Hands visible. Plain studio."
+    },
+    {
+      "id": "8v9_different_height_seed6200412",
+      "prompt_id": "2723aa96-d2da-471a-87a6-366436ad02af",
+      "seconds": 24.02,
+      "output": "outputs/8v9_different_height_seed6200412.png",
+      "comfy_image": {
+        "filename": "8v9_different_height_seed6200412_00001_.png",
+        "subfolder": "sean_qwen_propheight_20261002",
+        "type": "output",
+        "id": "debcd124-c4df-4aeb-afea-3023df36ef63"
+      },
+      "condition": "8v9_different_height",
+      "seed": 6200412,
+      "prompt": "Use <image1> as the left identity and <image2> as the right identity. Both wear the uniform from <image3>. Exactly two full-body women, front view, side by side, feet on the same ground line. Left woman: exactly 8 heads tall, 160 cm. Right woman: exactly 9 heads tall, 180 cm. Show the height difference clearly. Hands visible. Plain studio."
+    }
+  ],
+  "comparison_sheet":"outputs/proportion_height_comparison.png",
+  "summary":"Relative height difference was visually followed in all four outputs in the two different-height conditions. The requested 8-vs-9 head proportion was not clearly separated at equal height. Visual QC only."
+}

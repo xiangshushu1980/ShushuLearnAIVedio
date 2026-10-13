@@ -1,0 +1,155 @@
+{
+  "owner": "Sean",
+  "experiment": "qwen_image_2_1_duo_proportion_20261002",
+  "status": "review",
+  "purpose": "Test direct numeric head-to-body prompt control against a neutral two-person body-proportion reference, while keeping bare-shoulder identities and the shared uniform fixed.",
+  "source_experiment": "../qwen_image_2_1_bare_face_uniform_20261002/",
+  "inputs": {
+    "left_identity": "../qwen_image_2_1_bare_face_uniform_20261002/inputs/face1_bare_portrait.png",
+    "right_identity": "../qwen_image_2_1_bare_face_uniform_20261002/inputs/face2_bare_portrait.png",
+    "shared_uniform": "../qwen_image_2_1_bare_face_uniform_20261002/inputs/shared_uniform.png",
+    "body_proportion_guide": "inputs/two_figure_proportion_guide.png"
+  },
+  "conditions": [
+    {
+      "id": "text_8_head_proportion",
+      "references": [
+        "bare_face1",
+        "bare_face2",
+        "uniform"
+      ],
+      "seeds": [
+        6200311,
+        6200312
+      ]
+    },
+    {
+      "id": "body_guide_8_head_proportion",
+      "references": [
+        "body_guide",
+        "bare_face1",
+        "bare_face2",
+        "uniform"
+      ],
+      "seeds": [
+        6200311,
+        6200312
+      ]
+    }
+  ],
+  "runtime": {
+    "comfyui": "shared instance http://127.0.0.1:8188",
+    "unet": "qwen_image_2.1_int8_convrot.safetensors",
+    "clip": "qwen3vl_8b_int8_convrot.safetensors",
+    "vae": "qwen_image_2.1_vae_bf16.safetensors",
+    "steps": 25,
+    "cfg": 1.0,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "resolution_node": 1024
+  },
+  "results": [
+    {
+      "id": "two_figure_proportion_guide",
+      "prompt_id": "7a908a2a-5b39-4080-9de2-5cc4f72e57eb",
+      "seconds": 6.43,
+      "output": "outputs/two_figure_proportion_guide.png",
+      "comfy_image": {
+        "filename": "two_figure_guide_00001_.png",
+        "subfolder": "sean_qwen_duo_proportion_20261002",
+        "type": "output",
+        "id": "a8966d3c-562a-4990-852f-40c7ab8d5b1b"
+      },
+      "kind": "proportion_guide",
+      "prompt": "One full-body reference sheet with exactly two anonymous adult women standing side by side, front-facing and the same height. Both have natural adult anatomy and are exactly eight heads tall: head height is one eighth of total figure height from crown to soles. Arms relaxed slightly away from their sides, both hands visible and empty. They wear identical plain seamless matte-gray bodysuits with no markings, jewelry, armor, or accessories. Plain light-gray studio background, clear silhouettes, no text."
+    },
+    {
+      "id": "text_8_head_proportion_seed6200311",
+      "prompt_id": "96300d4c-7d21-49bb-b290-3d13bb96b086",
+      "seconds": 30.02,
+      "output": "outputs/text_8_head_proportion_seed6200311.png",
+      "comfy_image": {
+        "filename": "text_8_head_proportion_seed6200311_00001_.png",
+        "subfolder": "sean_qwen_duo_proportion_20261002",
+        "type": "output",
+        "id": "54a3c741-858e-4932-ba52-4d513cbb13fe"
+      },
+      "kind": "scored_output",
+      "condition": "text_8_head_proportion",
+      "seed": 6200311,
+      "references": [
+        "face1",
+        "face2",
+        "uniform"
+      ],
+      "prompt": "Use <image1> as the left identity and <image2> as the right identity. Both wear the uniform from <image3>. Exactly two full-body adult women, front view, side by side. Each is eight heads tall; each head is one eighth of body height. Hands visible. Plain studio."
+    },
+    {
+      "id": "text_8_head_proportion_seed6200312",
+      "prompt_id": "df538122-2f76-4862-a0ca-c3294b4fe2a6",
+      "seconds": 24.02,
+      "output": "outputs/text_8_head_proportion_seed6200312.png",
+      "comfy_image": {
+        "filename": "text_8_head_proportion_seed6200312_00001_.png",
+        "subfolder": "sean_qwen_duo_proportion_20261002",
+        "type": "output",
+        "id": "78f3e28f-3423-48f5-9534-a2b1e2c3fe41"
+      },
+      "kind": "scored_output",
+      "condition": "text_8_head_proportion",
+      "seed": 6200312,
+      "references": [
+        "face1",
+        "face2",
+        "uniform"
+      ],
+      "prompt": "Use <image1> as the left identity and <image2> as the right identity. Both wear the uniform from <image3>. Exactly two full-body adult women, front view, side by side. Each is eight heads tall; each head is one eighth of body height. Hands visible. Plain studio."
+    },
+    {
+      "id": "body_guide_8_head_proportion_seed6200311",
+      "prompt_id": "14222673-331a-40c6-b64a-0a978497ff01",
+      "seconds": 36.2,
+      "output": "outputs/body_guide_8_head_proportion_seed6200311.png",
+      "comfy_image": {
+        "filename": "body_guide_8_head_proportion_seed6200311_00001_.png",
+        "subfolder": "sean_qwen_duo_proportion_20261002",
+        "type": "output",
+        "id": "8441013c-6d4b-4e3d-9a10-90f75b4a8ac2"
+      },
+      "kind": "scored_output",
+      "condition": "body_guide_8_head_proportion",
+      "seed": 6200311,
+      "references": [
+        "guide",
+        "face1",
+        "face2",
+        "uniform"
+      ],
+      "prompt": "Follow <image1> only for the two-person pose and adult body proportions. Use <image2> as the left identity, <image3> as the right identity; both wear the uniform from <image4>. Exactly two full-body women side by side. Preserve the guide's 8-head-tall proportions, equal figure height and visible hands. Plain studio."
+    },
+    {
+      "id": "body_guide_8_head_proportion_seed6200312",
+      "prompt_id": "276d703f-3d92-4d72-ae9d-a5c542d8d0e9",
+      "seconds": 30.02,
+      "output": "outputs/body_guide_8_head_proportion_seed6200312.png",
+      "comfy_image": {
+        "filename": "body_guide_8_head_proportion_seed6200312_00001_.png",
+        "subfolder": "sean_qwen_duo_proportion_20261002",
+        "type": "output",
+        "id": "f7585fb3-7bf2-4345-9b29-5f5389470fa9"
+      },
+      "kind": "scored_output",
+      "condition": "body_guide_8_head_proportion",
+      "seed": 6200312,
+      "references": [
+        "guide",
+        "face1",
+        "face2",
+        "uniform"
+      ],
+      "prompt": "Follow <image1> only for the two-person pose and adult body proportions. Use <image2> as the left identity, <image3> as the right identity; both wear the uniform from <image4>. Exactly two full-body women side by side. Preserve the guide's 8-head-tall proportions, equal figure height and visible hands. Plain studio."
+    }
+  ],
+  "comparison_sheet": "outputs/duo_proportion_comparison.png",
+  "summary": "Across two matched seeds, the body-proportion guide visibly reduced relative head size and lengthened the figures; all four outputs retained two distinct identities, the shared uniform, and visible hands. Visual review only; ratios were not pixel-measured."
+}

@@ -1,0 +1,246 @@
+{
+  "owner": "Sean",
+  "experiment": "qwen_image_2_1_staged_character_reference_20261002",
+  "status": "review",
+  "purpose": "Test staged Qwen-only generation: isolated face/item/gear/clothing references -> several full-body character candidates -> two reference-sheet compositions per candidate.",
+  "runtime": {
+    "comfyui": "http://127.0.0.1:8188",
+    "unet": "qwen_image_2.1_int8_convrot.safetensors",
+    "clip": "qwen3vl_8b_int8_convrot.safetensors",
+    "vae": "qwen_image_2.1_vae_bf16.safetensors",
+    "lora": null,
+    "krea2_used": false,
+    "output_size": "1536x1024",
+    "steps": 25,
+    "cfg": 1.0,
+    "sampler": "euler",
+    "scheduler": "simple"
+  },
+  "design_assets": [
+    {
+      "id": "face_identity",
+      "prompt_id": "ec427692-7889-4651-9abb-930277b3ae79",
+      "seconds": 10.02,
+      "output": "inputs/assets/face_identity.png",
+      "seed": 6200701,
+      "comfy_image": {
+        "filename": "face_identity_00001_.png",
+        "subfolder": "sean_qwen_staged_character_reference_20261002",
+        "type": "output",
+        "id": "bfaadfca-b29d-4d45-8278-ca3e9c1885f3"
+      },
+      "role": "face_identity",
+      "output_size": "1536x1024",
+      "peak_vram_measured": false
+    },
+    {
+      "id": "uniform_clothing",
+      "prompt_id": "1c99d820-9b0b-4cb5-8e0c-baf42627b087",
+      "seconds": 10.02,
+      "output": "inputs/assets/uniform_clothing.png",
+      "seed": 6200702,
+      "comfy_image": {
+        "filename": "uniform_clothing_00001_.png",
+        "subfolder": "sean_qwen_staged_character_reference_20261002",
+        "type": "output",
+        "id": "aa9acfc2-e0d6-4b12-a5f3-c81df1eccd77"
+      },
+      "role": "uniform_clothing",
+      "output_size": "1536x1024",
+      "peak_vram_measured": false
+    },
+    {
+      "id": "silver_armor_gear",
+      "prompt_id": "1945aa5e-56bb-4002-a493-27c5bf95b72f",
+      "seconds": 10.02,
+      "output": "inputs/assets/silver_armor_gear.png",
+      "seed": 6200703,
+      "comfy_image": {
+        "filename": "silver_armor_gear_00001_.png",
+        "subfolder": "sean_qwen_staged_character_reference_20261002",
+        "type": "output",
+        "id": "38a4b586-0a96-4458-9f78-84b4175f3407"
+      },
+      "role": "silver_armor_gear",
+      "output_size": "1536x1024",
+      "peak_vram_measured": false
+    },
+    {
+      "id": "katana_item",
+      "prompt_id": "4fae5499-7b34-48f3-98c8-22e5ad2b20ac",
+      "seconds": 10.02,
+      "output": "inputs/assets/katana_item.png",
+      "seed": 6200704,
+      "comfy_image": {
+        "filename": "katana_item_00001_.png",
+        "subfolder": "sean_qwen_staged_character_reference_20261002",
+        "type": "output",
+        "id": "41177e1e-bdb6-4e65-afed-3f5794818eb9"
+      },
+      "role": "katana_item",
+      "output_size": "1536x1024",
+      "peak_vram_measured": false
+    }
+  ],
+  "character_candidates": [
+    {
+      "id": "character_candidate_01",
+      "prompt_id": "04c9b053-c598-4735-85f1-c94a6152025f",
+      "seconds": 38.04,
+      "output": "outputs/character_candidate_01.png",
+      "seed": 6200711,
+      "comfy_image": {
+        "filename": "character_candidate_01_00001_.png",
+        "subfolder": "sean_qwen_staged_character_reference_20261002",
+        "type": "output",
+        "id": "fb833cd1-d68f-414f-aacd-677637efb5a2"
+      },
+      "output_size": "1536x1024",
+      "peak_vram_measured": false
+    },
+    {
+      "id": "character_candidate_02",
+      "prompt_id": "cc809df4-a350-4766-83b9-23d351370021",
+      "seconds": 30.03,
+      "output": "outputs/character_candidate_02.png",
+      "seed": 6200712,
+      "comfy_image": {
+        "filename": "character_candidate_02_00001_.png",
+        "subfolder": "sean_qwen_staged_character_reference_20261002",
+        "type": "output",
+        "id": "93c031ef-bd4b-4f3e-bba3-89434d88e973"
+      },
+      "output_size": "1536x1024",
+      "peak_vram_measured": false
+    },
+    {
+      "id": "character_candidate_03",
+      "prompt_id": "62ca8b61-a4d2-4499-9ea5-3b643ee3a6f3",
+      "seconds": 30.03,
+      "output": "outputs/character_candidate_03.png",
+      "seed": 6200713,
+      "comfy_image": {
+        "filename": "character_candidate_03_00001_.png",
+        "subfolder": "sean_qwen_staged_character_reference_20261002",
+        "type": "output",
+        "id": "5d975684-e333-4fb0-89fd-11a77fa730c3"
+      },
+      "output_size": "1536x1024",
+      "peak_vram_measured": false
+    }
+  ],
+  "reference_sheets": [
+    {
+      "id": "candidate_01_face_front_back",
+      "prompt_id": "f1672376-816f-467d-892c-fc2085c7bf62",
+      "seconds": 16.02,
+      "output": "outputs/candidate_01_face_front_back.png",
+      "seed": 6200720,
+      "comfy_image": {
+        "filename": "candidate_01_face_front_back_00001_.png",
+        "subfolder": "sean_qwen_staged_character_reference_20261002",
+        "type": "output",
+        "id": "260a24e9-8bb5-43fd-863d-af1cf2c33bca"
+      },
+      "candidate": 1,
+      "layout": "face_front_back",
+      "output_size": "1536x1024",
+      "peak_vram_measured": false
+    },
+    {
+      "id": "candidate_01_face_front_side_back",
+      "prompt_id": "37145e99-7a46-472c-8122-2f2f13eb6369",
+      "seconds": 16.04,
+      "output": "outputs/candidate_01_face_front_side_back.png",
+      "seed": 6200721,
+      "comfy_image": {
+        "filename": "candidate_01_face_front_side_back_00001_.png",
+        "subfolder": "sean_qwen_staged_character_reference_20261002",
+        "type": "output",
+        "id": "7b8cadd7-746c-439d-9dfe-b4ee61b54705"
+      },
+      "candidate": 1,
+      "layout": "face_front_side_back",
+      "output_size": "1536x1024",
+      "peak_vram_measured": false
+    },
+    {
+      "id": "candidate_02_face_front_back",
+      "prompt_id": "f1f47397-4aa7-490c-acd3-1c3d38334b3e",
+      "seconds": 16.02,
+      "output": "outputs/candidate_02_face_front_back.png",
+      "seed": 6200722,
+      "comfy_image": {
+        "filename": "candidate_02_face_front_back_00001_.png",
+        "subfolder": "sean_qwen_staged_character_reference_20261002",
+        "type": "output",
+        "id": "6e6ef8b7-734c-4ae0-b17e-b265bb3a897b"
+      },
+      "candidate": 2,
+      "layout": "face_front_back",
+      "output_size": "1536x1024",
+      "peak_vram_measured": false
+    },
+    {
+      "id": "candidate_02_face_front_side_back",
+      "prompt_id": "286fc128-fb6d-4473-b061-5e6a9533f3ec",
+      "seconds": 16.02,
+      "output": "outputs/candidate_02_face_front_side_back.png",
+      "seed": 6200723,
+      "comfy_image": {
+        "filename": "candidate_02_face_front_side_back_00001_.png",
+        "subfolder": "sean_qwen_staged_character_reference_20261002",
+        "type": "output",
+        "id": "9ec49d18-7a1a-4200-b810-374351d78c90"
+      },
+      "candidate": 2,
+      "layout": "face_front_side_back",
+      "output_size": "1536x1024",
+      "peak_vram_measured": false
+    },
+    {
+      "id": "candidate_03_face_front_back",
+      "prompt_id": "5eefdd85-187b-4ff7-9316-a6ff32a903b8",
+      "seconds": 16.02,
+      "output": "outputs/candidate_03_face_front_back.png",
+      "seed": 6200724,
+      "comfy_image": {
+        "filename": "candidate_03_face_front_back_00001_.png",
+        "subfolder": "sean_qwen_staged_character_reference_20261002",
+        "type": "output",
+        "id": "fa4ece37-dbd2-4d06-88de-2f31c034a635"
+      },
+      "candidate": 3,
+      "layout": "face_front_back",
+      "output_size": "1536x1024",
+      "peak_vram_measured": false
+    },
+    {
+      "id": "candidate_03_face_front_side_back",
+      "prompt_id": "c9307014-9d91-49a4-9a85-4e20e85aa5ea",
+      "seconds": 16.02,
+      "output": "outputs/candidate_03_face_front_side_back.png",
+      "seed": 6200725,
+      "comfy_image": {
+        "filename": "candidate_03_face_front_side_back_00001_.png",
+        "subfolder": "sean_qwen_staged_character_reference_20261002",
+        "type": "output",
+        "id": "2b6a73e3-3ba8-4efd-982b-9084dd5d7a2b"
+      },
+      "candidate": 3,
+      "layout": "face_front_side_back",
+      "output_size": "1536x1024",
+      "peak_vram_measured": false
+    }
+  ],
+  "deviations": [
+    "All four design references and all character/sheet images are prompt-generated or Qwen-edited; no Krea2 or LoRA used.",
+    "Three candidate characters share the same four source references; each candidate produces both requested reference-sheet layouts.",
+    "Peak VRAM was not sampled during generation."
+  ],
+  "metrics": {
+    "generation_count": 13,
+    "sum_of_generation_seconds": 234.32,
+    "peak_vram_measured": false
+  }
+}

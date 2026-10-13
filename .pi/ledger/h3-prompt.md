@@ -23,6 +23,7 @@
 | C-20260918-01 | 多 Subject 技能参考绑定与双人物一致性 | 🟡待验证 | 拆分绑定优于整图 |
 | C-20260923-01 | H3 Ref2VA 多对象 reference 组织 | ✅现行 | A/D 候选，E 负对照 |
 | C-20260923-02 | H3 Ref2VA reference 数量消融与 prompt 泄漏边界 | 🟡待验证 | 数量收益已测，盲评分待补 |
+| C-20260926-01 | 角色 reference 生成链统一为主图→H3全视角→抽帧 | ✅现行 | 独立逐视角生图列为 rejected |
 
 ---
 
@@ -203,3 +204,11 @@
 - 影响：会与 F 的正脸身份图、以及 B 的背面参考互相竞争；此前将其描述为“保留后脑语义更完整”不成立，相关评分降级为工程观察，不用于生产选型。
 - 当前结论：`WB_neck_only` 的职责更干净；若要测试保留头型的 WB，先重做正面头部轮廓去脸版本，再进行公平对照。
 - 状态：已记录，未修改 skill 默认基线。
+
+### C-20260926-01 | 角色 reference 生成链统一为主图→H3全视角→抽帧
+- 状态：✅现行（valid_from 2026-09-26）
+- 现行值：角色 F/W/WB/S/Q/B 正式资产必须遵循 `统一提示词 → 主图 → H3 视频/ContactSheet 全视角 → 抽帧 → QC → manifest`；Krea2 只可承担主图阶段，Codex image、独立 Krea2 逐视角生成和其他模型结果不得进入 canonical。
+- 时间线：
+  - 2026-09-26 提出：A/B 直出批次暴露发色、精灵耳、装备和视角漂移；该批 12 张标记 rejected，不进入正式 manifest。
+  - 2026-09-26 修正：合并 reference 手册与 H3 链路说明，增加 manifest 的 H3 multi-view provider 门禁（来源任务 T47-1 reference pipeline 修订）。
+- 证据锚：`docs/45_ref_asset_handbook.md`；`workflows/h3_shushu_object_ref_probe.json`；`experiments/h3_reference_pipeline/characters/`；A/B `generated/krea2_v1/` direct-Krea2 rejected manifest。

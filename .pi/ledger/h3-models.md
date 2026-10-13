@@ -19,6 +19,7 @@
 | C-20260917-01 | VDN Ref2VA 1024×576/20s + NativeAudioLock 验收基线 | ✅现行 | T-comfy-ops-VDN-01 |
 | C-20260922-01 | H3 FaceRefine 远景小脸稳定性与分辨率边界 | ✅现行 | T-comfy-ops-47 |
 | C-20260922-02 | VOSR2 本地安装与图像/短批次 smoke | 🟡待验证 | 图像质量通过；长视频时序未验收 |
+| C-20260926-01 | FaceRefine 分段慢车道与目标锁定边界 | ✅现行 | T47 续开 / 8 秒窗口 |
 
 ---
 
@@ -138,6 +139,14 @@
 - 证据锚：`.pi/tasks/T-comfy-ops-47/progress.md`（2026-09-22 VOSR2/threshold）；产物 `/home/sean/projects/ComfyUI/output/face_solution/t47_old1344_faceonly_vosr2_2x_no_preview_20260922_00001_.mp4`、`t47_far_tail_person_vosr2_20260922_00001_.mp4`。
 - 补充：同一长拉远片中，用户标定的开始劣化第94帧对应源脸高约68px/原图VAE约8.5 latent px，但此时 detector confidence约0.82、跟踪稳定；真正默认人脸跟踪停止约第156帧，对应约26px/3.25 latent px。因此 `refine_start` 与 `face_track_stop` 必须是两个独立阈值，不能用丢脸检测作为首次劣化指标。证据：`experiments/h3_face_solution/t47_face_threshold_metrics_20260922.csv`。
 - 跨分辨率初测：同一内容缩放到 1344×768、960×548、768×438 后，第94帧脸高 68/48/38px，但占画面高度均约 8.7–8.9%；跟踪终点附近脸高 26/18/14px，占画面高度约 3.2–3.4%。因此跨分辨率候选指标应是 `face_h/frame_height`，不是固定px，也不是原图VAE latent px（后者随输出分辨率变化）。初始候选：比例约 0.088 启动 refine；跟踪失败硬停止并保留原帧。仍需真正不同分辨率生成片复核。
+
+### C-20260926-01 | FaceRefine 分段慢车道与目标锁定边界
+- 状态：✅现行（valid_from 2026-09-26）
+- 现行值：在 RTX 4090 / 1376×800 / 192帧（8秒）窗口上，768 crop、crop_factor=3、8 steps、逐帧 denoise 的单脸 FaceRefine 约 228.2–275.1 秒；32秒整段因主机内存压力不适合作为默认输入，生产上按 8 秒窗口或更短镜头运行。双人远景不能把 `face-index=1` 当作身份锁定；必须使用坐标/ROI、identity gate 或可复用 analysis manifest，错误目标输出不得拼回成品。
+- 时间线：
+  - 2026-09-25 提出：官方 FaceRefine v1.1.2 升级回归通过，124帧/1344×768约125.1秒，无 OOM（来源任务 `T-comfy-ops-facerefine-upgrade-20260925`）。
+  - 2026-09-26 修正：32秒 Continuum 全片 refine 因主机内存压力主动中止；8秒分段红发角色两段通过，精灵段因 `face-index=1` 锁错红发角色而作废（来源 T47 续开记录）。
+- 证据锚：`docs/43_h3_facerefine_current_state.md`；`experiments/h3_vae_upgrade/sean_ref2va_continuum_dialogue_4x8_1344_face_20260926.md`；`tools/h3_face_crop_refine_runner.py`。
 
 ### C-20260907-01 | Ref2VA 中文口型测试必须接 NativeAudioLock
 - 状态：🟡待验证（有效组合已跑通，最终口型/接缝待用户目视确认）

@@ -1,0 +1,39 @@
+{
+  "owner": "Sean",
+  "batch_id": "t47_1_single_object_reference_batch_v1",
+  "status": "awaiting_still_review_character_a",
+  "workflow": "F0_hd_front -> W0_hd_full_body -> WB_from_W0 -> single_object_h3_turnaround(W0_only) -> h3_review -> S_Q_B_frame_selection -> image_upscale_or_low_denoise_second_pass -> package_review",
+  "workflow_version": "single_object_hd_consistency_v1.1",
+  "generation_policy_detail": "F0 and W0 are canonical still-image truth sources; H3 is the consistency/turnaround evidence layer. Do not derive canonical F or W by cropping the soft H3 smoke. Preserve original H3 frames before any upscale or second pass.",
+  "output_root": "experiments/h3_reference_pipeline/t47_1_reference_batch_v1",
+  "jobs": [
+    {"object_id":"character_a_silver_elf_archer","object_type":"character","main_image":"/home/sean/projects/ComfyUI/input/sean_t47_1_ref_v1_character_a.png","prompt_file":"prompts/character_a_turnaround.txt","output_dir":"character_a_silver_elf_archer","frame_roles":["F","W","WB","S","Q","B"],"allow_other_objects":false,"status":"awaiting_still_review","still_candidates":{"F0":"/home/sean/projects/ComfyUI/output/sean_t47_1_hd_stills_20260926/character_a/F0_front_hd_00001_.png","W0":"/home/sean/projects/ComfyUI/output/sean_t47_1_hd_stills_20260926/character_a/W0_full_body_hd_00001_.png"},"still_generation":{"F0":{"mode":"identity_portrait","prompt_id":"8ed468e6-ece6-48d4-9b61-ec2f715dbe90","width":1344,"height":1344,"steps":10,"cfg":1.0,"ref_boost":4.0,"grounding_px":1024,"seed":4701202,"sha256":"ae68b4ead51ddefc544c81348c25ab9a9bb94a2c6e0617564d820f081ac88d10"},"W0":{"mode":"wardrobe_full_reference","prompt_id":"f20949ea-35e4-4843-915d-3d917c288f39","width":1024,"height":1536,"steps":10,"cfg":1.0,"ref_boost":4.0,"grounding_px":1024,"seed":4701203,"sha256":"5fd5cc83babcd05172ea2a7e528c73d5c51299ec1e22e7f7b8bf621238104c60"}}},
+    {"object_id":"character_b_red_haired_woman","object_type":"character","main_image":"/home/sean/projects/ComfyUI/input/ref_character_b.png","prompt_file":"prompts/character_b_turnaround.txt","output_dir":"character_b_red_haired_woman","frame_roles":["F","W","WB","S","Q","B"],"allow_other_objects":false,"status":"blocked_until_character_a_review"},
+    {"object_id":"observatory_scene","object_type":"scene","main_image":"/home/sean/projects/ComfyUI/input/ref_scene.png","prompt_file":"prompts/scene_turnaround.txt","output_dir":"observatory_scene","frame_roles":["front","left","center","right"],"allow_other_objects":false,"status":"blocked_until_character_a_review"},
+    {"object_id":"brass_compass","object_type":"prop","main_image":"/home/sean/projects/ComfyUI/input/ref_prop.png","prompt_file":"prompts/prop_turnaround.txt","output_dir":"brass_compass","frame_roles":["front","three_quarter","side","back","detail"],"allow_other_objects":false,"status":"blocked_until_character_a_review"},
+    {"object_id":"cyan_ribbon_spell","object_type":"spell","main_image":"/home/sean/projects/ComfyUI/input/ref_spell.png","prompt_file":"prompts/spell_turnaround.txt","output_dir":"cyan_ribbon_spell","frame_roles":["front","three_quarter","side","wide","close"],"allow_other_objects":false,"status":"blocked_until_character_a_review"}
+  ],
+  "review_gates": ["main_review", "h3_review", "package_review"],
+  "generation_policy": "This manifest is a batch of isolated jobs, never a multi-object scene. Only character A is enabled for the current test.",
+  "current_test": {
+    "object_id": "character_a_silver_elf_archer",
+    "prompt_id": "3a07a19b-3536-4153-a931-8127020edbd3",
+    "resolution": "768x448",
+    "frames": 192,
+    "fps": 24,
+    "duration_seconds": 8.0,
+    "steps": 20,
+    "sampler": "res_multistep",
+    "seed": 4701201,
+    "video": "character_a_silver_elf_archer/02_h3_turnaround/turnaround_test_00001_.mp4",
+    "review_frames": "character_a_silver_elf_archer/03_review_frames/turnaround_keyframes.png",
+    "package_stage": "blocked_until_h3_review"
+  },
+  "current_gate": {
+    "gate": "still_review",
+    "object_id": "character_a_silver_elf_archer",
+    "required_review": ["F0 identity/face detail", "W0 full-body clothing/equipment", "F0-W0 identity and costume consistency"],
+    "next_stage": "WB_from_W0_then_S_Q_frame_selection",
+    "package_stage": "blocked_until_still_review"
+  }
+}

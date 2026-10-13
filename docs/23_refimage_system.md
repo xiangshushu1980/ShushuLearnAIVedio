@@ -1,5 +1,7 @@
 # 设定图体系设计（T-20260812-03，refimage-system）
 
+> **当前生成链覆盖说明（2026-09-26）**：本文保留早期形态/职责设计；角色多视角的正式生成方式已并入 [`docs/45_ref_asset_handbook.md`](45_ref_asset_handbook.md)，统一采用“主图 → H3 全视角 → 抽帧”。本文中 `anima t2i`/独立 t2i 仅是历史设计，不得用于当前 F/W/WB/S/Q/B 正式包。
+
 > 产出：flash-worker（2026-08-16）｜输入：rolecards（alya_v1/yuki_v1）、ViMax stage2_consistency.md 建议2/4、H3 Ref2VA 机制（params.md/nodes.md）、web-shotlist-tool 实体系统现状、现有资产清单（ComfyUI/input/start/169/）
 > 定位：设定图的**形态/主次/重点控制/自动推导**四维度设计，落地动作清单供工具 A（拍摄本）/ B（六段式）/ C（图需求推导器）吸收
 

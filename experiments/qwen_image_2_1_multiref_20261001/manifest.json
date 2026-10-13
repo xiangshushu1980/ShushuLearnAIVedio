@@ -1,0 +1,269 @@
+{
+  "owner": "Sean",
+  "experiment": "Qwen-Image-2.1 multi-reference edit smoke test",
+  "status": "review",
+  "created": "2026-10-01",
+  "source": {
+    "workflow": "https://github.com/Comfy-Org/workflow_templates/blob/main/templates/image_qwen_image_2_1_image_edit.json",
+    "input_assets": "https://github.com/Comfy-Org/workflow_templates/tree/main/input"
+  },
+  "inputs": [
+    {
+      "role": "image1 person identity and base composition",
+      "file": "inputs/portrait_model_denim.png",
+      "source_url": "https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/input/portrait_model_denim.png",
+      "sha256": "d888e9396587a3fd4ad500bbf5988fed0f7ba60ffa71628c29fced78bece3ac6"
+    },
+    {
+      "role": "image2 light-blue denim shirt design",
+      "file": "inputs/clothing_light_blue_denim_shirt.png",
+      "source_url": "https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/input/clothing_light_blue_denim_shirt.png",
+      "sha256": "5f8d348aa0079922743e53ab687ba5661c57696d373a0113cc61dae9a36761a3"
+    },
+    {
+      "role": "image3 ornate fantasy longsword design",
+      "file": "inputs/sean_ornate_longsword_ref.png",
+      "source": "Generated for this experiment with image_gen; neutral studio weapon reference",
+      "sha256": "57698b4f23b9029a1187bfb645a3a47fd5883c1342ce7f975bafd8c3067b1aa3"
+    },
+    {
+      "role": "image4 shield design for the multiple-items case",
+      "file": "inputs/sean_ornate_kite_shield_ref.png",
+      "source": "Generated for this experiment with image_gen",
+      "sha256": "ea46e6803b33927870fbc9359b17cc7017d1c824a91d99a8849c091cdee59e2e"
+    },
+    {
+      "role": "image4 companion identity for the multiple-characters case",
+      "file": "inputs/sean_companion_identity_ref.png",
+      "source": "Generated for this experiment with image_gen",
+      "sha256": "8396d6f3dd3fa2872bac56c8842e55eb06c4c37ebaf912e201a6bb970e63db4c"
+    }
+  ],
+  "models": {
+    "diffusion_model": "qwen_image_2.1_int8_convrot.safetensors",
+    "text_encoder": "qwen3vl_8b_int8_convrot.safetensors",
+    "vae": "qwen_image_2.1_vae_bf16.safetensors"
+  },
+  "test": {
+    "goal": "Check whether local Qwen-Image-2.1 can combine person identity, garment design, and weapon design references in one character concept image.",
+    "reference_roles": {
+      "image1": "person identity and base composition",
+      "image2": "light-blue denim shirt design",
+      "image3": "ornate longsword design"
+    },
+    "seed": 2102021,
+    "steps": 25,
+    "cfg": 1.0,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "reference_resolution": 1024
+  },
+  "results": [
+    {
+      "case": "test01_person_plus_shirt",
+      "prompt_id": "340360b8-dd0a-4acc-a232-6ec966e5f417",
+      "output": "outputs/sean_test01_person_shirt.png",
+      "elapsed_seconds": 28,
+      "comfyui_version": "0.37.0",
+      "gpu": "NVIDIA GeForce RTX 4090 24GB",
+      "post_run_free_vram_bytes": 7248421804,
+      "peak_vram_measured": false,
+      "status": "generated",
+      "workflow": "api_workflows/multiref_clothing_api.json",
+      "prompt_file": "prompt.txt"
+    },
+    {
+      "case": "test02_person_shirt_and_weapon",
+      "prompt_id": "ff5281a4-e380-4e3a-b6c5-2104165674b7",
+      "workflow": "api_workflows/multiref_person_shirt_weapon_api.json",
+      "prompt_file": "prompt_test02.txt",
+      "output": "outputs/sean_test02_person_shirt_sword.png",
+      "elapsed_seconds": 35,
+      "comfyui_version": "0.37.0",
+      "gpu": "NVIDIA GeForce RTX 4090 24GB",
+      "post_run_free_vram_bytes": 8401190912,
+      "peak_vram_measured": false,
+      "status": "generated"
+    },
+    {
+      "case": "test03_pose_expression",
+      "workflow": "api_workflows/sean_test03_pose_expression_api.json",
+      "prompt_file": "prompts/test03_pose_expression.txt",
+      "status": "generated",
+      "prompt_id": "1c11972e-8eff-4f61-9890-03600d342403",
+      "output": "outputs/sean_test03_pose_expression.png",
+      "elapsed_seconds": 34.282,
+      "comfyui_version": "0.37.0",
+      "gpu": "NVIDIA GeForce RTX 4090 24GB",
+      "peak_vram_measured": false
+    },
+    {
+      "case": "test04_fantasy_transformation",
+      "workflow": "api_workflows/sean_test04_fantasy_transformation_api.json",
+      "prompt_file": "prompts/test04_fantasy_transformation.txt",
+      "status": "generated",
+      "prompt_id": "61cf1df6-b6ef-421e-934f-1c3dcf348656",
+      "output": "outputs/sean_test04_fantasy_transformation.png",
+      "elapsed_seconds": 27.735,
+      "comfyui_version": "0.37.0",
+      "gpu": "NVIDIA GeForce RTX 4090 24GB",
+      "peak_vram_measured": false
+    },
+    {
+      "case": "test05_clothing_recolor",
+      "workflow": "api_workflows/sean_test05_clothing_recolor_api.json",
+      "prompt_file": "prompts/test05_clothing_recolor.txt",
+      "status": "generated",
+      "prompt_id": "bf712b42-2236-46bf-a4a6-eb80b208c131",
+      "output": "outputs/sean_test05_clothing_recolor.png",
+      "elapsed_seconds": 27.399,
+      "comfyui_version": "0.37.0",
+      "gpu": "NVIDIA GeForce RTX 4090 24GB",
+      "peak_vram_measured": false
+    },
+    {
+      "case": "test06_add_scene",
+      "workflow": "api_workflows/sean_test06_add_scene_api.json",
+      "prompt_file": "prompts/test06_add_scene.txt",
+      "status": "generated",
+      "prompt_id": "e4424075-78fc-4d89-9cc5-f0827add75d5",
+      "output": "outputs/sean_test06_add_scene.png",
+      "elapsed_seconds": 27.37,
+      "comfyui_version": "0.37.0",
+      "gpu": "NVIDIA GeForce RTX 4090 24GB",
+      "peak_vram_measured": false
+    },
+    {
+      "case": "test07_multiple_items",
+      "workflow": "api_workflows/sean_test07_multiple_items_api.json",
+      "prompt_file": "prompts/test07_multiple_items.txt",
+      "status": "generated",
+      "prompt_id": "5bbc2857-7242-4340-91e4-26ce776e0097",
+      "output": "outputs/sean_test07_multiple_items.png",
+      "elapsed_seconds": 35.778,
+      "comfyui_version": "0.37.0",
+      "gpu": "NVIDIA GeForce RTX 4090 24GB",
+      "peak_vram_measured": false
+    },
+    {
+      "case": "test08_multiple_characters",
+      "workflow": "api_workflows/sean_test08_multiple_characters_api.json",
+      "prompt_file": "prompts/test08_multiple_characters.txt",
+      "status": "generated",
+      "prompt_id": "55e4b7bd-5610-4a86-a15d-fb4c36d3ee18",
+      "output": "outputs/sean_test08_multiple_characters.png",
+      "elapsed_seconds": 35.621,
+      "comfyui_version": "0.37.0",
+      "gpu": "NVIDIA GeForce RTX 4090 24GB",
+      "peak_vram_measured": false
+    },
+    {
+      "case": "test09_sword_slash",
+      "workflow": "api_workflows/sean_test09_sword_slash_api.json",
+      "prompt_file": "prompts/test09_sword_slash.txt",
+      "status": "generated",
+      "prompt_id": "30e4f4e1-c0df-4727-bf89-762a7746d838",
+      "output": "outputs/sean_test09_sword_slash.png",
+      "elapsed_seconds": 26.938,
+      "comfyui_version": "0.37.0",
+      "gpu": "NVIDIA GeForce RTX 4090 24GB",
+      "peak_vram_measured": false,
+      "run_date": "2026-10-02"
+    },
+    {
+      "case": "test10_forward_run",
+      "workflow": "api_workflows/sean_test10_forward_run_api.json",
+      "prompt_file": "prompts/test10_forward_run.txt",
+      "status": "generated",
+      "prompt_id": "89db4169-5a1d-4fd4-b12a-f29153caf9b3",
+      "output": "outputs/sean_test10_forward_run.png",
+      "elapsed_seconds": 26.8,
+      "comfyui_version": "0.37.0",
+      "gpu": "NVIDIA GeForce RTX 4090 24GB",
+      "peak_vram_measured": false,
+      "run_date": "2026-10-02"
+    },
+    {
+      "case": "test11_replace_scene",
+      "workflow": "api_workflows/sean_test11_replace_scene_api.json",
+      "prompt_file": "prompts/test11_replace_scene.txt",
+      "status": "generated",
+      "prompt_id": "08d5ac21-f18e-4400-af45-c8223a2e3fa7",
+      "output": "outputs/sean_test11_replace_scene.png",
+      "elapsed_seconds": 26.742,
+      "comfyui_version": "0.37.0",
+      "gpu": "NVIDIA GeForce RTX 4090 24GB",
+      "peak_vram_measured": false,
+      "run_date": "2026-10-02"
+    },
+    {
+      "case": "test12_hair_finetune",
+      "workflow": "api_workflows/sean_test12_hair_finetune_api.json",
+      "prompt_file": "prompts/test12_hair_finetune.txt",
+      "status": "generated",
+      "prompt_id": "98d1aeee-4133-4c93-8166-a231bef00328",
+      "output": "outputs/sean_test12_hair_finetune.png",
+      "elapsed_seconds": 11.377,
+      "comfyui_version": "0.37.0",
+      "gpu": "NVIDIA GeForce RTX 4090 24GB",
+      "peak_vram_measured": false,
+      "run_date": "2026-10-02"
+    },
+    {
+      "case": "test13_face_to_camera",
+      "workflow": "api_workflows/sean_test13_face_to_camera_api.json",
+      "prompt_file": "prompts/test13_face_to_camera.txt",
+      "base_output": "outputs/sean_test08_multiple_characters.png",
+      "run_date": "2026-10-02",
+      "status": "generated",
+      "prompt_id": "db2a4292-0a5d-4436-8cd5-96e787b0f6bf",
+      "output": "outputs/sean_test13_face_to_camera.png",
+      "elapsed_seconds": 27.099,
+      "comfyui_version": "0.37.0",
+      "gpu": "NVIDIA GeForce RTX 4090 24GB",
+      "peak_vram_measured": false
+    },
+    {
+      "case": "test14_duo_coordinated_headwear",
+      "workflow": "api_workflows/sean_test14_duo_coordinated_headwear_api.json",
+      "prompt_file": "prompts/test14_duo_coordinated_headwear.txt",
+      "base_output": "outputs/sean_test13_face_to_camera.png",
+      "run_date": "2026-10-02",
+      "status": "generated",
+      "prompt_id": "aef79a59-b955-4a95-959c-ddce6fd6086e",
+      "output": "outputs/sean_test14_duo_coordinated_headwear.png",
+      "elapsed_seconds": 64.762,
+      "comfyui_version": "0.37.0",
+      "gpu": "NVIDIA GeForce RTX 4090 24GB",
+      "peak_vram_measured": false
+    },
+    {
+      "case": "test15_duo_action_pose_refined",
+      "workflow": "api_workflows/sean_test15_duo_action_pose_refined_api.json",
+      "prompt_file": "prompts/test15_duo_action_pose_refined.txt",
+      "base_output": "outputs/sean_test14_duo_coordinated_headwear.png",
+      "run_date": "2026-10-02",
+      "status": "generated",
+      "prompt_id": "d6918d1a-cc0c-429c-afae-5323f2f08234",
+      "output": "outputs/sean_test15_duo_action_pose_refined.png",
+      "elapsed_seconds": 81.031,
+      "comfyui_version": "0.37.0",
+      "gpu": "NVIDIA GeForce RTX 4090 24GB",
+      "peak_vram_measured": false
+    }
+  ],
+  "runtime_observation": {
+    "queue_empty_after_run": true,
+    "post_run_free_vram_bytes": 7208575916,
+    "peak_vram_measured": false,
+    "gpu_lease_id": "7d82585e-b716-4fea-b59c-88e8cfdb3892"
+  },
+  "last_runtime_observation": {
+    "run_date": "2026-10-02",
+    "completedCases": 3,
+    "elapsed_seconds": 172.892,
+    "gpu_lease_id": "910da58a-db40-46c5-b5b0-774e441fc348",
+    "peak_vram_measured": false,
+    "post_run_free_vram_bytes": 7208575916
+  }
+}

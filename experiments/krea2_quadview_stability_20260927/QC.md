@@ -128,20 +128,20 @@ Both tests use the same source anchor, seed `4801002`, `1536×1024`, Krea 2 Turb
 
 This is the apples-to-apples final pair at the model card's recommended output resolution. Both requested layouts generated successfully for this red-mage seed. It confirms these two layouts for this sample only; view-to-view identity and cross-character stability still require human QC and additional cases. No Ref2VA generation was performed.
 
+## [Sean] Visual re-review and cleanup record — 2026-09-28
 
-## Face-panel lower-edge comparison (same restored workflow)
+The prior panel-count review did not check whether the face panel matches the full-body views. Re-reviewing the actual images changes the acceptance result:
 
-The prior ComfyUI execution graph was recovered from history (`FINAL_FWBS_1536`, prompt ID `2f68fc90-8cea-42b1-bb34-f11611702535`) and reused at 1536×1024 with the same Krea 2 Turbo, QuadView LoRA 1.0, 10 steps, CFG 1, Euler/simple, ref boost 1.0, and grounding settings. The cleaned transient source named in history is no longer present; its stored content hash matches the retained T48 red-mage anchor used for these tests. No compositing or border node is in the executed graph; it decodes and saves one image.
+- `FINAL_FWB_1536` and `FINAL_FWBS_1536` have the requested three/four distinct panels, but **both fail identity QC**. The retained red-mage source anchor is a male character; the generated face close-up is visibly a different, female-looking character while the full-body views remain male. Neither output is an acceptable reference package.
+- `output/sean_step2_threeview_red_mage_retry/red_mage/threeview_00001_.png` has a repeated back view (four panels total). The compact and exact-three prompt probes for the separate female red-mage design produced three panels on the same source and seed; this is a useful fix example, not cross-role stability evidence.
+- `output/sean_t48_quadview_stability_20260927_v1/N2_face_focus_1920_width/red_mage/result_00001_.png` has four panels despite the three-view prompt: it repeats the front view. The changed canvas width is not a reliable layout control.
+- The official four-view layout (face/front/side/back) is structurally achievable in the final 1536×1024 sample, but the identity failure above rejects that sample. Strict-side versus three-quarter selection, shoulder framing, and cross-character repeatability remain unstable or unproven.
+- Six older `threeview_verify_2/4` cases passed panel-count review, but their source images share an upstream Shushu image reference. They cannot establish independent identity fidelity for those roles.
 
-Eight prompt/seed comparisons are saved under `outputs/border_compare/`; the contact sheet is `outputs/border_compare/sean_t48_white_border_comparison_contact_sheet.png`. The two original final outputs also serve as controls.
+Input cleanup on the same date found nine SHA-256 duplicate groups (72 copies); one manifest-compatible representative per group remained in `ComfyUI/input`, and 63 redundant copies were moved to `ComfyUI/temp/ref_input_duplicates_20260928/`. The duplicate inventory is in that directory's `cleanup_manifest.json`. Current T48 manifest source paths were verified after cleanup.
 
-| Comparison | Result |
-|---|---|
-| Official four-view prompt, repeated at seeds 4801003 and 4801012 | Four views remain; the face inset's lower white edge appears in both. |
-| Remove the `face close-up` item | The face inset disappears and a front view duplicates; not a valid fix. |
-| Replace `Character Sheet` with `reference layout` | Face inset and lower edge remain; this phrase alone is not the cause. |
-| Add “no frames or borders” to the official prompt | Face inset and lower edge remain; negative wording does not suppress it. |
-| Reuse the earlier explicit three-view prompt at the same source/resolution | Face/front/back layout is retained and the face panel reaches the canvas bottom without the lower edge. |
-| Two four-view prompts explicitly aligning the face panel to top/bottom edges | The four views remain, but the face-panel lower edge persists in both. |
+Generated images are exploratory evidence only; no image in this batch is promoted to canonical. The final file-retention action is recorded in `manifest.json` after cleanup.
 
-Conclusion: the line is generated as part of the image, not added by workflow post-processing. The evidence does not implicate `face close-up` alone or the phrase `Character Sheet` alone. The generic learned four-view composition repeatedly renders the face as an inset panel with a lower boundary. The older detailed three-view wording avoids that boundary; the same attempt to force edge-to-edge treatment has not yet removed it in four-view outputs. This is a prompt/layout interaction observed on the red-mage sample, not proof of a universal rule.
+### Final retention action
+
+At Sean's request, regeneration artifacts were removed after recording their QC: 74 Krea2/QuadView images from the shared ComfyUI output tree and 33 image copies/previews from the experiment folders. The 63 quarantined exact-duplicate input copies and three unused legacy input aliases were also permanently deleted. Total removed: 173 files (about 319 MiB). The six T48 source anchors used by the current manifests remain in `ComfyUI/input`; scripts, prompts, seeds, workflow settings, manifests, run logs, and this review remain. No H3 video was deleted.

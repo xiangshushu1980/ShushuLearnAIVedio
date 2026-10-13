@@ -18,6 +18,9 @@
 | LongCat / Sol-Attn 工作流 | `../../workflows/archive/historical/` | LongCat 本机产能不达标；Sol-Attn 已弃用 | `LongCat Sol-Attn` |
 | Seedance 适用性实验 | `../../experiments/archive/seedance_verify/` | 仅保留“哪些提示词经验适用于 H3”的研究证据，不能视作 Seedance 生产方案 | `Seedance H3` |
 | Promptor 对比样本 | `../../experiments/archive/promptor_compare/` | 结论已吸收到 `docs/11`、`docs/16`、`docs/17`；原始样本用于追溯 | `promptor T8` |
+| 已完成的 T37 / TaoMate 规格 | `../../experiments/archive/completed_specs/` | 已完成评测或仅保留执行规格，当前不作为默认入口 | `T-comfy-ops-37 TaoMate HyperFlow` |
+| Krea2 旧探针 | `../../experiments/archive/krea2_probes/` | 独立风格探针和早期 H3 桥接探针，不能替代当前 turnaround 主线 | `Krea2 Jibs magic H3 probe` |
+| H3 MC 孤立案例 | `../../experiments/archive/h3_mc_orphan_cases/` | 已被任务记录和 `mc_test`/H3 主线资料取代的单文件案例 | `MC face clothing scene` |
 | 已完成任务进度 | `../../.pi/tasks/archive/` | 仅保留任务过程和证据链；结论以 docs、ledger 和 Mem0 为准 | `h3 turbo speech video ledger backfill` |
 
 ## 当前相关话题的查找顺序

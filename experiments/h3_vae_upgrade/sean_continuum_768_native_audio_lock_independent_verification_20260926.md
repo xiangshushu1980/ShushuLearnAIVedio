@@ -46,8 +46,8 @@ Continuum chunk refine_state
 
 | 阶段 | 产物 | 结果 | 耗时/资源 |
 |---|---|---|---|
-| 一采 | [`sean_ref2va_continuum_4x8_1024_00001_.mp4`](/home/sean/projects/ComfyUI/output/video/sean_ref2va_continuum_4x8_1024_00001_.mp4) | 1024×576，768 帧，31.998 s | 约 399.6 s；峰值显存约 23,110 MiB；最低可用内存约 5 GiB |
-| 二采 | [`sean_ref2va_continuum_dialogue_4x8_1344_00001_.mp4`](/home/sean/projects/ComfyUI/output/video/sean_ref2va_continuum_dialogue_4x8_1344_00001_.mp4) | 1376×800，768 帧，31.998 s | 676.69 s；峰值显存 23,574/24,564 MiB；最低可用内存 326 MB |
+| 一采 | [`sean_ref2va_continuum_4x8_1024_00001_.mp4`](../comfyui_output_archive_20260928.md) | 1024×576，768 帧，31.998 s | 约 399.6 s；峰值显存约 23,110 MiB；最低可用内存约 5 GiB |
+| 二采 | [`sean_ref2va_continuum_dialogue_4x8_1344_00001_.mp4`](../comfyui_output_archive_20260928.md) | 1376×800，768 帧，31.998 s | 676.69 s；峰值显存 23,574/24,564 MiB；最低可用内存 326 MB |
 
 二采音频探针：32 kHz、2 声道、AAC、31.999 s、1001 个音频帧。源片与二采片的音视频时长均在 1 ms 级别内对齐；二采没有裁掉或重新拼接对白轨。
 
