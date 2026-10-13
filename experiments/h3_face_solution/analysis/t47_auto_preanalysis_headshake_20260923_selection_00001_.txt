@@ -1,0 +1,7 @@
+source: sylvanas_hero_wide_headshake_turn_360_00001_.mp4  241 frames  1344x768  24.000 fps
+faces: 409 detections, max 3 in one frame; 1 shot card(s)
+cuts: 0 -> 1 shot(s)
+subject: select=identity_reference  [matched to identity_reference (clip_vision, threshold 0.20) in shot(s) [1]]
+  shot 1   frames 0-240 (241): face 0, locked at frame 0
+
+!! 241 frames is off H3's 17k+5 grid; H3 rounds up to 243 and the difference is padded, refined, then discarded. Use frame_load_cap to cut to 226 or re-cut the source.

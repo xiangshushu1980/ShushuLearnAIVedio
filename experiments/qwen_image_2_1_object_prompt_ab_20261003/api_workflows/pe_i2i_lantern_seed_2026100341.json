@@ -1,0 +1,118 @@
+{
+  "1": {
+    "class_type": "UNETLoader",
+    "inputs": {
+      "unet_name": "qwen_image_2.1_int8_convrot.safetensors",
+      "weight_dtype": "default"
+    }
+  },
+  "2": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen3vl_8b_int8_convrot.safetensors",
+      "type": "qwen_image",
+      "device": "default"
+    }
+  },
+  "3": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+    }
+  },
+  "4": {
+    "class_type": "QwenImage21Cache",
+    "inputs": {
+      "model": [
+        "1",
+        0
+      ],
+      "device": "auto",
+      "dtype": "default"
+    }
+  },
+  "5": {
+    "class_type": "TextEncodeQwenImage21",
+    "inputs": {
+      "clip": [
+        "2",
+        0
+      ],
+      "prompt": "Generate a horizontal 1×3 three-view sheet of the exact vintage brass oil lantern shown in <image1>, rendering the same single lantern at a consistent scale across three evenly sized panels with consistent narrow gutters, all placed on one clean neutral studio background that reproduces the input's own plain warm off-white cream tone with soft even lighting and a subtle contact shadow beneath the base. The lantern's design stays identical to <image1> in every view, with the aged golden-brass body, the arched carry handle with a notched top, the two curved side handle rails, the rounded clear glass globe protected by a crossed brass wire guard, the metal burner visible inside the globe, the domed chimney top with dark ventilation slots above a perforated band, and the rounded brass base with its small circular front fill cap, preserving every visible part, proportion, and finish exactly. The three panels from left to right are: 1. Front view, the lantern facing the camera directly in the same upright orientation as <image1>, showing the complete lantern from the base rim to the top of the carry handle; 2. Strict narrow side view, the lantern turned to a true profile, showing the side silhouette of the handle rail, the glass globe edge, the chimney profile, and the base side; 3. Rear view, the lantern seen from behind, showing only the back surfaces of the existing structure, namely the plain brass body back, the base rim, the carry handle back, the chimney back, and the back of the glass globe, keeping the rear completely plain and unadorned. Every panel contains the full lantern uncropped with uniform scale and identical perspective, the three panels align on a common horizontal baseline, and the entire sheet stays purely pictorial with no rendered text, no labels, no captions, no view-name tags, and no watermarks.",
+      "negative_prompt": "",
+      "resolution": 1024,
+      "vae": [
+        "3",
+        0
+      ],
+      "images.image_1": [
+        "10",
+        0
+      ]
+    }
+  },
+  "6": {
+    "class_type": "EmptyLatentImage",
+    "inputs": {
+      "width": 1536,
+      "height": 1024,
+      "batch_size": 1
+    }
+  },
+  "7": {
+    "class_type": "KSampler",
+    "inputs": {
+      "model": [
+        "4",
+        0
+      ],
+      "positive": [
+        "5",
+        0
+      ],
+      "negative": [
+        "5",
+        1
+      ],
+      "latent_image": [
+        "6",
+        0
+      ],
+      "seed": 2026100341,
+      "steps": 25,
+      "cfg": 1.0,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1.0
+    }
+  },
+  "8": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "7",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    }
+  },
+  "9": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "8",
+        0
+      ],
+      "filename_prefix": "sean_qwen_image_2_1_object_prompt_ab_20261003/pe_i2i/lantern/seed_2026100341"
+    }
+  },
+  "10": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "sean_qwen_image_2_1_object_prompt_ab_20261003_lantern_reference.png"
+    }
+  }
+}

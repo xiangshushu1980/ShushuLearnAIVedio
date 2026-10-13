@@ -1,0 +1,43 @@
+{
+  "prompt": "A single photorealistic Cantonese television presenter speaks naturally in the same minimalist light-gray studio, horizontal 16:9 waist-up half-body shot, both hands fully visible, stable identity, clothing and lighting, natural facial expression and mouth motion, restrained gestures, no scene change and no camera movement.",
+  "cases": [
+    {
+      "name": "identity4_A",
+      "images": ["ref2va_refs/digital_human/01_host_blank_gray_16x9.png"],
+      "audios": ["h3_avatar/audio/segments/semantic5_seg1.wav"],
+      "width": 768, "height": 448, "length": 107, "steps": 20,
+      "seed": 42100901,
+      "prefix": "video/h3_avatar_ref2va_mc_identity_4seg/A",
+      "save_latent": {"filename_prefix": "h3_ref2va_identity_4seg/A", "clip_index": 1}
+    },
+    {
+      "name": "identity4_B",
+      "images": ["ref2va_refs/digital_human/01_host_blank_gray_16x9.png"],
+      "audios": ["h3_avatar/audio/segments/semantic5_seg2.wav"],
+      "width": 768, "height": 448, "length": 112, "steps": 20,
+      "seed": 42100902,
+      "prefix": "video/h3_avatar_ref2va_mc_identity_4seg/B",
+      "mc": {"latent_path": "h3_ref2va_identity_4seg/A_00001.safetensors", "context_length": "22", "audio_context_length": 24},
+      "save_latent": {"filename_prefix": "h3_ref2va_identity_4seg/B", "clip_index": 1}
+    },
+    {
+      "name": "identity4_C",
+      "images": ["ref2va_refs/digital_human/01_host_blank_gray_16x9.png"],
+      "audios": ["h3_avatar/audio/segments/semantic5_seg3.wav"],
+      "width": 768, "height": 448, "length": 163, "steps": 20,
+      "seed": 42100903,
+      "prefix": "video/h3_avatar_ref2va_mc_identity_4seg/C",
+      "mc": {"latent_path": "h3_ref2va_identity_4seg/B_00001.safetensors", "context_length": "22", "audio_context_length": 24},
+      "save_latent": {"filename_prefix": "h3_ref2va_identity_4seg/C", "clip_index": 1}
+    },
+    {
+      "name": "identity4_D",
+      "images": ["ref2va_refs/digital_human/01_host_blank_gray_16x9.png"],
+      "audios": ["h3_avatar/audio/segments/semantic5_seg4.wav"],
+      "width": 768, "height": 448, "length": 112, "steps": 20,
+      "seed": 42100904,
+      "prefix": "video/h3_avatar_ref2va_mc_identity_4seg/D",
+      "mc": {"latent_path": "h3_ref2va_identity_4seg/C_00001.safetensors", "context_length": "22", "audio_context_length": 24}
+    }
+  ]
+}

@@ -1,0 +1,185 @@
+{
+  "unet": {
+    "class_type": "UNETLoader",
+    "inputs": {
+      "unet_name": "krea2_turbo_fp8.safetensors",
+      "weight_dtype": "default"
+    }
+  },
+  "clip": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen3vl_4b_bf16.safetensors",
+      "type": "krea2",
+      "device": "default"
+    }
+  },
+  "vae": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "qwen_image_vae.safetensors"
+    }
+  },
+  "positive": {
+    "class_type": "TextEncodeKrea2Reference",
+    "inputs": {
+      "clip": [
+        "clip",
+        0
+      ],
+      "prompt": "Make one coherent full-color fantasy game illustration, a single wide scene, not a reference board. Show exactly two adult women together, full body from head to boots, at equal scale, standing side by side with clear space between them. On the left is the woman swordswoman from character1: preserve her East Asian face, almond-shaped dark-brown eyes, straight brows, black high ponytail tied with a red silk cord and cheek-length locks. She wears an ivory wrapped tunic, deep-navy split riding coat with red lining, lacquered black shoulder guard, red sash, dark trousers and black boots; a long katana in a black lacquer scabbard hangs at her left hip. On the right is the woman from character2: preserve her oval freckled face, green-hazel eyes, copper-red braided ponytail and jaw-length curls. She wears an ivory high-collar blouse, burgundy velvet waistcoat, long asymmetrical wine-red coat, charcoal trousers and dark knee boots; she carries the staff design shown in image4. Keep the two women unmistakably different: black hair and navy-red samurai outfit on the left; copper hair and burgundy mage outfit on the right. Place both characters naturally inside the moonlit stone courtyard shown in image3; keep the architecture behind them and visible around their silhouettes. Eye-level medium-wide camera, natural relaxed stance, faces readable, no overlapping bodies, no duplicate people, no extra panels, no borders, no labels, no text, no watermark. Detailed painterly fantasy game concept art, coherent lighting and perspective across characters and environment.",
+      "layout_split": 0.25,
+      "image1": [
+        "crop_1",
+        0
+      ],
+      "image1_detail": "high",
+      "image2": [
+        "crop_2",
+        0
+      ],
+      "image2_detail": "high",
+      "image3": [
+        "ref_3",
+        0
+      ],
+      "image3_detail": "normal",
+      "image4": [
+        "ref_4",
+        0
+      ],
+      "image4_detail": "high"
+    }
+  },
+  "negative": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "clip",
+        0
+      ],
+      "text": ""
+    }
+  },
+  "latent": {
+    "class_type": "EmptySD3LatentImage",
+    "inputs": {
+      "width": 1280,
+      "height": 832,
+      "batch_size": 1
+    }
+  },
+  "sample": {
+    "class_type": "KSampler",
+    "inputs": {
+      "model": [
+        "model",
+        0
+      ],
+      "positive": [
+        "positive",
+        0
+      ],
+      "negative": [
+        "negative",
+        0
+      ],
+      "latent_image": [
+        "latent",
+        0
+      ],
+      "seed": 6100102,
+      "control_after_generate": "fixed",
+      "steps": 8,
+      "cfg": 1.0,
+      "sampler_name": "er_sde",
+      "scheduler": "simple",
+      "denoise": 1.0
+    }
+  },
+  "decode": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "sample",
+        0
+      ],
+      "vae": [
+        "vae",
+        0
+      ]
+    }
+  },
+  "save": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "decode",
+        0
+      ],
+      "filename_prefix": "sean_krea2_multiref/two_faces_scene_prop_split025_seed6100102"
+    }
+  },
+  "model": {
+    "class_type": "Krea2ReferenceLoraLoader",
+    "inputs": {
+      "model": [
+        "unet",
+        0
+      ],
+      "lora_name": "krea2_style_reference.safetensors",
+      "strength_text_fusion": 1.0,
+      "strength_dit_body": 0.0
+    }
+  },
+  "ref_1": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "sean_multiref_character1.png"
+    }
+  },
+  "crop_1": {
+    "class_type": "ImageCrop",
+    "inputs": {
+      "image": [
+        "ref_1",
+        0
+      ],
+      "x": 256,
+      "y": 0,
+      "width": 512,
+      "height": 512
+    }
+  },
+  "ref_2": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "sean_multiref_character2.png"
+    }
+  },
+  "crop_2": {
+    "class_type": "ImageCrop",
+    "inputs": {
+      "image": [
+        "ref_2",
+        0
+      ],
+      "x": 256,
+      "y": 0,
+      "width": 512,
+      "height": 512
+    }
+  },
+  "ref_3": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "sean_multiref_scene.png"
+    }
+  },
+  "ref_4": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "sean_multiref_prop.png"
+    }
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "1": {
+    "class_type": "UNETLoader",
+    "inputs": {
+      "unet_name": "qwen_image_2.1_int8_convrot.safetensors",
+      "weight_dtype": "default"
+    }
+  },
+  "2": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen3vl_8b_int8_convrot.safetensors",
+      "type": "qwen_image",
+      "device": "default"
+    }
+  },
+  "3": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+    }
+  },
+  "4": {
+    "class_type": "QwenImage21Cache",
+    "inputs": {
+      "model": [
+        "1",
+        0
+      ],
+      "device": "auto",
+      "dtype": "default"
+    }
+  },
+  "5": {
+    "class_type": "TextEncodeQwenImage21",
+    "inputs": {
+      "clip": [
+        "2",
+        0
+      ],
+      "prompt": "Generate a horizontal 1×3 three-view sheet of the exact fully sheathed katana shown in <image1>, presented as one whole object in each panel on the same clean neutral pale cream off-white studio background as the input, with every panel completely clean of text, labels, and watermarks. The katana keeps its exact identity in all three views: the glossy black lacquered scabbard with brass end caps, the round black tsuba, the gold-toned brass fittings at the scabbard throat, and the black hilt wrapped in diamond-pattern cord, with the blade remaining fully enclosed inside the same scabbard in every view and the same gentle scabbard curve held exactly as in the input. The three panels from left to right are: 1. the broad side view reproducing the input's exact orientation, hilt at the left and scabbard mouth at the right, showing the flat side of the scabbard and the full diamond-wrapped hilt; 2. the strict edge-on view with the scabbard's cutting edge facing the camera, the whole length reading as a narrow profile silhouette that shows the curved blade line within the scabbard; 3. the opposite broad side view showing the mirrored flat side of the same scabbard, tsuba, and hilt. Only the viewing angle changes between the three panels; the object's pose, orientation, proportions, and every fitting stay identical to the input, and the sheet presents the katana as one intact object per panel with the full length visible from hilt end to scabbard mouth inside each panel. All three panels share uniform size and even spacing, the object renders with consistent structure and undistorted geometry in every view, and the ornament stays limited to the fittings and diamond wrapping already visible in the input.",
+      "negative_prompt": "",
+      "resolution": 1024,
+      "vae": [
+        "3",
+        0
+      ],
+      "images.image_1": [
+        "10",
+        0
+      ]
+    }
+  },
+  "6": {
+    "class_type": "EmptyLatentImage",
+    "inputs": {
+      "width": 1536,
+      "height": 1024,
+      "batch_size": 1
+    }
+  },
+  "7": {
+    "class_type": "KSampler",
+    "inputs": {
+      "model": [
+        "4",
+        0
+      ],
+      "positive": [
+        "5",
+        0
+      ],
+      "negative": [
+        "5",
+        1
+      ],
+      "latent_image": [
+        "6",
+        0
+      ],
+      "seed": 2026100371,
+      "steps": 25,
+      "cfg": 1.0,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1.0
+    }
+  },
+  "8": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "7",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    }
+  },
+  "9": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "8",
+        0
+      ],
+      "filename_prefix": "sean_qwen_image_2_1_object_prompt_ab_20261003/pe_i2i/katana/seed_2026100371"
+    }
+  },
+  "10": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "sean_qwen_image_2_1_object_prompt_ab_20261003_katana_reference.png"
+    }
+  }
+}

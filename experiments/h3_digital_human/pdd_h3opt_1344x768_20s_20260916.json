@@ -1,0 +1,27 @@
+[
+  {
+    "name": "pdd_h3opt_1344x768_20s",
+    "refs": [
+      "ref2va_refs/vdn_dual_dialogue/sylvanas_style.png",
+      "ref2va_refs/vdn_dual_dialogue/original_caped_hero.png",
+      "ref2va_refs/vdn_dual_dialogue/ice_fortress_background.png"
+    ],
+    "prompt": "For the target video, <Picture 1> is the cold undead elven woman, <Picture 2> is the blue-suited red-caped flying hero, and <Picture 3> is the frozen fortress courtyard. Preserve both characters and the fortress background. Cinematic realistic fantasy, 16:9 medium two-shot, both characters framed head to waist with the background clearly visible, woman on the left and hero on the right facing each other. They speak alternating Chinese dialogue driven only by NativeAudioLock audio, natural lip sync, restrained gestures, subtle wind in hair and clothing, stable identities and scale, one continuous shot, no cuts, no subtitles, no readable text, no watermark, no extra people or limbs.",
+    "unet": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+    "pdd": "minimax_h3_ref2va_pdd_acc_8step_comfyui.safetensors",
+    "pdd_nfe": 8,
+    "steps": 8,
+    "width": 1344,
+    "height": 768,
+    "length": 481,
+    "seed": 20260919,
+    "audio": "vdn_audio_test/dialogue_dual_20s.wav",
+    "h3_memory_optimization": true,
+    "h3_chunk_rows": 4096,
+    "h3_precision_mode": "Preserve native",
+    "h3_qkv_streaming_mode": "Auto",
+    "release_before_decode": true,
+    "tiled_vae": true,
+    "prefix": "video/h3_pdd_ref2va_retests/pdd_h3opt_1344x768_20s_20260916"
+  }
+]

@@ -1,0 +1,24 @@
+[
+  {
+    "name": "vdn_breeze_clone_1024x576_20s_shot_timed_effects",
+    "refs": [
+      "ref2va_refs/vdn_dual_dialogue/sylvanas_style.png",
+      "ref2va_refs/vdn_dual_dialogue/original_caped_hero.png",
+      "ref2va_refs/vdn_dual_dialogue/ice_fortress_background.png"
+    ],
+    "prompt": "subject_definitions:\n<Subject 1> is the local guardian Sylvanas, with her identity and visual appearance defined by the first reference image.\n<Subject 2> is the visiting male hero, with his identity and visual appearance defined by the second reference image.\n<Subject 3> is the ice fortress environment, with its spatial layout and visual atmosphere defined by the third reference image.\n<Audio 1> is the externally supplied dual-speaker Chinese dialogue track from dialogue_dual_breeze_clone_vdn_strict20s.wav, directly reused as the target speech performance; <Subject 1> (S1) is the female speaker and <Subject 2> (S2) is the male speaker.\n\nsummary:\n[reference generation + audio reuse] The target video presents a crisis at <Subject 3> through a dialogue between <Subject 1> and <Subject 2>. <Subject 2> arrives to help, and the visual effects follow the entrance, the hero's resolve, and the approaching end of <Audio 1>.\n\nretention_analysis:\n<Subject 1> (appears in [Shot 1], [Shot 2], [Shot 3]): fully_preserved - Sylvanas's identity and visual appearance remain stable.\n<Subject 2> (appears in [Shot 1], [Shot 2], [Shot 3]): fully_preserved - the visiting hero's identity and visual appearance remain stable.\n<Subject 3> (appears in [Shot 1], [Shot 2], [Shot 3]): fully_preserved - the fortress environment remains the continuous setting.\n<Audio 1>: fully_copy - the complete external dialogue track supplies the synchronized speech performance.\n\ndetailed_description:\nThe target video uses a high-fantasy dramatic style with cold blue light, deep-red distant danger, and a clear three-part camera progression.\n[Shot 1] From 00:00.000 to 00:04.000, a medium-wide shot shows <Subject 1> and <Subject 2> entering the fortress courtyard. The camera pushes in with small amplitude at slow speed toward both speakers. <Subject 1> remains firmly standing as the local guardian, while <Subject 2> walks a few steps forward toward her. As <Subject 1> appears, blue-white frost magic briefly awakens around her: fine ice crystals rise near her hands and feet, a thin frost pattern spreads across the nearby stone, and a cool mist responds around her before settling.\n[Shot 2] At 00:04.000, the camera holds a medium two-shot as <Subject 1> (S1) and <Subject 2> (S2) alternate speaking according to <Audio 1>. Their eye lines, mouth movements, and facial reactions follow the dialogue. <Subject 1> remains grounded in place while <Subject 2> maintains his forward position. When <Subject 2> delivers the decisive statement in <Audio 1>, a focused blue-white shimmer appears in both of his eyes and briefly illuminates his face.\n[Shot 3] At 00:16.000, as <Audio 1> approaches its final exchange, the camera pulls out with small amplitude at slow speed into a wide shot. The full courtyard and distant fortress become visible. The deep red glow behind the distant castle gradually intensifies and pulses across the clouds, revealing the danger surrounding the fortress and casting a restrained red reflection across the snowy stone. The final frame holds the two speakers within the threatened fortress environment as the dialogue reaches its ending.\n\noverall_soundscape:\n<Audio 1> carries the complete synchronized alternating Chinese dialogue between <Subject 1> (S1) and <Subject 2> (S2), including its pauses, timing, and final exchange.\n\nnon_diegetic_music:\nN/A",
+    "unet": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+    "steps": 8,
+    "width": 1024,
+    "height": 576,
+    "length": 481,
+    "seed": 20260923,
+    "audio": "vdn_audio_test/dialogue_dual_breeze_clone_vdn_strict20s.wav",
+    "vdn": true,
+    "vdn_branch_weights": "stream",
+    "vdn_retain_buffers": "off",
+    "release_before_decode": true,
+    "tiled_vae": true,
+    "prefix": "video/h3_vdn_ref2va/breeze_clone_1024x576_20s_shot_timed_effects_20260917"
+  }
+]

@@ -1,0 +1,5 @@
+Create a clean 3:2 landscape environment reference sheet of one fixed mountain shrine courtyard, divided into exactly three equal panels with narrow clean gutters. Show three unmistakably different views of the same place, preserving matching landmarks and layout:
+1. Frontal entrance view from outside the single red wooden gate, looking inward toward the shrine.
+2. True 90-degree right-side elevation, camera perpendicular to the entrance axis, showing the long side wall, courtyard depth, stairway, and shrine side facade. Do not face the entrance.
+3. Direct overhead bird's-eye site plan of the same courtyard, showing the gate at the south edge, stairway running north to the timber shrine, large pine on the west/left, and stone lantern on the east/right.
+Keep the same single red gate, one small timber shrine with a dark tiled roof, one large pine, the stone stairway and retaining wall, and one stone lantern. Keep weather, time of day, materials, and visual style consistent. The three camera views must be distinct and must not repeat the frontal entrance view. No people, added buildings, extra gates, map symbols, text, labels, borders, or unrelated scenery.

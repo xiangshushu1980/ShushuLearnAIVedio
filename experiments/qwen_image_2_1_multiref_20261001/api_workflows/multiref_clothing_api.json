@@ -1,0 +1,84 @@
+{
+  "1": {
+    "class_type": "UNETLoader",
+    "inputs": {
+      "unet_name": "qwen_image_2.1_int8_convrot.safetensors",
+      "weight_dtype": "default"
+    }
+  },
+  "2": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen3vl_8b_int8_convrot.safetensors",
+      "type": "qwen_image",
+      "device": "default"
+    }
+  },
+  "3": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+    }
+  },
+  "4": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "sean_qwen21_portrait_model_denim.png"
+    }
+  },
+  "5": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "sean_qwen21_light_blue_denim_shirt.png"
+    }
+  },
+  "6": {
+    "class_type": "QwenImage21Cache",
+    "inputs": {
+      "model": ["1", 0],
+      "device": "auto",
+      "dtype": "default"
+    }
+  },
+  "7": {
+    "class_type": "TextEncodeQwenImage21",
+    "inputs": {
+      "clip": ["2", 0],
+      "prompt": "Use <image1> as the person and base composition. Preserve his facial identity, hairstyle, head angle, body pose, proportions, crop, lighting, and plain gray-blue background. Use <image2> only as the garment design reference. Replace the dark teal zip-up top in <image1> with the light-blue denim button-up shirt shown in <image2>, preserving its pointed collar, centered button placket, single chest pocket, seam lines, cuffs, pale washed denim color, and fabric texture. Fit the shirt naturally to the person's original pose with believable folds and lighting. The final image should show the same person from <image1> wearing the shirt from <image2>; do not copy the hanger, wall, shadows, or dark garment visible in <image2>.",
+      "negative_prompt": "",
+      "resolution": 1024,
+      "vae": ["3", 0],
+      "images.image_1": ["4", 0],
+      "images.image_2": ["5", 0]
+    }
+  },
+  "8": {
+    "class_type": "KSampler",
+    "inputs": {
+      "model": ["6", 0],
+      "positive": ["7", 0],
+      "negative": ["7", 1],
+      "latent_image": ["7", 2],
+      "seed": 2102021,
+      "steps": 25,
+      "cfg": 1.0,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1.0
+    }
+  },
+  "9": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": ["8", 0],
+      "vae": ["3", 0]
+    }
+  },
+  "10": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": ["9", 0],
+      "filename_prefix": "sean_qwen21_multiref_20261001/test01"
+    }
+  }
+}

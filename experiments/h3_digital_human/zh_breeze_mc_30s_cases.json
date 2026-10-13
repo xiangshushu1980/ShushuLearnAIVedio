@@ -1,0 +1,39 @@
+[
+  {
+    "name": "zh_breeze_A_0_10",
+    "audio": "h3_avatar/audio/segments/zh_breeze_test_30s_seg1.wav",
+    "image": "ref2va_refs/digital_human/01_host_blank_gray_16x9.png",
+    "length": 244,
+    "seed": 51090701,
+    "prefix": "video/h3_avatar_zh_breeze_mc_30s/A",
+    "save_latent": {"latent_path": "h3_zh_breeze_mc_30s_A"},
+    "prompt": "A single photorealistic Mandarin-speaking television presenter speaks naturally to camera in a minimalist light-gray studio, horizontal 16:9 waist-up shot, stable identity and clothing, natural mouth movement synchronized to the provided Mandarin speech, restrained facial expressions and hand gestures, no camera movement, no scene change."
+  },
+  {
+    "name": "zh_breeze_B_9_20",
+    "audio": "h3_avatar/audio/preroll/zh_breeze_test_30s_seg2_preroll.wav",
+    "image": "ref2va_refs/digital_human/01_host_blank_gray_16x9.png",
+    "length": 262,
+    "seed": 51090702,
+    "prefix": "video/h3_avatar_zh_breeze_mc_30s/B",
+    "mc": {"latent_path": "/home/sean/projects/ComfyUI/output/h3_zh_breeze_mc_30s_A_00001.safetensors"},
+    "context_length": 22,
+    "trim": true,
+    "save_latent": {"latent_path": "h3_zh_breeze_mc_30s_B"},
+    "first_frame": false,
+    "prompt": "The same photorealistic Mandarin-speaking television presenter continues speaking naturally in the same minimalist light-gray studio, preserve identity, clothing, facial details and background, accurate Mandarin mouth movement, restrained gestures, no camera movement, no scene change."
+  },
+  {
+    "name": "zh_breeze_C_19_30",
+    "audio": "h3_avatar/audio/preroll/zh_breeze_test_30s_seg3_preroll.wav",
+    "image": "ref2va_refs/digital_human/01_host_blank_gray_16x9.png",
+    "length": 262,
+    "seed": 51090703,
+    "prefix": "video/h3_avatar_zh_breeze_mc_30s/C",
+    "mc": {"latent_path": "/home/sean/projects/ComfyUI/output/h3_zh_breeze_mc_30s_B_00001.safetensors"},
+    "context_length": 22,
+    "trim": true,
+    "first_frame": false,
+    "prompt": "The same photorealistic Mandarin-speaking television presenter continues speaking naturally in the same minimalist light-gray studio, preserve identity, clothing, facial details and background, accurate Mandarin mouth movement, restrained gestures, no camera movement, no scene change."
+  }
+]

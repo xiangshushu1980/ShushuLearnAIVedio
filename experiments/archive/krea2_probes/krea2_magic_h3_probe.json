@@ -1,0 +1,34 @@
+[
+  {
+    "name": "krea2_magic_h3_std20",
+    "ref_images": [
+      "ref2va_refs/krea2_magic/protagonist_darkbrush.png",
+      "ref2va_refs/krea2_magic/arcane_darkbrush.png"
+    ],
+    "prompt": "subject_definitions: Picture 1 is the same young human mage traveler, preserve the blue hooded cloak, carved wooden staff, silver bracer, face and body silhouette. Picture 2 is the visual reference for the blue-violet arcane magic circle, concentric geometry, floating rune shards and luminous energy. summary: The mage performs a controlled arcane ritual in the ruined forest shrine, building a large stable magic circle before releasing a focused pulse. retention_analysis: Preserve the mage identity, blue cloak, staff, purple-blue palette, large readable geometric magic shapes and shrine composition; allow cloak movement, drifting mist and glowing particles to animate. detailed_description: Start with the mage in a three-quarter full-body view holding the staff toward the ground. Blue-violet lines ignite one by one, forming concentric rings across the stone floor. Six rune shards rise into the air and orbit slowly. Energy streams connect the staff, the rings and the floating shards. The mage lifts the staff and sends a controlled arcane pulse through the center of the circle; the forest mist and dust react to the wave. Keep the magic architectural, geometric and readable, with no random fire, no modern technology, no text or watermark. overall_soundscape: ancient forest shrine ambience, low magical hum, crystalline rune chimes, rising arcane resonance, one soft energy pulse. non_diegetic_music: restrained cinematic fantasy score with low strings and distant choir, no percussion.",
+    "ref_image_size": "match",
+    "steps": 20,
+    "width": 768,
+    "height": 448,
+    "length": 124,
+    "seed": 36002,
+    "prefix": "krea2_magic/h3_std20_arcane"
+  },
+  {
+    "name": "krea2_magic_h3_pdd8",
+    "ref_images": [
+      "ref2va_refs/krea2_magic/protagonist_darkbrush.png",
+      "ref2va_refs/krea2_magic/arcane_darkbrush.png"
+    ],
+    "prompt": "subject_definitions: Picture 1 is the same young human mage traveler, preserve the blue hooded cloak, carved wooden staff, silver bracer, face and body silhouette. Picture 2 is the visual reference for the blue-violet arcane magic circle, concentric geometry, floating rune shards and luminous energy. summary: The mage performs a controlled arcane ritual in the ruined forest shrine, building a large stable magic circle before releasing a focused pulse. retention_analysis: Preserve the mage identity, blue cloak, staff, purple-blue palette, large readable geometric magic shapes and shrine composition; allow cloak movement, drifting mist and glowing particles to animate. detailed_description: Start with the mage in a three-quarter full-body view holding the staff toward the ground. Blue-violet lines ignite one by one, forming concentric rings across the stone floor. Six rune shards rise into the air and orbit slowly. Energy streams connect the staff, the rings and the floating shards. The mage lifts the staff and sends a controlled arcane pulse through the center of the circle; the forest mist and dust react to the wave. Keep the magic architectural, geometric and readable, with no random fire, no modern technology, no text or watermark. overall_soundscape: ancient forest shrine ambience, low magical hum, crystalline rune chimes, rising arcane resonance, one soft energy pulse. non_diegetic_music: restrained cinematic fantasy score with low strings and distant choir, no percussion.",
+    "ref_image_size": "match",
+    "pdd": "minimax_h3_ref2va_pdd_acc_8step_comfyui.safetensors",
+    "pdd_nfe": 8,
+    "pdd_partition": "4,4,4,4,4,4,4,4",
+    "width": 768,
+    "height": 448,
+    "length": 124,
+    "seed": 36002,
+    "prefix": "krea2_magic/h3_pdd8_arcane"
+  }
+]

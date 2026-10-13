@@ -1,0 +1,28 @@
+[
+  {
+    "name": "pdd_sage_1024x576_22s_effects",
+    "refs": [
+      "ref2va_refs/vdn_dual_dialogue/sylvanas_style.png",
+      "ref2va_refs/vdn_dual_dialogue/original_caped_hero.png",
+      "ref2va_refs/vdn_dual_dialogue/ice_fortress_background.png"
+    ],
+    "prompt": "For the target video, <Picture 1> is the cold undead elven woman, <Picture 2> is the blue-suited red-caped hero, and <Picture 3> is the frozen fortress courtyard. Preserve both character identities, clothing, proportions, and the fortress background. Cinematic realistic fantasy, 16:9 medium two-shot, woman on the left and hero on the right, facing each other, both framed head to waist with the background clearly visible. Alternate stable medium two-shots, over-the-shoulder views, and brief close-ups while keeping identities and spatial positions stable. When the woman speaks, a powerful icy wind rises, her hair and cloak whip, snow and frost crystals swirl with cold wind and ice sounds. When the hero replies, use a determined close-up. In his final reply, his eyes gradually glow intense blue-white with a low energy hum illuminating the snow, then pull back to both characters. Chinese dialogue and speech timing are driven only by NativeAudioLock audio. One continuous cinematic shot language, no subtitles, no readable text, no watermark, no extra people, no extra limbs, no identity drift.",
+    "unet": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+    "pdd": "minimax_h3_ref2va_pdd_acc_8step_comfyui.safetensors",
+    "pdd_nfe": 8,
+    "steps": 8,
+    "width": 1024,
+    "height": 576,
+    "length": 529,
+    "seed": 20260920,
+    "audio": "vdn_audio_test/dialogue_dual_25s.wav",
+    "sage_attention": true,
+    "h3_memory_optimization": true,
+    "h3_chunk_rows": 4096,
+    "h3_precision_mode": "Preserve native",
+    "h3_qkv_streaming_mode": "Auto",
+    "release_before_decode": true,
+    "tiled_vae": true,
+    "prefix": "video/h3_pdd_sage_ref2va_clean/pdd_sage_1024x576_22s_effects_380s"
+  }
+]

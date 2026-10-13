@@ -1,0 +1,43 @@
+{
+  "prompt": "A single photorealistic Cantonese television presenter speaks continuously in the same minimalist light-gray studio, horizontal 16:9 waist-up half-body shot, both hands fully visible, stable identity, clothing and lighting, natural facial expression and mouth motion, restrained gestures, no scene change and no camera movement.",
+  "seed": 42090301,
+  "cases": [
+    {
+      "name": "r2v_identity_A",
+      "images": ["ref2va_refs/digital_human/01_host_blank_gray_16x9.png"],
+      "audios": ["h3_avatar/audio/segments/speaking_s1_a.wav"],
+      "width": 768,
+      "height": 448,
+      "length": 90,
+      "steps": 20,
+      "seed": 42090301,
+      "prefix": "video/h3_avatar_ref2va_mc_identity_min/A",
+      "save_latent": {"filename_prefix": "h3_ref2va_identity_min/A", "clip_index": 1}
+    },
+    {
+      "name": "r2v_mc_no_ref_B",
+      "images": [],
+      "audios": ["h3_avatar/audio/segments/speaking_s1_b.wav"],
+      "width": 768,
+      "height": 448,
+      "length": 146,
+      "steps": 20,
+      "seed": 42090302,
+      "prefix": "video/h3_avatar_ref2va_mc_identity_min/B_no_ref",
+      "mc": {"latent_path": "h3_ref2va_identity_min/A_00001.safetensors", "context_length": "22", "audio_context_length": 24},
+      "save_latent": {"filename_prefix": "h3_ref2va_identity_min/B_no_ref", "clip_index": 1}
+    },
+    {
+      "name": "r2v_mc_identity_ref_B",
+      "images": ["ref2va_refs/digital_human/01_host_blank_gray_16x9.png"],
+      "audios": ["h3_avatar/audio/segments/speaking_s1_b.wav"],
+      "width": 768,
+      "height": 448,
+      "length": 146,
+      "steps": 20,
+      "seed": 42090303,
+      "prefix": "video/h3_avatar_ref2va_mc_identity_min/B_identity_ref",
+      "mc": {"latent_path": "h3_ref2va_identity_min/A_00001.safetensors", "context_length": "22", "audio_context_length": 24}
+    }
+  ]
+}

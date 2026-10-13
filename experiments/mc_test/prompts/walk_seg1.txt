@@ -1,0 +1,16 @@
+subject_definitions:
+<Subject 1> is a 2D anime-style girl with long silver-white hair reaching below the shoulders, a red ribbon bow on the left side, fair skin, a small nose, large bright blue eyes, and a calm expression, wearing an open white gold-trimmed jacket with gold buttons and gold-edged cuffs over a dark navy top with a white pointed collar and a red bow at the collar, a black pleated skirt with white horizontal stripes near the hem, white knee-high socks with thin gold rings, and black leather shoes.
+
+summary:
+[reference generation] The target video shows <Subject 1> walking alone at a steady pace from left to right along a rain-dampened city street at night, seen in a side tracking shot that keeps her centered in the frame. Her footsteps land on the wet asphalt with a clear, rhythmic sound, and the nighttime street ambience (distant traffic, hum of neon signs, light wind) continues throughout. There is no dialogue. The shot ends with her mid-stride, one foot lifted, the walk deliberately left incomplete so it can continue in the next segment.
+
+retention_analysis:
+<Subject 1> (appears in [Shot 1]): fully_preserved - her silver-white hair, red ribbon bow, blue eyes, white gold-trimmed jacket, black pleated skirt, and black leather shoes are retained, matching the reference image.
+
+detailed_description:
+The target video is in a 2D anime style with cool night tones: dark blue night sky, wet asphalt reflecting street lights and neon, rain-dampened pavement glistening under the lamps.
+[Shot 1] A steady side tracking shot follows <Subject 1> as she walks from left to right at an unhurried, constant pace along the sidewalk of a quiet city street at night. The wet asphalt reflects the glow of street lamps and a few neon signs; a light drizzle has just ended and the pavement glistens. Her long silver-white hair sways with each step, the white gold-trimmed jacket and black pleated skirt move naturally, and her black leather shoes land with a clear, rhythmic footstep on the wet ground, alternating left-right at a steady cadence. In the background, a few cars pass on a distant road, and the faint hum of neon signs and air-conditioning units hangs in the air. The camera holds a steady side tracking shot, keeping her centered, framed from knees up, background moving past at a consistent speed. The walk is continuous and rhythmic with no pause and no dialogue.
+[Ending movement] In the last ~1.5 seconds, <Subject 1> continues her steady walk, one foot lifting off the ground mid-stride as the shot ends - the stride is deliberately left incomplete so the walk continues seamlessly in the next segment. The footsteps and ambience continue to the very last frame.
+
+overall_soundscape:
+Nighttime city street ambience continues throughout: distant passing cars, a low hum of neon signs and air-conditioning units, light wind, and - most prominently - clear rhythmic footsteps of leather shoes on wet asphalt, alternating left-right at a steady cadence, continuing without pause to the final frame. No dialogue, no music.

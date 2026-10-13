@@ -1,0 +1,53 @@
+{
+  "1": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen3vl_8b_int8_convrot.safetensors",
+      "type": "qwen_image",
+      "device": "default"
+    }
+  },
+  "2": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "sean_qwen_image_2_1_object_prompt_ab_20261003_lantern_agent_reference.png"
+    }
+  },
+  "3": {
+    "class_type": "TextGenerate",
+    "inputs": {
+      "clip": [
+        "1",
+        0
+      ],
+      "image": [
+        "2",
+        0
+      ],
+      "prompt": "You are preparing a reference sheet prompt for Qwen Image 2.1. Inspect the supplied image and write one concise, single-paragraph English generation prompt for the exact same brass lantern. Ask for three equal full-object views from left to right: straight-on front, strict narrow side, and rear. Preserve the visible arched wire handle, vented cap, brass upper housing, clear glass chamber, crossed protective wires, side supports, broad fuel base, and one front control knob. The source does not reveal rear fittings; keep them simple and do not invent controls or ornament. Specify matching proportions and scale, neutral studio lighting, clear panel spacing, and no flame, text, labels, people, or extra objects. Output only the finished prompt, without analysis, headings, or JSON.",
+      "max_length": 4096,
+      "sampling_mode": "on",
+      "sampling_mode.temperature": 0.35,
+      "sampling_mode.top_k": 40,
+      "sampling_mode.top_p": 0.9,
+      "sampling_mode.min_p": 0.0,
+      "sampling_mode.repetition_penalty": 1.05,
+      "sampling_mode.seed": 42,
+      "sampling_mode.presence_penalty": 0.0,
+      "thinking": false,
+      "use_default_template": true,
+      "mtp": "auto"
+    }
+  },
+  "4": {
+    "class_type": "SaveText",
+    "inputs": {
+      "text": [
+        "3",
+        0
+      ],
+      "filename_prefix": "sean_qwen_image_2_1_object_prompt_ab_20261003/agent_prompt/lantern",
+      "format": "txt"
+    }
+  }
+}

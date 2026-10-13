@@ -1,0 +1,16 @@
+subject_definitions:
+<Subject 1> is a 2D anime-style girl with long silver-white hair reaching below the shoulders, a red ribbon bow on the left side, fair skin, a small nose, large bright blue eyes, and a calm expression, wearing an open white gold-trimmed jacket with gold buttons and gold-edged cuffs over a dark navy top with a white pointed collar and a red bow at the collar, a black pleated skirt with white horizontal stripes near the hem, white knee-high socks with thin gold rings, and black leather shoes.
+
+summary:
+[reference generation] The target video shows <Subject 1> walking toward the camera along a rain-dampened city street at night, in a fixed wide shot, seen at a middle distance and approaching steadily, her clear footsteps on wet asphalt and the nighttime street ambience present throughout. There is no dialogue. She is still approaching as the clip ends.
+
+retention_analysis:
+<Subject 1> (appears in [Shot 1]): fully_preserved - her silver-white hair, red ribbon bow, blue eyes, white gold-trimmed jacket, black pleated skirt, and black leather shoes are retained, matching the reference image.
+
+detailed_description:
+The target video is in a 2D anime style with cool night tones. The camera is FIXED: a wide shot of a long, rain-dampened city street at night, wet asphalt reflecting street lights, buildings receding into the distance.
+[Shot 1] A fixed camera holds a wide shot down a long, rain-dampened night street. <Subject 1>, the silver-white-haired girl, is seen at a middle distance walking steadily toward the camera at an unhurried pace, growing slightly larger in the frame as she approaches. Her long silver-white hair and the white gold-trimmed jacket sway gently with each step, and her black leather shoes land on the wet asphalt with a clear, rhythmic footstep, alternating left-right at a steady cadence, growing a little louder as she nears. The nighttime street ambience - distant traffic, low wind, the hum of neon signs - continues steadily throughout. The camera never moves; the perspective change comes only from her approach.
+[Ending movement] In the last ~1.5 seconds, <Subject 1> continues her approach, one foot lifting mid-stride as the shot ends. Her footsteps and the ambience continue to the very last frame.
+
+overall_soundscape:
+Nighttime street ambience continues throughout: distant traffic, low wind, neon hum, and clear rhythmic footsteps of leather shoes on wet asphalt, alternating left-right at a steady cadence, growing louder as she approaches. No dialogue, no music.

@@ -1,0 +1,118 @@
+{
+  "1": {
+    "class_type": "UNETLoader",
+    "inputs": {
+      "unet_name": "qwen_image_2.1_int8_convrot.safetensors",
+      "weight_dtype": "default"
+    }
+  },
+  "2": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen3vl_8b_int8_convrot.safetensors",
+      "type": "qwen_image",
+      "device": "default"
+    }
+  },
+  "3": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+    }
+  },
+  "4": {
+    "class_type": "QwenImage21Cache",
+    "inputs": {
+      "model": [
+        "1",
+        0
+      ],
+      "device": "auto",
+      "dtype": "default"
+    }
+  },
+  "5": {
+    "class_type": "TextEncodeQwenImage21",
+    "inputs": {
+      "clip": [
+        "2",
+        0
+      ],
+      "prompt": "Generate a horizontal 1×3 three-view sheet of the exact round shield shown in <image1>, composed of three evenly sized square panels in a single row with consistent narrow gutters, all placed on the same plain warm off-white cream studio background as the input image, in a clean neutral product-photography style with soft even lighting. The shield's design and proportions are locked to <image1> in every view: a circular dark brown wooden face with fine vertical wood grain, a medium-width weathered brass rim, a raised hemispherical steel-bronze central boss crowned with a red eight-pointed starburst emblem, and eight small round rivets set evenly around the boss ring. The three panels from left to right are: 1. Front view, the shield facing the camera squarely with the wooden face, brass rim, central boss, red starburst emblem, and rivets fully visible; 2. Strict edge-on side view, the shield turned exactly ninety degrees so the camera sees its perfect edge profile as a thin vertical silhouette showing the rim thickness and the protrusion of the central boss, with the full shield contained inside the panel; 3. Rear view, the shield turned fully around to show only its back, displaying the plain unadorned dark wooden back panel and the continuous brass rim, kept completely bare. Every panel shows the complete shield in its entirety at a uniform scale with identical structure, materials, and finish across all three views, one shield per panel, and the entire sheet displays only the three shield views on the clean neutral background, with every panel left completely clean and unmarked.",
+      "negative_prompt": "",
+      "resolution": 1024,
+      "vae": [
+        "3",
+        0
+      ],
+      "images.image_1": [
+        "10",
+        0
+      ]
+    }
+  },
+  "6": {
+    "class_type": "EmptyLatentImage",
+    "inputs": {
+      "width": 1536,
+      "height": 1024,
+      "batch_size": 1
+    }
+  },
+  "7": {
+    "class_type": "KSampler",
+    "inputs": {
+      "model": [
+        "4",
+        0
+      ],
+      "positive": [
+        "5",
+        0
+      ],
+      "negative": [
+        "5",
+        1
+      ],
+      "latent_image": [
+        "6",
+        0
+      ],
+      "seed": 2026100393,
+      "steps": 25,
+      "cfg": 1.0,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1.0
+    }
+  },
+  "8": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "7",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    }
+  },
+  "9": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "8",
+        0
+      ],
+      "filename_prefix": "sean_qwen_image_2_1_object_prompt_ab_20261003/pe_i2i/shield/seed_2026100393"
+    }
+  },
+  "10": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "sean_qwen_image_2_1_object_prompt_ab_20261003_shield_reference.png"
+    }
+  }
+}

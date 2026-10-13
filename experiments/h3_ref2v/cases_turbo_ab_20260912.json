@@ -1,0 +1,38 @@
+[
+  {
+    "name": "cyber_base20",
+    "ref_images": ["ref2va_refs/cyberpunk_demo/01_scene_cyberpunk.png", "ref2va_refs/cyberpunk_demo/02_char_swordswoman.png", "ref2va_refs/cyberpunk_demo/03_char_cybergirl.png"],
+    "prompt": "subject_definitions:\n<Subject 1> is the rainy cyberpunk city street shown in <Picture 1>.\n<Subject 2> is the female swordsman shown in <Picture 2>.\n<Subject 3> is the cyberpunk girl shown in <Picture 3>.\n\nsummary:\nA cinematic 4-second sequence where Subject 2 walks through the rainy street, meets Subject 3, and slowly draws her sword.\n\nretention_analysis:\nSubject 1 fully_preserved. Subject 2 fully_preserved. Subject 3 fully_preserved.\n\ndetailed_description:\nPhotorealistic neon-noir cinematography. Subject 2 walks toward camera through rain, Subject 3 steps from a storefront, they face each other and Subject 2 draws the blade. Slow handheld tracking and a gentle orbit, natural body motion.\n\noverall_soundscape:\nHeavy rain, wet footsteps, distant traffic, neon electrical buzz, a soft metallic ring as the sword is drawn.\n\nnon_diegetic_music:\nN/A",
+    "width": 768, "height": 448, "length": 99, "steps": 20, "sampler": "res_multistep", "seed": 20260912, "prefix": "video/ref2va_turbo_ab_20260912/cyber_base20"
+  },
+  {
+    "name": "cyber_turbo4",
+    "ref_images": ["ref2va_refs/cyberpunk_demo/01_scene_cyberpunk.png", "ref2va_refs/cyberpunk_demo/02_char_swordswoman.png", "ref2va_refs/cyberpunk_demo/03_char_cybergirl.png"],
+    "prompt": "subject_definitions:\n<Subject 1> is the rainy cyberpunk city street shown in <Picture 1>.\n<Subject 2> is the female swordsman shown in <Picture 2>.\n<Subject 3> is the cyberpunk girl shown in <Picture 3>.\n\nsummary:\nA cinematic 4-second sequence where Subject 2 walks through the rainy street, meets Subject 3, and slowly draws her sword.\n\nretention_analysis:\nSubject 1 fully_preserved. Subject 2 fully_preserved. Subject 3 fully_preserved.\n\ndetailed_description:\nPhotorealistic neon-noir cinematography. Subject 2 walks toward camera through rain, Subject 3 steps from a storefront, they face each other and Subject 2 draws the blade. Slow handheld tracking and a gentle orbit, natural body motion.\n\noverall_soundscape:\nHeavy rain, wet footsteps, distant traffic, neon electrical buzz, a soft metallic ring as the sword is drawn.\n\nnon_diegetic_music:\nN/A",
+    "width": 768, "height": 448, "length": 99, "steps": 4, "sampler": "euler", "lora": "minimax_h3_ref2v_turbo_4step_v0.1_comfyui_bf16.safetensors", "lora_strength": 1.0, "seed": 20260912, "prefix": "video/ref2va_turbo_ab_20260912/cyber_turbo4"
+  },
+  {
+    "name": "cyber_turbo8",
+    "ref_images": ["ref2va_refs/cyberpunk_demo/01_scene_cyberpunk.png", "ref2va_refs/cyberpunk_demo/02_char_swordswoman.png", "ref2va_refs/cyberpunk_demo/03_char_cybergirl.png"],
+    "prompt": "subject_definitions:\n<Subject 1> is the rainy cyberpunk city street shown in <Picture 1>.\n<Subject 2> is the female swordsman shown in <Picture 2>.\n<Subject 3> is the cyberpunk girl shown in <Picture 3>.\n\nsummary:\nA cinematic 4-second sequence where Subject 2 walks through the rainy street, meets Subject 3, and slowly draws her sword.\n\nretention_analysis:\nSubject 1 fully_preserved. Subject 2 fully_preserved. Subject 3 fully_preserved.\n\ndetailed_description:\nPhotorealistic neon-noir cinematography. Subject 2 walks toward camera through rain, Subject 3 steps from a storefront, they face each other and Subject 2 draws the blade. Slow handheld tracking and a gentle orbit, natural body motion.\n\noverall_soundscape:\nHeavy rain, wet footsteps, distant traffic, neon electrical buzz, a soft metallic ring as the sword is drawn.\n\nnon_diegetic_music:\nN/A",
+    "width": 768, "height": 448, "length": 99, "steps": 8, "sampler": "res_multistep", "lora": "minimax_h3_ref2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors", "lora_strength": 1.0, "seed": 20260912, "prefix": "video/ref2va_turbo_ab_20260912/cyber_turbo8"
+  },
+  {
+    "name": "host_base20",
+    "ref_images": ["ref2va_refs/digital_human/01_host_blank_gray_16x9.png"],
+    "prompt": "subject_definitions:\n<Subject 1> is the Mandarin-speaking television presenter shown in <Picture 1>.\n\nsummary:\nA presenter speaks directly to camera in a calm minimalist studio.\n\nretention_analysis:\nSubject 1 fully_preserved.\n\ndetailed_description:\nPhotorealistic locked medium shot. The presenter maintains eye contact, speaks naturally with subtle facial expression and restrained hand gestures. No camera movement, no scene change.\n\noverall_soundscape:\nClear natural Mandarin speech with a quiet studio room tone.\n\nnon_diegetic_music:\nN/A",
+    "width": 768, "height": 448, "length": 99, "steps": 20, "sampler": "res_multistep", "seed": 20260913, "prefix": "video/ref2va_turbo_ab_20260912/host_base20"
+  },
+  {
+    "name": "host_turbo4",
+    "ref_images": ["ref2va_refs/digital_human/01_host_blank_gray_16x9.png"],
+    "prompt": "subject_definitions:\n<Subject 1> is the Mandarin-speaking television presenter shown in <Picture 1>.\n\nsummary:\nA presenter speaks directly to camera in a calm minimalist studio.\n\nretention_analysis:\nSubject 1 fully_preserved.\n\ndetailed_description:\nPhotorealistic locked medium shot. The presenter maintains eye contact, speaks naturally with subtle facial expression and restrained hand gestures. No camera movement, no scene change.\n\noverall_soundscape:\nClear natural Mandarin speech with a quiet studio room tone.\n\nnon_diegetic_music:\nN/A",
+    "width": 768, "height": 448, "length": 99, "steps": 4, "sampler": "euler", "lora": "minimax_h3_ref2v_turbo_4step_v0.1_comfyui_bf16.safetensors", "lora_strength": 1.0, "seed": 20260913, "prefix": "video/ref2va_turbo_ab_20260912/host_turbo4"
+  },
+  {
+    "name": "host_turbo8",
+    "ref_images": ["ref2va_refs/digital_human/01_host_blank_gray_16x9.png"],
+    "prompt": "subject_definitions:\n<Subject 1> is the Mandarin-speaking television presenter shown in <Picture 1>.\n\nsummary:\nA presenter speaks directly to camera in a calm minimalist studio.\n\nretention_analysis:\nSubject 1 fully_preserved.\n\ndetailed_description:\nPhotorealistic locked medium shot. The presenter maintains eye contact, speaks naturally with subtle facial expression and restrained hand gestures. No camera movement, no scene change.\n\noverall_soundscape:\nClear natural Mandarin speech with a quiet studio room tone.\n\nnon_diegetic_music:\nN/A",
+    "width": 768, "height": 448, "length": 99, "steps": 8, "sampler": "res_multistep", "lora": "minimax_h3_ref2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors", "lora_strength": 1.0, "seed": 20260913, "prefix": "video/ref2va_turbo_ab_20260912/host_turbo8"
+  }
+]

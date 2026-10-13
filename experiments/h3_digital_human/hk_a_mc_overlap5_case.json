@@ -1,0 +1,3 @@
+[
+{"name":"breath_overlap5_b","image":"ref2va_refs/digital_human/01_host_blank_gray_16x9.png","audio":"h3_avatar/audio/preroll/preroll_breath_b_3.542-8.708s.wav","length":124,"seed":33090502,"prefix":"video/h3_avatar_mc_overlap5/breath_b","mc":{"latent_path":"h3_mc_preroll_breath_00001.safetensors"},"trim_frames_override":17,"prompt":"The same photorealistic Cantonese television presenter continues speaking in the same minimalist light-gray studio with seamless blank background, same horizontal 16:9 waist-up framing and fully visible hands, preserve identity, fine facial and clothing details, natural expression and restrained gestures, no scene change and no camera movement."}
+]

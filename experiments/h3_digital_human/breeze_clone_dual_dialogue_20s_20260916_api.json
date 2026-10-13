@@ -1,0 +1,61 @@
+{
+  "1": {
+    "class_type": "BreezeTTS2LoadModel",
+    "inputs": {
+      "model": "int8 hybrid (recommended)",
+      "dtype": "auto",
+      "device": "auto",
+      "attention": "sdpa",
+      "decode_mode": "cuda_graphs",
+      "download_if_missing": false
+    }
+  },
+  "2": {
+    "class_type": "BreezeTTS2Speaker",
+    "inputs": {
+      "name": "Hero",
+      "audio": "vdn_audio_test/dual/hero_voice.wav",
+      "reference_text": "",
+      "auto_transcribe_if_empty": true,
+      "instruction": "保持参考音频中的男性英雄音色，普通话清晰、坚定、沉稳，保持同一说话人。",
+      "cfg_scale": 1.0
+    }
+  },
+  "3": {
+    "class_type": "BreezeTTS2Speaker",
+    "inputs": {
+      "name": "Sylvanas",
+      "audio": "vdn_audio_test/dual/sylvanas_voice.wav",
+      "reference_text": "",
+      "auto_transcribe_if_empty": true,
+      "instruction": "保持参考音频中的女性角色音色，普通话清晰、冷静、带有威严，保持同一说话人。",
+      "cfg_scale": 1.0
+    }
+  },
+  "4": {
+    "class_type": "BreezeTTS2MultiSpeaker",
+    "inputs": {
+      "breeze_model": ["1", 0],
+      "text": "Sylvanas: 你终于来了，我等你很久了。\nHero: 我来了，我不会让你独自面对寒夜。\nSylvanas: 冰霜正在吞噬这座堡垒。\nHero: 看着我，我们一起挡住它。\nSylvanas: 如果我失控，你必须阻止我。\nHero: 我答应你，坚持到最后。\nSylvanas: 英雄，让我们结束这场风暴。\nHero: 握紧力量，黎明会穿过冰原。",
+      "pause_between_speakers": 0.2,
+      "max_new_tokens": 1500,
+      "temperature": 0.9,
+      "top_k": 50,
+      "top_p": 1.0,
+      "repetition_penalty": 1.1,
+      "depth_temperature": 0.9,
+      "depth_top_k": 50,
+      "depth_top_p": 1.0,
+      "seed": 20260916,
+      "speaker_1": ["2", 0],
+      "speaker_2": ["3", 0]
+    }
+  },
+  "5": {
+    "class_type": "SaveAudio",
+    "inputs": {
+      "audio": ["4", 0],
+      "filename_prefix": "h3_digital_human/breeze_clone_dual_dialogue_20s_20260916"
+    }
+  }
+}

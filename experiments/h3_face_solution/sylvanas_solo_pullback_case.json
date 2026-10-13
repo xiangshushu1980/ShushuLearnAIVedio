@@ -1,0 +1,19 @@
+[
+    {
+      "name": "sylvanas_solo_pullback_source_768",
+      "prompt_file": "experiments/h3_face_solution/sylvanas_solo_pullback_prompt.txt",
+      "seed": 2026092101,
+      "mode": "ref2va",
+      "unet": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+      "width": 768,
+      "height": 448,
+      "length": 124,
+      "steps": 8,
+      "ref_image_size": "max",
+      "images": [
+        "ref2va_refs/vdn_dual_dialogue/sylvanas_style.png",
+        "ref2va_refs/vdn_dual_dialogue/ice_fortress_background.png"
+      ],
+      "prefix": "face_solution/sylvanas_solo_pullback_source_768"
+    }
+]

@@ -1,0 +1,58 @@
+{
+  "seed": 20260821,
+  "cases": [
+    {
+      "name": "walk2_seg1",
+      "mode": "ref2va",
+      "images": [
+        "start/169/portrait/alya169_portrait_uniform_00001_.png"
+      ],
+      "width": 768,
+      "height": 448,
+      "length": 192,
+      "steps": 20,
+      "prompt": "@/home/sean/projects/comfy-ops/experiments/mc_test/prompts/walk2_seg1.txt",
+      "prefix": "video/h3_mc_sfx2/agreement_walk2_seg1",
+      "save_latent": {
+        "filename_prefix": "h3_ctx_sfx2/clip",
+        "clip_index": 1
+      }
+    },
+    {
+      "name": "walk2_seg2_chain",
+      "mode": "ref2va",
+      "images": [
+        "start/169/portrait/alya169_portrait_uniform_00001_.png"
+      ],
+      "width": 768,
+      "height": 448,
+      "length": 192,
+      "steps": 20,
+      "prompt": "@/home/sean/projects/comfy-ops/experiments/mc_test/prompts/walk2_seg2_chain.txt",
+      "prefix": "video/h3_mc_sfx2/agreement_walk2_seg2_chain",
+      "mc": {
+        "context_length": "22",
+        "audio_context_length": 24,
+        "latent_path": "h3_ctx_sfx2",
+        "clip_index": 1
+      },
+      "save_latent": {
+        "filename_prefix": "h3_ctx_sfx2/clip",
+        "clip_index": 2
+      }
+    },
+    {
+      "name": "walk2_seg2_base",
+      "mode": "ref2va",
+      "images": [
+        "start/169/portrait/alya169_portrait_uniform_00001_.png"
+      ],
+      "width": 768,
+      "height": 448,
+      "length": 192,
+      "steps": 20,
+      "prompt": "@/home/sean/projects/comfy-ops/experiments/mc_test/prompts/walk2_seg2_base.txt",
+      "prefix": "video/h3_mc_sfx2/agreement_walk2_seg2_base"
+    }
+  ]
+}

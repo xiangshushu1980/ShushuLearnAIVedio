@@ -1,0 +1,22 @@
+{
+  "prompt": "@/home/sean/projects/comfy-ops/experiments/h3_face_solution/dynamic_side_prompt.txt",
+  "seed": 2026092021,
+  "cases": [
+    {
+      "name": "dynamic_side_identity_scene_outfit",
+      "mode": "ref2va",
+      "unet": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+      "width": 768,
+      "height": 448,
+      "length": 124,
+      "steps": 20,
+      "ref_image_size": "max",
+      "images": [
+        "ref2va_refs/fellow/processed/shushu_identity_rebuilt_v1.png",
+        "ref2va_refs/fellow/processed/shushu_empty_studio_scene_v1.png",
+        "ref2va_refs/fellow/processed/shushu_outfit_charcoal_v1.png"
+      ],
+      "prefix": "face_solution/dynamic_side_source"
+    }
+  ]
+}

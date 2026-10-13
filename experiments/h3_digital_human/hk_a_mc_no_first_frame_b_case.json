@@ -1,0 +1,3 @@
+[
+{"name":"no_first_frame_b","first_frame":false,"audio":"h3_avatar/audio/segments/unified22_seg2.wav","length":146,"seed":35090502,"prefix":"video/h3_avatar_mc_no_first_frame/breath_b","mc":{"latent_path":"h3_mc_5seg22_u1_00001.safetensors"},"context_length":22,"prompt":"The same photorealistic Cantonese television presenter continues speaking in the same minimalist light-gray studio with seamless blank background, same horizontal 16:9 waist-up framing, clothing, lighting and fully visible hands, preserve identity and fine facial and clothing details, natural expression and restrained gestures, no scene change and no camera movement."}
+]

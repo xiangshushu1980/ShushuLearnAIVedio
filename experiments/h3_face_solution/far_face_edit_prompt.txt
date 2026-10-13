@@ -1,0 +1,21 @@
+subject_definitions:
+<Subject 1> is the identity reference for the one tracked character being refined.
+<Video 1> is the far-wide source video whose local face region is being edited.
+<Audio 1> is the original synchronized audio of <Video 1>, reused after stitching.
+
+summary:
+[video editing + reference generation + audio reuse] Refine only the tracked character represented by <Subject 1> inside <Video 1>. Preserve the source video's far-wide composition, action, expression, interaction, environment, timing and audio while restoring facial detail at the small source face size.
+
+retention_analysis:
+<Subject 1> (appears throughout [Shot 1]): fully_preserved - use only as the identity anchor for the tracked character.
+<Video 1> (source composition, motion and timing): fully_preserved - preserve the original far-wide shot and all non-target content.
+<Audio 1>: fully_copy - reuse the original synchronized audio after face-only stitching.
+
+detailed_description:
+The target is a local face refinement of the far-wide source video, not a new shot. [Shot 1] Keep <Subject 1> at the exact source position, scale, head orientation, expression and motion. Preserve the small-face scale and the large amount of visible environment; do not enlarge the head, change the far-wide composition, introduce a close-up or convert the shot to a medium shot. Restore only missing facial detail while preserving the source character's existing appearance, costume, lighting, interaction and temporal motion. The other character and the environment remain unchanged. Keep the tracked face coherent through every frame, including any slight turn or profile, without identity drift, duplicated features, facial melting, crop jitter or a new action. The final result must be suitable for face-only stitching back into <Video 1> at the original coordinates.
+
+overall_soundscape:
+Reuse the source video's original synchronized sound through the stitch. Do not add new voices or effects.
+
+non_diegetic_music:
+N/A

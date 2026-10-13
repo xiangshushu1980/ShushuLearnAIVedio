@@ -1,0 +1,34 @@
+[
+  {
+    "name": "t38_two_person_cc_shushu_a",
+    "ref_images": [
+      "ref2va_refs/fellow/processed/cc_identity_rebuilt_v1.png",
+      "ref2va_refs/fellow/processed/shushu_identity_rebuilt_v2_cap.png",
+      "ref2va_refs/fellow/processed/shushu_empty_studio_scene_v1.png"
+    ],
+    "prompt": "subject_definitions:\n<Subject 1> is the first male person represented by the CC identity image. Preserve his face, facial proportions, eyes, nose, mouth, ears, skin tone, short hair and glasses.\n<Subject 2> is the second male person represented by the shushu identity image. Preserve his face, facial proportions, eyes, nose, mouth, ears, skin tone, backward black cap and natural expression. Do not merge the two identities.\n<Subject 3> is the empty minimalist gray studio represented by the scene image. Preserve its wall layout, floor, soft frontal lighting and fixed spatial composition.\n\nsummary:\nGenerate a two-person studio video with two distinct male identities. Keep <Subject 1> and <Subject 2> separate and recognizable. Use <Subject 3> only as the fixed environment.\n\nretention_analysis:\n<Subject 1> (appears in [Shot 1]): fully_preserved - preserve his glasses, face and identity without borrowing features from <Subject 2>.\n<Subject 2> (appears in [Shot 1]): fully_preserved - preserve his face, backward black cap and identity without borrowing features from <Subject 1>.\n<Subject 3> (appears in [Shot 1]): fully_preserved - preserve the neutral gray studio, wall divisions, floor and lighting.\n\ndetailed_description:\nA restrained photorealistic two-person studio portrait. The camera is locked at eye level in a medium waist-up composition. Both people remain visible from beginning to end, with <Subject 1> standing on screen-left and <Subject 2> standing on screen-right. Keep a clear gap between them. <Subject 1> wears a plain neutral shirt and glasses. <Subject 2> wears a plain dark shirt and the backward black cap from his reference. Do not merge their faces, hair, glasses, cap or body shapes.\n[Shot 1] Both subjects stand calmly and face the camera in <Subject 3>. They make only small independent head movements: <Subject 1> gives one small nod; <Subject 2> makes one slight gaze shift and returns to camera. Keep the camera, framing, lighting and background fixed. No cuts, no zoom, no extra people, no animals, no props, no text, no logos, and no new location.\n\noverall_soundscape:\nQuiet indoor studio room tone with subtle breath. No dialogue, music or sound effects.\n\nnon_diegetic_music:\nN/A",
+    "ref_image_size": "max",
+    "steps": 20,
+    "width": 768,
+    "height": 448,
+    "length": 124,
+    "seed": 2026091831,
+    "prefix": "video/T38/t38_two_person_cc_shushu_a"
+  },
+  {
+    "name": "t38_two_person_cc_shushu_b",
+    "ref_images": [
+      "ref2va_refs/fellow/processed/cc_identity_rebuilt_v1.png",
+      "ref2va_refs/fellow/processed/shushu_identity_rebuilt_v2_cap.png",
+      "ref2va_refs/fellow/processed/shushu_empty_studio_scene_v1.png"
+    ],
+    "prompt": "subject_definitions:\n<Subject 1> is the first male person represented by the CC identity image. Preserve his face, facial proportions, eyes, nose, mouth, ears, skin tone, short hair and glasses.\n<Subject 2> is the second male person represented by the shushu identity image. Preserve his face, facial proportions, eyes, nose, mouth, ears, skin tone, backward black cap and natural expression. Do not merge the two identities.\n<Subject 3> is the empty minimalist gray studio represented by the scene image. Preserve its wall layout, floor, soft frontal lighting and fixed spatial composition.\n\nsummary:\nGenerate a two-person studio video with two distinct male identities. Keep <Subject 1> and <Subject 2> separate and recognizable. Use <Subject 3> only as the fixed environment.\n\nretention_analysis:\n<Subject 1> (appears in [Shot 1]): fully_preserved - preserve his glasses, face and identity without borrowing features from <Subject 2>.\n<Subject 2> (appears in [Shot 1]): fully_preserved - preserve his face, backward black cap and identity without borrowing features from <Subject 1>.\n<Subject 3> (appears in [Shot 1]): fully_preserved - preserve the neutral gray studio, wall divisions, floor and lighting.\n\ndetailed_description:\nA restrained photorealistic two-person studio portrait. The camera is locked at eye level in a medium waist-up composition. Both people remain visible from beginning to end, with <Subject 1> standing on screen-left and <Subject 2> standing on screen-right. Keep a clear gap between them. <Subject 1> wears a plain neutral shirt and glasses. <Subject 2> wears a plain dark shirt and the backward black cap from his reference. Do not merge their faces, hair, glasses, cap or body shapes.\n[Shot 1] Both subjects stand calmly and face the camera in <Subject 3>. They make only small independent head movements: <Subject 1> gives one small nod; <Subject 2> makes one slight gaze shift and returns to camera. Keep the camera, framing, lighting and background fixed. No cuts, no zoom, no extra people, no animals, no props, no text, no logos, and no new location.\n\noverall_soundscape:\nQuiet indoor studio room tone with subtle breath. No dialogue, music or sound effects.\n\nnon_diegetic_music:\nN/A",
+    "ref_image_size": "max",
+    "steps": 20,
+    "width": 768,
+    "height": 448,
+    "length": 124,
+    "seed": 2026091832,
+    "prefix": "video/T38/t38_two_person_cc_shushu_b"
+  }
+]

@@ -1,0 +1,22 @@
+subject_definitions:
+<Subject 1> is Sylvanas, the single and only character in the video. <Picture 1> is the authoritative character reference for her face, pale skin, glowing blue eyes, pointed ears, long dark hair, deep red hood, black-red armor, skull shoulder plates, bow and quiver, silhouette and costume details.
+<Subject 2> is the frozen fortress courtyard environment. <Picture 2> is the authoritative environment reference for the snow-covered stone courtyard, broken arches, hanging black banners, braziers, distant mountains, bridge and gothic fortress skyline under a moonlit blue-red sky.
+<Picture 1> is used only for the identity and appearance of <Subject 1>. <Picture 2> is used only for the architecture, composition, lighting and atmosphere of <Subject 2>.
+
+summary:
+[reference generation] Generate one continuous ten-second solo pull-back shot of <Subject 1> standing in <Subject 2> at 1344 by 768 resolution. Begin at a readable medium-wide distance and use a long, steady retreat to end at a substantially farther genuine far-wide distance for a long-distance face-refinement test.
+
+retention_analysis:
+<Subject 1> (appears throughout [Shot 1]): fully_preserved - preserve the exact identity, pale face, blue eyes, pointed ears, dark hair, red hood, black-red armor, shoulder armor, bow and silhouette from <Picture 1>; do not substitute another person, costume or generic fantasy character.
+<Subject 2> (appears throughout [Shot 1]): fully_preserved - preserve the frozen courtyard, arches, banners, snow, braziers, mountains and distant gothic fortress composition, lighting and atmosphere from <Picture 2>; do not replace it with a generic forest, castle interior or unrelated landscape.
+<Picture 1> (reference image): fully_preserved - character identity and costume authority for <Subject 1> only.
+<Picture 2> (reference image): fully_preserved - environment and background authority for <Subject 2> only.
+
+detailed_description:
+[Shot 1] 0.00-10.00 seconds, one unbroken shot with no cut, no transition and no additional characters. At 0.00 seconds, use <Picture 2> as the environment layout and place <Subject 1> alone in the center-left of the frozen courtyard, framed in a readable medium-wide shot; use <Picture 1> as the exact visual authority for her face, hair, hood, armor and silhouette. From 0.00 to 10.00 seconds, execute one smooth, slow, continuous camera pull-back along the courtyard centerline. The camera retreats gradually for the full duration: 0.00-3.00 seconds moves from medium-wide to wide, 3.00-7.00 seconds continues through a distant wide shot, and 7.00-10.00 seconds reaches a substantially farther genuine far-wide final composition where the environment dominates and <Subject 1>'s head is approximately 20-35 source pixels high at 1344 by 768. Keep <Subject 1> continuously present, centered slightly left, upright and recognizable while revealing substantially more of the exact <Picture 2> environment: the icy stone floor and circular markings, broken arches and hanging banners at the sides, braziers, snowy mountains, bridge and distant gothic fortress skyline. Keep the moonlit blue-red lighting and cold atmosphere from <Picture 2>. Use <Picture 1> for <Subject 1> and <Picture 2> for <Subject 2> in every frame of [Shot 1]; these are the two binding references for this shot. The character makes only tiny natural breathing and head adjustments, with no walking, attack, pose change, morphing or identity drift. The final frame is still the same Sylvanas in the same referenced frozen fortress courtyard, only much farther away.
+
+overall_soundscape:
+Cold wind moving across the open frozen courtyard, faint snow and ice movement, distant low fortress ambience, and subtle cloth movement from Sylvanas. Sparse natural diegetic sound only.
+
+non_diegetic_music:
+N/A

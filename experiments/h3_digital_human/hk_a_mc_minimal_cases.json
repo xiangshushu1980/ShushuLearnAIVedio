@@ -1,0 +1,4 @@
+[
+  {"name":"breath_minimal_b_no_anchor","audio":"h3_avatar/audio/segments/breath_seg02_4.5-9.5s.wav","length":124,"seed":28090401,"prefix":"video/h3_avatar_mc_minimal/breath_b_no_anchor","first_frame":false,"mc":{"latent_path":"h3_mc_breath_v2_00001.safetensors"},"prompt":""},
+  {"name":"mid_minimal_b_no_anchor","audio":"h3_avatar/audio/segments/mid_seg02_6-11s.wav","length":124,"seed":28090402,"prefix":"video/h3_avatar_mc_minimal/mid_b_no_anchor","first_frame":false,"mc":{"latent_path":"h3_mc_mid_v2_00001.safetensors"},"prompt":""}
+]

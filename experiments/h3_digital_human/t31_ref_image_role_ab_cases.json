@@ -1,0 +1,42 @@
+{
+  "cases": [
+    {
+      "name": "t31_mc_native_no_image_ref_B",
+      "images": [],
+      "audio_lock": "h3_avatar/audio/preroll/zh_breeze_test_30s_seg2_preroll.wav",
+      "width": 768,
+      "height": 448,
+      "length": 262,
+      "steps": 20,
+      "seed": 62090811,
+      "prefix": "video/T31/t31_mc_native_no_image_ref_B",
+      "mc": {
+        "latent_path": "/home/sean/projects/ComfyUI/output/h3_zh_breeze_ref2va_audio_lock_mc_30s_A_00001.safetensors",
+        "context_length": "22",
+        "audio_context_length": 24,
+        "clip_index": 1
+      },
+      "trim": true,
+      "prompt": "The same photorealistic Mandarin-speaking television presenter continues directly from the previous clip's final latent state in the same minimalist light-gray studio. Preserve the exact identity, clothing, pose, facial expression, hand position, camera framing and background state at the beginning. Continue speaking naturally with restrained gestures, no camera movement and no scene change."
+    },
+    {
+      "name": "t31_mc_native_identity_image_only_B",
+      "images": ["ref2va_refs/digital_human/01_host_blank_gray_16x9.png"],
+      "audio_lock": "h3_avatar/audio/preroll/zh_breeze_test_30s_seg2_preroll.wav",
+      "width": 768,
+      "height": 448,
+      "length": 262,
+      "steps": 20,
+      "seed": 62090811,
+      "prefix": "video/T31/t31_mc_native_identity_image_only_B",
+      "mc": {
+        "latent_path": "/home/sean/projects/ComfyUI/output/h3_zh_breeze_ref2va_audio_lock_mc_30s_A_00001.safetensors",
+        "context_length": "22",
+        "audio_context_length": 24,
+        "clip_index": 1
+      },
+      "trim": true,
+      "prompt": "<Picture 1> is an identity reference only. It defines the presenter's face, hairstyle, clothing and general appearance, but it must not determine the opening pose, facial expression, hand position, camera framing or background state. The same photorealistic Mandarin-speaking television presenter continues directly from the previous clip's final latent state in the same minimalist light-gray studio. At the beginning, follow the previous clip's exact latent state for pose, expression, hands, framing and background. Continue speaking naturally with restrained gestures, no camera movement and no scene change."
+    }
+  ]
+}

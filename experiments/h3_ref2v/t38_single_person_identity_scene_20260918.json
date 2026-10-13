@@ -1,0 +1,32 @@
+[
+  {
+    "name": "t38_single_identity_scene_a",
+    "ref_images": [
+      "ref2va_refs/generated_krea/01_identity_host_krea.png",
+      "ref2va_refs/generated_krea/02_empty_studio_scene_krea.png"
+    ],
+    "prompt": "subject_definitions:\n<Subject 1> is the single female television presenter from the identity reference image, used for her face, hairstyle, facial proportions, skin tone, and general identity.\n<Subject 2> is the empty minimalist light-gray television studio from the scene reference image, used only for the background layout, lighting direction, and neutral gray palette.\n\nsummary:\n[reference generation] Generate a single-person studio presenter video using <Subject 1> for identity and <Subject 2> for the fixed environment.\n\nretention_analysis:\n<Subject 1> (appears in [Shot 1]): fully_preserved - preserve the presenter's face, hairstyle, facial proportions, skin tone, and identity; the clothing may remain simple and neutral.\n<Subject 2> (appears in [Shot 1]): fully_preserved - preserve the empty studio layout, neutral gray background, frontal lighting, and fixed camera environment.\n\ndetailed_description:\nA restrained photorealistic television presentation in a quiet minimalist studio with a neutral light-gray background and soft frontal lighting. The camera remains locked in a medium head-and-torso composition throughout.\n[Shot 1] The single female presenter from <Subject 1> stands centered and faces the camera in <Subject 2>. She maintains the same identity and hairstyle throughout the shot, gives a small natural nod, then makes one restrained hand gesture below chest level while continuing to look into the lens. The studio background remains empty and unchanged. No scene change, no camera movement, no second person, no text, no logo, and no watermark.\n\noverall_soundscape:\nQuiet indoor studio ambience with subtle room tone and very soft natural clothing movement. No identifiable dialogue or music.\n\nnon_diegetic_music:\nN/A",
+    "ref_image_size": "match",
+    "steps": 20,
+    "width": 768,
+    "height": 448,
+    "length": 124,
+    "seed": 2026091801,
+    "prefix": "video/T38/t38_single_identity_scene_a"
+  },
+  {
+    "name": "t38_single_identity_scene_b",
+    "ref_images": [
+      "ref2va_refs/generated_krea/01_identity_host_krea.png",
+      "ref2va_refs/generated_krea/02_empty_studio_scene_krea.png"
+    ],
+    "prompt": "subject_definitions:\n<Subject 1> is the single female television presenter from the identity reference image, used for her face, hairstyle, facial proportions, skin tone, and general identity.\n<Subject 2> is the empty minimalist light-gray television studio from the scene reference image, used only for the background layout, lighting direction, and neutral gray palette.\n\nsummary:\n[reference generation] Generate a single-person studio presenter video using <Subject 1> for identity and <Subject 2> for the fixed environment.\n\nretention_analysis:\n<Subject 1> (appears in [Shot 1]): fully_preserved - preserve the presenter's face, hairstyle, facial proportions, skin tone, and identity; the clothing may remain simple and neutral.\n<Subject 2> (appears in [Shot 1]): fully_preserved - preserve the empty studio layout, neutral gray background, frontal lighting, and fixed camera environment.\n\ndetailed_description:\nA restrained photorealistic television presentation in a quiet minimalist studio with a neutral light-gray background and soft frontal lighting. The camera remains locked in a medium head-and-torso composition throughout.\n[Shot 1] The single female presenter from <Subject 1> stands centered and faces the camera in <Subject 2>. She maintains the same identity and hairstyle throughout the shot, briefly shifts her gaze slightly to camera-left, then returns her eyes to the lens with a calm expression and one small shoulder movement. The studio background remains empty and unchanged. No scene change, no camera movement, no second person, no text, no logo, and no watermark.\n\noverall_soundscape:\nQuiet indoor studio ambience with subtle room tone and very soft natural clothing movement. No identifiable dialogue or music.\n\nnon_diegetic_music:\nN/A",
+    "ref_image_size": "match",
+    "steps": 20,
+    "width": 768,
+    "height": 448,
+    "length": 124,
+    "seed": 2026091802,
+    "prefix": "video/T38/t38_single_identity_scene_b"
+  }
+]

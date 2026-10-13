@@ -1,0 +1,49 @@
+{
+  "1": {
+    "class_type": "BreezeTTS2LoadModel",
+    "inputs": {
+      "model": "bf16 (best quality)",
+      "dtype": "auto",
+      "device": "cuda",
+      "attention": "sdpa",
+      "decode_mode": "cuda_graphs",
+      "download_if_missing": false
+    }
+  },
+  "2": {
+    "class_type": "VHS_LoadAudio",
+    "inputs": {
+      "audio_file": "/home/sean/projects/ComfyUI/input/wang_audio/Wang_ref_20s.wav",
+      "seek_seconds": 0.0,
+      "duration": 0.0
+    }
+  },
+  "3": {
+    "class_type": "BreezeTTS2VoiceDirection",
+    "inputs": {
+      "breeze_model": ["1", 0],
+      "text": "这两年，很多文科生都有一个焦虑：\nAI 会写、会画、会做视频，那我还剩下什么？\n我觉得问题问反了。\nAI 淘汰的不是“文科生”，而是只负责把信息搬来搬去的人。\n你会发现，同一个 AI 工具，交给不同的人，做出来的东西差别非常大。\n有人只得到一段看起来很正确、但谁也不想看的文案；\n有人能把一次采访、一份报告、一个客户需求，变成一个让人愿意看、愿意转发、甚至愿意付费的内容。\n差别在哪里？\n不在提示词有多长，而在三个能力：\n第一，你知道什么问题值得问；\n第二，你能判断哪些信息是真的重要；\n第三，你能把复杂的东西讲到别人愿意行动。\n所以，如果你是文科生，不一定要把自己训练成程序员。\n你更该练的是：用 AI 放大你的理解力、表达力和专业经验。\n接下来我会用真实案例讲清楚：\n一个新 AI 工具出来以后，普通人到底该不该学、应该怎么用，以及它能帮你完成什么工作。\n别只追热点，我们一起找能落到自己身上的机会。",
+      "reference_audio": ["2", 0],
+      "reference_text": "各位媒体的老师，各位媒体的同行，大家好。之所以说同行呢，是因为我自己在武汉大学任教之前呢，也在媒体做了十多年的记者。所以对我们媒体，尤其是新闻业务，我是做新闻的，是非常有感情的。那我自身呢，也是经历了从媒体的黄金时期，到后来遭受互联网的冲击和挤压。",
+      "instruction": "保持参考音频中 Doctor Wang 的真实音色、年龄感、说话方式、语气起伏和自然气息，像本人面对短视频镜头进行一段有感染力的中文知识口播。整段情绪比普通播报更饱满、更有交流感，但仍然真实克制，不要戏剧腔。开头先用带有共情的语气承接文科生的焦虑，像在认真理解观众；提出“我觉得问题问反了”时带一点明确的疑问和观点转折，语调有起伏；讲 AI 和不同人的差别时热情、具体、有说服力；问“差别在哪里？”时形成真实提问和短暂停顿。讲三个能力时保持理性清楚，每一点都有轻微重音和节奏变化；说“不一定要把自己训练成程序员”时语气放松、安定、给人减压；说“你更该练的是”时加强鼓励和引导；最后几句逐渐变得温暖、坚定、有行动号召感，像真诚地邀请观众一起尝试。保留本人式的自然呼吸、停顿、重音和句尾变化。不要播音腔、广告腔、唱腔、机械平读、过度煽情或改变音色。",
+      "cfg_scale": 2.8,
+      "stitch_reference": "none",
+      "max_new_tokens": 2600,
+      "temperature": 0.75,
+      "top_k": 50,
+      "top_p": 1.0,
+      "repetition_penalty": 1.1,
+      "depth_temperature": 0.75,
+      "depth_top_k": 50,
+      "depth_top_p": 1.0,
+      "seed": 20260918
+    }
+  },
+  "4": {
+    "class_type": "SaveAudio",
+    "inputs": {
+      "audio": ["3", 0],
+      "filename_prefix": "h3_digital_human/doctor_wang_voice_direction_gpu_emotional_20260917"
+    }
+  }
+}

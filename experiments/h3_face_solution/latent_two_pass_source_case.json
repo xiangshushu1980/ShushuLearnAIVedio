@@ -1,0 +1,20 @@
+[
+  {
+    "name": "sylvanas_hero_latent_two_pass_768_source",
+    "prompt_file": "experiments/h3_face_solution/sylvanas_hero_latent_two_pass_prompt.txt",
+    "seed": 2026092023,
+    "ref_images": [
+      "ref2va_refs/vdn_dual_dialogue/sylvanas_style.png",
+      "ref2va_refs/vdn_dual_dialogue/original_caped_hero.png",
+      "ref2va_refs/vdn_dual_dialogue/ice_fortress_background.png"
+    ],
+    "unet": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+    "width": 768,
+    "height": 448,
+    "length": 49,
+    "steps": 8,
+    "ref_image_size": "max",
+    "prefix": "face_solution/sylvanas_hero_latent_two_pass_768_source",
+    "source_only": true
+  }
+]

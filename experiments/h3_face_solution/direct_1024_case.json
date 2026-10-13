@@ -1,0 +1,22 @@
+{
+  "prompt": "@/home/sean/projects/comfy-ops/experiments/h3_face_solution/ref2va_reference_matrix_prompt.txt",
+  "seed": 20260920,
+  "cases": [
+    {
+      "name": "direct_1024_contact_sheet",
+      "mode": "ref2va",
+      "unet": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+      "width": 1024,
+      "height": 576,
+      "length": 124,
+      "steps": 20,
+      "ref_image_size": "max",
+      "images": [
+        "face_solution/shushu_contact_sheet_512_strip_00001_.png",
+        "ref2va_refs/fellow/processed/shushu_empty_studio_scene_v1.png",
+        "ref2va_refs/fellow/processed/shushu_outfit_charcoal_v1.png"
+      ],
+      "prefix": "face_solution/direct_1024_contact_sheet"
+    }
+  ]
+}

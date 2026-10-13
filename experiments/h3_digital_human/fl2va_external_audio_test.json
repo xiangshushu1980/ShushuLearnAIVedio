@@ -1,0 +1,15 @@
+[
+  {
+    "name": "fl2va_external_audio_10s_hd_presenter",
+    "unet": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+    "steps": 14,
+    "width": 768,
+    "height": 448,
+    "length": 244,
+    "seed": 20260902,
+    "image": "start/h3_face2face_man_hd.png",
+    "audio": "hk_a_30s.wav",
+    "prompt": "A single realistic Cantonese-speaking presenter in a medium close-up upper-body shot speaks naturally directly to camera, clear facial expression, accurate mouth motion synchronized to the provided speech, subtle head movement and natural blinking, stable identity, stable shoulders, no cuts, no camera shake.",
+    "prefix": "video/h3_avatar_audio_lock/fl2va_external_audio_10s_hd_presenter"
+  }
+]

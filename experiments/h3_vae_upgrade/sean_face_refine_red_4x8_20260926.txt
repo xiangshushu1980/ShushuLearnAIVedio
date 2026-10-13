@@ -1,0 +1,17 @@
+subject_definitions:
+<Subject 1> is the red-haired woman defined by the supplied identity reference. Preserve her asymmetrical auburn hair, dark skin, burgundy leather coat, brass shoulder armor and facial proportions. The supplied identity image is the authority for this one character only.
+
+summary:
+[reference generation] Refine only the tracked face of <Subject 1> in the supplied 32-second fantasy video. Preserve the original motion, pose, lighting, costume, compass, observatory and audio; improve facial stability and readable identity without changing the shot.
+
+retention_analysis:
+<Subject 1>: fully_preserved - preserve the same red-haired identity and facial structure across every tracked frame; do not create a new face, extra character or close-up.
+
+detailed_description:
+Use the supplied video as the motion and composition source. Refine only the tracked face of <Subject 1>, preserving the original head angle, expression, eye direction, lighting, hairline and temporal motion. Keep the red-haired woman in the original observatory shot with the same body, coat, armor and compass; do not change the background, camera movement, screen position or scale. Improve coherent eyes, eyelids, nose bridge, lips, jawline and skin texture only where the face is large enough to contain reliable information. When the face becomes too small or tracking is uncertain, preserve the original pixels rather than inventing a new face. No additional characters, no face replacement, no reframing, no dialogue changes and no scene changes.
+
+overall_soundscape:
+Preserve the supplied video's complete original audio track unchanged.
+
+non_diegetic_music:
+N/A

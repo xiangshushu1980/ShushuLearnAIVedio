@@ -1,0 +1,19 @@
+subject_definitions:
+<Subject 1> is Sylvanas. <Picture 1> is the authoritative visual reference for her exact identity, face, costume, silhouette and overall appearance.
+<Subject 2> is the frozen fortress courtyard. <Picture 2> is the authoritative visual reference for its architecture, layout, lighting and overall environment.
+
+summary:
+[reference generation] Generate one continuous five-second solo shot of <Subject 1> in <Subject 2>, beginning as a readable medium shot and ending as a genuine far-wide shot to test face stability during pull-back.
+
+retention_analysis:
+<Subject 1> (appears throughout [Shot 1]): fully_preserved - preserve the identity and visual appearance supplied by <Picture 1>, together with posture and screen position while the camera moves away.
+<Subject 2> (appears throughout [Shot 1]): fully_preserved - preserve the architecture, layout, lighting and environment supplied by <Picture 2>.
+
+detailed_description:
+Open on <Subject 1> standing alone in <Subject 2>, framed from the waist up in a stable medium shot. Her face is readable and her body faces three-quarters toward the camera. From 0.00 to 5.00 seconds, the camera performs one continuous slow pull-back with small amplitude and no cut, moving from the readable medium shot through a wide shot into a genuine far-wide composition where the environment dominates and her head becomes approximately 30–50 source pixels high. She remains centered slightly left of frame, keeps the same calm upright posture and makes only a small natural head adjustment while maintaining continuous presence in the scene. Throughout the shot, use <Picture 1> as the sole authority for <Subject 1>'s identity and visual appearance, and use <Picture 2> as the sole authority for <Subject 2>'s architecture, layout and lighting. The final frame clearly reveals substantially more of the referenced environment while the same referenced character remains stable in the scene.
+
+overall_soundscape:
+Cold wind crossing the open courtyard, faint snow movement and subtle cloth movement from the character. The sound remains sparse and natural.
+
+non_diegetic_music:
+N/A

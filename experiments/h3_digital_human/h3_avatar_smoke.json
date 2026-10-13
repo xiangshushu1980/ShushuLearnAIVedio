@@ -1,0 +1,31 @@
+{
+  "seed": 20260901,
+  "prompt": "@/home/sean/projects/comfy-ops/experiments/h3_digital_human/avatar_prompt.txt",
+  "cases": [
+    {
+      "name": "avatar_seg1_audio_ref",
+      "mode": "ref2va",
+      "images": ["start/169/portrait/alya169_portrait_uniform_00001_.png"],
+      "audios": ["h3_avatar_cantonese_smoke.mp3"],
+      "width": 768,
+      "height": 448,
+      "length": 120,
+      "steps": 14,
+      "prefix": "video/h3_avatar_smoke/avatar_seg1_audio_ref",
+      "save_latent": {"filename_prefix": "h3_avatar_context/clip", "clip_index": 1}
+    },
+    {
+      "name": "avatar_seg2_mc22",
+      "mode": "ref2va",
+      "images": ["start/169/portrait/alya169_portrait_uniform_00001_.png"],
+      "audios": ["h3_avatar_cantonese_smoke.mp3"],
+      "width": 768,
+      "height": 448,
+      "length": 120,
+      "steps": 14,
+      "prefix": "video/h3_avatar_smoke/avatar_seg2_mc22",
+      "mc": {"context_length": "22", "audio_context_length": 24, "latent_path": "h3_avatar_context", "clip_index": 1},
+      "save_latent": {"filename_prefix": "h3_avatar_context/clip", "clip_index": 2}
+    }
+  ]
+}

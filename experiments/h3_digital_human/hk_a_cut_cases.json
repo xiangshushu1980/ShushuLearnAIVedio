@@ -1,0 +1,47 @@
+[
+  {
+    "name": "cut_seg01_10s",
+    "unet": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+    "steps": 8,
+    "pdd": "minimax_h3_fl2va_pdd_acc_8step_comfyui.safetensors",
+    "pdd_nfe": 8,
+    "width": 768,
+    "height": 448,
+    "length": 244,
+    "seed": 28090211,
+    "image": "ref2va_refs/digital_human/03_host_krea_16x9.png",
+    "audio": "h3_avatar/audio/segments/hk_a_seg01_00-10s.wav",
+    "prompt": "A single photorealistic Cantonese-speaking television presenter in a chest-up 16:9 medium shot speaks naturally directly to camera, accurate mouth motion synchronized to the provided Cantonese speech, warm changing facial expressions, natural blinking, subtle eyebrow movement, occasional small nods, restrained shoulder and hand gestures visible in frame, stable identity, clean neutral studio background, no camera movement, no scene transition.",
+    "prefix": "video/h3_avatar_cut_16x9_grid/hk_a_cut_seg01"
+  },
+  {
+    "name": "cut_seg02_9s",
+    "unet": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+    "steps": 8,
+    "pdd": "minimax_h3_fl2va_pdd_acc_8step_comfyui.safetensors",
+    "pdd_nfe": 8,
+    "width": 768,
+    "height": 448,
+    "length": 220,
+    "seed": 28090212,
+    "image": "ref2va_refs/digital_human/03_host_krea_16x9.png",
+    "audio": "h3_avatar/audio/segments/hk_a_seg02_10-19s.wav",
+    "prompt": "A single photorealistic Cantonese-speaking television presenter in a chest-up 16:9 medium shot speaks naturally directly to camera, accurate mouth motion synchronized to the provided Cantonese speech, warm changing facial expressions, natural blinking, subtle eyebrow movement, occasional small nods, restrained shoulder and hand gestures visible in frame, stable identity, clean neutral studio background, no camera movement, no scene transition.",
+    "prefix": "video/h3_avatar_cut_16x9_grid/hk_a_cut_seg02"
+  },
+  {
+    "name": "cut_seg03_11s",
+    "unet": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+    "steps": 8,
+    "pdd": "minimax_h3_fl2va_pdd_acc_8step_comfyui.safetensors",
+    "pdd_nfe": 8,
+    "width": 768,
+    "height": 448,
+    "length": 268,
+    "seed": 28090213,
+    "image": "ref2va_refs/digital_human/03_host_krea_16x9.png",
+    "audio": "h3_avatar/audio/segments/hk_a_seg03_19-30s.wav",
+    "prompt": "A single photorealistic Cantonese-speaking television presenter in a chest-up 16:9 medium shot speaks naturally directly to camera, accurate mouth motion synchronized to the provided Cantonese speech, warm changing facial expressions, natural blinking, subtle eyebrow movement, occasional small nods, restrained shoulder and hand gestures visible in frame, stable identity, clean neutral studio background, no camera movement, no scene transition.",
+    "prefix": "video/h3_avatar_cut_16x9_grid/hk_a_cut_seg03"
+  }
+]

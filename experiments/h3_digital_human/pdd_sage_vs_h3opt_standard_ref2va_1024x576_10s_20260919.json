@@ -1,0 +1,54 @@
+[
+  {
+    "name": "standard_ref2va_baseline_pdd_sage_1024x576_10s",
+    "prompt_format": "standard_h3_ref2va_six_section",
+    "ref_images": [
+      "ref2va_refs/vdn_dual_dialogue/sylvanas_style.png",
+      "ref2va_refs/vdn_dual_dialogue/original_caped_hero.png",
+      "ref2va_refs/vdn_dual_dialogue/ice_fortress_background.png"
+    ],
+    "prompt": "subject_definitions:\n<Subject 1> is the cold undead elven woman represented by the first reference image. Preserve her pale undead elven facial identity, long white hair, dark icy armor, black cloak, slender proportions, and cold determined expression. Use this subject only for the woman's identity, appearance, clothing, and controlled gestures; do not copy unrelated source-image framing or background details.\n<Subject 2> is the blue-suited red-caped hero represented by the second reference image. Preserve his facial identity, blue suit, red cape, gold-trimmed mask, athletic proportions, and determined expression. Use this subject only for the hero's identity, appearance, clothing, and controlled gestures; do not copy unrelated source-image framing or background details.\n<Subject 3> is the frozen fortress courtyard represented by the third reference image. Preserve the gray stone architecture, arched gate, snow-covered ground, icy surfaces, cold overcast lighting, and wintry spatial layout as the target environment.\n\nsummary:\n[reference generation] Generate a continuous cinematic fantasy dialogue scene using <Subject 1> as the woman, <Subject 2> as the hero, and <Subject 3> as the fixed frozen fortress environment. Keep the woman on screen-left and the hero on screen-right with stable identities, clothing, scale, and spatial positions. External NativeAudioLock audio supplies the Chinese dialogue and timing; do not invent or rewrite dialogue in the prompt.\n\nretention_analysis:\n<Subject 1> (appears throughout [Shot 1]): fully_preserved - preserve the cold undead elven woman's facial identity, pale complexion, long white hair, dark icy armor, black cloak, slender proportions, and stable screen-left role.\n<Subject 2> (appears throughout [Shot 1]): fully_preserved - preserve the hero's facial identity, blue suit, red cape, gold-trimmed mask, athletic proportions, and stable screen-right role.\n<Subject 3> (appears throughout [Shot 1]): fully_preserved - preserve the frozen fortress courtyard, gray stone arches, snow, ice, cold lighting, and spatial layout as the only environment.\n\ndetailed_description:\nThe target video is a realistic cinematic fantasy scene in a cold desaturated palette with natural snow and ice detail. Use one continuous shot language without hard cuts. The composition is a stable 16:9 medium two-shot, with the woman from <Subject 1> on screen-left and the hero from <Subject 2> on screen-right, both framed from head to waist inside the frozen fortress courtyard from <Subject 3>. Keep both identities, costumes, proportions, scale, and left-right placement consistent from beginning to end.\n[Shot 1] At the beginning, the woman and the hero face each other in the courtyard from <Subject 3>. Use a stable medium two-shot, then gradual over-the-shoulder views and brief controlled close-ups while preserving screen-left and screen-right continuity. When <Subject 1> speaks, her hair and black cloak move in a powerful icy wind; snow and frost crystals swirl around her without obscuring her face. When <Subject 2> replies, use a determined close-up that preserves his mask, blue suit, and red cape. During the final reply, the hero's eyes gradually glow intense blue-white and cast a restrained cool illumination onto the nearby snow, then return to a two-shot of both subjects. The external NativeAudioLock track is the sole source of Chinese dialogue and speech timing. Keep gestures restrained and physically coherent. Do not introduce extra people, extra limbs, new costumes, a different location, subtitles, readable text, logos, watermarks, or identity drift.\n\noverall_soundscape:\nCold fortress ambience with soft wind, moving snow, subtle ice and frost sounds, restrained clothing movement, and quiet environmental reverb. Chinese dialogue and its timing come only from the external NativeAudioLock track.\n\nnon_diegetic_music:\nN/A",
+    "unet": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+    "pdd": "minimax_h3_ref2va_pdd_acc_8step_comfyui.safetensors",
+    "pdd_nfe": 8,
+    "steps": 8,
+    "width": 1024,
+    "height": 576,
+    "length": 241,
+    "seed": 20260921,
+    "audio": "vdn_audio_test/dialogue_dual_15s.wav",
+    "sage_attention": true,
+    "release_before_decode": true,
+    "tiled_vae": true,
+    "ref_image_size": "match",
+    "prefix": "video/h3_pdd_sage_ref2va_standard/ab_baseline_1024x576_10s_20260919"
+  },
+  {
+    "name": "standard_ref2va_h3opt_pdd_sage_1024x576_10s",
+    "prompt_format": "standard_h3_ref2va_six_section",
+    "ref_images": [
+      "ref2va_refs/vdn_dual_dialogue/sylvanas_style.png",
+      "ref2va_refs/vdn_dual_dialogue/original_caped_hero.png",
+      "ref2va_refs/vdn_dual_dialogue/ice_fortress_background.png"
+    ],
+    "prompt": "subject_definitions:\n<Subject 1> is the cold undead elven woman represented by the first reference image. Preserve her pale undead elven facial identity, long white hair, dark icy armor, black cloak, slender proportions, and cold determined expression. Use this subject only for the woman's identity, appearance, clothing, and controlled gestures; do not copy unrelated source-image framing or background details.\n<Subject 2> is the blue-suited red-caped hero represented by the second reference image. Preserve his facial identity, blue suit, red cape, gold-trimmed mask, athletic proportions, and determined expression. Use this subject only for the hero's identity, appearance, clothing, and controlled gestures; do not copy unrelated source-image framing or background details.\n<Subject 3> is the frozen fortress courtyard represented by the third reference image. Preserve the gray stone architecture, arched gate, snow-covered ground, icy surfaces, cold overcast lighting, and wintry spatial layout as the target environment.\n\nsummary:\n[reference generation] Generate a continuous cinematic fantasy dialogue scene using <Subject 1> as the woman, <Subject 2> as the hero, and <Subject 3> as the fixed frozen fortress environment. Keep the woman on screen-left and the hero on screen-right with stable identities, clothing, scale, and spatial positions. External NativeAudioLock audio supplies the Chinese dialogue and timing; do not invent or rewrite dialogue in the prompt.\n\nretention_analysis:\n<Subject 1> (appears throughout [Shot 1]): fully_preserved - preserve the cold undead elven woman's facial identity, pale complexion, long white hair, dark icy armor, black cloak, slender proportions, and stable screen-left role.\n<Subject 2> (appears throughout [Shot 1]): fully_preserved - preserve the hero's facial identity, blue suit, red cape, gold-trimmed mask, athletic proportions, and stable screen-right role.\n<Subject 3> (appears throughout [Shot 1]): fully_preserved - preserve the frozen fortress courtyard, gray stone arches, snow, ice, cold lighting, and spatial layout as the only environment.\n\ndetailed_description:\nThe target video is a realistic cinematic fantasy scene in a cold desaturated palette with natural snow and ice detail. Use one continuous shot language without hard cuts. The composition is a stable 16:9 medium two-shot, with the woman from <Subject 1> on screen-left and the hero from <Subject 2> on screen-right, both framed from head to waist inside the frozen fortress courtyard from <Subject 3>. Keep both identities, costumes, proportions, scale, and left-right placement consistent from beginning to end.\n[Shot 1] At the beginning, the woman and the hero face each other in the courtyard from <Subject 3>. Use a stable medium two-shot, then gradual over-the-shoulder views and brief controlled close-ups while preserving screen-left and screen-right continuity. When <Subject 1> speaks, her hair and black cloak move in a powerful icy wind; snow and frost crystals swirl around her without obscuring her face. When <Subject 2> replies, use a determined close-up that preserves his mask, blue suit, and red cape. During the final reply, the hero's eyes gradually glow intense blue-white and cast a restrained cool illumination onto the nearby snow, then return to a two-shot of both subjects. The external NativeAudioLock track is the sole source of Chinese dialogue and speech timing. Keep gestures restrained and physically coherent. Do not introduce extra people, extra limbs, new costumes, a different location, subtitles, readable text, logos, watermarks, or identity drift.\n\noverall_soundscape:\nCold fortress ambience with soft wind, moving snow, subtle ice and frost sounds, restrained clothing movement, and quiet environmental reverb. Chinese dialogue and its timing come only from the external NativeAudioLock track.\n\nnon_diegetic_music:\nN/A",
+    "unet": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+    "pdd": "minimax_h3_ref2va_pdd_acc_8step_comfyui.safetensors",
+    "pdd_nfe": 8,
+    "steps": 8,
+    "width": 1024,
+    "height": 576,
+    "length": 241,
+    "seed": 20260921,
+    "audio": "vdn_audio_test/dialogue_dual_15s.wav",
+    "sage_attention": true,
+    "h3_memory_optimization": true,
+    "h3_chunk_rows": 4096,
+    "h3_precision_mode": "Preserve native",
+    "h3_qkv_streaming_mode": "Auto",
+    "release_before_decode": true,
+    "tiled_vae": true,
+    "ref_image_size": "match",
+    "prefix": "video/h3_pdd_sage_ref2va_standard/ab_h3opt_1024x576_10s_20260919"
+  }
+]

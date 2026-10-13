@@ -1,0 +1,21 @@
+subject_definitions:
+<Subject 1> is the same undead elven woman shown in the supplied identity reference and the input crop. Preserve her pointed ear, pale cool skin, sharp elven facial proportions, long dark hair, hood, dark red hooded armor and undead fantasy identity.
+<Subject 2> is the original cinematic frozen fortress environment visible in the input crop. Preserve the cold blue-gray ruins, snow, distant mountains and dramatic overcast light.
+<Subject 3> is the original dark red hooded armor and cloak. Preserve its silhouette, leather and metal details.
+
+summary:
+[reference generation] Refine only the tracked undead elven woman in a medium-wide two-person fantasy shot. Restore readable facial detail while preserving the original scene, pose and interaction. Do not alter or regenerate the other hero.
+
+retention_analysis:
+<Subject 1> (appears throughout [Shot 1]): fully_preserved - same elf identity, pointed ear, hood, pale skin, sharp nose, eyes, lips and dark red armor.
+<Subject 2> (appears throughout [Shot 1]): fully_preserved - same frozen fortress, lighting and composition.
+<Subject 3> (appears throughout [Shot 1]): fully_preserved - same armor, hood and cloak.
+
+detailed_description:
+[Shot 1] Keep the tracked undead elven woman in exactly the same screen-left position, scale, pose and head orientation as the input crop. Restore her eyes, eyelids, eyebrows, sharp elven nose, lips, cheek planes, pointed ear, jawline and pale skin texture. Preserve the slight profile orientation toward the hero, the hood shadow, dark hair and red-black armor. Do not change her age, species, expression or costume. Do not modify the other character, add a second face, mirror features, duplicate eyes, melt the ear, round the elven face or invent human facial details. The result must remain temporally stable and suitable for face-only stitching into the original two-person shot.
+
+overall_soundscape:
+N/A. Preserve the source audio through the stitch.
+
+non_diegetic_music:
+N/A

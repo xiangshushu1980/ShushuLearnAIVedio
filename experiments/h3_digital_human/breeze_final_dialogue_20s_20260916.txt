@@ -1,0 +1,12 @@
+# Final Breeze dialogue test, approximately 20 seconds total.
+# Each line is generated independently with the same role instruction and seed,
+# then interleaved with 250 ms pauses. No previous WAV clips are reused.
+
+[Sylvanas 1] 你终于来了，我等你很久了。
+[Hero 1] 我来了，我不会让你独自面对寒夜。
+[Sylvanas 2] 冰霜正在吞噬这座堡垒。
+[Hero 2] 看着我，我们一起挡住它。
+[Sylvanas 3] 如果我失控，你必须阻止我。
+[Hero 3] 我答应你，坚持到最后。
+[Sylvanas 4] 英雄，让我们结束这场风暴。
+[Hero 4] 握紧力量，黎明会穿过冰原。

@@ -1,0 +1,21 @@
+subject_definitions:
+<Subject 1> is the one adult man represented by the supplied identity reference. Preserve his exact facial identity, head proportions, hair, ears, skin tone, facial hair, eyes, nose and mouth. This crop contains only this subject; do not borrow features from another person.
+<Subject 2> is the fixed gray studio environment represented by the supplied scene reference. Preserve the neutral gray background and soft frontal lighting.
+<Subject 3> is the wardrobe represented by the supplied wardrobe reference. Preserve the original clothing visible in the input crop.
+
+summary:
+[reference generation] Refine one tracked person's face in a realistic two-person studio video. Preserve the supplied identity while restoring readable facial detail. Do not merge this face with any other person.
+
+retention_analysis:
+<Subject 1> (appears throughout [Shot 1]): fully_preserved - same identity, facial proportions, hair, eyes, nose, mouth and facial hair.
+<Subject 2> (appears throughout [Shot 1]): fully_preserved - stable gray studio background and lighting.
+<Subject 3> (appears throughout [Shot 1]): fully_preserved - original clothing and body context.
+
+detailed_description:
+[Shot 1] Keep the same tracked adult man from <Subject 1> in the exact position, scale, pose and head orientation found in the input crop. Restore natural eyes, eyelids, eyebrows, nose bridge, lips, ears, jawline, hairline and facial hair without changing age, ethnicity or expression. Preserve the temporal motion of the input crop and do not add a second face. If the head turns slightly, keep the same identity and anatomically coherent profile. Use natural skin texture, no beauty smoothing, no facial melting, no duplicate features, no stretched eyes, no mouth drift and no identity blending. The result must remain suitable for stitching back into the original two-person frame.
+
+overall_soundscape:
+N/A. Preserve the source audio through the video stitch.
+
+non_diegetic_music:
+N/A

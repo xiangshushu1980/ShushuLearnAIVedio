@@ -1,0 +1,16 @@
+subject_definitions:
+<Subject 1> is a 2D anime-style girl with long silver-white hair reaching below the shoulders, a red ribbon bow on the left side, fair skin, a small nose, large bright blue eyes, and a calm expression, wearing an open white gold-trimmed jacket with gold buttons and gold-edged cuffs over a dark navy top with a white pointed collar and a red bow at the collar, a black pleated skirt with white horizontal stripes near the hem, white knee-high socks with thin gold rings, and black leather shoes.
+
+summary:
+[reference generation] The target video shows <Subject 1> walking toward the camera from a distance along a rain-dampened city street at night, in a fixed wide shot that keeps her centered as she approaches. Her footsteps are heard from far away and grow steadily louder and clearer as she gets closer, while the nighttime street ambience (distant traffic, wind, neon hum) continues throughout. There is no dialogue. The shot ends with her at mid-distance, still approaching, the walk deliberately left incomplete so it can continue in the next segment.
+
+retention_analysis:
+<Subject 1> (appears in [Shot 1]): fully_preserved - her silver-white hair, red ribbon bow, blue eyes, white gold-trimmed jacket, black pleated skirt, and black leather shoes are retained, matching the reference image.
+
+detailed_description:
+The target video is in a 2D anime style with cool night tones. The camera is FIXED: a static wide shot of a long, rain-dampened city street at night, wet asphalt reflecting street lights, buildings receding into the distance, a single distant figure.
+[Shot 1] A fixed camera holds a wide shot down a long, rain-dampened night street. Far in the distance, <Subject 1>, the silver-white-haired girl, appears small and walks toward the camera at a steady, unhurried pace. As she approaches over the course of the shot, she gradually grows larger in the frame, from a small distant figure to a mid-distance figure by the end. Her long silver-white hair and the white gold-trimmed jacket sway gently with each step, and her black leather shoes land on the wet asphalt. Her footsteps are first faint and muffled from afar, then progressively louder and crisper as she nears, each step landing with growing clarity and a light echo off the buildings. The nighttime street ambience - distant traffic, low wind, the hum of neon signs - continues steadily throughout. The camera never moves; the perspective change comes only from her approach.
+[Ending movement] In the last ~1.5 seconds, <Subject 1> has reached mid-distance (about a quarter of the way to the camera), still walking steadily toward the camera, one foot lifting mid-stride as the shot ends - the approach is deliberately left incomplete so it continues seamlessly in the next segment. Her footsteps continue to grow louder to the very last frame.
+
+overall_soundscape:
+Nighttime street ambience continues throughout: distant traffic, low wind, neon hum. Most prominently, the footsteps of leather shoes on wet asphalt are heard from far away and grow steadily louder and clearer as <Subject 1> approaches, continuing to strengthen to the final frame. No dialogue, no music.

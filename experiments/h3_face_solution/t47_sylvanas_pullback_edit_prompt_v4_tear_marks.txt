@@ -1,0 +1,22 @@
+subject_definitions:
+<Subject 1> is the same undead elven woman being refined in <Video 1>. <Picture 1> is the complete character/object reference for her identity, pale skin, pointed ears, sharp elven facial structure, long dark hair, hood, dark red armor and overall appearance. The dark tear streaks beneath her eyes are fixed facial markings attached to the skin; they are not hair, fibers or loose strands, and they must not flutter, separate, or move independently.
+<Video 1> is the source video being edited. It is authoritative for the character's current pose, head angle, expression, screen position, scale, pull-back motion, lighting, frozen fortress environment, interaction and temporal continuity.
+<Audio 1> is the original synchronized audio of <Video 1>, reused unchanged after stitching.
+
+summary:
+[video editing + reference generation + audio reuse] The target video is an edited version of <Video 1>. Refine only the tracked face of <Subject 1>. Use <Picture 1> as the sole character/object reference, while preserving the source video's character state, camera, environment, motion, timing and audio. Keep all facial markings, including the fixed dark tear streaks, attached to the face. Do not create a new shot or a new background.
+
+retention_analysis:
+<Subject 1> (appears throughout [Shot 1]): partially_preserved - preserve the source character's exact pose, head angle, expression, position, scale, costume, motion and temporal continuity; use <Picture 1> only for compatible facial identity and character appearance inside the local face crop. The dark tear streaks are skin-attached facial markings and remain fixed relative to the face.
+<Video 1> (source shot, environment, motion and temporal structure): fully_preserved - keep the original composition, frozen fortress, snow, lighting, interaction and all non-target pixels unchanged.
+<Picture 1> (complete character/object reference): attribute_transfer - transfer only compatible facial structure, pale skin, pointed ears, hair, hood, armor and identity to <Subject 1>; do not transfer its gray background, close-up framing, enlarged head or studio pose.
+<Audio 1>: fully_copy - reuse <Audio 1> unchanged as the final audio track.
+
+detailed_description:
+The target is a local face refinement of <Video 1>, not a new generation. [Shot 1] Keep <Subject 1> at the exact source position, scale, pose, head orientation, expression and continuous pull-back motion shown in <Video 1>. Keep the frozen fortress courtyard, snow, architecture, lighting, interaction and all non-face pixels from <Video 1> unchanged. Use <Picture 1> as the sole H3 character/object reference for compatible undead-elven facial identity and appearance. Do not copy its gray background, close-up framing, camera distance, enlarged head or studio composition. Restore only stable natural facial detail inside the tracked face region while preserving the source crop's current angle, expression, lighting and motion. Preserve the dark tear streaks as thin, fixed, skin-attached markings beneath the eyes: they follow the face, do not behave like hair, do not flutter, do not grow into strands, and do not detach from the skin. Do not introduce identity drift, face jitter, texture popping, duplicated features, melted features, a wrong frontal face, mask-like detail or a new action. When the source face is not confidently detected, preserve the original source pixels rather than hallucinating a replacement. The output must be suitable for face-only stitching into <Video 1> at the original coordinates. Reuse <Audio 1> unchanged.
+
+overall_soundscape:
+Preserve the original synchronized ambience and physical sounds from <Audio 1>.
+
+non_diegetic_music:
+Do not add music; preserve the source mix through <Audio 1>.

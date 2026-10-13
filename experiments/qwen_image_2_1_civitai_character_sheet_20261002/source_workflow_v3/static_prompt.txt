@@ -1,0 +1,8 @@
+Composition: Clean 3:2 landscape layout on a warm off-white background with generous spacing. No frames, borders, dividers, text, labels, watermarks, or logos. Soft, even neutral studio lighting across all panels. Rendering style, line weight, texture, and shading must strictly match the reference image.
+Left Column (20% width): 4 stacked, identically scaled and cropped head-and-shoulders portraits of the reference subject:
+1. Neutral: Relaxed brows, open eyes, closed mouth (identity anchor).
+2. Joy: Gentle closed-mouth smile, relaxed cheeks, open eyes (no strain/crinkles).
+3. Anger: Brows drawn down/inward, narrowed intense eyes, firmly pressed lips, tight jaw.
+4. Sorrow: Inner brows raised, heavy drooping eyelids, downturned mouth, relaxed jaw (distinct from anger).
+Right Row (80% width): 3 full-height, identically scaled figures of the reference subject in neutral relaxed stance: Front View, Clean Side Profile, and Back View. Soft oval floor shadows.
+Consistency & Constraints: Preserve exact identity, hair, facial features, garments, asymmetry, and accessories from the reference. Do not add, redesign, beautify, age, or extrapolate items based on lore/profession. No extra characters, shifting proportions, extra limbs, or style drift.

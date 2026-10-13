@@ -1,0 +1,34 @@
+subject_definitions
+<Subject 1> is the pale silver-haired elven archer defined by <Picture 1>. Preserve her pointed ears, pale cool skin, light blue eyes, silver hair, dark teal hooded cloak, dark leather armor, and one single dark recurve bow. The bow is one unique prop, secured diagonally across her back for the entire target video; never create a second bow and never place a second weapon in either hand.
+<Subject 2> is the red-haired woman defined by <Picture 2>. Preserve her asymmetrical auburn hair, dark skin, burgundy leather coat, brass shoulder armor, black gloves, and tall boots. She carries one brass compass defined by <Picture 5>; the compass is a separate handheld prop and is not a weapon.
+<Subject 3> is the moonlit stone observatory defined by <Picture 3>, including the circular floor, gothic arches, tall windows, two stone pedestals, blue moonlight, mist, and cloudy night sky.
+<Subject 4> is the translucent cyan magical ribbon defined by <Picture 4>, one coherent spell effect with a bright cyan core, soft blue halo, floating shards, and slow helical motion; never split it into multiple independent spells.
+<Subject 5> is the brass compass defined by <Picture 5>, with a round engraved brass case, dark leather wrist strap, blue glass center, and one small side knob.
+<Picture 1> is used only as the character reference for <Subject 1>; <Picture 2> is used only as the character reference for <Subject 2>; <Picture 3> is used only as the environment reference for <Subject 3>; <Picture 4> is used only as the effect reference for <Subject 4>; <Picture 5> is used only as the prop reference for <Subject 5>. None of these pictures is a target frame.
+
+summary
+[reference generation] Create a continuous 32-second fantasy action scene in four connected 8-second shots. Use <Subject 1> and <Subject 2> as two distinct, consistently identifiable characters, <Subject 3> as the unchanged observatory environment, <Subject 4> as one evolving magical effect, and <Subject 5> as one continuously tracked compass. Preserve screen direction, prop ownership, hand placement, lighting, and physical cause-and-effect across every shot.
+
+retention_analysis
+<Subject 1> (appears in [Shot 2], [Shot 3], [Shot 4]): fully_preserved - preserve the same elf, outfit, face, and one bow fixed across her back; no duplicate bow or weapon.
+<Subject 2> (appears in [Shot 1], [Shot 2], [Shot 3], [Shot 4]): fully_preserved - preserve the same red-haired woman, burgundy armor, and silhouette while she moves from the left side to the center.
+<Subject 3> (appears throughout [Shot 1]–[Shot 4]): fully_preserved - preserve the observatory architecture, floor layout, moonlight direction, and mist.
+<Subject 4> (appears in [Shot 3], [Shot 4]): fully_preserved - preserve one cyan ribbon spell whose motion grows from a small glow into a controlled helix without multiplying into separate spells.
+<Subject 5> (appears in [Shot 1], [Shot 2], [Shot 3], [Shot 4]): fully_preserved - preserve one brass compass, transferred from <Subject 2>'s right hand to <Subject 1>'s left hand at the shot transition.
+
+detailed_description
+The target video uses a grounded dark-fantasy action style with cool moonlight, readable hand choreography, restrained volumetric mist, and continuous cause-and-effect between two characters and one magical object. The camera language is deliberate and physically motivated; there are no hidden cuts inside a shot.
+
+[Shot 1] At 00:00.000, the camera opens on a wide three-quarter view of <Subject 3>, the empty circular observatory. <Subject 2> enters from screen left and walks toward the nearer stone pedestal. She holds the single <Subject 5> brass compass in her right hand, keeps her left hand empty, and studies the blue glass center. The camera tracks backward with small amplitude at slow speed, keeping her on the left third of the frame and the moonlit arches visible. At 00:06.500 she stops beside the pedestal and turns the compass toward the center of the room.
+
+[Shot 2] At 00:08.000, continue from the same observatory lighting and screen direction without changing the compass. <Subject 1> enters from screen right and approaches <Subject 2>. Her single dark bow remains secured diagonally across her back; both hands are empty while she walks. The camera trucks left with small amplitude at slow speed, revealing both characters in a balanced two-shot. <Subject 2> extends the compass forward in her right hand, while <Subject 1> reaches with her left hand. At 00:14.500 their hands meet over the circular floor; the compass transfers once from <Subject 2>'s right hand to <Subject 1>'s left hand. No duplicate compass appears.
+
+[Shot 3] At 00:16.000, continue directly from the completed handoff. <Subject 1> stands at the center holding <Subject 5> in her left hand; the one bow stays fixed on her back. <Subject 2> steps one pace backward and keeps both hands visible and empty. The camera pushes in slowly toward the compass. A small cyan glow appears around the compass and develops into <Subject 4>, one translucent ribbon of magic. The ribbon coils once around the compass and rises in a controlled helix; its particles illuminate both faces and the nearby stone floor. The observatory architecture and moonlight remain unchanged.
+
+[Shot 4] At 00:24.000, continue the same spell without restarting or multiplying it. <Subject 1> raises her left hand with the compass to chest height while her right hand remains relaxed near her side; her single bow is still visible across her back. <Subject 2> turns toward the brightest arched window and watches the cyan ribbon. The camera makes a slow clockwise arc around both characters with small amplitude, keeping their left-right relationship stable. The single <Subject 4> ribbon widens briefly into a luminous doorway-shaped loop between the two stone pedestals, then settles into a steady helix by 00:30.500. End at 00:32.000 on both characters facing the stable light. No additional characters, weapons, compasses, spells, dialogue, or visible text appear.
+
+overall_soundscape
+Cold wind through the observatory arches, measured footsteps on stone, leather and armor movement, one brass compass click during the handoff, a low continuous magical hum that grows with the cyan ribbon, and soft glass-like particles. No dialogue and no abrupt sound replacement at the shot boundaries.
+
+non_diegetic_music
+N/A

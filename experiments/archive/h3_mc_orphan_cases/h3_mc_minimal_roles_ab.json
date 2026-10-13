@@ -1,0 +1,49 @@
+{
+  "cases": [
+    {
+      "name": "t31_roles_A124",
+      "images": [
+        "h3_avatar/refs/identity/ref_identity_hd_v2.png",
+        "h3_avatar/refs/scene/ref_scene_hd_v2.png"
+      ],
+      "audio_lock": "h3_avatar/audio/segments/t31_std20_four_A.wav",
+      "width": 768,
+      "height": 448,
+      "length": 124,
+      "steps": 20,
+      "seed": 7311401,
+      "prefix": "video/T31/t31_roles_A124",
+      "save_latent": {
+        "filename_prefix": "t31_roles_A124",
+        "clip_index": 1
+      },
+      "prompt": "The woman from <Picture 1> speaks to camera in the studio from <Picture 2>."
+    },
+    {
+      "name": "t31_roles_B141",
+      "images": [
+        "h3_avatar/refs/identity/ref_identity_hd_v2.png",
+        "h3_avatar/refs/scene/ref_scene_hd_v2.png"
+      ],
+      "audio_lock": "h3_avatar/audio/segments/t31_std20_legal_B.wav",
+      "width": 768,
+      "height": 448,
+      "length": 141,
+      "steps": 20,
+      "seed": 7311402,
+      "prefix": "video/T31/t31_roles_B141",
+      "save_latent": {
+        "filename_prefix": "t31_roles_B141",
+        "clip_index": 1
+      },
+      "mc": {
+        "latent_path": "/home/sean/projects/ComfyUI/output/t31_roles_A124_00001.safetensors",
+        "context_length": "22",
+        "audio_context_length": 24,
+        "clip_index": 1
+      },
+      "trim": true,
+      "prompt": "The woman from <Picture 1> speaks to camera in the studio from <Picture 2>."
+    }
+  ]
+}

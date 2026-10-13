@@ -1,0 +1,24 @@
+[
+  {
+    "name": "vdn_breeze_clone_1024x576_20s_simple_medium",
+    "refs": [
+      "ref2va_refs/vdn_dual_dialogue/sylvanas_style.png",
+      "ref2va_refs/vdn_dual_dialogue/original_caped_hero.png",
+      "ref2va_refs/vdn_dual_dialogue/ice_fortress_background.png"
+    ],
+    "prompt": "For the target video, Picture 1 is Sylvanas, the cold undead elven woman; Picture 2 is the blue-suited red-caped male hero; Picture 3 is the frozen fortress courtyard. Preserve the two characters, their clothing, proportions, left-right positions, and the fortress courtyard. Use one continuous static medium-wide two-shot for the entire video. Show both characters from the knees up, standing several steps apart, with both characters relatively small in frame and the complete fortress courtyard, walls, snow-covered ground, and distant architecture clearly visible throughout. They face each other and speak alternating Chinese dialogue driven only by NativeAudioLock audio. Keep the camera fixed at the same distance and angle: no close-ups, no over-the-shoulder shots, no zoom, no pan, no rapid cuts, and no new shot. No special effects, no wind effects, no frost particles, no energy glow, no trees, no pine branches, no leaves, no extra people, no subtitles, no readable text, no watermark, no extra limbs, and no identity drift. Keep both faces unobstructed and maintain the same background from beginning to end.",
+    "unet": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+    "steps": 8,
+    "width": 1024,
+    "height": 576,
+    "length": 481,
+    "seed": 20260921,
+    "audio": "vdn_audio_test/dialogue_dual_breeze_clone_vdn_strict20s.wav",
+    "vdn": true,
+    "vdn_branch_weights": "stream",
+    "vdn_retain_buffers": "off",
+    "release_before_decode": true,
+    "tiled_vae": true,
+    "prefix": "video/h3_vdn_ref2va/breeze_clone_1024x576_20s_simple_medium_20260916"
+  }
+]

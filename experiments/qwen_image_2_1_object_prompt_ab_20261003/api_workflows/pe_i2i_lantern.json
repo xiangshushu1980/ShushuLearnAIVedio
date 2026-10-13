@@ -1,0 +1,46 @@
+{
+  "1": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen3.5_9b_qwen_image_2.1_pe_i2i.int8_convrot.safetensors",
+      "type": "qwen_image",
+      "device": "default"
+    }
+  },
+  "2": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "sean_qwen_image_2_1_object_prompt_ab_20261003_lantern_reference.png"
+    }
+  },
+  "3": {
+    "class_type": "QwenImage21_EditPromptRewrite",
+    "inputs": {
+      "clip": [
+        "1",
+        0
+      ],
+      "image_1": [
+        "2",
+        0
+      ],
+      "prompt": "Using the supplied image as the only reference, create a three-view sheet of this exact lantern: straight-on front, strict narrow side, and rear. Preserve visible design, parts, and proportions. Do not invent hidden rear fittings. Full lantern in every view, one object only, clean neutral studio background, no text or labels.",
+      "temperature": 1.0,
+      "top_p": 0.95,
+      "presence_penalty": 0.0,
+      "max_length": 24000,
+      "seed": 42
+    }
+  },
+  "4": {
+    "class_type": "SaveText",
+    "inputs": {
+      "text": [
+        "3",
+        0
+      ],
+      "filename_prefix": "sean_qwen_image_2_1_object_prompt_ab_20261003/pe_prompt/lantern",
+      "format": "txt"
+    }
+  }
+}

@@ -1,0 +1,150 @@
+[
+ {
+  "name": "V1_1024_3ref_4s",
+  "ref_images": [
+   "ref2va_refs/cyberpunk_demo/01_scene_cyberpunk.png",
+   "ref2va_refs/cyberpunk_demo/02_char_swordswoman.png",
+   "ref2va_refs/cyberpunk_demo/03_char_cybergirl.png"
+  ],
+  "steps": 4,
+  "sampler": "euler",
+  "shift_video": 12,
+  "shift_audio": 3,
+  "width": 1024,
+  "height": 576,
+  "length": 124,
+  "seed": 20260814,
+  "prefix": "video/h3_r2v/V1_1024_3ref_4s",
+  "prompt": "subject_definitions:\n<Subject 1> is the rainy cyberpunk city street shown in <Picture 1>, with neon signs in purple and orange, wet reflective asphalt, towering skyscrapers, and drifting fog.\n<Subject 2> is the female swordsman shown in <Picture 2>, an elegant East Asian woman warrior in a flowing red and white outfit with a long blade, confident stance.\n<Subject 3> is the cyberpunk girl shown in <Picture 3>, a stylish young woman in a dark futuristic outfit with neon accents, short hair.\n\nsummary:\n[reference generation] A 5-second cinematic sequence in which <Subject 2> walks through <Subject 1>, the rainy neon street, then encounters <Subject 3> under the neon light; both characters exchange a glance and <Subject 2> draws her blade as a test of recognition.\n\nretention_analysis:\n<Subject 1> (appears in all shots): fully_preserved - the neon signs, wet asphalt, fog, and skyscraper skyline are retained.\n<Subject 2> (appears in all shots): fully_preserved - the red and white outfit, long blade, and warrior identity are retained.\n<Subject 3> (appears in all shots): fully_preserved - the dark futuristic outfit, neon accents, and short hair are retained.\n\ndetailed_description:\nCinematic ultra-realistic style with neon-noir color grading, volumetric light, shallow depth of field.\n[Shot 1] Wide establishing shot of <Subject 1>, the rainy cyberpunk street at night. <Subject 2> walks slowly toward the camera from the far end, red outfit contrasting the blue-purple neon haze, rain falling in visible streaks.\n[Shot 2] At 00:02.000, medium tracking shot: <Subject 2> approaches the neon intersection, footsteps splashing on wet asphalt. <Subject 3> steps out from the shadow of a storefront, neon circuit lines on her outfit glowing.\n[Shot 3] At 00:03.500, close two-shot: <Subject 2> and <Subject 3> stand facing each other under a flickering neon sign. <Subject 2> slowly draws her long blade; <Subject 3> smiles and raises a glowing hand. The camera slowly orbits them.\n[Shot 4] At 00:04.500, wide shot pulls back: the two silhouettes stand apart in the rain, neon reflections on the wet street, fog drifting between them. Final frame holds the standoff.\n\noverall_soundscape:\nContinuous heavy rain with splashes on asphalt. Distant city ambience: traffic hum and neon sign electrical buzz. Footsteps with water splashes as <Subject 2> walks. A soft metallic ring as the blade is drawn. Faint electronic hum from <Subject 3>'s glowing hand.\n\nnon_diegetic_music:\nAtmospheric synthwave score, slow and moody. Low sustained pads and a sparse pulse, building slightly as the two characters face each other, ending on a sustained unresolved chord.",
+  "lora": "minimax_h3_ref2v_turbo_4step_v0.1_comfyui_bf16.safetensors"
+ },
+ {
+  "name": "V1_1024_3ref_8s",
+  "ref_images": [
+   "ref2va_refs/cyberpunk_demo/01_scene_cyberpunk.png",
+   "ref2va_refs/cyberpunk_demo/02_char_swordswoman.png",
+   "ref2va_refs/cyberpunk_demo/03_char_cybergirl.png"
+  ],
+  "steps": 8,
+  "sampler": "euler",
+  "shift_video": 12,
+  "shift_audio": 3,
+  "width": 1024,
+  "height": 576,
+  "length": 124,
+  "seed": 20260814,
+  "prefix": "video/h3_r2v/V1_1024_3ref_8s",
+  "prompt": "subject_definitions:\n<Subject 1> is the rainy cyberpunk city street shown in <Picture 1>, with neon signs in purple and orange, wet reflective asphalt, towering skyscrapers, and drifting fog.\n<Subject 2> is the female swordsman shown in <Picture 2>, an elegant East Asian woman warrior in a flowing red and white outfit with a long blade, confident stance.\n<Subject 3> is the cyberpunk girl shown in <Picture 3>, a stylish young woman in a dark futuristic outfit with neon accents, short hair.\n\nsummary:\n[reference generation] A 5-second cinematic sequence in which <Subject 2> walks through <Subject 1>, the rainy neon street, then encounters <Subject 3> under the neon light; both characters exchange a glance and <Subject 2> draws her blade as a test of recognition.\n\nretention_analysis:\n<Subject 1> (appears in all shots): fully_preserved - the neon signs, wet asphalt, fog, and skyscraper skyline are retained.\n<Subject 2> (appears in all shots): fully_preserved - the red and white outfit, long blade, and warrior identity are retained.\n<Subject 3> (appears in all shots): fully_preserved - the dark futuristic outfit, neon accents, and short hair are retained.\n\ndetailed_description:\nCinematic ultra-realistic style with neon-noir color grading, volumetric light, shallow depth of field.\n[Shot 1] Wide establishing shot of <Subject 1>, the rainy cyberpunk street at night. <Subject 2> walks slowly toward the camera from the far end, red outfit contrasting the blue-purple neon haze, rain falling in visible streaks.\n[Shot 2] At 00:02.000, medium tracking shot: <Subject 2> approaches the neon intersection, footsteps splashing on wet asphalt. <Subject 3> steps out from the shadow of a storefront, neon circuit lines on her outfit glowing.\n[Shot 3] At 00:03.500, close two-shot: <Subject 2> and <Subject 3> stand facing each other under a flickering neon sign. <Subject 2> slowly draws her long blade; <Subject 3> smiles and raises a glowing hand. The camera slowly orbits them.\n[Shot 4] At 00:04.500, wide shot pulls back: the two silhouettes stand apart in the rain, neon reflections on the wet street, fog drifting between them. Final frame holds the standoff.\n\noverall_soundscape:\nContinuous heavy rain with splashes on asphalt. Distant city ambience: traffic hum and neon sign electrical buzz. Footsteps with water splashes as <Subject 2> walks. A soft metallic ring as the blade is drawn. Faint electronic hum from <Subject 3>'s glowing hand.\n\nnon_diegetic_music:\nAtmospheric synthwave score, slow and moody. Low sustained pads and a sparse pulse, building slightly as the two characters face each other, ending on a sustained unresolved chord.",
+  "lora": "minimax_h3_ref2v_turbo_4step_v0.1_comfyui_bf16.safetensors"
+ },
+ {
+  "name": "V2_1024_3ref_seed2_4s",
+  "ref_images": [
+   "ref2va_refs/cyberpunk_demo/01_scene_cyberpunk.png",
+   "ref2va_refs/cyberpunk_demo/02_char_swordswoman.png",
+   "ref2va_refs/cyberpunk_demo/03_char_cybergirl.png"
+  ],
+  "steps": 4,
+  "sampler": "euler",
+  "shift_video": 12,
+  "shift_audio": 3,
+  "width": 1024,
+  "height": 576,
+  "length": 124,
+  "seed": 20260715,
+  "prefix": "video/h3_r2v/V2_1024_3ref_seed2_4s",
+  "prompt": "subject_definitions:\n<Subject 1> is the rainy cyberpunk city street shown in <Picture 1>, with neon signs in purple and orange, wet reflective asphalt, towering skyscrapers, and drifting fog.\n<Subject 2> is the female swordsman shown in <Picture 2>, an elegant East Asian woman warrior in a flowing red and white outfit with a long blade, confident stance.\n<Subject 3> is the cyberpunk girl shown in <Picture 3>, a stylish young woman in a dark futuristic outfit with neon accents, short hair.\n\nsummary:\n[reference generation] A 5-second cinematic sequence in which <Subject 2> walks through <Subject 1>, the rainy neon street, then encounters <Subject 3> under the neon light; both characters exchange a glance and <Subject 2> draws her blade as a test of recognition.\n\nretention_analysis:\n<Subject 1> (appears in all shots): fully_preserved - the neon signs, wet asphalt, fog, and skyscraper skyline are retained.\n<Subject 2> (appears in all shots): fully_preserved - the red and white outfit, long blade, and warrior identity are retained.\n<Subject 3> (appears in all shots): fully_preserved - the dark futuristic outfit, neon accents, and short hair are retained.\n\ndetailed_description:\nCinematic ultra-realistic style with neon-noir color grading, volumetric light, shallow depth of field.\n[Shot 1] Wide establishing shot of <Subject 1>, the rainy cyberpunk street at night. <Subject 2> walks slowly toward the camera from the far end, red outfit contrasting the blue-purple neon haze, rain falling in visible streaks.\n[Shot 2] At 00:02.000, medium tracking shot: <Subject 2> approaches the neon intersection, footsteps splashing on wet asphalt. <Subject 3> steps out from the shadow of a storefront, neon circuit lines on her outfit glowing.\n[Shot 3] At 00:03.500, close two-shot: <Subject 2> and <Subject 3> stand facing each other under a flickering neon sign. <Subject 2> slowly draws her long blade; <Subject 3> smiles and raises a glowing hand. The camera slowly orbits them.\n[Shot 4] At 00:04.500, wide shot pulls back: the two silhouettes stand apart in the rain, neon reflections on the wet street, fog drifting between them. Final frame holds the standoff.\n\noverall_soundscape:\nContinuous heavy rain with splashes on asphalt. Distant city ambience: traffic hum and neon sign electrical buzz. Footsteps with water splashes as <Subject 2> walks. A soft metallic ring as the blade is drawn. Faint electronic hum from <Subject 3>'s glowing hand.\n\nnon_diegetic_music:\nAtmospheric synthwave score, slow and moody. Low sustained pads and a sparse pulse, building slightly as the two characters face each other, ending on a sustained unresolved chord.",
+  "lora": "minimax_h3_ref2v_turbo_4step_v0.1_comfyui_bf16.safetensors"
+ },
+ {
+  "name": "V2_1024_3ref_seed2_8s",
+  "ref_images": [
+   "ref2va_refs/cyberpunk_demo/01_scene_cyberpunk.png",
+   "ref2va_refs/cyberpunk_demo/02_char_swordswoman.png",
+   "ref2va_refs/cyberpunk_demo/03_char_cybergirl.png"
+  ],
+  "steps": 8,
+  "sampler": "euler",
+  "shift_video": 12,
+  "shift_audio": 3,
+  "width": 1024,
+  "height": 576,
+  "length": 124,
+  "seed": 20260715,
+  "prefix": "video/h3_r2v/V2_1024_3ref_seed2_8s",
+  "prompt": "subject_definitions:\n<Subject 1> is the rainy cyberpunk city street shown in <Picture 1>, with neon signs in purple and orange, wet reflective asphalt, towering skyscrapers, and drifting fog.\n<Subject 2> is the female swordsman shown in <Picture 2>, an elegant East Asian woman warrior in a flowing red and white outfit with a long blade, confident stance.\n<Subject 3> is the cyberpunk girl shown in <Picture 3>, a stylish young woman in a dark futuristic outfit with neon accents, short hair.\n\nsummary:\n[reference generation] A 5-second cinematic sequence in which <Subject 2> walks through <Subject 1>, the rainy neon street, then encounters <Subject 3> under the neon light; both characters exchange a glance and <Subject 2> draws her blade as a test of recognition.\n\nretention_analysis:\n<Subject 1> (appears in all shots): fully_preserved - the neon signs, wet asphalt, fog, and skyscraper skyline are retained.\n<Subject 2> (appears in all shots): fully_preserved - the red and white outfit, long blade, and warrior identity are retained.\n<Subject 3> (appears in all shots): fully_preserved - the dark futuristic outfit, neon accents, and short hair are retained.\n\ndetailed_description:\nCinematic ultra-realistic style with neon-noir color grading, volumetric light, shallow depth of field.\n[Shot 1] Wide establishing shot of <Subject 1>, the rainy cyberpunk street at night. <Subject 2> walks slowly toward the camera from the far end, red outfit contrasting the blue-purple neon haze, rain falling in visible streaks.\n[Shot 2] At 00:02.000, medium tracking shot: <Subject 2> approaches the neon intersection, footsteps splashing on wet asphalt. <Subject 3> steps out from the shadow of a storefront, neon circuit lines on her outfit glowing.\n[Shot 3] At 00:03.500, close two-shot: <Subject 2> and <Subject 3> stand facing each other under a flickering neon sign. <Subject 2> slowly draws her long blade; <Subject 3> smiles and raises a glowing hand. The camera slowly orbits them.\n[Shot 4] At 00:04.500, wide shot pulls back: the two silhouettes stand apart in the rain, neon reflections on the wet street, fog drifting between them. Final frame holds the standoff.\n\noverall_soundscape:\nContinuous heavy rain with splashes on asphalt. Distant city ambience: traffic hum and neon sign electrical buzz. Footsteps with water splashes as <Subject 2> walks. A soft metallic ring as the blade is drawn. Faint electronic hum from <Subject 3>'s glowing hand.\n\nnon_diegetic_music:\nAtmospheric synthwave score, slow and moody. Low sustained pads and a sparse pulse, building slightly as the two characters face each other, ending on a sustained unresolved chord.",
+  "lora": "minimax_h3_ref2v_turbo_4step_v0.1_comfyui_bf16.safetensors"
+ },
+ {
+  "name": "V3_1024_2ref_4s",
+  "ref_images": [
+   "ref2va_refs/cyberpunk_demo/01_scene_cyberpunk.png",
+   "ref2va_refs/cyberpunk_demo/02_char_swordswoman.png"
+  ],
+  "steps": 4,
+  "sampler": "euler",
+  "shift_video": 12,
+  "shift_audio": 3,
+  "width": 1024,
+  "height": 576,
+  "length": 124,
+  "seed": 20260814,
+  "prefix": "video/h3_r2v/V3_1024_2ref_4s",
+  "prompt": "subject_definitions:\n<Subject 1> is the rainy cyberpunk city street shown in <Picture 1>, with neon signs in purple and orange, wet reflective asphalt, towering skyscrapers, and drifting fog.\n<Subject 2> is the female swordsman shown in <Picture 2>, an elegant East Asian woman warrior in a flowing red and white outfit with a long blade, confident stance.\n\nsummary:\n[reference generation] A 5-second cinematic sequence: <Subject 2> stands alone in <Subject 1>, the rainy neon street, slowly drawing her long blade while rain falls around her, then walking toward the camera through the neon haze.\n\nretention_analysis:\n<Subject 1> (appears in all shots): fully_preserved - the neon signs, wet asphalt, fog, and skyscraper skyline are retained.\n<Subject 2> (appears in all shots): fully_preserved - the red and white outfit, long blade, and warrior identity are retained.\n\ndetailed_description:\nCinematic ultra-realistic style with neon-noir color grading, volumetric light, shallow depth of field.\n[Shot 1] Wide establishing shot of <Subject 1>, the rainy cyberpunk street at night. <Subject 2> stands centered under a neon sign, rain streaking through the light, her red outfit vivid against the blue-purple haze.\n[Shot 2] At 00:02.000, medium shot: <Subject 2> slowly draws her long blade, the metal catching neon reflections. Raindrops splatter on the wet asphalt around her feet.\n[Shot 3] At 00:03.500, tracking shot: <Subject 2> walks toward the camera, cloak and hair moving in the wind, neon signs flickering behind her. Fog drifts across the road.\n[Shot 4] At 00:04.500, wide shot pulls back and up: <Subject 2> walks away into the neon-lit distance, becoming a small red silhouette in the rain. Final frame fades slightly.\n\noverall_soundscape:\nContinuous heavy rain with splashes on asphalt. Distant city ambience: traffic hum and neon sign electrical buzz. Footsteps with water splashes. A soft metallic ring as the blade is drawn. Faint wind.\n\nnon_diegetic_music:\nAtmospheric synthwave score, slow and moody. Low sustained pads and a sparse pulse, building slightly, ending on a sustained unresolved chord.",
+  "lora": "minimax_h3_ref2v_turbo_4step_v0.1_comfyui_bf16.safetensors"
+ },
+ {
+  "name": "V3_1024_2ref_8s",
+  "ref_images": [
+   "ref2va_refs/cyberpunk_demo/01_scene_cyberpunk.png",
+   "ref2va_refs/cyberpunk_demo/02_char_swordswoman.png"
+  ],
+  "steps": 8,
+  "sampler": "euler",
+  "shift_video": 12,
+  "shift_audio": 3,
+  "width": 1024,
+  "height": 576,
+  "length": 124,
+  "seed": 20260814,
+  "prefix": "video/h3_r2v/V3_1024_2ref_8s",
+  "prompt": "subject_definitions:\n<Subject 1> is the rainy cyberpunk city street shown in <Picture 1>, with neon signs in purple and orange, wet reflective asphalt, towering skyscrapers, and drifting fog.\n<Subject 2> is the female swordsman shown in <Picture 2>, an elegant East Asian woman warrior in a flowing red and white outfit with a long blade, confident stance.\n\nsummary:\n[reference generation] A 5-second cinematic sequence: <Subject 2> stands alone in <Subject 1>, the rainy neon street, slowly drawing her long blade while rain falls around her, then walking toward the camera through the neon haze.\n\nretention_analysis:\n<Subject 1> (appears in all shots): fully_preserved - the neon signs, wet asphalt, fog, and skyscraper skyline are retained.\n<Subject 2> (appears in all shots): fully_preserved - the red and white outfit, long blade, and warrior identity are retained.\n\ndetailed_description:\nCinematic ultra-realistic style with neon-noir color grading, volumetric light, shallow depth of field.\n[Shot 1] Wide establishing shot of <Subject 1>, the rainy cyberpunk street at night. <Subject 2> stands centered under a neon sign, rain streaking through the light, her red outfit vivid against the blue-purple haze.\n[Shot 2] At 00:02.000, medium shot: <Subject 2> slowly draws her long blade, the metal catching neon reflections. Raindrops splatter on the wet asphalt around her feet.\n[Shot 3] At 00:03.500, tracking shot: <Subject 2> walks toward the camera, cloak and hair moving in the wind, neon signs flickering behind her. Fog drifts across the road.\n[Shot 4] At 00:04.500, wide shot pulls back and up: <Subject 2> walks away into the neon-lit distance, becoming a small red silhouette in the rain. Final frame fades slightly.\n\noverall_soundscape:\nContinuous heavy rain with splashes on asphalt. Distant city ambience: traffic hum and neon sign electrical buzz. Footsteps with water splashes. A soft metallic ring as the blade is drawn. Faint wind.\n\nnon_diegetic_music:\nAtmospheric synthwave score, slow and moody. Low sustained pads and a sparse pulse, building slightly, ending on a sustained unresolved chord.",
+  "lora": "minimax_h3_ref2v_turbo_4step_v0.1_comfyui_bf16.safetensors"
+ },
+ {
+  "name": "V4_1024_2ref_cybergirl_4s",
+  "ref_images": [
+   "ref2va_refs/cyberpunk_demo/01_scene_cyberpunk.png",
+   "ref2va_refs/cyberpunk_demo/03_char_cybergirl.png"
+  ],
+  "steps": 4,
+  "sampler": "euler",
+  "shift_video": 12,
+  "shift_audio": 3,
+  "width": 1024,
+  "height": 576,
+  "length": 124,
+  "seed": 20260716,
+  "prefix": "video/h3_r2v/V4_1024_2ref_cybergirl_4s",
+  "prompt": "subject_definitions:\n<Subject 1> is the rainy cyberpunk city street shown in <Picture 1>, with neon signs in purple and orange, wet reflective asphalt, towering skyscrapers, and drifting fog.\n<Subject 2> is the cyberpunk girl shown in <Picture 2>, a stylish young woman in a dark futuristic outfit with neon accents, short hair, confident and agile.\n\nsummary:\n[reference generation] A 5-second cinematic sequence: <Subject 2> walks through <Subject 1>, the rainy neon street, looks up at the neon billboards, then pauses under a flickering sign and glances back toward the camera with a slight smile.\n\nretention_analysis:\n<Subject 1> (appears in all shots): fully_preserved - the neon signs, wet asphalt, fog, and skyscraper skyline are retained.\n<Subject 2> (appears in all shots): fully_preserved - the dark futuristic outfit, neon accents, short hair, and face identity are retained.\n\ndetailed_description:\nCinematic ultra-realistic style with neon-noir color grading, volumetric light, shallow depth of field.\n[Shot 1] Wide establishing shot of <Subject 1>, the rainy cyberpunk street. <Subject 2> walks in from the left side, dark outfit glowing with cyan neon circuit lines, rain reflecting around her.\n[Shot 2] At 00:02.000, medium tracking shot from behind: <Subject 2> walks past neon storefronts, her short hair catching purple neon light, footsteps splashing.\n[Shot 3] At 00:03.500, front medium shot: <Subject 2> stops under a flickering neon sign, looks up at the holographic billboard, rain streaking through the light. She glances toward the camera.\n[Shot 4] At 00:04.500, close shot: <Subject 2> turns her head to the camera, slight smile, neon reflections in her eyes, background bokeh of city lights. Final frame holds.\n\noverall_soundscape:\nContinuous heavy rain with splashes on asphalt. Distant city ambience: traffic hum and neon sign electrical buzz. Footsteps with water splashes. Faint electronic hum from her outfit's neon circuits.\n\nnon_diegetic_music:\nAtmospheric synthwave score, slow and moody. Low sustained pads and a sparse pulse, building slightly, ending on a sustained unresolved chord.",
+  "lora": "minimax_h3_ref2v_turbo_4step_v0.1_comfyui_bf16.safetensors"
+ },
+ {
+  "name": "V4_1024_2ref_cybergirl_8s",
+  "ref_images": [
+   "ref2va_refs/cyberpunk_demo/01_scene_cyberpunk.png",
+   "ref2va_refs/cyberpunk_demo/03_char_cybergirl.png"
+  ],
+  "steps": 8,
+  "sampler": "euler",
+  "shift_video": 12,
+  "shift_audio": 3,
+  "width": 1024,
+  "height": 576,
+  "length": 124,
+  "seed": 20260716,
+  "prefix": "video/h3_r2v/V4_1024_2ref_cybergirl_8s",
+  "prompt": "subject_definitions:\n<Subject 1> is the rainy cyberpunk city street shown in <Picture 1>, with neon signs in purple and orange, wet reflective asphalt, towering skyscrapers, and drifting fog.\n<Subject 2> is the cyberpunk girl shown in <Picture 2>, a stylish young woman in a dark futuristic outfit with neon accents, short hair, confident and agile.\n\nsummary:\n[reference generation] A 5-second cinematic sequence: <Subject 2> walks through <Subject 1>, the rainy neon street, looks up at the neon billboards, then pauses under a flickering sign and glances back toward the camera with a slight smile.\n\nretention_analysis:\n<Subject 1> (appears in all shots): fully_preserved - the neon signs, wet asphalt, fog, and skyscraper skyline are retained.\n<Subject 2> (appears in all shots): fully_preserved - the dark futuristic outfit, neon accents, short hair, and face identity are retained.\n\ndetailed_description:\nCinematic ultra-realistic style with neon-noir color grading, volumetric light, shallow depth of field.\n[Shot 1] Wide establishing shot of <Subject 1>, the rainy cyberpunk street. <Subject 2> walks in from the left side, dark outfit glowing with cyan neon circuit lines, rain reflecting around her.\n[Shot 2] At 00:02.000, medium tracking shot from behind: <Subject 2> walks past neon storefronts, her short hair catching purple neon light, footsteps splashing.\n[Shot 3] At 00:03.500, front medium shot: <Subject 2> stops under a flickering neon sign, looks up at the holographic billboard, rain streaking through the light. She glances toward the camera.\n[Shot 4] At 00:04.500, close shot: <Subject 2> turns her head to the camera, slight smile, neon reflections in her eyes, background bokeh of city lights. Final frame holds.\n\noverall_soundscape:\nContinuous heavy rain with splashes on asphalt. Distant city ambience: traffic hum and neon sign electrical buzz. Footsteps with water splashes. Faint electronic hum from her outfit's neon circuits.\n\nnon_diegetic_music:\nAtmospheric synthwave score, slow and moody. Low sustained pads and a sparse pulse, building slightly, ending on a sustained unresolved chord.",
+  "lora": "minimax_h3_ref2v_turbo_4step_v0.1_comfyui_bf16.safetensors"
+ }
+]

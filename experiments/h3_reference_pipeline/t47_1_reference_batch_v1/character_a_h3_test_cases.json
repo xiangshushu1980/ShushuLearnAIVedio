@@ -1,0 +1,15 @@
+[
+  {
+    "name": "t47_1_character_a_single_object_turnaround_test",
+    "prompt_file": "experiments/h3_reference_pipeline/t47_1_reference_batch_v1/prompts/character_a_turnaround.txt",
+    "ref_images": ["sean_t47_1_ref_v1_character_a.png"],
+    "ref_image_size": "match",
+    "width": 768,
+    "height": 448,
+    "length": 192,
+    "steps": 20,
+    "sampler": "res_multistep",
+    "seed": 4701201,
+    "prefix": "video/t47_1_reference_batch_v1/character_a/turnaround_test"
+  }
+]

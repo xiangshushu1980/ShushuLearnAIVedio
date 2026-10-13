@@ -1,0 +1,21 @@
+subject_definitions:
+<Subject 1> is the undead elven woman defined by the supplied character reference.
+<Subject 2> is the flying hero defined by the supplied character reference.
+<Subject 3> is the frozen fortress courtyard defined by the supplied environment reference.
+
+summary:
+[reference generation] Generate a five-second far-wide two-person shot using <Subject 1> and <Subject 2> in <Subject 3>, with the environment occupying most of the frame and both characters remaining recognizable at a distant scale.
+
+retention_analysis:
+<Subject 1> (appears throughout [Shot 1]): fully_preserved - preserve identity, position, costume and restrained motion.
+<Subject 2> (appears throughout [Shot 1]): fully_preserved - preserve identity, position, costume and restrained motion.
+<Subject 3> (appears throughout [Shot 1]): fully_preserved - preserve the frozen courtyard layout, snow, architecture and stable moonlit illumination.
+
+detailed_description:
+The target video is a restrained fantasy far-wide two-shot with the frozen fortress courtyard occupying most of the composition. [Shot 1] Hold a continuous locked far-wide composition for the full shot. <Subject 1> stands on screen-left and <Subject 2> stands on screen-right, several meters apart, both shown full-body or nearly full-body. Their heads remain small within the wide composition, approximately 30–50 source pixels high, while the ruined stone architecture, snow and distant mountains remain readable. Each character performs one small conversational gesture while maintaining position. Preserve the source-defined identities, costumes, body proportions, spacing and screen direction through the motion. Keep the scene as one continuous shot with steady lighting, stable background geometry and coherent movement.
+
+overall_soundscape:
+Cold wind crossing the stone courtyard, soft snow movement, restrained cloth and armor movement, and light footsteps.
+
+non_diegetic_music:
+N/A

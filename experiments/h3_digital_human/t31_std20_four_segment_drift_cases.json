@@ -1,0 +1,47 @@
+{
+  "cases": [
+    {
+      "name": "t31_std20_four_A",
+      "images": ["ref2va_refs/digital_human/01_host_blank_gray_16x9.png"],
+      "audio_lock": "h3_avatar/audio/segments/t31_std20_four_A.wav",
+      "width": 768, "height": 448, "length": 124, "steps": 20,
+      "seed": 7311001,
+      "prefix": "video/T31/t31_std20_four_A",
+      "save_latent": {"filename_prefix": "t31_std20_four_A", "clip_index": 1},
+      "prompt": "A single photorealistic Mandarin-speaking television presenter speaks naturally to camera in a minimalist light-gray studio, horizontal 16:9 waist-up shot, stable identity and clothing, natural mouth movement synchronized to the provided Mandarin speech, restrained facial expressions and hand gestures, no camera movement, no scene change."
+    },
+    {
+      "name": "t31_std20_four_B",
+      "images": ["ref2va_refs/digital_human/01_host_blank_gray_16x9.png"],
+      "audio_lock": "h3_avatar/audio/segments/t31_std20_four_B.wav",
+      "width": 768, "height": 448, "length": 124, "steps": 20,
+      "seed": 7311002, "prefix": "video/T31/t31_std20_four_B",
+      "save_latent": {"filename_prefix": "t31_std20_four_B", "clip_index": 1},
+      "mc": {"latent_path": "/home/sean/projects/ComfyUI/output/t31_std20_four_A_00001.safetensors", "context_length": "22", "audio_context_length": 24, "clip_index": 1},
+      "trim": true,
+      "prompt": "The same photorealistic Mandarin-speaking television presenter continues directly from the previous clip in the same minimalist light-gray studio. Preserve identity, clothing, facial details, camera framing and background. Continue the ongoing speaking motion naturally from the previous clip's final state, with restrained gestures, no camera movement and no scene change."
+    },
+    {
+      "name": "t31_std20_four_C",
+      "images": ["ref2va_refs/digital_human/01_host_blank_gray_16x9.png"],
+      "audio_lock": "h3_avatar/audio/segments/t31_std20_four_C.wav",
+      "width": 768, "height": 448, "length": 124, "steps": 20,
+      "seed": 7311003, "prefix": "video/T31/t31_std20_four_C",
+      "save_latent": {"filename_prefix": "t31_std20_four_C", "clip_index": 1},
+      "mc": {"latent_path": "/home/sean/projects/ComfyUI/output/t31_std20_four_B_00001.safetensors", "context_length": "22", "audio_context_length": 24, "clip_index": 1},
+      "trim": true,
+      "prompt": "The same photorealistic Mandarin-speaking television presenter continues directly from the previous clip in the same minimalist light-gray studio. Preserve identity, clothing, facial details, camera framing and background. Continue the ongoing speaking motion naturally from the previous clip's final state, with restrained gestures, no camera movement and no scene change."
+    },
+    {
+      "name": "t31_std20_four_D",
+      "images": ["ref2va_refs/digital_human/01_host_blank_gray_16x9.png"],
+      "audio_lock": "h3_avatar/audio/segments/t31_std20_four_D.wav",
+      "width": 768, "height": 448, "length": 124, "steps": 20,
+      "seed": 7311004, "prefix": "video/T31/t31_std20_four_D",
+      "save_latent": {"filename_prefix": "t31_std20_four_D", "clip_index": 1},
+      "mc": {"latent_path": "/home/sean/projects/ComfyUI/output/t31_std20_four_C_00001.safetensors", "context_length": "22", "audio_context_length": 24, "clip_index": 1},
+      "trim": true,
+      "prompt": "The same photorealistic Mandarin-speaking television presenter continues directly from the previous clip in the same minimalist light-gray studio. Preserve identity, clothing, facial details, camera framing and background. Continue the ongoing speaking motion naturally from the previous clip's final state, with restrained gestures, no camera movement and no scene change."
+    }
+  ]
+}

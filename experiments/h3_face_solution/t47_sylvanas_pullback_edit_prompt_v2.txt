@@ -1,0 +1,22 @@
+subject_definitions:
+<Subject 1> is the same undead elven woman being refined in <Video 1>. <Picture 1> is the complete character/object reference for her identity, pale cool skin, pointed ears, sharp elven facial structure, long dark hair, hood, dark red armor, costume silhouette and overall appearance. The separate face-only tracking image is an internal CLIP Vision identity anchor and is not a generative H3 reference.
+<Video 1> is the source video being locally edited. It is authoritative for the current character's screen position, scale, pose, head orientation, expression, pull-back motion, lighting, environment, interaction and temporal order.
+<Audio 1> is the original synchronized audio track of <Video 1>, reused unchanged after face-only stitching.
+
+summary:
+[video editing + reference generation + audio reuse] The target video is an edited version of <Video 1>. Refine only the tracked face of <Subject 1> while preserving the source video's exact character, background, composition, pull-back, action, lighting, interaction, timing and audio. Use <Picture 1> as the sole H3 character/object reference; do not treat the internal face-only tracker image as a second generative reference and do not create a new scene.
+
+retention_analysis:
+<Subject 1> (appears throughout [Shot 1]): partially_preserved - preserve the source character's exact position, scale, pose, head angle, expression, costume, motion and temporal continuity from <Video 1>; use <Picture 1> only to reinforce compatible identity and appearance inside the local tracked crop.
+<Video 1> (source composition, environment, motion and temporal structure): fully_preserved - edit the existing video in place and preserve all non-target content.
+<Picture 1> (complete character/object reference): attribute_transfer - transfer only compatible character identity, facial structure, hair, hood, armor and appearance to <Subject 1>; do not transfer its studio background, close-up framing, camera distance or pose into the target video.
+<Audio 1>: fully_copy - reuse <Audio 1> unchanged as the complete final audio track.
+
+detailed_description:
+The target is a local face refinement of <Video 1>, not a new shot or a new background. [Shot 1] Keep <Subject 1> at the exact source position, scale, pose, head orientation, expression and continuous pull-back motion found in <Video 1>. Keep the frozen fortress courtyard, snow, architecture, lighting, screen composition, interaction and every non-face pixel from <Video 1> unchanged. Use <Picture 1> as the sole H3 character/object reference for the same undead elven identity, pale skin, pointed ears, sharp facial proportions, dark hair, hood and dark red armor; do not copy its close-up camera framing, gray background, enlarged head or a new body pose. The external face-only CLIP Vision image is used only by the tracker to decide which detected person is <Subject 1>; it must not become a second H3 appearance reference. Restore only stable, compatible facial detail inside the tracked face region while preserving the source crop's current angle, expression, light and motion. The face must remain temporally coherent during the pull-back, with no identity drift, crop jitter, texture popping, duplicated features, melted features, wrong frontal face, mask-like reconstruction or invented detail after the source face becomes too small to support it. If the source face is not confidently detected, preserve the original source pixels instead of hallucinating a replacement. The result must remain suitable for face-only stitching into <Video 1> at the original coordinates. Reuse <Audio 1> unchanged.
+
+overall_soundscape:
+Preserve the original synchronized ambience and physical sounds from <Audio 1> without generating new environmental sound.
+
+non_diegetic_music:
+Do not add or regenerate music; preserve the existing source mix through <Audio 1>.

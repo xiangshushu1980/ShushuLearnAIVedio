@@ -1,0 +1,32 @@
+{
+  "owner": "Sean",
+  "source": "https://civitai.com/models/2960750/qwen-image-21-character-design-sheet-maker-workflow?modelVersionId=3377047",
+  "version": {
+    "id": 3377047,
+    "name": "Qwen Image 2.1 [V3.0]",
+    "publishedAt": "2026-10-02T12:19:34.486Z",
+    "file": "QwenImage21Character_qwenImage21V30.zip",
+    "sha256": "C9A760F237EE6044AA527949CCA4ED0986539CBEBDA94002A7631710E06F2347",
+    "changelog_html": "<ul><li><p>Dropped GGUF support in favor of native <strong>Safetensors</strong>.</p></li><li><p>Rewrote system prompt to optimize instruction adherence for smaller LLM sizes.</p></li><li><p>Merged V1 (Production) and V2 (Simple) workflows into a single release package.</p></li></ul>"
+  },
+  "previous_version": {
+    "id": 3358399,
+    "name": "Qwen Image 2.1 [V2.0]",
+    "file": "QwenImage21Character_qwenImage21V20.zip",
+    "sha256": "2049CC08278F664800E514D1317BDD52C009C2A6BB5B83DEA88B2D84EB9B034D"
+  },
+  "local_compatibility": {
+    "ComfyUI": "0.37.0",
+    "VAEDeGrid_node_available": false,
+    "TextGenerate_node_available": true,
+    "qwen3_5_4b_int8_available": false,
+    "qwen3vl_8b_bf16_available": false,
+    "static_prompt_mode": "supported by the V3 Simple workflow; bypasses prompt enhancer",
+    "adaptation": "Use current local Qwen Image 2.1 int8 stack and standard VAE decode unless installing compatible upstream dependencies/models.",
+    "present_relevant_text_models": [
+      "qwen3vl_8b_int8_convrot.safetensors",
+      "qwen3vl_4b_bf16.safetensors",
+      "qwen3vl_4b_fp8_scaled.safetensors"
+    ]
+  }
+}

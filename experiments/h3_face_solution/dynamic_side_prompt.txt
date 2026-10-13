@@ -1,0 +1,21 @@
+subject_definitions:
+<Subject 1> is the same adult man represented by the supplied identity references. Preserve his facial identity, short black hair, ears, sparse moustache and beard, skin tone, head proportions and natural human facial structure across frontal and profile views.
+<Subject 2> is the clean gray studio environment represented by the supplied scene reference. Preserve the fixed neutral gray wall, floor and soft frontal lighting.
+<Subject 3> is the charcoal overshirt and black inner shirt represented by the supplied wardrobe reference. Preserve the clothing silhouette and color.
+
+summary:
+[reference generation] Generate a five-second realistic single-person studio video designed to test a tracked face turning in depth. Use <Subject 1> as one person only, <Subject 2> as the fixed studio, and <Subject 3> as the fixed wardrobe. Preserve identity through a controlled frontal-to-profile head turn and return.
+
+retention_analysis:
+<Subject 1> (appears throughout [Shot 1]): fully_preserved - same identity, facial proportions, hair, ears, facial hair and skin tone in frontal, three-quarter and side views.
+<Subject 2> (appears throughout [Shot 1]): fully_preserved - stable gray studio, floor, lighting and camera composition.
+<Subject 3> (appears throughout [Shot 1]): fully_preserved - stable charcoal overshirt and black inner shirt.
+
+detailed_description:
+[Shot 1] Keep the camera locked in a medium-wide head-and-torso composition with the same adult man alone in the gray studio. From 00:00 to 00:01.5 he faces the camera with a neutral expression. From 00:01.5 to 00:03.0 he slowly turns his head and upper neck toward screen-right through a clear three-quarter view until the face reaches a readable near-profile view; the shoulders remain mostly stable and the body does not leave frame. From 00:03.0 to 00:04.2 he holds the side-facing pose briefly, keeping one eye, nose bridge, lips, ear, jawline, hairline and sparse beard anatomically coherent. From 00:04.2 to 00:05.0 he slowly returns toward the camera. The motion must be continuous and moderate, with no cuts, zoom, pan, reframing, extra people or occlusion. Preserve the exact same identity during the turn: do not replace the face, mirror features, duplicate eyes, stretch the nose, melt the jaw, change hair, remove facial hair or invent a second person. Maintain natural temporal continuity while the visible face area changes from large frontal to smaller profile and back.
+
+overall_soundscape:
+Quiet studio room tone with subtle clothing movement and natural breath. No dialogue or prominent effects.
+
+non_diegetic_music:
+N/A

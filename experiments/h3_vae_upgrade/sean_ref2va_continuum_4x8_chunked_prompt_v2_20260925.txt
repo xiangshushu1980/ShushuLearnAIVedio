@@ -1,0 +1,115 @@
+[0-8s]
+subject_definitions
+<Subject 1> is the pale silver-haired elven archer from <Picture 1>, with pointed ears, pale skin, light blue eyes, a dark teal hooded cloak, dark leather armor, and one single dark recurve bow secured diagonally across her back. Never create a second bow or another weapon.
+<Subject 2> is the red-haired woman from <Picture 2>, with asymmetrical auburn hair, dark skin, a burgundy leather coat, brass shoulder armor, gloves, and boots.
+<Subject 3> is the moonlit stone observatory from <Picture 3>, with a circular floor, gothic arches, tall windows, two stone pedestals, blue moonlight, and drifting mist.
+<Subject 4> is one translucent cyan magical ribbon from <Picture 4>; never split it into independent spells. It has a bright cyan core, blue halo, floating shards, and slow helical motion.
+<Subject 5> is one engraved brass compass from <Picture 5>, with a blue glass center, leather strap, and side knob.
+<Subject 2> (S1) is the red-haired woman speaking in a low, cautious Mandarin voice.
+<Picture 1> through <Picture 5> are visual references only, not target frames.
+
+summary
+[reference generation] Generate the first 8-second continuous chunk of a single fantasy scene in <Subject 3>. Establish <Subject 2> and the single <Subject 5> compass. Do not introduce <Subject 1> or <Subject 4> yet.
+
+retention_analysis
+<Subject 1>: fully_preserved reference, not visible in this chunk.
+<Subject 2>: fully_preserved throughout the chunk.
+<Subject 3>: fully_preserved throughout the chunk.
+<Subject 4>: fully_preserved reference, not visible yet.
+<Subject 5>: fully_preserved throughout the chunk.
+
+detailed_description
+Use one continuous shot with no cut. At the beginning, <Subject 3> is empty except for moonlight and mist. <Subject 2> enters from screen left and walks toward the nearer stone pedestal. She holds the one <Subject 5> compass in her right hand and keeps her left hand empty. The camera tracks backward with small amplitude at slow speed, maintaining her on the left third of the frame and preserving the observatory arches and circular floor. She studies the compass's blue center, then stops beside the pedestal and turns the compass toward the center of the room. Near the end, <Subject 2> (S1) whispers in Mandarin with her lips clearly synchronized: <d>[Chinese] 这座塔还在呼吸。</d> End with <Subject 2> standing beside the pedestal, compass still in her right hand, left hand empty, facing toward the center. This exact pose, screen position, lighting, and compass ownership are the starting state for the next chunk. No second character, bow, spell, or visible text.
+
+overall_soundscape
+Cold wind through the arches, measured footsteps on stone, quiet leather movement, one small brass compass click, and <Subject 2>'s quiet Mandarin whisper near the end. No music.
+
+non_diegetic_music
+N/A
+
+[8-16s]
+subject_definitions
+<Subject 1> is the same pale silver-haired elven archer from <Picture 1>, with one single dark recurve bow secured diagonally across her back. Never create a second bow or another weapon.
+<Subject 2> is the same red-haired woman from <Picture 2>, wearing the same burgundy leather outfit.
+<Subject 3> is the same moonlit stone observatory from <Picture 3>.
+<Subject 4> is one cyan magical ribbon from <Picture 4>, not yet active; never split it into independent spells.
+<Subject 5> is the same single brass compass from <Picture 5>.
+<Subject 1> (S2) is the silver-haired archer speaking in a calm, restrained Mandarin voice.
+<Picture 1> through <Picture 5> are visual references only, not target frames.
+
+summary
+[reference generation] Continue exactly from the previous chunk: <Subject 2> remains beside the pedestal holding <Subject 5> in her right hand. Introduce <Subject 1> as a second character while preserving the same observatory, lighting, compass, and screen direction.
+
+retention_analysis
+<Subject 1>: fully_preserved after entering from screen right.
+<Subject 2>: fully_preserved from the previous chunk.
+<Subject 3>: fully_preserved from the previous chunk.
+<Subject 4>: fully_preserved reference, still inactive.
+<Subject 5>: fully_preserved in <Subject 2>'s right hand until the explicit handoff.
+
+detailed_description
+Use one continuous shot with no cut. Begin from the exact previous state: <Subject 2> stands beside the nearer pedestal, facing the center, holding the one <Subject 5> compass in her right hand, with her left hand empty. <Subject 1> enters slowly from screen right. Her single dark bow remains fixed diagonally across her back and both of her hands are empty while she approaches. The camera trucks left with small amplitude at slow speed to form a balanced two-shot without changing the observatory layout. <Subject 2> looks toward <Subject 1> and asks in Mandarin: <d>[Chinese] 你也听见了吗？</d> <Subject 1> answers calmly: <d>[Chinese] 听见了，罗盘在指引我们。</d> She extends the compass forward in her right hand. <Subject 1> reaches with her left hand. Near the end of this 8-second chunk, the compass transfers once from <Subject 2>'s right hand to <Subject 1>'s left hand. End with <Subject 1> holding the compass in her left hand at chest level, the bow still on her back, while <Subject 2> has both hands empty and stands one step to the left. No spell activates yet, no duplicate compass appears, and no new weapon is created.
+
+overall_soundscape
+Continue the same wind and stone-room ambience. Add approaching footsteps, fabric and armor movement, two quiet Mandarin voices, and one clear brass handoff click at the transfer. No music.
+
+non_diegetic_music
+N/A
+
+[16-24s]
+subject_definitions
+<Subject 1> is the same silver-haired archer from <Picture 1>, holding the one bow on her back and the one compass in her left hand.
+<Subject 2> is the same red-haired woman from <Picture 2>, standing nearby with both hands empty.
+<Subject 3> is the same moonlit observatory from <Picture 3>.
+<Subject 4> is one cyan magical ribbon from <Picture 4>, beginning as a small glow around the compass and growing continuously; never split it into independent spells.
+<Subject 5> is the same brass compass from <Picture 5>, held in <Subject 1>'s left hand.
+<Subject 2> (S1) and <Subject 1> (S2) keep the same Mandarin voices as in the previous chunk.
+<Picture 1> through <Picture 5> are visual references only, not target frames.
+
+summary
+[reference generation] Continue exactly from the completed handoff. Keep both characters and the compass fixed in their current positions, then begin one controlled cyan spell from the compass without changing the room or restarting the action.
+
+retention_analysis
+<Subject 1>: fully_preserved from the previous chunk, compass in left hand, bow on back.
+<Subject 2>: fully_preserved from the previous chunk, both hands empty.
+<Subject 3>: fully_preserved from the previous chunk.
+<Subject 4>: fully_preserved as one evolving spell, not multiple effects.
+<Subject 5>: fully_preserved in <Subject 1>'s left hand.
+
+detailed_description
+Use one continuous shot with no cut. Begin from the exact previous state: <Subject 1> stands near the center holding <Subject 5> in her left hand; her right hand is empty and her single bow remains diagonally across her back. <Subject 2> stands one step to the left with both hands empty. <Subject 1> warns in Mandarin: <d>[Chinese] 别松手，它要打开了。</d> <Subject 2> answers: <d>[Chinese] 我不会。</d> The camera pushes in slowly toward the compass and both faces. A small cyan glow appears around the compass, then becomes <Subject 4>, one translucent ribbon that coils once around the compass and rises in a controlled helix. The effect grows gradually from a small glow to a waist-high loop; it must remain one connected ribbon with one source at the compass. Cyan light reflects on both characters and the stone floor while the architecture, moonlight direction, and mist remain unchanged. End with the single ribbon stable between the two characters, still anchored to the compass in <Subject 1>'s left hand.
+
+overall_soundscape
+Continue the same wind and room tone. Add two restrained Mandarin voices, a low magical hum that begins at the compass and grows smoothly, and sparse glass-like particles. No music.
+
+non_diegetic_music
+N/A
+
+[24-32s]
+subject_definitions
+<Subject 1> is the same silver-haired archer from <Picture 1>, holding the one compass in her left hand and keeping the one bow on her back.
+<Subject 2> is the same red-haired woman from <Picture 2>, standing beside her with empty hands.
+<Subject 3> is the same moonlit observatory from <Picture 3>.
+<Subject 4> is the same single cyan ribbon spell from <Picture 4>, already active and continuous from the previous chunk; never split it into independent spells.
+<Subject 5> is the same compass from <Picture 5>, still in <Subject 1>'s left hand.
+<Subject 2> (S1) and <Subject 1> (S2) keep the same Mandarin voices as in the previous chunks.
+<Picture 1> through <Picture 5> are visual references only, not target frames.
+
+summary
+[reference generation] Continue exactly from the stable spell state. Do not restart the spell, change compass ownership, duplicate the bow, or reset either character. Resolve the same scene with a controlled final magical image.
+
+retention_analysis
+<Subject 1>: fully_preserved from the previous chunk.
+<Subject 2>: fully_preserved from the previous chunk.
+<Subject 3>: fully_preserved from the previous chunk.
+<Subject 4>: fully_preserved as the same single continuous ribbon.
+<Subject 5>: fully_preserved in <Subject 1>'s left hand.
+
+detailed_description
+Use one continuous shot with no cut. Begin from the exact previous state: the same two characters stand in the same observatory, <Subject 1> holds <Subject 5> in her left hand, and the single cyan <Subject 4> ribbon is already active and anchored to the compass. The camera makes a slow clockwise arc with small amplitude around both characters while preserving their left-right relationship. <Subject 2> asks in Mandarin: <d>[Chinese] 门后是什么？</d> <Subject 1> answers in a low voice: <d>[Chinese] 我们马上就知道。</d> <Subject 1> raises her left hand slightly to chest height; her right hand stays empty and the single bow remains visible on her back. <Subject 2> turns toward the brightest arched window without changing position abruptly. The cyan ribbon widens into a luminous doorway-shaped loop between the two pedestals, then settles into a steady helix without multiplying or disappearing. End this 8-second chunk with both characters facing the stable light, the compass still in <Subject 1>'s left hand, the bow still on her back, and the observatory unchanged.
+
+overall_soundscape
+Continue the same wind, room tone, and magical hum without a reset at the chunk boundary. Add four short Mandarin lines across the scene, a gentle rise in the ribbon's resonant tone, and sparse particles. No music.
+
+non_diegetic_music
+N/A

@@ -1,0 +1,150 @@
+{
+  "1": {
+    "class_type": "UNETLoader",
+    "inputs": {
+      "unet_name": "qwen_image_2.1_int8_convrot.safetensors",
+      "weight_dtype": "default"
+    }
+  },
+  "2": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen3vl_8b_int8_convrot.safetensors",
+      "type": "qwen_image",
+      "device": "default"
+    }
+  },
+  "3": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+    }
+  },
+  "4": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "sean_qwen21_duo_facefixed_20261002.png"
+    }
+  },
+  "5": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "sean_qwen21_duo_male_identity_20261002.png"
+    }
+  },
+  "6": {
+    "class_type": "QwenImage21Cache",
+    "inputs": {
+      "model": [
+        "1",
+        0
+      ],
+      "device": "auto",
+      "dtype": "default"
+    }
+  },
+  "7": {
+    "class_type": "TextEncodeQwenImage21",
+    "inputs": {
+      "clip": [
+        "2",
+        0
+      ],
+      "prompt": "Use <image1> as the corrected two-person composition and outfit reference; both faces must remain front-facing and fully visible. Use <image2> only as the man’s identity reference, <image3> only as the woman’s identity reference, <image4> only as the ornate dark-steel sword design, and <image5> only as the dark kite shield with a gold starburst design. Create a coordinated guardian action, not a static side-by-side pose: the man steps forward on the left and makes a controlled sword sweep toward an unseen threat outside the left edge; the woman stands half a step behind on the right and raises the referenced shield to cover his open side against that same threat. Their body directions and timing should clearly support one another. Keep both faces turned toward the camera, eyes visible, with the same recognizable identities; no weapon or shield may cross either face. Keep the man in his light-blue denim shirt and put a dark leather adventurer hat on him, with the brim lifted enough to leave both eyes unobstructed. Keep the woman in her forest-green tunic and give her an elegant small gold crown over her dark wavy hair, without covering her face. Preserve their separate clothing and identities. Use the plain cool gray-blue studio background, exactly two people, and no extra objects or people.",
+      "negative_prompt": "",
+      "resolution": 1024,
+      "vae": [
+        "3",
+        0
+      ],
+      "images.image_1": [
+        "4",
+        0
+      ],
+      "images.image_2": [
+        "5",
+        0
+      ],
+      "images.image_3": [
+        "11",
+        0
+      ],
+      "images.image_4": [
+        "12",
+        0
+      ],
+      "images.image_5": [
+        "13",
+        0
+      ]
+    }
+  },
+  "8": {
+    "class_type": "KSampler",
+    "inputs": {
+      "model": [
+        "6",
+        0
+      ],
+      "positive": [
+        "7",
+        0
+      ],
+      "negative": [
+        "7",
+        1
+      ],
+      "latent_image": [
+        "7",
+        2
+      ],
+      "seed": 2102051,
+      "steps": 25,
+      "cfg": 1.0,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1.0
+    }
+  },
+  "9": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "8",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    }
+  },
+  "10": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "9",
+        0
+      ],
+      "filename_prefix": "sean_qwen21_multiref_20261001/test14_duo_coordinated_headwear"
+    }
+  },
+  "11": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "sean_qwen21_duo_companion_identity_20261002.png"
+    }
+  },
+  "12": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "sean_qwen21_duo_sword_20261002.png"
+    }
+  },
+  "13": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "sean_qwen21_duo_shield_20261002.png"
+    }
+  }
+}

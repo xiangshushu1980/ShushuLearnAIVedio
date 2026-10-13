@@ -1,0 +1,130 @@
+{
+  "1": {
+    "class_type": "UNETLoader",
+    "inputs": {
+      "unet_name": "qwen_image_2.1_int8_convrot.safetensors",
+      "weight_dtype": "default"
+    }
+  },
+  "2": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen3vl_8b_int8_convrot.safetensors",
+      "type": "qwen_image",
+      "device": "default"
+    }
+  },
+  "3": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+    }
+  },
+  "4": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "portrait_model_denim.png"
+    }
+  },
+  "5": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "clothing_light_blue_denim_shirt.png"
+    }
+  },
+  "6": {
+    "class_type": "QwenImage21Cache",
+    "inputs": {
+      "model": [
+        "1",
+        0
+      ],
+      "device": "auto",
+      "dtype": "default"
+    }
+  },
+  "7": {
+    "class_type": "TextEncodeQwenImage21",
+    "inputs": {
+      "clip": [
+        "2",
+        0
+      ],
+      "prompt": "Use <image1> as the character identity reference. Preserve the same man’s facial identity, skin tone, curly hairstyle, side-profile head angle, thoughtful expression, and cool gray-blue studio background. Use <image2> only as the clothing design reference: replace his dark teal top with the same light-blue washed denim button-up shirt, pointed collar, centered button placket, single chest pocket, seam lines, cuffs, and realistic fabric folds. Use <image3> only as the weapon design reference: include the same full-length ornate dark-steel longsword with gold star engravings, gold-accented crossguard and pommel, and dark leather grip. Create a polished fantasy character concept portrait, widening the crop naturally to waist-up if needed so one hand can visibly hold the sword by its grip beside his body. Keep the sword readable and fully visible as much as the portrait framing allows; blade points upward along the right side of the image, not across the face. Make the hand anatomy and grip believable. Do not copy the hanger, wall, shadows, or garment arrangement from <image2>; do not add other weapons, jewelry, armor, text, or extra people.",
+      "negative_prompt": "",
+      "resolution": 1024,
+      "vae": [
+        "3",
+        0
+      ],
+      "images.image_1": [
+        "4",
+        0
+      ],
+      "images.image_2": [
+        "5",
+        0
+      ],
+      "images.image_3": [
+        "11",
+        0
+      ]
+    }
+  },
+  "8": {
+    "class_type": "KSampler",
+    "inputs": {
+      "model": [
+        "6",
+        0
+      ],
+      "positive": [
+        "7",
+        0
+      ],
+      "negative": [
+        "7",
+        1
+      ],
+      "latent_image": [
+        "7",
+        2
+      ],
+      "seed": 2102021,
+      "steps": 25,
+      "cfg": 1.0,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1.0
+    }
+  },
+  "9": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "8",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    }
+  },
+  "10": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "9",
+        0
+      ],
+      "filename_prefix": "sean_qwen21_multiref_20261001/test02_person_shirt_sword"
+    }
+  },
+  "11": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "sean_ornate_longsword_ref.png"
+    }
+  }
+}

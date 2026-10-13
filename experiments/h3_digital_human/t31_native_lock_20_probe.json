@@ -1,0 +1,13 @@
+{
+  "cases": [
+    {
+      "name": "t31_native_lock_20_probe",
+      "images": ["ref2va_refs/diagnostic/02_T31_audio_ref.png"],
+      "audio_lock": "T31_audio_driver_20260907.wav",
+      "width": 768, "height": 448, "length": 124, "steps": 20,
+      "seed": 71090801,
+      "prefix": "video/T31/t31_native_lock_20_probe",
+      "prompt": "A photorealistic Mandarin-speaking presenter speaks naturally to camera in the same light-gray studio, stable identity and clothing, accurate mouth movement synchronized to the provided audio, restrained gestures, no camera movement, no scene change."
+    }
+  ]
+}

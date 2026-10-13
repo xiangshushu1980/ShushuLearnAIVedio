@@ -1,0 +1,95 @@
+# 信息架构与决策演进调研
+
+Owner: Sean  
+日期：2026-10-14  
+范围：Diátaxis、MADR、adr-tools；只研究，不安装或运行仓库代码。
+
+## 建议
+
+最值得吸收的是「按读者问题设置入口」与「为重要选择保留理由和代价」。保留既有真源分层；按需给正文增加用途；把决策理由纳入现有 ledger 或边界文档。无需新增四套文档目录或安装 ADR CLI。
+
+| 机制 | 建议 | 对 skill 的具体改造 |
+|---|---|---|
+| Diátaxis 的用途分类 | 采用，轻量 | 新写一页前明确读者要做什么：查当前契约、执行操作、理解理由、学习入门；混杂时把非主要用途移出并链接 |
+| Diátaxis 的渐进改进 | 采用 | 优先修当前任务触及的一页；不为了分类补空目录，不重排全库 |
+| MADR 的问题、候选、选择理由、后果 | 采用，按需 | 重要选择必须说明约束、落选原因、接受的代价、复核触发；琐碎编辑免写决策记录 |
+| MADR 的 Confirmation | 采用概念 | 明确「怎样判定选择落实」，写验收证据指针；不自动要求新增测试 |
+| 替代链双向链接 | 采用现有机制 | 直接引用 ledger 既有覆盖纪律；通用 skill 只要求明确后继指针，不复制项目 ledger 手册 |
+| 新建独立 ADR 文档族 | 可选 | 只有项目没有决策历史落点且反复追问理由时才引入；已有 ledger 则复用 |
+| adr-tools CLI、默认 Accepted、全局流水号 | 不采用 | 引入新工具无明显收益；默认接受有误导风险；并行写入顺序号可能撞号 |
+| 单一全库线性 TOC | 不采用为默认入口 | 只作历史发现；当前入口按主题与问题指向权威页，历史条目不占满入口 |
+
+## 获取与证据边界
+
+三仓库 shallow clone 存于 `/tmp/sean-project-doc-research-20261014/`。下列 commit 是实际取得快照，不宣称稳定 release 或生产验证。三者都是一手来源；没有采纳聚合搜索摘要。深入组覆盖官方网页、官方仓库文档、仓库实现/模板三种证据载体，未调查社区使用效果、未执行测试；整体外部渠道覆盖由总览报告汇总。
+
+| 项目 | 实际仓库与 commit | 许可证核对 | 本地目录 |
+|---|---|---|---|
+| Diátaxis | `evildmp/diataxis-documentation-framework` · `957c09ca40b4a1edc23874f713e01937d50d54d5` | CC BY-SA 4.0，[声明](https://github.com/evildmp/diataxis-documentation-framework/blob/957c09ca40b4a1edc23874f713e01937d50d54d5/README.rst#L18) | `diataxis-documentation-framework` |
+| MADR | `adr/madr` · `ba75bb1b20d42af5746b246ad348c202419ae681` | MIT OR CC0-1.0，[声明](https://github.com/adr/madr/blob/ba75bb1b20d42af5746b246ad348c202419ae681/README.md#L108-L115) | `madr` |
+| adr-tools | `npryce/adr-tools` · `b3279baf9be2207d1a4f4bbd608fd0b591c72aee` | 工具 GPL-3.0-or-later；生成内容 CC BY 4.0，[声明](https://github.com/npryce/adr-tools/blob/b3279baf9be2207d1a4f4bbd608fd0b591c72aee/LICENSE.txt#L1-L19) | `adr-tools` |
+
+原候选 `Diataxis/diataxis-documentation` clone 返回 Repository not found；经 [官方 colophon](https://diataxis.fr/colophon/) 发现真实仓库后取得源码。许可证记录用于说明材料来源；本报告独立概括机制，不直接复制框架正文或代码进我们的 skill。
+
+## Diátaxis：用途与权威层是两个维度
+
+**文档声称**：其分类依据读者需求，教程、操作指南、参考与解释各服务不同任务。[官方首页](https://diataxis.fr/)
+
+**仓库文档确认**：`source/compass.rst` 用行为/认知、学习/工作两个问题辅助分类，并允许在一句话、一段或整页层面应用。[永久证据](https://github.com/evildmp/diataxis-documentation-framework/blob/957c09ca40b4a1edc23874f713e01937d50d54d5/source/compass.rst#L24-L77)
+
+**仓库文档确认**：其工作方法强调从小范围逐步改进，不要求先搭满四类空结构。[永久证据](https://github.com/evildmp/diataxis-documentation-framework/blob/957c09ca40b4a1edc23874f713e01937d50d54d5/source/how-to-use-diataxis.rst#L13-L41)
+
+**源码确认**：网站首页把快速开始、实际应用、理论理解分为不同入口，目录深度设为 1。[永久证据](https://github.com/evildmp/diataxis-documentation-framework/blob/957c09ca40b4a1edc23874f713e01937d50d54d5/source/index.rst#L51-L107)
+
+**我们的推断**：现有 skill 的边界/摘要/细节/历史回答「谁是权威、保留什么粒度」；用途回答「读者为何看这页」，两者可以并存。一个参考页可以是当前契约真源，一个操作页通过链接消费契约。两页都复制同一参数仍会漂移；用途分类不会自动解决真源问题。
+
+推荐新增规则：每页写清一个主要用途；索引按「当前规则在哪里／如何执行／理由和证据在哪里／历史如何查」导航。不要求为每种用途创建文件。主入口保持短，历史流水按主题下沉。目录深度 1 是其实现选择，不能推断为所有项目硬限制；我们的有界入口需另定义按需阅读约束。
+
+## MADR：决定与证据必须区分
+
+**源码/模板确认**：完整模板包含可删的 status/date 等元数据，问题与范围、驱动因素、候选方案、选择及理由、正负后果、Confirmation、候选详细比较和补充信息；部分章节明确可选。[模板永久证据](https://github.com/adr/madr/blob/ba75bb1b20d42af5746b246ad348c202419ae681/template/adr-template.md#L1-L73)
+
+**源码/模板确认**：最小模板只保留问题、候选和选择理由，后果可选。[最小模板](https://github.com/adr/madr/blob/ba75bb1b20d42af5746b246ad348c202419ae681/template/adr-template-minimal.md#L1-L23)
+
+**我们的推断**：MADR 适合补足当前 skill 的「为什么采用这个结构」；不适合把每个实验结论自动升级为架构决定。Accepted 表示决定已被采纳，不表示性能已实测、实现已上线或任务已验收。应分开保存决定状态、证据类别与任务链接。
+
+可选轻量记录，字段以独立中文表述实现：
+
+```markdown
+## <日期> <决定主题>
+- 问题与适用范围：
+- 约束与候选：<只列真实考虑过的候选>
+- 采用及理由：
+- 代价与局限：
+- 核对方式/证据链接：
+- 复核触发：<依赖版本、使用范围或事实发生什么变化>
+- 生效/取代：<现行正文、旧记录或后继记录链接>
+```
+
+此模板是建议，未在真实迁移中验证。既有 ledger 条目可用链接引用单独的方案分析，避免扩充每条结论为冗长 ADR。复核触发是根据模板 More Information 中 revisit 提示形成的本地操作建议，不是上游强制规范。
+
+## adr-tools：可借覆盖机制，工具不值得引入
+
+**源码确认**：`adr-new` 的 `-s` 会改旧记录状态并给新旧两端加链接；`-l` 同样建立双向关系。[实现](https://github.com/npryce/adr-tools/blob/b3279baf9be2207d1a4f4bbd608fd0b591c72aee/src/adr-new#L115-L130)
+
+**源码确认**：新编号由当前目录最大数字加一取得，默认模板状态被替换为 Accepted；生成后调用编辑器。[实现](https://github.com/npryce/adr-tools/blob/b3279baf9be2207d1a4f4bbd608fd0b591c72aee/src/adr-new#L94-L113)
+
+**我们的推断**：该编号片段没有并发预留步骤，多 Agent 同时取得相同最大编号可能覆盖同名输出或造成重复编号；未通过执行复现，不能标本地实测。当前结论 ID 应沿用项目主题+日期约定。
+
+**源码确认**：TOC 生成逐条列出标题链接，支持链接前缀；不包含作用域、当前有效性或读者任务路由。[实现](https://github.com/npryce/adr-tools/blob/b3279baf9be2207d1a4f4bbd608fd0b591c72aee/src/_adr_generate_toc#L46-L63)
+
+**本地文档确认**：comfy-ops `.pi/ledger/README.md` 已定义结论覆盖链、证据锚和双向追溯，并已明确决定不引入 adr-tools CLI。此轮不应重新制造 ADR 系统。可补充的是重要选型的「未采用项理由、代价、复核触发」，而非再加入状态工具。
+
+## 现有 skill 的具体问题与修订优先级
+
+1. **状态唯一真源的适用域必须先厘清。** 当前「当前状态只在摘要层维护」与 Task Center 外部生命周期真源冲突。建议改为：任务状态读取 Task Center；当前技术契约落项目指定 docs；摘要只负责导航或明确的研究项视图。摘要中呈现外部状态时给来源与查询时间，不能自行推进生命周期。Diátaxis/MADR 无此宿主契约，此建议来自本地规则对照。
+2. **禁止复制过于绝对。** ledger 必须留历史值，记录稳定历史快照不是维护第二份当前真源。定义「一个范围内只有一个当前权威正文」，允许不可变历史证据、明确引用的派生摘要和归档。对摘要数字也按是否服务入口判断，重点是链接来源和不独立更新。
+3. **证据等级不能排成线性可信度。** 当前把静态推断排在源码确认之上容易误读。分别标文档声称、源码确认、推断、实测，注明版本、场景、范围；源码存在不代表功能可用，本地实测不代表其他环境。
+4. **定位顺序应从主题入口与外部真源开始。** 最近修改文件只能说明变化，不能决定现行权威；不应固定扫描全库或改用最新文件取代基线。Git 适合查看指定文件变化和历史。
+5. **增加重要选择的记录触发。** 有多方案取舍、会影响后续执行、预计要解释代价时记录；修辞与链接修补无需 ADR。
+
+## 渐进迁移
+
+先改 skill 的宿主真源边界、证据标签和导航规则，再增加可选决定模板。已有项目保留目录与 ID；选当前触及的一个主题明确权威页、操作页、证据/历史入口。对重复当前值保留权威正文，其他位置改指针；历史记录保留原始结论并标后继。完成后再观察是否仍需要独立决策目录。
+
+推荐父 agent 下一轮重点分析「真源范围与派生视图」及「决定状态、研究有效性、任务生命周期的分离」；这比进一步比较 ADR CLI 更能解决现有 skill 的实质冲突。

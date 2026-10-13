@@ -1,0 +1,24 @@
+[
+  {
+    "name": "vdn_breeze_clone_1024x576_20s_crisis_effects_positive",
+    "refs": [
+      "ref2va_refs/vdn_dual_dialogue/sylvanas_style.png",
+      "ref2va_refs/vdn_dual_dialogue/original_caped_hero.png",
+      "ref2va_refs/vdn_dual_dialogue/ice_fortress_background.png"
+    ],
+    "prompt": "subject_definitions:\n<Subject 1> is the local guardian Sylvanas, with her identity and visual appearance defined by the first reference image.\n<Subject 2> is the visiting male hero, with his identity and visual appearance defined by the second reference image.\n<Subject 3> is the ice fortress environment, with its spatial layout and visual atmosphere defined by the third reference image.\n<Audio 1> is the externally supplied dual-speaker Chinese dialogue track from dialogue_dual_breeze_clone_vdn_strict20s.wav, directly reused as the target speech performance; <Subject 1> (S1) is the female speaker and <Subject 2> (S2) is the male speaker.\n\nsummary:\n[reference generation + audio reuse] The target video shows <Subject 1> and <Subject 2> holding a tense conversation as <Subject 2> arrives to help during a crisis affecting <Subject 3>. The target uses <Audio 1> as the complete synchronized dialogue track.\n\nretention_analysis:\n<Subject 1> (appears in [Shot 1]): fully_preserved - Sylvanas's identity and visual appearance remain stable throughout the dialogue.\n<Subject 2> (appears in [Shot 1]): fully_preserved - the visiting hero's identity and visual appearance remain stable throughout the dialogue.\n<Subject 3> (appears in [Shot 1]): fully_preserved - the fortress setting and its spatial composition remain stable throughout the dialogue.\n<Audio 1>: fully_copy - the complete externally supplied dual-speaker dialogue track is reused for the target video's synchronized speech performance.\n\ndetailed_description:\nThe target video uses a high-fantasy dramatic style with cold blue atmospheric lighting and a restrained deep-red magical contrast.\n[Shot 1] <Subject 3> fills the continuous medium-wide two-shot while <Subject 1> and <Subject 2> face each other in a balanced knees-up composition, with the full courtyard and distant castle visible. The camera holds a locked-off viewpoint for the entire 20-second dialogue. <Subject 1> (S1) and <Subject 2> (S2) alternate speaking according to <Audio 1>, with clear facial performance, natural mouth movement, attentive eye contact, and measured reactions. The fortress crisis is expressed through blue-white frost magic: luminous ice crystals and fine snow drift through the air, thin icy mist moves across the ground, and frost light glints along the castle walls and stone floor. During <Subject 2>'s important reactions, both eyes carry a subtle blue-white magical shimmer. The distant castle emits a deep red magical glow through the clouds; the glow pulses slowly, illuminates the distant towers, and creates a faint red reflection on the snowy stone. The frost energy responds gently to the dialogue as the scene develops from danger toward hope, while the three referenced subjects remain visually continuous through the final frame.\n\noverall_soundscape:\n<Audio 1> carries the complete synchronized alternating Chinese dialogue between <Subject 1> (S1) and <Subject 2> (S2), including its pauses, timing, and vocal interaction throughout the shot.\n\nnon_diegetic_music:\nN/A",
+    "unet": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+    "steps": 8,
+    "width": 1024,
+    "height": 576,
+    "length": 481,
+    "seed": 20260922,
+    "audio": "vdn_audio_test/dialogue_dual_breeze_clone_vdn_strict20s.wav",
+    "vdn": true,
+    "vdn_branch_weights": "stream",
+    "vdn_retain_buffers": "off",
+    "release_before_decode": true,
+    "tiled_vae": true,
+    "prefix": "video/h3_vdn_ref2va/breeze_clone_1024x576_20s_crisis_effects_positive_20260917"
+  }
+]

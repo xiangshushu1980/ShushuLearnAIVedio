@@ -1,0 +1,21 @@
+subject_definitions:
+<Subject 1> is the undead elven woman defined by the supplied character reference.
+<Subject 2> is the flying hero defined by the supplied character reference.
+<Subject 3> is the frozen fortress courtyard defined by the supplied environment reference.
+
+summary:
+[reference generation] Generate a five-second cinematic far-wide two-person shot using <Subject 1> and <Subject 2> in <Subject 3>. Keep both characters as the same identities while deliberately making their faces small in frame for a distant-face-detail test.
+
+retention_analysis:
+<Subject 1> (appears throughout [Shot 1]): fully_preserved - preserve the same identity and motion.
+<Subject 2> (appears throughout [Shot 1]): fully_preserved - preserve the same identity and motion.
+<Subject 3> (appears throughout [Shot 1]): fully_preserved - preserve the courtyard layout, atmosphere and lighting.
+
+detailed_description:
+The target video is a restrained cinematic fantasy wide shot with the environment occupying most of the frame. [Shot 1] Begin on a locked far-wide two-shot: both characters stand several meters apart in the frozen courtyard, shown full-body or nearly full-body, with the ruined architecture, snow and distant mountains clearly dominant. Keep each head small in frame, approximately 30–50 source pixels high, so this is a genuine distant-face test rather than a portrait. <Subject 1> remains on screen-left and <Subject 2> remains on screen-right, facing one another. They perform only one restrained action: each makes a small conversational gesture while maintaining position. The camera then makes a very slow, shallow pull-back over the shot, increasing the surrounding negative space without cutting, panning, tilting or reframing toward either face. Keep both subjects continuously visible and spatially separated. Preserve the source-defined identities, body proportions, costumes and environment through the motion; do not add people, enlarge the heads, change to a medium shot, introduce a close-up, or replace either face. Keep the lighting stable and the background readable. The final frame remains a far-wide composition with both small faces still visible and temporally coherent.
+
+overall_soundscape:
+Cold outdoor wind across the courtyard, faint snow movement, distant cloth and armor movement, and restrained footsteps or body movement. No dialogue and no prominent effects.
+
+non_diegetic_music:
+N/A

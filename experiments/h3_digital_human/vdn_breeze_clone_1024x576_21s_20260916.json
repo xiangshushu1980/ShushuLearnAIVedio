@@ -1,0 +1,24 @@
+[
+  {
+    "name": "vdn_breeze_clone_1024x576_21s",
+    "refs": [
+      "ref2va_refs/vdn_dual_dialogue/sylvanas_style.png",
+      "ref2va_refs/vdn_dual_dialogue/original_caped_hero.png",
+      "ref2va_refs/vdn_dual_dialogue/ice_fortress_background.png"
+    ],
+    "prompt": "For the target video, <Picture 1> is the cold undead elven woman Sylvanas, <Picture 2> is the blue-suited red-caped male hero, and <Picture 3> is the frozen fortress courtyard. Preserve both character identities, clothing, proportions, and the fortress background. Cinematic realistic fantasy, 16:9 medium two-shot, woman on the left and hero on the right, facing each other, both framed head to waist with the background clearly visible. Use stable medium two-shots and restrained over-the-shoulder views, with no rapid montage cuts. The NativeAudioLock audio contains eight alternating Chinese lines in the order Sylvanas, Hero, Sylvanas, Hero, Sylvanas, Hero, Sylvanas, Hero, followed by a brief silent tail. The audio timing and speaker identity are authoritative; only Sylvanas speaks on odd-numbered lines and only the male hero speaks on even-numbered lines. Keep both faces unobstructed. Subtle wind and sparse frost are allowed, but no pine trees, branches, leaves, extra people, subtitles, readable text, watermark, extra limbs, or identity drift. Natural lip sync, stable scale, one continuous cinematic scene.",
+    "unet": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+    "steps": 8,
+    "width": 1024,
+    "height": 576,
+    "length": 505,
+    "seed": 20260921,
+    "audio": "vdn_audio_test/dialogue_dual_breeze_clone_vdn_strict21s.wav",
+    "vdn": true,
+    "vdn_branch_weights": "stream",
+    "vdn_retain_buffers": "off",
+    "release_before_decode": true,
+    "tiled_vae": true,
+    "prefix": "video/h3_vdn_ref2va/breeze_clone_1024x576_21s_20260916"
+  }
+]

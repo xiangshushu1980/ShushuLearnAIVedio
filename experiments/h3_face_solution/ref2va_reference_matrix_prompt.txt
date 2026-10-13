@@ -1,0 +1,21 @@
+subject_definitions:
+<Subject 1> is the same adult man represented by the supplied identity references. Preserve his facial identity, short black hair, ears, sparse moustache and beard, skin tone, head proportions, neutral expression, and natural human facial structure. When multiple views are supplied, use them as complementary views of one person rather than separate people. Do not mix, average, or invent another face.
+<Subject 2> is the clean gray studio environment represented by the supplied scene reference. Preserve the neutral gray wall, floor, soft frontal lighting, and uncluttered background.
+<Subject 3> is the charcoal overshirt and black inner shirt represented by the supplied wardrobe reference. Preserve the clothing silhouette, collar, buttons, pocket, and dark charcoal color.
+
+summary:
+[reference generation] Generate a five-second continuous realistic studio video using <Subject 1> as the single person, <Subject 2> as the fixed environment, and <Subject 3> as the fixed wardrobe. The main purpose is to test facial identity and visible facial detail in a medium-wide composition where the head occupies a limited portion of the frame. Keep one person only, centered, with no cuts, no camera reframing, no additional faces, and no identity blending.
+
+retention_analysis:
+<Subject 1> (appears throughout [Shot 1]): fully_preserved - preserve the same face, hair, ears, facial hair, skin tone, head proportions, and identity across the entire shot; complementary views only clarify the same identity.
+<Subject 2> (appears throughout [Shot 1]): fully_preserved - preserve the gray studio background, soft frontal lighting, and uncluttered spatial layout.
+<Subject 3> (appears throughout [Shot 1]): fully_preserved - preserve the charcoal overshirt, black inner shirt, collar, buttons, pocket, and silhouette.
+
+detailed_description:
+The target video is a realistic studio portrait test with neutral soft lighting, natural skin texture, and a restrained camera. [Shot 1] The same adult man from <Subject 1> stands alone in the gray studio from <Subject 2>, wearing the charcoal overshirt and black inner shirt from <Subject 3>. Begin with a medium-wide head-and-torso composition: his head is clearly visible but does not fill the frame, allowing the test to expose small-face detail rather than relying on a close-up. Keep his face frontal or only slightly three-quarter, with both eyes, nose, mouth, ears, short black hair, sparse moustache and beard, and jawline visibly readable. The camera holds a static shot with no zoom, pan, tilt, dolly, crop change, or reframing. The man makes one small natural action: he slowly raises his right hand to chest height, gives a restrained wave, then lowers it while keeping his head orientation and facial identity stable. Preserve the same facial proportions during the motion; do not smooth the face into a generic face, change ethnicity, alter age, add glasses, remove facial hair, or introduce a second person. Keep the studio wall and floor stable, with soft even frontal light and no moving background objects. Maintain coherent eyes, eyelids, eyebrows, nose bridge, lips, ears, hairline, and beard stubble at every point. The final frame remains the same medium-wide composition with the man's face still recognizable and free from melting, duplicated features, stretched eyes, asymmetrical mouth, or texture washout.
+
+overall_soundscape:
+Quiet studio room tone with faint clothing movement and a soft rustle from the restrained hand wave. No other human voices or prominent sound effects.
+
+non_diegetic_music:
+N/A

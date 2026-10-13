@@ -1,0 +1,20 @@
+subject_definitions:
+<Subject 1> is the same Sylvanas character in the tracked source crop. <Picture 1> is the authoritative complete character/object reference for her face, pointed ears, pale skin, dark hair, red hood, black-red armor, skull shoulder plates, bow, quiver, cloak and full-body silhouette.
+<Subject 2> is the original frozen fortress environment visible around the tracked character in the source crop. Preserve its snow, stone floor, banners, braziers, mountains, fortress skyline and lighting.
+
+summary:
+[video editing + reference generation] Refine the entire tracked <Subject 1> crop as one coherent character region. Preserve the source video's exact pose, body proportions, camera motion, environment and timing. This is a whole-person local latent refinement, not a face-only replacement and not a global redraw.
+
+retention_analysis:
+<Subject 1> (appears throughout [Shot 1]): fully_preserved - preserve the source character's exact full-body identity, head angle, expression, body pose, screen position, scale, hood, hair, armor, cloak, bow, quiver, silhouette and pull-back motion; use <Picture 1> only as the appearance authority.
+<Subject 2> (source environment): fully_preserved - preserve all non-character pixels, including the frozen courtyard, architecture, snow, lighting and distant fortress; do not regenerate or move the background.
+<Picture 1> (complete character/object reference): attribute_transfer - transfer only compatible Sylvanas identity, costume, armor and full-body silhouette; do not copy its gray studio background, portrait framing or enlarged pose.
+
+detailed_description:
+[Shot 1] Keep the entire tracked Sylvanas region at the exact source coordinates and scale while the camera pulls back. Refine the full visible character coherently as one connected person region: face, hair, pointed ears, hood, shoulders, torso, armor plates, arms, hands, cloak, bow, quiver and legs when visible. Preserve the source crop's current pose, head angle, expression, lighting, perspective and temporal motion. Use <Picture 1> only for compatible character identity and costume appearance. Preserve <Subject 2> and every non-character pixel from the source video unchanged. Do not produce a portrait close-up, do not enlarge the head, do not change the pose, do not add limbs or weapons, do not duplicate the character, do not create a rectangular background patch, and do not replace the courtyard. At distant scale prioritize a stable coherent silhouette, costume color blocks and body continuity over invented facial detail. When the character region becomes small, keep its original position and proportions rather than hallucinating a new person. The output must remain suitable for a person-region-only stitch into the original source video.
+
+overall_soundscape:
+Preserve the original synchronized source audio unchanged.
+
+non_diegetic_music:
+Do not add music; preserve the source mix.

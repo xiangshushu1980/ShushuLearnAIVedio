@@ -1,0 +1,21 @@
+subject_definitions:
+<Subject 1> is the same blue-suited red-caped flying hero shown in the supplied identity reference and the input crop. Preserve his exact heroic human identity, dark swept hair, strong jaw, facial proportions, blue suit, gold chest emblem and red cape.
+<Subject 2> is the original cinematic frozen fortress environment visible in the input crop. Preserve the cold blue-gray ruins, snow, distant mountains and dramatic overcast light.
+<Subject 3> is the original blue suit, gold emblem and red cape. Preserve their silhouette and colors.
+
+summary:
+[reference generation] Refine only the tracked flying hero in a medium-wide two-person fantasy shot. Restore readable facial detail while preserving the original scene, pose and interaction. Do not alter or regenerate the other elf.
+
+retention_analysis:
+<Subject 1> (appears throughout [Shot 1]): fully_preserved - same hero identity, dark hair, eyes, nose, lips, jaw, blue suit, gold emblem and red cape.
+<Subject 2> (appears throughout [Shot 1]): fully_preserved - same frozen fortress, lighting and composition.
+<Subject 3> (appears throughout [Shot 1]): fully_preserved - same blue suit, gold emblem and red cape.
+
+detailed_description:
+[Shot 1] Keep the tracked hero in exactly the same screen-right position, scale, pose and head orientation as the input crop. Restore his eyes, eyelids, eyebrows, nose bridge, lips, cheek planes, jawline, dark swept hair and natural skin texture. Preserve the slight profile orientation toward the elf, the blue suit, gold chest emblem and red cape. Do not change his age, ethnicity, expression or costume. Do not modify the other character, add a second face, mirror features, duplicate eyes, melt the jaw or invent a different actor. The result must remain temporally stable and suitable for face-only stitching into the original two-person shot.
+
+overall_soundscape:
+N/A. Preserve the source audio through the stitch.
+
+non_diegetic_music:
+N/A

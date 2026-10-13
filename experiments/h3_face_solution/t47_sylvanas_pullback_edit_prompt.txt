@@ -1,0 +1,27 @@
+subject_definitions:
+<Subject 1> is the same undead elven woman being refined in <Video 1>. Her identity anchor is the face-only reference <Picture 1>; her complete character appearance, hood, dark red armor, hair and silhouette are defined by the full character object reference <Picture 2>. Use the two pictures for separate but complementary roles, never as two different characters.
+<Subject 2> is the frozen fortress courtyard, snow, architecture, lighting and background geometry already present in <Video 1>. It is source-video content to be preserved, not a newly generated environment.
+<Video 1> is the source video being locally edited. It supplies the original composition, screen position, scale, pose, head angle, motion, interaction, lighting, background and temporal order.
+<Picture 1> is the face-only identity reference for <Subject 1>. It is used only to decide and maintain which person is being tracked.
+<Picture 2> is the complete-person/object reference for <Subject 1>. It is used by H3 to preserve the character's overall identity and appearance during the local face refinement.
+<Audio 1> is the original synchronized audio track of <Video 1>, reused unchanged in the target video.
+
+summary:
+[video editing + reference generation + audio reuse] The target video is an edited version of <Video 1>. Refine only the face region of <Subject 1> while preserving the source video's exact composition, pull-back, motion, pose, lighting, environment and interaction. Use <Picture 1> only as the identity-tracking anchor and <Picture 2> as the complete-character H3 object reference; do not create a new character, scene or shot.
+
+retention_analysis:
+<Subject 1> (appears throughout [Shot 1]): partially_preserved - preserve the source subject's exact position, scale, pose, head angle, expression, motion, costume and temporal continuity from <Video 1>; use <Picture 1> only to maintain identity and <Picture 2> only to restore compatible character appearance inside the tracked face region.
+<Subject 2> (appears throughout [Shot 1]): fully_preserved - keep the courtyard, snow, architecture, lighting, background geometry and all non-face pixels from <Video 1> unchanged.
+<Video 1> (source composition, motion and temporal structure): fully_preserved - edit the existing video in place; do not reframe, pull back differently, replace the background or invent a new interaction.
+<Picture 1> (face-only identity anchor): attribute_transfer - use only to identify and track <Subject 1>; do not copy its crop framing, background or pose into the target.
+<Picture 2> (complete-character object reference): attribute_transfer - transfer only compatible identity, facial structure, hair, hood and armor appearance to the tracked local crop; do not replace the source composition or environment.
+<Audio 1>: fully_copy - reuse <Audio 1> unchanged as the complete final audio track.
+
+detailed_description:
+The target is a local face refinement of <Video 1>, not a new generation. [Shot 1] Preserve every source frame of <Video 1> in its original 768x448 composition. Keep <Subject 1> at the exact source screen position, scale, pose, head orientation, expression, pull-back motion and interaction throughout the shot. Use <Picture 1> only as the face-only identity anchor for tracking which character is being refined. Use <Picture 2> only as the complete-character H3 object reference for compatible facial structure, pale undead-elven appearance, pointed ear, dark hair, hood and dark red armor details. The source video <Video 1> remains authoritative for the current frame's action, angle, expression, illumination, occlusion, background and temporal position. Do not enlarge the head, change the camera distance, regenerate the courtyard, replace the other character, alter the snow or architecture, or introduce a new background. Restore only stable natural facial detail inside the tracked face region while preserving the source crop's angle and expression. Keep the face temporally coherent during the continuous pull-back: no identity drift, crop jitter, texture popping, duplicated eyes, melted features, wrong frontal face, mask-like reconstruction or invented facial detail after the source face becomes too small to support it. When the source face is not confidently detected, preserve the original source pixels rather than hallucinating a replacement. The target must remain suitable for face-only stitching back into <Video 1> at the original coordinates. Reuse <Audio 1> unchanged across the entire shot.
+
+overall_soundscape:
+Preserve the original synchronized ambience and physical sounds from <Audio 1> without generating new environmental sound.
+
+non_diegetic_music:
+Do not add or regenerate music; preserve the source video's existing audio mix through <Audio 1>.

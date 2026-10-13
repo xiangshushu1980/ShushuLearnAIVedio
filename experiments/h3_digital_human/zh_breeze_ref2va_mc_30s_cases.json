@@ -1,0 +1,46 @@
+{
+  "cases": [
+  {
+    "name": "zh_breeze_ref2va_A_0_10",
+    "images": ["ref2va_refs/digital_human/01_host_blank_gray_16x9.png"],
+    "audio_lock": "h3_avatar/audio/segments/zh_breeze_test_30s_seg1.wav",
+    "width": 768,
+    "height": 448,
+    "length": 244,
+    "steps": 20,
+    "seed": 61090701,
+    "prefix": "video/h3_avatar_zh_breeze_ref2va_mc_30s/A",
+    "save_latent": {"filename_prefix": "h3_zh_breeze_ref2va_mc_30s_A", "clip_index": 1},
+    "prompt": "A single photorealistic Mandarin-speaking television presenter speaks naturally to camera in a minimalist light-gray studio, horizontal 16:9 waist-up shot, stable identity and clothing, natural mouth movement synchronized to the provided Mandarin speech, restrained facial expressions and hand gestures, no camera movement, no scene change."
+  },
+  {
+    "name": "zh_breeze_ref2va_B_9_20",
+    "images": ["ref2va_refs/digital_human/01_host_blank_gray_16x9.png"],
+    "audio_lock": "h3_avatar/audio/preroll/zh_breeze_test_30s_seg2_preroll.wav",
+    "width": 768,
+    "height": 448,
+    "length": 262,
+    "steps": 20,
+    "seed": 61090702,
+    "prefix": "video/h3_avatar_zh_breeze_ref2va_mc_30s/B",
+    "mc": {"latent_path": "/home/sean/projects/ComfyUI/output/h3_zh_breeze_ref2va_mc_30s_A_00001.safetensors", "context_length": "22", "audio_context_length": 24, "clip_index": 1},
+    "trim": true,
+    "save_latent": {"filename_prefix": "h3_zh_breeze_ref2va_mc_30s_B", "clip_index": 1},
+    "prompt": "The same photorealistic Mandarin-speaking television presenter continues speaking naturally in the same minimalist light-gray studio, preserve identity, clothing, facial details and background, accurate Mandarin mouth movement, restrained gestures, no camera movement, no scene change."
+  },
+  {
+    "name": "zh_breeze_ref2va_C_19_30",
+    "images": ["ref2va_refs/digital_human/01_host_blank_gray_16x9.png"],
+    "audio_lock": "h3_avatar/audio/preroll/zh_breeze_test_30s_seg3_preroll.wav",
+    "width": 768,
+    "height": 448,
+    "length": 262,
+    "steps": 20,
+    "seed": 61090703,
+    "prefix": "video/h3_avatar_zh_breeze_ref2va_mc_30s/C",
+    "mc": {"latent_path": "/home/sean/projects/ComfyUI/output/h3_zh_breeze_ref2va_mc_30s_B_00001.safetensors", "context_length": "22", "audio_context_length": 24, "clip_index": 1},
+    "trim": true,
+    "prompt": "The same photorealistic Mandarin-speaking television presenter continues speaking naturally in the same minimalist light-gray studio, preserve identity, clothing, facial details and background, accurate Mandarin mouth movement, restrained gestures, no camera movement, no scene change."
+  }
+  ]
+}

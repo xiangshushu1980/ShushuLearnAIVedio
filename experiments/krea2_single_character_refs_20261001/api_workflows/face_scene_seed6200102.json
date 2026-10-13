@@ -1,0 +1,150 @@
+{
+  "unet": {
+    "class_type": "UNETLoader",
+    "inputs": {
+      "unet_name": "krea2_turbo_fp8.safetensors",
+      "weight_dtype": "default"
+    }
+  },
+  "clip": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen3vl_4b_bf16.safetensors",
+      "type": "krea2",
+      "device": "default"
+    }
+  },
+  "vae": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "qwen_image_vae.safetensors"
+    }
+  },
+  "model": {
+    "class_type": "Krea2ReferenceLoraLoader",
+    "inputs": {
+      "model": [
+        "unet",
+        0
+      ],
+      "lora_name": "krea2_style_reference.safetensors",
+      "strength_text_fusion": 1.0,
+      "strength_dit_body": 0.0
+    }
+  },
+  "positive": {
+    "class_type": "TextEncodeKrea2Reference",
+    "inputs": {
+      "clip": [
+        "clip",
+        0
+      ],
+      "prompt": "Create one coherent square fantasy game concept-art illustration in the exact same painterly rendering style as the reference images. Reference image 1 is the face reference; use it specifically to preserve that feature on this one character. Reference image 2 is the scene reference; use it specifically to preserve that feature on this one character. Show exactly one adult East Asian swordswoman, full body from head to boots, standing naturally in a three-quarter view, face clearly visible. Preserve her recognizable face: softly tapered oval face, almond-shaped dark-brown eyes, straight brows, small nose, calm confident expression, black hair in a high ponytail tied with a red silk cord, two cheek-length locks. She wears the same ivory wrapped tunic, deep navy split riding coat with red lining, lacquered black shoulder guard, red waist sash, dark trousers and black boots. A single long katana in a black lacquer scabbard hangs at her left hip; preserve its dark grip, restrained bronze fittings and curved silhouette. Place her naturally within the moonlit courtyard shown in reference image 2; the environment surrounds her as one continuous space, with architecture visible behind her. Keep the face, hair, clothing, armor and katana belonging to this one same character. One image, no extra people, no duplicate weapons, no inset panels, no reference board, no borders, no labels, no text, no watermark. Consistent painterly edges, rich but restrained colors, detailed fantasy game illustration, unified night lighting and perspective.",
+      "layout_split": 0.0,
+      "image1": [
+        "crop_1",
+        0
+      ],
+      "image1_detail": "high",
+      "image2": [
+        "ref_2",
+        0
+      ],
+      "image2_detail": "normal"
+    }
+  },
+  "negative": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "clip",
+        0
+      ],
+      "text": ""
+    }
+  },
+  "latent": {
+    "class_type": "EmptySD3LatentImage",
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "batch_size": 1
+    }
+  },
+  "sample": {
+    "class_type": "KSampler",
+    "inputs": {
+      "model": [
+        "model",
+        0
+      ],
+      "positive": [
+        "positive",
+        0
+      ],
+      "negative": [
+        "negative",
+        0
+      ],
+      "latent_image": [
+        "latent",
+        0
+      ],
+      "seed": 6200102,
+      "control_after_generate": "fixed",
+      "steps": 8,
+      "cfg": 1.0,
+      "sampler_name": "er_sde",
+      "scheduler": "simple",
+      "denoise": 1.0
+    }
+  },
+  "decode": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "sample",
+        0
+      ],
+      "vae": [
+        "vae",
+        0
+      ]
+    }
+  },
+  "save": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "decode",
+        0
+      ],
+      "filename_prefix": "sean_krea2_single_refs/face_scene_seed6200102"
+    }
+  },
+  "ref_1": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "sean_single_ref_source.png"
+    }
+  },
+  "crop_1": {
+    "class_type": "ImageCrop",
+    "inputs": {
+      "image": [
+        "ref_1",
+        0
+      ],
+      "x": 256,
+      "y": 0,
+      "width": 512,
+      "height": 512
+    }
+  },
+  "ref_2": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "sean_single_ref_scene.png"
+    }
+  }
+}

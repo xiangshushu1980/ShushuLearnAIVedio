@@ -1,0 +1,3 @@
+[
+{"name":"c_correct_audio","first_frame":false,"audio":"h3_avatar/audio/segments/correct_c_8.000-14.083.wav","length":146,"seed":390103,"prefix":"video/h3_avatar_mc_two_methods_correct/c","mc":{"latent_path":"h3_two_methods_b_00001.safetensors"},"context_length":22,"prompt":"The same photorealistic Cantonese television presenter continues speaking in the same minimalist light-gray studio with seamless blank background, preserve identity, clothing, fine facial details and natural mouth movement, no scene change and no camera movement."}
+]

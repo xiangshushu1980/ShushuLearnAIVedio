@@ -1,0 +1,17 @@
+subject_definitions:
+<Subject 1> is a 2D anime-style girl with long silver-white hair reaching below the shoulders, a red ribbon bow on the left side, fair skin, a small nose, large bright blue eyes, and a calm expression, wearing an open white gold-trimmed jacket with gold buttons and gold-edged cuffs over a dark navy top with a white pointed collar and a red bow at the collar, a black pleated skirt with white horizontal stripes near the hem, white knee-high socks with thin gold rings, and black leather shoes.
+
+summary:
+[reference generation] The target video continues the previous segment without a cut on the same rain-dampened city street at night: <Subject 1> keeps walking toward the camera from mid-distance, growing larger in the fixed frame, her footsteps continuing to grow louder and clearer, flowing directly from the end of the previous clip. The nighttime street ambience continues throughout. There is no dialogue. The clip ends with her very close to the camera, footsteps at their loudest.
+
+retention_analysis:
+<Subject 1> (appears in [Shot 1], [Shot 2]): fully_preserved - her silver-white hair, red ribbon bow, blue eyes, white gold-trimmed jacket, black pleated skirt, and black leather shoes are retained, matching the reference image and the previous segment.
+
+detailed_description:
+The target video is in the same 2D anime style with cool night tones, and the scene is the same rain-dampened city street as the previous segment: the same fixed wide shot down the street, the same wet asphalt reflecting street lights, the same buildings.
+[Shot 1] At 00:00.000, the shot continues the previous moment without a cut: the fixed camera holds the same framing as <Subject 1> continues her approach from the previous clip, now noticeably closer to the camera, her stride rhythm unchanged, one foot landing on the wet asphalt as the previous one lifts - an unbroken continuation of her movement. Her footsteps continue growing louder and crisper, each step distinct on the wet ground. There is no dialogue in this opening moment.
+[Shot 2] At 00:03.000, <Subject 1> reaches the near foreground of the frame, still walking steadily toward the camera, her footsteps now loud and clear, alternating left-right on the wet asphalt, a light echo off the buildings. The camera remains fixed; she fills a larger portion of the frame as the street recedes behind her.
+[Ending movement] In the last ~1.5 seconds, she is very close to the camera, footsteps at their loudest and clearest, still mid-stride as the shot ends, the walk and the soundscape continuing to the very last frame.
+
+overall_soundscape:
+The nighttime street ambience continues without interruption from the previous segment: distant traffic, low wind, neon hum, and the footsteps of leather shoes on wet asphalt growing steadily louder and clearer, reaching their peak loudness at the end. No dialogue, no music.

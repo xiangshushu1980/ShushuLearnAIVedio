@@ -1,0 +1,140 @@
+{
+  "1": {
+    "class_type": "UNETLoader",
+    "inputs": {
+      "unet_name": "qwen_image_2.1_int8_convrot.safetensors",
+      "weight_dtype": "default"
+    }
+  },
+  "2": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen3vl_8b_int8_convrot.safetensors",
+      "type": "qwen_image",
+      "device": "default"
+    }
+  },
+  "3": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+    }
+  },
+  "4": {
+    "class_type": "QwenImage21Cache",
+    "inputs": {
+      "model": [
+        "1",
+        0
+      ],
+      "device": "auto",
+      "dtype": "default"
+    }
+  },
+  "5": {
+    "class_type": "TextEncodeQwenImage21",
+    "inputs": {
+      "clip": [
+        "2",
+        0
+      ],
+      "prompt": "Use <image1> only as the left woman’s face and hairstyle identity, and <image2> only as the right woman’s face and hairstyle identity. Use <image3> only as the exact shared uniform design; put the same uniform on both women. Use <image4> only as the design of the single katana each woman wears fully sheathed at her left hip. Each sword is one complete assembly: one visible grip and guard attached to one scabbard containing the blade. Create one coherent fantasy game concept-art illustration with exactly two adult women, full body from head to boots, standing side by side at equal scale. The left woman has the East Asian face, almond-shaped dark-brown eyes and black high ponytail tied with red cord from <image1>. The right woman has the freckled oval face, green-hazel eyes and copper-red braided ponytail from <image2>. Keep the two identities distinct. Both women wear exactly the same ivory high-collar tunic, deep navy fitted split coat with red lining, red waist sash, dark trousers, black knee boots and one lacquered shoulder guard. Match all outfit cuts, colors and details. There are exactly two weapons in the whole image: one katana worn at the left hip of each woman. Each is fully sheathed; show one grip and guard connected to its own single black lacquer scabbard. Do not draw either blade. Do not put a sword in either hand. Do not add a second hilt, sword, sheath, dagger, wakizashi or back-mounted weapon. Keep the hilt and scabbard visually connected as one item on the same belt. Use a plain warm-gray studio background, unified painterly rendering and light. Keep both full silhouettes inside the square image. No extra people, detached props, panels, borders, labels, text or watermark.",
+      "negative_prompt": "",
+      "resolution": 1024,
+      "vae": [
+        "3",
+        0
+      ],
+      "images.image_1": [
+        "9",
+        0
+      ],
+      "images.image_2": [
+        "10",
+        0
+      ],
+      "images.image_3": [
+        "11",
+        0
+      ],
+      "images.image_4": [
+        "12",
+        0
+      ]
+    }
+  },
+  "6": {
+    "class_type": "KSampler",
+    "inputs": {
+      "model": [
+        "4",
+        0
+      ],
+      "positive": [
+        "5",
+        0
+      ],
+      "negative": [
+        "5",
+        1
+      ],
+      "latent_image": [
+        "5",
+        2
+      ],
+      "seed": 6200213,
+      "steps": 25,
+      "cfg": 1.0,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1.0
+    }
+  },
+  "7": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "6",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    }
+  },
+  "8": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "7",
+        0
+      ],
+      "filename_prefix": "sean_qwen21_shared_costume_weapon_20261002/faces_uniform_weapon_prompt_single_katana_seed6200213"
+    }
+  },
+  "9": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "sean_qwen_shared_face1_20261002.png"
+    }
+  },
+  "10": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "sean_qwen_shared_face2_20261002.png"
+    }
+  },
+  "11": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "sean_qwen_shared_uniform_20261002.png"
+    }
+  },
+  "12": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "sean_qwen_shared_weapon_20261002.png"
+    }
+  }
+}

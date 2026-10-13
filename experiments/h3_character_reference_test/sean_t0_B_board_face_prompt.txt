@@ -1,0 +1,23 @@
+subject_definitions:
+<Subject 1> is one single hoodless undead high-elf ranger woman defined by <Picture 1> and <Picture 2>. <Picture 1> is the authoritative same-character reference board containing the front, face, left profile, right profile, and rear views of one design; use it only as a compact design reference and do not reproduce its panel layout, gutters, or background as the target scene. <Picture 2> is the authoritative high-resolution face reference for the same character: preserve the same facial proportions, eye shape and spacing, nose, mouth, jawline, hairline, expression, and hoodless appearance. The board and face image define one subject only and must not be mixed with another identity.
+
+summary:
+[reference generation] Generate a five-second quiet character reference test shot using <Subject 1> from the compact character board <Picture 1> plus the independent face reference <Picture 2>. The target is a neutral medium shot that tests identity and wardrobe binding without action, dialogue, scene complexity, or music.
+
+retention_analysis:
+<Subject 1> (appears in [Shot 1]): fully_preserved - preserve the character identity, hoodless head, hair, facial structure, body silhouette, armor, belt arrangement, pouches, pendant, bow, quiver, and boots from the reference board and face image.
+<Picture 1>: fully_preserved - use as the compact same-character multi-view design source; do not copy its panel layout into the target.
+<Picture 2>: fully_preserved - use as the independent face and hair source.
+
+detailed_description:
+The target video is a clean dark-fantasy character reference test on a neutral medium-gray studio background with soft, even front lighting, accurate neutral colors, no visible environment, and no stylized color grading. The composition is deliberately simple so the reference organization can be judged without action or camera complexity.
+
+[Shot 1] <Subject 1> stands alone in a centered medium shot from the waist upward, facing directly toward the camera with a calm neutral expression. The character remains completely hoodless; no hood or helmet covers the head. The face, white-blond hair, pointed ears, pale cool-gray skin, luminous blue eyes, shoulder mantle, silver chest clasp, upper crossed leather belts, and the top of the waist equipment remain readable. The image-derived identity from <Picture 2> controls the face, eyes, hairline, ears, and facial proportions. The multi-view design information from <Picture 1> controls the armor silhouette, dark teal and charcoal colors, leather layers, metal trim, belt placement, pouches, pendant, bow, and quiver. The target must depict one continuous character design, not a panel, grid, collage, or copied reference sheet. Any lower-body content outside the medium framing is not invented or redesigned; visible costume edges remain consistent with <Subject 1>.
+
+The camera holds a completely static shot at eye level with no pan, tilt, zoom, push, pull, shake, roll, or reframing. <Subject 1> does not walk, turn, gesture, speak, blink exaggeratedly, or change pose; only minimal natural stillness is allowed. The same single character remains centered for the full duration. Preserve every visible strap, buckle, plate, seam, ornament, material, color, and accessory relationship from the references. Do not combine features from a different person or redesign the costume. The neutral background remains continuous from the first frame to the last frame.
+
+No text, subtitles, labels, logos, watermarks, second character, duplicate subject, collage, reference-sheet layout, panel gutters, magic, weapon substitution, extra accessories, cropped face, malformed hands, or facial distortion appears anywhere in the target video.
+
+overall_soundscape: Silence. No footsteps, speech, breathing emphasis, wind, cloth movement, or environmental sound is added.
+
+non_diegetic_music: N/A

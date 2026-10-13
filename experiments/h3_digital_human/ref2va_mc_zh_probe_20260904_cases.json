@@ -1,0 +1,8 @@
+{
+  "prompt": "一位写实的中文电视节目主持人在简洁的浅灰色演播室中自然说话，横向16:9腰部以上半身镜头，双手完整可见，身份、服装和灯光稳定，表情自然，嘴型跟随中文语音，动作克制，没有换景，没有镜头移动。",
+  "cases": [
+    {"name":"zh_A","images":["ref2va_refs/digital_human/01_host_blank_gray_16x9.png"],"audios":["h3_avatar/zh_probe_20260904/zh_A.wav"],"width":768,"height":448,"length":90,"steps":20,"seed":42100921,"prefix":"video/h3_avatar_ref2va_mc_zh_probe_20260904/A","save_latent":{"filename_prefix":"h3_ref2va_mc_zh_probe_20260904/A","clip_index":1}},
+    {"name":"zh_B_untrim","images":["ref2va_refs/digital_human/01_host_blank_gray_16x9.png"],"audios":["h3_avatar/zh_probe_20260904/zh_B.wav"],"width":768,"height":448,"length":112,"steps":20,"seed":42100922,"prefix":"video/h3_avatar_ref2va_mc_zh_probe_20260904/B","mc":{"latent_path":"h3_ref2va_mc_zh_probe_20260904/A_00001.safetensors","context_length":"22","audio_context_length":24},"trim":false,"save_latent":{"filename_prefix":"h3_ref2va_mc_zh_probe_20260904/B","clip_index":1}},
+    {"name":"zh_C_untrim","images":["ref2va_refs/digital_human/01_host_blank_gray_16x9.png"],"audios":["h3_avatar/zh_probe_20260904/zh_C.wav"],"width":768,"height":448,"length":70,"steps":20,"seed":42100923,"prefix":"video/h3_avatar_ref2va_mc_zh_probe_20260904/C","mc":{"latent_path":"h3_ref2va_mc_zh_probe_20260904/B_00001.safetensors","context_length":"22","audio_context_length":24},"trim":false}
+  ]
+}

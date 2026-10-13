@@ -1,0 +1,174 @@
+{
+  "unet": {
+    "class_type": "UNETLoader",
+    "inputs": {
+      "unet_name": "krea2_turbo_fp8.safetensors",
+      "weight_dtype": "default"
+    }
+  },
+  "clip": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen3vl_4b_bf16.safetensors",
+      "type": "krea2",
+      "device": "default"
+    }
+  },
+  "vae": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "qwen_image_vae.safetensors"
+    }
+  },
+  "negative": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "clip",
+        0
+      ],
+      "text": ""
+    }
+  },
+  "latent": {
+    "class_type": "EmptySD3LatentImage",
+    "inputs": {
+      "width": 1280,
+      "height": 832,
+      "batch_size": 1
+    }
+  },
+  "sample": {
+    "class_type": "KSampler",
+    "inputs": {
+      "model": [
+        "model",
+        0
+      ],
+      "positive": [
+        "positive",
+        0
+      ],
+      "negative": [
+        "negative",
+        0
+      ],
+      "latent_image": [
+        "latent",
+        0
+      ],
+      "seed": 6200211,
+      "control_after_generate": "fixed",
+      "steps": 8,
+      "cfg": 1.0,
+      "sampler_name": "er_sde",
+      "scheduler": "simple",
+      "denoise": 1.0
+    }
+  },
+  "decode": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "sample",
+        0
+      ],
+      "vae": [
+        "vae",
+        0
+      ]
+    }
+  },
+  "save": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "decode",
+        0
+      ],
+      "filename_prefix": "sean_krea2_shared_costume_weapon/faces_plus_weapon_seed6200211"
+    }
+  },
+  "model": {
+    "class_type": "Krea2ReferenceLoraLoader",
+    "inputs": {
+      "model": [
+        "unet",
+        0
+      ],
+      "lora_name": "krea2_style_reference.safetensors",
+      "strength_text_fusion": 1.0,
+      "strength_dit_body": 0.0
+    }
+  },
+  "positive": {
+    "class_type": "TextEncodeKrea2Reference",
+    "inputs": {
+      "clip": [
+        "clip",
+        0
+      ],
+      "prompt": "Reference images 1 and 2 are the left and right face identities. Reference image 3 defines the exact katana; each woman carries an identical copy. Create one coherent wide fantasy game concept-art illustration, a single continuous studio scene. Show exactly two adult women, full body head to boots, standing side by side at equal scale with clear space between them. Left woman has the recognizable East Asian face, almond-shaped dark-brown eyes and black high ponytail from reference image 1. Right woman has the recognizable freckled oval face, green-hazel eyes and copper-red braided ponytail from reference image 2. The two faces, hairstyles and identities must remain distinct. Both women wear exactly the same uniform: same ivory high-collar tunic, same deep navy fitted split coat with red lining, same red waist sash, same dark trousers, same black knee boots, same single lacquered shoulder guard; the cut, colors, materials, proportions and details match between them. Each woman carries exactly one identical curved katana with the same black lacquer scabbard, dark wrapped grip and restrained bronze fittings. Put one matching katana in each woman's hand, clearly visible. Simple warm-gray studio backdrop, full silhouettes visible, painterly fantasy game concept art, unified light and perspective. No other people, no extra weapons, no costume variations, no panels, no borders, no labels, no text, no watermark.",
+      "layout_split": 0.25,
+      "image1": [
+        "crop_1",
+        0
+      ],
+      "image1_detail": "high",
+      "image2": [
+        "crop_2",
+        0
+      ],
+      "image2_detail": "high",
+      "image3": [
+        "ref_3",
+        0
+      ],
+      "image3_detail": "high"
+    }
+  },
+  "ref_1": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "sean_shared_uniform_face1.png"
+    }
+  },
+  "crop_1": {
+    "class_type": "ImageCrop",
+    "inputs": {
+      "image": [
+        "ref_1",
+        0
+      ],
+      "x": 256,
+      "y": 0,
+      "width": 512,
+      "height": 512
+    }
+  },
+  "ref_2": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "sean_shared_uniform_face2.png"
+    }
+  },
+  "crop_2": {
+    "class_type": "ImageCrop",
+    "inputs": {
+      "image": [
+        "ref_2",
+        0
+      ],
+      "x": 256,
+      "y": 0,
+      "width": 512,
+      "height": 512
+    }
+  },
+  "ref_3": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "sean_shared_weapon_ref.png"
+    }
+  }
+}
