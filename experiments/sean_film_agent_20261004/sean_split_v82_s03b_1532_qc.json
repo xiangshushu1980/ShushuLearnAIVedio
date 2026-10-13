@@ -1,0 +1,22 @@
+{
+  "owner": "Sean",
+  "candidateId": "1532bf29-f888-4ad6-9974-34fd41ac0b16",
+  "inspection": "Root whole4fps contact and full1024 tail4.308333; completeAVdecode pass",
+  "result": "partial; not selected",
+  "findings": [
+    "No clear planned screen-left step aligning torso with far-left point; only small torso shift.",
+    "Coat again lifted tall then laid long horizontally behind/across clear glasses, not whole cloth left of central glass.",
+    "Visible final outline has no obvious edge overhang; individual hidden sleeves not distinguishable.",
+    "A/book/knife/papers/2glasses/room preserved."
+  ],
+  "nextHypothesis": "Native20 vs PDD8, same exact frozen prompt/seed/nine references/duration/resolution; diagnostic separate from editor candidate.",
+  "promptDelivery": {
+    "graphTextEqualsFrozenShotPrompt": true,
+    "characters": 10247,
+    "words": 1764
+  },
+  "limits": [
+    "No new ASR/listening",
+    "34-second plan vs30 target unresolved"
+  ]
+}

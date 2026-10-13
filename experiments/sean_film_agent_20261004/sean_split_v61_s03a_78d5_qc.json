@@ -1,0 +1,18 @@
+{
+  "owner": "Sean",
+  "candidateId": "78d5634d-5931-4ae0-ac92-d9c8878eeb56",
+  "status": "partial-not-selected",
+  "evidence": [
+    "Rootwhole4fpscontact",
+    "Rootfull1024tail",
+    "Agent6actualframes"
+  ],
+  "observations": [
+    "samecoatremovedonly inner/pantsretained",
+    "heldinbothhands throughoutend no placement orrelease",
+    "tablebookkatana papersglassesA unchanged",
+    "cloth gathered loosely overforearm but longsection hangs; exactoncefold/sleevestuckingcompactness notobserved"
+  ],
+  "nextDesign": "Revisit added exactfold mechanism rather than more seed/time retries; user originalplot requires removal/placing/transfer not precisefold. Any revised heldcloth state must synchronize S3a/S3b actions/prompts/start-end then new tests; do not retroactively call current candidate compliant. Final barewoodsupport andbookvisibility remain required.",
+  "audioAcceptance": "unverified"
+}

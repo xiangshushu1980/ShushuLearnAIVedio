@@ -1,0 +1,10 @@
+{
+  "owner": "Sean",
+  "source": "isolated mock Agent/PC; no providers or generation",
+  "beforeDescription": "入口相邻长凳区",
+  "afterDescription": "用户指定的新说明（模拟）；保留原外观和其他资料。",
+  "unchangedAppearance": true,
+  "unchangedVoice": true,
+  "runCount": 0,
+  "applied": true
+}

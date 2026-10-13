@@ -22,7 +22,7 @@ Owner: Sean。日期：2026-10-04。Task Center：remote-92ecb0d7-d1db-4bd5-8a3e
 
 视频和图片保留本地，代码/文档使用scoped commit。应用专用模型凭据不属于实验交付，不复制进仓库；临时DB不能直接并入主应用DB，因为快照ID与原项目有共同来源。失败基线保留，用后续反馈修订结果作对照。
 
-恢复副本保存在本目录 `runtime-data/film.sqlite` 与 `runtime-data/blobs/`，当前SQLite备份integrity_check为ok，revision52、13个终态Agent运行、10个成功视频候选及完整素材/会话/版本；初始revision34备份另存film-rev34.sqlite，不含agent凭据目录。仅作为独立数据目录使用，禁止合并主库。可复制到新的FILM_DATA_DIR，在独立端口启动film-editor，配置应用自有模型凭据后续接；GPU操作仍需资源协调。主服务4190继续运行。
+恢复副本保存在本目录 `runtime-data/film.sqlite` 与 `runtime-data/blobs/`，当前SQLite备份integrity_check为ok，revision58、16个终态Agent运行、11个成功视频候选及2条诊断成片及完整素材/会话/版本；初始revision34备份另存film-rev34.sqlite，不含agent凭据目录。仅作为独立数据目录使用，禁止合并主库。可复制到新的FILM_DATA_DIR，在独立端口启动film-editor，配置应用自有模型凭据后续接；GPU操作仍需资源协调。主服务4190继续运行。
 
 
 ## 具体衔接帧对照
@@ -35,3 +35,6 @@ Owner: Sean。日期：2026-10-04。Task Center：remote-92ecb0d7-d1db-4bd5-8a3e
 
 
 顺序衔接新增 S2/S3/S4 对照见 `sean_pi_continuity_anchor_s02_test.json`、`sean_pi_continuity_anchor_s03_test.json`、`sean_pi_continuity_anchor_s04_test.json`。已在隔离副本选用新S2/S3，S4尚未选用，S5旧锚点因S4输入变化过期。S1→S4的实际抽帧保留A左/B右、同一主桌/书墙与刀/外套状态链，S4补充六点帧显示拿刀转移及远侧离场；仍需新S5接续当前S4并检查完整运动/音色，不代表全片验收完成。
+
+
+当前五镜诊断cut53d54489-5189-4300-ac14-80d335af1b3b及四接缝已归档；所有新候选已在隔离副本选用，revision58。`collect-cut-evidence.mjs`只读采集成片/输入哈希、完整流解码与接缝附近帧，不提交LLM/GPU；可安全重复采集同一cut。S5实际新源接续、12点定点观察与诊断选片/合成的真实会话另存sean_pi_continuity_anchor_s05_current_test.json、sean_pi_continuity_anchor_s05_motion_review.json、sean_pi_continuity_anchor_current_cut.json。设计文字对中性桌面物件仍有冲突，S5字幕/开场B与站位/完整动作/声音尚未全片验收；详见QC，不以cut成功结束目标。

@@ -1,0 +1,16 @@
+[
+  {
+    "name": "t5_smoke_D_F_WB_S",
+    "ref_images": ["t5_reference_roles/F_face_identity.png", "t5_reference_roles/WB_wardrobe_body.png", "t5_reference_roles/S_view_side.png"],
+    "prompt_file": ".pi/tasks/remote-c1c2bb3a-432b-4586-af9d-f6ffdde54196/t5_side_prompt.txt",
+    "width": 768, "height": 448, "length": 124, "steps": 8, "sampler": "res_multistep", "seed": 20260927,
+    "ref_image_size": "match", "prefix": "sean_h3_character_reference_test/t5_smoke_D_F_WB_S"
+  },
+  {
+    "name": "t5_smoke_E_F_WB_B",
+    "ref_images": ["t5_reference_roles/F_face_identity.png", "t5_reference_roles/WB_wardrobe_body.png", "t5_reference_roles/B_view_back.png"],
+    "prompt_file": ".pi/tasks/remote-c1c2bb3a-432b-4586-af9d-f6ffdde54196/t5_back_prompt.txt",
+    "width": 768, "height": 448, "length": 124, "steps": 8, "sampler": "res_multistep", "seed": 20260927,
+    "ref_image_size": "match", "prefix": "sean_h3_character_reference_test/t5_smoke_E_F_WB_B"
+  }
+]

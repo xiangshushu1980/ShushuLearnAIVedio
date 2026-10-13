@@ -1,0 +1,17 @@
+{
+  "owner": "Sean",
+  "candidateId": "afb05853-64ac-4ce2-80d7-df31a6b46c14",
+  "inspection": "Root whole4fps contact and full1024 tail4.308333; completeAVdecode pass",
+  "result": "partial; not selected",
+  "findings": [
+    "Garment still long/tall while lifted, not gathered compact between hands.",
+    "Terminal cloth lies as a long wide mass behind/across clear glasses, not wholly left of central glass.",
+    "No clear edge hanging at tail; separate sleeves unknown.",
+    "A/book/knife/papers/2glasses/room preserved."
+  ],
+  "nextHypothesis": "Fixed B torso/feet at far-right anchor may constrain transport to far-left point. Consider explicitly designed far-side sidestep while preserving axis and all static props; do not claim physical impossibility without measurement. Avoid another wording-only gathering retry.",
+  "limits": [
+    "No new ASR/listening",
+    "34-second plan vs30 target remains unresolved"
+  ]
+}

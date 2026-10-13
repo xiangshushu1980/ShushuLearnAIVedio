@@ -1,0 +1,16 @@
+{
+  "owner": "Sean",
+  "candidateId": "e5fc191e-0e4d-4105-a040-a9fecb807890",
+  "scope": "2fps wholeclip plus4fps6-10sec; no audio review",
+  "passes": [
+    "One visible A with ponytail through clothing change",
+    "Own navy jacket/armour removed and laid aside",
+    "Tabletop outer garment picked up and put on",
+    "B absent; sword absent; library/table retained"
+  ],
+  "failures": [
+    "Multiple full turn cycles in6-10sec rather than exactly one"
+  ],
+  "selected": false,
+  "nextCorrection": "One deliberate measured turn with quarter-turn milestones and complete stop; hold until line"
+}

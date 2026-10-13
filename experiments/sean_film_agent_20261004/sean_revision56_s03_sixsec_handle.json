@@ -1,0 +1,14 @@
+{
+  "owner": "Sean",
+  "projectId": "538005c3-16bd-4709-aa4e-70831b960a24",
+  "sessionId": "0707ba67-08da-42cf-9bc9-b1fa07bf95cf",
+  "request": {
+    "requestId": "00a56e81-52c0-40a1-83a0-ff011f922e66",
+    "mode": "generate",
+    "text": "授权仅隔离项目S3单变量时长诊断6秒+一次实际候选。已知30秒目标暂不改变；测试计划总长32秒，不宣称最终满足30秒，不覆盖用户原项目。根核对当前rev56 sharedqueue0/0。freshcontext加载方法，定点读S3。先版本化提案仅改durationSec4->6及本镜prompt/continuity中对应four seconds/4秒为six seconds/6秒，所有其他文字包括action、路径、一次对折、静物、实体、图序、seed与anchor完全保留，不调固定LLM401重试。校验有效采用；再完整等价spatial重新核对：scenePlan所有start/end/transition逐字原样、每镜取最新prompt/framing/continuity，保留前两镜current，freshvalidateS3。只在无错误且anchorready时generate_video一次 cbfc4455-17f8-4b4a-875a-e3bcfc418399；adapter资源预检占用时停止提交并报告不绕过。轮询同一candidate到终态不重提交。实际inspect三批0/1/2、3/4/5、末尾前.15，明确时间预算是否使脱衣后的手持一次对折/收袖形成紧凑衣束、沿远半区向左送到中央杯左方书左方刀远侧裸木点、先木面接触再放手、衣body+sleeves全木面支撑/无垂沿/不压杯，书原位全程可见，A刀纸杯不变。观察事实分通过/部分/失败/未知，别因视频成功就通过。禁止选片、S4anchor、其他镜生成、合成。报告版本候选hash实际时长/32秒配置账与完整未验收项，无需重复索取已明确测试授权。"
+  },
+  "response": {
+    "runId": "7d0329ec-0fbb-4340-9b42-d4d4e8ae8096",
+    "status": "running"
+  }
+}

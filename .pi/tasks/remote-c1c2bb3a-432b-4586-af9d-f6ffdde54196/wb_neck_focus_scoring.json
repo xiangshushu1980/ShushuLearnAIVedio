@@ -1,0 +1,18 @@
+{
+  "owner": "Sean",
+  "status": "preliminary_manual_focus_review",
+  "scope": "6 videos, 3 seeds per WB variant;首/中/末帧 reviewed",
+  "scale": "1=failed, 3=usable, 5=strong",
+  "criteria": ["head_to_body_ratio", "neck_collar_seam", "hair_shoulder_continuity", "cross_seed_stability"],
+  "variants": [
+    {"id":"N1","asset":"WB_face_erased","sample_count":3,"head_to_body_ratio":4,"neck_collar_seam":4,"hair_shoulder_continuity":5,"cross_seed_stability":4,"hard_failures":0,"note":"Most complete head/ear/rear-hair context; no gross floating head or neck break observed."},
+    {"id":"N2","asset":"WB_neck_only","sample_count":3,"head_to_body_ratio":4,"neck_collar_seam":4,"hair_shoulder_continuity":4,"cross_seed_stability":4,"hard_failures":0,"note":"Neutral neck anchor reconnects F face successfully; no obvious proportion failure, but it provides less hair/ear context."}
+  ],
+  "comparison": {
+    "winner": "tie_for_current_test",
+    "role_separation": "WB_neck_only is cleaner because it carries no head/hair identity content.",
+    "visual_continuity": "WB_face_erased is richer because it retains rear-head, ear, and hair-to-shoulder context.",
+    "production_candidate": "Keep both as role-specific candidates; prefer neck_only when minimizing head competition is the priority, prefer face_erased when rear-head/hair continuity is important.",
+    "limitations": "Single action prompt, 3 seeds, manual ordinal review; no close-up-only or static neutral-pose control yet."
+  }
+}

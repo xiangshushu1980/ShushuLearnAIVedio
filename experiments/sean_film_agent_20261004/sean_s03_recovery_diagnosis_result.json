@@ -1,0 +1,4692 @@
+{
+  "owner": "Sean",
+  "session": {
+    "owner": "Sean",
+    "id": "30306617-01a7-4374-9bad-1f5b525b8393",
+    "projectId": "538005c3-16bd-4709-aa4e-70831b960a24",
+    "provider": "deepseek",
+    "modelId": "deepseek-flash",
+    "profileVersion": 7,
+    "createdAt": "2026-10-04T16:35:37.882Z"
+  },
+  "runs": [
+    {
+      "owner": "Sean",
+      "id": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "sessionId": "30306617-01a7-4374-9bad-1f5b525b8393",
+      "requestId": "2ce79aac-4309-4a1b-ae62-bd662d28df5a",
+      "requestHash": "0f834a64b681d7109dae6a44b1fec5396f969a31e78a49002c43490ac5dc7588",
+      "localInference": false,
+      "mode": "discuss",
+      "userText": "只做基于证据的诊断，不修改、不采用提案、不生成视频。读取当前完整剧本/逐镜动作与共用空间，读取S2和S3详情与实际候选，加载narrative-control与ref2va技能。用inspect_candidate_frames查看S2候选6fb58b1f-e122-47e4-a018-1c2b2b1953ba的0/2/4.30秒，S3候选4258a080-6a40-4771-a5d5-5e04ebeff68d的0/2/4.30秒，每次最多3张。比较书本、外套和刀在同一桌面上的位置。已知S3两次生成把外套压到书本位置且布料垂出桌边，提示词指定书本左侧和全部支撑仍未成功。请区分实际画面观察与当前创作要求，不凭未知画面推断书移动或桌绝对尺寸。分析现有4秒脱外套平放动作的执行难点，提出一个有明确物理落点和动作过程、适合S4取刀/S6取衣的最小改动，注明是否仅改S3或需要S2书落点重排/锚帧重做。不要将否定句堆叠或更换随机种子当作主要方案，也不要降低物体一致性验收标准。最后返回具体可实施建议和仍需验证项。",
+      "text": "我先读取完整上下文、技能与实际候选画面，再做诊断。\n\n现在查看两个候选的关键帧，并定点重读 S2/S3 详情。\n\n我已看到 6 帧实证画面。再做一次只读校验，确认当前实际阻塞状态。\n\n## 本轮实际动作（均为只读）\n\n- `get_film_context`、`get_shot_details`（S2 `75f55a65`、S3 `cbfc4455`）、`load_film_skill`（narrative-control、ref2va）\n- `inspect_candidate_frames`：S2 候选 `6fb58b1f-e122-47e4-a018-1c2b2b1953ba` 的 0 / 2 / 4.3s；S3 候选 `4258a080-6a40-4771-a5d5-5e04ebeff68d` 的 0 / 2 / 4.3s（各 3 张，共 6 张）\n- `validate_film_inputs`（S3 单镜 + 全片）：revision 36，`valid:true`，无 issues。所以当前**没有格式/输入层阻塞**，问题发生在实际画面层。\n- 未修改任何内容、未采用任何提案、未创建提案、未提交生成。S3 两个候选 `selectedCandidateId` 均为 null（未被选用），无需回滚。\n\n---\n\n## 一、实证观察记录（可回到 candidateId/时间点核对）\n\nS2 候选 `6fb58b1f`（视频时长 4.458s，mediaHash `191c6581…`）\n\n| requestedTimeSec | frameHash | 我实际看到的 |\n|---|---|---|\n| 0 | `88454c3d` | A 坐近侧左（马尾、银肩甲），B 坐远侧右，双手持**打开的书**；刀平放桌面近侧左半、斜置，刀柄朝向桌面中线偏左；另有文件夹/纸张/杯在中左区。 |\n| 2 | `2ecea1bc` | B 已把**合上的书**放到远侧半区、自己座位前方（画面右）；刀位置未变。 |\n| 4.3 | `66d65e53` | B 站在远侧、面朝近侧，外套**仍穿在身上**；合上的书在远侧半区右侧（她刚坐的位置前）；刀仍在近侧左半未动。 |\n\nS3 候选 `4258a080`（时长 4.458s，mediaHash `3943ee3a…`）\n\n| requestedTimeSec | frameHash | 我实际看到的 |\n|---|---|---|\n| 0 | `78bdcdfb` | 布局与 S2 尾帧一致：刀在近侧左半/中左、书在远侧右侧、B 站远侧（书的前方）；A 坐近侧左。 |\n| 2 | `808772fd` | B 已把**外套从肩上脱下**，外套垂挂在她手侧/髋侧，尚未上桌；书仍在远侧半区可见；刀未动。 |\n| 4.3 | `6ad878cd` | 外套摊在桌面**远侧偏中/右区**——正是 t=0 合上的书所在区域；**该帧中合上的书已不能单独看到**；外套一部分越过桌边、垂到桌面以下；刀仍在原位、未被外套覆盖。 |\n\n两点可核对的事实：\n- S2 的 4.3s 帧 `66d65e53…` 与 S3 的衔接帧资产 `d319a13e…`（`sourceCandidateId=6fb58b1f`，`timeSec=4.308`，`localHash=66d65e530fbc25aef…`）是同一帧；S3 的 t=0 是**重新渲染**（hash `78bdcdfb` 不同），即开场只复现了构图，不保证像素级锁定。\n- 两个 S3 候选的 `samplingSeed` 都是 2760152716（seedPolicy=configured）：第二次生成与第一次**不是独立采样**。这只是事实记录，不作为方案。\n\n---\n\n## 二、实际画面 vs 当前创作要求（严格区分）\n\n| 项 | 当前创作要求（S3 action/continuity/prompt） | 实际画面（4258a080） |\n|---|---|---|\n| 外套落点 | 桌面**远侧半区靠中线**、合上的书**左侧**的空位 | 落在远侧偏中/右——书的原位置 |\n| 与书关系 | 与书、刀互不重叠；书保持完整可见 | 外套占据书的位置，书不再单独可见（是否被压在下/被移开，3 帧无法判定） |\n| 支撑 | 衣身与两只袖子**全部**在水平桌面上，无越边下垂、不搭椅 | 一部分越桌边垂到桌面以下 |\n| 只脱一件 | 只脱驼色长外套，保留米白连帽内搭、裤、鞋 | 符合：B 仍穿米白连帽内搭与浅色裤 |\n| 刀 | 平放在近侧半区靠中线，本镜不动 | 符合：刀全程在近侧左半，未被外套覆盖、未被拿起 |\n| 身份/机位 | 同机位近侧、不越轴；A 坐近侧不伸手 | 符合：机位、A 坐姿、A 未触物均成立 |\n\n不能从现有画面推断的（明确标为未知）：书的绝对去向（是否在衣下）、桌面绝对尺寸与可用空白面积、外套完全展开所需面积、桌边是哪一条边被布料越出（我判断是右/近右一带，但仅 3 帧且为斜视，不足以定论）。\n\n---\n\n## 三、4 秒\"脱外套 + 平放\"的执行难点\n\n1. **两个互相冲突的运动被塞进一个动作**：脱衣是贴身、竖直、双臂从袖中抽出的运动；放衣是双臂前伸、横向转移的运动。模型把二者合成\"一次挥摆\"，于是**在站立处释放**——而 B 站的位置正好是书的落点。这是本次两次失败的最可能主因。\n2. **缺少物理接触与释放点**：现文本给的是抽象区域（\"远侧半区靠中线、书左侧、不重叠\"），没有\"衣料先触桌面 → 双手压住 → 再从两端松开\"的接触序列，因此模型把\"放\"理解为\"丢\"。\n3. **指示词不可解**：\"书左侧\"没有指定参照系（摄影机左 / 角色左 / 外套自身左），而外套本身有朝向；模型更倾向于沿用它手里的方向。\n4. **长外套的物理尺寸问题**：长外套按身体穿着的形态脱落后是**竖直悬挂**的物体，若要满足\"衣身与两袖全部受桌面支撑\"，必须先把衣料沿长轴对折/收拢，再贴着桌面放下。4 秒里\"脱下（约 2–2.5s）+ 折叠收拢 + 平移 + 放下（约 1.5–2s）\"已到极限，若再要求沿远侧桌边走一步，时间预算不足。\n5. **落点无可见标定**：桌面同时已有书、刀、文件夹/纸张、杯四组占用物，空位没有被任何画面内参照物界定；一个面积大的软物体必然吃掉相邻的间隙。\n\n---\n\n## 四、最小改动建议（明确物理落点 + 动作过程）\n\n**建议只改 S3 的动作/衔接/提示词措辞，不改 S2、不重做锚帧**。理由与内容如下。\n\n### 4.1 落点（相对锚点，不编造绝对尺寸）\n\n在 S3 文本中把\"书左侧的空位\"替换为**用画面内已有物体和可见桌面来界定的落点**：\n\n> 外套落点 = 桌面**远侧半区、中线靠 A 一侧**（即从近侧 A 的椅子正对过去的桌面远侧空白处）的裸木桌面；它与合上的书之间留有**至少一个合上书本宽度**的可见裸木间隔；落点避开刀位、文件夹/纸张与杯。\n\n即：用\"合上的书\"本身作为画面内可读的**尺度单位与间隙参照**，而不是用\"左/右\"这种无参照系的方位词。这个落点在几何上同时满足后续两镜：S4 中 B 从远侧前倾取近侧中线刀位，她的前倾路径不经过该落点；S6 中 A 站在近侧椅子旁伸手可及（这是远侧半区里离 A 最近的一带）。\n\n### 4.2 动作过程（改成\"接触—放置—松开\"的物理序列）\n\n把 S3 的主导动作写成一个连续可执行的拍点，全部用正向物理陈述（不要堆否定句）：\n\n> B 用双手把外套从双肩滑下、抽出双臂，随即在胸前把这一件外套沿长轴**对折收拢**成一束，双手各持一端；\n> 她上半身转向自己的斜前方，双臂前伸，把这束外套送到上述远侧半区裸木桌面处；\n> 双手先让衣料**落上桌面**，再沿桌长轴方向把它放平，掌心压住外套两端，把衣身与两只袖子都压贴在木面上，让外套四周都露出可见的裸木桌面；\n> 双手在保持衣料平贴的状态下同时松开，然后直起身；合上的书仍完整可见在原位。\n\n（\"对折收拢成束\"是关键：它把长外套的落点面积需求减半，让\"全部受支撑 + 不触书不触刀\"在同一块空白区里物理可行；同时不改变剧本事实——\"平放\"仍成立，S6 里 A 从桌上拿起穿上也不受影响。）\n\n可选（建议但非必须）：把 S3 的 framing 从中近景放宽到**能看全整张桌面**的中景，让目标空白区进入画面，机位仍固定在近侧、不越轴——否则\"落点\"仍在画框外，模型没有可放置的可见区域。\n\n### 4.3 影响面与\"是否只改 S3\"\n\n- **S2 不必重排、锚帧不必重做**：本方案不动 S2 的结束状态（书仍在远侧右侧、B 站远侧、刀在近侧中线），所以 S3 现用的衔接帧（来源 `6fb58b1f`，t=4.308）仍然有效，只需改 S3 文本后重新生成。\n- **但下游文字必须同步**：S4（`8c1401c1` 取刀）与 S6（`f0ac8b73` 取衣）的 startState / continuity / prompt 都把外套落点写成\"桌面远侧半区靠中线落点\"；共用空间计划里也有\"外套落点=桌面远侧半区靠中线另一空位\"。这些都要改写成 4.1 的同一表述，否则跨镜状态描述会互相矛盾。两镜目前都无锚帧、无选定候选，属纯文本更新。\n- **不推荐\"改 S2 让书换位、外套落在 B 站位前\"这条路**：那样 B 就不必移动也符合物理直觉，但外套会落在远侧右端（B 座位前），S6 里 A 站在近侧左要横跨整张桌面才够得到，会破坏 S6 的\"前倾即可取\"调度；而且必须重新生成 S2 并重做 S3 锚帧，改动面更大。\n\n### 4.4 明确不做\n\n不把\"换随机种子\"作为主要方案（两候选同 seed，只说明当前不是独立复验）；不靠叠加否定句来约束；不放松\"书完整可见、刀不动、外套全部受支撑、只脱一件\"的一致性验收。\n\n---\n\n## 五、仍需验证项\n\n1. **远侧半区靠 A 一侧的裸木面积是否真能容纳折拢后的外套**：我只看了 3 帧、无法测量；需在生成前用 S3 衔接帧（`d319a13e`）或 S2 尾帧逐帧确认该区是否被文件夹/纸张/杯占据。\n2. **4 秒是否够**：本镜文本自己已标注\"测试计划时长、若不可能需报告风险\"。建议下一轮在 generate 权限下先做一次 S3 测试生成，抽帧看 0 / 1 / 2 / 3 / 4.3s，检查\"脱下→收拢→放上→松开\"是否都在时长内完成；若脱衣本身就占满 ~2.5s，可选：延长 S3 至 5s（需明确授权，会动 30s 时长目标）或将\"收拢平放\"拆为独立镜（更大改动，需授权）。\n3. **不迈步的前伸距离是否够**：若测试显示不放步够不到目标区，退路是加\"沿远侧桌边走一步再放下\"（仍在远侧，不越中线），但那会进一步挤压 4 秒预算——需与第 2 项一起决策。\n4. **书是否被压**：本次抽帧判不出书的去向，验收时必须以\"书完整可见在原位\"这一条单独复核，而不是默认它没动。\n5. **空间计划文字修订的授权**：外套落点的定义句在已采用的空间稿里，改写属需授权的文字修订；本轮我未提交任何提案，只给可用文本。\n6. 3 帧抽样**不能**证明音频、口型或连续运动；本诊断亦未验证 S2 台词音色。\n\n如果要把上面 4.1/4.2/4.3 落成可审阅的修订文案（S3 + S4 + S6 + 空间计划落点措辞），请给我明确授权，我会以当前 revision 36 保存为一条提案供你审阅后再采用。",
+      "status": "succeeded",
+      "createdAt": "2026-10-04T16:35:37.889Z",
+      "profileVersion": 7,
+      "tools": [
+        {
+          "name": "get_film_context",
+          "status": "succeeded",
+          "startedAt": "2026-10-04T16:35:38.899Z",
+          "finishedAt": "2026-10-04T16:35:38.955Z"
+        },
+        {
+          "name": "load_film_skill",
+          "status": "succeeded",
+          "startedAt": "2026-10-04T16:35:38.940Z",
+          "finishedAt": "2026-10-04T16:35:38.960Z"
+        },
+        {
+          "name": "load_film_skill",
+          "status": "succeeded",
+          "startedAt": "2026-10-04T16:35:38.948Z",
+          "finishedAt": "2026-10-04T16:35:38.964Z"
+        },
+        {
+          "name": "inspect_candidate_frames",
+          "status": "succeeded",
+          "startedAt": "2026-10-04T16:35:41.911Z",
+          "finishedAt": "2026-10-04T16:35:42.735Z"
+        },
+        {
+          "name": "inspect_candidate_frames",
+          "status": "succeeded",
+          "startedAt": "2026-10-04T16:35:41.920Z",
+          "finishedAt": "2026-10-04T16:35:42.722Z"
+        },
+        {
+          "name": "get_shot_details",
+          "status": "succeeded",
+          "startedAt": "2026-10-04T16:35:41.926Z",
+          "finishedAt": "2026-10-04T16:35:41.991Z"
+        },
+        {
+          "name": "get_shot_details",
+          "status": "succeeded",
+          "startedAt": "2026-10-04T16:35:41.958Z",
+          "finishedAt": "2026-10-04T16:35:41.996Z"
+        },
+        {
+          "name": "validate_film_inputs",
+          "status": "succeeded",
+          "startedAt": "2026-10-04T16:36:56.844Z",
+          "finishedAt": "2026-10-04T16:36:56.900Z"
+        },
+        {
+          "name": "validate_film_inputs",
+          "status": "succeeded",
+          "startedAt": "2026-10-04T16:36:56.861Z",
+          "finishedAt": "2026-10-04T16:36:56.905Z"
+        }
+      ],
+      "skills": [
+        {
+          "skillId": "narrative-control",
+          "version": 6,
+          "contentHash": "53169ba83a5e3f1495a44634e5706320587bc0962137e7ef3267b4a87e3dbffd"
+        },
+        {
+          "skillId": "ref2va",
+          "version": 1,
+          "contentHash": "85d55967e876820666f809e2a8029674b28162408b8589a7c04905bdd5b1a36c"
+        }
+      ],
+      "observations": [
+        {
+          "candidateId": "4258a080-6a40-4771-a5d5-5e04ebeff68d",
+          "mediaHash": "3943ee3ae5f434fa6de19f9f60481cd1eda52f297dad2c38b9e4a22a2478edc2",
+          "times": [
+            0,
+            2,
+            4.3
+          ],
+          "duration": 4.458333,
+          "videoDuration": 4.458333,
+          "frames": [
+            {
+              "requestedTimeSec": 0,
+              "frameHash": "78bdcdfbf80c3bd198f76e577e4d7a053f14c38d5948fd2499a2731550768e11"
+            },
+            {
+              "requestedTimeSec": 2,
+              "frameHash": "808772fd1d0f9c9b604e8de22f31f08e498e36ff7dd1489c08d8f19886cead80"
+            },
+            {
+              "requestedTimeSec": 4.3,
+              "frameHash": "6ad878cd9dd2e953aace8ddc24fde37c5e7f5c624b673f1ef26cb401e107ed7a"
+            }
+          ],
+          "evidence": "3 sampled frames only; no audio or complete continuous motion observation",
+          "at": "2026-10-04T16:35:42.719Z"
+        },
+        {
+          "candidateId": "6fb58b1f-e122-47e4-a018-1c2b2b1953ba",
+          "mediaHash": "191c6581f237e5a3f635f9b7b26816666ae6bec36231b1f1c248466a1af4abd3",
+          "times": [
+            0,
+            2,
+            4.3
+          ],
+          "duration": 4.458333,
+          "videoDuration": 4.458333,
+          "frames": [
+            {
+              "requestedTimeSec": 0,
+              "frameHash": "88454c3df258a1af9a402494393335db7bdbdee864d2885eb75e4132caddcadb"
+            },
+            {
+              "requestedTimeSec": 2,
+              "frameHash": "2ecea1bcf708331e500226cf37c9619ac418e79a4ba3478d6b66af31038c9f0a"
+            },
+            {
+              "requestedTimeSec": 4.3,
+              "frameHash": "66d65e530fbc25aefdb5bc0591b887e40d67319089d02f8d6a1c55911cc4211b"
+            }
+          ],
+          "evidence": "3 sampled frames only; no audio or complete continuous motion observation",
+          "at": "2026-10-04T16:35:42.733Z"
+        }
+      ],
+      "workflowIds": [],
+      "candidateIds": [],
+      "usage": {
+        "input": 178,
+        "output": 3568,
+        "cacheRead": 69248,
+        "cacheWrite": 0,
+        "reasoning": 489,
+        "totalTokens": 72994,
+        "cost": {
+          "input": 5.34e-05,
+          "output": 0.0042816,
+          "cacheRead": 0.000415488,
+          "cacheWrite": 0,
+          "total": 0.004750488000000001
+        }
+      },
+      "error": null,
+      "finishedAt": "2026-10-04T16:37:14.837Z"
+    }
+  ],
+  "proposals": [],
+  "events": [
+    {
+      "seq": 1,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:35:38.624Z",
+      "kind": "text",
+      "body": {
+        "delta": "我先"
+      }
+    },
+    {
+      "seq": 2,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:35:38.639Z",
+      "kind": "text",
+      "body": {
+        "delta": "读取"
+      }
+    },
+    {
+      "seq": 3,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:35:38.643Z",
+      "kind": "text",
+      "body": {
+        "delta": "完整"
+      }
+    },
+    {
+      "seq": 4,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:35:38.647Z",
+      "kind": "text",
+      "body": {
+        "delta": "上下文"
+      }
+    },
+    {
+      "seq": 5,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:35:38.651Z",
+      "kind": "text",
+      "body": {
+        "delta": "、"
+      }
+    },
+    {
+      "seq": 6,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:35:38.655Z",
+      "kind": "text",
+      "body": {
+        "delta": "技能"
+      }
+    },
+    {
+      "seq": 7,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:35:38.658Z",
+      "kind": "text",
+      "body": {
+        "delta": "与实际"
+      }
+    },
+    {
+      "seq": 8,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:35:38.664Z",
+      "kind": "text",
+      "body": {
+        "delta": "候选"
+      }
+    },
+    {
+      "seq": 9,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:35:38.667Z",
+      "kind": "text",
+      "body": {
+        "delta": "画面"
+      }
+    },
+    {
+      "seq": 10,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:35:38.683Z",
+      "kind": "text",
+      "body": {
+        "delta": "，"
+      }
+    },
+    {
+      "seq": 11,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:35:38.686Z",
+      "kind": "text",
+      "body": {
+        "delta": "再做"
+      }
+    },
+    {
+      "seq": 12,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:35:38.690Z",
+      "kind": "text",
+      "body": {
+        "delta": "诊断"
+      }
+    },
+    {
+      "seq": 13,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:35:38.694Z",
+      "kind": "text",
+      "body": {
+        "delta": "。"
+      }
+    },
+    {
+      "seq": 14,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:35:38.902Z",
+      "kind": "tool",
+      "body": {
+        "name": "get_film_context",
+        "status": "running"
+      }
+    },
+    {
+      "seq": 15,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:35:38.942Z",
+      "kind": "tool",
+      "body": {
+        "name": "load_film_skill",
+        "status": "running"
+      }
+    },
+    {
+      "seq": 16,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:35:38.950Z",
+      "kind": "tool",
+      "body": {
+        "name": "load_film_skill",
+        "status": "running"
+      }
+    },
+    {
+      "seq": 17,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:35:38.957Z",
+      "kind": "tool",
+      "body": {
+        "name": "get_film_context",
+        "status": "succeeded"
+      }
+    },
+    {
+      "seq": 18,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:35:38.962Z",
+      "kind": "tool",
+      "body": {
+        "name": "load_film_skill",
+        "status": "succeeded"
+      }
+    },
+    {
+      "seq": 19,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:35:38.966Z",
+      "kind": "tool",
+      "body": {
+        "name": "load_film_skill",
+        "status": "succeeded"
+      }
+    },
+    {
+      "seq": 20,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:35:41.148Z",
+      "kind": "text",
+      "body": {
+        "delta": "现在"
+      }
+    },
+    {
+      "seq": 21,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:35:41.160Z",
+      "kind": "text",
+      "body": {
+        "delta": "查看"
+      }
+    },
+    {
+      "seq": 22,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:35:41.186Z",
+      "kind": "text",
+      "body": {
+        "delta": "两个"
+      }
+    },
+    {
+      "seq": 23,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:35:41.190Z",
+      "kind": "text",
+      "body": {
+        "delta": "候选"
+      }
+    },
+    {
+      "seq": 24,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:35:41.194Z",
+      "kind": "text",
+      "body": {
+        "delta": "的关键"
+      }
+    },
+    {
+      "seq": 25,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:35:41.202Z",
+      "kind": "text",
+      "body": {
+        "delta": "帧"
+      }
+    },
+    {
+      "seq": 26,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:35:41.206Z",
+      "kind": "text",
+      "body": {
+        "delta": "，"
+      }
+    },
+    {
+      "seq": 27,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:35:41.209Z",
+      "kind": "text",
+      "body": {
+        "delta": "并"
+      }
+    },
+    {
+      "seq": 28,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:35:41.213Z",
+      "kind": "text",
+      "body": {
+        "delta": "定点"
+      }
+    },
+    {
+      "seq": 29,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:35:41.217Z",
+      "kind": "text",
+      "body": {
+        "delta": "重"
+      }
+    },
+    {
+      "seq": 30,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:35:41.221Z",
+      "kind": "text",
+      "body": {
+        "delta": "读"
+      }
+    },
+    {
+      "seq": 31,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:35:41.225Z",
+      "kind": "text",
+      "body": {
+        "delta": " S"
+      }
+    },
+    {
+      "seq": 32,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:35:41.228Z",
+      "kind": "text",
+      "body": {
+        "delta": "2"
+      }
+    },
+    {
+      "seq": 33,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:35:41.232Z",
+      "kind": "text",
+      "body": {
+        "delta": "/S"
+      }
+    },
+    {
+      "seq": 34,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:35:41.236Z",
+      "kind": "text",
+      "body": {
+        "delta": "3"
+      }
+    },
+    {
+      "seq": 35,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:35:41.239Z",
+      "kind": "text",
+      "body": {
+        "delta": " "
+      }
+    },
+    {
+      "seq": 36,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:35:41.246Z",
+      "kind": "text",
+      "body": {
+        "delta": "详情"
+      }
+    },
+    {
+      "seq": 37,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:35:41.251Z",
+      "kind": "text",
+      "body": {
+        "delta": "。"
+      }
+    },
+    {
+      "seq": 38,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:35:41.914Z",
+      "kind": "tool",
+      "body": {
+        "name": "inspect_candidate_frames",
+        "status": "running"
+      }
+    },
+    {
+      "seq": 39,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:35:41.922Z",
+      "kind": "tool",
+      "body": {
+        "name": "inspect_candidate_frames",
+        "status": "running"
+      }
+    },
+    {
+      "seq": 40,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:35:41.928Z",
+      "kind": "tool",
+      "body": {
+        "name": "get_shot_details",
+        "status": "running"
+      }
+    },
+    {
+      "seq": 41,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:35:41.960Z",
+      "kind": "tool",
+      "body": {
+        "name": "get_shot_details",
+        "status": "running"
+      }
+    },
+    {
+      "seq": 42,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:35:41.993Z",
+      "kind": "tool",
+      "body": {
+        "name": "get_shot_details",
+        "status": "succeeded"
+      }
+    },
+    {
+      "seq": 43,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:35:41.998Z",
+      "kind": "tool",
+      "body": {
+        "name": "get_shot_details",
+        "status": "succeeded"
+      }
+    },
+    {
+      "seq": 44,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:35:42.725Z",
+      "kind": "tool",
+      "body": {
+        "name": "inspect_candidate_frames",
+        "status": "succeeded"
+      }
+    },
+    {
+      "seq": 45,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:35:42.738Z",
+      "kind": "tool",
+      "body": {
+        "name": "inspect_candidate_frames",
+        "status": "succeeded"
+      }
+    },
+    {
+      "seq": 46,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:36:56.467Z",
+      "kind": "text",
+      "body": {
+        "delta": "我已"
+      }
+    },
+    {
+      "seq": 47,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:36:56.481Z",
+      "kind": "text",
+      "body": {
+        "delta": "看到"
+      }
+    },
+    {
+      "seq": 48,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:36:56.497Z",
+      "kind": "text",
+      "body": {
+        "delta": " "
+      }
+    },
+    {
+      "seq": 49,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:36:56.504Z",
+      "kind": "text",
+      "body": {
+        "delta": "6"
+      }
+    },
+    {
+      "seq": 50,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:36:56.507Z",
+      "kind": "text",
+      "body": {
+        "delta": " "
+      }
+    },
+    {
+      "seq": 51,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:36:56.510Z",
+      "kind": "text",
+      "body": {
+        "delta": "帧"
+      }
+    },
+    {
+      "seq": 52,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:36:56.513Z",
+      "kind": "text",
+      "body": {
+        "delta": "实证"
+      }
+    },
+    {
+      "seq": 53,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:36:56.516Z",
+      "kind": "text",
+      "body": {
+        "delta": "画面"
+      }
+    },
+    {
+      "seq": 54,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:36:56.531Z",
+      "kind": "text",
+      "body": {
+        "delta": "。"
+      }
+    },
+    {
+      "seq": 55,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:36:56.535Z",
+      "kind": "text",
+      "body": {
+        "delta": "再做"
+      }
+    },
+    {
+      "seq": 56,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:36:56.544Z",
+      "kind": "text",
+      "body": {
+        "delta": "一次"
+      }
+    },
+    {
+      "seq": 57,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:36:56.557Z",
+      "kind": "text",
+      "body": {
+        "delta": "只"
+      }
+    },
+    {
+      "seq": 58,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:36:56.560Z",
+      "kind": "text",
+      "body": {
+        "delta": "读"
+      }
+    },
+    {
+      "seq": 59,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:36:56.563Z",
+      "kind": "text",
+      "body": {
+        "delta": "校验"
+      }
+    },
+    {
+      "seq": 60,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:36:56.567Z",
+      "kind": "text",
+      "body": {
+        "delta": "，"
+      }
+    },
+    {
+      "seq": 61,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:36:56.571Z",
+      "kind": "text",
+      "body": {
+        "delta": "确认"
+      }
+    },
+    {
+      "seq": 62,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:36:56.575Z",
+      "kind": "text",
+      "body": {
+        "delta": "当前"
+      }
+    },
+    {
+      "seq": 63,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:36:56.578Z",
+      "kind": "text",
+      "body": {
+        "delta": "实际"
+      }
+    },
+    {
+      "seq": 64,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:36:56.581Z",
+      "kind": "text",
+      "body": {
+        "delta": "阻塞"
+      }
+    },
+    {
+      "seq": 65,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:36:56.586Z",
+      "kind": "text",
+      "body": {
+        "delta": "状态"
+      }
+    },
+    {
+      "seq": 66,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:36:56.599Z",
+      "kind": "text",
+      "body": {
+        "delta": "。"
+      }
+    },
+    {
+      "seq": 67,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:36:56.847Z",
+      "kind": "tool",
+      "body": {
+        "name": "validate_film_inputs",
+        "status": "running"
+      }
+    },
+    {
+      "seq": 68,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:36:56.864Z",
+      "kind": "tool",
+      "body": {
+        "name": "validate_film_inputs",
+        "status": "running"
+      }
+    },
+    {
+      "seq": 69,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:36:56.903Z",
+      "kind": "tool",
+      "body": {
+        "name": "validate_film_inputs",
+        "status": "succeeded"
+      }
+    },
+    {
+      "seq": 70,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:36:56.908Z",
+      "kind": "tool",
+      "body": {
+        "name": "validate_film_inputs",
+        "status": "succeeded"
+      }
+    },
+    {
+      "seq": 71,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.408Z",
+      "kind": "text",
+      "body": {
+        "delta": "##"
+      }
+    },
+    {
+      "seq": 72,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.412Z",
+      "kind": "text",
+      "body": {
+        "delta": " "
+      }
+    },
+    {
+      "seq": 73,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.415Z",
+      "kind": "text",
+      "body": {
+        "delta": "本轮"
+      }
+    },
+    {
+      "seq": 74,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.418Z",
+      "kind": "text",
+      "body": {
+        "delta": "实际"
+      }
+    },
+    {
+      "seq": 75,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.422Z",
+      "kind": "text",
+      "body": {
+        "delta": "动作"
+      }
+    },
+    {
+      "seq": 76,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.425Z",
+      "kind": "text",
+      "body": {
+        "delta": "（"
+      }
+    },
+    {
+      "seq": 77,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.428Z",
+      "kind": "text",
+      "body": {
+        "delta": "均为"
+      }
+    },
+    {
+      "seq": 78,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.431Z",
+      "kind": "text",
+      "body": {
+        "delta": "只"
+      }
+    },
+    {
+      "seq": 79,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.435Z",
+      "kind": "text",
+      "body": {
+        "delta": "读"
+      }
+    },
+    {
+      "seq": 80,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.438Z",
+      "kind": "text",
+      "body": {
+        "delta": "）\n\n"
+      }
+    },
+    {
+      "seq": 81,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.441Z",
+      "kind": "text",
+      "body": {
+        "delta": "-"
+      }
+    },
+    {
+      "seq": 82,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.445Z",
+      "kind": "text",
+      "body": {
+        "delta": " `"
+      }
+    },
+    {
+      "seq": 83,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.448Z",
+      "kind": "text",
+      "body": {
+        "delta": "get"
+      }
+    },
+    {
+      "seq": 84,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.451Z",
+      "kind": "text",
+      "body": {
+        "delta": "_f"
+      }
+    },
+    {
+      "seq": 85,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.454Z",
+      "kind": "text",
+      "body": {
+        "delta": "ilm"
+      }
+    },
+    {
+      "seq": 86,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.458Z",
+      "kind": "text",
+      "body": {
+        "delta": "_context"
+      }
+    },
+    {
+      "seq": 87,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.461Z",
+      "kind": "text",
+      "body": {
+        "delta": "`"
+      }
+    },
+    {
+      "seq": 88,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.464Z",
+      "kind": "text",
+      "body": {
+        "delta": "、"
+      }
+    },
+    {
+      "seq": 89,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.468Z",
+      "kind": "text",
+      "body": {
+        "delta": "`"
+      }
+    },
+    {
+      "seq": 90,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.471Z",
+      "kind": "text",
+      "body": {
+        "delta": "get"
+      }
+    },
+    {
+      "seq": 91,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.474Z",
+      "kind": "text",
+      "body": {
+        "delta": "_"
+      }
+    },
+    {
+      "seq": 92,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.477Z",
+      "kind": "text",
+      "body": {
+        "delta": "shot"
+      }
+    },
+    {
+      "seq": 93,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.484Z",
+      "kind": "text",
+      "body": {
+        "delta": "_details"
+      }
+    },
+    {
+      "seq": 94,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.487Z",
+      "kind": "text",
+      "body": {
+        "delta": "`"
+      }
+    },
+    {
+      "seq": 95,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.491Z",
+      "kind": "text",
+      "body": {
+        "delta": "（"
+      }
+    },
+    {
+      "seq": 96,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.494Z",
+      "kind": "text",
+      "body": {
+        "delta": "S"
+      }
+    },
+    {
+      "seq": 97,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.497Z",
+      "kind": "text",
+      "body": {
+        "delta": "2"
+      }
+    },
+    {
+      "seq": 98,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.500Z",
+      "kind": "text",
+      "body": {
+        "delta": " `"
+      }
+    },
+    {
+      "seq": 99,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.504Z",
+      "kind": "text",
+      "body": {
+        "delta": "75"
+      }
+    },
+    {
+      "seq": 100,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.507Z",
+      "kind": "text",
+      "body": {
+        "delta": "f"
+      }
+    },
+    {
+      "seq": 101,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.510Z",
+      "kind": "text",
+      "body": {
+        "delta": "55"
+      }
+    },
+    {
+      "seq": 102,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.514Z",
+      "kind": "text",
+      "body": {
+        "delta": "a"
+      }
+    },
+    {
+      "seq": 103,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.517Z",
+      "kind": "text",
+      "body": {
+        "delta": "65"
+      }
+    },
+    {
+      "seq": 104,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.520Z",
+      "kind": "text",
+      "body": {
+        "delta": "`"
+      }
+    },
+    {
+      "seq": 105,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.523Z",
+      "kind": "text",
+      "body": {
+        "delta": "、"
+      }
+    },
+    {
+      "seq": 106,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.527Z",
+      "kind": "text",
+      "body": {
+        "delta": "S"
+      }
+    },
+    {
+      "seq": 107,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.530Z",
+      "kind": "text",
+      "body": {
+        "delta": "3"
+      }
+    },
+    {
+      "seq": 108,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.534Z",
+      "kind": "text",
+      "body": {
+        "delta": " `"
+      }
+    },
+    {
+      "seq": 109,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.539Z",
+      "kind": "text",
+      "body": {
+        "delta": "c"
+      }
+    },
+    {
+      "seq": 110,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.547Z",
+      "kind": "text",
+      "body": {
+        "delta": "bf"
+      }
+    },
+    {
+      "seq": 111,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.553Z",
+      "kind": "text",
+      "body": {
+        "delta": "c"
+      }
+    },
+    {
+      "seq": 112,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.557Z",
+      "kind": "text",
+      "body": {
+        "delta": "445"
+      }
+    },
+    {
+      "seq": 113,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.560Z",
+      "kind": "text",
+      "body": {
+        "delta": "5"
+      }
+    },
+    {
+      "seq": 114,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.564Z",
+      "kind": "text",
+      "body": {
+        "delta": "`"
+      }
+    },
+    {
+      "seq": 115,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.567Z",
+      "kind": "text",
+      "body": {
+        "delta": "）、"
+      }
+    },
+    {
+      "seq": 116,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.570Z",
+      "kind": "text",
+      "body": {
+        "delta": "`"
+      }
+    },
+    {
+      "seq": 117,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.574Z",
+      "kind": "text",
+      "body": {
+        "delta": "load"
+      }
+    },
+    {
+      "seq": 118,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.577Z",
+      "kind": "text",
+      "body": {
+        "delta": "_f"
+      }
+    },
+    {
+      "seq": 119,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.580Z",
+      "kind": "text",
+      "body": {
+        "delta": "ilm"
+      }
+    },
+    {
+      "seq": 120,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.583Z",
+      "kind": "text",
+      "body": {
+        "delta": "_"
+      }
+    },
+    {
+      "seq": 121,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.587Z",
+      "kind": "text",
+      "body": {
+        "delta": "skill"
+      }
+    },
+    {
+      "seq": 122,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.590Z",
+      "kind": "text",
+      "body": {
+        "delta": "`"
+      }
+    },
+    {
+      "seq": 123,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.593Z",
+      "kind": "text",
+      "body": {
+        "delta": "（"
+      }
+    },
+    {
+      "seq": 124,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.596Z",
+      "kind": "text",
+      "body": {
+        "delta": "n"
+      }
+    },
+    {
+      "seq": 125,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.600Z",
+      "kind": "text",
+      "body": {
+        "delta": "arrative"
+      }
+    },
+    {
+      "seq": 126,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.603Z",
+      "kind": "text",
+      "body": {
+        "delta": "-control"
+      }
+    },
+    {
+      "seq": 127,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.606Z",
+      "kind": "text",
+      "body": {
+        "delta": "、"
+      }
+    },
+    {
+      "seq": 128,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.609Z",
+      "kind": "text",
+      "body": {
+        "delta": "ref"
+      }
+    },
+    {
+      "seq": 129,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.612Z",
+      "kind": "text",
+      "body": {
+        "delta": "2"
+      }
+    },
+    {
+      "seq": 130,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.616Z",
+      "kind": "text",
+      "body": {
+        "delta": "va"
+      }
+    },
+    {
+      "seq": 131,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.619Z",
+      "kind": "text",
+      "body": {
+        "delta": "）\n"
+      }
+    },
+    {
+      "seq": 132,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.622Z",
+      "kind": "text",
+      "body": {
+        "delta": "-"
+      }
+    },
+    {
+      "seq": 133,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.625Z",
+      "kind": "text",
+      "body": {
+        "delta": " `"
+      }
+    },
+    {
+      "seq": 134,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.629Z",
+      "kind": "text",
+      "body": {
+        "delta": "in"
+      }
+    },
+    {
+      "seq": 135,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.632Z",
+      "kind": "text",
+      "body": {
+        "delta": "spect"
+      }
+    },
+    {
+      "seq": 136,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.635Z",
+      "kind": "text",
+      "body": {
+        "delta": "_c"
+      }
+    },
+    {
+      "seq": 137,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.638Z",
+      "kind": "text",
+      "body": {
+        "delta": "andidate"
+      }
+    },
+    {
+      "seq": 138,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.641Z",
+      "kind": "text",
+      "body": {
+        "delta": "_f"
+      }
+    },
+    {
+      "seq": 139,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.645Z",
+      "kind": "text",
+      "body": {
+        "delta": "rames"
+      }
+    },
+    {
+      "seq": 140,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.648Z",
+      "kind": "text",
+      "body": {
+        "delta": "`"
+      }
+    },
+    {
+      "seq": 141,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.651Z",
+      "kind": "text",
+      "body": {
+        "delta": "："
+      }
+    },
+    {
+      "seq": 142,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.654Z",
+      "kind": "text",
+      "body": {
+        "delta": "S"
+      }
+    },
+    {
+      "seq": 143,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.658Z",
+      "kind": "text",
+      "body": {
+        "delta": "2"
+      }
+    },
+    {
+      "seq": 144,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.661Z",
+      "kind": "text",
+      "body": {
+        "delta": " "
+      }
+    },
+    {
+      "seq": 145,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.664Z",
+      "kind": "text",
+      "body": {
+        "delta": "候选"
+      }
+    },
+    {
+      "seq": 146,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.667Z",
+      "kind": "text",
+      "body": {
+        "delta": " `"
+      }
+    },
+    {
+      "seq": 147,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.670Z",
+      "kind": "text",
+      "body": {
+        "delta": "6"
+      }
+    },
+    {
+      "seq": 148,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.674Z",
+      "kind": "text",
+      "body": {
+        "delta": "fb"
+      }
+    },
+    {
+      "seq": 149,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.677Z",
+      "kind": "text",
+      "body": {
+        "delta": "58"
+      }
+    },
+    {
+      "seq": 150,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.683Z",
+      "kind": "text",
+      "body": {
+        "delta": "b"
+      }
+    },
+    {
+      "seq": 151,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.687Z",
+      "kind": "text",
+      "body": {
+        "delta": "1"
+      }
+    },
+    {
+      "seq": 152,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.690Z",
+      "kind": "text",
+      "body": {
+        "delta": "f"
+      }
+    },
+    {
+      "seq": 153,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.694Z",
+      "kind": "text",
+      "body": {
+        "delta": "-e"
+      }
+    },
+    {
+      "seq": 154,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.697Z",
+      "kind": "text",
+      "body": {
+        "delta": "122"
+      }
+    },
+    {
+      "seq": 155,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.700Z",
+      "kind": "text",
+      "body": {
+        "delta": "-"
+      }
+    },
+    {
+      "seq": 156,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.703Z",
+      "kind": "text",
+      "body": {
+        "delta": "47"
+      }
+    },
+    {
+      "seq": 157,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.707Z",
+      "kind": "text",
+      "body": {
+        "delta": "e"
+      }
+    },
+    {
+      "seq": 158,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.710Z",
+      "kind": "text",
+      "body": {
+        "delta": "4"
+      }
+    },
+    {
+      "seq": 159,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.713Z",
+      "kind": "text",
+      "body": {
+        "delta": "-a"
+      }
+    },
+    {
+      "seq": 160,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.716Z",
+      "kind": "text",
+      "body": {
+        "delta": "018"
+      }
+    },
+    {
+      "seq": 161,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.720Z",
+      "kind": "text",
+      "body": {
+        "delta": "-"
+      }
+    },
+    {
+      "seq": 162,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.723Z",
+      "kind": "text",
+      "body": {
+        "delta": "1"
+      }
+    },
+    {
+      "seq": 163,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.726Z",
+      "kind": "text",
+      "body": {
+        "delta": "c"
+      }
+    },
+    {
+      "seq": 164,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.730Z",
+      "kind": "text",
+      "body": {
+        "delta": "2"
+      }
+    },
+    {
+      "seq": 165,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.733Z",
+      "kind": "text",
+      "body": {
+        "delta": "b"
+      }
+    },
+    {
+      "seq": 166,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.737Z",
+      "kind": "text",
+      "body": {
+        "delta": "2"
+      }
+    },
+    {
+      "seq": 167,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.740Z",
+      "kind": "text",
+      "body": {
+        "delta": "b"
+      }
+    },
+    {
+      "seq": 168,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.744Z",
+      "kind": "text",
+      "body": {
+        "delta": "195"
+      }
+    },
+    {
+      "seq": 169,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.747Z",
+      "kind": "text",
+      "body": {
+        "delta": "3"
+      }
+    },
+    {
+      "seq": 170,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.751Z",
+      "kind": "text",
+      "body": {
+        "delta": "ba"
+      }
+    },
+    {
+      "seq": 171,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.754Z",
+      "kind": "text",
+      "body": {
+        "delta": "`"
+      }
+    },
+    {
+      "seq": 172,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.757Z",
+      "kind": "text",
+      "body": {
+        "delta": " "
+      }
+    },
+    {
+      "seq": 173,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.761Z",
+      "kind": "text",
+      "body": {
+        "delta": "的"
+      }
+    },
+    {
+      "seq": 174,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.764Z",
+      "kind": "text",
+      "body": {
+        "delta": " "
+      }
+    },
+    {
+      "seq": 175,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.768Z",
+      "kind": "text",
+      "body": {
+        "delta": "0"
+      }
+    },
+    {
+      "seq": 176,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.771Z",
+      "kind": "text",
+      "body": {
+        "delta": " /"
+      }
+    },
+    {
+      "seq": 177,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.775Z",
+      "kind": "text",
+      "body": {
+        "delta": " "
+      }
+    },
+    {
+      "seq": 178,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.779Z",
+      "kind": "text",
+      "body": {
+        "delta": "2"
+      }
+    },
+    {
+      "seq": 179,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.783Z",
+      "kind": "text",
+      "body": {
+        "delta": " /"
+      }
+    },
+    {
+      "seq": 180,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.788Z",
+      "kind": "text",
+      "body": {
+        "delta": " "
+      }
+    },
+    {
+      "seq": 181,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.793Z",
+      "kind": "text",
+      "body": {
+        "delta": "4"
+      }
+    },
+    {
+      "seq": 182,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.798Z",
+      "kind": "text",
+      "body": {
+        "delta": "."
+      }
+    },
+    {
+      "seq": 183,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.803Z",
+      "kind": "text",
+      "body": {
+        "delta": "3"
+      }
+    },
+    {
+      "seq": 184,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.807Z",
+      "kind": "text",
+      "body": {
+        "delta": "s"
+      }
+    },
+    {
+      "seq": 185,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.810Z",
+      "kind": "text",
+      "body": {
+        "delta": "；"
+      }
+    },
+    {
+      "seq": 186,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.814Z",
+      "kind": "text",
+      "body": {
+        "delta": "S"
+      }
+    },
+    {
+      "seq": 187,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.817Z",
+      "kind": "text",
+      "body": {
+        "delta": "3"
+      }
+    },
+    {
+      "seq": 188,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.821Z",
+      "kind": "text",
+      "body": {
+        "delta": " "
+      }
+    },
+    {
+      "seq": 189,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.827Z",
+      "kind": "text",
+      "body": {
+        "delta": "候选"
+      }
+    },
+    {
+      "seq": 190,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.831Z",
+      "kind": "text",
+      "body": {
+        "delta": " `"
+      }
+    },
+    {
+      "seq": 191,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.835Z",
+      "kind": "text",
+      "body": {
+        "delta": "425"
+      }
+    },
+    {
+      "seq": 192,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.838Z",
+      "kind": "text",
+      "body": {
+        "delta": "8"
+      }
+    },
+    {
+      "seq": 193,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.842Z",
+      "kind": "text",
+      "body": {
+        "delta": "a"
+      }
+    },
+    {
+      "seq": 194,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.845Z",
+      "kind": "text",
+      "body": {
+        "delta": "080"
+      }
+    },
+    {
+      "seq": 195,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.849Z",
+      "kind": "text",
+      "body": {
+        "delta": "-"
+      }
+    },
+    {
+      "seq": 196,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.852Z",
+      "kind": "text",
+      "body": {
+        "delta": "6"
+      }
+    },
+    {
+      "seq": 197,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.855Z",
+      "kind": "text",
+      "body": {
+        "delta": "a"
+      }
+    },
+    {
+      "seq": 198,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.859Z",
+      "kind": "text",
+      "body": {
+        "delta": "40"
+      }
+    },
+    {
+      "seq": 199,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.862Z",
+      "kind": "text",
+      "body": {
+        "delta": "-"
+      }
+    },
+    {
+      "seq": 200,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.866Z",
+      "kind": "text",
+      "body": {
+        "delta": "477"
+      }
+    },
+    {
+      "seq": 201,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.869Z",
+      "kind": "text",
+      "body": {
+        "delta": "1"
+      }
+    },
+    {
+      "seq": 202,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.873Z",
+      "kind": "text",
+      "body": {
+        "delta": "-a"
+      }
+    },
+    {
+      "seq": 203,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.876Z",
+      "kind": "text",
+      "body": {
+        "delta": "5"
+      }
+    },
+    {
+      "seq": 204,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.879Z",
+      "kind": "text",
+      "body": {
+        "delta": "d"
+      }
+    },
+    {
+      "seq": 205,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.883Z",
+      "kind": "text",
+      "body": {
+        "delta": "5"
+      }
+    },
+    {
+      "seq": 206,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.887Z",
+      "kind": "text",
+      "body": {
+        "delta": "-"
+      }
+    },
+    {
+      "seq": 207,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.890Z",
+      "kind": "text",
+      "body": {
+        "delta": "5"
+      }
+    },
+    {
+      "seq": 208,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.893Z",
+      "kind": "text",
+      "body": {
+        "delta": "e"
+      }
+    },
+    {
+      "seq": 209,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.897Z",
+      "kind": "text",
+      "body": {
+        "delta": "04"
+      }
+    },
+    {
+      "seq": 210,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.900Z",
+      "kind": "text",
+      "body": {
+        "delta": "eb"
+      }
+    },
+    {
+      "seq": 211,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.904Z",
+      "kind": "text",
+      "body": {
+        "delta": "eff"
+      }
+    },
+    {
+      "seq": 212,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.907Z",
+      "kind": "text",
+      "body": {
+        "delta": "68"
+      }
+    },
+    {
+      "seq": 213,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.911Z",
+      "kind": "text",
+      "body": {
+        "delta": "d"
+      }
+    },
+    {
+      "seq": 214,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.914Z",
+      "kind": "text",
+      "body": {
+        "delta": "`"
+      }
+    },
+    {
+      "seq": 215,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.917Z",
+      "kind": "text",
+      "body": {
+        "delta": " "
+      }
+    },
+    {
+      "seq": 216,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.921Z",
+      "kind": "text",
+      "body": {
+        "delta": "的"
+      }
+    },
+    {
+      "seq": 217,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.924Z",
+      "kind": "text",
+      "body": {
+        "delta": " "
+      }
+    },
+    {
+      "seq": 218,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.928Z",
+      "kind": "text",
+      "body": {
+        "delta": "0"
+      }
+    },
+    {
+      "seq": 219,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.931Z",
+      "kind": "text",
+      "body": {
+        "delta": " /"
+      }
+    },
+    {
+      "seq": 220,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.935Z",
+      "kind": "text",
+      "body": {
+        "delta": " "
+      }
+    },
+    {
+      "seq": 221,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.938Z",
+      "kind": "text",
+      "body": {
+        "delta": "2"
+      }
+    },
+    {
+      "seq": 222,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.942Z",
+      "kind": "text",
+      "body": {
+        "delta": " /"
+      }
+    },
+    {
+      "seq": 223,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.945Z",
+      "kind": "text",
+      "body": {
+        "delta": " "
+      }
+    },
+    {
+      "seq": 224,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.949Z",
+      "kind": "text",
+      "body": {
+        "delta": "4"
+      }
+    },
+    {
+      "seq": 225,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.952Z",
+      "kind": "text",
+      "body": {
+        "delta": "."
+      }
+    },
+    {
+      "seq": 226,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.956Z",
+      "kind": "text",
+      "body": {
+        "delta": "3"
+      }
+    },
+    {
+      "seq": 227,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.959Z",
+      "kind": "text",
+      "body": {
+        "delta": "s"
+      }
+    },
+    {
+      "seq": 228,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.965Z",
+      "kind": "text",
+      "body": {
+        "delta": "（"
+      }
+    },
+    {
+      "seq": 229,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.970Z",
+      "kind": "text",
+      "body": {
+        "delta": "各"
+      }
+    },
+    {
+      "seq": 230,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.973Z",
+      "kind": "text",
+      "body": {
+        "delta": " "
+      }
+    },
+    {
+      "seq": 231,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.977Z",
+      "kind": "text",
+      "body": {
+        "delta": "3"
+      }
+    },
+    {
+      "seq": 232,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.980Z",
+      "kind": "text",
+      "body": {
+        "delta": " "
+      }
+    },
+    {
+      "seq": 233,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:00.983Z",
+      "kind": "text",
+      "body": {
+        "delta": "张"
+      }
+    },
+    {
+      "seq": 234,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.029Z",
+      "kind": "text",
+      "body": {
+        "delta": "，"
+      }
+    },
+    {
+      "seq": 235,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.033Z",
+      "kind": "text",
+      "body": {
+        "delta": "共"
+      }
+    },
+    {
+      "seq": 236,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.036Z",
+      "kind": "text",
+      "body": {
+        "delta": " "
+      }
+    },
+    {
+      "seq": 237,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.040Z",
+      "kind": "text",
+      "body": {
+        "delta": "6"
+      }
+    },
+    {
+      "seq": 238,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.043Z",
+      "kind": "text",
+      "body": {
+        "delta": " "
+      }
+    },
+    {
+      "seq": 239,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.047Z",
+      "kind": "text",
+      "body": {
+        "delta": "张"
+      }
+    },
+    {
+      "seq": 240,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.050Z",
+      "kind": "text",
+      "body": {
+        "delta": "）\n"
+      }
+    },
+    {
+      "seq": 241,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.053Z",
+      "kind": "text",
+      "body": {
+        "delta": "-"
+      }
+    },
+    {
+      "seq": 242,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.057Z",
+      "kind": "text",
+      "body": {
+        "delta": " `"
+      }
+    },
+    {
+      "seq": 243,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.060Z",
+      "kind": "text",
+      "body": {
+        "delta": "validate"
+      }
+    },
+    {
+      "seq": 244,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.064Z",
+      "kind": "text",
+      "body": {
+        "delta": "_f"
+      }
+    },
+    {
+      "seq": 245,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.067Z",
+      "kind": "text",
+      "body": {
+        "delta": "ilm"
+      }
+    },
+    {
+      "seq": 246,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.070Z",
+      "kind": "text",
+      "body": {
+        "delta": "_input"
+      }
+    },
+    {
+      "seq": 247,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.074Z",
+      "kind": "text",
+      "body": {
+        "delta": "s"
+      }
+    },
+    {
+      "seq": 248,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.077Z",
+      "kind": "text",
+      "body": {
+        "delta": "`"
+      }
+    },
+    {
+      "seq": 249,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.081Z",
+      "kind": "text",
+      "body": {
+        "delta": "（"
+      }
+    },
+    {
+      "seq": 250,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.087Z",
+      "kind": "text",
+      "body": {
+        "delta": "S"
+      }
+    },
+    {
+      "seq": 251,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.091Z",
+      "kind": "text",
+      "body": {
+        "delta": "3"
+      }
+    },
+    {
+      "seq": 252,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.096Z",
+      "kind": "text",
+      "body": {
+        "delta": " "
+      }
+    },
+    {
+      "seq": 253,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.101Z",
+      "kind": "text",
+      "body": {
+        "delta": "单"
+      }
+    },
+    {
+      "seq": 254,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.106Z",
+      "kind": "text",
+      "body": {
+        "delta": "镜"
+      }
+    },
+    {
+      "seq": 255,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.110Z",
+      "kind": "text",
+      "body": {
+        "delta": " +"
+      }
+    },
+    {
+      "seq": 256,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.114Z",
+      "kind": "text",
+      "body": {
+        "delta": " "
+      }
+    },
+    {
+      "seq": 257,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.117Z",
+      "kind": "text",
+      "body": {
+        "delta": "全"
+      }
+    },
+    {
+      "seq": 258,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.120Z",
+      "kind": "text",
+      "body": {
+        "delta": "片"
+      }
+    },
+    {
+      "seq": 259,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.124Z",
+      "kind": "text",
+      "body": {
+        "delta": "）："
+      }
+    },
+    {
+      "seq": 260,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.127Z",
+      "kind": "text",
+      "body": {
+        "delta": "re"
+      }
+    },
+    {
+      "seq": 261,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.131Z",
+      "kind": "text",
+      "body": {
+        "delta": "vision"
+      }
+    },
+    {
+      "seq": 262,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.134Z",
+      "kind": "text",
+      "body": {
+        "delta": " "
+      }
+    },
+    {
+      "seq": 263,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.137Z",
+      "kind": "text",
+      "body": {
+        "delta": "36"
+      }
+    },
+    {
+      "seq": 264,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.141Z",
+      "kind": "text",
+      "body": {
+        "delta": "，"
+      }
+    },
+    {
+      "seq": 265,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.144Z",
+      "kind": "text",
+      "body": {
+        "delta": "`"
+      }
+    },
+    {
+      "seq": 266,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.148Z",
+      "kind": "text",
+      "body": {
+        "delta": "valid"
+      }
+    },
+    {
+      "seq": 267,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.153Z",
+      "kind": "text",
+      "body": {
+        "delta": ":"
+      }
+    },
+    {
+      "seq": 268,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.158Z",
+      "kind": "text",
+      "body": {
+        "delta": "true"
+      }
+    },
+    {
+      "seq": 269,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.162Z",
+      "kind": "text",
+      "body": {
+        "delta": "`"
+      }
+    },
+    {
+      "seq": 270,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.165Z",
+      "kind": "text",
+      "body": {
+        "delta": "，"
+      }
+    },
+    {
+      "seq": 271,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.169Z",
+      "kind": "text",
+      "body": {
+        "delta": "无"
+      }
+    },
+    {
+      "seq": 272,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.172Z",
+      "kind": "text",
+      "body": {
+        "delta": " issues"
+      }
+    },
+    {
+      "seq": 273,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.175Z",
+      "kind": "text",
+      "body": {
+        "delta": "。"
+      }
+    },
+    {
+      "seq": 274,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.179Z",
+      "kind": "text",
+      "body": {
+        "delta": "所以"
+      }
+    },
+    {
+      "seq": 275,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.182Z",
+      "kind": "text",
+      "body": {
+        "delta": "当前"
+      }
+    },
+    {
+      "seq": 276,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.186Z",
+      "kind": "text",
+      "body": {
+        "delta": "**"
+      }
+    },
+    {
+      "seq": 277,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.189Z",
+      "kind": "text",
+      "body": {
+        "delta": "没有"
+      }
+    },
+    {
+      "seq": 278,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.193Z",
+      "kind": "text",
+      "body": {
+        "delta": "格式"
+      }
+    },
+    {
+      "seq": 279,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.196Z",
+      "kind": "text",
+      "body": {
+        "delta": "/"
+      }
+    },
+    {
+      "seq": 280,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.200Z",
+      "kind": "text",
+      "body": {
+        "delta": "输入"
+      }
+    },
+    {
+      "seq": 281,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.203Z",
+      "kind": "text",
+      "body": {
+        "delta": "层"
+      }
+    },
+    {
+      "seq": 282,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.207Z",
+      "kind": "text",
+      "body": {
+        "delta": "阻塞"
+      }
+    },
+    {
+      "seq": 283,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.210Z",
+      "kind": "text",
+      "body": {
+        "delta": "**"
+      }
+    },
+    {
+      "seq": 284,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.214Z",
+      "kind": "text",
+      "body": {
+        "delta": "，"
+      }
+    },
+    {
+      "seq": 285,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.217Z",
+      "kind": "text",
+      "body": {
+        "delta": "问题"
+      }
+    },
+    {
+      "seq": 286,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.221Z",
+      "kind": "text",
+      "body": {
+        "delta": "发生在"
+      }
+    },
+    {
+      "seq": 287,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.224Z",
+      "kind": "text",
+      "body": {
+        "delta": "实际"
+      }
+    },
+    {
+      "seq": 288,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.227Z",
+      "kind": "text",
+      "body": {
+        "delta": "画面"
+      }
+    },
+    {
+      "seq": 289,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.231Z",
+      "kind": "text",
+      "body": {
+        "delta": "层"
+      }
+    },
+    {
+      "seq": 290,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.234Z",
+      "kind": "text",
+      "body": {
+        "delta": "。\n"
+      }
+    },
+    {
+      "seq": 291,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.238Z",
+      "kind": "text",
+      "body": {
+        "delta": "-"
+      }
+    },
+    {
+      "seq": 292,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.241Z",
+      "kind": "text",
+      "body": {
+        "delta": " "
+      }
+    },
+    {
+      "seq": 293,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.245Z",
+      "kind": "text",
+      "body": {
+        "delta": "未"
+      }
+    },
+    {
+      "seq": 294,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.248Z",
+      "kind": "text",
+      "body": {
+        "delta": "修改"
+      }
+    },
+    {
+      "seq": 295,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.251Z",
+      "kind": "text",
+      "body": {
+        "delta": "任何"
+      }
+    },
+    {
+      "seq": 296,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.255Z",
+      "kind": "text",
+      "body": {
+        "delta": "内容"
+      }
+    },
+    {
+      "seq": 297,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.259Z",
+      "kind": "text",
+      "body": {
+        "delta": "、"
+      }
+    },
+    {
+      "seq": 298,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.262Z",
+      "kind": "text",
+      "body": {
+        "delta": "未"
+      }
+    },
+    {
+      "seq": 299,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.265Z",
+      "kind": "text",
+      "body": {
+        "delta": "采用"
+      }
+    },
+    {
+      "seq": 300,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.269Z",
+      "kind": "text",
+      "body": {
+        "delta": "任何"
+      }
+    },
+    {
+      "seq": 301,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.272Z",
+      "kind": "text",
+      "body": {
+        "delta": "提案"
+      }
+    },
+    {
+      "seq": 302,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.276Z",
+      "kind": "text",
+      "body": {
+        "delta": "、"
+      }
+    },
+    {
+      "seq": 303,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.279Z",
+      "kind": "text",
+      "body": {
+        "delta": "未"
+      }
+    },
+    {
+      "seq": 304,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.283Z",
+      "kind": "text",
+      "body": {
+        "delta": "创建"
+      }
+    },
+    {
+      "seq": 305,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.286Z",
+      "kind": "text",
+      "body": {
+        "delta": "提案"
+      }
+    },
+    {
+      "seq": 306,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.292Z",
+      "kind": "text",
+      "body": {
+        "delta": "、"
+      }
+    },
+    {
+      "seq": 307,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.297Z",
+      "kind": "text",
+      "body": {
+        "delta": "未"
+      }
+    },
+    {
+      "seq": 308,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.300Z",
+      "kind": "text",
+      "body": {
+        "delta": "提交"
+      }
+    },
+    {
+      "seq": 309,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.304Z",
+      "kind": "text",
+      "body": {
+        "delta": "生成"
+      }
+    },
+    {
+      "seq": 310,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.307Z",
+      "kind": "text",
+      "body": {
+        "delta": "。"
+      }
+    },
+    {
+      "seq": 311,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.311Z",
+      "kind": "text",
+      "body": {
+        "delta": "S"
+      }
+    },
+    {
+      "seq": 312,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.314Z",
+      "kind": "text",
+      "body": {
+        "delta": "3"
+      }
+    },
+    {
+      "seq": 313,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.318Z",
+      "kind": "text",
+      "body": {
+        "delta": " "
+      }
+    },
+    {
+      "seq": 314,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.321Z",
+      "kind": "text",
+      "body": {
+        "delta": "两个"
+      }
+    },
+    {
+      "seq": 315,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.325Z",
+      "kind": "text",
+      "body": {
+        "delta": "候选"
+      }
+    },
+    {
+      "seq": 316,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.328Z",
+      "kind": "text",
+      "body": {
+        "delta": " `"
+      }
+    },
+    {
+      "seq": 317,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.332Z",
+      "kind": "text",
+      "body": {
+        "delta": "selected"
+      }
+    },
+    {
+      "seq": 318,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.335Z",
+      "kind": "text",
+      "body": {
+        "delta": "Candidate"
+      }
+    },
+    {
+      "seq": 319,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.339Z",
+      "kind": "text",
+      "body": {
+        "delta": "Id"
+      }
+    },
+    {
+      "seq": 320,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.344Z",
+      "kind": "text",
+      "body": {
+        "delta": "`"
+      }
+    },
+    {
+      "seq": 321,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.349Z",
+      "kind": "text",
+      "body": {
+        "delta": " "
+      }
+    },
+    {
+      "seq": 322,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.354Z",
+      "kind": "text",
+      "body": {
+        "delta": "均为"
+      }
+    },
+    {
+      "seq": 323,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.359Z",
+      "kind": "text",
+      "body": {
+        "delta": " null"
+      }
+    },
+    {
+      "seq": 324,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.364Z",
+      "kind": "text",
+      "body": {
+        "delta": "（"
+      }
+    },
+    {
+      "seq": 325,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.369Z",
+      "kind": "text",
+      "body": {
+        "delta": "未被"
+      }
+    },
+    {
+      "seq": 326,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.373Z",
+      "kind": "text",
+      "body": {
+        "delta": "选用"
+      }
+    },
+    {
+      "seq": 327,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.376Z",
+      "kind": "text",
+      "body": {
+        "delta": "），"
+      }
+    },
+    {
+      "seq": 328,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.379Z",
+      "kind": "text",
+      "body": {
+        "delta": "无需"
+      }
+    },
+    {
+      "seq": 329,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.383Z",
+      "kind": "text",
+      "body": {
+        "delta": "回"
+      }
+    },
+    {
+      "seq": 330,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.386Z",
+      "kind": "text",
+      "body": {
+        "delta": "滚"
+      }
+    },
+    {
+      "seq": 331,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.390Z",
+      "kind": "text",
+      "body": {
+        "delta": "。\n\n"
+      }
+    },
+    {
+      "seq": 332,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.393Z",
+      "kind": "text",
+      "body": {
+        "delta": "---\n\n"
+      }
+    },
+    {
+      "seq": 333,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.396Z",
+      "kind": "text",
+      "body": {
+        "delta": "##"
+      }
+    },
+    {
+      "seq": 334,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.400Z",
+      "kind": "text",
+      "body": {
+        "delta": " "
+      }
+    },
+    {
+      "seq": 335,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.403Z",
+      "kind": "text",
+      "body": {
+        "delta": "一"
+      }
+    },
+    {
+      "seq": 336,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.407Z",
+      "kind": "text",
+      "body": {
+        "delta": "、"
+      }
+    },
+    {
+      "seq": 337,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.410Z",
+      "kind": "text",
+      "body": {
+        "delta": "实证"
+      }
+    },
+    {
+      "seq": 338,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.414Z",
+      "kind": "text",
+      "body": {
+        "delta": "观察"
+      }
+    },
+    {
+      "seq": 339,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.417Z",
+      "kind": "text",
+      "body": {
+        "delta": "记录"
+      }
+    },
+    {
+      "seq": 340,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.420Z",
+      "kind": "text",
+      "body": {
+        "delta": "（"
+      }
+    },
+    {
+      "seq": 341,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.424Z",
+      "kind": "text",
+      "body": {
+        "delta": "可"
+      }
+    },
+    {
+      "seq": 342,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.427Z",
+      "kind": "text",
+      "body": {
+        "delta": "回到"
+      }
+    },
+    {
+      "seq": 343,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.431Z",
+      "kind": "text",
+      "body": {
+        "delta": " candidate"
+      }
+    },
+    {
+      "seq": 344,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.434Z",
+      "kind": "text",
+      "body": {
+        "delta": "Id"
+      }
+    },
+    {
+      "seq": 345,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.440Z",
+      "kind": "text",
+      "body": {
+        "delta": "/"
+      }
+    },
+    {
+      "seq": 346,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.445Z",
+      "kind": "text",
+      "body": {
+        "delta": "时间"
+      }
+    },
+    {
+      "seq": 347,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.449Z",
+      "kind": "text",
+      "body": {
+        "delta": "点"
+      }
+    },
+    {
+      "seq": 348,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.452Z",
+      "kind": "text",
+      "body": {
+        "delta": "核对"
+      }
+    },
+    {
+      "seq": 349,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.455Z",
+      "kind": "text",
+      "body": {
+        "delta": "）\n\n"
+      }
+    },
+    {
+      "seq": 350,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.459Z",
+      "kind": "text",
+      "body": {
+        "delta": "S"
+      }
+    },
+    {
+      "seq": 351,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.462Z",
+      "kind": "text",
+      "body": {
+        "delta": "2"
+      }
+    },
+    {
+      "seq": 352,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.466Z",
+      "kind": "text",
+      "body": {
+        "delta": " "
+      }
+    },
+    {
+      "seq": 353,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.469Z",
+      "kind": "text",
+      "body": {
+        "delta": "候选"
+      }
+    },
+    {
+      "seq": 354,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.473Z",
+      "kind": "text",
+      "body": {
+        "delta": " `"
+      }
+    },
+    {
+      "seq": 355,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.476Z",
+      "kind": "text",
+      "body": {
+        "delta": "6"
+      }
+    },
+    {
+      "seq": 356,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.479Z",
+      "kind": "text",
+      "body": {
+        "delta": "fb"
+      }
+    },
+    {
+      "seq": 357,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.483Z",
+      "kind": "text",
+      "body": {
+        "delta": "58"
+      }
+    },
+    {
+      "seq": 358,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.486Z",
+      "kind": "text",
+      "body": {
+        "delta": "b"
+      }
+    },
+    {
+      "seq": 359,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.489Z",
+      "kind": "text",
+      "body": {
+        "delta": "1"
+      }
+    },
+    {
+      "seq": 360,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.492Z",
+      "kind": "text",
+      "body": {
+        "delta": "f"
+      }
+    },
+    {
+      "seq": 361,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.496Z",
+      "kind": "text",
+      "body": {
+        "delta": "`"
+      }
+    },
+    {
+      "seq": 362,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.499Z",
+      "kind": "text",
+      "body": {
+        "delta": "（"
+      }
+    },
+    {
+      "seq": 363,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.502Z",
+      "kind": "text",
+      "body": {
+        "delta": "视频"
+      }
+    },
+    {
+      "seq": 364,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.506Z",
+      "kind": "text",
+      "body": {
+        "delta": "时长"
+      }
+    },
+    {
+      "seq": 365,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.509Z",
+      "kind": "text",
+      "body": {
+        "delta": " "
+      }
+    },
+    {
+      "seq": 366,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.512Z",
+      "kind": "text",
+      "body": {
+        "delta": "4"
+      }
+    },
+    {
+      "seq": 367,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.515Z",
+      "kind": "text",
+      "body": {
+        "delta": "."
+      }
+    },
+    {
+      "seq": 368,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.519Z",
+      "kind": "text",
+      "body": {
+        "delta": "458"
+      }
+    },
+    {
+      "seq": 369,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.522Z",
+      "kind": "text",
+      "body": {
+        "delta": "s"
+      }
+    },
+    {
+      "seq": 370,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.525Z",
+      "kind": "text",
+      "body": {
+        "delta": "，"
+      }
+    },
+    {
+      "seq": 371,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.528Z",
+      "kind": "text",
+      "body": {
+        "delta": "media"
+      }
+    },
+    {
+      "seq": 372,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.531Z",
+      "kind": "text",
+      "body": {
+        "delta": "Hash"
+      }
+    },
+    {
+      "seq": 373,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.535Z",
+      "kind": "text",
+      "body": {
+        "delta": " `"
+      }
+    },
+    {
+      "seq": 374,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.538Z",
+      "kind": "text",
+      "body": {
+        "delta": "191"
+      }
+    },
+    {
+      "seq": 375,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.546Z",
+      "kind": "text",
+      "body": {
+        "delta": "c"
+      }
+    },
+    {
+      "seq": 376,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.549Z",
+      "kind": "text",
+      "body": {
+        "delta": "658"
+      }
+    },
+    {
+      "seq": 377,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.553Z",
+      "kind": "text",
+      "body": {
+        "delta": "1"
+      }
+    },
+    {
+      "seq": 378,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.556Z",
+      "kind": "text",
+      "body": {
+        "delta": "…"
+      }
+    },
+    {
+      "seq": 379,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.559Z",
+      "kind": "text",
+      "body": {
+        "delta": "`"
+      }
+    },
+    {
+      "seq": 380,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.562Z",
+      "kind": "text",
+      "body": {
+        "delta": "）\n\n"
+      }
+    },
+    {
+      "seq": 381,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.565Z",
+      "kind": "text",
+      "body": {
+        "delta": "|"
+      }
+    },
+    {
+      "seq": 382,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.569Z",
+      "kind": "text",
+      "body": {
+        "delta": " requested"
+      }
+    },
+    {
+      "seq": 383,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.572Z",
+      "kind": "text",
+      "body": {
+        "delta": "Time"
+      }
+    },
+    {
+      "seq": 384,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.577Z",
+      "kind": "text",
+      "body": {
+        "delta": "Sec"
+      }
+    },
+    {
+      "seq": 385,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.582Z",
+      "kind": "text",
+      "body": {
+        "delta": " |"
+      }
+    },
+    {
+      "seq": 386,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.585Z",
+      "kind": "text",
+      "body": {
+        "delta": " frame"
+      }
+    },
+    {
+      "seq": 387,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.589Z",
+      "kind": "text",
+      "body": {
+        "delta": "Hash"
+      }
+    },
+    {
+      "seq": 388,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.592Z",
+      "kind": "text",
+      "body": {
+        "delta": " |"
+      }
+    },
+    {
+      "seq": 389,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.595Z",
+      "kind": "text",
+      "body": {
+        "delta": " "
+      }
+    },
+    {
+      "seq": 390,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.598Z",
+      "kind": "text",
+      "body": {
+        "delta": "我"
+      }
+    },
+    {
+      "seq": 391,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.603Z",
+      "kind": "text",
+      "body": {
+        "delta": "实际"
+      }
+    },
+    {
+      "seq": 392,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.608Z",
+      "kind": "text",
+      "body": {
+        "delta": "看到的"
+      }
+    },
+    {
+      "seq": 393,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.613Z",
+      "kind": "text",
+      "body": {
+        "delta": " |\n"
+      }
+    },
+    {
+      "seq": 394,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.617Z",
+      "kind": "text",
+      "body": {
+        "delta": "|---|---"
+      }
+    },
+    {
+      "seq": 395,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.622Z",
+      "kind": "text",
+      "body": {
+        "delta": "|---"
+      }
+    },
+    {
+      "seq": 396,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.627Z",
+      "kind": "text",
+      "body": {
+        "delta": "|\n"
+      }
+    },
+    {
+      "seq": 397,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.631Z",
+      "kind": "text",
+      "body": {
+        "delta": "|"
+      }
+    },
+    {
+      "seq": 398,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.634Z",
+      "kind": "text",
+      "body": {
+        "delta": " "
+      }
+    },
+    {
+      "seq": 399,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.638Z",
+      "kind": "text",
+      "body": {
+        "delta": "0"
+      }
+    },
+    {
+      "seq": 400,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.641Z",
+      "kind": "text",
+      "body": {
+        "delta": " |"
+      }
+    },
+    {
+      "seq": 401,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.644Z",
+      "kind": "text",
+      "body": {
+        "delta": " `"
+      }
+    },
+    {
+      "seq": 402,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.647Z",
+      "kind": "text",
+      "body": {
+        "delta": "884"
+      }
+    },
+    {
+      "seq": 403,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.650Z",
+      "kind": "text",
+      "body": {
+        "delta": "54"
+      }
+    },
+    {
+      "seq": 404,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.653Z",
+      "kind": "text",
+      "body": {
+        "delta": "c"
+      }
+    },
+    {
+      "seq": 405,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.656Z",
+      "kind": "text",
+      "body": {
+        "delta": "3"
+      }
+    },
+    {
+      "seq": 406,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.660Z",
+      "kind": "text",
+      "body": {
+        "delta": "d"
+      }
+    },
+    {
+      "seq": 407,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.663Z",
+      "kind": "text",
+      "body": {
+        "delta": "`"
+      }
+    },
+    {
+      "seq": 408,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.666Z",
+      "kind": "text",
+      "body": {
+        "delta": " |"
+      }
+    },
+    {
+      "seq": 409,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.669Z",
+      "kind": "text",
+      "body": {
+        "delta": " A"
+      }
+    },
+    {
+      "seq": 410,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.673Z",
+      "kind": "text",
+      "body": {
+        "delta": " "
+      }
+    },
+    {
+      "seq": 411,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.676Z",
+      "kind": "text",
+      "body": {
+        "delta": "坐"
+      }
+    },
+    {
+      "seq": 412,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.679Z",
+      "kind": "text",
+      "body": {
+        "delta": "近"
+      }
+    },
+    {
+      "seq": 413,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.683Z",
+      "kind": "text",
+      "body": {
+        "delta": "侧"
+      }
+    },
+    {
+      "seq": 414,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.686Z",
+      "kind": "text",
+      "body": {
+        "delta": "左"
+      }
+    },
+    {
+      "seq": 415,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.689Z",
+      "kind": "text",
+      "body": {
+        "delta": "（"
+      }
+    },
+    {
+      "seq": 416,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.692Z",
+      "kind": "text",
+      "body": {
+        "delta": "马尾"
+      }
+    },
+    {
+      "seq": 417,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.695Z",
+      "kind": "text",
+      "body": {
+        "delta": "、"
+      }
+    },
+    {
+      "seq": 418,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.699Z",
+      "kind": "text",
+      "body": {
+        "delta": "银"
+      }
+    },
+    {
+      "seq": 419,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.702Z",
+      "kind": "text",
+      "body": {
+        "delta": "肩"
+      }
+    },
+    {
+      "seq": 420,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.705Z",
+      "kind": "text",
+      "body": {
+        "delta": "甲"
+      }
+    },
+    {
+      "seq": 421,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.708Z",
+      "kind": "text",
+      "body": {
+        "delta": "），"
+      }
+    },
+    {
+      "seq": 422,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.711Z",
+      "kind": "text",
+      "body": {
+        "delta": "B"
+      }
+    },
+    {
+      "seq": 423,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.717Z",
+      "kind": "text",
+      "body": {
+        "delta": " "
+      }
+    },
+    {
+      "seq": 424,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.721Z",
+      "kind": "text",
+      "body": {
+        "delta": "坐"
+      }
+    },
+    {
+      "seq": 425,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.725Z",
+      "kind": "text",
+      "body": {
+        "delta": "远"
+      }
+    },
+    {
+      "seq": 426,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.728Z",
+      "kind": "text",
+      "body": {
+        "delta": "侧"
+      }
+    },
+    {
+      "seq": 427,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.731Z",
+      "kind": "text",
+      "body": {
+        "delta": "右"
+      }
+    },
+    {
+      "seq": 428,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.734Z",
+      "kind": "text",
+      "body": {
+        "delta": "，"
+      }
+    },
+    {
+      "seq": 429,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.738Z",
+      "kind": "text",
+      "body": {
+        "delta": "双手"
+      }
+    },
+    {
+      "seq": 430,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.741Z",
+      "kind": "text",
+      "body": {
+        "delta": "持"
+      }
+    },
+    {
+      "seq": 431,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.744Z",
+      "kind": "text",
+      "body": {
+        "delta": "**"
+      }
+    },
+    {
+      "seq": 432,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.747Z",
+      "kind": "text",
+      "body": {
+        "delta": "打开"
+      }
+    },
+    {
+      "seq": 433,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.751Z",
+      "kind": "text",
+      "body": {
+        "delta": "的书"
+      }
+    },
+    {
+      "seq": 434,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.754Z",
+      "kind": "text",
+      "body": {
+        "delta": "**"
+      }
+    },
+    {
+      "seq": 435,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.757Z",
+      "kind": "text",
+      "body": {
+        "delta": "；"
+      }
+    },
+    {
+      "seq": 436,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.760Z",
+      "kind": "text",
+      "body": {
+        "delta": "刀"
+      }
+    },
+    {
+      "seq": 437,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.764Z",
+      "kind": "text",
+      "body": {
+        "delta": "平"
+      }
+    },
+    {
+      "seq": 438,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.767Z",
+      "kind": "text",
+      "body": {
+        "delta": "放"
+      }
+    },
+    {
+      "seq": 439,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.770Z",
+      "kind": "text",
+      "body": {
+        "delta": "桌面"
+      }
+    },
+    {
+      "seq": 440,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.774Z",
+      "kind": "text",
+      "body": {
+        "delta": "近"
+      }
+    },
+    {
+      "seq": 441,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.777Z",
+      "kind": "text",
+      "body": {
+        "delta": "侧"
+      }
+    },
+    {
+      "seq": 442,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.780Z",
+      "kind": "text",
+      "body": {
+        "delta": "左"
+      }
+    },
+    {
+      "seq": 443,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.783Z",
+      "kind": "text",
+      "body": {
+        "delta": "半"
+      }
+    },
+    {
+      "seq": 444,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.787Z",
+      "kind": "text",
+      "body": {
+        "delta": "、"
+      }
+    },
+    {
+      "seq": 445,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.790Z",
+      "kind": "text",
+      "body": {
+        "delta": "斜"
+      }
+    },
+    {
+      "seq": 446,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.793Z",
+      "kind": "text",
+      "body": {
+        "delta": "置"
+      }
+    },
+    {
+      "seq": 447,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.796Z",
+      "kind": "text",
+      "body": {
+        "delta": "，"
+      }
+    },
+    {
+      "seq": 448,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.800Z",
+      "kind": "text",
+      "body": {
+        "delta": "刀"
+      }
+    },
+    {
+      "seq": 449,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.803Z",
+      "kind": "text",
+      "body": {
+        "delta": "柄"
+      }
+    },
+    {
+      "seq": 450,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.806Z",
+      "kind": "text",
+      "body": {
+        "delta": "朝向"
+      }
+    },
+    {
+      "seq": 451,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.809Z",
+      "kind": "text",
+      "body": {
+        "delta": "桌面"
+      }
+    },
+    {
+      "seq": 452,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.812Z",
+      "kind": "text",
+      "body": {
+        "delta": "中线"
+      }
+    },
+    {
+      "seq": 453,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.816Z",
+      "kind": "text",
+      "body": {
+        "delta": "偏"
+      }
+    },
+    {
+      "seq": 454,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.819Z",
+      "kind": "text",
+      "body": {
+        "delta": "左"
+      }
+    },
+    {
+      "seq": 455,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.823Z",
+      "kind": "text",
+      "body": {
+        "delta": "；"
+      }
+    },
+    {
+      "seq": 456,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.826Z",
+      "kind": "text",
+      "body": {
+        "delta": "另有"
+      }
+    },
+    {
+      "seq": 457,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.829Z",
+      "kind": "text",
+      "body": {
+        "delta": "文件夹"
+      }
+    },
+    {
+      "seq": 458,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.832Z",
+      "kind": "text",
+      "body": {
+        "delta": "/"
+      }
+    },
+    {
+      "seq": 459,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.835Z",
+      "kind": "text",
+      "body": {
+        "delta": "纸张"
+      }
+    },
+    {
+      "seq": 460,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.839Z",
+      "kind": "text",
+      "body": {
+        "delta": "/"
+      }
+    },
+    {
+      "seq": 461,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.842Z",
+      "kind": "text",
+      "body": {
+        "delta": "杯"
+      }
+    },
+    {
+      "seq": 462,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.847Z",
+      "kind": "text",
+      "body": {
+        "delta": "在中"
+      }
+    },
+    {
+      "seq": 463,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.853Z",
+      "kind": "text",
+      "body": {
+        "delta": "左"
+      }
+    },
+    {
+      "seq": 464,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.858Z",
+      "kind": "text",
+      "body": {
+        "delta": "区"
+      }
+    },
+    {
+      "seq": 465,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.863Z",
+      "kind": "text",
+      "body": {
+        "delta": "。"
+      }
+    },
+    {
+      "seq": 466,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.868Z",
+      "kind": "text",
+      "body": {
+        "delta": " |\n"
+      }
+    },
+    {
+      "seq": 467,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.872Z",
+      "kind": "text",
+      "body": {
+        "delta": "|"
+      }
+    },
+    {
+      "seq": 468,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.877Z",
+      "kind": "text",
+      "body": {
+        "delta": " "
+      }
+    },
+    {
+      "seq": 469,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.881Z",
+      "kind": "text",
+      "body": {
+        "delta": "2"
+      }
+    },
+    {
+      "seq": 470,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.885Z",
+      "kind": "text",
+      "body": {
+        "delta": " |"
+      }
+    },
+    {
+      "seq": 471,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.888Z",
+      "kind": "text",
+      "body": {
+        "delta": " `"
+      }
+    },
+    {
+      "seq": 472,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.891Z",
+      "kind": "text",
+      "body": {
+        "delta": "2"
+      }
+    },
+    {
+      "seq": 473,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.895Z",
+      "kind": "text",
+      "body": {
+        "delta": "ece"
+      }
+    },
+    {
+      "seq": 474,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.898Z",
+      "kind": "text",
+      "body": {
+        "delta": "a"
+      }
+    },
+    {
+      "seq": 475,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.901Z",
+      "kind": "text",
+      "body": {
+        "delta": "1"
+      }
+    },
+    {
+      "seq": 476,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.905Z",
+      "kind": "text",
+      "body": {
+        "delta": "bc"
+      }
+    },
+    {
+      "seq": 477,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.908Z",
+      "kind": "text",
+      "body": {
+        "delta": "`"
+      }
+    },
+    {
+      "seq": 478,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.911Z",
+      "kind": "text",
+      "body": {
+        "delta": " |"
+      }
+    },
+    {
+      "seq": 479,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.915Z",
+      "kind": "text",
+      "body": {
+        "delta": " B"
+      }
+    },
+    {
+      "seq": 480,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.918Z",
+      "kind": "text",
+      "body": {
+        "delta": " "
+      }
+    },
+    {
+      "seq": 481,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.922Z",
+      "kind": "text",
+      "body": {
+        "delta": "已"
+      }
+    },
+    {
+      "seq": 482,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.925Z",
+      "kind": "text",
+      "body": {
+        "delta": "把"
+      }
+    },
+    {
+      "seq": 483,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.928Z",
+      "kind": "text",
+      "body": {
+        "delta": "**"
+      }
+    },
+    {
+      "seq": 484,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.932Z",
+      "kind": "text",
+      "body": {
+        "delta": "合"
+      }
+    },
+    {
+      "seq": 485,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.935Z",
+      "kind": "text",
+      "body": {
+        "delta": "上的"
+      }
+    },
+    {
+      "seq": 486,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.939Z",
+      "kind": "text",
+      "body": {
+        "delta": "书"
+      }
+    },
+    {
+      "seq": 487,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.942Z",
+      "kind": "text",
+      "body": {
+        "delta": "**"
+      }
+    },
+    {
+      "seq": 488,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.946Z",
+      "kind": "text",
+      "body": {
+        "delta": "放到"
+      }
+    },
+    {
+      "seq": 489,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.949Z",
+      "kind": "text",
+      "body": {
+        "delta": "远"
+      }
+    },
+    {
+      "seq": 490,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.953Z",
+      "kind": "text",
+      "body": {
+        "delta": "侧"
+      }
+    },
+    {
+      "seq": 491,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.956Z",
+      "kind": "text",
+      "body": {
+        "delta": "半"
+      }
+    },
+    {
+      "seq": 492,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.959Z",
+      "kind": "text",
+      "body": {
+        "delta": "区"
+      }
+    },
+    {
+      "seq": 493,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.963Z",
+      "kind": "text",
+      "body": {
+        "delta": "、"
+      }
+    },
+    {
+      "seq": 494,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.966Z",
+      "kind": "text",
+      "body": {
+        "delta": "自己"
+      }
+    },
+    {
+      "seq": 495,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.970Z",
+      "kind": "text",
+      "body": {
+        "delta": "座位"
+      }
+    },
+    {
+      "seq": 496,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.973Z",
+      "kind": "text",
+      "body": {
+        "delta": "前方"
+      }
+    },
+    {
+      "seq": 497,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.976Z",
+      "kind": "text",
+      "body": {
+        "delta": "（"
+      }
+    },
+    {
+      "seq": 498,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.980Z",
+      "kind": "text",
+      "body": {
+        "delta": "画面"
+      }
+    },
+    {
+      "seq": 499,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.988Z",
+      "kind": "text",
+      "body": {
+        "delta": "右"
+      }
+    },
+    {
+      "seq": 500,
+      "runId": "ecc7ccf0-7c41-428c-a25f-a8e90a8859a6",
+      "at": "2026-10-04T16:37:01.992Z",
+      "kind": "text",
+      "body": {
+        "delta": "）；"
+      }
+    }
+  ]
+}

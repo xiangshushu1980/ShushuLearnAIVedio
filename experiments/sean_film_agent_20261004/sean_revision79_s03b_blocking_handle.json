@@ -1,0 +1,14 @@
+{
+  "owner": "Sean",
+  "projectId": "538005c3-16bd-4709-aa4e-70831b960a24",
+  "sessionId": "0707ba67-08da-42cf-9bc9-b1fa07bf95cf",
+  "request": {
+    "requestId": "1c9ebc8c-569c-42dc-8d5b-82dc9d31ec42",
+    "mode": "prepare",
+    "text": "本轮仅文字调度修订，禁止GPU/选片/锚帧/其他镜修改/合成。当前revision79，afb0实测仍抬成长衣再横铺杯后，未通过；不能再只增聚拢措辞/加时。新可判别调度假设：原来把B躯干双脚锁死在远侧右端可能让送衣落点与可达位置不匹配（未量化，不宣称物理不可能）。授权只改S3b的技术调度：开场仍从实际Picture9双手抓衣上部/下布垂落；她沿同一远侧桌边向画面左侧迈一步，使身体与固定裸木落点对齐，不绕桌端、不跨到近侧、不换轴、不撞杯；一手仍抓衣上部另一手从下面托起长衣身与两袖向两手间自然聚拢，保持整件受托持，随后近木面搬运并放到原杯左/书左/刀远侧点，全衣身袖木面支撑，触木后两手离开。这是一个连续放衣动作中的明确站位移动，不添加剧情，不删coat/knife换装动作，不改4秒/seed/对白/引用。B末态可在远侧左移一步的位置，保持远侧身份而非固定右端；下一镜B取刀仍从远侧伸向近侧中线，不需改变剧情。先freshcontext/loadmethod/get_shot_details/get_current_spatial_plan，保存该当前完整空间稿（含实时提示词）作为未改字段依据，不读旧空间提案。版本化shotChanges仅S3b action/continuity同步一步站位设计，采用后读新的get_current_spatial_plan。随后patch:{summary,shotId:S3b,spatial:完整当前稿}限定单镜空间修订：只改S3b start/end/transition/相关prompt，使far-side允许计划的一步而非原地脚躯干锁死，scenePlan/questions和其他6镜逐字原样(服务器会拒绝超范围)。如先旧prompt需临时最小修改以匹配调度，完整6段词数350-500；采用后调用固定prompt工作流仅S3b以完整新版action/spatial和实际Picture9生成400-450词新稿。审核全文不保留old feet/torso stay fixed限制，仅far-side lane和一步路径，static bookcupspaperknifeA不得改。freshvalidate后报告revision/前3镜current/其他6镜不变/新假设条件，禁止generate。34sec vs30目标仍待解决。"
+  },
+  "response": {
+    "runId": "1cf71f66-8d35-4368-830f-aa17df4c37b8",
+    "status": "running"
+  }
+}

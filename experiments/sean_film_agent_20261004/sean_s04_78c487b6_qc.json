@@ -1,0 +1,16 @@
+{
+  "owner": "Sean",
+  "candidateId": "78c487b6-e122-4ae9-9715-6df5d488d860",
+  "mediaSha256": "ed06f4a914524e511209c02dfb6e9f00bec91607ff54a42704fc8da364cd6305",
+  "evidence": "frames/sean_s04_78c487b6_contact.png",
+  "method": "Direct 1fps contact-sheet observation, approximately 0–6 seconds; no audio or full-motion proof",
+  "result": "not-selected",
+  "observations": [
+    "Same room/table/camera side preserved",
+    "Removed outer garment remains on horizontal tabletop, chair backs empty",
+    "B lifts sword by approximately2seconds; no blade on tabletop thereafter",
+    "B visible at5seconds; absent at6seconds",
+    "A seated through sampled5seconds, standing by sampled6seconds; violates approved S4 seated end and S5 seated opening"
+  ],
+  "next": "Resolve S4/S5 physical state and timing before selection; evaluate alternative seed/keyframe control rather than accepting prompt compliance alone"
+}

@@ -1,0 +1,28 @@
+{
+  "owner": "Sean",
+  "revision": 76,
+  "checks": {
+    "plot": true,
+    "script": true,
+    "dialogue": true,
+    "entities": true,
+    "scenePlanUnchanged": true,
+    "otherSixShotSpecsUnchanged": true
+  },
+  "sourceRegression": {
+    "proposalId": "f22b2318-ee86-4f1e-bd33-1854c54b7413",
+    "cause": "Copied old spatial draft carried obsolete S3a prompt and overwrote selected source input.",
+    "recovery": "Restored exact revision68 S3a prompt through shot-version API at74; reselected ca55 at75; reviewed full fixedLLM S3b text and confirmed at76.",
+    "newGPURecoveryNeeded": false
+  },
+  "s03bWorkflowId": "988e5ed3-5fca-4ab6-bb84-2a9c2caa6e03",
+  "newS03bRun": "97f583b9-0a54-4734-8fc0-7c988a31f619",
+  "candidateId": "f5168a7d-a02b-481e-90fa-a5c90254ed1a",
+  "limits": [
+    "Coat placement visual quality pending",
+    "34-second planned timing vs30-second target unresolved",
+    "New clips audio not transcribed/listened; old two tracks ASR authorization already used"
+  ],
+  "commit": "00f39e0",
+  "verification": "32 related tests and Vite build passed"
+}

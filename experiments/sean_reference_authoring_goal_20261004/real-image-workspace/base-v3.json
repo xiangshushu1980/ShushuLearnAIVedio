@@ -1,0 +1,461 @@
+{
+  "owner": "Sean",
+  "step": {
+    "id": "392329c4-d0f8-4c56-9d0d-d9af16b79543",
+    "planId": "d1886bd8-05f3-492b-bcef-9ae55694b185",
+    "entityId": "76dab29d-6225-485f-b905-0f022e144159",
+    "entityName": "实验林岚",
+    "candidateKey": "linlan",
+    "candidateKind": "character",
+    "entityRevision": "532ebfb4a71821cd4ac315a1b44460416c6d79641dfad325c630ac5d0acc7682",
+    "invariants": [
+      "参考来源只用本实体已选定主形象（useMainAppearance 依赖），不引入其他图片",
+      "保持主图的发型（短黑发中一缕白发）、面部身份、体型、灰色长外套、白衬衫与深蓝领带、深蓝长裤",
+      "保持 V3 Simple 脸部＋正面／背面／侧面 布局，不改成独立概念图或其他布局",
+      "不凭空新增饰物、道具、伤痕或未登记设计",
+      "不使用任何 V3 输出或疑似错误输出作为参考"
+    ],
+    "key": "base-v3",
+    "label": "base-v3",
+    "modelId": "qwen-v3-simple-face-front-back-side",
+    "parameters": {},
+    "prompt": "[Qwen V3 Simple · 脸部＋正面／背面／侧面 布局模板]\nComposition: Clean 3:2 landscape layout on a warm off-white background with generous spacing. No frames, borders, dividers, text, labels, watermarks, or logos. Soft, even neutral studio lighting across all panels. Rendering style, line weight, texture, and shading must strictly match the reference image.\nLeft Column (20% width): Exactly one large, straight-on head-and-shoulders portrait of the reference subject with a neutral expression. Clearly show the face and hairstyle. No expression grid, no stacked portraits, no additional head crops.\nRight Row (80% width): Exactly three full-height, identically scaled figures arranged left to right: Front View, Back View, and Clean Side Profile. Neutral relaxed stance, head to feet visible in every figure, including shoes. Soft oval floor shadows. The face portrait and all three full-body views show the same subject.\nConsistency & Constraints: Preserve exact identity, hair, facial features, garments, asymmetry, and accessories from the reference. Do not add, redesign, beautify, age, or extrapolate items based on lore/profession. No extra characters, shifting proportions, extra limbs, or style drift.\n\n[本步骤明确要求]\n参考来源只有一张：本实体（实验林岚）已选定的主形象（useMainAppearance 依赖），仅用于保留身份与服装。\n保持该主形象实际可见外观：成年夜班管理员，短黑发中只有一缕白发，灰色长外套（双排扣长风衣），白衬衫与深蓝领带，深蓝长裤，深色皮鞋；面部身份、发型、体型、画风不变。\n本图只做多视图布局，不新增饰物、道具、伤痕或任何未登记设定。",
+    "purpose": "受控质量实验，非已核实事实",
+    "referenceAssetIds": [
+      "5785b1f1-fd47-4e46-b419-9a58be21f15c"
+    ],
+    "role": "three_view",
+    "styleId": "original",
+    "unknowns": [
+      "画面是否符合设计需生成后逐张检查",
+      "背景与光影表现由模型决定，不作为设定事实",
+      "人物声音与性格未设定，不在本步骤范围"
+    ],
+    "useBaseAppearance": false,
+    "useMainAppearance": true,
+    "rootStepId": "a1b9d58f-7d09-488a-bed1-c1010420e1fc",
+    "parentStepId": "a1b9d58f-7d09-488a-bed1-c1010420e1fc",
+    "version": 2,
+    "reason": "用户接受首图视觉设计，后续基于当前资料与主图（不是因为首图需要修复）。保留 key=base-v3、role=three_view、模型 qwen-v3-simple-face-front-back-side、styleId=original、parameters={} 不变。按服务端规则修正引用方式：“主形象依赖与指定参考图不能同时使用”，因此 referenceAssetIds 留空，改由 useMainAppearance=true 依赖本实体（实验林岚）已选定的主形象（本轮实看的主图：正面全身，短黑发含一缕白发、灰色双排扣长风衣、白衬衫＋深蓝领带、深蓝长裤、深色皮鞋），不引入其他图片、不用 V3 或疑似错误输出作参考。提示词以 catalog 中该模型的“脸部＋正面／背面／侧面”布局模板为底，只补用户明确要求与不变量。",
+    "sessionId": "62870af9-da7a-411b-bdfa-bf79710614d1",
+    "runId": "b8ab7a3e-e04f-426b-b5ec-dd042c2f48a4",
+    "activeStepId": "392329c4-d0f8-4c56-9d0d-d9af16b79543",
+    "isCurrent": true,
+    "revisionStatus": "current",
+    "revisionBasis": {
+      "contextHash": "265756729c1463e3bc2c764c1fef09abcce47a36e404b6801777264287fc4c2b",
+      "imageHashes": {},
+      "projectRevision": 2
+    },
+    "contentHash": "185b02d4d6325861745256bf7486011192f0e2362226ec444b65b66f71435881",
+    "stale": false,
+    "issue": null,
+    "referenceEntityId": "76dab29d-6225-485f-b905-0f022e144159",
+    "sourceReferenceAssetIds": [],
+    "runs": []
+  },
+  "run": {
+    "id": "c279872e-e614-4995-907d-71c7662e38f3",
+    "entityId": "76dab29d-6225-485f-b905-0f022e144159",
+    "status": "succeeded",
+    "snapshot": {
+      "owner": "Sean",
+      "entity": {
+        "id": "76dab29d-6225-485f-b905-0f022e144159",
+        "name": "实验林岚",
+        "context": {
+          "appearance": "成年夜班管理员，短黑发中只有一缕白发，灰色长外套与深蓝长裤。人物身份、头发、体型与衣服在变体中不变。",
+          "authoring": {
+            "candidateKey": "linlan",
+            "newDesign": true,
+            "planId": "d1886bd8-05f3-492b-bcef-9ae55694b185",
+            "unknowns": [
+              "本组为实验设计，不代表生产资料；声音未设定"
+            ]
+          },
+          "description": "成年夜班管理员，短黑发中只有一缕白发，灰色长外套与深蓝长裤。人物身份、头发、体型与衣服在变体中不变。",
+          "flags": [
+            "人物",
+            "质量实验"
+          ],
+          "owner": "Sean",
+          "type": "character",
+          "voiceDescription": ""
+        }
+      },
+      "model": {
+        "id": "qwen-v3-simple-face-front-back-side",
+        "name": "Qwen V3 Simple · 脸部＋正面／背面／侧面",
+        "version": 3,
+        "adapter": "comfy",
+        "enabled": true,
+        "stage": "multiview",
+        "layout": "face-front-back-side",
+        "localGpu": true,
+        "references": {
+          "min": 1,
+          "max": 1,
+          "instruction": "只引用已选定的主形象，保留其身份、服装、装备和画风。"
+        },
+        "fields": {
+          "size": {
+            "type": "select",
+            "label": "画幅",
+            "default": "1536x1024",
+            "options": [
+              {
+                "value": "1536x1024",
+                "label": "3:2 · 1536 × 1024"
+              }
+            ]
+          },
+          "seed": {
+            "type": "integer",
+            "label": "随机种子",
+            "default": 6200605,
+            "min": 0,
+            "max": 2147483647
+          },
+          "steps": {
+            "type": "integer",
+            "label": "采样步数",
+            "default": 25,
+            "min": 1,
+            "max": 50
+          }
+        }
+      },
+      "style": {
+        "id": "original",
+        "name": "原始提示词",
+        "version": 1,
+        "promptSuffix": ""
+      },
+      "prompt": "[Qwen V3 Simple · 脸部＋正面／背面／侧面 布局模板]\nComposition: Clean 3:2 landscape layout on a warm off-white background with generous spacing. No frames, borders, dividers, text, labels, watermarks, or logos. Soft, even neutral studio lighting across all panels. Rendering style, line weight, texture, and shading must strictly match the reference image.\nLeft Column (20% width): Exactly one large, straight-on head-and-shoulders portrait of the reference subject with a neutral expression. Clearly show the face and hairstyle. No expression grid, no stacked portraits, no additional head crops.\nRight Row (80% width): Exactly three full-height, identically scaled figures arranged left to right: Front View, Back View, and Clean Side Profile. Neutral relaxed stance, head to feet visible in every figure, including shoes. Soft oval floor shadows. The face portrait and all three full-body views show the same subject.\nConsistency & Constraints: Preserve exact identity, hair, facial features, garments, asymmetry, and accessories from the reference. Do not add, redesign, beautify, age, or extrapolate items based on lore/profession. No extra characters, shifting proportions, extra limbs, or style drift.\n\n[本步骤明确要求]\n参考来源只有一张：本实体（实验林岚）已选定的主形象（useMainAppearance 依赖），仅用于保留身份与服装。\n保持该主形象实际可见外观：成年夜班管理员，短黑发中只有一缕白发，灰色长外套（双排扣长风衣），白衬衫与深蓝领带，深蓝长裤，深色皮鞋；面部身份、发型、体型、画风不变。\n本图只做多视图布局，不新增饰物、道具、伤痕或任何未登记设定。",
+      "purpose": "受控质量实验，非已核实事实",
+      "effectivePrompt": "[Qwen V3 Simple · 脸部＋正面／背面／侧面 布局模板]\nComposition: Clean 3:2 landscape layout on a warm off-white background with generous spacing. No frames, borders, dividers, text, labels, watermarks, or logos. Soft, even neutral studio lighting across all panels. Rendering style, line weight, texture, and shading must strictly match the reference image.\nLeft Column (20% width): Exactly one large, straight-on head-and-shoulders portrait of the reference subject with a neutral expression. Clearly show the face and hairstyle. No expression grid, no stacked portraits, no additional head crops.\nRight Row (80% width): Exactly three full-height, identically scaled figures arranged left to right: Front View, Back View, and Clean Side Profile. Neutral relaxed stance, head to feet visible in every figure, including shoes. Soft oval floor shadows. The face portrait and all three full-body views show the same subject.\nConsistency & Constraints: Preserve exact identity, hair, facial features, garments, asymmetry, and accessories from the reference. Do not add, redesign, beautify, age, or extrapolate items based on lore/profession. No extra characters, shifting proportions, extra limbs, or style drift.\n\n[本步骤明确要求]\n参考来源只有一张：本实体（实验林岚）已选定的主形象（useMainAppearance 依赖），仅用于保留身份与服装。\n保持该主形象实际可见外观：成年夜班管理员，短黑发中只有一缕白发，灰色长外套（双排扣长风衣），白衬衫与深蓝领带，深蓝长裤，深色皮鞋；面部身份、发型、体型、画风不变。\n本图只做多视图布局，不新增饰物、道具、伤痕或任何未登记设定。",
+      "parameters": {
+        "size": "1536x1024",
+        "seed": 6200605,
+        "steps": 25
+      },
+      "references": [
+        {
+          "id": "5785b1f1-fd47-4e46-b419-9a58be21f15c",
+          "hash": "11013803402d864886fc21c7027c08f2fec6e8d4a6a01d0ad8fb2c85edc8882b",
+          "kind": "concept",
+          "name": "概念图 e34c1f58 · 1",
+          "runId": "e34c1f58-9041-4bdb-9518-e935526fa8a5",
+          "createdAt": "2026-10-04T11:40:23.009Z"
+        }
+      ],
+      "stage": "multiview",
+      "layout": "face-front-back-side",
+      "appearance": {
+        "id": "d948bfed-55c9-4617-abc7-b41725316940",
+        "version": 1,
+        "assetId": "5785b1f1-fd47-4e46-b419-9a58be21f15c",
+        "assetHash": "11013803402d864886fc21c7027c08f2fec6e8d4a6a01d0ad8fb2c85edc8882b",
+        "sourceRunId": "e34c1f58-9041-4bdb-9518-e935526fa8a5"
+      },
+      "notes": "",
+      "template": {
+        "id": "qwen-v3-simple-face-front-back-side.1-refs",
+        "version": 3,
+        "hash": "b55db52f730d3580d092b86c310477cb5f185cad85bc58af0b6574ce2919a4e1"
+      },
+      "authoring": {
+        "stepId": "392329c4-d0f8-4c56-9d0d-d9af16b79543",
+        "rootStepId": "a1b9d58f-7d09-488a-bed1-c1010420e1fc",
+        "version": 2,
+        "planId": "d1886bd8-05f3-492b-bcef-9ae55694b185",
+        "sourceRevision": "185b02d4d6325861745256bf7486011192f0e2362226ec444b65b66f71435881",
+        "role": "three_view",
+        "label": "base-v3",
+        "invariants": [
+          "参考来源只用本实体已选定主形象（useMainAppearance 依赖），不引入其他图片",
+          "保持主图的发型（短黑发中一缕白发）、面部身份、体型、灰色长外套、白衬衫与深蓝领带、深蓝长裤",
+          "保持 V3 Simple 脸部＋正面／背面／侧面 布局，不改成独立概念图或其他布局",
+          "不凭空新增饰物、道具、伤痕或未登记设计",
+          "不使用任何 V3 输出或疑似错误输出作为参考"
+        ],
+        "unknowns": [
+          "画面是否符合设计需生成后逐张检查",
+          "背景与光影表现由模型决定，不作为设定事实",
+          "人物声音与性格未设定，不在本步骤范围"
+        ],
+        "batchId": "8d592d12-bcd1-42b7-bbe3-ddd4b9b37198",
+        "batchItemId": "cb04f1ab-704e-4b0f-bbc1-740b2452e25f"
+      }
+    },
+    "progress": 100,
+    "phase": "生成完成 · 已加入历史",
+    "promptId": "fa19e731-3475-46df-b079-5550975344d9",
+    "error": null,
+    "createdAt": "2026-10-04T12:13:49.704Z",
+    "updatedAt": "2026-10-04T12:14:16.174Z",
+    "completedAt": "2026-10-04T12:14:16.174Z",
+    "references": [
+      {
+        "id": "5785b1f1-fd47-4e46-b419-9a58be21f15c",
+        "entityId": "76dab29d-6225-485f-b905-0f022e144159",
+        "kind": "concept",
+        "name": "概念图 e34c1f58 · 1",
+        "mime": "image/png",
+        "hash": "11013803402d864886fc21c7027c08f2fec6e8d4a6a01d0ad8fb2c85edc8882b",
+        "width": 1536,
+        "height": 1024,
+        "locked": true,
+        "protected": true,
+        "everConfirmed": true,
+        "description": "",
+        "descriptionSource": "empty",
+        "metadata": {
+          "source": "generation",
+          "template": {
+            "id": "qwen-image-2.1.0-refs",
+            "version": 1,
+            "hash": "ff56cf7134b69f84749120bba48e546964c3e7c38ee19ae6856606c71295ab46"
+          },
+          "authoring": {
+            "stepId": "a566dc72-50aa-42aa-b39d-2d12244a7aca",
+            "rootStepId": "a566dc72-50aa-42aa-b39d-2d12244a7aca",
+            "version": 1,
+            "planId": "d1886bd8-05f3-492b-bcef-9ae55694b185",
+            "sourceRevision": "329238dc5c602bb03cc94d40bc3e5249329ca7085e9c7d3f7d8bc0895d71a299",
+            "role": "concept",
+            "label": "base-concept",
+            "invariants": [
+              "只保留明确设计及实际参考依据，不补充未知"
+            ],
+            "unknowns": [
+              "画面是否符合设计需生成后逐张检查"
+            ],
+            "batchId": "c3a37024-a768-4afd-8dc0-0d8af8c46db8",
+            "batchItemId": "9ec15cd2-62a4-4736-9bd9-9b0340943b3e"
+          },
+          "outputIndex": 0,
+          "inputAssetIds": [],
+          "provider": "comfy",
+          "promptId": "3c695ae8-8e81-410f-b423-a0dcc2c99a3b",
+          "outputFiles": [
+            {
+              "filename": "concept_00001_.png",
+              "subfolder": "sean_reference_workspace/e34c1f58-9041-4bdb-9518-e935526fa8a5",
+              "type": "output",
+              "id": "ef4aac42-f3b0-4fc7-a15c-43bbadf196d5",
+              "nodeId": "9"
+            }
+          ],
+          "owner": "Sean"
+        },
+        "mediaType": "image",
+        "durationSec": null,
+        "runId": "e34c1f58-9041-4bdb-9518-e935526fa8a5",
+        "createdAt": "2026-10-04T11:40:23.009Z",
+        "deletedAt": null,
+        "url": "/api/assets/5785b1f1-fd47-4e46-b419-9a58be21f15c/content",
+        "position": 0
+      }
+    ],
+    "outputs": [
+      {
+        "id": "39bbdd8f-4c65-4021-996a-47c097d2d062",
+        "entityId": "76dab29d-6225-485f-b905-0f022e144159",
+        "kind": "multiview",
+        "name": "脸部＋正背侧 c279872e · 1",
+        "mime": "image/png",
+        "hash": "95d5990e9a51da2e80b6ccc4cba9d4f4f404688ff53f15849012e570d52fea54",
+        "width": 1536,
+        "height": 1024,
+        "locked": true,
+        "protected": false,
+        "everConfirmed": false,
+        "description": "",
+        "descriptionSource": "empty",
+        "metadata": {
+          "source": "generation",
+          "template": {
+            "id": "qwen-v3-simple-face-front-back-side.1-refs",
+            "version": 3,
+            "hash": "b55db52f730d3580d092b86c310477cb5f185cad85bc58af0b6574ce2919a4e1"
+          },
+          "authoring": {
+            "stepId": "392329c4-d0f8-4c56-9d0d-d9af16b79543",
+            "rootStepId": "a1b9d58f-7d09-488a-bed1-c1010420e1fc",
+            "version": 2,
+            "planId": "d1886bd8-05f3-492b-bcef-9ae55694b185",
+            "sourceRevision": "185b02d4d6325861745256bf7486011192f0e2362226ec444b65b66f71435881",
+            "role": "three_view",
+            "label": "base-v3",
+            "invariants": [
+              "参考来源只用本实体已选定主形象（useMainAppearance 依赖），不引入其他图片",
+              "保持主图的发型（短黑发中一缕白发）、面部身份、体型、灰色长外套、白衬衫与深蓝领带、深蓝长裤",
+              "保持 V3 Simple 脸部＋正面／背面／侧面 布局，不改成独立概念图或其他布局",
+              "不凭空新增饰物、道具、伤痕或未登记设计",
+              "不使用任何 V3 输出或疑似错误输出作为参考"
+            ],
+            "unknowns": [
+              "画面是否符合设计需生成后逐张检查",
+              "背景与光影表现由模型决定，不作为设定事实",
+              "人物声音与性格未设定，不在本步骤范围"
+            ],
+            "batchId": "8d592d12-bcd1-42b7-bbe3-ddd4b9b37198",
+            "batchItemId": "cb04f1ab-704e-4b0f-bbc1-740b2452e25f"
+          },
+          "appearance": {
+            "id": "d948bfed-55c9-4617-abc7-b41725316940",
+            "version": 1,
+            "assetId": "5785b1f1-fd47-4e46-b419-9a58be21f15c",
+            "assetHash": "11013803402d864886fc21c7027c08f2fec6e8d4a6a01d0ad8fb2c85edc8882b",
+            "sourceRunId": "e34c1f58-9041-4bdb-9518-e935526fa8a5"
+          },
+          "layout": "face-front-back-side",
+          "outputIndex": 0,
+          "inputAssetIds": [
+            "5785b1f1-fd47-4e46-b419-9a58be21f15c"
+          ],
+          "provider": "comfy",
+          "promptId": "fa19e731-3475-46df-b079-5550975344d9",
+          "outputFiles": [
+            {
+              "filename": "multiview_00001_.png",
+              "subfolder": "sean_reference_workspace/c279872e-e614-4995-907d-71c7662e38f3",
+              "type": "output",
+              "id": "5459481e-ac65-45f2-baa3-d0937a14da2a",
+              "nodeId": "9"
+            }
+          ],
+          "owner": "Sean"
+        },
+        "mediaType": "image",
+        "durationSec": null,
+        "runId": "c279872e-e614-4995-907d-71c7662e38f3",
+        "createdAt": "2026-10-04T12:14:16.174Z",
+        "deletedAt": null,
+        "url": "/api/assets/39bbdd8f-4c65-4021-996a-47c097d2d062/content"
+      }
+    ]
+  },
+  "execution": {
+    "workflow": {
+      "1": {
+        "class_type": "UNETLoader",
+        "inputs": {
+          "unet_name": "qwen_image_2.1_int8_convrot.safetensors",
+          "weight_dtype": "default"
+        }
+      },
+      "2": {
+        "class_type": "CLIPLoader",
+        "inputs": {
+          "clip_name": "qwen3vl_8b_int8_convrot.safetensors",
+          "type": "qwen_image",
+          "device": "default"
+        }
+      },
+      "3": {
+        "class_type": "VAELoader",
+        "inputs": {
+          "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+        }
+      },
+      "4": {
+        "class_type": "QwenImage21Cache",
+        "inputs": {
+          "model": [
+            "1",
+            0
+          ],
+          "device": "auto",
+          "dtype": "default"
+        }
+      },
+      "5": {
+        "class_type": "TextEncodeQwenImage21",
+        "inputs": {
+          "clip": [
+            "2",
+            0
+          ],
+          "prompt": "[Qwen V3 Simple · 脸部＋正面／背面／侧面 布局模板]\nComposition: Clean 3:2 landscape layout on a warm off-white background with generous spacing. No frames, borders, dividers, text, labels, watermarks, or logos. Soft, even neutral studio lighting across all panels. Rendering style, line weight, texture, and shading must strictly match the reference image.\nLeft Column (20% width): Exactly one large, straight-on head-and-shoulders portrait of the reference subject with a neutral expression. Clearly show the face and hairstyle. No expression grid, no stacked portraits, no additional head crops.\nRight Row (80% width): Exactly three full-height, identically scaled figures arranged left to right: Front View, Back View, and Clean Side Profile. Neutral relaxed stance, head to feet visible in every figure, including shoes. Soft oval floor shadows. The face portrait and all three full-body views show the same subject.\nConsistency & Constraints: Preserve exact identity, hair, facial features, garments, asymmetry, and accessories from the reference. Do not add, redesign, beautify, age, or extrapolate items based on lore/profession. No extra characters, shifting proportions, extra limbs, or style drift.\n\n[本步骤明确要求]\n参考来源只有一张：本实体（实验林岚）已选定的主形象（useMainAppearance 依赖），仅用于保留身份与服装。\n保持该主形象实际可见外观：成年夜班管理员，短黑发中只有一缕白发，灰色长外套（双排扣长风衣），白衬衫与深蓝领带，深蓝长裤，深色皮鞋；面部身份、发型、体型、画风不变。\n本图只做多视图布局，不新增饰物、道具、伤痕或任何未登记设定。",
+          "negative_prompt": "",
+          "resolution": 1024,
+          "vae": [
+            "3",
+            0
+          ],
+          "images.image_1": [
+            "10",
+            0
+          ]
+        }
+      },
+      "6": {
+        "class_type": "EmptyLatentImage",
+        "inputs": {
+          "width": 1536,
+          "height": 1024,
+          "batch_size": 1
+        }
+      },
+      "7": {
+        "class_type": "KSampler",
+        "inputs": {
+          "model": [
+            "4",
+            0
+          ],
+          "positive": [
+            "5",
+            0
+          ],
+          "negative": [
+            "5",
+            1
+          ],
+          "latent_image": [
+            "6",
+            0
+          ],
+          "seed": 6200605,
+          "steps": 25,
+          "cfg": 1,
+          "sampler_name": "euler",
+          "scheduler": "simple",
+          "denoise": 1
+        }
+      },
+      "8": {
+        "class_type": "VAEDecode",
+        "inputs": {
+          "samples": [
+            "7",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        }
+      },
+      "9": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "8",
+            0
+          ],
+          "filename_prefix": "sean_reference_workspace/c279872e-e614-4995-907d-71c7662e38f3/multiview"
+        }
+      },
+      "10": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "sean_reference_workspace/5785b1f1-fd47-4e46-b419-9a58be21f15c.png"
+        }
+      }
+    },
+    "clientId": "sean-reference-c279872e-e614-4995-907d-71c7662e38f3"
+  }
+}

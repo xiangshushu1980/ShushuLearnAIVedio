@@ -1,0 +1,30 @@
+{
+  "owner": "Sean",
+  "createdAt": "2026-10-04T11:41:55.232Z",
+  "method": "Codex inspected actual saved PNG; not a Pi report or human confirmation",
+  "checks": [
+    {
+      "key": "base-concept",
+      "status": "needs-human-design-selection",
+      "observations": [
+        "Single full-length character; black hair with white section; grey long coat and navy trousers visible",
+        "White shirt and navy tie were generated but not specified in text; acceptance unresolved"
+      ]
+    },
+    {
+      "key": "hall-overview",
+      "status": "layout-conflict",
+      "observations": [
+        "Roofless overhead representation; bench at upper wall; doorways at left/right walls",
+        "Window and a doorway drawn on right wall; conflicts with specified separate C-door and D-window walls"
+      ],
+      "limits": [
+        "No visible A/B/C/D labels; wall mapping is inferred from topology, not model supplied IDs",
+        "Absolute scale and unseen outside areas remain unknown"
+      ]
+    }
+  ],
+  "confirmedAssets": [],
+  "remainingBaselineCap": 6,
+  "remainingCorrectionCap": 1
+}

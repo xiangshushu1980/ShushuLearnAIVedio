@@ -1,11 +1,17 @@
 #!/usr/bin/env python3
-"""T37 Krea2 Identity Edit runner with three evidence-based modes."""
+"""[Sean] Krea2 main-image runner.
+
+This runner can establish the single main image for the H3 reference pipeline.
+It must not be used to independently generate the formal F/W/WB/S/Q/B package;
+those assets must come from the H3 multi-view workflow.
+"""
 
 import argparse
 import json
 import os
 import time
 import urllib.request
+import urllib.error
 
 from krea2_prompt_profiles import PROMPT_VERSION, get_prompt
 
@@ -20,20 +26,24 @@ def api(path, payload=None):
         data=data,
         headers={"Content-Type": "application/json"} if data else {},
     )
-    with urllib.request.urlopen(req, timeout=30) as response:
-        return json.loads(response.read())
+    try:
+        with urllib.request.urlopen(req, timeout=30) as response:
+            return json.loads(response.read())
+    except urllib.error.HTTPError as exc:
+        detail = exc.read().decode("utf-8", errors="replace")
+        raise RuntimeError(f"ComfyUI HTTP {exc.code}: {detail}") from exc
 
 
 def graph(args):
     ref = args.reference
-    prompt = get_prompt(args.mode, args.remove_item)
+    prompt = args.prompt_override or get_prompt(args.mode, args.remove_item, args.character_spec)
     if args.mode == "identity_portrait":
         model = "id_model"
     elif args.mode == "identity_remove":
         model = "id_model"
     elif args.mode == "jibs_style_portrait":
         model = "jibs_model"
-    elif args.mode in ("tear_mark_face", "front_reference", "back_reference", "three_quarter_reference"):
+    elif args.mode in ("tear_mark_face", "front_reference", "back_reference", "turnaround_sheet", "three_quarter_reference", "wardrobe_full_reference", "wardrobe_body_reference", "side_reference"):
         model = "id_model"
     else:
         raise ValueError(f"unknown mode: {args.mode}")
@@ -55,7 +65,7 @@ def graph(args):
             "class_type": "LoraLoaderModelOnly",
             "inputs": {
                 "model": ["unet", 0],
-                "lora_name": "krea2_identity_edit_v1_2.safetensors",
+                "lora_name": args.model_lora,
                 "strength_model": 1.0,
             },
         },
@@ -82,7 +92,7 @@ def graph(args):
                 "clip": ["clip", 0],
                 "prompt": prompt,
                 "image": ["ref", 0],
-                "grounding_px": 768,
+                "grounding_px": args.positive_grounding_px,
                 "system_prompt": "",
             },
         },
@@ -122,8 +132,8 @@ def graph(args):
                 "control_after_generate": "fixed",
                 "steps": args.steps,
                 "cfg": args.cfg,
-                "sampler_name": "euler",
-                "scheduler": "simple",
+                "sampler_name": args.sampler,
+                "scheduler": args.scheduler,
                 "denoise": 1.0,
             },
         },
@@ -143,17 +153,27 @@ def main():
     parser.add_argument("--reference", default="ref2va_refs/fellow/processed/shushu_identity_rebuilt_v2_cap.png")
     parser.add_argument(
         "--mode",
-        choices=("identity_portrait", "identity_remove", "jibs_style_portrait", "tear_mark_face", "front_reference", "back_reference", "three_quarter_reference"),
+        choices=("identity_portrait", "identity_remove", "jibs_style_portrait", "tear_mark_face", "front_reference", "back_reference", "turnaround_sheet", "three_quarter_reference", "wardrobe_full_reference", "wardrobe_body_reference", "side_reference"),
         default="identity_portrait",
         help="Evidence-based Krea2 task mode",
     )
     parser.add_argument("--unet-name", default="krea2_turbo_fp8.safetensors")
+    parser.add_argument("--model-lora", default="krea2_identity_edit_v1_2.safetensors")
     parser.add_argument("--jibs-strength", type=float, default=1.0)
     parser.add_argument("--ref-boost", type=float, default=4.0)
     parser.add_argument("--grounding-px", type=int, default=1024)
+    parser.add_argument("--positive-grounding-px", type=int, default=768)
+    parser.add_argument("--prompt-override", default=None)
     parser.add_argument("--remove-item", default="eyeglasses and all eyewear")
+    parser.add_argument(
+        "--character-spec",
+        default=None,
+        help="Role/costume specification appended to the parameterized front/back reference template",
+    )
     parser.add_argument("--steps", type=int, default=None)
     parser.add_argument("--cfg", type=float, default=None)
+    parser.add_argument("--sampler", default="euler")
+    parser.add_argument("--scheduler", default="simple")
     parser.add_argument("--width", type=int, default=1024)
     parser.add_argument("--height", type=int, default=1024)
     parser.add_argument("--seed", type=int, default=20260920)
@@ -194,11 +214,16 @@ def main():
         "prompt_version": PROMPT_VERSION,
         "mode": args.mode,
         "unet": args.unet_name,
+        "model_lora": args.model_lora,
         "jibs_strength": args.jibs_strength,
         "steps": args.steps,
         "cfg": args.cfg,
+        "sampler": args.sampler,
+        "scheduler": args.scheduler,
         "ref_boost": args.ref_boost,
         "grounding_px": args.grounding_px,
+        "character_spec": args.character_spec,
+        "prompt_override": args.prompt_override,
     }), flush=True)
     while time.time() - started < args.timeout:
         history = api("/history/" + prompt_id)

@@ -1,0 +1,2670 @@
+{
+  "owner": "Sean",
+  "candidate": {
+    "id": "1d223e8a-77b5-44d0-83d1-f97d48b3a544",
+    "projectId": "538005c3-16bd-4709-aa4e-70831b960a24",
+    "shotId": "18cd89f4-1697-451b-9719-124d43e8b511",
+    "parentId": null,
+    "branch": "edit-and-rerun",
+    "owner": "Sean",
+    "createdAt": "2026-10-04T12:05:49.074Z",
+    "status": "succeeded",
+    "input": {
+      "owner": "Sean",
+      "shot": {
+        "title": "A带刀入场、放刀并在近侧落座交谈",
+        "durationSec": 6,
+        "entityIds": [
+          "5821d6dd-2041-40a3-a789-74989c6edd90",
+          "e3f49e04-4a4b-483f-823e-d31f497d5ab8",
+          "9971429d-863e-499e-b7c5-902d30e0f6a2",
+          "4c8e5bd2-78a5-4aee-8f22-7ec5a8512bb8",
+          "3044bf32-2019-458e-a7cf-e50ab304e42c"
+        ],
+        "imageAssetIds": [
+          "af9823e0-1b27-48b7-a469-47ddcf4b7534",
+          "89f7618d-e430-46c7-9c4d-b8e20f3ff386",
+          "43123388-aebd-4161-97d7-04f0dabc9484",
+          "bf0ec0df-9e51-4a07-a54a-23ef9626173c",
+          "25958405-ac83-454f-909e-f4aeba33f9a4",
+          "e6ea44ed-6c4a-4fb0-a868-de41e241c430",
+          "96e44971-aedc-42da-a534-dc321fd5e350",
+          "5d0c2f3a-2249-44f3-ab7b-fa89a476610b"
+        ],
+        "action": "起始：角色A站在图书馆阅读室入口一侧的走道上，身体朝向同一张阅读桌T1的近侧，右手携唯一的一把刀；角色B已经坐在同一张阅读桌远侧的椅子上读书，双手持书，面朝近侧。因果先后（本镜）：角色A沿走道带刀走到阅读桌近侧桌边，停步仍站立，面对远侧坐着的角色B，先说出第一句；坐在远侧、手持书的角色B随即说出第二句，示意角色A先把刀放下；随后角色A把唯一的一把刀放到桌面近侧半区靠中线的那一处空位（本片指定的双方伸手可及交互点），刀身与桌面平行，不放到近侧外缘、不远离角色B一侧；放刀后A在阅读桌近侧的椅子上坐下，面向远侧的角色B，再说出第三句。",
+        "framing": "中景，画面内同时包含整张阅读桌T1与两侧坐姿的两人；摄影机位于阅读桌近侧、与角色A同侧，略高于桌面，越过桌面看向远侧的角色B。",
+        "camera": "固定机位，位于阅读桌近侧（角色A一侧），不越过阅读桌轴线，不绕到远侧。",
+        "continuity": "锚点：同一张阅读桌T1的近侧（角色A从入口走到并坐下的一边）与远侧（角色B坐着的一边），两条边在本片固定不变、不随镜头重命名。本片调度：刀落点固定在桌面近侧半区靠中线的一处空位，作为双方伸手可及的交互点；该交互区、近远半区与站位是本片新指定的调度要求，不是实体登记尺寸。因果顺序（本镜，与剧本第一拍一致）：A带刀在近侧停步仍站着→先说第一句→B坐远侧持书说第二句、示意放刀→A把刀放到近侧中线交互点→A在近侧椅子坐下→A说第三句；三句为对白总稿原第一、二、三句，顺序与文字不变，不新增台词。起始状态：角色A站立、持唯一的一把刀、位于近侧；角色B已坐在远侧、书在手中；桌面近侧半区靠中线那处空位尚未占用；那件休闲服外套仍穿在角色B身上。结束状态：角色A坐在近侧、面向远侧；角色B坐在远侧、书仍在手中；唯一的一把刀平放在桌面近侧半区靠中线的交互点上；外套仍在角色B身上。6秒需容纳入场步行、第一与第二句、放刀、落座与第三句（测试计划时长）；若在不加速的前提下不可能完成，按测试计划报告该风险，本镜不增删台词、不删动作、不加速。",
+        "dialogue": [
+          {
+            "speaker": "5821d6dd-2041-40a3-a789-74989c6edd90",
+            "text": "你还真会挑地方。",
+            "language": "Chinese"
+          },
+          {
+            "speaker": "e3f49e04-4a4b-483f-823e-d31f497d5ab8",
+            "text": "图书馆里，刀先放下。",
+            "language": "Chinese"
+          },
+          {
+            "speaker": "5821d6dd-2041-40a3-a789-74989c6edd90",
+            "text": "好。那就说一会儿。",
+            "language": "Chinese"
+          }
+        ],
+        "id": "18cd89f4-1697-451b-9719-124d43e8b511",
+        "prompt": "subject_definitions:\n<Subject 1> is character A (S1), the young adult woman whose identity, face, ponytail, and body type are defined by <Picture 1> and <Picture 2>.\n<Subject 2> is character B (S2), the adult woman whose identity and appearance are defined by <Picture 3> and <Picture 4>.\n<Subject 3> is the modern library reading-room environment defined by <Picture 5>, with light-wood tall shelves, a long light-wood reading table, gray-green mesh chairs, a light-wood floor, and linear ceiling lights.\n<Subject 4> is the single sword prop defined by <Picture 6>: one black sheathed katana.\n<Subject 5> is the casual outfit defined by <Picture 7> and <Picture 8>: a camel-colored long outer coat with an off-white hooded inner layer, off-white trousers, and light shoes.\n<Audio 1> is the voice-timbre reference for <Subject 1> (S1), used only as a timbre reference; its sample speech is not copied.\n<Audio 2> is the voice-timbre reference for <Subject 2> (S2), used only as a timbre reference; its sample speech is not copied.\nsummary:\n[reference generation + audio reference] A enters the library reading room carrying the only sword, speaks one line at the near edge of reading table T1, is told by B to put the sword down, sets it on the near-center interaction point, sits down, and speaks a third line; B stays seated on the far side with the book in her hands. The sword stays on the table and B keeps her coat on.\nretention_analysis:\n<Subject 1> (appears in [Shot 1]): fully_preserved - A keeps the same face, ponytail, body type, navy uniform upper garment, uniform trousers, black boots, and silver shoulder and forearm armor.\n<Subject 2> (appears in [Shot 1]): fully_preserved - B keeps the same identity, face, and black hair, and still wears the camel coat over the off-white hooded inner layer, trousers, and shoes.\n<Subject 3> (appears in [Shot 1]): fully_preserved - the light-wood reading room, long table, tall shelves, mesh chairs, light-wood floor, and even interior lighting are retained.\n<Subject 4> (appears in [Shot 1]): fully_preserved - exactly one black sheathed katana, unchanged in shape, size, and material.\n<Subject 5> (appears in [Shot 1]): fully_preserved - the camel coat and the off-white inner layer, trousers, and shoes stay on B.\n<Audio 1>: reference - only the voice timbre guides A's delivery; the sample lines inside the reference audio are not copied, quoted, or reperformed, and the target dialogue is written only in the description below.\n<Audio 2>: reference - only the voice timbre guides B's delivery; the sample lines inside the reference audio are not copied, quoted, or reperformed.\ndetailed_description:\nThe target video is live-action realistic photography that continues the photoreal look of the reference images: real skin and hair detail, real fabric weave, leather, and brushed metal, natural camera optics with shallow depth of field, and even indoor library light; there is no anime linework and no cel shading.\n[Shot 1] Reading table T1 is the same light-wood table that stands adjacent to the same tall light-wood bookwall; that bookwall stays fixed in the far background, the table's long axis runs horizontally across the frame, the camera stays on the near side on character A's side, A holds the left-near area while B holds the right-far area, and near side and far side are fixed names for this table that are never renamed when the camera changes; these are this film's relative staging anchors, not entity-registered dimensions. A fixed medium shot sits slightly above table height on the near side, looking across the tabletop toward the far side; the screen direction never changes. The space is the modern library reading room of <Subject 3>, with light-wood tall shelves, the long table, gray-green mesh chairs, a light-wood floor, and linear ceiling lights. <Subject 1> (S1), character A, begins standing in the aisle beside the reading-room entrance, her body facing the near side of table T1 and her right hand carrying <Subject 4>, the only black sheathed katana in the scene. She walks along the aisle to the near edge of the table with the sword still in her hand, stops there, stays standing, and speaks her first line. <Subject 2> (S2), character B, is already seated on the far-side chair holding the only book in both hands and facing near, wearing <Subject 5>, the camel coat over her off-white hooded inner layer, trousers, and shoes; she answers with her second line, telling A to put the sword down first. Only then does A set the katana flat on the near half of the tabletop close to the centerline at the designated interaction point that both characters can reach, not at the outer near edge and not away from B. A then sits down on the near-side chair, faces the far side, and speaks her third line. The camera is completely static with no pan, tilt, zoom, or shake. A's gaze moves from the table edge up to B as she sits, while B's gaze stays on A. A's uniform upper garment, uniform trousers, black boots, and silver shoulder and forearm armor remain worn. In order, <Subject 1> (S1) says <d>[Chinese] 你还真会挑地方。</d>, then <Subject 2> (S2) says <d>[Chinese] 图书馆里，刀先放下。</d>, and then <Subject 1> (S1) says <d>[Chinese] 好。那就说一会儿。</d>. Close ambience carries soft footfalls on wood, the chair shifting, fabric rustle, and a faint click as the sheathed sword meets the tabletop. Final state: A seated on the near side, B seated on the far side, the sword flat on the near-center interaction point, the book in B's hands, and B still wearing the coat.\noverall_soundscape:\nQuiet library room tone with a low ventilation hum, soft footfalls on a light-wood floor, a chair shifting, fabric rustle, and the faint click of a sheathed sword settling on a wooden tabletop.\nnon_diegetic_music:\nN/A",
+        "seed": 1087377081,
+        "nativeAudioAssetId": null,
+        "verifiedAudioTranscript": ""
+      },
+      "shotHash": "1cb90d30fc713a84c82f36a9dde5feab6e7f084a115a5e2a484de3501739425d",
+      "plot": "A和B在图书馆遇见发生一件小事。\nA走到图书馆，看到B正在读书，便把刀放到一边，然后同B交谈了一会儿。\nB脱下衣服放到一旁，取了刀便离开。\nB离开后，A起身脱下自己的衣服，然后穿上B的衣服，开心的转了一圈。",
+      "script": "短片名：《图书馆里的一件小事》\n\n时长目标：30秒。\n\n人物：角色A、角色B。\n场景：图书馆阅读室。\n固定事实：角色A保持同一张脸、同一束马尾、同一体型与基础声音；角色B保持已确认形象与声音。唯一的一把刀由角色B最后带走。角色A的派生只是同一个角色A在只脱下自己的制服上衣与其附着的肩部、前臂银甲后，穿上角色B留在桌面远侧同一位置的同一件休闲服外套，不新增人物；换装不改变角色A的脸、马尾、体型与基础声音。角色A与角色B换装后都保留原有内搭、裤子与鞋。\n\n第一拍（约0—8秒）：\n角色A走进图书馆阅读室，看见角色B正坐在桌边读书。角色A带刀走到同一张阅读桌近侧桌边停下，仍站立，先说出自己的第一句；坐在远侧、手持书的角色B随即说出自己的第二句，示意角色A先把刀放下；角色A把唯一的一把刀放到桌面近侧半区靠中线的交互点，随后在同一张阅读桌近侧坐下，面向远侧坐着的角色B，再说出自己的第三句。\n\n第二拍（约8—16秒）：\n角色A与角色B交谈了一会儿。角色B合上书，起身，只脱下自己原有休闲服中的那件外套，保留原有内搭、裤子与鞋，把这一件外套平放在阅读桌远侧的空处，避开桌面上的书与那把刀，不搭放在椅子上。\n\n第三拍（约16—23秒）：\n角色B拿起那把唯一的一把刀，不再停留，转身离开阅读室，完全离场；离场时她仍穿着原有内搭、裤子与鞋，未穿那件外套，外套留在阅读桌远侧的同一位置。角色A留在原处，目送角色B离开。\n\n第四拍（约23—30秒）：\n角色B离开后，角色A起身，只脱下自己原有制服的上衣以及附着其上的肩部、前臂银甲，保留原有内搭、裤子与鞋，把脱下的制服上衣与银甲放到近侧自己刚坐过的椅子上；随后从阅读桌远侧的同一位置拿起角色B留下的那同一件休闲服外套穿上。角色A穿着角色B的那件休闲服外套，以同一张脸、同一束马尾、同一体型与同一基础声音呈现，不新增第三人；穿好站定后再开心地转，只转一次完整的360度，转完停住。\n\n结尾：角色A停住，神情轻快。没有新增人物，没有新增武器，唯一的一把刀已随角色B离场。",
+      "dialogue": "对白总稿\n\n角色A：你还真会挑地方。\n角色B：图书馆里，刀先放下。\n角色A：好。那就说一会儿。\n角色B：说完我就走。\n角色B：刀我拿走了。\n\n说明：以上对白与剧本一致。角色A使用既有基础声音，清冷克制，带一点烟嗓颗粒感；角色B使用既有基础声音，明亮活泼。角色B说完“刀我拿走了。”后离场，角色A之后不再说话，只以开心转圈完成结尾。",
+      "render": {
+        "width": 1024,
+        "height": 576
+      },
+      "entities": [
+        {
+          "appearance": "",
+          "assets": [
+            {
+              "assetId": "1e2f367f-132f-4c92-93d7-660422eaf8be",
+              "available": true,
+              "confirmation": {
+                "isCurrent": true,
+                "records": [
+                  {
+                    "confirmationId": "7241220e-968d-4db9-bc31-0095b4b6c62b",
+                    "createdAt": "2026-10-03T04:47:54.564Z",
+                    "kind": "voice",
+                    "version": 2
+                  }
+                ],
+                "status": "confirmed"
+              },
+              "contentHash": "136dc791274fa4bf7f7a5cb4667c04bbaf8affd92c7473775cf295846215ff1b",
+              "contentUrl": "/api/reference/v1/assets/1e2f367f-132f-4c92-93d7-660422eaf8be/content",
+              "createdAt": "2026-10-03T04:47:01.945Z",
+              "description": null,
+              "durationSec": 6.08,
+              "entityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+              "fileSize": 291918,
+              "height": null,
+              "inheritance": null,
+              "layout": null,
+              "mediaType": "audio",
+              "mime": "audio/wav",
+              "name": "声音 · 基础音色 · 中性样音 4c0619b2 · 1",
+              "reviewStatus": null,
+              "role": "voice",
+              "sourceRevision": "b6609476c53d88114e255176ad70cad73743b75846f54ec0de6e74f1559c0a95",
+              "sourceRunId": "4c0619b2-04b1-41a7-a7a4-1fba6bb36235",
+              "width": null,
+              "localHash": "136dc791274fa4bf7f7a5cb4667c04bbaf8affd92c7473775cf295846215ff1b"
+            },
+            {
+              "assetId": "89f7618d-e430-46c7-9c4d-b8e20f3ff386",
+              "available": true,
+              "confirmation": {
+                "isCurrent": true,
+                "records": [
+                  {
+                    "confirmationId": "cda1ca59-391a-4a13-9d65-8712fed8c853",
+                    "createdAt": "2026-10-03T07:46:10.080Z",
+                    "kind": "view",
+                    "version": 3
+                  }
+                ],
+                "status": "confirmed"
+              },
+              "contentHash": "5fecbc99843090ee1c74e7eecce6b9f3b3c34df5bd8ebfdd33a10a1fc2b9aa43",
+              "contentUrl": "/api/reference/v1/assets/89f7618d-e430-46c7-9c4d-b8e20f3ff386/content",
+              "createdAt": "2026-10-03T03:15:48.058Z",
+              "description": null,
+              "durationSec": null,
+              "entityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+              "fileSize": 1639632,
+              "height": 1024,
+              "inheritance": null,
+              "layout": "face-front-back-side",
+              "mediaType": "image",
+              "mime": "image/png",
+              "name": "脸部＋正背侧 1913176b · 1",
+              "reviewStatus": null,
+              "role": "three_view",
+              "sourceRevision": "d3f67cdff7f67ac7a420207c95d68ce07dd596b20736c7eb3a1832fabf9ee326",
+              "sourceRunId": "1913176b-0bb6-411c-9fc4-fba39571c88e",
+              "width": 1536,
+              "localHash": "5fecbc99843090ee1c74e7eecce6b9f3b3c34df5bd8ebfdd33a10a1fc2b9aa43"
+            },
+            {
+              "assetId": "af9823e0-1b27-48b7-a469-47ddcf4b7534",
+              "available": true,
+              "confirmation": {
+                "isCurrent": true,
+                "records": [
+                  {
+                    "confirmationId": "4e1b9ef4-326f-40cb-be07-4b974f4a8129",
+                    "createdAt": "2026-10-02T16:56:33.878Z",
+                    "kind": "appearance",
+                    "version": 1
+                  }
+                ],
+                "status": "confirmed"
+              },
+              "contentHash": "df20a30c62bf979ff04d2773b1757620847d3b485b580095b429031b5ea2d04b",
+              "contentUrl": "/api/reference/v1/assets/af9823e0-1b27-48b7-a469-47ddcf4b7534/content",
+              "createdAt": "2026-10-02T15:32:49.700Z",
+              "description": null,
+              "durationSec": null,
+              "entityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+              "fileSize": 1475226,
+              "height": 1024,
+              "inheritance": null,
+              "layout": null,
+              "mediaType": "image",
+              "mime": "image/png",
+              "name": "概念图 ae5a56dc · 1",
+              "reviewStatus": null,
+              "role": "main_appearance",
+              "sourceRevision": "c55ec362fa3256461942afd3487bbba4446d4321868f479b1deec6aa2f6dd7c5",
+              "sourceRunId": "ae5a56dc-42b2-404b-b45b-5fcf9f4acecc",
+              "width": 1536,
+              "localHash": "df20a30c62bf979ff04d2773b1757620847d3b485b580095b429031b5ea2d04b"
+            }
+          ],
+          "contentHash": "f01ce83c5b7088ef55d8397e32610f5a6f6e1967005d3e0cb2dfdab31af63703",
+          "createdAt": "2026-10-02T15:31:20.130Z",
+          "currentAppearance": {
+            "assetId": "af9823e0-1b27-48b7-a469-47ddcf4b7534",
+            "confirmationId": "4e1b9ef4-326f-40cb-be07-4b974f4a8129",
+            "contentHash": "df20a30c62bf979ff04d2773b1757620847d3b485b580095b429031b5ea2d04b",
+            "version": 1
+          },
+          "currentVoice": {
+            "assetId": "1e2f367f-132f-4c92-93d7-660422eaf8be",
+            "confirmationId": "7241220e-968d-4db9-bc31-0095b4b6c62b",
+            "contentHash": "136dc791274fa4bf7f7a5cb4667c04bbaf8affd92c7473775cf295846215ff1b",
+            "version": 2
+          },
+          "derivedFrom": null,
+          "description": "",
+          "entityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+          "fieldSources": {
+            "appearance": {
+              "contentHash": "12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126",
+              "source": "entities.context.appearance"
+            },
+            "description": {
+              "contentHash": "12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126",
+              "source": "entities.context.description"
+            },
+            "type": null,
+            "voiceDescription": {
+              "contentHash": "bdc62d6384c6d181419acbc5e4ecd739bc038d8221a5095c3d28b4a9072c5137",
+              "source": "entities.context.voiceDescription"
+            }
+          },
+          "flags": [
+            "人物"
+          ],
+          "missingFields": [
+            "type"
+          ],
+          "name": "角色A",
+          "prompts": [
+            {
+              "assetIds": [
+                "89f7618d-e430-46c7-9c4d-b8e20f3ff386"
+              ],
+              "contentHash": "ee09b26e94902d27584b6a33c60dd2a02ccfca52090a86d33a4989b483c34904",
+              "createdAt": "2026-10-03T03:15:31.600Z",
+              "effectiveText": "Composition: Clean 3:2 landscape layout on a warm off-white background with generous spacing. No frames, borders, dividers, text, labels, watermarks, or logos. Soft, even neutral studio lighting across all panels. Use the selected rendering style consistently across every portrait and full-body view. Preserve the reference subject's identity, proportions, clothing, colors, equipment, and accessories while changing only the rendering style.\nLeft Column (20% width): Exactly one large, straight-on head-and-shoulders portrait of the reference subject with a neutral expression. Clearly show the face and hairstyle. No expression grid, no stacked portraits, no additional head crops.\nRight Row (80% width): Exactly three full-height, identically scaled figures arranged left to right: Front View, Back View, and Clean Side Profile. Neutral relaxed stance, head to feet visible in every figure, including shoes. Soft oval floor shadows. The face portrait and all three full-body views show the same subject.\nConsistency & Constraints: Preserve exact identity, hair, facial features, garments, asymmetry, and accessories from the reference. Do not add, redesign, beautify, age, or extrapolate items based on lore/profession. No extra characters, shifting proportions, extra limbs, or inconsistent rendering between views.\n\nJapanese anime character art, clean controlled linework, cel shading, crisp colors, clear facial features.",
+              "promptId": "run:1913176b-0bb6-411c-9fc4-fba39571c88e",
+              "purpose": "二期PC链路验收：V3 Simple 原版表情栏＋正侧背",
+              "samples": [],
+              "sourceEntityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+              "sourceRevision": "ee09b26e94902d27584b6a33c60dd2a02ccfca52090a86d33a4989b483c34904",
+              "sourceRunId": "1913176b-0bb6-411c-9fc4-fba39571c88e",
+              "stage": "multiview",
+              "text": "Composition: Clean 3:2 landscape layout on a warm off-white background with generous spacing. No frames, borders, dividers, text, labels, watermarks, or logos. Soft, even neutral studio lighting across all panels. Use the selected rendering style consistently across every portrait and full-body view. Preserve the reference subject's identity, proportions, clothing, colors, equipment, and accessories while changing only the rendering style.\nLeft Column (20% width): Exactly one large, straight-on head-and-shoulders portrait of the reference subject with a neutral expression. Clearly show the face and hairstyle. No expression grid, no stacked portraits, no additional head crops.\nRight Row (80% width): Exactly three full-height, identically scaled figures arranged left to right: Front View, Back View, and Clean Side Profile. Neutral relaxed stance, head to feet visible in every figure, including shoes. Soft oval floor shadows. The face portrait and all three full-body views show the same subject.\nConsistency & Constraints: Preserve exact identity, hair, facial features, garments, asymmetry, and accessories from the reference. Do not add, redesign, beautify, age, or extrapolate items based on lore/profession. No extra characters, shifting proportions, extra limbs, or inconsistent rendering between views.",
+              "version": null,
+              "workflow": {
+                "contentHash": "b55db52f730d3580d092b86c310477cb5f185cad85bc58af0b6574ce2919a4e1",
+                "id": "qwen-v3-simple-face-front-back-side.1-refs",
+                "version": 3
+              }
+            },
+            {
+              "assetIds": [
+                "432cfa98-83f2-416e-b600-01090075fb73"
+              ],
+              "contentHash": "01cfe0f46d81190e472a47175d625991e3a07c0fb4719bc5c2cfcad6df9117ad",
+              "createdAt": "2026-10-02T16:58:38.993Z",
+              "effectiveText": "Composition: Clean 3:2 landscape layout on a warm off-white background with generous spacing. No frames, borders, dividers, text, labels, watermarks, or logos. Soft, even neutral studio lighting across all panels. Rendering style, line weight, texture, and shading must strictly match the reference image.\nLeft Column (20% width): 4 stacked, identically scaled and cropped head-and-shoulders portraits of the reference subject:\n1. Neutral: Relaxed brows, open eyes, closed mouth (identity anchor).\n2. Joy: Gentle closed-mouth smile, relaxed cheeks, open eyes (no strain/crinkles).\n3. Anger: Brows drawn down/inward, narrowed intense eyes, firmly pressed lips, tight jaw.\n4. Sorrow: Inner brows raised, heavy drooping eyelids, downturned mouth, relaxed jaw (distinct from anger).\nRight Row (80% width): 3 full-height, identically scaled figures of the reference subject in neutral relaxed stance: Front View, Clean Side Profile, and Back View. Soft oval floor shadows.\nConsistency & Constraints: Preserve exact identity, hair, facial features, garments, asymmetry, and accessories from the reference. Do not add, redesign, beautify, age, or extrapolate items based on lore/profession. No extra characters, shifting proportions, extra limbs, or style drift.",
+              "promptId": "run:3547aa4f-9e72-4c7c-9694-3b74e2a733d5",
+              "purpose": "二期PC链路验收：V3 Simple 原版表情栏＋正侧背",
+              "samples": [],
+              "sourceEntityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+              "sourceRevision": "01cfe0f46d81190e472a47175d625991e3a07c0fb4719bc5c2cfcad6df9117ad",
+              "sourceRunId": "3547aa4f-9e72-4c7c-9694-3b74e2a733d5",
+              "stage": "multiview",
+              "text": "Composition: Clean 3:2 landscape layout on a warm off-white background with generous spacing. No frames, borders, dividers, text, labels, watermarks, or logos. Soft, even neutral studio lighting across all panels. Rendering style, line weight, texture, and shading must strictly match the reference image.\nLeft Column (20% width): 4 stacked, identically scaled and cropped head-and-shoulders portraits of the reference subject:\n1. Neutral: Relaxed brows, open eyes, closed mouth (identity anchor).\n2. Joy: Gentle closed-mouth smile, relaxed cheeks, open eyes (no strain/crinkles).\n3. Anger: Brows drawn down/inward, narrowed intense eyes, firmly pressed lips, tight jaw.\n4. Sorrow: Inner brows raised, heavy drooping eyelids, downturned mouth, relaxed jaw (distinct from anger).\nRight Row (80% width): 3 full-height, identically scaled figures of the reference subject in neutral relaxed stance: Front View, Clean Side Profile, and Back View. Soft oval floor shadows.\nConsistency & Constraints: Preserve exact identity, hair, facial features, garments, asymmetry, and accessories from the reference. Do not add, redesign, beautify, age, or extrapolate items based on lore/profession. No extra characters, shifting proportions, extra limbs, or style drift.",
+              "version": null,
+              "workflow": {
+                "contentHash": "f471674e864f60d13668e929266729900de9a611fe28e94802ad4ddf9d1fe075",
+                "id": "qwen-v3-simple-four.1-refs",
+                "version": 3
+              }
+            },
+            {
+              "assetIds": [
+                "1e2f367f-132f-4c92-93d7-660422eaf8be"
+              ],
+              "contentHash": "7cddb81d8d1d6f23e4835d8ae74b5104646fd3de49dac490289366acd5c97854",
+              "createdAt": "2026-10-03T04:46:51.465Z",
+              "effectiveText": "成年女性声音；年轻成年人的声音；音调偏低；音质清澈干净；共鸣自然均衡；基础语速适中；吐字清晰利落；基础气质清冷克制；普通话自然清晰，正常说话，不唱歌。；稍微的烟嗓颗粒感，嘲讽感",
+              "promptId": "run:4c0619b2-04b1-41a7-a7a4-1fba6bb36235",
+              "purpose": "声音阶段 PC 生成链路检查：三段系统试听台词",
+              "samples": [
+                {
+                  "direction": "成年女性声音；年轻成年人的声音；音调偏低；音质清澈干净；共鸣自然均衡；基础语速适中；吐字清晰利落；基础气质清冷克制；普通话自然清晰，正常说话，不唱歌。；稍微的烟嗓颗粒感，嘲讽感\n以自然、中性的语气正常说话，情绪平稳，不唱歌，不夸张表演。",
+                  "text": "你好，很高兴见到你。今天我们一起出发，慢慢认识这个世界。"
+                }
+              ],
+              "sourceEntityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+              "sourceRevision": "7cddb81d8d1d6f23e4835d8ae74b5104646fd3de49dac490289366acd5c97854",
+              "sourceRunId": "4c0619b2-04b1-41a7-a7a4-1fba6bb36235",
+              "stage": "voice",
+              "text": "成年女性声音；年轻成年人的声音；音调偏低；音质清澈干净；共鸣自然均衡；基础语速适中；吐字清晰利落；基础气质清冷克制；普通话自然清晰，正常说话，不唱歌。；稍微的烟嗓颗粒感，嘲讽感",
+              "version": null,
+              "workflow": {
+                "contentHash": "984e093b4b4b3e0162dda12a72305314595c2bc1e97d1fea3df0e761aaa4a3f2",
+                "id": "breeze-reference-voice",
+                "version": 2
+              }
+            },
+            {
+              "assetIds": [
+                "47f47dc6-b855-4b62-82ee-fec79ace1704"
+              ],
+              "contentHash": "ae7f76b85fd6a62f510090de172240335ed9ba5caaffbbe7a95f52492ecf9f75",
+              "createdAt": "2026-10-03T03:29:03.405Z",
+              "effectiveText": "成年女性，声音清晰温和，普通话自然，语速适中，正常说话，不唱歌。",
+              "promptId": "run:698812b4-38b6-4c12-b91a-0877b23955f4",
+              "purpose": "声音阶段 PC 生成链路检查：三段系统试听台词",
+              "samples": [
+                {
+                  "direction": "成年女性，声音清晰温和，普通话自然，语速适中，正常说话，不唱歌。\n自然、平静，像面对面聊天。",
+                  "text": "你好，很高兴见到你。我们慢慢说，不用着急。"
+                },
+                {
+                  "direction": "成年女性，声音清晰温和，普通话自然，语速适中，正常说话，不唱歌。\n轻微喜悦，自然口语，不唱歌。",
+                  "text": "太好了，这件事终于完成了。我想把这个好消息告诉你。"
+                },
+                {
+                  "direction": "成年女性，声音清晰温和，普通话自然，语速适中，正常说话，不唱歌。\n认真坚定，吐字清楚，不喊叫。",
+                  "text": "请先听我说完，这件事很重要，我们需要一起想办法。"
+                }
+              ],
+              "sourceEntityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+              "sourceRevision": "c3f106e5983a5629a2ea865a36eb49ebc0cb7bbd0cc3f96558e46570ba47b348",
+              "sourceRunId": "698812b4-38b6-4c12-b91a-0877b23955f4",
+              "stage": "voice",
+              "text": "成年女性，声音清晰温和，普通话自然，语速适中，正常说话，不唱歌。",
+              "version": null,
+              "workflow": {
+                "contentHash": "348c975545678f2ff7c3ba23e83cb69cb7031a3560770b094b0321a04f3dfb17",
+                "id": "breeze-reference-voice",
+                "version": 1
+              }
+            },
+            {
+              "assetIds": [
+                "af9823e0-1b27-48b7-a469-47ddcf4b7534"
+              ],
+              "contentHash": "cb294f4739dfe1c72b2954670651886151272ab251bda27ee93b831a21f34b96",
+              "createdAt": "2026-10-02T15:32:11.213Z",
+              "effectiveText": "Create one full-body adult East Asian woman character concept. Image 1 defines her face and ponytail, Image 2 defines the navy uniform and boots, Image 3 defines silver shoulder and forearm armor, and Image 4 defines one black sheathed katana. Preserve those roles. Front-facing relaxed standing pose, head to boots visible, hands relaxed, exactly one katana attached at the waist. Plain warm off-white studio background, realistic materials and soft lighting. No text, no extra people or weapons.",
+              "promptId": "run:ae5a56dc-42b2-404b-b45b-5fcf9f4acecc",
+              "purpose": "一期端到端验收：四张显式设定图 → Qwen 概念图，验证历史回流",
+              "samples": [],
+              "sourceEntityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+              "sourceRevision": "cb294f4739dfe1c72b2954670651886151272ab251bda27ee93b831a21f34b96",
+              "sourceRunId": "ae5a56dc-42b2-404b-b45b-5fcf9f4acecc",
+              "stage": "concept",
+              "text": "Create one full-body adult East Asian woman character concept. Image 1 defines her face and ponytail, Image 2 defines the navy uniform and boots, Image 3 defines silver shoulder and forearm armor, and Image 4 defines one black sheathed katana. Preserve those roles. Front-facing relaxed standing pose, head to boots visible, hands relaxed, exactly one katana attached at the waist. Plain warm off-white studio background, realistic materials and soft lighting. No text, no extra people or weapons.",
+              "version": null,
+              "workflow": {
+                "contentHash": null,
+                "id": "qwen-image-2.1.4-refs",
+                "version": 1
+              }
+            },
+            {
+              "assetIds": [
+                "35478ed6-3fb0-46ec-99a6-046de9f5737f"
+              ],
+              "contentHash": "688059479e8300e6871d039755bd799509a5e78ddec7be8a26d01d04a9f0c580",
+              "createdAt": "2026-10-02T16:56:53.299Z",
+              "effectiveText": "Composition: Clean 3:2 landscape layout on a warm off-white background with generous spacing. No frames, borders, dividers, text, labels, watermarks, or logos. Soft, even neutral studio lighting across all panels. Rendering style, line weight, texture, and shading must strictly match the reference image.\nThree full-height, identically scaled figures of the reference subject arranged left to right: Front View, Clean Side Profile, and Back View. Neutral relaxed stance, head to feet visible in every figure. Soft oval floor shadows.\nConsistency & Constraints: Preserve exact identity, hair, facial features, garments, asymmetry, and accessories from the reference. Do not add, redesign, beautify, age, or extrapolate items based on lore/profession. No extra characters, shifting proportions, extra limbs, or style drift.",
+              "promptId": "run:d2fde352-9a1b-4c8b-83ef-766e73972e6b",
+              "purpose": "二期PC链路验收：V3 Simple 三视图",
+              "samples": [],
+              "sourceEntityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+              "sourceRevision": "688059479e8300e6871d039755bd799509a5e78ddec7be8a26d01d04a9f0c580",
+              "sourceRunId": "d2fde352-9a1b-4c8b-83ef-766e73972e6b",
+              "stage": "multiview",
+              "text": "Composition: Clean 3:2 landscape layout on a warm off-white background with generous spacing. No frames, borders, dividers, text, labels, watermarks, or logos. Soft, even neutral studio lighting across all panels. Rendering style, line weight, texture, and shading must strictly match the reference image.\nThree full-height, identically scaled figures of the reference subject arranged left to right: Front View, Clean Side Profile, and Back View. Neutral relaxed stance, head to feet visible in every figure. Soft oval floor shadows.\nConsistency & Constraints: Preserve exact identity, hair, facial features, garments, asymmetry, and accessories from the reference. Do not add, redesign, beautify, age, or extrapolate items based on lore/profession. No extra characters, shifting proportions, extra limbs, or style drift.",
+              "version": null,
+              "workflow": {
+                "contentHash": "f471674e864f60d13668e929266729900de9a611fe28e94802ad4ddf9d1fe075",
+                "id": "qwen-v3-simple-three.1-refs",
+                "version": 3
+              }
+            }
+          ],
+          "relationRevisions": [
+            "26b57d4f09a413dc872d07bba9c5e95ca66756a37265e7dbe4d36dd3bc158f82",
+            "9a33199481cfb8ee099d479b66764434e2286d30130583951a711ce24283bedf"
+          ],
+          "sceneImages": {
+            "confirmedAt": null,
+            "contentHash": "d38598da3d4acb64f7f2de96143adb8981a7b0edd4f604a8aaccc49f7cdaf5d9",
+            "images": [],
+            "issues": [],
+            "notes": "",
+            "schemaVersion": 1,
+            "sourceRevision": "6ab92157e3823ffb829835ea8176f0b344eb69eff041658a93be3e2102c32c9b",
+            "status": "missing",
+            "usage": "同一场景的人工选定参考图片组；图片角色和锚点指向不是新的空间事实，固定事实以 sceneSpatial 为准。",
+            "version": 0,
+            "versionId": null
+          },
+          "sceneSpatial": {
+            "confirmedAt": null,
+            "contentHash": "82d59f4ed4c85a69dac432ef7d61079cc368ea2811d7ccb21f1f06692575fb8e",
+            "draft": null,
+            "elements": [],
+            "frame": null,
+            "issues": [],
+            "links": [],
+            "promptContext": "",
+            "referenceImages": [],
+            "routes": [],
+            "schemaVersion": 1,
+            "scope": "fixed_scene_space",
+            "sourceRevision": "63cc30b3c0a3c7cbeefc09ab32cc57df2422681636d7c46eccde8e81baee89ed",
+            "status": "missing",
+            "unknowns": [
+              "方向基准待补充或确认；不可将镜头左/右直接当场景固定方向。",
+              "主要区域、建筑结构与固定物体尚未登记。"
+            ],
+            "usage": "空间标识以 entityId#id 引用；角色当前位置、朝向、移动时间线与可移动物品转移属于拍摄本。pending/draft/needs_review 内容不得作为已确认固定事实。",
+            "version": 0,
+            "versionId": null
+          },
+          "sourceRevision": "f01ce83c5b7088ef55d8397e32610f5a6f6e1967005d3e0cb2dfdab31af63703",
+          "type": null,
+          "voiceDescription": "成年女性声音；年轻成年人的声音；音调偏低；音质清澈干净；共鸣自然均衡；基础语速适中；吐字清晰利落；基础气质清冷克制；普通话自然清晰，正常说话，不唱歌。；稍微的烟嗓颗粒感，嘲讽感",
+          "snapshotId": "b8031f71-80b4-43dc-a6d8-14aeb1351b3e",
+          "snapshotVersion": 1
+        },
+        {
+          "appearance": "",
+          "assets": [
+            {
+              "assetId": "43123388-aebd-4161-97d7-04f0dabc9484",
+              "available": true,
+              "confirmation": {
+                "isCurrent": true,
+                "records": [
+                  {
+                    "confirmationId": "35904f45-5f04-45ec-99d6-2183c7e89e04",
+                    "createdAt": "2026-10-03T07:38:23.957Z",
+                    "kind": "appearance",
+                    "version": 2
+                  }
+                ],
+                "status": "confirmed"
+              },
+              "contentHash": "59fd1cff742b9d28c0904419206edc8b0ffe933e53bdb0f272c43b69e314e94f",
+              "contentUrl": "/api/reference/v1/assets/43123388-aebd-4161-97d7-04f0dabc9484/content",
+              "createdAt": "2026-10-03T07:38:15.416Z",
+              "description": null,
+              "durationSec": null,
+              "entityId": "e3f49e04-4a4b-483f-823e-d31f497d5ab8",
+              "fileSize": 1267656,
+              "height": 1344,
+              "inheritance": null,
+              "layout": null,
+              "mediaType": "image",
+              "mime": "image/png",
+              "name": "概念图 453618b6 · 1",
+              "reviewStatus": null,
+              "role": "main_appearance",
+              "sourceRevision": "f3294990167cf6ba867c7de7e4b36f724d0ab771504086f5f289a28bffc6d11c",
+              "sourceRunId": "453618b6-15f7-40fc-a42b-1492a625518f",
+              "width": 768,
+              "localHash": "59fd1cff742b9d28c0904419206edc8b0ffe933e53bdb0f272c43b69e314e94f"
+            },
+            {
+              "assetId": "6f63253b-ec45-4f56-8292-5e1e3d20d2b0",
+              "available": true,
+              "confirmation": {
+                "isCurrent": true,
+                "records": [
+                  {
+                    "confirmationId": "ffd5d59a-04ce-44db-b245-f8b956b20bb7",
+                    "createdAt": "2026-10-03T07:44:49.220Z",
+                    "kind": "voice",
+                    "version": 1
+                  }
+                ],
+                "status": "confirmed"
+              },
+              "contentHash": "e273276c1556ee5f989c8befdafd86e465b640fcd504e3e02a3777d8150876f0",
+              "contentUrl": "/api/reference/v1/assets/6f63253b-ec45-4f56-8292-5e1e3d20d2b0/content",
+              "createdAt": "2026-10-03T07:43:25.314Z",
+              "description": null,
+              "durationSec": 5.28,
+              "entityId": "e3f49e04-4a4b-483f-823e-d31f497d5ab8",
+              "fileSize": 253518,
+              "height": null,
+              "inheritance": null,
+              "layout": null,
+              "mediaType": "audio",
+              "mime": "audio/wav",
+              "name": "声音 · 基础音色 · 中性样音 1a2deeda · 1",
+              "reviewStatus": null,
+              "role": "voice",
+              "sourceRevision": "92d98f4b447ebc38768e06873b61614e515050e844430627ee00cd382c27d3a5",
+              "sourceRunId": "1a2deeda-da01-47dc-89d3-a7f85448bc0a",
+              "width": null,
+              "localHash": "e273276c1556ee5f989c8befdafd86e465b640fcd504e3e02a3777d8150876f0"
+            },
+            {
+              "assetId": "bf0ec0df-9e51-4a07-a54a-23ef9626173c",
+              "available": true,
+              "confirmation": {
+                "isCurrent": true,
+                "records": [
+                  {
+                    "confirmationId": "8284bb6c-1224-41b7-afb0-7b1bc719f49c",
+                    "createdAt": "2026-10-03T07:42:29.710Z",
+                    "kind": "view",
+                    "version": 1
+                  }
+                ],
+                "status": "confirmed"
+              },
+              "contentHash": "25c620051f4c8240550e54817c3ba9e4d38ffcc34c9d19e6e696613b7f80e897",
+              "contentUrl": "/api/reference/v1/assets/bf0ec0df-9e51-4a07-a54a-23ef9626173c/content",
+              "createdAt": "2026-10-03T07:38:59.365Z",
+              "description": null,
+              "durationSec": null,
+              "entityId": "e3f49e04-4a4b-483f-823e-d31f497d5ab8",
+              "fileSize": 1787418,
+              "height": 1024,
+              "inheritance": null,
+              "layout": "three",
+              "mediaType": "image",
+              "mime": "image/png",
+              "name": "三视图 83b2bf9f · 1",
+              "reviewStatus": null,
+              "role": "three_view",
+              "sourceRevision": "6dfe14b80fb3063d305c9695c556069153dbd28f02ab5465801b642cac47ab8e",
+              "sourceRunId": "83b2bf9f-abdf-43e5-903b-d4092625e786",
+              "width": 1536,
+              "localHash": "25c620051f4c8240550e54817c3ba9e4d38ffcc34c9d19e6e696613b7f80e897"
+            }
+          ],
+          "contentHash": "752c5abc16ba6beee99a57150c5623b214a6bdc2e9d1d71efddfffe2aa69b173",
+          "createdAt": "2026-10-03T07:23:45.999Z",
+          "currentAppearance": {
+            "assetId": "43123388-aebd-4161-97d7-04f0dabc9484",
+            "confirmationId": "35904f45-5f04-45ec-99d6-2183c7e89e04",
+            "contentHash": "59fd1cff742b9d28c0904419206edc8b0ffe933e53bdb0f272c43b69e314e94f",
+            "version": 2
+          },
+          "currentVoice": {
+            "assetId": "6f63253b-ec45-4f56-8292-5e1e3d20d2b0",
+            "confirmationId": "ffd5d59a-04ce-44db-b245-f8b956b20bb7",
+            "contentHash": "e273276c1556ee5f989c8befdafd86e465b640fcd504e3e02a3777d8150876f0",
+            "version": 1
+          },
+          "derivedFrom": null,
+          "description": "",
+          "entityId": "e3f49e04-4a4b-483f-823e-d31f497d5ab8",
+          "fieldSources": {
+            "appearance": {
+              "contentHash": "12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126",
+              "source": "entities.context.appearance"
+            },
+            "description": {
+              "contentHash": "12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126",
+              "source": "entities.context.description"
+            },
+            "type": null,
+            "voiceDescription": {
+              "contentHash": "c835d6c42794e64ceea974a4318ce78bef1338d0a11d0fedaef74a179083044a",
+              "source": "current voice source run"
+            }
+          },
+          "flags": [
+            "人物"
+          ],
+          "missingFields": [
+            "type"
+          ],
+          "name": "角色B",
+          "prompts": [
+            {
+              "assetIds": [
+                "6f63253b-ec45-4f56-8292-5e1e3d20d2b0"
+              ],
+              "contentHash": "20c99f0c258de8223f6b94daccb8d01510bb05647915595898bdd3c6669669ee",
+              "createdAt": "2026-10-03T07:43:04.695Z",
+              "effectiveText": "成年女性声音；成熟成年人的声音；音调偏低；音质明亮通透；共鸣自然均衡；基础语速适中；吐字清晰利落；基础气质活泼灵动；普通话自然清晰，正常说话，不唱歌。",
+              "promptId": "run:1a2deeda-da01-47dc-89d3-a7f85448bc0a",
+              "purpose": null,
+              "samples": [
+                {
+                  "direction": "成年女性声音；成熟成年人的声音；音调偏低；音质明亮通透；共鸣自然均衡；基础语速适中；吐字清晰利落；基础气质活泼灵动；普通话自然清晰，正常说话，不唱歌。\n以自然、中性的语气正常说话，情绪平稳，不唱歌，不夸张表演。",
+                  "text": "你好，很高兴见到你。今天我们一起出发，慢慢认识这个世界。"
+                }
+              ],
+              "sourceEntityId": "e3f49e04-4a4b-483f-823e-d31f497d5ab8",
+              "sourceRevision": "20c99f0c258de8223f6b94daccb8d01510bb05647915595898bdd3c6669669ee",
+              "sourceRunId": "1a2deeda-da01-47dc-89d3-a7f85448bc0a",
+              "stage": "voice",
+              "text": "成年女性声音；成熟成年人的声音；音调偏低；音质明亮通透；共鸣自然均衡；基础语速适中；吐字清晰利落；基础气质活泼灵动；普通话自然清晰，正常说话，不唱歌。",
+              "version": null,
+              "workflow": {
+                "contentHash": "984e093b4b4b3e0162dda12a72305314595c2bc1e97d1fea3df0e761aaa4a3f2",
+                "id": "breeze-reference-voice",
+                "version": 2
+              }
+            },
+            {
+              "assetIds": [
+                "43123388-aebd-4161-97d7-04f0dabc9484"
+              ],
+              "contentHash": "49391bdbc2c6fbcfb5a33027b657131a0f77be4a0d125505e9777f17835bde58",
+              "createdAt": "2026-10-03T07:37:47.011Z",
+              "effectiveText": "Image 1 提供脸，Image 3 提供服装，Image 2 是刀。\n一个30岁女武士，身材纤细，右手握着刀柄，怒视前方。\n人物正面全身照。头身比为9头身。",
+              "promptId": "run:453618b6-15f7-40fc-a42b-1492a625518f",
+              "purpose": null,
+              "samples": [],
+              "sourceEntityId": "e3f49e04-4a4b-483f-823e-d31f497d5ab8",
+              "sourceRevision": "49391bdbc2c6fbcfb5a33027b657131a0f77be4a0d125505e9777f17835bde58",
+              "sourceRunId": "453618b6-15f7-40fc-a42b-1492a625518f",
+              "stage": "concept",
+              "text": "Image 1 提供脸，Image 3 提供服装，Image 2 是刀。\n一个30岁女武士，身材纤细，右手握着刀柄，怒视前方。\n人物正面全身照。头身比为9头身。",
+              "version": null,
+              "workflow": {
+                "contentHash": "ff56cf7134b69f84749120bba48e546964c3e7c38ee19ae6856606c71295ab46",
+                "id": "qwen-image-2.1.3-refs",
+                "version": 1
+              }
+            },
+            {
+              "assetIds": [
+                "02fdfb13-4406-473f-8028-9fbe6444bbcb"
+              ],
+              "contentHash": "b808e75a280884e54c22d0596345449ce97069dc7b16952090bca24d3a997e7d",
+              "createdAt": "2026-10-03T07:27:03.016Z",
+              "effectiveText": "Image 1 提供脸，Image 2 提供服装，Image 3 提供装备\n一个女武士主视图，纯净背景",
+              "promptId": "run:51199404-4450-4ce9-ae3b-87ef83a9a91b",
+              "purpose": null,
+              "samples": [],
+              "sourceEntityId": "e3f49e04-4a4b-483f-823e-d31f497d5ab8",
+              "sourceRevision": "b808e75a280884e54c22d0596345449ce97069dc7b16952090bca24d3a997e7d",
+              "sourceRunId": "51199404-4450-4ce9-ae3b-87ef83a9a91b",
+              "stage": "concept",
+              "text": "Image 1 提供脸，Image 2 提供服装，Image 3 提供装备\n一个女武士主视图，纯净背景",
+              "version": null,
+              "workflow": {
+                "contentHash": "ff56cf7134b69f84749120bba48e546964c3e7c38ee19ae6856606c71295ab46",
+                "id": "qwen-image-2.1.3-refs",
+                "version": 1
+              }
+            },
+            {
+              "assetIds": [
+                "bf0ec0df-9e51-4a07-a54a-23ef9626173c"
+              ],
+              "contentHash": "2e953a9137c97146c55d79e041805fdf4f726b5697aba40d6c63a33bd0f93e20",
+              "createdAt": "2026-10-03T07:38:42.890Z",
+              "effectiveText": "Composition: Clean 3:2 landscape layout on a warm off-white background with generous spacing. No frames, borders, dividers, text, labels, watermarks, or logos. Soft, even neutral studio lighting across all panels. Rendering style, line weight, texture, and shading must strictly match the reference image.\nThree full-height, identically scaled figures of the reference subject arranged left to right: Front View, Clean Side Profile, and Back View. Neutral relaxed stance, head to feet visible in every figure. Soft oval floor shadows.\nConsistency & Constraints: Preserve exact identity, hair, facial features, garments, asymmetry, and accessories from the reference. Do not add, redesign, beautify, age, or extrapolate items based on lore/profession. No extra characters, shifting proportions, extra limbs, or style drift.",
+              "promptId": "run:83b2bf9f-abdf-43e5-903b-d4092625e786",
+              "purpose": null,
+              "samples": [],
+              "sourceEntityId": "e3f49e04-4a4b-483f-823e-d31f497d5ab8",
+              "sourceRevision": "2e953a9137c97146c55d79e041805fdf4f726b5697aba40d6c63a33bd0f93e20",
+              "sourceRunId": "83b2bf9f-abdf-43e5-903b-d4092625e786",
+              "stage": "multiview",
+              "text": "Composition: Clean 3:2 landscape layout on a warm off-white background with generous spacing. No frames, borders, dividers, text, labels, watermarks, or logos. Soft, even neutral studio lighting across all panels. Rendering style, line weight, texture, and shading must strictly match the reference image.\nThree full-height, identically scaled figures of the reference subject arranged left to right: Front View, Clean Side Profile, and Back View. Neutral relaxed stance, head to feet visible in every figure. Soft oval floor shadows.\nConsistency & Constraints: Preserve exact identity, hair, facial features, garments, asymmetry, and accessories from the reference. Do not add, redesign, beautify, age, or extrapolate items based on lore/profession. No extra characters, shifting proportions, extra limbs, or style drift.",
+              "version": null,
+              "workflow": {
+                "contentHash": "f471674e864f60d13668e929266729900de9a611fe28e94802ad4ddf9d1fe075",
+                "id": "qwen-v3-simple-three.1-refs",
+                "version": 3
+              }
+            }
+          ],
+          "relationRevisions": [
+            "48a2cc072c909988bd78768ffd2949b35af5e0e0a5fbbe46542670f2d2eff4fa",
+            "6b05091224ee63490c4b9e414f368f7ad295b1d7112a6cc06fd1be9090784d1d",
+            "9a33199481cfb8ee099d479b66764434e2286d30130583951a711ce24283bedf"
+          ],
+          "sceneImages": {
+            "confirmedAt": null,
+            "contentHash": "d38598da3d4acb64f7f2de96143adb8981a7b0edd4f604a8aaccc49f7cdaf5d9",
+            "images": [],
+            "issues": [],
+            "notes": "",
+            "schemaVersion": 1,
+            "sourceRevision": "6ab92157e3823ffb829835ea8176f0b344eb69eff041658a93be3e2102c32c9b",
+            "status": "missing",
+            "usage": "同一场景的人工选定参考图片组；图片角色和锚点指向不是新的空间事实，固定事实以 sceneSpatial 为准。",
+            "version": 0,
+            "versionId": null
+          },
+          "sceneSpatial": {
+            "confirmedAt": null,
+            "contentHash": "82d59f4ed4c85a69dac432ef7d61079cc368ea2811d7ccb21f1f06692575fb8e",
+            "draft": null,
+            "elements": [],
+            "frame": null,
+            "issues": [],
+            "links": [],
+            "promptContext": "",
+            "referenceImages": [],
+            "routes": [],
+            "schemaVersion": 1,
+            "scope": "fixed_scene_space",
+            "sourceRevision": "63cc30b3c0a3c7cbeefc09ab32cc57df2422681636d7c46eccde8e81baee89ed",
+            "status": "missing",
+            "unknowns": [
+              "方向基准待补充或确认；不可将镜头左/右直接当场景固定方向。",
+              "主要区域、建筑结构与固定物体尚未登记。"
+            ],
+            "usage": "空间标识以 entityId#id 引用；角色当前位置、朝向、移动时间线与可移动物品转移属于拍摄本。pending/draft/needs_review 内容不得作为已确认固定事实。",
+            "version": 0,
+            "versionId": null
+          },
+          "sourceRevision": "752c5abc16ba6beee99a57150c5623b214a6bdc2e9d1d71efddfffe2aa69b173",
+          "type": null,
+          "voiceDescription": "成年女性声音；成熟成年人的声音；音调偏低；音质明亮通透；共鸣自然均衡；基础语速适中；吐字清晰利落；基础气质活泼灵动；普通话自然清晰，正常说话，不唱歌。",
+          "snapshotId": "b8031f71-80b4-43dc-a6d8-14aeb1351b3e",
+          "snapshotVersion": 1
+        },
+        {
+          "appearance": "现代图书馆，明窗净几，装修简洁",
+          "assets": [
+            {
+              "assetId": "25958405-ac83-454f-909e-f4aeba33f9a4",
+              "available": true,
+              "confirmation": {
+                "isCurrent": true,
+                "records": [
+                  {
+                    "confirmationId": "75c6c015-419b-4a81-9bf0-b4adde81693b",
+                    "createdAt": "2026-10-03T07:57:34.289Z",
+                    "kind": "appearance",
+                    "version": 1
+                  }
+                ],
+                "status": "confirmed"
+              },
+              "contentHash": "bc97295cda1363c189fcd3e0cc3841dfc36ca03db415906bf96b44b56d21cd6e",
+              "contentUrl": "/api/reference/v1/assets/25958405-ac83-454f-909e-f4aeba33f9a4/content",
+              "createdAt": "2026-10-03T07:57:28.926Z",
+              "description": null,
+              "durationSec": null,
+              "entityId": "9971429d-863e-499e-b7c5-902d30e0f6a2",
+              "fileSize": 2696693,
+              "height": 1024,
+              "inheritance": null,
+              "layout": null,
+              "mediaType": "image",
+              "mime": "image/png",
+              "name": "概念图 cd09c87e · 1",
+              "reviewStatus": null,
+              "role": "main_appearance",
+              "sourceRevision": "cc2b205a8d7e2588153453c95690f2c99985b5e593c96fd7b4e596a31539ee14",
+              "sourceRunId": "cd09c87e-4de7-4fa4-bad1-1195ce0f1cec",
+              "width": 1536,
+              "localHash": "bc97295cda1363c189fcd3e0cc3841dfc36ca03db415906bf96b44b56d21cd6e"
+            }
+          ],
+          "contentHash": "771e40c10dda38cab5fad64c15aae7d29e2b90031e6827eb9854829eb37baac5",
+          "createdAt": "2026-10-03T07:56:03.107Z",
+          "currentAppearance": {
+            "assetId": "25958405-ac83-454f-909e-f4aeba33f9a4",
+            "confirmationId": "75c6c015-419b-4a81-9bf0-b4adde81693b",
+            "contentHash": "bc97295cda1363c189fcd3e0cc3841dfc36ca03db415906bf96b44b56d21cd6e",
+            "version": 1
+          },
+          "currentVoice": null,
+          "derivedFrom": null,
+          "description": "",
+          "entityId": "9971429d-863e-499e-b7c5-902d30e0f6a2",
+          "fieldSources": {
+            "appearance": {
+              "contentHash": "b69908f1bcca3bab29a3d267a1eabbb15b0eecda41394f7e7a1d2632f425d717",
+              "source": "entities.context.appearance"
+            },
+            "description": {
+              "contentHash": "12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126",
+              "source": "entities.context.description"
+            },
+            "type": null,
+            "voiceDescription": null
+          },
+          "flags": [
+            "场景"
+          ],
+          "missingFields": [
+            "type",
+            "voiceDescription"
+          ],
+          "name": "图书馆",
+          "prompts": [
+            {
+              "assetIds": [
+                "25958405-ac83-454f-909e-f4aeba33f9a4"
+              ],
+              "contentHash": "3e5b73377af2a97d864cb65d36b889987329827e6b5c3aa13496d5b6a773d558",
+              "createdAt": "2026-10-03T07:57:18.674Z",
+              "effectiveText": "现代图书馆的阅读室\n其将作为两个人的交互场景\n生成一个视角良好的场景参考图",
+              "promptId": "run:cd09c87e-4de7-4fa4-bad1-1195ce0f1cec",
+              "purpose": null,
+              "samples": [],
+              "sourceEntityId": "9971429d-863e-499e-b7c5-902d30e0f6a2",
+              "sourceRevision": "3e5b73377af2a97d864cb65d36b889987329827e6b5c3aa13496d5b6a773d558",
+              "sourceRunId": "cd09c87e-4de7-4fa4-bad1-1195ce0f1cec",
+              "stage": "concept",
+              "text": "现代图书馆的阅读室\n其将作为两个人的交互场景\n生成一个视角良好的场景参考图",
+              "version": null,
+              "workflow": {
+                "contentHash": "ff56cf7134b69f84749120bba48e546964c3e7c38ee19ae6856606c71295ab46",
+                "id": "qwen-image-2.1.0-refs",
+                "version": 1
+              }
+            }
+          ],
+          "relationRevisions": [],
+          "sceneImages": {
+            "confirmedAt": null,
+            "contentHash": "d38598da3d4acb64f7f2de96143adb8981a7b0edd4f604a8aaccc49f7cdaf5d9",
+            "images": [],
+            "issues": [],
+            "notes": "",
+            "schemaVersion": 1,
+            "sourceRevision": "6ab92157e3823ffb829835ea8176f0b344eb69eff041658a93be3e2102c32c9b",
+            "status": "missing",
+            "usage": "同一场景的人工选定参考图片组；图片角色和锚点指向不是新的空间事实，固定事实以 sceneSpatial 为准。",
+            "version": 0,
+            "versionId": null
+          },
+          "sceneSpatial": {
+            "confirmedAt": null,
+            "contentHash": "5d81ca064c5a6d3197254a0c1a31c30f6214be22c6d546b09618c83b34000478",
+            "draft": null,
+            "elements": [],
+            "frame": null,
+            "issues": [],
+            "links": [],
+            "promptContext": "",
+            "referenceImages": [
+              {
+                "assetId": "25958405-ac83-454f-909e-f4aeba33f9a4",
+                "available": true,
+                "contentHash": "bc97295cda1363c189fcd3e0cc3841dfc36ca03db415906bf96b44b56d21cd6e"
+              }
+            ],
+            "routes": [],
+            "schemaVersion": 1,
+            "scope": "fixed_scene_space",
+            "sourceRevision": "6abb0adb9063c705c8317ac8c200f1b475dfc30f33341a13784265ebbbfa72ce",
+            "status": "draft",
+            "unknowns": [
+              "房间总尺寸、层高、桌面尺寸、通道宽度和固定物体精确间距尚无资料。",
+              "入口、出口、背面和参考图不可见区域布局待补充；不能根据单张图推断完整平面图。",
+              "书架正面相对于约定方向的精确朝向、桌面长轴方向待确认。",
+              "各桌之间可通行路线、椅子是否阻挡、右侧是否连接其他区域待补充；目前不登记已确认通路。",
+              "桌面书本、杯子、纸张及角色站位不属于固定事实，由各段拍摄本指定。",
+              "[reading_area] 朝向未单独记录；只能使用已有说明，不得猜测。",
+              "[reading_area] 尺度未单独记录；只能使用已有说明，不得猜测。",
+              "[left_shelf] 朝向未单独记录；只能使用已有说明，不得猜测。",
+              "[left_shelf] 尺度未单独记录；只能使用已有说明，不得猜测。",
+              "[back_shelf] 朝向未单独记录；只能使用已有说明，不得猜测。",
+              "[back_shelf] 尺度未单独记录；只能使用已有说明，不得猜测。",
+              "[near_table] 朝向未单独记录；只能使用已有说明，不得猜测。",
+              "[far_table] 朝向未单独记录；只能使用已有说明，不得猜测。",
+              "[far_table] 尺度未单独记录；只能使用已有说明，不得猜测。",
+              "[right_boundary] 右侧边界待确认 待补充或确认。",
+              "[right_boundary] 朝向未单独记录；只能使用已有说明，不得猜测。",
+              "[right_boundary] 尺度未单独记录；只能使用已有说明，不得猜测。"
+            ],
+            "usage": "空间标识以 entityId#id 引用；角色当前位置、朝向、移动时间线与可移动物品转移属于拍摄本。pending/draft/needs_review 内容不得作为已确认固定事实。",
+            "version": 1,
+            "versionId": "dfd0eeed-4e3c-4d77-bdc2-d17f761e4484"
+          },
+          "sourceRevision": "771e40c10dda38cab5fad64c15aae7d29e2b90031e6827eb9854829eb37baac5",
+          "type": null,
+          "voiceDescription": null,
+          "snapshotId": "b8031f71-80b4-43dc-a6d8-14aeb1351b3e",
+          "snapshotVersion": 1
+        },
+        {
+          "appearance": "",
+          "assets": [
+            {
+              "assetId": "e6ea44ed-6c4a-4fb0-a868-de41e241c430",
+              "available": true,
+              "confirmation": {
+                "isCurrent": true,
+                "records": [
+                  {
+                    "confirmationId": "c2350075-42a0-41f4-b2ac-e6e99d9f1e50",
+                    "createdAt": "2026-10-03T03:56:19.828Z",
+                    "kind": "appearance",
+                    "version": 1
+                  }
+                ],
+                "status": "confirmed"
+              },
+              "contentHash": "e0c1d47b35f3b83c590c44e138f4dcb9df6078fbf44b39237cd3cf4d40684c53",
+              "contentUrl": "/api/reference/v1/assets/e6ea44ed-6c4a-4fb0-a868-de41e241c430/content",
+              "createdAt": "2026-10-03T03:56:03.604Z",
+              "description": null,
+              "durationSec": null,
+              "entityId": "4c8e5bd2-78a5-4aee-8f22-7ec5a8512bb8",
+              "fileSize": 1866810,
+              "height": 1024,
+              "inheritance": null,
+              "layout": null,
+              "mediaType": "image",
+              "mime": "image/png",
+              "name": "概念图 b9026922 · 1",
+              "reviewStatus": null,
+              "role": "main_appearance",
+              "sourceRevision": "a3e7949b4d52ab7db1f208ce6b94687fbb3ef9b3356a1133819b7ca453b12bda",
+              "sourceRunId": "b9026922-b9ee-44d0-83be-8a90203b21e3",
+              "width": 1536,
+              "localHash": "e0c1d47b35f3b83c590c44e138f4dcb9df6078fbf44b39237cd3cf4d40684c53"
+            }
+          ],
+          "contentHash": "508a482814c72269c945e82527efde871238004875f1019e13d8f0560e717eef",
+          "createdAt": "2026-10-02T15:30:09.717Z",
+          "currentAppearance": {
+            "assetId": "e6ea44ed-6c4a-4fb0-a868-de41e241c430",
+            "confirmationId": "c2350075-42a0-41f4-b2ac-e6e99d9f1e50",
+            "contentHash": "e0c1d47b35f3b83c590c44e138f4dcb9df6078fbf44b39237cd3cf4d40684c53",
+            "version": 1
+          },
+          "currentVoice": null,
+          "derivedFrom": null,
+          "description": "",
+          "entityId": "4c8e5bd2-78a5-4aee-8f22-7ec5a8512bb8",
+          "fieldSources": {
+            "appearance": {
+              "contentHash": "12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126",
+              "source": "entities.context.appearance"
+            },
+            "description": {
+              "contentHash": "12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126",
+              "source": "entities.context.description"
+            },
+            "type": null,
+            "voiceDescription": null
+          },
+          "flags": [
+            "物品"
+          ],
+          "missingFields": [
+            "type",
+            "voiceDescription"
+          ],
+          "name": "一把刀",
+          "prompts": [
+            {
+              "assetIds": [
+                "e6ea44ed-6c4a-4fb0-a868-de41e241c430"
+              ],
+              "contentHash": "c3b4be06fec17ec0a3c7b98918cc8b025bcc21ed8ead708c1c8335536e1a3ed9",
+              "createdAt": "2026-10-03T03:55:53.356Z",
+              "effectiveText": "单独一把太刀的道具展示图\n\nCinematic lighting, realistic materials, coherent color grading.",
+              "promptId": "run:b9026922-b9ee-44d0-83be-8a90203b21e3",
+              "purpose": null,
+              "samples": [],
+              "sourceEntityId": "4c8e5bd2-78a5-4aee-8f22-7ec5a8512bb8",
+              "sourceRevision": "c3b4be06fec17ec0a3c7b98918cc8b025bcc21ed8ead708c1c8335536e1a3ed9",
+              "sourceRunId": "b9026922-b9ee-44d0-83be-8a90203b21e3",
+              "stage": "concept",
+              "text": "单独一把太刀的道具展示图",
+              "version": null,
+              "workflow": {
+                "contentHash": "ff56cf7134b69f84749120bba48e546964c3e7c38ee19ae6856606c71295ab46",
+                "id": "qwen-image-2.1.0-refs",
+                "version": 1
+              }
+            }
+          ],
+          "relationRevisions": [
+            "48a2cc072c909988bd78768ffd2949b35af5e0e0a5fbbe46542670f2d2eff4fa"
+          ],
+          "sceneImages": {
+            "confirmedAt": null,
+            "contentHash": "d38598da3d4acb64f7f2de96143adb8981a7b0edd4f604a8aaccc49f7cdaf5d9",
+            "images": [],
+            "issues": [],
+            "notes": "",
+            "schemaVersion": 1,
+            "sourceRevision": "6ab92157e3823ffb829835ea8176f0b344eb69eff041658a93be3e2102c32c9b",
+            "status": "missing",
+            "usage": "同一场景的人工选定参考图片组；图片角色和锚点指向不是新的空间事实，固定事实以 sceneSpatial 为准。",
+            "version": 0,
+            "versionId": null
+          },
+          "sceneSpatial": {
+            "confirmedAt": null,
+            "contentHash": "82d59f4ed4c85a69dac432ef7d61079cc368ea2811d7ccb21f1f06692575fb8e",
+            "draft": null,
+            "elements": [],
+            "frame": null,
+            "issues": [],
+            "links": [],
+            "promptContext": "",
+            "referenceImages": [],
+            "routes": [],
+            "schemaVersion": 1,
+            "scope": "fixed_scene_space",
+            "sourceRevision": "63cc30b3c0a3c7cbeefc09ab32cc57df2422681636d7c46eccde8e81baee89ed",
+            "status": "missing",
+            "unknowns": [
+              "方向基准待补充或确认；不可将镜头左/右直接当场景固定方向。",
+              "主要区域、建筑结构与固定物体尚未登记。"
+            ],
+            "usage": "空间标识以 entityId#id 引用；角色当前位置、朝向、移动时间线与可移动物品转移属于拍摄本。pending/draft/needs_review 内容不得作为已确认固定事实。",
+            "version": 0,
+            "versionId": null
+          },
+          "sourceRevision": "508a482814c72269c945e82527efde871238004875f1019e13d8f0560e717eef",
+          "type": null,
+          "voiceDescription": null,
+          "snapshotId": "b8031f71-80b4-43dc-a6d8-14aeb1351b3e",
+          "snapshotVersion": 1
+        },
+        {
+          "appearance": "",
+          "assets": [
+            {
+              "assetId": "5d0c2f3a-2249-44f3-ab7b-fa89a476610b",
+              "available": true,
+              "confirmation": {
+                "isCurrent": true,
+                "records": [
+                  {
+                    "confirmationId": "1067f524-6098-4c71-a911-7974cf7f60eb",
+                    "createdAt": "2026-10-03T07:16:13.057Z",
+                    "kind": "view",
+                    "version": 1
+                  }
+                ],
+                "status": "confirmed"
+              },
+              "contentHash": "3ce01b333ac8918b3faa804e2e345f3c0f73ba2fd4db5bdfb69b5a46940417ba",
+              "contentUrl": "/api/reference/v1/assets/5d0c2f3a-2249-44f3-ab7b-fa89a476610b/content",
+              "createdAt": "2026-10-03T07:15:58.875Z",
+              "description": null,
+              "durationSec": null,
+              "entityId": "3044bf32-2019-458e-a7cf-e50ab304e42c",
+              "fileSize": 1601214,
+              "height": 1024,
+              "inheritance": null,
+              "layout": "three",
+              "mediaType": "image",
+              "mime": "image/png",
+              "name": "三视图 04b83eb8 · 1",
+              "reviewStatus": null,
+              "role": "three_view",
+              "sourceRevision": "c97da2414777bd55be4c5dba7ab5b873252548ff20f923889c82ddb3667be9a5",
+              "sourceRunId": "04b83eb8-2135-428b-9a33-1e5f3eeeb4ef",
+              "width": 1536,
+              "localHash": "3ce01b333ac8918b3faa804e2e345f3c0f73ba2fd4db5bdfb69b5a46940417ba"
+            },
+            {
+              "assetId": "96e44971-aedc-42da-a534-dc321fd5e350",
+              "available": true,
+              "confirmation": {
+                "isCurrent": true,
+                "records": [
+                  {
+                    "confirmationId": "950677ea-681a-47e4-9fb4-0a266d3717f0",
+                    "createdAt": "2026-10-03T07:14:43.164Z",
+                    "kind": "appearance",
+                    "version": 1
+                  }
+                ],
+                "status": "confirmed"
+              },
+              "contentHash": "80a8e0c3b070a51034c55026b864f9841f96e90d8e0cff6077b7ed2fb1df6a81",
+              "contentUrl": "/api/reference/v1/assets/96e44971-aedc-42da-a534-dc321fd5e350/content",
+              "createdAt": "2026-10-03T07:14:38.706Z",
+              "description": null,
+              "durationSec": null,
+              "entityId": "3044bf32-2019-458e-a7cf-e50ab304e42c",
+              "fileSize": 1146388,
+              "height": 1024,
+              "inheritance": null,
+              "layout": null,
+              "mediaType": "image",
+              "mime": "image/png",
+              "name": "概念图 ab7c5108 · 1",
+              "reviewStatus": null,
+              "role": "main_appearance",
+              "sourceRevision": "614b066d35e725b75a5aae50ee9e697103b8359c6b2091cb0ce17cde8f968cfa",
+              "sourceRunId": "ab7c5108-f51e-41fa-ab85-5ee5162aff67",
+              "width": 1536,
+              "localHash": "80a8e0c3b070a51034c55026b864f9841f96e90d8e0cff6077b7ed2fb1df6a81"
+            }
+          ],
+          "contentHash": "9a48b8d162877cfcd0e23d7b44b9915850a8bb6617140e9f317c83b553248d2c",
+          "createdAt": "2026-10-03T07:11:36.515Z",
+          "currentAppearance": {
+            "assetId": "96e44971-aedc-42da-a534-dc321fd5e350",
+            "confirmationId": "950677ea-681a-47e4-9fb4-0a266d3717f0",
+            "contentHash": "80a8e0c3b070a51034c55026b864f9841f96e90d8e0cff6077b7ed2fb1df6a81",
+            "version": 1
+          },
+          "currentVoice": null,
+          "derivedFrom": null,
+          "description": "",
+          "entityId": "3044bf32-2019-458e-a7cf-e50ab304e42c",
+          "fieldSources": {
+            "appearance": {
+              "contentHash": "12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126",
+              "source": "entities.context.appearance"
+            },
+            "description": {
+              "contentHash": "12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126",
+              "source": "entities.context.description"
+            },
+            "type": null,
+            "voiceDescription": null
+          },
+          "flags": [
+            "服装",
+            "人物",
+            "物品"
+          ],
+          "missingFields": [
+            "type",
+            "voiceDescription"
+          ],
+          "name": "休闲服",
+          "prompts": [
+            {
+              "assetIds": [
+                "5d0c2f3a-2249-44f3-ab7b-fa89a476610b"
+              ],
+              "contentHash": "753e41441e48f235614922c5de3fcdac181bf4bf37fe197f4fdf76e01eedb5ff",
+              "createdAt": "2026-10-03T07:15:40.530Z",
+              "effectiveText": "Composition: Clean 3:2 landscape layout on a warm off-white background with generous spacing. No frames, borders, dividers, text, labels, watermarks, or logos. Soft, even neutral studio lighting across all panels. Rendering style, line weight, texture, and shading must strictly match the reference image.\nThree full-height, identically scaled figures of the reference subject arranged left to right: Front View, Clean Side Profile, and Back View. Neutral relaxed stance, head to feet visible in every figure. Soft oval floor shadows.\nConsistency & Constraints: Preserve exact identity, hair, facial features, garments, asymmetry, and accessories from the reference. Do not add, redesign, beautify, age, or extrapolate items based on lore/profession. No extra characters, shifting proportions, extra limbs, or style drift.\n\n只有衣服，不要有人物",
+              "promptId": "run:04b83eb8-2135-428b-9a33-1e5f3eeeb4ef",
+              "purpose": "简单测试下衣服物品的3视图。",
+              "samples": [],
+              "sourceEntityId": "3044bf32-2019-458e-a7cf-e50ab304e42c",
+              "sourceRevision": "753e41441e48f235614922c5de3fcdac181bf4bf37fe197f4fdf76e01eedb5ff",
+              "sourceRunId": "04b83eb8-2135-428b-9a33-1e5f3eeeb4ef",
+              "stage": "multiview",
+              "text": "Composition: Clean 3:2 landscape layout on a warm off-white background with generous spacing. No frames, borders, dividers, text, labels, watermarks, or logos. Soft, even neutral studio lighting across all panels. Rendering style, line weight, texture, and shading must strictly match the reference image.\nThree full-height, identically scaled figures of the reference subject arranged left to right: Front View, Clean Side Profile, and Back View. Neutral relaxed stance, head to feet visible in every figure. Soft oval floor shadows.\nConsistency & Constraints: Preserve exact identity, hair, facial features, garments, asymmetry, and accessories from the reference. Do not add, redesign, beautify, age, or extrapolate items based on lore/profession. No extra characters, shifting proportions, extra limbs, or style drift.\n\n只有衣服，不要有人物",
+              "version": null,
+              "workflow": {
+                "contentHash": "f471674e864f60d13668e929266729900de9a611fe28e94802ad4ddf9d1fe075",
+                "id": "qwen-v3-simple-three.1-refs",
+                "version": 3
+              }
+            },
+            {
+              "assetIds": [
+                "96e44971-aedc-42da-a534-dc321fd5e350"
+              ],
+              "contentHash": "18d12f9b68c48e73819ec91e5a03824890b20a13e0d181ebccb6360b2c0e0dca",
+              "createdAt": "2026-10-03T07:14:22.032Z",
+              "effectiveText": "从Image 1中获得标准服装正面图片，Tpose，只有服装，没有其他东西。\n\nCinematic lighting, realistic materials, coherent color grading.",
+              "promptId": "run:ab7c5108-f51e-41fa-ab85-5ee5162aff67",
+              "purpose": "任意图片博取标准服装图片",
+              "samples": [],
+              "sourceEntityId": "3044bf32-2019-458e-a7cf-e50ab304e42c",
+              "sourceRevision": "18d12f9b68c48e73819ec91e5a03824890b20a13e0d181ebccb6360b2c0e0dca",
+              "sourceRunId": "ab7c5108-f51e-41fa-ab85-5ee5162aff67",
+              "stage": "concept",
+              "text": "从Image 1中获得标准服装正面图片，Tpose，只有服装，没有其他东西。",
+              "version": null,
+              "workflow": {
+                "contentHash": "ff56cf7134b69f84749120bba48e546964c3e7c38ee19ae6856606c71295ab46",
+                "id": "qwen-image-2.1.1-refs",
+                "version": 1
+              }
+            }
+          ],
+          "relationRevisions": [
+            "6b05091224ee63490c4b9e414f368f7ad295b1d7112a6cc06fd1be9090784d1d"
+          ],
+          "sceneImages": {
+            "confirmedAt": null,
+            "contentHash": "d38598da3d4acb64f7f2de96143adb8981a7b0edd4f604a8aaccc49f7cdaf5d9",
+            "images": [],
+            "issues": [],
+            "notes": "",
+            "schemaVersion": 1,
+            "sourceRevision": "6ab92157e3823ffb829835ea8176f0b344eb69eff041658a93be3e2102c32c9b",
+            "status": "missing",
+            "usage": "同一场景的人工选定参考图片组；图片角色和锚点指向不是新的空间事实，固定事实以 sceneSpatial 为准。",
+            "version": 0,
+            "versionId": null
+          },
+          "sceneSpatial": {
+            "confirmedAt": null,
+            "contentHash": "82d59f4ed4c85a69dac432ef7d61079cc368ea2811d7ccb21f1f06692575fb8e",
+            "draft": null,
+            "elements": [],
+            "frame": null,
+            "issues": [],
+            "links": [],
+            "promptContext": "",
+            "referenceImages": [],
+            "routes": [],
+            "schemaVersion": 1,
+            "scope": "fixed_scene_space",
+            "sourceRevision": "63cc30b3c0a3c7cbeefc09ab32cc57df2422681636d7c46eccde8e81baee89ed",
+            "status": "missing",
+            "unknowns": [
+              "方向基准待补充或确认；不可将镜头左/右直接当场景固定方向。",
+              "主要区域、建筑结构与固定物体尚未登记。"
+            ],
+            "usage": "空间标识以 entityId#id 引用；角色当前位置、朝向、移动时间线与可移动物品转移属于拍摄本。pending/draft/needs_review 内容不得作为已确认固定事实。",
+            "version": 0,
+            "versionId": null
+          },
+          "sourceRevision": "9a48b8d162877cfcd0e23d7b44b9915850a8bb6617140e9f317c83b553248d2c",
+          "type": null,
+          "voiceDescription": null,
+          "snapshotId": "b8031f71-80b4-43dc-a6d8-14aeb1351b3e",
+          "snapshotVersion": 1
+        }
+      ],
+      "snapshots": {
+        "5821d6dd-2041-40a3-a789-74989c6edd90": {
+          "snapshotId": "b8031f71-80b4-43dc-a6d8-14aeb1351b3e",
+          "sourceRevision": "f01ce83c5b7088ef55d8397e32610f5a6f6e1967005d3e0cb2dfdab31af63703",
+          "name": "角色A"
+        },
+        "e3f49e04-4a4b-483f-823e-d31f497d5ab8": {
+          "snapshotId": "b8031f71-80b4-43dc-a6d8-14aeb1351b3e",
+          "sourceRevision": "752c5abc16ba6beee99a57150c5623b214a6bdc2e9d1d71efddfffe2aa69b173",
+          "name": "角色B"
+        },
+        "9971429d-863e-499e-b7c5-902d30e0f6a2": {
+          "snapshotId": "b8031f71-80b4-43dc-a6d8-14aeb1351b3e",
+          "sourceRevision": "771e40c10dda38cab5fad64c15aae7d29e2b90031e6827eb9854829eb37baac5",
+          "name": "图书馆"
+        },
+        "4c8e5bd2-78a5-4aee-8f22-7ec5a8512bb8": {
+          "snapshotId": "b8031f71-80b4-43dc-a6d8-14aeb1351b3e",
+          "sourceRevision": "508a482814c72269c945e82527efde871238004875f1019e13d8f0560e717eef",
+          "name": "一把刀"
+        },
+        "3044bf32-2019-458e-a7cf-e50ab304e42c": {
+          "snapshotId": "b8031f71-80b4-43dc-a6d8-14aeb1351b3e",
+          "sourceRevision": "9a48b8d162877cfcd0e23d7b44b9915850a8bb6617140e9f317c83b553248d2c",
+          "name": "休闲服"
+        }
+      },
+      "images": [
+        {
+          "assetId": "af9823e0-1b27-48b7-a469-47ddcf4b7534",
+          "available": true,
+          "confirmation": {
+            "isCurrent": true,
+            "records": [
+              {
+                "confirmationId": "4e1b9ef4-326f-40cb-be07-4b974f4a8129",
+                "createdAt": "2026-10-02T16:56:33.878Z",
+                "kind": "appearance",
+                "version": 1
+              }
+            ],
+            "status": "confirmed"
+          },
+          "contentHash": "df20a30c62bf979ff04d2773b1757620847d3b485b580095b429031b5ea2d04b",
+          "contentUrl": "/api/reference/v1/assets/af9823e0-1b27-48b7-a469-47ddcf4b7534/content",
+          "createdAt": "2026-10-02T15:32:49.700Z",
+          "description": null,
+          "durationSec": null,
+          "entityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+          "fileSize": 1475226,
+          "height": 1024,
+          "inheritance": null,
+          "layout": null,
+          "mediaType": "image",
+          "mime": "image/png",
+          "name": "概念图 ae5a56dc · 1",
+          "reviewStatus": null,
+          "role": "main_appearance",
+          "sourceRevision": "c55ec362fa3256461942afd3487bbba4446d4321868f479b1deec6aa2f6dd7c5",
+          "sourceRunId": "ae5a56dc-42b2-404b-b45b-5fcf9f4acecc",
+          "width": 1536,
+          "localHash": "df20a30c62bf979ff04d2773b1757620847d3b485b580095b429031b5ea2d04b"
+        },
+        {
+          "assetId": "89f7618d-e430-46c7-9c4d-b8e20f3ff386",
+          "available": true,
+          "confirmation": {
+            "isCurrent": true,
+            "records": [
+              {
+                "confirmationId": "cda1ca59-391a-4a13-9d65-8712fed8c853",
+                "createdAt": "2026-10-03T07:46:10.080Z",
+                "kind": "view",
+                "version": 3
+              }
+            ],
+            "status": "confirmed"
+          },
+          "contentHash": "5fecbc99843090ee1c74e7eecce6b9f3b3c34df5bd8ebfdd33a10a1fc2b9aa43",
+          "contentUrl": "/api/reference/v1/assets/89f7618d-e430-46c7-9c4d-b8e20f3ff386/content",
+          "createdAt": "2026-10-03T03:15:48.058Z",
+          "description": null,
+          "durationSec": null,
+          "entityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+          "fileSize": 1639632,
+          "height": 1024,
+          "inheritance": null,
+          "layout": "face-front-back-side",
+          "mediaType": "image",
+          "mime": "image/png",
+          "name": "脸部＋正背侧 1913176b · 1",
+          "reviewStatus": null,
+          "role": "three_view",
+          "sourceRevision": "d3f67cdff7f67ac7a420207c95d68ce07dd596b20736c7eb3a1832fabf9ee326",
+          "sourceRunId": "1913176b-0bb6-411c-9fc4-fba39571c88e",
+          "width": 1536,
+          "localHash": "5fecbc99843090ee1c74e7eecce6b9f3b3c34df5bd8ebfdd33a10a1fc2b9aa43"
+        },
+        {
+          "assetId": "43123388-aebd-4161-97d7-04f0dabc9484",
+          "available": true,
+          "confirmation": {
+            "isCurrent": true,
+            "records": [
+              {
+                "confirmationId": "35904f45-5f04-45ec-99d6-2183c7e89e04",
+                "createdAt": "2026-10-03T07:38:23.957Z",
+                "kind": "appearance",
+                "version": 2
+              }
+            ],
+            "status": "confirmed"
+          },
+          "contentHash": "59fd1cff742b9d28c0904419206edc8b0ffe933e53bdb0f272c43b69e314e94f",
+          "contentUrl": "/api/reference/v1/assets/43123388-aebd-4161-97d7-04f0dabc9484/content",
+          "createdAt": "2026-10-03T07:38:15.416Z",
+          "description": null,
+          "durationSec": null,
+          "entityId": "e3f49e04-4a4b-483f-823e-d31f497d5ab8",
+          "fileSize": 1267656,
+          "height": 1344,
+          "inheritance": null,
+          "layout": null,
+          "mediaType": "image",
+          "mime": "image/png",
+          "name": "概念图 453618b6 · 1",
+          "reviewStatus": null,
+          "role": "main_appearance",
+          "sourceRevision": "f3294990167cf6ba867c7de7e4b36f724d0ab771504086f5f289a28bffc6d11c",
+          "sourceRunId": "453618b6-15f7-40fc-a42b-1492a625518f",
+          "width": 768,
+          "localHash": "59fd1cff742b9d28c0904419206edc8b0ffe933e53bdb0f272c43b69e314e94f"
+        },
+        {
+          "assetId": "bf0ec0df-9e51-4a07-a54a-23ef9626173c",
+          "available": true,
+          "confirmation": {
+            "isCurrent": true,
+            "records": [
+              {
+                "confirmationId": "8284bb6c-1224-41b7-afb0-7b1bc719f49c",
+                "createdAt": "2026-10-03T07:42:29.710Z",
+                "kind": "view",
+                "version": 1
+              }
+            ],
+            "status": "confirmed"
+          },
+          "contentHash": "25c620051f4c8240550e54817c3ba9e4d38ffcc34c9d19e6e696613b7f80e897",
+          "contentUrl": "/api/reference/v1/assets/bf0ec0df-9e51-4a07-a54a-23ef9626173c/content",
+          "createdAt": "2026-10-03T07:38:59.365Z",
+          "description": null,
+          "durationSec": null,
+          "entityId": "e3f49e04-4a4b-483f-823e-d31f497d5ab8",
+          "fileSize": 1787418,
+          "height": 1024,
+          "inheritance": null,
+          "layout": "three",
+          "mediaType": "image",
+          "mime": "image/png",
+          "name": "三视图 83b2bf9f · 1",
+          "reviewStatus": null,
+          "role": "three_view",
+          "sourceRevision": "6dfe14b80fb3063d305c9695c556069153dbd28f02ab5465801b642cac47ab8e",
+          "sourceRunId": "83b2bf9f-abdf-43e5-903b-d4092625e786",
+          "width": 1536,
+          "localHash": "25c620051f4c8240550e54817c3ba9e4d38ffcc34c9d19e6e696613b7f80e897"
+        },
+        {
+          "assetId": "25958405-ac83-454f-909e-f4aeba33f9a4",
+          "available": true,
+          "confirmation": {
+            "isCurrent": true,
+            "records": [
+              {
+                "confirmationId": "75c6c015-419b-4a81-9bf0-b4adde81693b",
+                "createdAt": "2026-10-03T07:57:34.289Z",
+                "kind": "appearance",
+                "version": 1
+              }
+            ],
+            "status": "confirmed"
+          },
+          "contentHash": "bc97295cda1363c189fcd3e0cc3841dfc36ca03db415906bf96b44b56d21cd6e",
+          "contentUrl": "/api/reference/v1/assets/25958405-ac83-454f-909e-f4aeba33f9a4/content",
+          "createdAt": "2026-10-03T07:57:28.926Z",
+          "description": null,
+          "durationSec": null,
+          "entityId": "9971429d-863e-499e-b7c5-902d30e0f6a2",
+          "fileSize": 2696693,
+          "height": 1024,
+          "inheritance": null,
+          "layout": null,
+          "mediaType": "image",
+          "mime": "image/png",
+          "name": "概念图 cd09c87e · 1",
+          "reviewStatus": null,
+          "role": "main_appearance",
+          "sourceRevision": "cc2b205a8d7e2588153453c95690f2c99985b5e593c96fd7b4e596a31539ee14",
+          "sourceRunId": "cd09c87e-4de7-4fa4-bad1-1195ce0f1cec",
+          "width": 1536,
+          "localHash": "bc97295cda1363c189fcd3e0cc3841dfc36ca03db415906bf96b44b56d21cd6e"
+        },
+        {
+          "assetId": "e6ea44ed-6c4a-4fb0-a868-de41e241c430",
+          "available": true,
+          "confirmation": {
+            "isCurrent": true,
+            "records": [
+              {
+                "confirmationId": "c2350075-42a0-41f4-b2ac-e6e99d9f1e50",
+                "createdAt": "2026-10-03T03:56:19.828Z",
+                "kind": "appearance",
+                "version": 1
+              }
+            ],
+            "status": "confirmed"
+          },
+          "contentHash": "e0c1d47b35f3b83c590c44e138f4dcb9df6078fbf44b39237cd3cf4d40684c53",
+          "contentUrl": "/api/reference/v1/assets/e6ea44ed-6c4a-4fb0-a868-de41e241c430/content",
+          "createdAt": "2026-10-03T03:56:03.604Z",
+          "description": null,
+          "durationSec": null,
+          "entityId": "4c8e5bd2-78a5-4aee-8f22-7ec5a8512bb8",
+          "fileSize": 1866810,
+          "height": 1024,
+          "inheritance": null,
+          "layout": null,
+          "mediaType": "image",
+          "mime": "image/png",
+          "name": "概念图 b9026922 · 1",
+          "reviewStatus": null,
+          "role": "main_appearance",
+          "sourceRevision": "a3e7949b4d52ab7db1f208ce6b94687fbb3ef9b3356a1133819b7ca453b12bda",
+          "sourceRunId": "b9026922-b9ee-44d0-83be-8a90203b21e3",
+          "width": 1536,
+          "localHash": "e0c1d47b35f3b83c590c44e138f4dcb9df6078fbf44b39237cd3cf4d40684c53"
+        },
+        {
+          "assetId": "96e44971-aedc-42da-a534-dc321fd5e350",
+          "available": true,
+          "confirmation": {
+            "isCurrent": true,
+            "records": [
+              {
+                "confirmationId": "950677ea-681a-47e4-9fb4-0a266d3717f0",
+                "createdAt": "2026-10-03T07:14:43.164Z",
+                "kind": "appearance",
+                "version": 1
+              }
+            ],
+            "status": "confirmed"
+          },
+          "contentHash": "80a8e0c3b070a51034c55026b864f9841f96e90d8e0cff6077b7ed2fb1df6a81",
+          "contentUrl": "/api/reference/v1/assets/96e44971-aedc-42da-a534-dc321fd5e350/content",
+          "createdAt": "2026-10-03T07:14:38.706Z",
+          "description": null,
+          "durationSec": null,
+          "entityId": "3044bf32-2019-458e-a7cf-e50ab304e42c",
+          "fileSize": 1146388,
+          "height": 1024,
+          "inheritance": null,
+          "layout": null,
+          "mediaType": "image",
+          "mime": "image/png",
+          "name": "概念图 ab7c5108 · 1",
+          "reviewStatus": null,
+          "role": "main_appearance",
+          "sourceRevision": "614b066d35e725b75a5aae50ee9e697103b8359c6b2091cb0ce17cde8f968cfa",
+          "sourceRunId": "ab7c5108-f51e-41fa-ab85-5ee5162aff67",
+          "width": 1536,
+          "localHash": "80a8e0c3b070a51034c55026b864f9841f96e90d8e0cff6077b7ed2fb1df6a81"
+        },
+        {
+          "assetId": "5d0c2f3a-2249-44f3-ab7b-fa89a476610b",
+          "available": true,
+          "confirmation": {
+            "isCurrent": true,
+            "records": [
+              {
+                "confirmationId": "1067f524-6098-4c71-a911-7974cf7f60eb",
+                "createdAt": "2026-10-03T07:16:13.057Z",
+                "kind": "view",
+                "version": 1
+              }
+            ],
+            "status": "confirmed"
+          },
+          "contentHash": "3ce01b333ac8918b3faa804e2e345f3c0f73ba2fd4db5bdfb69b5a46940417ba",
+          "contentUrl": "/api/reference/v1/assets/5d0c2f3a-2249-44f3-ab7b-fa89a476610b/content",
+          "createdAt": "2026-10-03T07:15:58.875Z",
+          "description": null,
+          "durationSec": null,
+          "entityId": "3044bf32-2019-458e-a7cf-e50ab304e42c",
+          "fileSize": 1601214,
+          "height": 1024,
+          "inheritance": null,
+          "layout": "three",
+          "mediaType": "image",
+          "mime": "image/png",
+          "name": "三视图 04b83eb8 · 1",
+          "reviewStatus": null,
+          "role": "three_view",
+          "sourceRevision": "c97da2414777bd55be4c5dba7ab5b873252548ff20f923889c82ddb3667be9a5",
+          "sourceRunId": "04b83eb8-2135-428b-9a33-1e5f3eeeb4ef",
+          "width": 1536,
+          "localHash": "3ce01b333ac8918b3faa804e2e345f3c0f73ba2fd4db5bdfb69b5a46940417ba"
+        }
+      ],
+      "audio": null,
+      "voiceReferences": [
+        {
+          "assetId": "1e2f367f-132f-4c92-93d7-660422eaf8be",
+          "available": true,
+          "confirmation": {
+            "isCurrent": true,
+            "records": [
+              {
+                "confirmationId": "7241220e-968d-4db9-bc31-0095b4b6c62b",
+                "createdAt": "2026-10-03T04:47:54.564Z",
+                "kind": "voice",
+                "version": 2
+              }
+            ],
+            "status": "confirmed"
+          },
+          "contentHash": "136dc791274fa4bf7f7a5cb4667c04bbaf8affd92c7473775cf295846215ff1b",
+          "contentUrl": "/api/reference/v1/assets/1e2f367f-132f-4c92-93d7-660422eaf8be/content",
+          "createdAt": "2026-10-03T04:47:01.945Z",
+          "description": null,
+          "durationSec": 6.08,
+          "entityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+          "fileSize": 291918,
+          "height": null,
+          "inheritance": null,
+          "layout": null,
+          "mediaType": "audio",
+          "mime": "audio/wav",
+          "name": "声音 · 基础音色 · 中性样音 4c0619b2 · 1",
+          "reviewStatus": null,
+          "role": "voice",
+          "sourceRevision": "b6609476c53d88114e255176ad70cad73743b75846f54ec0de6e74f1559c0a95",
+          "sourceRunId": "4c0619b2-04b1-41a7-a7a4-1fba6bb36235",
+          "width": null,
+          "localHash": "136dc791274fa4bf7f7a5cb4667c04bbaf8affd92c7473775cf295846215ff1b",
+          "audioIndex": 1,
+          "speakerEntityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+          "speakerId": "S1",
+          "voiceDescription": "成年女性声音；年轻成年人的声音；音调偏低；音质清澈干净；共鸣自然均衡；基础语速适中；吐字清晰利落；基础气质清冷克制；普通话自然清晰，正常说话，不唱歌。；稍微的烟嗓颗粒感，嘲讽感",
+          "sourceEntityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+          "sourceSnapshotId": "b8031f71-80b4-43dc-a6d8-14aeb1351b3e",
+          "sourceEntityRevision": "f01ce83c5b7088ef55d8397e32610f5a6f6e1967005d3e0cb2dfdab31af63703"
+        },
+        {
+          "assetId": "6f63253b-ec45-4f56-8292-5e1e3d20d2b0",
+          "available": true,
+          "confirmation": {
+            "isCurrent": true,
+            "records": [
+              {
+                "confirmationId": "ffd5d59a-04ce-44db-b245-f8b956b20bb7",
+                "createdAt": "2026-10-03T07:44:49.220Z",
+                "kind": "voice",
+                "version": 1
+              }
+            ],
+            "status": "confirmed"
+          },
+          "contentHash": "e273276c1556ee5f989c8befdafd86e465b640fcd504e3e02a3777d8150876f0",
+          "contentUrl": "/api/reference/v1/assets/6f63253b-ec45-4f56-8292-5e1e3d20d2b0/content",
+          "createdAt": "2026-10-03T07:43:25.314Z",
+          "description": null,
+          "durationSec": 5.28,
+          "entityId": "e3f49e04-4a4b-483f-823e-d31f497d5ab8",
+          "fileSize": 253518,
+          "height": null,
+          "inheritance": null,
+          "layout": null,
+          "mediaType": "audio",
+          "mime": "audio/wav",
+          "name": "声音 · 基础音色 · 中性样音 1a2deeda · 1",
+          "reviewStatus": null,
+          "role": "voice",
+          "sourceRevision": "92d98f4b447ebc38768e06873b61614e515050e844430627ee00cd382c27d3a5",
+          "sourceRunId": "1a2deeda-da01-47dc-89d3-a7f85448bc0a",
+          "width": null,
+          "localHash": "e273276c1556ee5f989c8befdafd86e465b640fcd504e3e02a3777d8150876f0",
+          "audioIndex": 2,
+          "speakerEntityId": "e3f49e04-4a4b-483f-823e-d31f497d5ab8",
+          "speakerId": "S2",
+          "voiceDescription": "成年女性声音；成熟成年人的声音；音调偏低；音质明亮通透；共鸣自然均衡；基础语速适中；吐字清晰利落；基础气质活泼灵动；普通话自然清晰，正常说话，不唱歌。",
+          "sourceEntityId": "e3f49e04-4a4b-483f-823e-d31f497d5ab8",
+          "sourceSnapshotId": "b8031f71-80b4-43dc-a6d8-14aeb1351b3e",
+          "sourceEntityRevision": "752c5abc16ba6beee99a57150c5623b214a6bdc2e9d1d71efddfffe2aa69b173"
+        }
+      ],
+      "approval": {
+        "owner": "Sean",
+        "scope": "shot",
+        "shotId": "18cd89f4-1697-451b-9719-124d43e8b511",
+        "mode": "direct-generation",
+        "at": "2026-10-04T12:05:49.072Z",
+        "inputRevision": 24,
+        "hash": "b20caef2c9f0beff636e07b65d2792b28af25c29afa5e8923cc3465d10bc1507"
+      },
+      "model": {
+        "unet": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+        "clip": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+        "videoVae": "minimax_h3_video_vae_fp16.safetensors",
+        "audioVae": "minimax_h3_audio_vae_fp32.safetensors",
+        "pdd": "minimax_h3_ref2va_pdd_acc_8step_comfyui.safetensors"
+      },
+      "spatialPlan": {
+        "owner": "Sean",
+        "scenePlan": "固定空间计划（图书馆阅读室，实体 9971429d-863e-499e-b7c5-902d30e0f6a2）。\n权威事实：实体外观“现代图书馆，明窗净几，装修简洁”；主参考图资产 25958405-ac83-454f-909e-f4aeba33f9a4；空间登记为 draft，房间绝对尺寸/层高/桌面尺寸/通道宽度/入口出口位置与朝向/门的位置与方位/书架正面朝向/桌面长轴方向均无已确认资料。\n视觉目标（全片统一）：真实写实摄影（live-action realistic photography），延续主形象与场景参考图的写实视觉；包括真实皮肤毛发、真实布料与金属质感、自然光学与均匀室内光；本片目标不包含动漫线描/赛璐璐渲染，不得自行加入 anime 或 cel shading 风格。角色A的三视图只提供形体与衣物轮廓参考，不得覆盖主形象的脸与视觉渲染风格；图片顺序不变。\n本片调度（非实体登记尺寸）：主锚点=同一张阅读桌 T1，用它与同一面浅木色通顶书墙的相对关系识别，不用“最靠近当前机位的桌子”定义。固定书墙位于远侧背景；桌长轴在画面横向；机位在阅读桌近侧、与A同侧；A在画面左近侧，B在画面右远侧；近侧/远侧固定属于该桌两条边，不随机位变化重命名；不越轴、不绕到远侧、不做环绕运动。材质与光照保持参考图事实：浅木色长条桌与通顶书架、浅木地板、顶部线性灯、灰绿色网椅、明亮均匀室内光。\n相对交互点：刀落点=桌面近侧半区靠中线空位（双方伸手可及）；外套落点=桌面远侧半区靠中线另一空位（避开合上的书与刀，三处互不重叠，近侧站立的A伸手可及）；A脱下的制服上衣与肩部、前臂银甲放在A近侧刚坐过的椅子座面。道具唯一性：全片只有一把刀、一件外套、一本书。\n身份与派生：角色A与“角色A · 派生”是同一人；基础图锁脸/身份/马尾/体型；派生图只作那一件驼色长外套的部分转移参考，A只加穿B那一件外套，保留自身内搭、裤子与黑色靴子，不复制派生图整套休闲服（连帽内搭、白裤、浅色鞋）；派生图中带鞘刀位于其身侧腰线附近，不据此断言“手持”，也不复制该刀；本片只要求末镜A手中无刀，不新增人物或武器。\n来源未知（记录，不作为阻塞、不发明建筑）：房间绝对尺寸/层高/桌面尺寸/通道宽度、入口与出口位置及朝向、门的位置与方位、书架正面朝向、桌面长轴方向均无已确认资料；本片一律只用相对锚点，不据单张参考图推断完整平面，也不指定门与通道尺寸。",
+        "shots": [
+          {
+            "id": "18cd89f4-1697-451b-9719-124d43e8b511",
+            "startState": "角色A站在图书馆阅读室入口一侧的走道上，身体朝向同一张阅读桌T1的近侧，右手携唯一的一把刀；角色B已经坐在同一张阅读桌远侧的椅子上读书，双手持书，面朝近侧；桌面近侧半区靠中线交互点空置；外套仍穿在角色B身上。",
+            "endState": "角色A坐在阅读桌近侧椅子上，面向远侧；角色B坐在远侧椅子上，书仍在手中；唯一的一把刀平放在桌面近侧半区靠中线交互点；外套仍穿在角色B身上；A的制服与银甲仍穿戴。",
+            "transitionFromPrevious": "无前镜；起始状态为剧本第一拍开场，人物与道具按确认剧本就位，无瞬移。"
+          },
+          {
+            "id": "75f55a65-8167-469e-9762-9b3bfaf5b048",
+            "startState": "角色A坐在阅读桌近侧椅子上，面朝远侧；角色B坐在阅读桌远侧椅子上，双手持书，面朝近侧；刀平放在桌面近侧半区靠中线交互点；外套仍穿在角色B身上。",
+            "endState": "角色A仍坐近侧、面朝远侧；角色B站立在阅读桌远侧、面朝近侧；合上的书放在桌面远侧半区空位；刀仍在桌面近侧半区靠中线交互点；外套仍穿在角色B身上。",
+            "transitionFromPrevious": "承接第1镜结束状态：A坐近侧、B坐远侧、刀在近侧中心交互点、书在B手中、外套仍在B身上；本镜从坐姿交谈继续。"
+          },
+          {
+            "id": "cbfc4455-17f8-4b4a-875a-e3bcfc418399",
+            "startState": "角色A坐在阅读桌近侧，面朝远侧；角色B站在阅读桌远侧桌边，面朝近侧；外套仍穿在角色B身上；书在桌面远侧半区；刀在桌面近侧半区靠中线交互点。",
+            "endState": "角色A仍坐近侧；角色B仍站远侧，穿米白连帽内搭、裤子与鞋；驼色长外套平放在桌面远侧半区靠中线落点；书仍在桌面远侧半区；刀仍在桌面近侧半区靠中线交互点。",
+            "transitionFromPrevious": "承接第2镜结束状态：A坐近侧、B站远侧、书在远侧半区、刀在近侧中心交互点、外套仍在B身上；本镜只脱这一件长外套并平放。"
+          },
+          {
+            "id": "8c1401c1-d4db-4b40-82ea-6fddd83bb208",
+            "startState": "角色A坐在阅读桌近侧，面朝远侧；角色B站在阅读桌远侧桌边，穿米白连帽内搭、裤子与鞋，未穿外套；外套平放在桌面远侧半区靠中线落点；书在桌面远侧半区；唯一的一把刀在桌面近侧半区靠中线交互点。",
+            "endState": "角色B与唯一的一把刀已完全离场；外套仍平放在桌面远侧半区靠中线落点；书仍在桌面远侧半区；角色A仍坐在阅读桌近侧，面朝远侧。",
+            "transitionFromPrevious": "承接第3镜结束状态：A坐近侧、B站远侧、外套在远侧中心落点、书在远侧半区、刀在近侧中心交互点；本镜B从远侧前倾取刀并离场。"
+          },
+          {
+            "id": "4a3af4ad-be8c-41bc-b43a-5f24773917fa",
+            "startState": "角色B与唯一的一把刀已离场；角色A坐在阅读桌近侧椅子上，面朝远侧；书与外套分别平放在桌面远侧半区空位未动；桌面近侧半区靠中线刀位已空；A穿原有制服、银甲、内搭、裤子与黑色靴子。",
+            "endState": "角色A站在阅读桌近侧椅子旁、面朝远侧，穿原有内搭、裤子与黑色靴子；制服上衣与银甲在近侧椅子座面；外套仍在桌面远侧半区靠中线落点未被拿起；书仍在桌面远侧半区；刀不在场。",
+            "transitionFromPrevious": "承接第4镜结束状态：B与刀已离场、书在远侧半区、外套在远侧中心落点、A坐近侧；本镜A起身并只脱制服上衣与银甲，放到近侧椅座。"
+          },
+          {
+            "id": "f0ac8b73-eb6b-4d3d-b877-6d4d7b95a34e",
+            "startState": "角色A站在阅读桌近侧椅子旁，面朝远侧，穿原有内搭、原有裤子与黑色靴子；制服上衣与银甲在近侧椅子座面；外套平放在桌面远侧半区靠中线落点；书在桌面远侧半区；刀不在场。",
+            "endState": "角色A穿着那件外套、站在阅读桌近侧、停止旋转、面朝远侧；内搭、裤子与黑色靴子未变；制服上衣与银甲仍在近侧椅子座面；书仍在桌面远侧半区；刀不在场；A完成一次完整360度转圈并停住。",
+            "transitionFromPrevious": "承接第5镜结束状态：A站在近侧椅子旁、穿内搭裤子黑靴、制服上衣与银甲在近侧椅座、外套在远侧中心落点、书在远侧半区、刀不在场；本镜A取外套穿上并原地360度转圈。"
+          }
+        ],
+        "sourceHash": "b6a3811c83bf339f10c36fc36a26b86fd7b06ad952a502374f3c3c982ae6d604"
+      },
+      "adapterVersion": "sean-ref2va@3",
+      "samplingSeed": 1087377081,
+      "seedPolicy": "configured"
+    },
+    "startedAt": "2026-10-04T12:05:49.079Z",
+    "updatedAt": "2026-10-04T12:08:06.230Z",
+    "progress": {
+      "phase": "complete",
+      "detail": "视频已保存，可以播放并选用",
+      "updatedAt": "2026-10-04T12:08:06.230Z"
+    },
+    "leaseId": "7c4dbbc9-5153-46ff-bf7d-fc822dbd1c67",
+    "workflow": {
+      "1": {
+        "class_type": "UNETLoader",
+        "inputs": {
+          "unet_name": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+          "weight_dtype": "default"
+        }
+      },
+      "2": {
+        "class_type": "CLIPLoader",
+        "inputs": {
+          "clip_name": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+          "type": "minimax",
+          "device": "default"
+        }
+      },
+      "3": {
+        "class_type": "VAELoader",
+        "inputs": {
+          "vae_name": "minimax_h3_video_vae_fp16.safetensors"
+        }
+      },
+      "4": {
+        "class_type": "VAELoader",
+        "inputs": {
+          "vae_name": "minimax_h3_audio_vae_fp32.safetensors"
+        }
+      },
+      "6": {
+        "class_type": "MiniMaxH3ReferenceToVideo",
+        "inputs": {
+          "clip": [
+            "2",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ],
+          "audio_vae": [
+            "4",
+            0
+          ],
+          "prompt": "subject_definitions:\n<Subject 1> is character A (S1), the young adult woman whose identity, face, ponytail, and body type are defined by <Picture 1> and <Picture 2>.\n<Subject 2> is character B (S2), the adult woman whose identity and appearance are defined by <Picture 3> and <Picture 4>.\n<Subject 3> is the modern library reading-room environment defined by <Picture 5>, with light-wood tall shelves, a long light-wood reading table, gray-green mesh chairs, a light-wood floor, and linear ceiling lights.\n<Subject 4> is the single sword prop defined by <Picture 6>: one black sheathed katana.\n<Subject 5> is the casual outfit defined by <Picture 7> and <Picture 8>: a camel-colored long outer coat with an off-white hooded inner layer, off-white trousers, and light shoes.\n<Audio 1> is the voice-timbre reference for <Subject 1> (S1), used only as a timbre reference; its sample speech is not copied.\n<Audio 2> is the voice-timbre reference for <Subject 2> (S2), used only as a timbre reference; its sample speech is not copied.\nsummary:\n[reference generation + audio reference] A enters the library reading room carrying the only sword, speaks one line at the near edge of reading table T1, is told by B to put the sword down, sets it on the near-center interaction point, sits down, and speaks a third line; B stays seated on the far side with the book in her hands. The sword stays on the table and B keeps her coat on.\nretention_analysis:\n<Subject 1> (appears in [Shot 1]): fully_preserved - A keeps the same face, ponytail, body type, navy uniform upper garment, uniform trousers, black boots, and silver shoulder and forearm armor.\n<Subject 2> (appears in [Shot 1]): fully_preserved - B keeps the same identity, face, and black hair, and still wears the camel coat over the off-white hooded inner layer, trousers, and shoes.\n<Subject 3> (appears in [Shot 1]): fully_preserved - the light-wood reading room, long table, tall shelves, mesh chairs, light-wood floor, and even interior lighting are retained.\n<Subject 4> (appears in [Shot 1]): fully_preserved - exactly one black sheathed katana, unchanged in shape, size, and material.\n<Subject 5> (appears in [Shot 1]): fully_preserved - the camel coat and the off-white inner layer, trousers, and shoes stay on B.\n<Audio 1>: reference - only the voice timbre guides A's delivery; the sample lines inside the reference audio are not copied, quoted, or reperformed, and the target dialogue is written only in the description below.\n<Audio 2>: reference - only the voice timbre guides B's delivery; the sample lines inside the reference audio are not copied, quoted, or reperformed.\ndetailed_description:\nThe target video is live-action realistic photography that continues the photoreal look of the reference images: real skin and hair detail, real fabric weave, leather, and brushed metal, natural camera optics with shallow depth of field, and even indoor library light; there is no anime linework and no cel shading.\n[Shot 1] Reading table T1 is the same light-wood table that stands adjacent to the same tall light-wood bookwall; that bookwall stays fixed in the far background, the table's long axis runs horizontally across the frame, the camera stays on the near side on character A's side, A holds the left-near area while B holds the right-far area, and near side and far side are fixed names for this table that are never renamed when the camera changes; these are this film's relative staging anchors, not entity-registered dimensions. A fixed medium shot sits slightly above table height on the near side, looking across the tabletop toward the far side; the screen direction never changes. The space is the modern library reading room of <Subject 3>, with light-wood tall shelves, the long table, gray-green mesh chairs, a light-wood floor, and linear ceiling lights. <Subject 1> (S1), character A, begins standing in the aisle beside the reading-room entrance, her body facing the near side of table T1 and her right hand carrying <Subject 4>, the only black sheathed katana in the scene. She walks along the aisle to the near edge of the table with the sword still in her hand, stops there, stays standing, and speaks her first line. <Subject 2> (S2), character B, is already seated on the far-side chair holding the only book in both hands and facing near, wearing <Subject 5>, the camel coat over her off-white hooded inner layer, trousers, and shoes; she answers with her second line, telling A to put the sword down first. Only then does A set the katana flat on the near half of the tabletop close to the centerline at the designated interaction point that both characters can reach, not at the outer near edge and not away from B. A then sits down on the near-side chair, faces the far side, and speaks her third line. The camera is completely static with no pan, tilt, zoom, or shake. A's gaze moves from the table edge up to B as she sits, while B's gaze stays on A. A's uniform upper garment, uniform trousers, black boots, and silver shoulder and forearm armor remain worn. In order, <Subject 1> (S1) says <d>[Chinese] 你还真会挑地方。</d>, then <Subject 2> (S2) says <d>[Chinese] 图书馆里，刀先放下。</d>, and then <Subject 1> (S1) says <d>[Chinese] 好。那就说一会儿。</d>. Close ambience carries soft footfalls on wood, the chair shifting, fabric rustle, and a faint click as the sheathed sword meets the tabletop. Final state: A seated on the near side, B seated on the far side, the sword flat on the near-center interaction point, the book in B's hands, and B still wearing the coat.\noverall_soundscape:\nQuiet library room tone with a low ventilation hum, soft footfalls on a light-wood floor, a chair shifting, fabric rustle, and the faint click of a sheathed sword settling on a wooden tabletop.\nnon_diegetic_music:\nN/A",
+          "width": 1024,
+          "height": 576,
+          "length": 144,
+          "ref_image_size": "match",
+          "ref_images.ref_image_0": [
+            "100",
+            0
+          ],
+          "ref_images.ref_image_1": [
+            "101",
+            0
+          ],
+          "ref_images.ref_image_2": [
+            "102",
+            0
+          ],
+          "ref_images.ref_image_3": [
+            "103",
+            0
+          ],
+          "ref_images.ref_image_4": [
+            "104",
+            0
+          ],
+          "ref_images.ref_image_5": [
+            "105",
+            0
+          ],
+          "ref_images.ref_image_6": [
+            "106",
+            0
+          ],
+          "ref_images.ref_image_7": [
+            "107",
+            0
+          ],
+          "ref_audios.ref_audio_0": [
+            "200",
+            0
+          ],
+          "ref_audios.ref_audio_1": [
+            "201",
+            0
+          ]
+        }
+      },
+      "7": {
+        "class_type": "KSamplerSelect",
+        "inputs": {
+          "sampler_name": "euler"
+        }
+      },
+      "8": {
+        "class_type": "BasicScheduler",
+        "inputs": {
+          "model": [
+            "23",
+            0
+          ],
+          "scheduler": "simple",
+          "steps": 8,
+          "denoise": 1
+        }
+      },
+      "9": {
+        "class_type": "BasicGuider",
+        "inputs": {
+          "model": [
+            "23",
+            0
+          ],
+          "conditioning": [
+            "6",
+            0
+          ]
+        }
+      },
+      "10": {
+        "class_type": "RandomNoise",
+        "inputs": {
+          "noise_seed": 1087377081
+        }
+      },
+      "11": {
+        "class_type": "SamplerCustomAdvanced",
+        "inputs": {
+          "noise": [
+            "10",
+            0
+          ],
+          "guider": [
+            "9",
+            0
+          ],
+          "sampler": [
+            "7",
+            0
+          ],
+          "sigmas": [
+            "18",
+            1
+          ],
+          "latent_image": [
+            "6",
+            1
+          ]
+        }
+      },
+      "12": {
+        "class_type": "VAEDecode",
+        "inputs": {
+          "samples": [
+            "11",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        }
+      },
+      "13": {
+        "class_type": "VAEDecodeAudio",
+        "inputs": {
+          "samples": [
+            "11",
+            0
+          ],
+          "vae": [
+            "4",
+            0
+          ]
+        }
+      },
+      "14": {
+        "class_type": "CreateVideo",
+        "inputs": {
+          "images": [
+            "12",
+            0
+          ],
+          "fps": 24,
+          "audio": [
+            "13",
+            0
+          ],
+          "bit_depth": 8
+        }
+      },
+      "15": {
+        "class_type": "SaveVideo",
+        "inputs": {
+          "video": [
+            "14",
+            0
+          ],
+          "filename_prefix": "video/sean_film_editor/1d223e8a-77b5-44d0-83d1-f97d48b3a544/clip",
+          "format": "mp4",
+          "codec": "auto"
+        }
+      },
+      "18": {
+        "class_type": "MiniMaxH3PDDAccApply",
+        "inputs": {
+          "model": [
+            "1",
+            0
+          ],
+          "pdd_file": "minimax_h3_ref2va_pdd_acc_8step_comfyui.safetensors",
+          "nfe": "8",
+          "lora_strength": 1,
+          "head_strength": 1,
+          "on_off_grid": "error"
+        }
+      },
+      "23": {
+        "class_type": "MiniMaxH3MemoryEfficientSageAttentionPatch",
+        "inputs": {
+          "model": [
+            "18",
+            0
+          ]
+        }
+      },
+      "100": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "sean_1d223e8a-77b5-44d0-83d1-f97d48b3a544_df20a30c62bf979ff04d2773b1757620847d3b485b580095b429031b5ea2d04b.png"
+        }
+      },
+      "101": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "sean_1d223e8a-77b5-44d0-83d1-f97d48b3a544_5fecbc99843090ee1c74e7eecce6b9f3b3c34df5bd8ebfdd33a10a1fc2b9aa43.png"
+        }
+      },
+      "102": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "sean_1d223e8a-77b5-44d0-83d1-f97d48b3a544_59fd1cff742b9d28c0904419206edc8b0ffe933e53bdb0f272c43b69e314e94f.png"
+        }
+      },
+      "103": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "sean_1d223e8a-77b5-44d0-83d1-f97d48b3a544_25c620051f4c8240550e54817c3ba9e4d38ffcc34c9d19e6e696613b7f80e897.png"
+        }
+      },
+      "104": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "sean_1d223e8a-77b5-44d0-83d1-f97d48b3a544_bc97295cda1363c189fcd3e0cc3841dfc36ca03db415906bf96b44b56d21cd6e.png"
+        }
+      },
+      "105": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "sean_1d223e8a-77b5-44d0-83d1-f97d48b3a544_e0c1d47b35f3b83c590c44e138f4dcb9df6078fbf44b39237cd3cf4d40684c53.png"
+        }
+      },
+      "106": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "sean_1d223e8a-77b5-44d0-83d1-f97d48b3a544_80a8e0c3b070a51034c55026b864f9841f96e90d8e0cff6077b7ed2fb1df6a81.png"
+        }
+      },
+      "107": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "sean_1d223e8a-77b5-44d0-83d1-f97d48b3a544_3ce01b333ac8918b3faa804e2e345f3c0f73ba2fd4db5bdfb69b5a46940417ba.png"
+        }
+      },
+      "200": {
+        "class_type": "LoadAudio",
+        "inputs": {
+          "audio": "sean_1d223e8a-77b5-44d0-83d1-f97d48b3a544_136dc791274fa4bf7f7a5cb4667c04bbaf8affd92c7473775cf295846215ff1b.wav"
+        }
+      },
+      "201": {
+        "class_type": "LoadAudio",
+        "inputs": {
+          "audio": "sean_1d223e8a-77b5-44d0-83d1-f97d48b3a544_e273276c1556ee5f989c8befdafd86e465b640fcd504e3e02a3777d8150876f0.wav"
+        }
+      }
+    },
+    "workflowHash": "af6892ebc763fec2ac88aceab28a2c737109bd85ceac5385b8e5e9c5b9b940ae",
+    "uploads": {
+      "images": [
+        "sean_1d223e8a-77b5-44d0-83d1-f97d48b3a544_df20a30c62bf979ff04d2773b1757620847d3b485b580095b429031b5ea2d04b.png",
+        "sean_1d223e8a-77b5-44d0-83d1-f97d48b3a544_5fecbc99843090ee1c74e7eecce6b9f3b3c34df5bd8ebfdd33a10a1fc2b9aa43.png",
+        "sean_1d223e8a-77b5-44d0-83d1-f97d48b3a544_59fd1cff742b9d28c0904419206edc8b0ffe933e53bdb0f272c43b69e314e94f.png",
+        "sean_1d223e8a-77b5-44d0-83d1-f97d48b3a544_25c620051f4c8240550e54817c3ba9e4d38ffcc34c9d19e6e696613b7f80e897.png",
+        "sean_1d223e8a-77b5-44d0-83d1-f97d48b3a544_bc97295cda1363c189fcd3e0cc3841dfc36ca03db415906bf96b44b56d21cd6e.png",
+        "sean_1d223e8a-77b5-44d0-83d1-f97d48b3a544_e0c1d47b35f3b83c590c44e138f4dcb9df6078fbf44b39237cd3cf4d40684c53.png",
+        "sean_1d223e8a-77b5-44d0-83d1-f97d48b3a544_80a8e0c3b070a51034c55026b864f9841f96e90d8e0cff6077b7ed2fb1df6a81.png",
+        "sean_1d223e8a-77b5-44d0-83d1-f97d48b3a544_3ce01b333ac8918b3faa804e2e345f3c0f73ba2fd4db5bdfb69b5a46940417ba.png"
+      ],
+      "audio": null,
+      "voices": [
+        "sean_1d223e8a-77b5-44d0-83d1-f97d48b3a544_136dc791274fa4bf7f7a5cb4667c04bbaf8affd92c7473775cf295846215ff1b.wav",
+        "sean_1d223e8a-77b5-44d0-83d1-f97d48b3a544_e273276c1556ee5f989c8befdafd86e465b640fcd504e3e02a3777d8150876f0.wav"
+      ]
+    },
+    "promptId": "26d8a45e-3506-46a0-a0b4-c2badc0683ec",
+    "submittedAt": "2026-10-04T12:05:49.951Z",
+    "media": {
+      "hash": "be5d3c3091054fa3a60a497d8fbe4b59133aac9697e601287111672cb9d40366",
+      "mime": "video/mp4",
+      "size": 786180
+    },
+    "history": {
+      "prompt": [
+        34,
+        "26d8a45e-3506-46a0-a0b4-c2badc0683ec",
+        {
+          "1": {
+            "class_type": "UNETLoader",
+            "inputs": {
+              "unet_name": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+              "weight_dtype": "default"
+            }
+          },
+          "2": {
+            "class_type": "CLIPLoader",
+            "inputs": {
+              "clip_name": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+              "type": "minimax",
+              "device": "default"
+            }
+          },
+          "3": {
+            "class_type": "VAELoader",
+            "inputs": {
+              "vae_name": "minimax_h3_video_vae_fp16.safetensors"
+            }
+          },
+          "4": {
+            "class_type": "VAELoader",
+            "inputs": {
+              "vae_name": "minimax_h3_audio_vae_fp32.safetensors"
+            }
+          },
+          "6": {
+            "class_type": "MiniMaxH3ReferenceToVideo",
+            "inputs": {
+              "clip": [
+                "2",
+                0
+              ],
+              "vae": [
+                "3",
+                0
+              ],
+              "audio_vae": [
+                "4",
+                0
+              ],
+              "prompt": "subject_definitions:\n<Subject 1> is character A (S1), the young adult woman whose identity, face, ponytail, and body type are defined by <Picture 1> and <Picture 2>.\n<Subject 2> is character B (S2), the adult woman whose identity and appearance are defined by <Picture 3> and <Picture 4>.\n<Subject 3> is the modern library reading-room environment defined by <Picture 5>, with light-wood tall shelves, a long light-wood reading table, gray-green mesh chairs, a light-wood floor, and linear ceiling lights.\n<Subject 4> is the single sword prop defined by <Picture 6>: one black sheathed katana.\n<Subject 5> is the casual outfit defined by <Picture 7> and <Picture 8>: a camel-colored long outer coat with an off-white hooded inner layer, off-white trousers, and light shoes.\n<Audio 1> is the voice-timbre reference for <Subject 1> (S1), used only as a timbre reference; its sample speech is not copied.\n<Audio 2> is the voice-timbre reference for <Subject 2> (S2), used only as a timbre reference; its sample speech is not copied.\nsummary:\n[reference generation + audio reference] A enters the library reading room carrying the only sword, speaks one line at the near edge of reading table T1, is told by B to put the sword down, sets it on the near-center interaction point, sits down, and speaks a third line; B stays seated on the far side with the book in her hands. The sword stays on the table and B keeps her coat on.\nretention_analysis:\n<Subject 1> (appears in [Shot 1]): fully_preserved - A keeps the same face, ponytail, body type, navy uniform upper garment, uniform trousers, black boots, and silver shoulder and forearm armor.\n<Subject 2> (appears in [Shot 1]): fully_preserved - B keeps the same identity, face, and black hair, and still wears the camel coat over the off-white hooded inner layer, trousers, and shoes.\n<Subject 3> (appears in [Shot 1]): fully_preserved - the light-wood reading room, long table, tall shelves, mesh chairs, light-wood floor, and even interior lighting are retained.\n<Subject 4> (appears in [Shot 1]): fully_preserved - exactly one black sheathed katana, unchanged in shape, size, and material.\n<Subject 5> (appears in [Shot 1]): fully_preserved - the camel coat and the off-white inner layer, trousers, and shoes stay on B.\n<Audio 1>: reference - only the voice timbre guides A's delivery; the sample lines inside the reference audio are not copied, quoted, or reperformed, and the target dialogue is written only in the description below.\n<Audio 2>: reference - only the voice timbre guides B's delivery; the sample lines inside the reference audio are not copied, quoted, or reperformed.\ndetailed_description:\nThe target video is live-action realistic photography that continues the photoreal look of the reference images: real skin and hair detail, real fabric weave, leather, and brushed metal, natural camera optics with shallow depth of field, and even indoor library light; there is no anime linework and no cel shading.\n[Shot 1] Reading table T1 is the same light-wood table that stands adjacent to the same tall light-wood bookwall; that bookwall stays fixed in the far background, the table's long axis runs horizontally across the frame, the camera stays on the near side on character A's side, A holds the left-near area while B holds the right-far area, and near side and far side are fixed names for this table that are never renamed when the camera changes; these are this film's relative staging anchors, not entity-registered dimensions. A fixed medium shot sits slightly above table height on the near side, looking across the tabletop toward the far side; the screen direction never changes. The space is the modern library reading room of <Subject 3>, with light-wood tall shelves, the long table, gray-green mesh chairs, a light-wood floor, and linear ceiling lights. <Subject 1> (S1), character A, begins standing in the aisle beside the reading-room entrance, her body facing the near side of table T1 and her right hand carrying <Subject 4>, the only black sheathed katana in the scene. She walks along the aisle to the near edge of the table with the sword still in her hand, stops there, stays standing, and speaks her first line. <Subject 2> (S2), character B, is already seated on the far-side chair holding the only book in both hands and facing near, wearing <Subject 5>, the camel coat over her off-white hooded inner layer, trousers, and shoes; she answers with her second line, telling A to put the sword down first. Only then does A set the katana flat on the near half of the tabletop close to the centerline at the designated interaction point that both characters can reach, not at the outer near edge and not away from B. A then sits down on the near-side chair, faces the far side, and speaks her third line. The camera is completely static with no pan, tilt, zoom, or shake. A's gaze moves from the table edge up to B as she sits, while B's gaze stays on A. A's uniform upper garment, uniform trousers, black boots, and silver shoulder and forearm armor remain worn. In order, <Subject 1> (S1) says <d>[Chinese] 你还真会挑地方。</d>, then <Subject 2> (S2) says <d>[Chinese] 图书馆里，刀先放下。</d>, and then <Subject 1> (S1) says <d>[Chinese] 好。那就说一会儿。</d>. Close ambience carries soft footfalls on wood, the chair shifting, fabric rustle, and a faint click as the sheathed sword meets the tabletop. Final state: A seated on the near side, B seated on the far side, the sword flat on the near-center interaction point, the book in B's hands, and B still wearing the coat.\noverall_soundscape:\nQuiet library room tone with a low ventilation hum, soft footfalls on a light-wood floor, a chair shifting, fabric rustle, and the faint click of a sheathed sword settling on a wooden tabletop.\nnon_diegetic_music:\nN/A",
+              "width": 1024,
+              "height": 576,
+              "length": 144,
+              "ref_image_size": "match",
+              "ref_images.ref_image_0": [
+                "100",
+                0
+              ],
+              "ref_images.ref_image_1": [
+                "101",
+                0
+              ],
+              "ref_images.ref_image_2": [
+                "102",
+                0
+              ],
+              "ref_images.ref_image_3": [
+                "103",
+                0
+              ],
+              "ref_images.ref_image_4": [
+                "104",
+                0
+              ],
+              "ref_images.ref_image_5": [
+                "105",
+                0
+              ],
+              "ref_images.ref_image_6": [
+                "106",
+                0
+              ],
+              "ref_images.ref_image_7": [
+                "107",
+                0
+              ],
+              "ref_audios.ref_audio_0": [
+                "200",
+                0
+              ],
+              "ref_audios.ref_audio_1": [
+                "201",
+                0
+              ]
+            }
+          },
+          "7": {
+            "class_type": "KSamplerSelect",
+            "inputs": {
+              "sampler_name": "euler"
+            }
+          },
+          "8": {
+            "class_type": "BasicScheduler",
+            "inputs": {
+              "model": [
+                "23",
+                0
+              ],
+              "scheduler": "simple",
+              "steps": 8,
+              "denoise": 1
+            }
+          },
+          "9": {
+            "class_type": "BasicGuider",
+            "inputs": {
+              "model": [
+                "23",
+                0
+              ],
+              "conditioning": [
+                "6",
+                0
+              ]
+            }
+          },
+          "10": {
+            "class_type": "RandomNoise",
+            "inputs": {
+              "noise_seed": 1087377081
+            }
+          },
+          "11": {
+            "class_type": "SamplerCustomAdvanced",
+            "inputs": {
+              "noise": [
+                "10",
+                0
+              ],
+              "guider": [
+                "9",
+                0
+              ],
+              "sampler": [
+                "7",
+                0
+              ],
+              "sigmas": [
+                "18",
+                1
+              ],
+              "latent_image": [
+                "6",
+                1
+              ]
+            }
+          },
+          "12": {
+            "class_type": "VAEDecode",
+            "inputs": {
+              "samples": [
+                "11",
+                0
+              ],
+              "vae": [
+                "3",
+                0
+              ]
+            }
+          },
+          "13": {
+            "class_type": "VAEDecodeAudio",
+            "inputs": {
+              "samples": [
+                "11",
+                0
+              ],
+              "vae": [
+                "4",
+                0
+              ]
+            }
+          },
+          "14": {
+            "class_type": "CreateVideo",
+            "inputs": {
+              "images": [
+                "12",
+                0
+              ],
+              "fps": 24,
+              "audio": [
+                "13",
+                0
+              ],
+              "bit_depth": 8
+            }
+          },
+          "15": {
+            "class_type": "SaveVideo",
+            "inputs": {
+              "video": [
+                "14",
+                0
+              ],
+              "filename_prefix": "video/sean_film_editor/1d223e8a-77b5-44d0-83d1-f97d48b3a544/clip",
+              "format": "mp4",
+              "codec": "auto"
+            }
+          },
+          "18": {
+            "class_type": "MiniMaxH3PDDAccApply",
+            "inputs": {
+              "model": [
+                "1",
+                0
+              ],
+              "pdd_file": "minimax_h3_ref2va_pdd_acc_8step_comfyui.safetensors",
+              "nfe": "8",
+              "lora_strength": 1,
+              "head_strength": 1,
+              "on_off_grid": "error"
+            }
+          },
+          "23": {
+            "class_type": "MiniMaxH3MemoryEfficientSageAttentionPatch",
+            "inputs": {
+              "model": [
+                "18",
+                0
+              ]
+            }
+          },
+          "100": {
+            "class_type": "LoadImage",
+            "inputs": {
+              "image": "sean_1d223e8a-77b5-44d0-83d1-f97d48b3a544_df20a30c62bf979ff04d2773b1757620847d3b485b580095b429031b5ea2d04b.png"
+            }
+          },
+          "101": {
+            "class_type": "LoadImage",
+            "inputs": {
+              "image": "sean_1d223e8a-77b5-44d0-83d1-f97d48b3a544_5fecbc99843090ee1c74e7eecce6b9f3b3c34df5bd8ebfdd33a10a1fc2b9aa43.png"
+            }
+          },
+          "102": {
+            "class_type": "LoadImage",
+            "inputs": {
+              "image": "sean_1d223e8a-77b5-44d0-83d1-f97d48b3a544_59fd1cff742b9d28c0904419206edc8b0ffe933e53bdb0f272c43b69e314e94f.png"
+            }
+          },
+          "103": {
+            "class_type": "LoadImage",
+            "inputs": {
+              "image": "sean_1d223e8a-77b5-44d0-83d1-f97d48b3a544_25c620051f4c8240550e54817c3ba9e4d38ffcc34c9d19e6e696613b7f80e897.png"
+            }
+          },
+          "104": {
+            "class_type": "LoadImage",
+            "inputs": {
+              "image": "sean_1d223e8a-77b5-44d0-83d1-f97d48b3a544_bc97295cda1363c189fcd3e0cc3841dfc36ca03db415906bf96b44b56d21cd6e.png"
+            }
+          },
+          "105": {
+            "class_type": "LoadImage",
+            "inputs": {
+              "image": "sean_1d223e8a-77b5-44d0-83d1-f97d48b3a544_e0c1d47b35f3b83c590c44e138f4dcb9df6078fbf44b39237cd3cf4d40684c53.png"
+            }
+          },
+          "106": {
+            "class_type": "LoadImage",
+            "inputs": {
+              "image": "sean_1d223e8a-77b5-44d0-83d1-f97d48b3a544_80a8e0c3b070a51034c55026b864f9841f96e90d8e0cff6077b7ed2fb1df6a81.png"
+            }
+          },
+          "107": {
+            "class_type": "LoadImage",
+            "inputs": {
+              "image": "sean_1d223e8a-77b5-44d0-83d1-f97d48b3a544_3ce01b333ac8918b3faa804e2e345f3c0f73ba2fd4db5bdfb69b5a46940417ba.png"
+            }
+          },
+          "200": {
+            "class_type": "LoadAudio",
+            "inputs": {
+              "audio": "sean_1d223e8a-77b5-44d0-83d1-f97d48b3a544_136dc791274fa4bf7f7a5cb4667c04bbaf8affd92c7473775cf295846215ff1b.wav"
+            }
+          },
+          "201": {
+            "class_type": "LoadAudio",
+            "inputs": {
+              "audio": "sean_1d223e8a-77b5-44d0-83d1-f97d48b3a544_e273276c1556ee5f989c8befdafd86e465b640fcd504e3e02a3777d8150876f0.wav"
+            }
+          }
+        },
+        {
+          "owner": "Sean",
+          "candidateId": "1d223e8a-77b5-44d0-83d1-f97d48b3a544",
+          "projectId": "538005c3-16bd-4709-aa4e-70831b960a24",
+          "client_id": "sean-film-1d223e8a-77b5-44d0-83d1-f97d48b3a544",
+          "create_time": 1791115549950
+        },
+        [
+          "15"
+        ]
+      ],
+      "outputs": {
+        "15": {
+          "images": [
+            {
+              "filename": "clip_00001_.mp4",
+              "subfolder": "video/sean_film_editor/1d223e8a-77b5-44d0-83d1-f97d48b3a544",
+              "type": "output",
+              "id": "c8c84358-f6c4-4316-adff-2e0057cd0204"
+            }
+          ],
+          "animated": [
+            true
+          ]
+        }
+      },
+      "status": {
+        "status_str": "success",
+        "completed": true,
+        "messages": [
+          [
+            "execution_start",
+            {
+              "prompt_id": "26d8a45e-3506-46a0-a0b4-c2badc0683ec",
+              "timestamp": 1791115549951
+            }
+          ],
+          [
+            "execution_cached",
+            {
+              "nodes": [],
+              "prompt_id": "26d8a45e-3506-46a0-a0b4-c2badc0683ec",
+              "timestamp": 1791115549978
+            }
+          ],
+          [
+            "execution_success",
+            {
+              "prompt_id": "26d8a45e-3506-46a0-a0b4-c2badc0683ec",
+              "timestamp": 1791115681042
+            }
+          ]
+        ]
+      },
+      "meta": {
+        "15": {
+          "node_id": "15",
+          "display_node": "15",
+          "parent_node": null,
+          "real_node_id": "15"
+        }
+      }
+    },
+    "completedAt": "2026-10-04T12:08:06.016Z",
+    "elapsedSec": 136.937,
+    "peakVramMb": 23323.21392059326
+  },
+  "probe": {
+    "streams": [
+      {
+        "index": 0,
+        "codec_name": "h264",
+        "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+        "profile": "High",
+        "codec_type": "video",
+        "codec_tag_string": "avc1",
+        "codec_tag": "0x31637661",
+        "width": 1024,
+        "height": 576,
+        "coded_width": 1024,
+        "coded_height": 576,
+        "has_b_frames": 2,
+        "pix_fmt": "yuv420p",
+        "level": 31,
+        "color_range": "tv",
+        "color_space": "bt709",
+        "color_transfer": "iec61966-2-1",
+        "color_primaries": "bt709",
+        "chroma_location": "left",
+        "field_order": "progressive",
+        "refs": 1,
+        "is_avc": "true",
+        "nal_length_size": "4",
+        "id": "0x1",
+        "r_frame_rate": "24/1",
+        "avg_frame_rate": "24/1",
+        "time_base": "1/12288",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 80896,
+        "duration": "6.583333",
+        "bit_rate": "803677",
+        "bits_per_raw_sample": "8",
+        "nb_frames": "158",
+        "extradata_size": 48,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "non_diegetic": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0,
+          "multilayer": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "VideoHandler",
+          "vendor_id": "[0][0][0][0]"
+        }
+      },
+      {
+        "index": 1,
+        "codec_name": "aac",
+        "codec_long_name": "AAC (Advanced Audio Coding)",
+        "profile": "LC",
+        "codec_type": "audio",
+        "codec_tag_string": "mp4a",
+        "codec_tag": "0x6134706d",
+        "sample_fmt": "fltp",
+        "sample_rate": "32000",
+        "channels": 2,
+        "channel_layout": "stereo",
+        "bits_per_sample": 0,
+        "initial_padding": 0,
+        "id": "0x2",
+        "r_frame_rate": "0/0",
+        "avg_frame_rate": "0/0",
+        "time_base": "1/32000",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 210400,
+        "duration": "6.575000",
+        "bit_rate": "129897",
+        "nb_frames": "207",
+        "extradata_size": 5,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "non_diegetic": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0,
+          "multilayer": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "SoundHandler",
+          "vendor_id": "[0][0][0][0]"
+        }
+      }
+    ],
+    "format": {
+      "filename": "experiments/sean_film_agent_20261004/sean_six_s01_1d22.mp4",
+      "nb_streams": 2,
+      "nb_programs": 0,
+      "nb_stream_groups": 0,
+      "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+      "format_long_name": "QuickTime / MOV",
+      "start_time": "0.000000",
+      "duration": "6.583333",
+      "size": "786180",
+      "bit_rate": "955358",
+      "probe_score": 100,
+      "tags": {
+        "major_brand": "isom",
+        "minor_version": "512",
+        "compatible_brands": "isomiso2avc1mp41",
+        "prompt": "{\"1\": {\"class_type\": \"UNETLoader\", \"inputs\": {\"unet_name\": \"minimax_h3_ref2va_pruned_int8_convrot.safetensors\", \"weight_dtype\": \"default\"}}, \"2\": {\"class_type\": \"CLIPLoader\", \"inputs\": {\"clip_name\": \"qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors\", \"type\": \"minimax\", \"device\": \"default\"}}, \"3\": {\"class_type\": \"VAELoader\", \"inputs\": {\"vae_name\": \"minimax_h3_video_vae_fp16.safetensors\"}}, \"4\": {\"class_type\": \"VAELoader\", \"inputs\": {\"vae_name\": \"minimax_h3_audio_vae_fp32.safetensors\"}}, \"6\": {\"class_type\": \"MiniMaxH3ReferenceToVideo\", \"inputs\": {\"clip\": [\"2\", 0], \"vae\": [\"3\", 0], \"audio_vae\": [\"4\", 0], \"prompt\": \"subject_definitions:\\n<Subject 1> is character A (S1), the young adult woman whose identity, face, ponytail, and body type are defined by <Picture 1> and <Picture 2>.\\n<Subject 2> is character B (S2), the adult woman whose identity and appearance are defined by <Picture 3> and <Picture 4>.\\n<Subject 3> is the modern library reading-room environment defined by <Picture 5>, with light-wood tall shelves, a long light-wood reading table, gray-green mesh chairs, a light-wood floor, and linear ceiling lights.\\n<Subject 4> is the single sword prop defined by <Picture 6>: one black sheathed katana.\\n<Subject 5> is the casual outfit defined by <Picture 7> and <Picture 8>: a camel-colored long outer coat with an off-white hooded inner layer, off-white trousers, and light shoes.\\n<Audio 1> is the voice-timbre reference for <Subject 1> (S1), used only as a timbre reference; its sample speech is not copied.\\n<Audio 2> is the voice-timbre reference for <Subject 2> (S2), used only as a timbre reference; its sample speech is not copied.\\nsummary:\\n[reference generation + audio reference] A enters the library reading room carrying the only sword, speaks one line at the near edge of reading table T1, is told by B to put the sword down, sets it on the near-center interaction point, sits down, and speaks a third line; B stays seated on the far side with the book in her hands. The sword stays on the table and B keeps her coat on.\\nretention_analysis:\\n<Subject 1> (appears in [Shot 1]): fully_preserved - A keeps the same face, ponytail, body type, navy uniform upper garment, uniform trousers, black boots, and silver shoulder and forearm armor.\\n<Subject 2> (appears in [Shot 1]): fully_preserved - B keeps the same identity, face, and black hair, and still wears the camel coat over the off-white hooded inner layer, trousers, and shoes.\\n<Subject 3> (appears in [Shot 1]): fully_preserved - the light-wood reading room, long table, tall shelves, mesh chairs, light-wood floor, and even interior lighting are retained.\\n<Subject 4> (appears in [Shot 1]): fully_preserved - exactly one black sheathed katana, unchanged in shape, size, and material.\\n<Subject 5> (appears in [Shot 1]): fully_preserved - the camel coat and the off-white inner layer, trousers, and shoes stay on B.\\n<Audio 1>: reference - only the voice timbre guides A's delivery; the sample lines inside the reference audio are not copied, quoted, or reperformed, and the target dialogue is written only in the description below.\\n<Audio 2>: reference - only the voice timbre guides B's delivery; the sample lines inside the reference audio are not copied, quoted, or reperformed.\\ndetailed_description:\\nThe target video is live-action realistic photography that continues the photoreal look of the reference images: real skin and hair detail, real fabric weave, leather, and brushed metal, natural camera optics with shallow depth of field, and even indoor library light; there is no anime linework and no cel shading.\\n[Shot 1] Reading table T1 is the same light-wood table that stands adjacent to the same tall light-wood bookwall; that bookwall stays fixed in the far background, the table's long axis runs horizontally across the frame, the camera stays on the near side on character A's side, A holds the left-near area while B holds the right-far area, and near side and far side are fixed names for this table that are never renamed when the camera changes; these are this film's relative staging anchors, not entity-registered dimensions. A fixed medium shot sits slightly above table height on the near side, looking across the tabletop toward the far side; the screen direction never changes. The space is the modern library reading room of <Subject 3>, with light-wood tall shelves, the long table, gray-green mesh chairs, a light-wood floor, and linear ceiling lights. <Subject 1> (S1), character A, begins standing in the aisle beside the reading-room entrance, her body facing the near side of table T1 and her right hand carrying <Subject 4>, the only black sheathed katana in the scene. She walks along the aisle to the near edge of the table with the sword still in her hand, stops there, stays standing, and speaks her first line. <Subject 2> (S2), character B, is already seated on the far-side chair holding the only book in both hands and facing near, wearing <Subject 5>, the camel coat over her off-white hooded inner layer, trousers, and shoes; she answers with her second line, telling A to put the sword down first. Only then does A set the katana flat on the near half of the tabletop close to the centerline at the designated interaction point that both characters can reach, not at the outer near edge and not away from B. A then sits down on the near-side chair, faces the far side, and speaks her third line. The camera is completely static with no pan, tilt, zoom, or shake. A's gaze moves from the table edge up to B as she sits, while B's gaze stays on A. A's uniform upper garment, uniform trousers, black boots, and silver shoulder and forearm armor remain worn. In order, <Subject 1> (S1) says <d>[Chinese] \\u4f60\\u8fd8\\u771f\\u4f1a\\u6311\\u5730\\u65b9\\u3002</d>, then <Subject 2> (S2) says <d>[Chinese] \\u56fe\\u4e66\\u9986\\u91cc\\uff0c\\u5200\\u5148\\u653e\\u4e0b\\u3002</d>, and then <Subject 1> (S1) says <d>[Chinese] \\u597d\\u3002\\u90a3\\u5c31\\u8bf4\\u4e00\\u4f1a\\u513f\\u3002</d>. Close ambience carries soft footfalls on wood, the chair shifting, fabric rustle, and a faint click as the sheathed sword meets the tabletop. Final state: A seated on the near side, B seated on the far side, the sword flat on the near-center interaction point, the book in B's hands, and B still wearing the coat.\\noverall_soundscape:\\nQuiet library room tone with a low ventilation hum, soft footfalls on a light-wood floor, a chair shifting, fabric rustle, and the faint click of a sheathed sword settling on a wooden tabletop.\\nnon_diegetic_music:\\nN/A\", \"width\": 1024, \"height\": 576, \"length\": 144, \"ref_image_size\": \"match\", \"ref_images.ref_image_0\": [\"100\", 0], \"ref_images.ref_image_1\": [\"101\", 0], \"ref_images.ref_image_2\": [\"102\", 0], \"ref_images.ref_image_3\": [\"103\", 0], \"ref_images.ref_image_4\": [\"104\", 0], \"ref_images.ref_image_5\": [\"105\", 0], \"ref_images.ref_image_6\": [\"106\", 0], \"ref_images.ref_image_7\": [\"107\", 0], \"ref_audios.ref_audio_0\": [\"200\", 0], \"ref_audios.ref_audio_1\": [\"201\", 0]}}, \"7\": {\"class_type\": \"KSamplerSelect\", \"inputs\": {\"sampler_name\": \"euler\"}}, \"8\": {\"class_type\": \"BasicScheduler\", \"inputs\": {\"model\": [\"23\", 0], \"scheduler\": \"simple\", \"steps\": 8, \"denoise\": 1}}, \"9\": {\"class_type\": \"BasicGuider\", \"inputs\": {\"model\": [\"23\", 0], \"conditioning\": [\"6\", 0]}}, \"10\": {\"class_type\": \"RandomNoise\", \"inputs\": {\"noise_seed\": 1087377081}}, \"11\": {\"class_type\": \"SamplerCustomAdvanced\", \"inputs\": {\"noise\": [\"10\", 0], \"guider\": [\"9\", 0], \"sampler\": [\"7\", 0], \"sigmas\": [\"18\", 1], \"latent_image\": [\"6\", 1]}}, \"12\": {\"class_type\": \"VAEDecode\", \"inputs\": {\"samples\": [\"11\", 0], \"vae\": [\"3\", 0]}}, \"13\": {\"class_type\": \"VAEDecodeAudio\", \"inputs\": {\"samples\": [\"11\", 0], \"vae\": [\"4\", 0]}}, \"14\": {\"class_type\": \"CreateVideo\", \"inputs\": {\"images\": [\"12\", 0], \"fps\": 24.0, \"audio\": [\"13\", 0], \"bit_depth\": 8}}, \"15\": {\"class_type\": \"SaveVideo\", \"inputs\": {\"video\": [\"14\", 0], \"filename_prefix\": \"video/sean_film_editor/1d223e8a-77b5-44d0-83d1-f97d48b3a544/clip\", \"format\": \"mp4\", \"codec\": \"auto\"}}, \"18\": {\"class_type\": \"MiniMaxH3PDDAccApply\", \"inputs\": {\"model\": [\"1\", 0], \"pdd_file\": \"minimax_h3_ref2va_pdd_acc_8step_comfyui.safetensors\", \"nfe\": \"8\", \"lora_strength\": 1.0, \"head_strength\": 1.0, \"on_off_grid\": \"error\"}}, \"23\": {\"class_type\": \"MiniMaxH3MemoryEfficientSageAttentionPatch\", \"inputs\": {\"model\": [\"18\", 0]}}, \"100\": {\"class_type\": \"LoadImage\", \"inputs\": {\"image\": \"sean_1d223e8a-77b5-44d0-83d1-f97d48b3a544_df20a30c62bf979ff04d2773b1757620847d3b485b580095b429031b5ea2d04b.png\"}, \"is_changed\": [\"df20a30c62bf979ff04d2773b1757620847d3b485b580095b429031b5ea2d04b\"]}, \"101\": {\"class_type\": \"LoadImage\", \"inputs\": {\"image\": \"sean_1d223e8a-77b5-44d0-83d1-f97d48b3a544_5fecbc99843090ee1c74e7eecce6b9f3b3c34df5bd8ebfdd33a10a1fc2b9aa43.png\"}, \"is_changed\": [\"5fecbc99843090ee1c74e7eecce6b9f3b3c34df5bd8ebfdd33a10a1fc2b9aa43\"]}, \"102\": {\"class_type\": \"LoadImage\", \"inputs\": {\"image\": \"sean_1d223e8a-77b5-44d0-83d1-f97d48b3a544_59fd1cff742b9d28c0904419206edc8b0ffe933e53bdb0f272c43b69e314e94f.png\"}, \"is_changed\": [\"59fd1cff742b9d28c0904419206edc8b0ffe933e53bdb0f272c43b69e314e94f\"]}, \"103\": {\"class_type\": \"LoadImage\", \"inputs\": {\"image\": \"sean_1d223e8a-77b5-44d0-83d1-f97d48b3a544_25c620051f4c8240550e54817c3ba9e4d38ffcc34c9d19e6e696613b7f80e897.png\"}, \"is_changed\": [\"25c620051f4c8240550e54817c3ba9e4d38ffcc34c9d19e6e696613b7f80e897\"]}, \"104\": {\"class_type\": \"LoadImage\", \"inputs\": {\"image\": \"sean_1d223e8a-77b5-44d0-83d1-f97d48b3a544_bc97295cda1363c189fcd3e0cc3841dfc36ca03db415906bf96b44b56d21cd6e.png\"}, \"is_changed\": [\"bc97295cda1363c189fcd3e0cc3841dfc36ca03db415906bf96b44b56d21cd6e\"]}, \"105\": {\"class_type\": \"LoadImage\", \"inputs\": {\"image\": \"sean_1d223e8a-77b5-44d0-83d1-f97d48b3a544_e0c1d47b35f3b83c590c44e138f4dcb9df6078fbf44b39237cd3cf4d40684c53.png\"}, \"is_changed\": [\"e0c1d47b35f3b83c590c44e138f4dcb9df6078fbf44b39237cd3cf4d40684c53\"]}, \"106\": {\"class_type\": \"LoadImage\", \"inputs\": {\"image\": \"sean_1d223e8a-77b5-44d0-83d1-f97d48b3a544_80a8e0c3b070a51034c55026b864f9841f96e90d8e0cff6077b7ed2fb1df6a81.png\"}, \"is_changed\": [\"80a8e0c3b070a51034c55026b864f9841f96e90d8e0cff6077b7ed2fb1df6a81\"]}, \"107\": {\"class_type\": \"LoadImage\", \"inputs\": {\"image\": \"sean_1d223e8a-77b5-44d0-83d1-f97d48b3a544_3ce01b333ac8918b3faa804e2e345f3c0f73ba2fd4db5bdfb69b5a46940417ba.png\"}, \"is_changed\": [\"3ce01b333ac8918b3faa804e2e345f3c0f73ba2fd4db5bdfb69b5a46940417ba\"]}, \"200\": {\"class_type\": \"LoadAudio\", \"inputs\": {\"audio\": \"sean_1d223e8a-77b5-44d0-83d1-f97d48b3a544_136dc791274fa4bf7f7a5cb4667c04bbaf8affd92c7473775cf295846215ff1b.wav\"}, \"is_changed\": [\"136dc791274fa4bf7f7a5cb4667c04bbaf8affd92c7473775cf295846215ff1b\"]}, \"201\": {\"class_type\": \"LoadAudio\", \"inputs\": {\"audio\": \"sean_1d223e8a-77b5-44d0-83d1-f97d48b3a544_e273276c1556ee5f989c8befdafd86e465b640fcd504e3e02a3777d8150876f0.wav\"}, \"is_changed\": [\"e273276c1556ee5f989c8befdafd86e465b640fcd504e3e02a3777d8150876f0\"]}}",
+        "encoder": "Lavf62.12.102"
+      }
+    }
+  },
+  "agentRun": {
+    "owner": "Sean",
+    "id": "ec7c2fda-5047-4324-9c9c-2f399c51935f",
+    "sessionId": "c57c6b97-42cf-4457-85d7-3bd548bd727d",
+    "requestId": "1c7f8de8-01ff-4e0f-a0a5-4058d296af71",
+    "requestHash": "ad22e192aa185c54e1315c6e84165cd4be40d2fff731a4419f584f76d2911ed3",
+    "localInference": false,
+    "mode": "generate",
+    "userText": "当前文字审核已完成，现授权仅为本隔离项目首镜18cd89f4-1697-451b-9719-124d43e8b511生成一个真实视频候选，测试6秒内的进场、对白放刀落座因果顺序。禁止修改任何文本/动作/引用/时长/实体；不生成其他镜、不选片不合成、不调用ASR或外部账户。先读最新上下文并加载两技能，validate该镜通过后generate_video一次；轮询同一candidate到终态，不重复提交。成功后inspect_candidate_frames分批看0/1.5/3秒，再看4.5/5.8秒(以实际时长为边界，必要时最后取duration-.1)，逐帧记录A坐站与方位、B始终远侧坐姿、唯一刀是否真实从A手转移到桌面、外套仍在B身上、是否写实场景/同一桌书墙。不把抽帧当对白或音色证据，不承诺完整运动质量，报告candidateId与实际观察和风险。失败保存错误，不自动重生成。",
+    "text": "先读最新上下文并加载两套技能。\n\n上下文已确认：**revision 23**，首镜 `18cd89f4…` prompt 状态 **ready**，技能已加载（narrative-control v6、ref2va v1）。\n\n先对本镜做校验：\n\n校验通过（`valid=true, issues=[]`）。按授权提交本镜唯一一次真实生成：\n\n已提交：candidateId **`1d223e8a-77b5-44d0-83d1-f97d48b3a544`**，status=queued，项目 revision=24。轮询同一候选到终态（不重提交）。\n\n\n\n采样进行中（step 1/8），继续等待同一候选。\n\n\n\n\n\n\n\n候选成功：`status=succeeded`，视频已保存（hash `be5d3c30…`，786KB）。按你要求分批抽帧，**第一批 0 / 1.5 / 3 秒**：\n\n第一批已看（A 左近侧站立、B 右远侧坐姿持书、写实图书馆、同一张浅木桌与通顶书墙；3 秒时刀在 A 手中处于桌面高度、尚未落桌）。继续**第二批 4.5 / 5.8 / 6.4 秒**（实际时长 6.583 秒，末帧取接近 duration 的 6.4 秒）：\n\n抽帧观察完成。以下为实际记录（**candidateId `1d223e8a-77b5-44d0-83d1-f97d48b3a544`**，mediaHash `be5d3c30…`，实际时长 **6.583 秒**）。\n\n## 逐帧记录（按 requestedTimeSec / frameHash）\n\n| t | frameHash | A 的坐/站与方位 | B 的状态 | 刀 | 外套 | 场景 |\n|---|---|---|---|---|---|---|\n| 0 s | `c190e5da…` | **站立**，画面左侧近侧走道上，正朝桌走近；视线朝远侧 | **坐姿**、右远侧，双手持打开的书，面朝近侧 | 在 A **右手**，鞘刀朝下，未落桌 | **仍穿在 B 身上**（驼色长外套＋米白连帽内搭） | 写实图书馆：浅木通顶书架＋浅木长桌＋灰绿网椅，无动漫线描 |\n| 1.5 s | `07832397…` | **站立**在桌近侧边缘，面朝 B，嘴微张 | **坐姿**远侧，持书，注视 A | 仍在 A 右手、垂于身侧 | 仍在 B 身上 | 同上，同一张桌与书墙 |\n| 3 s | `11563d48…` | **站立**略前倾 | **坐姿**远侧，持书 | 在 A 手中、**已降到桌面高度**（放置过程中） | 仍在 B 身上 | 同上 |\n| 4.5 s | `58f17ad0…` | **站立**在近侧，右手贴近刀柄 | **坐姿**远侧，持书 | **已平放在桌面近侧半区**，A 手仍在柄侧 | 仍在 B 身上 | 同上 |\n| 5.8 s | `c53b0823…` | **已坐下**（近侧灰绿网椅），面向远侧 | **坐姿**远侧，持书 | 平放在桌面近侧半区 | 仍在 B 身上 | 同上 |\n| 6.4 s | `499b1402…` | **保持坐姿**近侧 | **坐姿**远侧，持书 | 平放在桌面近侧半区，A 手已离开 | 仍在 B 身上 | 同上 |\n\n## 与预期的对照\n\n- **因果顺序可见**：A 站立（0/1.5/3/4.5 s）→ 放刀到桌面（3→4.5 s）→ 落座（5.8 s 起）→ 坐姿继续（6.4 s），与“先说话、再放刀、后落座”的调度方向一致。\n- **刀确有手→桌面的转移**：抽样帧显示 0–1.5 s 在 A 右手 → 3 s 降至桌面高度 → 4.5 s 已平放桌面（手仍贴近）→ 5.8/6.4 s 平放且手离开；**每帧只见到一把刀**，未见重复/第二把。\n- **B 全程坐在远侧**、书始终在手中、**外套始终未脱下**。\n- **场景**：同一张浅木长桌与同一面通顶浅木书墙，A 在画面左近侧、B 在右远侧，六帧屏幕方向一致；**写实摄影外观，未见动漫线描/赛璐璐**。\n- 未见第三人、未见额外武器。\n\n## 风险与不可断言项\n\n1. **抽帧≠对白/音色证据**：未听音频、未运行 ASR，无法确认“三句对白按序、由 A→B→A 说出”；1.5 s 与 5.8/6.4 s 只见 A 嘴部张开，**不足以证明台词内容或说话人顺序**。\n2. **离散抽样不证明连续运动**：仅 6 个时间点；刀从 1.5 s 到 4.5 s 之间的连续轨迹、以及“是否始终只有一把刀”，只在这 6 帧内成立，未被完整观察。\n3. **时长偏差**：交付 **6.583 s**，比本镜 6 s 测试计划**长约 0.58 s**（生成器输出时长，未做裁剪）。\n4. **身份细节只在抽样帧内核对**：A 呈现藏青制服＋肩/前臂银甲＋马尾 ✓，B 呈现深发＋驼色长外套 ✓；未做逐帧身份一致性判定。\n5. 文本校验通过 ≠ 视觉通过：本结论仅为上述 6 帧的观察。\n\n## 本轮动作边界\n\n- 仅对首镜 `18cd89f4-1697-451b-9719-124d43e8b511` 校验（`valid=true, issues=[]`）并 **`generate_video` 提交一次**（revision 23 → 24），轮询同一候选至 `succeeded`（视频已保存）。\n- **未**修改任何文本/动作/引用/时长/实体，**未**生成其他镜，**未**选片、**未**合成，**未**调用 ASR 或外部账户；失败情形未发生（无错误需保存），也未自动重生成。\n\n如需下一步（例如选片、或按你的判断补抽 3.5/5.0 s 复核刀的转移接触点），请明确授权。",
+    "status": "succeeded",
+    "createdAt": "2026-10-04T12:05:35.869Z",
+    "profileVersion": 7,
+    "tools": [
+      {
+        "name": "get_film_context",
+        "status": "succeeded",
+        "startedAt": "2026-10-04T12:05:39.867Z",
+        "finishedAt": "2026-10-04T12:05:39.896Z"
+      },
+      {
+        "name": "load_film_skill",
+        "status": "succeeded",
+        "startedAt": "2026-10-04T12:05:39.887Z",
+        "finishedAt": "2026-10-04T12:05:39.899Z"
+      },
+      {
+        "name": "load_film_skill",
+        "status": "succeeded",
+        "startedAt": "2026-10-04T12:05:39.892Z",
+        "finishedAt": "2026-10-04T12:05:39.900Z"
+      },
+      {
+        "name": "validate_film_inputs",
+        "status": "succeeded",
+        "startedAt": "2026-10-04T12:05:45.115Z",
+        "finishedAt": "2026-10-04T12:05:45.126Z"
+      },
+      {
+        "name": "generate_video",
+        "status": "succeeded",
+        "startedAt": "2026-10-04T12:05:49.066Z",
+        "finishedAt": "2026-10-04T12:05:49.097Z"
+      },
+      {
+        "name": "get_video_status",
+        "status": "succeeded",
+        "startedAt": "2026-10-04T12:05:53.817Z",
+        "finishedAt": "2026-10-04T12:06:14.013Z"
+      },
+      {
+        "name": "get_video_status",
+        "status": "succeeded",
+        "startedAt": "2026-10-04T12:06:18.035Z",
+        "finishedAt": "2026-10-04T12:06:38.094Z"
+      },
+      {
+        "name": "get_video_status",
+        "status": "succeeded",
+        "startedAt": "2026-10-04T12:06:42.637Z",
+        "finishedAt": "2026-10-04T12:07:02.673Z"
+      },
+      {
+        "name": "get_video_status",
+        "status": "succeeded",
+        "startedAt": "2026-10-04T12:07:07.632Z",
+        "finishedAt": "2026-10-04T12:07:27.668Z"
+      },
+      {
+        "name": "get_video_status",
+        "status": "succeeded",
+        "startedAt": "2026-10-04T12:07:32.176Z",
+        "finishedAt": "2026-10-04T12:07:53.082Z"
+      },
+      {
+        "name": "get_video_status",
+        "status": "succeeded",
+        "startedAt": "2026-10-04T12:07:58.229Z",
+        "finishedAt": "2026-10-04T12:08:06.319Z"
+      },
+      {
+        "name": "inspect_candidate_frames",
+        "status": "succeeded",
+        "startedAt": "2026-10-04T12:08:12.096Z",
+        "finishedAt": "2026-10-04T12:08:13.298Z"
+      },
+      {
+        "name": "inspect_candidate_frames",
+        "status": "succeeded",
+        "startedAt": "2026-10-04T12:08:22.477Z",
+        "finishedAt": "2026-10-04T12:08:23.535Z"
+      }
+    ],
+    "skills": [
+      {
+        "skillId": "narrative-control",
+        "version": 6,
+        "contentHash": "53169ba83a5e3f1495a44634e5706320587bc0962137e7ef3267b4a87e3dbffd"
+      },
+      {
+        "skillId": "ref2va",
+        "version": 1,
+        "contentHash": "85d55967e876820666f809e2a8029674b28162408b8589a7c04905bdd5b1a36c"
+      }
+    ],
+    "observations": [
+      {
+        "candidateId": "1d223e8a-77b5-44d0-83d1-f97d48b3a544",
+        "mediaHash": "be5d3c3091054fa3a60a497d8fbe4b59133aac9697e601287111672cb9d40366",
+        "times": [
+          0,
+          1.5,
+          3
+        ],
+        "duration": 6.583333,
+        "videoDuration": 6.583333,
+        "frames": [
+          {
+            "requestedTimeSec": 0,
+            "frameHash": "c190e5da945c778da4426a5b9fc880bef529321d2b48076f726ed700dc85570f"
+          },
+          {
+            "requestedTimeSec": 1.5,
+            "frameHash": "078323978f28af6782eb5398ae7f72533cd0352c840d178439c137b733af3acc"
+          },
+          {
+            "requestedTimeSec": 3,
+            "frameHash": "11563d48da0cfb3c631147bce4a322ec6efff12546926c67ca8597b2e292ded2"
+          }
+        ],
+        "evidence": "3 sampled frames only; no audio or complete continuous motion observation",
+        "at": "2026-10-04T12:08:13.295Z"
+      },
+      {
+        "candidateId": "1d223e8a-77b5-44d0-83d1-f97d48b3a544",
+        "mediaHash": "be5d3c3091054fa3a60a497d8fbe4b59133aac9697e601287111672cb9d40366",
+        "times": [
+          4.5,
+          5.8,
+          6.4
+        ],
+        "duration": 6.583333,
+        "videoDuration": 6.583333,
+        "frames": [
+          {
+            "requestedTimeSec": 4.5,
+            "frameHash": "58f17ad0d2744cd3d9a655ed7aab44a909438f4cb0aeebf5c55e854be0df7620"
+          },
+          {
+            "requestedTimeSec": 5.8,
+            "frameHash": "c53b08234719b7f75d5e38e75b32d93f41d63b4f1932582ea88c576fb03b9dc5"
+          },
+          {
+            "requestedTimeSec": 6.4,
+            "frameHash": "499b14028004c9c06697a95c141a8cc837a16ff093b397749abc7f9741bc56a4"
+          }
+        ],
+        "evidence": "3 sampled frames only; no audio or complete continuous motion observation",
+        "at": "2026-10-04T12:08:23.532Z"
+      }
+    ],
+    "workflowIds": [],
+    "candidateIds": [
+      "1d223e8a-77b5-44d0-83d1-f97d48b3a544"
+    ],
+    "usage": {
+      "input": 1673,
+      "output": 2419,
+      "cacheRead": 572288,
+      "cacheWrite": 0,
+      "reasoning": 1191,
+      "totalTokens": 576380,
+      "cost": {
+        "input": 0.0005019,
+        "output": 0.0029028,
+        "cacheRead": 0.003433728,
+        "cacheWrite": 0,
+        "total": 0.0068384280000000006
+      }
+    },
+    "error": null,
+    "finishedAt": "2026-10-04T12:08:41.103Z"
+  },
+  "video": "experiments/sean_film_agent_20261004/sean_six_s01_1d22.mp4",
+  "contact": "frames/sean_six_s01_1d22_contact.png"
+}

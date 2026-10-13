@@ -1,0 +1,20 @@
+{
+  "owner": "Sean",
+  "candidateId": "1d223e8a-77b5-44d0-83d1-f97d48b3a544",
+  "method": "Root inspected 2fps contact plus Agent independently sampled six timestamps",
+  "actualDurationSec": 6.583333,
+  "plannedDurationSec": 6,
+  "fullDecodePassed": true,
+  "observations": [
+    "A enters at left with single sheathed blade, places it on wooden tabletop then sits; B remains seated on right with open book and camel coat",
+    "Photoreal people/library rather than cel-shaded drawing",
+    "No extra actor or second blade visible in sampled frames"
+  ],
+  "limitations": [
+    "No audio listening/transcript or timbre/lips validation",
+    "Sampled contact does not prove every frame or full continuous hand/prop motion",
+    "Actual blade extends toward near table edge; grip point reachable near middle needs confirmation in B take shot",
+    "Actual clip 6.583 sec; do not trim dialogue blindly to match planned6sec"
+  ],
+  "status": "provisional visual pass; audio and downstream transfer pending"
+}

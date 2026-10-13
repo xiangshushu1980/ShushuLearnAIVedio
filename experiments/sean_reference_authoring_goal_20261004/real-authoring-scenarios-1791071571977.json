@@ -1,0 +1,2558 @@
+{
+  "owner": "Sean",
+  "createdAt": "2026-10-03T23:52:51.977Z",
+  "scope": "real Pi text/tool verification; temporary DB; no image observation or generation",
+  "scenarios": [
+    {
+      "label": "existing-character-and-scene",
+      "runId": "1f93d335-df03-44d5-80a8-b02339a78a01",
+      "runStatus": "succeeded",
+      "error": null,
+      "messages": [
+        {
+          "id": "110aa93e-5a3c-4479-b512-3e32929d7b3a",
+          "role": "user",
+          "text": "给已有角色林岚（55627d2f-0656-4172-8be9-159934613032）增加一张脸部＋正面／背面／侧面的 V3 Simple 多视图。给已有场景旧候车厅（3af88500-7116-4f76-bf4c-92857cbf1003）增加入口回看的角度和长凳细节两张图片，不新增场景实体。两者都等待各自已选主图，但目前还没选；保留原资料、服装和布局。不要再建同名实体，不自动生成；保存可审阅的工作流方案。没有给出朝向、尺度与完整平面布局，不要补成直线、同轴或南北方向。",
+          "createdAt": "2026-10-03T23:52:52.867Z",
+          "runId": "1f93d335-df03-44d5-80a8-b02339a78a01"
+        },
+        {
+          "id": "2590db30-6ce8-4cfa-83eb-e69368dcf235",
+          "role": "assistant",
+          "text": "我先读取方法、两个实体完整资料和当前工作流能力，再给出方案。\n\n方法、两个实体完整资料与工作流能力都读完了：两个实体各有 0 张已选图、`sceneSpatial` 为 missing/draft、项目 `visualStyle` 为空。按“只增图片步骤、不建实体”的方式提交两份可审阅方案。\n\n两份方案已保存为待审阅提案（未生成、未改任何已有资料）：\n\n**1) 林岚（55627d2f-…）· planId 860a5c20-142d-4212-b3f3-267dd157614f**\n- 只增加 1 个图片步骤：`v3_face_front_back_side`（role=three_view，模型 `qwen-v3-simple-face-front-back-side`，layout=脸部＋正／背／侧）。\n- `useMainAppearance=true`、`useBaseAppearance=false`、`referenceAssetIds=[]` → 挂起，等林岚主图选定后批次执行。\n- 固定项：短黑发中一缕白发、灰色长外套、深蓝裤子、同一人物、无风格漂移；不因职业新增道具／配饰／伤势；无电子设备（世界规则）。\n- 未定项明列：画风（项目 `visualStyle` 为空）、脸型与五官细节、白发位置、鞋型、外套长度与纽扣等，需主图选定后核对。\n\n**2) 旧候车厅（3af88500-…）· planId 04c7e5a5-02ba-4e5d-9ed8-e3de8c06b026**\n- 增加 2 个图片步骤，未新增场景实体：`look_back_at_entrance`（scene_angle）、`bench_detail`（scene_detail），模型 `qwen-image-2.1`，同样 `useMainAppearance=true` + 空引用 → 两张都挂起等主图。\n- 只承认已登记事实：入口、长凳区、站台门；入口与长凳区相邻、长凳区通向站台门；不写同轴／直线／左右／朝向；朝向、绝对尺度、完整平面布局全部保留为未确认；不新增未登记固定结构；取景不出现人物（仅取景要求，不等于场景永远无人）。\n\n需要你确认的 3 个点（决定执行前是否要改提示词）：\n1. “入口回看”我按**从厅内长凳区一侧朝入口区域回看**来写；如果你要的是**从入口朝厅内看**，我改成反向。\n2. 画风：项目 `visualStyle` 为空，两个步骤都填了 `original`（严格跟随各自主图渲染风格）。是否照此，或指定某个风格（写实／电影感／动画等）？\n3. 长凳细节我写成“裁到座面、边框与支脚，含周围地面”，且不预设木制或金属；你希望更近的单件特写，还是带一点长凳区环境的近景？\n\n确认后到“实体创作工作流”接受提案；在选定主图前这两组步骤都不会出图。",
+          "createdAt": "2026-10-03T23:52:52.867Z",
+          "runId": "1f93d335-df03-44d5-80a8-b02339a78a01"
+        }
+      ],
+      "events": [
+        {
+          "seq": 1,
+          "type": "text",
+          "body": {
+            "delta": "我先"
+          }
+        },
+        {
+          "seq": 2,
+          "type": "text",
+          "body": {
+            "delta": "读取"
+          }
+        },
+        {
+          "seq": 3,
+          "type": "text",
+          "body": {
+            "delta": "方法"
+          }
+        },
+        {
+          "seq": 4,
+          "type": "text",
+          "body": {
+            "delta": "、"
+          }
+        },
+        {
+          "seq": 5,
+          "type": "text",
+          "body": {
+            "delta": "两个"
+          }
+        },
+        {
+          "seq": 6,
+          "type": "text",
+          "body": {
+            "delta": "实体"
+          }
+        },
+        {
+          "seq": 7,
+          "type": "text",
+          "body": {
+            "delta": "完整"
+          }
+        },
+        {
+          "seq": 8,
+          "type": "text",
+          "body": {
+            "delta": "资料"
+          }
+        },
+        {
+          "seq": 9,
+          "type": "text",
+          "body": {
+            "delta": "和"
+          }
+        },
+        {
+          "seq": 10,
+          "type": "text",
+          "body": {
+            "delta": "当前"
+          }
+        },
+        {
+          "seq": 11,
+          "type": "text",
+          "body": {
+            "delta": "工作"
+          }
+        },
+        {
+          "seq": 12,
+          "type": "text",
+          "body": {
+            "delta": "流"
+          }
+        },
+        {
+          "seq": 13,
+          "type": "text",
+          "body": {
+            "delta": "能力"
+          }
+        },
+        {
+          "seq": 14,
+          "type": "text",
+          "body": {
+            "delta": "，"
+          }
+        },
+        {
+          "seq": 15,
+          "type": "text",
+          "body": {
+            "delta": "再"
+          }
+        },
+        {
+          "seq": 16,
+          "type": "text",
+          "body": {
+            "delta": "给出"
+          }
+        },
+        {
+          "seq": 17,
+          "type": "text",
+          "body": {
+            "delta": "方案"
+          }
+        },
+        {
+          "seq": 18,
+          "type": "text",
+          "body": {
+            "delta": "。"
+          }
+        },
+        {
+          "seq": 19,
+          "type": "tool",
+          "body": {
+            "label": "读取当前工作模式的方法"
+          }
+        },
+        {
+          "seq": 20,
+          "type": "tool",
+          "body": {
+            "label": "读取项目最新资料"
+          }
+        },
+        {
+          "seq": 21,
+          "type": "tool",
+          "body": {
+            "label": "读取项目实体详情"
+          }
+        },
+        {
+          "seq": 22,
+          "type": "tool",
+          "body": {
+            "label": "读取项目实体详情"
+          }
+        },
+        {
+          "seq": 23,
+          "type": "tool",
+          "body": {
+            "label": "读取可用图片工作流"
+          }
+        },
+        {
+          "seq": 24,
+          "type": "tool",
+          "body": {
+            "label": "读取已保存创作方案"
+          }
+        },
+        {
+          "seq": 25,
+          "type": "text",
+          "body": {
+            "delta": "方法"
+          }
+        },
+        {
+          "seq": 26,
+          "type": "text",
+          "body": {
+            "delta": "、"
+          }
+        },
+        {
+          "seq": 27,
+          "type": "text",
+          "body": {
+            "delta": "两个"
+          }
+        },
+        {
+          "seq": 28,
+          "type": "text",
+          "body": {
+            "delta": "实体"
+          }
+        },
+        {
+          "seq": 29,
+          "type": "text",
+          "body": {
+            "delta": "完整"
+          }
+        },
+        {
+          "seq": 30,
+          "type": "text",
+          "body": {
+            "delta": "资料"
+          }
+        },
+        {
+          "seq": 31,
+          "type": "text",
+          "body": {
+            "delta": "与"
+          }
+        },
+        {
+          "seq": 32,
+          "type": "text",
+          "body": {
+            "delta": "工作"
+          }
+        },
+        {
+          "seq": 33,
+          "type": "text",
+          "body": {
+            "delta": "流"
+          }
+        },
+        {
+          "seq": 34,
+          "type": "text",
+          "body": {
+            "delta": "能力"
+          }
+        },
+        {
+          "seq": 35,
+          "type": "text",
+          "body": {
+            "delta": "都"
+          }
+        },
+        {
+          "seq": 36,
+          "type": "text",
+          "body": {
+            "delta": "读"
+          }
+        },
+        {
+          "seq": 37,
+          "type": "text",
+          "body": {
+            "delta": "完了"
+          }
+        },
+        {
+          "seq": 38,
+          "type": "text",
+          "body": {
+            "delta": "："
+          }
+        },
+        {
+          "seq": 39,
+          "type": "text",
+          "body": {
+            "delta": "两个"
+          }
+        },
+        {
+          "seq": 40,
+          "type": "text",
+          "body": {
+            "delta": "实体"
+          }
+        },
+        {
+          "seq": 41,
+          "type": "text",
+          "body": {
+            "delta": "各有"
+          }
+        },
+        {
+          "seq": 42,
+          "type": "text",
+          "body": {
+            "delta": " "
+          }
+        },
+        {
+          "seq": 43,
+          "type": "text",
+          "body": {
+            "delta": "0"
+          }
+        },
+        {
+          "seq": 44,
+          "type": "text",
+          "body": {
+            "delta": " "
+          }
+        },
+        {
+          "seq": 45,
+          "type": "text",
+          "body": {
+            "delta": "张"
+          }
+        },
+        {
+          "seq": 46,
+          "type": "text",
+          "body": {
+            "delta": "已"
+          }
+        },
+        {
+          "seq": 47,
+          "type": "text",
+          "body": {
+            "delta": "选"
+          }
+        },
+        {
+          "seq": 48,
+          "type": "text",
+          "body": {
+            "delta": "图"
+          }
+        },
+        {
+          "seq": 49,
+          "type": "text",
+          "body": {
+            "delta": "、"
+          }
+        },
+        {
+          "seq": 50,
+          "type": "text",
+          "body": {
+            "delta": "`"
+          }
+        },
+        {
+          "seq": 51,
+          "type": "text",
+          "body": {
+            "delta": "scene"
+          }
+        },
+        {
+          "seq": 52,
+          "type": "text",
+          "body": {
+            "delta": "S"
+          }
+        },
+        {
+          "seq": 53,
+          "type": "text",
+          "body": {
+            "delta": "pat"
+          }
+        },
+        {
+          "seq": 54,
+          "type": "text",
+          "body": {
+            "delta": "ial"
+          }
+        },
+        {
+          "seq": 55,
+          "type": "text",
+          "body": {
+            "delta": "`"
+          }
+        },
+        {
+          "seq": 56,
+          "type": "text",
+          "body": {
+            "delta": " "
+          }
+        },
+        {
+          "seq": 57,
+          "type": "text",
+          "body": {
+            "delta": "为"
+          }
+        },
+        {
+          "seq": 58,
+          "type": "text",
+          "body": {
+            "delta": " missing"
+          }
+        },
+        {
+          "seq": 59,
+          "type": "text",
+          "body": {
+            "delta": "/d"
+          }
+        },
+        {
+          "seq": 60,
+          "type": "text",
+          "body": {
+            "delta": "raft"
+          }
+        },
+        {
+          "seq": 61,
+          "type": "text",
+          "body": {
+            "delta": "、"
+          }
+        },
+        {
+          "seq": 62,
+          "type": "text",
+          "body": {
+            "delta": "项目"
+          }
+        },
+        {
+          "seq": 63,
+          "type": "text",
+          "body": {
+            "delta": " `"
+          }
+        },
+        {
+          "seq": 64,
+          "type": "text",
+          "body": {
+            "delta": "visual"
+          }
+        },
+        {
+          "seq": 65,
+          "type": "text",
+          "body": {
+            "delta": "Style"
+          }
+        },
+        {
+          "seq": 66,
+          "type": "text",
+          "body": {
+            "delta": "`"
+          }
+        },
+        {
+          "seq": 67,
+          "type": "text",
+          "body": {
+            "delta": " "
+          }
+        },
+        {
+          "seq": 68,
+          "type": "text",
+          "body": {
+            "delta": "为空"
+          }
+        },
+        {
+          "seq": 69,
+          "type": "text",
+          "body": {
+            "delta": "。"
+          }
+        },
+        {
+          "seq": 70,
+          "type": "text",
+          "body": {
+            "delta": "按"
+          }
+        },
+        {
+          "seq": 71,
+          "type": "text",
+          "body": {
+            "delta": "“"
+          }
+        },
+        {
+          "seq": 72,
+          "type": "text",
+          "body": {
+            "delta": "只"
+          }
+        },
+        {
+          "seq": 73,
+          "type": "text",
+          "body": {
+            "delta": "增"
+          }
+        },
+        {
+          "seq": 74,
+          "type": "text",
+          "body": {
+            "delta": "图片"
+          }
+        },
+        {
+          "seq": 75,
+          "type": "text",
+          "body": {
+            "delta": "步骤"
+          }
+        },
+        {
+          "seq": 76,
+          "type": "text",
+          "body": {
+            "delta": "、"
+          }
+        },
+        {
+          "seq": 77,
+          "type": "text",
+          "body": {
+            "delta": "不"
+          }
+        },
+        {
+          "seq": 78,
+          "type": "text",
+          "body": {
+            "delta": "建"
+          }
+        },
+        {
+          "seq": 79,
+          "type": "text",
+          "body": {
+            "delta": "实体"
+          }
+        },
+        {
+          "seq": 80,
+          "type": "text",
+          "body": {
+            "delta": "”"
+          }
+        },
+        {
+          "seq": 81,
+          "type": "text",
+          "body": {
+            "delta": "的方式"
+          }
+        },
+        {
+          "seq": 82,
+          "type": "text",
+          "body": {
+            "delta": "提交"
+          }
+        },
+        {
+          "seq": 83,
+          "type": "text",
+          "body": {
+            "delta": "两份"
+          }
+        },
+        {
+          "seq": 84,
+          "type": "text",
+          "body": {
+            "delta": "可"
+          }
+        },
+        {
+          "seq": 85,
+          "type": "text",
+          "body": {
+            "delta": "审"
+          }
+        },
+        {
+          "seq": 86,
+          "type": "text",
+          "body": {
+            "delta": "阅"
+          }
+        },
+        {
+          "seq": 87,
+          "type": "text",
+          "body": {
+            "delta": "方案"
+          }
+        },
+        {
+          "seq": 88,
+          "type": "text",
+          "body": {
+            "delta": "。"
+          }
+        },
+        {
+          "seq": 89,
+          "type": "tool",
+          "body": {
+            "label": "规划已有实体新图片步骤"
+          }
+        },
+        {
+          "seq": 90,
+          "type": "tool",
+          "body": {
+            "label": "规划已有实体新图片步骤"
+          }
+        },
+        {
+          "seq": 91,
+          "type": "proposal",
+          "body": {
+            "kind": "entity-workflow",
+            "proposalId": "860a5c20-142d-4212-b3f3-267dd157614f"
+          }
+        },
+        {
+          "seq": 92,
+          "type": "proposal",
+          "body": {
+            "kind": "entity-workflow",
+            "proposalId": "04c7e5a5-02ba-4e5d-9ed8-e3de8c06b026"
+          }
+        },
+        {
+          "seq": 93,
+          "type": "text",
+          "body": {
+            "delta": "两份"
+          }
+        },
+        {
+          "seq": 94,
+          "type": "text",
+          "body": {
+            "delta": "方案"
+          }
+        },
+        {
+          "seq": 95,
+          "type": "text",
+          "body": {
+            "delta": "已"
+          }
+        },
+        {
+          "seq": 96,
+          "type": "text",
+          "body": {
+            "delta": "保存"
+          }
+        },
+        {
+          "seq": 97,
+          "type": "text",
+          "body": {
+            "delta": "为"
+          }
+        },
+        {
+          "seq": 98,
+          "type": "text",
+          "body": {
+            "delta": "待"
+          }
+        },
+        {
+          "seq": 99,
+          "type": "text",
+          "body": {
+            "delta": "审"
+          }
+        },
+        {
+          "seq": 100,
+          "type": "text",
+          "body": {
+            "delta": "阅"
+          }
+        },
+        {
+          "seq": 101,
+          "type": "text",
+          "body": {
+            "delta": "提案"
+          }
+        },
+        {
+          "seq": 102,
+          "type": "text",
+          "body": {
+            "delta": "（"
+          }
+        },
+        {
+          "seq": 103,
+          "type": "text",
+          "body": {
+            "delta": "未"
+          }
+        },
+        {
+          "seq": 104,
+          "type": "text",
+          "body": {
+            "delta": "生成"
+          }
+        },
+        {
+          "seq": 105,
+          "type": "text",
+          "body": {
+            "delta": "、"
+          }
+        },
+        {
+          "seq": 106,
+          "type": "text",
+          "body": {
+            "delta": "未"
+          }
+        },
+        {
+          "seq": 107,
+          "type": "text",
+          "body": {
+            "delta": "改"
+          }
+        },
+        {
+          "seq": 108,
+          "type": "text",
+          "body": {
+            "delta": "任何"
+          }
+        },
+        {
+          "seq": 109,
+          "type": "text",
+          "body": {
+            "delta": "已有"
+          }
+        },
+        {
+          "seq": 110,
+          "type": "text",
+          "body": {
+            "delta": "资料"
+          }
+        },
+        {
+          "seq": 111,
+          "type": "text",
+          "body": {
+            "delta": "）：\n\n"
+          }
+        },
+        {
+          "seq": 112,
+          "type": "text",
+          "body": {
+            "delta": "**"
+          }
+        },
+        {
+          "seq": 113,
+          "type": "text",
+          "body": {
+            "delta": "1"
+          }
+        },
+        {
+          "seq": 114,
+          "type": "text",
+          "body": {
+            "delta": ")"
+          }
+        },
+        {
+          "seq": 115,
+          "type": "text",
+          "body": {
+            "delta": " "
+          }
+        },
+        {
+          "seq": 116,
+          "type": "text",
+          "body": {
+            "delta": "林"
+          }
+        },
+        {
+          "seq": 117,
+          "type": "text",
+          "body": {
+            "delta": "岚"
+          }
+        },
+        {
+          "seq": 118,
+          "type": "text",
+          "body": {
+            "delta": "（"
+          }
+        },
+        {
+          "seq": 119,
+          "type": "text",
+          "body": {
+            "delta": "556"
+          }
+        },
+        {
+          "seq": 120,
+          "type": "text",
+          "body": {
+            "delta": "27"
+          }
+        },
+        {
+          "seq": 121,
+          "type": "text",
+          "body": {
+            "delta": "d"
+          }
+        },
+        {
+          "seq": 122,
+          "type": "text",
+          "body": {
+            "delta": "2"
+          }
+        },
+        {
+          "seq": 123,
+          "type": "text",
+          "body": {
+            "delta": "f"
+          }
+        },
+        {
+          "seq": 124,
+          "type": "text",
+          "body": {
+            "delta": "-"
+          }
+        },
+        {
+          "seq": 125,
+          "type": "text",
+          "body": {
+            "delta": "…"
+          }
+        },
+        {
+          "seq": 126,
+          "type": "text",
+          "body": {
+            "delta": "）"
+          }
+        },
+        {
+          "seq": 127,
+          "type": "text",
+          "body": {
+            "delta": "·"
+          }
+        },
+        {
+          "seq": 128,
+          "type": "text",
+          "body": {
+            "delta": " plan"
+          }
+        },
+        {
+          "seq": 129,
+          "type": "text",
+          "body": {
+            "delta": "Id"
+          }
+        },
+        {
+          "seq": 130,
+          "type": "text",
+          "body": {
+            "delta": " "
+          }
+        },
+        {
+          "seq": 131,
+          "type": "text",
+          "body": {
+            "delta": "860"
+          }
+        },
+        {
+          "seq": 132,
+          "type": "text",
+          "body": {
+            "delta": "a"
+          }
+        },
+        {
+          "seq": 133,
+          "type": "text",
+          "body": {
+            "delta": "5"
+          }
+        },
+        {
+          "seq": 134,
+          "type": "text",
+          "body": {
+            "delta": "c"
+          }
+        },
+        {
+          "seq": 135,
+          "type": "text",
+          "body": {
+            "delta": "20"
+          }
+        },
+        {
+          "seq": 136,
+          "type": "text",
+          "body": {
+            "delta": "-"
+          }
+        },
+        {
+          "seq": 137,
+          "type": "text",
+          "body": {
+            "delta": "142"
+          }
+        },
+        {
+          "seq": 138,
+          "type": "text",
+          "body": {
+            "delta": "d"
+          }
+        },
+        {
+          "seq": 139,
+          "type": "text",
+          "body": {
+            "delta": "-"
+          }
+        },
+        {
+          "seq": 140,
+          "type": "text",
+          "body": {
+            "delta": "421"
+          }
+        },
+        {
+          "seq": 141,
+          "type": "text",
+          "body": {
+            "delta": "2"
+          }
+        },
+        {
+          "seq": 142,
+          "type": "text",
+          "body": {
+            "delta": "-b"
+          }
+        },
+        {
+          "seq": 143,
+          "type": "text",
+          "body": {
+            "delta": "3"
+          }
+        },
+        {
+          "seq": 144,
+          "type": "text",
+          "body": {
+            "delta": "f"
+          }
+        },
+        {
+          "seq": 145,
+          "type": "text",
+          "body": {
+            "delta": "3"
+          }
+        },
+        {
+          "seq": 146,
+          "type": "text",
+          "body": {
+            "delta": "-"
+          }
+        },
+        {
+          "seq": 147,
+          "type": "text",
+          "body": {
+            "delta": "267"
+          }
+        },
+        {
+          "seq": 148,
+          "type": "text",
+          "body": {
+            "delta": "dd"
+          }
+        },
+        {
+          "seq": 149,
+          "type": "text",
+          "body": {
+            "delta": "157"
+          }
+        },
+        {
+          "seq": 150,
+          "type": "text",
+          "body": {
+            "delta": "614"
+          }
+        },
+        {
+          "seq": 151,
+          "type": "text",
+          "body": {
+            "delta": "f"
+          }
+        },
+        {
+          "seq": 152,
+          "type": "text",
+          "body": {
+            "delta": "**\n"
+          }
+        },
+        {
+          "seq": 153,
+          "type": "text",
+          "body": {
+            "delta": "-"
+          }
+        },
+        {
+          "seq": 154,
+          "type": "text",
+          "body": {
+            "delta": " "
+          }
+        },
+        {
+          "seq": 155,
+          "type": "text",
+          "body": {
+            "delta": "只"
+          }
+        },
+        {
+          "seq": 156,
+          "type": "text",
+          "body": {
+            "delta": "增加"
+          }
+        },
+        {
+          "seq": 157,
+          "type": "text",
+          "body": {
+            "delta": " "
+          }
+        },
+        {
+          "seq": 158,
+          "type": "text",
+          "body": {
+            "delta": "1"
+          }
+        },
+        {
+          "seq": 159,
+          "type": "text",
+          "body": {
+            "delta": " "
+          }
+        },
+        {
+          "seq": 160,
+          "type": "text",
+          "body": {
+            "delta": "个"
+          }
+        },
+        {
+          "seq": 161,
+          "type": "text",
+          "body": {
+            "delta": "图片"
+          }
+        },
+        {
+          "seq": 162,
+          "type": "text",
+          "body": {
+            "delta": "步骤"
+          }
+        },
+        {
+          "seq": 163,
+          "type": "text",
+          "body": {
+            "delta": "："
+          }
+        },
+        {
+          "seq": 164,
+          "type": "text",
+          "body": {
+            "delta": "`"
+          }
+        },
+        {
+          "seq": 165,
+          "type": "text",
+          "body": {
+            "delta": "v"
+          }
+        },
+        {
+          "seq": 166,
+          "type": "text",
+          "body": {
+            "delta": "3"
+          }
+        },
+        {
+          "seq": 167,
+          "type": "text",
+          "body": {
+            "delta": "_"
+          }
+        },
+        {
+          "seq": 168,
+          "type": "text",
+          "body": {
+            "delta": "face"
+          }
+        },
+        {
+          "seq": 169,
+          "type": "text",
+          "body": {
+            "delta": "_front"
+          }
+        },
+        {
+          "seq": 170,
+          "type": "text",
+          "body": {
+            "delta": "_back"
+          }
+        },
+        {
+          "seq": 171,
+          "type": "text",
+          "body": {
+            "delta": "_"
+          }
+        },
+        {
+          "seq": 172,
+          "type": "text",
+          "body": {
+            "delta": "side"
+          }
+        },
+        {
+          "seq": 173,
+          "type": "text",
+          "body": {
+            "delta": "`"
+          }
+        },
+        {
+          "seq": 174,
+          "type": "text",
+          "body": {
+            "delta": "（"
+          }
+        },
+        {
+          "seq": 175,
+          "type": "text",
+          "body": {
+            "delta": "role"
+          }
+        },
+        {
+          "seq": 176,
+          "type": "text",
+          "body": {
+            "delta": "="
+          }
+        },
+        {
+          "seq": 177,
+          "type": "text",
+          "body": {
+            "delta": "three"
+          }
+        },
+        {
+          "seq": 178,
+          "type": "text",
+          "body": {
+            "delta": "_view"
+          }
+        },
+        {
+          "seq": 179,
+          "type": "text",
+          "body": {
+            "delta": "，"
+          }
+        },
+        {
+          "seq": 180,
+          "type": "text",
+          "body": {
+            "delta": "模型"
+          }
+        },
+        {
+          "seq": 181,
+          "type": "text",
+          "body": {
+            "delta": " `"
+          }
+        },
+        {
+          "seq": 182,
+          "type": "text",
+          "body": {
+            "delta": "q"
+          }
+        },
+        {
+          "seq": 183,
+          "type": "text",
+          "body": {
+            "delta": "wen"
+          }
+        },
+        {
+          "seq": 184,
+          "type": "text",
+          "body": {
+            "delta": "-v"
+          }
+        },
+        {
+          "seq": 185,
+          "type": "text",
+          "body": {
+            "delta": "3"
+          }
+        },
+        {
+          "seq": 186,
+          "type": "text",
+          "body": {
+            "delta": "-s"
+          }
+        },
+        {
+          "seq": 187,
+          "type": "text",
+          "body": {
+            "delta": "imple"
+          }
+        },
+        {
+          "seq": 188,
+          "type": "text",
+          "body": {
+            "delta": "-face"
+          }
+        },
+        {
+          "seq": 189,
+          "type": "text",
+          "body": {
+            "delta": "-front"
+          }
+        },
+        {
+          "seq": 190,
+          "type": "text",
+          "body": {
+            "delta": "-back"
+          }
+        },
+        {
+          "seq": 191,
+          "type": "text",
+          "body": {
+            "delta": "-side"
+          }
+        },
+        {
+          "seq": 192,
+          "type": "text",
+          "body": {
+            "delta": "`"
+          }
+        },
+        {
+          "seq": 193,
+          "type": "text",
+          "body": {
+            "delta": "，"
+          }
+        },
+        {
+          "seq": 194,
+          "type": "text",
+          "body": {
+            "delta": "layout"
+          }
+        },
+        {
+          "seq": 195,
+          "type": "text",
+          "body": {
+            "delta": "="
+          }
+        },
+        {
+          "seq": 196,
+          "type": "text",
+          "body": {
+            "delta": "脸部"
+          }
+        },
+        {
+          "seq": 197,
+          "type": "text",
+          "body": {
+            "delta": "＋"
+          }
+        },
+        {
+          "seq": 198,
+          "type": "text",
+          "body": {
+            "delta": "正"
+          }
+        },
+        {
+          "seq": 199,
+          "type": "text",
+          "body": {
+            "delta": "／"
+          }
+        },
+        {
+          "seq": 200,
+          "type": "text",
+          "body": {
+            "delta": "背"
+          }
+        },
+        {
+          "seq": 201,
+          "type": "text",
+          "body": {
+            "delta": "／"
+          }
+        },
+        {
+          "seq": 202,
+          "type": "text",
+          "body": {
+            "delta": "侧"
+          }
+        },
+        {
+          "seq": 203,
+          "type": "text",
+          "body": {
+            "delta": "）。\n"
+          }
+        },
+        {
+          "seq": 204,
+          "type": "text",
+          "body": {
+            "delta": "-"
+          }
+        },
+        {
+          "seq": 205,
+          "type": "text",
+          "body": {
+            "delta": " `"
+          }
+        },
+        {
+          "seq": 206,
+          "type": "text",
+          "body": {
+            "delta": "use"
+          }
+        },
+        {
+          "seq": 207,
+          "type": "text",
+          "body": {
+            "delta": "Main"
+          }
+        },
+        {
+          "seq": 208,
+          "type": "text",
+          "body": {
+            "delta": "App"
+          }
+        },
+        {
+          "seq": 209,
+          "type": "text",
+          "body": {
+            "delta": "earance"
+          }
+        },
+        {
+          "seq": 210,
+          "type": "text",
+          "body": {
+            "delta": "=true"
+          }
+        },
+        {
+          "seq": 211,
+          "type": "text",
+          "body": {
+            "delta": "`"
+          }
+        },
+        {
+          "seq": 212,
+          "type": "text",
+          "body": {
+            "delta": "、"
+          }
+        },
+        {
+          "seq": 213,
+          "type": "text",
+          "body": {
+            "delta": "`"
+          }
+        },
+        {
+          "seq": 214,
+          "type": "text",
+          "body": {
+            "delta": "use"
+          }
+        },
+        {
+          "seq": 215,
+          "type": "text",
+          "body": {
+            "delta": "Base"
+          }
+        },
+        {
+          "seq": 216,
+          "type": "text",
+          "body": {
+            "delta": "App"
+          }
+        },
+        {
+          "seq": 217,
+          "type": "text",
+          "body": {
+            "delta": "earance"
+          }
+        },
+        {
+          "seq": 218,
+          "type": "text",
+          "body": {
+            "delta": "=false"
+          }
+        },
+        {
+          "seq": 219,
+          "type": "text",
+          "body": {
+            "delta": "`"
+          }
+        },
+        {
+          "seq": 220,
+          "type": "text",
+          "body": {
+            "delta": "、"
+          }
+        },
+        {
+          "seq": 221,
+          "type": "text",
+          "body": {
+            "delta": "`"
+          }
+        },
+        {
+          "seq": 222,
+          "type": "text",
+          "body": {
+            "delta": "reference"
+          }
+        },
+        {
+          "seq": 223,
+          "type": "text",
+          "body": {
+            "delta": "Asset"
+          }
+        },
+        {
+          "seq": 224,
+          "type": "text",
+          "body": {
+            "delta": "Ids"
+          }
+        },
+        {
+          "seq": 225,
+          "type": "text",
+          "body": {
+            "delta": "="
+          }
+        },
+        {
+          "seq": 226,
+          "type": "text",
+          "body": {
+            "delta": "[]"
+          }
+        },
+        {
+          "seq": 227,
+          "type": "text",
+          "body": {
+            "delta": "`"
+          }
+        },
+        {
+          "seq": 228,
+          "type": "text",
+          "body": {
+            "delta": " →"
+          }
+        },
+        {
+          "seq": 229,
+          "type": "text",
+          "body": {
+            "delta": " "
+          }
+        },
+        {
+          "seq": 230,
+          "type": "text",
+          "body": {
+            "delta": "挂"
+          }
+        },
+        {
+          "seq": 231,
+          "type": "text",
+          "body": {
+            "delta": "起"
+          }
+        },
+        {
+          "seq": 232,
+          "type": "text",
+          "body": {
+            "delta": "，"
+          }
+        },
+        {
+          "seq": 233,
+          "type": "text",
+          "body": {
+            "delta": "等"
+          }
+        },
+        {
+          "seq": 234,
+          "type": "text",
+          "body": {
+            "delta": "林"
+          }
+        },
+        {
+          "seq": 235,
+          "type": "text",
+          "body": {
+            "delta": "岚"
+          }
+        },
+        {
+          "seq": 236,
+          "type": "text",
+          "body": {
+            "delta": "主"
+          }
+        },
+        {
+          "seq": 237,
+          "type": "text",
+          "body": {
+            "delta": "图"
+          }
+        },
+        {
+          "seq": 238,
+          "type": "text",
+          "body": {
+            "delta": "选定"
+          }
+        },
+        {
+          "seq": 239,
+          "type": "text",
+          "body": {
+            "delta": "后"
+          }
+        },
+        {
+          "seq": 240,
+          "type": "text",
+          "body": {
+            "delta": "批次"
+          }
+        },
+        {
+          "seq": 241,
+          "type": "text",
+          "body": {
+            "delta": "执行"
+          }
+        },
+        {
+          "seq": 242,
+          "type": "text",
+          "body": {
+            "delta": "。\n"
+          }
+        },
+        {
+          "seq": 243,
+          "type": "text",
+          "body": {
+            "delta": "-"
+          }
+        },
+        {
+          "seq": 244,
+          "type": "text",
+          "body": {
+            "delta": " "
+          }
+        },
+        {
+          "seq": 245,
+          "type": "text",
+          "body": {
+            "delta": "固定"
+          }
+        },
+        {
+          "seq": 246,
+          "type": "text",
+          "body": {
+            "delta": "项"
+          }
+        },
+        {
+          "seq": 247,
+          "type": "text",
+          "body": {
+            "delta": "："
+          }
+        },
+        {
+          "seq": 248,
+          "type": "text",
+          "body": {
+            "delta": "短"
+          }
+        },
+        {
+          "seq": 249,
+          "type": "text",
+          "body": {
+            "delta": "黑"
+          }
+        },
+        {
+          "seq": 250,
+          "type": "text",
+          "body": {
+            "delta": "发"
+          }
+        },
+        {
+          "seq": 251,
+          "type": "text",
+          "body": {
+            "delta": "中"
+          }
+        },
+        {
+          "seq": 252,
+          "type": "text",
+          "body": {
+            "delta": "一缕"
+          }
+        },
+        {
+          "seq": 253,
+          "type": "text",
+          "body": {
+            "delta": "白发"
+          }
+        },
+        {
+          "seq": 254,
+          "type": "text",
+          "body": {
+            "delta": "、"
+          }
+        },
+        {
+          "seq": 255,
+          "type": "text",
+          "body": {
+            "delta": "灰色"
+          }
+        },
+        {
+          "seq": 256,
+          "type": "text",
+          "body": {
+            "delta": "长"
+          }
+        },
+        {
+          "seq": 257,
+          "type": "text",
+          "body": {
+            "delta": "外套"
+          }
+        },
+        {
+          "seq": 258,
+          "type": "text",
+          "body": {
+            "delta": "、"
+          }
+        },
+        {
+          "seq": 259,
+          "type": "text",
+          "body": {
+            "delta": "深"
+          }
+        },
+        {
+          "seq": 260,
+          "type": "text",
+          "body": {
+            "delta": "蓝"
+          }
+        },
+        {
+          "seq": 261,
+          "type": "text",
+          "body": {
+            "delta": "裤子"
+          }
+        },
+        {
+          "seq": 262,
+          "type": "text",
+          "body": {
+            "delta": "、"
+          }
+        },
+        {
+          "seq": 263,
+          "type": "text",
+          "body": {
+            "delta": "同一"
+          }
+        },
+        {
+          "seq": 264,
+          "type": "text",
+          "body": {
+            "delta": "人物"
+          }
+        },
+        {
+          "seq": 265,
+          "type": "text",
+          "body": {
+            "delta": "、"
+          }
+        },
+        {
+          "seq": 266,
+          "type": "text",
+          "body": {
+            "delta": "无"
+          }
+        },
+        {
+          "seq": 267,
+          "type": "text",
+          "body": {
+            "delta": "风格"
+          }
+        },
+        {
+          "seq": 268,
+          "type": "text",
+          "body": {
+            "delta": "漂"
+          }
+        },
+        {
+          "seq": 269,
+          "type": "text",
+          "body": {
+            "delta": "移"
+          }
+        },
+        {
+          "seq": 270,
+          "type": "text",
+          "body": {
+            "delta": "；"
+          }
+        },
+        {
+          "seq": 271,
+          "type": "text",
+          "body": {
+            "delta": "不"
+          }
+        },
+        {
+          "seq": 272,
+          "type": "text",
+          "body": {
+            "delta": "因"
+          }
+        },
+        {
+          "seq": 273,
+          "type": "text",
+          "body": {
+            "delta": "职业"
+          }
+        },
+        {
+          "seq": 274,
+          "type": "text",
+          "body": {
+            "delta": "新增"
+          }
+        },
+        {
+          "seq": 275,
+          "type": "text",
+          "body": {
+            "delta": "道具"
+          }
+        },
+        {
+          "seq": 276,
+          "type": "text",
+          "body": {
+            "delta": "／"
+          }
+        },
+        {
+          "seq": 277,
+          "type": "text",
+          "body": {
+            "delta": "配"
+          }
+        },
+        {
+          "seq": 278,
+          "type": "text",
+          "body": {
+            "delta": "饰"
+          }
+        },
+        {
+          "seq": 279,
+          "type": "text",
+          "body": {
+            "delta": "／"
+          }
+        },
+        {
+          "seq": 280,
+          "type": "text",
+          "body": {
+            "delta": "伤势"
+          }
+        },
+        {
+          "seq": 281,
+          "type": "text",
+          "body": {
+            "delta": "；"
+          }
+        },
+        {
+          "seq": 282,
+          "type": "text",
+          "body": {
+            "delta": "无"
+          }
+        },
+        {
+          "seq": 283,
+          "type": "text",
+          "body": {
+            "delta": "电子"
+          }
+        },
+        {
+          "seq": 284,
+          "type": "text",
+          "body": {
+            "delta": "设备"
+          }
+        },
+        {
+          "seq": 285,
+          "type": "text",
+          "body": {
+            "delta": "（"
+          }
+        },
+        {
+          "seq": 286,
+          "type": "text",
+          "body": {
+            "delta": "世界"
+          }
+        },
+        {
+          "seq": 287,
+          "type": "text",
+          "body": {
+            "delta": "规则"
+          }
+        },
+        {
+          "seq": 288,
+          "type": "text",
+          "body": {
+            "delta": "）。\n"
+          }
+        },
+        {
+          "seq": 289,
+          "type": "text",
+          "body": {
+            "delta": "-"
+          }
+        },
+        {
+          "seq": 290,
+          "type": "text",
+          "body": {
+            "delta": " "
+          }
+        },
+        {
+          "seq": 291,
+          "type": "text",
+          "body": {
+            "delta": "未"
+          }
+        },
+        {
+          "seq": 292,
+          "type": "text",
+          "body": {
+            "delta": "定"
+          }
+        },
+        {
+          "seq": 293,
+          "type": "text",
+          "body": {
+            "delta": "项"
+          }
+        },
+        {
+          "seq": 294,
+          "type": "text",
+          "body": {
+            "delta": "明"
+          }
+        },
+        {
+          "seq": 295,
+          "type": "text",
+          "body": {
+            "delta": "列"
+          }
+        },
+        {
+          "seq": 296,
+          "type": "text",
+          "body": {
+            "delta": "："
+          }
+        },
+        {
+          "seq": 297,
+          "type": "text",
+          "body": {
+            "delta": "画"
+          }
+        },
+        {
+          "seq": 298,
+          "type": "text",
+          "body": {
+            "delta": "风"
+          }
+        },
+        {
+          "seq": 299,
+          "type": "text",
+          "body": {
+            "delta": "（"
+          }
+        },
+        {
+          "seq": 300,
+          "type": "text",
+          "body": {
+            "delta": "项目"
+          }
+        }
+      ],
+      "plans": [
+        {
+          "owner": "Sean",
+          "id": "04c7e5a5-02ba-4e5d-9ed8-e3de8c06b026",
+          "projectId": "638e42ff-9d84-4fa2-8777-5b9eed4639f5",
+          "sessionId": "0bf664b5-e485-45c4-bba2-a3a01adc3701",
+          "runId": "1f93d335-df03-44d5-80a8-b02339a78a01",
+          "candidates": [
+            {
+              "baseEntityId": null,
+              "changes": "",
+              "copySpatialDraft": false,
+              "existingEntityId": "3af88500-7116-4f76-bf4c-92857cbf1003",
+              "images": [
+                {
+                  "invariants": [
+                    "只保留已登记要素：入口、长凳区、站台门。",
+                    "保持已登记连接：入口与长凳区相邻；长凳区通向站台门。相邻与通向不推断同轴、直线排列、对面、左右顺序、朝向或完整平面形状。",
+                    "不新增未登记的固定结构、房间、售票设施、指示牌或装饰；主图中已有的结构、材质、颜色保持原位、原样。",
+                    "普通现实城市、夜间，无魔法；画面中不出现电子或数字设备，道具为机械或手工物品（项目世界规则）。",
+                    "本张取景不出现人物；参考图里的临时人物、站位与动作不作为空间锚点或场景设定。",
+                    "不把镜头左右当作场景固定方向；朝向、绝对尺寸与完整平面布局保持未确认。",
+                    "同一场景的材质、照明调性与配色与其他旧候车厅图片保持一致。"
+                  ],
+                  "key": "look_back_at_entrance",
+                  "label": "旧候车厅 · 回看入口区域（待主图）",
+                  "modelId": "qwen-image-2.1",
+                  "parameters": {
+                    "seed": 42,
+                    "size": "1536x1024",
+                    "steps": 25
+                  },
+                  "prompt": "Interior view of the old waiting hall (旧候车厅) at night, in an ordinary contemporary city, empty of people. Camera stands inside the hall on the bench-area side and looks back toward the entrance area, so the hall interior occupies the foreground and the entrance area is seen ahead in the depth of the frame.\nDocumented layout facts only: the entrance area and the bench area are adjacent, and the bench area leads to the platform door. Show only these areas and the structures visible in the selected main reference image of this hall. Do not assume or depict any straight, coaxial, left–right, opposite, or north–south arrangement between the entrance, the bench area, and the platform door.\nMaterials and atmosphere: worn, old public waiting hall, aged paint, dull floor, plain ceiling, night ambience, even nondescript practical lighting consistent with the reference image; nothing glossy or renovated.\nProject world rule: no electronic or digital devices anywhere; every fixture and prop is mechanical or hand-made (analogue signage, metal fittings, wooden or metal benches).\nFraming: no people in frame — this is a framing requirement for this shot only, not a claim that the hall is always empty. Consistent perspective, no fisheye, no text overlay, no watermark, no labels. Preserve any structure, material, and colour already visible in the reference image; do not relocate or redesign it.",
+                  "purpose": "补一个与总览方向相反的回看角度，用于说明入口区域与厅内空间的关系；只呈现已登记的相邻与连通，不确立轴向、尺度或完整平面形状。本步骤依赖该场景自己的主图，主图未选定前保持挂起。",
+                  "referenceAssetIds": [],
+                  "role": "scene_angle",
+                  "styleId": "original",
+                  "unknowns": [
+                    "回看方向的基准未确认：本步骤按“从厅内朝入口区域回看”取景，若用户意图是“从入口朝厅内看”，需改写后再执行。",
+                    "入口与长凳区、长凳区与站台门的轴向、前后、左右顺序均未登记。",
+                    "候车厅的绝对尺寸、层高、进深与完整平面布局未确认。",
+                    "入口的形式（门洞、门扇数量、宽窄）未登记，主图未选定前无法核对。",
+                    "长凳的数量、排数、材质、朝向未登记，无法在角度图里固定。",
+                    "照明方式、墙地顶材质与色彩未登记。",
+                    "项目 visualStyle 为空，画风只能沿用该场景主图。"
+                  ],
+                  "useBaseAppearance": false,
+                  "useMainAppearance": true
+                },
+                {
+                  "invariants": [
+                    "只呈现长凳区的长凳及主图中可见的相邻地面与结构，不新增未登记固定物。",
+                    "保持长凳已可见的材质、颜色、磨损与做工；主图未选定前不预设长凳是木制、金属或组合材质。",
+                    "保持已登记连接：入口与长凳区相邻；长凳区通向站台门；不由此推断轴线、朝向或左右顺序。",
+                    "普通现实城市、夜间，无魔法；画面中不出现电子或数字设备，道具为机械或手工物品（项目世界规则）。",
+                    "本张取景不出现人物；参考图中的临时人物与站位不作为空间锚点。",
+                    "同一场景的照明调性、配色与画风与其他图片保持一致。"
+                  ],
+                  "key": "bench_detail",
+                  "label": "旧候车厅 · 长凳细节（待主图）",
+                  "modelId": "qwen-image-2.1",
+                  "parameters": {
+                    "seed": 42,
+                    "size": "1536x1024",
+                    "steps": 25
+                  },
+                  "prompt": "Close detail view of the seating bench in the bench area (长凳区) of the old waiting hall at night, in an ordinary contemporary city. Camera close to the bench, framing its seat surface, edge, supporting frame and feet, with a shallow but readable depth so the surrounding floor and part of the hall remain identifiable.\nDocumented layout facts only: the entrance area and the bench area are adjacent, and the bench area leads to the platform door. Do not imply a straight, coaxial, left–right, opposite, or north–south arrangement among these areas.\nMaterial focus: worn painted or varnished metal and wood with visible scratches, scuffs, chipped paint, dust and age; the plain, heavy, practical look of an old public waiting hall. Show only the bench forms and materials visible in the selected main reference image of this hall; do not invent extra fixtures.\nProject world rule: no electronic or digital devices anywhere; all props are mechanical or hand-made.\nFraming: no people in frame — a framing requirement for this shot only, not a claim that the hall is always empty. Same night ambience, colour palette and lighting character as the reference image. No text overlay, no watermark, no labels.",
+                  "purpose": "补一张长凳区材质与做工细节图，用于固定长凳的可复用外观与磨损质感；不对长凳数量、排数、朝向或区域布局下结论。本步骤依赖该场景自己的主图，主图未选定前保持挂起。",
+                  "referenceAssetIds": [],
+                  "role": "scene_detail",
+                  "styleId": "original",
+                  "unknowns": [
+                    "长凳的数量、排数、单侧或双侧、是否带扶手与靠背均未登记。",
+                    "长凳材质、尺寸、颜色与固定方式需在主图选定后核对。",
+                    "长凳区与入口、站台门的相对方位与距离未确认。",
+                    "该细节图在画面中的取景距离与镜头高度未确定。",
+                    "长凳区的地面材质与是否有标记线未登记。",
+                    "项目 visualStyle 为空，画风只能沿用该场景主图。"
+                  ],
+                  "useBaseAppearance": false,
+                  "useMainAppearance": true
+                }
+              ],
+              "key": "existing",
+              "kind": "scene",
+              "profile": {
+                "appearance": "入口、长凳区、站台门。朝向、绝对尺寸和完整平面布局未确定。",
+                "description": "入口与长凳区相邻，长凳区通向站台门。",
+                "flags": [
+                  "场景"
+                ],
+                "name": "旧候车厅",
+                "voiceDescription": ""
+              },
+              "projectRole": {
+                "plotNotes": "",
+                "role": ""
+              },
+              "unknowns": [],
+              "variationOf": null
+            }
+          ],
+          "questions": [],
+          "relations": [],
+          "summary": "只为已有场景“旧候车厅”（3af88500-...-92857cbf1003）增加两个图片步骤（scene_angle + scene_detail），不新增场景实体、不改文字资料与关系、不复制基础场景。两张图均 useMainAppearance=true、useBaseAppearance=false、referenceAssetIds=[]，因此都挂起，等待用户为该场景选定主图后再批次执行；当前该场景没有任何已选图片，本方案只是待执行步骤，未生成图片。保留资料与项目规则：入口、长凳区、站台门三个已登记要素；入口与长凳区相邻、长凳区通向站台门；普通现实城市、夜间、无电子设备（道具为机械或手工）；不把相邻／通向当作同轴、直线或方位事实，不补出朝向、绝对尺度与完整平面布局。",
+          "title": "旧候车厅 · 回看入口角度＋长凳细节",
+          "basis": {
+            "contextHash": "d5a2761b47c7a2553454a933d9377dd77ef34d95b8799c948ca0cd26f438425c",
+            "imageHashes": {},
+            "projectRevision": 3,
+            "workflowRulesVersion": 3
+          },
+          "contentHash": "b173ba78e0b20ce8bc09b49a8dafe0cef3a9a5d5180e4f09564ad93ef12ef178",
+          "applied": null,
+          "stale": false,
+          "createdAt": "2026-10-03T23:53:21.431Z"
+        },
+        {
+          "owner": "Sean",
+          "id": "860a5c20-142d-4212-b3f3-267dd157614f",
+          "projectId": "638e42ff-9d84-4fa2-8777-5b9eed4639f5",
+          "sessionId": "0bf664b5-e485-45c4-bba2-a3a01adc3701",
+          "runId": "1f93d335-df03-44d5-80a8-b02339a78a01",
+          "candidates": [
+            {
+              "baseEntityId": null,
+              "changes": "",
+              "copySpatialDraft": false,
+              "existingEntityId": "55627d2f-0656-4172-8be9-159934613032",
+              "images": [
+                {
+                  "invariants": [
+                    "同一个体：脸部特写与三张全身视图必须是同一人物，比例一致。",
+                    "短黑发中有一缕白发，发型与发色保持不变。",
+                    "服装保持资料描述：灰色长外套、深蓝裤子；不新增换装。",
+                    "身份与外观一致：夜班女管理员，不做美化、年轻化或风格漂移。",
+                    "普通现实城市、无魔法；画面中不出现电子设备（项目世界规则）。",
+                    "不因职业推断新增道具、配饰、徽章或制服改写；不新增未在主图出现的道具、配饰或伤势。",
+                    "背景为暖白／浅色棚拍底，无文字、无标签、无边框、无水印。",
+                    "仅改变视图角度，不改变已被选主图确认的可见特征。"
+                  ],
+                  "key": "v3_face_front_back_side",
+                  "label": "林岚 · 脸部＋正／背／侧 多视图（待主图）",
+                  "modelId": "qwen-v3-simple-face-front-back-side",
+                  "parameters": {
+                    "seed": 6200605,
+                    "size": "1536x1024",
+                    "steps": 25
+                  },
+                  "prompt": "Composition: Clean 3:2 landscape layout on a warm off-white background with generous spacing. No frames, borders, dividers, text, labels, watermarks, or logos. Soft, even neutral studio lighting across all panels. Rendering style, line weight, texture, and shading must strictly match the selected main reference image of the same subject.\nLeft Column (20% width): Exactly one large, straight-on head-and-shoulders portrait of the reference subject with a neutral expression. Clearly show the face and hairstyle: short black hair with a single streak of white hair. No expression grid, no stacked portraits, no additional head crops.\nRight Row (80% width): Exactly three full-height, identically scaled figures arranged left to right: Front View, Back View, and Clean Side Profile. Neutral relaxed stance, head to feet visible in every figure, including shoes. Clothing exactly as in the reference: grey long coat, dark blue trousers. Soft oval floor shadows. The face portrait and all three full-body views show the same subject.\nSetting note: ordinary contemporary city, night-shift station attendant, no magic. No electronic or digital devices on the person (project world rule); props, if any, are mechanical or hand-made. Keep the plain, unglamorous working look.\nConsistency & Constraints: Preserve exact identity, the short black hair with one white streak, facial features, grey long coat, dark blue trousers, asymmetry, and any accessories visible in the reference. Do not add, redesign, beautify, age, or extrapolate items based on lore or profession, and do not invent props, accessories, or injuries that are not visible in the reference. No extra characters, shifting proportions, extra limbs, or style drift between views.",
+                  "purpose": "为已有角色补齐脸部与正／背／侧三向可复用形象视图，供后续镜头与变体保持同一张脸和同一套服装；本步骤依赖林岚自己的主图，主图未选定前保持挂起。",
+                  "referenceAssetIds": [],
+                  "role": "three_view",
+                  "styleId": "original",
+                  "unknowns": [
+                    "项目 visualStyle 为空，最终画风只能沿用林岚主图的渲染风格；未选主图前画风未知。",
+                    "主图未选定：脸型、五官细节、白发所在位置与分缝、鞋型、身高比例、外套长度与纽扣样式等无法核对。",
+                    "林岚的身高、体型尺寸没有登记。",
+                    "资料未描述她的伤情、配饰、随身物品，不能据此写成“确认没有”。",
+                    "所需正／背／侧细节（如外套背部结构、口袋）需在主图选定后逐项核对。"
+                  ],
+                  "useBaseAppearance": false,
+                  "useMainAppearance": true
+                }
+              ],
+              "key": "existing",
+              "kind": "character",
+              "profile": {
+                "appearance": "灰色长外套，深蓝裤子，身份与服装保持一致。",
+                "description": "夜班女管理员，短黑发中有一缕白发。",
+                "flags": [
+                  "人物"
+                ],
+                "name": "林岚",
+                "voiceDescription": ""
+              },
+              "projectRole": {
+                "plotNotes": "",
+                "role": ""
+              },
+              "unknowns": [],
+              "variationOf": null
+            }
+          ],
+          "questions": [],
+          "relations": [],
+          "summary": "只为已有角色“林岚”（55627d2f-...-159934613032）增加一个图片步骤，不新建实体、不改文字资料、不改关系。步骤使用 Qwen V3 Simple 三视图系列的“脸部＋正面／背面／侧面”模型，layout=face-front-back-side：左侧一张正面脸部特写，右侧正面／背面／侧面三张全身等比例视图。useMainAppearance=true、useBaseAppearance=false、referenceAssetIds=[]，因此该步骤挂起，等待用户为林岚选定主图后再批次执行；目前项目内林岚没有任何已选图片，所以本方案只是待执行步骤，未生成任何图片。保留资料中的身份与服装：夜班女管理员、短黑发中有一缕白发、灰色长外套、深蓝裤子。遵守项目世界规则：普通现实城市、无魔法、无电子设备；不因职业推断新增道具、配饰或伤势。",
+          "title": "林岚 · V3 Simple 脸部＋正面／背面／侧面",
+          "basis": {
+            "contextHash": "d5a2761b47c7a2553454a933d9377dd77ef34d95b8799c948ca0cd26f438425c",
+            "imageHashes": {},
+            "projectRevision": 3,
+            "workflowRulesVersion": 3
+          },
+          "contentHash": "260c11ebf4d6ea4e7efa902255a7c7ac427deabafb5c8f2d77228e00783e984f",
+          "applied": null,
+          "stale": false,
+          "createdAt": "2026-10-03T23:53:21.415Z"
+        }
+      ],
+      "reviews": [],
+      "applied": [
+        {
+          "owner": "Sean",
+          "planId": "04c7e5a5-02ba-4e5d-9ed8-e3de8c06b026",
+          "entities": {
+            "existing": "3af88500-7116-4f76-bf4c-92857cbf1003"
+          },
+          "createdEntityIds": [],
+          "existingEntityIds": [
+            "3af88500-7116-4f76-bf4c-92857cbf1003"
+          ],
+          "steps": [
+            {
+              "stepId": "19f082aa-a563-4f48-8966-78182ccfed12",
+              "entityId": "3af88500-7116-4f76-bf4c-92857cbf1003",
+              "label": "旧候车厅 · 回看入口区域（待主图）"
+            },
+            {
+              "stepId": "13e742b4-f2ca-4716-a0ab-ef023c160e56",
+              "entityId": "3af88500-7116-4f76-bf4c-92857cbf1003",
+              "label": "旧候车厅 · 长凳细节（待主图）"
+            }
+          ],
+          "appliedAt": "2026-10-03T23:53:24.992Z"
+        },
+        {
+          "owner": "Sean",
+          "planId": "860a5c20-142d-4212-b3f3-267dd157614f",
+          "entities": {
+            "existing": "55627d2f-0656-4172-8be9-159934613032"
+          },
+          "createdEntityIds": [],
+          "existingEntityIds": [
+            "55627d2f-0656-4172-8be9-159934613032"
+          ],
+          "steps": [
+            {
+              "stepId": "7150888c-0d93-46bc-aae8-73bf5bcbb448",
+              "entityId": "55627d2f-0656-4172-8be9-159934613032",
+              "label": "林岚 · 脸部＋正／背／侧 多视图（待主图）"
+            }
+          ],
+          "appliedAt": "2026-10-03T23:53:25.000Z"
+        }
+      ],
+      "projectUnchanged": true
+    }
+  ],
+  "credentials": "private app-owned copies; not exported",
+  "provider": "deepseek",
+  "modelId": "deepseek-flash",
+  "generationRunCount": 0,
+  "steps": [
+    {
+      "id": "13e742b4-f2ca-4716-a0ab-ef023c160e56",
+      "planId": "04c7e5a5-02ba-4e5d-9ed8-e3de8c06b026",
+      "entityId": "3af88500-7116-4f76-bf4c-92857cbf1003",
+      "entityName": "旧候车厅",
+      "candidateKey": "existing",
+      "candidateKind": "scene",
+      "entityRevision": "976da1da4595978e1ade9a33219ebb48fa0b0ab262059510fd64b1a90fbb185d",
+      "invariants": [
+        "只呈现长凳区的长凳及主图中可见的相邻地面与结构，不新增未登记固定物。",
+        "保持长凳已可见的材质、颜色、磨损与做工；主图未选定前不预设长凳是木制、金属或组合材质。",
+        "保持已登记连接：入口与长凳区相邻；长凳区通向站台门；不由此推断轴线、朝向或左右顺序。",
+        "普通现实城市、夜间，无魔法；画面中不出现电子或数字设备，道具为机械或手工物品（项目世界规则）。",
+        "本张取景不出现人物；参考图中的临时人物与站位不作为空间锚点。",
+        "同一场景的照明调性、配色与画风与其他图片保持一致。"
+      ],
+      "key": "bench_detail",
+      "label": "旧候车厅 · 长凳细节（待主图）",
+      "modelId": "qwen-image-2.1",
+      "parameters": {
+        "seed": 42,
+        "size": "1536x1024",
+        "steps": 25
+      },
+      "prompt": "Close detail view of the seating bench in the bench area (长凳区) of the old waiting hall at night, in an ordinary contemporary city. Camera close to the bench, framing its seat surface, edge, supporting frame and feet, with a shallow but readable depth so the surrounding floor and part of the hall remain identifiable.\nDocumented layout facts only: the entrance area and the bench area are adjacent, and the bench area leads to the platform door. Do not imply a straight, coaxial, left–right, opposite, or north–south arrangement among these areas.\nMaterial focus: worn painted or varnished metal and wood with visible scratches, scuffs, chipped paint, dust and age; the plain, heavy, practical look of an old public waiting hall. Show only the bench forms and materials visible in the selected main reference image of this hall; do not invent extra fixtures.\nProject world rule: no electronic or digital devices anywhere; all props are mechanical or hand-made.\nFraming: no people in frame — a framing requirement for this shot only, not a claim that the hall is always empty. Same night ambience, colour palette and lighting character as the reference image. No text overlay, no watermark, no labels.",
+      "purpose": "补一张长凳区材质与做工细节图，用于固定长凳的可复用外观与磨损质感；不对长凳数量、排数、朝向或区域布局下结论。本步骤依赖该场景自己的主图，主图未选定前保持挂起。",
+      "referenceAssetIds": [],
+      "role": "scene_detail",
+      "styleId": "original",
+      "unknowns": [
+        "长凳的数量、排数、单侧或双侧、是否带扶手与靠背均未登记。",
+        "长凳材质、尺寸、颜色与固定方式需在主图选定后核对。",
+        "长凳区与入口、站台门的相对方位与距离未确认。",
+        "该细节图在画面中的取景距离与镜头高度未确定。",
+        "长凳区的地面材质与是否有标记线未登记。",
+        "项目 visualStyle 为空，画风只能沿用该场景主图。"
+      ],
+      "useBaseAppearance": false,
+      "useMainAppearance": true,
+      "rootStepId": "13e742b4-f2ca-4716-a0ab-ef023c160e56",
+      "parentStepId": null,
+      "version": 1,
+      "reason": "",
+      "sessionId": null,
+      "runId": null,
+      "activeStepId": "13e742b4-f2ca-4716-a0ab-ef023c160e56",
+      "isCurrent": true,
+      "revisionStatus": "current",
+      "revisionBasis": null,
+      "contentHash": "f6884c29c9fc704ba176896d160abce18e49675b9d4ddf0b8f177ab77cc4b8b7",
+      "stale": false,
+      "issue": "需要先选定当前主形象",
+      "referenceEntityId": "3af88500-7116-4f76-bf4c-92857cbf1003",
+      "sourceReferenceAssetIds": [],
+      "runs": []
+    },
+    {
+      "id": "19f082aa-a563-4f48-8966-78182ccfed12",
+      "planId": "04c7e5a5-02ba-4e5d-9ed8-e3de8c06b026",
+      "entityId": "3af88500-7116-4f76-bf4c-92857cbf1003",
+      "entityName": "旧候车厅",
+      "candidateKey": "existing",
+      "candidateKind": "scene",
+      "entityRevision": "976da1da4595978e1ade9a33219ebb48fa0b0ab262059510fd64b1a90fbb185d",
+      "invariants": [
+        "只保留已登记要素：入口、长凳区、站台门。",
+        "保持已登记连接：入口与长凳区相邻；长凳区通向站台门。相邻与通向不推断同轴、直线排列、对面、左右顺序、朝向或完整平面形状。",
+        "不新增未登记的固定结构、房间、售票设施、指示牌或装饰；主图中已有的结构、材质、颜色保持原位、原样。",
+        "普通现实城市、夜间，无魔法；画面中不出现电子或数字设备，道具为机械或手工物品（项目世界规则）。",
+        "本张取景不出现人物；参考图里的临时人物、站位与动作不作为空间锚点或场景设定。",
+        "不把镜头左右当作场景固定方向；朝向、绝对尺寸与完整平面布局保持未确认。",
+        "同一场景的材质、照明调性与配色与其他旧候车厅图片保持一致。"
+      ],
+      "key": "look_back_at_entrance",
+      "label": "旧候车厅 · 回看入口区域（待主图）",
+      "modelId": "qwen-image-2.1",
+      "parameters": {
+        "seed": 42,
+        "size": "1536x1024",
+        "steps": 25
+      },
+      "prompt": "Interior view of the old waiting hall (旧候车厅) at night, in an ordinary contemporary city, empty of people. Camera stands inside the hall on the bench-area side and looks back toward the entrance area, so the hall interior occupies the foreground and the entrance area is seen ahead in the depth of the frame.\nDocumented layout facts only: the entrance area and the bench area are adjacent, and the bench area leads to the platform door. Show only these areas and the structures visible in the selected main reference image of this hall. Do not assume or depict any straight, coaxial, left–right, opposite, or north–south arrangement between the entrance, the bench area, and the platform door.\nMaterials and atmosphere: worn, old public waiting hall, aged paint, dull floor, plain ceiling, night ambience, even nondescript practical lighting consistent with the reference image; nothing glossy or renovated.\nProject world rule: no electronic or digital devices anywhere; every fixture and prop is mechanical or hand-made (analogue signage, metal fittings, wooden or metal benches).\nFraming: no people in frame — this is a framing requirement for this shot only, not a claim that the hall is always empty. Consistent perspective, no fisheye, no text overlay, no watermark, no labels. Preserve any structure, material, and colour already visible in the reference image; do not relocate or redesign it.",
+      "purpose": "补一个与总览方向相反的回看角度，用于说明入口区域与厅内空间的关系；只呈现已登记的相邻与连通，不确立轴向、尺度或完整平面形状。本步骤依赖该场景自己的主图，主图未选定前保持挂起。",
+      "referenceAssetIds": [],
+      "role": "scene_angle",
+      "styleId": "original",
+      "unknowns": [
+        "回看方向的基准未确认：本步骤按“从厅内朝入口区域回看”取景，若用户意图是“从入口朝厅内看”，需改写后再执行。",
+        "入口与长凳区、长凳区与站台门的轴向、前后、左右顺序均未登记。",
+        "候车厅的绝对尺寸、层高、进深与完整平面布局未确认。",
+        "入口的形式（门洞、门扇数量、宽窄）未登记，主图未选定前无法核对。",
+        "长凳的数量、排数、材质、朝向未登记，无法在角度图里固定。",
+        "照明方式、墙地顶材质与色彩未登记。",
+        "项目 visualStyle 为空，画风只能沿用该场景主图。"
+      ],
+      "useBaseAppearance": false,
+      "useMainAppearance": true,
+      "rootStepId": "19f082aa-a563-4f48-8966-78182ccfed12",
+      "parentStepId": null,
+      "version": 1,
+      "reason": "",
+      "sessionId": null,
+      "runId": null,
+      "activeStepId": "19f082aa-a563-4f48-8966-78182ccfed12",
+      "isCurrent": true,
+      "revisionStatus": "current",
+      "revisionBasis": null,
+      "contentHash": "f16d9bb2723163b1309f248f19e934cca3f5081c663de77e444265e5bbf04a21",
+      "stale": false,
+      "issue": "需要先选定当前主形象",
+      "referenceEntityId": "3af88500-7116-4f76-bf4c-92857cbf1003",
+      "sourceReferenceAssetIds": [],
+      "runs": []
+    },
+    {
+      "id": "7150888c-0d93-46bc-aae8-73bf5bcbb448",
+      "planId": "860a5c20-142d-4212-b3f3-267dd157614f",
+      "entityId": "55627d2f-0656-4172-8be9-159934613032",
+      "entityName": "林岚",
+      "candidateKey": "existing",
+      "candidateKind": "character",
+      "entityRevision": "2c3d68a3068ecd38f527d5ceaf3ac225e40ac1452419687c174d75ec5df5604b",
+      "invariants": [
+        "同一个体：脸部特写与三张全身视图必须是同一人物，比例一致。",
+        "短黑发中有一缕白发，发型与发色保持不变。",
+        "服装保持资料描述：灰色长外套、深蓝裤子；不新增换装。",
+        "身份与外观一致：夜班女管理员，不做美化、年轻化或风格漂移。",
+        "普通现实城市、无魔法；画面中不出现电子设备（项目世界规则）。",
+        "不因职业推断新增道具、配饰、徽章或制服改写；不新增未在主图出现的道具、配饰或伤势。",
+        "背景为暖白／浅色棚拍底，无文字、无标签、无边框、无水印。",
+        "仅改变视图角度，不改变已被选主图确认的可见特征。"
+      ],
+      "key": "v3_face_front_back_side",
+      "label": "林岚 · 脸部＋正／背／侧 多视图（待主图）",
+      "modelId": "qwen-v3-simple-face-front-back-side",
+      "parameters": {
+        "seed": 6200605,
+        "size": "1536x1024",
+        "steps": 25
+      },
+      "prompt": "Composition: Clean 3:2 landscape layout on a warm off-white background with generous spacing. No frames, borders, dividers, text, labels, watermarks, or logos. Soft, even neutral studio lighting across all panels. Rendering style, line weight, texture, and shading must strictly match the selected main reference image of the same subject.\nLeft Column (20% width): Exactly one large, straight-on head-and-shoulders portrait of the reference subject with a neutral expression. Clearly show the face and hairstyle: short black hair with a single streak of white hair. No expression grid, no stacked portraits, no additional head crops.\nRight Row (80% width): Exactly three full-height, identically scaled figures arranged left to right: Front View, Back View, and Clean Side Profile. Neutral relaxed stance, head to feet visible in every figure, including shoes. Clothing exactly as in the reference: grey long coat, dark blue trousers. Soft oval floor shadows. The face portrait and all three full-body views show the same subject.\nSetting note: ordinary contemporary city, night-shift station attendant, no magic. No electronic or digital devices on the person (project world rule); props, if any, are mechanical or hand-made. Keep the plain, unglamorous working look.\nConsistency & Constraints: Preserve exact identity, the short black hair with one white streak, facial features, grey long coat, dark blue trousers, asymmetry, and any accessories visible in the reference. Do not add, redesign, beautify, age, or extrapolate items based on lore or profession, and do not invent props, accessories, or injuries that are not visible in the reference. No extra characters, shifting proportions, extra limbs, or style drift between views.",
+      "purpose": "为已有角色补齐脸部与正／背／侧三向可复用形象视图，供后续镜头与变体保持同一张脸和同一套服装；本步骤依赖林岚自己的主图，主图未选定前保持挂起。",
+      "referenceAssetIds": [],
+      "role": "three_view",
+      "styleId": "original",
+      "unknowns": [
+        "项目 visualStyle 为空，最终画风只能沿用林岚主图的渲染风格；未选主图前画风未知。",
+        "主图未选定：脸型、五官细节、白发所在位置与分缝、鞋型、身高比例、外套长度与纽扣样式等无法核对。",
+        "林岚的身高、体型尺寸没有登记。",
+        "资料未描述她的伤情、配饰、随身物品，不能据此写成“确认没有”。",
+        "所需正／背／侧细节（如外套背部结构、口袋）需在主图选定后逐项核对。"
+      ],
+      "useBaseAppearance": false,
+      "useMainAppearance": true,
+      "rootStepId": "7150888c-0d93-46bc-aae8-73bf5bcbb448",
+      "parentStepId": null,
+      "version": 1,
+      "reason": "",
+      "sessionId": null,
+      "runId": null,
+      "activeStepId": "7150888c-0d93-46bc-aae8-73bf5bcbb448",
+      "isCurrent": true,
+      "revisionStatus": "current",
+      "revisionBasis": null,
+      "contentHash": "89822cc1d99f3feb2ca2a3011ecb2c44dd901c1f69950d003eec50f8d07750c6",
+      "stale": false,
+      "issue": "需要先选定当前主形象",
+      "referenceEntityId": "55627d2f-0656-4172-8be9-159934613032",
+      "sourceReferenceAssetIds": [],
+      "runs": []
+    }
+  ],
+  "structuralChecksPassed": true
+}

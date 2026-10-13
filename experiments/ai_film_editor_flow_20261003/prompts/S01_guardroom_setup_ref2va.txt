@@ -1,0 +1,21 @@
+subject_definitions:
+<Subject 1> is the same adult East Asian woman shown in <Picture 1> and <Picture 2>. <Picture 1> provides her main-appearance identity and costume reference; <Picture 2> provides her confirmed front, side, and back proportions. Preserve her black hair tied in a low ponytail, calm youthful face, dark navy high-collar buttoned uniform, silver shoulder and forearm armor, dark trousers, black boots, and one black sheathed katana at her waist. Keep the katana sheathed and preserve the same outfit and equipment throughout this clip.
+
+summary:
+[reference generation] Create a 4-second, 16:9 live-action-style dramatic setup in one quiet guardroom at dusk. Use <Subject 1> only for the visible character's identity, clothing, body proportions, and sheathed katana. The original white studio backgrounds are reference-sheet backgrounds and must not appear in the target scene.
+
+retention_analysis:
+<Subject 1> (appears throughout [Shot 1]): fully_preserved - retain the woman's facial identity, low ponytail, navy uniform, silver shoulder and forearm armor, dark trousers, black boots, and single sheathed katana. The new room, lighting, pose, and action are newly requested scene content, not source attributes.
+
+detailed_description:
+The target video is a restrained live-action dramatic scene with natural human movement, realistic cloth and metal response, muted blue-gray evening light, and a quiet, watchful mood. Keep the same adult East Asian woman from <Subject 1> as the only visible person. Preserve her face, black low ponytail, high-collar navy uniform, silver shoulder plates, silver forearm guards, dark trousers, black boots, and one black katana in its scabbard at her waist. Do not turn the reference sheet's plain white studio background into the setting. Place her inside one modest guardroom with a dark wooden doorway, a narrow window, and a warm practical lamp in the background. The room is simple, quiet, and spatially stable; no signs, readable writing, logos, or extra people appear.
+
+[Shot 1] The shot opens on a medium-wide three-quarter view of the woman standing just inside the guardroom, framed from her knees upward with the doorway visible behind her. She faces slightly toward screen right. At the start she holds a relaxed but alert posture, shoulders level, hands lowered, the katana still fully sheathed. A faint sequence of footsteps approaches from outside the frame. She pauses, shifts her eyes toward the doorway, then turns her head and upper torso toward the sound in one measured movement. Her right hand rises only to rest lightly near the scabbard; she does not draw or touch the blade. Her expression changes from neutral concentration to quiet recognition, with a slight softening around the eyes. The camera makes a very slow, small push toward her face and hand, keeping both in the same composition. The action remains a single continuous beat without a cut, sudden camera shake, dramatic attack, or additional gesture. The navy fabric moves only slightly as she turns; the silver armor catches a narrow warm lamp reflection while the window side remains cool. By the final moment she is looking toward the unseen visitor, poised to greet them, and the katana remains secured at her waist. Keep screen direction, doorway position, window light, and costume details consistent from beginning to end.
+
+Maintain a clear silhouette against the dim room. Preserve natural blinking and subtle breathing, and keep the face visible throughout the turn.
+
+overall_soundscape:
+Quiet room tone, faint evening wind at the window, and soft approaching footsteps from outside the doorway. No intelligible speech or singing. Keep the footsteps subdued beneath the room ambience and avoid added musical tones.
+
+non_diegetic_music:
+N/A.

@@ -1,0 +1,38 @@
+{
+  "owner": "Sean",
+  "manifestId": "e0797899-ccb5-46d1-b461-13035a820dbc",
+  "contentHash": "52379821c048fc7a4c98498fc94499d6aec3324d03da3fe5af5a7b100db422b8",
+  "entityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+  "entityName": "一期验收 · 四图概念探索",
+  "assetCount": 3,
+  "assets": [
+    {
+      "assetId": "1e2f367f-132f-4c92-93d7-660422eaf8be",
+      "role": "voice",
+      "mime": "audio/wav",
+      "contentHash": "136dc791274fa4bf7f7a5cb4667c04bbaf8affd92c7473775cf295846215ff1b",
+      "localPath": "assets/1e2f367f-132f-4c92-93d7-660422eaf8be.wav"
+    },
+    {
+      "assetId": "432cfa98-83f2-416e-b600-01090075fb73",
+      "role": "three_view",
+      "mime": "image/png",
+      "contentHash": "dff6328599b5a4fe878ce234590d864b83b2a936c89032fecabac610495aadd9",
+      "localPath": "assets/432cfa98-83f2-416e-b600-01090075fb73.png"
+    },
+    {
+      "assetId": "af9823e0-1b27-48b7-a469-47ddcf4b7534",
+      "role": "main_appearance",
+      "mime": "image/png",
+      "contentHash": "df20a30c62bf979ff04d2773b1757620847d3b485b580095b429031b5ea2d04b",
+      "localPath": "assets/af9823e0-1b27-48b7-a469-47ddcf4b7534.png"
+    }
+  ],
+  "missingCapabilities": [
+    "relations",
+    "sound_effect",
+    "review_status",
+    "prompt_version"
+  ],
+  "verifiedAt": "2026-10-03T05:47:21.399Z"
+}

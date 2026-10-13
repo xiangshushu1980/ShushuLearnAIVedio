@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "owner": "Sean",
+  "instanceId": "13691d3c-895a-4daa-846e-f8623ce89d15",
+  "filmProjectId": "5269e95a-d8b7-4c66-b8fd-603be396ef4c",
+  "workspaceRoot": "/home/sean/projects/comfy-ops/experiments/sean_film_pi_20261005/workspaces/films/5269e95a-d8b7-4c66-b8fd-603be396ef4c",
+  "toolRepository": "/home/sean/projects/comfy-ops",
+  "apiUrl": "http://127.0.0.1:4195",
+  "taskId": "remote-fbb88314-4820-4f5d-bf06-7103b9c56c51",
+  "mode": "prepare",
+  "memoryPools": {
+    "project": "workspaces",
+    "domain": "comfy-ops",
+    "global": "global"
+  },
+  "bindingVersion": 2,
+  "updatedAt": "2026-10-05T10:02:54.613Z"
+}

@@ -1,0 +1,18 @@
+{
+  "owner": "Sean",
+  "candidateId": "f37fe841-3d96-4a24-86a1-19628564de99",
+  "scope": "2fps sampled visual review",
+  "passes": [
+    "B absent at8s endpoint",
+    "A remains seated",
+    "Single blade pickup and departure"
+  ],
+  "failures": [
+    "Opening resets B to wearing outer garment",
+    "B repeats S3 removal and placement before sword pickup",
+    "Opening table garment absent despite current S3 tail showing it"
+  ],
+  "provenanceCheck": "input Picture7 actual S3 tail time4.308333s, current source and hash verified",
+  "hypothesis": "B image references in original outer garment may dominate opening-frame costume state; not proven causal",
+  "selected": false
+}

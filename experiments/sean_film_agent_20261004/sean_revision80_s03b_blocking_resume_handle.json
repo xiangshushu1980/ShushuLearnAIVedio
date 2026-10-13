@@ -1,0 +1,14 @@
+{
+  "owner": "Sean",
+  "projectId": "538005c3-16bd-4709-aa4e-70831b960a24",
+  "sessionId": "0707ba67-08da-42cf-9bc9-b1fa07bf95cf",
+  "request": {
+    "requestId": "23279245-16c4-4d4a-b46b-b69f7f3ffa6d",
+    "mode": "prepare",
+    "text": "续接上一轮1cf71文字修订。该轮因新get_current_spatial_plan缺changes默认值导致scoped草稿把其他6镜changes补[]时误判变化；根已主动取消该轮并修复4e888e8，实际服务器profile12已加载，llm配置正常。不要重做已采用的S3b action/continuity (rev80一步far-side站位)，不要用任何旧提案。freshcontext/loadmethod，调用NEWget_current_spatial_plan拿完整当前空间稿，现已含changes[]默认值。仅patch:{summary,shotId:7a4d2f18-6c93-4b57-9e21-5d8c3f0a6b74,spatial:完整当前稿}修改S3b end/transition及必要prompt：B从实际Picture9双手抓上部/下布垂落开场，沿远侧桌边screenleft迈一步使身体对齐原杯左/书左/刀远侧barewood点，不绕桌端/不跨近侧/不换轴/不撞静物，另一手从下方托起衣身两袖自然聚拢保持托持，近木面送到落点，衣先触木后双手完全离开，全衣身两袖木面支撑、不垂边。末态B处远侧左移一步位置(不再躯干脚原地锁死)，A书杯刀纸不动。原scenePlan/questions/其他6镜逐字原样，保留当前实时prompts尤其S3a实测ca55对应prompt，不恢复旧空间稿prompt。先validate草稿，看scope和词数warnings无错后保存新提案并采用。再用固定stageprompt仅S3b生成完整六段400-450词，实际9Picture开场不变，其他图顺序/4秒/seed/空对白不变；全文核对没有旧feet/torso stayfixed限制，最后freshvalidate报告前3镜selected/current和其他6镜不变。授权仅文字，禁止GPU/选片/锚帧/其他镜/合成；34s不是30s验收目标。"
+  },
+  "response": {
+    "runId": "f773d0b1-31f8-465f-99c0-e51a94a3838c",
+    "status": "running"
+  }
+}

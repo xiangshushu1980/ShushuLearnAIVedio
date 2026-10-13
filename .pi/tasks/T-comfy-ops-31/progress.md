@@ -174,7 +174,7 @@
 
 ## 2026-09-09：A 身份+服装+场景，B-D 新脸+场景固定机位测试
 
-- 配置：`experiments/h3_mc_locked_camera_face_clothing_scene.json`。A 同时使用 `ref_identity_hd_v2.png`、`ref_outfit_hands_hd.png`、`ref_scene_hd_v2.png`；B-D 使用同一张新脸 `ref_game_banshee_queen.png` 和同一场景图，不再输入服装图。
+- 配置：`experiments/archive/h3_mc_orphan_cases/h3_mc_locked_camera_face_clothing_scene.json`。A 同时使用 `ref_identity_hd_v2.png`、`ref_outfit_hands_hd.png`、`ref_scene_hd_v2.png`；B-D 使用同一张新脸 `ref_game_banshee_queen.png` 和同一场景图，不再输入服装图。
 - 提示词明确固定中景机位：无 pan/tilt/zoom/dolly/reframing；B-D 只允许改变脸部身份，衣服、身体、手势、动作和背景继承。
 - 最终成片：`/home/sean/projects/ComfyUI/output/video/T31/t31_locked_camera_face_clothing_scene_master.mp4`，481 帧/20.041667s；原始 Breeze 音频单次挂载，音频编码流约20.011s，容器总长20.041667s。
 - 经验结论：服装参考图若包含大面积身体/双手和不同构图，可能诱导镜头转为衣服特写；必须在提示词中声明服装图只定义材质/衣服，不能定义构图。B-D 看不到明显换脸，仍说明 MC latent 对脸部身份的继承强于后续静态头像参考；连续性与换脸是冲突目标。
@@ -182,11 +182,11 @@
 ## 2026-09-09：三参考图高清重制
 
 - 重制并检查三张 1672×941 高清参考图：`ref_face_hd.png`（脸部身份）、`ref_scene_hd.png`（特色电视演播室，无人物/手）、`ref_outfit_hands_hd.png`（服装与手势）。
-- `experiments/h3_mc_three_ref_four_chain.json` 已切换到新参考图；旧的 `ref_face_only.png`、`ref_gray_studio_scene.png`、`ref_outfit_hands.png` 已移入系统回收站。原始主播全身锚定图和音频保留。
+- `experiments/archive/h3_mc_orphan_cases/h3_mc_three_ref_four_chain.json` 已切换到新参考图；旧的 `ref_face_only.png`、`ref_gray_studio_scene.png`、`ref_outfit_hands.png` 已移入系统回收站。原始主播全身锚定图和音频保留。
 - 2026-09-12：复核三参考图四段链 `t31_three_ref_four_segment_master.mp4`。四段均成功，481 帧/20.042s，A=124 帧、B-D 各保留119帧，latent 齐全；输出为 `ComfyUI/output/video/T31/t31_three_ref_four_segment_master.mp4`。
 - 2026-09-12：T31 QC（接缝帧 124/243/362）显示边界 SSIM `0.9199/0.9021/0.9715`，跳变倍率 `1.62/1.584/1.047`；第三处接缝已平滑，前两处仍是轻度复核项。中心锚点相对首帧 SSIM 在 5.17/10.125/15.083/20.0s 为 `0.7381/0.1937/0.3210/0.2067`，说明第2段后构图/姿态累计漂移明显。音频20.0534s、视频20.0417s，但包络—嘴部代理相关性仅 `0.0918`、最佳延迟约625ms；不能作为逐音素同步结论。
 - 2026-09-12：抽帧目视确认身份/服装未崩坏，但各段动作与裁切状态持续变化，静态身份+场景参考没有解决 MC 链累计漂移。下一步不再堆静态参考图，优先比较 latent-mask/AV Extension 或更短镜头重建策略；三参考图链保留为当前标准20步对照样本。
-- 2026-09-12：按用户确定的官方式最简参考角色 prompt 做 A→B 对照：两段均只使用 `The woman from <Picture 1> speaks to camera in the studio from <Picture 2>.`，不写 same/uninterrupted/match，也不写镜头禁止词；配置 `experiments/h3_mc_minimal_roles_ab.json`，输出 `t31_roles_A124_00001_.mp4`、`t31_roles_B141_00001_.mp4`。
+- 2026-09-12：按用户确定的官方式最简参考角色 prompt 做 A→B 对照：两段均只使用 `The woman from <Picture 1> speaks to camera in the studio from <Picture 2>.`，不写 same/uninterrupted/match，也不写镜头禁止词；配置 `experiments/archive/h3_mc_orphan_cases/h3_mc_minimal_roles_ab.json`，输出 `t31_roles_A124_00001_.mp4`、`t31_roles_B141_00001_.mp4`。
 - 2026-09-12：A→B 两段均成功（A约120s、B约130s，峰值显存23.7/23.8GB）。目视显示 A 段内部仍从宽景桌面切到近距离胸像再回到中景，B 段主要维持宽景；仅用 `<Picture>` 角色标签和一句 prompt 没有锁定固定镜头。结论：问题不是 prompt 缺少 `same/uninterrupted/match`，而是 Ref2VA 的普通参考图条件本身不提供固定镜头锚点；需要换成完整构图锚点/FL2VA 或其他硬约束路线，暂停继续扩展链长。
 - 2026-09-13：Ref2VA 清理与最小基线：历史 Ref2VA/T31 输出已移入 /tmp/ref2va-cleanup-20260913/，保留 input 参考图、experiments 工作流/结果记录及模型文件。
 - 2026-09-13：单段无 MC/无 LoRA 基线（1 张 h3_avatar/anchor_host_blank_gray_16x9.png，768×448，length=99，20 steps，res_multistep，seed 20260913）成功，runner 耗时 78.7s；请求 99 帧，实际输出 107 帧/4.458s。未见 OOM。

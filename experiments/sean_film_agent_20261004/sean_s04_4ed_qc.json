@@ -1,0 +1,23 @@
+{
+  "owner": "Sean",
+  "candidateId": "4ed9180a-faf3-4014-a55a-a78535e48819",
+  "evidence": [
+    "2fpscontact",
+    "tail at6.38sec"
+  ],
+  "passes": [
+    "A seated at endpoint",
+    "Single sword picked up and removed from tabletop",
+    "Outer garment remains flat on tabletop"
+  ],
+  "failures": [
+    "B leg remains at right edge at6.38sec",
+    "Text direct route/early departure did not materially accelerate departure"
+  ],
+  "selected": false,
+  "nextWork": [
+    "Resolve S5 old continuity claiming B visible vs S4 planned absent",
+    "Evaluate shorter physical departure path or revised shot timing using actual endpoint; do not silently accept failure",
+    "Complete S5 clothing identity change/spin and audio verification"
+  ]
+}

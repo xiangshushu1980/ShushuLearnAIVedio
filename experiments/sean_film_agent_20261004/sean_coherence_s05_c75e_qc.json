@@ -1,0 +1,7 @@
+{
+  "owner": "Sean",
+  "candidateId": "c75e5638-4ddd-4f7a-aa31-997e5637ff0c",
+  "method": "actual2fps wholeclip",
+  "verdict": "reject-multiple-turns",
+  "observations": "Uniformremoval/owncoatnear-chair/Btablecoattoworn/sameponytailA/Bswordabsent consistent; two separatebackpasses withfrontbetween duringrotation. Notselected. Sameconfiguredseed reusedacrossrevisiontrials; varysamplingnextwithoutrewritingstory."
+}

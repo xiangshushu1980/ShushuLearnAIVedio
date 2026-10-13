@@ -1,0 +1,13 @@
+{
+  "owner": "Sean",
+  "kind": "text-review",
+  "artifact": "corrected-spatial-result.json",
+  "sha256": "53b9229c383defe78673103d547ec4fac2a5bb37823291c7b6135c149c1762f2",
+  "sourceJobId": "b2d8117c-a7a8-4719-89c4-660754b9f94f",
+  "filmRevision": 20,
+  "taskSource": "isolated test fixture, not real Coordinator",
+  "visualReview": false,
+  "gpuSubmitted": false,
+  "unresolvedQuestions": 4,
+  "applied": false
+}

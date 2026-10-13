@@ -1,0 +1,16 @@
+{
+  "owner": "Sean",
+  "candidateId": "b3362266-52f2-43a8-858f-71a943cfba7e",
+  "scope": "2fps visual samples, no audio review",
+  "observations": [
+    "Opening coat remains flat on table; no repeated removal",
+    "B rises and lifts single sword",
+    "B absent in8sec endpoint",
+    "A remains seated and coat/neutral props stay"
+  ],
+  "limitations": [
+    "No complete audio/lip sync review",
+    "Sampled images do not prove every transition between frames"
+  ],
+  "decision": "provisional current-chain selection"
+}

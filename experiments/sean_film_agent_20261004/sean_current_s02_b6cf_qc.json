@@ -1,0 +1,16 @@
+{
+  "owner": "Sean",
+  "candidateId": "b6cf15f3-480e-473c-b560-aae73c90a2f5",
+  "scope": "2fps visual samples; no audio listening",
+  "observations": [
+    "Both actors remain seated",
+    "Same library shelves table screen positions and tabletop blade",
+    "B raises gaze during exchange"
+  ],
+  "decision": "provisional current continuity chain selection",
+  "remaining": [
+    "Exact dialogue in this new candidate",
+    "Timbre separation and speaker attribution",
+    "Lip sync"
+  ]
+}

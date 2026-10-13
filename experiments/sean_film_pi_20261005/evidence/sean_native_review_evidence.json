@@ -1,0 +1,157 @@
+{
+  "owner": "Sean",
+  "at": "2026-10-05T10:44:23.326279+00:00",
+  "scope": {
+    "service": "http://127.0.0.1:4195",
+    "authority": "Task Center response is an isolated fixture, NOT real Coordinator",
+    "nativeSessionId": "01a10b84-3653-7bee-bbf3-264b426c9239",
+    "noRealCoordinatorWrite": true,
+    "noApplyOrGeneration": true
+  },
+  "restart": {
+    "originalPid": 138871,
+    "newPid": 147598,
+    "cwd": "/home/sean/projects/comfy-ops/film-editor",
+    "command": "/home/sean/.local/share/fnm/node-versions/v24.18.0/installation/bin/node --env-file-if-exists=.env server/index.mjs",
+    "port": "4195",
+    "dataDir": "/home/sean/projects/comfy-ops/experiments/sean_film_pi_20261005/runtime",
+    "originalEnvironmentInherited": true,
+    "originalPidGone": true,
+    "production4190Pid147581StillPresent": true,
+    "runningJobsBefore": 0,
+    "runningJobsAfter": 0,
+    "gpuEnabled": null
+  },
+  "sourceFile": {
+    "path": "/home/sean/projects/comfy-ops/experiments/sean_film_pi_20261005/evidence/corrected-spatial-result.json",
+    "rawSHA256BeforeLaterFix": "6db6b2dfc1fb174ca2ee1146c26f63f9252cfe6bdd70f6869bded74c1cd972df",
+    "canonicalSHA256": "6536fbf6929de777e2953cf4c02c7ceed2f630fe32bd31326c68f74505a049ed",
+    "wordCountsReportedByLuna": [
+      420,
+      378,
+      413,
+      395,
+      430
+    ],
+    "textSelfCheckDidNotCoverActualServerValidation": true
+  },
+  "verification": {
+    "reviewDraftExactlyEqual": true,
+    "canonicalReviewDraftSHA256": "6536fbf6929de777e2953cf4c02c7ceed2f630fe32bd31326c68f74505a049ed",
+    "originalJobResultUnchanged": true,
+    "originalJobResultSHA256": "651bbf7ef6f1e8276626128d12f1be98337bf91359e56dc4ea28c503f887e7fe",
+    "projectFactsUnchanged": true,
+    "projectBeforeSHA256": "2bd0e8bf95e538ccd6d25921d0cdef31610db63f643aac31922331bcabbec9c6",
+    "projectAfterSHA256": "2bd0e8bf95e538ccd6d25921d0cdef31610db63f643aac31922331bcabbec9c6",
+    "revision": 20,
+    "newJobs": 0,
+    "candidateCountUnchanged": true,
+    "appliedAt": null,
+    "jobDiffKeys": [
+      "reviewDraft",
+      "reviewDraftAt",
+      "reviewValidation",
+      "reviewSource"
+    ]
+  },
+  "validation": {
+    "warnings": [
+      {
+        "shotId": "51b9d957-d24c-47e4-9268-d61ffcfa68ab",
+        "title": "A arrives, sets down the sword, and sits",
+        "message": "提示词缺少 [Shot 1]"
+      },
+      {
+        "shotId": "9478d1bf-5268-41d0-b899-98e3dc9d3e6c",
+        "title": "A and B talk at the main reading table",
+        "message": "提示词缺少 [Shot 1]"
+      },
+      {
+        "shotId": "1e97e13e-d8d1-4c23-9b67-a81a48f2353a",
+        "title": "B removes the casual clothes and places them aside",
+        "message": "提示词缺少 [Shot 1]"
+      },
+      {
+        "shotId": "6df199fc-99db-4f97-af28-82ed68869e16",
+        "title": "B takes the sword and leaves; A calls out",
+        "message": "提示词缺少 [Shot 1]"
+      },
+      {
+        "shotId": "5f220d41-6480-461a-9082-d91b8ae8d4f2",
+        "title": "A changes into B's casual clothes and spins",
+        "message": "提示词缺少 [Shot 1]"
+      }
+    ],
+    "questions": [
+      "角色B脱下休闲服后的内层服装资料缺失；提示词不描述该内层，不推断其样式。",
+      "角色A脱下的自身衣物具体包含哪些衣物件、是否有内层，资料缺失；提示词只保留“自己的衣物”这一动作，不扩写衣物种类或外观。",
+      "休闲服的组成件数与具体层次资料缺失；提示词只引用现有休闲服参考，不拆分或新增衣物。",
+      "输入绑定缺口：镜2与镜3动作中可见刀，但对应 imageAssetIds 未包含现有“一把刀”参考图。本 result-only 文件不能改 imageAssetIds，故未虚构 Picture 标签；若需锁定参考尺寸与形态，应在生成输入中补入既有刀图。"
+    ],
+    "valid": false
+  },
+  "reviewSource": {
+    "instanceId": "13691d3c-895a-4daa-846e-f8623ce89d15",
+    "taskId": "remote-fbb88314-4820-4f5d-bf06-7103b9c56c51",
+    "controllerGeneration": 2,
+    "bindingVersion": 2,
+    "source": "external",
+    "sessionId": "01a10b84-3653-7bee-bbf3-264b426c9239",
+    "runId": "487f332f-fad9-4c79-8e05-68f896fde276",
+    "owner": "Sean",
+    "projectId": "5269e95a-d8b7-4c66-b8fd-603be396ef4c",
+    "jobId": "b2d8117c-a7a8-4719-89c4-660754b9f94f",
+    "revision": 20
+  },
+  "actualRunAudit": {
+    "id": "487f332f-fad9-4c79-8e05-68f896fde276",
+    "sessionId": "01a10b84-3653-7bee-bbf3-264b426c9239",
+    "source": "external",
+    "status": "succeeded",
+    "tools": [
+      {
+        "name": "review_workflow_result",
+        "status": "succeeded",
+        "startedAt": "2026-10-05T10:40:08.587Z",
+        "finishedAt": "2026-10-05T10:40:08.651Z"
+      }
+    ],
+    "skills": [
+      {
+        "path": "/home/sean/.pi/agent/skills/film-production/SKILL.md",
+        "contentHash": "eabf9bb8cb76c1713c7a9c0a9c7c9ebfeb49bc56f39628ea23ccb94298791d2f",
+        "source": "pi-native-read",
+        "complete": true,
+        "loadedAt": "2026-10-05T10:03:03.686Z"
+      },
+      {
+        "path": "/home/sean/.pi/agent/skills/film-shot-planning/SKILL.md",
+        "contentHash": "69c00e3b48ec4b667a0a99ca5f5acd366b8133f0d6f579e8ffaf67fd1d4f345c",
+        "source": "pi-native-read",
+        "complete": true,
+        "loadedAt": "2026-10-05T10:11:27.627Z"
+      },
+      {
+        "path": "/home/sean/.pi/agent/skills/film-shot-planning/SKILL.md",
+        "contentHash": "2e649ea6209a0c4da59ed6ed4a7d08fa42021cff7b9aca986ada376287dac3c4",
+        "source": "pi-native-read",
+        "complete": true,
+        "loadedAt": "2026-10-05T10:39:41.841Z"
+      },
+      {
+        "path": "/home/sean/.pi/agent/skills/film-production/references/runtime.md",
+        "contentHash": "610c7933a49a744804480b7ee3cc32a289848c5dc52606bee02c58e2cdf17b27",
+        "source": "pi-native-read",
+        "complete": true,
+        "loadedAt": "2026-10-05T10:39:41.852Z"
+      }
+    ]
+  },
+  "idempotency": {
+    "key": "739e9913-f3bf-4265-8dda-29a2e6c14b34",
+    "matchingRunOperationCount": 1,
+    "operationStatuses": [
+      "succeeded"
+    ]
+  }
+}

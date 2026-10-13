@@ -1,0 +1,5047 @@
+{
+  "owner": "Sean",
+  "run": {
+    "id": "b3382b47-13ef-454c-876a-2825e5e7e746",
+    "session_id": "c373cb5a-2682-49e8-a443-2b284a78964a",
+    "request_id": "47d26247-f1c7-4628-af84-888733f4ee5c",
+    "status": "succeeded",
+    "basis": "{\"contextHash\":\"4896dc3288a319ef41792c99b5b5488676896a64f33d59cc4f383191d445ee44\",\"evidenceStateHash\":null,\"images\":[{\"assetId\":\"a4e8670a-471d-4352-904a-544608a55427\",\"contentHash\":\"237a16ead67bf023ea0b897bb4ec71a6356b4b626a72badb7fedafe05acf6eff\"},{\"assetId\":\"e0003bae-c5f9-4e4b-9ffc-c2d164afe6a9\",\"contentHash\":\"e5776a5c13132da5bc8bb51801f64ec50bbf5c4749e7bfe38b403f4f48177f28\"},{\"assetId\":\"7652eda5-1cde-4f3e-b1e4-6a579c364a48\",\"contentHash\":\"6e899571f447bc759b73fc0adca2d5320420192abffc0d6416502bce053abf12\"}],\"profileVersion\":1,\"referenceAssetIds\":[\"a4e8670a-471d-4352-904a-544608a55427\",\"e0003bae-c5f9-4e4b-9ffc-c2d164afe6a9\",\"7652eda5-1cde-4f3e-b1e4-6a579c364a48\"],\"skillVersion\":14,\"spatialVersionId\":null}",
+    "assistant_message_id": "b2d800ed-7c47-4b62-951f-4ee0aec864f5",
+    "error": null,
+    "created_at": "2026-10-04T12:42:21.688Z",
+    "completed_at": "2026-10-04T12:43:12.270Z"
+  },
+  "events": [
+    {
+      "type": "text",
+      "body": "{\"delta\":\"先\"}",
+      "created_at": "2026-10-04T12:42:28.226Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"读取\"}",
+      "created_at": "2026-10-04T12:42:28.240Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"最新\"}",
+      "created_at": "2026-10-04T12:42:28.243Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"项目\"}",
+      "created_at": "2026-10-04T12:42:28.254Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"、\"}",
+      "created_at": "2026-10-04T12:42:28.257Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"相关\"}",
+      "created_at": "2026-10-04T12:42:28.260Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"实体\"}",
+      "created_at": "2026-10-04T12:42:28.267Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"与\"}",
+      "created_at": "2026-10-04T12:42:28.270Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"步骤\"}",
+      "created_at": "2026-10-04T12:42:28.306Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"索引\"}",
+      "created_at": "2026-10-04T12:42:28.309Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"，\"}",
+      "created_at": "2026-10-04T12:42:28.313Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"定位\"}",
+      "created_at": "2026-10-04T12:42:28.339Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"三\"}",
+      "created_at": "2026-10-04T12:42:28.343Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"张\"}",
+      "created_at": "2026-10-04T12:42:28.349Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"图\"}",
+      "created_at": "2026-10-04T12:42:28.352Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"的实际\"}",
+      "created_at": "2026-10-04T12:42:28.355Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"来源\"}",
+      "created_at": "2026-10-04T12:42:28.358Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"步骤\"}",
+      "created_at": "2026-10-04T12:42:28.361Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"。\"}",
+      "created_at": "2026-10-04T12:42:28.363Z"
+    },
+    {
+      "type": "tool",
+      "body": "{\"label\":\"读取项目最新资料\"}",
+      "created_at": "2026-10-04T12:42:29.205Z"
+    },
+    {
+      "type": "tool",
+      "body": "{\"label\":\"读取已保存创作方案\"}",
+      "created_at": "2026-10-04T12:42:29.208Z"
+    },
+    {
+      "type": "tool",
+      "body": "{\"label\":\"读取项目实体详情\"}",
+      "created_at": "2026-10-04T12:42:29.209Z"
+    },
+    {
+      "type": "tool",
+      "body": "{\"label\":\"读取项目实体详情\"}",
+      "created_at": "2026-10-04T12:42:29.212Z"
+    },
+    {
+      "type": "tool",
+      "body": "{\"label\":\"读取项目实体详情\"}",
+      "created_at": "2026-10-04T12:42:29.214Z"
+    },
+    {
+      "type": "tool",
+      "body": "{\"label\":\"读取图片步骤完整版本\"}",
+      "created_at": "2026-10-04T12:42:29.215Z"
+    },
+    {
+      "type": "tool",
+      "body": "{\"label\":\"读取图片步骤完整版本\"}",
+      "created_at": "2026-10-04T12:42:29.217Z"
+    },
+    {
+      "type": "tool",
+      "body": "{\"label\":\"读取图片步骤完整版本\"}",
+      "created_at": "2026-10-04T12:42:29.219Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"三\"}",
+      "created_at": "2026-10-04T12:42:35.424Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"张\"}",
+      "created_at": "2026-10-04T12:42:35.434Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"图\"}",
+      "created_at": "2026-10-04T12:42:35.448Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"来源\"}",
+      "created_at": "2026-10-04T12:42:35.451Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"已\"}",
+      "created_at": "2026-10-04T12:42:35.461Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"确认\"}",
+      "created_at": "2026-10-04T12:42:35.507Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"（\"}",
+      "created_at": "2026-10-04T12:42:35.510Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"a\"}",
+      "created_at": "2026-10-04T12:42:35.512Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"4\"}",
+      "created_at": "2026-10-04T12:42:35.515Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"e\"}",
+      "created_at": "2026-10-04T12:42:35.518Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"867\"}",
+      "created_at": "2026-10-04T12:42:35.521Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"0\"}",
+      "created_at": "2026-10-04T12:42:35.524Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"a\"}",
+      "created_at": "2026-10-04T12:42:35.527Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"←\"}",
+      "created_at": "2026-10-04T12:42:35.530Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"3\"}",
+      "created_at": "2026-10-04T12:42:35.533Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"ee\"}",
+      "created_at": "2026-10-04T12:42:35.536Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"028\"}",
+      "created_at": "2026-10-04T12:42:35.538Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"7\"}",
+      "created_at": "2026-10-04T12:42:35.541Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"a\"}",
+      "created_at": "2026-10-04T12:42:35.544Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" v\"}",
+      "created_at": "2026-10-04T12:42:35.547Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"1\"}",
+      "created_at": "2026-10-04T12:42:35.550Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"；\"}",
+      "created_at": "2026-10-04T12:42:35.553Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"e\"}",
+      "created_at": "2026-10-04T12:42:35.556Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"000\"}",
+      "created_at": "2026-10-04T12:42:35.559Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"3\"}",
+      "created_at": "2026-10-04T12:42:35.562Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"b\"}",
+      "created_at": "2026-10-04T12:42:35.565Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"ae\"}",
+      "created_at": "2026-10-04T12:42:35.567Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"←\"}",
+      "created_at": "2026-10-04T12:42:35.570Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"ad\"}",
+      "created_at": "2026-10-04T12:42:35.574Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"606\"}",
+      "created_at": "2026-10-04T12:42:35.577Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"1\"}",
+      "created_at": "2026-10-04T12:42:35.580Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"aa\"}",
+      "created_at": "2026-10-04T12:42:35.583Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" v\"}",
+      "created_at": "2026-10-04T12:42:35.586Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"2\"}",
+      "created_at": "2026-10-04T12:42:35.589Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"；\"}",
+      "created_at": "2026-10-04T12:42:35.592Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"765\"}",
+      "created_at": "2026-10-04T12:42:35.595Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"2\"}",
+      "created_at": "2026-10-04T12:42:35.598Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"eda\"}",
+      "created_at": "2026-10-04T12:42:35.601Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"5\"}",
+      "created_at": "2026-10-04T12:42:35.603Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"←\"}",
+      "created_at": "2026-10-04T12:42:35.608Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"85\"}",
+      "created_at": "2026-10-04T12:42:35.612Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"f\"}",
+      "created_at": "2026-10-04T12:42:35.617Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"eb\"}",
+      "created_at": "2026-10-04T12:42:35.621Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"24\"}",
+      "created_at": "2026-10-04T12:42:35.625Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"e\"}",
+      "created_at": "2026-10-04T12:42:35.630Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" v\"}",
+      "created_at": "2026-10-04T12:42:35.634Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"4\"}",
+      "created_at": "2026-10-04T12:42:35.639Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"）。\"}",
+      "created_at": "2026-10-04T12:42:35.642Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"现在\"}",
+      "created_at": "2026-10-04T12:42:35.645Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"逐\"}",
+      "created_at": "2026-10-04T12:42:35.648Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"张\"}",
+      "created_at": "2026-10-04T12:42:35.652Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"查看\"}",
+      "created_at": "2026-10-04T12:42:35.655Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"。\"}",
+      "created_at": "2026-10-04T12:42:35.658Z"
+    },
+    {
+      "type": "tool",
+      "body": "{\"label\":\"查看参考图\"}",
+      "created_at": "2026-10-04T12:42:36.039Z"
+    },
+    {
+      "type": "tool",
+      "body": "{\"label\":\"查看参考图\"}",
+      "created_at": "2026-10-04T12:42:36.041Z"
+    },
+    {
+      "type": "tool",
+      "body": "{\"label\":\"查看参考图\"}",
+      "created_at": "2026-10-04T12:42:36.043Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"三\"}",
+      "created_at": "2026-10-04T12:42:50.745Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"张\"}",
+      "created_at": "2026-10-04T12:42:50.756Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"图\"}",
+      "created_at": "2026-10-04T12:42:50.759Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"已\"}",
+      "created_at": "2026-10-04T12:42:50.784Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"逐\"}",
+      "created_at": "2026-10-04T12:42:50.787Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"张\"}",
+      "created_at": "2026-10-04T12:42:50.791Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"实\"}",
+      "created_at": "2026-10-04T12:42:50.795Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"看\"}",
+      "created_at": "2026-10-04T12:42:50.798Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"。\"}",
+      "created_at": "2026-10-04T12:42:50.802Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"保存\"}",
+      "created_at": "2026-10-04T12:42:50.805Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"检验\"}",
+      "created_at": "2026-10-04T12:42:50.808Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"报告\"}",
+      "created_at": "2026-10-04T12:42:50.812Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"。\"}",
+      "created_at": "2026-10-04T12:42:50.815Z"
+    },
+    {
+      "type": "tool",
+      "body": "{\"label\":\"整理资料\"}",
+      "created_at": "2026-10-04T12:43:00.641Z"
+    },
+    {
+      "type": "proposal",
+      "body": "{\"kind\":\"image-review\",\"proposalId\":\"ee969629-d24a-4ccc-bed8-4948bb542da0\"}",
+      "created_at": "2026-10-04T12:43:00.899Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"检验\"}",
+      "created_at": "2026-10-04T12:43:07.529Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"报告\"}",
+      "created_at": "2026-10-04T12:43:07.536Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"已\"}",
+      "created_at": "2026-10-04T12:43:07.540Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"保存\"}",
+      "created_at": "2026-10-04T12:43:07.543Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"为\"}",
+      "created_at": "2026-10-04T12:43:07.546Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"待\"}",
+      "created_at": "2026-10-04T12:43:07.552Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"审\"}",
+      "created_at": "2026-10-04T12:43:07.555Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"阅\"}",
+      "created_at": "2026-10-04T12:43:07.558Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"提案\"}",
+      "created_at": "2026-10-04T12:43:07.562Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"（\"}",
+      "created_at": "2026-10-04T12:43:07.565Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"pro\"}",
+      "created_at": "2026-10-04T12:43:07.569Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"posal\"}",
+      "created_at": "2026-10-04T12:43:07.572Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"Id\"}",
+      "created_at": "2026-10-04T12:43:07.575Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" `\"}",
+      "created_at": "2026-10-04T12:43:07.580Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"ee\"}",
+      "created_at": "2026-10-04T12:43:07.583Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"969\"}",
+      "created_at": "2026-10-04T12:43:07.587Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"629\"}",
+      "created_at": "2026-10-04T12:43:07.595Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"-d\"}",
+      "created_at": "2026-10-04T12:43:07.600Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"24\"}",
+      "created_at": "2026-10-04T12:43:07.604Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"a\"}",
+      "created_at": "2026-10-04T12:43:07.607Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"-\"}",
+      "created_at": "2026-10-04T12:43:07.612Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"4\"}",
+      "created_at": "2026-10-04T12:43:07.616Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"ccc\"}",
+      "created_at": "2026-10-04T12:43:07.620Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"-bed\"}",
+      "created_at": "2026-10-04T12:43:07.623Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"8\"}",
+      "created_at": "2026-10-04T12:43:07.628Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"-\"}",
+      "created_at": "2026-10-04T12:43:07.636Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"494\"}",
+      "created_at": "2026-10-04T12:43:07.642Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"8\"}",
+      "created_at": "2026-10-04T12:43:07.646Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"bb\"}",
+      "created_at": "2026-10-04T12:43:07.649Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"542\"}",
+      "created_at": "2026-10-04T12:43:07.653Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"da\"}",
+      "created_at": "2026-10-04T12:43:07.662Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"0\"}",
+      "created_at": "2026-10-04T12:43:07.667Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:43:07.670Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"，\"}",
+      "created_at": "2026-10-04T12:43:07.810Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"requires\"}",
+      "created_at": "2026-10-04T12:43:07.814Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"-user\"}",
+      "created_at": "2026-10-04T12:43:07.818Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"；\"}",
+      "created_at": "2026-10-04T12:43:07.822Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"未\"}",
+      "created_at": "2026-10-04T12:43:07.827Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"采用\"}",
+      "created_at": "2026-10-04T12:43:07.837Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"、\"}",
+      "created_at": "2026-10-04T12:43:07.849Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"未\"}",
+      "created_at": "2026-10-04T12:43:07.854Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"生成\"}",
+      "created_at": "2026-10-04T12:43:07.865Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"、\"}",
+      "created_at": "2026-10-04T12:43:07.870Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"未\"}",
+      "created_at": "2026-10-04T12:43:07.880Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"选\"}",
+      "created_at": "2026-10-04T12:43:07.887Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"主\"}",
+      "created_at": "2026-10-04T12:43:07.892Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"图\"}",
+      "created_at": "2026-10-04T12:43:07.897Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"、\"}",
+      "created_at": "2026-10-04T12:43:07.907Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"未\"}",
+      "created_at": "2026-10-04T12:43:07.914Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"确认\"}",
+      "created_at": "2026-10-04T12:43:07.918Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"空间\"}",
+      "created_at": "2026-10-04T12:43:07.922Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"）。\\n\\n\"}",
+      "created_at": "2026-10-04T12:43:07.930Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"**\"}",
+      "created_at": "2026-10-04T12:43:07.934Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"读取\"}",
+      "created_at": "2026-10-04T12:43:07.938Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"与\"}",
+      "created_at": "2026-10-04T12:43:07.941Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"来源\"}",
+      "created_at": "2026-10-04T12:43:07.946Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"（\"}",
+      "created_at": "2026-10-04T12:43:07.951Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"已\"}",
+      "created_at": "2026-10-04T12:43:07.960Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"按要求\"}",
+      "created_at": "2026-10-04T12:43:07.964Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"完整\"}",
+      "created_at": "2026-10-04T12:43:07.968Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"读取\"}",
+      "created_at": "2026-10-04T12:43:07.972Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"）\"}",
+      "created_at": "2026-10-04T12:43:07.981Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"**\\n\"}",
+      "created_at": "2026-10-04T12:43:07.992Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"-\"}",
+      "created_at": "2026-10-04T12:43:07.996Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" a\"}",
+      "created_at": "2026-10-04T12:43:08.000Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"4\"}",
+      "created_at": "2026-10-04T12:43:08.009Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"e\"}",
+      "created_at": "2026-10-04T12:43:08.013Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"867\"}",
+      "created_at": "2026-10-04T12:43:08.017Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"0\"}",
+      "created_at": "2026-10-04T12:43:08.025Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"a\"}",
+      "created_at": "2026-10-04T12:43:08.029Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:43:08.033Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"基础\"}",
+      "created_at": "2026-10-04T12:43:08.038Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"主\"}",
+      "created_at": "2026-10-04T12:43:08.041Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"图\"}",
+      "created_at": "2026-10-04T12:43:08.049Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" ←\"}",
+      "created_at": "2026-10-04T12:43:08.058Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" hall\"}",
+      "created_at": "2026-10-04T12:43:08.063Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"-over\"}",
+      "created_at": "2026-10-04T12:43:08.067Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"view\"}",
+      "created_at": "2026-10-04T12:43:08.075Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:43:08.079Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"步骤\"}",
+      "created_at": "2026-10-04T12:43:08.083Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" `\"}",
+      "created_at": "2026-10-04T12:43:08.091Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"3\"}",
+      "created_at": "2026-10-04T12:43:08.096Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"ee\"}",
+      "created_at": "2026-10-04T12:43:08.100Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"028\"}",
+      "created_at": "2026-10-04T12:43:08.104Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"7\"}",
+      "created_at": "2026-10-04T12:43:08.108Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"a\"}",
+      "created_at": "2026-10-04T12:43:08.117Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:43:08.125Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"（\"}",
+      "created_at": "2026-10-04T12:43:08.130Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"v\"}",
+      "created_at": "2026-10-04T12:43:08.137Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"1\"}",
+      "created_at": "2026-10-04T12:43:08.145Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"，\"}",
+      "created_at": "2026-10-04T12:43:08.149Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"仍\"}",
+      "created_at": "2026-10-04T12:43:08.156Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" current\"}",
+      "created_at": "2026-10-04T12:43:08.160Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"）\\n\"}",
+      "created_at": "2026-10-04T12:43:08.164Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"-\"}",
+      "created_at": "2026-10-04T12:43:08.167Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" e\"}",
+      "created_at": "2026-10-04T12:43:08.171Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"000\"}",
+      "created_at": "2026-10-04T12:43:08.175Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"3\"}",
+      "created_at": "2026-10-04T12:43:08.186Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"b\"}",
+      "created_at": "2026-10-04T12:43:08.193Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"ae\"}",
+      "created_at": "2026-10-04T12:43:08.196Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:43:08.199Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"旧\"}",
+      "created_at": "2026-10-04T12:43:08.208Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" hall\"}",
+      "created_at": "2026-10-04T12:43:08.213Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"-angle\"}",
+      "created_at": "2026-10-04T12:43:08.220Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:43:08.225Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"输出\"}",
+      "created_at": "2026-10-04T12:43:08.228Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" ←\"}",
+      "created_at": "2026-10-04T12:43:08.232Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:43:08.236Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"步骤\"}",
+      "created_at": "2026-10-04T12:43:08.239Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" `\"}",
+      "created_at": "2026-10-04T12:43:08.242Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"ad\"}",
+      "created_at": "2026-10-04T12:43:08.249Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"606\"}",
+      "created_at": "2026-10-04T12:43:08.256Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"1\"}",
+      "created_at": "2026-10-04T12:43:08.262Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"aa\"}",
+      "created_at": "2026-10-04T12:43:08.265Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:43:08.269Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"（\"}",
+      "created_at": "2026-10-04T12:43:08.278Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"v\"}",
+      "created_at": "2026-10-04T12:43:08.282Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"2\"}",
+      "created_at": "2026-10-04T12:43:08.286Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"）\\n\"}",
+      "created_at": "2026-10-04T12:43:08.293Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"-\"}",
+      "created_at": "2026-10-04T12:43:08.296Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:43:08.301Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"765\"}",
+      "created_at": "2026-10-04T12:43:08.304Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"2\"}",
+      "created_at": "2026-10-04T12:43:08.308Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"eda\"}",
+      "created_at": "2026-10-04T12:43:08.312Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"5\"}",
+      "created_at": "2026-10-04T12:43:08.322Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:43:08.328Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"修订\"}",
+      "created_at": "2026-10-04T12:43:08.332Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" v\"}",
+      "created_at": "2026-10-04T12:43:08.335Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"4\"}",
+      "created_at": "2026-10-04T12:43:08.339Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:43:08.347Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"输出\"}",
+      "created_at": "2026-10-04T12:43:08.350Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" ←\"}",
+      "created_at": "2026-10-04T12:43:08.355Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:43:08.364Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"步骤\"}",
+      "created_at": "2026-10-04T12:43:08.370Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" `\"}",
+      "created_at": "2026-10-04T12:43:08.375Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"85\"}",
+      "created_at": "2026-10-04T12:43:08.380Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"f\"}",
+      "created_at": "2026-10-04T12:43:08.391Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"eb\"}",
+      "created_at": "2026-10-04T12:43:08.401Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"24\"}",
+      "created_at": "2026-10-04T12:43:08.405Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"e\"}",
+      "created_at": "2026-10-04T12:43:08.412Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:43:08.417Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"（\"}",
+      "created_at": "2026-10-04T12:43:08.421Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"v\"}",
+      "created_at": "2026-10-04T12:43:08.426Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"4\"}",
+      "created_at": "2026-10-04T12:43:08.431Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"，\"}",
+      "created_at": "2026-10-04T12:43:08.436Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"is\"}",
+      "created_at": "2026-10-04T12:43:08.441Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"Current\"}",
+      "created_at": "2026-10-04T12:43:08.445Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"；\"}",
+      "created_at": "2026-10-04T12:43:08.449Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"run\"}",
+      "created_at": "2026-10-04T12:43:08.460Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" `\"}",
+      "created_at": "2026-10-04T12:43:08.468Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"3\"}",
+      "created_at": "2026-10-04T12:43:08.473Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"d\"}",
+      "created_at": "2026-10-04T12:43:08.477Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"701\"}",
+      "created_at": "2026-10-04T12:43:08.487Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"4\"}",
+      "created_at": "2026-10-04T12:43:08.490Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"af\"}",
+      "created_at": "2026-10-04T12:43:08.494Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:43:08.503Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"，\"}",
+      "created_at": "2026-10-04T12:43:08.507Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"comp\"}",
+      "created_at": "2026-10-04T12:43:08.512Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"iler\"}",
+      "created_at": "2026-10-04T12:43:08.516Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"Version\"}",
+      "created_at": "2026-10-04T12:43:08.520Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:43:08.524Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"2\"}",
+      "created_at": "2026-10-04T12:43:08.535Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"，\"}",
+      "created_at": "2026-10-04T12:43:08.544Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"带\"}",
+      "created_at": "2026-10-04T12:43:08.548Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"本\"}",
+      "created_at": "2026-10-04T12:43:08.554Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"报告\"}",
+      "created_at": "2026-10-04T12:43:08.561Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" feedback\"}",
+      "created_at": "2026-10-04T12:43:08.566Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"）\\n\"}",
+      "created_at": "2026-10-04T12:43:08.573Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"-\"}",
+      "created_at": "2026-10-04T12:43:08.577Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:43:08.581Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"实体\"}",
+      "created_at": "2026-10-04T12:43:08.586Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"：\"}",
+      "created_at": "2026-10-04T12:43:08.590Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"实验\"}",
+      "created_at": "2026-10-04T12:43:08.594Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"候\"}",
+      "created_at": "2026-10-04T12:43:08.598Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"车\"}",
+      "created_at": "2026-10-04T12:43:08.606Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"厅\"}",
+      "created_at": "2026-10-04T12:43:08.615Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"、\"}",
+      "created_at": "2026-10-04T12:43:08.618Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"实验\"}",
+      "created_at": "2026-10-04T12:43:08.622Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"候\"}",
+      "created_at": "2026-10-04T12:43:08.630Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"车\"}",
+      "created_at": "2026-10-04T12:43:08.634Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"厅\"}",
+      "created_at": "2026-10-04T12:43:08.637Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"·\"}",
+      "created_at": "2026-10-04T12:43:08.645Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"告\"}",
+      "created_at": "2026-10-04T12:43:08.649Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"示\"}",
+      "created_at": "2026-10-04T12:43:08.654Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"、\"}",
+      "created_at": "2026-10-04T12:43:08.658Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"实验\"}",
+      "created_at": "2026-10-04T12:43:08.662Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"林\"}",
+      "created_at": "2026-10-04T12:43:08.676Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"岚\"}",
+      "created_at": "2026-10-04T12:43:08.682Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"（\"}",
+      "created_at": "2026-10-04T12:43:08.687Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"全文\"}",
+      "created_at": "2026-10-04T12:43:08.697Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"）；\"}",
+      "created_at": "2026-10-04T12:43:08.701Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"关系\"}",
+      "created_at": "2026-10-04T12:43:08.705Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"端点\"}",
+      "created_at": "2026-10-04T12:43:08.714Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"：\"}",
+      "created_at": "2026-10-04T12:43:08.722Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:43:08.725Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"f\"}",
+      "created_at": "2026-10-04T12:43:08.729Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"4\"}",
+      "created_at": "2026-10-04T12:43:08.738Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"a\"}",
+      "created_at": "2026-10-04T12:43:08.744Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"1\"}",
+      "created_at": "2026-10-04T12:43:08.752Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"e\"}",
+      "created_at": "2026-10-04T12:43:08.756Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"753\"}",
+      "created_at": "2026-10-04T12:43:08.761Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:43:08.769Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"（\"}",
+      "created_at": "2026-10-04T12:43:08.774Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"剧情\"}",
+      "created_at": "2026-10-04T12:43:08.777Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:43:08.784Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"值守\"}",
+      "created_at": "2026-10-04T12:43:08.787Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"）、\"}",
+      "created_at": "2026-10-04T12:43:08.792Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:43:08.796Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"69\"}",
+      "created_at": "2026-10-04T12:43:08.801Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"f\"}",
+      "created_at": "2026-10-04T12:43:08.808Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"5\"}",
+      "created_at": "2026-10-04T12:43:08.815Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"ea\"}",
+      "created_at": "2026-10-04T12:43:08.822Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"1\"}",
+      "created_at": "2026-10-04T12:43:08.825Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"e\"}",
+      "created_at": "2026-10-04T12:43:08.832Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:43:08.839Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"（\"}",
+      "created_at": "2026-10-04T12:43:08.845Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"设定\"}",
+      "created_at": "2026-10-04T12:43:08.852Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:43:08.856Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"派生\"}",
+      "created_at": "2026-10-04T12:43:08.860Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"自\"}",
+      "created_at": "2026-10-04T12:43:08.864Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"）。\\n\\n\"}",
+      "created_at": "2026-10-04T12:43:08.868Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"**\"}",
+      "created_at": "2026-10-04T12:43:08.877Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"三\"}",
+      "created_at": "2026-10-04T12:43:08.885Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"图\"}",
+      "created_at": "2026-10-04T12:43:08.890Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"实\"}",
+      "created_at": "2026-10-04T12:43:08.894Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"看\"}",
+      "created_at": "2026-10-04T12:43:08.902Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"结论\"}",
+      "created_at": "2026-10-04T12:43:08.908Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"（\"}",
+      "created_at": "2026-10-04T12:43:08.916Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"与\"}",
+      "created_at": "2026-10-04T12:43:08.921Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"你的\"}",
+      "created_at": "2026-10-04T12:43:08.927Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"观察\"}",
+      "created_at": "2026-10-04T12:43:08.933Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"一致\"}",
+      "created_at": "2026-10-04T12:43:08.945Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"：\"}",
+      "created_at": "2026-10-04T12:43:08.953Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"新\"}",
+      "created_at": "2026-10-04T12:43:08.957Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"图\"}",
+      "created_at": "2026-10-04T12:43:08.964Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"仍是\"}",
+      "created_at": "2026-10-04T12:43:08.969Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"俯\"}",
+      "created_at": "2026-10-04T12:43:08.973Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"视\"}",
+      "created_at": "2026-10-04T12:43:08.980Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"全景\"}",
+      "created_at": "2026-10-04T12:43:08.984Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"）\"}",
+      "created_at": "2026-10-04T12:43:08.989Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"**\\n\"}",
+      "created_at": "2026-10-04T12:43:08.993Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"1\"}",
+      "created_at": "2026-10-04T12:43:08.997Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\".\"}",
+      "created_at": "2026-10-04T12:43:09.006Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" **\"}",
+      "created_at": "2026-10-04T12:43:09.016Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"固定\"}",
+      "created_at": "2026-10-04T12:43:09.022Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"空间\"}",
+      "created_at": "2026-10-04T12:43:09.026Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"一致性\"}",
+      "created_at": "2026-10-04T12:43:09.035Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"：\"}",
+      "created_at": "2026-10-04T12:43:09.038Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"未见\"}",
+      "created_at": "2026-10-04T12:43:09.043Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"几何\"}",
+      "created_at": "2026-10-04T12:43:09.050Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"矛盾\"}",
+      "created_at": "2026-10-04T12:43:09.054Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"。\"}",
+      "created_at": "2026-10-04T12:43:09.058Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"**\"}",
+      "created_at": "2026-10-04T12:43:09.061Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:43:09.065Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"三\"}",
+      "created_at": "2026-10-04T12:43:09.072Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"图\"}",
+      "created_at": "2026-10-04T12:43:09.080Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"都\"}",
+      "created_at": "2026-10-04T12:43:09.085Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"保持\"}",
+      "created_at": "2026-10-04T12:43:09.089Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"同一\"}",
+      "created_at": "2026-10-04T12:43:09.097Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"组\"}",
+      "created_at": "2026-10-04T12:43:09.101Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"相对\"}",
+      "created_at": "2026-10-04T12:43:09.105Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"关系\"}",
+      "created_at": "2026-10-04T12:43:09.113Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"——\"}",
+      "created_at": "2026-10-04T12:43:09.116Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"长\"}",
+      "created_at": "2026-10-04T12:43:09.121Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"凳\"}",
+      "created_at": "2026-10-04T12:43:09.124Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"沿\"}",
+      "created_at": "2026-10-04T12:43:09.132Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"画\"}",
+      "created_at": "2026-10-04T12:43:09.138Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"面上\"}",
+      "created_at": "2026-10-04T12:43:09.146Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"方\"}",
+      "created_at": "2026-10-04T12:43:09.149Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"那\"}",
+      "created_at": "2026-10-04T12:43:09.152Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"面\"}",
+      "created_at": "2026-10-04T12:43:09.156Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"墙\"}",
+      "created_at": "2026-10-04T12:43:09.160Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"放置\"}",
+      "created_at": "2026-10-04T12:43:09.163Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"；\"}",
+      "created_at": "2026-10-04T12:43:09.166Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"一侧\"}",
+      "created_at": "2026-10-04T12:43:09.170Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"相邻\"}",
+      "created_at": "2026-10-04T12:43:09.173Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"墙\"}",
+      "created_at": "2026-10-04T12:43:09.177Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"有\"}",
+      "created_at": "2026-10-04T12:43:09.181Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"带\"}",
+      "created_at": "2026-10-04T12:43:09.184Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"金属\"}",
+      "created_at": "2026-10-04T12:43:09.187Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"边框\"}",
+      "created_at": "2026-10-04T12:43:09.191Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"、\"}",
+      "created_at": "2026-10-04T12:43:09.194Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"内\"}",
+      "created_at": "2026-10-04T12:43:09.197Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"为\"}",
+      "created_at": "2026-10-04T12:43:09.201Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"偏\"}",
+      "created_at": "2026-10-04T12:43:09.205Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"灰\"}",
+      "created_at": "2026-10-04T12:43:09.209Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"蓝\"}",
+      "created_at": "2026-10-04T12:43:09.212Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"玻璃\"}",
+      "created_at": "2026-10-04T12:43:09.215Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"与\"}",
+      "created_at": "2026-10-04T12:43:09.219Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"细\"}",
+      "created_at": "2026-10-04T12:43:09.222Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"金属\"}",
+      "created_at": "2026-10-04T12:43:09.226Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"横\"}",
+      "created_at": "2026-10-04T12:43:09.229Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"杆\"}",
+      "created_at": "2026-10-04T12:43:09.232Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"的\"}",
+      "created_at": "2026-10-04T12:43:09.236Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"开口\"}",
+      "created_at": "2026-10-04T12:43:09.239Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"及\"}",
+      "created_at": "2026-10-04T12:43:09.243Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"下方\"}",
+      "created_at": "2026-10-04T12:43:09.246Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"白色\"}",
+      "created_at": "2026-10-04T12:43:09.250Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"小\"}",
+      "created_at": "2026-10-04T12:43:09.254Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"矩形\"}",
+      "created_at": "2026-10-04T12:43:09.258Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"面板\"}",
+      "created_at": "2026-10-04T12:43:09.261Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"；\"}",
+      "created_at": "2026-10-04T12:43:09.264Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"另一\"}",
+      "created_at": "2026-10-04T12:43:09.270Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"侧\"}",
+      "created_at": "2026-10-04T12:43:09.275Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"相邻\"}",
+      "created_at": "2026-10-04T12:43:09.279Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"墙\"}",
+      "created_at": "2026-10-04T12:43:09.285Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"有\"}",
+      "created_at": "2026-10-04T12:43:09.289Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"偏\"}",
+      "created_at": "2026-10-04T12:43:09.293Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"上\"}",
+      "created_at": "2026-10-04T12:43:09.296Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"带\"}",
+      "created_at": "2026-10-04T12:43:09.300Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"框\"}",
+      "created_at": "2026-10-04T12:43:09.306Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"明亮\"}",
+      "created_at": "2026-10-04T12:43:09.316Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"开口\"}",
+      "created_at": "2026-10-04T12:43:09.322Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"与\"}",
+      "created_at": "2026-10-04T12:43:09.325Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"偏\"}",
+      "created_at": "2026-10-04T12:43:09.334Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"下\"}",
+      "created_at": "2026-10-04T12:43:09.337Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"竖向\"}",
+      "created_at": "2026-10-04T12:43:09.346Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"狭\"}",
+      "created_at": "2026-10-04T12:43:09.349Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"长\"}",
+      "created_at": "2026-10-04T12:43:09.353Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"特征\"}",
+      "created_at": "2026-10-04T12:43:09.358Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"（\"}",
+      "created_at": "2026-10-04T12:43:09.366Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"下端\"}",
+      "created_at": "2026-10-04T12:43:09.375Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"深\"}",
+      "created_at": "2026-10-04T12:43:09.382Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"色\"}",
+      "created_at": "2026-10-04T12:43:09.391Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"矩形\"}",
+      "created_at": "2026-10-04T12:43:09.397Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"块\"}",
+      "created_at": "2026-10-04T12:43:09.406Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"）；\"}",
+      "created_at": "2026-10-04T12:43:09.414Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"对面\"}",
+      "created_at": "2026-10-04T12:43:09.419Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"只见\"}",
+      "created_at": "2026-10-04T12:43:09.423Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"墙体\"}",
+      "created_at": "2026-10-04T12:43:09.431Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"厚度\"}",
+      "created_at": "2026-10-04T12:43:09.439Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"；\"}",
+      "created_at": "2026-10-04T12:43:09.444Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"无\"}",
+      "created_at": "2026-10-04T12:43:09.450Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"人物\"}",
+      "created_at": "2026-10-04T12:43:09.454Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"、\"}",
+      "created_at": "2026-10-04T12:43:09.457Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"无\"}",
+      "created_at": "2026-10-04T12:43:09.466Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"文字\"}",
+      "created_at": "2026-10-04T12:43:09.470Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"标注\"}",
+      "created_at": "2026-10-04T12:43:09.476Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"。\\n\"}",
+      "created_at": "2026-10-04T12:43:09.480Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"2\"}",
+      "created_at": "2026-10-04T12:43:09.484Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\".\"}",
+      "created_at": "2026-10-04T12:43:09.495Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" **\"}",
+      "created_at": "2026-10-04T12:43:09.502Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"差异\"}",
+      "created_at": "2026-10-04T12:43:09.505Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"属\"}",
+      "created_at": "2026-10-04T12:43:09.514Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"材质\"}",
+      "created_at": "2026-10-04T12:43:09.519Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"/\"}",
+      "created_at": "2026-10-04T12:43:09.526Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"渲染\"}",
+      "created_at": "2026-10-04T12:43:09.530Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"**\"}",
+      "created_at": "2026-10-04T12:43:09.535Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"：\"}",
+      "created_at": "2026-10-04T12:43:09.539Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"a\"}",
+      "created_at": "2026-10-04T12:43:09.544Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"4\"}",
+      "created_at": "2026-10-04T12:43:09.553Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"e\"}",
+      "created_at": "2026-10-04T12:43:09.560Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"867\"}",
+      "created_at": "2026-10-04T12:43:09.564Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"0\"}",
+      "created_at": "2026-10-04T12:43:09.571Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"a\"}",
+      "created_at": "2026-10-04T12:43:09.577Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:43:09.584Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"是\"}",
+      "created_at": "2026-10-04T12:43:09.590Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"平整\"}",
+      "created_at": "2026-10-04T12:43:09.595Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"浅\"}",
+      "created_at": "2026-10-04T12:43:09.599Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"冷\"}",
+      "created_at": "2026-10-04T12:43:09.602Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"灰\"}",
+      "created_at": "2026-10-04T12:43:09.610Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"砖\"}",
+      "created_at": "2026-10-04T12:43:09.618Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"面\"}",
+      "created_at": "2026-10-04T12:43:09.623Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"＋\"}",
+      "created_at": "2026-10-04T12:43:09.628Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"平整\"}",
+      "created_at": "2026-10-04T12:43:09.636Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"浅\"}",
+      "created_at": "2026-10-04T12:43:09.643Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"米\"}",
+      "created_at": "2026-10-04T12:43:09.649Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"墙面\"}",
+      "created_at": "2026-10-04T12:43:09.653Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"；\"}",
+      "created_at": "2026-10-04T12:43:09.657Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"e\"}",
+      "created_at": "2026-10-04T12:43:09.664Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"000\"}",
+      "created_at": "2026-10-04T12:43:09.677Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"3\"}",
+      "created_at": "2026-10-04T12:43:09.680Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"b\"}",
+      "created_at": "2026-10-04T12:43:09.692Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"ae\"}",
+      "created_at": "2026-10-04T12:43:09.696Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:43:09.702Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"与\"}",
+      "created_at": "2026-10-04T12:43:09.707Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:43:09.711Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"765\"}",
+      "created_at": "2026-10-04T12:43:09.715Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"2\"}",
+      "created_at": "2026-10-04T12:43:09.719Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"eda\"}",
+      "created_at": "2026-10-04T12:43:09.728Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"5\"}",
+      "created_at": "2026-10-04T12:43:09.735Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:43:09.738Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"地面\"}",
+      "created_at": "2026-10-04T12:43:09.745Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"与\"}",
+      "created_at": "2026-10-04T12:43:09.751Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"墙面\"}",
+      "created_at": "2026-10-04T12:43:09.755Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"呈\"}",
+      "created_at": "2026-10-04T12:43:09.759Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"斑\"}",
+      "created_at": "2026-10-04T12:43:09.767Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"驳\"}",
+      "created_at": "2026-10-04T12:43:09.770Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"石材\"}",
+      "created_at": "2026-10-04T12:43:09.774Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"纹理\"}",
+      "created_at": "2026-10-04T12:43:09.778Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"、\"}",
+      "created_at": "2026-10-04T12:43:09.786Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"木\"}",
+      "created_at": "2026-10-04T12:43:09.794Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"纹\"}",
+      "created_at": "2026-10-04T12:43:09.800Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"更强\"}",
+      "created_at": "2026-10-04T12:43:09.803Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"。\"}",
+      "created_at": "2026-10-04T12:43:09.806Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"按\"}",
+      "created_at": "2026-10-04T12:43:09.816Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"标准\"}",
+      "created_at": "2026-10-04T12:43:09.819Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"记为\"}",
+      "created_at": "2026-10-04T12:43:09.823Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"表现\"}",
+      "created_at": "2026-10-04T12:43:09.828Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"差异\"}",
+      "created_at": "2026-10-04T12:43:09.834Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"，\"}",
+      "created_at": "2026-10-04T12:43:09.839Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"不是\"}",
+      "created_at": "2026-10-04T12:43:09.843Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"布局\"}",
+      "created_at": "2026-10-04T12:43:09.846Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"矛盾\"}",
+      "created_at": "2026-10-04T12:43:09.853Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"。\\n\"}",
+      "created_at": "2026-10-04T12:43:09.860Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"3\"}",
+      "created_at": "2026-10-04T12:43:09.866Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\".\"}",
+      "created_at": "2026-10-04T12:43:09.869Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" **\"}",
+      "created_at": "2026-10-04T12:43:09.873Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"输出\"}",
+      "created_at": "2026-10-04T12:43:09.877Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"取\"}",
+      "created_at": "2026-10-04T12:43:09.883Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"景\"}",
+      "created_at": "2026-10-04T12:43:09.889Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"仍未\"}",
+      "created_at": "2026-10-04T12:43:09.892Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"实现\"}",
+      "created_at": "2026-10-04T12:43:09.898Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"（\"}",
+      "created_at": "2026-10-04T12:43:09.903Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"conf\"}",
+      "created_at": "2026-10-04T12:43:09.912Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"lict\"}",
+      "created_at": "2026-10-04T12:43:09.919Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"）\"}",
+      "created_at": "2026-10-04T12:43:09.925Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"**\"}",
+      "created_at": "2026-10-04T12:43:09.930Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"：\"}",
+      "created_at": "2026-10-04T12:43:09.939Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"765\"}",
+      "created_at": "2026-10-04T12:43:09.949Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"2\"}",
+      "created_at": "2026-10-04T12:43:09.954Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"eda\"}",
+      "created_at": "2026-10-04T12:43:09.962Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"5\"}",
+      "created_at": "2026-10-04T12:43:09.966Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:43:09.969Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"与\"}",
+      "created_at": "2026-10-04T12:43:09.973Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"旧\"}",
+      "created_at": "2026-10-04T12:43:09.981Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"输出\"}",
+      "created_at": "2026-10-04T12:43:09.985Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" e\"}",
+      "created_at": "2026-10-04T12:43:09.988Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"000\"}",
+      "created_at": "2026-10-04T12:43:09.992Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"3\"}",
+      "created_at": "2026-10-04T12:43:10.000Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"b\"}",
+      "created_at": "2026-10-04T12:43:10.009Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"ae\"}",
+      "created_at": "2026-10-04T12:43:10.013Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:43:10.018Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"在\"}",
+      "created_at": "2026-10-04T12:43:10.025Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"取\"}",
+      "created_at": "2026-10-04T12:43:10.029Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"景\"}",
+      "created_at": "2026-10-04T12:43:10.032Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"上\"}",
+      "created_at": "2026-10-04T12:43:10.035Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"几乎\"}",
+      "created_at": "2026-10-04T12:43:10.045Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"相同\"}",
+      "created_at": "2026-10-04T12:43:10.049Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"，\"}",
+      "created_at": "2026-10-04T12:43:10.054Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"都\"}",
+      "created_at": "2026-10-04T12:43:10.058Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"还是\"}",
+      "created_at": "2026-10-04T12:43:10.067Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"俯\"}",
+      "created_at": "2026-10-04T12:43:10.076Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"视\"}",
+      "created_at": "2026-10-04T12:43:10.080Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"剖\"}",
+      "created_at": "2026-10-04T12:43:10.084Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"切\"}",
+      "created_at": "2026-10-04T12:43:10.093Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"总\"}",
+      "created_at": "2026-10-04T12:43:10.097Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"览\"}",
+      "created_at": "2026-10-04T12:43:10.100Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"，\"}",
+      "created_at": "2026-10-04T12:43:10.106Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"并非\"}",
+      "created_at": "2026-10-04T12:43:10.110Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"“\"}",
+      "created_at": "2026-10-04T12:43:10.114Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"室内\"}",
+      "created_at": "2026-10-04T12:43:10.118Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"人\"}",
+      "created_at": "2026-10-04T12:43:10.121Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"眼\"}",
+      "created_at": "2026-10-04T12:43:10.126Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"高度\"}",
+      "created_at": "2026-10-04T12:43:10.130Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"平\"}",
+      "created_at": "2026-10-04T12:43:10.134Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"视\"}",
+      "created_at": "2026-10-04T12:43:10.138Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"”。\\n\"}",
+      "created_at": "2026-10-04T12:43:10.141Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"4\"}",
+      "created_at": "2026-10-04T12:43:10.144Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\".\"}",
+      "created_at": "2026-10-04T12:43:10.148Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" **\"}",
+      "created_at": "2026-10-04T12:43:10.152Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"修订\"}",
+      "created_at": "2026-10-04T12:43:10.155Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"输入\"}",
+      "created_at": "2026-10-04T12:43:10.159Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"确实\"}",
+      "created_at": "2026-10-04T12:43:10.162Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"改变了\"}",
+      "created_at": "2026-10-04T12:43:10.166Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"、\"}",
+      "created_at": "2026-10-04T12:43:10.170Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"但\"}",
+      "created_at": "2026-10-04T12:43:10.173Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"可能\"}",
+      "created_at": "2026-10-04T12:43:10.176Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"仍未\"}",
+      "created_at": "2026-10-04T12:43:10.180Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"奏\"}",
+      "created_at": "2026-10-04T12:43:10.183Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"效\"}",
+      "created_at": "2026-10-04T12:43:10.187Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"**\"}",
+      "created_at": "2026-10-04T12:43:10.191Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"：\"}",
+      "created_at": "2026-10-04T12:43:10.194Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"v\"}",
+      "created_at": "2026-10-04T12:43:10.198Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"4\"}",
+      "created_at": "2026-10-04T12:43:10.202Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:43:10.206Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"相对\"}",
+      "created_at": "2026-10-04T12:43:10.209Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" v\"}",
+      "created_at": "2026-10-04T12:43:10.213Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"2\"}",
+      "created_at": "2026-10-04T12:43:10.217Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:43:10.221Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"新增\"}",
+      "created_at": "2026-10-04T12:43:10.224Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" `\"}",
+      "created_at": "2026-10-04T12:43:10.228Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"scene\"}",
+      "created_at": "2026-10-04T12:43:10.232Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"Intent\"}",
+      "created_at": "2026-10-04T12:43:10.235Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\".com\"}",
+      "created_at": "2026-10-04T12:43:10.238Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"position\"}",
+      "created_at": "2026-10-04T12:43:10.242Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"=\"}",
+      "created_at": "2026-10-04T12:43:10.246Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"ref\"}",
+      "created_at": "2026-10-04T12:43:10.249Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"rame\"}",
+      "created_at": "2026-10-04T12:43:10.252Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:43:10.255Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"（\"}",
+      "created_at": "2026-10-04T12:43:10.259Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"view\"}",
+      "created_at": "2026-10-04T12:43:10.263Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"point\"}",
+      "created_at": "2026-10-04T12:43:10.266Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"=\"}",
+      "created_at": "2026-10-04T12:43:10.269Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"eye\"}",
+      "created_at": "2026-10-04T12:43:10.272Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"_level\"}",
+      "created_at": "2026-10-04T12:43:10.275Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"、\"}",
+      "created_at": "2026-10-04T12:43:10.279Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"shot\"}",
+      "created_at": "2026-10-04T12:43:10.283Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"Scale\"}",
+      "created_at": "2026-10-04T12:43:10.286Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"=\"}",
+      "created_at": "2026-10-04T12:43:10.290Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"wide\"}",
+      "created_at": "2026-10-04T12:43:10.293Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:43:10.296Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"保持\"}",
+      "created_at": "2026-10-04T12:43:10.300Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"），\"}",
+      "created_at": "2026-10-04T12:43:10.303Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:43:10.307Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"scene\"}",
+      "created_at": "2026-10-04T12:43:10.312Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"Prompt\"}",
+      "created_at": "2026-10-04T12:43:10.315Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"B\"}",
+      "created_at": "2026-10-04T12:43:10.320Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"asis\"}",
+      "created_at": "2026-10-04T12:43:10.325Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\".comp\"}",
+      "created_at": "2026-10-04T12:43:10.330Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"iler\"}",
+      "created_at": "2026-10-04T12:43:10.334Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"Version\"}",
+      "created_at": "2026-10-04T12:43:10.339Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:43:10.344Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:43:10.348Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"1\"}",
+      "created_at": "2026-10-04T12:43:10.353Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"→\"}",
+      "created_at": "2026-10-04T12:43:10.356Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"2\"}",
+      "created_at": "2026-10-04T12:43:10.360Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"，\"}",
+      "created_at": "2026-10-04T12:43:10.363Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"编译\"}",
+      "created_at": "2026-10-04T12:43:10.367Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"提示\"}",
+      "created_at": "2026-10-04T12:43:10.370Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"词\"}",
+      "created_at": "2026-10-04T12:43:10.374Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"新增\"}",
+      "created_at": "2026-10-04T12:43:10.377Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" “\"}",
+      "created_at": "2026-10-04T12:43:10.381Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"REC\"}",
+      "created_at": "2026-10-04T12:43:10.385Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"O\"}",
+      "created_at": "2026-10-04T12:43:10.389Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"MP\"}",
+      "created_at": "2026-10-04T12:43:10.392Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"OSE\"}",
+      "created_at": "2026-10-04T12:43:10.396Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" THE\"}",
+      "created_at": "2026-10-04T12:43:10.400Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" CAM\"}",
+      "created_at": "2026-10-04T12:43:10.403Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"ERA\"}",
+      "created_at": "2026-10-04T12:43:10.406Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" VIEW\"}",
+      "created_at": "2026-10-04T12:43:10.410Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"…”\"}",
+      "created_at": "2026-10-04T12:43:10.413Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:43:10.416Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"与\"}",
+      "created_at": "2026-10-04T12:43:10.420Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" “\"}",
+      "created_at": "2026-10-04T12:43:10.423Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"Place\"}",
+      "created_at": "2026-10-04T12:43:10.426Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" the\"}",
+      "created_at": "2026-10-04T12:43:10.429Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" observer\"}",
+      "created_at": "2026-10-04T12:43:10.433Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" inside\"}",
+      "created_at": "2026-10-04T12:43:10.436Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" the\"}",
+      "created_at": "2026-10-04T12:43:10.439Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" room\"}",
+      "created_at": "2026-10-04T12:43:10.442Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" at\"}",
+      "created_at": "2026-10-04T12:43:10.446Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" eye\"}",
+      "created_at": "2026-10-04T12:43:10.449Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" level\"}",
+      "created_at": "2026-10-04T12:43:10.453Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"…\"}",
+      "created_at": "2026-10-04T12:43:10.456Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" do\"}",
+      "created_at": "2026-10-04T12:43:10.459Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" not\"}",
+      "created_at": "2026-10-04T12:43:10.462Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" deliver\"}",
+      "created_at": "2026-10-04T12:43:10.466Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" an\"}",
+      "created_at": "2026-10-04T12:43:10.469Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" overhead\"}",
+      "created_at": "2026-10-04T12:43:10.472Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" cut\"}",
+      "created_at": "2026-10-04T12:43:10.476Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"away\"}",
+      "created_at": "2026-10-04T12:43:10.479Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\",\"}",
+      "created_at": "2026-10-04T12:43:10.483Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" floor\"}",
+      "created_at": "2026-10-04T12:43:10.486Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" plan\"}",
+      "created_at": "2026-10-04T12:43:10.489Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" or\"}",
+      "created_at": "2026-10-04T12:43:10.492Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" ro\"}",
+      "created_at": "2026-10-04T12:43:10.495Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"ofl\"}",
+      "created_at": "2026-10-04T12:43:10.498Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"ess\"}",
+      "created_at": "2026-10-04T12:43:10.502Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" doll\"}",
+      "created_at": "2026-10-04T12:43:10.505Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"house\"}",
+      "created_at": "2026-10-04T12:43:10.509Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" overview\"}",
+      "created_at": "2026-10-04T12:43:10.512Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"”，\"}",
+      "created_at": "2026-10-04T12:43:10.516Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"该\"}",
+      "created_at": "2026-10-04T12:43:10.519Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"次\"}",
+      "created_at": "2026-10-04T12:43:10.523Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" run\"}",
+      "created_at": "2026-10-04T12:43:10.527Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:43:10.530Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"的\"}",
+      "created_at": "2026-10-04T12:43:10.533Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" input\"}",
+      "created_at": "2026-10-04T12:43:10.537Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"Asset\"}",
+      "created_at": "2026-10-04T12:43:10.540Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"Ids\"}",
+      "created_at": "2026-10-04T12:43:10.543Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:43:10.546Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"仍是\"}",
+      "created_at": "2026-10-04T12:43:10.550Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"主\"}",
+      "created_at": "2026-10-04T12:43:10.553Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"图\"}",
+      "created_at": "2026-10-04T12:43:10.557Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" a\"}",
+      "created_at": "2026-10-04T12:43:10.560Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"4\"}",
+      "created_at": "2026-10-04T12:43:10.563Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"e\"}",
+      "created_at": "2026-10-04T12:43:10.566Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"867\"}",
+      "created_at": "2026-10-04T12:43:10.570Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"0\"}",
+      "created_at": "2026-10-04T12:43:10.573Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"a\"}",
+      "created_at": "2026-10-04T12:43:10.576Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"，\"}",
+      "created_at": "2026-10-04T12:43:10.579Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"feedback\"}",
+      "created_at": "2026-10-04T12:43:10.583Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:43:10.586Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"指向\"}",
+      "created_at": "2026-10-04T12:43:10.589Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"本\"}",
+      "created_at": "2026-10-04T12:43:10.592Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"报告\"}",
+      "created_at": "2026-10-04T12:43:10.596Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"；\"}",
+      "created_at": "2026-10-04T12:43:10.599Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"也就是说\"}",
+      "created_at": "2026-10-04T12:43:10.602Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"：\"}",
+      "created_at": "2026-10-04T12:43:10.605Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"**\"}",
+      "created_at": "2026-10-04T12:43:10.609Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"输入\"}",
+      "created_at": "2026-10-04T12:43:10.612Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"已\"}",
+      "created_at": "2026-10-04T12:43:10.615Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"变\"}",
+      "created_at": "2026-10-04T12:43:10.618Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"，\"}",
+      "created_at": "2026-10-04T12:43:10.621Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"模型\"}",
+      "created_at": "2026-10-04T12:43:10.624Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"仍未\"}",
+      "created_at": "2026-10-04T12:43:10.627Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"改变\"}",
+      "created_at": "2026-10-04T12:43:10.631Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"相机\"}",
+      "created_at": "2026-10-04T12:43:10.634Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"投影\"}",
+      "created_at": "2026-10-04T12:43:10.638Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"**\"}",
+      "created_at": "2026-10-04T12:43:10.641Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"。\"}",
+      "created_at": "2026-10-04T12:43:10.646Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"生成\"}",
+      "created_at": "2026-10-04T12:43:10.651Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"成功\"}",
+      "created_at": "2026-10-04T12:43:10.656Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" ≠\"}",
+      "created_at": "2026-10-04T12:43:10.661Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:43:10.666Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"质量\"}",
+      "created_at": "2026-10-04T12:43:10.670Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"通过\"}",
+      "created_at": "2026-10-04T12:43:10.675Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"。\\n\"}",
+      "created_at": "2026-10-04T12:43:10.680Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"5\"}",
+      "created_at": "2026-10-04T12:43:10.683Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\".\"}",
+      "created_at": "2026-10-04T12:43:10.687Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" **\"}",
+      "created_at": "2026-10-04T12:43:10.690Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"missing\"}",
+      "created_at": "2026-10-04T12:43:10.694Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"/\"}",
+      "created_at": "2026-10-04T12:43:10.698Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"待\"}",
+      "created_at": "2026-10-04T12:43:10.701Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"补充\"}",
+      "created_at": "2026-10-04T12:43:10.704Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"**\"}",
+      "created_at": "2026-10-04T12:43:10.707Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"：\"}",
+      "created_at": "2026-10-04T12:43:10.710Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"三\"}",
+      "created_at": "2026-10-04T12:43:10.713Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"处\"}",
+      "created_at": "2026-10-04T12:43:10.716Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"开口\"}",
+      "created_at": "2026-10-04T12:43:10.719Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"功能\"}",
+      "created_at": "2026-10-04T12:43:10.723Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"与\"}",
+      "created_at": "2026-10-04T12:43:10.726Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"入口\"}",
+      "created_at": "2026-10-04T12:43:10.729Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"门\"}",
+      "created_at": "2026-10-04T12:43:10.732Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"/\"}",
+      "created_at": "2026-10-04T12:43:10.735Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"站\"}",
+      "created_at": "2026-10-04T12:43:10.738Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"台\"}",
+      "created_at": "2026-10-04T12:43:10.741Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"门\"}",
+      "created_at": "2026-10-04T12:43:10.745Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"区分\"}",
+      "created_at": "2026-10-04T12:43:10.749Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"、\"}",
+      "created_at": "2026-10-04T12:43:10.752Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"相对\"}",
+      "created_at": "2026-10-04T12:43:10.756Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"墙\"}",
+      "created_at": "2026-10-04T12:43:10.759Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"内\"}",
+      "created_at": "2026-10-04T12:43:10.763Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"侧面\"}",
+      "created_at": "2026-10-04T12:43:10.766Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"、\"}",
+      "created_at": "2026-10-04T12:43:10.770Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"绝对\"}",
+      "created_at": "2026-10-04T12:43:10.773Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"尺寸\"}",
+      "created_at": "2026-10-04T12:43:10.777Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"与\"}",
+      "created_at": "2026-10-04T12:43:10.781Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"净\"}",
+      "created_at": "2026-10-04T12:43:10.783Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"高\"}",
+      "created_at": "2026-10-04T12:43:10.787Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"、\"}",
+      "created_at": "2026-10-04T12:43:10.790Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"天花板\"}",
+      "created_at": "2026-10-04T12:43:10.794Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"、\"}",
+      "created_at": "2026-10-04T12:43:10.797Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"门外\"}",
+      "created_at": "2026-10-04T12:43:10.801Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"空间\"}",
+      "created_at": "2026-10-04T12:43:10.805Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"与\"}",
+      "created_at": "2026-10-04T12:43:10.809Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"地理\"}",
+      "created_at": "2026-10-04T12:43:10.812Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"朝向\"}",
+      "created_at": "2026-10-04T12:43:10.815Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"、\"}",
+      "created_at": "2026-10-04T12:43:10.819Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"长\"}",
+      "created_at": "2026-10-04T12:43:10.823Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"凳\"}",
+      "created_at": "2026-10-04T12:43:10.826Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"是否\"}",
+      "created_at": "2026-10-04T12:43:10.834Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"固定\"}",
+      "created_at": "2026-10-04T12:43:10.837Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"与\"}",
+      "created_at": "2026-10-04T12:43:10.840Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"数量\"}",
+      "created_at": "2026-10-04T12:43:10.843Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"、\"}",
+      "created_at": "2026-10-04T12:43:10.846Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"白色\"}",
+      "created_at": "2026-10-04T12:43:10.849Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"面板\"}",
+      "created_at": "2026-10-04T12:43:10.853Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"/\"}",
+      "created_at": "2026-10-04T12:43:10.857Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"深\"}",
+      "created_at": "2026-10-04T12:43:10.863Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"色\"}",
+      "created_at": "2026-10-04T12:43:10.867Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"矩形\"}",
+      "created_at": "2026-10-04T12:43:10.870Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"块\"}",
+      "created_at": "2026-10-04T12:43:10.875Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"/\"}",
+      "created_at": "2026-10-04T12:43:10.879Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"蓝色\"}",
+      "created_at": "2026-10-04T12:43:10.883Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"小\"}",
+      "created_at": "2026-10-04T12:43:10.887Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"标\"}",
+      "created_at": "2026-10-04T12:43:10.890Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"牌\"}",
+      "created_at": "2026-10-04T12:43:10.894Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"用途\"}",
+      "created_at": "2026-10-04T12:43:10.898Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"——\"}",
+      "created_at": "2026-10-04T12:43:10.903Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"一律\"}",
+      "created_at": "2026-10-04T12:43:10.907Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"保留\"}",
+      "created_at": "2026-10-04T12:43:10.911Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"待\"}",
+      "created_at": "2026-10-04T12:43:10.914Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"补充\"}",
+      "created_at": "2026-10-04T12:43:10.918Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"，\"}",
+      "created_at": "2026-10-04T12:43:10.921Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"不\"}",
+      "created_at": "2026-10-04T12:43:10.924Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"编\"}",
+      "created_at": "2026-10-04T12:43:10.927Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"造\"}",
+      "created_at": "2026-10-04T12:43:10.931Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"。\\n\"}",
+      "created_at": "2026-10-04T12:43:10.934Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"6\"}",
+      "created_at": "2026-10-04T12:43:10.937Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\".\"}",
+      "created_at": "2026-10-04T12:43:10.940Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" **\"}",
+      "created_at": "2026-10-04T12:43:10.943Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"关系\"}",
+      "created_at": "2026-10-04T12:43:10.946Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"**\"}",
+      "created_at": "2026-10-04T12:43:10.950Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"：\"}",
+      "created_at": "2026-10-04T12:43:10.953Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"剧情\"}",
+      "created_at": "2026-10-04T12:43:10.957Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"“\"}",
+      "created_at": "2026-10-04T12:43:10.960Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"值守\"}",
+      "created_at": "2026-10-04T12:43:10.963Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"”\"}",
+      "created_at": "2026-10-04T12:43:10.966Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"本轮\"}",
+      "created_at": "2026-10-04T12:43:10.969Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"无\"}",
+      "created_at": "2026-10-04T12:43:10.973Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"同\"}",
+      "created_at": "2026-10-04T12:43:10.976Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"框\"}",
+      "created_at": "2026-10-04T12:43:10.980Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"证据\"}",
+      "created_at": "2026-10-04T12:43:10.984Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"，\"}",
+      "created_at": "2026-10-04T12:43:10.989Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"只能\"}",
+      "created_at": "2026-10-04T12:43:10.994Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"记为\"}",
+      "created_at": "2026-10-04T12:43:10.998Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"不可\"}",
+      "created_at": "2026-10-04T12:43:11.003Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"检验\"}",
+      "created_at": "2026-10-04T12:43:11.008Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"；\"}",
+      "created_at": "2026-10-04T12:43:11.013Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:43:11.017Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"69\"}",
+      "created_at": "2026-10-04T12:43:11.020Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"f\"}",
+      "created_at": "2026-10-04T12:43:11.023Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"5\"}",
+      "created_at": "2026-10-04T12:43:11.027Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"ea\"}",
+      "created_at": "2026-10-04T12:43:11.030Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"1\"}",
+      "created_at": "2026-10-04T12:43:11.034Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"e\"}",
+      "created_at": "2026-10-04T12:43:11.037Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:43:11.040Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:43:11.043Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"派生\"}",
+      "created_at": "2026-10-04T12:43:11.047Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"关系\"}",
+      "created_at": "2026-10-04T12:43:11.050Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"不受\"}",
+      "created_at": "2026-10-04T12:43:11.053Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"影响\"}",
+      "created_at": "2026-10-04T12:43:11.057Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"（\"}",
+      "created_at": "2026-10-04T12:43:11.060Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"本轮\"}",
+      "created_at": "2026-10-04T12:43:11.063Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"三\"}",
+      "created_at": "2026-10-04T12:43:11.067Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"图\"}",
+      "created_at": "2026-10-04T12:43:11.070Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"属\"}",
+      "created_at": "2026-10-04T12:43:11.074Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"基础\"}",
+      "created_at": "2026-10-04T12:43:11.077Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"场景\"}",
+      "created_at": "2026-10-04T12:43:11.080Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"，\"}",
+      "created_at": "2026-10-04T12:43:11.084Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"告\"}",
+      "created_at": "2026-10-04T12:43:11.087Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"示\"}",
+      "created_at": "2026-10-04T12:43:11.090Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"变\"}",
+      "created_at": "2026-10-04T12:43:11.093Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"体\"}",
+      "created_at": "2026-10-04T12:43:11.096Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"图\"}",
+      "created_at": "2026-10-04T12:43:11.099Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"未\"}",
+      "created_at": "2026-10-04T12:43:11.102Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"在\"}",
+      "created_at": "2026-10-04T12:43:11.106Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"选\"}",
+      "created_at": "2026-10-04T12:43:11.109Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"图中\"}",
+      "created_at": "2026-10-04T12:43:11.112Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"）。\\n\\n\"}",
+      "created_at": "2026-10-04T12:43:11.115Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"**\"}",
+      "created_at": "2026-10-04T12:43:11.118Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"建议\"}",
+      "created_at": "2026-10-04T12:43:11.121Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"处理\"}",
+      "created_at": "2026-10-04T12:43:11.124Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"方式\"}",
+      "created_at": "2026-10-04T12:43:11.127Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"（\"}",
+      "created_at": "2026-10-04T12:43:11.130Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"只是\"}",
+      "created_at": "2026-10-04T12:43:11.134Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"选项\"}",
+      "created_at": "2026-10-04T12:43:11.137Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"，\"}",
+      "created_at": "2026-10-04T12:43:11.140Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"未\"}",
+      "created_at": "2026-10-04T12:43:11.143Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"执行\"}",
+      "created_at": "2026-10-04T12:43:11.147Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"任何\"}",
+      "created_at": "2026-10-04T12:43:11.150Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"动作\"}",
+      "created_at": "2026-10-04T12:43:11.153Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"）\"}",
+      "created_at": "2026-10-04T12:43:11.157Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"**\"}",
+      "created_at": "2026-10-04T12:43:11.160Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"：\"}",
+      "created_at": "2026-10-04T12:43:11.164Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"把\"}",
+      "created_at": "2026-10-04T12:43:11.167Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" hall\"}",
+      "created_at": "2026-10-04T12:43:11.171Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"-angle\"}",
+      "created_at": "2026-10-04T12:43:11.174Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:43:11.178Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"标\"}",
+      "created_at": "2026-10-04T12:43:11.181Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"为\"}",
+      "created_at": "2026-10-04T12:43:11.184Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"“\"}",
+      "created_at": "2026-10-04T12:43:11.188Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"室内\"}",
+      "created_at": "2026-10-04T12:43:11.192Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"平\"}",
+      "created_at": "2026-10-04T12:43:11.195Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"视\"}",
+      "created_at": "2026-10-04T12:43:11.198Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"取\"}",
+      "created_at": "2026-10-04T12:43:11.202Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"景\"}",
+      "created_at": "2026-10-04T12:43:11.206Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"未\"}",
+      "created_at": "2026-10-04T12:43:11.210Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"实现\"}",
+      "created_at": "2026-10-04T12:43:11.213Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"/\"}",
+      "created_at": "2026-10-04T12:43:11.217Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"待\"}",
+      "created_at": "2026-10-04T12:43:11.221Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"重\"}",
+      "created_at": "2026-10-04T12:43:11.224Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"做\"}",
+      "created_at": "2026-10-04T12:43:11.228Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"”，\"}",
+      "created_at": "2026-10-04T12:43:11.231Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"不\"}",
+      "created_at": "2026-10-04T12:43:11.235Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"把\"}",
+      "created_at": "2026-10-04T12:43:11.238Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:43:11.241Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"765\"}",
+      "created_at": "2026-10-04T12:43:11.245Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"2\"}",
+      "created_at": "2026-10-04T12:43:11.248Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"eda\"}",
+      "created_at": "2026-10-04T12:43:11.252Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"5\"}",
+      "created_at": "2026-10-04T12:43:11.255Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:43:11.259Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"当\"}",
+      "created_at": "2026-10-04T12:43:11.262Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"第二个\"}",
+      "created_at": "2026-10-04T12:43:11.265Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"角度\"}",
+      "created_at": "2026-10-04T12:43:11.269Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"；\"}",
+      "created_at": "2026-10-04T12:43:11.273Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"不在\"}",
+      "created_at": "2026-10-04T12:43:11.276Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"后续\"}",
+      "created_at": "2026-10-04T12:43:11.279Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"步骤\"}",
+      "created_at": "2026-10-04T12:43:11.283Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"中\"}",
+      "created_at": "2026-10-04T12:43:11.286Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"把它\"}",
+      "created_at": "2026-10-04T12:43:11.289Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"当\"}",
+      "created_at": "2026-10-04T12:43:11.293Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"参考\"}",
+      "created_at": "2026-10-04T12:43:11.297Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"扩散\"}",
+      "created_at": "2026-10-04T12:43:11.301Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"；\"}",
+      "created_at": "2026-10-04T12:43:11.304Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"若\"}",
+      "created_at": "2026-10-04T12:43:11.309Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"将来\"}",
+      "created_at": "2026-10-04T12:43:11.314Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"允许\"}",
+      "created_at": "2026-10-04T12:43:11.318Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"再\"}",
+      "created_at": "2026-10-04T12:43:11.323Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"出\"}",
+      "created_at": "2026-10-04T12:43:11.329Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"图\"}",
+      "created_at": "2026-10-04T12:43:11.334Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"，\"}",
+      "created_at": "2026-10-04T12:43:11.339Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"需要\"}",
+      "created_at": "2026-10-04T12:43:11.344Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"改变\"}",
+      "created_at": "2026-10-04T12:43:11.349Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"输入\"}",
+      "created_at": "2026-10-04T12:43:11.353Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"本身\"}",
+      "created_at": "2026-10-04T12:43:11.356Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"（\"}",
+      "created_at": "2026-10-04T12:43:11.360Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"换\"}",
+      "created_at": "2026-10-04T12:43:11.364Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"已\"}",
+      "created_at": "2026-10-04T12:43:11.367Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"选定\"}",
+      "created_at": "2026-10-04T12:43:11.371Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"参考\"}",
+      "created_at": "2026-10-04T12:43:11.374Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"，\"}",
+      "created_at": "2026-10-04T12:43:11.378Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"或\"}",
+      "created_at": "2026-10-04T12:43:11.381Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"先在\"}",
+      "created_at": "2026-10-04T12:43:11.385Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"空间\"}",
+      "created_at": "2026-10-04T12:43:11.389Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"模式\"}",
+      "created_at": "2026-10-04T12:43:11.393Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"用\"}",
+      "created_at": "2026-10-04T12:43:11.397Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"有\"}",
+      "created_at": "2026-10-04T12:43:11.400Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"来源\"}",
+      "created_at": "2026-10-04T12:43:11.404Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"证据\"}",
+      "created_at": "2026-10-04T12:43:11.407Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"确认\"}",
+      "created_at": "2026-10-04T12:43:11.411Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"能\"}",
+      "created_at": "2026-10-04T12:43:11.414Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"支撑\"}",
+      "created_at": "2026-10-04T12:43:11.418Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"室内\"}",
+      "created_at": "2026-10-04T12:43:11.421Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"视角\"}",
+      "created_at": "2026-10-04T12:43:11.424Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"的\"}",
+      "created_at": "2026-10-04T12:43:11.428Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"锚\"}",
+      "created_at": "2026-10-04T12:43:11.431Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"点\"}",
+      "created_at": "2026-10-04T12:43:11.435Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"/\"}",
+      "created_at": "2026-10-04T12:43:11.438Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"框架\"}",
+      "created_at": "2026-10-04T12:43:11.442Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"），\"}",
+      "created_at": "2026-10-04T12:43:11.446Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"而不是\"}",
+      "created_at": "2026-10-04T12:43:11.449Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"继续\"}",
+      "created_at": "2026-10-04T12:43:11.452Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"复\"}",
+      "created_at": "2026-10-04T12:43:11.456Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"述\"}",
+      "created_at": "2026-10-04T12:43:11.459Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"取\"}",
+      "created_at": "2026-10-04T12:43:11.462Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"景\"}",
+      "created_at": "2026-10-04T12:43:11.466Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"词\"}",
+      "created_at": "2026-10-04T12:43:11.469Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"。\"}",
+      "created_at": "2026-10-04T12:43:11.473Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"本轮\"}",
+      "created_at": "2026-10-04T12:43:11.476Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"修订\"}",
+      "created_at": "2026-10-04T12:43:11.480Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"额度\"}",
+      "created_at": "2026-10-04T12:43:11.483Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"已\"}",
+      "created_at": "2026-10-04T12:43:11.487Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"用完\"}",
+      "created_at": "2026-10-04T12:43:11.490Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"，\"}",
+      "created_at": "2026-10-04T12:43:11.493Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"我不\"}",
+      "created_at": "2026-10-04T12:43:11.497Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"提出\"}",
+      "created_at": "2026-10-04T12:43:11.500Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"额外\"}",
+      "created_at": "2026-10-04T12:43:11.504Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"生成\"}",
+      "created_at": "2026-10-04T12:43:11.507Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"。\\n\\n\"}",
+      "created_at": "2026-10-04T12:43:11.510Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"另外\"}",
+      "created_at": "2026-10-04T12:43:11.514Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"提示\"}",
+      "created_at": "2026-10-04T12:43:11.518Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"：\"}",
+      "created_at": "2026-10-04T12:43:11.522Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"步骤\"}",
+      "created_at": "2026-10-04T12:43:11.525Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"索引\"}",
+      "created_at": "2026-10-04T12:43:11.529Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"里\"}",
+      "created_at": "2026-10-04T12:43:11.532Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"还存在\"}",
+      "created_at": "2026-10-04T12:43:11.535Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"一份\"}",
+      "created_at": "2026-10-04T12:43:11.539Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"未\"}",
+      "created_at": "2026-10-04T12:43:11.542Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"采用的\"}",
+      "created_at": "2026-10-04T12:43:11.546Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" v\"}",
+      "created_at": "2026-10-04T12:43:11.549Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"5\"}",
+      "created_at": "2026-10-04T12:43:11.553Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:43:11.556Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"候选\"}",
+      "created_at": "2026-10-04T12:43:11.560Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" `\"}",
+      "created_at": "2026-10-04T12:43:11.563Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"918\"}",
+      "created_at": "2026-10-04T12:43:11.567Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"01\"}",
+      "created_at": "2026-10-04T12:43:11.570Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"de\"}",
+      "created_at": "2026-10-04T12:43:11.573Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"7\"}",
+      "created_at": "2026-10-04T12:43:11.577Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:43:11.580Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"（\"}",
+      "created_at": "2026-10-04T12:43:11.584Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"把\"}",
+      "created_at": "2026-10-04T12:43:11.587Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" hall\"}",
+      "created_at": "2026-10-04T12:43:11.591Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"-angle\"}",
+      "created_at": "2026-10-04T12:43:11.594Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:43:11.598Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"改为\"}",
+      "created_at": "2026-10-04T12:43:11.601Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" `\"}",
+      "created_at": "2026-10-04T12:43:11.605Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"shot\"}",
+      "created_at": "2026-10-04T12:43:11.608Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"Scale\"}",
+      "created_at": "2026-10-04T12:43:11.612Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"=\"}",
+      "created_at": "2026-10-04T12:43:11.615Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"medium\"}",
+      "created_at": "2026-10-04T12:43:11.619Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:43:11.622Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"，\"}",
+      "created_at": "2026-10-04T12:43:11.626Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"re\"}",
+      "created_at": "2026-10-04T12:43:11.629Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"vision\"}",
+      "created_at": "2026-10-04T12:43:11.633Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"Status\"}",
+      "created_at": "2026-10-04T12:43:11.636Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"=\"}",
+      "created_at": "2026-10-04T12:43:11.639Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"pro\"}",
+      "created_at": "2026-10-04T12:43:11.643Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"posal\"}",
+      "created_at": "2026-10-04T12:43:11.646Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"），\"}",
+      "created_at": "2026-10-04T12:43:11.649Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"它\"}",
+      "created_at": "2026-10-04T12:43:11.654Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"既\"}",
+      "created_at": "2026-10-04T12:43:11.659Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"未\"}",
+      "created_at": "2026-10-04T12:43:11.664Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"采用\"}",
+      "created_at": "2026-10-04T12:43:11.669Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"也未\"}",
+      "created_at": "2026-10-04T12:43:11.675Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"生成\"}",
+      "created_at": "2026-10-04T12:43:11.681Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"，\"}",
+      "created_at": "2026-10-04T12:43:11.686Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"不影响\"}",
+      "created_at": "2026-10-04T12:43:11.691Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"本次\"}",
+      "created_at": "2026-10-04T12:43:11.694Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"结论\"}",
+      "created_at": "2026-10-04T12:43:11.698Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"；\"}",
+      "created_at": "2026-10-04T12:43:11.701Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"如需\"}",
+      "created_at": "2026-10-04T12:43:11.705Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"我\"}",
+      "created_at": "2026-10-04T12:43:11.708Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"按\"}",
+      "created_at": "2026-10-04T12:43:11.711Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"报告\"}",
+      "created_at": "2026-10-04T12:43:11.715Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"对它\"}",
+      "created_at": "2026-10-04T12:43:11.718Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"做\"}",
+      "created_at": "2026-10-04T12:43:11.722Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"任何\"}",
+      "created_at": "2026-10-04T12:43:11.725Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"处理\"}",
+      "created_at": "2026-10-04T12:43:11.728Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"，\"}",
+      "created_at": "2026-10-04T12:43:11.732Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"请\"}",
+      "created_at": "2026-10-04T12:43:11.736Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"明确\"}",
+      "created_at": "2026-10-04T12:43:11.739Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"指示\"}",
+      "created_at": "2026-10-04T12:43:11.742Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"。\"}",
+      "created_at": "2026-10-04T12:43:11.746Z"
+    },
+    {
+      "type": "usage",
+      "body": "{\"usage\":{\"cacheRead\":254976,\"cacheWrite\":0,\"cost\":{\"cacheRead\":0.001529856,\"cacheWrite\":0,\"input\":0.0000456,\"output\":0.0010956,\"total\":0.0026710559999999998},\"input\":152,\"output\":913,\"reasoning\":6,\"totalTokens\":256041}}",
+      "created_at": "2026-10-04T12:43:12.265Z"
+    },
+    {
+      "type": "done",
+      "body": "{\"status\":\"succeeded\"}",
+      "created_at": "2026-10-04T12:43:12.645Z"
+    }
+  ],
+  "generationCount": 8
+}

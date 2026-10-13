@@ -1,0 +1,14 @@
+{
+  "owner": "Sean",
+  "projectId": "538005c3-16bd-4709-aa4e-70831b960a24",
+  "sessionId": "0707ba67-08da-42cf-9bc9-b1fa07bf95cf",
+  "request": {
+    "requestId": "d436c85d-1274-48e6-8d4b-aca2a7b1f6d5",
+    "mode": "prepare",
+    "text": "上一轮20ee达到10分钟上限已终止，不重做选片/设帧/结构采用。继续仅文字工作，禁止GPU/合成/其他镜修改。先get_film_context确认当前revision71，然后get_film_proposal读取上一轮最后有效空间草稿并核对是否已保存；未保存则只同步S3b真实双手抓coat上部/下布垂落的startState和transition及对应prompt，scenePlan与其他6镜逐字保留，采用版本化空间提案。随后必须调用现有固定提示词生成工作流只生成S3b完整Ref2VA六段400-450词，基于已设置实际Picture9锚帧74c7d3a9/source ca55。保留其他8图顺序、4sec/seed、空对白与剧情。真实开始未前臂托抱；开始动作另一手从下方托起下垂衣身和袖子，完整移至裸木点中央杯左方/书左方/刀远侧，接触木面后松手，所有布料袖子均木面支撑、不垂边不压书不碰杯纸刀，A坐静止。完成后读完整新prompt并validate，报告warnings、revision、前3镜selected/current、S3b锚帧。34秒计划仍非30秒验收。"
+  },
+  "response": {
+    "runId": "8d828d4e-ba9c-44f8-84e0-c6646fd1fefb",
+    "status": "running"
+  }
+}

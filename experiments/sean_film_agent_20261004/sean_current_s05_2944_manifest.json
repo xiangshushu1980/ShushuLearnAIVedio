@@ -1,0 +1,1958 @@
+{
+  "id": "29448db9-ddbc-403c-b117-0473c8ca9708",
+  "projectId": "70338d49-e494-433f-a753-738fbd3dafc9",
+  "shotId": "5f220d41-6480-461a-9082-d91b8ae8d4f2",
+  "parentId": "dd44eebb-3401-46ff-9e23-dfe5e5a253c0",
+  "branch": "edit-and-rerun",
+  "owner": "Sean",
+  "createdAt": "2026-10-04T09:38:22.400Z",
+  "status": "succeeded",
+  "input": {
+    "owner": "Sean",
+    "shot": {
+      "id": "5f220d41-6480-461a-9082-d91b8ae8d4f2",
+      "title": "A changes into B's casual clothes and spins",
+      "durationSec": 12,
+      "entityIds": [
+        "5821d6dd-2041-40a3-a789-74989c6edd90",
+        "ba6dcbf0-ea45-4720-80c7-8bc7b2ec9165",
+        "3044bf32-2019-458e-a7cf-e50ab304e42c",
+        "9971429d-863e-499e-b7c5-902d30e0f6a2"
+      ],
+      "imageAssetIds": [
+        "25958405-ac83-454f-909e-f4aeba33f9a4",
+        "af9823e0-1b27-48b7-a469-47ddcf4b7534",
+        "89f7618d-e430-46c7-9c4d-b8e20f3ff386",
+        "c25d9268-6efa-4c1c-9a23-cef25c5ef192",
+        "96e44971-aedc-42da-a534-dc321fd5e350",
+        "5d0c2f3a-2249-44f3-ab7b-fa89a476610b"
+      ],
+      "action": "After B has completely left with the sword, the same Character A starts seated on the near side of the main library reading table. A stands, removes only the uniform outer jacket and its attached silver armour actually worn in the opening frame, places it aside on the near side, retaining inner clothing, trousers and boots. A takes the one outer garment B left flat on the far-side tabletop and puts it on. This is A in the derived clothed appearance, the same identity and voice, not another person. A performs one complete happy 360-degree spin at the near side, ending facing the camera side, and says the approved line. B is absent throughout; no sword remains.",
+      "framing": "中景全身镜头，延续近侧机位；A 起身、只脱制服外套与银甲放到近侧一旁，取远侧桌面 B 留下的外衣穿上成为角色A·派生，站近侧面向机位侧完成一整圈转身并说原对白。",
+      "camera": "Camera remains on A's side of the main reading table; it does not cross the A-B action axis. For the complete spin, 角色A · 派生 starts facing the camera and ends facing the camera, rotating through a full 360 degrees; do not hold a single fixed facing throughout the rotation.",
+      "continuity": "紧接 S4 结尾状态（本镜当前无锚帧，旧锚帧已移除）：B 已完全离场，刀随她离开，桌面与 A 腰边无刀、无刀鞘；A 坐近侧，远侧桌面留下 B 脱下的同一件休闲服外衣，桌面中性阅览用品原位。A 起身，只脱下自己开场实际穿着的制服外套（银甲随外套移走），放在近侧一旁；保留内层、长裤和靴，取远侧桌面那件外衣穿上。A·派生是同一个 A，沿用同一脸、发型、体型和基础声音（全局声音 ID S1），不新增角色。随后在近侧原地完成一整圈转身，结束时再面向机位说原对白。机位不跨交互轴；单镜连续 12 秒。",
+      "dialogue": [
+        {
+          "speaker": "ba6dcbf0-ea45-4720-80c7-8bc7b2ec9165",
+          "text": "……还挺合身。",
+          "language": "Chinese"
+        }
+      ],
+      "prompt": "subject_definitions:\n<Subject 1> is the modern library reading room defined by <Picture 1>: a bright, clean, simply decorated reading room with one continuous straight pale-wood shelving wall, light wood floor, grey-green chairs and soft even overhead lighting; <Picture 1> supplies environment appearance and materials only, does not select another reading table and is not a competing camera or composition anchor. The single main reading table T1 is the light-wood reading table against that same continuous shelving wall, its near side the camera-side edge and Character A's side, its far side the opposite edge where the garment was left.\n<Subject 2> is Character A, the adult woman defined by <Picture 2> and <Picture 3>: ponytail, deep navy stand-collar uniform jacket with silver shoulder and forearm armour, matching navy trousers and black boots; those pictures are authoritative for her identity, body proportions, hair, her own clothing and her base voice, and she has no sword and no scabbard at her waist.\n<Subject 3> is Character A in her derived state, defined by <Picture 4> together with the same woman in <Picture 2> and <Picture 3>: <Picture 4> shows only how the outer garment of the casual set sits on her body, while her face, ponytail, body proportions and voice still come from <Picture 2> and <Picture 3>; she keeps the same global voice identity (S1) and is the same single person, with no third person appearing.\n<Subject 4> is the casual clothing set defined by <Picture 5> and <Picture 6>, shown without a person; those references are authoritative for its colour, design and material, and in this shot only its outer garment is put on, while the rest of that set belongs to the departing character and is never worn here.\n<Picture 7> is the edited first frame and opening composition anchor of [Shot 1], an actual frozen tail frame of the preceding clip and not a Subject: the same bright reading room with the continuous straight pale-wood shelving wall, the same single main reading table T1, the grey-green chairs, Character A seated at the near side on screen-left with no weapon at her waist, the other woman completely absent, no sword and no scabbard anywhere, that woman's removed outer garment lying flat on the far-side tabletop with its body and sleeves supported by the wood, the neutral reading props in place, and the chair backs empty, with no third person.\n<Audio 1> is the voice-timbre reference for the visible <Subject 3> (S1), supplied as speakerId S1 for the derived Character A: a low, clear young-adult female voice with a faint rasp and a dry edge, Mandarin Chinese natural speech; it is the same base voice of the same identity and a standalone timbre reference only, and its sample wording is never reproduced.\n\nsummary:\n[reference generation + keyframe completion + audio reference] The target video is one continuous 12-second single shot inside <Subject 1>, beginning exactly from <Picture 7>, the edited opening frame: the other woman has already completely left, no sword or scabbard remains anywhere, and the outer garment of <Subject 4> lies flat on the far-side tabletop. <Subject 2>, seated at the screen-left of the near side of the main reading table T1 in her referenced uniform, stands up, removes only her own navy uniform jacket together with its attached silver shoulder and forearm armour and lays them aside at the near side, keeping her inner layer, trousers and boots on; she reaches across the tabletop, takes that same outer garment and puts it on over her own clothing, becoming <Subject 3> with the same face, hair, body proportions and voice. Facing the camera side, she then performs exactly one slow and measured 360-degree turn on the spot at the near side, passing one side, the back exactly once, the opposite side, and returning to front, finishing well before the end of the shot; for the remaining roughly three seconds she stands entirely still, feet planted and body facing the camera side, and only then speaks the approved line with the timbre of <Audio 1>. No second revolution, no repeated back-facing pass and no continued spinning occur.\n\nretention_analysis:\n<Picture 7> (opening frame of [Shot 1]): fully_preserved - the continuous straight pale-wood shelving wall, the same light-wood reading table T1, the grey-green chairs, the same camera side at the near side of T1 and the same action axis, the soft even lighting and materials, Character A's seated position at the near side on screen-left with her head and gaze toward the departure direction, the absence of the other woman, the absence of any sword or scabbard on the tabletop or at her waist, the removed outer garment lying flat on the far-side tabletop with its body and sleeves supported by the wood, and the neutral reading props in place are all retained as the authoritative opening composition. Approved corrections: no departing person and no weapon may be restored or reintroduced from any earlier failed output; the chair backs must stay empty; the departed woman’s coat removal or placement is not replayed; the rotation must be one single measured revolution in which the back faces the camera exactly once and never returns, with no second revolution, no extra half-turn and no alternating front-and-back repetition, and the closing seconds must be fully stationary facing the camera side; no duplicate blade, second sword or scabbard appears; the scene reference is not used to select another reading table or another camera angle; and no subtitle, caption, on-screen text or watermark appears.\n<Subject 1> (appears in [Shot 1]): fully_preserved - the bright reading room, its continuous straight pale-wood shelving wall, light wood floor, grey-green chairs and soft even overhead lighting, with no unlisted architecture, extra table or additional person added.\n<Subject 2> (appears in [Shot 1]): fully_preserved - the identity, face, body proportions, ponytail, navy uniform jacket with silver shoulder and forearm armour, trousers and boots of the woman defined by <Picture 2> and <Picture 3>, retained through the change, with her inner layer, trousers and boots remaining on afterwards and nothing exposed.\n<Subject 3> (appears in [Shot 1]): fully_preserved - the derived state keeps the same face, body proportions, ponytail and voice while wearing the referenced outer garment; clothing is the only change and no third person exists.\n<Subject 4> (appears in [Shot 1]): attribute_transfer - the referenced outer garment keeps its colour, design and material but is transferred from the departing character onto Character A; the rest of that casual set is never worn here, and the garment stays horizontally supported on the tabletop until Character A lifts it, never on a chair back.\n<Audio 1> (appears in [Shot 1]): reference - the supplied clip is used only as a standalone voice-timbre reference for the visible speaker; none of its sample words are carried into the story.\n\ndetailed_description:\nStyle: live-action cinematic inside a bright modern library reading room, clean anime-influenced character rendering, natural colour grading, soft even overhead light, realistic materials, no subtitles, captions, on-screen text or watermarks.\n[Shot 1] Opens exactly from <Picture 7>, the edited first frame and opening composition anchor of [Shot 1], a frozen tail frame of the preceding clip: keep the bright reading room, its continuous pale-wood shelving wall, the long light-wood reading table T1, grey-green chairs and soft overhead light; T1's near side is the camera-side edge and Character A's side, its far side the opposite edge.\nSame camera side and seated position; no sword or scabbard remains, the other woman is absent, and her outer garment lies flat on the far-side tabletop; neutral props and empty chair backs stay unchanged.\nInitial state: Character A sits near side on screen-left, pelvis on the seat, gaze toward the departure direction, in her deep navy stand-collar jacket with silver shoulder and forearm armour, trousers and black boots.\nDominant action: she stands, removes only her own uniform jacket with its attached silver armour and lays them aside at the near side, keeping her inner layer, trousers and boots on; she takes that outer garment and puts it on over her own clothing, becoming the same woman in the derived outfit, same face, hair and voice.\nOnce the garment is on she settles facing the camera side. Then one single measured revolution on the spot: a slow, even, decelerating 360-degree turn through one side, the back, the opposite side, and back to front. The back faces the camera exactly once and never returns, with no second revolution. The turn finishes by roughly the ninth second and ends facing the camera side.\nFrom that moment to the final frame, roughly the last three seconds, she is completely stationary: both feet planted, no residual rotation and no stepping.\nHolding that stopped front-facing position, <Subject 3> (S1) says with matching lip movement <d>[Chinese] ……还挺合身。</d> and stays still to the final frame.\nCamera: locked-off medium full-body shot, one very small slow push-in across the exact twelve seconds, one continuous take, no cut or reframing.\nSound: quiet room tone, fabric rustle during the jacket and armour removal and the coat change, a faint whisper as the garment lifts off the wood, and one light swish during the single turn only.\nEnd state: the same A stands still at the near side facing the camera side in the derived outfit over her inner layer and trousers, both feet planted, no residual rotation; the other woman and the sword are absent; the outer garment is gone from the far-side tabletop; chair backs empty.\n\noverall_soundscape:\nQuiet library room tone throughout; fabric rustle during the uniform jacket and armour removal and the coat change; a soft settle as the jacket and armour are set aside; a faint whisper as the outer garment lifts off the wood; soft near-side footsteps; one light sustained swish during the single measured turn only, followed by stillness.\n\nnon_diegetic_music:\nN/A",
+      "seed": 253151585,
+      "nativeAudioAssetId": null,
+      "verifiedAudioTranscript": ""
+    },
+    "shotHash": "375c7e0c9aefdc31ea1e7e8d0f5c52f867919e212620ff932af7e2acb9af191b",
+    "plot": "A和B在图书馆遇见发生一件小事。\nA走到图书馆，看到B正在读书，便把刀放到一边，然后同B交谈了一会儿。\nB脱下衣服放到一旁，取了刀便离开。\nB离开手，A起身脱下自己的衣服，然后穿上B的衣服，开心的转了一圈。",
+    "script": "短片脚本（约30秒）\n图书馆内，角色A走到主阅读桌旁，看见角色B正在读书。角色A把一把刀放到一旁。\n角色A：你倒是清闲。\n角色B：你来还书，还是来还刀？\n角色A：先放这儿。\n角色B：放这儿？你舍得？\n角色A：随你怎么想。\n两人交谈了一会儿。角色B脱下休闲服放到一旁，取了那把刀，起身离开。\n角色B：那我收下了。\n角色A：喂——\n角色B没有回头，走出图书馆。\n角色A起身，脱下自己的衣服，拿起角色B留下的休闲服穿上，成为角色A · 派生，开心地转了一圈。\n角色A · 派生：……还挺合身。",
+    "dialogue": "角色A：你倒是清闲。\n角色B：你来还书，还是来还刀？\n角色A：先放这儿。\n角色B：放这儿？你舍得？\n角色A：随你怎么想。\n角色B：那我收下了。\n角色A：喂——\n角色A · 派生：……还挺合身。",
+    "render": {
+      "width": 1024,
+      "height": 576
+    },
+    "entities": [
+      {
+        "appearance": "",
+        "assets": [
+          {
+            "assetId": "1e2f367f-132f-4c92-93d7-660422eaf8be",
+            "available": true,
+            "confirmation": {
+              "isCurrent": true,
+              "records": [
+                {
+                  "confirmationId": "7241220e-968d-4db9-bc31-0095b4b6c62b",
+                  "createdAt": "2026-10-03T04:47:54.564Z",
+                  "kind": "voice",
+                  "version": 2
+                }
+              ],
+              "status": "confirmed"
+            },
+            "contentHash": "136dc791274fa4bf7f7a5cb4667c04bbaf8affd92c7473775cf295846215ff1b",
+            "contentUrl": "/api/reference/v1/assets/1e2f367f-132f-4c92-93d7-660422eaf8be/content",
+            "createdAt": "2026-10-03T04:47:01.945Z",
+            "description": null,
+            "durationSec": 6.08,
+            "entityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+            "fileSize": 291918,
+            "height": null,
+            "inheritance": null,
+            "layout": null,
+            "mediaType": "audio",
+            "mime": "audio/wav",
+            "name": "声音 · 基础音色 · 中性样音 4c0619b2 · 1",
+            "reviewStatus": null,
+            "role": "voice",
+            "sourceRevision": "b6609476c53d88114e255176ad70cad73743b75846f54ec0de6e74f1559c0a95",
+            "sourceRunId": "4c0619b2-04b1-41a7-a7a4-1fba6bb36235",
+            "width": null,
+            "localHash": "136dc791274fa4bf7f7a5cb4667c04bbaf8affd92c7473775cf295846215ff1b"
+          },
+          {
+            "assetId": "89f7618d-e430-46c7-9c4d-b8e20f3ff386",
+            "available": true,
+            "confirmation": {
+              "isCurrent": true,
+              "records": [
+                {
+                  "confirmationId": "cda1ca59-391a-4a13-9d65-8712fed8c853",
+                  "createdAt": "2026-10-03T07:46:10.080Z",
+                  "kind": "view",
+                  "version": 3
+                }
+              ],
+              "status": "confirmed"
+            },
+            "contentHash": "5fecbc99843090ee1c74e7eecce6b9f3b3c34df5bd8ebfdd33a10a1fc2b9aa43",
+            "contentUrl": "/api/reference/v1/assets/89f7618d-e430-46c7-9c4d-b8e20f3ff386/content",
+            "createdAt": "2026-10-03T03:15:48.058Z",
+            "description": null,
+            "durationSec": null,
+            "entityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+            "fileSize": 1639632,
+            "height": 1024,
+            "inheritance": null,
+            "layout": "face-front-back-side",
+            "mediaType": "image",
+            "mime": "image/png",
+            "name": "脸部＋正背侧 1913176b · 1",
+            "reviewStatus": null,
+            "role": "three_view",
+            "sourceRevision": "d3f67cdff7f67ac7a420207c95d68ce07dd596b20736c7eb3a1832fabf9ee326",
+            "sourceRunId": "1913176b-0bb6-411c-9fc4-fba39571c88e",
+            "width": 1536,
+            "localHash": "5fecbc99843090ee1c74e7eecce6b9f3b3c34df5bd8ebfdd33a10a1fc2b9aa43"
+          },
+          {
+            "assetId": "af9823e0-1b27-48b7-a469-47ddcf4b7534",
+            "available": true,
+            "confirmation": {
+              "isCurrent": true,
+              "records": [
+                {
+                  "confirmationId": "4e1b9ef4-326f-40cb-be07-4b974f4a8129",
+                  "createdAt": "2026-10-02T16:56:33.878Z",
+                  "kind": "appearance",
+                  "version": 1
+                }
+              ],
+              "status": "confirmed"
+            },
+            "contentHash": "df20a30c62bf979ff04d2773b1757620847d3b485b580095b429031b5ea2d04b",
+            "contentUrl": "/api/reference/v1/assets/af9823e0-1b27-48b7-a469-47ddcf4b7534/content",
+            "createdAt": "2026-10-02T15:32:49.700Z",
+            "description": null,
+            "durationSec": null,
+            "entityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+            "fileSize": 1475226,
+            "height": 1024,
+            "inheritance": null,
+            "layout": null,
+            "mediaType": "image",
+            "mime": "image/png",
+            "name": "概念图 ae5a56dc · 1",
+            "reviewStatus": null,
+            "role": "main_appearance",
+            "sourceRevision": "c55ec362fa3256461942afd3487bbba4446d4321868f479b1deec6aa2f6dd7c5",
+            "sourceRunId": "ae5a56dc-42b2-404b-b45b-5fcf9f4acecc",
+            "width": 1536,
+            "localHash": "df20a30c62bf979ff04d2773b1757620847d3b485b580095b429031b5ea2d04b"
+          }
+        ],
+        "contentHash": "fc45059ff35f657f04d86a7f86ce227198cd919bcf5effe421e2d5d07fa64332",
+        "createdAt": "2026-10-02T15:31:20.130Z",
+        "currentAppearance": {
+          "assetId": "af9823e0-1b27-48b7-a469-47ddcf4b7534",
+          "confirmationId": "4e1b9ef4-326f-40cb-be07-4b974f4a8129",
+          "contentHash": "df20a30c62bf979ff04d2773b1757620847d3b485b580095b429031b5ea2d04b",
+          "version": 1
+        },
+        "currentVoice": {
+          "assetId": "1e2f367f-132f-4c92-93d7-660422eaf8be",
+          "confirmationId": "7241220e-968d-4db9-bc31-0095b4b6c62b",
+          "contentHash": "136dc791274fa4bf7f7a5cb4667c04bbaf8affd92c7473775cf295846215ff1b",
+          "version": 2
+        },
+        "derivedFrom": null,
+        "description": "",
+        "entityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+        "fieldSources": {
+          "appearance": {
+            "contentHash": "12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126",
+            "source": "entities.context.appearance"
+          },
+          "description": {
+            "contentHash": "12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126",
+            "source": "entities.context.description"
+          },
+          "type": null,
+          "voiceDescription": {
+            "contentHash": "bdc62d6384c6d181419acbc5e4ecd739bc038d8221a5095c3d28b4a9072c5137",
+            "source": "entities.context.voiceDescription"
+          }
+        },
+        "flags": [
+          "人物"
+        ],
+        "missingFields": [
+          "type"
+        ],
+        "name": "角色A",
+        "prompts": [
+          {
+            "assetIds": [
+              "89f7618d-e430-46c7-9c4d-b8e20f3ff386"
+            ],
+            "contentHash": "ee09b26e94902d27584b6a33c60dd2a02ccfca52090a86d33a4989b483c34904",
+            "createdAt": "2026-10-03T03:15:31.600Z",
+            "effectiveText": "Composition: Clean 3:2 landscape layout on a warm off-white background with generous spacing. No frames, borders, dividers, text, labels, watermarks, or logos. Soft, even neutral studio lighting across all panels. Use the selected rendering style consistently across every portrait and full-body view. Preserve the reference subject's identity, proportions, clothing, colors, equipment, and accessories while changing only the rendering style.\nLeft Column (20% width): Exactly one large, straight-on head-and-shoulders portrait of the reference subject with a neutral expression. Clearly show the face and hairstyle. No expression grid, no stacked portraits, no additional head crops.\nRight Row (80% width): Exactly three full-height, identically scaled figures arranged left to right: Front View, Back View, and Clean Side Profile. Neutral relaxed stance, head to feet visible in every figure, including shoes. Soft oval floor shadows. The face portrait and all three full-body views show the same subject.\nConsistency & Constraints: Preserve exact identity, hair, facial features, garments, asymmetry, and accessories from the reference. Do not add, redesign, beautify, age, or extrapolate items based on lore/profession. No extra characters, shifting proportions, extra limbs, or inconsistent rendering between views.\n\nJapanese anime character art, clean controlled linework, cel shading, crisp colors, clear facial features.",
+            "promptId": "run:1913176b-0bb6-411c-9fc4-fba39571c88e",
+            "purpose": "二期PC链路验收：V3 Simple 原版表情栏＋正侧背",
+            "samples": [],
+            "sourceEntityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+            "sourceRevision": "ee09b26e94902d27584b6a33c60dd2a02ccfca52090a86d33a4989b483c34904",
+            "sourceRunId": "1913176b-0bb6-411c-9fc4-fba39571c88e",
+            "stage": "multiview",
+            "text": "Composition: Clean 3:2 landscape layout on a warm off-white background with generous spacing. No frames, borders, dividers, text, labels, watermarks, or logos. Soft, even neutral studio lighting across all panels. Use the selected rendering style consistently across every portrait and full-body view. Preserve the reference subject's identity, proportions, clothing, colors, equipment, and accessories while changing only the rendering style.\nLeft Column (20% width): Exactly one large, straight-on head-and-shoulders portrait of the reference subject with a neutral expression. Clearly show the face and hairstyle. No expression grid, no stacked portraits, no additional head crops.\nRight Row (80% width): Exactly three full-height, identically scaled figures arranged left to right: Front View, Back View, and Clean Side Profile. Neutral relaxed stance, head to feet visible in every figure, including shoes. Soft oval floor shadows. The face portrait and all three full-body views show the same subject.\nConsistency & Constraints: Preserve exact identity, hair, facial features, garments, asymmetry, and accessories from the reference. Do not add, redesign, beautify, age, or extrapolate items based on lore/profession. No extra characters, shifting proportions, extra limbs, or inconsistent rendering between views.",
+            "version": null,
+            "workflow": {
+              "contentHash": "b55db52f730d3580d092b86c310477cb5f185cad85bc58af0b6574ce2919a4e1",
+              "id": "qwen-v3-simple-face-front-back-side.1-refs",
+              "version": 3
+            }
+          },
+          {
+            "assetIds": [
+              "432cfa98-83f2-416e-b600-01090075fb73"
+            ],
+            "contentHash": "01cfe0f46d81190e472a47175d625991e3a07c0fb4719bc5c2cfcad6df9117ad",
+            "createdAt": "2026-10-02T16:58:38.993Z",
+            "effectiveText": "Composition: Clean 3:2 landscape layout on a warm off-white background with generous spacing. No frames, borders, dividers, text, labels, watermarks, or logos. Soft, even neutral studio lighting across all panels. Rendering style, line weight, texture, and shading must strictly match the reference image.\nLeft Column (20% width): 4 stacked, identically scaled and cropped head-and-shoulders portraits of the reference subject:\n1. Neutral: Relaxed brows, open eyes, closed mouth (identity anchor).\n2. Joy: Gentle closed-mouth smile, relaxed cheeks, open eyes (no strain/crinkles).\n3. Anger: Brows drawn down/inward, narrowed intense eyes, firmly pressed lips, tight jaw.\n4. Sorrow: Inner brows raised, heavy drooping eyelids, downturned mouth, relaxed jaw (distinct from anger).\nRight Row (80% width): 3 full-height, identically scaled figures of the reference subject in neutral relaxed stance: Front View, Clean Side Profile, and Back View. Soft oval floor shadows.\nConsistency & Constraints: Preserve exact identity, hair, facial features, garments, asymmetry, and accessories from the reference. Do not add, redesign, beautify, age, or extrapolate items based on lore/profession. No extra characters, shifting proportions, extra limbs, or style drift.",
+            "promptId": "run:3547aa4f-9e72-4c7c-9694-3b74e2a733d5",
+            "purpose": "二期PC链路验收：V3 Simple 原版表情栏＋正侧背",
+            "samples": [],
+            "sourceEntityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+            "sourceRevision": "01cfe0f46d81190e472a47175d625991e3a07c0fb4719bc5c2cfcad6df9117ad",
+            "sourceRunId": "3547aa4f-9e72-4c7c-9694-3b74e2a733d5",
+            "stage": "multiview",
+            "text": "Composition: Clean 3:2 landscape layout on a warm off-white background with generous spacing. No frames, borders, dividers, text, labels, watermarks, or logos. Soft, even neutral studio lighting across all panels. Rendering style, line weight, texture, and shading must strictly match the reference image.\nLeft Column (20% width): 4 stacked, identically scaled and cropped head-and-shoulders portraits of the reference subject:\n1. Neutral: Relaxed brows, open eyes, closed mouth (identity anchor).\n2. Joy: Gentle closed-mouth smile, relaxed cheeks, open eyes (no strain/crinkles).\n3. Anger: Brows drawn down/inward, narrowed intense eyes, firmly pressed lips, tight jaw.\n4. Sorrow: Inner brows raised, heavy drooping eyelids, downturned mouth, relaxed jaw (distinct from anger).\nRight Row (80% width): 3 full-height, identically scaled figures of the reference subject in neutral relaxed stance: Front View, Clean Side Profile, and Back View. Soft oval floor shadows.\nConsistency & Constraints: Preserve exact identity, hair, facial features, garments, asymmetry, and accessories from the reference. Do not add, redesign, beautify, age, or extrapolate items based on lore/profession. No extra characters, shifting proportions, extra limbs, or style drift.",
+            "version": null,
+            "workflow": {
+              "contentHash": "f471674e864f60d13668e929266729900de9a611fe28e94802ad4ddf9d1fe075",
+              "id": "qwen-v3-simple-four.1-refs",
+              "version": 3
+            }
+          },
+          {
+            "assetIds": [
+              "1e2f367f-132f-4c92-93d7-660422eaf8be"
+            ],
+            "contentHash": "7cddb81d8d1d6f23e4835d8ae74b5104646fd3de49dac490289366acd5c97854",
+            "createdAt": "2026-10-03T04:46:51.465Z",
+            "effectiveText": "成年女性声音；年轻成年人的声音；音调偏低；音质清澈干净；共鸣自然均衡；基础语速适中；吐字清晰利落；基础气质清冷克制；普通话自然清晰，正常说话，不唱歌。；稍微的烟嗓颗粒感，嘲讽感",
+            "promptId": "run:4c0619b2-04b1-41a7-a7a4-1fba6bb36235",
+            "purpose": "声音阶段 PC 生成链路检查：三段系统试听台词",
+            "samples": [
+              {
+                "direction": "成年女性声音；年轻成年人的声音；音调偏低；音质清澈干净；共鸣自然均衡；基础语速适中；吐字清晰利落；基础气质清冷克制；普通话自然清晰，正常说话，不唱歌。；稍微的烟嗓颗粒感，嘲讽感\n以自然、中性的语气正常说话，情绪平稳，不唱歌，不夸张表演。",
+                "text": "你好，很高兴见到你。今天我们一起出发，慢慢认识这个世界。"
+              }
+            ],
+            "sourceEntityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+            "sourceRevision": "7cddb81d8d1d6f23e4835d8ae74b5104646fd3de49dac490289366acd5c97854",
+            "sourceRunId": "4c0619b2-04b1-41a7-a7a4-1fba6bb36235",
+            "stage": "voice",
+            "text": "成年女性声音；年轻成年人的声音；音调偏低；音质清澈干净；共鸣自然均衡；基础语速适中；吐字清晰利落；基础气质清冷克制；普通话自然清晰，正常说话，不唱歌。；稍微的烟嗓颗粒感，嘲讽感",
+            "version": null,
+            "workflow": {
+              "contentHash": "984e093b4b4b3e0162dda12a72305314595c2bc1e97d1fea3df0e761aaa4a3f2",
+              "id": "breeze-reference-voice",
+              "version": 2
+            }
+          },
+          {
+            "assetIds": [
+              "47f47dc6-b855-4b62-82ee-fec79ace1704"
+            ],
+            "contentHash": "ae7f76b85fd6a62f510090de172240335ed9ba5caaffbbe7a95f52492ecf9f75",
+            "createdAt": "2026-10-03T03:29:03.405Z",
+            "effectiveText": "成年女性，声音清晰温和，普通话自然，语速适中，正常说话，不唱歌。",
+            "promptId": "run:698812b4-38b6-4c12-b91a-0877b23955f4",
+            "purpose": "声音阶段 PC 生成链路检查：三段系统试听台词",
+            "samples": [
+              {
+                "direction": "成年女性，声音清晰温和，普通话自然，语速适中，正常说话，不唱歌。\n自然、平静，像面对面聊天。",
+                "text": "你好，很高兴见到你。我们慢慢说，不用着急。"
+              },
+              {
+                "direction": "成年女性，声音清晰温和，普通话自然，语速适中，正常说话，不唱歌。\n轻微喜悦，自然口语，不唱歌。",
+                "text": "太好了，这件事终于完成了。我想把这个好消息告诉你。"
+              },
+              {
+                "direction": "成年女性，声音清晰温和，普通话自然，语速适中，正常说话，不唱歌。\n认真坚定，吐字清楚，不喊叫。",
+                "text": "请先听我说完，这件事很重要，我们需要一起想办法。"
+              }
+            ],
+            "sourceEntityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+            "sourceRevision": "c3f106e5983a5629a2ea865a36eb49ebc0cb7bbd0cc3f96558e46570ba47b348",
+            "sourceRunId": "698812b4-38b6-4c12-b91a-0877b23955f4",
+            "stage": "voice",
+            "text": "成年女性，声音清晰温和，普通话自然，语速适中，正常说话，不唱歌。",
+            "version": null,
+            "workflow": {
+              "contentHash": "348c975545678f2ff7c3ba23e83cb69cb7031a3560770b094b0321a04f3dfb17",
+              "id": "breeze-reference-voice",
+              "version": 1
+            }
+          },
+          {
+            "assetIds": [
+              "af9823e0-1b27-48b7-a469-47ddcf4b7534"
+            ],
+            "contentHash": "cb294f4739dfe1c72b2954670651886151272ab251bda27ee93b831a21f34b96",
+            "createdAt": "2026-10-02T15:32:11.213Z",
+            "effectiveText": "Create one full-body adult East Asian woman character concept. Image 1 defines her face and ponytail, Image 2 defines the navy uniform and boots, Image 3 defines silver shoulder and forearm armor, and Image 4 defines one black sheathed katana. Preserve those roles. Front-facing relaxed standing pose, head to boots visible, hands relaxed, exactly one katana attached at the waist. Plain warm off-white studio background, realistic materials and soft lighting. No text, no extra people or weapons.",
+            "promptId": "run:ae5a56dc-42b2-404b-b45b-5fcf9f4acecc",
+            "purpose": "一期端到端验收：四张显式设定图 → Qwen 概念图，验证历史回流",
+            "samples": [],
+            "sourceEntityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+            "sourceRevision": "cb294f4739dfe1c72b2954670651886151272ab251bda27ee93b831a21f34b96",
+            "sourceRunId": "ae5a56dc-42b2-404b-b45b-5fcf9f4acecc",
+            "stage": "concept",
+            "text": "Create one full-body adult East Asian woman character concept. Image 1 defines her face and ponytail, Image 2 defines the navy uniform and boots, Image 3 defines silver shoulder and forearm armor, and Image 4 defines one black sheathed katana. Preserve those roles. Front-facing relaxed standing pose, head to boots visible, hands relaxed, exactly one katana attached at the waist. Plain warm off-white studio background, realistic materials and soft lighting. No text, no extra people or weapons.",
+            "version": null,
+            "workflow": {
+              "contentHash": null,
+              "id": "qwen-image-2.1.4-refs",
+              "version": 1
+            }
+          },
+          {
+            "assetIds": [
+              "35478ed6-3fb0-46ec-99a6-046de9f5737f"
+            ],
+            "contentHash": "688059479e8300e6871d039755bd799509a5e78ddec7be8a26d01d04a9f0c580",
+            "createdAt": "2026-10-02T16:56:53.299Z",
+            "effectiveText": "Composition: Clean 3:2 landscape layout on a warm off-white background with generous spacing. No frames, borders, dividers, text, labels, watermarks, or logos. Soft, even neutral studio lighting across all panels. Rendering style, line weight, texture, and shading must strictly match the reference image.\nThree full-height, identically scaled figures of the reference subject arranged left to right: Front View, Clean Side Profile, and Back View. Neutral relaxed stance, head to feet visible in every figure. Soft oval floor shadows.\nConsistency & Constraints: Preserve exact identity, hair, facial features, garments, asymmetry, and accessories from the reference. Do not add, redesign, beautify, age, or extrapolate items based on lore/profession. No extra characters, shifting proportions, extra limbs, or style drift.",
+            "promptId": "run:d2fde352-9a1b-4c8b-83ef-766e73972e6b",
+            "purpose": "二期PC链路验收：V3 Simple 三视图",
+            "samples": [],
+            "sourceEntityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+            "sourceRevision": "688059479e8300e6871d039755bd799509a5e78ddec7be8a26d01d04a9f0c580",
+            "sourceRunId": "d2fde352-9a1b-4c8b-83ef-766e73972e6b",
+            "stage": "multiview",
+            "text": "Composition: Clean 3:2 landscape layout on a warm off-white background with generous spacing. No frames, borders, dividers, text, labels, watermarks, or logos. Soft, even neutral studio lighting across all panels. Rendering style, line weight, texture, and shading must strictly match the reference image.\nThree full-height, identically scaled figures of the reference subject arranged left to right: Front View, Clean Side Profile, and Back View. Neutral relaxed stance, head to feet visible in every figure. Soft oval floor shadows.\nConsistency & Constraints: Preserve exact identity, hair, facial features, garments, asymmetry, and accessories from the reference. Do not add, redesign, beautify, age, or extrapolate items based on lore/profession. No extra characters, shifting proportions, extra limbs, or style drift.",
+            "version": null,
+            "workflow": {
+              "contentHash": "f471674e864f60d13668e929266729900de9a611fe28e94802ad4ddf9d1fe075",
+              "id": "qwen-v3-simple-three.1-refs",
+              "version": 3
+            }
+          }
+        ],
+        "relationRevisions": [
+          "26b57d4f09a413dc872d07bba9c5e95ca66756a37265e7dbe4d36dd3bc158f82",
+          "9a33199481cfb8ee099d479b66764434e2286d30130583951a711ce24283bedf"
+        ],
+        "sceneSpatial": {
+          "confirmedAt": null,
+          "contentHash": "82d59f4ed4c85a69dac432ef7d61079cc368ea2811d7ccb21f1f06692575fb8e",
+          "draft": null,
+          "elements": [],
+          "frame": null,
+          "issues": [],
+          "links": [],
+          "promptContext": "",
+          "referenceImages": [],
+          "routes": [],
+          "schemaVersion": 1,
+          "scope": "fixed_scene_space",
+          "sourceRevision": "63cc30b3c0a3c7cbeefc09ab32cc57df2422681636d7c46eccde8e81baee89ed",
+          "status": "missing",
+          "unknowns": [
+            "方向基准待补充或确认；不可将镜头左/右直接当场景固定方向。",
+            "主要区域、建筑结构与固定物体尚未登记。"
+          ],
+          "usage": "空间标识以 entityId#id 引用；角色当前位置、朝向、移动时间线与可移动物品转移属于拍摄本。pending/draft/needs_review 内容不得作为已确认固定事实。",
+          "version": 0,
+          "versionId": null
+        },
+        "sourceRevision": "fc45059ff35f657f04d86a7f86ce227198cd919bcf5effe421e2d5d07fa64332",
+        "type": null,
+        "voiceDescription": "成年女性声音；年轻成年人的声音；音调偏低；音质清澈干净；共鸣自然均衡；基础语速适中；吐字清晰利落；基础气质清冷克制；普通话自然清晰，正常说话，不唱歌。；稍微的烟嗓颗粒感，嘲讽感",
+        "snapshotId": "2082c389-0b97-4d77-ab92-192812e31bdd",
+        "snapshotVersion": 4
+      },
+      {
+        "appearance": "",
+        "assets": [
+          {
+            "assetId": "c25d9268-6efa-4c1c-9a23-cef25c5ef192",
+            "available": true,
+            "confirmation": {
+              "isCurrent": true,
+              "records": [
+                {
+                  "confirmationId": "c5048c00-4c26-4bca-b481-bb05215dc991",
+                  "createdAt": "2026-10-03T07:54:33.359Z",
+                  "kind": "appearance",
+                  "version": 2
+                }
+              ],
+              "status": "confirmed"
+            },
+            "contentHash": "0314d3cb3f05571238673e899a4eb8e1f098d2f3d511b8b93e988e0aeb80c238",
+            "contentUrl": "/api/reference/v1/assets/c25d9268-6efa-4c1c-9a23-cef25c5ef192/content",
+            "createdAt": "2026-10-03T07:54:25.420Z",
+            "description": null,
+            "durationSec": null,
+            "entityId": "ba6dcbf0-ea45-4720-80c7-8bc7b2ec9165",
+            "fileSize": 1049407,
+            "height": 1344,
+            "inheritance": null,
+            "layout": null,
+            "mediaType": "image",
+            "mime": "image/png",
+            "name": "概念图 c6c6c329 · 1",
+            "reviewStatus": null,
+            "role": "main_appearance",
+            "sourceRevision": "0134e004c21edeef36c98eff31ce69eac34ba568f55965bf3c8aecf84e995d69",
+            "sourceRunId": "c6c6c329-cf09-44b8-9467-ef4b41adfb6b",
+            "width": 768,
+            "localHash": "0314d3cb3f05571238673e899a4eb8e1f098d2f3d511b8b93e988e0aeb80c238"
+          },
+          {
+            "assetId": "e1d60d80-5d7f-44fe-9ec9-bc525139f3b7",
+            "available": true,
+            "confirmation": {
+              "isCurrent": true,
+              "records": [
+                {
+                  "confirmationId": "602aea59-74f7-4084-afaf-0e929c25e06c",
+                  "createdAt": "2026-10-03T07:47:39.013Z",
+                  "kind": "voice",
+                  "version": 1
+                }
+              ],
+              "status": "confirmed"
+            },
+            "contentHash": "136dc791274fa4bf7f7a5cb4667c04bbaf8affd92c7473775cf295846215ff1b",
+            "contentUrl": "/api/reference/v1/assets/e1d60d80-5d7f-44fe-9ec9-bc525139f3b7/content",
+            "createdAt": "2026-10-03T07:47:39.013Z",
+            "description": null,
+            "durationSec": 6.08,
+            "entityId": "ba6dcbf0-ea45-4720-80c7-8bc7b2ec9165",
+            "fileSize": 291918,
+            "height": null,
+            "inheritance": {
+              "sourceAssetId": "1e2f367f-132f-4c92-93d7-660422eaf8be",
+              "sourceEntityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+              "sourceHash": "136dc791274fa4bf7f7a5cb4667c04bbaf8affd92c7473775cf295846215ff1b",
+              "sourceRevision": "3c040ccf25502871041ea6fa7c71377737db8d54f63b26998720c1d44bac630e",
+              "sourceRunEntityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+              "sourceRunId": "4c0619b2-04b1-41a7-a7a4-1fba6bb36235",
+              "sourceVoiceId": "7241220e-968d-4db9-bc31-0095b4b6c62b"
+            },
+            "layout": null,
+            "mediaType": "audio",
+            "mime": "audio/wav",
+            "name": "声音 · 基础音色 · 中性样音 4c0619b2 · 1",
+            "reviewStatus": null,
+            "role": "voice",
+            "sourceRevision": "0b26a195fd26982f6ae235e04781ec2b393ae0c3917fdaa98e78afbdb96a7e3d",
+            "sourceRunId": "4c0619b2-04b1-41a7-a7a4-1fba6bb36235",
+            "width": null,
+            "localHash": "136dc791274fa4bf7f7a5cb4667c04bbaf8affd92c7473775cf295846215ff1b"
+          }
+        ],
+        "contentHash": "e28441bcd816cbd8de7b23405f380aebfd2105c5c1f249037d8f12bed8881307",
+        "createdAt": "2026-10-03T07:47:39.013Z",
+        "currentAppearance": {
+          "assetId": "c25d9268-6efa-4c1c-9a23-cef25c5ef192",
+          "confirmationId": "c5048c00-4c26-4bca-b481-bb05215dc991",
+          "contentHash": "0314d3cb3f05571238673e899a4eb8e1f098d2f3d511b8b93e988e0aeb80c238",
+          "version": 2
+        },
+        "currentVoice": {
+          "assetId": "e1d60d80-5d7f-44fe-9ec9-bc525139f3b7",
+          "confirmationId": "602aea59-74f7-4084-afaf-0e929c25e06c",
+          "contentHash": "136dc791274fa4bf7f7a5cb4667c04bbaf8affd92c7473775cf295846215ff1b",
+          "version": 1
+        },
+        "derivedFrom": {
+          "createdAt": "2026-10-03T07:47:39.013Z",
+          "description": "穿了角色B 的衣服",
+          "entityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+          "sourceRevision": "3c040ccf25502871041ea6fa7c71377737db8d54f63b26998720c1d44bac630e"
+        },
+        "description": "角色A获得了角色B的衣服，穿了一下。",
+        "entityId": "ba6dcbf0-ea45-4720-80c7-8bc7b2ec9165",
+        "fieldSources": {
+          "appearance": {
+            "contentHash": "12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126",
+            "source": "entities.context.appearance"
+          },
+          "description": {
+            "contentHash": "54372363fcb0a856f3b9c4f7a6ca9a9e16ad37753155a2cefb6a8cb3a89ee7e5",
+            "source": "entities.context.description"
+          },
+          "type": null,
+          "voiceDescription": {
+            "contentHash": "bdc62d6384c6d181419acbc5e4ecd739bc038d8221a5095c3d28b4a9072c5137",
+            "source": "entities.context.voiceDescription"
+          }
+        },
+        "flags": [
+          "人物"
+        ],
+        "missingFields": [
+          "type"
+        ],
+        "name": "角色A · 派生",
+        "prompts": [
+          {
+            "assetIds": [
+              "e1d60d80-5d7f-44fe-9ec9-bc525139f3b7"
+            ],
+            "contentHash": "df52b720b3b4799d9eadc636d7cc73ae381b7750d8983ec540764b78da839de5",
+            "createdAt": "2026-10-03T04:46:51.465Z",
+            "effectiveText": "成年女性声音；年轻成年人的声音；音调偏低；音质清澈干净；共鸣自然均衡；基础语速适中；吐字清晰利落；基础气质清冷克制；普通话自然清晰，正常说话，不唱歌。；稍微的烟嗓颗粒感，嘲讽感",
+            "promptId": "run:4c0619b2-04b1-41a7-a7a4-1fba6bb36235",
+            "purpose": "声音阶段 PC 生成链路检查：三段系统试听台词",
+            "samples": [
+              {
+                "direction": "成年女性声音；年轻成年人的声音；音调偏低；音质清澈干净；共鸣自然均衡；基础语速适中；吐字清晰利落；基础气质清冷克制；普通话自然清晰，正常说话，不唱歌。；稍微的烟嗓颗粒感，嘲讽感\n以自然、中性的语气正常说话，情绪平稳，不唱歌，不夸张表演。",
+                "text": "你好，很高兴见到你。今天我们一起出发，慢慢认识这个世界。"
+              }
+            ],
+            "sourceEntityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+            "sourceRevision": "df52b720b3b4799d9eadc636d7cc73ae381b7750d8983ec540764b78da839de5",
+            "sourceRunId": "4c0619b2-04b1-41a7-a7a4-1fba6bb36235",
+            "stage": "voice",
+            "text": "成年女性声音；年轻成年人的声音；音调偏低；音质清澈干净；共鸣自然均衡；基础语速适中；吐字清晰利落；基础气质清冷克制；普通话自然清晰，正常说话，不唱歌。；稍微的烟嗓颗粒感，嘲讽感",
+            "version": null,
+            "workflow": {
+              "contentHash": "984e093b4b4b3e0162dda12a72305314595c2bc1e97d1fea3df0e761aaa4a3f2",
+              "id": "breeze-reference-voice",
+              "version": 2
+            }
+          },
+          {
+            "assetIds": [
+              "d08db4bd-05b4-443a-8919-47d6ad8dc595"
+            ],
+            "contentHash": "207561e273073d68dc870fd132a2b8bfbea721d24df74ee35eec96867d45b225",
+            "createdAt": "2026-10-03T07:49:31.054Z",
+            "effectiveText": "以 Image 1 作为角色身份参考，按以下变化要求创作新的形象。\nImage2 是一套新衣服，给角色换上。\n生成角色的正面全身照，保持原角色体型和佩戴。",
+            "promptId": "run:99a9f26e-9797-45fa-b723-3a2ebd4579a6",
+            "purpose": "派生实体形象创作",
+            "samples": [],
+            "sourceEntityId": "ba6dcbf0-ea45-4720-80c7-8bc7b2ec9165",
+            "sourceRevision": "207561e273073d68dc870fd132a2b8bfbea721d24df74ee35eec96867d45b225",
+            "sourceRunId": "99a9f26e-9797-45fa-b723-3a2ebd4579a6",
+            "stage": "concept",
+            "text": "以 Image 1 作为角色身份参考，按以下变化要求创作新的形象。\nImage2 是一套新衣服，给角色换上。\n生成角色的正面全身照，保持原角色体型和佩戴。",
+            "version": null,
+            "workflow": {
+              "contentHash": "ff56cf7134b69f84749120bba48e546964c3e7c38ee19ae6856606c71295ab46",
+              "id": "qwen-image-2.1.2-refs",
+              "version": 1
+            }
+          },
+          {
+            "assetIds": [
+              "c25d9268-6efa-4c1c-9a23-cef25c5ef192"
+            ],
+            "contentHash": "ad01c4b931a5f56a5d323b259aa525bd7a783d31e07fb25c1860d006d71dd755",
+            "createdAt": "2026-10-03T07:54:09.006Z",
+            "effectiveText": "以 Image 1 作为角色身份参考，按以下变化要求创作新的形象。\nImage2 是一套新衣服，按照其样式给角色换上，保持元橘色的体型和佩刀。\n生成角色的正面全身照。",
+            "promptId": "run:c6c6c329-cf09-44b8-9467-ef4b41adfb6b",
+            "purpose": "派生实体形象创作",
+            "samples": [],
+            "sourceEntityId": "ba6dcbf0-ea45-4720-80c7-8bc7b2ec9165",
+            "sourceRevision": "ad01c4b931a5f56a5d323b259aa525bd7a783d31e07fb25c1860d006d71dd755",
+            "sourceRunId": "c6c6c329-cf09-44b8-9467-ef4b41adfb6b",
+            "stage": "concept",
+            "text": "以 Image 1 作为角色身份参考，按以下变化要求创作新的形象。\nImage2 是一套新衣服，按照其样式给角色换上，保持元橘色的体型和佩刀。\n生成角色的正面全身照。",
+            "version": null,
+            "workflow": {
+              "contentHash": "ff56cf7134b69f84749120bba48e546964c3e7c38ee19ae6856606c71295ab46",
+              "id": "qwen-image-2.1.2-refs",
+              "version": 1
+            }
+          }
+        ],
+        "relationRevisions": [
+          "26b57d4f09a413dc872d07bba9c5e95ca66756a37265e7dbe4d36dd3bc158f82"
+        ],
+        "sceneSpatial": {
+          "confirmedAt": null,
+          "contentHash": "82d59f4ed4c85a69dac432ef7d61079cc368ea2811d7ccb21f1f06692575fb8e",
+          "draft": null,
+          "elements": [],
+          "frame": null,
+          "issues": [],
+          "links": [],
+          "promptContext": "",
+          "referenceImages": [],
+          "routes": [],
+          "schemaVersion": 1,
+          "scope": "fixed_scene_space",
+          "sourceRevision": "63cc30b3c0a3c7cbeefc09ab32cc57df2422681636d7c46eccde8e81baee89ed",
+          "status": "missing",
+          "unknowns": [
+            "方向基准待补充或确认；不可将镜头左/右直接当场景固定方向。",
+            "主要区域、建筑结构与固定物体尚未登记。"
+          ],
+          "usage": "空间标识以 entityId#id 引用；角色当前位置、朝向、移动时间线与可移动物品转移属于拍摄本。pending/draft/needs_review 内容不得作为已确认固定事实。",
+          "version": 0,
+          "versionId": null
+        },
+        "sourceRevision": "e28441bcd816cbd8de7b23405f380aebfd2105c5c1f249037d8f12bed8881307",
+        "type": null,
+        "voiceDescription": "成年女性声音；年轻成年人的声音；音调偏低；音质清澈干净；共鸣自然均衡；基础语速适中；吐字清晰利落；基础气质清冷克制；普通话自然清晰，正常说话，不唱歌。；稍微的烟嗓颗粒感，嘲讽感",
+        "snapshotId": "2082c389-0b97-4d77-ab92-192812e31bdd",
+        "snapshotVersion": 4
+      },
+      {
+        "appearance": "现代图书馆，明窗净几，装修简洁",
+        "assets": [
+          {
+            "assetId": "25958405-ac83-454f-909e-f4aeba33f9a4",
+            "available": true,
+            "confirmation": {
+              "isCurrent": true,
+              "records": [
+                {
+                  "confirmationId": "75c6c015-419b-4a81-9bf0-b4adde81693b",
+                  "createdAt": "2026-10-03T07:57:34.289Z",
+                  "kind": "appearance",
+                  "version": 1
+                }
+              ],
+              "status": "confirmed"
+            },
+            "contentHash": "bc97295cda1363c189fcd3e0cc3841dfc36ca03db415906bf96b44b56d21cd6e",
+            "contentUrl": "/api/reference/v1/assets/25958405-ac83-454f-909e-f4aeba33f9a4/content",
+            "createdAt": "2026-10-03T07:57:28.926Z",
+            "description": null,
+            "durationSec": null,
+            "entityId": "9971429d-863e-499e-b7c5-902d30e0f6a2",
+            "fileSize": 2696693,
+            "height": 1024,
+            "inheritance": null,
+            "layout": null,
+            "mediaType": "image",
+            "mime": "image/png",
+            "name": "概念图 cd09c87e · 1",
+            "reviewStatus": null,
+            "role": "main_appearance",
+            "sourceRevision": "cc2b205a8d7e2588153453c95690f2c99985b5e593c96fd7b4e596a31539ee14",
+            "sourceRunId": "cd09c87e-4de7-4fa4-bad1-1195ce0f1cec",
+            "width": 1536,
+            "localHash": "bc97295cda1363c189fcd3e0cc3841dfc36ca03db415906bf96b44b56d21cd6e"
+          }
+        ],
+        "contentHash": "307f30ea0dba73fdf840a8dd4ee790d156a2e73f4a7738b463263c86407c7b2f",
+        "createdAt": "2026-10-03T07:56:03.107Z",
+        "currentAppearance": {
+          "assetId": "25958405-ac83-454f-909e-f4aeba33f9a4",
+          "confirmationId": "75c6c015-419b-4a81-9bf0-b4adde81693b",
+          "contentHash": "bc97295cda1363c189fcd3e0cc3841dfc36ca03db415906bf96b44b56d21cd6e",
+          "version": 1
+        },
+        "currentVoice": null,
+        "derivedFrom": null,
+        "description": "",
+        "entityId": "9971429d-863e-499e-b7c5-902d30e0f6a2",
+        "fieldSources": {
+          "appearance": {
+            "contentHash": "b69908f1bcca3bab29a3d267a1eabbb15b0eecda41394f7e7a1d2632f425d717",
+            "source": "entities.context.appearance"
+          },
+          "description": {
+            "contentHash": "12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126",
+            "source": "entities.context.description"
+          },
+          "type": null,
+          "voiceDescription": null
+        },
+        "flags": [
+          "场景"
+        ],
+        "missingFields": [
+          "type",
+          "voiceDescription"
+        ],
+        "name": "图书馆",
+        "prompts": [
+          {
+            "assetIds": [
+              "25958405-ac83-454f-909e-f4aeba33f9a4"
+            ],
+            "contentHash": "3e5b73377af2a97d864cb65d36b889987329827e6b5c3aa13496d5b6a773d558",
+            "createdAt": "2026-10-03T07:57:18.674Z",
+            "effectiveText": "现代图书馆的阅读室\n其将作为两个人的交互场景\n生成一个视角良好的场景参考图",
+            "promptId": "run:cd09c87e-4de7-4fa4-bad1-1195ce0f1cec",
+            "purpose": null,
+            "samples": [],
+            "sourceEntityId": "9971429d-863e-499e-b7c5-902d30e0f6a2",
+            "sourceRevision": "3e5b73377af2a97d864cb65d36b889987329827e6b5c3aa13496d5b6a773d558",
+            "sourceRunId": "cd09c87e-4de7-4fa4-bad1-1195ce0f1cec",
+            "stage": "concept",
+            "text": "现代图书馆的阅读室\n其将作为两个人的交互场景\n生成一个视角良好的场景参考图",
+            "version": null,
+            "workflow": {
+              "contentHash": "ff56cf7134b69f84749120bba48e546964c3e7c38ee19ae6856606c71295ab46",
+              "id": "qwen-image-2.1.0-refs",
+              "version": 1
+            }
+          }
+        ],
+        "relationRevisions": [],
+        "sceneSpatial": {
+          "confirmedAt": null,
+          "contentHash": "5d81ca064c5a6d3197254a0c1a31c30f6214be22c6d546b09618c83b34000478",
+          "draft": null,
+          "elements": [],
+          "frame": null,
+          "issues": [],
+          "links": [],
+          "promptContext": "",
+          "referenceImages": [
+            {
+              "assetId": "25958405-ac83-454f-909e-f4aeba33f9a4",
+              "available": true,
+              "contentHash": "bc97295cda1363c189fcd3e0cc3841dfc36ca03db415906bf96b44b56d21cd6e"
+            }
+          ],
+          "routes": [],
+          "schemaVersion": 1,
+          "scope": "fixed_scene_space",
+          "sourceRevision": "6abb0adb9063c705c8317ac8c200f1b475dfc30f33341a13784265ebbbfa72ce",
+          "status": "draft",
+          "unknowns": [
+            "房间总尺寸、层高、桌面尺寸、通道宽度和固定物体精确间距尚无资料。",
+            "入口、出口、背面和参考图不可见区域布局待补充；不能根据单张图推断完整平面图。",
+            "书架正面相对于约定方向的精确朝向、桌面长轴方向待确认。",
+            "各桌之间可通行路线、椅子是否阻挡、右侧是否连接其他区域待补充；目前不登记已确认通路。",
+            "桌面书本、杯子、纸张及角色站位不属于固定事实，由各段拍摄本指定。",
+            "[reading_area] 朝向未单独记录；只能使用已有说明，不得猜测。",
+            "[reading_area] 尺度未单独记录；只能使用已有说明，不得猜测。",
+            "[left_shelf] 朝向未单独记录；只能使用已有说明，不得猜测。",
+            "[left_shelf] 尺度未单独记录；只能使用已有说明，不得猜测。",
+            "[back_shelf] 朝向未单独记录；只能使用已有说明，不得猜测。",
+            "[back_shelf] 尺度未单独记录；只能使用已有说明，不得猜测。",
+            "[near_table] 朝向未单独记录；只能使用已有说明，不得猜测。",
+            "[far_table] 朝向未单独记录；只能使用已有说明，不得猜测。",
+            "[far_table] 尺度未单独记录；只能使用已有说明，不得猜测。",
+            "[right_boundary] 右侧边界待确认 待补充或确认。",
+            "[right_boundary] 朝向未单独记录；只能使用已有说明，不得猜测。",
+            "[right_boundary] 尺度未单独记录；只能使用已有说明，不得猜测。"
+          ],
+          "usage": "空间标识以 entityId#id 引用；角色当前位置、朝向、移动时间线与可移动物品转移属于拍摄本。pending/draft/needs_review 内容不得作为已确认固定事实。",
+          "version": 1,
+          "versionId": "dfd0eeed-4e3c-4d77-bdc2-d17f761e4484"
+        },
+        "sourceRevision": "307f30ea0dba73fdf840a8dd4ee790d156a2e73f4a7738b463263c86407c7b2f",
+        "type": null,
+        "voiceDescription": null,
+        "snapshotId": "2082c389-0b97-4d77-ab92-192812e31bdd",
+        "snapshotVersion": 4
+      },
+      {
+        "appearance": "",
+        "assets": [
+          {
+            "assetId": "5d0c2f3a-2249-44f3-ab7b-fa89a476610b",
+            "available": true,
+            "confirmation": {
+              "isCurrent": true,
+              "records": [
+                {
+                  "confirmationId": "1067f524-6098-4c71-a911-7974cf7f60eb",
+                  "createdAt": "2026-10-03T07:16:13.057Z",
+                  "kind": "view",
+                  "version": 1
+                }
+              ],
+              "status": "confirmed"
+            },
+            "contentHash": "3ce01b333ac8918b3faa804e2e345f3c0f73ba2fd4db5bdfb69b5a46940417ba",
+            "contentUrl": "/api/reference/v1/assets/5d0c2f3a-2249-44f3-ab7b-fa89a476610b/content",
+            "createdAt": "2026-10-03T07:15:58.875Z",
+            "description": null,
+            "durationSec": null,
+            "entityId": "3044bf32-2019-458e-a7cf-e50ab304e42c",
+            "fileSize": 1601214,
+            "height": 1024,
+            "inheritance": null,
+            "layout": "three",
+            "mediaType": "image",
+            "mime": "image/png",
+            "name": "三视图 04b83eb8 · 1",
+            "reviewStatus": null,
+            "role": "three_view",
+            "sourceRevision": "c97da2414777bd55be4c5dba7ab5b873252548ff20f923889c82ddb3667be9a5",
+            "sourceRunId": "04b83eb8-2135-428b-9a33-1e5f3eeeb4ef",
+            "width": 1536,
+            "localHash": "3ce01b333ac8918b3faa804e2e345f3c0f73ba2fd4db5bdfb69b5a46940417ba"
+          },
+          {
+            "assetId": "96e44971-aedc-42da-a534-dc321fd5e350",
+            "available": true,
+            "confirmation": {
+              "isCurrent": true,
+              "records": [
+                {
+                  "confirmationId": "950677ea-681a-47e4-9fb4-0a266d3717f0",
+                  "createdAt": "2026-10-03T07:14:43.164Z",
+                  "kind": "appearance",
+                  "version": 1
+                }
+              ],
+              "status": "confirmed"
+            },
+            "contentHash": "80a8e0c3b070a51034c55026b864f9841f96e90d8e0cff6077b7ed2fb1df6a81",
+            "contentUrl": "/api/reference/v1/assets/96e44971-aedc-42da-a534-dc321fd5e350/content",
+            "createdAt": "2026-10-03T07:14:38.706Z",
+            "description": null,
+            "durationSec": null,
+            "entityId": "3044bf32-2019-458e-a7cf-e50ab304e42c",
+            "fileSize": 1146388,
+            "height": 1024,
+            "inheritance": null,
+            "layout": null,
+            "mediaType": "image",
+            "mime": "image/png",
+            "name": "概念图 ab7c5108 · 1",
+            "reviewStatus": null,
+            "role": "main_appearance",
+            "sourceRevision": "614b066d35e725b75a5aae50ee9e697103b8359c6b2091cb0ce17cde8f968cfa",
+            "sourceRunId": "ab7c5108-f51e-41fa-ab85-5ee5162aff67",
+            "width": 1536,
+            "localHash": "80a8e0c3b070a51034c55026b864f9841f96e90d8e0cff6077b7ed2fb1df6a81"
+          }
+        ],
+        "contentHash": "e26e1705b023afc20344f76938324f7f19cdff9ed0ff7082f72e65751e4f202b",
+        "createdAt": "2026-10-03T07:11:36.515Z",
+        "currentAppearance": {
+          "assetId": "96e44971-aedc-42da-a534-dc321fd5e350",
+          "confirmationId": "950677ea-681a-47e4-9fb4-0a266d3717f0",
+          "contentHash": "80a8e0c3b070a51034c55026b864f9841f96e90d8e0cff6077b7ed2fb1df6a81",
+          "version": 1
+        },
+        "currentVoice": null,
+        "derivedFrom": null,
+        "description": "",
+        "entityId": "3044bf32-2019-458e-a7cf-e50ab304e42c",
+        "fieldSources": {
+          "appearance": {
+            "contentHash": "12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126",
+            "source": "entities.context.appearance"
+          },
+          "description": {
+            "contentHash": "12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126",
+            "source": "entities.context.description"
+          },
+          "type": null,
+          "voiceDescription": null
+        },
+        "flags": [
+          "服装",
+          "人物",
+          "物品"
+        ],
+        "missingFields": [
+          "type",
+          "voiceDescription"
+        ],
+        "name": "休闲服",
+        "prompts": [
+          {
+            "assetIds": [
+              "5d0c2f3a-2249-44f3-ab7b-fa89a476610b"
+            ],
+            "contentHash": "753e41441e48f235614922c5de3fcdac181bf4bf37fe197f4fdf76e01eedb5ff",
+            "createdAt": "2026-10-03T07:15:40.530Z",
+            "effectiveText": "Composition: Clean 3:2 landscape layout on a warm off-white background with generous spacing. No frames, borders, dividers, text, labels, watermarks, or logos. Soft, even neutral studio lighting across all panels. Rendering style, line weight, texture, and shading must strictly match the reference image.\nThree full-height, identically scaled figures of the reference subject arranged left to right: Front View, Clean Side Profile, and Back View. Neutral relaxed stance, head to feet visible in every figure. Soft oval floor shadows.\nConsistency & Constraints: Preserve exact identity, hair, facial features, garments, asymmetry, and accessories from the reference. Do not add, redesign, beautify, age, or extrapolate items based on lore/profession. No extra characters, shifting proportions, extra limbs, or style drift.\n\n只有衣服，不要有人物",
+            "promptId": "run:04b83eb8-2135-428b-9a33-1e5f3eeeb4ef",
+            "purpose": "简单测试下衣服物品的3视图。",
+            "samples": [],
+            "sourceEntityId": "3044bf32-2019-458e-a7cf-e50ab304e42c",
+            "sourceRevision": "753e41441e48f235614922c5de3fcdac181bf4bf37fe197f4fdf76e01eedb5ff",
+            "sourceRunId": "04b83eb8-2135-428b-9a33-1e5f3eeeb4ef",
+            "stage": "multiview",
+            "text": "Composition: Clean 3:2 landscape layout on a warm off-white background with generous spacing. No frames, borders, dividers, text, labels, watermarks, or logos. Soft, even neutral studio lighting across all panels. Rendering style, line weight, texture, and shading must strictly match the reference image.\nThree full-height, identically scaled figures of the reference subject arranged left to right: Front View, Clean Side Profile, and Back View. Neutral relaxed stance, head to feet visible in every figure. Soft oval floor shadows.\nConsistency & Constraints: Preserve exact identity, hair, facial features, garments, asymmetry, and accessories from the reference. Do not add, redesign, beautify, age, or extrapolate items based on lore/profession. No extra characters, shifting proportions, extra limbs, or style drift.\n\n只有衣服，不要有人物",
+            "version": null,
+            "workflow": {
+              "contentHash": "f471674e864f60d13668e929266729900de9a611fe28e94802ad4ddf9d1fe075",
+              "id": "qwen-v3-simple-three.1-refs",
+              "version": 3
+            }
+          },
+          {
+            "assetIds": [
+              "96e44971-aedc-42da-a534-dc321fd5e350"
+            ],
+            "contentHash": "18d12f9b68c48e73819ec91e5a03824890b20a13e0d181ebccb6360b2c0e0dca",
+            "createdAt": "2026-10-03T07:14:22.032Z",
+            "effectiveText": "从Image 1中获得标准服装正面图片，Tpose，只有服装，没有其他东西。\n\nCinematic lighting, realistic materials, coherent color grading.",
+            "promptId": "run:ab7c5108-f51e-41fa-ab85-5ee5162aff67",
+            "purpose": "任意图片博取标准服装图片",
+            "samples": [],
+            "sourceEntityId": "3044bf32-2019-458e-a7cf-e50ab304e42c",
+            "sourceRevision": "18d12f9b68c48e73819ec91e5a03824890b20a13e0d181ebccb6360b2c0e0dca",
+            "sourceRunId": "ab7c5108-f51e-41fa-ab85-5ee5162aff67",
+            "stage": "concept",
+            "text": "从Image 1中获得标准服装正面图片，Tpose，只有服装，没有其他东西。",
+            "version": null,
+            "workflow": {
+              "contentHash": "ff56cf7134b69f84749120bba48e546964c3e7c38ee19ae6856606c71295ab46",
+              "id": "qwen-image-2.1.1-refs",
+              "version": 1
+            }
+          }
+        ],
+        "relationRevisions": [
+          "6b05091224ee63490c4b9e414f368f7ad295b1d7112a6cc06fd1be9090784d1d"
+        ],
+        "sceneSpatial": {
+          "confirmedAt": null,
+          "contentHash": "82d59f4ed4c85a69dac432ef7d61079cc368ea2811d7ccb21f1f06692575fb8e",
+          "draft": null,
+          "elements": [],
+          "frame": null,
+          "issues": [],
+          "links": [],
+          "promptContext": "",
+          "referenceImages": [],
+          "routes": [],
+          "schemaVersion": 1,
+          "scope": "fixed_scene_space",
+          "sourceRevision": "63cc30b3c0a3c7cbeefc09ab32cc57df2422681636d7c46eccde8e81baee89ed",
+          "status": "missing",
+          "unknowns": [
+            "方向基准待补充或确认；不可将镜头左/右直接当场景固定方向。",
+            "主要区域、建筑结构与固定物体尚未登记。"
+          ],
+          "usage": "空间标识以 entityId#id 引用；角色当前位置、朝向、移动时间线与可移动物品转移属于拍摄本。pending/draft/needs_review 内容不得作为已确认固定事实。",
+          "version": 0,
+          "versionId": null
+        },
+        "sourceRevision": "e26e1705b023afc20344f76938324f7f19cdff9ed0ff7082f72e65751e4f202b",
+        "type": null,
+        "voiceDescription": null,
+        "snapshotId": "2082c389-0b97-4d77-ab92-192812e31bdd",
+        "snapshotVersion": 4
+      }
+    ],
+    "snapshots": {
+      "5821d6dd-2041-40a3-a789-74989c6edd90": {
+        "snapshotId": "2082c389-0b97-4d77-ab92-192812e31bdd",
+        "sourceRevision": "fc45059ff35f657f04d86a7f86ce227198cd919bcf5effe421e2d5d07fa64332",
+        "name": "角色A"
+      },
+      "ba6dcbf0-ea45-4720-80c7-8bc7b2ec9165": {
+        "snapshotId": "2082c389-0b97-4d77-ab92-192812e31bdd",
+        "sourceRevision": "e28441bcd816cbd8de7b23405f380aebfd2105c5c1f249037d8f12bed8881307",
+        "name": "角色A · 派生"
+      },
+      "3044bf32-2019-458e-a7cf-e50ab304e42c": {
+        "snapshotId": "2082c389-0b97-4d77-ab92-192812e31bdd",
+        "sourceRevision": "e26e1705b023afc20344f76938324f7f19cdff9ed0ff7082f72e65751e4f202b",
+        "name": "休闲服"
+      },
+      "9971429d-863e-499e-b7c5-902d30e0f6a2": {
+        "snapshotId": "2082c389-0b97-4d77-ab92-192812e31bdd",
+        "sourceRevision": "307f30ea0dba73fdf840a8dd4ee790d156a2e73f4a7738b463263c86407c7b2f",
+        "name": "图书馆"
+      }
+    },
+    "images": [
+      {
+        "assetId": "25958405-ac83-454f-909e-f4aeba33f9a4",
+        "available": true,
+        "confirmation": {
+          "isCurrent": true,
+          "records": [
+            {
+              "confirmationId": "75c6c015-419b-4a81-9bf0-b4adde81693b",
+              "createdAt": "2026-10-03T07:57:34.289Z",
+              "kind": "appearance",
+              "version": 1
+            }
+          ],
+          "status": "confirmed"
+        },
+        "contentHash": "bc97295cda1363c189fcd3e0cc3841dfc36ca03db415906bf96b44b56d21cd6e",
+        "contentUrl": "/api/reference/v1/assets/25958405-ac83-454f-909e-f4aeba33f9a4/content",
+        "createdAt": "2026-10-03T07:57:28.926Z",
+        "description": null,
+        "durationSec": null,
+        "entityId": "9971429d-863e-499e-b7c5-902d30e0f6a2",
+        "fileSize": 2696693,
+        "height": 1024,
+        "inheritance": null,
+        "layout": null,
+        "mediaType": "image",
+        "mime": "image/png",
+        "name": "概念图 cd09c87e · 1",
+        "reviewStatus": null,
+        "role": "main_appearance",
+        "sourceRevision": "cc2b205a8d7e2588153453c95690f2c99985b5e593c96fd7b4e596a31539ee14",
+        "sourceRunId": "cd09c87e-4de7-4fa4-bad1-1195ce0f1cec",
+        "width": 1536,
+        "localHash": "bc97295cda1363c189fcd3e0cc3841dfc36ca03db415906bf96b44b56d21cd6e"
+      },
+      {
+        "assetId": "af9823e0-1b27-48b7-a469-47ddcf4b7534",
+        "available": true,
+        "confirmation": {
+          "isCurrent": true,
+          "records": [
+            {
+              "confirmationId": "4e1b9ef4-326f-40cb-be07-4b974f4a8129",
+              "createdAt": "2026-10-02T16:56:33.878Z",
+              "kind": "appearance",
+              "version": 1
+            }
+          ],
+          "status": "confirmed"
+        },
+        "contentHash": "df20a30c62bf979ff04d2773b1757620847d3b485b580095b429031b5ea2d04b",
+        "contentUrl": "/api/reference/v1/assets/af9823e0-1b27-48b7-a469-47ddcf4b7534/content",
+        "createdAt": "2026-10-02T15:32:49.700Z",
+        "description": null,
+        "durationSec": null,
+        "entityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+        "fileSize": 1475226,
+        "height": 1024,
+        "inheritance": null,
+        "layout": null,
+        "mediaType": "image",
+        "mime": "image/png",
+        "name": "概念图 ae5a56dc · 1",
+        "reviewStatus": null,
+        "role": "main_appearance",
+        "sourceRevision": "c55ec362fa3256461942afd3487bbba4446d4321868f479b1deec6aa2f6dd7c5",
+        "sourceRunId": "ae5a56dc-42b2-404b-b45b-5fcf9f4acecc",
+        "width": 1536,
+        "localHash": "df20a30c62bf979ff04d2773b1757620847d3b485b580095b429031b5ea2d04b"
+      },
+      {
+        "assetId": "89f7618d-e430-46c7-9c4d-b8e20f3ff386",
+        "available": true,
+        "confirmation": {
+          "isCurrent": true,
+          "records": [
+            {
+              "confirmationId": "cda1ca59-391a-4a13-9d65-8712fed8c853",
+              "createdAt": "2026-10-03T07:46:10.080Z",
+              "kind": "view",
+              "version": 3
+            }
+          ],
+          "status": "confirmed"
+        },
+        "contentHash": "5fecbc99843090ee1c74e7eecce6b9f3b3c34df5bd8ebfdd33a10a1fc2b9aa43",
+        "contentUrl": "/api/reference/v1/assets/89f7618d-e430-46c7-9c4d-b8e20f3ff386/content",
+        "createdAt": "2026-10-03T03:15:48.058Z",
+        "description": null,
+        "durationSec": null,
+        "entityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+        "fileSize": 1639632,
+        "height": 1024,
+        "inheritance": null,
+        "layout": "face-front-back-side",
+        "mediaType": "image",
+        "mime": "image/png",
+        "name": "脸部＋正背侧 1913176b · 1",
+        "reviewStatus": null,
+        "role": "three_view",
+        "sourceRevision": "d3f67cdff7f67ac7a420207c95d68ce07dd596b20736c7eb3a1832fabf9ee326",
+        "sourceRunId": "1913176b-0bb6-411c-9fc4-fba39571c88e",
+        "width": 1536,
+        "localHash": "5fecbc99843090ee1c74e7eecce6b9f3b3c34df5bd8ebfdd33a10a1fc2b9aa43"
+      },
+      {
+        "assetId": "c25d9268-6efa-4c1c-9a23-cef25c5ef192",
+        "available": true,
+        "confirmation": {
+          "isCurrent": true,
+          "records": [
+            {
+              "confirmationId": "c5048c00-4c26-4bca-b481-bb05215dc991",
+              "createdAt": "2026-10-03T07:54:33.359Z",
+              "kind": "appearance",
+              "version": 2
+            }
+          ],
+          "status": "confirmed"
+        },
+        "contentHash": "0314d3cb3f05571238673e899a4eb8e1f098d2f3d511b8b93e988e0aeb80c238",
+        "contentUrl": "/api/reference/v1/assets/c25d9268-6efa-4c1c-9a23-cef25c5ef192/content",
+        "createdAt": "2026-10-03T07:54:25.420Z",
+        "description": null,
+        "durationSec": null,
+        "entityId": "ba6dcbf0-ea45-4720-80c7-8bc7b2ec9165",
+        "fileSize": 1049407,
+        "height": 1344,
+        "inheritance": null,
+        "layout": null,
+        "mediaType": "image",
+        "mime": "image/png",
+        "name": "概念图 c6c6c329 · 1",
+        "reviewStatus": null,
+        "role": "main_appearance",
+        "sourceRevision": "0134e004c21edeef36c98eff31ce69eac34ba568f55965bf3c8aecf84e995d69",
+        "sourceRunId": "c6c6c329-cf09-44b8-9467-ef4b41adfb6b",
+        "width": 768,
+        "localHash": "0314d3cb3f05571238673e899a4eb8e1f098d2f3d511b8b93e988e0aeb80c238"
+      },
+      {
+        "assetId": "96e44971-aedc-42da-a534-dc321fd5e350",
+        "available": true,
+        "confirmation": {
+          "isCurrent": true,
+          "records": [
+            {
+              "confirmationId": "950677ea-681a-47e4-9fb4-0a266d3717f0",
+              "createdAt": "2026-10-03T07:14:43.164Z",
+              "kind": "appearance",
+              "version": 1
+            }
+          ],
+          "status": "confirmed"
+        },
+        "contentHash": "80a8e0c3b070a51034c55026b864f9841f96e90d8e0cff6077b7ed2fb1df6a81",
+        "contentUrl": "/api/reference/v1/assets/96e44971-aedc-42da-a534-dc321fd5e350/content",
+        "createdAt": "2026-10-03T07:14:38.706Z",
+        "description": null,
+        "durationSec": null,
+        "entityId": "3044bf32-2019-458e-a7cf-e50ab304e42c",
+        "fileSize": 1146388,
+        "height": 1024,
+        "inheritance": null,
+        "layout": null,
+        "mediaType": "image",
+        "mime": "image/png",
+        "name": "概念图 ab7c5108 · 1",
+        "reviewStatus": null,
+        "role": "main_appearance",
+        "sourceRevision": "614b066d35e725b75a5aae50ee9e697103b8359c6b2091cb0ce17cde8f968cfa",
+        "sourceRunId": "ab7c5108-f51e-41fa-ab85-5ee5162aff67",
+        "width": 1536,
+        "localHash": "80a8e0c3b070a51034c55026b864f9841f96e90d8e0cff6077b7ed2fb1df6a81"
+      },
+      {
+        "assetId": "5d0c2f3a-2249-44f3-ab7b-fa89a476610b",
+        "available": true,
+        "confirmation": {
+          "isCurrent": true,
+          "records": [
+            {
+              "confirmationId": "1067f524-6098-4c71-a911-7974cf7f60eb",
+              "createdAt": "2026-10-03T07:16:13.057Z",
+              "kind": "view",
+              "version": 1
+            }
+          ],
+          "status": "confirmed"
+        },
+        "contentHash": "3ce01b333ac8918b3faa804e2e345f3c0f73ba2fd4db5bdfb69b5a46940417ba",
+        "contentUrl": "/api/reference/v1/assets/5d0c2f3a-2249-44f3-ab7b-fa89a476610b/content",
+        "createdAt": "2026-10-03T07:15:58.875Z",
+        "description": null,
+        "durationSec": null,
+        "entityId": "3044bf32-2019-458e-a7cf-e50ab304e42c",
+        "fileSize": 1601214,
+        "height": 1024,
+        "inheritance": null,
+        "layout": "three",
+        "mediaType": "image",
+        "mime": "image/png",
+        "name": "三视图 04b83eb8 · 1",
+        "reviewStatus": null,
+        "role": "three_view",
+        "sourceRevision": "c97da2414777bd55be4c5dba7ab5b873252548ff20f923889c82ddb3667be9a5",
+        "sourceRunId": "04b83eb8-2135-428b-9a33-1e5f3eeeb4ef",
+        "width": 1536,
+        "localHash": "3ce01b333ac8918b3faa804e2e345f3c0f73ba2fd4db5bdfb69b5a46940417ba"
+      },
+      {
+        "assetId": "941c265c-d666-43fa-ae5f-772e4f123849",
+        "entityId": null,
+        "role": "continuity_frame",
+        "mediaType": "image",
+        "mime": "image/png",
+        "localHash": "b7056a26b5108faf2a27a313a2cc7dea8b23b371a3a72ba2afa7b324e0678b58",
+        "provenance": {
+          "owner": "Sean",
+          "id": "941c265c-d666-43fa-ae5f-772e4f123849",
+          "role": "opening_frame",
+          "createdAt": "2026-10-04T09:17:44.031Z",
+          "sourceShotId": "6df199fc-99db-4f97-af28-82ed68869e16",
+          "sourceCandidateId": "b3362266-52f2-43a8-858f-71a943cfba7e",
+          "sourceMediaHash": "5fba14b4594715c1b247ea74f1d9841c87b9ce3471d925b36903300ff4e8ceb4",
+          "sourceInputHash": "a41caf1d3f4f166a21681fcc5d3041809d20a14759c95070078a8eedb879f2a9",
+          "timeSec": 7.85,
+          "localHash": "b7056a26b5108faf2a27a313a2cc7dea8b23b371a3a72ba2afa7b324e0678b58",
+          "mime": "image/png",
+          "isCurrent": true,
+          "historical": false
+        }
+      }
+    ],
+    "audio": null,
+    "voiceReferences": [
+      {
+        "assetId": "1e2f367f-132f-4c92-93d7-660422eaf8be",
+        "available": true,
+        "confirmation": {
+          "isCurrent": true,
+          "records": [
+            {
+              "confirmationId": "7241220e-968d-4db9-bc31-0095b4b6c62b",
+              "createdAt": "2026-10-03T04:47:54.564Z",
+              "kind": "voice",
+              "version": 2
+            }
+          ],
+          "status": "confirmed"
+        },
+        "contentHash": "136dc791274fa4bf7f7a5cb4667c04bbaf8affd92c7473775cf295846215ff1b",
+        "contentUrl": "/api/reference/v1/assets/1e2f367f-132f-4c92-93d7-660422eaf8be/content",
+        "createdAt": "2026-10-03T04:47:01.945Z",
+        "description": null,
+        "durationSec": 6.08,
+        "entityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+        "fileSize": 291918,
+        "height": null,
+        "inheritance": null,
+        "layout": null,
+        "mediaType": "audio",
+        "mime": "audio/wav",
+        "name": "声音 · 基础音色 · 中性样音 4c0619b2 · 1",
+        "reviewStatus": null,
+        "role": "voice",
+        "sourceRevision": "b6609476c53d88114e255176ad70cad73743b75846f54ec0de6e74f1559c0a95",
+        "sourceRunId": "4c0619b2-04b1-41a7-a7a4-1fba6bb36235",
+        "width": null,
+        "localHash": "136dc791274fa4bf7f7a5cb4667c04bbaf8affd92c7473775cf295846215ff1b",
+        "audioIndex": 1,
+        "speakerEntityId": "ba6dcbf0-ea45-4720-80c7-8bc7b2ec9165",
+        "speakerId": "S1",
+        "voiceDescription": "成年女性声音；年轻成年人的声音；音调偏低；音质清澈干净；共鸣自然均衡；基础语速适中；吐字清晰利落；基础气质清冷克制；普通话自然清晰，正常说话，不唱歌。；稍微的烟嗓颗粒感，嘲讽感",
+        "sourceEntityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+        "sourceSnapshotId": "2082c389-0b97-4d77-ab92-192812e31bdd",
+        "sourceEntityRevision": "fc45059ff35f657f04d86a7f86ce227198cd919bcf5effe421e2d5d07fa64332"
+      }
+    ],
+    "approval": {
+      "owner": "Sean",
+      "scope": "shot",
+      "shotId": "5f220d41-6480-461a-9082-d91b8ae8d4f2",
+      "mode": "direct-generation",
+      "at": "2026-10-04T09:38:22.365Z",
+      "inputRevision": 129,
+      "hash": "3d2a76ed5663d3f5f65b0a65a203557d22b3254ed8bb88e6af4fcbcfb930c1c7"
+    },
+    "model": {
+      "unet": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+      "clip": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+      "videoVae": "minimax_h3_video_vae_fp16.safetensors",
+      "audioVae": "minimax_h3_audio_vae_fp32.safetensors",
+      "pdd": "minimax_h3_ref2va_pdd_acc_8step_comfyui.safetensors"
+    },
+    "spatialPlan": {
+      "owner": "Sean",
+      "scenePlan": "场景：图书馆（实体 9971429d-863e-499e-b7c5-902d30e0f6a2）。\n\n【权威事实】appearance 仅登记「现代图书馆，明窗净几，装修简洁」；sceneSpatial 仍 status=draft、elements 为空，房间尺寸、层高、朝向、入口/出口、门、书架正反与固定物体间距均未确认，参考图不可见区域一律不推断。故不发明窗户、门、出口、走廊、地理方向或尺寸，也不新增家具与人物。角色、道具、服装外观以各自参考图为准，不用文字改写。\n\n【本片拍摄约定·仅属影片走位，不写入实体中心】1) 沿用同一套画面：连续笔直浅木书架墙背景、浅木地板、灰绿色椅、顶部灯带的柔和均匀顶光。2) 主阅读桌 T1＝该画面中最靠近机位的那张浅木长桌，是唯一交互锚点；空间语言只用 near side 近侧（机位侧＝A 侧）／far side 远侧（B 侧）与画面左右，不使用方位词与数值。3) 机位始终在 T1 近侧、略偏 A 左手侧，越过桌面看向远侧，全片不跨越 A–B 交互轴、不左右镜像。4) 桌面中性阅览用品（打开的书、玻璃杯、纸张、扁平阅读物等）按各镜真实锚帧原位保留，不虚构数量、不增删、不移动。5) 剧情道具只有两件：那把无鞘太刀与 B 脱下的休闲服外衣。6) 刀链：S1 A 放下（无鞘）→ S2/S3 平放在桌面近侧 A 右手边 → S4 B 取走并带离 → S5 桌面与 A 腰边均无刀、无鞘。7) 衣链：S3 B 只脱休闲服外衣，平放在远侧桌面她自己左手边（绝不挂椅背，椅背全程空置）→ S4 留在原处 → S5 A 取走穿上，远侧桌面清空该外衣。8) 服装口径：A 只脱藏青制服外套（银色肩甲与前臂甲随外套一并移走），保留内层、长裤与靴；随后把 B 留下的同一件外衣罩在自己衣物之外；A·派生＝同一个 A（同脸、发型、体型与基础声音，沿用全局声音 ID S1），不新增角色。9) S5 无锚帧：旧锚帧已移除，按导演备注 S4 结尾 B 已完全出画、A 仍坐近侧，S5 开场只留 A、B 绝不在场，远侧桌面留下那件外衣；currentFilmSpaceInstructions 第 9 条「尊重锚帧中正在离场的 B」针对的是已移除的旧锚帧，由当前导演备注取代，不再沿用。10) 禁止字幕、画面文字与水印，不复现历史抽帧中的字幕。\n\n【时长】按当前镜数据 S1 6s／S2 7s／S3 4s／S4 8s／S5 12s，合计 37s；导演备注明确为诊断测试、非最终 30s 交付，任何镜时长、对白、动作、机位与参考图均不改动。currentFilmSpaceInstructions 正文中「S4 6s／合计 35s」一行与当前镜数据及导演备注不一致，以当前镜数据 S4＝8s、总长 37s 为准，此处仅作说明，不改时长。S4 的 8 秒足以完成起身、取刀、转身与远侧桌沿直线出画；S5 的 12 秒足以完成起身、只脱制服外套与银甲、取远侧外衣穿上、一圈转身与一句对白，均不加速、不删减。\n\n【外观口径】休闲服外衣的颜色、款式与材质以 96e44971-aedc-42da-a534-dc321fd5e350 与 5d0c2f3a-2249-44f3-ab7b-fa89a476610b 参考图为准；用户口径称其为「米驼色外衣」，实体未登记颜色，故不以文字固化颜色，由参考图负责外观。A·派生外观见 c25d9268-6efa-4c1c-9a23-cef25c5ef192，身份仍来自 A 的参考图。\n\n【过期与冲突项】previousSpatialPlan 及其锚点、旧稿「桌面只许三件物品」、旧 S5 锚帧（含远处正在离场的 B）均不再作为场景或开场证据；历史失败输出中 A 坐在画面右、腰间出现刀鞘、出现多张桌子与重复桌品、画面字幕等均为历史缺陷，本轮不沿用。",
+      "shots": [
+        {
+          "id": "51b9d957-d24c-47e4-9268-d61ffcfa68ab",
+          "startState": "A 在阅读区画面左侧外，站立，单手握着那把无鞘太刀，穿藏青立领制服外套（含银色肩甲与前臂甲）、制服长裤与黑靴，腰间无刀、无刀鞘；B 已坐在 T1 远侧画面右，坐姿，身体朝桌面并朝 A，视线落在面前打开的书上；桌面中性阅览用品按参考帧原位保留；图书馆内无其他人走动。",
+          "endState": "A 坐在 T1 近侧画面左，坐姿，身体朝 B，目光看 B，右手刚放下刀；B 仍坐远侧画面右，坐姿，视线在书上；那把无鞘太刀平放在桌面近侧 A 右手边、两人之间、B 伸手可及处；桌面中性阅览用品原位未动。",
+          "transitionFromPrevious": "首镜，无前镜。"
+        },
+        {
+          "id": "9478d1bf-5268-41d0-b899-98e3dc9d3e6c",
+          "startState": "紧接 S1 尾帧：A 坐 T1 近侧画面左，坐姿，身体朝 B，目光看 B，穿藏青制服外套（含银色肩甲与前臂甲）、制服长裤与黑靴，腰间无刀、无刀鞘；B 坐 T1 远侧画面右，坐姿，身体朝桌面并朝 A，双手在桌面，视线上抬看 A；那把无鞘太刀平放在桌面近侧 A 右手边、两人之间；桌面中性阅览用品原位。",
+          "endState": "A 仍坐近侧画面左，坐姿，身体朝 B，目光看 B；B 仍坐远侧画面右，坐姿，身体朝 A，视线离书看 A；刀与桌面中性阅览用品位置不变；两人均未起身、未位移，四句对白说完。",
+          "transitionFromPrevious": "紧接 S1：A 刚坐到近侧并放下刀，B 仍在远侧读书；本镜 B 视线从书上抬起看向 A，两人保持坐姿完成四句对白，无位移，桌面物品不动。"
+        },
+        {
+          "id": "1e97e13e-d8d1-4c23-9b67-a81a48f2353a",
+          "startState": "紧接 S2 尾帧：A 坐 T1 近侧画面左，坐姿，身体朝 B，目光看 B，穿藏青制服外套（含银色肩甲与前臂甲）、制服长裤与黑靴，腰间无刀、无刀鞘；B 坐 T1 远侧画面右，坐姿，身体朝桌面并朝 A，完整穿着休闲服；那把无鞘太刀平放在桌面近侧 A 右手边；桌面中性阅览用品原位；椅背空置。",
+          "endState": "B 仍坐远侧画面右，坐姿，身体朝 A，已脱下休闲服外衣，保留其余层次与长裤（不裸露）；该外衣平放在远侧桌面她自己左手边、由桌面水平承托，双手已松开，椅背仍空置；A 仍坐近侧画面左观看；刀与桌面中性阅览用品位置不变。",
+          "transitionFromPrevious": "紧接 S2：两人仍坐原位、刀仍在桌面；本镜 B 在远侧坐姿只脱休闲服外衣并平放到远侧桌面，A 保持坐姿观看，无位移，无对白。"
+        },
+        {
+          "id": "6df199fc-99db-4f97-af28-82ed68869e16",
+          "startState": "紧接 S3 尾帧：A 坐 T1 近侧画面左，坐姿，身体与视线朝 B，穿藏青制服外套（含银色肩甲与前臂甲）、制服长裤与黑靴，腰间无刀、无刀鞘；B 坐 T1 远侧画面右，坐姿，身体朝 A，已脱下休闲服外衣、保留其余层次与长裤；那把无鞘太刀平放在桌面近侧 A 右手边；该外衣平放在远侧桌面 B 左手边；桌面中性阅览用品原位；椅背空置。",
+          "endState": "B 已从画面右侧完全出画，背对 A，右手握着那把无鞘太刀，不回头；A 仍坐近侧画面左，坐姿，骨盆不离座，头与视线转向 B 离场方向；桌面已无刀、无刀鞘；外衣仍平放在远侧桌面 B 左手边；桌面中性阅览用品原位；椅背空置；A 腰边无刀、无刀鞘。",
+          "transitionFromPrevious": "紧接 S3：B 仍坐远侧且已脱下外衣，A 坐近侧，刀在桌面；本镜 B 提前起身，伸手越过桌面取走那把无鞘太刀，转身背对 A 沿远侧桌沿直线快步出画；A 保持坐姿出声，不追不站。"
+        },
+        {
+          "id": "5f220d41-6480-461a-9082-d91b8ae8d4f2",
+          "startState": "紧接 S4 结尾：A 坐 T1 近侧画面左，坐姿，骨盆在座位上，头与视线朝 B 离场方向，穿藏青制服外套（含银色肩甲与前臂甲）、制服长裤与黑靴；B 已完全离场不在画面内；桌面无刀、无刀鞘；那件休闲服外衣平放在远侧桌面、由桌面水平承托；桌面中性阅览用品原位；椅背空置；A 腰边无刀、无刀鞘。",
+          "endState": "角色A·派生 站 T1 近侧，穿 B 留下的同一件外衣（罩在自己内层、长裤与靴之外），面向机位侧；A 的制服外套与银甲放在近侧一旁；B 不在场；桌面无刀、A 腰边无刀、无刀鞘；那件外衣已不在桌面远侧；角色A·派生 完成一整圈转身后重新面向机位并说完原对白。",
+          "transitionFromPrevious": "紧接 S4 结尾：B 已完全出画、刀已随她离开、外衣仍在远侧桌面，A 坐近侧。本镜开场沿用该状态：画面只留同一个 A，B 绝不在场；A 起身、只脱制服外套与银甲放到近侧一旁、取远侧桌面那件外衣穿上成为角色A·派生，原地完成一整圈转身，最后面向机位说原对白。"
+        }
+      ],
+      "sourceHash": "895bde3b892c856fd3eab7081fdf3c5dba18512837ca72f0095d1e1fd470bf95"
+    },
+    "adapterVersion": "sean-ref2va@3"
+  },
+  "startedAt": "2026-10-04T09:38:22.405Z",
+  "updatedAt": "2026-10-04T09:41:33.380Z",
+  "progress": {
+    "phase": "complete",
+    "detail": "视频已保存，可以播放并选用",
+    "updatedAt": "2026-10-04T09:41:33.380Z"
+  },
+  "leaseId": "867cfc19-56ad-4df5-962b-6f3ca0af4be6",
+  "workflow": {
+    "1": {
+      "class_type": "UNETLoader",
+      "inputs": {
+        "unet_name": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    "2": {
+      "class_type": "CLIPLoader",
+      "inputs": {
+        "clip_name": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+        "type": "minimax",
+        "device": "default"
+      }
+    },
+    "3": {
+      "class_type": "VAELoader",
+      "inputs": {
+        "vae_name": "minimax_h3_video_vae_fp16.safetensors"
+      }
+    },
+    "4": {
+      "class_type": "VAELoader",
+      "inputs": {
+        "vae_name": "minimax_h3_audio_vae_fp32.safetensors"
+      }
+    },
+    "6": {
+      "class_type": "MiniMaxH3ReferenceToVideo",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "vae": [
+          "3",
+          0
+        ],
+        "audio_vae": [
+          "4",
+          0
+        ],
+        "prompt": "subject_definitions:\n<Subject 1> is the modern library reading room defined by <Picture 1>: a bright, clean, simply decorated reading room with one continuous straight pale-wood shelving wall, light wood floor, grey-green chairs and soft even overhead lighting; <Picture 1> supplies environment appearance and materials only, does not select another reading table and is not a competing camera or composition anchor. The single main reading table T1 is the light-wood reading table against that same continuous shelving wall, its near side the camera-side edge and Character A's side, its far side the opposite edge where the garment was left.\n<Subject 2> is Character A, the adult woman defined by <Picture 2> and <Picture 3>: ponytail, deep navy stand-collar uniform jacket with silver shoulder and forearm armour, matching navy trousers and black boots; those pictures are authoritative for her identity, body proportions, hair, her own clothing and her base voice, and she has no sword and no scabbard at her waist.\n<Subject 3> is Character A in her derived state, defined by <Picture 4> together with the same woman in <Picture 2> and <Picture 3>: <Picture 4> shows only how the outer garment of the casual set sits on her body, while her face, ponytail, body proportions and voice still come from <Picture 2> and <Picture 3>; she keeps the same global voice identity (S1) and is the same single person, with no third person appearing.\n<Subject 4> is the casual clothing set defined by <Picture 5> and <Picture 6>, shown without a person; those references are authoritative for its colour, design and material, and in this shot only its outer garment is put on, while the rest of that set belongs to the departing character and is never worn here.\n<Picture 7> is the edited first frame and opening composition anchor of [Shot 1], an actual frozen tail frame of the preceding clip and not a Subject: the same bright reading room with the continuous straight pale-wood shelving wall, the same single main reading table T1, the grey-green chairs, Character A seated at the near side on screen-left with no weapon at her waist, the other woman completely absent, no sword and no scabbard anywhere, that woman's removed outer garment lying flat on the far-side tabletop with its body and sleeves supported by the wood, the neutral reading props in place, and the chair backs empty, with no third person.\n<Audio 1> is the voice-timbre reference for the visible <Subject 3> (S1), supplied as speakerId S1 for the derived Character A: a low, clear young-adult female voice with a faint rasp and a dry edge, Mandarin Chinese natural speech; it is the same base voice of the same identity and a standalone timbre reference only, and its sample wording is never reproduced.\n\nsummary:\n[reference generation + keyframe completion + audio reference] The target video is one continuous 12-second single shot inside <Subject 1>, beginning exactly from <Picture 7>, the edited opening frame: the other woman has already completely left, no sword or scabbard remains anywhere, and the outer garment of <Subject 4> lies flat on the far-side tabletop. <Subject 2>, seated at the screen-left of the near side of the main reading table T1 in her referenced uniform, stands up, removes only her own navy uniform jacket together with its attached silver shoulder and forearm armour and lays them aside at the near side, keeping her inner layer, trousers and boots on; she reaches across the tabletop, takes that same outer garment and puts it on over her own clothing, becoming <Subject 3> with the same face, hair, body proportions and voice. Facing the camera side, she then performs exactly one slow and measured 360-degree turn on the spot at the near side, passing one side, the back exactly once, the opposite side, and returning to front, finishing well before the end of the shot; for the remaining roughly three seconds she stands entirely still, feet planted and body facing the camera side, and only then speaks the approved line with the timbre of <Audio 1>. No second revolution, no repeated back-facing pass and no continued spinning occur.\n\nretention_analysis:\n<Picture 7> (opening frame of [Shot 1]): fully_preserved - the continuous straight pale-wood shelving wall, the same light-wood reading table T1, the grey-green chairs, the same camera side at the near side of T1 and the same action axis, the soft even lighting and materials, Character A's seated position at the near side on screen-left with her head and gaze toward the departure direction, the absence of the other woman, the absence of any sword or scabbard on the tabletop or at her waist, the removed outer garment lying flat on the far-side tabletop with its body and sleeves supported by the wood, and the neutral reading props in place are all retained as the authoritative opening composition. Approved corrections: no departing person and no weapon may be restored or reintroduced from any earlier failed output; the chair backs must stay empty; the departed woman’s coat removal or placement is not replayed; the rotation must be one single measured revolution in which the back faces the camera exactly once and never returns, with no second revolution, no extra half-turn and no alternating front-and-back repetition, and the closing seconds must be fully stationary facing the camera side; no duplicate blade, second sword or scabbard appears; the scene reference is not used to select another reading table or another camera angle; and no subtitle, caption, on-screen text or watermark appears.\n<Subject 1> (appears in [Shot 1]): fully_preserved - the bright reading room, its continuous straight pale-wood shelving wall, light wood floor, grey-green chairs and soft even overhead lighting, with no unlisted architecture, extra table or additional person added.\n<Subject 2> (appears in [Shot 1]): fully_preserved - the identity, face, body proportions, ponytail, navy uniform jacket with silver shoulder and forearm armour, trousers and boots of the woman defined by <Picture 2> and <Picture 3>, retained through the change, with her inner layer, trousers and boots remaining on afterwards and nothing exposed.\n<Subject 3> (appears in [Shot 1]): fully_preserved - the derived state keeps the same face, body proportions, ponytail and voice while wearing the referenced outer garment; clothing is the only change and no third person exists.\n<Subject 4> (appears in [Shot 1]): attribute_transfer - the referenced outer garment keeps its colour, design and material but is transferred from the departing character onto Character A; the rest of that casual set is never worn here, and the garment stays horizontally supported on the tabletop until Character A lifts it, never on a chair back.\n<Audio 1> (appears in [Shot 1]): reference - the supplied clip is used only as a standalone voice-timbre reference for the visible speaker; none of its sample words are carried into the story.\n\ndetailed_description:\nStyle: live-action cinematic inside a bright modern library reading room, clean anime-influenced character rendering, natural colour grading, soft even overhead light, realistic materials, no subtitles, captions, on-screen text or watermarks.\n[Shot 1] Opens exactly from <Picture 7>, the edited first frame and opening composition anchor of [Shot 1], a frozen tail frame of the preceding clip: keep the bright reading room, its continuous pale-wood shelving wall, the long light-wood reading table T1, grey-green chairs and soft overhead light; T1's near side is the camera-side edge and Character A's side, its far side the opposite edge.\nSame camera side and seated position; no sword or scabbard remains, the other woman is absent, and her outer garment lies flat on the far-side tabletop; neutral props and empty chair backs stay unchanged.\nInitial state: Character A sits near side on screen-left, pelvis on the seat, gaze toward the departure direction, in her deep navy stand-collar jacket with silver shoulder and forearm armour, trousers and black boots.\nDominant action: she stands, removes only her own uniform jacket with its attached silver armour and lays them aside at the near side, keeping her inner layer, trousers and boots on; she takes that outer garment and puts it on over her own clothing, becoming the same woman in the derived outfit, same face, hair and voice.\nOnce the garment is on she settles facing the camera side. Then one single measured revolution on the spot: a slow, even, decelerating 360-degree turn through one side, the back, the opposite side, and back to front. The back faces the camera exactly once and never returns, with no second revolution. The turn finishes by roughly the ninth second and ends facing the camera side.\nFrom that moment to the final frame, roughly the last three seconds, she is completely stationary: both feet planted, no residual rotation and no stepping.\nHolding that stopped front-facing position, <Subject 3> (S1) says with matching lip movement <d>[Chinese] ……还挺合身。</d> and stays still to the final frame.\nCamera: locked-off medium full-body shot, one very small slow push-in across the exact twelve seconds, one continuous take, no cut or reframing.\nSound: quiet room tone, fabric rustle during the jacket and armour removal and the coat change, a faint whisper as the garment lifts off the wood, and one light swish during the single turn only.\nEnd state: the same A stands still at the near side facing the camera side in the derived outfit over her inner layer and trousers, both feet planted, no residual rotation; the other woman and the sword are absent; the outer garment is gone from the far-side tabletop; chair backs empty.\n\noverall_soundscape:\nQuiet library room tone throughout; fabric rustle during the uniform jacket and armour removal and the coat change; a soft settle as the jacket and armour are set aside; a faint whisper as the outer garment lifts off the wood; soft near-side footsteps; one light sustained swish during the single measured turn only, followed by stillness.\n\nnon_diegetic_music:\nN/A",
+        "width": 1024,
+        "height": 576,
+        "length": 288,
+        "ref_image_size": "match",
+        "ref_images.ref_image_0": [
+          "100",
+          0
+        ],
+        "ref_images.ref_image_1": [
+          "101",
+          0
+        ],
+        "ref_images.ref_image_2": [
+          "102",
+          0
+        ],
+        "ref_images.ref_image_3": [
+          "103",
+          0
+        ],
+        "ref_images.ref_image_4": [
+          "104",
+          0
+        ],
+        "ref_images.ref_image_5": [
+          "105",
+          0
+        ],
+        "ref_images.ref_image_6": [
+          "106",
+          0
+        ],
+        "ref_audios.ref_audio_0": [
+          "200",
+          0
+        ]
+      }
+    },
+    "7": {
+      "class_type": "KSamplerSelect",
+      "inputs": {
+        "sampler_name": "euler"
+      }
+    },
+    "8": {
+      "class_type": "BasicScheduler",
+      "inputs": {
+        "model": [
+          "23",
+          0
+        ],
+        "scheduler": "simple",
+        "steps": 8,
+        "denoise": 1
+      }
+    },
+    "9": {
+      "class_type": "BasicGuider",
+      "inputs": {
+        "model": [
+          "23",
+          0
+        ],
+        "conditioning": [
+          "6",
+          0
+        ]
+      }
+    },
+    "10": {
+      "class_type": "RandomNoise",
+      "inputs": {
+        "noise_seed": 253151585
+      }
+    },
+    "11": {
+      "class_type": "SamplerCustomAdvanced",
+      "inputs": {
+        "noise": [
+          "10",
+          0
+        ],
+        "guider": [
+          "9",
+          0
+        ],
+        "sampler": [
+          "7",
+          0
+        ],
+        "sigmas": [
+          "18",
+          1
+        ],
+        "latent_image": [
+          "6",
+          1
+        ]
+      }
+    },
+    "12": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "11",
+          0
+        ],
+        "vae": [
+          "3",
+          0
+        ]
+      }
+    },
+    "13": {
+      "class_type": "VAEDecodeAudio",
+      "inputs": {
+        "samples": [
+          "11",
+          0
+        ],
+        "vae": [
+          "4",
+          0
+        ]
+      }
+    },
+    "14": {
+      "class_type": "CreateVideo",
+      "inputs": {
+        "images": [
+          "12",
+          0
+        ],
+        "fps": 24,
+        "audio": [
+          "13",
+          0
+        ],
+        "bit_depth": 8
+      }
+    },
+    "15": {
+      "class_type": "SaveVideo",
+      "inputs": {
+        "video": [
+          "14",
+          0
+        ],
+        "filename_prefix": "video/sean_film_editor/29448db9-ddbc-403c-b117-0473c8ca9708/clip",
+        "format": "mp4",
+        "codec": "auto"
+      }
+    },
+    "18": {
+      "class_type": "MiniMaxH3PDDAccApply",
+      "inputs": {
+        "model": [
+          "1",
+          0
+        ],
+        "pdd_file": "minimax_h3_ref2va_pdd_acc_8step_comfyui.safetensors",
+        "nfe": "8",
+        "lora_strength": 1,
+        "head_strength": 1,
+        "on_off_grid": "error"
+      }
+    },
+    "23": {
+      "class_type": "MiniMaxH3MemoryEfficientSageAttentionPatch",
+      "inputs": {
+        "model": [
+          "18",
+          0
+        ]
+      }
+    },
+    "100": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "sean_29448db9-ddbc-403c-b117-0473c8ca9708_bc97295cda1363c189fcd3e0cc3841dfc36ca03db415906bf96b44b56d21cd6e.png"
+      }
+    },
+    "101": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "sean_29448db9-ddbc-403c-b117-0473c8ca9708_df20a30c62bf979ff04d2773b1757620847d3b485b580095b429031b5ea2d04b.png"
+      }
+    },
+    "102": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "sean_29448db9-ddbc-403c-b117-0473c8ca9708_5fecbc99843090ee1c74e7eecce6b9f3b3c34df5bd8ebfdd33a10a1fc2b9aa43.png"
+      }
+    },
+    "103": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "sean_29448db9-ddbc-403c-b117-0473c8ca9708_0314d3cb3f05571238673e899a4eb8e1f098d2f3d511b8b93e988e0aeb80c238.png"
+      }
+    },
+    "104": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "sean_29448db9-ddbc-403c-b117-0473c8ca9708_80a8e0c3b070a51034c55026b864f9841f96e90d8e0cff6077b7ed2fb1df6a81.png"
+      }
+    },
+    "105": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "sean_29448db9-ddbc-403c-b117-0473c8ca9708_3ce01b333ac8918b3faa804e2e345f3c0f73ba2fd4db5bdfb69b5a46940417ba.png"
+      }
+    },
+    "106": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "sean_29448db9-ddbc-403c-b117-0473c8ca9708_b7056a26b5108faf2a27a313a2cc7dea8b23b371a3a72ba2afa7b324e0678b58.png"
+      }
+    },
+    "200": {
+      "class_type": "LoadAudio",
+      "inputs": {
+        "audio": "sean_29448db9-ddbc-403c-b117-0473c8ca9708_136dc791274fa4bf7f7a5cb4667c04bbaf8affd92c7473775cf295846215ff1b.wav"
+      }
+    }
+  },
+  "workflowHash": "b075cdf29a4b41d9ac4d1e8dae8d8282a24bc53aa5dd0cc8c43f6aaefe83be7a",
+  "uploads": {
+    "images": [
+      "sean_29448db9-ddbc-403c-b117-0473c8ca9708_bc97295cda1363c189fcd3e0cc3841dfc36ca03db415906bf96b44b56d21cd6e.png",
+      "sean_29448db9-ddbc-403c-b117-0473c8ca9708_df20a30c62bf979ff04d2773b1757620847d3b485b580095b429031b5ea2d04b.png",
+      "sean_29448db9-ddbc-403c-b117-0473c8ca9708_5fecbc99843090ee1c74e7eecce6b9f3b3c34df5bd8ebfdd33a10a1fc2b9aa43.png",
+      "sean_29448db9-ddbc-403c-b117-0473c8ca9708_0314d3cb3f05571238673e899a4eb8e1f098d2f3d511b8b93e988e0aeb80c238.png",
+      "sean_29448db9-ddbc-403c-b117-0473c8ca9708_80a8e0c3b070a51034c55026b864f9841f96e90d8e0cff6077b7ed2fb1df6a81.png",
+      "sean_29448db9-ddbc-403c-b117-0473c8ca9708_3ce01b333ac8918b3faa804e2e345f3c0f73ba2fd4db5bdfb69b5a46940417ba.png",
+      "sean_29448db9-ddbc-403c-b117-0473c8ca9708_b7056a26b5108faf2a27a313a2cc7dea8b23b371a3a72ba2afa7b324e0678b58.png"
+    ],
+    "audio": null,
+    "voices": [
+      "sean_29448db9-ddbc-403c-b117-0473c8ca9708_136dc791274fa4bf7f7a5cb4667c04bbaf8affd92c7473775cf295846215ff1b.wav"
+    ]
+  },
+  "promptId": "f64f1c91-767f-482e-aba8-3040e707b18d",
+  "submittedAt": "2026-10-04T09:38:22.901Z",
+  "media": {
+    "hash": "9c5f802f1adf6b55e717f6208a09e0cb9dd69af5b24fafdb829d8d7c3536d7da",
+    "mime": "video/mp4",
+    "size": 1823311
+  },
+  "history": {
+    "prompt": [
+      24,
+      "f64f1c91-767f-482e-aba8-3040e707b18d",
+      {
+        "1": {
+          "class_type": "UNETLoader",
+          "inputs": {
+            "unet_name": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+            "weight_dtype": "default"
+          }
+        },
+        "2": {
+          "class_type": "CLIPLoader",
+          "inputs": {
+            "clip_name": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+            "type": "minimax",
+            "device": "default"
+          }
+        },
+        "3": {
+          "class_type": "VAELoader",
+          "inputs": {
+            "vae_name": "minimax_h3_video_vae_fp16.safetensors"
+          }
+        },
+        "4": {
+          "class_type": "VAELoader",
+          "inputs": {
+            "vae_name": "minimax_h3_audio_vae_fp32.safetensors"
+          }
+        },
+        "6": {
+          "class_type": "MiniMaxH3ReferenceToVideo",
+          "inputs": {
+            "clip": [
+              "2",
+              0
+            ],
+            "vae": [
+              "3",
+              0
+            ],
+            "audio_vae": [
+              "4",
+              0
+            ],
+            "prompt": "subject_definitions:\n<Subject 1> is the modern library reading room defined by <Picture 1>: a bright, clean, simply decorated reading room with one continuous straight pale-wood shelving wall, light wood floor, grey-green chairs and soft even overhead lighting; <Picture 1> supplies environment appearance and materials only, does not select another reading table and is not a competing camera or composition anchor. The single main reading table T1 is the light-wood reading table against that same continuous shelving wall, its near side the camera-side edge and Character A's side, its far side the opposite edge where the garment was left.\n<Subject 2> is Character A, the adult woman defined by <Picture 2> and <Picture 3>: ponytail, deep navy stand-collar uniform jacket with silver shoulder and forearm armour, matching navy trousers and black boots; those pictures are authoritative for her identity, body proportions, hair, her own clothing and her base voice, and she has no sword and no scabbard at her waist.\n<Subject 3> is Character A in her derived state, defined by <Picture 4> together with the same woman in <Picture 2> and <Picture 3>: <Picture 4> shows only how the outer garment of the casual set sits on her body, while her face, ponytail, body proportions and voice still come from <Picture 2> and <Picture 3>; she keeps the same global voice identity (S1) and is the same single person, with no third person appearing.\n<Subject 4> is the casual clothing set defined by <Picture 5> and <Picture 6>, shown without a person; those references are authoritative for its colour, design and material, and in this shot only its outer garment is put on, while the rest of that set belongs to the departing character and is never worn here.\n<Picture 7> is the edited first frame and opening composition anchor of [Shot 1], an actual frozen tail frame of the preceding clip and not a Subject: the same bright reading room with the continuous straight pale-wood shelving wall, the same single main reading table T1, the grey-green chairs, Character A seated at the near side on screen-left with no weapon at her waist, the other woman completely absent, no sword and no scabbard anywhere, that woman's removed outer garment lying flat on the far-side tabletop with its body and sleeves supported by the wood, the neutral reading props in place, and the chair backs empty, with no third person.\n<Audio 1> is the voice-timbre reference for the visible <Subject 3> (S1), supplied as speakerId S1 for the derived Character A: a low, clear young-adult female voice with a faint rasp and a dry edge, Mandarin Chinese natural speech; it is the same base voice of the same identity and a standalone timbre reference only, and its sample wording is never reproduced.\n\nsummary:\n[reference generation + keyframe completion + audio reference] The target video is one continuous 12-second single shot inside <Subject 1>, beginning exactly from <Picture 7>, the edited opening frame: the other woman has already completely left, no sword or scabbard remains anywhere, and the outer garment of <Subject 4> lies flat on the far-side tabletop. <Subject 2>, seated at the screen-left of the near side of the main reading table T1 in her referenced uniform, stands up, removes only her own navy uniform jacket together with its attached silver shoulder and forearm armour and lays them aside at the near side, keeping her inner layer, trousers and boots on; she reaches across the tabletop, takes that same outer garment and puts it on over her own clothing, becoming <Subject 3> with the same face, hair, body proportions and voice. Facing the camera side, she then performs exactly one slow and measured 360-degree turn on the spot at the near side, passing one side, the back exactly once, the opposite side, and returning to front, finishing well before the end of the shot; for the remaining roughly three seconds she stands entirely still, feet planted and body facing the camera side, and only then speaks the approved line with the timbre of <Audio 1>. No second revolution, no repeated back-facing pass and no continued spinning occur.\n\nretention_analysis:\n<Picture 7> (opening frame of [Shot 1]): fully_preserved - the continuous straight pale-wood shelving wall, the same light-wood reading table T1, the grey-green chairs, the same camera side at the near side of T1 and the same action axis, the soft even lighting and materials, Character A's seated position at the near side on screen-left with her head and gaze toward the departure direction, the absence of the other woman, the absence of any sword or scabbard on the tabletop or at her waist, the removed outer garment lying flat on the far-side tabletop with its body and sleeves supported by the wood, and the neutral reading props in place are all retained as the authoritative opening composition. Approved corrections: no departing person and no weapon may be restored or reintroduced from any earlier failed output; the chair backs must stay empty; the departed woman’s coat removal or placement is not replayed; the rotation must be one single measured revolution in which the back faces the camera exactly once and never returns, with no second revolution, no extra half-turn and no alternating front-and-back repetition, and the closing seconds must be fully stationary facing the camera side; no duplicate blade, second sword or scabbard appears; the scene reference is not used to select another reading table or another camera angle; and no subtitle, caption, on-screen text or watermark appears.\n<Subject 1> (appears in [Shot 1]): fully_preserved - the bright reading room, its continuous straight pale-wood shelving wall, light wood floor, grey-green chairs and soft even overhead lighting, with no unlisted architecture, extra table or additional person added.\n<Subject 2> (appears in [Shot 1]): fully_preserved - the identity, face, body proportions, ponytail, navy uniform jacket with silver shoulder and forearm armour, trousers and boots of the woman defined by <Picture 2> and <Picture 3>, retained through the change, with her inner layer, trousers and boots remaining on afterwards and nothing exposed.\n<Subject 3> (appears in [Shot 1]): fully_preserved - the derived state keeps the same face, body proportions, ponytail and voice while wearing the referenced outer garment; clothing is the only change and no third person exists.\n<Subject 4> (appears in [Shot 1]): attribute_transfer - the referenced outer garment keeps its colour, design and material but is transferred from the departing character onto Character A; the rest of that casual set is never worn here, and the garment stays horizontally supported on the tabletop until Character A lifts it, never on a chair back.\n<Audio 1> (appears in [Shot 1]): reference - the supplied clip is used only as a standalone voice-timbre reference for the visible speaker; none of its sample words are carried into the story.\n\ndetailed_description:\nStyle: live-action cinematic inside a bright modern library reading room, clean anime-influenced character rendering, natural colour grading, soft even overhead light, realistic materials, no subtitles, captions, on-screen text or watermarks.\n[Shot 1] Opens exactly from <Picture 7>, the edited first frame and opening composition anchor of [Shot 1], a frozen tail frame of the preceding clip: keep the bright reading room, its continuous pale-wood shelving wall, the long light-wood reading table T1, grey-green chairs and soft overhead light; T1's near side is the camera-side edge and Character A's side, its far side the opposite edge.\nSame camera side and seated position; no sword or scabbard remains, the other woman is absent, and her outer garment lies flat on the far-side tabletop; neutral props and empty chair backs stay unchanged.\nInitial state: Character A sits near side on screen-left, pelvis on the seat, gaze toward the departure direction, in her deep navy stand-collar jacket with silver shoulder and forearm armour, trousers and black boots.\nDominant action: she stands, removes only her own uniform jacket with its attached silver armour and lays them aside at the near side, keeping her inner layer, trousers and boots on; she takes that outer garment and puts it on over her own clothing, becoming the same woman in the derived outfit, same face, hair and voice.\nOnce the garment is on she settles facing the camera side. Then one single measured revolution on the spot: a slow, even, decelerating 360-degree turn through one side, the back, the opposite side, and back to front. The back faces the camera exactly once and never returns, with no second revolution. The turn finishes by roughly the ninth second and ends facing the camera side.\nFrom that moment to the final frame, roughly the last three seconds, she is completely stationary: both feet planted, no residual rotation and no stepping.\nHolding that stopped front-facing position, <Subject 3> (S1) says with matching lip movement <d>[Chinese] ……还挺合身。</d> and stays still to the final frame.\nCamera: locked-off medium full-body shot, one very small slow push-in across the exact twelve seconds, one continuous take, no cut or reframing.\nSound: quiet room tone, fabric rustle during the jacket and armour removal and the coat change, a faint whisper as the garment lifts off the wood, and one light swish during the single turn only.\nEnd state: the same A stands still at the near side facing the camera side in the derived outfit over her inner layer and trousers, both feet planted, no residual rotation; the other woman and the sword are absent; the outer garment is gone from the far-side tabletop; chair backs empty.\n\noverall_soundscape:\nQuiet library room tone throughout; fabric rustle during the uniform jacket and armour removal and the coat change; a soft settle as the jacket and armour are set aside; a faint whisper as the outer garment lifts off the wood; soft near-side footsteps; one light sustained swish during the single measured turn only, followed by stillness.\n\nnon_diegetic_music:\nN/A",
+            "width": 1024,
+            "height": 576,
+            "length": 288,
+            "ref_image_size": "match",
+            "ref_images.ref_image_0": [
+              "100",
+              0
+            ],
+            "ref_images.ref_image_1": [
+              "101",
+              0
+            ],
+            "ref_images.ref_image_2": [
+              "102",
+              0
+            ],
+            "ref_images.ref_image_3": [
+              "103",
+              0
+            ],
+            "ref_images.ref_image_4": [
+              "104",
+              0
+            ],
+            "ref_images.ref_image_5": [
+              "105",
+              0
+            ],
+            "ref_images.ref_image_6": [
+              "106",
+              0
+            ],
+            "ref_audios.ref_audio_0": [
+              "200",
+              0
+            ]
+          }
+        },
+        "7": {
+          "class_type": "KSamplerSelect",
+          "inputs": {
+            "sampler_name": "euler"
+          }
+        },
+        "8": {
+          "class_type": "BasicScheduler",
+          "inputs": {
+            "model": [
+              "23",
+              0
+            ],
+            "scheduler": "simple",
+            "steps": 8,
+            "denoise": 1
+          }
+        },
+        "9": {
+          "class_type": "BasicGuider",
+          "inputs": {
+            "model": [
+              "23",
+              0
+            ],
+            "conditioning": [
+              "6",
+              0
+            ]
+          }
+        },
+        "10": {
+          "class_type": "RandomNoise",
+          "inputs": {
+            "noise_seed": 253151585
+          }
+        },
+        "11": {
+          "class_type": "SamplerCustomAdvanced",
+          "inputs": {
+            "noise": [
+              "10",
+              0
+            ],
+            "guider": [
+              "9",
+              0
+            ],
+            "sampler": [
+              "7",
+              0
+            ],
+            "sigmas": [
+              "18",
+              1
+            ],
+            "latent_image": [
+              "6",
+              1
+            ]
+          }
+        },
+        "12": {
+          "class_type": "VAEDecode",
+          "inputs": {
+            "samples": [
+              "11",
+              0
+            ],
+            "vae": [
+              "3",
+              0
+            ]
+          }
+        },
+        "13": {
+          "class_type": "VAEDecodeAudio",
+          "inputs": {
+            "samples": [
+              "11",
+              0
+            ],
+            "vae": [
+              "4",
+              0
+            ]
+          }
+        },
+        "14": {
+          "class_type": "CreateVideo",
+          "inputs": {
+            "images": [
+              "12",
+              0
+            ],
+            "fps": 24,
+            "audio": [
+              "13",
+              0
+            ],
+            "bit_depth": 8
+          }
+        },
+        "15": {
+          "class_type": "SaveVideo",
+          "inputs": {
+            "video": [
+              "14",
+              0
+            ],
+            "filename_prefix": "video/sean_film_editor/29448db9-ddbc-403c-b117-0473c8ca9708/clip",
+            "format": "mp4",
+            "codec": "auto"
+          }
+        },
+        "18": {
+          "class_type": "MiniMaxH3PDDAccApply",
+          "inputs": {
+            "model": [
+              "1",
+              0
+            ],
+            "pdd_file": "minimax_h3_ref2va_pdd_acc_8step_comfyui.safetensors",
+            "nfe": "8",
+            "lora_strength": 1,
+            "head_strength": 1,
+            "on_off_grid": "error"
+          }
+        },
+        "23": {
+          "class_type": "MiniMaxH3MemoryEfficientSageAttentionPatch",
+          "inputs": {
+            "model": [
+              "18",
+              0
+            ]
+          }
+        },
+        "100": {
+          "class_type": "LoadImage",
+          "inputs": {
+            "image": "sean_29448db9-ddbc-403c-b117-0473c8ca9708_bc97295cda1363c189fcd3e0cc3841dfc36ca03db415906bf96b44b56d21cd6e.png"
+          }
+        },
+        "101": {
+          "class_type": "LoadImage",
+          "inputs": {
+            "image": "sean_29448db9-ddbc-403c-b117-0473c8ca9708_df20a30c62bf979ff04d2773b1757620847d3b485b580095b429031b5ea2d04b.png"
+          }
+        },
+        "102": {
+          "class_type": "LoadImage",
+          "inputs": {
+            "image": "sean_29448db9-ddbc-403c-b117-0473c8ca9708_5fecbc99843090ee1c74e7eecce6b9f3b3c34df5bd8ebfdd33a10a1fc2b9aa43.png"
+          }
+        },
+        "103": {
+          "class_type": "LoadImage",
+          "inputs": {
+            "image": "sean_29448db9-ddbc-403c-b117-0473c8ca9708_0314d3cb3f05571238673e899a4eb8e1f098d2f3d511b8b93e988e0aeb80c238.png"
+          }
+        },
+        "104": {
+          "class_type": "LoadImage",
+          "inputs": {
+            "image": "sean_29448db9-ddbc-403c-b117-0473c8ca9708_80a8e0c3b070a51034c55026b864f9841f96e90d8e0cff6077b7ed2fb1df6a81.png"
+          }
+        },
+        "105": {
+          "class_type": "LoadImage",
+          "inputs": {
+            "image": "sean_29448db9-ddbc-403c-b117-0473c8ca9708_3ce01b333ac8918b3faa804e2e345f3c0f73ba2fd4db5bdfb69b5a46940417ba.png"
+          }
+        },
+        "106": {
+          "class_type": "LoadImage",
+          "inputs": {
+            "image": "sean_29448db9-ddbc-403c-b117-0473c8ca9708_b7056a26b5108faf2a27a313a2cc7dea8b23b371a3a72ba2afa7b324e0678b58.png"
+          }
+        },
+        "200": {
+          "class_type": "LoadAudio",
+          "inputs": {
+            "audio": "sean_29448db9-ddbc-403c-b117-0473c8ca9708_136dc791274fa4bf7f7a5cb4667c04bbaf8affd92c7473775cf295846215ff1b.wav"
+          }
+        }
+      },
+      {
+        "owner": "Sean",
+        "candidateId": "29448db9-ddbc-403c-b117-0473c8ca9708",
+        "projectId": "70338d49-e494-433f-a753-738fbd3dafc9",
+        "client_id": "sean-film-29448db9-ddbc-403c-b117-0473c8ca9708",
+        "create_time": 1791106702900
+      },
+      [
+        "15"
+      ]
+    ],
+    "outputs": {
+      "15": {
+        "images": [
+          {
+            "filename": "clip_00001_.mp4",
+            "subfolder": "video/sean_film_editor/29448db9-ddbc-403c-b117-0473c8ca9708",
+            "type": "output",
+            "id": "e17a09e0-e2ae-4b34-bdb5-eeda3a56979c"
+          }
+        ],
+        "animated": [
+          true
+        ]
+      }
+    },
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "f64f1c91-767f-482e-aba8-3040e707b18d",
+            "timestamp": 1791106702901
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "7",
+              "10",
+              "18",
+              "23"
+            ],
+            "prompt_id": "f64f1c91-767f-482e-aba8-3040e707b18d",
+            "timestamp": 1791106702921
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "f64f1c91-767f-482e-aba8-3040e707b18d",
+            "timestamp": 1791106889316
+          }
+        ]
+      ]
+    },
+    "meta": {
+      "15": {
+        "node_id": "15",
+        "display_node": "15",
+        "parent_node": null,
+        "real_node_id": "15"
+      }
+    }
+  },
+  "completedAt": "2026-10-04T09:41:33.222Z",
+  "elapsedSec": 190.817,
+  "peakVramMb": 23356.92760658264,
+  "isCurrent": true
+}

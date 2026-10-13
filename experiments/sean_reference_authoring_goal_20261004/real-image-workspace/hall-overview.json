@@ -1,0 +1,346 @@
+{
+  "owner": "Sean",
+  "step": {
+    "id": "3ee0287a-f2fb-4803-a5fe-3fa900274c84",
+    "planId": "d1886bd8-05f3-492b-bcef-9ae55694b185",
+    "entityId": "516b1812-e158-4780-992c-51b4553a4b18",
+    "entityName": "实验候车厅",
+    "candidateKey": "hall",
+    "candidateKind": "scene",
+    "entityRevision": "365bf469235063216856fffbe73458f87728668569796df6eb722220c2756d6c",
+    "invariants": [
+      "只保留明确设计及实际参考依据，不补充未知"
+    ],
+    "key": "hall-overview",
+    "label": "hall-overview",
+    "modelId": "qwen-image-2.1",
+    "parameters": {},
+    "prompt": "长方形候车厅。固定设计：入口门在A墙，站台门在相对的C墙；单个长凳沿B墙；D墙有一扇窗。A/B/C/D是本实验的局部墙面标识，依次环绕房间，不代表地理方向。地面灰色瓷砖、墙面浅米色。绝对尺寸、不可见门外空间未知。 总览展示可见的固定区域，不显示人物。不把遮挡区域补成已知。",
+    "purpose": "受控质量实验，非已核实事实",
+    "referenceAssetIds": [],
+    "role": "scene_overview",
+    "styleId": "original",
+    "unknowns": [
+      "画面是否符合设计需生成后逐张检查"
+    ],
+    "useBaseAppearance": false,
+    "useMainAppearance": false,
+    "rootStepId": "3ee0287a-f2fb-4803-a5fe-3fa900274c84",
+    "parentStepId": null,
+    "version": 1,
+    "reason": "",
+    "sessionId": null,
+    "runId": null,
+    "activeStepId": "3ee0287a-f2fb-4803-a5fe-3fa900274c84",
+    "isCurrent": true,
+    "revisionStatus": "current",
+    "revisionBasis": null,
+    "contentHash": "553bed625c6356219dcb2f164bc3d59b1eab1c4e2c2aa8d8740a44f241f1900d",
+    "stale": false,
+    "issue": null,
+    "referenceEntityId": "516b1812-e158-4780-992c-51b4553a4b18",
+    "sourceReferenceAssetIds": [],
+    "runs": []
+  },
+  "run": {
+    "id": "784f866a-48f2-4a14-b998-a2338877c47b",
+    "entityId": "516b1812-e158-4780-992c-51b4553a4b18",
+    "status": "succeeded",
+    "snapshot": {
+      "owner": "Sean",
+      "entity": {
+        "id": "516b1812-e158-4780-992c-51b4553a4b18",
+        "name": "实验候车厅",
+        "context": {
+          "appearance": "长方形候车厅。固定设计：入口门在A墙，站台门在相对的C墙；单个长凳沿B墙；D墙有一扇窗。A/B/C/D是本实验的局部墙面标识，依次环绕房间，不代表地理方向。地面灰色瓷砖、墙面浅米色。绝对尺寸、不可见门外空间未知。",
+          "authoring": {
+            "candidateKey": "hall",
+            "newDesign": true,
+            "planId": "d1886bd8-05f3-492b-bcef-9ae55694b185",
+            "unknowns": [
+              "本组为实验设计，不代表生产资料；声音未设定"
+            ]
+          },
+          "description": "长方形候车厅。固定设计：入口门在A墙，站台门在相对的C墙；单个长凳沿B墙；D墙有一扇窗。A/B/C/D是本实验的局部墙面标识，依次环绕房间，不代表地理方向。地面灰色瓷砖、墙面浅米色。绝对尺寸、不可见门外空间未知。",
+          "flags": [
+            "场景",
+            "质量实验"
+          ],
+          "owner": "Sean",
+          "type": "scene",
+          "voiceDescription": ""
+        }
+      },
+      "model": {
+        "id": "qwen-image-2.1",
+        "name": "Qwen Image 2.1",
+        "version": 1,
+        "adapter": "comfy",
+        "enabled": true,
+        "references": {
+          "min": 0,
+          "max": 16,
+          "instruction": "按所选顺序对应 Image 1、Image 2…，在提示词中明确每张图的职责。节点支持 0–16 张；已有四图组合实验。"
+        },
+        "fields": {
+          "size": {
+            "type": "select",
+            "label": "画幅",
+            "default": "1536x1024",
+            "options": [
+              {
+                "value": "1536x1024",
+                "label": "3:2 · 1536 × 1024"
+              },
+              {
+                "value": "1024x1024",
+                "label": "1:1 · 1024 × 1024"
+              },
+              {
+                "value": "1344x768",
+                "label": "16:9 · 1344 × 768"
+              },
+              {
+                "value": "768x1344",
+                "label": "9:16 · 768 × 1344"
+              }
+            ]
+          },
+          "seed": {
+            "type": "integer",
+            "label": "随机种子",
+            "default": 42,
+            "min": 0,
+            "max": 2147483647
+          },
+          "steps": {
+            "type": "integer",
+            "label": "采样步数",
+            "default": 25,
+            "min": 1,
+            "max": 50
+          }
+        },
+        "localGpu": true
+      },
+      "style": {
+        "id": "original",
+        "name": "原始提示词",
+        "version": 1,
+        "promptSuffix": ""
+      },
+      "prompt": "长方形候车厅。固定设计：入口门在A墙，站台门在相对的C墙；单个长凳沿B墙；D墙有一扇窗。A/B/C/D是本实验的局部墙面标识，依次环绕房间，不代表地理方向。地面灰色瓷砖、墙面浅米色。绝对尺寸、不可见门外空间未知。 总览展示可见的固定区域，不显示人物。不把遮挡区域补成已知。",
+      "purpose": "受控质量实验，非已核实事实",
+      "effectivePrompt": "长方形候车厅。固定设计：入口门在A墙，站台门在相对的C墙；单个长凳沿B墙；D墙有一扇窗。A/B/C/D是本实验的局部墙面标识，依次环绕房间，不代表地理方向。地面灰色瓷砖、墙面浅米色。绝对尺寸、不可见门外空间未知。 总览展示可见的固定区域，不显示人物。不把遮挡区域补成已知。",
+      "parameters": {
+        "size": "1536x1024",
+        "seed": 42,
+        "steps": 25
+      },
+      "references": [],
+      "template": {
+        "id": "qwen-image-2.1.0-refs",
+        "version": 1,
+        "hash": "ff56cf7134b69f84749120bba48e546964c3e7c38ee19ae6856606c71295ab46"
+      },
+      "authoring": {
+        "stepId": "3ee0287a-f2fb-4803-a5fe-3fa900274c84",
+        "rootStepId": "3ee0287a-f2fb-4803-a5fe-3fa900274c84",
+        "version": 1,
+        "planId": "d1886bd8-05f3-492b-bcef-9ae55694b185",
+        "sourceRevision": "553bed625c6356219dcb2f164bc3d59b1eab1c4e2c2aa8d8740a44f241f1900d",
+        "role": "scene_overview",
+        "label": "hall-overview",
+        "invariants": [
+          "只保留明确设计及实际参考依据，不补充未知"
+        ],
+        "unknowns": [
+          "画面是否符合设计需生成后逐张检查"
+        ],
+        "batchId": "d48f67d8-952e-4102-8fce-5c299405ba66",
+        "batchItemId": "ffb79bdc-fda1-4d0f-b601-7574550cea04"
+      }
+    },
+    "progress": 100,
+    "phase": "生成完成 · 已加入历史",
+    "promptId": "8bb7d0cb-1b8b-4cf7-bc5e-53126571159d",
+    "error": null,
+    "createdAt": "2026-10-04T11:40:26.270Z",
+    "updatedAt": "2026-10-04T11:40:36.523Z",
+    "completedAt": "2026-10-04T11:40:36.523Z",
+    "references": [],
+    "outputs": [
+      {
+        "id": "a4e8670a-471d-4352-904a-544608a55427",
+        "entityId": "516b1812-e158-4780-992c-51b4553a4b18",
+        "kind": "concept",
+        "name": "概念图 784f866a · 1",
+        "mime": "image/png",
+        "hash": "237a16ead67bf023ea0b897bb4ec71a6356b4b626a72badb7fedafe05acf6eff",
+        "width": 1536,
+        "height": 1024,
+        "locked": true,
+        "protected": false,
+        "everConfirmed": false,
+        "description": "",
+        "descriptionSource": "empty",
+        "metadata": {
+          "source": "generation",
+          "template": {
+            "id": "qwen-image-2.1.0-refs",
+            "version": 1,
+            "hash": "ff56cf7134b69f84749120bba48e546964c3e7c38ee19ae6856606c71295ab46"
+          },
+          "authoring": {
+            "stepId": "3ee0287a-f2fb-4803-a5fe-3fa900274c84",
+            "rootStepId": "3ee0287a-f2fb-4803-a5fe-3fa900274c84",
+            "version": 1,
+            "planId": "d1886bd8-05f3-492b-bcef-9ae55694b185",
+            "sourceRevision": "553bed625c6356219dcb2f164bc3d59b1eab1c4e2c2aa8d8740a44f241f1900d",
+            "role": "scene_overview",
+            "label": "hall-overview",
+            "invariants": [
+              "只保留明确设计及实际参考依据，不补充未知"
+            ],
+            "unknowns": [
+              "画面是否符合设计需生成后逐张检查"
+            ],
+            "batchId": "d48f67d8-952e-4102-8fce-5c299405ba66",
+            "batchItemId": "ffb79bdc-fda1-4d0f-b601-7574550cea04"
+          },
+          "outputIndex": 0,
+          "inputAssetIds": [],
+          "provider": "comfy",
+          "promptId": "8bb7d0cb-1b8b-4cf7-bc5e-53126571159d",
+          "outputFiles": [
+            {
+              "filename": "concept_00001_.png",
+              "subfolder": "sean_reference_workspace/784f866a-48f2-4a14-b998-a2338877c47b",
+              "type": "output",
+              "id": "7738794c-d193-4aa5-b4d9-d8a51c85ae18",
+              "nodeId": "9"
+            }
+          ],
+          "owner": "Sean"
+        },
+        "mediaType": "image",
+        "durationSec": null,
+        "runId": "784f866a-48f2-4a14-b998-a2338877c47b",
+        "createdAt": "2026-10-04T11:40:36.523Z",
+        "deletedAt": null,
+        "url": "/api/assets/a4e8670a-471d-4352-904a-544608a55427/content"
+      }
+    ]
+  },
+  "execution": {
+    "workflow": {
+      "1": {
+        "class_type": "UNETLoader",
+        "inputs": {
+          "unet_name": "qwen_image_2.1_int8_convrot.safetensors",
+          "weight_dtype": "default"
+        }
+      },
+      "2": {
+        "class_type": "CLIPLoader",
+        "inputs": {
+          "clip_name": "qwen3vl_8b_int8_convrot.safetensors",
+          "type": "qwen_image",
+          "device": "default"
+        }
+      },
+      "3": {
+        "class_type": "VAELoader",
+        "inputs": {
+          "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+        }
+      },
+      "4": {
+        "class_type": "QwenImage21Cache",
+        "inputs": {
+          "model": [
+            "1",
+            0
+          ],
+          "device": "auto",
+          "dtype": "default"
+        }
+      },
+      "5": {
+        "class_type": "TextEncodeQwenImage21",
+        "inputs": {
+          "clip": [
+            "2",
+            0
+          ],
+          "prompt": "长方形候车厅。固定设计：入口门在A墙，站台门在相对的C墙；单个长凳沿B墙；D墙有一扇窗。A/B/C/D是本实验的局部墙面标识，依次环绕房间，不代表地理方向。地面灰色瓷砖、墙面浅米色。绝对尺寸、不可见门外空间未知。 总览展示可见的固定区域，不显示人物。不把遮挡区域补成已知。",
+          "negative_prompt": "",
+          "resolution": 1024,
+          "vae": [
+            "3",
+            0
+          ]
+        }
+      },
+      "6": {
+        "class_type": "EmptyLatentImage",
+        "inputs": {
+          "width": 1536,
+          "height": 1024,
+          "batch_size": 1
+        }
+      },
+      "7": {
+        "class_type": "KSampler",
+        "inputs": {
+          "model": [
+            "4",
+            0
+          ],
+          "positive": [
+            "5",
+            0
+          ],
+          "negative": [
+            "5",
+            1
+          ],
+          "latent_image": [
+            "6",
+            0
+          ],
+          "seed": 42,
+          "steps": 25,
+          "cfg": 1,
+          "sampler_name": "euler",
+          "scheduler": "simple",
+          "denoise": 1
+        }
+      },
+      "8": {
+        "class_type": "VAEDecode",
+        "inputs": {
+          "samples": [
+            "7",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        }
+      },
+      "9": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "8",
+            0
+          ],
+          "filename_prefix": "sean_reference_workspace/784f866a-48f2-4a14-b998-a2338877c47b/concept"
+        }
+      }
+    },
+    "clientId": "sean-reference-784f866a-48f2-4a14-b998-a2338877c47b"
+  }
+}

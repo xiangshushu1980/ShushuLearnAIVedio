@@ -1,0 +1,4105 @@
+{
+  "owner": "Sean",
+  "createdAt": "2026-10-04T12:05:17.598Z",
+  "task": "hall-spatial-current",
+  "scope": "Actual Pi observes existing generated assets and saves proposals only; isolated experiment data.",
+  "generationSubmitted": false,
+  "sessionId": "67fd6700-9da1-4c02-b8ea-cd15b805ff26",
+  "model": {
+    "provider": "deepseek",
+    "id": "deepseek-flash"
+  },
+  "selectedAssetIds": [
+    "a4e8670a-471d-4352-904a-544608a55427"
+  ],
+  "beforeContext": {
+    "owner": "Sean",
+    "schemaVersion": 2,
+    "project": {
+      "owner": "Sean",
+      "id": "c51a50d3-2b12-48c9-a83c-8f4e8e30a3c6",
+      "synopsis": "",
+      "worldRules": "普通现实城市，无魔法。仅使用候选明确设计；未知空间不编造。",
+      "visualStyle": "",
+      "brief": "隔离人物与场景验证，不写生产资料。",
+      "decisions": "人工选定主图后继续；最多八次基线与一次修订，无自动重试。",
+      "entityIds": [
+        "76dab29d-6225-485f-b905-0f022e144159",
+        "ad60ce45-800f-48e1-9800-530aeba81c55",
+        "516b1812-e158-4780-992c-51b4553a4b18",
+        "045bb254-1560-4413-861e-d047b2215afa"
+      ],
+      "name": "实际图片质量实验",
+      "revision": 2,
+      "createdAt": "2026-10-04T11:39:58.087Z",
+      "updatedAt": "2026-10-04T11:39:58.101Z"
+    },
+    "entities": [
+      {
+        "entityId": "76dab29d-6225-485f-b905-0f022e144159",
+        "name": "实验林岚",
+        "flags": [
+          "人物",
+          "质量实验"
+        ],
+        "description": "成年夜班管理员，短黑发中只有一缕白发，灰色长外套与深蓝长裤。人物身份、头发、体型与衣服在变体中不变。",
+        "appearance": "成年夜班管理员，短黑发中只有一缕白发，灰色长外套与深蓝长裤。人物身份、头发、体型与衣服在变体中不变。",
+        "voiceDescription": "",
+        "sourceRevision": "532ebfb4a71821cd4ac315a1b44460416c6d79641dfad325c630ac5d0acc7682",
+        "projectRole": {
+          "role": "质量实验候选",
+          "plotNotes": "",
+          "revision": 1,
+          "sourceRevision": "1d3891d09df284c8d3aea21c4e195b8a524664a3a9d859155069b72f9ae82c08",
+          "updatedAt": "2026-10-04T11:39:58.101Z"
+        },
+        "sceneSpatial": {
+          "schemaVersion": 1,
+          "scope": "fixed_scene_space",
+          "status": "missing",
+          "version": 0,
+          "versionId": null,
+          "contentHash": "82d59f4ed4c85a69dac432ef7d61079cc368ea2811d7ccb21f1f06692575fb8e",
+          "confirmedAt": null,
+          "frame": null,
+          "elements": [],
+          "links": [],
+          "routes": [],
+          "unknowns": [
+            "方向基准待补充或确认；不可将镜头左/右直接当场景固定方向。",
+            "主要区域、建筑结构与固定物体尚未登记。"
+          ],
+          "issues": [],
+          "referenceImages": [],
+          "promptContext": "",
+          "draft": {
+            "owner": "Sean",
+            "schemaVersion": 1,
+            "scope": "fixed_scene_space",
+            "frame": {
+              "description": "",
+              "status": "pending"
+            },
+            "elements": [],
+            "links": [],
+            "routes": [],
+            "unknowns": [],
+            "referenceAssetIds": []
+          },
+          "usage": "空间标识以 entityId#id 引用；角色当前位置、朝向、移动时间线与可移动物品转移属于拍摄本。pending/draft/needs_review 内容不得作为已确认固定事实。",
+          "sourceRevision": "25132e0af894881b36a34722f69164379274ea584fb1d26a9576d759755b8307"
+        },
+        "sceneImages": {
+          "schemaVersion": 1,
+          "status": "missing",
+          "versionId": null,
+          "version": 0,
+          "contentHash": "d38598da3d4acb64f7f2de96143adb8981a7b0edd4f604a8aaccc49f7cdaf5d9",
+          "confirmedAt": null,
+          "images": [],
+          "notes": "",
+          "issues": [],
+          "usage": "同一场景的人工选定参考图片组；图片角色和锚点指向不是新的空间事实，固定事实以 sceneSpatial 为准。",
+          "sourceRevision": "6ab92157e3823ffb829835ea8176f0b344eb69eff041658a93be3e2102c32c9b"
+        },
+        "relations": [
+          {
+            "relationId": "7b35bb90-a3cf-4b87-a05a-bfd2dd9a6a3b",
+            "sourceEntityId": "ad60ce45-800f-48e1-9800-530aeba81c55",
+            "targetEntityId": "76dab29d-6225-485f-b905-0f022e144159",
+            "category": "setting",
+            "type": "派生自",
+            "description": "右手腕白色绷带，其他设计不变",
+            "status": "active",
+            "targetRevision": "6fd25a65954097c756c2f3c54bcd0ac720b05be73ecee1df5ca2d53953671b14",
+            "createdAt": "2026-10-04T11:39:58.101Z",
+            "updatedAt": "2026-10-04T11:39:58.101Z",
+            "sourceName": "实验林岚·腕伤",
+            "targetName": "实验林岚"
+          }
+        ],
+        "derivedFrom": null,
+        "images": [
+          {
+            "assetId": "5785b1f1-fd47-4e46-b419-9a58be21f15c",
+            "name": "概念图 e34c1f58 · 1",
+            "contentHash": "11013803402d864886fc21c7027c08f2fec6e8d4a6a01d0ad8fb2c85edc8882b"
+          }
+        ]
+      },
+      {
+        "entityId": "ad60ce45-800f-48e1-9800-530aeba81c55",
+        "name": "实验林岚·腕伤",
+        "flags": [
+          "人物",
+          "质量实验"
+        ],
+        "description": "成年夜班管理员，短黑发中只有一缕白发，灰色长外套与深蓝长裤。人物身份、头发、体型与衣服在变体中不变。 唯一变化：右手腕白色绷带。",
+        "appearance": "成年夜班管理员，短黑发中只有一缕白发，灰色长外套与深蓝长裤。人物身份、头发、体型与衣服在变体中不变。 右手腕白色绷带。",
+        "voiceDescription": "",
+        "sourceRevision": "f9e69575bb73fc7b0f77373b39135b16eb359f94e8b8b3c010714fff64874561",
+        "projectRole": {
+          "role": "质量实验候选",
+          "plotNotes": "",
+          "revision": 1,
+          "sourceRevision": "1d3891d09df284c8d3aea21c4e195b8a524664a3a9d859155069b72f9ae82c08",
+          "updatedAt": "2026-10-04T11:39:58.101Z"
+        },
+        "sceneSpatial": {
+          "schemaVersion": 1,
+          "scope": "fixed_scene_space",
+          "status": "missing",
+          "version": 0,
+          "versionId": null,
+          "contentHash": "82d59f4ed4c85a69dac432ef7d61079cc368ea2811d7ccb21f1f06692575fb8e",
+          "confirmedAt": null,
+          "frame": null,
+          "elements": [],
+          "links": [],
+          "routes": [],
+          "unknowns": [
+            "方向基准待补充或确认；不可将镜头左/右直接当场景固定方向。",
+            "主要区域、建筑结构与固定物体尚未登记。"
+          ],
+          "issues": [],
+          "referenceImages": [],
+          "promptContext": "",
+          "draft": {
+            "owner": "Sean",
+            "schemaVersion": 1,
+            "scope": "fixed_scene_space",
+            "frame": {
+              "description": "",
+              "status": "pending"
+            },
+            "elements": [],
+            "links": [],
+            "routes": [],
+            "unknowns": [],
+            "referenceAssetIds": []
+          },
+          "usage": "空间标识以 entityId#id 引用；角色当前位置、朝向、移动时间线与可移动物品转移属于拍摄本。pending/draft/needs_review 内容不得作为已确认固定事实。",
+          "sourceRevision": "25132e0af894881b36a34722f69164379274ea584fb1d26a9576d759755b8307"
+        },
+        "sceneImages": {
+          "schemaVersion": 1,
+          "status": "missing",
+          "versionId": null,
+          "version": 0,
+          "contentHash": "d38598da3d4acb64f7f2de96143adb8981a7b0edd4f604a8aaccc49f7cdaf5d9",
+          "confirmedAt": null,
+          "images": [],
+          "notes": "",
+          "issues": [],
+          "usage": "同一场景的人工选定参考图片组；图片角色和锚点指向不是新的空间事实，固定事实以 sceneSpatial 为准。",
+          "sourceRevision": "6ab92157e3823ffb829835ea8176f0b344eb69eff041658a93be3e2102c32c9b"
+        },
+        "relations": [
+          {
+            "relationId": "7b35bb90-a3cf-4b87-a05a-bfd2dd9a6a3b",
+            "sourceEntityId": "ad60ce45-800f-48e1-9800-530aeba81c55",
+            "targetEntityId": "76dab29d-6225-485f-b905-0f022e144159",
+            "category": "setting",
+            "type": "派生自",
+            "description": "右手腕白色绷带，其他设计不变",
+            "status": "active",
+            "targetRevision": "6fd25a65954097c756c2f3c54bcd0ac720b05be73ecee1df5ca2d53953671b14",
+            "createdAt": "2026-10-04T11:39:58.101Z",
+            "updatedAt": "2026-10-04T11:39:58.101Z",
+            "sourceName": "实验林岚·腕伤",
+            "targetName": "实验林岚"
+          }
+        ],
+        "derivedFrom": {
+          "entityId": "76dab29d-6225-485f-b905-0f022e144159",
+          "name": "实验林岚",
+          "sourceRevision": "6fd25a65954097c756c2f3c54bcd0ac720b05be73ecee1df5ca2d53953671b14",
+          "description": "右手腕白色绷带，其他设计不变",
+          "options": {
+            "authoringPlanId": "d1886bd8-05f3-492b-bcef-9ae55694b185",
+            "copyProfile": false,
+            "copyReference": false,
+            "copySettingRelations": false,
+            "copySpatialDraft": false,
+            "reuseVoice": false,
+            "sourceSpatialVersionId": null
+          },
+          "createdAt": "2026-10-04T11:39:58.101Z"
+        },
+        "images": []
+      },
+      {
+        "entityId": "516b1812-e158-4780-992c-51b4553a4b18",
+        "name": "实验候车厅",
+        "flags": [
+          "场景",
+          "质量实验"
+        ],
+        "description": "候车厅：候车用途保留。长方形室内房间；本图为俯视剖切总览，不显示天花板；画面一侧只看到墙体厚度，该侧墙内侧面不可见。本图中没有人物，这只是该图的取景状态，不代表该场景固定无人。\n\n可重复引用的物理位置（以长凳墙为基准；画面左右仅为该图中的相对位置，不代表地理方向）：\n- 长凳墙：放置长凳的那面墙。长凳靠墙放置，板面长边与墙平行，位于该墙可见部分的大致居中处，两端与可见墙角之间留有间隙。\n- 长凳墙某一侧相邻墙（图中位于长凳墙右侧）：本图在该墙上可见两处互相分开的开口状特征。偏上的一处为带框开口，内有玻璃并有横向分格条；偏下的一处为竖向狭长特征，其下端可见一个深色矩形块。两处之间有可见连续墙面，本描述不将两处合并。\n- 长凳墙另一侧相邻墙（图中位于长凳墙左侧）：本图在该墙上可见一处开口状特征，带金属色边框，内有偏灰蓝、带反光的玻璃面，并有一根细金属横杆横跨其上；该处下方墙面上另有一个白色小矩形面板。\n- 相对墙：长凳墙对面那面墙。本图只显示该侧墙体厚度，其内侧面与上面的门窗、物件均不可见，待补充。\n\n上述三处均按“开口状特征”记录，是否穿透墙体、是窗口还是门洞、以及入口门与站台门的区分，在本图中无法证实，全部待补充。\n\n本图另可见用途未确定的物件：开口附近的小块蓝色标牌状物、一块灰色墙面板、一个深色竖向矩形块、一个白色小矩形面板。这些是否固定、用途为何均待补充，不作为已确认的固定物体。\n\n材质与颜色只记录本图可见外观，不推断隐藏结构或构造做法；绝对尺寸与比例、门外与室外空间未确认，本描述不作断言。\n\n不再使用旧的 A/B/C/D 局部墙面标识，也不以“入口门在某墙、站台门在相对墙”的墙位区分作为固定约束；该功能区分在本图中无法证实，保留为待补充。",
+        "appearance": "以下为本图（俯视剖切总览）可见外观，仅描述可见外观，不推断材质构成、隐藏结构或构造做法。\n- 地面：灰色方形地砖，砖缝形成规则网格，整体呈浅冷灰色。\n- 墙面：浅米白色（偏乳白），可见墙面平整、无图案装饰。\n- 长凳：木质板面长凳，板面呈浅棕原木色；靠两端各有一个深色小支脚；凳面空置，无人物、无物品。板面长边沿长凳墙放置，大致居中于该墙可见部分。\n- 图中位于长凳墙右侧的相邻墙，可见两部分：偏上一处为带框开口，框为白色、玻璃明亮偏白，框内有一根横向分格条；同一墙面上偏下一处为与上部相分开的竖向狭长特征，外观浅色、带竖向边界线，其下端有一个深色（深灰）矩形块。两部分之间可见连续墙面。\n- 图中位于长凳墙左侧的相邻墙，可见一处带金属色边框的开口，内有偏灰蓝、带反光的玻璃面，一根细金属横杆横跨其上；该处下方墙面另有一个白色小矩形面板。\n- 墙上还有小块蓝色标牌状物与一块灰色墙面板，外观如上；其功能、是否固定均待补充。\n- 相对墙一侧：画面中只见浅灰色墙体厚度，无可见墙内侧面内容。",
+        "voiceDescription": "",
+        "sourceRevision": "531d703d0d7916adca8f4e94474c525ca7dea5c744e563903872e127fc3ea54c",
+        "projectRole": {
+          "role": "质量实验候选",
+          "plotNotes": "",
+          "revision": 1,
+          "sourceRevision": "1d3891d09df284c8d3aea21c4e195b8a524664a3a9d859155069b72f9ae82c08",
+          "updatedAt": "2026-10-04T11:39:58.101Z"
+        },
+        "sceneSpatial": {
+          "schemaVersion": 1,
+          "scope": "fixed_scene_space",
+          "status": "missing",
+          "version": 0,
+          "versionId": null,
+          "contentHash": "82d59f4ed4c85a69dac432ef7d61079cc368ea2811d7ccb21f1f06692575fb8e",
+          "confirmedAt": null,
+          "frame": null,
+          "elements": [],
+          "links": [],
+          "routes": [],
+          "unknowns": [
+            "方向基准待补充或确认；不可将镜头左/右直接当场景固定方向。",
+            "主要区域、建筑结构与固定物体尚未登记。"
+          ],
+          "issues": [],
+          "referenceImages": [],
+          "promptContext": "",
+          "draft": {
+            "owner": "Sean",
+            "schemaVersion": 1,
+            "scope": "fixed_scene_space",
+            "frame": {
+              "description": "",
+              "status": "pending"
+            },
+            "elements": [],
+            "links": [],
+            "routes": [],
+            "unknowns": [],
+            "referenceAssetIds": []
+          },
+          "usage": "空间标识以 entityId#id 引用；角色当前位置、朝向、移动时间线与可移动物品转移属于拍摄本。pending/draft/needs_review 内容不得作为已确认固定事实。",
+          "sourceRevision": "25132e0af894881b36a34722f69164379274ea584fb1d26a9576d759755b8307"
+        },
+        "sceneImages": {
+          "schemaVersion": 1,
+          "status": "missing",
+          "versionId": null,
+          "version": 0,
+          "contentHash": "d38598da3d4acb64f7f2de96143adb8981a7b0edd4f604a8aaccc49f7cdaf5d9",
+          "confirmedAt": null,
+          "images": [],
+          "notes": "",
+          "issues": [],
+          "usage": "同一场景的人工选定参考图片组；图片角色和锚点指向不是新的空间事实，固定事实以 sceneSpatial 为准。",
+          "sourceRevision": "6ab92157e3823ffb829835ea8176f0b344eb69eff041658a93be3e2102c32c9b"
+        },
+        "relations": [
+          {
+            "relationId": "69f5ea1e-2b19-4293-8081-0a3d472ea45a",
+            "sourceEntityId": "045bb254-1560-4413-861e-d047b2215afa",
+            "targetEntityId": "516b1812-e158-4780-992c-51b4553a4b18",
+            "category": "setting",
+            "type": "派生自",
+            "description": "D墙窗旁一张红色告示纸；不改变结构和门窗长凳",
+            "status": "active",
+            "targetRevision": "365bf469235063216856fffbe73458f87728668569796df6eb722220c2756d6c",
+            "createdAt": "2026-10-04T11:39:58.101Z",
+            "updatedAt": "2026-10-04T11:39:58.101Z",
+            "sourceName": "实验候车厅·告示",
+            "targetName": "实验候车厅"
+          }
+        ],
+        "derivedFrom": null,
+        "images": [
+          {
+            "assetId": "a4e8670a-471d-4352-904a-544608a55427",
+            "name": "概念图 784f866a · 1",
+            "contentHash": "237a16ead67bf023ea0b897bb4ec71a6356b4b626a72badb7fedafe05acf6eff"
+          }
+        ]
+      },
+      {
+        "entityId": "045bb254-1560-4413-861e-d047b2215afa",
+        "name": "实验候车厅·告示",
+        "flags": [
+          "场景",
+          "质量实验"
+        ],
+        "description": "长方形候车厅。固定设计：入口门在A墙，站台门在相对的C墙；单个长凳沿B墙；D墙有一扇窗。A/B/C/D是本实验的局部墙面标识，依次环绕房间，不代表地理方向。地面灰色瓷砖、墙面浅米色。绝对尺寸、不可见门外空间未知。 唯一变化：D墙新增一张红色告示纸，窗不动。",
+        "appearance": "长方形候车厅。固定设计：入口门在A墙，站台门在相对的C墙；单个长凳沿B墙；D墙有一扇窗。A/B/C/D是本实验的局部墙面标识，依次环绕房间，不代表地理方向。地面灰色瓷砖、墙面浅米色。绝对尺寸、不可见门外空间未知。 D墙新增红色告示纸。",
+        "voiceDescription": "",
+        "sourceRevision": "7f138d1472e0bd09db82ff8fd8e2d7df5aabcc89faf3f4928b59b69cae7a7b2b",
+        "projectRole": {
+          "role": "质量实验候选",
+          "plotNotes": "",
+          "revision": 1,
+          "sourceRevision": "1d3891d09df284c8d3aea21c4e195b8a524664a3a9d859155069b72f9ae82c08",
+          "updatedAt": "2026-10-04T11:39:58.101Z"
+        },
+        "sceneSpatial": {
+          "schemaVersion": 1,
+          "scope": "fixed_scene_space",
+          "status": "missing",
+          "version": 0,
+          "versionId": null,
+          "contentHash": "82d59f4ed4c85a69dac432ef7d61079cc368ea2811d7ccb21f1f06692575fb8e",
+          "confirmedAt": null,
+          "frame": null,
+          "elements": [],
+          "links": [],
+          "routes": [],
+          "unknowns": [
+            "方向基准待补充或确认；不可将镜头左/右直接当场景固定方向。",
+            "主要区域、建筑结构与固定物体尚未登记。"
+          ],
+          "issues": [],
+          "referenceImages": [],
+          "promptContext": "",
+          "draft": {
+            "owner": "Sean",
+            "schemaVersion": 1,
+            "scope": "fixed_scene_space",
+            "frame": {
+              "description": "",
+              "status": "pending"
+            },
+            "elements": [],
+            "links": [],
+            "routes": [],
+            "unknowns": [],
+            "referenceAssetIds": []
+          },
+          "usage": "空间标识以 entityId#id 引用；角色当前位置、朝向、移动时间线与可移动物品转移属于拍摄本。pending/draft/needs_review 内容不得作为已确认固定事实。",
+          "sourceRevision": "25132e0af894881b36a34722f69164379274ea584fb1d26a9576d759755b8307"
+        },
+        "sceneImages": {
+          "schemaVersion": 1,
+          "status": "missing",
+          "versionId": null,
+          "version": 0,
+          "contentHash": "d38598da3d4acb64f7f2de96143adb8981a7b0edd4f604a8aaccc49f7cdaf5d9",
+          "confirmedAt": null,
+          "images": [],
+          "notes": "",
+          "issues": [],
+          "usage": "同一场景的人工选定参考图片组；图片角色和锚点指向不是新的空间事实，固定事实以 sceneSpatial 为准。",
+          "sourceRevision": "6ab92157e3823ffb829835ea8176f0b344eb69eff041658a93be3e2102c32c9b"
+        },
+        "relations": [
+          {
+            "relationId": "69f5ea1e-2b19-4293-8081-0a3d472ea45a",
+            "sourceEntityId": "045bb254-1560-4413-861e-d047b2215afa",
+            "targetEntityId": "516b1812-e158-4780-992c-51b4553a4b18",
+            "category": "setting",
+            "type": "派生自",
+            "description": "D墙窗旁一张红色告示纸；不改变结构和门窗长凳",
+            "status": "active",
+            "targetRevision": "365bf469235063216856fffbe73458f87728668569796df6eb722220c2756d6c",
+            "createdAt": "2026-10-04T11:39:58.101Z",
+            "updatedAt": "2026-10-04T11:39:58.101Z",
+            "sourceName": "实验候车厅·告示",
+            "targetName": "实验候车厅"
+          }
+        ],
+        "derivedFrom": {
+          "entityId": "516b1812-e158-4780-992c-51b4553a4b18",
+          "name": "实验候车厅",
+          "sourceRevision": "365bf469235063216856fffbe73458f87728668569796df6eb722220c2756d6c",
+          "description": "D墙窗旁一张红色告示纸；不改变结构和门窗长凳",
+          "options": {
+            "authoringPlanId": "d1886bd8-05f3-492b-bcef-9ae55694b185",
+            "copyProfile": false,
+            "copyReference": false,
+            "copySettingRelations": false,
+            "copySpatialDraft": true,
+            "reuseVoice": false,
+            "sourceSpatialVersionId": null
+          },
+          "createdAt": "2026-10-04T11:39:58.101Z"
+        },
+        "images": []
+      }
+    ],
+    "storyRelations": [
+      {
+        "relationId": "43da02fc-635c-43db-9d2c-b15186b99d32",
+        "projectId": "c51a50d3-2b12-48c9-a83c-8f4e8e30a3c6",
+        "category": "story",
+        "sourceEntityId": "ad60ce45-800f-48e1-9800-530aeba81c55",
+        "targetEntityId": "045bb254-1560-4413-861e-d047b2215afa",
+        "sourceName": "实验林岚·腕伤",
+        "targetName": "实验候车厅·告示",
+        "type": "值守",
+        "description": "实验变体剧情职责，不是固定空间。",
+        "status": "active",
+        "revision": 1,
+        "sourceRevision": "823fdd5c0c039fffd364490d6e6b56b2c96c09ab6691f4747b95c6da7c3966ed",
+        "createdAt": "2026-10-04T11:39:58.101Z",
+        "updatedAt": "2026-10-04T11:39:58.101Z"
+      },
+      {
+        "relationId": "f4a1e753-bcc1-4f93-824e-c8a4369601d8",
+        "projectId": "c51a50d3-2b12-48c9-a83c-8f4e8e30a3c6",
+        "category": "story",
+        "sourceEntityId": "76dab29d-6225-485f-b905-0f022e144159",
+        "targetEntityId": "516b1812-e158-4780-992c-51b4553a4b18",
+        "sourceName": "实验林岚",
+        "targetName": "实验候车厅",
+        "type": "值守",
+        "description": "实验剧情职责，具体站位由拍摄本记录。",
+        "status": "active",
+        "revision": 1,
+        "sourceRevision": "8b540a9cf10a053ea94d727b3a0cf517e9ef458c1b2495647ae0e0829fa63f41",
+        "createdAt": "2026-10-04T11:39:58.101Z",
+        "updatedAt": "2026-10-04T11:39:58.101Z"
+      }
+    ],
+    "legacyUnassignedStoryRelations": [],
+    "contentHash": "e64fa02ea8ca48ca37de4627e267629cd1ee69cf57b207a37804d1fd51c1ee84",
+    "knowledgeIndex": [
+      {
+        "entityId": "76dab29d-6225-485f-b905-0f022e144159",
+        "sourceRevision": "532ebfb4a71821cd4ac315a1b44460416c6d79641dfad325c630ac5d0acc7682",
+        "projectRoleRevision": "1d3891d09df284c8d3aea21c4e195b8a524664a3a9d859155069b72f9ae82c08"
+      },
+      {
+        "entityId": "ad60ce45-800f-48e1-9800-530aeba81c55",
+        "sourceRevision": "f9e69575bb73fc7b0f77373b39135b16eb359f94e8b8b3c010714fff64874561",
+        "projectRoleRevision": "1d3891d09df284c8d3aea21c4e195b8a524664a3a9d859155069b72f9ae82c08"
+      },
+      {
+        "entityId": "516b1812-e158-4780-992c-51b4553a4b18",
+        "sourceRevision": "531d703d0d7916adca8f4e94474c525ca7dea5c744e563903872e127fc3ea54c",
+        "projectRoleRevision": "1d3891d09df284c8d3aea21c4e195b8a524664a3a9d859155069b72f9ae82c08"
+      },
+      {
+        "entityId": "045bb254-1560-4413-861e-d047b2215afa",
+        "sourceRevision": "7f138d1472e0bd09db82ff8fd8e2d7df5aabcc89faf3f4928b59b69cae7a7b2b",
+        "projectRoleRevision": "1d3891d09df284c8d3aea21c4e195b8a524664a3a9d859155069b72f9ae82c08"
+      }
+    ],
+    "missingFields": [
+      "synopsis",
+      "visualStyle"
+    ]
+  },
+  "runId": "bca9c43f-50ea-49af-846d-127a01dfcf54",
+  "status": "succeeded",
+  "events": [
+    {
+      "seq": 2209,
+      "type": "tool",
+      "body": {
+        "label": "读取工程和场景资料"
+      }
+    },
+    {
+      "seq": 2210,
+      "type": "tool",
+      "body": {
+        "label": "读取当前工作模式的方法"
+      }
+    },
+    {
+      "seq": 2211,
+      "type": "tool",
+      "body": {
+        "label": "查看参考图"
+      }
+    },
+    {
+      "seq": 2212,
+      "type": "text",
+      "body": {
+        "delta": "已"
+      }
+    },
+    {
+      "seq": 2213,
+      "type": "text",
+      "body": {
+        "delta": "按"
+      }
+    },
+    {
+      "seq": 2214,
+      "type": "text",
+      "body": {
+        "delta": "新"
+      }
+    },
+    {
+      "seq": 2215,
+      "type": "text",
+      "body": {
+        "delta": "版本"
+      }
+    },
+    {
+      "seq": 2216,
+      "type": "text",
+      "body": {
+        "delta": "重新"
+      }
+    },
+    {
+      "seq": 2217,
+      "type": "text",
+      "body": {
+        "delta": "读取"
+      }
+    },
+    {
+      "seq": 2218,
+      "type": "text",
+      "body": {
+        "delta": "场景"
+      }
+    },
+    {
+      "seq": 2219,
+      "type": "text",
+      "body": {
+        "delta": "与"
+      }
+    },
+    {
+      "seq": 2220,
+      "type": "text",
+      "body": {
+        "delta": " fixed"
+      }
+    },
+    {
+      "seq": 2221,
+      "type": "text",
+      "body": {
+        "delta": "-space"
+      }
+    },
+    {
+      "seq": 2222,
+      "type": "text",
+      "body": {
+        "delta": "（"
+      }
+    },
+    {
+      "seq": 2223,
+      "type": "text",
+      "body": {
+        "delta": "version"
+      }
+    },
+    {
+      "seq": 2224,
+      "type": "text",
+      "body": {
+        "delta": " "
+      }
+    },
+    {
+      "seq": 2225,
+      "type": "text",
+      "body": {
+        "delta": "2"
+      }
+    },
+    {
+      "seq": 2226,
+      "type": "text",
+      "body": {
+        "delta": "），"
+      }
+    },
+    {
+      "seq": 2227,
+      "type": "text",
+      "body": {
+        "delta": "并"
+      }
+    },
+    {
+      "seq": 2228,
+      "type": "text",
+      "body": {
+        "delta": "重新"
+      }
+    },
+    {
+      "seq": 2229,
+      "type": "text",
+      "body": {
+        "delta": "实际"
+      }
+    },
+    {
+      "seq": 2230,
+      "type": "text",
+      "body": {
+        "delta": "查看了"
+      }
+    },
+    {
+      "seq": 2231,
+      "type": "text",
+      "body": {
+        "delta": "本轮"
+      }
+    },
+    {
+      "seq": 2232,
+      "type": "text",
+      "body": {
+        "delta": "主"
+      }
+    },
+    {
+      "seq": 2233,
+      "type": "text",
+      "body": {
+        "delta": "图"
+      }
+    },
+    {
+      "seq": 2234,
+      "type": "text",
+      "body": {
+        "delta": " a"
+      }
+    },
+    {
+      "seq": 2235,
+      "type": "text",
+      "body": {
+        "delta": "4"
+      }
+    },
+    {
+      "seq": 2236,
+      "type": "text",
+      "body": {
+        "delta": "e"
+      }
+    },
+    {
+      "seq": 2237,
+      "type": "text",
+      "body": {
+        "delta": "867"
+      }
+    },
+    {
+      "seq": 2238,
+      "type": "text",
+      "body": {
+        "delta": "0"
+      }
+    },
+    {
+      "seq": 2239,
+      "type": "text",
+      "body": {
+        "delta": "a"
+      }
+    },
+    {
+      "seq": 2240,
+      "type": "text",
+      "body": {
+        "delta": "（"
+      }
+    },
+    {
+      "seq": 2241,
+      "type": "text",
+      "body": {
+        "delta": "俯"
+      }
+    },
+    {
+      "seq": 2242,
+      "type": "text",
+      "body": {
+        "delta": "视"
+      }
+    },
+    {
+      "seq": 2243,
+      "type": "text",
+      "body": {
+        "delta": "剖"
+      }
+    },
+    {
+      "seq": 2244,
+      "type": "text",
+      "body": {
+        "delta": "切"
+      }
+    },
+    {
+      "seq": 2245,
+      "type": "text",
+      "body": {
+        "delta": "总"
+      }
+    },
+    {
+      "seq": 2246,
+      "type": "text",
+      "body": {
+        "delta": "览"
+      }
+    },
+    {
+      "seq": 2247,
+      "type": "text",
+      "body": {
+        "delta": "："
+      }
+    },
+    {
+      "seq": 2248,
+      "type": "text",
+      "body": {
+        "delta": "地"
+      }
+    },
+    {
+      "seq": 2249,
+      "type": "text",
+      "body": {
+        "delta": "砖"
+      }
+    },
+    {
+      "seq": 2250,
+      "type": "text",
+      "body": {
+        "delta": "地面"
+      }
+    },
+    {
+      "seq": 2251,
+      "type": "text",
+      "body": {
+        "delta": "、"
+      }
+    },
+    {
+      "seq": 2252,
+      "type": "text",
+      "body": {
+        "delta": "浅"
+      }
+    },
+    {
+      "seq": 2253,
+      "type": "text",
+      "body": {
+        "delta": "米"
+      }
+    },
+    {
+      "seq": 2254,
+      "type": "text",
+      "body": {
+        "delta": "白"
+      }
+    },
+    {
+      "seq": 2255,
+      "type": "text",
+      "body": {
+        "delta": "墙"
+      }
+    },
+    {
+      "seq": 2256,
+      "type": "text",
+      "body": {
+        "delta": "、"
+      }
+    },
+    {
+      "seq": 2257,
+      "type": "text",
+      "body": {
+        "delta": "长"
+      }
+    },
+    {
+      "seq": 2258,
+      "type": "text",
+      "body": {
+        "delta": "凳"
+      }
+    },
+    {
+      "seq": 2259,
+      "type": "text",
+      "body": {
+        "delta": "沿"
+      }
+    },
+    {
+      "seq": 2260,
+      "type": "text",
+      "body": {
+        "delta": "画"
+      }
+    },
+    {
+      "seq": 2261,
+      "type": "text",
+      "body": {
+        "delta": "面上"
+      }
+    },
+    {
+      "seq": 2262,
+      "type": "text",
+      "body": {
+        "delta": "方"
+      }
+    },
+    {
+      "seq": 2263,
+      "type": "text",
+      "body": {
+        "delta": "那"
+      }
+    },
+    {
+      "seq": 2264,
+      "type": "text",
+      "body": {
+        "delta": "面"
+      }
+    },
+    {
+      "seq": 2265,
+      "type": "text",
+      "body": {
+        "delta": "墙"
+      }
+    },
+    {
+      "seq": 2266,
+      "type": "text",
+      "body": {
+        "delta": "、"
+      }
+    },
+    {
+      "seq": 2267,
+      "type": "text",
+      "body": {
+        "delta": "左侧"
+      }
+    },
+    {
+      "seq": 2268,
+      "type": "text",
+      "body": {
+        "delta": "相邻"
+      }
+    },
+    {
+      "seq": 2269,
+      "type": "text",
+      "body": {
+        "delta": "墙"
+      }
+    },
+    {
+      "seq": 2270,
+      "type": "text",
+      "body": {
+        "delta": "的"
+      }
+    },
+    {
+      "seq": 2271,
+      "type": "text",
+      "body": {
+        "delta": "金属"
+      }
+    },
+    {
+      "seq": 2272,
+      "type": "text",
+      "body": {
+        "delta": "边框"
+      }
+    },
+    {
+      "seq": 2273,
+      "type": "text",
+      "body": {
+        "delta": "玻璃"
+      }
+    },
+    {
+      "seq": 2274,
+      "type": "text",
+      "body": {
+        "delta": "开口"
+      }
+    },
+    {
+      "seq": 2275,
+      "type": "text",
+      "body": {
+        "delta": "与"
+      }
+    },
+    {
+      "seq": 2276,
+      "type": "text",
+      "body": {
+        "delta": "下方"
+      }
+    },
+    {
+      "seq": 2277,
+      "type": "text",
+      "body": {
+        "delta": "白色"
+      }
+    },
+    {
+      "seq": 2278,
+      "type": "text",
+      "body": {
+        "delta": "小"
+      }
+    },
+    {
+      "seq": 2279,
+      "type": "text",
+      "body": {
+        "delta": "矩形"
+      }
+    },
+    {
+      "seq": 2280,
+      "type": "text",
+      "body": {
+        "delta": "面板"
+      }
+    },
+    {
+      "seq": 2281,
+      "type": "text",
+      "body": {
+        "delta": "、"
+      }
+    },
+    {
+      "seq": 2282,
+      "type": "text",
+      "body": {
+        "delta": "右侧"
+      }
+    },
+    {
+      "seq": 2283,
+      "type": "text",
+      "body": {
+        "delta": "相邻"
+      }
+    },
+    {
+      "seq": 2284,
+      "type": "text",
+      "body": {
+        "delta": "墙"
+      }
+    },
+    {
+      "seq": 2285,
+      "type": "text",
+      "body": {
+        "delta": "偏"
+      }
+    },
+    {
+      "seq": 2286,
+      "type": "text",
+      "body": {
+        "delta": "上"
+      }
+    },
+    {
+      "seq": 2287,
+      "type": "text",
+      "body": {
+        "delta": "带"
+      }
+    },
+    {
+      "seq": 2288,
+      "type": "text",
+      "body": {
+        "delta": "框"
+      }
+    },
+    {
+      "seq": 2289,
+      "type": "text",
+      "body": {
+        "delta": "开口"
+      }
+    },
+    {
+      "seq": 2290,
+      "type": "text",
+      "body": {
+        "delta": "与"
+      }
+    },
+    {
+      "seq": 2291,
+      "type": "text",
+      "body": {
+        "delta": "偏"
+      }
+    },
+    {
+      "seq": 2292,
+      "type": "text",
+      "body": {
+        "delta": "下"
+      }
+    },
+    {
+      "seq": 2293,
+      "type": "text",
+      "body": {
+        "delta": "竖向"
+      }
+    },
+    {
+      "seq": 2294,
+      "type": "text",
+      "body": {
+        "delta": "狭"
+      }
+    },
+    {
+      "seq": 2295,
+      "type": "text",
+      "body": {
+        "delta": "长"
+      }
+    },
+    {
+      "seq": 2296,
+      "type": "text",
+      "body": {
+        "delta": "特征"
+      }
+    },
+    {
+      "seq": 2297,
+      "type": "text",
+      "body": {
+        "delta": "、"
+      }
+    },
+    {
+      "seq": 2298,
+      "type": "text",
+      "body": {
+        "delta": "画面"
+      }
+    },
+    {
+      "seq": 2299,
+      "type": "text",
+      "body": {
+        "delta": "下方"
+      }
+    },
+    {
+      "seq": 2300,
+      "type": "text",
+      "body": {
+        "delta": "只见"
+      }
+    },
+    {
+      "seq": 2301,
+      "type": "text",
+      "body": {
+        "delta": "墙体"
+      }
+    },
+    {
+      "seq": 2302,
+      "type": "text",
+      "body": {
+        "delta": "厚度"
+      }
+    },
+    {
+      "seq": 2303,
+      "type": "text",
+      "body": {
+        "delta": "）。"
+      }
+    },
+    {
+      "seq": 2304,
+      "type": "text",
+      "body": {
+        "delta": "上一"
+      }
+    },
+    {
+      "seq": 2305,
+      "type": "text",
+      "body": {
+        "delta": "轮"
+      }
+    },
+    {
+      "seq": 2306,
+      "type": "text",
+      "body": {
+        "delta": "候选"
+      }
+    },
+    {
+      "seq": 2307,
+      "type": "text",
+      "body": {
+        "delta": "因"
+      }
+    },
+    {
+      "seq": 2308,
+      "type": "text",
+      "body": {
+        "delta": "方法"
+      }
+    },
+    {
+      "seq": 2309,
+      "type": "text",
+      "body": {
+        "delta": "版本"
+      }
+    },
+    {
+      "seq": 2310,
+      "type": "text",
+      "body": {
+        "delta": "变化"
+      }
+    },
+    {
+      "seq": 2311,
+      "type": "text",
+      "body": {
+        "delta": "不可"
+      }
+    },
+    {
+      "seq": 2312,
+      "type": "text",
+      "body": {
+        "delta": "应用"
+      }
+    },
+    {
+      "seq": 2313,
+      "type": "text",
+      "body": {
+        "delta": "，"
+      }
+    },
+    {
+      "seq": 2314,
+      "type": "text",
+      "body": {
+        "delta": "属"
+      }
+    },
+    {
+      "seq": 2315,
+      "type": "text",
+      "body": {
+        "delta": "新"
+      }
+    },
+    {
+      "seq": 2316,
+      "type": "text",
+      "body": {
+        "delta": "版本"
+      }
+    },
+    {
+      "seq": 2317,
+      "type": "text",
+      "body": {
+        "delta": "保护"
+      }
+    },
+    {
+      "seq": 2318,
+      "type": "text",
+      "body": {
+        "delta": "；"
+      }
+    },
+    {
+      "seq": 2319,
+      "type": "text",
+      "body": {
+        "delta": "本轮"
+      }
+    },
+    {
+      "seq": 2320,
+      "type": "text",
+      "body": {
+        "delta": "保持"
+      }
+    },
+    {
+      "seq": 2321,
+      "type": "text",
+      "body": {
+        "delta": "全部"
+      }
+    },
+    {
+      "seq": 2322,
+      "type": "text",
+      "body": {
+        "delta": "原有"
+      }
+    },
+    {
+      "seq": 2323,
+      "type": "text",
+      "body": {
+        "delta": "稳定"
+      }
+    },
+    {
+      "seq": 2324,
+      "type": "text",
+      "body": {
+        "delta": "条目"
+      }
+    },
+    {
+      "seq": 2325,
+      "type": "text",
+      "body": {
+        "delta": " ID"
+      }
+    },
+    {
+      "seq": 2326,
+      "type": "text",
+      "body": {
+        "delta": " "
+      }
+    },
+    {
+      "seq": 2327,
+      "type": "text",
+      "body": {
+        "delta": "与"
+      }
+    },
+    {
+      "seq": 2328,
+      "type": "text",
+      "body": {
+        "delta": "标签"
+      }
+    },
+    {
+      "seq": 2329,
+      "type": "text",
+      "body": {
+        "delta": "、"
+      }
+    },
+    {
+      "seq": 2330,
+      "type": "text",
+      "body": {
+        "delta": "三"
+      }
+    },
+    {
+      "seq": 2331,
+      "type": "text",
+      "body": {
+        "delta": "处"
+      }
+    },
+    {
+      "seq": 2332,
+      "type": "text",
+      "body": {
+        "delta": "开口"
+      }
+    },
+    {
+      "seq": 2333,
+      "type": "text",
+      "body": {
+        "delta": "仍"
+      }
+    },
+    {
+      "seq": 2334,
+      "type": "text",
+      "body": {
+        "delta": "分开"
+      }
+    },
+    {
+      "seq": 2335,
+      "type": "text",
+      "body": {
+        "delta": "，"
+      }
+    },
+    {
+      "seq": 2336,
+      "type": "text",
+      "body": {
+        "delta": "重新"
+      }
+    },
+    {
+      "seq": 2337,
+      "type": "text",
+      "body": {
+        "delta": "提交"
+      }
+    },
+    {
+      "seq": 2338,
+      "type": "text",
+      "body": {
+        "delta": "完整"
+      }
+    },
+    {
+      "seq": 2339,
+      "type": "text",
+      "body": {
+        "delta": "草"
+      }
+    },
+    {
+      "seq": 2340,
+      "type": "text",
+      "body": {
+        "delta": "稿"
+      }
+    },
+    {
+      "seq": 2341,
+      "type": "text",
+      "body": {
+        "delta": "。"
+      }
+    },
+    {
+      "seq": 2342,
+      "type": "tool",
+      "body": {
+        "label": "整理空间提案"
+      }
+    },
+    {
+      "seq": 2343,
+      "type": "proposal",
+      "body": {
+        "proposalId": "b99b41a8-e3e1-4fbf-a02b-16f84f151647"
+      }
+    },
+    {
+      "seq": 2344,
+      "type": "text",
+      "body": {
+        "delta": "已"
+      }
+    },
+    {
+      "seq": 2345,
+      "type": "text",
+      "body": {
+        "delta": "重新"
+      }
+    },
+    {
+      "seq": 2346,
+      "type": "text",
+      "body": {
+        "delta": "提交"
+      }
+    },
+    {
+      "seq": 2347,
+      "type": "text",
+      "body": {
+        "delta": "，"
+      }
+    },
+    {
+      "seq": 2348,
+      "type": "text",
+      "body": {
+        "delta": "服务"
+      }
+    },
+    {
+      "seq": 2349,
+      "type": "text",
+      "body": {
+        "delta": "返回"
+      }
+    },
+    {
+      "seq": 2350,
+      "type": "text",
+      "body": {
+        "delta": " `"
+      }
+    },
+    {
+      "seq": 2351,
+      "type": "text",
+      "body": {
+        "delta": "s"
+      }
+    },
+    {
+      "seq": 2352,
+      "type": "text",
+      "body": {
+        "delta": "aved"
+      }
+    },
+    {
+      "seq": 2353,
+      "type": "text",
+      "body": {
+        "delta": "As"
+      }
+    },
+    {
+      "seq": 2354,
+      "type": "text",
+      "body": {
+        "delta": ":"
+      }
+    },
+    {
+      "seq": 2355,
+      "type": "text",
+      "body": {
+        "delta": " proposal"
+      }
+    },
+    {
+      "seq": 2356,
+      "type": "text",
+      "body": {
+        "delta": "-only"
+      }
+    },
+    {
+      "seq": 2357,
+      "type": "text",
+      "body": {
+        "delta": "`"
+      }
+    },
+    {
+      "seq": 2358,
+      "type": "text",
+      "body": {
+        "delta": "、"
+      }
+    },
+    {
+      "seq": 2359,
+      "type": "text",
+      "body": {
+        "delta": "`"
+      }
+    },
+    {
+      "seq": 2360,
+      "type": "text",
+      "body": {
+        "delta": "conf"
+      }
+    },
+    {
+      "seq": 2361,
+      "type": "text",
+      "body": {
+        "delta": "irmation"
+      }
+    },
+    {
+      "seq": 2362,
+      "type": "text",
+      "body": {
+        "delta": ":"
+      }
+    },
+    {
+      "seq": 2363,
+      "type": "text",
+      "body": {
+        "delta": " requires"
+      }
+    },
+    {
+      "seq": 2364,
+      "type": "text",
+      "body": {
+        "delta": "-user"
+      }
+    },
+    {
+      "seq": 2365,
+      "type": "text",
+      "body": {
+        "delta": "`"
+      }
+    },
+    {
+      "seq": 2366,
+      "type": "text",
+      "body": {
+        "delta": "，"
+      }
+    },
+    {
+      "seq": 2367,
+      "type": "text",
+      "body": {
+        "delta": "pro"
+      }
+    },
+    {
+      "seq": 2368,
+      "type": "text",
+      "body": {
+        "delta": "posal"
+      }
+    },
+    {
+      "seq": 2369,
+      "type": "text",
+      "body": {
+        "delta": "Id"
+      }
+    },
+    {
+      "seq": 2370,
+      "type": "text",
+      "body": {
+        "delta": " `"
+      }
+    },
+    {
+      "seq": 2371,
+      "type": "text",
+      "body": {
+        "delta": "b"
+      }
+    },
+    {
+      "seq": 2372,
+      "type": "text",
+      "body": {
+        "delta": "99"
+      }
+    },
+    {
+      "seq": 2373,
+      "type": "text",
+      "body": {
+        "delta": "b"
+      }
+    },
+    {
+      "seq": 2374,
+      "type": "text",
+      "body": {
+        "delta": "41"
+      }
+    },
+    {
+      "seq": 2375,
+      "type": "text",
+      "body": {
+        "delta": "a"
+      }
+    },
+    {
+      "seq": 2376,
+      "type": "text",
+      "body": {
+        "delta": "8"
+      }
+    },
+    {
+      "seq": 2377,
+      "type": "text",
+      "body": {
+        "delta": "-e"
+      }
+    },
+    {
+      "seq": 2378,
+      "type": "text",
+      "body": {
+        "delta": "3"
+      }
+    },
+    {
+      "seq": 2379,
+      "type": "text",
+      "body": {
+        "delta": "e"
+      }
+    },
+    {
+      "seq": 2380,
+      "type": "text",
+      "body": {
+        "delta": "1"
+      }
+    },
+    {
+      "seq": 2381,
+      "type": "text",
+      "body": {
+        "delta": "-"
+      }
+    },
+    {
+      "seq": 2382,
+      "type": "text",
+      "body": {
+        "delta": "4"
+      }
+    },
+    {
+      "seq": 2383,
+      "type": "text",
+      "body": {
+        "delta": "f"
+      }
+    },
+    {
+      "seq": 2384,
+      "type": "text",
+      "body": {
+        "delta": "bf"
+      }
+    },
+    {
+      "seq": 2385,
+      "type": "text",
+      "body": {
+        "delta": "-a"
+      }
+    },
+    {
+      "seq": 2386,
+      "type": "text",
+      "body": {
+        "delta": "02"
+      }
+    },
+    {
+      "seq": 2387,
+      "type": "text",
+      "body": {
+        "delta": "b"
+      }
+    },
+    {
+      "seq": 2388,
+      "type": "text",
+      "body": {
+        "delta": "-"
+      }
+    },
+    {
+      "seq": 2389,
+      "type": "text",
+      "body": {
+        "delta": "16"
+      }
+    },
+    {
+      "seq": 2390,
+      "type": "text",
+      "body": {
+        "delta": "f"
+      }
+    },
+    {
+      "seq": 2391,
+      "type": "text",
+      "body": {
+        "delta": "84"
+      }
+    },
+    {
+      "seq": 2392,
+      "type": "text",
+      "body": {
+        "delta": "f"
+      }
+    },
+    {
+      "seq": 2393,
+      "type": "text",
+      "body": {
+        "delta": "151"
+      }
+    },
+    {
+      "seq": 2394,
+      "type": "text",
+      "body": {
+        "delta": "647"
+      }
+    },
+    {
+      "seq": 2395,
+      "type": "text",
+      "body": {
+        "delta": "`"
+      }
+    },
+    {
+      "seq": 2396,
+      "type": "text",
+      "body": {
+        "delta": "。\n\n"
+      }
+    },
+    {
+      "seq": 2397,
+      "type": "text",
+      "body": {
+        "delta": "**"
+      }
+    },
+    {
+      "seq": 2398,
+      "type": "text",
+      "body": {
+        "delta": "这次"
+      }
+    },
+    {
+      "seq": 2399,
+      "type": "text",
+      "body": {
+        "delta": "做了什么"
+      }
+    },
+    {
+      "seq": 2400,
+      "type": "text",
+      "body": {
+        "delta": "**\n"
+      }
+    },
+    {
+      "seq": 2401,
+      "type": "text",
+      "body": {
+        "delta": "-"
+      }
+    },
+    {
+      "seq": 2402,
+      "type": "text",
+      "body": {
+        "delta": " "
+      }
+    },
+    {
+      "seq": 2403,
+      "type": "text",
+      "body": {
+        "delta": "重新"
+      }
+    },
+    {
+      "seq": 2404,
+      "type": "text",
+      "body": {
+        "delta": "读取"
+      }
+    },
+    {
+      "seq": 2405,
+      "type": "text",
+      "body": {
+        "delta": " get"
+      }
+    },
+    {
+      "seq": 2406,
+      "type": "text",
+      "body": {
+        "delta": "_sc"
+      }
+    },
+    {
+      "seq": 2407,
+      "type": "text",
+      "body": {
+        "delta": "ene"
+      }
+    },
+    {
+      "seq": 2408,
+      "type": "text",
+      "body": {
+        "delta": "_context"
+      }
+    },
+    {
+      "seq": 2409,
+      "type": "text",
+      "body": {
+        "delta": " "
+      }
+    },
+    {
+      "seq": 2410,
+      "type": "text",
+      "body": {
+        "delta": "与"
+      }
+    },
+    {
+      "seq": 2411,
+      "type": "text",
+      "body": {
+        "delta": " fixed"
+      }
+    },
+    {
+      "seq": 2412,
+      "type": "text",
+      "body": {
+        "delta": "-space"
+      }
+    },
+    {
+      "seq": 2413,
+      "type": "text",
+      "body": {
+        "delta": "（"
+      }
+    },
+    {
+      "seq": 2414,
+      "type": "text",
+      "body": {
+        "delta": "version"
+      }
+    },
+    {
+      "seq": 2415,
+      "type": "text",
+      "body": {
+        "delta": " "
+      }
+    },
+    {
+      "seq": 2416,
+      "type": "text",
+      "body": {
+        "delta": "2"
+      }
+    },
+    {
+      "seq": 2417,
+      "type": "text",
+      "body": {
+        "delta": "），"
+      }
+    },
+    {
+      "seq": 2418,
+      "type": "text",
+      "body": {
+        "delta": "并"
+      }
+    },
+    {
+      "seq": 2419,
+      "type": "text",
+      "body": {
+        "delta": "**"
+      }
+    },
+    {
+      "seq": 2420,
+      "type": "text",
+      "body": {
+        "delta": "重新"
+      }
+    },
+    {
+      "seq": 2421,
+      "type": "text",
+      "body": {
+        "delta": "实际"
+      }
+    },
+    {
+      "seq": 2422,
+      "type": "text",
+      "body": {
+        "delta": "查看"
+      }
+    },
+    {
+      "seq": 2423,
+      "type": "text",
+      "body": {
+        "delta": "**"
+      }
+    },
+    {
+      "seq": 2424,
+      "type": "text",
+      "body": {
+        "delta": "了"
+      }
+    },
+    {
+      "seq": 2425,
+      "type": "text",
+      "body": {
+        "delta": "本轮"
+      }
+    },
+    {
+      "seq": 2426,
+      "type": "text",
+      "body": {
+        "delta": "主"
+      }
+    },
+    {
+      "seq": 2427,
+      "type": "text",
+      "body": {
+        "delta": "图"
+      }
+    },
+    {
+      "seq": 2428,
+      "type": "text",
+      "body": {
+        "delta": " a"
+      }
+    },
+    {
+      "seq": 2429,
+      "type": "text",
+      "body": {
+        "delta": "4"
+      }
+    },
+    {
+      "seq": 2430,
+      "type": "text",
+      "body": {
+        "delta": "e"
+      }
+    },
+    {
+      "seq": 2431,
+      "type": "text",
+      "body": {
+        "delta": "867"
+      }
+    },
+    {
+      "seq": 2432,
+      "type": "text",
+      "body": {
+        "delta": "0"
+      }
+    },
+    {
+      "seq": 2433,
+      "type": "text",
+      "body": {
+        "delta": "a"
+      }
+    },
+    {
+      "seq": 2434,
+      "type": "text",
+      "body": {
+        "delta": "（"
+      }
+    },
+    {
+      "seq": 2435,
+      "type": "text",
+      "body": {
+        "delta": "结论"
+      }
+    },
+    {
+      "seq": 2436,
+      "type": "text",
+      "body": {
+        "delta": "与"
+      }
+    },
+    {
+      "seq": 2437,
+      "type": "text",
+      "body": {
+        "delta": "上"
+      }
+    },
+    {
+      "seq": 2438,
+      "type": "text",
+      "body": {
+        "delta": "轮"
+      }
+    },
+    {
+      "seq": 2439,
+      "type": "text",
+      "body": {
+        "delta": "一致"
+      }
+    },
+    {
+      "seq": 2440,
+      "type": "text",
+      "body": {
+        "delta": "，"
+      }
+    },
+    {
+      "seq": 2441,
+      "type": "text",
+      "body": {
+        "delta": "未"
+      }
+    },
+    {
+      "seq": 2442,
+      "type": "text",
+      "body": {
+        "delta": "因"
+      }
+    },
+    {
+      "seq": 2443,
+      "type": "text",
+      "body": {
+        "delta": "重"
+      }
+    },
+    {
+      "seq": 2444,
+      "type": "text",
+      "body": {
+        "delta": "看"
+      }
+    },
+    {
+      "seq": 2445,
+      "type": "text",
+      "body": {
+        "delta": "出现"
+      }
+    },
+    {
+      "seq": 2446,
+      "type": "text",
+      "body": {
+        "delta": "新"
+      }
+    },
+    {
+      "seq": 2447,
+      "type": "text",
+      "body": {
+        "delta": "事实"
+      }
+    },
+    {
+      "seq": 2448,
+      "type": "text",
+      "body": {
+        "delta": "）。\n"
+      }
+    },
+    {
+      "seq": 2449,
+      "type": "text",
+      "body": {
+        "delta": "-"
+      }
+    },
+    {
+      "seq": 2450,
+      "type": "text",
+      "body": {
+        "delta": " **"
+      }
+    },
+    {
+      "seq": 2451,
+      "type": "text",
+      "body": {
+        "delta": "ID"
+      }
+    },
+    {
+      "seq": 2452,
+      "type": "text",
+      "body": {
+        "delta": " "
+      }
+    },
+    {
+      "seq": 2453,
+      "type": "text",
+      "body": {
+        "delta": "全部"
+      }
+    },
+    {
+      "seq": 2454,
+      "type": "text",
+      "body": {
+        "delta": "原"
+      }
+    },
+    {
+      "seq": 2455,
+      "type": "text",
+      "body": {
+        "delta": "样"
+      }
+    },
+    {
+      "seq": 2456,
+      "type": "text",
+      "body": {
+        "delta": "保留"
+      }
+    },
+    {
+      "seq": 2457,
+      "type": "text",
+      "body": {
+        "delta": "**"
+      }
+    },
+    {
+      "seq": 2458,
+      "type": "text",
+      "body": {
+        "delta": "："
+      }
+    },
+    {
+      "seq": 2459,
+      "type": "text",
+      "body": {
+        "delta": "元素"
+      }
+    },
+    {
+      "seq": 2460,
+      "type": "text",
+      "body": {
+        "delta": " `"
+      }
+    },
+    {
+      "seq": 2461,
+      "type": "text",
+      "body": {
+        "delta": "place"
+      }
+    },
+    {
+      "seq": 2462,
+      "type": "text",
+      "body": {
+        "delta": "_f"
+      }
+    },
+    {
+      "seq": 2463,
+      "type": "text",
+      "body": {
+        "delta": "b"
+      }
+    },
+    {
+      "seq": 2464,
+      "type": "text",
+      "body": {
+        "delta": "040"
+      }
+    },
+    {
+      "seq": 2465,
+      "type": "text",
+      "body": {
+        "delta": "dad"
+      }
+    },
+    {
+      "seq": 2466,
+      "type": "text",
+      "body": {
+        "delta": "2"
+      }
+    },
+    {
+      "seq": 2467,
+      "type": "text",
+      "body": {
+        "delta": "cc"
+      }
+    },
+    {
+      "seq": 2468,
+      "type": "text",
+      "body": {
+        "delta": "341"
+      }
+    },
+    {
+      "seq": 2469,
+      "type": "text",
+      "body": {
+        "delta": "ad"
+      }
+    },
+    {
+      "seq": 2470,
+      "type": "text",
+      "body": {
+        "delta": "`"
+      }
+    },
+    {
+      "seq": 2471,
+      "type": "text",
+      "body": {
+        "delta": "（"
+      }
+    },
+    {
+      "seq": 2472,
+      "type": "text",
+      "body": {
+        "delta": "候"
+      }
+    },
+    {
+      "seq": 2473,
+      "type": "text",
+      "body": {
+        "delta": "车"
+      }
+    },
+    {
+      "seq": 2474,
+      "type": "text",
+      "body": {
+        "delta": "室内"
+      }
+    },
+    {
+      "seq": 2475,
+      "type": "text",
+      "body": {
+        "delta": "区域"
+      }
+    },
+    {
+      "seq": 2476,
+      "type": "text",
+      "body": {
+        "delta": "）、"
+      }
+    },
+    {
+      "seq": 2477,
+      "type": "text",
+      "body": {
+        "delta": "`"
+      }
+    },
+    {
+      "seq": 2478,
+      "type": "text",
+      "body": {
+        "delta": "place"
+      }
+    },
+    {
+      "seq": 2479,
+      "type": "text",
+      "body": {
+        "delta": "_"
+      }
+    },
+    {
+      "seq": 2480,
+      "type": "text",
+      "body": {
+        "delta": "869"
+      }
+    },
+    {
+      "seq": 2481,
+      "type": "text",
+      "body": {
+        "delta": "a"
+      }
+    },
+    {
+      "seq": 2482,
+      "type": "text",
+      "body": {
+        "delta": "556"
+      }
+    },
+    {
+      "seq": 2483,
+      "type": "text",
+      "body": {
+        "delta": "992"
+      }
+    },
+    {
+      "seq": 2484,
+      "type": "text",
+      "body": {
+        "delta": "4"
+      }
+    },
+    {
+      "seq": 2485,
+      "type": "text",
+      "body": {
+        "delta": "f"
+      }
+    },
+    {
+      "seq": 2486,
+      "type": "text",
+      "body": {
+        "delta": "471"
+      }
+    },
+    {
+      "seq": 2487,
+      "type": "text",
+      "body": {
+        "delta": "4"
+      }
+    },
+    {
+      "seq": 2488,
+      "type": "text",
+      "body": {
+        "delta": "`"
+      }
+    },
+    {
+      "seq": 2489,
+      "type": "text",
+      "body": {
+        "delta": "（"
+      }
+    },
+    {
+      "seq": 2490,
+      "type": "text",
+      "body": {
+        "delta": "长"
+      }
+    },
+    {
+      "seq": 2491,
+      "type": "text",
+      "body": {
+        "delta": "凳"
+      }
+    },
+    {
+      "seq": 2492,
+      "type": "text",
+      "body": {
+        "delta": "墙"
+      }
+    },
+    {
+      "seq": 2493,
+      "type": "text",
+      "body": {
+        "delta": "）、"
+      }
+    },
+    {
+      "seq": 2494,
+      "type": "text",
+      "body": {
+        "delta": "`"
+      }
+    },
+    {
+      "seq": 2495,
+      "type": "text",
+      "body": {
+        "delta": "place"
+      }
+    },
+    {
+      "seq": 2496,
+      "type": "text",
+      "body": {
+        "delta": "_"
+      }
+    },
+    {
+      "seq": 2497,
+      "type": "text",
+      "body": {
+        "delta": "3"
+      }
+    },
+    {
+      "seq": 2498,
+      "type": "text",
+      "body": {
+        "delta": "dc"
+      }
+    },
+    {
+      "seq": 2499,
+      "type": "text",
+      "body": {
+        "delta": "5"
+      }
+    },
+    {
+      "seq": 2500,
+      "type": "text",
+      "body": {
+        "delta": "ce"
+      }
+    },
+    {
+      "seq": 2501,
+      "type": "text",
+      "body": {
+        "delta": "af"
+      }
+    },
+    {
+      "seq": 2502,
+      "type": "text",
+      "body": {
+        "delta": "76"
+      }
+    },
+    {
+      "seq": 2503,
+      "type": "text",
+      "body": {
+        "delta": "d"
+      }
+    },
+    {
+      "seq": 2504,
+      "type": "text",
+      "body": {
+        "delta": "248"
+      }
+    },
+    {
+      "seq": 2505,
+      "type": "text",
+      "body": {
+        "delta": "fa"
+      }
+    },
+    {
+      "seq": 2506,
+      "type": "text",
+      "body": {
+        "delta": "`"
+      }
+    },
+    {
+      "seq": 2507,
+      "type": "text",
+      "body": {
+        "delta": "（"
+      }
+    },
+    {
+      "seq": 2508,
+      "type": "text",
+      "body": {
+        "delta": "木质"
+      }
+    }
+  ],
+  "run": {
+    "id": "bca9c43f-50ea-49af-846d-127a01dfcf54",
+    "session_id": "67fd6700-9da1-4c02-b8ea-cd15b805ff26",
+    "request_id": "10990c83-9928-4fa3-b415-ebacef31651f",
+    "status": "succeeded",
+    "basis": {
+      "contextHash": "35f94e156d3f5bde4682f13ed2727350fa66c247e8ebe0ee714103f414ca57a2",
+      "evidenceStateHash": "e0eff9d0ea1e916ccfb7a490a6fed95cd40375e3f2cfaeba9319754425402831",
+      "images": [
+        {
+          "assetId": "a4e8670a-471d-4352-904a-544608a55427",
+          "contentHash": "237a16ead67bf023ea0b897bb4ec71a6356b4b626a72badb7fedafe05acf6eff"
+        }
+      ],
+      "profileVersion": 2,
+      "referenceAssetIds": [
+        "a4e8670a-471d-4352-904a-544608a55427"
+      ],
+      "skillVersion": 2,
+      "spatialVersionId": null
+    },
+    "assistant_message_id": "b0772fa2-2a39-420a-ada1-8f5a6f2ffbba",
+    "error": null,
+    "created_at": "2026-10-04T12:05:18.280Z",
+    "completed_at": "2026-10-04T12:05:55.655Z"
+  },
+  "session": {
+    "owner": "Sean",
+    "id": "67fd6700-9da1-4c02-b8ea-cd15b805ff26",
+    "projectId": "c51a50d3-2b12-48c9-a83c-8f4e8e30a3c6",
+    "entityId": "516b1812-e158-4780-992c-51b4553a4b18",
+    "purpose": "scene-spatial",
+    "provider": "deepseek",
+    "modelId": "deepseek-flash",
+    "createdAt": "2026-10-04T12:00:32.999Z",
+    "messages": [
+      {
+        "id": "93e3fd7c-20be-4ab3-b5c5-819987abea1a",
+        "role": "user",
+        "text": "这轮总览图已由用户实际审阅接受为场景的视觉设计，基础候车厅文字已通过提案在隔离实验中对齐。请先get_scene_context读取最新项目、当前场景和空间状态，再load_authoring_skill fixed-space，再view_reference_image实际看图。为该场景提出最小而够用的固定空间草稿：主要房间区域、长凳、长凳所在墙、相邻两墙、相对墙及可见开口位置，适当的包含/沿墙/相邻关系。以长凳墙及可见固定物作相对基准，不把画面左右冒充地理方向。三处相隔的可见开口特征不要合并，若其中功能无法证实，用开口状位置而非断言入口或站台门。没有可确认路径则routes留空，不补精确尺寸、不补室外或隐蔽物体，不写人物站位。可见事实有图像来源即可在候选中known，猜测的门窗用途、绝对尺度与不可见区域留unknowns或pending。来源引用必须是真实读过的本轮图片assetId和本轮消息ID，known的frame、elements、links逐项有来源。只用propose_scene_spatial保存完整候选，不应用、不确认、不生成。问题最多两个，尽量先形成可用草稿，不要求手填字段。",
+        "createdAt": "2026-10-04T12:00:33.055Z",
+        "runId": "ba32694c-3399-442e-9b0a-308b67abed7a"
+      },
+      {
+        "id": "3156892b-7628-4fad-be97-417e75da1e31",
+        "role": "assistant",
+        "text": "I'll start by reading the latest project and scene state, then the skill, then actually look at the image.\n\n\n\n已读取最新项目与场景、读取了 fixed-space 方法，并实际查看了本轮图片。下面先说明我的观察依据，再提交候选草稿。\n\n**我看到的事实（本轮图 a4e8670a）**：俯视剖切的长方形室内空间；灰色方形地砖网格地面；浅米白墙面；木质板面长凳沿画面上方那面墙放置（居中、两端留隙、两端各一个深色小支脚）；画面左侧相邻墙上有一处带金属色边框、偏灰蓝反光玻璃、有一根细金属横杆横跨的开口状特征，其下方墙面有一个白色小矩形面板（另有浅灰面板状结构贴近该区）；画面右侧相邻墙上偏上一处带框开口（白框、明亮偏白玻璃、一根横向分格条），偏下一处竖向狭长特征（下端深灰色矩形块），两处之间是连续墙面，另有小块蓝色标牌状物；画面下方一侧只见墙体厚度，内侧面不可见。\n\n**已有事实（工程）**：场景实体的文字描述与上述观察一致；现有关系仅为“告示”派生自本场景；空间文档目前为空（status=missing）。**用户本轮新增设定**：总览图已人工审阅接受为视觉设计，以“长凳墙 + 可见固定物”作相对基准，三处开口不合并、不断言门用途，routes 若无确认则留空。\n\n提案因缺少 `referenceAssetIds` 未通过校验，我补上本轮图片 ID 后重新提交（内容不变）。\n\n候选已提交，服务返回 `savedAs: proposal-only`（proposalId `88a7504f-f16e-4f9c-b5b5-aad819bafaa0`）：**这只是候选草稿，尚未应用、未确认、未生成任何图片**；条目 ID 由服务分配了稳定形式（元素 `place_…`、关系 `rel_…`）。\n\n**草稿结构（最小而够用）**\n- 基准与边界（frame，known）：长方形室内候车空间，俯视剖切；以**长凳墙**及可见固定物作相对基准，只写“长凳墙／其两侧相邻墙／相对墙（本图中分别位于画面上方、左、右、下方）”，明确画面左右 ≠ 地理方向，不使用旧的 A/B/C/D。\n- 区域：候车室内区域（含灰色方形地砖地面、浅米白墙面外观）。\n- 墙面结构：长凳墙、长凳墙右侧相邻墙、长凳墙左侧相邻墙、相对墙（只登记墙存在并注明内侧面内容不可见）。\n- 固定物：木质长凳（沿长凳墙、近似居中、两端留隙、两端深色小支脚）。\n- 三处**分开**登记的开口状位置：左侧相邻墙带金属边框开口（含玻璃面与细金属横杆）；右侧相邻墙偏上带框开口（白框、横向分格条）；右侧相邻墙偏下竖向狭长特征（下端深灰矩形块）。一律写“开口状位置”，不写入口门／站台门。\n- 关系：包含（区域→长凳）、沿墙（长凳→长凳墙）、相邻（长凳墙↔两侧墙、两侧墙↔相对墙）、位于墙上（三处开口各自归属其墙、白色小矩形面板位于左侧相邻墙开口下方），并有一条“同墙相隔：不合并”的关系。\n- routes：留空（无可确认的固定通行路径）。\n- pending/unknowns：开口穿透性与用途、相对墙内侧面、绝对尺寸与净高、天花板、门外与室外空间、地理朝向、左墙浅灰面板状结构的性质、蓝色标牌状物与灰色面板状物的用途与固定性、白色小矩形面板与深灰矩形块的用途、长凳是否固定于该位置。\n\n**两个关键问题（影响下一版是否增补条目）**\n1. 左侧相邻墙上贴近墙面的浅灰面板状结构：算固定构件（我就单独登记为沿墙结构，与开口特征分开），还是仅取景表现（留在待补充）？\n2. 右侧相邻墙附近的小块蓝色标牌状物与灰色面板状物：纳入固定空间作为待补充固定物，还是视为可动／临时物件、不进固定空间？\n\n另有一处**待整理的文字不一致**供你判断：当前载入的摘要里，派生实体“实验候车厅·告示”仍写着旧的“入口门在 A 墙、站台门在相对 C 墙、D 墙有一扇窗、D 墙新增红色告示纸”，与本图可证实的“三处开口用途不明、不使用 A/B/C/D”不一致。我没有修改任何资料；如果你要我按项目模式完整读取该实体并提交一致性检查意见，说一声即可。",
+        "createdAt": "2026-10-04T12:00:33.055Z",
+        "runId": "ba32694c-3399-442e-9b0a-308b67abed7a"
+      },
+      {
+        "id": "84b9eb38-d8bc-48f8-8d03-62b643cba6c2",
+        "role": "user",
+        "text": "空间方法已更新，之前候选因方法版本变化不能应用，这是正常的新版本保护。请重新读取最新场景和fixed-space方法，并实际重新看本轮同一张主图。保持上轮可见结构、原有稳定条目ID及三处开口相隔的记录，重新保存有来源的完整草稿。参考previousProposal：已有标签不改ID，删除不必要的小件聚合锚点也必须明确说明；用途/固定性不明的小件保留pending，不凭空推断精确尺寸或入口功能。无确认通路，routes留空。这个任务是重新提出候选，不是确认空间，也不生成。最多两个真正影响空间的问题，不要为了建草稿先索取很多字段。",
+        "createdAt": "2026-10-04T12:05:18.280Z",
+        "runId": "bca9c43f-50ea-49af-846d-127a01dfcf54"
+      },
+      {
+        "id": "b0772fa2-2a39-420a-ada1-8f5a6f2ffbba",
+        "role": "assistant",
+        "text": "已按新版本重新读取场景与 fixed-space（version 2），并重新实际查看了本轮主图 a4e8670a（俯视剖切总览：地砖地面、浅米白墙、长凳沿画面上方那面墙、左侧相邻墙的金属边框玻璃开口与下方白色小矩形面板、右侧相邻墙偏上带框开口与偏下竖向狭长特征、画面下方只见墙体厚度）。上一轮候选因方法版本变化不可应用，属新版本保护；本轮保持全部原有稳定条目 ID 与标签、三处开口仍分开，重新提交完整草稿。\n\n已重新提交，服务返回 `savedAs: proposal-only`、`confirmation: requires-user`，proposalId `b99b41a8-e3e1-4fbf-a02b-16f84f151647`。\n\n**这次做了什么**\n- 重新读取 get_scene_context 与 fixed-space（version 2），并**重新实际查看**了本轮主图 a4e8670a（结论与上轮一致，未因重看出现新事实）。\n- **ID 全部原样保留**：元素 `place_fb040dad2cc341ad`（候车室内区域）、`place_869a5569924f4714`（长凳墙）、`place_3dc5ceaf76d248fa`（木质长凳）、`place_33193bbd01d34171` 与 `place_6856952e2d844202`（右侧相邻墙偏上／偏下两处开口状位置）、`place_310977e118764bfe`（右侧相邻墙）、`place_230882b546ab468a` 与 `place_e4f2a71aa369406d`（左侧相邻墙及其开口）、`place_8eee472f6b774577`（白色小矩形面板）、`place_6e1ed71322e84a05`（相对墙）、`place_5e3f54df76a24ea5`（用途未定小件）；关系 ID `rel_14ed8e3524b8450c`、`rel_b87bedb6b50f48f7`、`rel_335621c6cb8b4a1d`、`rel_c82507f6b4c44645`、`rel_5424c8c17b134954`、`rel_dd90129e50474517`、`rel_129ec6d25c9d4bf8`、`rel_b85ba206ea9e4928`、`rel_40d97b509d73442e`（同墙相隔不合并）、`rel_19811b69d8b24915`、`rel_1b12f3c90025470e`、`rel_c1f4e289756c4711` 也全部保留。\n- **没有删除任何条目**，包括那个“用途未定的小件”聚合锚点：我选择保留它并把状态维持 `pending`（含其 pending 关系），而不是删掉——若你要删，请直接说，我会在下一版明确标注删除项。服务返回的 changes 里仍列“新增”，是因为这是相对已应用文档（目前为空）的全新草稿，并非 ID 变化。\n- 方向基准仍写成**以长凳墙及可见固定物作相对命名**、明确不用 A/B/C/D、不把画面左右当地理方向；三处开口仍是分开的三个条目，一律写“开口状位置”，未推断精确尺寸、未推断入口／站台门功能。**routes 留空**。\n- known 的 frame／elements／links 逐项附图像来源（本轮 assetId），涉及方向基准与“不合并”的要求附本轮及上轮用户消息 ID；pending 项不强行凑来源。\n- 这是候选草稿：**未应用、未确认、未生成任何图片**，网页端仍需你人工确认与编辑。\n\n**两个影响空间的问题（未答也可先用草稿）**\n1. 左侧相邻墙上贴近墙面的浅灰面板状结构：是否作为固定构件单独登记为沿墙结构（与开口特征分开、新增条目）？还是留在待补充、不建条目？\n2. 用途未定小件现在是单个聚合条目 `place_5e3f54df76a24ea5`（pending）：维持这个聚合锚点，还是删除它、只把信息留在 unknowns 里？\n\n另外提醒一处仍待整理的文字不一致（我未改动任何资料）：派生实体“实验候车厅·告示”的摘要仍写“入口门在 A 墙、站台门在相对 C 墙、D 墙有一扇窗”，与本图可证实的“三处开口用途未证实、不用 A/B/C/D”不一致；需要我完整读取该实体并提交一致性检查意见时告诉我。",
+        "createdAt": "2026-10-04T12:05:18.280Z",
+        "runId": "bca9c43f-50ea-49af-846d-127a01dfcf54"
+      }
+    ],
+    "runs": [
+      {
+        "id": "ba32694c-3399-442e-9b0a-308b67abed7a",
+        "status": "succeeded",
+        "error": null,
+        "createdAt": "2026-10-04T12:00:33.055Z"
+      },
+      {
+        "id": "bca9c43f-50ea-49af-846d-127a01dfcf54",
+        "status": "succeeded",
+        "error": null,
+        "createdAt": "2026-10-04T12:05:18.280Z"
+      }
+    ],
+    "relationProposals": [],
+    "entityProposals": [],
+    "stepRevisions": [],
+    "authoringPlans": [],
+    "projectProposals": [],
+    "proposals": [
+      {
+        "id": "88a7504f-f16e-4f9c-b5b5-aad819bafaa0",
+        "runId": "ba32694c-3399-442e-9b0a-308b67abed7a",
+        "basis": {
+          "contextHash": "35f94e156d3f5bde4682f13ed2727350fa66c247e8ebe0ee714103f414ca57a2",
+          "evidenceStateHash": "e0eff9d0ea1e916ccfb7a490a6fed95cd40375e3f2cfaeba9319754425402831",
+          "images": [
+            {
+              "assetId": "a4e8670a-471d-4352-904a-544608a55427",
+              "contentHash": "237a16ead67bf023ea0b897bb4ec71a6356b4b626a72badb7fedafe05acf6eff"
+            }
+          ],
+          "profileVersion": 2,
+          "referenceAssetIds": [
+            "a4e8670a-471d-4352-904a-544608a55427"
+          ],
+          "skillVersion": 1,
+          "spatialVersionId": null
+        },
+        "changes": [
+          "调整方向基准",
+          "更新待补充事项",
+          "更新核对参考图",
+          "新增：候车室内区域",
+          "新增：长凳墙",
+          "新增：木质长凳",
+          "新增：带框开口（长凳墙右侧相邻墙偏上）",
+          "新增：长凳墙一侧相邻墙（本图位于长凳墙右侧）",
+          "新增：竖向狭长开口状特征（长凳墙右侧相邻墙偏下）",
+          "新增：长凳墙另一侧相邻墙（本图位于长凳墙左侧）",
+          "新增：带金属边框的开口状特征（长凳墙左侧相邻墙）",
+          "新增：白色小矩形面板（左侧相邻墙开口下方）",
+          "新增：相对墙（长凳墙对面）",
+          "新增：用途未定的小型可见物（蓝色标牌状物、灰色面板状物等）",
+          "新增：rel_14ed8e3524b8450c",
+          "新增：rel_b87bedb6b50f48f7",
+          "新增：rel_335621c6cb8b4a1d",
+          "新增：rel_c82507f6b4c44645",
+          "新增：rel_5424c8c17b134954",
+          "新增：rel_dd90129e50474517",
+          "新增：rel_129ec6d25c9d4bf8",
+          "新增：rel_b85ba206ea9e4928",
+          "新增：rel_40d97b509d73442e",
+          "新增：rel_19811b69d8b24915",
+          "新增：rel_1b12f3c90025470e",
+          "新增：rel_c1f4e289756c4711"
+        ],
+        "document": {
+          "elements": [
+            {
+              "description": "长方形室内房间的候车区域，候车用途保留。地面为灰色方形地砖，砖缝形成规则网格，整体呈浅冷灰色；本图可见墙面为浅米白色（偏乳白）、平整无图案装饰。材质与颜色只记录本图可见外观，不推断隐藏结构或构造做法。",
+              "id": "place_fb040dad2cc341ad",
+              "kind": "area",
+              "label": "候车室内区域",
+              "orientation": "",
+              "position": "由四面墙围合：长凳墙在本图中位于画面上方一侧，相对墙在其对面（画面下方）；两侧相邻墙分别位于本图长凳墙之左、之右。",
+              "scale": "绝对尺寸、比例与净高未确认。",
+              "status": "known"
+            },
+            {
+              "description": "放置长凳的那面墙；浅米白色（偏乳白）平整墙面，本图可见其内侧面，无图案装饰。是描述本空间其他位置的相对基准之一。",
+              "id": "place_869a5569924f4714",
+              "kind": "structure",
+              "label": "长凳墙",
+              "orientation": "内侧面朝向室内；其延伸方向即本图中的左右方向（相对基准，不代表地理方向）。",
+              "position": "本图中位于画面上方一侧，两侧端部分别与两侧相邻墙在墙角相接。",
+              "scale": "长度与高度未确认。",
+              "status": "known"
+            },
+            {
+              "description": "木质板面长凳，板面呈浅棕原木色，靠两端各有一个深色小支脚；凳面空置（本图取景状态，不代表固定无物）。",
+              "id": "place_3dc5ceaf76d248fa",
+              "kind": "object",
+              "label": "木质长凳",
+              "orientation": "板面长边平行于长凳墙，靠墙一侧贴近长凳墙内侧面。",
+              "position": "沿长凳墙内侧放置，板面长边与长凳墙平行，大致居中于该墙可见部分；两端与可见墙角之间留有间隙。",
+              "scale": "长度、高度与绝对尺寸未确认。",
+              "status": "known"
+            },
+            {
+              "description": "本图在该墙上可见的偏上一处开口状特征：带框开口，框为白色，内有明亮偏白玻璃，框内有一根横向分格条。是否穿透墙体、是否为窗口或门洞均未证实，此处只按开口状位置记录，不断言用途。",
+              "id": "place_33193bbd01d34171",
+              "kind": "structure",
+              "label": "带框开口（长凳墙右侧相邻墙偏上）",
+              "orientation": "",
+              "position": "位于长凳墙右侧相邻墙的偏上位置（以本图取景下的上下为准），与该墙偏下的竖向狭长特征互相分开。",
+              "scale": "尺寸与离地高度未确认。",
+              "status": "known"
+            },
+            {
+              "description": "在墙角与长凳墙相接的墙；浅米白色。本图在该墙上可见两处互相分开的开口状特征（偏上的带框开口、偏下的竖向狭长特征），两处之间为可见连续墙面，本描述不将两处合并。该墙区还有小块蓝色标牌状物，其用途与是否固定未确认。",
+              "id": "place_310977e118764bfe",
+              "kind": "structure",
+              "label": "长凳墙一侧相邻墙（本图位于长凳墙右侧）",
+              "orientation": "内侧面朝向室内。",
+              "position": "本图中位于长凳墙右侧，与长凳墙在墙角相接；其另一端与相对墙相接。",
+              "scale": "长度与高度未确认。",
+              "status": "known"
+            },
+            {
+              "description": "本图在该墙上可见的偏下一处开口状特征：外观浅色、带竖向边界线的竖向狭长特征，其下端有一个深色（深灰）矩形块。是否为开口、是否穿透墙体、用途为何均未证实；此处只按开口状位置记录，并与偏上的带框开口保持为两处。",
+              "id": "place_6856952e2d844202",
+              "kind": "structure",
+              "label": "竖向狭长开口状特征（长凳墙右侧相邻墙偏下）",
+              "orientation": "",
+              "position": "位于长凳墙右侧相邻墙的偏下位置，偏上的带框开口与其之间隔有可见连续墙面。",
+              "scale": "尺寸与离地高度未确认。",
+              "status": "known"
+            },
+            {
+              "description": "在墙角与长凳墙相接的墙；浅米白色。本图在该墙上可见一处开口状特征：带金属色边框，内有偏灰蓝、带反光的玻璃面，一根细金属横杆横跨其上；该区域另有浅灰色面板状结构贴近墙面，其性质未确认。",
+              "id": "place_230882b546ab468a",
+              "kind": "structure",
+              "label": "长凳墙另一侧相邻墙（本图位于长凳墙左侧）",
+              "orientation": "内侧面朝向室内。",
+              "position": "本图中位于长凳墙左侧，与长凳墙在墙角相接；其另一端与相对墙相接。",
+              "scale": "长度与高度未确认。",
+              "status": "known"
+            },
+            {
+              "description": "本图在该墙上可见的一处开口状特征：带金属色边框，内有偏灰蓝、带反光的玻璃面，并有一根细金属横杆横跨其上。是否穿透墙体、是窗口还是门洞均未证实，此处只按开口状位置记录，不断言用途，也不将它与其下方墙面上的白色小矩形面板合并。",
+              "id": "place_e4f2a71aa369406d",
+              "kind": "structure",
+              "label": "带金属边框的开口状特征（长凳墙左侧相邻墙）",
+              "orientation": "",
+              "position": "位于长凳墙左侧相邻墙的可见墙面中部；其下方同一墙面上另有一个白色小矩形面板。",
+              "scale": "尺寸与离地高度未确认。",
+              "status": "known"
+            },
+            {
+              "description": "本图在长凳墙左侧相邻墙上可见的一个白色小矩形面板，位于该墙开口状特征下方墙面。其用途与是否固定未确认，本描述不断言其为开关、开关箱或告示。",
+              "id": "place_8eee472f6b774577",
+              "kind": "object",
+              "label": "白色小矩形面板（左侧相邻墙开口下方）",
+              "orientation": "",
+              "position": "位于长凳墙左侧相邻墙的内侧面上，在上述开口状特征下方。",
+              "scale": "尺寸未确认。",
+              "status": "known"
+            },
+            {
+              "description": "长凳墙对面的那面墙。本图只显示该侧墙体厚度，其内侧面与上面的门窗、物件均不可见，待补充；此处不推断其上任何特征。",
+              "id": "place_6e1ed71322e84a05",
+              "kind": "structure",
+              "label": "相对墙（长凳墙对面）",
+              "orientation": "该侧墙体向室内的一面在本图中不可见。",
+              "position": "本图中位于画面下方一侧；两端分别与两侧相邻墙相接，与长凳墙相对。",
+              "scale": "长度与高度未确认。",
+              "status": "known"
+            },
+            {
+              "description": "本图中另可见小块的蓝色标牌状物与灰色面板状物等小型可见特征；其所属墙面、是否固定、用途为何在本图中无法确认，故按待补充登记，不作为已确认固定物体。",
+              "id": "place_5e3f54df76a24ea5",
+              "kind": "object",
+              "label": "用途未定的小型可见物（蓝色标牌状物、灰色面板状物等）",
+              "orientation": "",
+              "position": "大略位于长凳墙两侧相邻墙的墙面可见区域内；精确位置待补充。",
+              "scale": "尺寸未确认。",
+              "status": "pending"
+            }
+          ],
+          "frame": {
+            "description": "长方形室内候车空间，俯视剖切总览：可见灰色方形地砖地面、四面墙体（其中一面只见墙体厚度）与沿墙固定物，不显示天花板。本空间以固定锚点作相对基准，不使用 A/B/C/D 标识：长凳墙（放置长凳的那面墙，本图中位于画面上方）、长凳墙两侧相邻墙（本图中分别位于长凳墙之左、之右）、相对墙（长凳墙对面那面墙，本图中位于画面下方，只见墙体厚度）。图中画面左右只是该图内的相对位置，不代表地理方向。本图无人物，仅为取景状态，不代表该场景固定无人。",
+            "status": "known"
+          },
+          "links": [
+            {
+              "description": "包含：候车室内区域包含沿墙放置的木质长凳。",
+              "from": "place_fb040dad2cc341ad",
+              "id": "rel_14ed8e3524b8450c",
+              "status": "known",
+              "to": "place_3dc5ceaf76d248fa"
+            },
+            {
+              "description": "沿墙：长凳靠长凳墙内侧面放置，板面长边与长凳墙平行，大致居中于该墙可见部分，两端与可见墙角留有间隙。",
+              "from": "place_3dc5ceaf76d248fa",
+              "id": "rel_b87bedb6b50f48f7",
+              "status": "known",
+              "to": "place_869a5569924f4714"
+            },
+            {
+              "description": "相邻：长凳墙一侧端部与该相邻墙在墙角相接。",
+              "from": "place_869a5569924f4714",
+              "id": "rel_335621c6cb8b4a1d",
+              "status": "known",
+              "to": "place_310977e118764bfe"
+            },
+            {
+              "description": "相邻：长凳墙另一侧端部与该相邻墙在墙角相接。",
+              "from": "place_869a5569924f4714",
+              "id": "rel_c82507f6b4c44645",
+              "status": "known",
+              "to": "place_230882b546ab468a"
+            },
+            {
+              "description": "相邻：长凳墙右侧相邻墙的另一端与相对墙在墙角相接。",
+              "from": "place_310977e118764bfe",
+              "id": "rel_5424c8c17b134954",
+              "status": "known",
+              "to": "place_6e1ed71322e84a05"
+            },
+            {
+              "description": "相邻：长凳墙左侧相邻墙的另一端与相对墙在墙角相接。",
+              "from": "place_230882b546ab468a",
+              "id": "rel_dd90129e50474517",
+              "status": "known",
+              "to": "place_6e1ed71322e84a05"
+            },
+            {
+              "description": "位于墙上：偏上的带框开口位于长凳墙右侧相邻墙的偏上位置。",
+              "from": "place_310977e118764bfe",
+              "id": "rel_129ec6d25c9d4bf8",
+              "status": "known",
+              "to": "place_33193bbd01d34171"
+            },
+            {
+              "description": "位于墙上：偏下的竖向狭长开口状特征位于同一面墙的偏下位置。",
+              "from": "place_310977e118764bfe",
+              "id": "rel_b85ba206ea9e4928",
+              "status": "known",
+              "to": "place_6856952e2d844202"
+            },
+            {
+              "description": "同墙相隔：同一面墙上两处互相分开的开口状特征，两者之间为可见连续墙面，不合并为同一处。",
+              "from": "place_33193bbd01d34171",
+              "id": "rel_40d97b509d73442e",
+              "status": "known",
+              "to": "place_6856952e2d844202"
+            },
+            {
+              "description": "位于墙上：带金属边框的开口状特征位于长凳墙左侧相邻墙的可见墙面上。",
+              "from": "place_230882b546ab468a",
+              "id": "rel_19811b69d8b24915",
+              "status": "known",
+              "to": "place_e4f2a71aa369406d"
+            },
+            {
+              "description": "位于墙上：白色小矩形面板位于同一面墙的开口状特征下方墙面上。",
+              "from": "place_230882b546ab468a",
+              "id": "rel_1b12f3c90025470e",
+              "status": "known",
+              "to": "place_8eee472f6b774577"
+            },
+            {
+              "description": "位置关联待补充：该墙可见区域内的小型蓝色标牌状物等，所属墙面与是否固定尚未确认，暂按待补充关联。",
+              "from": "place_310977e118764bfe",
+              "id": "rel_c1f4e289756c4711",
+              "status": "pending",
+              "to": "place_5e3f54df76a24ea5"
+            }
+          ],
+          "owner": "Sean",
+          "referenceAssetIds": [
+            "a4e8670a-471d-4352-904a-544608a55427"
+          ],
+          "routes": [],
+          "schemaVersion": 1,
+          "scope": "fixed_scene_space",
+          "unknowns": [
+            "三处可见开口状特征（左侧相邻墙一处、右侧相邻墙两处）的功能未证实：是否穿透墙体、属于窗口还是门洞、其中是否有入口门或站台门之分。",
+            "相对墙（长凳墙对面）的内侧面及其上的门窗、物件未确认，本图只见该侧墙体厚度。",
+            "房间的绝对尺寸、比例与净高未确认；天花板在本图中不可见。",
+            "门外空间、站台或室外空间，以及本空间在城市中的地理朝向未确认；图中画面左右不等于地理方向。",
+            "左侧相邻墙处贴近墙面的浅灰面板状结构的性质未确认（可能是固定构件，也可能是取景表现），待判断后再决定是否登记为沿墙结构。",
+            "用途未定的小型可见物（小块蓝色标牌状物、灰色面板状物）的用途、所属墙面与是否固定未确认。",
+            "白色小矩形面板与竖向狭长特征下端的深灰色矩形块的用途与是否固定未确认。",
+            "长凳是否固定于该可见位置、数量是否固定为这一件未确认。",
+            "无可确认的固定通行路径，故 routes 暂留空。"
+          ]
+        },
+        "owner": "Sean",
+        "questions": [
+          "左侧相邻墙上贴近墙面的浅灰面板状结构，是算固定构件（我就把它单独登记为沿墙结构，与开口特征分开），还是只是取景表现（留在待补充）？",
+          "右侧相邻墙附近的小块蓝色标牌状物与灰色面板状物，要作为待补充固定物纳入固定空间，还是视为可动/临时物件、不进固定空间？"
+        ],
+        "sources": [
+          {
+            "explanation": "本图为俯视剖切总览，可见长方形房间轮廓、地砖地面、四面墙体（其中一面只见厚度），据此登记空间边界与‘长凳墙/两侧相邻墙/相对墙’的相对命名框架。",
+            "kind": "image",
+            "refs": [
+              "a4e8670a-471d-4352-904a-544608a55427"
+            ],
+            "target": "frame"
+          },
+          {
+            "explanation": "用户本轮明确：该图已审阅接受为视觉设计，以长凳墙及可见固定物作相对基准，不把画面左右冒充地理方向。",
+            "kind": "user",
+            "refs": [
+              "93e3fd7c-20be-4ab3-b5c5-819987abea1a"
+            ],
+            "target": "frame"
+          },
+          {
+            "explanation": "图中可见灰色方形地砖网格地面与浅米白墙面，且房间由四面墙围合。",
+            "kind": "image",
+            "refs": [
+              "a4e8670a-471d-4352-904a-544608a55427"
+            ],
+            "target": "elements/place_fb040dad2cc341ad"
+          },
+          {
+            "explanation": "图中画面上方那面墙内侧面可见，长凳即靠该墙放置，作为相对基准墙。",
+            "kind": "image",
+            "refs": [
+              "a4e8670a-471d-4352-904a-544608a55427"
+            ],
+            "target": "elements/place_869a5569924f4714"
+          },
+          {
+            "explanation": "图中可见木质板面长凳、两端深色小支脚、凳面空置，板面长边平行于其所在墙并大致居中。",
+            "kind": "image",
+            "refs": [
+              "a4e8670a-471d-4352-904a-544608a55427"
+            ],
+            "target": "elements/place_3dc5ceaf76d248fa"
+          },
+          {
+            "explanation": "图中右侧相邻墙偏上可见带白色框、明亮玻璃与一根横向分格条的开口状特征。",
+            "kind": "image",
+            "refs": [
+              "a4e8670a-471d-4352-904a-544608a55427"
+            ],
+            "target": "elements/place_33193bbd01d34171"
+          },
+          {
+            "explanation": "图中长凳墙右侧那面墙可见两处分开的开口状特征及其间连续墙面。",
+            "kind": "image",
+            "refs": [
+              "a4e8670a-471d-4352-904a-544608a55427"
+            ],
+            "target": "elements/place_310977e118764bfe"
+          },
+          {
+            "explanation": "图中同墙偏下可见竖向狭长、浅色带竖向边界线、下端有深灰色矩形块的特征。",
+            "kind": "image",
+            "refs": [
+              "a4e8670a-471d-4352-904a-544608a55427"
+            ],
+            "target": "elements/place_6856952e2d844202"
+          },
+          {
+            "explanation": "图中长凳墙左侧那面墙可见带金属色边框、偏灰蓝反光玻璃与细金属横杆的开口状特征。",
+            "kind": "image",
+            "refs": [
+              "a4e8670a-471d-4352-904a-544608a55427"
+            ],
+            "target": "elements/place_230882b546ab468a"
+          },
+          {
+            "explanation": "该开口状特征的位置与外观来自本图观察，未断言其穿透性与用途。",
+            "kind": "image",
+            "refs": [
+              "a4e8670a-471d-4352-904a-544608a55427"
+            ],
+            "target": "elements/place_e4f2a71aa369406d"
+          },
+          {
+            "explanation": "图中该墙开口状特征下方可见一个白色小矩形面板。",
+            "kind": "image",
+            "refs": [
+              "a4e8670a-471d-4352-904a-544608a55427"
+            ],
+            "target": "elements/place_8eee472f6b774577"
+          },
+          {
+            "explanation": "图中画面下方一侧只见浅灰墙体厚度、内侧面内容不可见，据此登记墙的存在并标注内容未确认。",
+            "kind": "image",
+            "refs": [
+              "a4e8670a-471d-4352-904a-544608a55427"
+            ],
+            "target": "elements/place_6e1ed71322e84a05"
+          },
+          {
+            "explanation": "长凳位于该房间地面区域内，包含关系由图直接可见。",
+            "kind": "image",
+            "refs": [
+              "a4e8670a-471d-4352-904a-544608a55427"
+            ],
+            "target": "links/rel_14ed8e3524b8450c"
+          },
+          {
+            "explanation": "图中长凳靠其所在墙放置，板面长边与墙平行、大致居中并两端留隙。",
+            "kind": "image",
+            "refs": [
+              "a4e8670a-471d-4352-904a-544608a55427"
+            ],
+            "target": "links/rel_b87bedb6b50f48f7"
+          },
+          {
+            "explanation": "图中长凳墙一端与右侧相邻墙在墙角相接。",
+            "kind": "image",
+            "refs": [
+              "a4e8670a-471d-4352-904a-544608a55427"
+            ],
+            "target": "links/rel_335621c6cb8b4a1d"
+          },
+          {
+            "explanation": "图中长凳墙另一端与左侧相邻墙在墙角相接。",
+            "kind": "image",
+            "refs": [
+              "a4e8670a-471d-4352-904a-544608a55427"
+            ],
+            "target": "links/rel_c82507f6b4c44645"
+          },
+          {
+            "explanation": "图中右侧相邻墙的另一端与画面下方那面相对墙相接。",
+            "kind": "image",
+            "refs": [
+              "a4e8670a-471d-4352-904a-544608a55427"
+            ],
+            "target": "links/rel_5424c8c17b134954"
+          },
+          {
+            "explanation": "图中左侧相邻墙的另一端与画面下方那面相对墙相接。",
+            "kind": "image",
+            "refs": [
+              "a4e8670a-471d-4352-904a-544608a55427"
+            ],
+            "target": "links/rel_dd90129e50474517"
+          },
+          {
+            "explanation": "带框开口位于该墙偏上位置，取自本图观察。",
+            "kind": "image",
+            "refs": [
+              "a4e8670a-471d-4352-904a-544608a55427"
+            ],
+            "target": "links/rel_129ec6d25c9d4bf8"
+          },
+          {
+            "explanation": "竖向狭长特征位于同墙偏下位置，取自本图观察。",
+            "kind": "image",
+            "refs": [
+              "a4e8670a-471d-4352-904a-544608a55427"
+            ],
+            "target": "links/rel_b85ba206ea9e4928"
+          },
+          {
+            "explanation": "图中两处之间可见连续墙面，故不合并。",
+            "kind": "image",
+            "refs": [
+              "a4e8670a-471d-4352-904a-544608a55427"
+            ],
+            "target": "links/rel_40d97b509d73442e"
+          },
+          {
+            "explanation": "用户本轮明确要求三处相隔的可见开口特征不要合并。",
+            "kind": "user",
+            "refs": [
+              "93e3fd7c-20be-4ab3-b5c5-819987abea1a"
+            ],
+            "target": "links/rel_40d97b509d73442e"
+          },
+          {
+            "explanation": "该开口状特征位于左侧相邻墙可见墙面上，取自本图观察。",
+            "kind": "image",
+            "refs": [
+              "a4e8670a-471d-4352-904a-544608a55427"
+            ],
+            "target": "links/rel_19811b69d8b24915"
+          },
+          {
+            "explanation": "白色小矩形面板位于同一墙面的开口状特征下方，取自本图观察。",
+            "kind": "image",
+            "refs": [
+              "a4e8670a-471d-4352-904a-544608a55427"
+            ],
+            "target": "links/rel_1b12f3c90025470e"
+          }
+        ],
+        "summary": "按本轮总览图提出最小可用的固定空间候选：登记“候车室内区域”“长凳墙”“长凳墙两侧相邻墙”“相对墙”“木质长凳”，并把三处可见开口状特征分别登记为独立元素（左侧相邻墙一处带金属边框开口；右侧相邻墙偏上带框开口、偏下竖向狭长特征），两处不合并，一律按“开口状位置”记录、不断言入口门或站台门。位置全部以长凳墙及可见固定物作相对基准，不使用 A/B/C/D 标识，不把画面左右当作地理方向。可见事实（房间矩形轮廓、地面与墙面外观、长凳及其沿墙居中关系、三处开口状特征的位置与分散关系、相邻墙与相对墙的相接关系）标为 known；开口用途、绝对尺寸、不可见相对墙内侧面、门外空间，以及用途未定小件标为 pending/unknowns；无确认路径，routes 留空。这是候选草稿，未保存、未确认、未生成任何内容。",
+        "contentHash": "b01db973502c87d7c2bd0ff98d26e838686c6562bcaacdfc1de9cdc3583bb231",
+        "appliedVersionId": null,
+        "createdAt": "2026-10-04T12:01:44.042Z",
+        "stale": true
+      },
+      {
+        "id": "b99b41a8-e3e1-4fbf-a02b-16f84f151647",
+        "runId": "bca9c43f-50ea-49af-846d-127a01dfcf54",
+        "basis": {
+          "contextHash": "35f94e156d3f5bde4682f13ed2727350fa66c247e8ebe0ee714103f414ca57a2",
+          "evidenceStateHash": "e0eff9d0ea1e916ccfb7a490a6fed95cd40375e3f2cfaeba9319754425402831",
+          "images": [
+            {
+              "assetId": "a4e8670a-471d-4352-904a-544608a55427",
+              "contentHash": "237a16ead67bf023ea0b897bb4ec71a6356b4b626a72badb7fedafe05acf6eff"
+            }
+          ],
+          "profileVersion": 2,
+          "referenceAssetIds": [
+            "a4e8670a-471d-4352-904a-544608a55427"
+          ],
+          "skillVersion": 2,
+          "spatialVersionId": null
+        },
+        "changes": [
+          "调整方向基准",
+          "更新待补充事项",
+          "更新核对参考图",
+          "新增：候车室内区域",
+          "新增：长凳墙",
+          "新增：木质长凳",
+          "新增：带框开口（长凳墙右侧相邻墙偏上）",
+          "新增：长凳墙一侧相邻墙（本图位于长凳墙右侧）",
+          "新增：竖向狭长开口状特征（长凳墙右侧相邻墙偏下）",
+          "新增：长凳墙另一侧相邻墙（本图位于长凳墙左侧）",
+          "新增：带金属边框的开口状特征（长凳墙左侧相邻墙）",
+          "新增：白色小矩形面板（左侧相邻墙开口下方）",
+          "新增：相对墙（长凳墙对面）",
+          "新增：用途未定的小型可见物（蓝色标牌状物、灰色面板状物等）",
+          "新增：rel_14ed8e3524b8450c",
+          "新增：rel_b87bedb6b50f48f7",
+          "新增：rel_335621c6cb8b4a1d",
+          "新增：rel_c82507f6b4c44645",
+          "新增：rel_5424c8c17b134954",
+          "新增：rel_dd90129e50474517",
+          "新增：rel_129ec6d25c9d4bf8",
+          "新增：rel_b85ba206ea9e4928",
+          "新增：rel_40d97b509d73442e",
+          "新增：rel_19811b69d8b24915",
+          "新增：rel_1b12f3c90025470e",
+          "新增：rel_c1f4e289756c4711"
+        ],
+        "document": {
+          "elements": [
+            {
+              "description": "长方形室内房间的候车区域，候车用途保留。地面为灰色方形地砖，砖缝形成规则网格，整体呈浅冷灰色；本图可见墙面为浅米白色（偏乳白）、平整无图案装饰。材质与颜色只记录本图可见外观，不推断隐藏结构或构造做法。",
+              "id": "place_fb040dad2cc341ad",
+              "kind": "area",
+              "label": "候车室内区域",
+              "orientation": "",
+              "position": "由四面墙围合：长凳墙在本图中位于画面上方一侧，相对墙在其对面（画面下方）；两侧相邻墙分别位于本图长凳墙之左、之右。",
+              "scale": "绝对尺寸、比例与净高未确认。",
+              "status": "known"
+            },
+            {
+              "description": "放置长凳的那面墙；浅米白色（偏乳白）平整墙面，本图可见其内侧面，无图案装饰。是描述本空间其他位置的相对基准之一。",
+              "id": "place_869a5569924f4714",
+              "kind": "structure",
+              "label": "长凳墙",
+              "orientation": "内侧面朝向室内；其延伸方向即本图中的左右方向（相对基准，不代表地理方向）。",
+              "position": "本图中位于画面上方一侧，两侧端部分别与两侧相邻墙在墙角相接。",
+              "scale": "长度与高度未确认。",
+              "status": "known"
+            },
+            {
+              "description": "木质板面长凳，板面呈浅棕原木色，靠两端各有一个深色小支脚；凳面空置（本图取景状态，不代表固定无物）。",
+              "id": "place_3dc5ceaf76d248fa",
+              "kind": "object",
+              "label": "木质长凳",
+              "orientation": "板面长边平行于长凳墙，靠墙一侧贴近长凳墙内侧面。",
+              "position": "沿长凳墙内侧放置，板面长边与长凳墙平行，大致居中于该墙可见部分；两端与可见墙角之间留有间隙。",
+              "scale": "长度、高度与绝对尺寸未确认。",
+              "status": "known"
+            },
+            {
+              "description": "本图在该墙上可见的偏上一处开口状特征：带框开口，框为白色，内有明亮偏白玻璃，框内有一根横向分格条。是否穿透墙体、是否为窗口或门洞均未证实，此处只按开口状位置记录，不断言用途。",
+              "id": "place_33193bbd01d34171",
+              "kind": "structure",
+              "label": "带框开口（长凳墙右侧相邻墙偏上）",
+              "orientation": "",
+              "position": "位于长凳墙右侧相邻墙的偏上位置（以本图取景下的上下为准），与该墙偏下的竖向狭长特征互相分开。",
+              "scale": "尺寸与离地高度未确认。",
+              "status": "known"
+            },
+            {
+              "description": "在墙角与长凳墙相接的墙；浅米白色。本图在该墙上可见两处互相分开的开口状特征（偏上的带框开口、偏下的竖向狭长特征），两处之间为可见连续墙面，本描述不将两处合并。该墙区还有小块蓝色标牌状物，其用途与是否固定未确认。",
+              "id": "place_310977e118764bfe",
+              "kind": "structure",
+              "label": "长凳墙一侧相邻墙（本图位于长凳墙右侧）",
+              "orientation": "内侧面朝向室内。",
+              "position": "本图中位于长凳墙右侧，与长凳墙在墙角相接；其另一端与相对墙相接。",
+              "scale": "长度与高度未确认。",
+              "status": "known"
+            },
+            {
+              "description": "本图在该墙上可见的偏下一处开口状特征：外观浅色、带竖向边界线的竖向狭长特征，其下端有一个深色（深灰）矩形块。是否为开口、是否穿透墙体、用途为何均未证实；此处只按开口状位置记录，并与偏上的带框开口保持为两处。",
+              "id": "place_6856952e2d844202",
+              "kind": "structure",
+              "label": "竖向狭长开口状特征（长凳墙右侧相邻墙偏下）",
+              "orientation": "",
+              "position": "位于长凳墙右侧相邻墙的偏下位置，偏上的带框开口与其之间隔有可见连续墙面。",
+              "scale": "尺寸与离地高度未确认。",
+              "status": "known"
+            },
+            {
+              "description": "在墙角与长凳墙相接的墙；浅米白色。本图在该墙上可见一处开口状特征：带金属色边框，内有偏灰蓝、带反光的玻璃面，一根细金属横杆横跨其上；该区域另有浅灰色面板状结构贴近墙面，其性质未确认。",
+              "id": "place_230882b546ab468a",
+              "kind": "structure",
+              "label": "长凳墙另一侧相邻墙（本图位于长凳墙左侧）",
+              "orientation": "内侧面朝向室内。",
+              "position": "本图中位于长凳墙左侧，与长凳墙在墙角相接；其另一端与相对墙相接。",
+              "scale": "长度与高度未确认。",
+              "status": "known"
+            },
+            {
+              "description": "本图在该墙上可见的一处开口状特征：带金属色边框，内有偏灰蓝、带反光的玻璃面，并有一根细金属横杆横跨其上。是否穿透墙体、是窗口还是门洞均未证实，此处只按开口状位置记录，不断言用途，也不将它与其下方墙面上的白色小矩形面板合并。",
+              "id": "place_e4f2a71aa369406d",
+              "kind": "structure",
+              "label": "带金属边框的开口状特征（长凳墙左侧相邻墙）",
+              "orientation": "",
+              "position": "位于长凳墙左侧相邻墙的可见墙面中部；其下方同一墙面上另有一个白色小矩形面板。",
+              "scale": "尺寸与离地高度未确认。",
+              "status": "known"
+            },
+            {
+              "description": "本图在长凳墙左侧相邻墙上可见的一个白色小矩形面板，位于该墙开口状特征下方墙面。其用途与是否固定未确认，本描述不断言其为开关、开关箱或告示。",
+              "id": "place_8eee472f6b774577",
+              "kind": "object",
+              "label": "白色小矩形面板（左侧相邻墙开口下方）",
+              "orientation": "",
+              "position": "位于长凳墙左侧相邻墙的内侧面上，在上述开口状特征下方。",
+              "scale": "尺寸未确认。",
+              "status": "known"
+            },
+            {
+              "description": "长凳墙对面的那面墙。本图只显示该侧墙体厚度，其内侧面与上面的门窗、物件均不可见，待补充；此处不推断其上任何特征。",
+              "id": "place_6e1ed71322e84a05",
+              "kind": "structure",
+              "label": "相对墙（长凳墙对面）",
+              "orientation": "该侧墙体向室内的一面在本图中不可见。",
+              "position": "本图中位于画面下方一侧；两端分别与两侧相邻墙相接，与长凳墙相对。",
+              "scale": "长度与高度未确认。",
+              "status": "known"
+            },
+            {
+              "description": "本图中另可见小块的蓝色标牌状物与灰色面板状物等小型可见特征；其所属墙面、是否固定、用途为何在本图中无法确认，故按待补充登记，不作为已确认固定物体。本条目保留原有 ID，本轮未删除。",
+              "id": "place_5e3f54df76a24ea5",
+              "kind": "object",
+              "label": "用途未定的小型可见物（蓝色标牌状物、灰色面板状物等）",
+              "orientation": "",
+              "position": "大略位于长凳墙两侧相邻墙的墙面可见区域内；精确位置待补充。",
+              "scale": "尺寸未确认。",
+              "status": "pending"
+            }
+          ],
+          "frame": {
+            "description": "长方形室内候车空间，俯视剖切总览：可见灰色方形地砖地面、四面墙体（其中一面只见墙体厚度）与沿墙固定物，不显示天花板。方向基准：本空间暂以固定锚点作相对命名，不使用 A/B/C/D 标识，也不预设地理朝向——长凳墙（放置长凳的那面墙，本图中位于画面上方）、长凳墙两侧相邻墙（本图中分别位于长凳墙之左、之右）、相对墙（长凳墙对面那面墙，本图中位于画面下方，只见墙体厚度）。图中画面左右只是该图内的相对位置，不代表地理方向。本图无人物，仅为取景状态，不代表该场景固定无人。",
+            "status": "known"
+          },
+          "links": [
+            {
+              "description": "包含：候车室内区域包含沿墙放置的木质长凳。",
+              "from": "place_fb040dad2cc341ad",
+              "id": "rel_14ed8e3524b8450c",
+              "status": "known",
+              "to": "place_3dc5ceaf76d248fa"
+            },
+            {
+              "description": "沿墙：长凳靠长凳墙内侧面放置，板面长边与长凳墙平行，大致居中于该墙可见部分，两端与可见墙角留有间隙。",
+              "from": "place_3dc5ceaf76d248fa",
+              "id": "rel_b87bedb6b50f48f7",
+              "status": "known",
+              "to": "place_869a5569924f4714"
+            },
+            {
+              "description": "相邻：长凳墙一侧端部与该相邻墙在墙角相接。",
+              "from": "place_869a5569924f4714",
+              "id": "rel_335621c6cb8b4a1d",
+              "status": "known",
+              "to": "place_310977e118764bfe"
+            },
+            {
+              "description": "相邻：长凳墙另一侧端部与该相邻墙在墙角相接。",
+              "from": "place_869a5569924f4714",
+              "id": "rel_c82507f6b4c44645",
+              "status": "known",
+              "to": "place_230882b546ab468a"
+            },
+            {
+              "description": "相邻：长凳墙右侧相邻墙的另一端与相对墙在墙角相接。",
+              "from": "place_310977e118764bfe",
+              "id": "rel_5424c8c17b134954",
+              "status": "known",
+              "to": "place_6e1ed71322e84a05"
+            },
+            {
+              "description": "相邻：长凳墙左侧相邻墙的另一端与相对墙在墙角相接。",
+              "from": "place_230882b546ab468a",
+              "id": "rel_dd90129e50474517",
+              "status": "known",
+              "to": "place_6e1ed71322e84a05"
+            },
+            {
+              "description": "位于墙上：偏上的带框开口位于长凳墙右侧相邻墙的偏上位置。",
+              "from": "place_310977e118764bfe",
+              "id": "rel_129ec6d25c9d4bf8",
+              "status": "known",
+              "to": "place_33193bbd01d34171"
+            },
+            {
+              "description": "位于墙上：偏下的竖向狭长开口状特征位于同一面墙的偏下位置。",
+              "from": "place_310977e118764bfe",
+              "id": "rel_b85ba206ea9e4928",
+              "status": "known",
+              "to": "place_6856952e2d844202"
+            },
+            {
+              "description": "同墙相隔：同一面墙上两处互相分开的开口状特征，两者之间为可见连续墙面，不合并为同一处。",
+              "from": "place_33193bbd01d34171",
+              "id": "rel_40d97b509d73442e",
+              "status": "known",
+              "to": "place_6856952e2d844202"
+            },
+            {
+              "description": "位于墙上：带金属边框的开口状特征位于长凳墙左侧相邻墙的可见墙面上。",
+              "from": "place_230882b546ab468a",
+              "id": "rel_19811b69d8b24915",
+              "status": "known",
+              "to": "place_e4f2a71aa369406d"
+            },
+            {
+              "description": "位于墙上：白色小矩形面板位于同一面墙的开口状特征下方墙面上。",
+              "from": "place_230882b546ab468a",
+              "id": "rel_1b12f3c90025470e",
+              "status": "known",
+              "to": "place_8eee472f6b774577"
+            },
+            {
+              "description": "位置关联待补充：该墙可见区域内的小型蓝色标牌状物等，所属墙面与是否固定尚未确认，暂按待补充关联。",
+              "from": "place_310977e118764bfe",
+              "id": "rel_c1f4e289756c4711",
+              "status": "pending",
+              "to": "place_5e3f54df76a24ea5"
+            }
+          ],
+          "owner": "Sean",
+          "referenceAssetIds": [
+            "a4e8670a-471d-4352-904a-544608a55427"
+          ],
+          "routes": [],
+          "schemaVersion": 1,
+          "scope": "fixed_scene_space",
+          "unknowns": [
+            "三处可见开口状特征（左侧相邻墙一处、右侧相邻墙两处）的功能未证实：是否穿透墙体、属于窗口还是门洞、其中是否有入口门或站台门之分。",
+            "相对墙（长凳墙对面）的内侧面及其上的门窗、物件未确认，本图只见该侧墙体厚度。",
+            "房间的绝对尺寸、比例与净高未确认；天花板在本图中不可见。",
+            "门外空间、站台或室外空间，以及本空间在城市中的地理朝向未确认；图中画面左右不等于地理方向。",
+            "左侧相邻墙处贴近墙面的浅灰面板状结构的性质未确认（可能是固定构件，也可能是取景表现），待判断后再决定是否登记为沿墙结构。",
+            "用途未定的小型可见物（小块蓝色标牌状物、灰色面板状物）的用途、所属墙面与是否固定未确认。",
+            "白色小矩形面板与竖向狭长特征下端的深灰色矩形块的用途与是否固定未确认。",
+            "长凳是否固定于该可见位置、数量是否固定为这一件未确认。",
+            "无可确认的固定通行路径，故 routes 暂留空。"
+          ]
+        },
+        "owner": "Sean",
+        "questions": [
+          "左侧相邻墙上贴近墙面的浅灰面板状结构，是否要作为固定构件单独登记为沿墙结构（与开口特征分开、新增条目），还是留在待补充不建条目？",
+          "用途未定的小件目前仍以一个聚合条目 place_5e3f54df76a24ea5（pending）保留；要维持这个聚合锚点，还是删除它、只把信息留在 unknowns 里？"
+        ],
+        "sources": [
+          {
+            "explanation": "本图为俯视剖切总览，可见长方形房间轮廓、地砖地面、四面墙体（其中一面只见厚度），据此登记空间边界与‘长凳墙/两侧相邻墙/相对墙’的相对命名框架。",
+            "kind": "image",
+            "refs": [
+              "a4e8670a-471d-4352-904a-544608a55427"
+            ],
+            "target": "frame"
+          },
+          {
+            "explanation": "用户本图已审阅接受为视觉设计，并要求以长凳墙及可见固定物作相对基准、不把画面左右冒充地理方向；本轮进一步要求保持上轮可见结构与方向基准写法。",
+            "kind": "user",
+            "refs": [
+              "93e3fd7c-20be-4ab3-b5c5-819987abea1a",
+              "84b9eb38-d8bc-48f8-8d03-62b643cba6c2"
+            ],
+            "target": "frame"
+          },
+          {
+            "explanation": "图中可见灰色方形地砖网格地面与浅米白墙面，且房间由四面墙围合。",
+            "kind": "image",
+            "refs": [
+              "a4e8670a-471d-4352-904a-544608a55427"
+            ],
+            "target": "elements/place_fb040dad2cc341ad"
+          },
+          {
+            "explanation": "图中画面上方那面墙内侧面可见，长凳即靠该墙放置，作为相对基准墙。",
+            "kind": "image",
+            "refs": [
+              "a4e8670a-471d-4352-904a-544608a55427"
+            ],
+            "target": "elements/place_869a5569924f4714"
+          },
+          {
+            "explanation": "图中可见木质板面长凳、两端深色小支脚、凳面空置，板面长边平行于其所在墙并大致居中。",
+            "kind": "image",
+            "refs": [
+              "a4e8670a-471d-4352-904a-544608a55427"
+            ],
+            "target": "elements/place_3dc5ceaf76d248fa"
+          },
+          {
+            "explanation": "图中右侧相邻墙偏上可见带白色框、明亮玻璃与一根横向分格条的开口状特征。",
+            "kind": "image",
+            "refs": [
+              "a4e8670a-471d-4352-904a-544608a55427"
+            ],
+            "target": "elements/place_33193bbd01d34171"
+          },
+          {
+            "explanation": "图中长凳墙右侧那面墙可见两处分开的开口状特征及其间连续墙面。",
+            "kind": "image",
+            "refs": [
+              "a4e8670a-471d-4352-904a-544608a55427"
+            ],
+            "target": "elements/place_310977e118764bfe"
+          },
+          {
+            "explanation": "图中同墙偏下可见竖向狭长、浅色带竖向边界线、下端有深灰色矩形块的特征。",
+            "kind": "image",
+            "refs": [
+              "a4e8670a-471d-4352-904a-544608a55427"
+            ],
+            "target": "elements/place_6856952e2d844202"
+          },
+          {
+            "explanation": "图中长凳墙左侧那面墙可见带金属色边框、偏灰蓝反光玻璃与细金属横杆的开口状特征。",
+            "kind": "image",
+            "refs": [
+              "a4e8670a-471d-4352-904a-544608a55427"
+            ],
+            "target": "elements/place_230882b546ab468a"
+          },
+          {
+            "explanation": "该开口状特征的位置与外观来自本图观察，未断言其穿透性与用途。",
+            "kind": "image",
+            "refs": [
+              "a4e8670a-471d-4352-904a-544608a55427"
+            ],
+            "target": "elements/place_e4f2a71aa369406d"
+          },
+          {
+            "explanation": "图中该墙开口状特征下方可见一个白色小矩形面板。",
+            "kind": "image",
+            "refs": [
+              "a4e8670a-471d-4352-904a-544608a55427"
+            ],
+            "target": "elements/place_8eee472f6b774577"
+          },
+          {
+            "explanation": "图中画面下方一侧只见浅灰墙体厚度、内侧面内容不可见，据此登记墙的存在并标注内容未确认。",
+            "kind": "image",
+            "refs": [
+              "a4e8670a-471d-4352-904a-544608a55427"
+            ],
+            "target": "elements/place_6e1ed71322e84a05"
+          },
+          {
+            "explanation": "长凳位于该房间地面区域内，包含关系由图直接可见。",
+            "kind": "image",
+            "refs": [
+              "a4e8670a-471d-4352-904a-544608a55427"
+            ],
+            "target": "links/rel_14ed8e3524b8450c"
+          },
+          {
+            "explanation": "图中长凳靠其所在墙放置，板面长边与墙平行、大致居中并两端留隙。",
+            "kind": "image",
+            "refs": [
+              "a4e8670a-471d-4352-904a-544608a55427"
+            ],
+            "target": "links/rel_b87bedb6b50f48f7"
+          },
+          {
+            "explanation": "图中长凳墙一端与右侧相邻墙在墙角相接。",
+            "kind": "image",
+            "refs": [
+              "a4e8670a-471d-4352-904a-544608a55427"
+            ],
+            "target": "links/rel_335621c6cb8b4a1d"
+          },
+          {
+            "explanation": "图中长凳墙另一端与左侧相邻墙在墙角相接。",
+            "kind": "image",
+            "refs": [
+              "a4e8670a-471d-4352-904a-544608a55427"
+            ],
+            "target": "links/rel_c82507f6b4c44645"
+          },
+          {
+            "explanation": "图中右侧相邻墙的另一端与画面下方那面相对墙相接。",
+            "kind": "image",
+            "refs": [
+              "a4e8670a-471d-4352-904a-544608a55427"
+            ],
+            "target": "links/rel_5424c8c17b134954"
+          },
+          {
+            "explanation": "图中左侧相邻墙的另一端与画面下方那面相对墙相接。",
+            "kind": "image",
+            "refs": [
+              "a4e8670a-471d-4352-904a-544608a55427"
+            ],
+            "target": "links/rel_dd90129e50474517"
+          },
+          {
+            "explanation": "带框开口位于该墙偏上位置，取自本图观察。",
+            "kind": "image",
+            "refs": [
+              "a4e8670a-471d-4352-904a-544608a55427"
+            ],
+            "target": "links/rel_129ec6d25c9d4bf8"
+          },
+          {
+            "explanation": "竖向狭长特征位于同墙偏下位置，取自本图观察。",
+            "kind": "image",
+            "refs": [
+              "a4e8670a-471d-4352-904a-544608a55427"
+            ],
+            "target": "links/rel_b85ba206ea9e4928"
+          },
+          {
+            "explanation": "图中两处之间可见连续墙面，故不合并。",
+            "kind": "image",
+            "refs": [
+              "a4e8670a-471d-4352-904a-544608a55427"
+            ],
+            "target": "links/rel_40d97b509d73442e"
+          },
+          {
+            "explanation": "用户要求三处相隔的可见开口特征不要合并，且本轮要求保持该相隔记录。",
+            "kind": "user",
+            "refs": [
+              "93e3fd7c-20be-4ab3-b5c5-819987abea1a",
+              "84b9eb38-d8bc-48f8-8d03-62b643cba6c2"
+            ],
+            "target": "links/rel_40d97b509d73442e"
+          },
+          {
+            "explanation": "该开口状特征位于左侧相邻墙可见墙面上，取自本图观察。",
+            "kind": "image",
+            "refs": [
+              "a4e8670a-471d-4352-904a-544608a55427"
+            ],
+            "target": "links/rel_19811b69d8b24915"
+          },
+          {
+            "explanation": "白色小矩形面板位于同一墙面的开口状特征下方，取自本图观察。",
+            "kind": "image",
+            "refs": [
+              "a4e8670a-471d-4352-904a-544608a55427"
+            ],
+            "target": "links/rel_1b12f3c90025470e"
+          }
+        ],
+        "summary": "按新版本方法（fixed-space v2）与重新查看的本轮主图，重提同一场景的完整固定空间候选：保留上轮全部稳定条目 ID 与标签（候车室内区域、长凳墙、木质长凳、两侧相邻墙、三处分开的开口状位置、白色小矩形面板、相对墙），关系 ID 亦原样保留（包含、沿墙、四处墙角相邻、位于墙上、同墙相隔不合并）。未删除任何条目：用途未定的小件聚合锚点 place_5e3f54df76a24ea5 及其 pending 关系 rel_c1f4e289756c4711 继续保留为 pending。方向基准仍以长凳墙及可见固定物作相对命名，不使用 A/B/C/D，不把画面左右当地理方向。known 项逐条附图像来源，方向基准与相隔要求附本轮用户消息来源；开口用途、绝对尺寸、不可见相对墙内侧面、门外空间等留在 unknowns；无可确认通路，routes 留空。本提案为候选草稿，未应用、未确认、未生成。",
+        "contentHash": "5177a04c152fb6fb796c007517da6080c06dfeb5ab8b682db2cc3bcd106f628c",
+        "appliedVersionId": null,
+        "createdAt": "2026-10-04T12:05:48.017Z",
+        "stale": false
+      }
+    ]
+  },
+  "plans": [],
+  "steps": [],
+  "afterContext": {
+    "owner": "Sean",
+    "schemaVersion": 2,
+    "project": {
+      "owner": "Sean",
+      "id": "c51a50d3-2b12-48c9-a83c-8f4e8e30a3c6",
+      "synopsis": "",
+      "worldRules": "普通现实城市，无魔法。仅使用候选明确设计；未知空间不编造。",
+      "visualStyle": "",
+      "brief": "隔离人物与场景验证，不写生产资料。",
+      "decisions": "人工选定主图后继续；最多八次基线与一次修订，无自动重试。",
+      "entityIds": [
+        "76dab29d-6225-485f-b905-0f022e144159",
+        "ad60ce45-800f-48e1-9800-530aeba81c55",
+        "516b1812-e158-4780-992c-51b4553a4b18",
+        "045bb254-1560-4413-861e-d047b2215afa"
+      ],
+      "name": "实际图片质量实验",
+      "revision": 2,
+      "createdAt": "2026-10-04T11:39:58.087Z",
+      "updatedAt": "2026-10-04T11:39:58.101Z"
+    },
+    "entities": [
+      {
+        "entityId": "76dab29d-6225-485f-b905-0f022e144159",
+        "name": "实验林岚",
+        "flags": [
+          "人物",
+          "质量实验"
+        ],
+        "description": "成年夜班管理员，短黑发中只有一缕白发，灰色长外套与深蓝长裤。人物身份、头发、体型与衣服在变体中不变。",
+        "appearance": "成年夜班管理员，短黑发中只有一缕白发，灰色长外套与深蓝长裤。人物身份、头发、体型与衣服在变体中不变。",
+        "voiceDescription": "",
+        "sourceRevision": "532ebfb4a71821cd4ac315a1b44460416c6d79641dfad325c630ac5d0acc7682",
+        "projectRole": {
+          "role": "质量实验候选",
+          "plotNotes": "",
+          "revision": 1,
+          "sourceRevision": "1d3891d09df284c8d3aea21c4e195b8a524664a3a9d859155069b72f9ae82c08",
+          "updatedAt": "2026-10-04T11:39:58.101Z"
+        },
+        "sceneSpatial": {
+          "schemaVersion": 1,
+          "scope": "fixed_scene_space",
+          "status": "missing",
+          "version": 0,
+          "versionId": null,
+          "contentHash": "82d59f4ed4c85a69dac432ef7d61079cc368ea2811d7ccb21f1f06692575fb8e",
+          "confirmedAt": null,
+          "frame": null,
+          "elements": [],
+          "links": [],
+          "routes": [],
+          "unknowns": [
+            "方向基准待补充或确认；不可将镜头左/右直接当场景固定方向。",
+            "主要区域、建筑结构与固定物体尚未登记。"
+          ],
+          "issues": [],
+          "referenceImages": [],
+          "promptContext": "",
+          "draft": {
+            "owner": "Sean",
+            "schemaVersion": 1,
+            "scope": "fixed_scene_space",
+            "frame": {
+              "description": "",
+              "status": "pending"
+            },
+            "elements": [],
+            "links": [],
+            "routes": [],
+            "unknowns": [],
+            "referenceAssetIds": []
+          },
+          "usage": "空间标识以 entityId#id 引用；角色当前位置、朝向、移动时间线与可移动物品转移属于拍摄本。pending/draft/needs_review 内容不得作为已确认固定事实。",
+          "sourceRevision": "25132e0af894881b36a34722f69164379274ea584fb1d26a9576d759755b8307"
+        },
+        "sceneImages": {
+          "schemaVersion": 1,
+          "status": "missing",
+          "versionId": null,
+          "version": 0,
+          "contentHash": "d38598da3d4acb64f7f2de96143adb8981a7b0edd4f604a8aaccc49f7cdaf5d9",
+          "confirmedAt": null,
+          "images": [],
+          "notes": "",
+          "issues": [],
+          "usage": "同一场景的人工选定参考图片组；图片角色和锚点指向不是新的空间事实，固定事实以 sceneSpatial 为准。",
+          "sourceRevision": "6ab92157e3823ffb829835ea8176f0b344eb69eff041658a93be3e2102c32c9b"
+        },
+        "relations": [
+          {
+            "relationId": "7b35bb90-a3cf-4b87-a05a-bfd2dd9a6a3b",
+            "sourceEntityId": "ad60ce45-800f-48e1-9800-530aeba81c55",
+            "targetEntityId": "76dab29d-6225-485f-b905-0f022e144159",
+            "category": "setting",
+            "type": "派生自",
+            "description": "右手腕白色绷带，其他设计不变",
+            "status": "active",
+            "targetRevision": "6fd25a65954097c756c2f3c54bcd0ac720b05be73ecee1df5ca2d53953671b14",
+            "createdAt": "2026-10-04T11:39:58.101Z",
+            "updatedAt": "2026-10-04T11:39:58.101Z",
+            "sourceName": "实验林岚·腕伤",
+            "targetName": "实验林岚"
+          }
+        ],
+        "derivedFrom": null,
+        "images": [
+          {
+            "assetId": "5785b1f1-fd47-4e46-b419-9a58be21f15c",
+            "name": "概念图 e34c1f58 · 1",
+            "contentHash": "11013803402d864886fc21c7027c08f2fec6e8d4a6a01d0ad8fb2c85edc8882b"
+          }
+        ]
+      },
+      {
+        "entityId": "ad60ce45-800f-48e1-9800-530aeba81c55",
+        "name": "实验林岚·腕伤",
+        "flags": [
+          "人物",
+          "质量实验"
+        ],
+        "description": "成年夜班管理员，短黑发中只有一缕白发，灰色长外套与深蓝长裤。人物身份、头发、体型与衣服在变体中不变。 唯一变化：右手腕白色绷带。",
+        "appearance": "成年夜班管理员，短黑发中只有一缕白发，灰色长外套与深蓝长裤。人物身份、头发、体型与衣服在变体中不变。 右手腕白色绷带。",
+        "voiceDescription": "",
+        "sourceRevision": "f9e69575bb73fc7b0f77373b39135b16eb359f94e8b8b3c010714fff64874561",
+        "projectRole": {
+          "role": "质量实验候选",
+          "plotNotes": "",
+          "revision": 1,
+          "sourceRevision": "1d3891d09df284c8d3aea21c4e195b8a524664a3a9d859155069b72f9ae82c08",
+          "updatedAt": "2026-10-04T11:39:58.101Z"
+        },
+        "sceneSpatial": {
+          "schemaVersion": 1,
+          "scope": "fixed_scene_space",
+          "status": "missing",
+          "version": 0,
+          "versionId": null,
+          "contentHash": "82d59f4ed4c85a69dac432ef7d61079cc368ea2811d7ccb21f1f06692575fb8e",
+          "confirmedAt": null,
+          "frame": null,
+          "elements": [],
+          "links": [],
+          "routes": [],
+          "unknowns": [
+            "方向基准待补充或确认；不可将镜头左/右直接当场景固定方向。",
+            "主要区域、建筑结构与固定物体尚未登记。"
+          ],
+          "issues": [],
+          "referenceImages": [],
+          "promptContext": "",
+          "draft": {
+            "owner": "Sean",
+            "schemaVersion": 1,
+            "scope": "fixed_scene_space",
+            "frame": {
+              "description": "",
+              "status": "pending"
+            },
+            "elements": [],
+            "links": [],
+            "routes": [],
+            "unknowns": [],
+            "referenceAssetIds": []
+          },
+          "usage": "空间标识以 entityId#id 引用；角色当前位置、朝向、移动时间线与可移动物品转移属于拍摄本。pending/draft/needs_review 内容不得作为已确认固定事实。",
+          "sourceRevision": "25132e0af894881b36a34722f69164379274ea584fb1d26a9576d759755b8307"
+        },
+        "sceneImages": {
+          "schemaVersion": 1,
+          "status": "missing",
+          "versionId": null,
+          "version": 0,
+          "contentHash": "d38598da3d4acb64f7f2de96143adb8981a7b0edd4f604a8aaccc49f7cdaf5d9",
+          "confirmedAt": null,
+          "images": [],
+          "notes": "",
+          "issues": [],
+          "usage": "同一场景的人工选定参考图片组；图片角色和锚点指向不是新的空间事实，固定事实以 sceneSpatial 为准。",
+          "sourceRevision": "6ab92157e3823ffb829835ea8176f0b344eb69eff041658a93be3e2102c32c9b"
+        },
+        "relations": [
+          {
+            "relationId": "7b35bb90-a3cf-4b87-a05a-bfd2dd9a6a3b",
+            "sourceEntityId": "ad60ce45-800f-48e1-9800-530aeba81c55",
+            "targetEntityId": "76dab29d-6225-485f-b905-0f022e144159",
+            "category": "setting",
+            "type": "派生自",
+            "description": "右手腕白色绷带，其他设计不变",
+            "status": "active",
+            "targetRevision": "6fd25a65954097c756c2f3c54bcd0ac720b05be73ecee1df5ca2d53953671b14",
+            "createdAt": "2026-10-04T11:39:58.101Z",
+            "updatedAt": "2026-10-04T11:39:58.101Z",
+            "sourceName": "实验林岚·腕伤",
+            "targetName": "实验林岚"
+          }
+        ],
+        "derivedFrom": {
+          "entityId": "76dab29d-6225-485f-b905-0f022e144159",
+          "name": "实验林岚",
+          "sourceRevision": "6fd25a65954097c756c2f3c54bcd0ac720b05be73ecee1df5ca2d53953671b14",
+          "description": "右手腕白色绷带，其他设计不变",
+          "options": {
+            "authoringPlanId": "d1886bd8-05f3-492b-bcef-9ae55694b185",
+            "copyProfile": false,
+            "copyReference": false,
+            "copySettingRelations": false,
+            "copySpatialDraft": false,
+            "reuseVoice": false,
+            "sourceSpatialVersionId": null
+          },
+          "createdAt": "2026-10-04T11:39:58.101Z"
+        },
+        "images": []
+      },
+      {
+        "entityId": "516b1812-e158-4780-992c-51b4553a4b18",
+        "name": "实验候车厅",
+        "flags": [
+          "场景",
+          "质量实验"
+        ],
+        "description": "候车厅：候车用途保留。长方形室内房间；本图为俯视剖切总览，不显示天花板；画面一侧只看到墙体厚度，该侧墙内侧面不可见。本图中没有人物，这只是该图的取景状态，不代表该场景固定无人。\n\n可重复引用的物理位置（以长凳墙为基准；画面左右仅为该图中的相对位置，不代表地理方向）：\n- 长凳墙：放置长凳的那面墙。长凳靠墙放置，板面长边与墙平行，位于该墙可见部分的大致居中处，两端与可见墙角之间留有间隙。\n- 长凳墙某一侧相邻墙（图中位于长凳墙右侧）：本图在该墙上可见两处互相分开的开口状特征。偏上的一处为带框开口，内有玻璃并有横向分格条；偏下的一处为竖向狭长特征，其下端可见一个深色矩形块。两处之间有可见连续墙面，本描述不将两处合并。\n- 长凳墙另一侧相邻墙（图中位于长凳墙左侧）：本图在该墙上可见一处开口状特征，带金属色边框，内有偏灰蓝、带反光的玻璃面，并有一根细金属横杆横跨其上；该处下方墙面上另有一个白色小矩形面板。\n- 相对墙：长凳墙对面那面墙。本图只显示该侧墙体厚度，其内侧面与上面的门窗、物件均不可见，待补充。\n\n上述三处均按“开口状特征”记录，是否穿透墙体、是窗口还是门洞、以及入口门与站台门的区分，在本图中无法证实，全部待补充。\n\n本图另可见用途未确定的物件：开口附近的小块蓝色标牌状物、一块灰色墙面板、一个深色竖向矩形块、一个白色小矩形面板。这些是否固定、用途为何均待补充，不作为已确认的固定物体。\n\n材质与颜色只记录本图可见外观，不推断隐藏结构或构造做法；绝对尺寸与比例、门外与室外空间未确认，本描述不作断言。\n\n不再使用旧的 A/B/C/D 局部墙面标识，也不以“入口门在某墙、站台门在相对墙”的墙位区分作为固定约束；该功能区分在本图中无法证实，保留为待补充。",
+        "appearance": "以下为本图（俯视剖切总览）可见外观，仅描述可见外观，不推断材质构成、隐藏结构或构造做法。\n- 地面：灰色方形地砖，砖缝形成规则网格，整体呈浅冷灰色。\n- 墙面：浅米白色（偏乳白），可见墙面平整、无图案装饰。\n- 长凳：木质板面长凳，板面呈浅棕原木色；靠两端各有一个深色小支脚；凳面空置，无人物、无物品。板面长边沿长凳墙放置，大致居中于该墙可见部分。\n- 图中位于长凳墙右侧的相邻墙，可见两部分：偏上一处为带框开口，框为白色、玻璃明亮偏白，框内有一根横向分格条；同一墙面上偏下一处为与上部相分开的竖向狭长特征，外观浅色、带竖向边界线，其下端有一个深色（深灰）矩形块。两部分之间可见连续墙面。\n- 图中位于长凳墙左侧的相邻墙，可见一处带金属色边框的开口，内有偏灰蓝、带反光的玻璃面，一根细金属横杆横跨其上；该处下方墙面另有一个白色小矩形面板。\n- 墙上还有小块蓝色标牌状物与一块灰色墙面板，外观如上；其功能、是否固定均待补充。\n- 相对墙一侧：画面中只见浅灰色墙体厚度，无可见墙内侧面内容。",
+        "voiceDescription": "",
+        "sourceRevision": "531d703d0d7916adca8f4e94474c525ca7dea5c744e563903872e127fc3ea54c",
+        "projectRole": {
+          "role": "质量实验候选",
+          "plotNotes": "",
+          "revision": 1,
+          "sourceRevision": "1d3891d09df284c8d3aea21c4e195b8a524664a3a9d859155069b72f9ae82c08",
+          "updatedAt": "2026-10-04T11:39:58.101Z"
+        },
+        "sceneSpatial": {
+          "schemaVersion": 1,
+          "scope": "fixed_scene_space",
+          "status": "missing",
+          "version": 0,
+          "versionId": null,
+          "contentHash": "82d59f4ed4c85a69dac432ef7d61079cc368ea2811d7ccb21f1f06692575fb8e",
+          "confirmedAt": null,
+          "frame": null,
+          "elements": [],
+          "links": [],
+          "routes": [],
+          "unknowns": [
+            "方向基准待补充或确认；不可将镜头左/右直接当场景固定方向。",
+            "主要区域、建筑结构与固定物体尚未登记。"
+          ],
+          "issues": [],
+          "referenceImages": [],
+          "promptContext": "",
+          "draft": {
+            "owner": "Sean",
+            "schemaVersion": 1,
+            "scope": "fixed_scene_space",
+            "frame": {
+              "description": "",
+              "status": "pending"
+            },
+            "elements": [],
+            "links": [],
+            "routes": [],
+            "unknowns": [],
+            "referenceAssetIds": []
+          },
+          "usage": "空间标识以 entityId#id 引用；角色当前位置、朝向、移动时间线与可移动物品转移属于拍摄本。pending/draft/needs_review 内容不得作为已确认固定事实。",
+          "sourceRevision": "25132e0af894881b36a34722f69164379274ea584fb1d26a9576d759755b8307"
+        },
+        "sceneImages": {
+          "schemaVersion": 1,
+          "status": "missing",
+          "versionId": null,
+          "version": 0,
+          "contentHash": "d38598da3d4acb64f7f2de96143adb8981a7b0edd4f604a8aaccc49f7cdaf5d9",
+          "confirmedAt": null,
+          "images": [],
+          "notes": "",
+          "issues": [],
+          "usage": "同一场景的人工选定参考图片组；图片角色和锚点指向不是新的空间事实，固定事实以 sceneSpatial 为准。",
+          "sourceRevision": "6ab92157e3823ffb829835ea8176f0b344eb69eff041658a93be3e2102c32c9b"
+        },
+        "relations": [
+          {
+            "relationId": "69f5ea1e-2b19-4293-8081-0a3d472ea45a",
+            "sourceEntityId": "045bb254-1560-4413-861e-d047b2215afa",
+            "targetEntityId": "516b1812-e158-4780-992c-51b4553a4b18",
+            "category": "setting",
+            "type": "派生自",
+            "description": "D墙窗旁一张红色告示纸；不改变结构和门窗长凳",
+            "status": "active",
+            "targetRevision": "365bf469235063216856fffbe73458f87728668569796df6eb722220c2756d6c",
+            "createdAt": "2026-10-04T11:39:58.101Z",
+            "updatedAt": "2026-10-04T11:39:58.101Z",
+            "sourceName": "实验候车厅·告示",
+            "targetName": "实验候车厅"
+          }
+        ],
+        "derivedFrom": null,
+        "images": [
+          {
+            "assetId": "a4e8670a-471d-4352-904a-544608a55427",
+            "name": "概念图 784f866a · 1",
+            "contentHash": "237a16ead67bf023ea0b897bb4ec71a6356b4b626a72badb7fedafe05acf6eff"
+          }
+        ]
+      },
+      {
+        "entityId": "045bb254-1560-4413-861e-d047b2215afa",
+        "name": "实验候车厅·告示",
+        "flags": [
+          "场景",
+          "质量实验"
+        ],
+        "description": "长方形候车厅。固定设计：入口门在A墙，站台门在相对的C墙；单个长凳沿B墙；D墙有一扇窗。A/B/C/D是本实验的局部墙面标识，依次环绕房间，不代表地理方向。地面灰色瓷砖、墙面浅米色。绝对尺寸、不可见门外空间未知。 唯一变化：D墙新增一张红色告示纸，窗不动。",
+        "appearance": "长方形候车厅。固定设计：入口门在A墙，站台门在相对的C墙；单个长凳沿B墙；D墙有一扇窗。A/B/C/D是本实验的局部墙面标识，依次环绕房间，不代表地理方向。地面灰色瓷砖、墙面浅米色。绝对尺寸、不可见门外空间未知。 D墙新增红色告示纸。",
+        "voiceDescription": "",
+        "sourceRevision": "7f138d1472e0bd09db82ff8fd8e2d7df5aabcc89faf3f4928b59b69cae7a7b2b",
+        "projectRole": {
+          "role": "质量实验候选",
+          "plotNotes": "",
+          "revision": 1,
+          "sourceRevision": "1d3891d09df284c8d3aea21c4e195b8a524664a3a9d859155069b72f9ae82c08",
+          "updatedAt": "2026-10-04T11:39:58.101Z"
+        },
+        "sceneSpatial": {
+          "schemaVersion": 1,
+          "scope": "fixed_scene_space",
+          "status": "missing",
+          "version": 0,
+          "versionId": null,
+          "contentHash": "82d59f4ed4c85a69dac432ef7d61079cc368ea2811d7ccb21f1f06692575fb8e",
+          "confirmedAt": null,
+          "frame": null,
+          "elements": [],
+          "links": [],
+          "routes": [],
+          "unknowns": [
+            "方向基准待补充或确认；不可将镜头左/右直接当场景固定方向。",
+            "主要区域、建筑结构与固定物体尚未登记。"
+          ],
+          "issues": [],
+          "referenceImages": [],
+          "promptContext": "",
+          "draft": {
+            "owner": "Sean",
+            "schemaVersion": 1,
+            "scope": "fixed_scene_space",
+            "frame": {
+              "description": "",
+              "status": "pending"
+            },
+            "elements": [],
+            "links": [],
+            "routes": [],
+            "unknowns": [],
+            "referenceAssetIds": []
+          },
+          "usage": "空间标识以 entityId#id 引用；角色当前位置、朝向、移动时间线与可移动物品转移属于拍摄本。pending/draft/needs_review 内容不得作为已确认固定事实。",
+          "sourceRevision": "25132e0af894881b36a34722f69164379274ea584fb1d26a9576d759755b8307"
+        },
+        "sceneImages": {
+          "schemaVersion": 1,
+          "status": "missing",
+          "versionId": null,
+          "version": 0,
+          "contentHash": "d38598da3d4acb64f7f2de96143adb8981a7b0edd4f604a8aaccc49f7cdaf5d9",
+          "confirmedAt": null,
+          "images": [],
+          "notes": "",
+          "issues": [],
+          "usage": "同一场景的人工选定参考图片组；图片角色和锚点指向不是新的空间事实，固定事实以 sceneSpatial 为准。",
+          "sourceRevision": "6ab92157e3823ffb829835ea8176f0b344eb69eff041658a93be3e2102c32c9b"
+        },
+        "relations": [
+          {
+            "relationId": "69f5ea1e-2b19-4293-8081-0a3d472ea45a",
+            "sourceEntityId": "045bb254-1560-4413-861e-d047b2215afa",
+            "targetEntityId": "516b1812-e158-4780-992c-51b4553a4b18",
+            "category": "setting",
+            "type": "派生自",
+            "description": "D墙窗旁一张红色告示纸；不改变结构和门窗长凳",
+            "status": "active",
+            "targetRevision": "365bf469235063216856fffbe73458f87728668569796df6eb722220c2756d6c",
+            "createdAt": "2026-10-04T11:39:58.101Z",
+            "updatedAt": "2026-10-04T11:39:58.101Z",
+            "sourceName": "实验候车厅·告示",
+            "targetName": "实验候车厅"
+          }
+        ],
+        "derivedFrom": {
+          "entityId": "516b1812-e158-4780-992c-51b4553a4b18",
+          "name": "实验候车厅",
+          "sourceRevision": "365bf469235063216856fffbe73458f87728668569796df6eb722220c2756d6c",
+          "description": "D墙窗旁一张红色告示纸；不改变结构和门窗长凳",
+          "options": {
+            "authoringPlanId": "d1886bd8-05f3-492b-bcef-9ae55694b185",
+            "copyProfile": false,
+            "copyReference": false,
+            "copySettingRelations": false,
+            "copySpatialDraft": true,
+            "reuseVoice": false,
+            "sourceSpatialVersionId": null
+          },
+          "createdAt": "2026-10-04T11:39:58.101Z"
+        },
+        "images": []
+      }
+    ],
+    "storyRelations": [
+      {
+        "relationId": "43da02fc-635c-43db-9d2c-b15186b99d32",
+        "projectId": "c51a50d3-2b12-48c9-a83c-8f4e8e30a3c6",
+        "category": "story",
+        "sourceEntityId": "ad60ce45-800f-48e1-9800-530aeba81c55",
+        "targetEntityId": "045bb254-1560-4413-861e-d047b2215afa",
+        "sourceName": "实验林岚·腕伤",
+        "targetName": "实验候车厅·告示",
+        "type": "值守",
+        "description": "实验变体剧情职责，不是固定空间。",
+        "status": "active",
+        "revision": 1,
+        "sourceRevision": "823fdd5c0c039fffd364490d6e6b56b2c96c09ab6691f4747b95c6da7c3966ed",
+        "createdAt": "2026-10-04T11:39:58.101Z",
+        "updatedAt": "2026-10-04T11:39:58.101Z"
+      },
+      {
+        "relationId": "f4a1e753-bcc1-4f93-824e-c8a4369601d8",
+        "projectId": "c51a50d3-2b12-48c9-a83c-8f4e8e30a3c6",
+        "category": "story",
+        "sourceEntityId": "76dab29d-6225-485f-b905-0f022e144159",
+        "targetEntityId": "516b1812-e158-4780-992c-51b4553a4b18",
+        "sourceName": "实验林岚",
+        "targetName": "实验候车厅",
+        "type": "值守",
+        "description": "实验剧情职责，具体站位由拍摄本记录。",
+        "status": "active",
+        "revision": 1,
+        "sourceRevision": "8b540a9cf10a053ea94d727b3a0cf517e9ef458c1b2495647ae0e0829fa63f41",
+        "createdAt": "2026-10-04T11:39:58.101Z",
+        "updatedAt": "2026-10-04T11:39:58.101Z"
+      }
+    ],
+    "legacyUnassignedStoryRelations": [],
+    "contentHash": "e64fa02ea8ca48ca37de4627e267629cd1ee69cf57b207a37804d1fd51c1ee84",
+    "knowledgeIndex": [
+      {
+        "entityId": "76dab29d-6225-485f-b905-0f022e144159",
+        "sourceRevision": "532ebfb4a71821cd4ac315a1b44460416c6d79641dfad325c630ac5d0acc7682",
+        "projectRoleRevision": "1d3891d09df284c8d3aea21c4e195b8a524664a3a9d859155069b72f9ae82c08"
+      },
+      {
+        "entityId": "ad60ce45-800f-48e1-9800-530aeba81c55",
+        "sourceRevision": "f9e69575bb73fc7b0f77373b39135b16eb359f94e8b8b3c010714fff64874561",
+        "projectRoleRevision": "1d3891d09df284c8d3aea21c4e195b8a524664a3a9d859155069b72f9ae82c08"
+      },
+      {
+        "entityId": "516b1812-e158-4780-992c-51b4553a4b18",
+        "sourceRevision": "531d703d0d7916adca8f4e94474c525ca7dea5c744e563903872e127fc3ea54c",
+        "projectRoleRevision": "1d3891d09df284c8d3aea21c4e195b8a524664a3a9d859155069b72f9ae82c08"
+      },
+      {
+        "entityId": "045bb254-1560-4413-861e-d047b2215afa",
+        "sourceRevision": "7f138d1472e0bd09db82ff8fd8e2d7df5aabcc89faf3f4928b59b69cae7a7b2b",
+        "projectRoleRevision": "1d3891d09df284c8d3aea21c4e195b8a524664a3a9d859155069b72f9ae82c08"
+      }
+    ],
+    "missingFields": [
+      "synopsis",
+      "visualStyle"
+    ]
+  },
+  "generationRunCount": 2
+}

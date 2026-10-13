@@ -1,0 +1,33 @@
+{
+  "owner": "Sean",
+  "candidateId": "2b99d604-2cd0-49ec-a732-1bde489ec78e",
+  "mediaSha256": "c7ed63e9fba153785f95efe3bf24b7fc7a03a7eb7bb7ab1952bd0e0b7ae221fb",
+  "method": "Direct contact-sheet inspection sampled at approximately 0–6 seconds, 1 fps; not full-motion/audio verification",
+  "evidence": "frames/sean_s04_2b99d604_contact.png",
+  "result": "not-selected",
+  "observations": [
+    {
+      "timeSec": 2,
+      "observed": "B holds the sword raised in her right hand; tabletop blade disappears in following sampled frames."
+    },
+    {
+      "timeSec": 5,
+      "observed": "A begins to rise while B is still visible at screen-right rear."
+    },
+    {
+      "timeSec": 6,
+      "observed": "A stands; B remains partly visible at screen-right."
+    },
+    {
+      "timeSec": 0,
+      "observed": "B outer garment is draped on far-side chair, inherited from S3; contradicts screenplay tabletop placement."
+    }
+  ],
+  "upstreamCorrection": {
+    "shot": 3,
+    "candidateId": "a0333ad1-db36-4cc7-9316-ba9e5cd127e6",
+    "issue": "Selected earlier despite coat placed on chair, requiring re-evaluation and replacement",
+    "revisionJobId": "ae17976e-74e2-4f34-9bdc-ede619f8902a"
+  },
+  "audio": "not evaluated"
+}

@@ -1,0 +1,14 @@
+{
+  "owner": "Sean",
+  "instanceId": "13691d3c-895a-4daa-846e-f8623ce89d15",
+  "projectId": "5269e95a-d8b7-4c66-b8fd-603be396ef4c",
+  "revision": 18,
+  "bindingMode": "discuss",
+  "workspaceRoot": "/home/sean/projects/comfy-ops/experiments/sean_film_pi_20261005/workspaces/films/5269e95a-d8b7-4c66-b8fd-603be396ef4c",
+  "cliStatusOk": true,
+  "apiDependencies": [
+    "PI/PiWeb",
+    "Task Center"
+  ],
+  "gpuSubmitted": false
+}

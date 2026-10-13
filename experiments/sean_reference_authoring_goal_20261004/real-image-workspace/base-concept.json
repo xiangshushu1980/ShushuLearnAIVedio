@@ -1,0 +1,346 @@
+{
+  "owner": "Sean",
+  "step": {
+    "id": "a566dc72-50aa-42aa-b39d-2d12244a7aca",
+    "planId": "d1886bd8-05f3-492b-bcef-9ae55694b185",
+    "entityId": "76dab29d-6225-485f-b905-0f022e144159",
+    "entityName": "实验林岚",
+    "candidateKey": "linlan",
+    "candidateKind": "character",
+    "entityRevision": "6fd25a65954097c756c2f3c54bcd0ac720b05be73ecee1df5ca2d53953671b14",
+    "invariants": [
+      "只保留明确设计及实际参考依据，不补充未知"
+    ],
+    "key": "base-concept",
+    "label": "base-concept",
+    "modelId": "qwen-image-2.1",
+    "parameters": {},
+    "prompt": "成年夜班管理员，短黑发中只有一缕白发，灰色长外套与深蓝长裤。人物身份、头发、体型与衣服在变体中不变。 单人全身静态设定图，无新饰品。",
+    "purpose": "受控质量实验，非已核实事实",
+    "referenceAssetIds": [],
+    "role": "concept",
+    "styleId": "original",
+    "unknowns": [
+      "画面是否符合设计需生成后逐张检查"
+    ],
+    "useBaseAppearance": false,
+    "useMainAppearance": false,
+    "rootStepId": "a566dc72-50aa-42aa-b39d-2d12244a7aca",
+    "parentStepId": null,
+    "version": 1,
+    "reason": "",
+    "sessionId": null,
+    "runId": null,
+    "activeStepId": "a566dc72-50aa-42aa-b39d-2d12244a7aca",
+    "isCurrent": true,
+    "revisionStatus": "current",
+    "revisionBasis": null,
+    "contentHash": "329238dc5c602bb03cc94d40bc3e5249329ca7085e9c7d3f7d8bc0895d71a299",
+    "stale": false,
+    "issue": null,
+    "referenceEntityId": "76dab29d-6225-485f-b905-0f022e144159",
+    "sourceReferenceAssetIds": [],
+    "runs": []
+  },
+  "run": {
+    "id": "e34c1f58-9041-4bdb-9518-e935526fa8a5",
+    "entityId": "76dab29d-6225-485f-b905-0f022e144159",
+    "status": "succeeded",
+    "snapshot": {
+      "owner": "Sean",
+      "entity": {
+        "id": "76dab29d-6225-485f-b905-0f022e144159",
+        "name": "实验林岚",
+        "context": {
+          "appearance": "成年夜班管理员，短黑发中只有一缕白发，灰色长外套与深蓝长裤。人物身份、头发、体型与衣服在变体中不变。",
+          "authoring": {
+            "candidateKey": "linlan",
+            "newDesign": true,
+            "planId": "d1886bd8-05f3-492b-bcef-9ae55694b185",
+            "unknowns": [
+              "本组为实验设计，不代表生产资料；声音未设定"
+            ]
+          },
+          "description": "成年夜班管理员，短黑发中只有一缕白发，灰色长外套与深蓝长裤。人物身份、头发、体型与衣服在变体中不变。",
+          "flags": [
+            "人物",
+            "质量实验"
+          ],
+          "owner": "Sean",
+          "type": "character",
+          "voiceDescription": ""
+        }
+      },
+      "model": {
+        "id": "qwen-image-2.1",
+        "name": "Qwen Image 2.1",
+        "version": 1,
+        "adapter": "comfy",
+        "enabled": true,
+        "references": {
+          "min": 0,
+          "max": 16,
+          "instruction": "按所选顺序对应 Image 1、Image 2…，在提示词中明确每张图的职责。节点支持 0–16 张；已有四图组合实验。"
+        },
+        "fields": {
+          "size": {
+            "type": "select",
+            "label": "画幅",
+            "default": "1536x1024",
+            "options": [
+              {
+                "value": "1536x1024",
+                "label": "3:2 · 1536 × 1024"
+              },
+              {
+                "value": "1024x1024",
+                "label": "1:1 · 1024 × 1024"
+              },
+              {
+                "value": "1344x768",
+                "label": "16:9 · 1344 × 768"
+              },
+              {
+                "value": "768x1344",
+                "label": "9:16 · 768 × 1344"
+              }
+            ]
+          },
+          "seed": {
+            "type": "integer",
+            "label": "随机种子",
+            "default": 42,
+            "min": 0,
+            "max": 2147483647
+          },
+          "steps": {
+            "type": "integer",
+            "label": "采样步数",
+            "default": 25,
+            "min": 1,
+            "max": 50
+          }
+        },
+        "localGpu": true
+      },
+      "style": {
+        "id": "original",
+        "name": "原始提示词",
+        "version": 1,
+        "promptSuffix": ""
+      },
+      "prompt": "成年夜班管理员，短黑发中只有一缕白发，灰色长外套与深蓝长裤。人物身份、头发、体型与衣服在变体中不变。 单人全身静态设定图，无新饰品。",
+      "purpose": "受控质量实验，非已核实事实",
+      "effectivePrompt": "成年夜班管理员，短黑发中只有一缕白发，灰色长外套与深蓝长裤。人物身份、头发、体型与衣服在变体中不变。 单人全身静态设定图，无新饰品。",
+      "parameters": {
+        "size": "1536x1024",
+        "seed": 42,
+        "steps": 25
+      },
+      "references": [],
+      "template": {
+        "id": "qwen-image-2.1.0-refs",
+        "version": 1,
+        "hash": "ff56cf7134b69f84749120bba48e546964c3e7c38ee19ae6856606c71295ab46"
+      },
+      "authoring": {
+        "stepId": "a566dc72-50aa-42aa-b39d-2d12244a7aca",
+        "rootStepId": "a566dc72-50aa-42aa-b39d-2d12244a7aca",
+        "version": 1,
+        "planId": "d1886bd8-05f3-492b-bcef-9ae55694b185",
+        "sourceRevision": "329238dc5c602bb03cc94d40bc3e5249329ca7085e9c7d3f7d8bc0895d71a299",
+        "role": "concept",
+        "label": "base-concept",
+        "invariants": [
+          "只保留明确设计及实际参考依据，不补充未知"
+        ],
+        "unknowns": [
+          "画面是否符合设计需生成后逐张检查"
+        ],
+        "batchId": "c3a37024-a768-4afd-8dc0-0d8af8c46db8",
+        "batchItemId": "9ec15cd2-62a4-4736-9bd9-9b0340943b3e"
+      }
+    },
+    "progress": 100,
+    "phase": "生成完成 · 已加入历史",
+    "promptId": "3c695ae8-8e81-410f-b423-a0dcc2c99a3b",
+    "error": null,
+    "createdAt": "2026-10-04T11:39:58.197Z",
+    "updatedAt": "2026-10-04T11:40:23.010Z",
+    "completedAt": "2026-10-04T11:40:23.010Z",
+    "references": [],
+    "outputs": [
+      {
+        "id": "5785b1f1-fd47-4e46-b419-9a58be21f15c",
+        "entityId": "76dab29d-6225-485f-b905-0f022e144159",
+        "kind": "concept",
+        "name": "概念图 e34c1f58 · 1",
+        "mime": "image/png",
+        "hash": "11013803402d864886fc21c7027c08f2fec6e8d4a6a01d0ad8fb2c85edc8882b",
+        "width": 1536,
+        "height": 1024,
+        "locked": true,
+        "protected": false,
+        "everConfirmed": false,
+        "description": "",
+        "descriptionSource": "empty",
+        "metadata": {
+          "source": "generation",
+          "template": {
+            "id": "qwen-image-2.1.0-refs",
+            "version": 1,
+            "hash": "ff56cf7134b69f84749120bba48e546964c3e7c38ee19ae6856606c71295ab46"
+          },
+          "authoring": {
+            "stepId": "a566dc72-50aa-42aa-b39d-2d12244a7aca",
+            "rootStepId": "a566dc72-50aa-42aa-b39d-2d12244a7aca",
+            "version": 1,
+            "planId": "d1886bd8-05f3-492b-bcef-9ae55694b185",
+            "sourceRevision": "329238dc5c602bb03cc94d40bc3e5249329ca7085e9c7d3f7d8bc0895d71a299",
+            "role": "concept",
+            "label": "base-concept",
+            "invariants": [
+              "只保留明确设计及实际参考依据，不补充未知"
+            ],
+            "unknowns": [
+              "画面是否符合设计需生成后逐张检查"
+            ],
+            "batchId": "c3a37024-a768-4afd-8dc0-0d8af8c46db8",
+            "batchItemId": "9ec15cd2-62a4-4736-9bd9-9b0340943b3e"
+          },
+          "outputIndex": 0,
+          "inputAssetIds": [],
+          "provider": "comfy",
+          "promptId": "3c695ae8-8e81-410f-b423-a0dcc2c99a3b",
+          "outputFiles": [
+            {
+              "filename": "concept_00001_.png",
+              "subfolder": "sean_reference_workspace/e34c1f58-9041-4bdb-9518-e935526fa8a5",
+              "type": "output",
+              "id": "ef4aac42-f3b0-4fc7-a15c-43bbadf196d5",
+              "nodeId": "9"
+            }
+          ],
+          "owner": "Sean"
+        },
+        "mediaType": "image",
+        "durationSec": null,
+        "runId": "e34c1f58-9041-4bdb-9518-e935526fa8a5",
+        "createdAt": "2026-10-04T11:40:23.009Z",
+        "deletedAt": null,
+        "url": "/api/assets/5785b1f1-fd47-4e46-b419-9a58be21f15c/content"
+      }
+    ]
+  },
+  "execution": {
+    "workflow": {
+      "1": {
+        "class_type": "UNETLoader",
+        "inputs": {
+          "unet_name": "qwen_image_2.1_int8_convrot.safetensors",
+          "weight_dtype": "default"
+        }
+      },
+      "2": {
+        "class_type": "CLIPLoader",
+        "inputs": {
+          "clip_name": "qwen3vl_8b_int8_convrot.safetensors",
+          "type": "qwen_image",
+          "device": "default"
+        }
+      },
+      "3": {
+        "class_type": "VAELoader",
+        "inputs": {
+          "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+        }
+      },
+      "4": {
+        "class_type": "QwenImage21Cache",
+        "inputs": {
+          "model": [
+            "1",
+            0
+          ],
+          "device": "auto",
+          "dtype": "default"
+        }
+      },
+      "5": {
+        "class_type": "TextEncodeQwenImage21",
+        "inputs": {
+          "clip": [
+            "2",
+            0
+          ],
+          "prompt": "成年夜班管理员，短黑发中只有一缕白发，灰色长外套与深蓝长裤。人物身份、头发、体型与衣服在变体中不变。 单人全身静态设定图，无新饰品。",
+          "negative_prompt": "",
+          "resolution": 1024,
+          "vae": [
+            "3",
+            0
+          ]
+        }
+      },
+      "6": {
+        "class_type": "EmptyLatentImage",
+        "inputs": {
+          "width": 1536,
+          "height": 1024,
+          "batch_size": 1
+        }
+      },
+      "7": {
+        "class_type": "KSampler",
+        "inputs": {
+          "model": [
+            "4",
+            0
+          ],
+          "positive": [
+            "5",
+            0
+          ],
+          "negative": [
+            "5",
+            1
+          ],
+          "latent_image": [
+            "6",
+            0
+          ],
+          "seed": 42,
+          "steps": 25,
+          "cfg": 1,
+          "sampler_name": "euler",
+          "scheduler": "simple",
+          "denoise": 1
+        }
+      },
+      "8": {
+        "class_type": "VAEDecode",
+        "inputs": {
+          "samples": [
+            "7",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        }
+      },
+      "9": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "8",
+            0
+          ],
+          "filename_prefix": "sean_reference_workspace/e34c1f58-9041-4bdb-9518-e935526fa8a5/concept"
+        }
+      }
+    },
+    "clientId": "sean-reference-e34c1f58-9041-4bdb-9518-e935526fa8a5"
+  }
+}

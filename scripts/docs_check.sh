@@ -84,9 +84,15 @@ else
   echo "  无"
 fi
 
+echo "== 7. Markdown 链接、编号例外与 Ledger ID 检查 =="
+if ! python3 scripts/docs_reference_check.py; then
+  fail=1
+fi
+
 if [ "$fail" -eq 0 ]; then
   echo "OK：文档与 skill 检查通过"
 else
   echo "FAIL：文档或 skill 检查失败（见上 ✗/⚠）"
 fi
+
 exit "$fail"

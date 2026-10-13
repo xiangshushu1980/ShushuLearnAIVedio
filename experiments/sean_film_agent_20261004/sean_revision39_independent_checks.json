@@ -1,0 +1,42 @@
+{
+  "owner": "Sean",
+  "revision": 39,
+  "checks": [
+    {
+      "shotId": "18cd89f4-1697-451b-9719-124d43e8b511",
+      "formatValid": true,
+      "videoEligible": true,
+      "error": null
+    },
+    {
+      "shotId": "75f55a65-8167-469e-9762-9b3bfaf5b048",
+      "formatValid": true,
+      "videoEligible": false,
+      "error": "衔接参考帧来源已变化，请重新选取前一镜候选的尾帧"
+    },
+    {
+      "shotId": "cbfc4455-17f8-4b4a-875a-e3bcfc418399",
+      "formatValid": true,
+      "videoEligible": false,
+      "error": "衔接参考帧来源已变化，请重新选取前一镜候选的尾帧"
+    },
+    {
+      "shotId": "8c1401c1-d4db-4b40-82ea-6fddd83bb208",
+      "formatValid": true,
+      "videoEligible": true,
+      "error": null
+    },
+    {
+      "shotId": "4a3af4ad-be8c-41bc-b43a-5f24773917fa",
+      "formatValid": true,
+      "videoEligible": true,
+      "error": null
+    },
+    {
+      "shotId": "f0ac8b73-eb6b-4d3d-b877-6d4d7b95a34e",
+      "formatValid": true,
+      "videoEligible": true,
+      "error": null
+    }
+  ]
+}

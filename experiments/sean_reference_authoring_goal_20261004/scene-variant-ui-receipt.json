@@ -1,0 +1,37 @@
+{
+  "owner": "Sean",
+  "source": "isolated PC color-block fixture, no actual generation",
+  "entityId": "d3b3ea81-dc56-4c57-8a08-871c79e1c2f9",
+  "derivation": {
+    "entityId": "ac741d6f-7173-484b-816f-40c4f704630b",
+    "name": "隔离测试候车厅",
+    "sourceRevision": "127af545195f131b8a60c4bf785e87ddc3d12fbf2820576c87b82ec093c66d59",
+    "description": "只改变长凳表面磨损，不改变布局",
+    "options": {
+      "authoringPlanId": "a4a54c9a-d0e1-4653-806d-17ad4a732f24",
+      "copyProfile": false,
+      "copyReference": false,
+      "copySettingRelations": false,
+      "copySpatialDraft": true,
+      "reuseVoice": false,
+      "sourceSpatialVersionId": "3570f3e0-48f0-4a70-a3c1-e7cf12173eed"
+    },
+    "createdAt": "2026-10-03T23:10:09.294Z"
+  },
+  "status": "draft",
+  "anchorIds": [
+    "entrance",
+    "bench"
+  ],
+  "anchorStatuses": [
+    "pending",
+    "pending"
+  ],
+  "referenceAssetIds": [],
+  "runCount": 0,
+  "defaultExport": {
+    "status": "draft",
+    "elements": [],
+    "promptContext": ""
+  }
+}

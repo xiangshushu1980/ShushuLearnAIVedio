@@ -1,0 +1,107 @@
+{
+ "1": {
+  "class_type": "LongCat_Video_SM_Model",
+  "inputs": {
+   "inference_weight_mode": "official_int8_sharded",
+   "attention_mode": "sageattn",
+   "auto_download_missing_weights": false,
+   "vae": "LongCat-Video-Avatar-vae.safetensors",
+   "lora": "longcat-avatar-dmd_lora.safetensors"
+  }
+ },
+ "2": {
+  "class_type": "LongCat_Video_SM_Encode",
+  "inputs": {
+   "text_encoder_root": "LongCat-Video",
+   "auto_download_missing_text_encoder": false,
+   "offload_device": "cpu",
+   "prompt": "A young woman with long black hair is speaking warmly to the camera, wearing a white blouse, sitting in a bright modern studio. Natural facial expressions and lip movement.",
+   "negative_prompt": ""
+  }
+ },
+ "3": {
+  "class_type": "LongCat_Video_SM_WhisperModel",
+  "inputs": {
+   "audio_encoder": "whisper-large-v3.safetensors"
+  }
+ },
+ "4": {
+  "class_type": "LoadAudio",
+  "inputs": {
+   "audio": "V1_1024_4s_audio.mp3"
+  }
+ },
+ "5": {
+  "class_type": "LongCat_Video_SM_Audio",
+  "inputs": {
+   "audio_encoder": [
+    "3",
+    0
+   ],
+   "audio": [
+    "4",
+    0
+   ],
+   "save_fps": 25,
+   "audio_type": "add",
+   "p_box": ""
+  }
+ },
+ "6": {
+  "class_type": "LongCat_Video_SM_Sampler",
+  "inputs": {
+   "model": [
+    "1",
+    0
+   ],
+   "te_cond": [
+    "2",
+    0
+   ],
+   "au_cond": [
+    "5",
+    0
+   ],
+   "stage_1": "at2v",
+   "resolution": "480p",
+   "seed": 42,
+   "steps": 8,
+   "text_guidance_scale": 1.0,
+   "audio_guidance_scale": 1.0,
+   "ref_img_index": 10,
+   "mask_frame_range": 3,
+   "block_num": 0,
+   "mux_audio_path": "",
+   "offload_device": "cpu",
+   "debug_mode": true,
+   "mux_audio": [
+    "4",
+    0
+   ]
+  }
+ },
+ "7": {
+  "class_type": "CreateVideo",
+  "inputs": {
+   "images": [
+    "6",
+    0
+   ],
+   "audio": [
+    "4",
+    0
+   ],
+   "fps": 25
+  }
+ },
+ "8": {
+  "class_type": "SaveVideo",
+  "inputs": {
+   "video": [
+    "7",
+    0
+   ],
+   "filename_prefix": "video/longcat_at2v_test"
+  }
+ }
+}

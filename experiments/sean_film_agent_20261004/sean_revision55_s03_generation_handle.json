@@ -1,0 +1,14 @@
+{
+  "owner": "Sean",
+  "projectId": "538005c3-16bd-4709-aa4e-70831b960a24",
+  "sessionId": "0707ba67-08da-42cf-9bc9-b1fa07bf95cf",
+  "request": {
+    "requestId": "437c54ad-d6e3-4057-ba22-1b11fa6e944f",
+    "mode": "generate",
+    "text": "授权仅S3当前rev55一次真实测试。根Agent已核对rev55所有任务/候选/Agent终态，共享Comfy队列0/0与资源状态。freshcontext加载method8/Ref2VA读S3完整prompt和view真实anchor，validate通过仅generate_video cbfc4455-17f8-4b4a-875a-e3bcfc418399一次。不修改任何文字/动作/时长/seed/空间/图序/实体，不调失败401固定LLM，不生成其他镜、不选片、不设S4anchor、不合成。adapter管理共享lease，轮询同一候选未知结果不重提交。成功inspect分批0/1/2和2.75/3.5/末尾前.15，观察衣束是否可见从B身前向左后方平移、经过中央杯后方、落到杯左方/书左方/刀远侧裸木点；书原位可见且衣身袖子全部受木面支撑；A刀杯纸不变B内搭裤鞋保留。明确通过/部分（轨迹左移但未抵达）/失败（仍Bfront盖书）；未看清未知，不凭prompt宣布动作完成。报告candidate/hash/时长与逐帧真观察，音频未验收。"
+  },
+  "response": {
+    "runId": "d8885656-3126-4482-9605-51883f8613bc",
+    "status": "running"
+  }
+}

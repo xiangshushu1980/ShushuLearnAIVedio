@@ -1,0 +1,26 @@
+{
+  "owner": "Sean",
+  "verification": "isolated PC UI; mock image fixture; no model/ComfyUI calls",
+  "projectContextUnchanged": true,
+  "entityDetailUnchanged": true,
+  "applied": {
+    "appliedAt": "2026-10-03T23:44:20.146Z",
+    "createdEntityIds": [],
+    "entities": {
+      "existing": "ade4f103-edc3-441f-8189-273feed57132"
+    },
+    "existingEntityIds": [
+      "ade4f103-edc3-441f-8189-273feed57132"
+    ],
+    "owner": "Sean",
+    "planId": "f6cc3ac5-9b0c-4593-ae2c-5e3aab1c7abe",
+    "steps": [
+      {
+        "entityId": "ade4f103-edc3-441f-8189-273feed57132",
+        "label": "既有长凳细节",
+        "stepId": "3d464f18-984a-4692-8a40-9251fc5b5cfa"
+      }
+    ]
+  },
+  "revisedPrompt": "Use Image 1 as the same hall. Show the existing bench and preserve the entrance. Do not invent new doors."
+}

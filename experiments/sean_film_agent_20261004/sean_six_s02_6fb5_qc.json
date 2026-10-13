@@ -1,0 +1,20 @@
+{
+  "owner": "Sean",
+  "candidateId": "6fb58b1f-e122-47e4-a018-1c2b2b1953ba",
+  "sourceCandidateId": "1d223e8a-77b5-44d0-83d1-f97d48b3a544",
+  "actualDurationSec": 4.458333,
+  "plannedDurationSec": 4,
+  "fullDecodePassed": true,
+  "method": "Root actual3fpscontact; Agent5timedframes",
+  "observations": [
+    "B closes open book and places it on table at her side, then rises to standing; outercoat remains worn",
+    "A remains seated, one sheathed blade stays flat at same table location",
+    "Same table, bookwall, foreground chair and paper/cup arrangement as source tail"
+  ],
+  "limitations": [
+    "No audio content/timbre/lips verification",
+    "Sparse images do not establish full-frame anatomy/continuous motion",
+    "Actual duration exceeds planned4sec by .458sec"
+  ],
+  "status": "provisional visual pass"
+}

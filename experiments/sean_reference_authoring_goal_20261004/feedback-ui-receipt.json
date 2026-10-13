@@ -1,0 +1,27 @@
+{
+  "owner": "Sean",
+  "source": "isolated PC fixture; mock Agent and color blocks; no providers/ComfyUI",
+  "beforeSend": {
+    "runs": 1,
+    "revisions": 0
+  },
+  "afterSend": {
+    "runs": 2,
+    "states": [
+      "succeeded",
+      "succeeded"
+    ],
+    "revisions": [
+      {
+        "status": "proposal",
+        "feedbackReviewId": "c4bebfd0-b190-4a6a-a0e9-fe3fb9096fec"
+      }
+    ]
+  },
+  "reload": {
+    "persisted": true,
+    "reportLink": true,
+    "overflow": false
+  },
+  "consoleErrors": 0
+}

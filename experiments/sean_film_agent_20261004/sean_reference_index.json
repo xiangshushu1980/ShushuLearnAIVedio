@@ -1,0 +1,182 @@
+{
+  "owner": "Sean",
+  "assets": [
+    {
+      "owner": "Sean",
+      "assetId": "25958405-ac83-454f-909e-f4aeba33f9a4",
+      "entityId": "9971429d-863e-499e-b7c5-902d30e0f6a2",
+      "role": "main_appearance",
+      "hash": "bc97295cda1363c189fcd3e0cc3841dfc36ca03db415906bf96b44b56d21cd6e",
+      "file": "references/sean_25958405-ac83-454f-909e-f4aeba33f9a4.png"
+    },
+    {
+      "owner": "Sean",
+      "assetId": "af9823e0-1b27-48b7-a469-47ddcf4b7534",
+      "entityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+      "role": "main_appearance",
+      "hash": "df20a30c62bf979ff04d2773b1757620847d3b485b580095b429031b5ea2d04b",
+      "file": "references/sean_af9823e0-1b27-48b7-a469-47ddcf4b7534.png"
+    },
+    {
+      "owner": "Sean",
+      "assetId": "89f7618d-e430-46c7-9c4d-b8e20f3ff386",
+      "entityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+      "role": "three_view",
+      "hash": "5fecbc99843090ee1c74e7eecce6b9f3b3c34df5bd8ebfdd33a10a1fc2b9aa43",
+      "file": "references/sean_89f7618d-e430-46c7-9c4d-b8e20f3ff386.png"
+    },
+    {
+      "owner": "Sean",
+      "assetId": "43123388-aebd-4161-97d7-04f0dabc9484",
+      "entityId": "e3f49e04-4a4b-483f-823e-d31f497d5ab8",
+      "role": "main_appearance",
+      "hash": "59fd1cff742b9d28c0904419206edc8b0ffe933e53bdb0f272c43b69e314e94f",
+      "file": "references/sean_43123388-aebd-4161-97d7-04f0dabc9484.png"
+    },
+    {
+      "owner": "Sean",
+      "assetId": "bf0ec0df-9e51-4a07-a54a-23ef9626173c",
+      "entityId": "e3f49e04-4a4b-483f-823e-d31f497d5ab8",
+      "role": "three_view",
+      "hash": "25c620051f4c8240550e54817c3ba9e4d38ffcc34c9d19e6e696613b7f80e897",
+      "file": "references/sean_bf0ec0df-9e51-4a07-a54a-23ef9626173c.png"
+    },
+    {
+      "owner": "Sean",
+      "assetId": "e6ea44ed-6c4a-4fb0-a868-de41e241c430",
+      "entityId": "4c8e5bd2-78a5-4aee-8f22-7ec5a8512bb8",
+      "role": "main_appearance",
+      "hash": "e0c1d47b35f3b83c590c44e138f4dcb9df6078fbf44b39237cd3cf4d40684c53",
+      "file": "references/sean_e6ea44ed-6c4a-4fb0-a868-de41e241c430.png"
+    },
+    {
+      "owner": "Sean",
+      "assetId": "96e44971-aedc-42da-a534-dc321fd5e350",
+      "entityId": "3044bf32-2019-458e-a7cf-e50ab304e42c",
+      "role": "main_appearance",
+      "hash": "80a8e0c3b070a51034c55026b864f9841f96e90d8e0cff6077b7ed2fb1df6a81",
+      "file": "references/sean_96e44971-aedc-42da-a534-dc321fd5e350.png"
+    },
+    {
+      "owner": "Sean",
+      "assetId": "5d0c2f3a-2249-44f3-ab7b-fa89a476610b",
+      "entityId": "3044bf32-2019-458e-a7cf-e50ab304e42c",
+      "role": "three_view",
+      "hash": "3ce01b333ac8918b3faa804e2e345f3c0f73ba2fd4db5bdfb69b5a46940417ba",
+      "file": "references/sean_5d0c2f3a-2249-44f3-ab7b-fa89a476610b.png"
+    },
+    {
+      "owner": "Sean",
+      "assetId": "c25d9268-6efa-4c1c-9a23-cef25c5ef192",
+      "entityId": "ba6dcbf0-ea45-4720-80c7-8bc7b2ec9165",
+      "role": "main_appearance",
+      "hash": "0314d3cb3f05571238673e899a4eb8e1f098d2f3d511b8b93e988e0aeb80c238",
+      "file": "references/sean_c25d9268-6efa-4c1c-9a23-cef25c5ef192.png"
+    },
+    {
+      "owner": "Sean",
+      "assetId": "7627e472-4072-42f7-aa37-3b68d9f96db7",
+      "entityId": null,
+      "role": "continuity_frame",
+      "hash": "fa0c8b002863d03452f9289b59c8dae8b9d6f62a96d2328d85fc593487ecaa49",
+      "file": "references/sean_7627e472-4072-42f7-aa37-3b68d9f96db7.png",
+      "provenance": {
+        "owner": "Sean",
+        "id": "7627e472-4072-42f7-aa37-3b68d9f96db7",
+        "role": "opening_frame",
+        "createdAt": "2026-10-03T22:55:33.527Z",
+        "sourceShotId": "6df199fc-99db-4f97-af28-82ed68869e16",
+        "sourceCandidateId": "414f8436-1205-4a97-95a6-71ec8d9b00b7",
+        "sourceMediaHash": "1ffb2d12dadd00740ddac77e6af98865f37dc6c6728e80c557a838e26b8f7210",
+        "sourceInputHash": "84db1e36ac8d65c252103e9f7c84b9c9aee7ebba150cc2bfb8b764c2cc73e347",
+        "timeSec": 6.433332999999999,
+        "localHash": "fa0c8b002863d03452f9289b59c8dae8b9d6f62a96d2328d85fc593487ecaa49",
+        "mime": "image/png"
+      }
+    },
+    {
+      "owner": "Sean",
+      "assetId": "8d9c0b64-f210-4055-8785-dd47d2de3c09",
+      "entityId": null,
+      "role": "continuity_frame",
+      "hash": "d8e3d4d4dcc8dc5a088d02fd64fd4ae5a508200222426f165d130affb203bb1e",
+      "file": "references/sean_8d9c0b64-f210-4055-8785-dd47d2de3c09.png",
+      "provenance": {
+        "owner": "Sean",
+        "id": "8d9c0b64-f210-4055-8785-dd47d2de3c09",
+        "role": "opening_frame",
+        "createdAt": "2026-10-03T23:11:48.625Z",
+        "sourceShotId": "51b9d957-d24c-47e4-9268-d61ffcfa68ab",
+        "sourceCandidateId": "16d49ccd-512b-43d2-9741-9c9fd15707a6",
+        "sourceMediaHash": "1b21e0c4fe836dacb6f5c14748e65155368e472cdf4dd4ffbdd6ae312dd3bfaa",
+        "sourceInputHash": "1e04f7a08a41a5b5fdc674945787764183bb01831bf821f3ab6dd9c7e7be51d3",
+        "timeSec": 6.433332999999999,
+        "localHash": "d8e3d4d4dcc8dc5a088d02fd64fd4ae5a508200222426f165d130affb203bb1e",
+        "mime": "image/png"
+      }
+    },
+    {
+      "owner": "Sean",
+      "assetId": "55324734-6101-4552-8c1a-d820f3bcf8a5",
+      "entityId": null,
+      "role": "continuity_frame",
+      "hash": "3a40cd96772fd75bf4fb23ad960aa72614b989f8e56686e6ea7147494de103b5",
+      "file": "references/sean_55324734-6101-4552-8c1a-d820f3bcf8a5.png",
+      "provenance": {
+        "owner": "Sean",
+        "id": "55324734-6101-4552-8c1a-d820f3bcf8a5",
+        "role": "opening_frame",
+        "createdAt": "2026-10-03T23:16:57.412Z",
+        "sourceShotId": "9478d1bf-5268-41d0-b899-98e3dc9d3e6c",
+        "sourceCandidateId": "a22002a9-cde2-42a0-9d45-9d7932e8505f",
+        "sourceMediaHash": "00cb7494bb74787de985747353ba1c0f1b52ae2da3377fdf1edd03e0bc364cdc",
+        "sourceInputHash": "40dbfa19ffd0850e97c1accff5d8f4e85c4bf7cc0634c0b39d8bbebc50df4b94",
+        "timeSec": 7.1419999999999995,
+        "localHash": "3a40cd96772fd75bf4fb23ad960aa72614b989f8e56686e6ea7147494de103b5",
+        "mime": "image/png"
+      }
+    },
+    {
+      "owner": "Sean",
+      "assetId": "5ba6855e-032c-42fa-b636-7288b0f7de13",
+      "entityId": null,
+      "role": "continuity_frame",
+      "hash": "da3e77421ef23176d6e12173709cf7fd7343e13079f3bd2df307c91d45a0ebf7",
+      "file": "references/sean_5ba6855e-032c-42fa-b636-7288b0f7de13.png",
+      "provenance": {
+        "owner": "Sean",
+        "id": "5ba6855e-032c-42fa-b636-7288b0f7de13",
+        "role": "opening_frame",
+        "createdAt": "2026-10-03T23:21:30.372Z",
+        "sourceShotId": "1e97e13e-d8d1-4c23-9b67-a81a48f2353a",
+        "sourceCandidateId": "7bdf5cc4-eaa1-4a1d-8fd3-f89598c018d5",
+        "sourceMediaHash": "6e0a236bc193e0742ad613609ac60fa7d67e6df00a728c7d5daa3efeef7f4ae6",
+        "sourceInputHash": "7d92c14f055fc2347cc3bd05c737caecda5a5a5236f66363760b1afbe8f4e09c",
+        "timeSec": 4.308332999999999,
+        "localHash": "da3e77421ef23176d6e12173709cf7fd7343e13079f3bd2df307c91d45a0ebf7",
+        "mime": "image/png"
+      }
+    },
+    {
+      "owner": "Sean",
+      "assetId": "af8931c2-cb31-40dd-8a7b-aaabdd6ad189",
+      "entityId": null,
+      "role": "continuity_frame",
+      "hash": "08b54b60224f2c788070d7c2d465f6c7fb0159c63847935a7b34a1269b55f4a0",
+      "file": "references/sean_af8931c2-cb31-40dd-8a7b-aaabdd6ad189.png",
+      "provenance": {
+        "owner": "Sean",
+        "id": "af8931c2-cb31-40dd-8a7b-aaabdd6ad189",
+        "role": "opening_frame",
+        "createdAt": "2026-10-03T23:31:05.310Z",
+        "sourceShotId": "6df199fc-99db-4f97-af28-82ed68869e16",
+        "sourceCandidateId": "1c64d684-531f-468e-beac-4e055fd959d6",
+        "sourceMediaHash": "03d7293b0d786e3ccee6e704b21f2b4627f1483675e8ed407d5401ee07540143",
+        "sourceInputHash": "9f932d75915f68d3ae1e936ba6d6587f79a3252f08959634ab97df18c8f62358",
+        "timeSec": 6.433332999999999,
+        "localHash": "08b54b60224f2c788070d7c2d465f6c7fb0159c63847935a7b34a1269b55f4a0",
+        "mime": "image/png"
+      }
+    }
+  ]
+}

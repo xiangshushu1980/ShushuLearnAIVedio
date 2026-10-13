@@ -1,0 +1,14 @@
+{
+  "owner": "Sean",
+  "projectId": "538005c3-16bd-4709-aa4e-70831b960a24",
+  "sessionId": "0707ba67-08da-42cf-9bc9-b1fa07bf95cf",
+  "request": {
+    "requestId": "8ec77b5c-cb1e-46fe-89e6-e15497e13beb",
+    "mode": "generate",
+    "text": "根已完整读rev82S3b新稿/独立diff，剧情实体全片scenePlan和其他6镜未变，S3b一步far-side站位与9Picture实际开场语义一致，无旧原地锁死。队列空、lease0。freshcontext/loadmethod/validate后，授权只提交ONE个4sec S3b 7a4d2f18-6c93-4b57-9e21-5d8c3f0a6b74实际候选。检验一步screenleft身体落点对齐是否出现、自然团状托持后整个cloth落中央杯左/书左/刀远侧，无衣角越桌沿，接触后双手离开，staticA/刀/书/杯/纸/图书馆不动。不改文字/空间/其他镜，不选片/锚帧/合成，不重试。等待同一candidate终态并inspect实际0.15/1/2/3/4.3或合法尾帧，succeeded不是QC。根全程contact+高清尾帧独立核对。不要宣称能够辨认被折层遮住的各袖；区分可见轮廓有无越沿与隐蔽内部支撑未知。"
+  },
+  "response": {
+    "runId": "81b471c2-48e1-48dc-8761-e75a7f12ae3e",
+    "status": "running"
+  }
+}

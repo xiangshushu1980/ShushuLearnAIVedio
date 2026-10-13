@@ -1,0 +1,984 @@
+{
+  "owner": "Sean",
+  "reviewer": "Codex",
+  "scope": "Isolated experiment only; aligned visible design following user acceptance of first images; not human spatial confirmation.",
+  "proposal": {
+    "owner": "Sean",
+    "id": "762cb85f-e452-4ccf-aa57-f13576d7b84e",
+    "projectId": "c51a50d3-2b12-48c9-a83c-8f4e8e30a3c6",
+    "entityId": "516b1812-e158-4780-992c-51b4553a4b18",
+    "sessionId": "baa7ee97-f5da-4a02-b1b6-7250fd7cfce7",
+    "runId": "3febbecf-42ab-4fb0-aa06-58dd2cdedc46",
+    "basis": {
+      "contextHash": "9975d7d13897a9103339de1b03f78f3a21df4b0dcc462bf399d1f881ebd957b0",
+      "entityRevision": "9f12c5084e58eacc6bc7cd78fd95e0b4a983422072ce32d08b213080c765b346"
+    },
+    "before": {
+      "appearance": "长方形候车厅。固定设计：入口门在A墙，站台门在相对的C墙；单个长凳沿B墙；D墙有一扇窗。A/B/C/D是本实验的局部墙面标识，依次环绕房间，不代表地理方向。地面灰色瓷砖、墙面浅米色。绝对尺寸、不可见门外空间未知。",
+      "description": "长方形候车厅。固定设计：入口门在A墙，站台门在相对的C墙；单个长凳沿B墙；D墙有一扇窗。A/B/C/D是本实验的局部墙面标识，依次环绕房间，不代表地理方向。地面灰色瓷砖、墙面浅米色。绝对尺寸、不可见门外空间未知。",
+      "name": "实验候车厅",
+      "voiceDescription": ""
+    },
+    "changes": {
+      "appearance": "以下为本图（俯视剖切总览）可见外观，仅描述可见外观，不推断材质构成、隐藏结构或构造做法。\n- 地面：灰色方形地砖，砖缝形成规则网格，整体呈浅冷灰色。\n- 墙面：浅米白色（偏乳白），可见墙面平整、无图案装饰。\n- 长凳：木质板面长凳，板面呈浅棕原木色；靠两端各有一个深色小支脚；凳面空置，无人物、无物品。板面长边沿长凳墙放置，大致居中于该墙可见部分。\n- 图中位于长凳墙右侧的相邻墙，可见两部分：偏上一处为带框开口，框为白色、玻璃明亮偏白，框内有一根横向分格条；同一墙面上偏下一处为与上部相分开的竖向狭长特征，外观浅色、带竖向边界线，其下端有一个深色（深灰）矩形块。两部分之间可见连续墙面。\n- 图中位于长凳墙左侧的相邻墙，可见一处带金属色边框的开口，内有偏灰蓝、带反光的玻璃面，一根细金属横杆横跨其上；该处下方墙面另有一个白色小矩形面板。\n- 墙上还有小块蓝色标牌状物与一块灰色墙面板，外观如上；其功能、是否固定均待补充。\n- 相对墙一侧：画面中只见浅灰色墙体厚度，无可见墙内侧面内容。",
+      "description": "候车厅：候车用途保留。长方形室内房间；本图为俯视剖切总览，不显示天花板；画面一侧只看到墙体厚度，该侧墙内侧面不可见。本图中没有人物，这只是该图的取景状态，不代表该场景固定无人。\n\n可重复引用的物理位置（以长凳墙为基准；画面左右仅为该图中的相对位置，不代表地理方向）：\n- 长凳墙：放置长凳的那面墙。长凳靠墙放置，板面长边与墙平行，位于该墙可见部分的大致居中处，两端与可见墙角之间留有间隙。\n- 长凳墙某一侧相邻墙（图中位于长凳墙右侧）：本图在该墙上可见两处互相分开的开口状特征。偏上的一处为带框开口，内有玻璃并有横向分格条；偏下的一处为竖向狭长特征，其下端可见一个深色矩形块。两处之间有可见连续墙面，本描述不将两处合并。\n- 长凳墙另一侧相邻墙（图中位于长凳墙左侧）：本图在该墙上可见一处开口状特征，带金属色边框，内有偏灰蓝、带反光的玻璃面，并有一根细金属横杆横跨其上；该处下方墙面上另有一个白色小矩形面板。\n- 相对墙：长凳墙对面那面墙。本图只显示该侧墙体厚度，其内侧面与上面的门窗、物件均不可见，待补充。\n\n上述三处均按“开口状特征”记录，是否穿透墙体、是窗口还是门洞、以及入口门与站台门的区分，在本图中无法证实，全部待补充。\n\n本图另可见用途未确定的物件：开口附近的小块蓝色标牌状物、一块灰色墙面板、一个深色竖向矩形块、一个白色小矩形面板。这些是否固定、用途为何均待补充，不作为已确认的固定物体。\n\n材质与颜色只记录本图可见外观，不推断隐藏结构或构造做法；绝对尺寸与比例、门外与室外空间未确认，本描述不作断言。\n\n不再使用旧的 A/B/C/D 局部墙面标识，也不以“入口门在某墙、站台门在相对墙”的墙位区分作为固定约束；该功能区分在本图中无法证实，保留为待补充。"
+    },
+    "summary": "重新读取了当前项目与「实验候车厅」完整资料，并重新调用图片工具认真复核本轮唯一选定图（assetId a4e8670a-471d-4352-904a-544608a55427，contentHash 237a16ea…f6eff，概念图 784f866a · 1）。这次按人工观察提示分位置复核：长凳墙右侧相邻墙上确实有两处互相分开的开口状特征（偏上一处带框、玻璃明亮并有横向分格；偏下一处竖向狭长、下端有一深色矩形块），两处之间可见连续墙面，因此分开记录、不再合并成“一处洞口”；长凳墙左侧相邻墙上另有第三处开口状特征。只改基础候车厅的 description 与 appearance：保留长凳墙作为物理基准，只用“长凳墙／长凳墙某侧相邻墙（画面相对位置，非地理方向）／相对墙”表述，不推断地理方向、不写精确尺寸、不写门外空间。功能未证实的开口一律写为“开口状特征、功能待补充”；功能未确定的可见物件不写成已确认固定物；画面无人物仅作为本图取景状态说明。未修改名称、声音描述、其他实体、关系、项目规则、工作流与图片选择；未出图，未确认空间（sceneSpatial 仍为 missing/pending）。上一轮提案未被应用，本提案是重新保存的独立候选，不代表实体已更新。",
+    "contentHash": "c4d8ee1ce709428c4c411ccc2eb8dcedc15067bb81580ae905b859116c71ab29",
+    "appliedEntityRevision": null,
+    "createdAt": "2026-10-04T11:58:46.243Z",
+    "stale": false
+  },
+  "receipt": {
+    "entityId": "516b1812-e158-4780-992c-51b4553a4b18",
+    "revision": "531d703d0d7916adca8f4e94474c525ca7dea5c744e563903872e127fc3ea54c",
+    "alreadyApplied": false,
+    "generationSubmitted": false
+  },
+  "before": {
+    "owner": "Sean",
+    "schemaVersion": 2,
+    "project": {
+      "owner": "Sean",
+      "id": "c51a50d3-2b12-48c9-a83c-8f4e8e30a3c6",
+      "synopsis": "",
+      "worldRules": "普通现实城市，无魔法。仅使用候选明确设计；未知空间不编造。",
+      "visualStyle": "",
+      "brief": "隔离人物与场景验证，不写生产资料。",
+      "decisions": "人工选定主图后继续；最多八次基线与一次修订，无自动重试。",
+      "entityIds": [
+        "76dab29d-6225-485f-b905-0f022e144159",
+        "ad60ce45-800f-48e1-9800-530aeba81c55",
+        "516b1812-e158-4780-992c-51b4553a4b18",
+        "045bb254-1560-4413-861e-d047b2215afa"
+      ],
+      "name": "实际图片质量实验",
+      "revision": 2,
+      "createdAt": "2026-10-04T11:39:58.087Z",
+      "updatedAt": "2026-10-04T11:39:58.101Z"
+    },
+    "entities": [
+      {
+        "entityId": "76dab29d-6225-485f-b905-0f022e144159",
+        "name": "实验林岚",
+        "flags": [
+          "人物",
+          "质量实验"
+        ],
+        "description": "成年夜班管理员，短黑发中只有一缕白发，灰色长外套与深蓝长裤。人物身份、头发、体型与衣服在变体中不变。",
+        "appearance": "成年夜班管理员，短黑发中只有一缕白发，灰色长外套与深蓝长裤。人物身份、头发、体型与衣服在变体中不变。",
+        "voiceDescription": "",
+        "sourceRevision": "532ebfb4a71821cd4ac315a1b44460416c6d79641dfad325c630ac5d0acc7682",
+        "projectRole": {
+          "role": "质量实验候选",
+          "plotNotes": "",
+          "revision": 1,
+          "sourceRevision": "1d3891d09df284c8d3aea21c4e195b8a524664a3a9d859155069b72f9ae82c08",
+          "updatedAt": "2026-10-04T11:39:58.101Z"
+        },
+        "sceneSpatial": {
+          "schemaVersion": 1,
+          "scope": "fixed_scene_space",
+          "status": "missing",
+          "version": 0,
+          "versionId": null,
+          "contentHash": "82d59f4ed4c85a69dac432ef7d61079cc368ea2811d7ccb21f1f06692575fb8e",
+          "confirmedAt": null,
+          "frame": null,
+          "elements": [],
+          "links": [],
+          "routes": [],
+          "unknowns": [
+            "方向基准待补充或确认；不可将镜头左/右直接当场景固定方向。",
+            "主要区域、建筑结构与固定物体尚未登记。"
+          ],
+          "issues": [],
+          "referenceImages": [],
+          "promptContext": "",
+          "draft": {
+            "owner": "Sean",
+            "schemaVersion": 1,
+            "scope": "fixed_scene_space",
+            "frame": {
+              "description": "",
+              "status": "pending"
+            },
+            "elements": [],
+            "links": [],
+            "routes": [],
+            "unknowns": [],
+            "referenceAssetIds": []
+          },
+          "usage": "空间标识以 entityId#id 引用；角色当前位置、朝向、移动时间线与可移动物品转移属于拍摄本。pending/draft/needs_review 内容不得作为已确认固定事实。",
+          "sourceRevision": "25132e0af894881b36a34722f69164379274ea584fb1d26a9576d759755b8307"
+        },
+        "sceneImages": {
+          "schemaVersion": 1,
+          "status": "missing",
+          "versionId": null,
+          "version": 0,
+          "contentHash": "d38598da3d4acb64f7f2de96143adb8981a7b0edd4f604a8aaccc49f7cdaf5d9",
+          "confirmedAt": null,
+          "images": [],
+          "notes": "",
+          "issues": [],
+          "usage": "同一场景的人工选定参考图片组；图片角色和锚点指向不是新的空间事实，固定事实以 sceneSpatial 为准。",
+          "sourceRevision": "6ab92157e3823ffb829835ea8176f0b344eb69eff041658a93be3e2102c32c9b"
+        },
+        "relations": [
+          {
+            "relationId": "7b35bb90-a3cf-4b87-a05a-bfd2dd9a6a3b",
+            "sourceEntityId": "ad60ce45-800f-48e1-9800-530aeba81c55",
+            "targetEntityId": "76dab29d-6225-485f-b905-0f022e144159",
+            "category": "setting",
+            "type": "派生自",
+            "description": "右手腕白色绷带，其他设计不变",
+            "status": "active",
+            "targetRevision": "6fd25a65954097c756c2f3c54bcd0ac720b05be73ecee1df5ca2d53953671b14",
+            "createdAt": "2026-10-04T11:39:58.101Z",
+            "updatedAt": "2026-10-04T11:39:58.101Z",
+            "sourceName": "实验林岚·腕伤",
+            "targetName": "实验林岚"
+          }
+        ],
+        "derivedFrom": null,
+        "images": [
+          {
+            "assetId": "5785b1f1-fd47-4e46-b419-9a58be21f15c",
+            "name": "概念图 e34c1f58 · 1",
+            "contentHash": "11013803402d864886fc21c7027c08f2fec6e8d4a6a01d0ad8fb2c85edc8882b"
+          }
+        ]
+      },
+      {
+        "entityId": "ad60ce45-800f-48e1-9800-530aeba81c55",
+        "name": "实验林岚·腕伤",
+        "flags": [
+          "人物",
+          "质量实验"
+        ],
+        "description": "成年夜班管理员，短黑发中只有一缕白发，灰色长外套与深蓝长裤。人物身份、头发、体型与衣服在变体中不变。 唯一变化：右手腕白色绷带。",
+        "appearance": "成年夜班管理员，短黑发中只有一缕白发，灰色长外套与深蓝长裤。人物身份、头发、体型与衣服在变体中不变。 右手腕白色绷带。",
+        "voiceDescription": "",
+        "sourceRevision": "f9e69575bb73fc7b0f77373b39135b16eb359f94e8b8b3c010714fff64874561",
+        "projectRole": {
+          "role": "质量实验候选",
+          "plotNotes": "",
+          "revision": 1,
+          "sourceRevision": "1d3891d09df284c8d3aea21c4e195b8a524664a3a9d859155069b72f9ae82c08",
+          "updatedAt": "2026-10-04T11:39:58.101Z"
+        },
+        "sceneSpatial": {
+          "schemaVersion": 1,
+          "scope": "fixed_scene_space",
+          "status": "missing",
+          "version": 0,
+          "versionId": null,
+          "contentHash": "82d59f4ed4c85a69dac432ef7d61079cc368ea2811d7ccb21f1f06692575fb8e",
+          "confirmedAt": null,
+          "frame": null,
+          "elements": [],
+          "links": [],
+          "routes": [],
+          "unknowns": [
+            "方向基准待补充或确认；不可将镜头左/右直接当场景固定方向。",
+            "主要区域、建筑结构与固定物体尚未登记。"
+          ],
+          "issues": [],
+          "referenceImages": [],
+          "promptContext": "",
+          "draft": {
+            "owner": "Sean",
+            "schemaVersion": 1,
+            "scope": "fixed_scene_space",
+            "frame": {
+              "description": "",
+              "status": "pending"
+            },
+            "elements": [],
+            "links": [],
+            "routes": [],
+            "unknowns": [],
+            "referenceAssetIds": []
+          },
+          "usage": "空间标识以 entityId#id 引用；角色当前位置、朝向、移动时间线与可移动物品转移属于拍摄本。pending/draft/needs_review 内容不得作为已确认固定事实。",
+          "sourceRevision": "25132e0af894881b36a34722f69164379274ea584fb1d26a9576d759755b8307"
+        },
+        "sceneImages": {
+          "schemaVersion": 1,
+          "status": "missing",
+          "versionId": null,
+          "version": 0,
+          "contentHash": "d38598da3d4acb64f7f2de96143adb8981a7b0edd4f604a8aaccc49f7cdaf5d9",
+          "confirmedAt": null,
+          "images": [],
+          "notes": "",
+          "issues": [],
+          "usage": "同一场景的人工选定参考图片组；图片角色和锚点指向不是新的空间事实，固定事实以 sceneSpatial 为准。",
+          "sourceRevision": "6ab92157e3823ffb829835ea8176f0b344eb69eff041658a93be3e2102c32c9b"
+        },
+        "relations": [
+          {
+            "relationId": "7b35bb90-a3cf-4b87-a05a-bfd2dd9a6a3b",
+            "sourceEntityId": "ad60ce45-800f-48e1-9800-530aeba81c55",
+            "targetEntityId": "76dab29d-6225-485f-b905-0f022e144159",
+            "category": "setting",
+            "type": "派生自",
+            "description": "右手腕白色绷带，其他设计不变",
+            "status": "active",
+            "targetRevision": "6fd25a65954097c756c2f3c54bcd0ac720b05be73ecee1df5ca2d53953671b14",
+            "createdAt": "2026-10-04T11:39:58.101Z",
+            "updatedAt": "2026-10-04T11:39:58.101Z",
+            "sourceName": "实验林岚·腕伤",
+            "targetName": "实验林岚"
+          }
+        ],
+        "derivedFrom": {
+          "entityId": "76dab29d-6225-485f-b905-0f022e144159",
+          "name": "实验林岚",
+          "sourceRevision": "6fd25a65954097c756c2f3c54bcd0ac720b05be73ecee1df5ca2d53953671b14",
+          "description": "右手腕白色绷带，其他设计不变",
+          "options": {
+            "authoringPlanId": "d1886bd8-05f3-492b-bcef-9ae55694b185",
+            "copyProfile": false,
+            "copyReference": false,
+            "copySettingRelations": false,
+            "copySpatialDraft": false,
+            "reuseVoice": false,
+            "sourceSpatialVersionId": null
+          },
+          "createdAt": "2026-10-04T11:39:58.101Z"
+        },
+        "images": []
+      },
+      {
+        "entityId": "516b1812-e158-4780-992c-51b4553a4b18",
+        "name": "实验候车厅",
+        "flags": [
+          "场景",
+          "质量实验"
+        ],
+        "description": "长方形候车厅。固定设计：入口门在A墙，站台门在相对的C墙；单个长凳沿B墙；D墙有一扇窗。A/B/C/D是本实验的局部墙面标识，依次环绕房间，不代表地理方向。地面灰色瓷砖、墙面浅米色。绝对尺寸、不可见门外空间未知。",
+        "appearance": "长方形候车厅。固定设计：入口门在A墙，站台门在相对的C墙；单个长凳沿B墙；D墙有一扇窗。A/B/C/D是本实验的局部墙面标识，依次环绕房间，不代表地理方向。地面灰色瓷砖、墙面浅米色。绝对尺寸、不可见门外空间未知。",
+        "voiceDescription": "",
+        "sourceRevision": "9f12c5084e58eacc6bc7cd78fd95e0b4a983422072ce32d08b213080c765b346",
+        "projectRole": {
+          "role": "质量实验候选",
+          "plotNotes": "",
+          "revision": 1,
+          "sourceRevision": "1d3891d09df284c8d3aea21c4e195b8a524664a3a9d859155069b72f9ae82c08",
+          "updatedAt": "2026-10-04T11:39:58.101Z"
+        },
+        "sceneSpatial": {
+          "schemaVersion": 1,
+          "scope": "fixed_scene_space",
+          "status": "missing",
+          "version": 0,
+          "versionId": null,
+          "contentHash": "82d59f4ed4c85a69dac432ef7d61079cc368ea2811d7ccb21f1f06692575fb8e",
+          "confirmedAt": null,
+          "frame": null,
+          "elements": [],
+          "links": [],
+          "routes": [],
+          "unknowns": [
+            "方向基准待补充或确认；不可将镜头左/右直接当场景固定方向。",
+            "主要区域、建筑结构与固定物体尚未登记。"
+          ],
+          "issues": [],
+          "referenceImages": [],
+          "promptContext": "",
+          "draft": {
+            "owner": "Sean",
+            "schemaVersion": 1,
+            "scope": "fixed_scene_space",
+            "frame": {
+              "description": "",
+              "status": "pending"
+            },
+            "elements": [],
+            "links": [],
+            "routes": [],
+            "unknowns": [],
+            "referenceAssetIds": []
+          },
+          "usage": "空间标识以 entityId#id 引用；角色当前位置、朝向、移动时间线与可移动物品转移属于拍摄本。pending/draft/needs_review 内容不得作为已确认固定事实。",
+          "sourceRevision": "25132e0af894881b36a34722f69164379274ea584fb1d26a9576d759755b8307"
+        },
+        "sceneImages": {
+          "schemaVersion": 1,
+          "status": "missing",
+          "versionId": null,
+          "version": 0,
+          "contentHash": "d38598da3d4acb64f7f2de96143adb8981a7b0edd4f604a8aaccc49f7cdaf5d9",
+          "confirmedAt": null,
+          "images": [],
+          "notes": "",
+          "issues": [],
+          "usage": "同一场景的人工选定参考图片组；图片角色和锚点指向不是新的空间事实，固定事实以 sceneSpatial 为准。",
+          "sourceRevision": "6ab92157e3823ffb829835ea8176f0b344eb69eff041658a93be3e2102c32c9b"
+        },
+        "relations": [
+          {
+            "relationId": "69f5ea1e-2b19-4293-8081-0a3d472ea45a",
+            "sourceEntityId": "045bb254-1560-4413-861e-d047b2215afa",
+            "targetEntityId": "516b1812-e158-4780-992c-51b4553a4b18",
+            "category": "setting",
+            "type": "派生自",
+            "description": "D墙窗旁一张红色告示纸；不改变结构和门窗长凳",
+            "status": "active",
+            "targetRevision": "365bf469235063216856fffbe73458f87728668569796df6eb722220c2756d6c",
+            "createdAt": "2026-10-04T11:39:58.101Z",
+            "updatedAt": "2026-10-04T11:39:58.101Z",
+            "sourceName": "实验候车厅·告示",
+            "targetName": "实验候车厅"
+          }
+        ],
+        "derivedFrom": null,
+        "images": [
+          {
+            "assetId": "a4e8670a-471d-4352-904a-544608a55427",
+            "name": "概念图 784f866a · 1",
+            "contentHash": "237a16ead67bf023ea0b897bb4ec71a6356b4b626a72badb7fedafe05acf6eff"
+          }
+        ]
+      },
+      {
+        "entityId": "045bb254-1560-4413-861e-d047b2215afa",
+        "name": "实验候车厅·告示",
+        "flags": [
+          "场景",
+          "质量实验"
+        ],
+        "description": "长方形候车厅。固定设计：入口门在A墙，站台门在相对的C墙；单个长凳沿B墙；D墙有一扇窗。A/B/C/D是本实验的局部墙面标识，依次环绕房间，不代表地理方向。地面灰色瓷砖、墙面浅米色。绝对尺寸、不可见门外空间未知。 唯一变化：D墙新增一张红色告示纸，窗不动。",
+        "appearance": "长方形候车厅。固定设计：入口门在A墙，站台门在相对的C墙；单个长凳沿B墙；D墙有一扇窗。A/B/C/D是本实验的局部墙面标识，依次环绕房间，不代表地理方向。地面灰色瓷砖、墙面浅米色。绝对尺寸、不可见门外空间未知。 D墙新增红色告示纸。",
+        "voiceDescription": "",
+        "sourceRevision": "7f138d1472e0bd09db82ff8fd8e2d7df5aabcc89faf3f4928b59b69cae7a7b2b",
+        "projectRole": {
+          "role": "质量实验候选",
+          "plotNotes": "",
+          "revision": 1,
+          "sourceRevision": "1d3891d09df284c8d3aea21c4e195b8a524664a3a9d859155069b72f9ae82c08",
+          "updatedAt": "2026-10-04T11:39:58.101Z"
+        },
+        "sceneSpatial": {
+          "schemaVersion": 1,
+          "scope": "fixed_scene_space",
+          "status": "missing",
+          "version": 0,
+          "versionId": null,
+          "contentHash": "82d59f4ed4c85a69dac432ef7d61079cc368ea2811d7ccb21f1f06692575fb8e",
+          "confirmedAt": null,
+          "frame": null,
+          "elements": [],
+          "links": [],
+          "routes": [],
+          "unknowns": [
+            "方向基准待补充或确认；不可将镜头左/右直接当场景固定方向。",
+            "主要区域、建筑结构与固定物体尚未登记。"
+          ],
+          "issues": [],
+          "referenceImages": [],
+          "promptContext": "",
+          "draft": {
+            "owner": "Sean",
+            "schemaVersion": 1,
+            "scope": "fixed_scene_space",
+            "frame": {
+              "description": "",
+              "status": "pending"
+            },
+            "elements": [],
+            "links": [],
+            "routes": [],
+            "unknowns": [],
+            "referenceAssetIds": []
+          },
+          "usage": "空间标识以 entityId#id 引用；角色当前位置、朝向、移动时间线与可移动物品转移属于拍摄本。pending/draft/needs_review 内容不得作为已确认固定事实。",
+          "sourceRevision": "25132e0af894881b36a34722f69164379274ea584fb1d26a9576d759755b8307"
+        },
+        "sceneImages": {
+          "schemaVersion": 1,
+          "status": "missing",
+          "versionId": null,
+          "version": 0,
+          "contentHash": "d38598da3d4acb64f7f2de96143adb8981a7b0edd4f604a8aaccc49f7cdaf5d9",
+          "confirmedAt": null,
+          "images": [],
+          "notes": "",
+          "issues": [],
+          "usage": "同一场景的人工选定参考图片组；图片角色和锚点指向不是新的空间事实，固定事实以 sceneSpatial 为准。",
+          "sourceRevision": "6ab92157e3823ffb829835ea8176f0b344eb69eff041658a93be3e2102c32c9b"
+        },
+        "relations": [
+          {
+            "relationId": "69f5ea1e-2b19-4293-8081-0a3d472ea45a",
+            "sourceEntityId": "045bb254-1560-4413-861e-d047b2215afa",
+            "targetEntityId": "516b1812-e158-4780-992c-51b4553a4b18",
+            "category": "setting",
+            "type": "派生自",
+            "description": "D墙窗旁一张红色告示纸；不改变结构和门窗长凳",
+            "status": "active",
+            "targetRevision": "365bf469235063216856fffbe73458f87728668569796df6eb722220c2756d6c",
+            "createdAt": "2026-10-04T11:39:58.101Z",
+            "updatedAt": "2026-10-04T11:39:58.101Z",
+            "sourceName": "实验候车厅·告示",
+            "targetName": "实验候车厅"
+          }
+        ],
+        "derivedFrom": {
+          "entityId": "516b1812-e158-4780-992c-51b4553a4b18",
+          "name": "实验候车厅",
+          "sourceRevision": "365bf469235063216856fffbe73458f87728668569796df6eb722220c2756d6c",
+          "description": "D墙窗旁一张红色告示纸；不改变结构和门窗长凳",
+          "options": {
+            "authoringPlanId": "d1886bd8-05f3-492b-bcef-9ae55694b185",
+            "copyProfile": false,
+            "copyReference": false,
+            "copySettingRelations": false,
+            "copySpatialDraft": true,
+            "reuseVoice": false,
+            "sourceSpatialVersionId": null
+          },
+          "createdAt": "2026-10-04T11:39:58.101Z"
+        },
+        "images": []
+      }
+    ],
+    "storyRelations": [
+      {
+        "relationId": "43da02fc-635c-43db-9d2c-b15186b99d32",
+        "projectId": "c51a50d3-2b12-48c9-a83c-8f4e8e30a3c6",
+        "category": "story",
+        "sourceEntityId": "ad60ce45-800f-48e1-9800-530aeba81c55",
+        "targetEntityId": "045bb254-1560-4413-861e-d047b2215afa",
+        "sourceName": "实验林岚·腕伤",
+        "targetName": "实验候车厅·告示",
+        "type": "值守",
+        "description": "实验变体剧情职责，不是固定空间。",
+        "status": "active",
+        "revision": 1,
+        "sourceRevision": "823fdd5c0c039fffd364490d6e6b56b2c96c09ab6691f4747b95c6da7c3966ed",
+        "createdAt": "2026-10-04T11:39:58.101Z",
+        "updatedAt": "2026-10-04T11:39:58.101Z"
+      },
+      {
+        "relationId": "f4a1e753-bcc1-4f93-824e-c8a4369601d8",
+        "projectId": "c51a50d3-2b12-48c9-a83c-8f4e8e30a3c6",
+        "category": "story",
+        "sourceEntityId": "76dab29d-6225-485f-b905-0f022e144159",
+        "targetEntityId": "516b1812-e158-4780-992c-51b4553a4b18",
+        "sourceName": "实验林岚",
+        "targetName": "实验候车厅",
+        "type": "值守",
+        "description": "实验剧情职责，具体站位由拍摄本记录。",
+        "status": "active",
+        "revision": 1,
+        "sourceRevision": "8b540a9cf10a053ea94d727b3a0cf517e9ef458c1b2495647ae0e0829fa63f41",
+        "createdAt": "2026-10-04T11:39:58.101Z",
+        "updatedAt": "2026-10-04T11:39:58.101Z"
+      }
+    ],
+    "legacyUnassignedStoryRelations": [],
+    "contentHash": "9975d7d13897a9103339de1b03f78f3a21df4b0dcc462bf399d1f881ebd957b0",
+    "knowledgeIndex": [
+      {
+        "entityId": "76dab29d-6225-485f-b905-0f022e144159",
+        "sourceRevision": "532ebfb4a71821cd4ac315a1b44460416c6d79641dfad325c630ac5d0acc7682",
+        "projectRoleRevision": "1d3891d09df284c8d3aea21c4e195b8a524664a3a9d859155069b72f9ae82c08"
+      },
+      {
+        "entityId": "ad60ce45-800f-48e1-9800-530aeba81c55",
+        "sourceRevision": "f9e69575bb73fc7b0f77373b39135b16eb359f94e8b8b3c010714fff64874561",
+        "projectRoleRevision": "1d3891d09df284c8d3aea21c4e195b8a524664a3a9d859155069b72f9ae82c08"
+      },
+      {
+        "entityId": "516b1812-e158-4780-992c-51b4553a4b18",
+        "sourceRevision": "9f12c5084e58eacc6bc7cd78fd95e0b4a983422072ce32d08b213080c765b346",
+        "projectRoleRevision": "1d3891d09df284c8d3aea21c4e195b8a524664a3a9d859155069b72f9ae82c08"
+      },
+      {
+        "entityId": "045bb254-1560-4413-861e-d047b2215afa",
+        "sourceRevision": "7f138d1472e0bd09db82ff8fd8e2d7df5aabcc89faf3f4928b59b69cae7a7b2b",
+        "projectRoleRevision": "1d3891d09df284c8d3aea21c4e195b8a524664a3a9d859155069b72f9ae82c08"
+      }
+    ],
+    "missingFields": [
+      "synopsis",
+      "visualStyle"
+    ]
+  },
+  "after": {
+    "owner": "Sean",
+    "schemaVersion": 2,
+    "project": {
+      "owner": "Sean",
+      "id": "c51a50d3-2b12-48c9-a83c-8f4e8e30a3c6",
+      "synopsis": "",
+      "worldRules": "普通现实城市，无魔法。仅使用候选明确设计；未知空间不编造。",
+      "visualStyle": "",
+      "brief": "隔离人物与场景验证，不写生产资料。",
+      "decisions": "人工选定主图后继续；最多八次基线与一次修订，无自动重试。",
+      "entityIds": [
+        "76dab29d-6225-485f-b905-0f022e144159",
+        "ad60ce45-800f-48e1-9800-530aeba81c55",
+        "516b1812-e158-4780-992c-51b4553a4b18",
+        "045bb254-1560-4413-861e-d047b2215afa"
+      ],
+      "name": "实际图片质量实验",
+      "revision": 2,
+      "createdAt": "2026-10-04T11:39:58.087Z",
+      "updatedAt": "2026-10-04T11:39:58.101Z"
+    },
+    "entities": [
+      {
+        "entityId": "76dab29d-6225-485f-b905-0f022e144159",
+        "name": "实验林岚",
+        "flags": [
+          "人物",
+          "质量实验"
+        ],
+        "description": "成年夜班管理员，短黑发中只有一缕白发，灰色长外套与深蓝长裤。人物身份、头发、体型与衣服在变体中不变。",
+        "appearance": "成年夜班管理员，短黑发中只有一缕白发，灰色长外套与深蓝长裤。人物身份、头发、体型与衣服在变体中不变。",
+        "voiceDescription": "",
+        "sourceRevision": "532ebfb4a71821cd4ac315a1b44460416c6d79641dfad325c630ac5d0acc7682",
+        "projectRole": {
+          "role": "质量实验候选",
+          "plotNotes": "",
+          "revision": 1,
+          "sourceRevision": "1d3891d09df284c8d3aea21c4e195b8a524664a3a9d859155069b72f9ae82c08",
+          "updatedAt": "2026-10-04T11:39:58.101Z"
+        },
+        "sceneSpatial": {
+          "schemaVersion": 1,
+          "scope": "fixed_scene_space",
+          "status": "missing",
+          "version": 0,
+          "versionId": null,
+          "contentHash": "82d59f4ed4c85a69dac432ef7d61079cc368ea2811d7ccb21f1f06692575fb8e",
+          "confirmedAt": null,
+          "frame": null,
+          "elements": [],
+          "links": [],
+          "routes": [],
+          "unknowns": [
+            "方向基准待补充或确认；不可将镜头左/右直接当场景固定方向。",
+            "主要区域、建筑结构与固定物体尚未登记。"
+          ],
+          "issues": [],
+          "referenceImages": [],
+          "promptContext": "",
+          "draft": {
+            "owner": "Sean",
+            "schemaVersion": 1,
+            "scope": "fixed_scene_space",
+            "frame": {
+              "description": "",
+              "status": "pending"
+            },
+            "elements": [],
+            "links": [],
+            "routes": [],
+            "unknowns": [],
+            "referenceAssetIds": []
+          },
+          "usage": "空间标识以 entityId#id 引用；角色当前位置、朝向、移动时间线与可移动物品转移属于拍摄本。pending/draft/needs_review 内容不得作为已确认固定事实。",
+          "sourceRevision": "25132e0af894881b36a34722f69164379274ea584fb1d26a9576d759755b8307"
+        },
+        "sceneImages": {
+          "schemaVersion": 1,
+          "status": "missing",
+          "versionId": null,
+          "version": 0,
+          "contentHash": "d38598da3d4acb64f7f2de96143adb8981a7b0edd4f604a8aaccc49f7cdaf5d9",
+          "confirmedAt": null,
+          "images": [],
+          "notes": "",
+          "issues": [],
+          "usage": "同一场景的人工选定参考图片组；图片角色和锚点指向不是新的空间事实，固定事实以 sceneSpatial 为准。",
+          "sourceRevision": "6ab92157e3823ffb829835ea8176f0b344eb69eff041658a93be3e2102c32c9b"
+        },
+        "relations": [
+          {
+            "relationId": "7b35bb90-a3cf-4b87-a05a-bfd2dd9a6a3b",
+            "sourceEntityId": "ad60ce45-800f-48e1-9800-530aeba81c55",
+            "targetEntityId": "76dab29d-6225-485f-b905-0f022e144159",
+            "category": "setting",
+            "type": "派生自",
+            "description": "右手腕白色绷带，其他设计不变",
+            "status": "active",
+            "targetRevision": "6fd25a65954097c756c2f3c54bcd0ac720b05be73ecee1df5ca2d53953671b14",
+            "createdAt": "2026-10-04T11:39:58.101Z",
+            "updatedAt": "2026-10-04T11:39:58.101Z",
+            "sourceName": "实验林岚·腕伤",
+            "targetName": "实验林岚"
+          }
+        ],
+        "derivedFrom": null,
+        "images": [
+          {
+            "assetId": "5785b1f1-fd47-4e46-b419-9a58be21f15c",
+            "name": "概念图 e34c1f58 · 1",
+            "contentHash": "11013803402d864886fc21c7027c08f2fec6e8d4a6a01d0ad8fb2c85edc8882b"
+          }
+        ]
+      },
+      {
+        "entityId": "ad60ce45-800f-48e1-9800-530aeba81c55",
+        "name": "实验林岚·腕伤",
+        "flags": [
+          "人物",
+          "质量实验"
+        ],
+        "description": "成年夜班管理员，短黑发中只有一缕白发，灰色长外套与深蓝长裤。人物身份、头发、体型与衣服在变体中不变。 唯一变化：右手腕白色绷带。",
+        "appearance": "成年夜班管理员，短黑发中只有一缕白发，灰色长外套与深蓝长裤。人物身份、头发、体型与衣服在变体中不变。 右手腕白色绷带。",
+        "voiceDescription": "",
+        "sourceRevision": "f9e69575bb73fc7b0f77373b39135b16eb359f94e8b8b3c010714fff64874561",
+        "projectRole": {
+          "role": "质量实验候选",
+          "plotNotes": "",
+          "revision": 1,
+          "sourceRevision": "1d3891d09df284c8d3aea21c4e195b8a524664a3a9d859155069b72f9ae82c08",
+          "updatedAt": "2026-10-04T11:39:58.101Z"
+        },
+        "sceneSpatial": {
+          "schemaVersion": 1,
+          "scope": "fixed_scene_space",
+          "status": "missing",
+          "version": 0,
+          "versionId": null,
+          "contentHash": "82d59f4ed4c85a69dac432ef7d61079cc368ea2811d7ccb21f1f06692575fb8e",
+          "confirmedAt": null,
+          "frame": null,
+          "elements": [],
+          "links": [],
+          "routes": [],
+          "unknowns": [
+            "方向基准待补充或确认；不可将镜头左/右直接当场景固定方向。",
+            "主要区域、建筑结构与固定物体尚未登记。"
+          ],
+          "issues": [],
+          "referenceImages": [],
+          "promptContext": "",
+          "draft": {
+            "owner": "Sean",
+            "schemaVersion": 1,
+            "scope": "fixed_scene_space",
+            "frame": {
+              "description": "",
+              "status": "pending"
+            },
+            "elements": [],
+            "links": [],
+            "routes": [],
+            "unknowns": [],
+            "referenceAssetIds": []
+          },
+          "usage": "空间标识以 entityId#id 引用；角色当前位置、朝向、移动时间线与可移动物品转移属于拍摄本。pending/draft/needs_review 内容不得作为已确认固定事实。",
+          "sourceRevision": "25132e0af894881b36a34722f69164379274ea584fb1d26a9576d759755b8307"
+        },
+        "sceneImages": {
+          "schemaVersion": 1,
+          "status": "missing",
+          "versionId": null,
+          "version": 0,
+          "contentHash": "d38598da3d4acb64f7f2de96143adb8981a7b0edd4f604a8aaccc49f7cdaf5d9",
+          "confirmedAt": null,
+          "images": [],
+          "notes": "",
+          "issues": [],
+          "usage": "同一场景的人工选定参考图片组；图片角色和锚点指向不是新的空间事实，固定事实以 sceneSpatial 为准。",
+          "sourceRevision": "6ab92157e3823ffb829835ea8176f0b344eb69eff041658a93be3e2102c32c9b"
+        },
+        "relations": [
+          {
+            "relationId": "7b35bb90-a3cf-4b87-a05a-bfd2dd9a6a3b",
+            "sourceEntityId": "ad60ce45-800f-48e1-9800-530aeba81c55",
+            "targetEntityId": "76dab29d-6225-485f-b905-0f022e144159",
+            "category": "setting",
+            "type": "派生自",
+            "description": "右手腕白色绷带，其他设计不变",
+            "status": "active",
+            "targetRevision": "6fd25a65954097c756c2f3c54bcd0ac720b05be73ecee1df5ca2d53953671b14",
+            "createdAt": "2026-10-04T11:39:58.101Z",
+            "updatedAt": "2026-10-04T11:39:58.101Z",
+            "sourceName": "实验林岚·腕伤",
+            "targetName": "实验林岚"
+          }
+        ],
+        "derivedFrom": {
+          "entityId": "76dab29d-6225-485f-b905-0f022e144159",
+          "name": "实验林岚",
+          "sourceRevision": "6fd25a65954097c756c2f3c54bcd0ac720b05be73ecee1df5ca2d53953671b14",
+          "description": "右手腕白色绷带，其他设计不变",
+          "options": {
+            "authoringPlanId": "d1886bd8-05f3-492b-bcef-9ae55694b185",
+            "copyProfile": false,
+            "copyReference": false,
+            "copySettingRelations": false,
+            "copySpatialDraft": false,
+            "reuseVoice": false,
+            "sourceSpatialVersionId": null
+          },
+          "createdAt": "2026-10-04T11:39:58.101Z"
+        },
+        "images": []
+      },
+      {
+        "entityId": "516b1812-e158-4780-992c-51b4553a4b18",
+        "name": "实验候车厅",
+        "flags": [
+          "场景",
+          "质量实验"
+        ],
+        "description": "候车厅：候车用途保留。长方形室内房间；本图为俯视剖切总览，不显示天花板；画面一侧只看到墙体厚度，该侧墙内侧面不可见。本图中没有人物，这只是该图的取景状态，不代表该场景固定无人。\n\n可重复引用的物理位置（以长凳墙为基准；画面左右仅为该图中的相对位置，不代表地理方向）：\n- 长凳墙：放置长凳的那面墙。长凳靠墙放置，板面长边与墙平行，位于该墙可见部分的大致居中处，两端与可见墙角之间留有间隙。\n- 长凳墙某一侧相邻墙（图中位于长凳墙右侧）：本图在该墙上可见两处互相分开的开口状特征。偏上的一处为带框开口，内有玻璃并有横向分格条；偏下的一处为竖向狭长特征，其下端可见一个深色矩形块。两处之间有可见连续墙面，本描述不将两处合并。\n- 长凳墙另一侧相邻墙（图中位于长凳墙左侧）：本图在该墙上可见一处开口状特征，带金属色边框，内有偏灰蓝、带反光的玻璃面，并有一根细金属横杆横跨其上；该处下方墙面上另有一个白色小矩形面板。\n- 相对墙：长凳墙对面那面墙。本图只显示该侧墙体厚度，其内侧面与上面的门窗、物件均不可见，待补充。\n\n上述三处均按“开口状特征”记录，是否穿透墙体、是窗口还是门洞、以及入口门与站台门的区分，在本图中无法证实，全部待补充。\n\n本图另可见用途未确定的物件：开口附近的小块蓝色标牌状物、一块灰色墙面板、一个深色竖向矩形块、一个白色小矩形面板。这些是否固定、用途为何均待补充，不作为已确认的固定物体。\n\n材质与颜色只记录本图可见外观，不推断隐藏结构或构造做法；绝对尺寸与比例、门外与室外空间未确认，本描述不作断言。\n\n不再使用旧的 A/B/C/D 局部墙面标识，也不以“入口门在某墙、站台门在相对墙”的墙位区分作为固定约束；该功能区分在本图中无法证实，保留为待补充。",
+        "appearance": "以下为本图（俯视剖切总览）可见外观，仅描述可见外观，不推断材质构成、隐藏结构或构造做法。\n- 地面：灰色方形地砖，砖缝形成规则网格，整体呈浅冷灰色。\n- 墙面：浅米白色（偏乳白），可见墙面平整、无图案装饰。\n- 长凳：木质板面长凳，板面呈浅棕原木色；靠两端各有一个深色小支脚；凳面空置，无人物、无物品。板面长边沿长凳墙放置，大致居中于该墙可见部分。\n- 图中位于长凳墙右侧的相邻墙，可见两部分：偏上一处为带框开口，框为白色、玻璃明亮偏白，框内有一根横向分格条；同一墙面上偏下一处为与上部相分开的竖向狭长特征，外观浅色、带竖向边界线，其下端有一个深色（深灰）矩形块。两部分之间可见连续墙面。\n- 图中位于长凳墙左侧的相邻墙，可见一处带金属色边框的开口，内有偏灰蓝、带反光的玻璃面，一根细金属横杆横跨其上；该处下方墙面另有一个白色小矩形面板。\n- 墙上还有小块蓝色标牌状物与一块灰色墙面板，外观如上；其功能、是否固定均待补充。\n- 相对墙一侧：画面中只见浅灰色墙体厚度，无可见墙内侧面内容。",
+        "voiceDescription": "",
+        "sourceRevision": "531d703d0d7916adca8f4e94474c525ca7dea5c744e563903872e127fc3ea54c",
+        "projectRole": {
+          "role": "质量实验候选",
+          "plotNotes": "",
+          "revision": 1,
+          "sourceRevision": "1d3891d09df284c8d3aea21c4e195b8a524664a3a9d859155069b72f9ae82c08",
+          "updatedAt": "2026-10-04T11:39:58.101Z"
+        },
+        "sceneSpatial": {
+          "schemaVersion": 1,
+          "scope": "fixed_scene_space",
+          "status": "missing",
+          "version": 0,
+          "versionId": null,
+          "contentHash": "82d59f4ed4c85a69dac432ef7d61079cc368ea2811d7ccb21f1f06692575fb8e",
+          "confirmedAt": null,
+          "frame": null,
+          "elements": [],
+          "links": [],
+          "routes": [],
+          "unknowns": [
+            "方向基准待补充或确认；不可将镜头左/右直接当场景固定方向。",
+            "主要区域、建筑结构与固定物体尚未登记。"
+          ],
+          "issues": [],
+          "referenceImages": [],
+          "promptContext": "",
+          "draft": {
+            "owner": "Sean",
+            "schemaVersion": 1,
+            "scope": "fixed_scene_space",
+            "frame": {
+              "description": "",
+              "status": "pending"
+            },
+            "elements": [],
+            "links": [],
+            "routes": [],
+            "unknowns": [],
+            "referenceAssetIds": []
+          },
+          "usage": "空间标识以 entityId#id 引用；角色当前位置、朝向、移动时间线与可移动物品转移属于拍摄本。pending/draft/needs_review 内容不得作为已确认固定事实。",
+          "sourceRevision": "25132e0af894881b36a34722f69164379274ea584fb1d26a9576d759755b8307"
+        },
+        "sceneImages": {
+          "schemaVersion": 1,
+          "status": "missing",
+          "versionId": null,
+          "version": 0,
+          "contentHash": "d38598da3d4acb64f7f2de96143adb8981a7b0edd4f604a8aaccc49f7cdaf5d9",
+          "confirmedAt": null,
+          "images": [],
+          "notes": "",
+          "issues": [],
+          "usage": "同一场景的人工选定参考图片组；图片角色和锚点指向不是新的空间事实，固定事实以 sceneSpatial 为准。",
+          "sourceRevision": "6ab92157e3823ffb829835ea8176f0b344eb69eff041658a93be3e2102c32c9b"
+        },
+        "relations": [
+          {
+            "relationId": "69f5ea1e-2b19-4293-8081-0a3d472ea45a",
+            "sourceEntityId": "045bb254-1560-4413-861e-d047b2215afa",
+            "targetEntityId": "516b1812-e158-4780-992c-51b4553a4b18",
+            "category": "setting",
+            "type": "派生自",
+            "description": "D墙窗旁一张红色告示纸；不改变结构和门窗长凳",
+            "status": "active",
+            "targetRevision": "365bf469235063216856fffbe73458f87728668569796df6eb722220c2756d6c",
+            "createdAt": "2026-10-04T11:39:58.101Z",
+            "updatedAt": "2026-10-04T11:39:58.101Z",
+            "sourceName": "实验候车厅·告示",
+            "targetName": "实验候车厅"
+          }
+        ],
+        "derivedFrom": null,
+        "images": [
+          {
+            "assetId": "a4e8670a-471d-4352-904a-544608a55427",
+            "name": "概念图 784f866a · 1",
+            "contentHash": "237a16ead67bf023ea0b897bb4ec71a6356b4b626a72badb7fedafe05acf6eff"
+          }
+        ]
+      },
+      {
+        "entityId": "045bb254-1560-4413-861e-d047b2215afa",
+        "name": "实验候车厅·告示",
+        "flags": [
+          "场景",
+          "质量实验"
+        ],
+        "description": "长方形候车厅。固定设计：入口门在A墙，站台门在相对的C墙；单个长凳沿B墙；D墙有一扇窗。A/B/C/D是本实验的局部墙面标识，依次环绕房间，不代表地理方向。地面灰色瓷砖、墙面浅米色。绝对尺寸、不可见门外空间未知。 唯一变化：D墙新增一张红色告示纸，窗不动。",
+        "appearance": "长方形候车厅。固定设计：入口门在A墙，站台门在相对的C墙；单个长凳沿B墙；D墙有一扇窗。A/B/C/D是本实验的局部墙面标识，依次环绕房间，不代表地理方向。地面灰色瓷砖、墙面浅米色。绝对尺寸、不可见门外空间未知。 D墙新增红色告示纸。",
+        "voiceDescription": "",
+        "sourceRevision": "7f138d1472e0bd09db82ff8fd8e2d7df5aabcc89faf3f4928b59b69cae7a7b2b",
+        "projectRole": {
+          "role": "质量实验候选",
+          "plotNotes": "",
+          "revision": 1,
+          "sourceRevision": "1d3891d09df284c8d3aea21c4e195b8a524664a3a9d859155069b72f9ae82c08",
+          "updatedAt": "2026-10-04T11:39:58.101Z"
+        },
+        "sceneSpatial": {
+          "schemaVersion": 1,
+          "scope": "fixed_scene_space",
+          "status": "missing",
+          "version": 0,
+          "versionId": null,
+          "contentHash": "82d59f4ed4c85a69dac432ef7d61079cc368ea2811d7ccb21f1f06692575fb8e",
+          "confirmedAt": null,
+          "frame": null,
+          "elements": [],
+          "links": [],
+          "routes": [],
+          "unknowns": [
+            "方向基准待补充或确认；不可将镜头左/右直接当场景固定方向。",
+            "主要区域、建筑结构与固定物体尚未登记。"
+          ],
+          "issues": [],
+          "referenceImages": [],
+          "promptContext": "",
+          "draft": {
+            "owner": "Sean",
+            "schemaVersion": 1,
+            "scope": "fixed_scene_space",
+            "frame": {
+              "description": "",
+              "status": "pending"
+            },
+            "elements": [],
+            "links": [],
+            "routes": [],
+            "unknowns": [],
+            "referenceAssetIds": []
+          },
+          "usage": "空间标识以 entityId#id 引用；角色当前位置、朝向、移动时间线与可移动物品转移属于拍摄本。pending/draft/needs_review 内容不得作为已确认固定事实。",
+          "sourceRevision": "25132e0af894881b36a34722f69164379274ea584fb1d26a9576d759755b8307"
+        },
+        "sceneImages": {
+          "schemaVersion": 1,
+          "status": "missing",
+          "versionId": null,
+          "version": 0,
+          "contentHash": "d38598da3d4acb64f7f2de96143adb8981a7b0edd4f604a8aaccc49f7cdaf5d9",
+          "confirmedAt": null,
+          "images": [],
+          "notes": "",
+          "issues": [],
+          "usage": "同一场景的人工选定参考图片组；图片角色和锚点指向不是新的空间事实，固定事实以 sceneSpatial 为准。",
+          "sourceRevision": "6ab92157e3823ffb829835ea8176f0b344eb69eff041658a93be3e2102c32c9b"
+        },
+        "relations": [
+          {
+            "relationId": "69f5ea1e-2b19-4293-8081-0a3d472ea45a",
+            "sourceEntityId": "045bb254-1560-4413-861e-d047b2215afa",
+            "targetEntityId": "516b1812-e158-4780-992c-51b4553a4b18",
+            "category": "setting",
+            "type": "派生自",
+            "description": "D墙窗旁一张红色告示纸；不改变结构和门窗长凳",
+            "status": "active",
+            "targetRevision": "365bf469235063216856fffbe73458f87728668569796df6eb722220c2756d6c",
+            "createdAt": "2026-10-04T11:39:58.101Z",
+            "updatedAt": "2026-10-04T11:39:58.101Z",
+            "sourceName": "实验候车厅·告示",
+            "targetName": "实验候车厅"
+          }
+        ],
+        "derivedFrom": {
+          "entityId": "516b1812-e158-4780-992c-51b4553a4b18",
+          "name": "实验候车厅",
+          "sourceRevision": "365bf469235063216856fffbe73458f87728668569796df6eb722220c2756d6c",
+          "description": "D墙窗旁一张红色告示纸；不改变结构和门窗长凳",
+          "options": {
+            "authoringPlanId": "d1886bd8-05f3-492b-bcef-9ae55694b185",
+            "copyProfile": false,
+            "copyReference": false,
+            "copySettingRelations": false,
+            "copySpatialDraft": true,
+            "reuseVoice": false,
+            "sourceSpatialVersionId": null
+          },
+          "createdAt": "2026-10-04T11:39:58.101Z"
+        },
+        "images": []
+      }
+    ],
+    "storyRelations": [
+      {
+        "relationId": "43da02fc-635c-43db-9d2c-b15186b99d32",
+        "projectId": "c51a50d3-2b12-48c9-a83c-8f4e8e30a3c6",
+        "category": "story",
+        "sourceEntityId": "ad60ce45-800f-48e1-9800-530aeba81c55",
+        "targetEntityId": "045bb254-1560-4413-861e-d047b2215afa",
+        "sourceName": "实验林岚·腕伤",
+        "targetName": "实验候车厅·告示",
+        "type": "值守",
+        "description": "实验变体剧情职责，不是固定空间。",
+        "status": "active",
+        "revision": 1,
+        "sourceRevision": "823fdd5c0c039fffd364490d6e6b56b2c96c09ab6691f4747b95c6da7c3966ed",
+        "createdAt": "2026-10-04T11:39:58.101Z",
+        "updatedAt": "2026-10-04T11:39:58.101Z"
+      },
+      {
+        "relationId": "f4a1e753-bcc1-4f93-824e-c8a4369601d8",
+        "projectId": "c51a50d3-2b12-48c9-a83c-8f4e8e30a3c6",
+        "category": "story",
+        "sourceEntityId": "76dab29d-6225-485f-b905-0f022e144159",
+        "targetEntityId": "516b1812-e158-4780-992c-51b4553a4b18",
+        "sourceName": "实验林岚",
+        "targetName": "实验候车厅",
+        "type": "值守",
+        "description": "实验剧情职责，具体站位由拍摄本记录。",
+        "status": "active",
+        "revision": 1,
+        "sourceRevision": "8b540a9cf10a053ea94d727b3a0cf517e9ef458c1b2495647ae0e0829fa63f41",
+        "createdAt": "2026-10-04T11:39:58.101Z",
+        "updatedAt": "2026-10-04T11:39:58.101Z"
+      }
+    ],
+    "legacyUnassignedStoryRelations": [],
+    "contentHash": "e64fa02ea8ca48ca37de4627e267629cd1ee69cf57b207a37804d1fd51c1ee84",
+    "knowledgeIndex": [
+      {
+        "entityId": "76dab29d-6225-485f-b905-0f022e144159",
+        "sourceRevision": "532ebfb4a71821cd4ac315a1b44460416c6d79641dfad325c630ac5d0acc7682",
+        "projectRoleRevision": "1d3891d09df284c8d3aea21c4e195b8a524664a3a9d859155069b72f9ae82c08"
+      },
+      {
+        "entityId": "ad60ce45-800f-48e1-9800-530aeba81c55",
+        "sourceRevision": "f9e69575bb73fc7b0f77373b39135b16eb359f94e8b8b3c010714fff64874561",
+        "projectRoleRevision": "1d3891d09df284c8d3aea21c4e195b8a524664a3a9d859155069b72f9ae82c08"
+      },
+      {
+        "entityId": "516b1812-e158-4780-992c-51b4553a4b18",
+        "sourceRevision": "531d703d0d7916adca8f4e94474c525ca7dea5c744e563903872e127fc3ea54c",
+        "projectRoleRevision": "1d3891d09df284c8d3aea21c4e195b8a524664a3a9d859155069b72f9ae82c08"
+      },
+      {
+        "entityId": "045bb254-1560-4413-861e-d047b2215afa",
+        "sourceRevision": "7f138d1472e0bd09db82ff8fd8e2d7df5aabcc89faf3f4928b59b69cae7a7b2b",
+        "projectRoleRevision": "1d3891d09df284c8d3aea21c4e195b8a524664a3a9d859155069b72f9ae82c08"
+      }
+    ],
+    "missingFields": [
+      "synopsis",
+      "visualStyle"
+    ]
+  }
+}

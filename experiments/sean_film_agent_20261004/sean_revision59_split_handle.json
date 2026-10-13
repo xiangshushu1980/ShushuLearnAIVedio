@@ -1,0 +1,14 @@
+{
+  "owner": "Sean",
+  "projectId": "538005c3-16bd-4709-aa4e-70831b960a24",
+  "sessionId": "0707ba67-08da-42cf-9bc9-b1fa07bf95cf",
+  "request": {
+    "requestId": "8b52a69e-184f-4dea-af22-c9b3a64cf6e6",
+    "mode": "prepare",
+    "text": "本轮授权隔离测试项目实际拆镜文字提案与采用，不生成GPU。服务已加载profile10/结构patch.shots能力。freshcontext/loadmethod/Ref2VA/getS3完整详情，当前rev59。根纠正上一轮报告：S3 action没有任何4秒时长注记，实际只在continuity里，勿编辑不存在冲突。固定LLM401不重试，按版本化提案完成拆镜。完整原叙事实体与全部5句对白、原S1/S2/原S4-S6全部字段ID逐字保留。原S3 cbfc4455保留ID成为S3a4秒：B只脱驼色coat保留inner裤鞋，双手衣摆向领口一次简单对折两袖收进衣身，持紧凑衣束在身前结束；本镜不放桌，不移书刀杯纸，不走动，A坐。新UUID S3b4秒插在S3a后：从同一个B双手持束开始，仅沿farhalf向screenleftback送到中央杯左/书左/刀后裸木处，木面接触后放手，全衣身袖支撑，书刀纸杯A不变；不重复脱衣折衣。继续原S4 B取刀离开、原S5 A脱uniform、原S6借coat转圈，不删剧情。提案patch.shots完整7镜，S3a实体/图序/seed/现有S2anchor不改，S3b引用同实体和8图顺序，seed沿原S3，nativeAudio null对白空；新镜不得虚构S3a已成功尾图资产。本轮先采用结构草稿（S3a/S3b prompt可空，明确待生成），读回验证完整story timing：原32配置->34秒，目标30未达标不可暗改其他镜。再完整7镜spatial提案：scenePlan逐字保留，未改5镜framing/continuity/prompt/start/end/transition逐字保留；S3a起始取旧S3状态结束改B脱coat保持持束，S3b起始承接持束结束桌面落点衣物已释放；S4 transition如需要只同步同落点取刀衔接不改剧情。生成两个完整6段350-500英文词prompt，S3a沿用Picture9实际S2尾帧定义，S3b当前只有8实体图不得宣称已经有前镜尾帧；其真实anchor必须等S3a通过后提取并届时改prompt。风险放提案questions/报告不塞prompt，静默无说话ID。检查有效提案后采用，最后freshvalidateS3a和报告S1/S2current/anchor/timing，新S3b无实际anchor如实未就绪跨镜验证。禁止生成/选片/S4anchor/合成；不请求重复授权。"
+  },
+  "response": {
+    "runId": "151e2a50-dfbe-4c96-bd41-93237ebd58e5",
+    "status": "running"
+  }
+}

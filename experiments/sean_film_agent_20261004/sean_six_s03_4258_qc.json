@@ -1,0 +1,23 @@
+{
+  "owner": "Sean",
+  "candidateId": "4258a080-6a40-4771-a5d5-5e04ebeff68d",
+  "actualDurationSec": 4.458333,
+  "plannedDurationSec": 4,
+  "fullDecodePassed": true,
+  "method": "Root4fpscontact+Agent5timedframes",
+  "status": "not selected; coat placement and separate visible book still unproven",
+  "observations": [
+    "B only removes outercoat, keeps inner layer/pants/shoes; A seated; blade static",
+    "Coat still at middle-right with fabric hanging from table edge; book no longer visibly separate",
+    "Movement/landing similar to earlier ca97 despite prompt feedback"
+  ],
+  "sampling": {
+    "configuredSeed": 2760152716,
+    "actualSeed": 2760152716,
+    "seedPolicy": "configured"
+  },
+  "limitations": [
+    "No audio content/timbre/lips verification",
+    "No proof of hidden book displacement"
+  ]
+}

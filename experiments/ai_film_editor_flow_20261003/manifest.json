@@ -1,0 +1,61 @@
+{
+  "owner": "Sean",
+  "experiment": "ai_film_editor_reference_import_and_shot_preview",
+  "status": "preview_complete",
+  "purpose": "Validate importing a confirmed Reference entity bundle into a short-film project, preserving exact source revisions and asset bytes, then exercise shot-level preview, retry/history, and assembly.",
+  "task": "remote-750a1fff-c5dc-426c-81d1-4e33811caab4",
+  "reference_api": "http://127.0.0.1:4188/api/reference/v1",
+  "source_manifest": {
+    "manifest_id": "e0797899-ccb5-46d1-b461-13035a820dbc",
+    "content_hash": "52379821c048fc7a4c98498fc94499d6aec3324d03da3fe5af5a7b100db422b8",
+    "path": "imports/e0797899-ccb5-46d1-b461-13035a820dbc/reference-manifest.json"
+  },
+  "source_entity": {
+    "entity_id": "5821d6dd-2041-40a3-a789-74989c6edd90",
+    "name": "一期验收 · 四图概念探索",
+    "source_revision": "5978a4f45c576a5394a8f5a5c3e278ced28ea817dadeb100e543b3f96d5814ff",
+    "missing_fields": ["type", "description", "appearance"],
+    "missing_capabilities": ["relations", "sound_effect", "review_status", "prompt_version"]
+  },
+  "selected_assets": [
+    {
+      "asset_id": "af9823e0-1b27-48b7-a469-47ddcf4b7534",
+      "role": "main_appearance",
+      "sha256": "df20a30c62bf979ff04d2773b1757620847d3b485b580095b429031b5ea2d04b",
+      "path": "imports/e0797899-ccb5-46d1-b461-13035a820dbc/assets/af9823e0-1b27-48b7-a469-47ddcf4b7534.png"
+    },
+    {
+      "asset_id": "432cfa98-83f2-416e-b600-01090075fb73",
+      "role": "three_view",
+      "sha256": "dff6328599b5a4fe878ce234590d864b83b2a936c89032fecabac610495aadd9",
+      "path": "imports/e0797899-ccb5-46d1-b461-13035a820dbc/assets/432cfa98-83f2-416e-b600-01090075fb73.png"
+    },
+    {
+      "asset_id": "1e2f367f-132f-4c92-93d7-660422eaf8be",
+      "role": "voice",
+      "sha256": "136dc791274fa4bf7f7a5cb4667c04bbaf8affd92c7473775cf295846215ff1b",
+      "path": "imports/e0797899-ccb5-46d1-b461-13035a820dbc/assets/1e2f367f-132f-4c92-93d7-660422eaf8be.wav"
+    }
+  ],
+  "generation": {
+    "planned_model": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+    "pdd_acc": "minimax_h3_ref2va_pdd_acc_8step_comfyui.safetensors",
+    "model_was_resident_at_start": false,
+    "plan": "Two independently rendered shots (visual setup; spoken shot using the confirmed voice sample with NativeAudioLock), one S02 retry branch, then assemble selected candidates. No model comparison or model swap was performed.",
+    "cases": [
+      {"name":"S01_setup_candidate_A","seed":2026100311,"frames":96,"elapsed_seconds":117,"output":"outputs/S01_setup_candidate_A_00001_.mp4","video_duration_seconds":4.458333,"audio_duration_seconds":4.45,"sha256":"ea0770170890226076eecd25648d561586f376977e709638d84ec2d4a2f8be92"},
+      {"name":"S02_greeting_candidate_A","seed":2026100321,"frames":148,"elapsed_seconds":85,"output":"outputs/S02_greeting_candidate_A_00001_.mp4","video_duration_seconds":6.583333,"audio_duration_seconds":6.575,"sha256":"691f506327a02fa53bd68b3603822914e9b67f0bf8fd19b468fa980a7d90c77d","selection":"selected_for_assembly"},
+      {"name":"S02_greeting_retry_B","seed":2026100322,"frames":148,"elapsed_seconds":75,"output":"outputs/S02_greeting_candidate_B_00001_.mp4","video_duration_seconds":6.583333,"audio_duration_seconds":6.575,"sha256":"e9ae5e9479b9f694d37526d6cfc8666091d448ac30b3404ff326e0c1c04aa198","selection":"retained_as_alternate"}
+    ],
+    "qc": {
+      "visual_review": "Keyframes inspected for all three candidates. Identity, costume and sheathed katana remain recognizable. Both greeting candidates are usable; A has framing closer to the prompt.",
+      "audio_review": "All outputs contain AAC stereo at 32 kHz. S02 audio duration is 6.575 s versus the 6.08 s source WAV. NativeAudioLock input and exact source dialogue were used. Sample-level equality was not verified; audio listening could not be performed in this environment.",
+      "assembly": "outputs/assembled_preview_S01_A_S02_A.mp4; H.264 1024x576 24 fps; video 11.041667 s; audio 11.065344 s; stream-copy concat.",
+      "limitations": ["Entity description/type/appearance fields, relations, SFX, review status and prompt version are unavailable in the current Reference snapshot.", "No separate storyboard still or director/action-blocking tool was exercised.", "Generated audio was not proven sample-identical to the source recording."]
+    }
+  },
+  "outputs": [
+    {"path":"outputs/assembled_preview_S01_A_S02_A.mp4","sha256":"2d05eff9b4e84ad2473125d4b11d55c28a9bddc9b32ca41d7390703512cf9962","role":"selected_assembly"}
+  ],
+  "source": "Reference Export v1 API; selected asset bytes downloaded by import_reference_manifest.mjs and verified against manifest SHA-256 values."
+}

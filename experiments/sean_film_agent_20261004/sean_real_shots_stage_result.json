@@ -1,0 +1,335 @@
+{
+  "owner": "Sean",
+  "id": "4118fde0-941c-4aa2-b304-270895a97299",
+  "projectId": "538005c3-16bd-4709-aa4e-70831b960a24",
+  "kind": "shots",
+  "shotId": null,
+  "status": "succeeded",
+  "createdAt": "2026-10-04T11:21:51.207Z",
+  "input": {
+    "revision": 5,
+    "content": {
+      "plot": "A和B在图书馆遇见发生一件小事。\nA走到图书馆，看到B正在读书，便把刀放到一边，然后同B交谈了一会儿。\nB脱下衣服放到一旁，取了刀便离开。\nB离开后，A起身脱下自己的衣服，然后穿上B的衣服，开心的转了一圈。",
+      "script": "短片名：《图书馆里的一件小事》\n\n时长目标：30秒。\n\n人物：角色A、角色B。\n场景：图书馆阅读室。\n固定事实：角色A保持同一张脸、同一束马尾、同一体型与基础声音；角色B保持已确认形象与声音。唯一的一把刀由角色B最后带走。角色A的派生只是同一个角色A在脱下自己的制服与银甲后，穿上角色B留下的休闲服，不新增人物。\n\n第一拍（约0—8秒）：\n角色A走进图书馆阅读室，看见角色B正坐在桌边读书。角色A停步，把唯一的一把刀放到一旁，随后在同一张阅读桌近侧坐下，面向远侧坐着的角色B，与她交谈。\n\n第二拍（约8—16秒）：\n角色A与角色B交谈了一会儿。角色B合上书，起身，脱下自己的休闲服，平放在桌面一旁。\n\n第三拍（约16—23秒）：\n角色B拿起那把唯一的一把刀，不再停留，转身离开阅读室，完全离场。角色A留在原处，目送角色B离开。\n\n第四拍（约23—30秒）：\n角色B离开后，角色A起身，脱下自己的制服与银甲，放到一旁，再拿起角色B留下的休闲服穿上。角色A穿着角色B的休闲服，开心地转了一圈。\n\n结尾：角色A停住，神情轻快。没有新增人物，没有新增武器，唯一的一把刀已随角色B离场。",
+      "dialogue": "对白总稿\n\n角色A：你还真会挑地方。\n角色B：图书馆里，刀先放下。\n角色A：好。那就说一会儿。\n角色B：说完我就走。\n角色B：刀我拿走了。\n\n说明：以上对白与剧本一致。角色A使用既有基础声音，清冷克制，带一点烟嗓颗粒感；角色B使用既有基础声音，明亮活泼。角色B说完“刀我拿走了。”后离场，角色A之后不再说话，只以开心转圈完成结尾。",
+      "shots": [],
+      "entities": {
+        "5821d6dd-2041-40a3-a789-74989c6edd90": {
+          "snapshotId": "b8031f71-80b4-43dc-a6d8-14aeb1351b3e",
+          "sourceRevision": "f01ce83c5b7088ef55d8397e32610f5a6f6e1967005d3e0cb2dfdab31af63703",
+          "name": "角色A"
+        },
+        "e3f49e04-4a4b-483f-823e-d31f497d5ab8": {
+          "snapshotId": "b8031f71-80b4-43dc-a6d8-14aeb1351b3e",
+          "sourceRevision": "752c5abc16ba6beee99a57150c5623b214a6bdc2e9d1d71efddfffe2aa69b173",
+          "name": "角色B"
+        },
+        "ba6dcbf0-ea45-4720-80c7-8bc7b2ec9165": {
+          "snapshotId": "b8031f71-80b4-43dc-a6d8-14aeb1351b3e",
+          "sourceRevision": "d784a2b5407c28e40f9db2f70732ddf388ffacf4544c76e5f28d35127bd3b0a3",
+          "name": "角色A · 派生"
+        },
+        "9971429d-863e-499e-b7c5-902d30e0f6a2": {
+          "snapshotId": "b8031f71-80b4-43dc-a6d8-14aeb1351b3e",
+          "sourceRevision": "771e40c10dda38cab5fad64c15aae7d29e2b90031e6827eb9854829eb37baac5",
+          "name": "图书馆"
+        },
+        "4c8e5bd2-78a5-4aee-8f22-7ec5a8512bb8": {
+          "snapshotId": "b8031f71-80b4-43dc-a6d8-14aeb1351b3e",
+          "sourceRevision": "508a482814c72269c945e82527efde871238004875f1019e13d8f0560e717eef",
+          "name": "一把刀"
+        },
+        "3044bf32-2019-458e-a7cf-e50ab304e42c": {
+          "snapshotId": "b8031f71-80b4-43dc-a6d8-14aeb1351b3e",
+          "sourceRevision": "9a48b8d162877cfcd0e23d7b44b9915850a8bb6617140e9f317c83b553248d2c",
+          "name": "休闲服"
+        }
+      },
+      "targetDurationSec": 30,
+      "pipeline": {
+        "owner": "Sean",
+        "script": {
+          "inputHash": "dfb2c2ea5640a44c87340ffd174421f7e0d19ebca969202bfe02e9883ccf566b",
+          "confirmedHash": "0eb53a30ee3e3babdfe11540377a048bcc4ce183905afcb963f4233c2dda0777",
+          "mode": "generation-input",
+          "at": "2026-10-04T11:21:51.207Z"
+        },
+        "shots": {
+          "inputHash": "d947ca61c3aa60720e49098f1a961debd83b6c6a4a6bcbe94814c18ddb49667a",
+          "confirmedHash": null
+        },
+        "promptInputs": {}
+      }
+    },
+    "settings": {
+      "llm": {
+        "baseUrl": "https://api.deepseek.com",
+        "model": "deepseek-flash",
+        "temperature": 0.7
+      },
+      "targetDurationSec": 30,
+      "render": {
+        "width": 1024,
+        "height": 576
+      }
+    },
+    "useCurrent": true,
+    "directorNotes": "只生成拍摄本，不写Ref2VA逐镜提示词，不生成媒体。基于当前已由Agent采用的剧本：第一拍A放唯一刀后明确坐同一桌近侧面对远侧B，第四拍A起身必须承接前面坐姿。保持当前剧本及对白总稿，不凭历史初稿改变动作或台词；A派生为同一A换装保持身份声音。每镜4–15秒，合计30秒目标，镜头开始/结束交代人物坐站、衣物、持刀/桌面/离场状态和动作轴。角色实体/图片选择符合剧情，不把派生当第三人。"
+  },
+  "response": {
+    "owner": "Sean",
+    "stage": "shots",
+    "shotId": null,
+    "provider": "openai-compatible",
+    "baseUrl": "https://api.deepseek.com",
+    "model": "deepseek-flash",
+    "temperature": 0.7,
+    "responseId": "632db654-da43-4831-81c4-7e7d57d2f9a3",
+    "usage": {
+      "prompt_tokens": 15868,
+      "completion_tokens": 19557,
+      "total_tokens": 35425,
+      "prompt_tokens_details": {
+        "cached_tokens": 384
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 15653
+      },
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 15484
+    },
+    "cachedTokens": 384,
+    "systemPrompt": "Owner: Sean. Output ONLY strict JSON, no markdown. Use only supplied entities and asset IDs; preserve authoritative appearance and do not invent missing facts. No tools or agents. Create ONLY the editable shotlist from the confirmed script and dialogue, without rewriting either. Schema {shots:[{title:string,durationSec:number(4..15),entityIds:UUID[],imageAssetIds:UUID[],action:string,framing:string,camera:string,continuity:string,dialogue:[{speaker:entityUUID,text:string,language:string}]}]}. Split into independent clips, one dominant action each, with continuity and ordered image references belonging to selected entities. Use exact approved dialogue in order, without additions, omissions or paraphrases. dialogue.language uses natural names Chinese/English/Cantonese, not locale codes. Do not produce prompt, id, seed or audio-lock fields.\nSPATIAL CONTINUITY: Use exportedFacts.prompts text/effectiveText from the selected reference assets as source prompt evidence; it describes intended image generation, not proof of unseen image content. Current explicit entity scene facts take precedence over obsolete source prompt wording; material conflicts must be listed as questions. Scene entity text and exportedFacts are authoritative for architecture, appearance, fixed furniture, dimensions, named anchors and spatial relations. Do not silently add windows, doors, lamps or room geometry absent from supplied facts. A reference image is supplied to video generation, not visually read by this text model; never claim to have inspected it. Preserve stable anchor names, explain them in natural English inside every clip prompt where relevant. Distinguish physical world-relative locations from screen-left/right relative to camera position. Establish camera side of the action axis; do not cross it without an explicit motivated transition. Each clip must explicitly describe initial character position, standing/seated posture, body facing, gaze target, traversed path, object interaction location and final physical state. Carry previous final states into the next clip; a relocation requires an explicit action or transition. No alternatives such as seated-or-standing. Facing and gaze must be compatible with the requested motion: for a complete spin, constrain initial and final orientation, not an impossible fixed facing throughout rotation. Check that travel distances, pickups, garment changes and dialogue can physically fit the approved duration; list infeasible timing as a question without adding rushed motion or silently altering approved actions or duration. Repeat relevant shared scene facts and blocking in EVERY complete Ref2VA prompt, rather than referring to another clip. Do not overwrite authoritative reference appearance with invented details. Approved story actions, dialogue, cast, asset order, durations, seed and audio-lock are immutable; spatial clarification may repair ambiguous or contradictory framing and continuity only in the all-shot proposal. Missing material facts or impossible approved actions must be listed as questions rather than silently guessed. Scene entities are reusable fixed environments; character blocking belongs to the film, not to the scene entity.\nUse directorNotes as additional user direction. Preserve authoritative story/actions/dialogue/cast/references/duration for prompt and spatial stages. If direction conflicts, explain in spatial questions; do not silently change facts.\nRendered video prompts must not contain UUIDs, asset hashes or metadata field names; express bindings using Subject/Picture/Audio labels and speaker IDs only.",
+    "rawResponse": "{\"shots\":[{\"title\":\"进入阅读室与初遇\",\"durationSec\":5,\"entityIds\":[\"5821d6dd-2041-40a3-a789-74989c6edd90\",\"e3f49e04-4a4b-483f-823e-d31f497d5ab8\",\"9971429d-863e-499e-b7c5-902d30e0f6a2\",\"4c8e5bd2-78a5-4aee-8f22-7ec5a8512bb8\"],\"imageAssetIds\":[\"af9823e0-1b27-48b7-a469-47ddcf4b7534\",\"43123388-aebd-4161-97d7-04f0dabc9484\",\"25958405-ac83-454f-909e-f4aeba33f9a4\",\"e6ea44ed-6c4a-4fb0-a868-de41e241c430\"],\"action\":\"角色A从阅读室入口方向走入现代图书馆阅读室，站立行走，面朝阅读室内侧，目光先扫过房间再落到坐在阅读桌远侧的角色B身上；角色B坐在桌边，身体面向阅读桌近侧，低头看书。角色A在阅读桌近侧停下，仍站立，面向远侧的角色B，开口说第一句对白；角色B抬头看向角色A并说第二句对白。角色A手中仍带着唯一的一把刀，没有放下；角色B手中是正在读的书。最终状态：角色A站在阅读桌近侧，面向远侧；角色B坐在远侧，面向近侧；刀仍在角色A处，书仍在角色B手中。\",\"framing\":\"中远景，从阅读桌近侧拍摄，镜头位于桌面动作轴近侧并略偏 camera-left，角色A在画面 camera-left 前景，角色B在画面 camera-right 后景；不越过桌面轴线。\",\"camera\":\"固定机位，轻微跟随角色A入画后停稳；保持角色A和角色B在同一轴线上。\",\"continuity\":\"起始：角色A在阅读室入口方向外，站立，携带唯一的一把刀；角色B已坐在阅读桌远侧看书。角色A的行走路径从入口方向到阅读桌近侧，不穿过角色A与角色B之间的桌面轴线。角色B全程坐在远侧，只抬头和说话。结束：角色A站在近侧，角色B坐在远侧。角色A同一张脸、同一束马尾、同一体型；角色B保持已确认形象。\",\"dialogue\":[{\"speaker\":\"5821d6dd-2041-40a3-a789-74989c6edd90\",\"text\":\"你还真会挑地方。\",\"language\":\"Chinese\"},{\"speaker\":\"e3f49e04-4a4b-483f-823e-d31f497d5ab8\",\"text\":\"图书馆里，刀先放下。\",\"language\":\"Chinese\"}]},{\"title\":\"放刀与近侧落座\",\"durationSec\":4,\"entityIds\":[\"5821d6dd-2041-40a3-a789-74989c6edd90\",\"e3f49e04-4a4b-483f-823e-d31f497d5ab8\",\"9971429d-863e-499e-b7c5-902d30e0f6a2\",\"4c8e5bd2-78a5-4aee-8f22-7ec5a8512bb8\"],\"imageAssetIds\":[\"af9823e0-1b27-48b7-a469-47ddcf4b7534\",\"43123388-aebd-4161-97d7-04f0dabc9484\",\"25958405-ac83-454f-909e-f4aeba33f9a4\",\"e6ea44ed-6c4a-4fb0-a868-de41e241c430\"],\"action\":\"承接上一镜：角色A站在阅读桌近侧，面向远侧坐着的角色B；角色B坐在远侧，面向近侧，书在手中；唯一的一把刀仍在角色A处。角色A把唯一的一把刀放到阅读桌桌面近侧一旁，动作结束后刀平放在桌面，不再由角色A手持；角色A随后在阅读桌近侧坐下，坐下后身体面向远侧的角色B，目光看向角色B，开口说第三句对白。角色B保持坐在远侧，面向角色A，听角色A说话。最终状态：角色A坐在阅读桌近侧，面向远侧；角色B坐在远侧，面向近侧；唯一的一把刀平放在桌面近侧一旁；角色B的书仍在手中。\",\"framing\":\"中景，从近侧略偏 camera-left 拍摄，角色A在 camera-left 前景坐下，角色B在 camera-right 后景；保持桌面轴线，不越过轴线。\",\"camera\":\"固定机位，跟随角色A放刀和落座的动作，构图让桌面近侧和远侧两人同框。\",\"continuity\":\"起始：角色A站在阅读桌近侧，手持唯一的一把刀；角色B坐在远侧，书在手中。角色A放刀的位置在桌面近侧一旁，位于角色A伸手可及处，后续角色B在同一位置取刀。角色A坐下后不再站立，直到后续起身动作。结束：角色A坐近侧，角色B坐远侧，刀在桌面近侧一旁。\",\"dialogue\":[{\"speaker\":\"5821d6dd-2041-40a3-a789-74989c6edd90\",\"text\":\"好。那就说一会儿。\",\"language\":\"Chinese\"}]},{\"title\":\"交谈与B合书起身\",\"durationSec\":4,\"entityIds\":[\"5821d6dd-2041-40a3-a789-74989c6edd90\",\"e3f49e04-4a4b-483f-823e-d31f497d5ab8\",\"9971429d-863e-499e-b7c5-902d30e0f6a2\"],\"imageAssetIds\":[\"af9823e0-1b27-48b7-a469-47ddcf4b7534\",\"43123388-aebd-4161-97d7-04f0dabc9484\",\"25958405-ac83-454f-909e-f4aeba33f9a4\"],\"action\":\"承接上一镜：角色A坐在阅读桌近侧，面向远侧；角色B坐在远侧，面向近侧；唯一的一把刀平放在桌面近侧一旁；角色B的书在手中。角色A与角色B简短交谈，两人保持坐姿，面对面。随后角色B合上手中的书，把书放在桌面远侧，起身站在阅读桌远侧，仍面向近侧的角色A，开口说第四句对白。角色A保持坐在近侧，面向远侧，听角色B说话。最终状态：角色A坐在近侧；角色B站在阅读桌远侧，书已合上放在桌面远侧；刀仍在桌面近侧一旁。\",\"framing\":\"中景，从近侧略偏 camera-left 拍摄，角色A在 camera-left 前景坐着，角色B在 camera-right 后景由坐变站；不越过桌面轴线。\",\"camera\":\"固定机位，轻微上摇跟随角色B起身，保持两人同框。\",\"continuity\":\"起始：角色A坐近侧，角色B坐远侧，刀在桌面近侧一旁，书在角色B手中。角色B合书后放在桌面远侧，起身后不再坐下。结束：角色A仍坐近侧，角色B站在远侧，书在桌面远侧，刀仍在桌面近侧一旁。\",\"dialogue\":[{\"speaker\":\"e3f49e04-4a4b-483f-823e-d31f497d5ab8\",\"text\":\"说完我就走。\",\"language\":\"Chinese\"}]},{\"title\":\"B脱下休闲服并平放\",\"durationSec\":4,\"entityIds\":[\"5821d6dd-2041-40a3-a789-74989c6edd90\",\"e3f49e04-4a4b-483f-823e-d31f497d5ab8\",\"9971429d-863e-499e-b7c5-902d30e0f6a2\",\"3044bf32-2019-458e-a7cf-e50ab304e42c\",\"4c8e5bd2-78a5-4aee-8f22-7ec5a8512bb8\"],\"imageAssetIds\":[\"af9823e0-1b27-48b7-a469-47ddcf4b7534\",\"43123388-aebd-4161-97d7-04f0dabc9484\",\"25958405-ac83-454f-909e-f4aeba33f9a4\",\"96e44971-aedc-42da-a534-dc321fd5e350\",\"e6ea44ed-6c4a-4fb0-a868-de41e241c430\"],\"action\":\"承接上一镜：角色A坐在阅读桌近侧，面向远侧；角色B站在阅读桌远侧，面向近侧；刀平放在桌面近侧一旁，书在桌面远侧。角色B站在远侧，脱下自己身上的休闲服，将休闲服平放在阅读桌桌面一旁；角色B脱下休闲服后，身体仍站在阅读桌远侧，面向近侧的角色A，不再穿着该休闲服。角色A保持坐在近侧，面向远侧，看着角色B的动作。最终状态：角色A坐在近侧；角色B站在远侧，已脱下休闲服；休闲服平放在桌面一旁；刀仍在桌面近侧一旁；书在桌面远侧。\",\"framing\":\"中景，从近侧略偏 camera-left 拍摄，角色A在 camera-left 前景坐着，角色B在 camera-right 后景站立并脱下休闲服；休闲服平放在桌面可见位置；不越过桌面轴线。\",\"camera\":\"固定机位，构图同时容纳站立的角色B、坐着的角色A和桌面上的休闲服。\",\"continuity\":\"起始：角色B站在远侧，身穿休闲服；角色A坐近侧；刀在桌面近侧一旁。角色B脱下休闲服后，休闲服平放在桌面一旁，属于角色B留下的衣物，后续由角色A取用。结束：角色B站在远侧，不再穿休闲服；休闲服平放在桌面一旁；角色A仍坐近侧。\",\"dialogue\":[]},{\"title\":\"B取刀转身离场\",\"durationSec\":5,\"entityIds\":[\"5821d6dd-2041-40a3-a789-74989c6edd90\",\"e3f49e04-4a4b-483f-823e-d31f497d5ab8\",\"9971429d-863e-499e-b7c5-902d30e0f6a2\",\"4c8e5bd2-78a5-4aee-8f22-7ec5a8512bb8\",\"3044bf32-2019-458e-a7cf-e50ab304e42c\"],\"imageAssetIds\":[\"af9823e0-1b27-48b7-a469-47ddcf4b7534\",\"43123388-aebd-4161-97d7-04f0dabc9484\",\"25958405-ac83-454f-909e-f4aeba33f9a4\",\"e6ea44ed-6c4a-4fb0-a868-de41e241c430\",\"96e44971-aedc-42da-a534-dc321fd5e350\"],\"action\":\"承接上一镜：角色A坐在阅读桌近侧，面向远侧；角色B站在阅读桌远侧，已脱下休闲服；休闲服平放在桌面一旁；唯一的一把刀平放在桌面近侧一旁；书在桌面远侧。角色B从远侧伸手拿起那把唯一的一把刀，拿起后刀由角色B持有；角色B不再停留，转身离开阅读桌，沿远离角色A的路线走出阅读室，完全离场。角色B在转身离开前开口说第五句对白。角色A保持坐在近侧，目光跟随角色B离开，不站起，不追赶。最终状态：角色B已带着唯一的一把刀离场；角色A独自坐在阅读桌近侧；休闲服平放在桌面一旁；书在桌面远侧；刀不在桌面。\",\"framing\":\"中全景，从近侧略偏 camera-left 拍摄，先让角色B在 camera-right 后景取刀，再跟随她转身向画面深处或一侧离场；角色A在 camera-left 前景坐着目送；镜头不越过桌面轴线。\",\"camera\":\"固定机位为主，角色B离场时可轻微横摇跟随，但保持角色A在画面内，不跨轴。\",\"continuity\":\"起始：角色B站在远侧，未穿休闲服；刀在桌面近侧一旁；角色A坐近侧。角色B取刀后，刀从桌面近侧一旁转移到角色B手中，并随角色B完全离场。角色A全程保持坐姿，直到下一镜才起身。结束：角色B和唯一的一把刀均不在阅读室画面内；休闲服留在桌面一旁；角色A坐在近侧。\",\"dialogue\":[{\"speaker\":\"e3f49e04-4a4b-483f-823e-d31f497d5ab8\",\"text\":\"刀我拿走了。\",\"language\":\"Chinese\"}]},{\"title\":\"A起身脱下制服与银甲\",\"durationSec\":4,\"entityIds\":[\"5821d6dd-2041-40a3-a789-74989c6edd90\",\"9971429d-863e-499e-b7c5-902d30e0f6a2\",\"3044bf32-2019-458e-a7cf-e50ab304e42c\"],\"imageAssetIds\":[\"af9823e0-1b27-48b7-a469-47ddcf4b7534\",\"25958405-ac83-454f-909e-f4aeba33f9a4\",\"96e44971-aedc-42da-a534-dc321fd5e350\"],\"action\":\"承接上一镜：角色B已带着唯一的一把刀离场；角色A独自坐在阅读桌近侧，面向远侧；休闲服平放在桌面一旁；书在桌面远侧。角色A从阅读桌近侧起身，站直，面向阅读桌远侧，然后脱下自己身上的制服与银甲，将脱下的制服与银甲放到一旁，不再穿戴。角色A脱下后仍站在原地，身体面向阅读桌远侧；休闲服仍平放在桌面一旁，未被拿起。最终状态：角色A站在阅读桌近侧，已脱下制服与银甲；制服与银甲放在一旁；休闲服仍在桌面一旁；B和刀均不在场。\",\"framing\":\"中景，从近侧略偏 camera-left 拍摄，角色A在 camera-left 前景由坐变站并脱下制服与银甲；桌面一旁的休闲服保持在画面可见位置；不越过桌面轴线。\",\"camera\":\"固定机位，轻微上摇跟随角色A起身，保持角色A全身和桌面休闲服同框。\",\"continuity\":\"起始：角色A坐在近侧，身穿制服与银甲；休闲服平放在桌面一旁。角色A起身后不再坐下，脱下制服与银甲并放在一旁，属于角色A脱下的衣物。结束：角色A站在近侧，未穿制服与银甲；休闲服仍在桌面一旁；刀已随角色B离场。\",\"dialogue\":[]},{\"title\":\"A穿上休闲服开心转圈\",\"durationSec\":4,\"entityIds\":[\"ba6dcbf0-ea45-4720-80c7-8bc7b2ec9165\",\"9971429d-863e-499e-b7c5-902d30e0f6a2\"],\"imageAssetIds\":[\"c25d9268-6efa-4c1c-9a23-cef25c5ef192\",\"25958405-ac83-454f-909e-f4aeba33f9a4\"],\"action\":\"承接上一镜：角色A站在阅读桌近侧，已脱下制服与银甲；休闲服平放在桌面一旁；B和刀均不在场。角色A从桌面一旁拿起角色B留下的休闲服，穿上休闲服；穿上后，角色A以同一身份、同一张脸、同一束马尾、同一体型呈现，只是换成了休闲服。角色A站在阅读桌近侧，初始面向远侧，随后开心地在原地转一整圈，完成360度旋转，最终转回面向远侧。角色A神情轻快，停住。最终状态：角色A站在阅读桌近侧，穿着角色B留下的休闲服，面向远侧，停止旋转；休闲服不再平放在桌面；没有新增人物，没有新增武器，唯一的一把刀已随角色B离场。\",\"framing\":\"中景，从近侧略偏 camera-left 拍摄，角色A在 camera-left 前景完成换装与原地转圈；镜头保持全身可见，不越过桌面轴线。\",\"camera\":\"固定机位，保持角色A全身在画面内，转圈时不切轴，不绕到角色A背后。\",\"continuity\":\"起始：角色A站在近侧，未穿制服与银甲，休闲服在桌面一旁。角色A拿起并穿上休闲服后，休闲服从桌面转移到角色A身上；角色A的最终形象使用派生形象参考，保持同一角色A身份，不新增第三人。转圈是原地360度，初始和最终都面向阅读桌远侧。结束：角色A穿休闲服站在近侧，面向远侧，神情轻快。\",\"dialogue\":[]}]}",
+    "warnings": []
+  },
+  "result": {
+    "shots": [
+      {
+        "title": "进入阅读室与初遇",
+        "durationSec": 5,
+        "entityIds": [
+          "5821d6dd-2041-40a3-a789-74989c6edd90",
+          "e3f49e04-4a4b-483f-823e-d31f497d5ab8",
+          "9971429d-863e-499e-b7c5-902d30e0f6a2",
+          "4c8e5bd2-78a5-4aee-8f22-7ec5a8512bb8"
+        ],
+        "imageAssetIds": [
+          "af9823e0-1b27-48b7-a469-47ddcf4b7534",
+          "43123388-aebd-4161-97d7-04f0dabc9484",
+          "25958405-ac83-454f-909e-f4aeba33f9a4",
+          "e6ea44ed-6c4a-4fb0-a868-de41e241c430"
+        ],
+        "action": "角色A从阅读室入口方向走入现代图书馆阅读室，站立行走，面朝阅读室内侧，目光先扫过房间再落到坐在阅读桌远侧的角色B身上；角色B坐在桌边，身体面向阅读桌近侧，低头看书。角色A在阅读桌近侧停下，仍站立，面向远侧的角色B，开口说第一句对白；角色B抬头看向角色A并说第二句对白。角色A手中仍带着唯一的一把刀，没有放下；角色B手中是正在读的书。最终状态：角色A站在阅读桌近侧，面向远侧；角色B坐在远侧，面向近侧；刀仍在角色A处，书仍在角色B手中。",
+        "framing": "中远景，从阅读桌近侧拍摄，镜头位于桌面动作轴近侧并略偏 camera-left，角色A在画面 camera-left 前景，角色B在画面 camera-right 后景；不越过桌面轴线。",
+        "camera": "固定机位，轻微跟随角色A入画后停稳；保持角色A和角色B在同一轴线上。",
+        "continuity": "起始：角色A在阅读室入口方向外，站立，携带唯一的一把刀；角色B已坐在阅读桌远侧看书。角色A的行走路径从入口方向到阅读桌近侧，不穿过角色A与角色B之间的桌面轴线。角色B全程坐在远侧，只抬头和说话。结束：角色A站在近侧，角色B坐在远侧。角色A同一张脸、同一束马尾、同一体型；角色B保持已确认形象。",
+        "dialogue": [
+          {
+            "speaker": "5821d6dd-2041-40a3-a789-74989c6edd90",
+            "text": "你还真会挑地方。",
+            "language": "Chinese"
+          },
+          {
+            "speaker": "e3f49e04-4a4b-483f-823e-d31f497d5ab8",
+            "text": "图书馆里，刀先放下。",
+            "language": "Chinese"
+          }
+        ],
+        "id": "79f442e7-6b73-4776-bce1-7bd0117afc2f",
+        "prompt": "",
+        "seed": 604615972,
+        "nativeAudioAssetId": null,
+        "verifiedAudioTranscript": "",
+        "stale": true,
+        "selectedCandidateId": null
+      },
+      {
+        "title": "放刀与近侧落座",
+        "durationSec": 4,
+        "entityIds": [
+          "5821d6dd-2041-40a3-a789-74989c6edd90",
+          "e3f49e04-4a4b-483f-823e-d31f497d5ab8",
+          "9971429d-863e-499e-b7c5-902d30e0f6a2",
+          "4c8e5bd2-78a5-4aee-8f22-7ec5a8512bb8"
+        ],
+        "imageAssetIds": [
+          "af9823e0-1b27-48b7-a469-47ddcf4b7534",
+          "43123388-aebd-4161-97d7-04f0dabc9484",
+          "25958405-ac83-454f-909e-f4aeba33f9a4",
+          "e6ea44ed-6c4a-4fb0-a868-de41e241c430"
+        ],
+        "action": "承接上一镜：角色A站在阅读桌近侧，面向远侧坐着的角色B；角色B坐在远侧，面向近侧，书在手中；唯一的一把刀仍在角色A处。角色A把唯一的一把刀放到阅读桌桌面近侧一旁，动作结束后刀平放在桌面，不再由角色A手持；角色A随后在阅读桌近侧坐下，坐下后身体面向远侧的角色B，目光看向角色B，开口说第三句对白。角色B保持坐在远侧，面向角色A，听角色A说话。最终状态：角色A坐在阅读桌近侧，面向远侧；角色B坐在远侧，面向近侧；唯一的一把刀平放在桌面近侧一旁；角色B的书仍在手中。",
+        "framing": "中景，从近侧略偏 camera-left 拍摄，角色A在 camera-left 前景坐下，角色B在 camera-right 后景；保持桌面轴线，不越过轴线。",
+        "camera": "固定机位，跟随角色A放刀和落座的动作，构图让桌面近侧和远侧两人同框。",
+        "continuity": "起始：角色A站在阅读桌近侧，手持唯一的一把刀；角色B坐在远侧，书在手中。角色A放刀的位置在桌面近侧一旁，位于角色A伸手可及处，后续角色B在同一位置取刀。角色A坐下后不再站立，直到后续起身动作。结束：角色A坐近侧，角色B坐远侧，刀在桌面近侧一旁。",
+        "dialogue": [
+          {
+            "speaker": "5821d6dd-2041-40a3-a789-74989c6edd90",
+            "text": "好。那就说一会儿。",
+            "language": "Chinese"
+          }
+        ],
+        "id": "efa6c98d-e614-437a-b17e-0f8551f794e3",
+        "prompt": "",
+        "seed": 3983858803,
+        "nativeAudioAssetId": null,
+        "verifiedAudioTranscript": "",
+        "stale": true,
+        "selectedCandidateId": null
+      },
+      {
+        "title": "交谈与B合书起身",
+        "durationSec": 4,
+        "entityIds": [
+          "5821d6dd-2041-40a3-a789-74989c6edd90",
+          "e3f49e04-4a4b-483f-823e-d31f497d5ab8",
+          "9971429d-863e-499e-b7c5-902d30e0f6a2"
+        ],
+        "imageAssetIds": [
+          "af9823e0-1b27-48b7-a469-47ddcf4b7534",
+          "43123388-aebd-4161-97d7-04f0dabc9484",
+          "25958405-ac83-454f-909e-f4aeba33f9a4"
+        ],
+        "action": "承接上一镜：角色A坐在阅读桌近侧，面向远侧；角色B坐在远侧，面向近侧；唯一的一把刀平放在桌面近侧一旁；角色B的书在手中。角色A与角色B简短交谈，两人保持坐姿，面对面。随后角色B合上手中的书，把书放在桌面远侧，起身站在阅读桌远侧，仍面向近侧的角色A，开口说第四句对白。角色A保持坐在近侧，面向远侧，听角色B说话。最终状态：角色A坐在近侧；角色B站在阅读桌远侧，书已合上放在桌面远侧；刀仍在桌面近侧一旁。",
+        "framing": "中景，从近侧略偏 camera-left 拍摄，角色A在 camera-left 前景坐着，角色B在 camera-right 后景由坐变站；不越过桌面轴线。",
+        "camera": "固定机位，轻微上摇跟随角色B起身，保持两人同框。",
+        "continuity": "起始：角色A坐近侧，角色B坐远侧，刀在桌面近侧一旁，书在角色B手中。角色B合书后放在桌面远侧，起身后不再坐下。结束：角色A仍坐近侧，角色B站在远侧，书在桌面远侧，刀仍在桌面近侧一旁。",
+        "dialogue": [
+          {
+            "speaker": "e3f49e04-4a4b-483f-823e-d31f497d5ab8",
+            "text": "说完我就走。",
+            "language": "Chinese"
+          }
+        ],
+        "id": "65cf9a63-d082-43af-9e6d-122e76f8faa7",
+        "prompt": "",
+        "seed": 1331603724,
+        "nativeAudioAssetId": null,
+        "verifiedAudioTranscript": "",
+        "stale": true,
+        "selectedCandidateId": null
+      },
+      {
+        "title": "B脱下休闲服并平放",
+        "durationSec": 4,
+        "entityIds": [
+          "5821d6dd-2041-40a3-a789-74989c6edd90",
+          "e3f49e04-4a4b-483f-823e-d31f497d5ab8",
+          "9971429d-863e-499e-b7c5-902d30e0f6a2",
+          "3044bf32-2019-458e-a7cf-e50ab304e42c",
+          "4c8e5bd2-78a5-4aee-8f22-7ec5a8512bb8"
+        ],
+        "imageAssetIds": [
+          "af9823e0-1b27-48b7-a469-47ddcf4b7534",
+          "43123388-aebd-4161-97d7-04f0dabc9484",
+          "25958405-ac83-454f-909e-f4aeba33f9a4",
+          "96e44971-aedc-42da-a534-dc321fd5e350",
+          "e6ea44ed-6c4a-4fb0-a868-de41e241c430"
+        ],
+        "action": "承接上一镜：角色A坐在阅读桌近侧，面向远侧；角色B站在阅读桌远侧，面向近侧；刀平放在桌面近侧一旁，书在桌面远侧。角色B站在远侧，脱下自己身上的休闲服，将休闲服平放在阅读桌桌面一旁；角色B脱下休闲服后，身体仍站在阅读桌远侧，面向近侧的角色A，不再穿着该休闲服。角色A保持坐在近侧，面向远侧，看着角色B的动作。最终状态：角色A坐在近侧；角色B站在远侧，已脱下休闲服；休闲服平放在桌面一旁；刀仍在桌面近侧一旁；书在桌面远侧。",
+        "framing": "中景，从近侧略偏 camera-left 拍摄，角色A在 camera-left 前景坐着，角色B在 camera-right 后景站立并脱下休闲服；休闲服平放在桌面可见位置；不越过桌面轴线。",
+        "camera": "固定机位，构图同时容纳站立的角色B、坐着的角色A和桌面上的休闲服。",
+        "continuity": "起始：角色B站在远侧，身穿休闲服；角色A坐近侧；刀在桌面近侧一旁。角色B脱下休闲服后，休闲服平放在桌面一旁，属于角色B留下的衣物，后续由角色A取用。结束：角色B站在远侧，不再穿休闲服；休闲服平放在桌面一旁；角色A仍坐近侧。",
+        "dialogue": [],
+        "id": "e028843c-0363-41e3-a7ee-acd84f687ab8",
+        "prompt": "",
+        "seed": 1382402528,
+        "nativeAudioAssetId": null,
+        "verifiedAudioTranscript": "",
+        "stale": true,
+        "selectedCandidateId": null
+      },
+      {
+        "title": "B取刀转身离场",
+        "durationSec": 5,
+        "entityIds": [
+          "5821d6dd-2041-40a3-a789-74989c6edd90",
+          "e3f49e04-4a4b-483f-823e-d31f497d5ab8",
+          "9971429d-863e-499e-b7c5-902d30e0f6a2",
+          "4c8e5bd2-78a5-4aee-8f22-7ec5a8512bb8",
+          "3044bf32-2019-458e-a7cf-e50ab304e42c"
+        ],
+        "imageAssetIds": [
+          "af9823e0-1b27-48b7-a469-47ddcf4b7534",
+          "43123388-aebd-4161-97d7-04f0dabc9484",
+          "25958405-ac83-454f-909e-f4aeba33f9a4",
+          "e6ea44ed-6c4a-4fb0-a868-de41e241c430",
+          "96e44971-aedc-42da-a534-dc321fd5e350"
+        ],
+        "action": "承接上一镜：角色A坐在阅读桌近侧，面向远侧；角色B站在阅读桌远侧，已脱下休闲服；休闲服平放在桌面一旁；唯一的一把刀平放在桌面近侧一旁；书在桌面远侧。角色B从远侧伸手拿起那把唯一的一把刀，拿起后刀由角色B持有；角色B不再停留，转身离开阅读桌，沿远离角色A的路线走出阅读室，完全离场。角色B在转身离开前开口说第五句对白。角色A保持坐在近侧，目光跟随角色B离开，不站起，不追赶。最终状态：角色B已带着唯一的一把刀离场；角色A独自坐在阅读桌近侧；休闲服平放在桌面一旁；书在桌面远侧；刀不在桌面。",
+        "framing": "中全景，从近侧略偏 camera-left 拍摄，先让角色B在 camera-right 后景取刀，再跟随她转身向画面深处或一侧离场；角色A在 camera-left 前景坐着目送；镜头不越过桌面轴线。",
+        "camera": "固定机位为主，角色B离场时可轻微横摇跟随，但保持角色A在画面内，不跨轴。",
+        "continuity": "起始：角色B站在远侧，未穿休闲服；刀在桌面近侧一旁；角色A坐近侧。角色B取刀后，刀从桌面近侧一旁转移到角色B手中，并随角色B完全离场。角色A全程保持坐姿，直到下一镜才起身。结束：角色B和唯一的一把刀均不在阅读室画面内；休闲服留在桌面一旁；角色A坐在近侧。",
+        "dialogue": [
+          {
+            "speaker": "e3f49e04-4a4b-483f-823e-d31f497d5ab8",
+            "text": "刀我拿走了。",
+            "language": "Chinese"
+          }
+        ],
+        "id": "29d1e0c9-51f8-46dd-b233-36a7a0699f31",
+        "prompt": "",
+        "seed": 2894284643,
+        "nativeAudioAssetId": null,
+        "verifiedAudioTranscript": "",
+        "stale": true,
+        "selectedCandidateId": null
+      },
+      {
+        "title": "A起身脱下制服与银甲",
+        "durationSec": 4,
+        "entityIds": [
+          "5821d6dd-2041-40a3-a789-74989c6edd90",
+          "9971429d-863e-499e-b7c5-902d30e0f6a2",
+          "3044bf32-2019-458e-a7cf-e50ab304e42c"
+        ],
+        "imageAssetIds": [
+          "af9823e0-1b27-48b7-a469-47ddcf4b7534",
+          "25958405-ac83-454f-909e-f4aeba33f9a4",
+          "96e44971-aedc-42da-a534-dc321fd5e350"
+        ],
+        "action": "承接上一镜：角色B已带着唯一的一把刀离场；角色A独自坐在阅读桌近侧，面向远侧；休闲服平放在桌面一旁；书在桌面远侧。角色A从阅读桌近侧起身，站直，面向阅读桌远侧，然后脱下自己身上的制服与银甲，将脱下的制服与银甲放到一旁，不再穿戴。角色A脱下后仍站在原地，身体面向阅读桌远侧；休闲服仍平放在桌面一旁，未被拿起。最终状态：角色A站在阅读桌近侧，已脱下制服与银甲；制服与银甲放在一旁；休闲服仍在桌面一旁；B和刀均不在场。",
+        "framing": "中景，从近侧略偏 camera-left 拍摄，角色A在 camera-left 前景由坐变站并脱下制服与银甲；桌面一旁的休闲服保持在画面可见位置；不越过桌面轴线。",
+        "camera": "固定机位，轻微上摇跟随角色A起身，保持角色A全身和桌面休闲服同框。",
+        "continuity": "起始：角色A坐在近侧，身穿制服与银甲；休闲服平放在桌面一旁。角色A起身后不再坐下，脱下制服与银甲并放在一旁，属于角色A脱下的衣物。结束：角色A站在近侧，未穿制服与银甲；休闲服仍在桌面一旁；刀已随角色B离场。",
+        "dialogue": [],
+        "id": "57256153-8ee5-428a-ac27-cb31841d0676",
+        "prompt": "",
+        "seed": 1548888901,
+        "nativeAudioAssetId": null,
+        "verifiedAudioTranscript": "",
+        "stale": true,
+        "selectedCandidateId": null
+      },
+      {
+        "title": "A穿上休闲服开心转圈",
+        "durationSec": 4,
+        "entityIds": [
+          "ba6dcbf0-ea45-4720-80c7-8bc7b2ec9165",
+          "9971429d-863e-499e-b7c5-902d30e0f6a2"
+        ],
+        "imageAssetIds": [
+          "c25d9268-6efa-4c1c-9a23-cef25c5ef192",
+          "25958405-ac83-454f-909e-f4aeba33f9a4"
+        ],
+        "action": "承接上一镜：角色A站在阅读桌近侧，已脱下制服与银甲；休闲服平放在桌面一旁；B和刀均不在场。角色A从桌面一旁拿起角色B留下的休闲服，穿上休闲服；穿上后，角色A以同一身份、同一张脸、同一束马尾、同一体型呈现，只是换成了休闲服。角色A站在阅读桌近侧，初始面向远侧，随后开心地在原地转一整圈，完成360度旋转，最终转回面向远侧。角色A神情轻快，停住。最终状态：角色A站在阅读桌近侧，穿着角色B留下的休闲服，面向远侧，停止旋转；休闲服不再平放在桌面；没有新增人物，没有新增武器，唯一的一把刀已随角色B离场。",
+        "framing": "中景，从近侧略偏 camera-left 拍摄，角色A在 camera-left 前景完成换装与原地转圈；镜头保持全身可见，不越过桌面轴线。",
+        "camera": "固定机位，保持角色A全身在画面内，转圈时不切轴，不绕到角色A背后。",
+        "continuity": "起始：角色A站在近侧，未穿制服与银甲，休闲服在桌面一旁。角色A拿起并穿上休闲服后，休闲服从桌面转移到角色A身上；角色A的最终形象使用派生形象参考，保持同一角色A身份，不新增第三人。转圈是原地360度，初始和最终都面向阅读桌远侧。结束：角色A穿休闲服站在近侧，面向远侧，神情轻快。",
+        "dialogue": [],
+        "id": "1fb1d6e2-4634-4c17-9196-48a389c06690",
+        "prompt": "",
+        "seed": 2491446472,
+        "nativeAudioAssetId": null,
+        "verifiedAudioTranscript": "",
+        "stale": true,
+        "selectedCandidateId": null
+      }
+    ]
+  },
+  "finishedAt": "2026-10-04T11:23:10.689Z",
+  "output": {
+    "revision": 6
+  }
+}

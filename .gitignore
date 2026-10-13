@@ -26,6 +26,8 @@ scripts/.venv-vlm/
 **/.data/
 **/runtime-data/
 **/runtime-restored-*/
+**/runtime/blobs/
+**/runtime/agent/auth.json
 experiments/**/_discarded_*/
 *.sqlite
 *.sqlite-*
@@ -72,6 +74,13 @@ experiments/**/_discarded_*/
 *.onnx
 models/
 vendor/**/.git/
+
+# 独立维护的嵌套仓库，不作为父仓库 gitlink 提交
+tools/breeze-tts/
+vendor/gathered-scenes-zine-skill/
+vendor/sean_source_research/comfyui-facefusion/
+vendor/sean_source_research/face-finder/
+vendor/sean_source_research/h3-face-refine-upstream/
 
 # 实验资产（个人创作媒体，不公开）
 experiments/speech-video/assets/

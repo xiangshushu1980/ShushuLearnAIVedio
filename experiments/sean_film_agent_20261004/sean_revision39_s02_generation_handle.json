@@ -1,0 +1,12 @@
+{
+  "owner": "Sean",
+  "projectId": "538005c3-16bd-4709-aa4e-70831b960a24",
+  "sessionId": "0707ba67-08da-42cf-9bc9-b1fa07bf95cf",
+  "runId": "caccb928-3343-4931-bec0-0496b5d09b68",
+  "status": "running",
+  "request": {
+    "requestId": "19e3ba21-8b08-48b9-ab4e-91efa1bb56a5",
+    "mode": "generate",
+    "text": "授权推进第二镜受控测试，本轮最多只生成S2候选一个，不改全片空间/剧情/镜头action/时长/对白/参考实体/种子，不生成其他镜、不合成。先get_film_context和load技能。根Agent已3fps全片contact和完整尾帧复核S1候选9f7023c5：唯一黑色带鞘刀桌面近侧，A落座、B远侧坐书在手外套穿着，静物中部稳定；实际6.583333sec，音频未验收。按视觉暂通过select_video该当前候选，再对S2(75f55a65-8167-469e-9762-9b3bfaf5b048) set_visual_anchor来源此S1，view_visual_anchor实际看新帧。用现有prompt工作流只修订S2提示词，notes必须包含新帧实际观察位置（纸张/文件夹近侧中部、透明杯中部更远、刀左近侧/柄中部、B右远侧），它是视频取证而非实体尺寸；保持B合书放远侧自己的右边空木处再起身说第四句，外套不脱、刀不动A坐姿，给下一镜书左方且刀远侧留可见裸木衣落点。等待同一promptjob，成功自动写回不要apply，读取最新上下文校验S2，只有当前有效才generate_video一次。轮询同一candidate到终态，成功inspect分批3帧的0/1/2和3/末尾前0.15，根据实际时长核对合书→放书→起身、书落点与衣空区、B仍穿coat，A坐刀不动、固定同侧。错误读原因修正，不重提交未知结果、不绕过stale/语法，未听音频不能声称台词/音色/口型通过。完成后报告jobId/candidateId/hash/实际时长/接第三镜的风险并停止，不选S2、不设S3锚帧。"
+  }
+}

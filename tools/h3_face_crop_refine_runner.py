@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Single-subject H3 FaceRefine crop -> resample -> stitch test."""
+"""Single-subject H3 FaceRefine crop -> resample -> stitch test. Owner: Sean."""
 
 from __future__ import annotations
 
@@ -45,6 +45,8 @@ def main() -> int:
     p.add_argument("--canvas-height", type=int, default=None)
     p.add_argument("--length", type=int, default=124,
                    help="Number of source frames to process; 124=5.17s, 241=10s at 24fps")
+    p.add_argument("--skip-first-frames", type=int, default=0,
+                   help="Skip source frames before loading the processing window; use for long-video chunking")
     p.add_argument("--crop-factor", type=float, default=2.0)
     p.add_argument("--denoise", type=float, default=0.25)
     p.add_argument("--steps", type=int, default=20)
@@ -104,7 +106,7 @@ def main() -> int:
             "confirmed_pick": "",
             "cut_detection": "none",
             "cut_threshold": 3.0,
-            "skip_first_frames": 0,
+            "skip_first_frames": args.skip_first_frames,
             "frame_load_cap": args.length,
             "select_every_nth": 1,
             "identity_reference": ["id", 0],

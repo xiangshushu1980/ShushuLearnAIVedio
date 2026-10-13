@@ -1,0 +1,12 @@
+{
+  "owner": "Sean",
+  "testOnlyTaskResponse": true,
+  "sessionId": "01a10b84-3653-7bee-bbf3-264b426c9239",
+  "revisionBefore": 19,
+  "revisionAfter": 20,
+  "changedPaths": [
+    ".shots[0].continuity"
+  ],
+  "passed": true,
+  "gpuEnabled": false
+}

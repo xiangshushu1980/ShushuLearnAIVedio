@@ -1,0 +1,16 @@
+{
+  "owner": "Sean",
+  "candidateId": "29448db9-ddbc-403c-b117-0473c8ca9708",
+  "mixedBatchRun": "42743f29-9fc2-4491-ab46-5f32da43db5a",
+  "freshFourFrameRun": "557a64ef-3863-4272-a817-0cbb3c5748c3",
+  "incorrectClaims": [
+    "mixed 9+12frames report t2 dragging tan garment instead of actual removal",
+    "t9 back/t10 side instead of actual opposite-side/front"
+  ],
+  "verifiedActual": {
+    "t2": "standing removed navy jacket in hand, tan coat still tabletop",
+    "t9": "opposite side profile facing screen left",
+    "t10": "front-facing in tan coat"
+  },
+  "conclusion": "Fresh4-frame observations match actual frames; mixedbatch timeline unreliable. Frame extraction handles correcttime andhash; no evidence of extractor bug. Reinspect disputedtimes, use smallsinglecandidatebatches. This does not prove allfuturemodel observations reliable."
+}

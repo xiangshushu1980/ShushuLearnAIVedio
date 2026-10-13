@@ -1,0 +1,14 @@
+{
+  "owner": "Sean",
+  "candidateId": "83614d0c-8b50-4c13-8ed5-a10f371bb176",
+  "status": "failed-not-selected",
+  "evidence": "Root entire 4fps contact sheet",
+  "observations": [
+    "coat removed; B inner layer pants remain, A seated sword remains",
+    "cloth becomes somewhat gathered on table but no clear single hem-to-collar fold before transfer",
+    "cloth released near screen-right B front, not required left barewood patch",
+    "closed book original location covered or occluded at end; book not visible; displacement unknown"
+  ],
+  "audioAcceptance": "unverified",
+  "next": "Do not use failed result for S4. Evaluate action budget and targeting strategy before further generation."
+}

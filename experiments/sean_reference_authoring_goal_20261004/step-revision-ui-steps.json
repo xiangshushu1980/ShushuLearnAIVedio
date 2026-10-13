@@ -1,0 +1,94 @@
+{
+  "owner": "Sean",
+  "purpose": "Isolated browser revision/adoption/restoration receipt; no generation",
+  "steps": [
+    {
+      "id": "495dfdaf-2629-4d29-99e5-516bb631a8dc",
+      "planId": "58e85add-42d2-42b1-8778-8c141112f1b2",
+      "entityId": "2645325b-e93c-497e-be19-45343c01508b",
+      "entityName": "修订测试场景",
+      "candidateKey": "hall",
+      "candidateKind": "scene",
+      "entityRevision": "14cf2919b30285cbb076d539d84a44e209a4e454547126ce7638c3ae56ac17a4",
+      "invariants": [
+        "入口相邻长凳区"
+      ],
+      "key": "overview",
+      "label": "测试总览步骤",
+      "modelId": "qwen-image-2.1",
+      "parameters": {},
+      "prompt": "Existing entrance and bench zone. Do not invent a compass direction.",
+      "purpose": "Fixture layout",
+      "referenceAssetIds": [],
+      "role": "scene_overview",
+      "styleId": "original",
+      "unknowns": [
+        "绝对方向未知"
+      ],
+      "useBaseAppearance": false,
+      "useMainAppearance": false,
+      "rootStepId": "495dfdaf-2629-4d29-99e5-516bb631a8dc",
+      "parentStepId": null,
+      "version": 1,
+      "reason": "",
+      "sessionId": null,
+      "runId": null,
+      "activeStepId": "495dfdaf-2629-4d29-99e5-516bb631a8dc",
+      "isCurrent": true,
+      "revisionStatus": "current",
+      "revisionBasis": null,
+      "contentHash": "b752e9e72391ef96f128f3b1a03cfc5d39797db243b5924a91e8f04c1e34d4cb",
+      "stale": false,
+      "issue": null,
+      "referenceEntityId": "2645325b-e93c-497e-be19-45343c01508b",
+      "sourceReferenceAssetIds": [],
+      "runs": []
+    },
+    {
+      "id": "739f996a-5df8-4eb3-ae5b-1e8a7fb2d424",
+      "planId": "58e85add-42d2-42b1-8778-8c141112f1b2",
+      "entityId": "2645325b-e93c-497e-be19-45343c01508b",
+      "entityName": "修订测试场景",
+      "candidateKey": "hall",
+      "candidateKind": "scene",
+      "entityRevision": "14cf2919b30285cbb076d539d84a44e209a4e454547126ce7638c3ae56ac17a4",
+      "invariants": [
+        "入口相邻长凳区"
+      ],
+      "key": "overview",
+      "label": "测试总览步骤",
+      "modelId": "qwen-image-2.1",
+      "parameters": {},
+      "prompt": "Preserve the existing entrance and bench zone. Do not add extra doors or windows.",
+      "purpose": "Fixture layout",
+      "referenceAssetIds": [],
+      "role": "scene_overview",
+      "styleId": "original",
+      "unknowns": [
+        "绝对方向未知"
+      ],
+      "useBaseAppearance": false,
+      "useMainAppearance": false,
+      "rootStepId": "495dfdaf-2629-4d29-99e5-516bb631a8dc",
+      "parentStepId": "495dfdaf-2629-4d29-99e5-516bb631a8dc",
+      "version": 2,
+      "reason": "验证反馈修订：不增加额外门窗。",
+      "sessionId": null,
+      "runId": null,
+      "activeStepId": "495dfdaf-2629-4d29-99e5-516bb631a8dc",
+      "isCurrent": false,
+      "revisionStatus": "history",
+      "revisionBasis": {
+        "contextHash": "fd0112ba47710984d9c04b843869acf0c7036f64cd0f5c94a07d4035edff282e",
+        "imageHashes": {},
+        "projectRevision": 2
+      },
+      "contentHash": "3eeb0f75366c4584f9d5ec80af260cab5af5125910a3a7f89e7396fcabac819e",
+      "stale": false,
+      "issue": null,
+      "referenceEntityId": "2645325b-e93c-497e-be19-45343c01508b",
+      "sourceReferenceAssetIds": [],
+      "runs": []
+    }
+  ]
+}

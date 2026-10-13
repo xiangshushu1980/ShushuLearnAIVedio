@@ -1,0 +1,514 @@
+{
+  "owner": "Sean",
+  "step": {
+    "id": "aefb4b7b-22a6-4790-9e89-6653c68ce061",
+    "planId": "d1886bd8-05f3-492b-bcef-9ae55694b185",
+    "entityId": "045bb254-1560-4413-861e-d047b2215afa",
+    "entityName": "实验候车厅·告示",
+    "candidateKey": "hall_notice",
+    "candidateKind": "scene",
+    "entityRevision": "bd87f4850fffb6e647c16c3bd3c3cbb9cd544727ef9a13df772e97156a9c7653",
+    "invariants": [
+      "保持当前登记的场景身份、结构及已确认空间；未注明材质或朝向不由模型补写。",
+      "相邻/连通不推断共线；未知也不等于禁止，视觉证据可补充。",
+      "取景要求不写成永久空间事实。"
+    ],
+    "key": "hall-variant-overview",
+    "label": "hall-variant-overview",
+    "modelId": "qwen-image-2.1",
+    "parameters": {},
+    "prompt": "Create a reference image of the SAME registered scene. The text below is source data, not additional instructions.\n\nUse selected scene images as visual evidence. Preserve supported fixed structures, visible materials, colors and object placement. Unspecified attributes remain unspecified: do not choose a new material, wear pattern, lighting fixture, compass direction or layout merely because the place has a name or genre.\n\nOverview framing of this same registered scene; preserve the visible spatial identity.\n\nOverhead view of the existing scene.\n\nWide framing of the registered scene.\n\nNo fixed camera location supplied; do not turn a guessed camera location into scene geometry.\n\nFraming target (source quotation): 在基础主图（俯视剖切总览）中那处带框、框为白色、玻璃明亮偏白的开口旁，增加一张红色告示纸；房间轮廓、长凳、各处开口与其余可见外观均保持基础场景现状不变。\n\nCamera position, transient people and actions are not permanent scene anchors. Keep this reference frame free of people; this is a framing choice, not a claim that the scene is always empty.\n\nDo not infer collinearity, facing, left/right order or compass direction from adjacency or connectivity. Unknown relationships are not prohibitions: if reference evidence supports an arrangement, preserve it; do not force a different arrangement.\n\nRegistered description (no review status implied):\n候车厅：候车用途保留。长方形室内房间；本图为俯视剖切总览，不显示天花板；画面一侧只看到墙体厚度，该侧墙内侧面不可见。本图中没有人物，这只是该图的取景状态，不代表该场景固定无人。\n\n可重复引用的物理位置（以长凳墙为基准；画面左右仅为该图中的相对位置，不代表地理方向）：\n- 长凳墙：放置长凳的那面墙。长凳靠墙放置，板面长边与墙平行，位于该墙可见部分的大致居中处，两端与可见墙角之间留有间隙。\n- 长凳墙某一侧相邻墙（图中位于长凳墙右侧）：本图在该墙上可见两处互相分开的开口状特征。偏上的一处为带框开口，内有玻璃并有横向分格条；偏下的一处为竖向狭长特征，其下端可见一个深色矩形块。两处之间有可见连续墙面，本描述不将两处合并。\n- 长凳墙另一侧相邻墙（图中位于长凳墙左侧）：本图在该墙上可见一处开口状特征，带金属色边框，内有偏灰蓝、带反光的玻璃面，并有一根细金属横杆横跨其上；该处下方墙面上另有一个白色小矩形面板。\n- 相对墙：长凳墙对面那面墙。本图只显示该侧墙体厚度，其内侧面与上面的门窗、物件均不可见，待补充。\n\n上述三处均按“开口状特征”记录，是否穿透墙体、是窗口还是门洞、以及入口门与站台门的区分，在本图中无法证实，全部待补充。\n\n本图另可见用途未确定的物件：开口附近的小块蓝色标牌状物、一块灰色墙面板、一个深色竖向矩形块、一个白色小矩形面板。这些是否固定、用途为何均待补充，不作为已确认的固定物体。\n\n材质与颜色只记录本图可见外观，不推断隐藏结构或构造做法；绝对尺寸与比例、门外与室外空间未确认，本描述不作断言。\n\n不再使用旧的 A/B/C/D 局部墙面标识，也不以“入口门在某墙、站台门在相对墙”的墙位区分作为固定约束；该功能区分在本图中无法证实，保留为待补充。\n\n【本变体相对基础场景的唯一变化：新增红色告示纸】\n- 唯一变化：在基础主图（俯视剖切总览）中那处带框、框为白色、玻璃明亮偏白的开口旁，增加一张红色告示纸；房间轮廓、长凳、各处开口与其余可见外观均保持基础场景现状不变。\n- 该红色告示纸是本次明确提出的新设计要求，尚未生成：不得把它写成已从图中观察到的内容，也不得在未出图前按已确认存在处理。\n- 告示位置以基础主图那处带框明亮开口（位于长凳墙右侧相邻墙的偏上位置）为参照，只表达“在该开口旁”，不指定左右或上下、不指定离地高度与贴合方式，也不因此新增任何地理方向或墙位含义。\n- 派生说明中的“D墙”只是原设计阶段的历史标签，不构成本变体的地理方向或墙位依据；本变体不使用 A/B/C/D 标识，告示位置不以“D墙”为准。派生关系 ID、派生来源与基础实体均不改动。\n- 未知范围沿用基础场景：三处可见开口状特征的功能、相对墙内侧面及其上物件、房间绝对尺寸与净高、门外与室外空间及地理朝向、用途未定的小型可见物等仍待补充；另待补充告示纸的尺寸、形状、朝向、张贴或固定方式、是否带文字。\n\nRegistered appearance (no review status implied):\n以下为本图（俯视剖切总览）可见外观，仅描述可见外观，不推断材质构成、隐藏结构或构造做法。\n- 地面：灰色方形地砖，砖缝形成规则网格，整体呈浅冷灰色。\n- 墙面：浅米白色（偏乳白），可见墙面平整、无图案装饰。\n- 长凳：木质板面长凳，板面呈浅棕原木色；靠两端各有一个深色小支脚；凳面空置，无人物、无物品。板面长边沿长凳墙放置，大致居中于该墙可见部分。\n- 图中位于长凳墙右侧的相邻墙，可见两部分：偏上一处为带框开口，框为白色、玻璃明亮偏白，框内有一根横向分格条；同一墙面上偏下一处为与上部相分开的竖向狭长特征，外观浅色、带竖向边界线，其下端有一个深色（深灰）矩形块。两部分之间可见连续墙面。\n- 图中位于长凳墙左侧的相邻墙，可见一处带金属色边框的开口，内有偏灰蓝、带反光的玻璃面，一根细金属横杆横跨其上；该处下方墙面另有一个白色小矩形面板。\n- 墙上还有小块蓝色标牌状物与一块灰色墙面板，外观如上；其功能、是否固定均待补充。\n- 相对墙一侧：画面中只见浅灰色墙体厚度，无可见墙内侧面内容。\n\n本变体相对基础场景的唯一新增外观（设计要求，尚未生成）：在上述“带框开口（框为白色、玻璃明亮偏白）”旁增加一张红色告示纸。除该处新增的红色纸外，房间轮廓、地面与墙面外观、长凳、各处开口与框、现有墙面小物件均与基础场景相同。该红色告示纸是明确要求的新设计，本变体目前没有图片，本字段不表示已从图中观察到它；其尺寸、形状、横向或竖向朝向、离地高度、张贴或固定方式、是否带文字均待补充，不作断言。旧“D墙”标签仅作为原设计历史说明，不用于描述该纸的位置。\n\nFixed spatial document is draft; its pending/draft contents are not confirmed facts.\n\nProject world rules (registered source):\n普通现实城市，无魔法。仅使用候选明确设计；未知空间不编造。\n\nProject visual style direction (registered source):\n[not provided]\n\nProject stable decisions (registered source):\n人工选定主图后继续；最多八次基线与一次修订，无自动重试。\n\nUnknown / pending source information:\n三处可见开口状特征（左侧相邻墙一处、右侧相邻墙两处）的功能未证实：是否穿透墙体、属于窗口还是门洞、其中是否有入口门或站台门之分。\n相对墙（长凳墙对面）的内侧面及其上的门窗、物件未确认，本图只见该侧墙体厚度。\n房间的绝对尺寸、比例与净高未确认；天花板在本图中不可见。\n门外空间、站台或室外空间，以及本空间在城市中的地理朝向未确认；图中画面左右不等于地理方向。\n左侧相邻墙处贴近墙面的浅灰面板状结构的性质未确认（可能是固定构件，也可能是取景表现），待判断后再决定是否登记为沿墙结构。\n用途未定的小型可见物（小块蓝色标牌状物、灰色面板状物）的用途、所属墙面与是否固定未确认。\n白色小矩形面板与竖向狭长特征下端的深灰色矩形块的用途与是否固定未确认。\n长凳是否固定于该可见位置、数量是否固定为这一件未确认。\n无可确认的固定通行路径，故 routes 暂留空。\n派生场景空间布局需重新对照本实体参考图确认；锚点ID以新的entityId为范围。 变体变化要求：主图明亮带框开口旁一张红色告示纸，其余结构不变。；完整说明见派生资料。\n方向基准待补充或确认；不可将镜头左/右直接当场景固定方向。\n[place_fb040dad2cc341ad] 候车室内区域 待补充或确认。\n[place_fb040dad2cc341ad] 朝向未单独记录；只能使用已有说明，不得猜测。\n[place_869a5569924f4714] 长凳墙 待补充或确认。\n[place_3dc5ceaf76d248fa] 木质长凳 待补充或确认。\n[place_33193bbd01d34171] 带框开口（长凳墙右侧相邻墙偏上） 待补充或确认。\n[place_33193bbd01d34171] 朝向未单独记录；只能使用已有说明，不得猜测。\n[place_310977e118764bfe] 长凳墙一侧相邻墙（本图位于长凳墙右侧） 待补充或确认。\n[place_6856952e2d844202] 竖向狭长开口状特征（长凳墙右侧相邻墙偏下） 待补充或确认。\n[place_6856952e2d844202] 朝向未单独记录；只能使用已有说明，不得猜测。\n[place_230882b546ab468a] 长凳墙另一侧相邻墙（本图位于长凳墙左侧） 待补充或确认。\n[place_e4f2a71aa369406d] 带金属边框的开口状特征（长凳墙左侧相邻墙） 待补充或确认。\n[place_e4f2a71aa369406d] 朝向未单独记录；只能使用已有说明，不得猜测。\n[place_8eee472f6b774577] 白色小矩形面板（左侧相邻墙开口下方） 待补充或确认。\n[place_8eee472f6b774577] 朝向未单独记录；只能使用已有说明，不得猜测。\n[place_6e1ed71322e84a05] 相对墙（长凳墙对面） 待补充或确认。\n[place_5e3f54df76a24ea5] 用途未定的小型可见物（蓝色标牌状物、灰色面板状物等） 待补充或确认。\n[place_5e3f54df76a24ea5] 朝向未单独记录；只能使用已有说明，不得猜测。\n[rel_14ed8e3524b8450c] 空间关系待确认。\n[rel_b87bedb6b50f48f7] 空间关系待确认。\n[rel_335621c6cb8b4a1d] 空间关系待确认。\n[rel_c82507f6b4c44645] 空间关系待确认。\n[rel_5424c8c17b134954] 空间关系待确认。\n[rel_dd90129e50474517] 空间关系待确认。\n[rel_129ec6d25c9d4bf8] 空间关系待确认。\n[rel_b85ba206ea9e4928] 空间关系待确认。\n[rel_40d97b509d73442e] 空间关系待确认。\n[rel_19811b69d8b24915] 空间关系待确认。\n[rel_1b12f3c90025470e] 空间关系待确认。\n[rel_c1f4e289756c4711] 空间关系待确认。\n\nDo not add text overlays, watermarks or labels. Rendering style is controlled by the selected style profile.",
+    "purpose": "受控质量实验，非已核实事实",
+    "referenceAssetIds": [
+      "a4e8670a-471d-4352-904a-544608a55427"
+    ],
+    "role": "scene_overview",
+    "sceneIntent": {
+      "anchorIds": [],
+      "cameraAnchorId": null,
+      "focusText": "在基础主图（俯视剖切总览）中那处带框、框为白色、玻璃明亮偏白的开口旁，增加一张红色告示纸；房间轮廓、长凳、各处开口与其余可见外观均保持基础场景现状不变。",
+      "shotScale": "wide",
+      "viewpoint": "overhead"
+    },
+    "scenePromptBasis": {
+      "compilerVersion": 1,
+      "entityId": "045bb254-1560-4413-861e-d047b2215afa",
+      "projectRulesHash": "7b1f8d4e83b94c0c06b7b60a0396f7aa47324577320b8d893d2c5ae183771b4f",
+      "spatialHash": "af9ad3bdca3a5158260be160f91ebdb0d60ac5705f8e5f398e848c29c85ca166",
+      "spatialStatus": "draft",
+      "textHash": "22d068125b684c00db69ccd07f774a954d226c82fa4109745d1b0cee1f460e46"
+    },
+    "styleId": "original",
+    "unknowns": [
+      "三处可见开口状特征（左侧相邻墙一处、右侧相邻墙两处）的功能未证实：是否穿透墙体、属于窗口还是门洞、其中是否有入口门或站台门之分。",
+      "相对墙（长凳墙对面）的内侧面及其上的门窗、物件未确认，本图只见该侧墙体厚度。",
+      "房间的绝对尺寸、比例与净高未确认；天花板在本图中不可见。",
+      "门外空间、站台或室外空间，以及本空间在城市中的地理朝向未确认；图中画面左右不等于地理方向。",
+      "左侧相邻墙处贴近墙面的浅灰面板状结构的性质未确认（可能是固定构件，也可能是取景表现），待判断后再决定是否登记为沿墙结构。",
+      "用途未定的小型可见物（小块蓝色标牌状物、灰色面板状物）的用途、所属墙面与是否固定未确认。",
+      "白色小矩形面板与竖向狭长特征下端的深灰色矩形块的用途与是否固定未确认。",
+      "长凳是否固定于该可见位置、数量是否固定为这一件未确认。",
+      "无可确认的固定通行路径，故 routes 暂留空。",
+      "派生场景空间布局需重新对照本实体参考图确认；锚点ID以新的entityId为范围。 变体变化要求：主图明亮带框开口旁一张红色告示纸，其余结构不变。；完整说明见派生资料。",
+      "方向基准待补充或确认；不可将镜头左/右直接当场景固定方向。",
+      "[place_fb040dad2cc341ad] 候车室内区域 待补充或确认。",
+      "[place_fb040dad2cc341ad] 朝向未单独记录；只能使用已有说明，不得猜测。",
+      "[place_869a5569924f4714] 长凳墙 待补充或确认。",
+      "[place_3dc5ceaf76d248fa] 木质长凳 待补充或确认。",
+      "[place_33193bbd01d34171] 带框开口（长凳墙右侧相邻墙偏上） 待补充或确认。",
+      "[place_33193bbd01d34171] 朝向未单独记录；只能使用已有说明，不得猜测。",
+      "[place_310977e118764bfe] 长凳墙一侧相邻墙（本图位于长凳墙右侧） 待补充或确认。",
+      "[place_6856952e2d844202] 竖向狭长开口状特征（长凳墙右侧相邻墙偏下） 待补充或确认。",
+      "[place_6856952e2d844202] 朝向未单独记录；只能使用已有说明，不得猜测。",
+      "[place_230882b546ab468a] 长凳墙另一侧相邻墙（本图位于长凳墙左侧） 待补充或确认。",
+      "[place_e4f2a71aa369406d] 带金属边框的开口状特征（长凳墙左侧相邻墙） 待补充或确认。",
+      "[place_e4f2a71aa369406d] 朝向未单独记录；只能使用已有说明，不得猜测。",
+      "[place_8eee472f6b774577] 白色小矩形面板（左侧相邻墙开口下方） 待补充或确认。",
+      "[place_8eee472f6b774577] 朝向未单独记录；只能使用已有说明，不得猜测。",
+      "[place_6e1ed71322e84a05] 相对墙（长凳墙对面） 待补充或确认。",
+      "[place_5e3f54df76a24ea5] 用途未定的小型可见物（蓝色标牌状物、灰色面板状物等） 待补充或确认。",
+      "[place_5e3f54df76a24ea5] 朝向未单独记录；只能使用已有说明，不得猜测。",
+      "[rel_14ed8e3524b8450c] 空间关系待确认。",
+      "还有 11 项待补充，完整内容见来源提示词和空间资料。"
+    ],
+    "useBaseAppearance": true,
+    "useMainAppearance": false,
+    "rootStepId": "74889ba8-69c2-4588-96fd-4026f438b1b7",
+    "parentStepId": "74889ba8-69c2-4588-96fd-4026f438b1b7",
+    "version": 2,
+    "reason": "用户接受首图视觉设计，后续基于当前资料与主图（不是因为首图需要修复）。保留 key=hall-variant-overview、role=scene_overview、模型 qwen-image-2.1、styleId=original、parameters={} 不变。旧描述里的“D墙”只是旧设计标签，本步骤改用变体实体当前 appearance 原文：只在明亮带框开口旁增加一张红色纸，其余结构不变，不保留 A/B/C/D 布局。本场景空间仅 draft，sceneIntent 用原文 focusText、anchorIds=[]、cameraAnchorId=null，viewpoint=overhead、shotScale=wide，基于基础主图增加告示纸。references 留空，useBaseAppearance=true 依赖基础场景（实验候车厅）已选定主图 a4e8670a；告示纸的尺寸、朝向、张贴方式与是否带文字继续待补充。",
+    "sessionId": "62870af9-da7a-411b-bdfa-bf79710614d1",
+    "runId": "b8ab7a3e-e04f-426b-b5ec-dd042c2f48a4",
+    "activeStepId": "aefb4b7b-22a6-4790-9e89-6653c68ce061",
+    "isCurrent": true,
+    "revisionStatus": "current",
+    "revisionBasis": {
+      "contextHash": "265756729c1463e3bc2c764c1fef09abcce47a36e404b6801777264287fc4c2b",
+      "imageHashes": {},
+      "projectRevision": 2
+    },
+    "contentHash": "956a2e1673029b474af0958e8cc870b90c6850a354d00c9fa4391ad38975d9fc",
+    "stale": false,
+    "issue": null,
+    "referenceEntityId": "516b1812-e158-4780-992c-51b4553a4b18",
+    "sourceReferenceAssetIds": [],
+    "runs": []
+  },
+  "run": {
+    "id": "ebd71c8b-1a96-40e5-9320-b4c12f6f1808",
+    "entityId": "045bb254-1560-4413-861e-d047b2215afa",
+    "status": "succeeded",
+    "snapshot": {
+      "owner": "Sean",
+      "entity": {
+        "id": "045bb254-1560-4413-861e-d047b2215afa",
+        "name": "实验候车厅·告示",
+        "context": {
+          "appearance": "以下为本图（俯视剖切总览）可见外观，仅描述可见外观，不推断材质构成、隐藏结构或构造做法。\n- 地面：灰色方形地砖，砖缝形成规则网格，整体呈浅冷灰色。\n- 墙面：浅米白色（偏乳白），可见墙面平整、无图案装饰。\n- 长凳：木质板面长凳，板面呈浅棕原木色；靠两端各有一个深色小支脚；凳面空置，无人物、无物品。板面长边沿长凳墙放置，大致居中于该墙可见部分。\n- 图中位于长凳墙右侧的相邻墙，可见两部分：偏上一处为带框开口，框为白色、玻璃明亮偏白，框内有一根横向分格条；同一墙面上偏下一处为与上部相分开的竖向狭长特征，外观浅色、带竖向边界线，其下端有一个深色（深灰）矩形块。两部分之间可见连续墙面。\n- 图中位于长凳墙左侧的相邻墙，可见一处带金属色边框的开口，内有偏灰蓝、带反光的玻璃面，一根细金属横杆横跨其上；该处下方墙面另有一个白色小矩形面板。\n- 墙上还有小块蓝色标牌状物与一块灰色墙面板，外观如上；其功能、是否固定均待补充。\n- 相对墙一侧：画面中只见浅灰色墙体厚度，无可见墙内侧面内容。\n\n本变体相对基础场景的唯一新增外观（设计要求，尚未生成）：在上述“带框开口（框为白色、玻璃明亮偏白）”旁增加一张红色告示纸。除该处新增的红色纸外，房间轮廓、地面与墙面外观、长凳、各处开口与框、现有墙面小物件均与基础场景相同。该红色告示纸是明确要求的新设计，本变体目前没有图片，本字段不表示已从图中观察到它；其尺寸、形状、横向或竖向朝向、离地高度、张贴或固定方式、是否带文字均待补充，不作断言。旧“D墙”标签仅作为原设计历史说明，不用于描述该纸的位置。",
+          "authoring": {
+            "candidateKey": "hall_notice",
+            "newDesign": true,
+            "planId": "d1886bd8-05f3-492b-bcef-9ae55694b185",
+            "unknowns": [
+              "本组为实验设计，不代表生产资料；声音未设定"
+            ]
+          },
+          "description": "候车厅：候车用途保留。长方形室内房间；本图为俯视剖切总览，不显示天花板；画面一侧只看到墙体厚度，该侧墙内侧面不可见。本图中没有人物，这只是该图的取景状态，不代表该场景固定无人。\n\n可重复引用的物理位置（以长凳墙为基准；画面左右仅为该图中的相对位置，不代表地理方向）：\n- 长凳墙：放置长凳的那面墙。长凳靠墙放置，板面长边与墙平行，位于该墙可见部分的大致居中处，两端与可见墙角之间留有间隙。\n- 长凳墙某一侧相邻墙（图中位于长凳墙右侧）：本图在该墙上可见两处互相分开的开口状特征。偏上的一处为带框开口，内有玻璃并有横向分格条；偏下的一处为竖向狭长特征，其下端可见一个深色矩形块。两处之间有可见连续墙面，本描述不将两处合并。\n- 长凳墙另一侧相邻墙（图中位于长凳墙左侧）：本图在该墙上可见一处开口状特征，带金属色边框，内有偏灰蓝、带反光的玻璃面，并有一根细金属横杆横跨其上；该处下方墙面上另有一个白色小矩形面板。\n- 相对墙：长凳墙对面那面墙。本图只显示该侧墙体厚度，其内侧面与上面的门窗、物件均不可见，待补充。\n\n上述三处均按“开口状特征”记录，是否穿透墙体、是窗口还是门洞、以及入口门与站台门的区分，在本图中无法证实，全部待补充。\n\n本图另可见用途未确定的物件：开口附近的小块蓝色标牌状物、一块灰色墙面板、一个深色竖向矩形块、一个白色小矩形面板。这些是否固定、用途为何均待补充，不作为已确认的固定物体。\n\n材质与颜色只记录本图可见外观，不推断隐藏结构或构造做法；绝对尺寸与比例、门外与室外空间未确认，本描述不作断言。\n\n不再使用旧的 A/B/C/D 局部墙面标识，也不以“入口门在某墙、站台门在相对墙”的墙位区分作为固定约束；该功能区分在本图中无法证实，保留为待补充。\n\n【本变体相对基础场景的唯一变化：新增红色告示纸】\n- 唯一变化：在基础主图（俯视剖切总览）中那处带框、框为白色、玻璃明亮偏白的开口旁，增加一张红色告示纸；房间轮廓、长凳、各处开口与其余可见外观均保持基础场景现状不变。\n- 该红色告示纸是本次明确提出的新设计要求，尚未生成：不得把它写成已从图中观察到的内容，也不得在未出图前按已确认存在处理。\n- 告示位置以基础主图那处带框明亮开口（位于长凳墙右侧相邻墙的偏上位置）为参照，只表达“在该开口旁”，不指定左右或上下、不指定离地高度与贴合方式，也不因此新增任何地理方向或墙位含义。\n- 派生说明中的“D墙”只是原设计阶段的历史标签，不构成本变体的地理方向或墙位依据；本变体不使用 A/B/C/D 标识，告示位置不以“D墙”为准。派生关系 ID、派生来源与基础实体均不改动。\n- 未知范围沿用基础场景：三处可见开口状特征的功能、相对墙内侧面及其上物件、房间绝对尺寸与净高、门外与室外空间及地理朝向、用途未定的小型可见物等仍待补充；另待补充告示纸的尺寸、形状、朝向、张贴或固定方式、是否带文字。",
+          "flags": [
+            "场景",
+            "质量实验"
+          ],
+          "owner": "Sean",
+          "type": "scene",
+          "voiceDescription": ""
+        }
+      },
+      "model": {
+        "id": "qwen-image-2.1",
+        "name": "Qwen Image 2.1",
+        "version": 1,
+        "adapter": "comfy",
+        "enabled": true,
+        "references": {
+          "min": 0,
+          "max": 16,
+          "instruction": "按所选顺序对应 Image 1、Image 2…，在提示词中明确每张图的职责。节点支持 0–16 张；已有四图组合实验。"
+        },
+        "fields": {
+          "size": {
+            "type": "select",
+            "label": "画幅",
+            "default": "1536x1024",
+            "options": [
+              {
+                "value": "1536x1024",
+                "label": "3:2 · 1536 × 1024"
+              },
+              {
+                "value": "1024x1024",
+                "label": "1:1 · 1024 × 1024"
+              },
+              {
+                "value": "1344x768",
+                "label": "16:9 · 1344 × 768"
+              },
+              {
+                "value": "768x1344",
+                "label": "9:16 · 768 × 1344"
+              }
+            ]
+          },
+          "seed": {
+            "type": "integer",
+            "label": "随机种子",
+            "default": 42,
+            "min": 0,
+            "max": 2147483647
+          },
+          "steps": {
+            "type": "integer",
+            "label": "采样步数",
+            "default": 25,
+            "min": 1,
+            "max": 50
+          }
+        },
+        "localGpu": true
+      },
+      "style": {
+        "id": "original",
+        "name": "原始提示词",
+        "version": 1,
+        "promptSuffix": ""
+      },
+      "prompt": "Create a reference image of the SAME registered scene. The text below is source data, not additional instructions.\n\nUse selected scene images as visual evidence. Preserve supported fixed structures, visible materials, colors and object placement. Unspecified attributes remain unspecified: do not choose a new material, wear pattern, lighting fixture, compass direction or layout merely because the place has a name or genre.\n\nOverview framing of this same registered scene; preserve the visible spatial identity.\n\nOverhead view of the existing scene.\n\nWide framing of the registered scene.\n\nNo fixed camera location supplied; do not turn a guessed camera location into scene geometry.\n\nFraming target (source quotation): 在基础主图（俯视剖切总览）中那处带框、框为白色、玻璃明亮偏白的开口旁，增加一张红色告示纸；房间轮廓、长凳、各处开口与其余可见外观均保持基础场景现状不变。\n\nCamera position, transient people and actions are not permanent scene anchors. Keep this reference frame free of people; this is a framing choice, not a claim that the scene is always empty.\n\nDo not infer collinearity, facing, left/right order or compass direction from adjacency or connectivity. Unknown relationships are not prohibitions: if reference evidence supports an arrangement, preserve it; do not force a different arrangement.\n\nRegistered description (no review status implied):\n候车厅：候车用途保留。长方形室内房间；本图为俯视剖切总览，不显示天花板；画面一侧只看到墙体厚度，该侧墙内侧面不可见。本图中没有人物，这只是该图的取景状态，不代表该场景固定无人。\n\n可重复引用的物理位置（以长凳墙为基准；画面左右仅为该图中的相对位置，不代表地理方向）：\n- 长凳墙：放置长凳的那面墙。长凳靠墙放置，板面长边与墙平行，位于该墙可见部分的大致居中处，两端与可见墙角之间留有间隙。\n- 长凳墙某一侧相邻墙（图中位于长凳墙右侧）：本图在该墙上可见两处互相分开的开口状特征。偏上的一处为带框开口，内有玻璃并有横向分格条；偏下的一处为竖向狭长特征，其下端可见一个深色矩形块。两处之间有可见连续墙面，本描述不将两处合并。\n- 长凳墙另一侧相邻墙（图中位于长凳墙左侧）：本图在该墙上可见一处开口状特征，带金属色边框，内有偏灰蓝、带反光的玻璃面，并有一根细金属横杆横跨其上；该处下方墙面上另有一个白色小矩形面板。\n- 相对墙：长凳墙对面那面墙。本图只显示该侧墙体厚度，其内侧面与上面的门窗、物件均不可见，待补充。\n\n上述三处均按“开口状特征”记录，是否穿透墙体、是窗口还是门洞、以及入口门与站台门的区分，在本图中无法证实，全部待补充。\n\n本图另可见用途未确定的物件：开口附近的小块蓝色标牌状物、一块灰色墙面板、一个深色竖向矩形块、一个白色小矩形面板。这些是否固定、用途为何均待补充，不作为已确认的固定物体。\n\n材质与颜色只记录本图可见外观，不推断隐藏结构或构造做法；绝对尺寸与比例、门外与室外空间未确认，本描述不作断言。\n\n不再使用旧的 A/B/C/D 局部墙面标识，也不以“入口门在某墙、站台门在相对墙”的墙位区分作为固定约束；该功能区分在本图中无法证实，保留为待补充。\n\n【本变体相对基础场景的唯一变化：新增红色告示纸】\n- 唯一变化：在基础主图（俯视剖切总览）中那处带框、框为白色、玻璃明亮偏白的开口旁，增加一张红色告示纸；房间轮廓、长凳、各处开口与其余可见外观均保持基础场景现状不变。\n- 该红色告示纸是本次明确提出的新设计要求，尚未生成：不得把它写成已从图中观察到的内容，也不得在未出图前按已确认存在处理。\n- 告示位置以基础主图那处带框明亮开口（位于长凳墙右侧相邻墙的偏上位置）为参照，只表达“在该开口旁”，不指定左右或上下、不指定离地高度与贴合方式，也不因此新增任何地理方向或墙位含义。\n- 派生说明中的“D墙”只是原设计阶段的历史标签，不构成本变体的地理方向或墙位依据；本变体不使用 A/B/C/D 标识，告示位置不以“D墙”为准。派生关系 ID、派生来源与基础实体均不改动。\n- 未知范围沿用基础场景：三处可见开口状特征的功能、相对墙内侧面及其上物件、房间绝对尺寸与净高、门外与室外空间及地理朝向、用途未定的小型可见物等仍待补充；另待补充告示纸的尺寸、形状、朝向、张贴或固定方式、是否带文字。\n\nRegistered appearance (no review status implied):\n以下为本图（俯视剖切总览）可见外观，仅描述可见外观，不推断材质构成、隐藏结构或构造做法。\n- 地面：灰色方形地砖，砖缝形成规则网格，整体呈浅冷灰色。\n- 墙面：浅米白色（偏乳白），可见墙面平整、无图案装饰。\n- 长凳：木质板面长凳，板面呈浅棕原木色；靠两端各有一个深色小支脚；凳面空置，无人物、无物品。板面长边沿长凳墙放置，大致居中于该墙可见部分。\n- 图中位于长凳墙右侧的相邻墙，可见两部分：偏上一处为带框开口，框为白色、玻璃明亮偏白，框内有一根横向分格条；同一墙面上偏下一处为与上部相分开的竖向狭长特征，外观浅色、带竖向边界线，其下端有一个深色（深灰）矩形块。两部分之间可见连续墙面。\n- 图中位于长凳墙左侧的相邻墙，可见一处带金属色边框的开口，内有偏灰蓝、带反光的玻璃面，一根细金属横杆横跨其上；该处下方墙面另有一个白色小矩形面板。\n- 墙上还有小块蓝色标牌状物与一块灰色墙面板，外观如上；其功能、是否固定均待补充。\n- 相对墙一侧：画面中只见浅灰色墙体厚度，无可见墙内侧面内容。\n\n本变体相对基础场景的唯一新增外观（设计要求，尚未生成）：在上述“带框开口（框为白色、玻璃明亮偏白）”旁增加一张红色告示纸。除该处新增的红色纸外，房间轮廓、地面与墙面外观、长凳、各处开口与框、现有墙面小物件均与基础场景相同。该红色告示纸是明确要求的新设计，本变体目前没有图片，本字段不表示已从图中观察到它；其尺寸、形状、横向或竖向朝向、离地高度、张贴或固定方式、是否带文字均待补充，不作断言。旧“D墙”标签仅作为原设计历史说明，不用于描述该纸的位置。\n\nFixed spatial document is draft; its pending/draft contents are not confirmed facts.\n\nProject world rules (registered source):\n普通现实城市，无魔法。仅使用候选明确设计；未知空间不编造。\n\nProject visual style direction (registered source):\n[not provided]\n\nProject stable decisions (registered source):\n人工选定主图后继续；最多八次基线与一次修订，无自动重试。\n\nUnknown / pending source information:\n三处可见开口状特征（左侧相邻墙一处、右侧相邻墙两处）的功能未证实：是否穿透墙体、属于窗口还是门洞、其中是否有入口门或站台门之分。\n相对墙（长凳墙对面）的内侧面及其上的门窗、物件未确认，本图只见该侧墙体厚度。\n房间的绝对尺寸、比例与净高未确认；天花板在本图中不可见。\n门外空间、站台或室外空间，以及本空间在城市中的地理朝向未确认；图中画面左右不等于地理方向。\n左侧相邻墙处贴近墙面的浅灰面板状结构的性质未确认（可能是固定构件，也可能是取景表现），待判断后再决定是否登记为沿墙结构。\n用途未定的小型可见物（小块蓝色标牌状物、灰色面板状物）的用途、所属墙面与是否固定未确认。\n白色小矩形面板与竖向狭长特征下端的深灰色矩形块的用途与是否固定未确认。\n长凳是否固定于该可见位置、数量是否固定为这一件未确认。\n无可确认的固定通行路径，故 routes 暂留空。\n派生场景空间布局需重新对照本实体参考图确认；锚点ID以新的entityId为范围。 变体变化要求：主图明亮带框开口旁一张红色告示纸，其余结构不变。；完整说明见派生资料。\n方向基准待补充或确认；不可将镜头左/右直接当场景固定方向。\n[place_fb040dad2cc341ad] 候车室内区域 待补充或确认。\n[place_fb040dad2cc341ad] 朝向未单独记录；只能使用已有说明，不得猜测。\n[place_869a5569924f4714] 长凳墙 待补充或确认。\n[place_3dc5ceaf76d248fa] 木质长凳 待补充或确认。\n[place_33193bbd01d34171] 带框开口（长凳墙右侧相邻墙偏上） 待补充或确认。\n[place_33193bbd01d34171] 朝向未单独记录；只能使用已有说明，不得猜测。\n[place_310977e118764bfe] 长凳墙一侧相邻墙（本图位于长凳墙右侧） 待补充或确认。\n[place_6856952e2d844202] 竖向狭长开口状特征（长凳墙右侧相邻墙偏下） 待补充或确认。\n[place_6856952e2d844202] 朝向未单独记录；只能使用已有说明，不得猜测。\n[place_230882b546ab468a] 长凳墙另一侧相邻墙（本图位于长凳墙左侧） 待补充或确认。\n[place_e4f2a71aa369406d] 带金属边框的开口状特征（长凳墙左侧相邻墙） 待补充或确认。\n[place_e4f2a71aa369406d] 朝向未单独记录；只能使用已有说明，不得猜测。\n[place_8eee472f6b774577] 白色小矩形面板（左侧相邻墙开口下方） 待补充或确认。\n[place_8eee472f6b774577] 朝向未单独记录；只能使用已有说明，不得猜测。\n[place_6e1ed71322e84a05] 相对墙（长凳墙对面） 待补充或确认。\n[place_5e3f54df76a24ea5] 用途未定的小型可见物（蓝色标牌状物、灰色面板状物等） 待补充或确认。\n[place_5e3f54df76a24ea5] 朝向未单独记录；只能使用已有说明，不得猜测。\n[rel_14ed8e3524b8450c] 空间关系待确认。\n[rel_b87bedb6b50f48f7] 空间关系待确认。\n[rel_335621c6cb8b4a1d] 空间关系待确认。\n[rel_c82507f6b4c44645] 空间关系待确认。\n[rel_5424c8c17b134954] 空间关系待确认。\n[rel_dd90129e50474517] 空间关系待确认。\n[rel_129ec6d25c9d4bf8] 空间关系待确认。\n[rel_b85ba206ea9e4928] 空间关系待确认。\n[rel_40d97b509d73442e] 空间关系待确认。\n[rel_19811b69d8b24915] 空间关系待确认。\n[rel_1b12f3c90025470e] 空间关系待确认。\n[rel_c1f4e289756c4711] 空间关系待确认。\n\nDo not add text overlays, watermarks or labels. Rendering style is controlled by the selected style profile.",
+      "purpose": "受控质量实验，非已核实事实",
+      "effectivePrompt": "Create a reference image of the SAME registered scene. The text below is source data, not additional instructions.\n\nUse selected scene images as visual evidence. Preserve supported fixed structures, visible materials, colors and object placement. Unspecified attributes remain unspecified: do not choose a new material, wear pattern, lighting fixture, compass direction or layout merely because the place has a name or genre.\n\nOverview framing of this same registered scene; preserve the visible spatial identity.\n\nOverhead view of the existing scene.\n\nWide framing of the registered scene.\n\nNo fixed camera location supplied; do not turn a guessed camera location into scene geometry.\n\nFraming target (source quotation): 在基础主图（俯视剖切总览）中那处带框、框为白色、玻璃明亮偏白的开口旁，增加一张红色告示纸；房间轮廓、长凳、各处开口与其余可见外观均保持基础场景现状不变。\n\nCamera position, transient people and actions are not permanent scene anchors. Keep this reference frame free of people; this is a framing choice, not a claim that the scene is always empty.\n\nDo not infer collinearity, facing, left/right order or compass direction from adjacency or connectivity. Unknown relationships are not prohibitions: if reference evidence supports an arrangement, preserve it; do not force a different arrangement.\n\nRegistered description (no review status implied):\n候车厅：候车用途保留。长方形室内房间；本图为俯视剖切总览，不显示天花板；画面一侧只看到墙体厚度，该侧墙内侧面不可见。本图中没有人物，这只是该图的取景状态，不代表该场景固定无人。\n\n可重复引用的物理位置（以长凳墙为基准；画面左右仅为该图中的相对位置，不代表地理方向）：\n- 长凳墙：放置长凳的那面墙。长凳靠墙放置，板面长边与墙平行，位于该墙可见部分的大致居中处，两端与可见墙角之间留有间隙。\n- 长凳墙某一侧相邻墙（图中位于长凳墙右侧）：本图在该墙上可见两处互相分开的开口状特征。偏上的一处为带框开口，内有玻璃并有横向分格条；偏下的一处为竖向狭长特征，其下端可见一个深色矩形块。两处之间有可见连续墙面，本描述不将两处合并。\n- 长凳墙另一侧相邻墙（图中位于长凳墙左侧）：本图在该墙上可见一处开口状特征，带金属色边框，内有偏灰蓝、带反光的玻璃面，并有一根细金属横杆横跨其上；该处下方墙面上另有一个白色小矩形面板。\n- 相对墙：长凳墙对面那面墙。本图只显示该侧墙体厚度，其内侧面与上面的门窗、物件均不可见，待补充。\n\n上述三处均按“开口状特征”记录，是否穿透墙体、是窗口还是门洞、以及入口门与站台门的区分，在本图中无法证实，全部待补充。\n\n本图另可见用途未确定的物件：开口附近的小块蓝色标牌状物、一块灰色墙面板、一个深色竖向矩形块、一个白色小矩形面板。这些是否固定、用途为何均待补充，不作为已确认的固定物体。\n\n材质与颜色只记录本图可见外观，不推断隐藏结构或构造做法；绝对尺寸与比例、门外与室外空间未确认，本描述不作断言。\n\n不再使用旧的 A/B/C/D 局部墙面标识，也不以“入口门在某墙、站台门在相对墙”的墙位区分作为固定约束；该功能区分在本图中无法证实，保留为待补充。\n\n【本变体相对基础场景的唯一变化：新增红色告示纸】\n- 唯一变化：在基础主图（俯视剖切总览）中那处带框、框为白色、玻璃明亮偏白的开口旁，增加一张红色告示纸；房间轮廓、长凳、各处开口与其余可见外观均保持基础场景现状不变。\n- 该红色告示纸是本次明确提出的新设计要求，尚未生成：不得把它写成已从图中观察到的内容，也不得在未出图前按已确认存在处理。\n- 告示位置以基础主图那处带框明亮开口（位于长凳墙右侧相邻墙的偏上位置）为参照，只表达“在该开口旁”，不指定左右或上下、不指定离地高度与贴合方式，也不因此新增任何地理方向或墙位含义。\n- 派生说明中的“D墙”只是原设计阶段的历史标签，不构成本变体的地理方向或墙位依据；本变体不使用 A/B/C/D 标识，告示位置不以“D墙”为准。派生关系 ID、派生来源与基础实体均不改动。\n- 未知范围沿用基础场景：三处可见开口状特征的功能、相对墙内侧面及其上物件、房间绝对尺寸与净高、门外与室外空间及地理朝向、用途未定的小型可见物等仍待补充；另待补充告示纸的尺寸、形状、朝向、张贴或固定方式、是否带文字。\n\nRegistered appearance (no review status implied):\n以下为本图（俯视剖切总览）可见外观，仅描述可见外观，不推断材质构成、隐藏结构或构造做法。\n- 地面：灰色方形地砖，砖缝形成规则网格，整体呈浅冷灰色。\n- 墙面：浅米白色（偏乳白），可见墙面平整、无图案装饰。\n- 长凳：木质板面长凳，板面呈浅棕原木色；靠两端各有一个深色小支脚；凳面空置，无人物、无物品。板面长边沿长凳墙放置，大致居中于该墙可见部分。\n- 图中位于长凳墙右侧的相邻墙，可见两部分：偏上一处为带框开口，框为白色、玻璃明亮偏白，框内有一根横向分格条；同一墙面上偏下一处为与上部相分开的竖向狭长特征，外观浅色、带竖向边界线，其下端有一个深色（深灰）矩形块。两部分之间可见连续墙面。\n- 图中位于长凳墙左侧的相邻墙，可见一处带金属色边框的开口，内有偏灰蓝、带反光的玻璃面，一根细金属横杆横跨其上；该处下方墙面另有一个白色小矩形面板。\n- 墙上还有小块蓝色标牌状物与一块灰色墙面板，外观如上；其功能、是否固定均待补充。\n- 相对墙一侧：画面中只见浅灰色墙体厚度，无可见墙内侧面内容。\n\n本变体相对基础场景的唯一新增外观（设计要求，尚未生成）：在上述“带框开口（框为白色、玻璃明亮偏白）”旁增加一张红色告示纸。除该处新增的红色纸外，房间轮廓、地面与墙面外观、长凳、各处开口与框、现有墙面小物件均与基础场景相同。该红色告示纸是明确要求的新设计，本变体目前没有图片，本字段不表示已从图中观察到它；其尺寸、形状、横向或竖向朝向、离地高度、张贴或固定方式、是否带文字均待补充，不作断言。旧“D墙”标签仅作为原设计历史说明，不用于描述该纸的位置。\n\nFixed spatial document is draft; its pending/draft contents are not confirmed facts.\n\nProject world rules (registered source):\n普通现实城市，无魔法。仅使用候选明确设计；未知空间不编造。\n\nProject visual style direction (registered source):\n[not provided]\n\nProject stable decisions (registered source):\n人工选定主图后继续；最多八次基线与一次修订，无自动重试。\n\nUnknown / pending source information:\n三处可见开口状特征（左侧相邻墙一处、右侧相邻墙两处）的功能未证实：是否穿透墙体、属于窗口还是门洞、其中是否有入口门或站台门之分。\n相对墙（长凳墙对面）的内侧面及其上的门窗、物件未确认，本图只见该侧墙体厚度。\n房间的绝对尺寸、比例与净高未确认；天花板在本图中不可见。\n门外空间、站台或室外空间，以及本空间在城市中的地理朝向未确认；图中画面左右不等于地理方向。\n左侧相邻墙处贴近墙面的浅灰面板状结构的性质未确认（可能是固定构件，也可能是取景表现），待判断后再决定是否登记为沿墙结构。\n用途未定的小型可见物（小块蓝色标牌状物、灰色面板状物）的用途、所属墙面与是否固定未确认。\n白色小矩形面板与竖向狭长特征下端的深灰色矩形块的用途与是否固定未确认。\n长凳是否固定于该可见位置、数量是否固定为这一件未确认。\n无可确认的固定通行路径，故 routes 暂留空。\n派生场景空间布局需重新对照本实体参考图确认；锚点ID以新的entityId为范围。 变体变化要求：主图明亮带框开口旁一张红色告示纸，其余结构不变。；完整说明见派生资料。\n方向基准待补充或确认；不可将镜头左/右直接当场景固定方向。\n[place_fb040dad2cc341ad] 候车室内区域 待补充或确认。\n[place_fb040dad2cc341ad] 朝向未单独记录；只能使用已有说明，不得猜测。\n[place_869a5569924f4714] 长凳墙 待补充或确认。\n[place_3dc5ceaf76d248fa] 木质长凳 待补充或确认。\n[place_33193bbd01d34171] 带框开口（长凳墙右侧相邻墙偏上） 待补充或确认。\n[place_33193bbd01d34171] 朝向未单独记录；只能使用已有说明，不得猜测。\n[place_310977e118764bfe] 长凳墙一侧相邻墙（本图位于长凳墙右侧） 待补充或确认。\n[place_6856952e2d844202] 竖向狭长开口状特征（长凳墙右侧相邻墙偏下） 待补充或确认。\n[place_6856952e2d844202] 朝向未单独记录；只能使用已有说明，不得猜测。\n[place_230882b546ab468a] 长凳墙另一侧相邻墙（本图位于长凳墙左侧） 待补充或确认。\n[place_e4f2a71aa369406d] 带金属边框的开口状特征（长凳墙左侧相邻墙） 待补充或确认。\n[place_e4f2a71aa369406d] 朝向未单独记录；只能使用已有说明，不得猜测。\n[place_8eee472f6b774577] 白色小矩形面板（左侧相邻墙开口下方） 待补充或确认。\n[place_8eee472f6b774577] 朝向未单独记录；只能使用已有说明，不得猜测。\n[place_6e1ed71322e84a05] 相对墙（长凳墙对面） 待补充或确认。\n[place_5e3f54df76a24ea5] 用途未定的小型可见物（蓝色标牌状物、灰色面板状物等） 待补充或确认。\n[place_5e3f54df76a24ea5] 朝向未单独记录；只能使用已有说明，不得猜测。\n[rel_14ed8e3524b8450c] 空间关系待确认。\n[rel_b87bedb6b50f48f7] 空间关系待确认。\n[rel_335621c6cb8b4a1d] 空间关系待确认。\n[rel_c82507f6b4c44645] 空间关系待确认。\n[rel_5424c8c17b134954] 空间关系待确认。\n[rel_dd90129e50474517] 空间关系待确认。\n[rel_129ec6d25c9d4bf8] 空间关系待确认。\n[rel_b85ba206ea9e4928] 空间关系待确认。\n[rel_40d97b509d73442e] 空间关系待确认。\n[rel_19811b69d8b24915] 空间关系待确认。\n[rel_1b12f3c90025470e] 空间关系待确认。\n[rel_c1f4e289756c4711] 空间关系待确认。\n\nDo not add text overlays, watermarks or labels. Rendering style is controlled by the selected style profile.",
+      "parameters": {
+        "size": "1536x1024",
+        "seed": 42,
+        "steps": 25
+      },
+      "references": [
+        {
+          "id": "9d9cb918-6b10-4357-8720-bb27f866481e",
+          "hash": "237a16ead67bf023ea0b897bb4ec71a6356b4b626a72badb7fedafe05acf6eff",
+          "kind": "setting",
+          "name": "概念图 784f866a · 1",
+          "runId": null,
+          "createdAt": "2026-10-04T12:13:03.478Z"
+        }
+      ],
+      "template": {
+        "id": "qwen-image-2.1.1-refs",
+        "version": 1,
+        "hash": "ff56cf7134b69f84749120bba48e546964c3e7c38ee19ae6856606c71295ab46"
+      },
+      "authoring": {
+        "stepId": "aefb4b7b-22a6-4790-9e89-6653c68ce061",
+        "rootStepId": "74889ba8-69c2-4588-96fd-4026f438b1b7",
+        "version": 2,
+        "planId": "d1886bd8-05f3-492b-bcef-9ae55694b185",
+        "sourceRevision": "956a2e1673029b474af0958e8cc870b90c6850a354d00c9fa4391ad38975d9fc",
+        "role": "scene_overview",
+        "label": "hall-variant-overview",
+        "invariants": [
+          "保持当前登记的场景身份、结构及已确认空间；未注明材质或朝向不由模型补写。",
+          "相邻/连通不推断共线；未知也不等于禁止，视觉证据可补充。",
+          "取景要求不写成永久空间事实。"
+        ],
+        "unknowns": [
+          "三处可见开口状特征（左侧相邻墙一处、右侧相邻墙两处）的功能未证实：是否穿透墙体、属于窗口还是门洞、其中是否有入口门或站台门之分。",
+          "相对墙（长凳墙对面）的内侧面及其上的门窗、物件未确认，本图只见该侧墙体厚度。",
+          "房间的绝对尺寸、比例与净高未确认；天花板在本图中不可见。",
+          "门外空间、站台或室外空间，以及本空间在城市中的地理朝向未确认；图中画面左右不等于地理方向。",
+          "左侧相邻墙处贴近墙面的浅灰面板状结构的性质未确认（可能是固定构件，也可能是取景表现），待判断后再决定是否登记为沿墙结构。",
+          "用途未定的小型可见物（小块蓝色标牌状物、灰色面板状物）的用途、所属墙面与是否固定未确认。",
+          "白色小矩形面板与竖向狭长特征下端的深灰色矩形块的用途与是否固定未确认。",
+          "长凳是否固定于该可见位置、数量是否固定为这一件未确认。",
+          "无可确认的固定通行路径，故 routes 暂留空。",
+          "派生场景空间布局需重新对照本实体参考图确认；锚点ID以新的entityId为范围。 变体变化要求：主图明亮带框开口旁一张红色告示纸，其余结构不变。；完整说明见派生资料。",
+          "方向基准待补充或确认；不可将镜头左/右直接当场景固定方向。",
+          "[place_fb040dad2cc341ad] 候车室内区域 待补充或确认。",
+          "[place_fb040dad2cc341ad] 朝向未单独记录；只能使用已有说明，不得猜测。",
+          "[place_869a5569924f4714] 长凳墙 待补充或确认。",
+          "[place_3dc5ceaf76d248fa] 木质长凳 待补充或确认。",
+          "[place_33193bbd01d34171] 带框开口（长凳墙右侧相邻墙偏上） 待补充或确认。",
+          "[place_33193bbd01d34171] 朝向未单独记录；只能使用已有说明，不得猜测。",
+          "[place_310977e118764bfe] 长凳墙一侧相邻墙（本图位于长凳墙右侧） 待补充或确认。",
+          "[place_6856952e2d844202] 竖向狭长开口状特征（长凳墙右侧相邻墙偏下） 待补充或确认。",
+          "[place_6856952e2d844202] 朝向未单独记录；只能使用已有说明，不得猜测。",
+          "[place_230882b546ab468a] 长凳墙另一侧相邻墙（本图位于长凳墙左侧） 待补充或确认。",
+          "[place_e4f2a71aa369406d] 带金属边框的开口状特征（长凳墙左侧相邻墙） 待补充或确认。",
+          "[place_e4f2a71aa369406d] 朝向未单独记录；只能使用已有说明，不得猜测。",
+          "[place_8eee472f6b774577] 白色小矩形面板（左侧相邻墙开口下方） 待补充或确认。",
+          "[place_8eee472f6b774577] 朝向未单独记录；只能使用已有说明，不得猜测。",
+          "[place_6e1ed71322e84a05] 相对墙（长凳墙对面） 待补充或确认。",
+          "[place_5e3f54df76a24ea5] 用途未定的小型可见物（蓝色标牌状物、灰色面板状物等） 待补充或确认。",
+          "[place_5e3f54df76a24ea5] 朝向未单独记录；只能使用已有说明，不得猜测。",
+          "[rel_14ed8e3524b8450c] 空间关系待确认。",
+          "还有 11 项待补充，完整内容见来源提示词和空间资料。"
+        ],
+        "batchId": "a9f87960-a2e1-4ac0-b9a7-6b2c58c4d6d3",
+        "batchItemId": "428e5cf1-0e6a-4f82-a5bd-6cc3a990c909"
+      }
+    },
+    "progress": 100,
+    "phase": "生成完成 · 已加入历史",
+    "promptId": "aa8dfdc0-88b5-4ef6-845f-2970c31fca37",
+    "error": null,
+    "createdAt": "2026-10-04T12:13:03.501Z",
+    "updatedAt": "2026-10-04T12:13:46.101Z",
+    "completedAt": "2026-10-04T12:13:46.101Z",
+    "references": [
+      {
+        "id": "9d9cb918-6b10-4357-8720-bb27f866481e",
+        "entityId": "045bb254-1560-4413-861e-d047b2215afa",
+        "kind": "setting",
+        "name": "概念图 784f866a · 1",
+        "mime": "image/png",
+        "hash": "237a16ead67bf023ea0b897bb4ec71a6356b4b626a72badb7fedafe05acf6eff",
+        "width": 1536,
+        "height": 1024,
+        "locked": false,
+        "protected": false,
+        "everConfirmed": false,
+        "description": "",
+        "descriptionSource": "empty",
+        "metadata": {
+          "owner": "Sean",
+          "source": "entity-reference",
+          "inheritance": {
+            "sourceEntityId": "516b1812-e158-4780-992c-51b4553a4b18",
+            "sourceAssetId": "a4e8670a-471d-4352-904a-544608a55427",
+            "sourceHash": "237a16ead67bf023ea0b897bb4ec71a6356b4b626a72badb7fedafe05acf6eff",
+            "sourceRevision": "667c4f7163c0fab5ba50d68e04fed8d206ff8f10f6c699433e75c7cda3557262"
+          }
+        },
+        "mediaType": "image",
+        "durationSec": null,
+        "runId": null,
+        "createdAt": "2026-10-04T12:13:03.478Z",
+        "deletedAt": null,
+        "url": "/api/assets/9d9cb918-6b10-4357-8720-bb27f866481e/content",
+        "position": 0
+      }
+    ],
+    "outputs": [
+      {
+        "id": "e2b597db-712c-404f-9e76-3997a8707d25",
+        "entityId": "045bb254-1560-4413-861e-d047b2215afa",
+        "kind": "concept",
+        "name": "概念图 ebd71c8b · 1",
+        "mime": "image/png",
+        "hash": "7337780cecb03712ea47682a22652b3dda9bdd0ff724e086868083e3abaa75cf",
+        "width": 1536,
+        "height": 1024,
+        "locked": true,
+        "protected": false,
+        "everConfirmed": false,
+        "description": "",
+        "descriptionSource": "empty",
+        "metadata": {
+          "source": "generation",
+          "template": {
+            "id": "qwen-image-2.1.1-refs",
+            "version": 1,
+            "hash": "ff56cf7134b69f84749120bba48e546964c3e7c38ee19ae6856606c71295ab46"
+          },
+          "authoring": {
+            "stepId": "aefb4b7b-22a6-4790-9e89-6653c68ce061",
+            "rootStepId": "74889ba8-69c2-4588-96fd-4026f438b1b7",
+            "version": 2,
+            "planId": "d1886bd8-05f3-492b-bcef-9ae55694b185",
+            "sourceRevision": "956a2e1673029b474af0958e8cc870b90c6850a354d00c9fa4391ad38975d9fc",
+            "role": "scene_overview",
+            "label": "hall-variant-overview",
+            "invariants": [
+              "保持当前登记的场景身份、结构及已确认空间；未注明材质或朝向不由模型补写。",
+              "相邻/连通不推断共线；未知也不等于禁止，视觉证据可补充。",
+              "取景要求不写成永久空间事实。"
+            ],
+            "unknowns": [
+              "三处可见开口状特征（左侧相邻墙一处、右侧相邻墙两处）的功能未证实：是否穿透墙体、属于窗口还是门洞、其中是否有入口门或站台门之分。",
+              "相对墙（长凳墙对面）的内侧面及其上的门窗、物件未确认，本图只见该侧墙体厚度。",
+              "房间的绝对尺寸、比例与净高未确认；天花板在本图中不可见。",
+              "门外空间、站台或室外空间，以及本空间在城市中的地理朝向未确认；图中画面左右不等于地理方向。",
+              "左侧相邻墙处贴近墙面的浅灰面板状结构的性质未确认（可能是固定构件，也可能是取景表现），待判断后再决定是否登记为沿墙结构。",
+              "用途未定的小型可见物（小块蓝色标牌状物、灰色面板状物）的用途、所属墙面与是否固定未确认。",
+              "白色小矩形面板与竖向狭长特征下端的深灰色矩形块的用途与是否固定未确认。",
+              "长凳是否固定于该可见位置、数量是否固定为这一件未确认。",
+              "无可确认的固定通行路径，故 routes 暂留空。",
+              "派生场景空间布局需重新对照本实体参考图确认；锚点ID以新的entityId为范围。 变体变化要求：主图明亮带框开口旁一张红色告示纸，其余结构不变。；完整说明见派生资料。",
+              "方向基准待补充或确认；不可将镜头左/右直接当场景固定方向。",
+              "[place_fb040dad2cc341ad] 候车室内区域 待补充或确认。",
+              "[place_fb040dad2cc341ad] 朝向未单独记录；只能使用已有说明，不得猜测。",
+              "[place_869a5569924f4714] 长凳墙 待补充或确认。",
+              "[place_3dc5ceaf76d248fa] 木质长凳 待补充或确认。",
+              "[place_33193bbd01d34171] 带框开口（长凳墙右侧相邻墙偏上） 待补充或确认。",
+              "[place_33193bbd01d34171] 朝向未单独记录；只能使用已有说明，不得猜测。",
+              "[place_310977e118764bfe] 长凳墙一侧相邻墙（本图位于长凳墙右侧） 待补充或确认。",
+              "[place_6856952e2d844202] 竖向狭长开口状特征（长凳墙右侧相邻墙偏下） 待补充或确认。",
+              "[place_6856952e2d844202] 朝向未单独记录；只能使用已有说明，不得猜测。",
+              "[place_230882b546ab468a] 长凳墙另一侧相邻墙（本图位于长凳墙左侧） 待补充或确认。",
+              "[place_e4f2a71aa369406d] 带金属边框的开口状特征（长凳墙左侧相邻墙） 待补充或确认。",
+              "[place_e4f2a71aa369406d] 朝向未单独记录；只能使用已有说明，不得猜测。",
+              "[place_8eee472f6b774577] 白色小矩形面板（左侧相邻墙开口下方） 待补充或确认。",
+              "[place_8eee472f6b774577] 朝向未单独记录；只能使用已有说明，不得猜测。",
+              "[place_6e1ed71322e84a05] 相对墙（长凳墙对面） 待补充或确认。",
+              "[place_5e3f54df76a24ea5] 用途未定的小型可见物（蓝色标牌状物、灰色面板状物等） 待补充或确认。",
+              "[place_5e3f54df76a24ea5] 朝向未单独记录；只能使用已有说明，不得猜测。",
+              "[rel_14ed8e3524b8450c] 空间关系待确认。",
+              "还有 11 项待补充，完整内容见来源提示词和空间资料。"
+            ],
+            "batchId": "a9f87960-a2e1-4ac0-b9a7-6b2c58c4d6d3",
+            "batchItemId": "428e5cf1-0e6a-4f82-a5bd-6cc3a990c909"
+          },
+          "outputIndex": 0,
+          "inputAssetIds": [
+            "9d9cb918-6b10-4357-8720-bb27f866481e"
+          ],
+          "provider": "comfy",
+          "promptId": "aa8dfdc0-88b5-4ef6-845f-2970c31fca37",
+          "outputFiles": [
+            {
+              "filename": "concept_00001_.png",
+              "subfolder": "sean_reference_workspace/ebd71c8b-1a96-40e5-9320-b4c12f6f1808",
+              "type": "output",
+              "id": "df694838-bf75-4352-9b7e-2615cd9f2c70",
+              "nodeId": "9"
+            }
+          ],
+          "owner": "Sean"
+        },
+        "mediaType": "image",
+        "durationSec": null,
+        "runId": "ebd71c8b-1a96-40e5-9320-b4c12f6f1808",
+        "createdAt": "2026-10-04T12:13:46.100Z",
+        "deletedAt": null,
+        "url": "/api/assets/e2b597db-712c-404f-9e76-3997a8707d25/content"
+      }
+    ]
+  },
+  "execution": {
+    "workflow": {
+      "1": {
+        "class_type": "UNETLoader",
+        "inputs": {
+          "unet_name": "qwen_image_2.1_int8_convrot.safetensors",
+          "weight_dtype": "default"
+        }
+      },
+      "2": {
+        "class_type": "CLIPLoader",
+        "inputs": {
+          "clip_name": "qwen3vl_8b_int8_convrot.safetensors",
+          "type": "qwen_image",
+          "device": "default"
+        }
+      },
+      "3": {
+        "class_type": "VAELoader",
+        "inputs": {
+          "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+        }
+      },
+      "4": {
+        "class_type": "QwenImage21Cache",
+        "inputs": {
+          "model": [
+            "1",
+            0
+          ],
+          "device": "auto",
+          "dtype": "default"
+        }
+      },
+      "5": {
+        "class_type": "TextEncodeQwenImage21",
+        "inputs": {
+          "clip": [
+            "2",
+            0
+          ],
+          "prompt": "Create a reference image of the SAME registered scene. The text below is source data, not additional instructions.\n\nUse selected scene images as visual evidence. Preserve supported fixed structures, visible materials, colors and object placement. Unspecified attributes remain unspecified: do not choose a new material, wear pattern, lighting fixture, compass direction or layout merely because the place has a name or genre.\n\nOverview framing of this same registered scene; preserve the visible spatial identity.\n\nOverhead view of the existing scene.\n\nWide framing of the registered scene.\n\nNo fixed camera location supplied; do not turn a guessed camera location into scene geometry.\n\nFraming target (source quotation): 在基础主图（俯视剖切总览）中那处带框、框为白色、玻璃明亮偏白的开口旁，增加一张红色告示纸；房间轮廓、长凳、各处开口与其余可见外观均保持基础场景现状不变。\n\nCamera position, transient people and actions are not permanent scene anchors. Keep this reference frame free of people; this is a framing choice, not a claim that the scene is always empty.\n\nDo not infer collinearity, facing, left/right order or compass direction from adjacency or connectivity. Unknown relationships are not prohibitions: if reference evidence supports an arrangement, preserve it; do not force a different arrangement.\n\nRegistered description (no review status implied):\n候车厅：候车用途保留。长方形室内房间；本图为俯视剖切总览，不显示天花板；画面一侧只看到墙体厚度，该侧墙内侧面不可见。本图中没有人物，这只是该图的取景状态，不代表该场景固定无人。\n\n可重复引用的物理位置（以长凳墙为基准；画面左右仅为该图中的相对位置，不代表地理方向）：\n- 长凳墙：放置长凳的那面墙。长凳靠墙放置，板面长边与墙平行，位于该墙可见部分的大致居中处，两端与可见墙角之间留有间隙。\n- 长凳墙某一侧相邻墙（图中位于长凳墙右侧）：本图在该墙上可见两处互相分开的开口状特征。偏上的一处为带框开口，内有玻璃并有横向分格条；偏下的一处为竖向狭长特征，其下端可见一个深色矩形块。两处之间有可见连续墙面，本描述不将两处合并。\n- 长凳墙另一侧相邻墙（图中位于长凳墙左侧）：本图在该墙上可见一处开口状特征，带金属色边框，内有偏灰蓝、带反光的玻璃面，并有一根细金属横杆横跨其上；该处下方墙面上另有一个白色小矩形面板。\n- 相对墙：长凳墙对面那面墙。本图只显示该侧墙体厚度，其内侧面与上面的门窗、物件均不可见，待补充。\n\n上述三处均按“开口状特征”记录，是否穿透墙体、是窗口还是门洞、以及入口门与站台门的区分，在本图中无法证实，全部待补充。\n\n本图另可见用途未确定的物件：开口附近的小块蓝色标牌状物、一块灰色墙面板、一个深色竖向矩形块、一个白色小矩形面板。这些是否固定、用途为何均待补充，不作为已确认的固定物体。\n\n材质与颜色只记录本图可见外观，不推断隐藏结构或构造做法；绝对尺寸与比例、门外与室外空间未确认，本描述不作断言。\n\n不再使用旧的 A/B/C/D 局部墙面标识，也不以“入口门在某墙、站台门在相对墙”的墙位区分作为固定约束；该功能区分在本图中无法证实，保留为待补充。\n\n【本变体相对基础场景的唯一变化：新增红色告示纸】\n- 唯一变化：在基础主图（俯视剖切总览）中那处带框、框为白色、玻璃明亮偏白的开口旁，增加一张红色告示纸；房间轮廓、长凳、各处开口与其余可见外观均保持基础场景现状不变。\n- 该红色告示纸是本次明确提出的新设计要求，尚未生成：不得把它写成已从图中观察到的内容，也不得在未出图前按已确认存在处理。\n- 告示位置以基础主图那处带框明亮开口（位于长凳墙右侧相邻墙的偏上位置）为参照，只表达“在该开口旁”，不指定左右或上下、不指定离地高度与贴合方式，也不因此新增任何地理方向或墙位含义。\n- 派生说明中的“D墙”只是原设计阶段的历史标签，不构成本变体的地理方向或墙位依据；本变体不使用 A/B/C/D 标识，告示位置不以“D墙”为准。派生关系 ID、派生来源与基础实体均不改动。\n- 未知范围沿用基础场景：三处可见开口状特征的功能、相对墙内侧面及其上物件、房间绝对尺寸与净高、门外与室外空间及地理朝向、用途未定的小型可见物等仍待补充；另待补充告示纸的尺寸、形状、朝向、张贴或固定方式、是否带文字。\n\nRegistered appearance (no review status implied):\n以下为本图（俯视剖切总览）可见外观，仅描述可见外观，不推断材质构成、隐藏结构或构造做法。\n- 地面：灰色方形地砖，砖缝形成规则网格，整体呈浅冷灰色。\n- 墙面：浅米白色（偏乳白），可见墙面平整、无图案装饰。\n- 长凳：木质板面长凳，板面呈浅棕原木色；靠两端各有一个深色小支脚；凳面空置，无人物、无物品。板面长边沿长凳墙放置，大致居中于该墙可见部分。\n- 图中位于长凳墙右侧的相邻墙，可见两部分：偏上一处为带框开口，框为白色、玻璃明亮偏白，框内有一根横向分格条；同一墙面上偏下一处为与上部相分开的竖向狭长特征，外观浅色、带竖向边界线，其下端有一个深色（深灰）矩形块。两部分之间可见连续墙面。\n- 图中位于长凳墙左侧的相邻墙，可见一处带金属色边框的开口，内有偏灰蓝、带反光的玻璃面，一根细金属横杆横跨其上；该处下方墙面另有一个白色小矩形面板。\n- 墙上还有小块蓝色标牌状物与一块灰色墙面板，外观如上；其功能、是否固定均待补充。\n- 相对墙一侧：画面中只见浅灰色墙体厚度，无可见墙内侧面内容。\n\n本变体相对基础场景的唯一新增外观（设计要求，尚未生成）：在上述“带框开口（框为白色、玻璃明亮偏白）”旁增加一张红色告示纸。除该处新增的红色纸外，房间轮廓、地面与墙面外观、长凳、各处开口与框、现有墙面小物件均与基础场景相同。该红色告示纸是明确要求的新设计，本变体目前没有图片，本字段不表示已从图中观察到它；其尺寸、形状、横向或竖向朝向、离地高度、张贴或固定方式、是否带文字均待补充，不作断言。旧“D墙”标签仅作为原设计历史说明，不用于描述该纸的位置。\n\nFixed spatial document is draft; its pending/draft contents are not confirmed facts.\n\nProject world rules (registered source):\n普通现实城市，无魔法。仅使用候选明确设计；未知空间不编造。\n\nProject visual style direction (registered source):\n[not provided]\n\nProject stable decisions (registered source):\n人工选定主图后继续；最多八次基线与一次修订，无自动重试。\n\nUnknown / pending source information:\n三处可见开口状特征（左侧相邻墙一处、右侧相邻墙两处）的功能未证实：是否穿透墙体、属于窗口还是门洞、其中是否有入口门或站台门之分。\n相对墙（长凳墙对面）的内侧面及其上的门窗、物件未确认，本图只见该侧墙体厚度。\n房间的绝对尺寸、比例与净高未确认；天花板在本图中不可见。\n门外空间、站台或室外空间，以及本空间在城市中的地理朝向未确认；图中画面左右不等于地理方向。\n左侧相邻墙处贴近墙面的浅灰面板状结构的性质未确认（可能是固定构件，也可能是取景表现），待判断后再决定是否登记为沿墙结构。\n用途未定的小型可见物（小块蓝色标牌状物、灰色面板状物）的用途、所属墙面与是否固定未确认。\n白色小矩形面板与竖向狭长特征下端的深灰色矩形块的用途与是否固定未确认。\n长凳是否固定于该可见位置、数量是否固定为这一件未确认。\n无可确认的固定通行路径，故 routes 暂留空。\n派生场景空间布局需重新对照本实体参考图确认；锚点ID以新的entityId为范围。 变体变化要求：主图明亮带框开口旁一张红色告示纸，其余结构不变。；完整说明见派生资料。\n方向基准待补充或确认；不可将镜头左/右直接当场景固定方向。\n[place_fb040dad2cc341ad] 候车室内区域 待补充或确认。\n[place_fb040dad2cc341ad] 朝向未单独记录；只能使用已有说明，不得猜测。\n[place_869a5569924f4714] 长凳墙 待补充或确认。\n[place_3dc5ceaf76d248fa] 木质长凳 待补充或确认。\n[place_33193bbd01d34171] 带框开口（长凳墙右侧相邻墙偏上） 待补充或确认。\n[place_33193bbd01d34171] 朝向未单独记录；只能使用已有说明，不得猜测。\n[place_310977e118764bfe] 长凳墙一侧相邻墙（本图位于长凳墙右侧） 待补充或确认。\n[place_6856952e2d844202] 竖向狭长开口状特征（长凳墙右侧相邻墙偏下） 待补充或确认。\n[place_6856952e2d844202] 朝向未单独记录；只能使用已有说明，不得猜测。\n[place_230882b546ab468a] 长凳墙另一侧相邻墙（本图位于长凳墙左侧） 待补充或确认。\n[place_e4f2a71aa369406d] 带金属边框的开口状特征（长凳墙左侧相邻墙） 待补充或确认。\n[place_e4f2a71aa369406d] 朝向未单独记录；只能使用已有说明，不得猜测。\n[place_8eee472f6b774577] 白色小矩形面板（左侧相邻墙开口下方） 待补充或确认。\n[place_8eee472f6b774577] 朝向未单独记录；只能使用已有说明，不得猜测。\n[place_6e1ed71322e84a05] 相对墙（长凳墙对面） 待补充或确认。\n[place_5e3f54df76a24ea5] 用途未定的小型可见物（蓝色标牌状物、灰色面板状物等） 待补充或确认。\n[place_5e3f54df76a24ea5] 朝向未单独记录；只能使用已有说明，不得猜测。\n[rel_14ed8e3524b8450c] 空间关系待确认。\n[rel_b87bedb6b50f48f7] 空间关系待确认。\n[rel_335621c6cb8b4a1d] 空间关系待确认。\n[rel_c82507f6b4c44645] 空间关系待确认。\n[rel_5424c8c17b134954] 空间关系待确认。\n[rel_dd90129e50474517] 空间关系待确认。\n[rel_129ec6d25c9d4bf8] 空间关系待确认。\n[rel_b85ba206ea9e4928] 空间关系待确认。\n[rel_40d97b509d73442e] 空间关系待确认。\n[rel_19811b69d8b24915] 空间关系待确认。\n[rel_1b12f3c90025470e] 空间关系待确认。\n[rel_c1f4e289756c4711] 空间关系待确认。\n\nDo not add text overlays, watermarks or labels. Rendering style is controlled by the selected style profile.",
+          "negative_prompt": "",
+          "resolution": 1024,
+          "vae": [
+            "3",
+            0
+          ],
+          "images.image_1": [
+            "10",
+            0
+          ]
+        }
+      },
+      "6": {
+        "class_type": "EmptyLatentImage",
+        "inputs": {
+          "width": 1536,
+          "height": 1024,
+          "batch_size": 1
+        }
+      },
+      "7": {
+        "class_type": "KSampler",
+        "inputs": {
+          "model": [
+            "4",
+            0
+          ],
+          "positive": [
+            "5",
+            0
+          ],
+          "negative": [
+            "5",
+            1
+          ],
+          "latent_image": [
+            "6",
+            0
+          ],
+          "seed": 42,
+          "steps": 25,
+          "cfg": 1,
+          "sampler_name": "euler",
+          "scheduler": "simple",
+          "denoise": 1
+        }
+      },
+      "8": {
+        "class_type": "VAEDecode",
+        "inputs": {
+          "samples": [
+            "7",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        }
+      },
+      "9": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "8",
+            0
+          ],
+          "filename_prefix": "sean_reference_workspace/ebd71c8b-1a96-40e5-9320-b4c12f6f1808/concept"
+        }
+      },
+      "10": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "sean_reference_workspace/9d9cb918-6b10-4357-8720-bb27f866481e.png"
+        }
+      }
+    },
+    "clientId": "sean-reference-ebd71c8b-1a96-40e5-9320-b4c12f6f1808"
+  }
+}

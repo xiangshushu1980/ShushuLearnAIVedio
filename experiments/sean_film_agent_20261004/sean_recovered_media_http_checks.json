@@ -1,0 +1,102 @@
+{
+  "owner": "Sean",
+  "mediaChecks": [
+    {
+      "hash": "bc97295cda1363c189fcd3e0cc3841dfc36ca03db415906bf96b44b56d21cd6e",
+      "status": 200,
+      "bytes": 2696693
+    },
+    {
+      "hash": "25c620051f4c8240550e54817c3ba9e4d38ffcc34c9d19e6e696613b7f80e897",
+      "status": 200,
+      "bytes": 1787418
+    },
+    {
+      "hash": "be5d3c3091054fa3a60a497d8fbe4b59133aac9697e601287111672cb9d40366",
+      "status": 200,
+      "bytes": 786180
+    },
+    {
+      "hash": "df20a30c62bf979ff04d2773b1757620847d3b485b580095b429031b5ea2d04b",
+      "status": 200,
+      "bytes": 1475226
+    },
+    {
+      "hash": "3943ee3ae5f434fa6de19f9f60481cd1eda52f297dad2c38b9e4a22a2478edc2",
+      "status": 200,
+      "bytes": 549900
+    },
+    {
+      "hash": "e0c1d47b35f3b83c590c44e138f4dcb9df6078fbf44b39237cd3cf4d40684c53",
+      "status": 200,
+      "bytes": 1866810
+    },
+    {
+      "hash": "e273276c1556ee5f989c8befdafd86e465b640fcd504e3e02a3777d8150876f0",
+      "status": 200,
+      "bytes": 253518
+    },
+    {
+      "hash": "5fecbc99843090ee1c74e7eecce6b9f3b3c34df5bd8ebfdd33a10a1fc2b9aa43",
+      "status": 200,
+      "bytes": 1639632
+    },
+    {
+      "hash": "0314d3cb3f05571238673e899a4eb8e1f098d2f3d511b8b93e988e0aeb80c238",
+      "status": 200,
+      "bytes": 1049407
+    },
+    {
+      "hash": "3ce01b333ac8918b3faa804e2e345f3c0f73ba2fd4db5bdfb69b5a46940417ba",
+      "status": 200,
+      "bytes": 1601214
+    },
+    {
+      "hash": "fdb59050027940aca0ba04f92ca36aa407a048bd8e636bdb8031520ecf3da115",
+      "status": 200,
+      "bytes": 611009
+    },
+    {
+      "hash": "80a8e0c3b070a51034c55026b864f9841f96e90d8e0cff6077b7ed2fb1df6a81",
+      "status": 200,
+      "bytes": 1146388
+    },
+    {
+      "hash": "d77b3592174ff9fc24af001cfbf422708405193bfded0f241697ac34a3af7a06",
+      "status": 200,
+      "bytes": 526491
+    },
+    {
+      "hash": "191c6581f237e5a3f635f9b7b26816666ae6bec36231b1f1c248466a1af4abd3",
+      "status": 200,
+      "bytes": 519488
+    },
+    {
+      "hash": "136dc791274fa4bf7f7a5cb4667c04bbaf8affd92c7473775cf295846215ff1b",
+      "status": 200,
+      "bytes": 291918
+    },
+    {
+      "hash": "59fd1cff742b9d28c0904419206edc8b0ffe933e53bdb0f272c43b69e314e94f",
+      "status": 200,
+      "bytes": 1267656
+    },
+    {
+      "hash": "66d65e530fbc25aefdb5bc0591b887e40d67319089d02f8d6a1c55911cc4211b",
+      "status": 200,
+      "bytes": 600534
+    }
+  ],
+  "rangeStatus": 206,
+  "errors": [
+    {
+      "status": 404,
+      "body": "{\"error\":\"素材不属于此项目\"}"
+    },
+    {
+      "status": 410,
+      "body": "{\"error\":\"此版本仅保留目录信息，历史正文未恢复；请查看当前拍摄本。\"}"
+    }
+  ],
+  "productionRevision": 18
+}

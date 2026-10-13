@@ -1,0 +1,27 @@
+{
+  "owner": "Sean",
+  "candidateId": "0141e773-2b56-4ec1-9dd1-54a01e36bdfe",
+  "mediaHash": "d32f9aae18aab1a1498aa7ddad183e9f6ce016b3026f7c4662e2c387f9d8abeb",
+  "actualDurationSec": 4.458333,
+  "plannedDurationSec": 4,
+  "visualConclusion": "provisional-pass-for-S3-continuity",
+  "scope": "Root4fps entireclipcontact andfulltail; Agent5timestampedframes; noaudioacceptance",
+  "observations": [
+    "B closes same darkbook, sets it on table right/far region, then rises wearingoriginalcamelcoat",
+    "A remains seated left/near, single sheathedkatana unchanged, paper/folder and multiplecups persist",
+    "Same readingtable/bookwall/camerasidethroughout andS1tail->S2opening",
+    "Visiblebarewood beyondknife andleftofclosedbook/centralglass can be targeted for gatheredcoat, but actualclothsupport notproven"
+  ],
+  "risks": [
+    "Foldedclotharea cannot be measured from image; S3 must demonstrate actualbodyandsleeveswoodsupport andbookvisible",
+    "Native output extends planned duration; no blindtrimming",
+    "Audio/dialogue/timbre/lips unverified; paidnewASRawaitspermission"
+  ],
+  "fullAudioVideoDecodePassed": true,
+  "evidence": [
+    "sean_six_v39_s02_0141_manifest.json",
+    "frames/sean_six_v39_s02_0141_contact.png",
+    "frames/sean_six_v39_s02_0141_tail.png",
+    "sean_revision39_s02_generation_result.json"
+  ]
+}

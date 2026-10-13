@@ -1,0 +1,72 @@
+{
+  "owner": "Sean",
+  "candidateId": "c8f3caec-ba74-437a-a8a5-fa767e66f587",
+  "mediaHash": "e9818fb414431cbf2b181ee79707964ab7af35a1994aa03128eb91ae51d2d38a",
+  "times": [
+    0.1,
+    0.7,
+    1.5,
+    3,
+    4.5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12.1
+  ],
+  "duration": 12.25,
+  "videoDuration": 12.25,
+  "frames": [
+    {
+      "requestedTimeSec": 0.1,
+      "frameHash": "a86b12bacbac3ff673736801f39d53062fbb23423b76da46cbc978aca13cfbca"
+    },
+    {
+      "requestedTimeSec": 0.7,
+      "frameHash": "afdba2b7083ad5854fb721c9889d2e42343799845b9b5950f3ba7e877124cd68"
+    },
+    {
+      "requestedTimeSec": 1.5,
+      "frameHash": "80af513360adcf5a5f2fd7864e722453aee81b1edf16706569fdb867f2c1cee1"
+    },
+    {
+      "requestedTimeSec": 3,
+      "frameHash": "908cc7347330aefe29e87ca6bd982872b980690eea598217854bd51f51b698b0"
+    },
+    {
+      "requestedTimeSec": 4.5,
+      "frameHash": "19798c6155659af8810c09e5e4781d4393d8d3abc9eb26dad14bf42fbeb29853"
+    },
+    {
+      "requestedTimeSec": 6,
+      "frameHash": "116ee0f6298ab54741ace55110e51bac4c617e82a5cf145a40d84a79712f6dd6"
+    },
+    {
+      "requestedTimeSec": 7,
+      "frameHash": "24277584f52c94332a9a04c86df810dffcc77daa782afd474cbe38dd2425c20e"
+    },
+    {
+      "requestedTimeSec": 8,
+      "frameHash": "e5c7beab9e9edcae064c73fa22c121acf5b6269a8ef098b886f73971a22dc01a"
+    },
+    {
+      "requestedTimeSec": 9,
+      "frameHash": "619db621d4633e177a6780f89264b60dc3a44fd234030da245f8eb862b28151a"
+    },
+    {
+      "requestedTimeSec": 10,
+      "frameHash": "d7678cc7b69255f479bdba70599d5c78dbd40d332600658a0f2b2f9b0b282577"
+    },
+    {
+      "requestedTimeSec": 11,
+      "frameHash": "799dc50560859f130869fa6eb20b339fa867cecc445487e2cf058dca36db6f74"
+    },
+    {
+      "requestedTimeSec": 12.1,
+      "frameHash": "e1e3d98c02e8e15e113f016b569b389934b5e2c9c7196c956bafc2f265a9db71"
+    }
+  ],
+  "evidence": "12 sampled frames only; no audio or complete continuous motion observation"
+}

@@ -1,0 +1,14 @@
+{
+  "owner": "Sean",
+  "request": {
+    "requestId": "951e3eb4-3801-4538-aebf-5a5e3ad64be3",
+    "mode": "prepare",
+    "text": "根Agent已独立读取rev50完整S3。发现格式校验遗漏的语义冲突：S3 continuity仍写“不追加折衣、压衣、步行等动作”，而新prompt明确一次衣摆向领口对折。此前把一次对折具体化为收拢已授权；本轮授权仅同步S3 continuity：允许一次简单对折和收袖作为既有收拢的实现，仍不追加精细或重复折衣/压衣/步行，其他连续性事实保留。S3 action不改、其他镜和全片空间不改。另prompt summary和detailed_description出现“plan reports feasibility risk”“approved actions”等审核元文字，不是可生成的画面，删除这些元说明，4秒时间线仍保留；风险放changes或结果报告。subject_definitions/detailed_description给全程无对白角色写(S1)(S2)不符合静默角色无speaker ID规则，删除本镜这些未使用说话ID，不影响其他镜全片speaker绑定。不能声称书是本镜唯一改变位置物件，书S3完全不动，只有外套移动。用当前版本化方法和固定接口仅修以上3类明确冲突，freshcontext并校验完整提案，只采用有效修改，保留全剧情时长对白实体图序seedanchor静物相对位置；本轮不提交GPU、不选片不合成。报告同步前后差异和新revision。"
+  },
+  "response": {
+    "runId": "e4483134-77a7-4cb8-ab7b-9e11a1d847a2",
+    "status": "running"
+  },
+  "sessionId": "0707ba67-08da-42cf-9bc9-b1fa07bf95cf",
+  "projectId": "538005c3-16bd-4709-aa4e-70831b960a24"
+}

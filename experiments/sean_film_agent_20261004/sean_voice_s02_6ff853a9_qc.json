@@ -1,0 +1,19 @@
+{
+  "owner": "Sean",
+  "candidateId": "6ff853a9-2d3a-4ad9-b971-62def9e124f8",
+  "mediaHash": "637d9747f03448069fd3508ef2395301c3120e74a0a53dc2acad25a25aefe7e6",
+  "evidenceScope": "1fps visual samples only, no audio listening",
+  "visualObservations": [
+    "Both characters remain seated in sampled frames",
+    "Same shelves, table, screen sides and single tabletop blade retained",
+    "B raises gaze toward A during middle samples"
+  ],
+  "audioVerification": "pending: dialogue accuracy, speaker attribution, distinct timbre and lip sync",
+  "selected": false,
+  "dialogueVerification": {
+    "method": "Qwen3 ASR cloud transcription",
+    "text": "你来还书还是来还刀？先放这儿。放这儿，你舍得？随你怎么想。",
+    "result": "all approved spoken words in correct order; punctuation differs",
+    "limitations": "No speaker attribution, timbre similarity or lip-sync proof"
+  }
+}

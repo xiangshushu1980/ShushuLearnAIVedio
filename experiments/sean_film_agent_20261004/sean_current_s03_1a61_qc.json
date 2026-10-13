@@ -1,0 +1,15 @@
+{
+  "owner": "Sean",
+  "candidateId": "1a61fb81-1274-4824-a072-88ab52034634",
+  "scope": "2fps sampled visuals, no audio or full continuous observation",
+  "observations": [
+    "B removes outer garment from opening outfit",
+    "Garment placed horizontally on tabletop",
+    "Both women remain seated; one sword stays on tabletop"
+  ],
+  "limitations": [
+    "Final hand release partly occluded",
+    "Clothing inner/outer hues similar; full continuous morph review pending"
+  ],
+  "decision": "provisional current chain selection"
+}

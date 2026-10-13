@@ -1,0 +1,38 @@
+{
+  "owner": "Sean",
+  "verifiedAt": "2026-10-04T05:06:21.463Z",
+  "projectId": "70338d49-e494-433f-a753-738fbd3dafc9",
+  "sourceEvidence": {
+    "bindings": "film-editor/server/reference.mjs returns images and native audio only",
+    "validation": "film-editor/server/planning.mjs permits Audio 1 only for NativeAudioLock",
+    "llm": "referenceInstructions explicitly prohibits voice-reference Audio labels",
+    "adapter": "film-editor/server/comfy.mjs wires only NativeAudioLock; no ref_audios inputs"
+  },
+  "runtimeNode": "MiniMaxH3ReferenceToVideo supports ref_audios.ref_audio_0..2, AUDIO, maximum3",
+  "importedVoices": [
+    {
+      "entity": "角色A",
+      "assetId": "1e2f367f-132f-4c92-93d7-660422eaf8be",
+      "durationSec": 6.08
+    },
+    {
+      "entity": "角色B",
+      "assetId": "6f63253b-ec45-4f56-8292-5e1e3d20d2b0",
+      "durationSec": 5.28
+    },
+    {
+      "entity": "角色A·派生",
+      "assetId": "e1d60d80-5d7f-44fe-9ec9-bc525139f3b7",
+      "durationSec": 6.08
+    }
+  ],
+  "status": "missing-feature",
+  "required": [
+    "Resolve current voice assets for speakers, preserving derived identity relationship",
+    "Expose numbered voice reference bindings to fixed LLM and PI context",
+    "Validate Audio labels and reference retention independently from whole-track audio lock",
+    "Freeze bytes/hashes in immutable candidate inputs and upload separate reference audio ports",
+    "Make provenance changes invalidate dependent inputs; preserve legacy candidates",
+    "Run real A/B timbre/dialogue tests; waveform decoding alone is insufficient"
+  ]
+}

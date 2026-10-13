@@ -1,0 +1,14 @@
+{
+  "owner": "Sean",
+  "projectId": "538005c3-16bd-4709-aa4e-70831b960a24",
+  "sessionId": "0707ba67-08da-42cf-9bc9-b1fa07bf95cf",
+  "request": {
+    "requestId": "4a966484-6c6f-4cce-9ba4-ebafdc6aba71",
+    "mode": "prepare",
+    "text": "本轮仅文字及真实固定LLM恢复验证，不GPU。根已经修正test4194启动node --env-file-if-exists=.env，现在/api/config llmKeyConfigured=true，原401是漏载dotenv而非providerquota。freshcontext/loadmethod/Ref2VA定点读S3a/b；先结构patch.shots只同步两镜title为“B脱下原外套并自然收拢持住”及“B将手持外套送到空桌面并放手”，其余全字段逐字不改，有效采用后完整等价空间提案原scenePlan和所有状态逐字保留/每镜取最新文字，preserveprefix。然后用固定revision工作流只针对S3a cbfc4455、旧失败78d5634d，观察旧稿只未做到精确对折、但新创作已明确不要求精确折法而要求同coat自然双手托抱收拢+inner裤鞋保留、全镜不放桌、不松手、书刀杯纸A不动、4秒；notes提供candidate/time/hash实际观察来源，不把旧video宣布新稿通过。维持当前完整叙事/实体图序seed4秒space和真实Picture9 S2anchor，350-500正文目标400-450，静默无speakerID，风险审核元话不入prompt。授权真实LLM请求一次验证配置，等待同一job终态，读取完整结果warnings；如格式/语义有效才采用S3a新prompt，无效保留未采用并报告不反复重请求；401如再出现报告不重复认证。freshcontextvalidateS3a并报告真实provider responseId/usage/job与最终revision。禁止生成/选片/新anchor/合成；不改变S3b无anchor实际状态和34秒测试账。"
+  },
+  "response": {
+    "runId": "28234a27-64ba-4da7-90a2-aa3cb1c0401d",
+    "status": "running"
+  }
+}

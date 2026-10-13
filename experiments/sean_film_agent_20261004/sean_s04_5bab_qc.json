@@ -1,0 +1,15 @@
+{
+  "owner": "Sean",
+  "candidateId": "5bab406b-744c-4674-84a9-36d0be20ad0b",
+  "scope": "2fps samples including6s; no audio review",
+  "passes": [
+    "A remains seated through sampled endpoint",
+    "B takes single sword from table",
+    "Outer garment stays on table"
+  ],
+  "failures": [
+    "B still visible at right edge at6s instead of absent"
+  ],
+  "selected": false,
+  "nextCorrection": "Direct brisk screen-right departure on far side, no pause or walking deeper towards shelves"
+}

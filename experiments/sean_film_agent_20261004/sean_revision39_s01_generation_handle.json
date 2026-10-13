@@ -1,0 +1,12 @@
+{
+  "owner": "Sean",
+  "projectId": "538005c3-16bd-4709-aa4e-70831b960a24",
+  "sessionId": "0707ba67-08da-42cf-9bc9-b1fa07bf95cf",
+  "runId": "82a20755-a85a-48f7-afb9-a1b0d4ecefbf",
+  "status": "running",
+  "request": {
+    "requestId": "37bf0b2d-5e5a-4f50-8d1f-126c4de3d1fd",
+    "mode": "generate",
+    "text": "授权实际GPU测试，但本轮只生成第一镜18cd89f4-1697-451b-9719-124d43e8b511的一个新候选，不改文字、不生成其他镜、不选片、不合成。先get_film_context并load叙事/ref2va方法，validate_film_inputs指定第一镜；当前rev39可生成，S2/S3过期锚帧不阻止第一镜。通过generate_video提交一次，用get_video_status轮询同一个candidate到终态，不因等待超时重提交。成功后在实际时长内inspect_candidate_frames分两批，每批3张，观察0/1/2.5以及3.5/5/实际片尾前0.15秒。逐张记录candidateId/requestedTimeSec/frameHash、A入场仍持刀→B要求先放→A唯一黑色带鞘刀放木桌→A落座，B一直远侧坐书在手外套仍穿，纸张/文件夹近侧中部/刀柄右下方、透明杯中部更远，机位同侧/同张T1书墙。别从剧情推断画面，未听声音不声称台词/音色/口型已验收。报告实际时长和素材hash、是否满足接下一镜，最后停止，不新建衔接帧/不修后镜。保持所有旧失败候选历史。"
+  }
+}

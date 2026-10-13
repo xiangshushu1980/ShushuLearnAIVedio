@@ -1,0 +1,15 @@
+{
+  "owner": "Sean",
+  "id": "remote-fbb88314-4820-4f5d-bf06-7103b9c56c51",
+  "status": "running",
+  "controllerConversationId": "01a10b84-3653-7bee-bbf3-264b426c9239",
+  "piSessionId": "01a10b84-3653-7bee-bbf3-264b426c9239",
+  "controllerGeneration": 2,
+  "metadata": {
+    "testOnly": true,
+    "filmBinding": {
+      "instanceId": "13691d3c-895a-4daa-846e-f8623ce89d15",
+      "filmProjectId": "5269e95a-d8b7-4c66-b8fd-603be396ef4c"
+    }
+  }
+}

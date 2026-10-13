@@ -1,0 +1,14 @@
+{
+  "owner": "Sean",
+  "projectId": "538005c3-16bd-4709-aa4e-70831b960a24",
+  "sessionId": "0707ba67-08da-42cf-9bc9-b1fa07bf95cf",
+  "request": {
+    "requestId": "cf68c4a6-327a-4d03-9c50-b4e8785f977c",
+    "mode": "prepare",
+    "text": "本轮授权仅自然持衣调度文字修订与7镜空间重新核对，不生成/选片/设anchor/合成。freshcontext/loadmethod/Ref2VA读取S3a/S3b全部详情和先前78d5失败视频3.25/4.308实际图；注意精确一次对折收袖是我们为占地加入的技术实现，不是原用户故事要求，原plot/script保持完整不改。现将S3a改为只脱原驼色coat、保留inner裤鞋，双手自然收拢衣身和袖子并将衣料托抱在身前/前臂上持住，不要求精确折法/完全没有下垂；保持同一件衣物不松手不放桌、不移书刀杯纸A。S3b起始同步这件双手托抱的自然收拢外套，双手承托控制衣身和袖子，沿farhalf向screenleftback搬到固定裸木点，接触木面后释放，最终衣身和两袖必须全部受桌面支撑、不垂桌沿、不压书不碰杯；不能放宽最终落点和支撑要求，不移动既有静物。无需精确对折但必须说明怎样托住整件衣物可控转移。同步两个镜action/continuity/prompt及全片spatial中S3a end、S3b start/transition/相关end表述，不将78d5失败retroactive宣布新稿通过、不直接引用failedtail作为approvedanchor。其他5镜全字段原样，scenePlan固定空间全文原样，实体图序种子各4秒和原对白不改；S3a原S2actualPicture9/S3b无anchor8图如实保留，等待新版S3a实际成功。固定LLM401不要重试，以版本化结构patch.shots只改2镜动作衔接prompt（其余镜全字段保留）然后独立7镜spatial采用，完整6段350-500英文词；明确在技术动作选择上调整而非删故事。读完整提案+validation无错误采用；freshvalidate S3a，检查prefixcurrent、anchorsready、34s账与30target差值。禁止GPU、本轮仅文本；不存在的4秒action注记不要编造。"
+  },
+  "response": {
+    "runId": "c3738ece-bae5-4956-9577-509b0f3198d6",
+    "status": "running"
+  }
+}

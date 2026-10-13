@@ -1,0 +1,37 @@
+{
+  "owner": "Sean",
+  "checked": [
+    {
+      "proposalId": "9e13e9d4-a7b3-47e7-b77b-0b4b8080890b",
+      "previousValidation": {
+        "valid": false,
+        "warnings": [
+          {
+            "shotId": "f0ac8b73-eb6b-4d3d-b877-6d4d7b95a34e",
+            "title": "A取穿B留下的外套并完成一次360度转圈",
+            "message": "<Subject 1> 需要在自己的定义中明确绑定 <Picture N>"
+          }
+        ],
+        "questions": [],
+        "scope": "proposal output; current project input errors are separate"
+      },
+      "currentAllSixValid": true
+    },
+    {
+      "proposalId": "652d86e7-0bf0-4ce7-a8c8-945aabd9623f",
+      "previousValidation": {
+        "valid": false,
+        "warnings": [
+          {
+            "shotId": "f0ac8b73-eb6b-4d3d-b877-6d4d7b95a34e",
+            "title": "A取穿B留下的外套并完成一次360度转圈",
+            "message": "<Subject 2> 需要在自己的定义中明确绑定 <Picture N>"
+          }
+        ],
+        "questions": [],
+        "scope": "proposal output; current project input errors are separate"
+      },
+      "currentAllSixValid": true
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "owner": "Sean",
+  "candidateId": "ca97476a-d13f-4b42-90ee-bfdf50aebedb",
+  "actualDurationSec": 4.458333,
+  "plannedDurationSec": 4,
+  "fullDecodePassed": true,
+  "method": "Root actual4fpscontact plus Agent5timedframes",
+  "observations": [
+    "B removes only outer coat; inner layer/pants/shoes remain",
+    "A seated, single blade stays flat, room/table match previous clip",
+    "Coat laid on tabletop at final state; some fabric hangs over edge",
+    "Closed book disappears from visibility during coat placement; obstruction/overlap cannot be cleared from sampled images"
+  ],
+  "status": "not selected; revise coat landing position and require book visibly separate",
+  "limitations": [
+    "Book hidden does not prove it moved",
+    "No audio verification; no full motion/anatomy guarantee"
+  ],
+  "agentCorrection": "409 was stale observed revision after automatic prompt write; fresh context gate rejected before candidate creation. Exactly one candidate created, not evidence of an external race."
+}

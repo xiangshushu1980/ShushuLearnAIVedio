@@ -1,0 +1,13 @@
+{
+  "owner": "Sean",
+  "cutId": "3f8853a2-aa67-4ca6-907d-414422101bcb",
+  "durationSec": 38.605,
+  "decode": "full ffmpeg audio/video decode passed",
+  "seams": "Actual4 before/after contacts preserve same table, shelving, camera axis, A near-left/B far-right; garment ontable at3, B/sword absent at4. Small framing variations exist.",
+  "remaining": [
+    "Full audio timbre/speaker and lip-sync audition",
+    "All-frame garment/body/neutral-prop details",
+    "Final target30sec pacing unresolved; current37secplanned/38.605actual diagnostic"
+  ],
+  "status": "diagnostic-not-final"
+}

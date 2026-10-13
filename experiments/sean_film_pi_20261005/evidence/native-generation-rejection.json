@@ -1,0 +1,9 @@
+{
+  "owner": "Sean",
+  "sessionId": "01a10b84-3653-7bee-bbf3-264b426c9239",
+  "taskSource": "isolated test fixture",
+  "expectedCode": "STALE_GENERATION",
+  "revisionBefore": 20,
+  "revisionAfter": 20,
+  "rejected": true
+}

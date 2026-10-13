@@ -1,0 +1,14 @@
+{
+  "owner": "Sean",
+  "candidateId": "2c6af2d8-43b9-4dbc-b0dd-c79ac52fbd0b",
+  "mediaSha256": "1719da840e3bf3c7dd270c67587e5f5bba6423267cf89ae8493abf3f2bd9d3e6",
+  "evidence": "frames/sean_s03_2c6af2d8_contact.png",
+  "method": "Direct 2fps contact-sheet observation; not full-motion/audio proof",
+  "selected": true,
+  "observations": [
+    "B removes same outer garment while seated",
+    "At sampled 3.5 and 4 seconds garment body/sleeves rest on horizontal tabletop; hands release; chair back empty",
+    "A stays seated; single sword remains on table"
+  ],
+  "remaining": "Audio and all unsampled frames not evaluated"
+}

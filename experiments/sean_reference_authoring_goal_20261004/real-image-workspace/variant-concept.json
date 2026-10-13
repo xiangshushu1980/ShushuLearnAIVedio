@@ -1,0 +1,421 @@
+{
+  "owner": "Sean",
+  "step": {
+    "id": "0c99c7b2-3598-422d-bf3c-fffc7ce03213",
+    "planId": "d1886bd8-05f3-492b-bcef-9ae55694b185",
+    "entityId": "ad60ce45-800f-48e1-9800-530aeba81c55",
+    "entityName": "实验林岚·腕伤",
+    "candidateKey": "linlan_injured",
+    "candidateKind": "character",
+    "entityRevision": "f9e69575bb73fc7b0f77373b39135b16eb359f94e8b8b3c010714fff64874561",
+    "invariants": [
+      "唯一变化为人物自身右手腕的白色绷带",
+      "保持基础主图的身份、发型（短黑发中一缕白发）、面部、体型、灰色长外套、白衬衫与深蓝领带、深蓝长裤",
+      "画面右侧可见的左手保持原样，不得加绷带或任何包裹物",
+      "右手姿势微调仅为展示绷带，不作为人物固定属性",
+      "不凭空新增其他伤痕、饰物或道具，不改服装款式与配色"
+    ],
+    "key": "variant-concept",
+    "label": "variant-concept",
+    "modelId": "qwen-image-2.1",
+    "parameters": {},
+    "prompt": "依据基础主图（实验林岚已选定主形象，useBaseAppearance=true 解析到的当前基础主图）保留身份外观：成年夜班管理员，短黑发中只有一缕白发，灰色长外套（双排扣长风衣），白衬衫与深蓝领带，深蓝长裤，深色皮鞋；面部身份、发型、体型、画风不变。\n唯一变化：人物自身的右手腕缠白色绷带。在基础主图中该右手位于画面左侧，原图中这只手放在风衣口袋处、腕部被遮挡；为了能展示绷带，允许右手离开口袋、手腕略微抬起或转向镜头，使右腕的白色绷带清晰可见。该姿势调整只是本张图的取景需要，不作为新增的人物属性。\n画面右侧自然下垂的那只手是人物左手：保持与基础主图一致，不加绷带、不加任何包裹物；不要出现两只手都被缠上绷带的情况。\n除右手腕的白色绷带外，不凭空新增其他伤痕、饰物或道具；不改变服装款式与配色。单人全身静态设定图。",
+    "purpose": "受控质量实验，非已核实事实",
+    "referenceAssetIds": [
+      "5785b1f1-fd47-4e46-b419-9a58be21f15c"
+    ],
+    "role": "concept",
+    "styleId": "original",
+    "unknowns": [
+      "绷带的缠绕方式、层数与是否覆盖手掌资料未说明，保持未知",
+      "画面是否符合设计需生成后逐张检查"
+    ],
+    "useBaseAppearance": true,
+    "useMainAppearance": false,
+    "rootStepId": "db884800-0c94-474c-a524-389c6b619ca7",
+    "parentStepId": "db884800-0c94-474c-a524-389c6b619ca7",
+    "version": 2,
+    "reason": "用户接受首图视觉设计，后续基于当前资料与主图（不是因为首图需要修复）。保留 key=variant-concept、role=concept、模型 qwen-image-2.1、styleId=original、parameters={} 不变。按服务端规则修正引用方式：“主形象依赖与指定参考图不能同时使用”，因此 referenceAssetIds 留空，改由 useBaseAppearance=true 依赖基础主图（实验林岚已选定主形象），不把 V3 输出或任何错误输出当引用。变体仍是独立腕伤变体：仅人物自身右手腕增加白色绷带，其余身份外观沿用基础主图；本轮实看基础主图，人物右手在画面左侧且该手放在风衣口袋处，故允许为展示绷带微调右手姿势，画面右侧可见的左手保持原样不加绷带。",
+    "sessionId": "62870af9-da7a-411b-bdfa-bf79710614d1",
+    "runId": "b8ab7a3e-e04f-426b-b5ec-dd042c2f48a4",
+    "activeStepId": "0c99c7b2-3598-422d-bf3c-fffc7ce03213",
+    "isCurrent": true,
+    "revisionStatus": "current",
+    "revisionBasis": {
+      "contextHash": "265756729c1463e3bc2c764c1fef09abcce47a36e404b6801777264287fc4c2b",
+      "imageHashes": {},
+      "projectRevision": 2
+    },
+    "contentHash": "64c08c6de1a3f7804e29249123f97bb218895c7cf26083930c9027b55eb6da85",
+    "stale": false,
+    "issue": null,
+    "referenceEntityId": "76dab29d-6225-485f-b905-0f022e144159",
+    "sourceReferenceAssetIds": [],
+    "runs": []
+  },
+  "run": {
+    "id": "a7d6dfc1-03d1-4c6e-97b8-2ad77262ce9b",
+    "entityId": "ad60ce45-800f-48e1-9800-530aeba81c55",
+    "status": "succeeded",
+    "snapshot": {
+      "owner": "Sean",
+      "entity": {
+        "id": "ad60ce45-800f-48e1-9800-530aeba81c55",
+        "name": "实验林岚·腕伤",
+        "context": {
+          "appearance": "成年夜班管理员，短黑发中只有一缕白发，灰色长外套与深蓝长裤。人物身份、头发、体型与衣服在变体中不变。 右手腕白色绷带。",
+          "authoring": {
+            "candidateKey": "linlan_injured",
+            "newDesign": true,
+            "planId": "d1886bd8-05f3-492b-bcef-9ae55694b185",
+            "unknowns": [
+              "本组为实验设计，不代表生产资料；声音未设定"
+            ]
+          },
+          "description": "成年夜班管理员，短黑发中只有一缕白发，灰色长外套与深蓝长裤。人物身份、头发、体型与衣服在变体中不变。 唯一变化：右手腕白色绷带。",
+          "flags": [
+            "人物",
+            "质量实验"
+          ],
+          "owner": "Sean",
+          "type": "character",
+          "voiceDescription": ""
+        }
+      },
+      "model": {
+        "id": "qwen-image-2.1",
+        "name": "Qwen Image 2.1",
+        "version": 1,
+        "adapter": "comfy",
+        "enabled": true,
+        "references": {
+          "min": 0,
+          "max": 16,
+          "instruction": "按所选顺序对应 Image 1、Image 2…，在提示词中明确每张图的职责。节点支持 0–16 张；已有四图组合实验。"
+        },
+        "fields": {
+          "size": {
+            "type": "select",
+            "label": "画幅",
+            "default": "1536x1024",
+            "options": [
+              {
+                "value": "1536x1024",
+                "label": "3:2 · 1536 × 1024"
+              },
+              {
+                "value": "1024x1024",
+                "label": "1:1 · 1024 × 1024"
+              },
+              {
+                "value": "1344x768",
+                "label": "16:9 · 1344 × 768"
+              },
+              {
+                "value": "768x1344",
+                "label": "9:16 · 768 × 1344"
+              }
+            ]
+          },
+          "seed": {
+            "type": "integer",
+            "label": "随机种子",
+            "default": 42,
+            "min": 0,
+            "max": 2147483647
+          },
+          "steps": {
+            "type": "integer",
+            "label": "采样步数",
+            "default": 25,
+            "min": 1,
+            "max": 50
+          }
+        },
+        "localGpu": true
+      },
+      "style": {
+        "id": "original",
+        "name": "原始提示词",
+        "version": 1,
+        "promptSuffix": ""
+      },
+      "prompt": "依据基础主图（实验林岚已选定主形象，useBaseAppearance=true 解析到的当前基础主图）保留身份外观：成年夜班管理员，短黑发中只有一缕白发，灰色长外套（双排扣长风衣），白衬衫与深蓝领带，深蓝长裤，深色皮鞋；面部身份、发型、体型、画风不变。\n唯一变化：人物自身的右手腕缠白色绷带。在基础主图中该右手位于画面左侧，原图中这只手放在风衣口袋处、腕部被遮挡；为了能展示绷带，允许右手离开口袋、手腕略微抬起或转向镜头，使右腕的白色绷带清晰可见。该姿势调整只是本张图的取景需要，不作为新增的人物属性。\n画面右侧自然下垂的那只手是人物左手：保持与基础主图一致，不加绷带、不加任何包裹物；不要出现两只手都被缠上绷带的情况。\n除右手腕的白色绷带外，不凭空新增其他伤痕、饰物或道具；不改变服装款式与配色。单人全身静态设定图。",
+      "purpose": "受控质量实验，非已核实事实",
+      "effectivePrompt": "依据基础主图（实验林岚已选定主形象，useBaseAppearance=true 解析到的当前基础主图）保留身份外观：成年夜班管理员，短黑发中只有一缕白发，灰色长外套（双排扣长风衣），白衬衫与深蓝领带，深蓝长裤，深色皮鞋；面部身份、发型、体型、画风不变。\n唯一变化：人物自身的右手腕缠白色绷带。在基础主图中该右手位于画面左侧，原图中这只手放在风衣口袋处、腕部被遮挡；为了能展示绷带，允许右手离开口袋、手腕略微抬起或转向镜头，使右腕的白色绷带清晰可见。该姿势调整只是本张图的取景需要，不作为新增的人物属性。\n画面右侧自然下垂的那只手是人物左手：保持与基础主图一致，不加绷带、不加任何包裹物；不要出现两只手都被缠上绷带的情况。\n除右手腕的白色绷带外，不凭空新增其他伤痕、饰物或道具；不改变服装款式与配色。单人全身静态设定图。",
+      "parameters": {
+        "size": "1536x1024",
+        "seed": 42,
+        "steps": 25
+      },
+      "references": [
+        {
+          "id": "2c9b1956-637b-47b0-8668-b2eae8070211",
+          "hash": "11013803402d864886fc21c7027c08f2fec6e8d4a6a01d0ad8fb2c85edc8882b",
+          "kind": "setting",
+          "name": "概念图 e34c1f58 · 1",
+          "runId": null,
+          "createdAt": "2026-10-04T12:14:20.012Z"
+        }
+      ],
+      "template": {
+        "id": "qwen-image-2.1.1-refs",
+        "version": 1,
+        "hash": "ff56cf7134b69f84749120bba48e546964c3e7c38ee19ae6856606c71295ab46"
+      },
+      "authoring": {
+        "stepId": "0c99c7b2-3598-422d-bf3c-fffc7ce03213",
+        "rootStepId": "db884800-0c94-474c-a524-389c6b619ca7",
+        "version": 2,
+        "planId": "d1886bd8-05f3-492b-bcef-9ae55694b185",
+        "sourceRevision": "64c08c6de1a3f7804e29249123f97bb218895c7cf26083930c9027b55eb6da85",
+        "role": "concept",
+        "label": "variant-concept",
+        "invariants": [
+          "唯一变化为人物自身右手腕的白色绷带",
+          "保持基础主图的身份、发型（短黑发中一缕白发）、面部、体型、灰色长外套、白衬衫与深蓝领带、深蓝长裤",
+          "画面右侧可见的左手保持原样，不得加绷带或任何包裹物",
+          "右手姿势微调仅为展示绷带，不作为人物固定属性",
+          "不凭空新增其他伤痕、饰物或道具，不改服装款式与配色"
+        ],
+        "unknowns": [
+          "绷带的缠绕方式、层数与是否覆盖手掌资料未说明，保持未知",
+          "画面是否符合设计需生成后逐张检查"
+        ],
+        "batchId": "b9428c02-02b4-45f5-80f9-69f7b5816506",
+        "batchItemId": "aff08019-d3c2-475c-bd0a-68a63fca238d"
+      }
+    },
+    "progress": 100,
+    "phase": "生成完成 · 已加入历史",
+    "promptId": "fc09f179-428a-4cb1-8ff5-a56c155886b2",
+    "error": null,
+    "createdAt": "2026-10-04T12:14:20.279Z",
+    "updatedAt": "2026-10-04T12:14:36.846Z",
+    "completedAt": "2026-10-04T12:14:36.846Z",
+    "references": [
+      {
+        "id": "2c9b1956-637b-47b0-8668-b2eae8070211",
+        "entityId": "ad60ce45-800f-48e1-9800-530aeba81c55",
+        "kind": "setting",
+        "name": "概念图 e34c1f58 · 1",
+        "mime": "image/png",
+        "hash": "11013803402d864886fc21c7027c08f2fec6e8d4a6a01d0ad8fb2c85edc8882b",
+        "width": 1536,
+        "height": 1024,
+        "locked": false,
+        "protected": false,
+        "everConfirmed": false,
+        "description": "",
+        "descriptionSource": "empty",
+        "metadata": {
+          "owner": "Sean",
+          "source": "entity-reference",
+          "inheritance": {
+            "sourceEntityId": "76dab29d-6225-485f-b905-0f022e144159",
+            "sourceAssetId": "5785b1f1-fd47-4e46-b419-9a58be21f15c",
+            "sourceHash": "11013803402d864886fc21c7027c08f2fec6e8d4a6a01d0ad8fb2c85edc8882b",
+            "sourceRevision": "532ebfb4a71821cd4ac315a1b44460416c6d79641dfad325c630ac5d0acc7682"
+          }
+        },
+        "mediaType": "image",
+        "durationSec": null,
+        "runId": null,
+        "createdAt": "2026-10-04T12:14:20.012Z",
+        "deletedAt": null,
+        "url": "/api/assets/2c9b1956-637b-47b0-8668-b2eae8070211/content",
+        "position": 0
+      }
+    ],
+    "outputs": [
+      {
+        "id": "7a5d01a1-0b33-455e-9fd6-5c03b6077617",
+        "entityId": "ad60ce45-800f-48e1-9800-530aeba81c55",
+        "kind": "concept",
+        "name": "概念图 a7d6dfc1 · 1",
+        "mime": "image/png",
+        "hash": "28b5d2628640f191274a503c6115c66a0d058c2674097d8c7d1dfdf1add06d48",
+        "width": 1536,
+        "height": 1024,
+        "locked": true,
+        "protected": false,
+        "everConfirmed": false,
+        "description": "",
+        "descriptionSource": "empty",
+        "metadata": {
+          "source": "generation",
+          "template": {
+            "id": "qwen-image-2.1.1-refs",
+            "version": 1,
+            "hash": "ff56cf7134b69f84749120bba48e546964c3e7c38ee19ae6856606c71295ab46"
+          },
+          "authoring": {
+            "stepId": "0c99c7b2-3598-422d-bf3c-fffc7ce03213",
+            "rootStepId": "db884800-0c94-474c-a524-389c6b619ca7",
+            "version": 2,
+            "planId": "d1886bd8-05f3-492b-bcef-9ae55694b185",
+            "sourceRevision": "64c08c6de1a3f7804e29249123f97bb218895c7cf26083930c9027b55eb6da85",
+            "role": "concept",
+            "label": "variant-concept",
+            "invariants": [
+              "唯一变化为人物自身右手腕的白色绷带",
+              "保持基础主图的身份、发型（短黑发中一缕白发）、面部、体型、灰色长外套、白衬衫与深蓝领带、深蓝长裤",
+              "画面右侧可见的左手保持原样，不得加绷带或任何包裹物",
+              "右手姿势微调仅为展示绷带，不作为人物固定属性",
+              "不凭空新增其他伤痕、饰物或道具，不改服装款式与配色"
+            ],
+            "unknowns": [
+              "绷带的缠绕方式、层数与是否覆盖手掌资料未说明，保持未知",
+              "画面是否符合设计需生成后逐张检查"
+            ],
+            "batchId": "b9428c02-02b4-45f5-80f9-69f7b5816506",
+            "batchItemId": "aff08019-d3c2-475c-bd0a-68a63fca238d"
+          },
+          "outputIndex": 0,
+          "inputAssetIds": [
+            "2c9b1956-637b-47b0-8668-b2eae8070211"
+          ],
+          "provider": "comfy",
+          "promptId": "fc09f179-428a-4cb1-8ff5-a56c155886b2",
+          "outputFiles": [
+            {
+              "filename": "concept_00001_.png",
+              "subfolder": "sean_reference_workspace/a7d6dfc1-03d1-4c6e-97b8-2ad77262ce9b",
+              "type": "output",
+              "id": "d8ecdf2f-9046-49b2-a638-373e31fc4479",
+              "nodeId": "9"
+            }
+          ],
+          "owner": "Sean"
+        },
+        "mediaType": "image",
+        "durationSec": null,
+        "runId": "a7d6dfc1-03d1-4c6e-97b8-2ad77262ce9b",
+        "createdAt": "2026-10-04T12:14:36.846Z",
+        "deletedAt": null,
+        "url": "/api/assets/7a5d01a1-0b33-455e-9fd6-5c03b6077617/content"
+      }
+    ]
+  },
+  "execution": {
+    "workflow": {
+      "1": {
+        "class_type": "UNETLoader",
+        "inputs": {
+          "unet_name": "qwen_image_2.1_int8_convrot.safetensors",
+          "weight_dtype": "default"
+        }
+      },
+      "2": {
+        "class_type": "CLIPLoader",
+        "inputs": {
+          "clip_name": "qwen3vl_8b_int8_convrot.safetensors",
+          "type": "qwen_image",
+          "device": "default"
+        }
+      },
+      "3": {
+        "class_type": "VAELoader",
+        "inputs": {
+          "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+        }
+      },
+      "4": {
+        "class_type": "QwenImage21Cache",
+        "inputs": {
+          "model": [
+            "1",
+            0
+          ],
+          "device": "auto",
+          "dtype": "default"
+        }
+      },
+      "5": {
+        "class_type": "TextEncodeQwenImage21",
+        "inputs": {
+          "clip": [
+            "2",
+            0
+          ],
+          "prompt": "依据基础主图（实验林岚已选定主形象，useBaseAppearance=true 解析到的当前基础主图）保留身份外观：成年夜班管理员，短黑发中只有一缕白发，灰色长外套（双排扣长风衣），白衬衫与深蓝领带，深蓝长裤，深色皮鞋；面部身份、发型、体型、画风不变。\n唯一变化：人物自身的右手腕缠白色绷带。在基础主图中该右手位于画面左侧，原图中这只手放在风衣口袋处、腕部被遮挡；为了能展示绷带，允许右手离开口袋、手腕略微抬起或转向镜头，使右腕的白色绷带清晰可见。该姿势调整只是本张图的取景需要，不作为新增的人物属性。\n画面右侧自然下垂的那只手是人物左手：保持与基础主图一致，不加绷带、不加任何包裹物；不要出现两只手都被缠上绷带的情况。\n除右手腕的白色绷带外，不凭空新增其他伤痕、饰物或道具；不改变服装款式与配色。单人全身静态设定图。",
+          "negative_prompt": "",
+          "resolution": 1024,
+          "vae": [
+            "3",
+            0
+          ],
+          "images.image_1": [
+            "10",
+            0
+          ]
+        }
+      },
+      "6": {
+        "class_type": "EmptyLatentImage",
+        "inputs": {
+          "width": 1536,
+          "height": 1024,
+          "batch_size": 1
+        }
+      },
+      "7": {
+        "class_type": "KSampler",
+        "inputs": {
+          "model": [
+            "4",
+            0
+          ],
+          "positive": [
+            "5",
+            0
+          ],
+          "negative": [
+            "5",
+            1
+          ],
+          "latent_image": [
+            "6",
+            0
+          ],
+          "seed": 42,
+          "steps": 25,
+          "cfg": 1,
+          "sampler_name": "euler",
+          "scheduler": "simple",
+          "denoise": 1
+        }
+      },
+      "8": {
+        "class_type": "VAEDecode",
+        "inputs": {
+          "samples": [
+            "7",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        }
+      },
+      "9": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "8",
+            0
+          ],
+          "filename_prefix": "sean_reference_workspace/a7d6dfc1-03d1-4c6e-97b8-2ad77262ce9b/concept"
+        }
+      },
+      "10": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "sean_reference_workspace/2c9b1956-637b-47b0-8668-b2eae8070211.png"
+        }
+      }
+    },
+    "clientId": "sean-reference-a7d6dfc1-03d1-4c6e-97b8-2ad77262ce9b"
+  }
+}

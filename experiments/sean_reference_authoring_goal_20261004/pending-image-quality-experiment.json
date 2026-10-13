@@ -1,0 +1,986 @@
+{
+  "owner": "Sean",
+  "createdAt": "2026-10-04T10:44:35.938Z",
+  "status": "prepared-not-authorized-not-generated",
+  "maxBaselineGenerations": 8,
+  "maxCorrectionGenerations": 1,
+  "productionWrites": false,
+  "credentialsUsed": false,
+  "generationRunCount": 0,
+  "plan": {
+    "owner": "Sean",
+    "id": "d7111b33-6bfb-425a-a6e0-947f0a3f4561",
+    "projectId": "0b471b29-1722-403a-b746-692d7a89e807",
+    "sessionId": null,
+    "runId": null,
+    "candidates": [
+      {
+        "baseEntityId": null,
+        "changes": "",
+        "copySpatialDraft": false,
+        "images": [
+          {
+            "invariants": [
+              "只保留明确设计及实际参考依据，不补充未知"
+            ],
+            "key": "base-concept",
+            "label": "base-concept",
+            "modelId": "qwen-image-2.1",
+            "parameters": {},
+            "prompt": "成年夜班管理员，短黑发中只有一缕白发，灰色长外套与深蓝长裤。人物身份、头发、体型与衣服在变体中不变。 单人全身静态设定图，无新饰品。",
+            "purpose": "受控质量实验，非已核实事实",
+            "referenceAssetIds": [],
+            "role": "concept",
+            "styleId": "original",
+            "unknowns": [
+              "画面是否符合设计需生成后逐张检查"
+            ],
+            "useBaseAppearance": false,
+            "useMainAppearance": false
+          },
+          {
+            "invariants": [
+              "只保留明确设计及实际参考依据，不补充未知"
+            ],
+            "key": "base-v3",
+            "label": "base-v3",
+            "modelId": "qwen-v3-simple-face-front-back-side",
+            "parameters": {},
+            "prompt": "成年夜班管理员，短黑发中只有一缕白发，灰色长外套与深蓝长裤。人物身份、头发、体型与衣服在变体中不变。 单张脸部特写及正面、背面、侧面全身，保持参考身份与服装。",
+            "purpose": "受控质量实验，非已核实事实",
+            "referenceAssetIds": [],
+            "role": "three_view",
+            "styleId": "original",
+            "unknowns": [
+              "画面是否符合设计需生成后逐张检查"
+            ],
+            "useBaseAppearance": false,
+            "useMainAppearance": true
+          }
+        ],
+        "key": "linlan",
+        "kind": "character",
+        "profile": {
+          "appearance": "成年夜班管理员，短黑发中只有一缕白发，灰色长外套与深蓝长裤。人物身份、头发、体型与衣服在变体中不变。",
+          "description": "成年夜班管理员，短黑发中只有一缕白发，灰色长外套与深蓝长裤。人物身份、头发、体型与衣服在变体中不变。",
+          "flags": [
+            "人物",
+            "质量实验"
+          ],
+          "name": "实验林岚",
+          "voiceDescription": ""
+        },
+        "projectRole": {
+          "plotNotes": "",
+          "role": "质量实验候选"
+        },
+        "unknowns": [
+          "本组为实验设计，不代表生产资料；声音未设定"
+        ],
+        "variationOf": null
+      },
+      {
+        "baseEntityId": null,
+        "changes": "右手腕白色绷带，其他设计不变",
+        "copySpatialDraft": false,
+        "images": [
+          {
+            "invariants": [
+              "只保留明确设计及实际参考依据，不补充未知"
+            ],
+            "key": "variant-concept",
+            "label": "variant-concept",
+            "modelId": "qwen-image-2.1",
+            "parameters": {},
+            "prompt": "依据基础人物参考保留身份、白发、体型、灰外套及深蓝裤子。只在右手腕添加白色绷带，不添加新伤痕。",
+            "purpose": "受控质量实验，非已核实事实",
+            "referenceAssetIds": [],
+            "role": "concept",
+            "styleId": "original",
+            "unknowns": [
+              "画面是否符合设计需生成后逐张检查"
+            ],
+            "useBaseAppearance": true,
+            "useMainAppearance": false
+          }
+        ],
+        "key": "linlan_injured",
+        "kind": "character",
+        "profile": {
+          "appearance": "成年夜班管理员，短黑发中只有一缕白发，灰色长外套与深蓝长裤。人物身份、头发、体型与衣服在变体中不变。 右手腕白色绷带。",
+          "description": "成年夜班管理员，短黑发中只有一缕白发，灰色长外套与深蓝长裤。人物身份、头发、体型与衣服在变体中不变。 唯一变化：右手腕白色绷带。",
+          "flags": [
+            "人物",
+            "质量实验"
+          ],
+          "name": "实验林岚·腕伤",
+          "voiceDescription": ""
+        },
+        "projectRole": {
+          "plotNotes": "",
+          "role": "质量实验候选"
+        },
+        "unknowns": [
+          "本组为实验设计，不代表生产资料；声音未设定"
+        ],
+        "variationOf": "linlan"
+      },
+      {
+        "baseEntityId": null,
+        "changes": "",
+        "copySpatialDraft": false,
+        "images": [
+          {
+            "invariants": [
+              "只保留明确设计及实际参考依据，不补充未知"
+            ],
+            "key": "hall-overview",
+            "label": "hall-overview",
+            "modelId": "qwen-image-2.1",
+            "parameters": {},
+            "prompt": "长方形候车厅。固定设计：入口门在A墙，站台门在相对的C墙；单个长凳沿B墙；D墙有一扇窗。A/B/C/D是本实验的局部墙面标识，依次环绕房间，不代表地理方向。地面灰色瓷砖、墙面浅米色。绝对尺寸、不可见门外空间未知。 总览展示可见的固定区域，不显示人物。不把遮挡区域补成已知。",
+            "purpose": "受控质量实验，非已核实事实",
+            "referenceAssetIds": [],
+            "role": "scene_overview",
+            "styleId": "original",
+            "unknowns": [
+              "画面是否符合设计需生成后逐张检查"
+            ],
+            "useBaseAppearance": false,
+            "useMainAppearance": false
+          },
+          {
+            "invariants": [
+              "只保留明确设计及实际参考依据，不补充未知"
+            ],
+            "key": "hall-angle",
+            "label": "hall-angle",
+            "modelId": "qwen-image-2.1",
+            "parameters": {},
+            "prompt": "长方形候车厅。固定设计：入口门在A墙，站台门在相对的C墙；单个长凳沿B墙；D墙有一扇窗。A/B/C/D是本实验的局部墙面标识，依次环绕房间，不代表地理方向。地面灰色瓷砖、墙面浅米色。绝对尺寸、不可见门外空间未知。 同一候车厅另一角度，保留参考中门、长凳和窗的固定关系。未看到的区域保持未知，不把透视左右差异当作房间布局改变。",
+            "purpose": "受控质量实验，非已核实事实",
+            "referenceAssetIds": [],
+            "role": "scene_angle",
+            "styleId": "original",
+            "unknowns": [
+              "画面是否符合设计需生成后逐张检查"
+            ],
+            "useBaseAppearance": false,
+            "useMainAppearance": true
+          },
+          {
+            "invariants": [
+              "只保留明确设计及实际参考依据，不补充未知"
+            ],
+            "key": "hall-detail",
+            "label": "hall-detail",
+            "modelId": "qwen-image-2.1",
+            "parameters": {},
+            "prompt": "长方形候车厅。固定设计：入口门在A墙，站台门在相对的C墙；单个长凳沿B墙；D墙有一扇窗。A/B/C/D是本实验的局部墙面标识，依次环绕房间，不代表地理方向。地面灰色瓷砖、墙面浅米色。绝对尺寸、不可见门外空间未知。 取长凳及所在B墙附近的局部细节，保留参考材质、连接和位置，不新增设施。",
+            "purpose": "受控质量实验，非已核实事实",
+            "referenceAssetIds": [],
+            "role": "scene_detail",
+            "styleId": "original",
+            "unknowns": [
+              "画面是否符合设计需生成后逐张检查"
+            ],
+            "useBaseAppearance": false,
+            "useMainAppearance": true
+          }
+        ],
+        "key": "hall",
+        "kind": "scene",
+        "profile": {
+          "appearance": "长方形候车厅。固定设计：入口门在A墙，站台门在相对的C墙；单个长凳沿B墙；D墙有一扇窗。A/B/C/D是本实验的局部墙面标识，依次环绕房间，不代表地理方向。地面灰色瓷砖、墙面浅米色。绝对尺寸、不可见门外空间未知。",
+          "description": "长方形候车厅。固定设计：入口门在A墙，站台门在相对的C墙；单个长凳沿B墙；D墙有一扇窗。A/B/C/D是本实验的局部墙面标识，依次环绕房间，不代表地理方向。地面灰色瓷砖、墙面浅米色。绝对尺寸、不可见门外空间未知。",
+          "flags": [
+            "场景",
+            "质量实验"
+          ],
+          "name": "实验候车厅",
+          "voiceDescription": ""
+        },
+        "projectRole": {
+          "plotNotes": "",
+          "role": "质量实验候选"
+        },
+        "unknowns": [
+          "本组为实验设计，不代表生产资料；声音未设定"
+        ],
+        "variationOf": null
+      },
+      {
+        "baseEntityId": null,
+        "changes": "D墙窗旁一张红色告示纸；不改变结构和门窗长凳",
+        "copySpatialDraft": true,
+        "images": [
+          {
+            "invariants": [
+              "只保留明确设计及实际参考依据，不补充未知"
+            ],
+            "key": "hall-variant-overview",
+            "label": "hall-variant-overview",
+            "modelId": "qwen-image-2.1",
+            "parameters": {},
+            "prompt": "长方形候车厅。固定设计：入口门在A墙，站台门在相对的C墙；单个长凳沿B墙；D墙有一扇窗。A/B/C/D是本实验的局部墙面标识，依次环绕房间，不代表地理方向。地面灰色瓷砖、墙面浅米色。绝对尺寸、不可见门外空间未知。 依据基础参考保持同一空间，只在D墙窗旁增加一张红色告示纸。",
+            "purpose": "受控质量实验，非已核实事实",
+            "referenceAssetIds": [],
+            "role": "scene_overview",
+            "styleId": "original",
+            "unknowns": [
+              "画面是否符合设计需生成后逐张检查"
+            ],
+            "useBaseAppearance": true,
+            "useMainAppearance": false
+          },
+          {
+            "invariants": [
+              "只保留明确设计及实际参考依据，不补充未知"
+            ],
+            "key": "hall-variant-angle",
+            "label": "hall-variant-angle",
+            "modelId": "qwen-image-2.1",
+            "parameters": {},
+            "prompt": "长方形候车厅。固定设计：入口门在A墙，站台门在相对的C墙；单个长凳沿B墙；D墙有一扇窗。A/B/C/D是本实验的局部墙面标识，依次环绕房间，不代表地理方向。地面灰色瓷砖、墙面浅米色。绝对尺寸、不可见门外空间未知。 同一变体另一角度，D墙新增红色告示纸，其余固定结构不变。",
+            "purpose": "受控质量实验，非已核实事实",
+            "referenceAssetIds": [],
+            "role": "scene_angle",
+            "styleId": "original",
+            "unknowns": [
+              "画面是否符合设计需生成后逐张检查"
+            ],
+            "useBaseAppearance": false,
+            "useMainAppearance": true
+          }
+        ],
+        "key": "hall_notice",
+        "kind": "scene",
+        "profile": {
+          "appearance": "长方形候车厅。固定设计：入口门在A墙，站台门在相对的C墙；单个长凳沿B墙；D墙有一扇窗。A/B/C/D是本实验的局部墙面标识，依次环绕房间，不代表地理方向。地面灰色瓷砖、墙面浅米色。绝对尺寸、不可见门外空间未知。 D墙新增红色告示纸。",
+          "description": "长方形候车厅。固定设计：入口门在A墙，站台门在相对的C墙；单个长凳沿B墙；D墙有一扇窗。A/B/C/D是本实验的局部墙面标识，依次环绕房间，不代表地理方向。地面灰色瓷砖、墙面浅米色。绝对尺寸、不可见门外空间未知。 唯一变化：D墙新增一张红色告示纸，窗不动。",
+          "flags": [
+            "场景",
+            "质量实验"
+          ],
+          "name": "实验候车厅·告示",
+          "voiceDescription": ""
+        },
+        "projectRole": {
+          "plotNotes": "",
+          "role": "质量实验候选"
+        },
+        "unknowns": [
+          "本组为实验设计，不代表生产资料；声音未设定"
+        ],
+        "variationOf": "hall"
+      }
+    ],
+    "questions": [
+      "是否批准在现有共享实例上执行最多9次图片生成？",
+      "主图必须实际审阅选定，不自动选择；图像质量失败则保存失败结论。"
+    ],
+    "relations": [
+      {
+        "category": "story",
+        "description": "实验剧情职责，具体站位由拍摄本记录。",
+        "sourceKey": "linlan",
+        "target": {
+          "candidateKey": "hall",
+          "entityId": null
+        },
+        "type": "值守"
+      },
+      {
+        "category": "story",
+        "description": "实验变体剧情职责，不是固定空间。",
+        "sourceKey": "linlan_injured",
+        "target": {
+          "candidateKey": "hall_notice",
+          "entityId": null
+        },
+        "type": "值守"
+      }
+    ],
+    "summary": "八个基线输出，最多另做一个根据报告修订的输出。全部需明确生成授权。",
+    "title": "人物与场景质量实验计划",
+    "basis": {
+      "contextHash": "e8573a5a2b5b1b2cc89d77798d8d2f528e0d99e6e8bf557216e2b80473e26803",
+      "imageHashes": {},
+      "projectRevision": 1,
+      "workflowRulesVersion": 3
+    },
+    "contentHash": "1d33e398115f5d6b6c3d75f123fde10e5dc8153dfc2a54b1e57923c4c67979c6",
+    "applied": {
+      "appliedAt": "2026-10-04T10:44:35.861Z",
+      "createdEntityIds": [
+        "ff66e65a-5aa4-4faf-bb23-e6d39daae761",
+        "41702b06-e5fb-4062-a485-27d8f2dbdd2b",
+        "e600f942-d99f-41ab-af0c-928f3cb091f8",
+        "ff8a44bc-9503-4021-a29a-d46a3510c74e"
+      ],
+      "entities": {
+        "hall": "e600f942-d99f-41ab-af0c-928f3cb091f8",
+        "hall_notice": "ff8a44bc-9503-4021-a29a-d46a3510c74e",
+        "linlan": "ff66e65a-5aa4-4faf-bb23-e6d39daae761",
+        "linlan_injured": "41702b06-e5fb-4062-a485-27d8f2dbdd2b"
+      },
+      "existingEntityIds": [],
+      "owner": "Sean",
+      "planId": "d7111b33-6bfb-425a-a6e0-947f0a3f4561",
+      "steps": [
+        {
+          "entityId": "ff66e65a-5aa4-4faf-bb23-e6d39daae761",
+          "label": "base-concept",
+          "stepId": "ccbf9c56-da74-45fd-9203-950f75e54636"
+        },
+        {
+          "entityId": "ff66e65a-5aa4-4faf-bb23-e6d39daae761",
+          "label": "base-v3",
+          "stepId": "8596e787-634b-4c81-b7b6-5b88950ef4ad"
+        },
+        {
+          "entityId": "41702b06-e5fb-4062-a485-27d8f2dbdd2b",
+          "label": "variant-concept",
+          "stepId": "dbcd2991-59cb-46e5-bcdc-f4c5ee878403"
+        },
+        {
+          "entityId": "e600f942-d99f-41ab-af0c-928f3cb091f8",
+          "label": "hall-overview",
+          "stepId": "73c576cd-cda3-440d-8c85-7b6cde81c9db"
+        },
+        {
+          "entityId": "e600f942-d99f-41ab-af0c-928f3cb091f8",
+          "label": "hall-angle",
+          "stepId": "21bd0af2-3af5-48da-b291-979d60874471"
+        },
+        {
+          "entityId": "e600f942-d99f-41ab-af0c-928f3cb091f8",
+          "label": "hall-detail",
+          "stepId": "207b7ece-161c-4b41-95ff-e2c19fd0af64"
+        },
+        {
+          "entityId": "ff8a44bc-9503-4021-a29a-d46a3510c74e",
+          "label": "hall-variant-overview",
+          "stepId": "3f42b6b6-bfbe-4687-985c-5e3c946579dd"
+        },
+        {
+          "entityId": "ff8a44bc-9503-4021-a29a-d46a3510c74e",
+          "label": "hall-variant-angle",
+          "stepId": "1984af24-cee9-45d3-b4e7-f421d24bffe7"
+        }
+      ]
+    },
+    "stale": false,
+    "createdAt": "2026-10-04T10:44:35.856Z"
+  },
+  "steps": [
+    {
+      "id": "1984af24-cee9-45d3-b4e7-f421d24bffe7",
+      "planId": "d7111b33-6bfb-425a-a6e0-947f0a3f4561",
+      "entityId": "ff8a44bc-9503-4021-a29a-d46a3510c74e",
+      "entityName": "实验候车厅·告示",
+      "candidateKey": "hall_notice",
+      "candidateKind": "scene",
+      "entityRevision": "b73994f88d0c6d106cca20e690fbfa141e289960b06e62d99dcca53cf51caedd",
+      "invariants": [
+        "只保留明确设计及实际参考依据，不补充未知"
+      ],
+      "key": "hall-variant-angle",
+      "label": "hall-variant-angle",
+      "modelId": "qwen-image-2.1",
+      "parameters": {},
+      "prompt": "长方形候车厅。固定设计：入口门在A墙，站台门在相对的C墙；单个长凳沿B墙；D墙有一扇窗。A/B/C/D是本实验的局部墙面标识，依次环绕房间，不代表地理方向。地面灰色瓷砖、墙面浅米色。绝对尺寸、不可见门外空间未知。 同一变体另一角度，D墙新增红色告示纸，其余固定结构不变。",
+      "purpose": "受控质量实验，非已核实事实",
+      "referenceAssetIds": [],
+      "role": "scene_angle",
+      "styleId": "original",
+      "unknowns": [
+        "画面是否符合设计需生成后逐张检查"
+      ],
+      "useBaseAppearance": false,
+      "useMainAppearance": true,
+      "rootStepId": "1984af24-cee9-45d3-b4e7-f421d24bffe7",
+      "parentStepId": null,
+      "version": 1,
+      "reason": "",
+      "sessionId": null,
+      "runId": null,
+      "activeStepId": "1984af24-cee9-45d3-b4e7-f421d24bffe7",
+      "isCurrent": true,
+      "revisionStatus": "current",
+      "revisionBasis": null,
+      "contentHash": "e1a8c8787d131832702a247057d0a3bd046b5616318e9514339ecb18b0957a25",
+      "stale": false,
+      "issue": "需要先选定当前主形象",
+      "referenceEntityId": "ff8a44bc-9503-4021-a29a-d46a3510c74e",
+      "sourceReferenceAssetIds": [],
+      "runs": []
+    },
+    {
+      "id": "207b7ece-161c-4b41-95ff-e2c19fd0af64",
+      "planId": "d7111b33-6bfb-425a-a6e0-947f0a3f4561",
+      "entityId": "e600f942-d99f-41ab-af0c-928f3cb091f8",
+      "entityName": "实验候车厅",
+      "candidateKey": "hall",
+      "candidateKind": "scene",
+      "entityRevision": "6ad63dc8a50819a48e47686c07a3abaf85380af04afd146ca34bb47e0d09e853",
+      "invariants": [
+        "只保留明确设计及实际参考依据，不补充未知"
+      ],
+      "key": "hall-detail",
+      "label": "hall-detail",
+      "modelId": "qwen-image-2.1",
+      "parameters": {},
+      "prompt": "长方形候车厅。固定设计：入口门在A墙，站台门在相对的C墙；单个长凳沿B墙；D墙有一扇窗。A/B/C/D是本实验的局部墙面标识，依次环绕房间，不代表地理方向。地面灰色瓷砖、墙面浅米色。绝对尺寸、不可见门外空间未知。 取长凳及所在B墙附近的局部细节，保留参考材质、连接和位置，不新增设施。",
+      "purpose": "受控质量实验，非已核实事实",
+      "referenceAssetIds": [],
+      "role": "scene_detail",
+      "styleId": "original",
+      "unknowns": [
+        "画面是否符合设计需生成后逐张检查"
+      ],
+      "useBaseAppearance": false,
+      "useMainAppearance": true,
+      "rootStepId": "207b7ece-161c-4b41-95ff-e2c19fd0af64",
+      "parentStepId": null,
+      "version": 1,
+      "reason": "",
+      "sessionId": null,
+      "runId": null,
+      "activeStepId": "207b7ece-161c-4b41-95ff-e2c19fd0af64",
+      "isCurrent": true,
+      "revisionStatus": "current",
+      "revisionBasis": null,
+      "contentHash": "1dda37861605e1e18cca3a8a4fff922449a1c7b7449e2869de2e857e87ffd9e4",
+      "stale": false,
+      "issue": "需要先选定当前主形象",
+      "referenceEntityId": "e600f942-d99f-41ab-af0c-928f3cb091f8",
+      "sourceReferenceAssetIds": [],
+      "runs": []
+    },
+    {
+      "id": "21bd0af2-3af5-48da-b291-979d60874471",
+      "planId": "d7111b33-6bfb-425a-a6e0-947f0a3f4561",
+      "entityId": "e600f942-d99f-41ab-af0c-928f3cb091f8",
+      "entityName": "实验候车厅",
+      "candidateKey": "hall",
+      "candidateKind": "scene",
+      "entityRevision": "6ad63dc8a50819a48e47686c07a3abaf85380af04afd146ca34bb47e0d09e853",
+      "invariants": [
+        "只保留明确设计及实际参考依据，不补充未知"
+      ],
+      "key": "hall-angle",
+      "label": "hall-angle",
+      "modelId": "qwen-image-2.1",
+      "parameters": {},
+      "prompt": "长方形候车厅。固定设计：入口门在A墙，站台门在相对的C墙；单个长凳沿B墙；D墙有一扇窗。A/B/C/D是本实验的局部墙面标识，依次环绕房间，不代表地理方向。地面灰色瓷砖、墙面浅米色。绝对尺寸、不可见门外空间未知。 同一候车厅另一角度，保留参考中门、长凳和窗的固定关系。未看到的区域保持未知，不把透视左右差异当作房间布局改变。",
+      "purpose": "受控质量实验，非已核实事实",
+      "referenceAssetIds": [],
+      "role": "scene_angle",
+      "styleId": "original",
+      "unknowns": [
+        "画面是否符合设计需生成后逐张检查"
+      ],
+      "useBaseAppearance": false,
+      "useMainAppearance": true,
+      "rootStepId": "21bd0af2-3af5-48da-b291-979d60874471",
+      "parentStepId": null,
+      "version": 1,
+      "reason": "",
+      "sessionId": null,
+      "runId": null,
+      "activeStepId": "21bd0af2-3af5-48da-b291-979d60874471",
+      "isCurrent": true,
+      "revisionStatus": "current",
+      "revisionBasis": null,
+      "contentHash": "d7a7a0301aaad0b5972a6bcf1c1b7b28532082e29203db80a3e3f50b976c9550",
+      "stale": false,
+      "issue": "需要先选定当前主形象",
+      "referenceEntityId": "e600f942-d99f-41ab-af0c-928f3cb091f8",
+      "sourceReferenceAssetIds": [],
+      "runs": []
+    },
+    {
+      "id": "3f42b6b6-bfbe-4687-985c-5e3c946579dd",
+      "planId": "d7111b33-6bfb-425a-a6e0-947f0a3f4561",
+      "entityId": "ff8a44bc-9503-4021-a29a-d46a3510c74e",
+      "entityName": "实验候车厅·告示",
+      "candidateKey": "hall_notice",
+      "candidateKind": "scene",
+      "entityRevision": "b73994f88d0c6d106cca20e690fbfa141e289960b06e62d99dcca53cf51caedd",
+      "invariants": [
+        "只保留明确设计及实际参考依据，不补充未知"
+      ],
+      "key": "hall-variant-overview",
+      "label": "hall-variant-overview",
+      "modelId": "qwen-image-2.1",
+      "parameters": {},
+      "prompt": "长方形候车厅。固定设计：入口门在A墙，站台门在相对的C墙；单个长凳沿B墙；D墙有一扇窗。A/B/C/D是本实验的局部墙面标识，依次环绕房间，不代表地理方向。地面灰色瓷砖、墙面浅米色。绝对尺寸、不可见门外空间未知。 依据基础参考保持同一空间，只在D墙窗旁增加一张红色告示纸。",
+      "purpose": "受控质量实验，非已核实事实",
+      "referenceAssetIds": [],
+      "role": "scene_overview",
+      "styleId": "original",
+      "unknowns": [
+        "画面是否符合设计需生成后逐张检查"
+      ],
+      "useBaseAppearance": true,
+      "useMainAppearance": false,
+      "rootStepId": "3f42b6b6-bfbe-4687-985c-5e3c946579dd",
+      "parentStepId": null,
+      "version": 1,
+      "reason": "",
+      "sessionId": null,
+      "runId": null,
+      "activeStepId": "3f42b6b6-bfbe-4687-985c-5e3c946579dd",
+      "isCurrent": true,
+      "revisionStatus": "current",
+      "revisionBasis": null,
+      "contentHash": "39aa2574f8fe899c77a12951c578c17598838c8dfcef448ec393583c40b563a8",
+      "stale": false,
+      "issue": "需要先选定基础实体主形象",
+      "referenceEntityId": "e600f942-d99f-41ab-af0c-928f3cb091f8",
+      "sourceReferenceAssetIds": [],
+      "runs": []
+    },
+    {
+      "id": "73c576cd-cda3-440d-8c85-7b6cde81c9db",
+      "planId": "d7111b33-6bfb-425a-a6e0-947f0a3f4561",
+      "entityId": "e600f942-d99f-41ab-af0c-928f3cb091f8",
+      "entityName": "实验候车厅",
+      "candidateKey": "hall",
+      "candidateKind": "scene",
+      "entityRevision": "6ad63dc8a50819a48e47686c07a3abaf85380af04afd146ca34bb47e0d09e853",
+      "invariants": [
+        "只保留明确设计及实际参考依据，不补充未知"
+      ],
+      "key": "hall-overview",
+      "label": "hall-overview",
+      "modelId": "qwen-image-2.1",
+      "parameters": {},
+      "prompt": "长方形候车厅。固定设计：入口门在A墙，站台门在相对的C墙；单个长凳沿B墙；D墙有一扇窗。A/B/C/D是本实验的局部墙面标识，依次环绕房间，不代表地理方向。地面灰色瓷砖、墙面浅米色。绝对尺寸、不可见门外空间未知。 总览展示可见的固定区域，不显示人物。不把遮挡区域补成已知。",
+      "purpose": "受控质量实验，非已核实事实",
+      "referenceAssetIds": [],
+      "role": "scene_overview",
+      "styleId": "original",
+      "unknowns": [
+        "画面是否符合设计需生成后逐张检查"
+      ],
+      "useBaseAppearance": false,
+      "useMainAppearance": false,
+      "rootStepId": "73c576cd-cda3-440d-8c85-7b6cde81c9db",
+      "parentStepId": null,
+      "version": 1,
+      "reason": "",
+      "sessionId": null,
+      "runId": null,
+      "activeStepId": "73c576cd-cda3-440d-8c85-7b6cde81c9db",
+      "isCurrent": true,
+      "revisionStatus": "current",
+      "revisionBasis": null,
+      "contentHash": "d528707e0a79b3724014d131cff5e23ab26b316c5e2734442d5cd27af94405c0",
+      "stale": false,
+      "issue": null,
+      "referenceEntityId": "e600f942-d99f-41ab-af0c-928f3cb091f8",
+      "sourceReferenceAssetIds": [],
+      "runs": []
+    },
+    {
+      "id": "8596e787-634b-4c81-b7b6-5b88950ef4ad",
+      "planId": "d7111b33-6bfb-425a-a6e0-947f0a3f4561",
+      "entityId": "ff66e65a-5aa4-4faf-bb23-e6d39daae761",
+      "entityName": "实验林岚",
+      "candidateKey": "linlan",
+      "candidateKind": "character",
+      "entityRevision": "e44e81b32132a0369067fcbc7df4bfeda767d63818200b04391a6cbf5057847a",
+      "invariants": [
+        "只保留明确设计及实际参考依据，不补充未知"
+      ],
+      "key": "base-v3",
+      "label": "base-v3",
+      "modelId": "qwen-v3-simple-face-front-back-side",
+      "parameters": {},
+      "prompt": "成年夜班管理员，短黑发中只有一缕白发，灰色长外套与深蓝长裤。人物身份、头发、体型与衣服在变体中不变。 单张脸部特写及正面、背面、侧面全身，保持参考身份与服装。",
+      "purpose": "受控质量实验，非已核实事实",
+      "referenceAssetIds": [],
+      "role": "three_view",
+      "styleId": "original",
+      "unknowns": [
+        "画面是否符合设计需生成后逐张检查"
+      ],
+      "useBaseAppearance": false,
+      "useMainAppearance": true,
+      "rootStepId": "8596e787-634b-4c81-b7b6-5b88950ef4ad",
+      "parentStepId": null,
+      "version": 1,
+      "reason": "",
+      "sessionId": null,
+      "runId": null,
+      "activeStepId": "8596e787-634b-4c81-b7b6-5b88950ef4ad",
+      "isCurrent": true,
+      "revisionStatus": "current",
+      "revisionBasis": null,
+      "contentHash": "1980b6cb536cf6a3836df25532ed19501506d54c6c06406e08c3db5f6c76751c",
+      "stale": false,
+      "issue": "需要先选定当前主形象",
+      "referenceEntityId": "ff66e65a-5aa4-4faf-bb23-e6d39daae761",
+      "sourceReferenceAssetIds": [],
+      "runs": []
+    },
+    {
+      "id": "ccbf9c56-da74-45fd-9203-950f75e54636",
+      "planId": "d7111b33-6bfb-425a-a6e0-947f0a3f4561",
+      "entityId": "ff66e65a-5aa4-4faf-bb23-e6d39daae761",
+      "entityName": "实验林岚",
+      "candidateKey": "linlan",
+      "candidateKind": "character",
+      "entityRevision": "e44e81b32132a0369067fcbc7df4bfeda767d63818200b04391a6cbf5057847a",
+      "invariants": [
+        "只保留明确设计及实际参考依据，不补充未知"
+      ],
+      "key": "base-concept",
+      "label": "base-concept",
+      "modelId": "qwen-image-2.1",
+      "parameters": {},
+      "prompt": "成年夜班管理员，短黑发中只有一缕白发，灰色长外套与深蓝长裤。人物身份、头发、体型与衣服在变体中不变。 单人全身静态设定图，无新饰品。",
+      "purpose": "受控质量实验，非已核实事实",
+      "referenceAssetIds": [],
+      "role": "concept",
+      "styleId": "original",
+      "unknowns": [
+        "画面是否符合设计需生成后逐张检查"
+      ],
+      "useBaseAppearance": false,
+      "useMainAppearance": false,
+      "rootStepId": "ccbf9c56-da74-45fd-9203-950f75e54636",
+      "parentStepId": null,
+      "version": 1,
+      "reason": "",
+      "sessionId": null,
+      "runId": null,
+      "activeStepId": "ccbf9c56-da74-45fd-9203-950f75e54636",
+      "isCurrent": true,
+      "revisionStatus": "current",
+      "revisionBasis": null,
+      "contentHash": "a7541855a174b3ac01fdd40f8d654ed88d92d726d53dc08e4b0f7b4d7031425d",
+      "stale": false,
+      "issue": null,
+      "referenceEntityId": "ff66e65a-5aa4-4faf-bb23-e6d39daae761",
+      "sourceReferenceAssetIds": [],
+      "runs": []
+    },
+    {
+      "id": "dbcd2991-59cb-46e5-bcdc-f4c5ee878403",
+      "planId": "d7111b33-6bfb-425a-a6e0-947f0a3f4561",
+      "entityId": "41702b06-e5fb-4062-a485-27d8f2dbdd2b",
+      "entityName": "实验林岚·腕伤",
+      "candidateKey": "linlan_injured",
+      "candidateKind": "character",
+      "entityRevision": "4cc6190d3390c43ebb0ca2d59ab52ce3153b9a83be75852f04bde8bfceda6556",
+      "invariants": [
+        "只保留明确设计及实际参考依据，不补充未知"
+      ],
+      "key": "variant-concept",
+      "label": "variant-concept",
+      "modelId": "qwen-image-2.1",
+      "parameters": {},
+      "prompt": "依据基础人物参考保留身份、白发、体型、灰外套及深蓝裤子。只在右手腕添加白色绷带，不添加新伤痕。",
+      "purpose": "受控质量实验，非已核实事实",
+      "referenceAssetIds": [],
+      "role": "concept",
+      "styleId": "original",
+      "unknowns": [
+        "画面是否符合设计需生成后逐张检查"
+      ],
+      "useBaseAppearance": true,
+      "useMainAppearance": false,
+      "rootStepId": "dbcd2991-59cb-46e5-bcdc-f4c5ee878403",
+      "parentStepId": null,
+      "version": 1,
+      "reason": "",
+      "sessionId": null,
+      "runId": null,
+      "activeStepId": "dbcd2991-59cb-46e5-bcdc-f4c5ee878403",
+      "isCurrent": true,
+      "revisionStatus": "current",
+      "revisionBasis": null,
+      "contentHash": "625aaf4337d8e88141772ee6317d8c21a8bf88a9bc904704877034db8527dca1",
+      "stale": false,
+      "issue": "需要先选定基础实体主形象",
+      "referenceEntityId": "ff66e65a-5aa4-4faf-bb23-e6d39daae761",
+      "sourceReferenceAssetIds": [],
+      "runs": []
+    }
+  ],
+  "initialWorkflowPreviews": [
+    {
+      "stepKey": "hall-overview",
+      "workflow": {
+        "owner": "Sean",
+        "stepId": "73c576cd-cda3-440d-8c85-7b6cde81c9db",
+        "input": {
+          "modelId": "qwen-image-2.1",
+          "styleId": "original",
+          "prompt": "长方形候车厅。固定设计：入口门在A墙，站台门在相对的C墙；单个长凳沿B墙；D墙有一扇窗。A/B/C/D是本实验的局部墙面标识，依次环绕房间，不代表地理方向。地面灰色瓷砖、墙面浅米色。绝对尺寸、不可见门外空间未知。 总览展示可见的固定区域，不显示人物。不把遮挡区域补成已知。",
+          "purpose": "受控质量实验，非已核实事实",
+          "references": [],
+          "parameters": {
+            "size": "1536x1024",
+            "seed": 42,
+            "steps": 25
+          }
+        },
+        "template": {
+          "id": "qwen-image-2.1",
+          "hash": "ff56cf7134b69f84749120bba48e546964c3e7c38ee19ae6856606c71295ab46"
+        },
+        "previewOnly": true,
+        "notice": "参考图节点使用稳定 ID 占位；实际上传和执行沿用生成服务。此接口不提交生成。",
+        "workflow": {
+          "1": {
+            "class_type": "UNETLoader",
+            "inputs": {
+              "unet_name": "qwen_image_2.1_int8_convrot.safetensors",
+              "weight_dtype": "default"
+            }
+          },
+          "2": {
+            "class_type": "CLIPLoader",
+            "inputs": {
+              "clip_name": "qwen3vl_8b_int8_convrot.safetensors",
+              "type": "qwen_image",
+              "device": "default"
+            }
+          },
+          "3": {
+            "class_type": "VAELoader",
+            "inputs": {
+              "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+            }
+          },
+          "4": {
+            "class_type": "QwenImage21Cache",
+            "inputs": {
+              "model": [
+                "1",
+                0
+              ],
+              "device": "auto",
+              "dtype": "default"
+            }
+          },
+          "5": {
+            "class_type": "TextEncodeQwenImage21",
+            "inputs": {
+              "clip": [
+                "2",
+                0
+              ],
+              "prompt": "长方形候车厅。固定设计：入口门在A墙，站台门在相对的C墙；单个长凳沿B墙；D墙有一扇窗。A/B/C/D是本实验的局部墙面标识，依次环绕房间，不代表地理方向。地面灰色瓷砖、墙面浅米色。绝对尺寸、不可见门外空间未知。 总览展示可见的固定区域，不显示人物。不把遮挡区域补成已知。",
+              "negative_prompt": "",
+              "resolution": 1024,
+              "vae": [
+                "3",
+                0
+              ]
+            }
+          },
+          "6": {
+            "class_type": "EmptyLatentImage",
+            "inputs": {
+              "width": 1536,
+              "height": 1024,
+              "batch_size": 1
+            }
+          },
+          "7": {
+            "class_type": "KSampler",
+            "inputs": {
+              "model": [
+                "4",
+                0
+              ],
+              "positive": [
+                "5",
+                0
+              ],
+              "negative": [
+                "5",
+                1
+              ],
+              "latent_image": [
+                "6",
+                0
+              ],
+              "seed": 42,
+              "steps": 25,
+              "cfg": 1,
+              "sampler_name": "euler",
+              "scheduler": "simple",
+              "denoise": 1
+            }
+          },
+          "8": {
+            "class_type": "VAEDecode",
+            "inputs": {
+              "samples": [
+                "7",
+                0
+              ],
+              "vae": [
+                "3",
+                0
+              ]
+            }
+          },
+          "9": {
+            "class_type": "SaveImage",
+            "inputs": {
+              "images": [
+                "8",
+                0
+              ],
+              "filename_prefix": "sean_reference_workspace/73c576cd-cda3-440d-8c85-7b6cde81c9db/concept"
+            }
+          }
+        }
+      }
+    },
+    {
+      "stepKey": "base-concept",
+      "workflow": {
+        "owner": "Sean",
+        "stepId": "ccbf9c56-da74-45fd-9203-950f75e54636",
+        "input": {
+          "modelId": "qwen-image-2.1",
+          "styleId": "original",
+          "prompt": "成年夜班管理员，短黑发中只有一缕白发，灰色长外套与深蓝长裤。人物身份、头发、体型与衣服在变体中不变。 单人全身静态设定图，无新饰品。",
+          "purpose": "受控质量实验，非已核实事实",
+          "references": [],
+          "parameters": {
+            "size": "1536x1024",
+            "seed": 42,
+            "steps": 25
+          }
+        },
+        "template": {
+          "id": "qwen-image-2.1",
+          "hash": "ff56cf7134b69f84749120bba48e546964c3e7c38ee19ae6856606c71295ab46"
+        },
+        "previewOnly": true,
+        "notice": "参考图节点使用稳定 ID 占位；实际上传和执行沿用生成服务。此接口不提交生成。",
+        "workflow": {
+          "1": {
+            "class_type": "UNETLoader",
+            "inputs": {
+              "unet_name": "qwen_image_2.1_int8_convrot.safetensors",
+              "weight_dtype": "default"
+            }
+          },
+          "2": {
+            "class_type": "CLIPLoader",
+            "inputs": {
+              "clip_name": "qwen3vl_8b_int8_convrot.safetensors",
+              "type": "qwen_image",
+              "device": "default"
+            }
+          },
+          "3": {
+            "class_type": "VAELoader",
+            "inputs": {
+              "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+            }
+          },
+          "4": {
+            "class_type": "QwenImage21Cache",
+            "inputs": {
+              "model": [
+                "1",
+                0
+              ],
+              "device": "auto",
+              "dtype": "default"
+            }
+          },
+          "5": {
+            "class_type": "TextEncodeQwenImage21",
+            "inputs": {
+              "clip": [
+                "2",
+                0
+              ],
+              "prompt": "成年夜班管理员，短黑发中只有一缕白发，灰色长外套与深蓝长裤。人物身份、头发、体型与衣服在变体中不变。 单人全身静态设定图，无新饰品。",
+              "negative_prompt": "",
+              "resolution": 1024,
+              "vae": [
+                "3",
+                0
+              ]
+            }
+          },
+          "6": {
+            "class_type": "EmptyLatentImage",
+            "inputs": {
+              "width": 1536,
+              "height": 1024,
+              "batch_size": 1
+            }
+          },
+          "7": {
+            "class_type": "KSampler",
+            "inputs": {
+              "model": [
+                "4",
+                0
+              ],
+              "positive": [
+                "5",
+                0
+              ],
+              "negative": [
+                "5",
+                1
+              ],
+              "latent_image": [
+                "6",
+                0
+              ],
+              "seed": 42,
+              "steps": 25,
+              "cfg": 1,
+              "sampler_name": "euler",
+              "scheduler": "simple",
+              "denoise": 1
+            }
+          },
+          "8": {
+            "class_type": "VAEDecode",
+            "inputs": {
+              "samples": [
+                "7",
+                0
+              ],
+              "vae": [
+                "3",
+                0
+              ]
+            }
+          },
+          "9": {
+            "class_type": "SaveImage",
+            "inputs": {
+              "images": [
+                "8",
+                0
+              ],
+              "filename_prefix": "sean_reference_workspace/ccbf9c56-da74-45fd-9203-950f75e54636/concept"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "notes": [
+    "UUID来自已清理临时验证库，不能直接作为生产API输入。实施时按本计划新建隔离实验资料。",
+    "真实输出才用于视觉检验；本计划不是图片质量证明。"
+  ]
+}

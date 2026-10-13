@@ -1,0 +1,297 @@
+{
+  "capabilities": {
+    "assetContent": {
+      "deletedContentReturns": 404,
+      "range": true,
+      "snapshotRetainsBytes": false,
+      "stableIds": true
+    },
+    "confirmation": {
+      "lockedIsConfirmation": false,
+      "source": "appearance_versions / view_confirmations / voice_versions",
+      "supported": true,
+      "supportedRoles": [
+        "main_appearance",
+        "three_view",
+        "voice"
+      ],
+      "unsupportedRoles": [
+        "setting",
+        "concept",
+        "voice_emotion",
+        "voice_source",
+        "sound_effect"
+      ]
+    },
+    "entityManagement": false,
+    "entityText": {
+      "fields": [
+        "type",
+        "description",
+        "appearance",
+        "voiceDescription"
+      ],
+      "formalSchema": false,
+      "storage": "optional explicit string fields in entities.context"
+    },
+    "owner": "Sean",
+    "promptVersions": {
+      "source": "immutable run snapshot; use contentHash and sourceRunId",
+      "supported": false
+    },
+    "relations": {
+      "directScope": "both endpoints must be explicitly selected",
+      "reason": "当前 Reference 数据层没有关系表；不解析任意 context.relations",
+      "supported": false
+    },
+    "reviewStatus": {
+      "supported": false
+    },
+    "soundEffects": {
+      "reason": "当前没有音效素材模型或登记入口",
+      "supported": false
+    }
+  },
+  "contentHash": "52379821c048fc7a4c98498fc94499d6aec3324d03da3fe5af5a7b100db422b8",
+  "createdAt": "2026-10-03T05:47:21.357Z",
+  "entities": [
+    {
+      "appearance": null,
+      "assets": [
+        {
+          "assetId": "1e2f367f-132f-4c92-93d7-660422eaf8be",
+          "available": true,
+          "confirmation": {
+            "isCurrent": true,
+            "records": [
+              {
+                "confirmationId": "7241220e-968d-4db9-bc31-0095b4b6c62b",
+                "createdAt": "2026-10-03T04:47:54.564Z",
+                "kind": "voice",
+                "version": 2
+              }
+            ],
+            "status": "confirmed"
+          },
+          "contentHash": "136dc791274fa4bf7f7a5cb4667c04bbaf8affd92c7473775cf295846215ff1b",
+          "contentUrl": "/api/reference/v1/assets/1e2f367f-132f-4c92-93d7-660422eaf8be/content",
+          "createdAt": "2026-10-03T04:47:01.945Z",
+          "description": null,
+          "durationSec": 6.08,
+          "entityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+          "fileSize": 291918,
+          "height": null,
+          "layout": null,
+          "mediaType": "audio",
+          "mime": "audio/wav",
+          "name": "声音 · 基础音色 · 中性样音 4c0619b2 · 1",
+          "reviewStatus": null,
+          "role": "voice",
+          "sourceRevision": "3d819b1b2fa737d60689128db57446d133b0287e98e2c66cf4b82071774bc8ff",
+          "sourceRunId": "4c0619b2-04b1-41a7-a7a4-1fba6bb36235",
+          "width": null
+        },
+        {
+          "assetId": "432cfa98-83f2-416e-b600-01090075fb73",
+          "available": true,
+          "confirmation": {
+            "isCurrent": true,
+            "records": [
+              {
+                "confirmationId": "51d3a7b5-90e6-4e6c-9f5d-e09a643e0a08",
+                "createdAt": "2026-10-02T16:59:51.554Z",
+                "kind": "view",
+                "version": 2
+              }
+            ],
+            "status": "confirmed"
+          },
+          "contentHash": "dff6328599b5a4fe878ce234590d864b83b2a936c89032fecabac610495aadd9",
+          "contentUrl": "/api/reference/v1/assets/432cfa98-83f2-416e-b600-01090075fb73/content",
+          "createdAt": "2026-10-02T16:58:57.304Z",
+          "description": null,
+          "durationSec": null,
+          "entityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+          "fileSize": 1719079,
+          "height": 1024,
+          "layout": "four",
+          "mediaType": "image",
+          "mime": "image/png",
+          "name": "表情＋正侧背 3547aa4f · 1",
+          "reviewStatus": null,
+          "role": "three_view",
+          "sourceRevision": "2437d56ceafaa0f76ed76019e73e58642c73a33162941684337d38fe206aa489",
+          "sourceRunId": "3547aa4f-9e72-4c7c-9694-3b74e2a733d5",
+          "width": 1536
+        },
+        {
+          "assetId": "af9823e0-1b27-48b7-a469-47ddcf4b7534",
+          "available": true,
+          "confirmation": {
+            "isCurrent": true,
+            "records": [
+              {
+                "confirmationId": "4e1b9ef4-326f-40cb-be07-4b974f4a8129",
+                "createdAt": "2026-10-02T16:56:33.878Z",
+                "kind": "appearance",
+                "version": 1
+              }
+            ],
+            "status": "confirmed"
+          },
+          "contentHash": "df20a30c62bf979ff04d2773b1757620847d3b485b580095b429031b5ea2d04b",
+          "contentUrl": "/api/reference/v1/assets/af9823e0-1b27-48b7-a469-47ddcf4b7534/content",
+          "createdAt": "2026-10-02T15:32:49.700Z",
+          "description": null,
+          "durationSec": null,
+          "entityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+          "fileSize": 1475226,
+          "height": 1024,
+          "layout": null,
+          "mediaType": "image",
+          "mime": "image/png",
+          "name": "概念图 ae5a56dc · 1",
+          "reviewStatus": null,
+          "role": "main_appearance",
+          "sourceRevision": "2eded155d3f95cff6c6b0e7d150b1845bc7d441fcbbd41e650b72e87c49bc01b",
+          "sourceRunId": "ae5a56dc-42b2-404b-b45b-5fcf9f4acecc",
+          "width": 1536
+        }
+      ],
+      "contentHash": "5978a4f45c576a5394a8f5a5c3e278ced28ea817dadeb100e543b3f96d5814ff",
+      "createdAt": "2026-10-02T15:31:20.130Z",
+      "currentAppearance": {
+        "assetId": "af9823e0-1b27-48b7-a469-47ddcf4b7534",
+        "confirmationId": "4e1b9ef4-326f-40cb-be07-4b974f4a8129",
+        "contentHash": "df20a30c62bf979ff04d2773b1757620847d3b485b580095b429031b5ea2d04b",
+        "version": 1
+      },
+      "currentVoice": {
+        "assetId": "1e2f367f-132f-4c92-93d7-660422eaf8be",
+        "confirmationId": "7241220e-968d-4db9-bc31-0095b4b6c62b",
+        "contentHash": "136dc791274fa4bf7f7a5cb4667c04bbaf8affd92c7473775cf295846215ff1b",
+        "version": 2
+      },
+      "description": null,
+      "entityId": "5821d6dd-2041-40a3-a789-74989c6edd90",
+      "fieldSources": {
+        "appearance": null,
+        "description": null,
+        "type": null,
+        "voiceDescription": {
+          "contentHash": "bdc62d6384c6d181419acbc5e4ecd739bc038d8221a5095c3d28b4a9072c5137",
+          "source": "current voice source run"
+        }
+      },
+      "missingFields": [
+        "type",
+        "description",
+        "appearance"
+      ],
+      "name": "一期验收 · 四图概念探索",
+      "prompts": [
+        {
+          "assetIds": [
+            "432cfa98-83f2-416e-b600-01090075fb73"
+          ],
+          "contentHash": "f0f0fdd4668ee4a4050a79b4fb5d33c9fd1ab0d0aa44ebade1aa0e87c6050d21",
+          "createdAt": "2026-10-02T16:58:38.993Z",
+          "effectiveText": "Composition: Clean 3:2 landscape layout on a warm off-white background with generous spacing. No frames, borders, dividers, text, labels, watermarks, or logos. Soft, even neutral studio lighting across all panels. Rendering style, line weight, texture, and shading must strictly match the reference image.\nLeft Column (20% width): 4 stacked, identically scaled and cropped head-and-shoulders portraits of the reference subject:\n1. Neutral: Relaxed brows, open eyes, closed mouth (identity anchor).\n2. Joy: Gentle closed-mouth smile, relaxed cheeks, open eyes (no strain/crinkles).\n3. Anger: Brows drawn down/inward, narrowed intense eyes, firmly pressed lips, tight jaw.\n4. Sorrow: Inner brows raised, heavy drooping eyelids, downturned mouth, relaxed jaw (distinct from anger).\nRight Row (80% width): 3 full-height, identically scaled figures of the reference subject in neutral relaxed stance: Front View, Clean Side Profile, and Back View. Soft oval floor shadows.\nConsistency & Constraints: Preserve exact identity, hair, facial features, garments, asymmetry, and accessories from the reference. Do not add, redesign, beautify, age, or extrapolate items based on lore/profession. No extra characters, shifting proportions, extra limbs, or style drift.",
+          "promptId": "run:3547aa4f-9e72-4c7c-9694-3b74e2a733d5",
+          "purpose": "二期PC链路验收：V3 Simple 原版表情栏＋正侧背",
+          "samples": [],
+          "sourceRevision": "f0f0fdd4668ee4a4050a79b4fb5d33c9fd1ab0d0aa44ebade1aa0e87c6050d21",
+          "sourceRunId": "3547aa4f-9e72-4c7c-9694-3b74e2a733d5",
+          "stage": "multiview",
+          "text": "Composition: Clean 3:2 landscape layout on a warm off-white background with generous spacing. No frames, borders, dividers, text, labels, watermarks, or logos. Soft, even neutral studio lighting across all panels. Rendering style, line weight, texture, and shading must strictly match the reference image.\nLeft Column (20% width): 4 stacked, identically scaled and cropped head-and-shoulders portraits of the reference subject:\n1. Neutral: Relaxed brows, open eyes, closed mouth (identity anchor).\n2. Joy: Gentle closed-mouth smile, relaxed cheeks, open eyes (no strain/crinkles).\n3. Anger: Brows drawn down/inward, narrowed intense eyes, firmly pressed lips, tight jaw.\n4. Sorrow: Inner brows raised, heavy drooping eyelids, downturned mouth, relaxed jaw (distinct from anger).\nRight Row (80% width): 3 full-height, identically scaled figures of the reference subject in neutral relaxed stance: Front View, Clean Side Profile, and Back View. Soft oval floor shadows.\nConsistency & Constraints: Preserve exact identity, hair, facial features, garments, asymmetry, and accessories from the reference. Do not add, redesign, beautify, age, or extrapolate items based on lore/profession. No extra characters, shifting proportions, extra limbs, or style drift.",
+          "version": null,
+          "workflow": {
+            "contentHash": "f471674e864f60d13668e929266729900de9a611fe28e94802ad4ddf9d1fe075",
+            "id": "qwen-v3-simple-four.1-refs",
+            "version": 3
+          }
+        },
+        {
+          "assetIds": [
+            "1e2f367f-132f-4c92-93d7-660422eaf8be"
+          ],
+          "contentHash": "ab6175ee038a586bbcf948ad6556b9bad3275980965d7fe49bec507c06464abf",
+          "createdAt": "2026-10-03T04:46:51.465Z",
+          "effectiveText": "成年女性声音；年轻成年人的声音；音调偏低；音质清澈干净；共鸣自然均衡；基础语速适中；吐字清晰利落；基础气质清冷克制；普通话自然清晰，正常说话，不唱歌。；稍微的烟嗓颗粒感，嘲讽感",
+          "promptId": "run:4c0619b2-04b1-41a7-a7a4-1fba6bb36235",
+          "purpose": "声音阶段 PC 生成链路检查：三段系统试听台词",
+          "samples": [
+            {
+              "direction": "成年女性声音；年轻成年人的声音；音调偏低；音质清澈干净；共鸣自然均衡；基础语速适中；吐字清晰利落；基础气质清冷克制；普通话自然清晰，正常说话，不唱歌。；稍微的烟嗓颗粒感，嘲讽感\n以自然、中性的语气正常说话，情绪平稳，不唱歌，不夸张表演。",
+              "text": "你好，很高兴见到你。今天我们一起出发，慢慢认识这个世界。"
+            }
+          ],
+          "sourceRevision": "ab6175ee038a586bbcf948ad6556b9bad3275980965d7fe49bec507c06464abf",
+          "sourceRunId": "4c0619b2-04b1-41a7-a7a4-1fba6bb36235",
+          "stage": "voice",
+          "text": "成年女性声音；年轻成年人的声音；音调偏低；音质清澈干净；共鸣自然均衡；基础语速适中；吐字清晰利落；基础气质清冷克制；普通话自然清晰，正常说话，不唱歌。；稍微的烟嗓颗粒感，嘲讽感",
+          "version": null,
+          "workflow": {
+            "contentHash": "984e093b4b4b3e0162dda12a72305314595c2bc1e97d1fea3df0e761aaa4a3f2",
+            "id": "breeze-reference-voice",
+            "version": 2
+          }
+        },
+        {
+          "assetIds": [
+            "af9823e0-1b27-48b7-a469-47ddcf4b7534"
+          ],
+          "contentHash": "d8487a69541257cd3d140c2716943e870713ee0edde4e9be9a3ff8ee892b3d43",
+          "createdAt": "2026-10-02T15:32:11.213Z",
+          "effectiveText": "Create one full-body adult East Asian woman character concept. Image 1 defines her face and ponytail, Image 2 defines the navy uniform and boots, Image 3 defines silver shoulder and forearm armor, and Image 4 defines one black sheathed katana. Preserve those roles. Front-facing relaxed standing pose, head to boots visible, hands relaxed, exactly one katana attached at the waist. Plain warm off-white studio background, realistic materials and soft lighting. No text, no extra people or weapons.",
+          "promptId": "run:ae5a56dc-42b2-404b-b45b-5fcf9f4acecc",
+          "purpose": "一期端到端验收：四张显式设定图 → Qwen 概念图，验证历史回流",
+          "samples": [],
+          "sourceRevision": "d8487a69541257cd3d140c2716943e870713ee0edde4e9be9a3ff8ee892b3d43",
+          "sourceRunId": "ae5a56dc-42b2-404b-b45b-5fcf9f4acecc",
+          "stage": "concept",
+          "text": "Create one full-body adult East Asian woman character concept. Image 1 defines her face and ponytail, Image 2 defines the navy uniform and boots, Image 3 defines silver shoulder and forearm armor, and Image 4 defines one black sheathed katana. Preserve those roles. Front-facing relaxed standing pose, head to boots visible, hands relaxed, exactly one katana attached at the waist. Plain warm off-white studio background, realistic materials and soft lighting. No text, no extra people or weapons.",
+          "version": null,
+          "workflow": {
+            "contentHash": null,
+            "id": "qwen-image-2.1.4-refs",
+            "version": 1
+          }
+        }
+      ],
+      "sourceRevision": "5978a4f45c576a5394a8f5a5c3e278ced28ea817dadeb100e543b3f96d5814ff",
+      "type": null,
+      "voiceDescription": "成年女性声音；年轻成年人的声音；音调偏低；音质清澈干净；共鸣自然均衡；基础语速适中；吐字清晰利落；基础气质清冷克制；普通话自然清晰，正常说话，不唱歌。；稍微的烟嗓颗粒感，嘲讽感"
+    }
+  ],
+  "format": "reference-manifest",
+  "manifestId": "e0797899-ccb5-46d1-b461-13035a820dbc",
+  "missingCapabilities": [
+    "relations",
+    "sound_effect",
+    "review_status",
+    "prompt_version"
+  ],
+  "omissions": [],
+  "owner": "Sean",
+  "relations": [],
+  "schemaVersion": 1,
+  "selection": {
+    "assetIds": [
+      "af9823e0-1b27-48b7-a469-47ddcf4b7534",
+      "432cfa98-83f2-416e-b600-01090075fb73",
+      "1e2f367f-132f-4c92-93d7-660422eaf8be"
+    ],
+    "assetRoles": [
+      "main_appearance",
+      "three_view",
+      "voice",
+      "sound_effect"
+    ],
+    "entityIds": [
+      "5821d6dd-2041-40a3-a789-74989c6edd90"
+    ],
+    "includeRelations": "direct",
+    "includeUnconfirmed": false
+  }
+}

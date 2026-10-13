@@ -1,0 +1,16 @@
+{
+  "owner": "Sean",
+  "candidateId": "1592bc04-eb1e-40bb-a114-1b0a0fc29661",
+  "scope": "2fps visual samples; no continuous/audio observation",
+  "observations": [
+    "B removes outer garment visible in opening frame",
+    "Garment rests on horizontal tabletop in final samples",
+    "A and B remain seated",
+    "Single blade remains on same tabletop"
+  ],
+  "limitations": [
+    "Final hand release partly occluded by garment",
+    "Inner layer resembles outer clothing hue; inspect full video for clothing morph"
+  ],
+  "decision": "provisional continuity-test selection"
+}

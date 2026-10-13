@@ -1,0 +1,14 @@
+{
+  "owner": "Sean",
+  "projectId": "538005c3-16bd-4709-aa4e-70831b960a24",
+  "sessionId": "0707ba67-08da-42cf-9bc9-b1fa07bf95cf",
+  "request": {
+    "requestId": "7732af28-1eb3-4ac6-afc4-34f08152dc84",
+    "mode": "prepare",
+    "text": "本轮授权等价空间稿重新核对和采用，仅文本不提交GPU。服务已加载2b3a6ad修复：sourceHash仍是审阅来源，完全相同scenePlan和全部start/end/transition可保留renderSourceHash因此不会让前两镜实际输入变化。先fresh get_film_context并加载当前技能，核对rev51及S3最新提示词和continuity。用propose_film_revision的patch.spatial构建完整六镜提案：scenePlan必须与当前既有空间稿逐字一致；questions=[]；每镜id/framing/continuity/prompt取当前shots逐字内容；startState/endState/transitionFromPrevious取现有spatialPlan对应状态逐字不改，changes记录仅重新核对来源、保留现有内容。不能重生成LLM文字、不能使用rev50旧稿、不能覆盖S3一次简单对折的最新稿。检查所有镜当前拍摄本空间内容相容，发现实质矛盾先报告不采用；否则只采用等价空间提案。get完整提案并validate后apply，freshcontext validate S3。报告实际新revision、source/renderhash、S1/S2 selected及isCurrent、S2/S3anchorstatus和warnings。本轮不选择任何视频、不设置任何锚帧、不生成、不合成。"
+  },
+  "response": {
+    "runId": "f4ae174e-49a5-4443-8f90-aaf1df3eb1e6",
+    "status": "running"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "owner": "Sean",
+  "candidateId": "ca55bc4b-e801-4197-9b65-6d0a620f4c4b",
+  "status": "provisional-visual-narrative-pass",
+  "evidence": [
+    "Rootwhole4fpscontact",
+    "Rootfull1024tail",
+    "Agent5actualframes"
+  ],
+  "observations": [
+    "samecoatremoved innerpantsretained",
+    "bothhandsheldgarmentfront at end, naturallongfabric hanging; no tableplacement/release",
+    "bookkatana papers2glassesA stable"
+  ],
+  "limitations": [
+    "precise forearmsupport unconfirmed",
+    "completeclothtransfer/support in nextshot pending",
+    "audio/lips unverified"
+  ],
+  "next": "Use actualendframe opening for placement; do not fabricate compactbundle or fullycradledforearms in next opening."
+}

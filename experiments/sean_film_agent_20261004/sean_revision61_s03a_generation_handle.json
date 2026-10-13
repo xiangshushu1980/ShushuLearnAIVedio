@@ -1,0 +1,14 @@
+{
+  "owner": "Sean",
+  "projectId": "538005c3-16bd-4709-aa4e-70831b960a24",
+  "sessionId": "0707ba67-08da-42cf-9bc9-b1fa07bf95cf",
+  "request": {
+    "requestId": "13243963-3275-4089-870b-a743938b0c20",
+    "mode": "generate",
+    "text": "授权仅隔离项目当前rev61 S3a cbfc4455-17f8-4b4a-875a-e3bcfc418399一次真实测试，不改任何文字/图序/时长/seed/空间/实体，禁止其他镜生成/选片/设S3banchor/合成。根检查sharedqueue0/0，现34秒测试计划不是30秒最终达标。freshcontext加载method/Ref2VA读完整S3a/view实际S2尾anchor，validate通过才generate一次共享adapter lease。轮询同一candidate到终态不重复未知提交。成功inspect分批0/.75/1.5、2.25/3.25/末尾前.15，核对只有原驼色coat离身、保留inner裤鞋；衣摆一次向领口对折/两袖收进衣身是否确实出现、是否形成紧凑衣束双手仍持身前；全镜不放桌不松手，书刀杯纸A全不动。观察到仍长衣展开/已经放桌/无compact须明确失败或未知，不因未放桌就满足收拢。报告hash/时长/帧差异，音频未验收。固定LLM401不重试，无需重复授权。"
+  },
+  "response": {
+    "runId": "8514a82c-e071-4452-84ca-43bc36cdc511",
+    "status": "running"
+  }
+}

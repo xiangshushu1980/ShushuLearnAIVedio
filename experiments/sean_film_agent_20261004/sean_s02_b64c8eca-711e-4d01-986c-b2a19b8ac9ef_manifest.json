@@ -1,0 +1,419 @@
+{
+  "owner": "Sean",
+  "projectId": "70338d49-e494-433f-a753-738fbd3dafc9",
+  "candidateId": "b64c8eca-711e-4d01-986c-b2a19b8ac9ef",
+  "shotId": "9478d1bf-5268-41d0-b899-98e3dc9d3e6c",
+  "mediaHash": "6821b8dd6f6faf4decbd8b60d6b2c6506b543c0940a8f3d7b65f88244c5fca53",
+  "video": "experiments/sean_film_agent_20261004/outputs/sean_s02_b64c8eca-711e-4d01-986c-b2a19b8ac9ef.mp4",
+  "probe": {
+    "streams": [
+      {
+        "index": 0,
+        "codec_name": "h264",
+        "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+        "profile": "High",
+        "codec_type": "video",
+        "codec_tag_string": "avc1",
+        "codec_tag": "0x31637661",
+        "width": 1024,
+        "height": 576,
+        "coded_width": 1024,
+        "coded_height": 576,
+        "has_b_frames": 2,
+        "pix_fmt": "yuv420p",
+        "level": 31,
+        "color_range": "tv",
+        "color_space": "bt709",
+        "color_transfer": "iec61966-2-1",
+        "color_primaries": "bt709",
+        "chroma_location": "left",
+        "field_order": "progressive",
+        "refs": 1,
+        "is_avc": "true",
+        "nal_length_size": "4",
+        "id": "0x1",
+        "r_frame_rate": "24/1",
+        "avg_frame_rate": "24/1",
+        "time_base": "1/12288",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 89600,
+        "duration": "7.291667",
+        "bit_rate": "1012511",
+        "bits_per_raw_sample": "8",
+        "nb_frames": "175",
+        "extradata_size": 48,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "non_diegetic": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0,
+          "multilayer": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "VideoHandler",
+          "vendor_id": "[0][0][0][0]"
+        }
+      },
+      {
+        "index": 1,
+        "codec_name": "aac",
+        "codec_long_name": "AAC (Advanced Audio Coding)",
+        "profile": "LC",
+        "codec_type": "audio",
+        "codec_tag_string": "mp4a",
+        "codec_tag": "0x6134706d",
+        "sample_fmt": "fltp",
+        "sample_rate": "32000",
+        "channels": 2,
+        "channel_layout": "stereo",
+        "bits_per_sample": 0,
+        "initial_padding": 0,
+        "id": "0x2",
+        "r_frame_rate": "0/0",
+        "avg_frame_rate": "0/0",
+        "time_base": "1/32000",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 233344,
+        "duration": "7.292000",
+        "bit_rate": "130030",
+        "nb_frames": "229",
+        "extradata_size": 5,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "non_diegetic": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0,
+          "multilayer": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "SoundHandler",
+          "vendor_id": "[0][0][0][0]"
+        }
+      }
+    ],
+    "format": {
+      "filename": "experiments/sean_film_agent_20261004/outputs/sean_s02_b64c8eca-711e-4d01-986c-b2a19b8ac9ef.mp4",
+      "nb_streams": 2,
+      "nb_programs": 0,
+      "nb_stream_groups": 0,
+      "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+      "format_long_name": "QuickTime / MOV",
+      "start_time": "0.000000",
+      "duration": "7.292000",
+      "size": "1060289",
+      "bit_rate": "1163235",
+      "probe_score": 100,
+      "tags": {
+        "major_brand": "isom",
+        "minor_version": "512",
+        "compatible_brands": "isomiso2avc1mp41",
+        "prompt": "{\"1\": {\"class_type\": \"UNETLoader\", \"inputs\": {\"unet_name\": \"minimax_h3_ref2va_pruned_int8_convrot.safetensors\", \"weight_dtype\": \"default\"}}, \"2\": {\"class_type\": \"CLIPLoader\", \"inputs\": {\"clip_name\": \"qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors\", \"type\": \"minimax\", \"device\": \"default\"}}, \"3\": {\"class_type\": \"VAELoader\", \"inputs\": {\"vae_name\": \"minimax_h3_video_vae_fp16.safetensors\"}}, \"4\": {\"class_type\": \"VAELoader\", \"inputs\": {\"vae_name\": \"minimax_h3_audio_vae_fp32.safetensors\"}}, \"6\": {\"class_type\": \"MiniMaxH3ReferenceToVideo\", \"inputs\": {\"clip\": [\"2\", 0], \"vae\": [\"3\", 0], \"audio_vae\": [\"4\", 0], \"prompt\": \"subject_definitions:\\n<Subject 1> is the modern library reading room defined by <Picture 1>: a bright, clean, simply decorated reading room with a continuous straight pale-wood shelving wall, light wood floor, grey-green chairs and soft even overhead lighting; <Picture 1> supplies environment appearance and materials only and is not a competing camera or composition anchor.\\n<Subject 2> is Character A, the adult woman defined by <Picture 2> and <Picture 3>: ponytail, deep navy stand-collar uniform jacket with silver shoulder and forearm armour, matching navy trousers and black boots; those pictures are authoritative for her identity, body proportions, hair and clothing, and she keeps all of them on throughout this shot, with no sword and no scabbard at her waist.\\n<Subject 3> is Character B, the adult woman defined by <Picture 4> and <Picture 5>: her identity, face, long dark hair, body proportions and complete casual clothing set come from those references, and she keeps that set on throughout this shot.\\n<Picture 6> is the edited first frame and opening composition anchor of [Shot 1], an actual frozen tail frame of the preceding clip and not a Subject: the same bright reading room with the continuous straight pale-wood shelving wall, the same single main reading table T1, Character A seated at the near side on screen-left with no weapon at her waist, Character B seated at the far side on screen-right, the single unsheathed sword flat on the near-side tabletop at Character A's right hand, the neutral reading props in place, and no third person, no duplicate blade and no scabbard.\\n\\nsummary:\\n[reference generation + keyframe completion] The target video is one continuous 7-second seated conversation inside <Subject 1>, beginning exactly from <Picture 6>: <Subject 2>, seated at the near side on screen-left with her body angled toward screen-right, and <Subject 3>, seated at the far side on screen-right facing the tabletop and toward <Subject 2>, exchange four Chinese lines while the single unsheathed sword and the neutral reading props stay unchanged on the tabletop and neither woman stands or relocates.\\n\\nretention_analysis:\\n<Picture 6> (opening frame of [Shot 1]): fully_preserved - the continuous straight pale-wood shelving wall, the same long light-wood reading table T1, the grey-green chairs, the same camera side at the near side of T1 and the same action axis, the soft even lighting and materials, Character A's seated position at the screen-left of the near side with her torso turned toward screen-right, Character B's seated position at the far side on screen-right with hands on the tabletop, the single unsheathed sword on the near-side tabletop at Character A's right hand, and the neutral reading props are all retained as the authoritative opening composition. Approved corrections: no cups, papers, notebooks or folder-like items are removed from the opening frame; no duplicate blade, second sword or scabbard is carried in; the scene reference is not used to select another table or camera angle; and no subtitle, caption, on-screen text or watermark appears.\\n<Subject 1> (appears in [Shot 1]): fully_preserved - the bright reading room, its continuous straight pale-wood shelving wall, light wood floor, grey-green chairs and soft even overhead lighting; no unlisted furniture, column, sign, exit architecture or additional person is added.\\n<Subject 2> (appears in [Shot 1]): fully_preserved - the identity, face, body proportions, ponytail, navy uniform jacket with silver shoulder and forearm armour, trousers and boots of the woman defined by <Picture 2> and <Picture 3>, kept worn throughout.\\n<Subject 3> (appears in [Shot 1]): fully_preserved - the identity, face, hair and complete casual clothing set of the woman defined by <Picture 4> and <Picture 5>, kept worn throughout.\\n\\ndetailed_description:\\nStyle: live-action cinematic inside a bright modern library reading room, clean anime-influenced character rendering, natural colour grading, soft even overhead lighting, realistic materials, no subtitles, captions, on-screen text or watermarks.\\n[Shot 1] The shot begins exactly from <Picture 6>, the edited first frame and opening composition anchor of [Shot 1], a real frozen tail frame of the preceding clip.\\nComposition: medium two-shot across the single main reading table T1, the long light-wood reading table against the same continuous straight pale-wood shelving wall. Near side is the camera-side edge and Character A's side; far side is the opposite edge and Character B's side. The camera stays on the near side, slightly to Character A's left, aimed almost level and only a little down at the tabletop, so Character A sits closer to camera at the screen-left of the near side, body and face angled toward screen-right, and Character B sits farther away at the far side on screen-right, turned toward the tabletop and toward Character A, never sideways to the camera. It never crosses or mirrors the axis between the two women.\\nEnvironment and light: the same continuous straight pale-wood shelving wall fills the background, with light wood floor along the lower edge, grey-green chairs and soft even overhead light without hard directional shadow; no door, exit architecture, column, sign or extra person appears.\\nCharacter A wears her navy uniform jacket with silver shoulder and forearm armour, uniform trousers and boots, and keeps them on. Character B keeps her complete casual clothing set on, outer garment on her body. The single sword lies unsheathed and motionless on the near-side tabletop between the two women at Character A's right hand, with no scabbard, no second blade and no weapon at Character A's waist. The tabletop keeps its neutral reading props \\u2014 Character B's open book, clear glass tumblers and loose papers or flat reading items \\u2014 unchanged in place and number.\\nDominant action: only a seated conversation. Neither woman stands, walks, reaches across or relocates; only eyes, heads, hands and upper torsos move. Character B's gaze lifts from the page to Character A early, and lifts again with her lines; Character A keeps her gaze on Character B. In order, <Subject 3> (S2) says <d>[Chinese] \\u4f60\\u6765\\u8fd8\\u4e66\\uff0c\\u8fd8\\u662f\\u6765\\u8fd8\\u5200\\uff1f</d>; <Subject 2> (S1) says <d>[Chinese] \\u5148\\u653e\\u8fd9\\u513f\\u3002</d>; <Subject 3> (S2) says <d>[Chinese] \\u653e\\u8fd9\\u513f\\uff1f\\u4f60\\u820d\\u5f97\\uff1f</d>; <Subject 2> (S1) says <d>[Chinese] \\u968f\\u4f60\\u600e\\u4e48\\u60f3\\u3002</d> Lip movement matches each line.\\nCamera: locked-off medium two-shot with one very small, slow lateral drift, keeping both faces, the sword and the tabletop props in frame. One continuous 7-second shot with no cut; sound is quiet library room tone throughout, faint chair creaks, soft fabric shifts, a light metallic whisper from the unsheathed blade already resting on the wood, and brief breath pauses between lines. End state: Character A seated at the near side screen-left, Character B seated at the far side screen-right, the sword and the neutral reading props unchanged on the tabletop, no further dialogue.\\n\\noverall_soundscape:\\nQuiet library room tone throughout, with faint chair creaks, soft fabric shifts, a light metallic whisper from the unsheathed blade already resting on the wood, and brief breath pauses during the seated dialogue.\\n\\nnon_diegetic_music:\\nN/A\", \"width\": 1024, \"height\": 576, \"length\": 168, \"ref_image_size\": \"match\", \"ref_images.ref_image_0\": [\"100\", 0], \"ref_images.ref_image_1\": [\"101\", 0], \"ref_images.ref_image_2\": [\"102\", 0], \"ref_images.ref_image_3\": [\"103\", 0], \"ref_images.ref_image_4\": [\"104\", 0], \"ref_images.ref_image_5\": [\"105\", 0]}}, \"7\": {\"class_type\": \"KSamplerSelect\", \"inputs\": {\"sampler_name\": \"euler\"}}, \"8\": {\"class_type\": \"BasicScheduler\", \"inputs\": {\"model\": [\"23\", 0], \"scheduler\": \"simple\", \"steps\": 8, \"denoise\": 1}}, \"9\": {\"class_type\": \"BasicGuider\", \"inputs\": {\"model\": [\"23\", 0], \"conditioning\": [\"6\", 0]}}, \"10\": {\"class_type\": \"RandomNoise\", \"inputs\": {\"noise_seed\": 1503028908}}, \"11\": {\"class_type\": \"SamplerCustomAdvanced\", \"inputs\": {\"noise\": [\"10\", 0], \"guider\": [\"9\", 0], \"sampler\": [\"7\", 0], \"sigmas\": [\"18\", 1], \"latent_image\": [\"6\", 1]}}, \"12\": {\"class_type\": \"VAEDecode\", \"inputs\": {\"samples\": [\"11\", 0], \"vae\": [\"3\", 0]}}, \"13\": {\"class_type\": \"VAEDecodeAudio\", \"inputs\": {\"samples\": [\"11\", 0], \"vae\": [\"4\", 0]}}, \"14\": {\"class_type\": \"CreateVideo\", \"inputs\": {\"images\": [\"12\", 0], \"fps\": 24.0, \"audio\": [\"13\", 0], \"bit_depth\": 8}}, \"15\": {\"class_type\": \"SaveVideo\", \"inputs\": {\"video\": [\"14\", 0], \"filename_prefix\": \"video/sean_film_editor/b64c8eca-711e-4d01-986c-b2a19b8ac9ef/clip\", \"format\": \"mp4\", \"codec\": \"auto\"}}, \"18\": {\"class_type\": \"MiniMaxH3PDDAccApply\", \"inputs\": {\"model\": [\"1\", 0], \"pdd_file\": \"minimax_h3_ref2va_pdd_acc_8step_comfyui.safetensors\", \"nfe\": \"8\", \"lora_strength\": 1.0, \"head_strength\": 1.0, \"on_off_grid\": \"error\"}}, \"23\": {\"class_type\": \"MiniMaxH3MemoryEfficientSageAttentionPatch\", \"inputs\": {\"model\": [\"18\", 0]}}, \"100\": {\"class_type\": \"LoadImage\", \"inputs\": {\"image\": \"sean_b64c8eca-711e-4d01-986c-b2a19b8ac9ef_bc97295cda1363c189fcd3e0cc3841dfc36ca03db415906bf96b44b56d21cd6e.png\"}, \"is_changed\": [\"bc97295cda1363c189fcd3e0cc3841dfc36ca03db415906bf96b44b56d21cd6e\"]}, \"101\": {\"class_type\": \"LoadImage\", \"inputs\": {\"image\": \"sean_b64c8eca-711e-4d01-986c-b2a19b8ac9ef_df20a30c62bf979ff04d2773b1757620847d3b485b580095b429031b5ea2d04b.png\"}, \"is_changed\": [\"df20a30c62bf979ff04d2773b1757620847d3b485b580095b429031b5ea2d04b\"]}, \"102\": {\"class_type\": \"LoadImage\", \"inputs\": {\"image\": \"sean_b64c8eca-711e-4d01-986c-b2a19b8ac9ef_5fecbc99843090ee1c74e7eecce6b9f3b3c34df5bd8ebfdd33a10a1fc2b9aa43.png\"}, \"is_changed\": [\"5fecbc99843090ee1c74e7eecce6b9f3b3c34df5bd8ebfdd33a10a1fc2b9aa43\"]}, \"103\": {\"class_type\": \"LoadImage\", \"inputs\": {\"image\": \"sean_b64c8eca-711e-4d01-986c-b2a19b8ac9ef_59fd1cff742b9d28c0904419206edc8b0ffe933e53bdb0f272c43b69e314e94f.png\"}, \"is_changed\": [\"59fd1cff742b9d28c0904419206edc8b0ffe933e53bdb0f272c43b69e314e94f\"]}, \"104\": {\"class_type\": \"LoadImage\", \"inputs\": {\"image\": \"sean_b64c8eca-711e-4d01-986c-b2a19b8ac9ef_25c620051f4c8240550e54817c3ba9e4d38ffcc34c9d19e6e696613b7f80e897.png\"}, \"is_changed\": [\"25c620051f4c8240550e54817c3ba9e4d38ffcc34c9d19e6e696613b7f80e897\"]}, \"105\": {\"class_type\": \"LoadImage\", \"inputs\": {\"image\": \"sean_b64c8eca-711e-4d01-986c-b2a19b8ac9ef_49e41c8e885f81d3eb5fb5206e100026b67ea5f65fff3f5a0cabb410a305905d.png\"}, \"is_changed\": [\"49e41c8e885f81d3eb5fb5206e100026b67ea5f65fff3f5a0cabb410a305905d\"]}}",
+        "encoder": "Lavf62.12.102"
+      }
+    }
+  },
+  "frames": [
+    {
+      "timeSec": 0.1,
+      "file": "experiments/sean_film_agent_20261004/frames/sean_s02_b64c8eca-711e-4d01-986c-b2a19b8ac9ef_0.png",
+      "sha256": "aa3119569f20b085851535f44e4b77f133eaf721114f24c50488914acd5bf917"
+    },
+    {
+      "timeSec": 3.646,
+      "file": "experiments/sean_film_agent_20261004/frames/sean_s02_b64c8eca-711e-4d01-986c-b2a19b8ac9ef_1.png",
+      "sha256": "a0f75c9d89b3a417fbbfb61b99c33f29592171979611b18a3071728346d7727e"
+    },
+    {
+      "timeSec": 7.1419999999999995,
+      "file": "experiments/sean_film_agent_20261004/frames/sean_s02_b64c8eca-711e-4d01-986c-b2a19b8ac9ef_2.png",
+      "sha256": "92a8006f895e1c06bc34047025351d02093097ba74010213e042e9c789f10d2c"
+    }
+  ],
+  "contact": "experiments/sean_film_agent_20261004/frames/sean_s02_b64c8eca-711e-4d01-986c-b2a19b8ac9ef_contact.png",
+  "inputShotHash": "cffe351d502d0656a7a9d653a9a626a4bbadd98b75cd541b0c97935f02cc7245",
+  "prompt": "subject_definitions:\n<Subject 1> is the modern library reading room defined by <Picture 1>: a bright, clean, simply decorated reading room with a continuous straight pale-wood shelving wall, light wood floor, grey-green chairs and soft even overhead lighting; <Picture 1> supplies environment appearance and materials only and is not a competing camera or composition anchor.\n<Subject 2> is Character A, the adult woman defined by <Picture 2> and <Picture 3>: ponytail, deep navy stand-collar uniform jacket with silver shoulder and forearm armour, matching navy trousers and black boots; those pictures are authoritative for her identity, body proportions, hair and clothing, and she keeps all of them on throughout this shot, with no sword and no scabbard at her waist.\n<Subject 3> is Character B, the adult woman defined by <Picture 4> and <Picture 5>: her identity, face, long dark hair, body proportions and complete casual clothing set come from those references, and she keeps that set on throughout this shot.\n<Picture 6> is the edited first frame and opening composition anchor of [Shot 1], an actual frozen tail frame of the preceding clip and not a Subject: the same bright reading room with the continuous straight pale-wood shelving wall, the same single main reading table T1, Character A seated at the near side on screen-left with no weapon at her waist, Character B seated at the far side on screen-right, the single unsheathed sword flat on the near-side tabletop at Character A's right hand, the neutral reading props in place, and no third person, no duplicate blade and no scabbard.\n\nsummary:\n[reference generation + keyframe completion] The target video is one continuous 7-second seated conversation inside <Subject 1>, beginning exactly from <Picture 6>: <Subject 2>, seated at the near side on screen-left with her body angled toward screen-right, and <Subject 3>, seated at the far side on screen-right facing the tabletop and toward <Subject 2>, exchange four Chinese lines while the single unsheathed sword and the neutral reading props stay unchanged on the tabletop and neither woman stands or relocates.\n\nretention_analysis:\n<Picture 6> (opening frame of [Shot 1]): fully_preserved - the continuous straight pale-wood shelving wall, the same long light-wood reading table T1, the grey-green chairs, the same camera side at the near side of T1 and the same action axis, the soft even lighting and materials, Character A's seated position at the screen-left of the near side with her torso turned toward screen-right, Character B's seated position at the far side on screen-right with hands on the tabletop, the single unsheathed sword on the near-side tabletop at Character A's right hand, and the neutral reading props are all retained as the authoritative opening composition. Approved corrections: no cups, papers, notebooks or folder-like items are removed from the opening frame; no duplicate blade, second sword or scabbard is carried in; the scene reference is not used to select another table or camera angle; and no subtitle, caption, on-screen text or watermark appears.\n<Subject 1> (appears in [Shot 1]): fully_preserved - the bright reading room, its continuous straight pale-wood shelving wall, light wood floor, grey-green chairs and soft even overhead lighting; no unlisted furniture, column, sign, exit architecture or additional person is added.\n<Subject 2> (appears in [Shot 1]): fully_preserved - the identity, face, body proportions, ponytail, navy uniform jacket with silver shoulder and forearm armour, trousers and boots of the woman defined by <Picture 2> and <Picture 3>, kept worn throughout.\n<Subject 3> (appears in [Shot 1]): fully_preserved - the identity, face, hair and complete casual clothing set of the woman defined by <Picture 4> and <Picture 5>, kept worn throughout.\n\ndetailed_description:\nStyle: live-action cinematic inside a bright modern library reading room, clean anime-influenced character rendering, natural colour grading, soft even overhead lighting, realistic materials, no subtitles, captions, on-screen text or watermarks.\n[Shot 1] The shot begins exactly from <Picture 6>, the edited first frame and opening composition anchor of [Shot 1], a real frozen tail frame of the preceding clip.\nComposition: medium two-shot across the single main reading table T1, the long light-wood reading table against the same continuous straight pale-wood shelving wall. Near side is the camera-side edge and Character A's side; far side is the opposite edge and Character B's side. The camera stays on the near side, slightly to Character A's left, aimed almost level and only a little down at the tabletop, so Character A sits closer to camera at the screen-left of the near side, body and face angled toward screen-right, and Character B sits farther away at the far side on screen-right, turned toward the tabletop and toward Character A, never sideways to the camera. It never crosses or mirrors the axis between the two women.\nEnvironment and light: the same continuous straight pale-wood shelving wall fills the background, with light wood floor along the lower edge, grey-green chairs and soft even overhead light without hard directional shadow; no door, exit architecture, column, sign or extra person appears.\nCharacter A wears her navy uniform jacket with silver shoulder and forearm armour, uniform trousers and boots, and keeps them on. Character B keeps her complete casual clothing set on, outer garment on her body. The single sword lies unsheathed and motionless on the near-side tabletop between the two women at Character A's right hand, with no scabbard, no second blade and no weapon at Character A's waist. The tabletop keeps its neutral reading props — Character B's open book, clear glass tumblers and loose papers or flat reading items — unchanged in place and number.\nDominant action: only a seated conversation. Neither woman stands, walks, reaches across or relocates; only eyes, heads, hands and upper torsos move. Character B's gaze lifts from the page to Character A early, and lifts again with her lines; Character A keeps her gaze on Character B. In order, <Subject 3> (S2) says <d>[Chinese] 你来还书，还是来还刀？</d>; <Subject 2> (S1) says <d>[Chinese] 先放这儿。</d>; <Subject 3> (S2) says <d>[Chinese] 放这儿？你舍得？</d>; <Subject 2> (S1) says <d>[Chinese] 随你怎么想。</d> Lip movement matches each line.\nCamera: locked-off medium two-shot with one very small, slow lateral drift, keeping both faces, the sword and the tabletop props in frame. One continuous 7-second shot with no cut; sound is quiet library room tone throughout, faint chair creaks, soft fabric shifts, a light metallic whisper from the unsheathed blade already resting on the wood, and brief breath pauses between lines. End state: Character A seated at the near side screen-left, Character B seated at the far side screen-right, the sword and the neutral reading props unchanged on the tabletop, no further dialogue.\n\noverall_soundscape:\nQuiet library room tone throughout, with faint chair creaks, soft fabric shifts, a light metallic whisper from the unsheathed blade already resting on the wood, and brief breath pauses during the seated dialogue.\n\nnon_diegetic_music:\nN/A",
+  "workflow": {
+    "1": {
+      "class_type": "UNETLoader",
+      "inputs": {
+        "unet_name": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    "2": {
+      "class_type": "CLIPLoader",
+      "inputs": {
+        "clip_name": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+        "type": "minimax",
+        "device": "default"
+      }
+    },
+    "3": {
+      "class_type": "VAELoader",
+      "inputs": {
+        "vae_name": "minimax_h3_video_vae_fp16.safetensors"
+      }
+    },
+    "4": {
+      "class_type": "VAELoader",
+      "inputs": {
+        "vae_name": "minimax_h3_audio_vae_fp32.safetensors"
+      }
+    },
+    "6": {
+      "class_type": "MiniMaxH3ReferenceToVideo",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "vae": [
+          "3",
+          0
+        ],
+        "audio_vae": [
+          "4",
+          0
+        ],
+        "prompt": "subject_definitions:\n<Subject 1> is the modern library reading room defined by <Picture 1>: a bright, clean, simply decorated reading room with a continuous straight pale-wood shelving wall, light wood floor, grey-green chairs and soft even overhead lighting; <Picture 1> supplies environment appearance and materials only and is not a competing camera or composition anchor.\n<Subject 2> is Character A, the adult woman defined by <Picture 2> and <Picture 3>: ponytail, deep navy stand-collar uniform jacket with silver shoulder and forearm armour, matching navy trousers and black boots; those pictures are authoritative for her identity, body proportions, hair and clothing, and she keeps all of them on throughout this shot, with no sword and no scabbard at her waist.\n<Subject 3> is Character B, the adult woman defined by <Picture 4> and <Picture 5>: her identity, face, long dark hair, body proportions and complete casual clothing set come from those references, and she keeps that set on throughout this shot.\n<Picture 6> is the edited first frame and opening composition anchor of [Shot 1], an actual frozen tail frame of the preceding clip and not a Subject: the same bright reading room with the continuous straight pale-wood shelving wall, the same single main reading table T1, Character A seated at the near side on screen-left with no weapon at her waist, Character B seated at the far side on screen-right, the single unsheathed sword flat on the near-side tabletop at Character A's right hand, the neutral reading props in place, and no third person, no duplicate blade and no scabbard.\n\nsummary:\n[reference generation + keyframe completion] The target video is one continuous 7-second seated conversation inside <Subject 1>, beginning exactly from <Picture 6>: <Subject 2>, seated at the near side on screen-left with her body angled toward screen-right, and <Subject 3>, seated at the far side on screen-right facing the tabletop and toward <Subject 2>, exchange four Chinese lines while the single unsheathed sword and the neutral reading props stay unchanged on the tabletop and neither woman stands or relocates.\n\nretention_analysis:\n<Picture 6> (opening frame of [Shot 1]): fully_preserved - the continuous straight pale-wood shelving wall, the same long light-wood reading table T1, the grey-green chairs, the same camera side at the near side of T1 and the same action axis, the soft even lighting and materials, Character A's seated position at the screen-left of the near side with her torso turned toward screen-right, Character B's seated position at the far side on screen-right with hands on the tabletop, the single unsheathed sword on the near-side tabletop at Character A's right hand, and the neutral reading props are all retained as the authoritative opening composition. Approved corrections: no cups, papers, notebooks or folder-like items are removed from the opening frame; no duplicate blade, second sword or scabbard is carried in; the scene reference is not used to select another table or camera angle; and no subtitle, caption, on-screen text or watermark appears.\n<Subject 1> (appears in [Shot 1]): fully_preserved - the bright reading room, its continuous straight pale-wood shelving wall, light wood floor, grey-green chairs and soft even overhead lighting; no unlisted furniture, column, sign, exit architecture or additional person is added.\n<Subject 2> (appears in [Shot 1]): fully_preserved - the identity, face, body proportions, ponytail, navy uniform jacket with silver shoulder and forearm armour, trousers and boots of the woman defined by <Picture 2> and <Picture 3>, kept worn throughout.\n<Subject 3> (appears in [Shot 1]): fully_preserved - the identity, face, hair and complete casual clothing set of the woman defined by <Picture 4> and <Picture 5>, kept worn throughout.\n\ndetailed_description:\nStyle: live-action cinematic inside a bright modern library reading room, clean anime-influenced character rendering, natural colour grading, soft even overhead lighting, realistic materials, no subtitles, captions, on-screen text or watermarks.\n[Shot 1] The shot begins exactly from <Picture 6>, the edited first frame and opening composition anchor of [Shot 1], a real frozen tail frame of the preceding clip.\nComposition: medium two-shot across the single main reading table T1, the long light-wood reading table against the same continuous straight pale-wood shelving wall. Near side is the camera-side edge and Character A's side; far side is the opposite edge and Character B's side. The camera stays on the near side, slightly to Character A's left, aimed almost level and only a little down at the tabletop, so Character A sits closer to camera at the screen-left of the near side, body and face angled toward screen-right, and Character B sits farther away at the far side on screen-right, turned toward the tabletop and toward Character A, never sideways to the camera. It never crosses or mirrors the axis between the two women.\nEnvironment and light: the same continuous straight pale-wood shelving wall fills the background, with light wood floor along the lower edge, grey-green chairs and soft even overhead light without hard directional shadow; no door, exit architecture, column, sign or extra person appears.\nCharacter A wears her navy uniform jacket with silver shoulder and forearm armour, uniform trousers and boots, and keeps them on. Character B keeps her complete casual clothing set on, outer garment on her body. The single sword lies unsheathed and motionless on the near-side tabletop between the two women at Character A's right hand, with no scabbard, no second blade and no weapon at Character A's waist. The tabletop keeps its neutral reading props — Character B's open book, clear glass tumblers and loose papers or flat reading items — unchanged in place and number.\nDominant action: only a seated conversation. Neither woman stands, walks, reaches across or relocates; only eyes, heads, hands and upper torsos move. Character B's gaze lifts from the page to Character A early, and lifts again with her lines; Character A keeps her gaze on Character B. In order, <Subject 3> (S2) says <d>[Chinese] 你来还书，还是来还刀？</d>; <Subject 2> (S1) says <d>[Chinese] 先放这儿。</d>; <Subject 3> (S2) says <d>[Chinese] 放这儿？你舍得？</d>; <Subject 2> (S1) says <d>[Chinese] 随你怎么想。</d> Lip movement matches each line.\nCamera: locked-off medium two-shot with one very small, slow lateral drift, keeping both faces, the sword and the tabletop props in frame. One continuous 7-second shot with no cut; sound is quiet library room tone throughout, faint chair creaks, soft fabric shifts, a light metallic whisper from the unsheathed blade already resting on the wood, and brief breath pauses between lines. End state: Character A seated at the near side screen-left, Character B seated at the far side screen-right, the sword and the neutral reading props unchanged on the tabletop, no further dialogue.\n\noverall_soundscape:\nQuiet library room tone throughout, with faint chair creaks, soft fabric shifts, a light metallic whisper from the unsheathed blade already resting on the wood, and brief breath pauses during the seated dialogue.\n\nnon_diegetic_music:\nN/A",
+        "width": 1024,
+        "height": 576,
+        "length": 168,
+        "ref_image_size": "match",
+        "ref_images.ref_image_0": [
+          "100",
+          0
+        ],
+        "ref_images.ref_image_1": [
+          "101",
+          0
+        ],
+        "ref_images.ref_image_2": [
+          "102",
+          0
+        ],
+        "ref_images.ref_image_3": [
+          "103",
+          0
+        ],
+        "ref_images.ref_image_4": [
+          "104",
+          0
+        ],
+        "ref_images.ref_image_5": [
+          "105",
+          0
+        ]
+      }
+    },
+    "7": {
+      "class_type": "KSamplerSelect",
+      "inputs": {
+        "sampler_name": "euler"
+      }
+    },
+    "8": {
+      "class_type": "BasicScheduler",
+      "inputs": {
+        "model": [
+          "23",
+          0
+        ],
+        "scheduler": "simple",
+        "steps": 8,
+        "denoise": 1
+      }
+    },
+    "9": {
+      "class_type": "BasicGuider",
+      "inputs": {
+        "model": [
+          "23",
+          0
+        ],
+        "conditioning": [
+          "6",
+          0
+        ]
+      }
+    },
+    "10": {
+      "class_type": "RandomNoise",
+      "inputs": {
+        "noise_seed": 1503028908
+      }
+    },
+    "11": {
+      "class_type": "SamplerCustomAdvanced",
+      "inputs": {
+        "noise": [
+          "10",
+          0
+        ],
+        "guider": [
+          "9",
+          0
+        ],
+        "sampler": [
+          "7",
+          0
+        ],
+        "sigmas": [
+          "18",
+          1
+        ],
+        "latent_image": [
+          "6",
+          1
+        ]
+      }
+    },
+    "12": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "11",
+          0
+        ],
+        "vae": [
+          "3",
+          0
+        ]
+      }
+    },
+    "13": {
+      "class_type": "VAEDecodeAudio",
+      "inputs": {
+        "samples": [
+          "11",
+          0
+        ],
+        "vae": [
+          "4",
+          0
+        ]
+      }
+    },
+    "14": {
+      "class_type": "CreateVideo",
+      "inputs": {
+        "images": [
+          "12",
+          0
+        ],
+        "fps": 24,
+        "audio": [
+          "13",
+          0
+        ],
+        "bit_depth": 8
+      }
+    },
+    "15": {
+      "class_type": "SaveVideo",
+      "inputs": {
+        "video": [
+          "14",
+          0
+        ],
+        "filename_prefix": "video/sean_film_editor/b64c8eca-711e-4d01-986c-b2a19b8ac9ef/clip",
+        "format": "mp4",
+        "codec": "auto"
+      }
+    },
+    "18": {
+      "class_type": "MiniMaxH3PDDAccApply",
+      "inputs": {
+        "model": [
+          "1",
+          0
+        ],
+        "pdd_file": "minimax_h3_ref2va_pdd_acc_8step_comfyui.safetensors",
+        "nfe": "8",
+        "lora_strength": 1,
+        "head_strength": 1,
+        "on_off_grid": "error"
+      }
+    },
+    "23": {
+      "class_type": "MiniMaxH3MemoryEfficientSageAttentionPatch",
+      "inputs": {
+        "model": [
+          "18",
+          0
+        ]
+      }
+    },
+    "100": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "sean_b64c8eca-711e-4d01-986c-b2a19b8ac9ef_bc97295cda1363c189fcd3e0cc3841dfc36ca03db415906bf96b44b56d21cd6e.png"
+      }
+    },
+    "101": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "sean_b64c8eca-711e-4d01-986c-b2a19b8ac9ef_df20a30c62bf979ff04d2773b1757620847d3b485b580095b429031b5ea2d04b.png"
+      }
+    },
+    "102": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "sean_b64c8eca-711e-4d01-986c-b2a19b8ac9ef_5fecbc99843090ee1c74e7eecce6b9f3b3c34df5bd8ebfdd33a10a1fc2b9aa43.png"
+      }
+    },
+    "103": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "sean_b64c8eca-711e-4d01-986c-b2a19b8ac9ef_59fd1cff742b9d28c0904419206edc8b0ffe933e53bdb0f272c43b69e314e94f.png"
+      }
+    },
+    "104": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "sean_b64c8eca-711e-4d01-986c-b2a19b8ac9ef_25c620051f4c8240550e54817c3ba9e4d38ffcc34c9d19e6e696613b7f80e897.png"
+      }
+    },
+    "105": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "sean_b64c8eca-711e-4d01-986c-b2a19b8ac9ef_49e41c8e885f81d3eb5fb5206e100026b67ea5f65fff3f5a0cabb410a305905d.png"
+      }
+    }
+  },
+  "leaseId": "65a3abe4-a928-4877-b82e-a92e6f0c92c7",
+  "elapsedSec": 100.601,
+  "peakVramMb": 23480.01860809326
+}

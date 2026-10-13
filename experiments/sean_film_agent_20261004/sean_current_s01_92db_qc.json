@@ -1,0 +1,13 @@
+{
+  "owner": "Sean",
+  "candidateId": "92dbf8fa-fc51-49fb-8f45-a914f9297c8c",
+  "scope": "2fps visual samples, no audio verification",
+  "observations": [
+    "A enters holding single sword",
+    "A sets sword flat on tabletop",
+    "A sits by4sec",
+    "B stays seated reading across same table"
+  ],
+  "decision": "select for current diagnostic chain",
+  "audio": "still requires listening/timbre and dialogue verification"
+}

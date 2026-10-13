@@ -1,0 +1,121 @@
+{
+  "owner": "Sean",
+  "sourceProjectId": "538005c3-16bd-4709-aa4e-70831b960a24",
+  "sourceFullSnapshotRevision": 23,
+  "knownArchivedFrontierRevision": 34,
+  "recoveryRevision": 36,
+  "missingHistory": "Full later database and live conversation entries were lost after host reboot; archived jobs/candidates are preserved. Latest variation 9e98b833 media/input absent, not fabricated.",
+  "assets": [
+    {
+      "assetId": "1e2f367f-132f-4c92-93d7-660422eaf8be",
+      "hash": "136dc791274fa4bf7f7a5cb4667c04bbaf8affd92c7473775cf295846215ff1b"
+    },
+    {
+      "assetId": "89f7618d-e430-46c7-9c4d-b8e20f3ff386",
+      "hash": "5fecbc99843090ee1c74e7eecce6b9f3b3c34df5bd8ebfdd33a10a1fc2b9aa43"
+    },
+    {
+      "assetId": "af9823e0-1b27-48b7-a469-47ddcf4b7534",
+      "hash": "df20a30c62bf979ff04d2773b1757620847d3b485b580095b429031b5ea2d04b"
+    },
+    {
+      "assetId": "43123388-aebd-4161-97d7-04f0dabc9484",
+      "hash": "59fd1cff742b9d28c0904419206edc8b0ffe933e53bdb0f272c43b69e314e94f"
+    },
+    {
+      "assetId": "6f63253b-ec45-4f56-8292-5e1e3d20d2b0",
+      "hash": "e273276c1556ee5f989c8befdafd86e465b640fcd504e3e02a3777d8150876f0"
+    },
+    {
+      "assetId": "bf0ec0df-9e51-4a07-a54a-23ef9626173c",
+      "hash": "25c620051f4c8240550e54817c3ba9e4d38ffcc34c9d19e6e696613b7f80e897"
+    },
+    {
+      "assetId": "c25d9268-6efa-4c1c-9a23-cef25c5ef192",
+      "hash": "0314d3cb3f05571238673e899a4eb8e1f098d2f3d511b8b93e988e0aeb80c238"
+    },
+    {
+      "assetId": "e1d60d80-5d7f-44fe-9ec9-bc525139f3b7",
+      "hash": "136dc791274fa4bf7f7a5cb4667c04bbaf8affd92c7473775cf295846215ff1b"
+    },
+    {
+      "assetId": "25958405-ac83-454f-909e-f4aeba33f9a4",
+      "hash": "bc97295cda1363c189fcd3e0cc3841dfc36ca03db415906bf96b44b56d21cd6e"
+    },
+    {
+      "assetId": "e6ea44ed-6c4a-4fb0-a868-de41e241c430",
+      "hash": "e0c1d47b35f3b83c590c44e138f4dcb9df6078fbf44b39237cd3cf4d40684c53"
+    },
+    {
+      "assetId": "5d0c2f3a-2249-44f3-ab7b-fa89a476610b",
+      "hash": "3ce01b333ac8918b3faa804e2e345f3c0f73ba2fd4db5bdfb69b5a46940417ba"
+    },
+    {
+      "assetId": "96e44971-aedc-42da-a534-dc321fd5e350",
+      "hash": "80a8e0c3b070a51034c55026b864f9841f96e90d8e0cff6077b7ed2fb1df6a81"
+    }
+  ],
+  "anchors": [
+    {
+      "anchorId": "22dda69f-c3b5-4fdd-a437-84edbb1cf18b",
+      "hash": "fdb59050027940aca0ba04f92ca36aa407a048bd8e636bdb8031520ecf3da115",
+      "exactBytesReproduced": true
+    },
+    {
+      "anchorId": "d319a13e-9d7d-4719-aeba-e18f943311a2",
+      "hash": "66d65e530fbc25aefdb5bc0591b887e40d67319089d02f8d6a1c55911cc4211b",
+      "exactBytesReproduced": true
+    }
+  ],
+  "validation": {
+    "allSixPromptsValid": true,
+    "state": {
+      "spatialStale": false,
+      "anchors": [
+        {
+          "shotId": "75f55a65-8167-469e-9762-9b3bfaf5b048",
+          "status": "ready"
+        },
+        {
+          "shotId": "cbfc4455-17f8-4b4a-875a-e3bcfc418399",
+          "status": "ready"
+        }
+      ],
+      "prompts": [
+        {
+          "shotId": "18cd89f4-1697-451b-9719-124d43e8b511",
+          "status": "ready"
+        },
+        {
+          "shotId": "75f55a65-8167-469e-9762-9b3bfaf5b048",
+          "status": "ready"
+        },
+        {
+          "shotId": "cbfc4455-17f8-4b4a-875a-e3bcfc418399",
+          "status": "ready"
+        },
+        {
+          "shotId": "8c1401c1-d4db-4b40-82ea-6fddd83bb208",
+          "status": "ready"
+        },
+        {
+          "shotId": "4a3af4ad-be8c-41bc-b43a-5f24773917fa",
+          "status": "ready"
+        },
+        {
+          "shotId": "f0ac8b73-eb6b-4d3d-b877-6d4d7b95a34e",
+          "status": "ready"
+        }
+      ]
+    },
+    "firstTwoSelected": true,
+    "thirdUnselected": true,
+    "candidateHashesMatchOriginal": true
+  },
+  "historyCoverage": {
+    "historicalVersionIndexCount": 44,
+    "historicalVersionBodiesRecovered": 0,
+    "currentRecoveredVersionBodyAvailable": true,
+    "note": "Archived API project view contains version index metadata only. Earlier recovery claim of 44 complete immutable versions was incorrect; never synthesize missing content."
+  }
+}

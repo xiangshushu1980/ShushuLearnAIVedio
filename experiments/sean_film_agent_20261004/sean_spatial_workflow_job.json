@@ -1,0 +1,449 @@
+{
+  "owner": "Sean",
+  "id": "9f04b67b-37af-4c5c-b19c-9692a15d18b8",
+  "projectId": "70338d49-e494-433f-a753-738fbd3dafc9",
+  "kind": "spatial",
+  "shotId": null,
+  "status": "succeeded",
+  "createdAt": "2026-10-03T17:48:48.734Z",
+  "input": {
+    "revision": 19,
+    "content": {
+      "plot": "A和B在图书馆遇见发生一件小事。\nA走到图书馆，看到B正在读书，便把刀放到一边，然后同B交谈了一会儿。\nB脱下衣服放到一旁，取了刀便离开。\nB离开手，A起身脱下自己的衣服，然后穿上B的衣服，开心的转了一圈。",
+      "script": "短片脚本（约30秒）\n图书馆内，角色A走到主阅读桌旁，看见角色B正在读书。角色A把一把刀放到一旁。\n角色A：你倒是清闲。\n角色B：你来还书，还是来还刀？\n角色A：先放这儿。\n角色B：放这儿？你舍得？\n角色A：随你怎么想。\n两人交谈了一会儿。角色B脱下休闲服放到一旁，取了那把刀，起身离开。\n角色B：那我收下了。\n角色A：喂——\n角色B没有回头，走出图书馆。\n角色A起身，脱下自己的衣服，拿起角色B留下的休闲服穿上，成为角色A · 派生，开心地转了一圈。\n角色A · 派生：……还挺合身。",
+      "dialogue": "角色A：你倒是清闲。\n角色B：你来还书，还是来还刀？\n角色A：先放这儿。\n角色B：放这儿？你舍得？\n角色A：随你怎么想。\n角色B：那我收下了。\n角色A：喂——\n角色A · 派生：……还挺合身。",
+      "shots": [
+        {
+          "title": "A arrives, sets down the sword, and sits",
+          "durationSec": 6,
+          "entityIds": [
+            "5821d6dd-2041-40a3-a789-74989c6edd90",
+            "e3f49e04-4a4b-483f-823e-d31f497d5ab8",
+            "9971429d-863e-499e-b7c5-902d30e0f6a2",
+            "4c8e5bd2-78a5-4aee-8f22-7ec5a8512bb8"
+          ],
+          "imageAssetIds": [
+            "25958405-ac83-454f-909e-f4aeba33f9a4",
+            "af9823e0-1b27-48b7-a469-47ddcf4b7534",
+            "89f7618d-e430-46c7-9c4d-b8e20f3ff386",
+            "43123388-aebd-4161-97d7-04f0dabc9484",
+            "bf0ec0df-9e51-4a07-a54a-23ef9626173c",
+            "e6ea44ed-6c4a-4fb0-a868-de41e241c430"
+          ],
+          "action": "In the modern library reading room (bright, clean, simple decor), at the main reading table, 角色A enters from the left side of the reading area, walks to the near side of the main reading table (the camera side), and sees 角色B already seated on the far side of the table, reading a book, body facing the table and A, gaze down at the book. A stops at the near side, places the sword (一把刀) on the tabletop at A's right-hand side between A and B within B's reach, then sits down at the near side of the table, body facing B, gaze on B. A's final state: seated at the near side, right hand just released the sword, gaze on B. B's final state: still seated on the far side, reading, gaze down at the book.",
+          "framing": "Medium two-shot across the main reading table; A in the near side foreground, B seated on the far side, sword visible on the tabletop.",
+          "camera": "Camera is placed on A's side of the main reading table, slightly to A's left, looking across the table at B. The camera does not cross the A-B action axis. World-relative compass directions are not confirmed; blocking uses near-side (camera side) and far-side relative to the table.",
+          "continuity": "Establishes the modern library reading room (bright, clean, simple decor) and the main reading table as the fixed interaction anchor. A starts outside the table area and ends seated at the near side; B remains seated on the far side; the sword transfers from A to the tabletop. Unresolved question: exact library entrance/exit, table dimensions, and walking distance are not confirmed in scene facts; do not invent specific doors, windows, lamps, or room geometry.",
+          "dialogue": [
+            {
+              "speaker": "5821d6dd-2041-40a3-a789-74989c6edd90",
+              "text": "你倒是清闲。",
+              "language": "Chinese"
+            }
+          ],
+          "id": "51b9d957-d24c-47e4-9268-d61ffcfa68ab",
+          "prompt": "",
+          "seed": 1169807229,
+          "nativeAudioAssetId": null,
+          "verifiedAudioTranscript": ""
+        },
+        {
+          "title": "A and B talk at the main reading table",
+          "durationSec": 7,
+          "entityIds": [
+            "5821d6dd-2041-40a3-a789-74989c6edd90",
+            "e3f49e04-4a4b-483f-823e-d31f497d5ab8",
+            "9971429d-863e-499e-b7c5-902d30e0f6a2"
+          ],
+          "imageAssetIds": [
+            "25958405-ac83-454f-909e-f4aeba33f9a4",
+            "af9823e0-1b27-48b7-a469-47ddcf4b7534",
+            "89f7618d-e430-46c7-9c4d-b8e20f3ff386",
+            "43123388-aebd-4161-97d7-04f0dabc9484",
+            "bf0ec0df-9e51-4a07-a54a-23ef9626173c"
+          ],
+          "action": "In the modern library reading room, at the main reading table, 角色A and 角色B remain seated. A is seated at the near side (camera side), body facing B, gaze on B; the sword rests on the tabletop at A's right. B is seated on the far side, body facing A; B's gaze lifts from the book to A during the exchange. There is no relocation; only head and upper-body shifts and eye contact. Final state: A seated at the near side, B seated on the far side, sword unchanged on the tabletop.",
+          "framing": "Medium two-shot across the main reading table, holding the established near-side/far-side arrangement.",
+          "camera": "Camera stays on A's side of the main reading table, slightly to A's left, looking across at B; it does not cross the A-B action axis.",
+          "continuity": "Carries over Shot 1: A seated at the near side, B seated on the far side, sword on the tabletop. Conversation is the dominant action. Unresolved question: exact table dimensions and seating spacing are not confirmed; keep the blocking within the supplied reading-room facts. World-relative directions remain unconfirmed; use camera-side and far-side.",
+          "dialogue": [
+            {
+              "speaker": "e3f49e04-4a4b-483f-823e-d31f497d5ab8",
+              "text": "你来还书，还是来还刀？",
+              "language": "Chinese"
+            },
+            {
+              "speaker": "5821d6dd-2041-40a3-a789-74989c6edd90",
+              "text": "先放这儿。",
+              "language": "Chinese"
+            },
+            {
+              "speaker": "e3f49e04-4a4b-483f-823e-d31f497d5ab8",
+              "text": "放这儿？你舍得？",
+              "language": "Chinese"
+            },
+            {
+              "speaker": "5821d6dd-2041-40a3-a789-74989c6edd90",
+              "text": "随你怎么想。",
+              "language": "Chinese"
+            }
+          ],
+          "id": "9478d1bf-5268-41d0-b899-98e3dc9d3e6c",
+          "prompt": "",
+          "seed": 1503028908,
+          "nativeAudioAssetId": null,
+          "verifiedAudioTranscript": ""
+        },
+        {
+          "title": "B removes the casual clothes and places them aside",
+          "durationSec": 4,
+          "entityIds": [
+            "5821d6dd-2041-40a3-a789-74989c6edd90",
+            "e3f49e04-4a4b-483f-823e-d31f497d5ab8",
+            "3044bf32-2019-458e-a7cf-e50ab304e42c",
+            "9971429d-863e-499e-b7c5-902d30e0f6a2"
+          ],
+          "imageAssetIds": [
+            "25958405-ac83-454f-909e-f4aeba33f9a4",
+            "af9823e0-1b27-48b7-a469-47ddcf4b7534",
+            "89f7618d-e430-46c7-9c4d-b8e20f3ff386",
+            "43123388-aebd-4161-97d7-04f0dabc9484",
+            "bf0ec0df-9e51-4a07-a54a-23ef9626173c",
+            "96e44971-aedc-42da-a534-dc321fd5e350",
+            "5d0c2f3a-2249-44f3-ab7b-fa89a476610b"
+          ],
+          "action": "In the modern library reading room, at the main reading table, 角色B remains seated on the far side of the table, body facing A. B removes the casual outer garment (休闲服) she is wearing and places it on the far side of the tabletop beside her, at her left-hand side on the far side. 角色A remains seated at the near side, watching, sword still on the tabletop. B's final state: seated on the far side, no longer wearing the casual outer garment, which rests on the far side of the tabletop. A's final state: seated at the near side, watching B. The sword remains unchanged on the tabletop.",
+          "framing": "Medium shot from A's side of the main reading table, with B on the far side and the removed garment visible on the far-side tabletop.",
+          "camera": "Camera remains on A's side of the main reading table; it does not cross the A-B action axis.",
+          "continuity": "Carries over Shot 2: A seated near side, B seated far side, sword on the tabletop. New state: B has removed the casual clothes and placed them on the far-side tabletop. Unresolved question: B's under-layer clothing is not described in confirmed facts; use only the supplied 休闲服 asset and do not invent other garment details. Unresolved question: exact table dimensions and garment placement space are not confirmed.",
+          "dialogue": [],
+          "id": "1e97e13e-d8d1-4c23-9b67-a81a48f2353a",
+          "prompt": "",
+          "seed": 2147684664,
+          "nativeAudioAssetId": null,
+          "verifiedAudioTranscript": ""
+        },
+        {
+          "title": "B takes the sword and leaves; A calls out",
+          "durationSec": 6,
+          "entityIds": [
+            "5821d6dd-2041-40a3-a789-74989c6edd90",
+            "e3f49e04-4a4b-483f-823e-d31f497d5ab8",
+            "4c8e5bd2-78a5-4aee-8f22-7ec5a8512bb8",
+            "9971429d-863e-499e-b7c5-902d30e0f6a2"
+          ],
+          "imageAssetIds": [
+            "25958405-ac83-454f-909e-f4aeba33f9a4",
+            "af9823e0-1b27-48b7-a469-47ddcf4b7534",
+            "89f7618d-e430-46c7-9c4d-b8e20f3ff386",
+            "43123388-aebd-4161-97d7-04f0dabc9484",
+            "bf0ec0df-9e51-4a07-a54a-23ef9626173c",
+            "e6ea44ed-6c4a-4fb0-a868-de41e241c430"
+          ],
+          "action": "In the modern library reading room, at the main reading table, 角色B, now without the casual outer garment, stands up from the far side of the table, reaches to the tabletop, and picks up the sword (一把刀) at the near side of the tabletop where A placed it. B turns her body away from A toward the library exit direction and walks away from the main reading table without looking back. 角色A remains seated at the near side, body facing B, gaze following B, and calls out. B does not turn her head or body back. B's final state: walking away from the table, back to A, sword in hand, moving toward the off-screen exit. A's final state: seated at the near side, gaze toward B, sword no longer on the tabletop; the casual clothes remain on the far side of the tabletop.",
+          "framing": "Medium wide shot from A's side of the main reading table; B moves away from the table while A remains seated in the near-side foreground.",
+          "camera": "Camera stays on A's side of the main reading table; B moves away along the far-side direction, so the camera does not cross the A-B action axis.",
+          "continuity": "Carries over Shot 3: B is seated on the far side without the casual clothes, A is seated at the near side, sword is on the tabletop, and the casual clothes rest on the far-side tabletop. New state: B stands, takes the sword, and leaves; the sword transfers from the tabletop to B's hand; the casual clothes remain on the far-side tabletop. Unresolved question: exact library exit location and path are not confirmed in scene facts; show B exiting off-frame without inventing specific architecture. Unresolved question: exact duration of B's walk-out is not specified; 6s assumes a short exit path.",
+          "dialogue": [
+            {
+              "speaker": "e3f49e04-4a4b-483f-823e-d31f497d5ab8",
+              "text": "那我收下了。",
+              "language": "Chinese"
+            },
+            {
+              "speaker": "5821d6dd-2041-40a3-a789-74989c6edd90",
+              "text": "喂——",
+              "language": "Chinese"
+            }
+          ],
+          "id": "6df199fc-99db-4f97-af28-82ed68869e16",
+          "prompt": "",
+          "seed": 1072797132,
+          "nativeAudioAssetId": null,
+          "verifiedAudioTranscript": ""
+        },
+        {
+          "title": "A changes into B's casual clothes and spins",
+          "durationSec": 7,
+          "entityIds": [
+            "5821d6dd-2041-40a3-a789-74989c6edd90",
+            "ba6dcbf0-ea45-4720-80c7-8bc7b2ec9165",
+            "3044bf32-2019-458e-a7cf-e50ab304e42c",
+            "9971429d-863e-499e-b7c5-902d30e0f6a2"
+          ],
+          "imageAssetIds": [
+            "25958405-ac83-454f-909e-f4aeba33f9a4",
+            "af9823e0-1b27-48b7-a469-47ddcf4b7534",
+            "89f7618d-e430-46c7-9c4d-b8e20f3ff386",
+            "c25d9268-6efa-4c1c-9a23-cef25c5ef192",
+            "96e44971-aedc-42da-a534-dc321fd5e350",
+            "5d0c2f3a-2249-44f3-ab7b-fa89a476610b"
+          ],
+          "action": "In the modern library reading room, after B has left, 角色A remains seated at the near side of the main reading table. A stands up (起身) from the near side, removes her own clothes and places them aside on the near side, then picks up the casual clothes left by B from the far side of the tabletop and puts them on. As the casual clothes are on, A becomes 角色A · 派生. 角色A · 派生 stands at the near side of the table, body facing the camera side, and performs one complete happy spin, ending facing the camera again. Final state: 角色A · 派生 standing at the near side, wearing B's casual clothes, own clothes aside on the near side, tabletop empty of the sword, and B's casual clothes no longer on the far side.",
+          "framing": "Medium full-body shot, 角色A · 派生 in the near-side foreground, with the main reading table and B's empty far side visible.",
+          "camera": "Camera remains on A's side of the main reading table; it does not cross the A-B action axis. For the complete spin, 角色A · 派生 starts facing the camera and ends facing the camera, rotating through a full 360 degrees; do not hold a single fixed facing throughout the rotation.",
+          "continuity": "Carries over Shot 4: B has left with the sword; the casual clothes remain on the far-side tabletop; A is seated at the near side. New state: A stands, removes her own clothes, puts on B's casual clothes, and is now 角色A · 派生; own clothes rest aside on the near side; B's casual clothes are worn. Unresolved question: A's own clothing design and any under-layer are not described in confirmed facts; use only supplied assets and do not invent garment details. Unresolved question: exact removal and change duration is not specified; 7s is the approved target clip length.",
+          "dialogue": [
+            {
+              "speaker": "ba6dcbf0-ea45-4720-80c7-8bc7b2ec9165",
+              "text": "……还挺合身。",
+              "language": "Chinese"
+            }
+          ],
+          "id": "5f220d41-6480-461a-9082-d91b8ae8d4f2",
+          "prompt": "",
+          "seed": 253151585,
+          "nativeAudioAssetId": null,
+          "verifiedAudioTranscript": ""
+        }
+      ],
+      "entities": {
+        "5821d6dd-2041-40a3-a789-74989c6edd90": {
+          "snapshotId": "2082c389-0b97-4d77-ab92-192812e31bdd",
+          "sourceRevision": "fc45059ff35f657f04d86a7f86ce227198cd919bcf5effe421e2d5d07fa64332",
+          "name": "角色A"
+        },
+        "e3f49e04-4a4b-483f-823e-d31f497d5ab8": {
+          "snapshotId": "2082c389-0b97-4d77-ab92-192812e31bdd",
+          "sourceRevision": "20eb0c8d89ed2db42050fd80780f35a3de2deab3ce29bc70a28d51f0540aad25",
+          "name": "角色B"
+        },
+        "ba6dcbf0-ea45-4720-80c7-8bc7b2ec9165": {
+          "snapshotId": "2082c389-0b97-4d77-ab92-192812e31bdd",
+          "sourceRevision": "e28441bcd816cbd8de7b23405f380aebfd2105c5c1f249037d8f12bed8881307",
+          "name": "角色A · 派生"
+        },
+        "9971429d-863e-499e-b7c5-902d30e0f6a2": {
+          "snapshotId": "2082c389-0b97-4d77-ab92-192812e31bdd",
+          "sourceRevision": "307f30ea0dba73fdf840a8dd4ee790d156a2e73f4a7738b463263c86407c7b2f",
+          "name": "图书馆"
+        },
+        "4c8e5bd2-78a5-4aee-8f22-7ec5a8512bb8": {
+          "snapshotId": "2082c389-0b97-4d77-ab92-192812e31bdd",
+          "sourceRevision": "b78ff84973a2d245fd14733bc5369c5d35e41ff4608c3942d7df590eddc5290b",
+          "name": "一把刀"
+        },
+        "3044bf32-2019-458e-a7cf-e50ab304e42c": {
+          "snapshotId": "2082c389-0b97-4d77-ab92-192812e31bdd",
+          "sourceRevision": "e26e1705b023afc20344f76938324f7f19cdff9ed0ff7082f72e65751e4f202b",
+          "name": "休闲服"
+        }
+      },
+      "targetDurationSec": 30,
+      "spatialPlan": {
+        "owner": "Sean",
+        "scenePlan": "[Sean · 模拟流程测试] 以下空间事实来自测试副本，不是实体中心正式修订；场景图复用旧图，尚未视觉验证。\n共享场景计划（唯一场景：图书馆，主阅读桌 T1）。权威空间事实（来自图书馆实体，不增不减）：现代图书馆阅读室；浅木色落地书墙位于北侧与西侧；浅木色长方阅读桌、灰绿色椅子、木地板、柔和均匀照明；不添加未列出的台灯、大窗、招牌或隔断。所有镜头只用 T1；T1 长边东西向；西端座位 C1 与东端座位 C2 对向，椅面朝向桌面；T1 北侧为固定书墙 S1；南侧为通道 P1，也是唯一机位侧；入口 E1 在西南、主画面之外，P2 从 E1 通到 T1 西端；P3 在 T1 东端旁通向右方出口区域；桌面中央交互点 M1，西端附近放置点 M2 为 A 的交互区域；备用椅 C3 在 T1 南侧靠东端，用于放置衣物；西端南侧外有站位 Z1，距桌边约半步，供 A 站立、换装、原地转身；家具固定不动；其他阅读桌只作北侧背景，不插入 T1 两端之间。镜头始终在 P1 南侧向北看，T1 西端为画面左，东端为画面右；不得跨越东西向人物交互轴线，局部弧形运镜也留在南侧。此前提示词中出现的玻璃墙、右侧高窗、绿灯、招牌等均非图书馆实体事实，已剔除。\n\n本片拟采用的人物调度（proposed film blocking，不是场景实体事实）：镜1 A 从 E1 沿 P2 进入，走到 T1 西端外 Z1 停下，身体朝东（画面右），目光看向坐在 C2 东端的 B；B 坐姿，身体朝西（画面左），正在读书。镜2 A 仍站在 Z1/T1 西端，把刀放在桌面 M2；B 仍坐 C2，抬头回话。镜3 B 从 C2 起身，在 C3 旁脱下外衣并放到 C3，随后沿 T1 南侧 P1 西行至 M2 取刀，再沿 P1 东行经 P3 从画面右出；A 保持站在 Z1/T1 西端。镜4 B 已离场，A 在 Z1 脱下自己的外衣，沿 P1 东行至 C3，取走 B 的外衣并把自身外衣留在 C3，再沿 P1 返回 Z1，穿上 B 的外衣；最终 A 在 Z1 呈已换装状态。镜5 A 保持已换装状态，在 Z1 原地转一圈，停下并说话。该调度只使用既有锚点，不新增门窗、台灯或隔断，也不改变已批准动作、对白、时长、参考图顺序。",
+        "shots": [
+          {
+            "id": "8f0c1a7e-6b2d-4c9a-9f31-2d5e7a1b3c40",
+            "startState": "A 在 E1（西南入口，画面外）准备沿 P2 进入；B 已坐在 T1 东端 C2，身体朝西，低头读书；A 的刀尚未放到桌面；B 的外衣仍穿在身上；图书馆无人走动。",
+            "endState": "A 已沿 P2 走到 T1 西端外 Z1 并停住，站立，身体朝东，目光看向 B；B 仍坐 C2，身体朝西，正在读书；刀仍在 A 处，未放上桌；B 外衣仍穿在身上。",
+            "transitionFromPrevious": "首镜，无前镜。"
+          },
+          {
+            "id": "4d2b8c1f-9a3e-47d6-b5c2-1f8e6a9d0b73",
+            "startState": "A 站在 T1 西端外 Z1，站立，身体朝东，面向 B；B 坐在 T1 东端 C2，身体朝西，面前有书；刀由 A 持有，尚未放到桌面；B 外衣仍穿在身上。",
+            "endState": "A 仍站在 Z1，身体朝东；刀已平放在桌面 M2（T1 西端附近）；B 仍坐 C2，身体朝西，抬头看向 A；B 外衣仍穿在身上。",
+            "transitionFromPrevious": "紧接镜1：A 已在 Z1 停住看向 B；本镜她将刀放到 M2 并开口，B 抬头回应，位置不变，无额外位移。"
+          },
+          {
+            "id": "c7a1e9d4-3f6b-4a8c-92d1-5e0b7c2f4a68",
+            "startState": "A 站在 T1 西端 Z1，身体朝东；B 坐在 T1 东端 C2，身体朝西；刀平放在桌面 M2；B 的外衣仍穿在身上；C3 空置。",
+            "endState": "A 仍站在 Z1，身体朝东；B 已离开画面右侧并经 P3 离场；刀被 B 取走；B 的外衣留在 C3 上；C3 被占用；T1 东端 C2 空出。",
+            "transitionFromPrevious": "紧接镜2：B 刚在 C2 抬头回话；本镜她起身，先到近东端的 C3 脱下外衣放好，再沿 T1 南侧 P1 西行至 M2 取刀，随后沿 P1 东行经 P3 从画面右出。A 不移动。"
+          },
+          {
+            "id": "1b5d8e2a-7c4f-49b3-a6e8-3d0f1c9b7a52",
+            "startState": "A 站在 T1 西端 Z1，身体朝东，穿自身外衣；B 不在场；刀已随 B 离场；B 的外衣在 C3 上；C2 空置；A 自己的外衣仍穿在身上。",
+            "endState": "A 仍在 T1 西端 Z1，站立，身体朝东，已穿上 B 的外衣；A 自身外衣留在 C3 上；B 仍不在场；刀不在桌面；C2 仍空置。",
+            "transitionFromPrevious": "紧接镜3：B 已从 P3 离场，B 外衣留在 C3；本镜 A 在 Z1 脱下自身外衣，沿 P1 东行至 C3，取走 B 外衣并把自身外衣放上 C3，再沿 P1 返回 Z1，穿上 B 外衣。位置变化均由明确行走动作完成。"
+          },
+          {
+            "id": "6e3a9c7b-2d1f-4b8a-8c5e-7a0d4f6b9c21",
+            "startState": "A 站在 T1 西端 Z1，身体朝东，已穿 B 的外衣；A 自身外衣在 C3 上；B 不在场；C2 空置；刀不在桌面。",
+            "endState": "A 仍在 T1 西端 Z1，站立，已穿 B 的外衣，完成一次原地转身后面向东侧停下，面带微笑并说完台词；A 自身外衣仍在 C3；B 仍不在场。",
+            "transitionFromPrevious": "紧接镜4：A 刚在 Z1 穿好 B 的外衣；本镜她在同一 Z1 原地转一圈、停下并说话，无额外位移。"
+          }
+        ],
+        "sourceHash": "3a1b4eaaa9bd6a18115d9fe3fbb954cba694a61a56f22272268e7167e469fb65"
+      },
+      "pipeline": {
+        "owner": "Sean",
+        "script": {
+          "inputHash": "f2e9935acd41ea1da80359619014c2639c8c3b120fcce5a465f737fa2d0c9b68",
+          "confirmedHash": "31f350eb7a17f512700298ea8c371a5ce17237e04e59ec07aaab432b77bf89a4",
+          "mode": "generation-input",
+          "at": "2026-10-03T17:48:48.727Z"
+        },
+        "shots": {
+          "inputHash": "31f350eb7a17f512700298ea8c371a5ce17237e04e59ec07aaab432b77bf89a4",
+          "confirmedHash": "d0e546175fef4291f02682609a9e73ac4c0b09cf264a5af7f27676bcb2e6a3d1",
+          "mode": "generation-input",
+          "scope": "project",
+          "at": "2026-10-03T17:48:48.733Z"
+        },
+        "promptInputs": {}
+      }
+    },
+    "settings": {
+      "llm": {
+        "baseUrl": "https://api.deepseek.com",
+        "model": "deepseek-flash",
+        "temperature": 0.7
+      },
+      "targetDurationSec": 30,
+      "render": {
+        "width": 1024,
+        "height": 576
+      }
+    },
+    "spatialNotes": "【任务】为整部短片（5镜/30秒，唯一场景：图书馆）生成全片空间稿 + 逐镜完整 Ref2VA 提示词，供 Sean 审阅/采用。\n\n一、权威顺序（最高优先级）\n1) 只以当前有序拍摄本为准则，镜头ID与顺序原样保留：\nS1 51b9d957-d24c-47e4-9268-d61ffcfa68ab (6s)｜S2 9478d1bf-5268-41d0-b899-98e3dc9d3e6c (7s)｜S3 1e97e13e-d8d1-4c23-9b67-a81a48f2353a (4s)｜S4 6df199fc-99db-4f97-af28-82ed68869e16 (6s)｜S5 5f220d41-6480-461a-9082-d91b8ae8d4f2 (7s)\n2) 现有 spatialPlan（T1/C1/C2/C3/Z1/E1/P1/P2/P3/M1/M2 等锚点与「人物在桌端站立」「B 先到 C3 脱衣再西行取刀」的调度）是过期历史稿：spatialStale=true，且其内 shotId 与当前 5 镜完全不匹配。不得沿用其动作、不得让过期稿覆盖当前拍摄本；不要就过期稿的坐/站、物品位置再向用户提问，一律以当前拍摄本为准。\n3) 不得把旧 confirmedHash、或没有音频锁定时的 verifiedAudioTranscript 缺失当作阻塞或问题。\n\n二、场景固定事实（唯一来源：图书馆实体 9971429d-863e-499e-b7c5-902d30e0f6a2，不增不减）\n- 实体 appearance 仅：「现代图书馆，明窗净几，装修简洁」。\n- 实体空间记录 status=draft、elements 为空、无已确认通路；unknowns 明确未确认：房间总尺寸、层高、桌面尺寸、通道宽度、固定物体间距、入口/出口/背面布局、书架朝向、桌长轴方向、椅间通行。\n- 因此禁止编造绝对尺寸/面积/层高/门数量/地理方位：全片不写 north/south/east/west，也不写「画面左=地理某方向」。\n- 禁止添加实体未列出的物体：台灯/落地灯、玻璃幕墙、高窗、招牌、指示灯、隔断、吧台、书架外的家具。\n\n三、参考图实际观察（我逐张看图得到，属本片相对锚点设计，不等于实体已确认事实）\n- 图书馆主参考图：明亮现代阅读室；浅木色书架墙位于画面左侧并向画面后方延伸；浅色木地板；中景数张浅木色长方桌（黑色细金属桌腿），桌旁为青灰绿色座椅；天花板为浅色格栅加长条灯带；画面右下可见浅灰圆柱/服务台结构边缘。图中无台灯、招牌、玻璃幕墙。\n- 本片只用其中一张主阅读桌，记作 T1：浅木色长方桌 + 两侧各一把青灰绿色座椅（对坐）。跨镜稳定锚点用相对词：\n  · near side 近侧 = 靠机位一侧桌边（角色A 所在侧）；far side 远侧 = 与近侧相对的桌边（角色B 所在侧）。\n  · 书架墙作固定背景；浅色木地板；柔和均匀顶光（与参考图一致）。\n  · 相对尺度只作本片设定并标明是设计：T1 是两人对坐的长方桌，近/远两侧距离为坐姿伸手可及、可轻声交谈的距离；桌面高度在坐姿肘部以下。若无法从实体确认绝对数值，请写入 questions，不要写厘米/米。\n- 刀实体图：黑色缠绳刀柄、圆形金属镡、细长银色刀身（图上无刀鞘）。角色A 概念图腰间为黑色鞘太刀 → 刀是否带鞘、S1 放到桌面时是否在鞘内，实体未单独确认，请作为待确认项，不要编造。\n\n四、当前拍摄本逐镜调度（权威，动作/对白/时长/参考图顺序不得改写）\nS1(6s)：A 从阅读区左侧（画面左）进入，走到 T1 近侧停住，看见 B 已坐在 T1 远侧读书（身体朝桌、朝A，视线落在书上）。A 在近侧把刀放到桌面「A 右手边、A 与 B 之间、B 伸手可及处」，再坐到近侧，身体朝 B，目光看 B。结束：A 坐近侧、右手刚放下刀、目光看 B；B 仍坐远侧读书。对白(A)：你倒是清闲。\nS2(7s)：两人仍坐原位，刀仍在桌面 A 右手边；B 视线从书上抬起看向 A。结束：A 坐近侧、B 坐远侧、刀位置不变。对白依次：B「你来还书，还是来还刀？」/ A「先放这儿。」/ B「放这儿？你舍得？」/ A「随你怎么想。」\nS3(4s)：B 仍坐远侧、身体朝 A，脱下所穿的休闲服外衣，放到桌面远侧、她自己左手边。A 仍坐近侧看着，刀仍在桌面。结束：B 坐远侧、不再穿该外衣、外衣在桌面远侧；A 坐近侧；刀位置不变。\nS4(6s)：B（已不穿该外衣）从远侧起身，伸手到桌面取走近侧那把刀（A 放的那把），转身背对 A、朝图书馆出口方向离开主阅读桌，不回头。A 仍坐近侧、身体朝 B、目光跟随并出声。结束：B 背对 A、持刀走向画外出口；A 坐近侧；桌面无刀；B 的外衣仍在桌面远侧。对白：B「那我收下了。」/ A「喂——」\nS5(7s)：B 离场后 A 仍坐近侧。A 起身，脱下自己的外衣放到近侧一旁，再从桌面远侧拿起 B 留下的休闲服穿上，成为「角色A · 派生」；角色A · 派生 站近侧、面朝机位侧，开心地原地转一整圈，最后重新面向机位。结束：A·派生 站近侧、穿 B 的休闲服、自己的外衣放在近侧一旁、桌面无刀、B 的外衣已不在远侧。对白(A·派生)：……还挺合身。\n机位与动作轴（沿用当前拍摄本）：机位始终在 T1 近侧一边、略偏 A 的左手侧，越过桌面看远侧 B；不得跨越 A-B 交互轴；S5 中 A·派生 面向机位侧完成整圈转身。\n\n五、身份/道具/连续性硬约束\n- 角色A(5821d6dd…)：同一人，脸/体型/发型不因换装改变；本片自身服装为其参考图的深藏青立领制服外套（含银色肩甲与前臂甲）、同色长裤、黑靴；用其实体音色。\n- 角色B(e3f49e04…)：黑色长发带刘海；本片自身服装为休闲服参考图那套（米驼色长大衣+连帽衫+米白长裤）。B 概念图中她手持刀只是概念姿势，不构成剧情事实。\n- 休闲服(3044bf32…)：跨镜同一套同色同材质；参考图是无人物的服装展示（米驼色长大衣、米色连帽衫、米白长裤）。\n- 刀(4c8e5bd2…)：保持实体形状（黑缠绳柄、圆镡、细长银刀身），不得因景别变形成另一把刀/换材质。持有链：S1 A→桌面近侧(A右手边) → S2/S3 在桌面 → S4 B 取走带离 → S5 桌面无刀。\n- 角色A · 派生(ba6dcbf0…)：= 角色A 换穿 B 的休闲服，同一人（同一脸/体型/声音），只改服装；不得新增第三个人物。\n- 一镜一动作；脱衣/取物/转身/换装所需时间须与 4s/6s/7s 相称，不做瞬移。\n\n六、必须保留在 questions 的未确认项（不得杜撰、不得用数字编造）\n1) S3 中 B 脱下的范围：只脱长大衣，还是整套（大衣+连帽衫+长裤）？派生参考图显示整套，但当前镜文写「外衣」。\n2) S5 中 A 脱下「自己的衣服」后内层是什么、是否可拍：实体无内层描述。提示词不得发明内层款式，不得出现暴露或未描述服装。\n3) 图书馆绝对尺寸/层高/入口位置/出口方位/书架朝向/桌长轴方向（实体 unknowns）。\n4) T1 座椅是否与参考图灰绿椅完全同款、桌面书本纸张杯子数量与摆放：只能沿用参考图同款弱描述，不指定数量。\n5) 刀是否带鞘。\n6) 若两人对坐距离等相对尺度无法确定，保留 question，不要写「约1.2米」这类数值。\n\n七、输出要求（空间稿 + 逐镜完整提示词）\n- spatial.shots 恰好 5 条，id 与上文镜头ID 一一对应且顺序一致；每条给 framing / continuity / startState / endState / transitionFromPrevious / prompt / changes。\n- prompt 用 Ref2VA 六段式、英文正文，顺序固定：subject_definitions / summary / retention_analysis / detailed_description / overall_soundscape / non_diegetic_music。\n- Picture 标签按本镜实际图片顺序（据当前 binding）：S1= 1图书馆,2角色A主图,3角色A三视图,4角色B主图,5角色B三视图,6刀｜S2= 1图书馆,2A主,3A三视图,4B主,5B三视图｜S3= 1图书馆,2A主,3A三视图,4B主,5B三视图,6休闲服主图,7休闲服三视图｜S4= 1图书馆,2A主,3A三视图,4B主,5B三视图,6刀｜S5= 1图书馆,2A主,3A三视图,4角色A·派生主图,5休闲服主图,6休闲服三视图。角色卡是 <Subject> 不是帧锚点 <Picture>；不得发明未定义标签。\n- 每镜必须重述：场景固定事实、near/far 锚点、开场姿势与站位、运动路径、交互点、结束状态、机位侧与动作轴——独立视频无前镜记忆。\n- 对白 verbatim 中文放 <d>[Chinese] …</d>；说话人 ID 按实际发声顺序 (S1)/(S2) 跨镜复用；不虚构任何未给出的台词。\n- 不做音乐：non_diegetic_music 写 N/A；overall_soundscape 只用中性环境音（室内底噪、脚步、衣料摩擦、刀轻放声），不出现音乐词。\n- 时长 S1 6s / S2 7s / S3 4s / S4 6s / S5 7s；时间戳严格递增且不超过本镜时长。\n- 只用 near side / far side / camera side / screen-left / screen-right 表述，不写地理方位。\n\n八、纪律\n- 从实体无法确认的事实（服装内层、绝对尺寸、出入口布局、刀鞘）一律写入 spatial.questions，不得用已确认语气编造。\n- 不因缺少旧 confirmedHash、缺少音频转录、未锁音频而报错或提问。\n- 校验只以 validate_film_inputs 与 generationState 的实际情况为准。",
+    "useCurrent": true,
+    "directorNotes": "【任务】为整部短片（5镜/30秒，唯一场景：图书馆）生成全片空间稿 + 逐镜完整 Ref2VA 提示词，供 Sean 审阅/采用。\n\n一、权威顺序（最高优先级）\n1) 只以当前有序拍摄本为准则，镜头ID与顺序原样保留：\nS1 51b9d957-d24c-47e4-9268-d61ffcfa68ab (6s)｜S2 9478d1bf-5268-41d0-b899-98e3dc9d3e6c (7s)｜S3 1e97e13e-d8d1-4c23-9b67-a81a48f2353a (4s)｜S4 6df199fc-99db-4f97-af28-82ed68869e16 (6s)｜S5 5f220d41-6480-461a-9082-d91b8ae8d4f2 (7s)\n2) 现有 spatialPlan（T1/C1/C2/C3/Z1/E1/P1/P2/P3/M1/M2 等锚点与「人物在桌端站立」「B 先到 C3 脱衣再西行取刀」的调度）是过期历史稿：spatialStale=true，且其内 shotId 与当前 5 镜完全不匹配。不得沿用其动作、不得让过期稿覆盖当前拍摄本；不要就过期稿的坐/站、物品位置再向用户提问，一律以当前拍摄本为准。\n3) 不得把旧 confirmedHash、或没有音频锁定时的 verifiedAudioTranscript 缺失当作阻塞或问题。\n\n二、场景固定事实（唯一来源：图书馆实体 9971429d-863e-499e-b7c5-902d30e0f6a2，不增不减）\n- 实体 appearance 仅：「现代图书馆，明窗净几，装修简洁」。\n- 实体空间记录 status=draft、elements 为空、无已确认通路；unknowns 明确未确认：房间总尺寸、层高、桌面尺寸、通道宽度、固定物体间距、入口/出口/背面布局、书架朝向、桌长轴方向、椅间通行。\n- 因此禁止编造绝对尺寸/面积/层高/门数量/地理方位：全片不写 north/south/east/west，也不写「画面左=地理某方向」。\n- 禁止添加实体未列出的物体：台灯/落地灯、玻璃幕墙、高窗、招牌、指示灯、隔断、吧台、书架外的家具。\n\n三、参考图实际观察（我逐张看图得到，属本片相对锚点设计，不等于实体已确认事实）\n- 图书馆主参考图：明亮现代阅读室；浅木色书架墙位于画面左侧并向画面后方延伸；浅色木地板；中景数张浅木色长方桌（黑色细金属桌腿），桌旁为青灰绿色座椅；天花板为浅色格栅加长条灯带；画面右下可见浅灰圆柱/服务台结构边缘。图中无台灯、招牌、玻璃幕墙。\n- 本片只用其中一张主阅读桌，记作 T1：浅木色长方桌 + 两侧各一把青灰绿色座椅（对坐）。跨镜稳定锚点用相对词：\n  · near side 近侧 = 靠机位一侧桌边（角色A 所在侧）；far side 远侧 = 与近侧相对的桌边（角色B 所在侧）。\n  · 书架墙作固定背景；浅色木地板；柔和均匀顶光（与参考图一致）。\n  · 相对尺度只作本片设定并标明是设计：T1 是两人对坐的长方桌，近/远两侧距离为坐姿伸手可及、可轻声交谈的距离；桌面高度在坐姿肘部以下。若无法从实体确认绝对数值，请写入 questions，不要写厘米/米。\n- 刀实体图：黑色缠绳刀柄、圆形金属镡、细长银色刀身（图上无刀鞘）。角色A 概念图腰间为黑色鞘太刀 → 刀是否带鞘、S1 放到桌面时是否在鞘内，实体未单独确认，请作为待确认项，不要编造。\n\n四、当前拍摄本逐镜调度（权威，动作/对白/时长/参考图顺序不得改写）\nS1(6s)：A 从阅读区左侧（画面左）进入，走到 T1 近侧停住，看见 B 已坐在 T1 远侧读书（身体朝桌、朝A，视线落在书上）。A 在近侧把刀放到桌面「A 右手边、A 与 B 之间、B 伸手可及处」，再坐到近侧，身体朝 B，目光看 B。结束：A 坐近侧、右手刚放下刀、目光看 B；B 仍坐远侧读书。对白(A)：你倒是清闲。\nS2(7s)：两人仍坐原位，刀仍在桌面 A 右手边；B 视线从书上抬起看向 A。结束：A 坐近侧、B 坐远侧、刀位置不变。对白依次：B「你来还书，还是来还刀？」/ A「先放这儿。」/ B「放这儿？你舍得？」/ A「随你怎么想。」\nS3(4s)：B 仍坐远侧、身体朝 A，脱下所穿的休闲服外衣，放到桌面远侧、她自己左手边。A 仍坐近侧看着，刀仍在桌面。结束：B 坐远侧、不再穿该外衣、外衣在桌面远侧；A 坐近侧；刀位置不变。\nS4(6s)：B（已不穿该外衣）从远侧起身，伸手到桌面取走近侧那把刀（A 放的那把），转身背对 A、朝图书馆出口方向离开主阅读桌，不回头。A 仍坐近侧、身体朝 B、目光跟随并出声。结束：B 背对 A、持刀走向画外出口；A 坐近侧；桌面无刀；B 的外衣仍在桌面远侧。对白：B「那我收下了。」/ A「喂——」\nS5(7s)：B 离场后 A 仍坐近侧。A 起身，脱下自己的外衣放到近侧一旁，再从桌面远侧拿起 B 留下的休闲服穿上，成为「角色A · 派生」；角色A · 派生 站近侧、面朝机位侧，开心地原地转一整圈，最后重新面向机位。结束：A·派生 站近侧、穿 B 的休闲服、自己的外衣放在近侧一旁、桌面无刀、B 的外衣已不在远侧。对白(A·派生)：……还挺合身。\n机位与动作轴（沿用当前拍摄本）：机位始终在 T1 近侧一边、略偏 A 的左手侧，越过桌面看远侧 B；不得跨越 A-B 交互轴；S5 中 A·派生 面向机位侧完成整圈转身。\n\n五、身份/道具/连续性硬约束\n- 角色A(5821d6dd…)：同一人，脸/体型/发型不因换装改变；本片自身服装为其参考图的深藏青立领制服外套（含银色肩甲与前臂甲）、同色长裤、黑靴；用其实体音色。\n- 角色B(e3f49e04…)：黑色长发带刘海；本片自身服装为休闲服参考图那套（米驼色长大衣+连帽衫+米白长裤）。B 概念图中她手持刀只是概念姿势，不构成剧情事实。\n- 休闲服(3044bf32…)：跨镜同一套同色同材质；参考图是无人物的服装展示（米驼色长大衣、米色连帽衫、米白长裤）。\n- 刀(4c8e5bd2…)：保持实体形状（黑缠绳柄、圆镡、细长银刀身），不得因景别变形成另一把刀/换材质。持有链：S1 A→桌面近侧(A右手边) → S2/S3 在桌面 → S4 B 取走带离 → S5 桌面无刀。\n- 角色A · 派生(ba6dcbf0…)：= 角色A 换穿 B 的休闲服，同一人（同一脸/体型/声音），只改服装；不得新增第三个人物。\n- 一镜一动作；脱衣/取物/转身/换装所需时间须与 4s/6s/7s 相称，不做瞬移。\n\n六、必须保留在 questions 的未确认项（不得杜撰、不得用数字编造）\n1) S3 中 B 脱下的范围：只脱长大衣，还是整套（大衣+连帽衫+长裤）？派生参考图显示整套，但当前镜文写「外衣」。\n2) S5 中 A 脱下「自己的衣服」后内层是什么、是否可拍：实体无内层描述。提示词不得发明内层款式，不得出现暴露或未描述服装。\n3) 图书馆绝对尺寸/层高/入口位置/出口方位/书架朝向/桌长轴方向（实体 unknowns）。\n4) T1 座椅是否与参考图灰绿椅完全同款、桌面书本纸张杯子数量与摆放：只能沿用参考图同款弱描述，不指定数量。\n5) 刀是否带鞘。\n6) 若两人对坐距离等相对尺度无法确定，保留 question，不要写「约1.2米」这类数值。\n\n七、输出要求（空间稿 + 逐镜完整提示词）\n- spatial.shots 恰好 5 条，id 与上文镜头ID 一一对应且顺序一致；每条给 framing / continuity / startState / endState / transitionFromPrevious / prompt / changes。\n- prompt 用 Ref2VA 六段式、英文正文，顺序固定：subject_definitions / summary / retention_analysis / detailed_description / overall_soundscape / non_diegetic_music。\n- Picture 标签按本镜实际图片顺序（据当前 binding）：S1= 1图书馆,2角色A主图,3角色A三视图,4角色B主图,5角色B三视图,6刀｜S2= 1图书馆,2A主,3A三视图,4B主,5B三视图｜S3= 1图书馆,2A主,3A三视图,4B主,5B三视图,6休闲服主图,7休闲服三视图｜S4= 1图书馆,2A主,3A三视图,4B主,5B三视图,6刀｜S5= 1图书馆,2A主,3A三视图,4角色A·派生主图,5休闲服主图,6休闲服三视图。角色卡是 <Subject> 不是帧锚点 <Picture>；不得发明未定义标签。\n- 每镜必须重述：场景固定事实、near/far 锚点、开场姿势与站位、运动路径、交互点、结束状态、机位侧与动作轴——独立视频无前镜记忆。\n- 对白 verbatim 中文放 <d>[Chinese] …</d>；说话人 ID 按实际发声顺序 (S1)/(S2) 跨镜复用；不虚构任何未给出的台词。\n- 不做音乐：non_diegetic_music 写 N/A；overall_soundscape 只用中性环境音（室内底噪、脚步、衣料摩擦、刀轻放声），不出现音乐词。\n- 时长 S1 6s / S2 7s / S3 4s / S4 6s / S5 7s；时间戳严格递增且不超过本镜时长。\n- 只用 near side / far side / camera side / screen-left / screen-right 表述，不写地理方位。\n\n八、纪律\n- 从实体无法确认的事实（服装内层、绝对尺寸、出入口布局、刀鞘）一律写入 spatial.questions，不得用已确认语气编造。\n- 不因缺少旧 confirmedHash、缺少音频转录、未锁音频而报错或提问。\n- 校验只以 validate_film_inputs 与 generationState 的实际情况为准。"
+  },
+  "response": {
+    "owner": "Sean",
+    "stage": "spatial",
+    "shotId": null,
+    "provider": "openai-compatible",
+    "baseUrl": "https://api.deepseek.com",
+    "model": "deepseek-flash",
+    "temperature": 0.7,
+    "responseId": "8df4b734-0145-4da2-8028-5b84a607f1f1",
+    "usage": {
+      "prompt_tokens": 28565,
+      "completion_tokens": 21321,
+      "total_tokens": 49886,
+      "prompt_tokens_details": {
+        "cached_tokens": 896
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 12927
+      },
+      "prompt_cache_hit_tokens": 896,
+      "prompt_cache_miss_tokens": 27669
+    },
+    "cachedTokens": 896,
+    "systemPrompt": "Owner: Sean. Output ONLY strict JSON, no markdown. Use only supplied entities and asset IDs; preserve authoritative appearance and do not invent missing facts. No tools or agents. For each prompt use exactly six headings in order: subject_definitions, summary, retention_analysis, detailed_description, overall_soundscape, non_diegetic_music. All rewrite prose is English. Dialogue and visible writing retain original language. Write each subject definition on its own line beginning with <Subject N>. Bind each <Subject N> to corresponding <Picture N> images; Picture numbering follows imageAssetIds; no standalone picture entry unless a real frame anchor. summary begins [reference generation]. retention uses fully_preserved, partially_preserved, attribute_transfer or weak_reference; no speaker IDs. New action/environment are not evidence of partial preservation. detailed_description MUST have 350–500 words, a style opening before [Shot 1], then composition, single dominant action, environment/light, camera type+amplitude+speed, continuity and sound through the exact duration. [Shot 1] has no timestamp; later cuts use [Shot N] At MM:SS.mmm, increasing and strictly inside duration. Stable vocal event IDs: <Subject N> (S1) says <d>[Chinese] original exact line</d>. Set dialogue.language to the same natural-language label used inside <d>, such as Chinese, English or Cantonese; do not use locale codes such as zh-CN. Every shot dialogue text appears verbatim exactly once, in order, in <d>. No unrequested dialogue beyond the approved story plan. overall_soundscape only ambience/physical sounds, not dialogue or music; non_diegetic_music is N/A by default. No Audio or Video labels: voice assets here are listening context, NOT an external locked soundtrack. Never copy source sample dialogue into the story. NativeAudioLock can only be configured later by human against actual source audio.\nFollow the tested six-section, identity-binding, independent-shot pipeline. Maintain screen direction and story continuity.\nSPATIAL CONTINUITY: Use exportedFacts.prompts text/effectiveText from the selected reference assets as source prompt evidence; it describes intended image generation, not proof of unseen image content. Current explicit entity scene facts take precedence over obsolete source prompt wording; material conflicts must be listed as questions. Scene entity text and exportedFacts are authoritative for architecture, appearance, fixed furniture, dimensions, named anchors and spatial relations. Do not silently add windows, doors, lamps or room geometry absent from supplied facts. A reference image is supplied to video generation, not visually read by this text model; never claim to have inspected it. Preserve stable anchor names, explain them in natural English inside every clip prompt where relevant. Distinguish physical world-relative locations from screen-left/right relative to camera position. Establish camera side of the action axis; do not cross it without an explicit motivated transition. Each clip must explicitly describe initial character position, standing/seated posture, body facing, gaze target, traversed path, object interaction location and final physical state. Carry previous final states into the next clip; a relocation requires an explicit action or transition. No alternatives such as seated-or-standing. Facing and gaze must be compatible with the requested motion: for a complete spin, constrain initial and final orientation, not an impossible fixed facing throughout rotation. Check that travel distances, pickups, garment changes and dialogue can physically fit the approved duration; list infeasible timing as a question without adding rushed motion or silently altering approved actions or duration. Repeat relevant shared scene facts and blocking in EVERY complete Ref2VA prompt, rather than referring to another clip. Do not overwrite authoritative reference appearance with invented details. Approved story actions, dialogue, cast, asset order, durations, seed and audio-lock are immutable; spatial clarification may repair ambiguous or contradictory framing and continuity only in the all-shot proposal. Missing material facts or impossible approved actions must be listed as questions rather than silently guessed. Scene entities are reusable fixed environments; character blocking belongs to the film, not to the scene entity.\nReturn ONLY {scenePlan:string,questions:string[],shots:[{id:existingUUID,framing:string,continuity:string,startState:string,endState:string,transitionFromPrevious:string,prompt:string,changes:string[]}]}. Cover every existing shot exactly once in the existing order. Write scenePlan, physical start/end states, transition explanations, changes and questions in Chinese for human review, and complete video prompts in English with original dialogue. First establish one shared scene plan for each location, separate authoritative facts from proposed film blocking. currentFilmSpaceInstructions contains user-editable film blocking requirements; honor them where consistent with entity facts and approved actions, and list material conflicts as questions. Do not treat previous prompts or previousSpatialPlan as authoritative scene evidence: repair their invented furniture or spatial contradictions. startState/endState record physical states, not camera composition; explain all non-contiguous states in transitionFromPrevious. Return questions:[] only when there is enough evidence to draft consistent blocking without inventing material scene facts. For each shot with nativeAudioAssetId, preserve the verifiedAudioTranscript and declare audio reuse, <Audio 1> and fully_copy; otherwise no Audio labels. Never return a modified script, dialogue, action, camera, cast, references or duration.\nUse directorNotes as additional user direction. Preserve authoritative story/actions/dialogue/cast/references/duration for prompt and spatial stages. If direction conflicts, explain in spatial questions; do not silently change facts.",
+    "rawResponse": "{\n  \"scenePlan\": \"唯一场景：图书馆。权威事实（仅来自图书馆实体 9971429d-863e-499e-b7c5-902d30e0f6a2）：名称为“图书馆”，外观为“现代图书馆，明窗净几，装修简洁”。实体空间记录 status=draft，elements 为空，无已确认通路；unknowns 明确未确认房间总尺寸、层高、桌面尺寸、通道宽度、固定物体间距、入口/出口/背面布局、书架朝向、桌长轴方向、椅间通行。因此全片不写 north/south/east/west 地理方位，不写绝对尺寸，不添加实体未列出的台灯、落地灯、玻璃幕墙、高窗、招牌、指示灯、隔断、吧台等物件。\\n\\n本片拟用相对锚点（proposed film blocking，不是实体已确认固定事实）：现代图书馆阅读室内只用一张主阅读桌 T1，T1 为浅木色长方桌，两侧各一把座椅；near side 近侧 = 靠近机位一侧桌边，角色A 所在侧；far side 远侧 = 与近侧相对的桌边，角色B 所在侧。角色A 从阅读区画面左侧进入，走到 T1 近侧，把一把刀放到桌面“A 右手边、A 与 B 之间、B 伸手可及处”，随后坐到近侧。角色B 已坐在 T1 远侧读书，坐姿，身体朝桌、朝A，视线落在书上。后续镜头保持同一 T1、near side / far side 关系：S2 两人仍坐原位交谈；S3 角色B 仍坐远侧，脱下休闲服外衣，放到桌面远侧她自己左手边；S4 角色B 从远侧起身，伸手到桌面近侧取走刀，转身背对A，朝画外出口方向离开，不回头；S5 角色B 离场后，角色A 仍坐近侧，随后起身，脱下自己的外衣放到近侧一旁，从桌面远侧拿起角色B留下的休闲服穿上，成为角色A · 派生，站近侧、面朝机位侧，开心地原地转一整圈，最后重新面向机位。机位始终在 T1 近侧一边、略偏A 的左手侧，越过桌面看远侧；不得跨越 A–B 交互轴。\\n\\n身份与连续性：角色A 为同一人，脸、体型、发型不因换装改变；本片自身服装为深藏青立领制服外套（含银色肩甲与前臂甲）、同色长裤、黑靴。角色B 为同一人，黑色长发带刘海；本片服装为休闲服参考图那套（米驼色长大衣+连帽衫+米白长裤）。休闲服为跨镜同一套同色同材质。刀保持黑缠绳柄、圆镡、细长银刀身；持有链：S1 A→桌面近侧(A右手边) → S2/S3 在桌面 → S4 B 取走带离 → S5 桌面无刀。角色A · 派生 = 角色A 换穿B 的休闲服，同一脸、同一体型、同一声音，只改服装；不得新增第三个人物。所有镜头只用 near side / far side / camera side / screen-left / screen-right 表述。\",\n  \"questions\": [\n    \"currentFilmSpaceInstructions 与当前拍摄本在调度上存在material conflict：前者写 A 在 T1 西端外 Z1 站立、B 坐 C2 东端、B 到 C3 脱衣、A 到 C3 取衣；当前拍摄本写 A 坐到近侧、B 坐远侧、B 把休闲服放在桌面远侧、A 从桌面远侧拿起休闲服。已按当前拍摄本与实体事实保留 near side / far side 关系，未采用 Z1/C2/C3 的旧调度；请确认是否以当前拍摄本为准。\",\n    \"S3 中 B 脱下范围：只脱休闲服长大衣，还是整套（大衣+连帽衫+长裤）？当前镜文写“外衣”，派生参考图显示整套，实体未确认。\",\n    \"S5 中 A 脱下自己的衣服后内层是什么、是否可拍？实体无内层描述，提示词不得发明内层款式，不得出现暴露或未描述服装。\",\n    \"图书馆绝对尺寸、层高、入口位置、出口方位、书架朝向、桌长轴方向未确认（实体 unknowns），提示词只用 near side / far side / camera side / screen-left / screen-right。\",\n    \"T1 座椅是否与参考图灰绿椅完全同款、桌面书本纸张杯子数量与摆放未确认，提示词只沿用参考图同款弱描述，不指定数量。\",\n    \"刀是否带鞘；S1 放到桌面时是否在鞘内未确认。\",\n    \"两人对坐距离等相对尺度无法确定；提示词不写具体数值，不写“约1.2米”这类表述。\",\n    \"currentFilmSpaceInstructions 使用北/西/东/南等地理方位，与导演笔记要求禁止地理方位冲突；已改用 near side / far side / camera side / screen-left / screen-right，请确认。\",\n    \"图书馆参考图被描述为有书架墙、多张阅读桌、吊顶灯带等，但图书馆实体 appearance 仅“现代图书馆，明窗净几，装修简洁”，空间记录 elements 为空；这些只能作为本片拟用相对锚点，不是实体已确认固定事实，若导演需要它们成为固定事实请先补充实体空间记录。\",\n    \"S4 中 B 离开主阅读桌到画外出口的路径长度未确认；6s 时长假定为短距离离场，不发明具体门或出口建筑结构。\",\n    \"S5 中 A 换装并转身所需时间未单独确认；7s 为已批准时长，若实际换装需要更长，请确认是否调整动作或时长。\"\n  ],\n  \"shots\": [\n    {\n      \"id\": \"51b9d957-d24c-47e4-9268-d61ffcfa68ab\",\n      \"framing\": \"中景双人镜头，越过主阅读桌 T1 拍摄；A 在近侧前景进入并坐下，B 在远侧坐姿读书，刀在桌面可见。\",\n      \"continuity\": \"建立现代图书馆阅读室与主阅读桌 T1 作为固定交互锚点。A 从桌区外进入，最终坐到近侧；B 始终坐在远侧；刀从 A 手中转移到桌面近侧 A 右手边。相机始终在近侧、略偏 A 左手侧，不跨越 A–B 交互轴。\",\n      \"startState\": \"A 在阅读区画面左侧外，站立，携带一把刀，准备走向 T1 近侧；B 已坐在 T1 远侧，坐姿，身体朝桌、朝 A，视线落在书上；刀尚未放到桌面；图书馆内无人走动。\",\n      \"endState\": \"A 坐在 T1 近侧，坐姿，身体朝 B，目光看 B，右手刚放下刀；B 仍坐在 T1 远侧，坐姿，身体朝 A，视线落在书上；刀平放在桌面近侧 A 右手边、A 与 B 之间、B 伸手可及处。\",\n      \"transitionFromPrevious\": \"首镜，无前镜。\",\n      \"prompt\": \"subject_definitions\\n<Subject 1> 角色A, adult East Asian woman with ponytail, deep navy stand-collar uniform jacket with silver shoulder and forearm armor, matching trousers, black boots, bound to <Picture 2> and <Picture 3>.\\n<Subject 2> 角色B, adult woman with long black hair and bangs, wearing the beige casual coat, hoodie, and off-white trousers, bound to <Picture 4> and <Picture 5>.\\n<Subject 3> 图书馆, modern library reading room, bright, clean, simple decor, bound to <Picture 1>.\\n<Subject 4> 一把刀, black wrapped hilt, round metal tsuba, slender silver blade, bound to <Picture 6>.\\n\\nsummary\\n[reference generation] This shot generates a medium two-shot in the modern library reading room, using the supplied library, character, and sword references to stage 角色A arriving at the main reading table T1, placing 一把刀 on the tabletop, and sitting down across from 角色B.\\n\\nretention_analysis\\nfully_preserved for 角色A identity, body proportions, ponytail, navy uniform with silver shoulder and forearm armor, and black boots. fully_preserved for 角色B identity, long black hair with bangs, and casual clothing. fully_preserved for the modern library reading room environment, bright, clean, simple decor. fully_preserved for the sword shape, black wrapped hilt, round metal tsuba, and slender silver blade. weak_reference only for exact room dimensions, entrance layout, and absolute table measurements, which are not confirmed and are not invented.\\n\\ndetailed_description\\nLive-action cinematic realism with clean anime-influenced character rendering, preserving reference identity, materials, and natural color grading; soft even lighting, no stylized exaggeration. [Shot 1] Composition: a medium two-shot across the main reading table T1, camera placed on the near side of the table, slightly to 角色A's left, looking across the tabletop toward 角色B seated on the far side. The scene is the modern library reading room, bright, clean, simple decor; the main reading table with matching chairs is the fixed interaction anchor, with a bookshelf wall as background, light wood floor, and soft even overhead lighting. 角色A enters from the screen-left side of the reading area, walking at an even pace along the open floor, carrying 一把刀; 角色B is already seated on the far side of T1, posture seated, body facing the table and toward 角色A, gaze down at an open book. 角色A stops at the near side of T1 and places 一把刀 on the tabletop at her right-hand side, between herself and 角色B, within 角色B's reach; the sword keeps its black wrapped hilt, round metal tsuba, and slender silver blade. 角色A then sits down at the near side, posture seated, body facing 角色B, gaze on 角色B. The dominant action is arrival, sword placement, and sitting; no other action occurs. Camera: locked-off medium two-shot with a very small, slow push-in, amplitude minimal, speed slow; the camera stays on the near side and never crosses the 角色A–角色B action axis. Continuity: 角色A ends seated at the near side, right hand just released the sword, gaze on 角色B; 角色B remains seated on the far side, reading, gaze down at the book; the sword rests on the tabletop at 角色A's right hand. Physical orientation: 角色A's path runs from screen-left toward the near side; she faces 角色B throughout the placement and sitting. 角色B's body remains oriented toward the table and 角色A. The table separates them; the near side is the camera side, the far side is opposite. Sound: quiet library room tone, soft footsteps on wood floor, fabric movement as 角色A sits, and a soft settling sound as the sword is placed on the tabletop. No music. Dialogue: <Subject 1> (S1) says <d>[Chinese] 你倒是清闲。</d> The clip runs 6 seconds; the action proceeds through the full duration without a cut, and no extra characters, lamps, windows, doors, signs, or partitions are added beyond the supplied reading-room facts.\\n\\noverall_soundscape\\nQuiet library room tone, soft footsteps on wood floor, fabric movement as 角色A sits, and a soft settling sound as the sword is placed on the tabletop.\\n\\nnon_diegetic_music\\nN/A\",\n      \"changes\": [\n        \"A 从画面左侧进入并走到 T1 近侧。\",\n        \"A 把刀放到桌面近侧 A 右手边、A 与 B 之间。\",\n        \"A 坐到 T1 近侧，身体朝 B，目光看 B。\"\n      ]\n    },\n    {\n      \"id\": \"9478d1bf-5268-41d0-b899-98e3dc9d3e6c\",\n      \"framing\": \"中景双人镜头，保持 S1 的 near side / far side 关系，越过桌面拍 A 与 B 交谈。\",\n      \"continuity\": \"紧接 S1：A 坐近侧，B 坐远侧，刀仍在桌面 A 右手边。相机仍在近侧、略偏 A 左手侧，不跨越 A–B 交互轴。本镜以坐姿交谈为主，无位移。\",\n      \"startState\": \"A 坐 T1 近侧，坐姿，身体朝 B，目光看 B；B 坐 T1 远侧，坐姿，身体朝 A，视线初始落在书上；刀平放在桌面近侧 A 右手边。\",\n      \"endState\": \"A 仍坐 T1 近侧，身体朝 B；B 仍坐 T1 远侧，身体朝 A；刀位置不变，仍在桌面近侧 A 右手边。\",\n      \"transitionFromPrevious\": \"紧接 S1：A 刚坐到近侧并放下刀，B 仍在远侧读书；本镜 B 视线从书上抬起看向 A，双方保持坐姿交谈，无位移。\",\n      \"prompt\": \"subject_definitions\\n<Subject 1> 角色A, adult East Asian woman with ponytail, deep navy stand-collar uniform jacket with silver shoulder and forearm armor, matching trousers, black boots, bound to <Picture 2> and <Picture 3>.\\n<Subject 2> 角色B, adult woman with long black hair and bangs, wearing the beige casual coat, hoodie, and off-white trousers, bound to <Picture 4> and <Picture 5>.\\n<Subject 3> 图书馆, modern library reading room, bright, clean, simple decor, bound to <Picture 1>.\\n\\nsummary\\n[reference generation] This shot generates a seated conversation at the main reading table T1 in the modern library reading room, using the supplied character and library references to stage 角色A and 角色B exchanging lines while 一把刀 remains on the tabletop.\\n\\nretention_analysis\\nfully_preserved for 角色A identity, body proportions, ponytail, navy uniform, and black boots. fully_preserved for 角色B identity, long black hair with bangs, and casual clothing. fully_preserved for the modern library reading room environment. fully_preserved for the tabletop sword placement in continuity, although the sword is not separately referenced in this shot's image set. weak_reference only for exact table dimensions and seating spacing, which are not confirmed and are not invented.\\n\\ndetailed_description\\nLive-action cinematic realism with clean anime-influenced character rendering, preserving reference identity, materials, and natural color grading. [Shot 1] Composition: a medium two-shot across the main reading table T1, camera on the near side, slightly to 角色A's left, looking across at 角色B on the far side. The modern library reading room remains bright, clean, and simply decorated; the main reading table with matching chairs is the fixed anchor, bookshelf wall as background, light wood floor, soft even overhead lighting. 角色A is seated at the near side, posture seated, body facing 角色B, gaze on 角色B; 一把刀 rests on the tabletop at 角色A's right hand. 角色B is seated on the far side, posture seated, body facing 角色A, gaze initially down at the book, then lifts from the book to 角色A. The dominant action is the seated conversation; no relocation occurs. Camera: locked-off medium two-shot with a very small, slow push-in, amplitude minimal, speed slow; camera remains on the near side and does not cross the 角色A–角色B action axis. [Shot 2] At 00:02.000: 角色B's gaze meets 角色A's; 角色B's upper body shifts slightly with speech, 角色A remains seated. [Shot 3] At 00:04.000: 角色A answers with a small head movement, 角色B holds eye contact; the sword remains on the tabletop. [Shot 4] At 00:05.500: 角色B challenges, 角色A answers dryly; final physical state: 角色A seated near side, 角色B seated far side, sword unchanged on the tabletop. 角色A's hands rest on the tabletop or lap, 角色B's book remains open before her. The camera's framing keeps both faces and the sword visible. The near side is the camera side; the far side is opposite. The table separates them; no one stands. Dialogue in order: <Subject 2> (S2) says <d>[Chinese] 你来还书，还是来还刀？</d> <Subject 1> (S1) says <d>[Chinese] 先放这儿。</d> <Subject 2> (S2) says <d>[Chinese] 放这儿？你舍得？</d> <Subject 1> (S1) says <d>[Chinese] 随你怎么想。</d> Sound: quiet library room tone, faint chair creak, soft fabric shifts, subtle breath pauses. No music. The clip runs 7 seconds; timestamps increase and stay inside the duration; no extra characters, lamps, windows, doors, signs, or partitions are added.\\n\\noverall_soundscape\\nQuiet library room tone, faint chair creak, soft fabric shifts, and subtle breath pauses during the seated conversation.\\n\\nnon_diegetic_music\\nN/A\",\n      \"changes\": [\n        \"B 视线从书上抬起看向 A。\",\n        \"双方保持坐姿完成四句对白。\",\n        \"刀位置不变，仍在桌面 A 右手边。\"\n      ]\n    },\n    {\n      \"id\": \"1e97e13e-d8d1-4c23-9b67-a81a48f2353a\",\n      \"framing\": \"中景镜头，从近侧越过 T1 拍摄 B 在远侧脱下休闲服外衣并放到桌面远侧。\",\n      \"continuity\": \"紧接 S2：A 坐近侧，B 坐远侧，刀在桌面。本镜 B 仍坐远侧脱下休闲服外衣并放到桌面远侧她自己左手边；A 坐近侧看着；刀位置不变。相机仍在近侧，不跨越 A–B 交互轴。\",\n      \"startState\": \"A 坐 T1 近侧，坐姿，身体朝 B；B 坐 T1 远侧，坐姿，身体朝 A，仍穿休闲服外衣；刀平放在桌面近侧 A 右手边；休闲服外衣尚未脱下。\",\n      \"endState\": \"B 仍坐 T1 远侧，坐姿，身体朝 A，已不再穿休闲服外衣；休闲服外衣放在桌面远侧 B 左手边；A 仍坐 T1 近侧，坐姿，目光看 B；刀位置不变，仍在桌面近侧 A 右手边。\",\n      \"transitionFromPrevious\": \"紧接 S2：双方仍坐原位，刀仍在桌面；本镜 B 在远侧坐姿脱下休闲服外衣并放到桌面远侧，A 保持坐姿观看，无位移。\",\n      \"prompt\": \"subject_definitions\\n<Subject 1> 角色A, adult East Asian woman with ponytail, deep navy stand-collar uniform jacket with silver shoulder and forearm armor, matching trousers, black boots, bound to <Picture 2> and <Picture 3>.\\n<Subject 2> 角色B, adult woman with long black hair and bangs, wearing the beige casual coat, hoodie, and off-white trousers, bound to <Picture 4> and <Picture 5>.\\n<Subject 3> 休闲服, the beige casual coat with hoodie and off-white trousers set, bound to <Picture 6> and <Picture 7>.\\n<Subject 4> 图书馆, modern library reading room, bright, clean, simple decor, bound to <Picture 1>.\\n\\nsummary\\n[reference generation] This shot generates a medium seated action at the main reading table T1, using the supplied 角色B, 角色A, 休闲服, and library references to stage 角色B removing the casual outer garment and placing it on the far-side tabletop while 角色A watches.\\n\\nretention_analysis\\nfully_preserved for 角色A identity, body proportions, ponytail, navy uniform, and black boots. fully_preserved for 角色B identity, long black hair with bangs, and casual clothing. fully_preserved for the 休闲服 garment color, material, and design. fully_preserved for the modern library reading room environment. weak_reference only for exact table dimensions and garment placement space, which are not confirmed and are not invented.\\n\\ndetailed_description\\nLive-action cinematic realism with clean anime-influenced character rendering, preserving reference identity, materials, and natural color grading. [Shot 1] Composition: a medium shot from the near side of the main reading table T1, camera slightly to 角色A's left, looking across the tabletop at 角色B on the far side. The modern library reading room is bright, clean, and simply decorated; the main reading table with matching chairs is the fixed interaction anchor, bookshelf wall as background, light wood floor, soft even overhead lighting. 角色B is seated on the far side, posture seated, body facing 角色A. 角色A is seated on the near side, posture seated, body facing 角色B, gaze on 角色B. 一把刀 rests on the tabletop at 角色A's right hand. The dominant action is 角色B removing the casual outer garment and placing it aside. 角色B, still seated, unbuttons or opens the beige casual coat from the supplied 休闲服 set, slips it off her shoulders and arms, and lays it on the far side of the tabletop beside her, at her left-hand side on the far side; the garment settles on the tabletop. 角色A remains seated and watching, without moving from the near side; the sword remains unchanged on the tabletop. Physical final state: 角色B seated on the far side, no longer wearing the casual outer garment, the garment resting on the far-side tabletop at her left; 角色A seated on the near side; sword still on the tabletop. Camera: locked-off medium shot with a very small, slow lateral drift, amplitude minimal, speed slow; camera remains on the near side and does not cross the 角色A–角色B action axis. Continuity: this follows Shot 2 with both characters seated and the sword on the tabletop; the only change is 角色B's outer garment moving from her body to the far-side tabletop. Sound: quiet library room tone, fabric sliding and settling, a faint chair shift. No music. The clip runs 4 seconds; the action proceeds through the full duration without a cut; no extra characters, lamps, windows, doors, signs, or partitions are added. No under-layer garment details are invented; 角色B's remaining clothing must match the supplied reference without adding new design. Unresolved question for human review: whether 角色B removes only the outer coat or the whole set is not confirmed; this prompt only stages the outer garment removal as written in the approved action.\\n\\noverall_soundscape\\nQuiet library room tone, fabric sliding and settling, and a faint chair shift.\\n\\nnon_diegetic_music\\nN/A\",\n      \"changes\": [\n        \"B 在远侧坐姿脱下休闲服外衣。\",\n        \"B 把休闲服外衣放到桌面远侧她自己左手边。\",\n        \"A 保持坐姿观看，刀位置不变。\"\n      ]\n    },\n    {\n      \"id\": \"6df199fc-99db-4f97-af28-82ed68869e16\",\n      \"framing\": \"中宽镜头，从近侧越过 T1 拍摄；B 站起、取刀并背对 A 走向画外，A 仍坐近侧出声。\",\n      \"continuity\": \"紧接 S3：B 坐远侧、已不穿休闲服外衣，A 坐近侧，刀在桌面，休闲服外衣在桌面远侧。本镜 B 起身、取走桌面近侧的刀、转身背对 A、走向画外；A 保持坐姿出声；刀离开桌面；休闲服外衣仍在桌面远侧。相机仍在近侧，不跨越 A–B 交互轴。\",\n      \"startState\": \"A 坐 T1 近侧，坐姿，身体朝 B，目光看 B；B 坐 T1 远侧，坐姿，身体朝 A，已不穿休闲服外衣；休闲服外衣在桌面远侧 B 左手边；刀平放在桌面近侧 A 右手边。\",\n      \"endState\": \"B 已离开 T1，背对 A，手持刀，朝画外出口方向行走，不回头；A 仍坐 T1 近侧，坐姿，身体朝 B 离场方向，目光跟随；桌面无刀；休闲服外衣仍在桌面远侧。\",\n      \"transitionFromPrevious\": \"紧接 S3：B 仍坐远侧且已不穿休闲服外衣，A 坐近侧，刀在桌面；本镜 B 从远侧站起，伸手到桌面近侧取刀，转身背对 A 走向画外；A 保持坐姿出声。\",\n      \"prompt\": \"subject_definitions\\n<Subject 1> 角色A, adult East Asian woman with ponytail, deep navy stand-collar uniform jacket with silver shoulder and forearm armor, matching trousers, black boots, bound to <Picture 2> and <Picture 3>.\\n<Subject 2> 角色B, adult woman with long black hair and bangs, no longer wearing the casual outer garment, bound to <Picture 4> and <Picture 5>.\\n<Subject 3> 一把刀, black wrapped hilt, round metal tsuba, slender silver blade, bound to <Picture 6>.\\n<Subject 4> 图书馆, modern library reading room, bright, clean, simple decor, bound to <Picture 1>.\\n\\nsummary\\n[reference generation] This shot generates a medium wide action at the main reading table T1, using the supplied 角色A, 角色B, sword, and library references to stage 角色B standing, taking 一把刀 from the near-side tabletop, turning away from 角色A, and walking toward the off-screen exit while 角色A remains seated and calls out.\\n\\nretention_analysis\\nfully_preserved for 角色A identity, body proportions, ponytail, navy uniform, and black boots. fully_preserved for 角色B identity, long black hair with bangs, and remaining clothing. fully_preserved for the sword shape, black wrapped hilt, round metal tsuba, and slender silver blade. fully_preserved for the modern library reading room environment. weak_reference only for exact exit location, path length, and room dimensions, which are not confirmed and are not invented.\\n\\ndetailed_description\\nLive-action cinematic realism with clean anime-influenced character rendering, preserving reference identity, materials, and natural color grading. [Shot 1] Composition: a medium wide shot from the near side of the main reading table T1, camera slightly to 角色A's left, looking across the tabletop and toward the far side and the off-screen exit direction. The modern library reading room is bright, clean, and simply decorated; the main reading table with matching chairs is the fixed interaction anchor, bookshelf wall as background, light wood floor, soft even overhead lighting. 角色A is seated on the near side, posture seated, body facing 角色B, gaze following 角色B. 角色B is seated on the far side, posture seated, body facing 角色A, no longer wearing the casual outer garment; the casual clothes rest on the far-side tabletop. 一把刀 rests on the tabletop at 角色A's right hand. The dominant action is 角色B standing, taking the sword, turning away, and leaving. 角色B stands up from the far side, steps to the tabletop, reaches to the near side of the tabletop where 一把刀 lies, and picks it up; the sword keeps its black wrapped hilt, round metal tsuba, and slender silver blade. 角色B turns her body away from 角色A, back to 角色A, and walks away from the main reading table toward the off-screen exit direction without looking back. 角色A remains seated at the near side, body facing 角色B, gaze following, and calls out. [Shot 2] At 00:03.000: 角色B is already walking away, back to 角色A, sword in hand; 角色A remains seated and calls after her. Final physical state: 角色B walking away from the table, back to 角色A, sword in hand, moving toward the off-screen exit; 角色A seated on the near side; sword no longer on the tabletop; the casual clothes remain on the far-side tabletop. Camera: medium wide shot with a small, slow reframe to keep 角色B in frame as she moves away, amplitude small, speed slow; camera stays on the near side and does not cross the 角色A–角色B action axis. Continuity: follows Shot 3 with 角色B seated without the casual outer garment, 角色A seated near side, sword on tabletop, casual clothes on far-side tabletop. Sound: quiet library room tone, chair legs shifting as 角色B stands, soft footsteps walking away, a faint metallic whisper as the sword is lifted, fabric movement. No music. The clip runs 6 seconds; timestamps increase and stay inside the duration. Dialogue in order: <Subject 2> (S2) says <d>[Chinese] 那我收下了。</d> <Subject 1> (S1) says <d>[Chinese] 喂——</d> No extra characters, lamps, windows, doors, signs, or partitions are added.\\n\\noverall_soundscape\\nQuiet library room tone, chair legs shifting as 角色B stands, soft footsteps walking away, a faint metallic whisper as the sword is lifted, and fabric movement.\\n\\nnon_diegetic_music\\nN/A\",\n      \"changes\": [\n        \"B 从远侧站起并走到桌面近侧取走刀。\",\n        \"B 转身背对 A，朝画外出口方向离开，不回头。\",\n        \"A 保持坐姿出声；桌面无刀；休闲服外衣仍在桌面远侧。\"\n      ]\n    },\n    {\n      \"id\": \"5f220d41-6480-461a-9082-d91b8ae8d4f2\",\n      \"framing\": \"中景全身镜头，从近侧越过 T1 拍摄；A 起身换装并成为 A · 派生，站近侧面向机位侧完成一圈转身。\",\n      \"continuity\": \"紧接 S4：B 已离场，刀已随 B 离开，休闲服外衣仍在桌面远侧，A 坐近侧。本镜 A 起身，脱下自己的外衣放到近侧一旁，从桌面远侧拿起 B 留下的休闲服穿上，成为角色A · 派生；随后站近侧、面向机位侧原地转一整圈，最后重新面向机位并说话。相机仍在近侧，不跨越 A–B 交互轴。\",\n      \"startState\": \"A 坐 T1 近侧，坐姿，穿自身深藏青制服外套，身体朝 B 离场方向；B 不在场；刀不在桌面；B 的休闲服外衣在桌面远侧；A 自己的外衣仍穿在身上。\",\n      \"endState\": \"角色A · 派生 站 T1 近侧，穿 B 的休闲服，身体面向机位侧；A 自己的外衣放在近侧一旁；B 仍不在场；桌面无刀；B 的休闲服已不在桌面远侧；角色A · 派生 已完成一整圈转身并重新面向机位。\",\n      \"transitionFromPrevious\": \"紧接 S4：B 已离场，刀已不在桌面，休闲服外衣仍在桌面远侧，A 坐近侧；本镜 A 起身，脱下自己的外衣放到近侧一旁，从桌面远侧拿起休闲服穿上，成为角色A · 派生，原地转一整圈后停下说话。\",\n      \"prompt\": \"subject_definitions\\n<Subject 1> 角色A, adult East Asian woman with ponytail, deep navy stand-collar uniform jacket with silver shoulder and forearm armor, matching trousers, black boots, bound to <Picture 2> and <Picture 3>.\\n<Subject 2> 角色A · 派生, same adult East Asian woman as 角色A, same face, body, and ponytail, now wearing the beige casual coat, hoodie, and off-white trousers, bound to <Picture 4>.\\n<Subject 3> 休闲服, the beige casual coat with hoodie and off-white trousers set, bound to <Picture 5> and <Picture 6>.\\n<Subject 4> 图书馆, modern library reading room, bright, clean, simple decor, bound to <Picture 1>.\\n\\nsummary\\n[reference generation] This shot generates a medium full-body action at the main reading table T1, using the supplied 角色A, 角色A · 派生, 休闲服, and library references to stage 角色A standing, changing into 角色B's casual clothes, becoming 角色A · 派生, and performing one complete happy spin facing the camera side.\\n\\nretention_analysis\\nfully_preserved for 角色A identity, body proportions, ponytail, and same face and voice. attribute_transfer for the clothing state from 角色A's own uniform to 角色B's casual clothes, while the underlying identity remains fully_preserved in 角色A · 派生. fully_preserved for the 休闲服 garment color, material, and design. fully_preserved for the modern library reading room environment. weak_reference only for 角色A's under-layer after removing the outer clothes and for exact change duration, which are not confirmed and are not invented.\\n\\ndetailed_description\\nLive-action cinematic realism with clean anime-influenced character rendering, preserving reference identity, materials, and natural color grading. [Shot 1] Composition: a medium full-body shot from the near side of the main reading table T1, camera slightly to 角色A's left, looking across the tabletop and the far side. The modern library reading room is bright, clean, and simply decorated; the main reading table with matching chairs is the fixed interaction anchor, bookshelf wall as background, light wood floor, soft even overhead lighting. 角色A is seated on the near side, posture seated, wearing her own deep navy uniform jacket, matching trousers, and black boots; 角色B is absent; 一把刀 is no longer on the tabletop; 角色B's casual clothes rest on the far-side tabletop. The dominant action is 角色A standing, removing her own outer clothes, putting on 角色B's casual clothes, and spinning happily. 角色A stands up from the near side, removes her own outer clothes and places them aside on the near side, then reaches to the far side of the tabletop, picks up the casual clothes left by 角色B, and puts them on. As the casual clothes are on, 角色A becomes 角色A · 派生, the same adult East Asian woman with the same face, body, and ponytail, now wearing the beige casual coat, hoodie, and off-white trousers; no third person appears. 角色A · 派生 stands at the near side of the table, body facing the camera side, and performs one complete happy spin, rotating through a full 360 degrees; she starts facing the camera and ends facing the camera again. Final physical state: 角色A · 派生 standing at the near side, wearing 角色B's casual clothes, her own clothes placed aside on the near side, tabletop empty of the sword, and 角色B's casual clothes no longer on the far side. Camera: medium full-body shot with a very small, slow push-in, amplitude minimal, speed slow; camera remains on the near side and does not cross the 角色A–角色B action axis, and it accommodates the full spin without crossing the axis. [Shot 2] At 00:05.000: 角色A · 派生 has completed the spin, faces the camera side, and speaks. Sound: quiet library room tone, fabric rustle as clothes are removed and put on, soft footsteps, the light swish of the spin, and subtle room ambience. No music. Dialogue: <Subject 2> (S1) says <d>[Chinese] ……还挺合身。</d> The clip runs 7 seconds; timestamps increase and stay inside the duration. No extra characters, lamps, windows, doors, signs, or partitions are added. Unresolved question for human review: 角色A's under-layer after removing her outer clothes is not described in confirmed facts; this prompt does not invent or expose any undescribed inner garment.\\n\\noverall_soundscape\\nQuiet library room tone, fabric rustle as clothes are removed and put on, soft footsteps, the light swish of the spin, and subtle room ambience.\\n\\nnon_diegetic_music\\nN/A\",\n      \"changes\": [\n        \"A 起身并脱下自己的外衣放到近侧一旁。\",\n        \"A 从桌面远侧拿起 B 的休闲服穿上，成为角色A · 派生。\",\n        \"角色A · 派生 站近侧、面向机位侧原地转一整圈，最后重新面向机位并说话。\"\n      ]\n    }\n  ]\n}",
+    "warnings": [
+      {
+        "shotId": "51b9d957-d24c-47e4-9268-d61ffcfa68ab",
+        "title": "A arrives, sets down the sword, and sits",
+        "message": "提示词必须按 Ref2VA 六段式填写"
+      },
+      {
+        "shotId": "9478d1bf-5268-41d0-b899-98e3dc9d3e6c",
+        "title": "A and B talk at the main reading table",
+        "message": "提示词必须按 Ref2VA 六段式填写"
+      },
+      {
+        "shotId": "1e97e13e-d8d1-4c23-9b67-a81a48f2353a",
+        "title": "B removes the casual clothes and places them aside",
+        "message": "提示词必须按 Ref2VA 六段式填写"
+      },
+      {
+        "shotId": "6df199fc-99db-4f97-af28-82ed68869e16",
+        "title": "B takes the sword and leaves; A calls out",
+        "message": "提示词必须按 Ref2VA 六段式填写"
+      },
+      {
+        "shotId": "5f220d41-6480-461a-9082-d91b8ae8d4f2",
+        "title": "A changes into B's casual clothes and spins",
+        "message": "提示词必须按 Ref2VA 六段式填写"
+      }
+    ]
+  },
+  "result": {
+    "scenePlan": "唯一场景：图书馆。权威事实（仅来自图书馆实体 9971429d-863e-499e-b7c5-902d30e0f6a2）：名称为“图书馆”，外观为“现代图书馆，明窗净几，装修简洁”。实体空间记录 status=draft，elements 为空，无已确认通路；unknowns 明确未确认房间总尺寸、层高、桌面尺寸、通道宽度、固定物体间距、入口/出口/背面布局、书架朝向、桌长轴方向、椅间通行。因此全片不写 north/south/east/west 地理方位，不写绝对尺寸，不添加实体未列出的台灯、落地灯、玻璃幕墙、高窗、招牌、指示灯、隔断、吧台等物件。\n\n本片拟用相对锚点（proposed film blocking，不是实体已确认固定事实）：现代图书馆阅读室内只用一张主阅读桌 T1，T1 为浅木色长方桌，两侧各一把座椅；near side 近侧 = 靠近机位一侧桌边，角色A 所在侧；far side 远侧 = 与近侧相对的桌边，角色B 所在侧。角色A 从阅读区画面左侧进入，走到 T1 近侧，把一把刀放到桌面“A 右手边、A 与 B 之间、B 伸手可及处”，随后坐到近侧。角色B 已坐在 T1 远侧读书，坐姿，身体朝桌、朝A，视线落在书上。后续镜头保持同一 T1、near side / far side 关系：S2 两人仍坐原位交谈；S3 角色B 仍坐远侧，脱下休闲服外衣，放到桌面远侧她自己左手边；S4 角色B 从远侧起身，伸手到桌面近侧取走刀，转身背对A，朝画外出口方向离开，不回头；S5 角色B 离场后，角色A 仍坐近侧，随后起身，脱下自己的外衣放到近侧一旁，从桌面远侧拿起角色B留下的休闲服穿上，成为角色A · 派生，站近侧、面朝机位侧，开心地原地转一整圈，最后重新面向机位。机位始终在 T1 近侧一边、略偏A 的左手侧，越过桌面看远侧；不得跨越 A–B 交互轴。\n\n身份与连续性：角色A 为同一人，脸、体型、发型不因换装改变；本片自身服装为深藏青立领制服外套（含银色肩甲与前臂甲）、同色长裤、黑靴。角色B 为同一人，黑色长发带刘海；本片服装为休闲服参考图那套（米驼色长大衣+连帽衫+米白长裤）。休闲服为跨镜同一套同色同材质。刀保持黑缠绳柄、圆镡、细长银刀身；持有链：S1 A→桌面近侧(A右手边) → S2/S3 在桌面 → S4 B 取走带离 → S5 桌面无刀。角色A · 派生 = 角色A 换穿B 的休闲服，同一脸、同一体型、同一声音，只改服装；不得新增第三个人物。所有镜头只用 near side / far side / camera side / screen-left / screen-right 表述。",
+    "questions": [
+      "currentFilmSpaceInstructions 与当前拍摄本在调度上存在material conflict：前者写 A 在 T1 西端外 Z1 站立、B 坐 C2 东端、B 到 C3 脱衣、A 到 C3 取衣；当前拍摄本写 A 坐到近侧、B 坐远侧、B 把休闲服放在桌面远侧、A 从桌面远侧拿起休闲服。已按当前拍摄本与实体事实保留 near side / far side 关系，未采用 Z1/C2/C3 的旧调度；请确认是否以当前拍摄本为准。",
+      "S3 中 B 脱下范围：只脱休闲服长大衣，还是整套（大衣+连帽衫+长裤）？当前镜文写“外衣”，派生参考图显示整套，实体未确认。",
+      "S5 中 A 脱下自己的衣服后内层是什么、是否可拍？实体无内层描述，提示词不得发明内层款式，不得出现暴露或未描述服装。",
+      "图书馆绝对尺寸、层高、入口位置、出口方位、书架朝向、桌长轴方向未确认（实体 unknowns），提示词只用 near side / far side / camera side / screen-left / screen-right。",
+      "T1 座椅是否与参考图灰绿椅完全同款、桌面书本纸张杯子数量与摆放未确认，提示词只沿用参考图同款弱描述，不指定数量。",
+      "刀是否带鞘；S1 放到桌面时是否在鞘内未确认。",
+      "两人对坐距离等相对尺度无法确定；提示词不写具体数值，不写“约1.2米”这类表述。",
+      "currentFilmSpaceInstructions 使用北/西/东/南等地理方位，与导演笔记要求禁止地理方位冲突；已改用 near side / far side / camera side / screen-left / screen-right，请确认。",
+      "图书馆参考图被描述为有书架墙、多张阅读桌、吊顶灯带等，但图书馆实体 appearance 仅“现代图书馆，明窗净几，装修简洁”，空间记录 elements 为空；这些只能作为本片拟用相对锚点，不是实体已确认固定事实，若导演需要它们成为固定事实请先补充实体空间记录。",
+      "S4 中 B 离开主阅读桌到画外出口的路径长度未确认；6s 时长假定为短距离离场，不发明具体门或出口建筑结构。",
+      "S5 中 A 换装并转身所需时间未单独确认；7s 为已批准时长，若实际换装需要更长，请确认是否调整动作或时长。"
+    ],
+    "shots": [
+      {
+        "id": "51b9d957-d24c-47e4-9268-d61ffcfa68ab",
+        "framing": "中景双人镜头，越过主阅读桌 T1 拍摄；A 在近侧前景进入并坐下，B 在远侧坐姿读书，刀在桌面可见。",
+        "continuity": "建立现代图书馆阅读室与主阅读桌 T1 作为固定交互锚点。A 从桌区外进入，最终坐到近侧；B 始终坐在远侧；刀从 A 手中转移到桌面近侧 A 右手边。相机始终在近侧、略偏 A 左手侧，不跨越 A–B 交互轴。",
+        "startState": "A 在阅读区画面左侧外，站立，携带一把刀，准备走向 T1 近侧；B 已坐在 T1 远侧，坐姿，身体朝桌、朝 A，视线落在书上；刀尚未放到桌面；图书馆内无人走动。",
+        "endState": "A 坐在 T1 近侧，坐姿，身体朝 B，目光看 B，右手刚放下刀；B 仍坐在 T1 远侧，坐姿，身体朝 A，视线落在书上；刀平放在桌面近侧 A 右手边、A 与 B 之间、B 伸手可及处。",
+        "transitionFromPrevious": "首镜，无前镜。",
+        "prompt": "subject_definitions\n<Subject 1> 角色A, adult East Asian woman with ponytail, deep navy stand-collar uniform jacket with silver shoulder and forearm armor, matching trousers, black boots, bound to <Picture 2> and <Picture 3>.\n<Subject 2> 角色B, adult woman with long black hair and bangs, wearing the beige casual coat, hoodie, and off-white trousers, bound to <Picture 4> and <Picture 5>.\n<Subject 3> 图书馆, modern library reading room, bright, clean, simple decor, bound to <Picture 1>.\n<Subject 4> 一把刀, black wrapped hilt, round metal tsuba, slender silver blade, bound to <Picture 6>.\n\nsummary\n[reference generation] This shot generates a medium two-shot in the modern library reading room, using the supplied library, character, and sword references to stage 角色A arriving at the main reading table T1, placing 一把刀 on the tabletop, and sitting down across from 角色B.\n\nretention_analysis\nfully_preserved for 角色A identity, body proportions, ponytail, navy uniform with silver shoulder and forearm armor, and black boots. fully_preserved for 角色B identity, long black hair with bangs, and casual clothing. fully_preserved for the modern library reading room environment, bright, clean, simple decor. fully_preserved for the sword shape, black wrapped hilt, round metal tsuba, and slender silver blade. weak_reference only for exact room dimensions, entrance layout, and absolute table measurements, which are not confirmed and are not invented.\n\ndetailed_description\nLive-action cinematic realism with clean anime-influenced character rendering, preserving reference identity, materials, and natural color grading; soft even lighting, no stylized exaggeration. [Shot 1] Composition: a medium two-shot across the main reading table T1, camera placed on the near side of the table, slightly to 角色A's left, looking across the tabletop toward 角色B seated on the far side. The scene is the modern library reading room, bright, clean, simple decor; the main reading table with matching chairs is the fixed interaction anchor, with a bookshelf wall as background, light wood floor, and soft even overhead lighting. 角色A enters from the screen-left side of the reading area, walking at an even pace along the open floor, carrying 一把刀; 角色B is already seated on the far side of T1, posture seated, body facing the table and toward 角色A, gaze down at an open book. 角色A stops at the near side of T1 and places 一把刀 on the tabletop at her right-hand side, between herself and 角色B, within 角色B's reach; the sword keeps its black wrapped hilt, round metal tsuba, and slender silver blade. 角色A then sits down at the near side, posture seated, body facing 角色B, gaze on 角色B. The dominant action is arrival, sword placement, and sitting; no other action occurs. Camera: locked-off medium two-shot with a very small, slow push-in, amplitude minimal, speed slow; the camera stays on the near side and never crosses the 角色A–角色B action axis. Continuity: 角色A ends seated at the near side, right hand just released the sword, gaze on 角色B; 角色B remains seated on the far side, reading, gaze down at the book; the sword rests on the tabletop at 角色A's right hand. Physical orientation: 角色A's path runs from screen-left toward the near side; she faces 角色B throughout the placement and sitting. 角色B's body remains oriented toward the table and 角色A. The table separates them; the near side is the camera side, the far side is opposite. Sound: quiet library room tone, soft footsteps on wood floor, fabric movement as 角色A sits, and a soft settling sound as the sword is placed on the tabletop. No music. Dialogue: <Subject 1> (S1) says <d>[Chinese] 你倒是清闲。</d> The clip runs 6 seconds; the action proceeds through the full duration without a cut, and no extra characters, lamps, windows, doors, signs, or partitions are added beyond the supplied reading-room facts.\n\noverall_soundscape\nQuiet library room tone, soft footsteps on wood floor, fabric movement as 角色A sits, and a soft settling sound as the sword is placed on the tabletop.\n\nnon_diegetic_music\nN/A",
+        "changes": [
+          "A 从画面左侧进入并走到 T1 近侧。",
+          "A 把刀放到桌面近侧 A 右手边、A 与 B 之间。",
+          "A 坐到 T1 近侧，身体朝 B，目光看 B。"
+        ]
+      },
+      {
+        "id": "9478d1bf-5268-41d0-b899-98e3dc9d3e6c",
+        "framing": "中景双人镜头，保持 S1 的 near side / far side 关系，越过桌面拍 A 与 B 交谈。",
+        "continuity": "紧接 S1：A 坐近侧，B 坐远侧，刀仍在桌面 A 右手边。相机仍在近侧、略偏 A 左手侧，不跨越 A–B 交互轴。本镜以坐姿交谈为主，无位移。",
+        "startState": "A 坐 T1 近侧，坐姿，身体朝 B，目光看 B；B 坐 T1 远侧，坐姿，身体朝 A，视线初始落在书上；刀平放在桌面近侧 A 右手边。",
+        "endState": "A 仍坐 T1 近侧，身体朝 B；B 仍坐 T1 远侧，身体朝 A；刀位置不变，仍在桌面近侧 A 右手边。",
+        "transitionFromPrevious": "紧接 S1：A 刚坐到近侧并放下刀，B 仍在远侧读书；本镜 B 视线从书上抬起看向 A，双方保持坐姿交谈，无位移。",
+        "prompt": "subject_definitions\n<Subject 1> 角色A, adult East Asian woman with ponytail, deep navy stand-collar uniform jacket with silver shoulder and forearm armor, matching trousers, black boots, bound to <Picture 2> and <Picture 3>.\n<Subject 2> 角色B, adult woman with long black hair and bangs, wearing the beige casual coat, hoodie, and off-white trousers, bound to <Picture 4> and <Picture 5>.\n<Subject 3> 图书馆, modern library reading room, bright, clean, simple decor, bound to <Picture 1>.\n\nsummary\n[reference generation] This shot generates a seated conversation at the main reading table T1 in the modern library reading room, using the supplied character and library references to stage 角色A and 角色B exchanging lines while 一把刀 remains on the tabletop.\n\nretention_analysis\nfully_preserved for 角色A identity, body proportions, ponytail, navy uniform, and black boots. fully_preserved for 角色B identity, long black hair with bangs, and casual clothing. fully_preserved for the modern library reading room environment. fully_preserved for the tabletop sword placement in continuity, although the sword is not separately referenced in this shot's image set. weak_reference only for exact table dimensions and seating spacing, which are not confirmed and are not invented.\n\ndetailed_description\nLive-action cinematic realism with clean anime-influenced character rendering, preserving reference identity, materials, and natural color grading. [Shot 1] Composition: a medium two-shot across the main reading table T1, camera on the near side, slightly to 角色A's left, looking across at 角色B on the far side. The modern library reading room remains bright, clean, and simply decorated; the main reading table with matching chairs is the fixed anchor, bookshelf wall as background, light wood floor, soft even overhead lighting. 角色A is seated at the near side, posture seated, body facing 角色B, gaze on 角色B; 一把刀 rests on the tabletop at 角色A's right hand. 角色B is seated on the far side, posture seated, body facing 角色A, gaze initially down at the book, then lifts from the book to 角色A. The dominant action is the seated conversation; no relocation occurs. Camera: locked-off medium two-shot with a very small, slow push-in, amplitude minimal, speed slow; camera remains on the near side and does not cross the 角色A–角色B action axis. [Shot 2] At 00:02.000: 角色B's gaze meets 角色A's; 角色B's upper body shifts slightly with speech, 角色A remains seated. [Shot 3] At 00:04.000: 角色A answers with a small head movement, 角色B holds eye contact; the sword remains on the tabletop. [Shot 4] At 00:05.500: 角色B challenges, 角色A answers dryly; final physical state: 角色A seated near side, 角色B seated far side, sword unchanged on the tabletop. 角色A's hands rest on the tabletop or lap, 角色B's book remains open before her. The camera's framing keeps both faces and the sword visible. The near side is the camera side; the far side is opposite. The table separates them; no one stands. Dialogue in order: <Subject 2> (S2) says <d>[Chinese] 你来还书，还是来还刀？</d> <Subject 1> (S1) says <d>[Chinese] 先放这儿。</d> <Subject 2> (S2) says <d>[Chinese] 放这儿？你舍得？</d> <Subject 1> (S1) says <d>[Chinese] 随你怎么想。</d> Sound: quiet library room tone, faint chair creak, soft fabric shifts, subtle breath pauses. No music. The clip runs 7 seconds; timestamps increase and stay inside the duration; no extra characters, lamps, windows, doors, signs, or partitions are added.\n\noverall_soundscape\nQuiet library room tone, faint chair creak, soft fabric shifts, and subtle breath pauses during the seated conversation.\n\nnon_diegetic_music\nN/A",
+        "changes": [
+          "B 视线从书上抬起看向 A。",
+          "双方保持坐姿完成四句对白。",
+          "刀位置不变，仍在桌面 A 右手边。"
+        ]
+      },
+      {
+        "id": "1e97e13e-d8d1-4c23-9b67-a81a48f2353a",
+        "framing": "中景镜头，从近侧越过 T1 拍摄 B 在远侧脱下休闲服外衣并放到桌面远侧。",
+        "continuity": "紧接 S2：A 坐近侧，B 坐远侧，刀在桌面。本镜 B 仍坐远侧脱下休闲服外衣并放到桌面远侧她自己左手边；A 坐近侧看着；刀位置不变。相机仍在近侧，不跨越 A–B 交互轴。",
+        "startState": "A 坐 T1 近侧，坐姿，身体朝 B；B 坐 T1 远侧，坐姿，身体朝 A，仍穿休闲服外衣；刀平放在桌面近侧 A 右手边；休闲服外衣尚未脱下。",
+        "endState": "B 仍坐 T1 远侧，坐姿，身体朝 A，已不再穿休闲服外衣；休闲服外衣放在桌面远侧 B 左手边；A 仍坐 T1 近侧，坐姿，目光看 B；刀位置不变，仍在桌面近侧 A 右手边。",
+        "transitionFromPrevious": "紧接 S2：双方仍坐原位，刀仍在桌面；本镜 B 在远侧坐姿脱下休闲服外衣并放到桌面远侧，A 保持坐姿观看，无位移。",
+        "prompt": "subject_definitions\n<Subject 1> 角色A, adult East Asian woman with ponytail, deep navy stand-collar uniform jacket with silver shoulder and forearm armor, matching trousers, black boots, bound to <Picture 2> and <Picture 3>.\n<Subject 2> 角色B, adult woman with long black hair and bangs, wearing the beige casual coat, hoodie, and off-white trousers, bound to <Picture 4> and <Picture 5>.\n<Subject 3> 休闲服, the beige casual coat with hoodie and off-white trousers set, bound to <Picture 6> and <Picture 7>.\n<Subject 4> 图书馆, modern library reading room, bright, clean, simple decor, bound to <Picture 1>.\n\nsummary\n[reference generation] This shot generates a medium seated action at the main reading table T1, using the supplied 角色B, 角色A, 休闲服, and library references to stage 角色B removing the casual outer garment and placing it on the far-side tabletop while 角色A watches.\n\nretention_analysis\nfully_preserved for 角色A identity, body proportions, ponytail, navy uniform, and black boots. fully_preserved for 角色B identity, long black hair with bangs, and casual clothing. fully_preserved for the 休闲服 garment color, material, and design. fully_preserved for the modern library reading room environment. weak_reference only for exact table dimensions and garment placement space, which are not confirmed and are not invented.\n\ndetailed_description\nLive-action cinematic realism with clean anime-influenced character rendering, preserving reference identity, materials, and natural color grading. [Shot 1] Composition: a medium shot from the near side of the main reading table T1, camera slightly to 角色A's left, looking across the tabletop at 角色B on the far side. The modern library reading room is bright, clean, and simply decorated; the main reading table with matching chairs is the fixed interaction anchor, bookshelf wall as background, light wood floor, soft even overhead lighting. 角色B is seated on the far side, posture seated, body facing 角色A. 角色A is seated on the near side, posture seated, body facing 角色B, gaze on 角色B. 一把刀 rests on the tabletop at 角色A's right hand. The dominant action is 角色B removing the casual outer garment and placing it aside. 角色B, still seated, unbuttons or opens the beige casual coat from the supplied 休闲服 set, slips it off her shoulders and arms, and lays it on the far side of the tabletop beside her, at her left-hand side on the far side; the garment settles on the tabletop. 角色A remains seated and watching, without moving from the near side; the sword remains unchanged on the tabletop. Physical final state: 角色B seated on the far side, no longer wearing the casual outer garment, the garment resting on the far-side tabletop at her left; 角色A seated on the near side; sword still on the tabletop. Camera: locked-off medium shot with a very small, slow lateral drift, amplitude minimal, speed slow; camera remains on the near side and does not cross the 角色A–角色B action axis. Continuity: this follows Shot 2 with both characters seated and the sword on the tabletop; the only change is 角色B's outer garment moving from her body to the far-side tabletop. Sound: quiet library room tone, fabric sliding and settling, a faint chair shift. No music. The clip runs 4 seconds; the action proceeds through the full duration without a cut; no extra characters, lamps, windows, doors, signs, or partitions are added. No under-layer garment details are invented; 角色B's remaining clothing must match the supplied reference without adding new design. Unresolved question for human review: whether 角色B removes only the outer coat or the whole set is not confirmed; this prompt only stages the outer garment removal as written in the approved action.\n\noverall_soundscape\nQuiet library room tone, fabric sliding and settling, and a faint chair shift.\n\nnon_diegetic_music\nN/A",
+        "changes": [
+          "B 在远侧坐姿脱下休闲服外衣。",
+          "B 把休闲服外衣放到桌面远侧她自己左手边。",
+          "A 保持坐姿观看，刀位置不变。"
+        ]
+      },
+      {
+        "id": "6df199fc-99db-4f97-af28-82ed68869e16",
+        "framing": "中宽镜头，从近侧越过 T1 拍摄；B 站起、取刀并背对 A 走向画外，A 仍坐近侧出声。",
+        "continuity": "紧接 S3：B 坐远侧、已不穿休闲服外衣，A 坐近侧，刀在桌面，休闲服外衣在桌面远侧。本镜 B 起身、取走桌面近侧的刀、转身背对 A、走向画外；A 保持坐姿出声；刀离开桌面；休闲服外衣仍在桌面远侧。相机仍在近侧，不跨越 A–B 交互轴。",
+        "startState": "A 坐 T1 近侧，坐姿，身体朝 B，目光看 B；B 坐 T1 远侧，坐姿，身体朝 A，已不穿休闲服外衣；休闲服外衣在桌面远侧 B 左手边；刀平放在桌面近侧 A 右手边。",
+        "endState": "B 已离开 T1，背对 A，手持刀，朝画外出口方向行走，不回头；A 仍坐 T1 近侧，坐姿，身体朝 B 离场方向，目光跟随；桌面无刀；休闲服外衣仍在桌面远侧。",
+        "transitionFromPrevious": "紧接 S3：B 仍坐远侧且已不穿休闲服外衣，A 坐近侧，刀在桌面；本镜 B 从远侧站起，伸手到桌面近侧取刀，转身背对 A 走向画外；A 保持坐姿出声。",
+        "prompt": "subject_definitions\n<Subject 1> 角色A, adult East Asian woman with ponytail, deep navy stand-collar uniform jacket with silver shoulder and forearm armor, matching trousers, black boots, bound to <Picture 2> and <Picture 3>.\n<Subject 2> 角色B, adult woman with long black hair and bangs, no longer wearing the casual outer garment, bound to <Picture 4> and <Picture 5>.\n<Subject 3> 一把刀, black wrapped hilt, round metal tsuba, slender silver blade, bound to <Picture 6>.\n<Subject 4> 图书馆, modern library reading room, bright, clean, simple decor, bound to <Picture 1>.\n\nsummary\n[reference generation] This shot generates a medium wide action at the main reading table T1, using the supplied 角色A, 角色B, sword, and library references to stage 角色B standing, taking 一把刀 from the near-side tabletop, turning away from 角色A, and walking toward the off-screen exit while 角色A remains seated and calls out.\n\nretention_analysis\nfully_preserved for 角色A identity, body proportions, ponytail, navy uniform, and black boots. fully_preserved for 角色B identity, long black hair with bangs, and remaining clothing. fully_preserved for the sword shape, black wrapped hilt, round metal tsuba, and slender silver blade. fully_preserved for the modern library reading room environment. weak_reference only for exact exit location, path length, and room dimensions, which are not confirmed and are not invented.\n\ndetailed_description\nLive-action cinematic realism with clean anime-influenced character rendering, preserving reference identity, materials, and natural color grading. [Shot 1] Composition: a medium wide shot from the near side of the main reading table T1, camera slightly to 角色A's left, looking across the tabletop and toward the far side and the off-screen exit direction. The modern library reading room is bright, clean, and simply decorated; the main reading table with matching chairs is the fixed interaction anchor, bookshelf wall as background, light wood floor, soft even overhead lighting. 角色A is seated on the near side, posture seated, body facing 角色B, gaze following 角色B. 角色B is seated on the far side, posture seated, body facing 角色A, no longer wearing the casual outer garment; the casual clothes rest on the far-side tabletop. 一把刀 rests on the tabletop at 角色A's right hand. The dominant action is 角色B standing, taking the sword, turning away, and leaving. 角色B stands up from the far side, steps to the tabletop, reaches to the near side of the tabletop where 一把刀 lies, and picks it up; the sword keeps its black wrapped hilt, round metal tsuba, and slender silver blade. 角色B turns her body away from 角色A, back to 角色A, and walks away from the main reading table toward the off-screen exit direction without looking back. 角色A remains seated at the near side, body facing 角色B, gaze following, and calls out. [Shot 2] At 00:03.000: 角色B is already walking away, back to 角色A, sword in hand; 角色A remains seated and calls after her. Final physical state: 角色B walking away from the table, back to 角色A, sword in hand, moving toward the off-screen exit; 角色A seated on the near side; sword no longer on the tabletop; the casual clothes remain on the far-side tabletop. Camera: medium wide shot with a small, slow reframe to keep 角色B in frame as she moves away, amplitude small, speed slow; camera stays on the near side and does not cross the 角色A–角色B action axis. Continuity: follows Shot 3 with 角色B seated without the casual outer garment, 角色A seated near side, sword on tabletop, casual clothes on far-side tabletop. Sound: quiet library room tone, chair legs shifting as 角色B stands, soft footsteps walking away, a faint metallic whisper as the sword is lifted, fabric movement. No music. The clip runs 6 seconds; timestamps increase and stay inside the duration. Dialogue in order: <Subject 2> (S2) says <d>[Chinese] 那我收下了。</d> <Subject 1> (S1) says <d>[Chinese] 喂——</d> No extra characters, lamps, windows, doors, signs, or partitions are added.\n\noverall_soundscape\nQuiet library room tone, chair legs shifting as 角色B stands, soft footsteps walking away, a faint metallic whisper as the sword is lifted, and fabric movement.\n\nnon_diegetic_music\nN/A",
+        "changes": [
+          "B 从远侧站起并走到桌面近侧取走刀。",
+          "B 转身背对 A，朝画外出口方向离开，不回头。",
+          "A 保持坐姿出声；桌面无刀；休闲服外衣仍在桌面远侧。"
+        ]
+      },
+      {
+        "id": "5f220d41-6480-461a-9082-d91b8ae8d4f2",
+        "framing": "中景全身镜头，从近侧越过 T1 拍摄；A 起身换装并成为 A · 派生，站近侧面向机位侧完成一圈转身。",
+        "continuity": "紧接 S4：B 已离场，刀已随 B 离开，休闲服外衣仍在桌面远侧，A 坐近侧。本镜 A 起身，脱下自己的外衣放到近侧一旁，从桌面远侧拿起 B 留下的休闲服穿上，成为角色A · 派生；随后站近侧、面向机位侧原地转一整圈，最后重新面向机位并说话。相机仍在近侧，不跨越 A–B 交互轴。",
+        "startState": "A 坐 T1 近侧，坐姿，穿自身深藏青制服外套，身体朝 B 离场方向；B 不在场；刀不在桌面；B 的休闲服外衣在桌面远侧；A 自己的外衣仍穿在身上。",
+        "endState": "角色A · 派生 站 T1 近侧，穿 B 的休闲服，身体面向机位侧；A 自己的外衣放在近侧一旁；B 仍不在场；桌面无刀；B 的休闲服已不在桌面远侧；角色A · 派生 已完成一整圈转身并重新面向机位。",
+        "transitionFromPrevious": "紧接 S4：B 已离场，刀已不在桌面，休闲服外衣仍在桌面远侧，A 坐近侧；本镜 A 起身，脱下自己的外衣放到近侧一旁，从桌面远侧拿起休闲服穿上，成为角色A · 派生，原地转一整圈后停下说话。",
+        "prompt": "subject_definitions\n<Subject 1> 角色A, adult East Asian woman with ponytail, deep navy stand-collar uniform jacket with silver shoulder and forearm armor, matching trousers, black boots, bound to <Picture 2> and <Picture 3>.\n<Subject 2> 角色A · 派生, same adult East Asian woman as 角色A, same face, body, and ponytail, now wearing the beige casual coat, hoodie, and off-white trousers, bound to <Picture 4>.\n<Subject 3> 休闲服, the beige casual coat with hoodie and off-white trousers set, bound to <Picture 5> and <Picture 6>.\n<Subject 4> 图书馆, modern library reading room, bright, clean, simple decor, bound to <Picture 1>.\n\nsummary\n[reference generation] This shot generates a medium full-body action at the main reading table T1, using the supplied 角色A, 角色A · 派生, 休闲服, and library references to stage 角色A standing, changing into 角色B's casual clothes, becoming 角色A · 派生, and performing one complete happy spin facing the camera side.\n\nretention_analysis\nfully_preserved for 角色A identity, body proportions, ponytail, and same face and voice. attribute_transfer for the clothing state from 角色A's own uniform to 角色B's casual clothes, while the underlying identity remains fully_preserved in 角色A · 派生. fully_preserved for the 休闲服 garment color, material, and design. fully_preserved for the modern library reading room environment. weak_reference only for 角色A's under-layer after removing the outer clothes and for exact change duration, which are not confirmed and are not invented.\n\ndetailed_description\nLive-action cinematic realism with clean anime-influenced character rendering, preserving reference identity, materials, and natural color grading. [Shot 1] Composition: a medium full-body shot from the near side of the main reading table T1, camera slightly to 角色A's left, looking across the tabletop and the far side. The modern library reading room is bright, clean, and simply decorated; the main reading table with matching chairs is the fixed interaction anchor, bookshelf wall as background, light wood floor, soft even overhead lighting. 角色A is seated on the near side, posture seated, wearing her own deep navy uniform jacket, matching trousers, and black boots; 角色B is absent; 一把刀 is no longer on the tabletop; 角色B's casual clothes rest on the far-side tabletop. The dominant action is 角色A standing, removing her own outer clothes, putting on 角色B's casual clothes, and spinning happily. 角色A stands up from the near side, removes her own outer clothes and places them aside on the near side, then reaches to the far side of the tabletop, picks up the casual clothes left by 角色B, and puts them on. As the casual clothes are on, 角色A becomes 角色A · 派生, the same adult East Asian woman with the same face, body, and ponytail, now wearing the beige casual coat, hoodie, and off-white trousers; no third person appears. 角色A · 派生 stands at the near side of the table, body facing the camera side, and performs one complete happy spin, rotating through a full 360 degrees; she starts facing the camera and ends facing the camera again. Final physical state: 角色A · 派生 standing at the near side, wearing 角色B's casual clothes, her own clothes placed aside on the near side, tabletop empty of the sword, and 角色B's casual clothes no longer on the far side. Camera: medium full-body shot with a very small, slow push-in, amplitude minimal, speed slow; camera remains on the near side and does not cross the 角色A–角色B action axis, and it accommodates the full spin without crossing the axis. [Shot 2] At 00:05.000: 角色A · 派生 has completed the spin, faces the camera side, and speaks. Sound: quiet library room tone, fabric rustle as clothes are removed and put on, soft footsteps, the light swish of the spin, and subtle room ambience. No music. Dialogue: <Subject 2> (S1) says <d>[Chinese] ……还挺合身。</d> The clip runs 7 seconds; timestamps increase and stay inside the duration. No extra characters, lamps, windows, doors, signs, or partitions are added. Unresolved question for human review: 角色A's under-layer after removing her outer clothes is not described in confirmed facts; this prompt does not invent or expose any undescribed inner garment.\n\noverall_soundscape\nQuiet library room tone, fabric rustle as clothes are removed and put on, soft footsteps, the light swish of the spin, and subtle room ambience.\n\nnon_diegetic_music\nN/A",
+        "changes": [
+          "A 起身并脱下自己的外衣放到近侧一旁。",
+          "A 从桌面远侧拿起 B 的休闲服穿上，成为角色A · 派生。",
+          "角色A · 派生 站近侧、面向机位侧原地转一整圈，最后重新面向机位并说话。"
+        ]
+      }
+    ]
+  },
+  "finishedAt": "2026-10-03T17:50:08.729Z",
+  "output": {
+    "revision": 19
+  }
+}

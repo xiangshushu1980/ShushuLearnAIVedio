@@ -1,0 +1,7 @@
+{
+  "owner": "Sean",
+  "name": "Sean Material Gallery",
+  "version": "1.0.0",
+  "description": "Local ComfyUI video material preview",
+  "entrypoint": "__init__.py"
+}

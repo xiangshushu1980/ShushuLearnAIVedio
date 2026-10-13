@@ -1,0 +1,71 @@
+{
+  "owner": "Sean",
+  "source": "isolated browser fixture",
+  "projectId": "15c6f72e-628b-4fb5-92b5-501aac4c0c65",
+  "plan": {
+    "owner": "Sean",
+    "id": "b9286cd3-f112-400f-b4be-c382749ddb72",
+    "projectId": "15c6f72e-628b-4fb5-92b5-501aac4c0c65",
+    "sessionId": null,
+    "runId": null,
+    "candidates": [
+      {
+        "baseEntityId": "ac741d6f-7173-484b-816f-40c4f704630b",
+        "changes": "只改变长凳表面磨损，不改变布局",
+        "copySpatialDraft": true,
+        "images": [
+          {
+            "invariants": [
+              "入口相邻长凳区"
+            ],
+            "key": "overview",
+            "label": "受损场景总览",
+            "modelId": "qwen-image-2.1",
+            "parameters": {},
+            "prompt": "Image 1 is the fixed layout reference. Change only the bench surface wear. Keep entrance adjacent to bench area; do not infer unknown dimensions.",
+            "purpose": "Mock UI variant",
+            "referenceAssetIds": [],
+            "role": "scene_overview",
+            "styleId": "original",
+            "unknowns": [
+              "尺度未知"
+            ],
+            "useBaseAppearance": true,
+            "useMainAppearance": false
+          }
+        ],
+        "key": "worn",
+        "kind": "scene",
+        "profile": {
+          "appearance": "长凳磨损（模拟设定）",
+          "description": "沿用入口与长凳区相邻布局；模拟受损状态",
+          "flags": [
+            "场景"
+          ],
+          "name": "模拟受损候车厅",
+          "voiceDescription": ""
+        },
+        "projectRole": {
+          "plotNotes": "",
+          "role": "对照实验"
+        },
+        "unknowns": [],
+        "variationOf": null
+      }
+    ],
+    "questions": [],
+    "relations": [],
+    "summary": "模拟数据，不生成图片",
+    "title": "场景变体沿用界面验证",
+    "basis": {
+      "contextHash": "6529910e7c1a643496b19f30609a7919b3277d731404dea4f0310f2cc1f9dd81",
+      "imageHashes": {},
+      "projectRevision": 2,
+      "workflowRulesVersion": 2
+    },
+    "contentHash": "f78d0e68c0250be517007a66d3b49c105fa4862586cf0304e2905bd59fe3d430",
+    "applied": null,
+    "stale": false,
+    "createdAt": "2026-10-03T23:08:57.586Z"
+  }
+}

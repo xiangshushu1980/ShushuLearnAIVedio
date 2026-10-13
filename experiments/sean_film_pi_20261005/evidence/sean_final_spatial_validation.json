@@ -1,0 +1,15 @@
+{
+  "owner": "Sean",
+  "revision": 20,
+  "saved": true,
+  "source": "editor-shared-review-api",
+  "applied": false,
+  "warnings": [],
+  "questions": [
+    "角色B脱下休闲服后的内层服装资料缺失；提示词不描述该内层，不推断其样式。",
+    "角色A脱下的自身衣物具体包含哪些衣物件、是否有内层，资料缺失；提示词只保留“自己的衣物”这一动作，不扩写衣物种类或外观。",
+    "休闲服的组成件数与具体层次资料缺失；提示词只引用现有休闲服参考，不拆分或新增衣物。",
+    "输入绑定缺口：镜2与镜3动作中可见刀，但对应 imageAssetIds 未包含现有“一把刀”参考图。本 result-only 文件不能改 imageAssetIds，故未虚构 Picture 标签；若需锁定参考尺寸与形态，应在生成输入中补入既有刀图。"
+  ],
+  "valid": false
+}

@@ -1,0 +1,14 @@
+{
+  "owner": "Sean",
+  "projectId": "538005c3-16bd-4709-aa4e-70831b960a24",
+  "sessionId": "0707ba67-08da-42cf-9bc9-b1fa07bf95cf",
+  "request": {
+    "requestId": "7e6b9b6d-ddd6-44c0-b60c-51a09710456d",
+    "mode": "prepare",
+    "text": "服务已加载profile9/narrative-control8。授权本轮仅S3路径分域文字修订并等价空间重新核对，不生成视频不选片不合成。freshcontext加载新版方法和Ref2VA，实际查看现有S3anchor及失败83614d0c的2.25/3.25/4.308。保持4秒/剧情/对白/实体/图序/seed/全片空间及状态/其他镜完全不改。诊断是假设，不保证可达。先用固定revision工作流针对8361修prompt：B脚与躯干留在远侧、不走近侧不绕桌端；不是禁止手臂伸向画面左半区。衣物一次简单对折收袖保持紧凑，双手托束从B身前沿桌面远半区上方可见地向画面左后方平移，经过中央杯后方避开杯，不提前在B身前降落，抵达中央杯左方/书左方/刀远侧裸木点再下降接触木面并释放。书原位全程可见、刀A纸杯不动。原action“向前送”、continuity“不跨中线”与新路径有歧义，授权同步仅S3 action/continuity中的路径和约束分域，保留脱衣/收拢/接触先于松手等所有叙事动作，不增加走动或精细折衣。不要把诊断元话/风险/approved写进视频prompt；详细正文400-450词，无对白角色无说话ID。读取完整固定revision结果与warnings，只采用有效稿；再版本化提案同步S3 action/continuity并以完整等价spatial提案重新核对（分开patch，scenePlan和各start/end/transition逐字原样，六镜prompt/framing/continuity取最新，不能恢复旧稿），维持前两镜current和锚帧ready。每一步freshcontext，发现待确认实质空间矛盾或格式错误不得绕过。最终validateS3并报告修改/newrevision/prefix+anchorstatus；本轮禁止GPU，不因工具权限重复索取已有授权。"
+  },
+  "response": {
+    "runId": "827989cc-c6e4-4bc4-981a-f6e549bf3d63",
+    "status": "running"
+  }
+}

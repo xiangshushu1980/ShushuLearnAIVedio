@@ -1,0 +1,16 @@
+{
+  "owner": "Sean",
+  "candidateId": "f5168a7d-a02b-481e-90fa-a5c90254ed1a",
+  "inspection": "Root 4fps whole contact sheet and full 1024px tail 4.308333; completeAVdecode pass",
+  "result": "partial; not selected",
+  "findings": [
+    "Coat releases and remains on wood with no clearly visible hanging cloth in tail; separate sleeves not fully distinguishable.",
+    "Coat body extends across/behind the two clear glasses; NOT wholly screen-left of central glass as required by current shot plan.",
+    "Book remains visible and unchanged; A/knife/papers/room fixed.",
+    "Motion lifts garment vertically and lets it span behind glasses; does not show the prescribed controlled forearm carry."
+  ],
+  "limits": [
+    "ASR/listening not performed",
+    "Do not claim exact left-of-cup target passed"
+  ]
+}

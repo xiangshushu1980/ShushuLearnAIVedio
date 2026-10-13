@@ -1,0 +1,56 @@
+{
+  "owner": "Sean",
+  "createdAt": "2026-10-04T11:39:58.128Z",
+  "projectId": "c51a50d3-2b12-48c9-a83c-8f4e8e30a3c6",
+  "planId": "d1886bd8-05f3-492b-bcef-9ae55694b185",
+  "entities": {
+    "linlan": "76dab29d-6225-485f-b905-0f022e144159",
+    "linlan_injured": "ad60ce45-800f-48e1-9800-530aeba81c55",
+    "hall": "516b1812-e158-4780-992c-51b4553a4b18",
+    "hall_notice": "045bb254-1560-4413-861e-d047b2215afa"
+  },
+  "maxBaselineGenerations": 8,
+  "maxCorrectionGenerations": 1,
+  "productionWrites": false,
+  "runs": [
+    {
+      "key": "base-concept",
+      "runId": "e34c1f58-9041-4bdb-9518-e935526fa8a5"
+    },
+    {
+      "key": "hall-overview",
+      "runId": "784f866a-48f2-4a14-b998-a2338877c47b"
+    },
+    {
+      "key": "hall-variant-overview",
+      "runId": "ebd71c8b-1a96-40e5-9320-b4c12f6f1808"
+    },
+    {
+      "key": "base-v3",
+      "runId": "c279872e-e614-4995-907d-71c7662e38f3"
+    },
+    {
+      "key": "variant-concept",
+      "runId": "a7d6dfc1-03d1-4c6e-97b8-2ad77262ce9b"
+    },
+    {
+      "key": "hall-angle",
+      "runId": "504def34-0a00-4c12-9eca-a4acb8991382"
+    },
+    {
+      "key": "hall-detail",
+      "runId": "e71369a8-36a6-43e1-983f-84cc6208cff7"
+    }
+  ],
+  "status": "awaiting-human-image-review",
+  "updatedAt": "2026-10-04T12:15:28.616Z",
+  "correction": {
+    "owner": "Sean",
+    "batchId": "5b81c27a-3565-4070-88da-9188fc122e1e",
+    "stepId": "85feb24e-3ecb-4dcd-b8d0-0f150c361015",
+    "status": "succeeded",
+    "authorization": "Earlier user continue: 8 baselines + at most 1 feedback correction; no retry",
+    "runId": "3d7014af-9d9f-450a-8403-75290d7e6f6c",
+    "assetId": "7652eda5-1cde-4f3e-b1e4-6a579c364a48"
+  }
+}

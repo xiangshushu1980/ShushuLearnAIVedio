@@ -1,0 +1,20 @@
+{
+  "u": {"class_type": "UNETLoader", "inputs": {"unet_name": "minimax_h3_ref2va_pruned_int8_convrot.safetensors", "weight_dtype": "default"}},
+  "lo": {"class_type": "LoraLoaderModelOnly", "inputs": {"lora_name": "minimax_h3_five_view_512_s1500.safetensors", "strength_model": 1.0, "model": ["u", 0]}},
+  "c": {"class_type": "CLIPLoader", "inputs": {"clip_name": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors", "type": "minimax", "device": "default"}},
+  "v": {"class_type": "VAELoader", "inputs": {"vae_name": "minimax_h3_video_vae_fp16.safetensors"}},
+  "img": {"class_type": "LoadImage", "inputs": {"image": "start/alya_768.png"}},
+  "cs": {"class_type": "H3ContactSheet", "inputs": {
+      "clip": ["c", 0], "vae": ["v", 0],
+      "prompt": "the camera orbits the subject of <Picture 1> ninety degrees clockwise, neutral studio background, constant lighting",
+      "ref_image": ["img", 0], "size": 512}},
+  "g": {"class_type": "BasicGuider", "inputs": {"model": ["lo", 0], "conditioning": ["cs", 0]}},
+  "sch": {"class_type": "BasicScheduler", "inputs": {"model": ["lo", 0], "scheduler": "simple", "steps": 28, "denoise": 1.0}},
+  "ks": {"class_type": "KSamplerSelect", "inputs": {"sampler_name": "res_multistep"}},
+  "n": {"class_type": "RandomNoise", "inputs": {"noise_seed": 42}},
+  "s": {"class_type": "SamplerCustomAdvanced", "inputs": {
+      "noise": ["n", 0], "guider": ["g", 0], "sampler": ["ks", 0], "sigmas": ["sch", 0], "latent_image": ["cs", 1]}},
+  "dec": {"class_type": "H3ContactSheetDecode", "inputs": {"vae": ["v", 0], "samples": ["s", 0]}},
+  "save": {"class_type": "SaveImage", "inputs": {"images": ["dec", 1], "filename_prefix": "img_turnaround/alya_sheet_512"}},
+  "save2": {"class_type": "SaveImage", "inputs": {"images": ["dec", 0], "filename_prefix": "img_turnaround/alya_views_512"}}
+}

@@ -1,0 +1,112 @@
+{
+  "owner": "Sean",
+  "id": "6d0cd2a4-6b3b-4c99-a962-c82bfb37ac4c",
+  "projectId": "538005c3-16bd-4709-aa4e-70831b960a24",
+  "kind": "script",
+  "shotId": null,
+  "status": "succeeded",
+  "createdAt": "2026-10-04T11:17:11.763Z",
+  "input": {
+    "revision": 3,
+    "content": {
+      "plot": "A和B在图书馆遇见发生一件小事。\nA走到图书馆，看到B正在读书，便把刀放到一边，然后同B交谈了一会儿。\nB脱下衣服放到一旁，取了刀便离开。\nB离开后，A起身脱下自己的衣服，然后穿上B的衣服，开心的转了一圈。",
+      "script": "",
+      "dialogue": "",
+      "shots": [],
+      "entities": {
+        "5821d6dd-2041-40a3-a789-74989c6edd90": {
+          "snapshotId": "b8031f71-80b4-43dc-a6d8-14aeb1351b3e",
+          "sourceRevision": "f01ce83c5b7088ef55d8397e32610f5a6f6e1967005d3e0cb2dfdab31af63703",
+          "name": "角色A"
+        },
+        "e3f49e04-4a4b-483f-823e-d31f497d5ab8": {
+          "snapshotId": "b8031f71-80b4-43dc-a6d8-14aeb1351b3e",
+          "sourceRevision": "752c5abc16ba6beee99a57150c5623b214a6bdc2e9d1d71efddfffe2aa69b173",
+          "name": "角色B"
+        },
+        "ba6dcbf0-ea45-4720-80c7-8bc7b2ec9165": {
+          "snapshotId": "b8031f71-80b4-43dc-a6d8-14aeb1351b3e",
+          "sourceRevision": "d784a2b5407c28e40f9db2f70732ddf388ffacf4544c76e5f28d35127bd3b0a3",
+          "name": "角色A · 派生"
+        },
+        "9971429d-863e-499e-b7c5-902d30e0f6a2": {
+          "snapshotId": "b8031f71-80b4-43dc-a6d8-14aeb1351b3e",
+          "sourceRevision": "771e40c10dda38cab5fad64c15aae7d29e2b90031e6827eb9854829eb37baac5",
+          "name": "图书馆"
+        },
+        "4c8e5bd2-78a5-4aee-8f22-7ec5a8512bb8": {
+          "snapshotId": "b8031f71-80b4-43dc-a6d8-14aeb1351b3e",
+          "sourceRevision": "508a482814c72269c945e82527efde871238004875f1019e13d8f0560e717eef",
+          "name": "一把刀"
+        },
+        "3044bf32-2019-458e-a7cf-e50ab304e42c": {
+          "snapshotId": "b8031f71-80b4-43dc-a6d8-14aeb1351b3e",
+          "sourceRevision": "9a48b8d162877cfcd0e23d7b44b9915850a8bb6617140e9f317c83b553248d2c",
+          "name": "休闲服"
+        }
+      },
+      "targetDurationSec": 30,
+      "pipeline": {
+        "owner": "Sean",
+        "script": {
+          "inputHash": "e638ad6499499ebb36b3147ad77c62d34a497347fd556e0b2f4fac8bcf28376a",
+          "confirmedHash": null
+        },
+        "shots": {
+          "inputHash": "d947ca61c3aa60720e49098f1a961debd83b6c6a4a6bcbe94814c18ddb49667a",
+          "confirmedHash": null
+        },
+        "promptInputs": {}
+      }
+    },
+    "settings": {
+      "llm": {
+        "baseUrl": "https://api.deepseek.com",
+        "model": "deepseek-flash",
+        "temperature": 0.7
+      },
+      "targetDurationSec": 30,
+      "render": {
+        "width": 1024,
+        "height": 576
+      }
+    },
+    "useCurrent": true,
+    "directorNotes": "仅生成本阶段剧本与对白总稿，基于完整剧情和已导入实体事实。A派生是同一个A脱下自己实际制服与银甲后穿B留下的外衣，同一脸/马尾/体型/基础声音，不新增角色。B脱外衣平放桌面后拿唯一刀完全离场，A随后换装开心转一圈。保持因果顺序，不编造剧情外人物。项目30秒为目标，请据此节奏设计。"
+  },
+  "response": {
+    "owner": "Sean",
+    "stage": "script",
+    "shotId": null,
+    "provider": "openai-compatible",
+    "baseUrl": "https://api.deepseek.com",
+    "model": "deepseek-flash",
+    "temperature": 0.7,
+    "responseId": "83893f64-8cf6-4278-b7d4-91e03f8c3758",
+    "usage": {
+      "prompt_tokens": 14853,
+      "completion_tokens": 4406,
+      "total_tokens": 19259,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3939
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 14853
+    },
+    "cachedTokens": 0,
+    "systemPrompt": "Owner: Sean. Output ONLY strict JSON, no markdown. Use only supplied entities and asset IDs; preserve authoritative appearance and do not invent missing facts. No tools or agents. Write ONLY a short-film script and dialogue master for human review. Schema {script:string,dialogue:string}. Establish story beats, actions, speaker names and exact lines. Do not write shot specifications or video prompts. Use the plot language. The dialogue master must agree with the script and requested story.\nUse directorNotes as additional user direction. Preserve authoritative story/actions/dialogue/cast/references/duration for prompt and spatial stages. If direction conflicts, explain in spatial questions; do not silently change facts.\nRendered video prompts must not contain UUIDs, asset hashes or metadata field names; express bindings using Subject/Picture/Audio labels and speaker IDs only.",
+    "rawResponse": "{\"script\":\"短片名：《图书馆里的一件小事》\\n\\n时长目标：30秒。\\n\\n人物：角色A、角色B。\\n场景：图书馆阅读室。\\n固定事实：角色A保持同一张脸、同一束马尾、同一体型与基础声音；角色B保持已确认形象与声音。唯一的一把刀由角色B最后带走。角色A的派生只是同一个角色A在脱下自己的制服与银甲后，穿上角色B留下的休闲服，不新增人物。\\n\\n第一拍（约0—8秒）：\\n角色A走进图书馆阅读室，看见角色B正坐在桌边读书。角色A停步，把唯一的一把刀放到一旁，然后走近角色B，与角色B交谈。\\n\\n第二拍（约8—16秒）：\\n角色A与角色B交谈了一会儿。角色B合上书，起身，脱下自己的休闲服，平放在桌面一旁。\\n\\n第三拍（约16—23秒）：\\n角色B拿起那把唯一的一把刀，不再停留，转身离开阅读室，完全离场。角色A留在原处，目送角色B离开。\\n\\n第四拍（约23—30秒）：\\n角色B离开后，角色A起身，脱下自己的制服与银甲，放到一旁，再拿起角色B留下的休闲服穿上。角色A穿着角色B的休闲服，开心地转了一圈。\\n\\n结尾：角色A停住，神情轻快。没有新增人物，没有新增武器，唯一的一把刀已随角色B离场。\",\"dialogue\":\"对白总稿\\n\\n角色A：你还真会挑地方。\\n角色B：图书馆里，刀先放下。\\n角色A：好。那就说一会儿。\\n角色B：说完我就走。\\n角色B：刀我拿走了。\\n\\n说明：以上对白与剧本一致。角色A使用既有基础声音，清冷克制，带一点烟嗓颗粒感；角色B使用既有基础声音，明亮活泼。角色B说完“刀我拿走了。”后离场，角色A之后不再说话，只以开心转圈完成结尾。\"}",
+    "warnings": []
+  },
+  "result": {
+    "script": "短片名：《图书馆里的一件小事》\n\n时长目标：30秒。\n\n人物：角色A、角色B。\n场景：图书馆阅读室。\n固定事实：角色A保持同一张脸、同一束马尾、同一体型与基础声音；角色B保持已确认形象与声音。唯一的一把刀由角色B最后带走。角色A的派生只是同一个角色A在脱下自己的制服与银甲后，穿上角色B留下的休闲服，不新增人物。\n\n第一拍（约0—8秒）：\n角色A走进图书馆阅读室，看见角色B正坐在桌边读书。角色A停步，把唯一的一把刀放到一旁，然后走近角色B，与角色B交谈。\n\n第二拍（约8—16秒）：\n角色A与角色B交谈了一会儿。角色B合上书，起身，脱下自己的休闲服，平放在桌面一旁。\n\n第三拍（约16—23秒）：\n角色B拿起那把唯一的一把刀，不再停留，转身离开阅读室，完全离场。角色A留在原处，目送角色B离开。\n\n第四拍（约23—30秒）：\n角色B离开后，角色A起身，脱下自己的制服与银甲，放到一旁，再拿起角色B留下的休闲服穿上。角色A穿着角色B的休闲服，开心地转了一圈。\n\n结尾：角色A停住，神情轻快。没有新增人物，没有新增武器，唯一的一把刀已随角色B离场。",
+    "dialogue": "对白总稿\n\n角色A：你还真会挑地方。\n角色B：图书馆里，刀先放下。\n角色A：好。那就说一会儿。\n角色B：说完我就走。\n角色B：刀我拿走了。\n\n说明：以上对白与剧本一致。角色A使用既有基础声音，清冷克制，带一点烟嗓颗粒感；角色B使用既有基础声音，明亮活泼。角色B说完“刀我拿走了。”后离场，角色A之后不再说话，只以开心转圈完成结尾。"
+  },
+  "finishedAt": "2026-10-04T11:17:32.563Z",
+  "output": {
+    "revision": 4
+  }
+}

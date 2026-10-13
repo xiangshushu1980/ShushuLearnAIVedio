@@ -1,0 +1,12 @@
+{
+  "owner": "Sean",
+  "projectId": "538005c3-16bd-4709-aa4e-70831b960a24",
+  "sessionId": "0707ba67-08da-42cf-9bc9-b1fa07bf95cf",
+  "runId": "902bf130-6f94-4475-b8f7-88557d82df79",
+  "status": "running",
+  "request": {
+    "requestId": "033dfc2a-8998-4fea-a751-74600ecb8de6",
+    "mode": "prepare",
+    "text": "当前隔离测试空间稿rev38已采用，但独立实际图复核发现中性静物描述误读。授权做最小文字修正、禁止GPU、禁止重跑LLM工作流。每轮先get_film_context并加载narrative-control/ref2va（当前profile8方法7）。先inspect_candidate_frames候选6fb58b1f-e122-47e4-a018-1c2b2b1953ba只看4.30s一张图，它是历史已归档证据，不可强选。实际根Agent已看完整大图：刀在画面左近侧，纸张/文件夹在画面近侧中部且位于刀柄右下方，透明杯分布在桌面中部及更远处；黑色合上书在画面右侧B前面。不能把纸张/杯全部定位到刀左边、不能把多个可见杯统成唯一杯，也不发明坐标和尺寸。请检查当前scenePlan与六镜各段有关这些静物的文字，将错误“mid-left / left of sword”等与实际图冲突定位改成只按确实观察到的相对关系：既有纸张/文件夹在近侧中部、透明杯在桌面中部与更远处保持原位；刀仍左近侧，书仍右远侧；目标衣落点为书左方且刀位远侧、避开这些静物的可见裸木区。不改变S3收拢-触木-松手过程，S4/S5留存、S6取展开穿同一外套状态。全部六段和主体音频引用/图片顺序、原始对白、动作/时长/实体/种子严格保持；只改有关静物位置错误，scenePlan须说明相对观察来源candidate/time，不把历史渲染外观称实体登记。不要加新事实，不把多个静物位置合成未观测同一群。用propose_film_revision正确形状revision顶层/patch.summary/patch.spatial完整稿提出、get_film_proposal读取完整校验，正文词数400-450优先、允许350-500范围。只在自身validation.valid且questions空时apply_film_proposal采用并读取最新上下文。旧S2/S3锚帧来源失效是另一码事，不为采用文字绕过或强选历史视频；之后仍待真实重建S1->S2->S3链。不要重复询问已授权保留静物，也不要重跑spatial付费。最终报告实际采用版本、校验和仍存在的依赖阻塞。"
+  }
+}

@@ -1,0 +1,23 @@
+subject_definitions:
+<Subject 1> is the same adult East Asian woman shown in <Picture 1> and <Picture 2>. <Picture 1> provides her main-appearance identity and costume reference; <Picture 2> provides her confirmed front, side, and back proportions. Preserve her black hair tied in a low ponytail, calm youthful face, dark navy high-collar buttoned uniform, silver shoulder and forearm armor, dark trousers, black boots, and one black sheathed katana at her waist. Her posture and facial expression may change naturally while these identifying features remain stable. She is the visible speaker (S1).
+<Audio 1> is the confirmed voice recording for <Subject 1> (S1). Its exact Mandarin speech and timing are the target audio track and are copied in full without rewriting or replacement.
+
+summary:
+[reference generation + audio reuse] Create a 6.167-second, 16:9 live-action-style greeting in the same guardroom at dusk as [Shot 1] of the paired scene. Use <Subject 1> for the woman's identity and costume. Copy <Audio 1> as the complete target audio track; do not invent or alter dialogue. Let the final expression hold after the approximately 6.08-second recording ends.
+
+retention_analysis:
+<Subject 1> (appears throughout [Shot 1]): fully_preserved - retain the woman's face, black low ponytail, navy high-collar uniform, silver shoulder and forearm armor, dark trousers, black boots, and single sheathed katana.
+<Audio 1>: fully_copy - reuse the complete confirmed source recording as the target video's complete audio track, preserving its original signal and timing.
+
+detailed_description:
+The target video is a naturalistic, intimate character moment with muted blue-gray evening light, warm practical light in the background, realistic facial motion, and restrained performance. The single visible character is the adult East Asian woman defined by <Subject 1>. Preserve her facial identity, black hair in a low ponytail, dark navy high-collar buttoned uniform, silver shoulder and forearm armor, dark trousers, black boots, and one black sheathed katana at her waist. The location is the same modest guardroom established in the paired setup: dark wooden doorway, narrow cool-lit window, and one warm lamp. Keep the room layout and lighting direction consistent. The studio-white source backgrounds are not part of the scene. No other person enters the frame; the person she addresses remains off-screen.
+
+[Shot 1] The shot begins in a medium close view that includes her face, shoulders, upper torso, and the top of the katana scabbard. She looks toward the unseen companion near screen right, continuing the recognition established by the preceding setup. At 0.00 seconds, <Audio 1> begins and supplies her complete Mandarin greeting: <d>[Chinese] 你好，很高兴见到你。今天我们一起出发，慢慢认识这个世界。</d> (S1). Her mouth movement follows the source recording naturally, with small pauses and syllable timing aligned to the original audio. She gives a subtle, genuine smile and a slight welcoming nod, then holds eye contact just off camera. Keep the gesture small enough to fit the spoken duration; do not add a wave, sword movement, walking, or a second action. The camera performs a gentle, slow push toward her face while preserving a little of the navy collar and silver shoulder armor in frame. Her lips close after the final syllable, and her expression settles into calm anticipation. The katana remains sheathed and stationary. Use one continuous shot with no cut, no time jump, no subtitles, no visible text, no additional voices, and no extra people. Preserve stable facial proportions and costume details through the close framing. The room ambience remains quiet beneath the copied voice track; do not add a competing sound effect or musical cue.
+
+Keep her head orientation steady enough for readable lip movement, avoid fast facial turns, preserve her position near screen center, and let the final expression hold briefly after speech.
+
+overall_soundscape:
+<Audio 1> is copied in full and remains the only intelligible voice. Keep quiet room tone underneath it; do not add other dialogue, singing, or a competing sound effect.
+
+non_diegetic_music:
+N/A.

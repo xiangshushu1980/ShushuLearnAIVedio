@@ -1,0 +1,22 @@
+{
+  "owner": "Sean",
+  "candidateId": "8cad3852-e49c-4c93-9619-5cf19ef82e6f",
+  "mediaHash": "b9e66f670fca47866dc7f6cd914ef69f571e1da084ed9bcb25066dce59c9fee1",
+  "actualDurationSec": 4.458333,
+  "plannedDurationSec": 4,
+  "visualConclusion": "failed-not-selected",
+  "scope": "Root4fps entireclipcontact andAgent6 exacttimestamps; noaudioacceptance",
+  "observations": [
+    "B removes only originalcamelcoat; offwhitehoodie/pants retained, A remains seated and singlekatana unmoved",
+    "Coat held upright then spread while setting it down; compact gatheredfootprint not maintained",
+    "Finalcoat overlaps originalclosedbooklocation; booknotindependentlyvisible, unknownifundercloth ormoved",
+    "Finalcloth extendsacrossnear-right tabletop andoverfront/rightedge, fullbodyandsleevewoodsupportfails"
+  ],
+  "nextControlHypothesis": "A single explicit hem-to-collar fold within gathering, keeping the compact mass held until contact at barewood beyond knife/leftofcentralglass; must test physicalplacement rather than randomseed. Four-second feasibility unproven. Consider isolated removal/placement split if stronger control still fails.",
+  "fullAudioVideoDecodePassed": true,
+  "evidence": [
+    "sean_six_v39_s03_8cad_manifest.json",
+    "frames/sean_six_v39_s03_8cad_contact.png",
+    "sean_revision39_s03_generation_result.json"
+  ]
+}

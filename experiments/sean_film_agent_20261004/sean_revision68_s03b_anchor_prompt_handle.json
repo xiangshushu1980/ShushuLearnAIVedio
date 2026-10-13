@@ -1,0 +1,14 @@
+{
+  "owner": "Sean",
+  "projectId": "538005c3-16bd-4709-aa4e-70831b960a24",
+  "sessionId": "0707ba67-08da-42cf-9bc9-b1fa07bf95cf",
+  "request": {
+    "requestId": "21ee6106-5c82-41f7-b8fb-b36527d35265",
+    "mode": "generate",
+    "text": "本轮允许选片/设置实际锚帧及文字修订，但禁止提交GPU和合成。根全程4fps+完整尾图已核对新版S3a ca55bc4b-e801-4197-9b65-6d0a620f4c4b：原coat脱下、inner裤鞋保留、双手身前持衣下缘自然垂落、未放桌未松手，书刀纸2杯A不动；仅叙事视觉暂通过，精确前臂支撑未确认。freshcontext/loadmethod，select该当前候选，然后给S3b 7a4d2f18-6c93-4b57-9e21-5d8c3f0a6b74 set_visual_anchor来源ca55，view实际图片不要猜。定点读完整S3b，实际开场是双手抓持外套上部/身前、下部长衣料下垂，不是已完全前臂托好的小衣束。授权仅S3b action/continuity/prompt及对应spatial start/transition明确真实开场；运动起始一手仍抓coat上部，另一手从下方托起垂落衣身与袖子，再双手/前臂承托整件向远半区screenleftback搬到固定裸木点（中央杯左方/书左方/刀远侧），不可重脱外套、不增加精细折衣/走动；木面接触后放手，最后整个衣身+两袖均木面支撑不垂桌沿，不压书不碰杯纸刀，book始终原位可见，A坐。不能宣称forearm已支撑或已紧凑作为开场事实，不移动静物不放宽目标。先版本化结构patch仅同步S3b action/continuity真实开场（其他6镜逐字原样），等价7spatial仅S3b start/transition真实heldstate改、S3b结束同barewood，scenePlan和其他状态原样，暂prompt若过期仍可文字采用历史anchor模式但不得生成。再固定prompt工作流仅S3b按实际Picture9开场和已同步输入生成完整六段正文400-450词，notes包含candidateId/time/hash真实观察、Picture9是帧不是人物、原8图顺序不动/seed4s/所有对白原样空。读结果校验warnings和语义，不改剧情，不凭自动写回宣称通过；如无错freshvalidateS3b报告新revision、S1/S2/S3a current/selection、S3banchorready与完整末端支撑风险。禁止generate_video、其他镜修改/选片、合成；34s不是最终30目标。"
+  },
+  "response": {
+    "runId": "20ee2418-6752-4bdf-9d4b-322103c5db49",
+    "status": "running"
+  }
+}

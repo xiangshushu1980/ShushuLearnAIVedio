@@ -1,0 +1,14 @@
+{
+  "owner": "Sean",
+  "projectId": "538005c3-16bd-4709-aa4e-70831b960a24",
+  "sessionId": "0707ba67-08da-42cf-9bc9-b1fa07bf95cf",
+  "request": {
+    "requestId": "039b2a5a-9aa9-49b1-bc6c-a4b7be646066",
+    "mode": "generate",
+    "text": "授权本轮仅S3当前rev52一次真实受控视频测试，根Agent已独立核对前两镜全部字段与rev50逐字相同、selected9f70/0141仍current，scenePlan和所有空间状态完全等价，S2/S3anchorready；共享Comfy队列0/0、hive-resource活跃租约0。先freshgetcontext加载方法、读S3完整文本与真实开场帧、validate，无错误仅generate_video cbfc4455-17f8-4b4a-875a-e3bcfc418399一次。不要再改提示词/action/continuity/时长/种子/实体/参考顺序/空间，不生成其他镜，不选片不设S4anchor不合成。应用共享adapter负责GPUlease，轮询同一candidate到终态，超时不重提交。成功实际inspect两批0/.75/1.5与2.25/3.25/末尾前.15，明确观察脱coat仅保留inner/pants/shoes、一次对折是否形成紧凑衣束、是否保持收拢移向左方裸木区、木面接触先于放手、全衣身两袖是否受水平桌面支撑、书全程原位可见/无被衣遮挡、刀/静物/A姿势不变。不能凭prompt或视频成功状态宣布视觉通过；不清楚写未知，不通过必须如实标注。报告candidate/hash/实际时长及帧事实，未验收音色对白音乐口型。"
+  },
+  "response": {
+    "runId": "8b7794bd-7a1d-49e2-b4b9-1a9ee162064e",
+    "status": "running"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "owner": "Sean",
+  "candidateId": "9f7023c5-86d4-4b6c-a740-3dbaa8588fb1",
+  "mediaHash": "0786113977994990d1c2f36c6c0ee4713f82033006c8bd3b87f45aabdbac1833",
+  "scope": "Root full clip3fps contact plus full-resolution tail; Agent6 actual timestamps; no audio acceptance",
+  "visualConclusion": "provisional-pass-for-S2-continuity",
+  "observations": [
+    "Short approach from near-side aisle to table, single sheathed black katana set down, A sits by ending",
+    "B remains seated far/right with book in hands and coat worn",
+    "Only one visible sword, handle near middle of table accessible to B later; long scabbard extends toward A/near-left edge",
+    "Papers/folders and multiple transparent cups persist on near-center/middle tabletop; no material scene cut or axis crossing"
+  ],
+  "limits": [
+    "Discrete sampling does not prove all frames or complete dialogue",
+    "Actual6.583333sec exceeds planned6sec",
+    "Knife pickup/reach and coat support still require next real clips",
+    "ASR for new three dialogue tracks awaits user authorization; voice/lips unverified"
+  ],
+  "evidence": [
+    "sean_six_v39_s01_9f70_manifest.json",
+    "frames/sean_six_v39_s01_9f70_contact.png",
+    "frames/sean_six_v39_s01_9f70_tail.png",
+    "sean_revision39_s01_generation_result.json"
+  ],
+  "fullAudioVideoDecodePassed": true
+}

@@ -1,0 +1,27 @@
+{
+  "owner": "Sean",
+  "status": "preliminary_manual_anonymous_review",
+  "method": "Conditions were anonymized before visual review;首帧、中帧、末帧 were extracted from all completed T5 videos. Scores are 1-5 manual ordinal scores, with hard-failure flags recorded separately.",
+  "scale": {"1": "failed", "3": "usable", "5": "strong"},
+  "hard_failure_flags": ["identity_swap", "wardrobe_leak", "layout_copy", "object_transfer", "face_melt", "missing_subject", "invalid_order"],
+  "cell_scores": [
+    {"blind_id":"R1","revealed_cell":"T5-A F+W","sample_count":3,"identity":4,"wardrobe_body":4,"view_endpoint":3,"neck_hair":4,"accessories":4,"hard_failures":0,"pass_rate":1.0,"note":"Stable full-body baseline; later frames trend toward larger crop."},
+    {"blind_id":"R2","revealed_cell":"T5-B F+WB","sample_count":3,"identity":4,"wardrobe_body":4,"view_endpoint":3,"neck_hair":4,"accessories":4,"hard_failures":0,"pass_rate":1.0,"note":"Often larger subject/clearer wardrobe, but no clear identity advantage over R1."},
+    {"blind_id":"R3","revealed_cell":"T5-C F+WB+Q","sample_count":3,"identity":4,"wardrobe_body":4,"view_endpoint":2,"neck_hair":4,"accessories":4,"hard_failures":0,"pass_rate":1.0,"note":"Q did not reliably preserve the intended 45-degree endpoint; trends side-facing."},
+    {"blind_id":"R4","revealed_cell":"T5-C0 F+WB","sample_count":3,"identity":4,"wardrobe_body":4,"view_endpoint":2,"neck_hair":4,"accessories":4,"hard_failures":0,"pass_rate":1.0,"note":"No-Q control also trends side-facing; no clear disadvantage versus R3."},
+    {"blind_id":"R5","revealed_cell":"T5-D F+WB+S","sample_count":3,"identity":4,"wardrobe_body":4,"view_endpoint":3,"neck_hair":4,"accessories":4,"hard_failures":0,"pass_rate":1.0,"note":"Can reach side endpoint; dedicated S benefit over D0 not established."},
+    {"blind_id":"R6","revealed_cell":"T5-D0 F+WB","sample_count":3,"identity":4,"wardrobe_body":4,"view_endpoint":3,"neck_hair":4,"accessories":4,"hard_failures":0,"pass_rate":1.0,"note":"No-S control can also reach reasonable side endpoint."},
+    {"blind_id":"R7","revealed_cell":"T5-E F+WB+B","sample_count":3,"identity":4,"wardrobe_body":4,"view_endpoint":3,"neck_hair":4,"accessories":4,"hard_failures":0,"pass_rate":1.0,"note":"Can reach back endpoint; dedicated B benefit over E0 not established."},
+    {"blind_id":"R8","revealed_cell":"T5-E0 F+WB","sample_count":3,"identity":4,"wardrobe_body":4,"view_endpoint":3,"neck_hair":4,"accessories":4,"hard_failures":0,"pass_rate":1.0,"note":"No-B control can also reach reasonable back endpoint."},
+    {"blind_id":"R9","revealed_cell":"T5-F F+W+Q","sample_count":3,"identity":4,"wardrobe_body":4,"view_endpoint":2,"neck_hair":4,"accessories":4,"hard_failures":0,"pass_rate":1.0,"note":"Repeated full-body face information plus Q adds no stable endpoint benefit."},
+    {"blind_id":"R10","revealed_cell":"T5-close-A F+W","sample_count":3,"identity":5,"wardrobe_body":3,"view_endpoint":3,"neck_hair":5,"accessories":3,"hard_failures":0,"pass_rate":1.0,"note":"Close-up face is stable and readable."},
+    {"blind_id":"R11","revealed_cell":"T5-close-B F+WB","sample_count":3,"identity":5,"wardrobe_body":3,"view_endpoint":3,"neck_hair":5,"accessories":3,"hard_failures":0,"pass_rate":1.0,"note":"Close-up face is effectively tied with R10; no visible WB degradation or gain."}
+  ],
+  "provisional_summary": {
+    "default_candidate": "F+WB for role separation and lower redundant-face competition",
+    "confirmed_gain": "None demonstrated for dedicated Q/S/B view references or repeated W in the restrained slow-turn setup.",
+    "closeup_result": "F+W and F+WB are effectively tied in sampled close-up identity stability.",
+    "limitations": "Manual ordinal review, one character, low motion, no dialogue, 768x448, 20 steps; not a population-level statistical claim.",
+    "next": "Either accept T5 as provisional and move to difficult-action/occlusion testing, or add a second reviewer before promoting WB to a formal skill baseline."
+  }
+}

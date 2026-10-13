@@ -1,0 +1,14 @@
+{
+  "owner": "Sean",
+  "cutId": "ac7eccfd-512f-465e-a4d5-8ce18bccca47",
+  "durationSec": 38.605,
+  "decode": "full audio/video ffmpeg decode passed",
+  "spliceEvidence": "actual before/after frames around all4splices in frames/sean_coherence_cut_seams.png preservemain-table/shelving/action-axis Anear-left Bfar-right. S3coatremovedtable staysintoS4; S4absentB/bladestaysintoS5. Slightframing/prop-size changes visible.",
+  "status": "diagnostic pending audio/full quality/final pacing",
+  "remaining": [
+    "Current rendered voiceidentity/timbre/lip-sync listening",
+    "Full-frame clothing/hand/anatomy defects",
+    "Final30sec pacing currently37secplanned38.605actual"
+  ],
+  "verifiedFlow": "FixedLLM coherentall-filmspace +sequentialcurrent-tail references +actualAgent frame-feedback revision +distinctcandidate sampling +selectedcurrent5clipassembly"
+}

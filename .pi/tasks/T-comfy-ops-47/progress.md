@@ -12,6 +12,45 @@
 - 任务 ID：`T-comfy-ops-47`。
 - 用户要求：新对话重新读取上下文后继续，不依赖上一轮聊天记忆。
 
+## 2026-09-26：单物体高清统一流程收敛
+
+- 用户明确当前优先级不是五对象并行，而是先完成单物体：高清唯一正脸、高清全身、H3 全人物侧/背/回正统一性，以及之后的 S/Q/B 高清化方法选择。
+- 回查 `docs/39_h3_latent_upscale_face_research.md`、`docs/40_h3_far_face_second_pass_strategy.md`、`docs/40_krea2_prompt_and_identity_pipeline.md`、`docs/41_h3_character_reference_test_plan.md`、`docs/42_h3_face_preanalysis_external_research.md`、`docs/43_h3_facerefine_current_state.md` 和 `docs/45_ref_asset_handbook.md` 后，确认旧手册“F/W/WB/S/Q/B 全部从低清 H3 抽帧”过于粗糙，不能满足高清细节目标。
+- 当前采用职责分离：`F0` 为高清唯一正脸真值；`W0` 为同一身份源的高清全身真值；`WB` 从 `W0` 去脸/去头；H3 只输入 `W0`，负责侧面、背面、回正和服装一致性；S/Q/B 从通过审查的 H3 帧开始，先直接图像超分，再按需做低 denoise 图像 latent 二采。
+- 完整视频 latent 二采保留为整体视频结构/时序慢车道，不作为 reference 默认路径；本地研究已显示它不能承诺恢复远景小脸身份细节。FaceRefine 同样只对近景/中景或明确需要的短片段启用。
+- 已更新权威手册：`docs/45_ref_asset_handbook.md` v1.1；新增决策记录：`experiments/h3_reference_pipeline/t47_1_reference_batch_v1/SINGLE_OBJECT_HD_WORKFLOW_DECISION_20260926.md`；manifest 已记录 `single_object_hd_consistency_v1.1`。
+- 本次未生成新图、未抽帧、未合成、未启动 ComfyUI、未占用 GPU。Character A 现有 H3 smoke 仍处于 `awaiting_h3_review_character_a`，只等待用户检查。
+
+## 2026-09-26：Character A 高清静帧候选
+
+- Sean 已确认 Character A H3 turnaround 的统一性通过；清晰度不足由后续高清静帧与视角高清化阶段覆盖，不作为 H3 review 否决项。
+- 按单物体流程生成两张待审查候选，均以 `/home/sean/projects/ComfyUI/input/sean_t47_1_ref_v1_character_a.png` 为唯一输入：`F0` 1344×1344、identity_portrait、seed=4701202、prompt_id=`8ed468e6-ece6-48d4-9b61-ec2f715dbe90`；`W0` 1024×1536、wardrobe_full_reference、seed=4701203、prompt_id=`f20949ea-35e4-4843-915d-3d917c288f39`。
+- 产物分别为 `/home/sean/projects/ComfyUI/output/sean_t47_1_hd_stills_20260926/character_a/F0_front_hd_00001_.png` 与 `/home/sean/projects/ComfyUI/output/sean_t47_1_hd_stills_20260926/character_a/W0_full_body_hd_00001_.png`；参数、hash 和路径已写入批次 manifest。
+- 初步检查：F0 面部细节清楚；W0 全身、服装、披风、装备和靴子可读。当前状态改为 `awaiting_still_review_character_a`，未生成 WB、S/Q/B、组合图；GPU 租约已释放。
+
+## 2026-09-26：Krea2 正面锚点→背面一致性 v2
+
+- 用户要求验证“先生成正面，再仅依靠正面图和背面提示词生成背面”，并扩大到多种角色、服装、饰物、发型和怪物，同时保持统一风格。
+- 新增参数化 Krea2 流程：`tools/krea2_prompt_profiles.py` 支持统一风格模板 + `--character-spec`；`scripts/krea2_front_back_consistency_batch.py` 串行执行 front → case-local input staging → back，避免跨角色 reference 污染。
+- v2 生成 8 组 front/back，共 16 张 `1344×1536`：6 个人形角色 + 2 个怪物。原始输出保留在 `/home/sean/projects/ComfyUI/output/sean_krea2_front_back_consistency_20260926_v2/`，归档和 QC 位于 `experiments/krea2_front_back_consistency_20260926_v2/`。
+- 初步 QC：6 个人形角色背面真正转身，主色、服装、发型后侧和主要装备大体统一；2 个怪物背面仍基本正面朝向，判定失败，不得作为背面 canonical。
+- 发现并修复两项流程问题：ComfyUI SaveImage 的 prefix 实际落在 case 目录而非 `front/` 子目录；Krea2 LoadImage 不能直接读取 output 路径，已加入 input staging 复制契约。
+- 当前只保存实验结果和失败边界，未进入 H3 turnaround、未生成 canonical reference；GPU 租约已释放，等待 Sean 检查成对 contact sheet 和 QC notes。
+
+## 2026-09-26：一次性正反面 turnaround sheet 对照
+
+- 针对“正面图单独生成背面会复制正面/不转身”的问题，新增 `turnaround_sheet` Krea2 prompt mode：一次画布生成左正面、右背面，要求同一角色、互补背部结构、禁止复制正面专属元素。
+- 使用 Character A 高清 W0 作为唯一输入，生成 `1536×1024` 双视图 sheet；prompt_id=`9be5b71d-76cd-486a-a4c0-29f72b4e7144`，seed=`4712201`。
+- 结果显示真实背面成立：后脑头发、披风后幅、箭袋、背部弓套和靴子后侧形成互补结构，未见明显正脸复制；该路线比“正面→单独背面”更有希望。
+- 产物归档：`experiments/krea2_turnaround_sheet_test_20260926/`；仍是 experimental 双视图板，不能直接当两张 canonical reference。GPU 租约已释放。
+
+## 2026-09-26：8角色高分辨率 turnaround sheet 批量测速
+
+- 按用户确认的“一次生成同画布正面+背面”方案，复用 8 个角色/怪物的正面锚点，串行生成 `1728×1152`（约 1.99 MP）turnaround sheet；实验记录：`experiments/krea2_turnaround_sheet_batch_20260926_v1/`。
+- 8/8 成功，串行总耗时约 268.9 秒，平均 33.6 秒/张，范围 30.3–36.1 秒/张。GPU 租约已释放。
+- 严格两视图 QC 仅 4/8 通过：红法师、东方女剑士、矮人工程师、蜥蜴怪通过；精灵弓手、沙漠游侠、白骑士、冰狼出现重复正面主体。高分辨率提升了细节，但没有解决“第三主体/重复正面”布局不稳定。
+- 一次性正反面模式对蜥蜴怪有效，解决上一轮单独生成 back 时不转身的问题；当前批次全部仍是实验图，不进入 canonical reference。下一步如需生产 reference，必须增加严格两主体 QC，并针对失败角色重试布局或采用拆分视图路线。
+
 ## 新会话必读
 
 按以下顺序读取：
@@ -301,3 +340,132 @@
 - 验证：runner 与 ComfyUI 节点源码均通过 Python AST 静态校验；未 reload/重启共享 ComfyUI，未启动 GPU，尚未做真实 manifest 闭环运行。
 - 下一步：获准安全 reload 后，用现有 `t47_auto_preanalysis_final8_20260923_*` 对应源片做一次 manifest 读取闭环；核对输出与预分析轨迹一致，再决定是否增加源哈希校验与结构化候选 identity/margin 字段。
 - 2026-09-23 续接协议复核：[Sean] 确认前一轮只写入 checkpoint，没有设置新对话可接管标记；因此新对话的 start 在永久 controller 模式下正确拒绝了直接 claim，checkpoint 也因旧 worker/generation 被拒绝。Hivemind 已补充 `handoffReady`：当前对话 checkpoint 后，新对话 `hive-task start T-comfy-ops-47` 会先注册新 Worker，自动调用原子 handoff，再把 checkpoint.context 注入启动提示；旧对话只读。正式 Task Center 已部署并通过 27 项 Coordinator 回归测试，当前任务 generation=4、`handoffReady=true`。本机隧道 `hivemind-task-center-tunnel.service` 已 enabled/active，3191 健康检查返回 protocolVersion=2；此前日志中的 `Broken pipe` 已由 systemd 自动重启恢复，沙箱内无权限时可能出现假性 fetch failed。
+
+## 2026-09-26：当前交接摘要
+
+- 官方 `ComfyUI-H3-FaceRefine` v1.1.2 已完成升级回归；当前权威续开入口为 `docs/43_h3_facerefine_current_state.md`，本任务不再重复维护一套独立参数表。
+- Continuum 4×8 实测：32 秒整段 FaceRefine 因主机内存压力主动中止；改用 8 秒/192 帧窗口后，红发角色 c1/c2 成功（228.2–275.1 秒/段），精灵 c2 因 `face-index=1` 误选红发角色而作废。
+- 后续第一优先级是预分析 manifest/坐标 ROI/identity gate 的目标锁定闭环；错误目标输出不得进入成片。`face-index` 只能作候选排序，不能作为双人身份契约。
+- 当前生产分流：latent 二采负责全片结构与分辨率；FaceRefine 只处理近中景或明确需要修脸的 8 秒以内片段；VOSR2 仅为可选末端锐化，不解决丢检或 20–35px 远景身份恢复。
+
+## 2026-09-26：长度与资源基准
+
+- 清缓存后，8 秒/192 帧、768 crop、8 steps、单脸 FaceRefine 成功，耗时 222.3 秒；采样阶段显存约 23.1GiB，系统可用内存最低约 375MiB。
+- 直接扩展到 16 秒/384 帧后，显存约 22.9GiB、GPU 100%，系统可用内存降至约 300–500MiB并开始使用约 2.3–2.4GiB swap；为避免主机 OOM 主动中止，未继续 20/24 秒。
+- 当前结论：8 秒是本机当前已验证安全分段；16 秒是风险边界而非稳定上限。下一步若要提升单次长度，先定位长序列系统内存占用/降低内存峰值，再复测 16 秒。
+- 源长度对照已完成：FaceRefine 先完整解码源视频，再执行 `frame_load_cap`。5.17 秒源处理 124 帧耗时 125.1s；32 秒源只处理前 124 帧仍耗时 140.6s（慢约 12.4%），证明“只处理 0–8 秒”不能抵消长源文件的内存成本。物理裁成 8 秒后处理 192 帧成功，耗时 180.2s，未出现 16 秒测试的危险内存状态。后续流程应在 FaceRefine 前物理切段；当前 768 crop/8 steps 的 8 秒物理短源是安全基线。
+- 详细记录：`experiments/h3_vae_upgrade/sean_facerefine_duration_benchmark_20260926.md`；资源观测 `a11a2151-5c91-4458-aecb-de525304920e`；本轮 GPU 租约已释放。
+
+## 2026-09-26：Reference 生成链纠偏与新 Agent 续接入口
+
+- 用户确认 Reference 正式链路必须是：`统一提示词 → 主图 → H3 全视角/视频 → 抽帧 → QC → manifest`。Krea2 只能作为主图阶段；Codex image、独立 Krea2 逐视角生成和其他模型不得进入正式 F/W/WB/S/Q/B 包。
+- 本轮 A/B 的 direct-Krea2 v1 产物已判定为 rejected noncanonical：它们没有经过 H3 主图到全视角链，不能作为 T47-1 的 reference 验收依据。项目产物尚未删除，待用户确认新 Agent 接管后按精确清单清理。
+- 文档已整理：`docs/45_ref_asset_handbook.md` 是唯一当前 Reference 手册；`docs/40_krea2_prompt_and_identity_pipeline.md` 只保留 Krea2 主图专题；旧 `docs/23_refimage_system.md` 标记为历史设计；重复的 46 已合并/移除。相关结论追加至 `.pi/ledger/h3-prompt.md` 的 `C-20260926-01`。
+- 正确续接必须先读：项目 `AGENTS.md`、`docs/INDEX.md`、`docs/45_ref_asset_handbook.md`、`docs/40_krea2_prompt_and_identity_pipeline.md`、`docs/34_ref2va_generation_guide.md`、`docs/17_h3_prompt_writing_rules.md`、`workflows/h3_shushu_object_ref_probe.json`、本 progress 和 T5 reference 组织证据。
+- 新 Agent 的第一阶段只做 H3 reference pipeline smoke，不做 FaceRefine 视频测试：确认主图输入、H3 ContactSheet/视频全视角输出、帧抽取、F/W/WB/S/Q/B manifest 写盘；通过人工检查后再进入 H3 Ref2VA smoke。
+- 生成门禁：不得调用宿主 `image_gen`；不得使用 `tools/krea2_identity_edit_runner.py` 直接生成 S/Q/B；不得从不同角色版本拼接；每个资产必须记录 `source_main_image`、H3 workflow、prompt hash、seed、抽取帧号和 QC 状态。
+- 当前远程 Task Center 状态核对：`T-comfy-ops-47` 已处于 `awaiting_acceptance`、无 controller、generation=6。由于当前 CLI 在 T-ID 后不支持 `--help` 形式，误将接口探查触发为实际 finish/awaiting_acceptance 操作；未继续执行任何远程写操作。新 Agent 接管前需按当前 Task Center 新接口执行 reopen/claim/handoff，不使用旧 `hive-task start`。
+
+## 2026-09-26：严格双视图 prompt + 1536×1024 速度复测
+
+- 用户指出上一批的三个确定问题：部分图出现两个正面一个背面；东方女剑士肩甲/肩胛前后不对应；红法师头发前后不一致。
+- `tools/krea2_prompt_profiles.py` 的 turnaround prompt 已加强为：恰好两个主体、左正右背、同一中立姿势、同脚位/手臂/肩高、肩甲对应同一肩胛 landmark、发型颜色/长度/绑法保持一致、禁止第三主体和重复正面。
+- 为恢复已保留的 8 个正面锚点，新增最小源清单 `experiments/krea2_front_back_consistency_20260926_v2_recovered/manifest.json`；未重新生成正面图。
+- 新批次 `experiments/krea2_turnaround_sheet_batch_20260926_v2/` 使用 1536×1024（1.57 MP），8/8 成功，串行总耗时约 192.6 秒，平均 24.1 秒/张，相比上一批 1728×1152 的 33.6 秒/张快约 28.4%。
+- QC：布局无第三主体 6/8；东方女剑士与冰狼仍出现两个正面一个背面。红法师布局通过但双侧编发/中央后辫仍不构成同一明确发型；东方女剑士背面肩甲结构仍未严格对应。全批次仍为实验产物，不进入 canonical reference。
+- 相关 prompt 代码、manifest、原图、contact sheet、hash 和 QC notes 已归档；GPU 租约已释放。
+
+## 2026-09-26：暂停生成，重新检索多视图统一性方案
+
+- 按用户要求暂停生成，使用 sources 对 GitHub/Hugging Face/ComfyUI 相关资料重新检索，并回查本地 T-comfy-ops-38、T-comfy-ops-43 与 T-20260815-07 历史记录。
+- 找回并确认此前主流程辅助候选：`ComfyUI-H3-ContactSheet` + `minimax_h3_five_view_512_s1500.safetensors`；本机节点和 LoRA 仍在，历史实测为风格化角色 512 约45秒、1024约50秒出5视图，写实旋转曾失败。
+- 新增研究文档 `docs/46_multiview_consistency_research.md`。当前最值得恢复验证的是 OrbitSheets 的 H3 硬切 front/face/left/right/back + 内容聚类抽帧，其次比较 H3 ContactSheet 五槽和 H3 Edit 的 6/8 view decoder；静态 Krea2/Flux 多视图 LoRA 暂列对照，不进入正式 canonical。
+- 本轮只检索和记录，没有安装新节点、下载新模型或生成图；GPU 无租约。
+
+## 2026-09-26：CharacterSheet QuadView 八案例 smoke
+
+- 按用户要求测试静态 CharacterSheet，不改变 canonical reference 流程。下载并安装 `QuadView_krea2_v1.safetensors` 到 ComfyUI LoRA 目录。
+- 由于用户此前手动清理了恢复 manifest，重新建立最小测试清单 `experiments/krea2_charactersheet_test_20260926/manifest.json`；只引用仍保留的 8 张正面锚点，不使用旧 turnaround 作为输入。
+- 新增批次 `experiments/krea2_charactersheet_quadview_20260926_v1/`，8/8 成功。配置为 1536×1024、10 steps、CFG 1、Euler/simple、ref boost 1；串行平均约 27.1 秒/张，总计约 216.6 秒。
+- 结果为 face close-up + front full body + side full body + back full body 四栏。初检 8/8 均有四个不同视角，未见上一批的“两个正面一个背面”或明显重复正面；东方面剑士、红法师、冰狼和蜥蜴怪的服装/发型/身体结构转向关系也明显更好。
+- QC 仍标为 `pass for review`，不是 canonical：单图四栏需要进一步裁切、放大和逐项检查，才能写入 F0/W0/WB/S/Q/B manifest。详见 `experiments/krea2_charactersheet_quadview_20260926_v1/qc/README.md`。
+- GPU 租约已释放；未删除用户文件。
+
+## 2026-09-26：实验 1，QuadView Krea2 严格三视图 prompt
+
+- 官方仓库核对确认：没有 Krea2 专用 TripleView LoRA；只有 `QuadView_krea2_v1`。因此用同一东方女剑士正面锚点、同一 seed/参数，仅把 prompt 改为严格 `front + side + back full body only`。
+- 结果成功：1536×1024 输出恰好三栏，没有脸部特写、hero、第四栏或额外角色。正面/严格侧面/背面清晰，马尾、肩甲、长外套、红腰带和武器保持统一。
+- 结论：QuadView Krea2 可以通过 prompt 实现三视图，但这是 prompt-level 行为，不是独立 TripleView 模式；需要更多角色复测后才能作为稳定默认。产物：`experiments/krea2_quadview_threeview_test_20260926/`。
+
+## 2026-09-26：QuadView 两种三栏布局 A/B
+
+- 使用东方女剑士和冰狼两个角色，分别测试 `脸部特写 + 正面全身 + 背面全身` 与 `上半身正面 + 正面全身 + 背面全身`。
+- 四张图均 1536×1024、10 steps、CFG 1、Euler/simple、ref boost 1；4/4 成功，均严格生成三栏，无侧面、第四栏或 Dynamic 额外区域。
+- 两种布局都能保持发型/角/毛发、肩甲/披风、腰带、武器和背部轮廓。`face + front + back` 更适合脸部身份与前后服装；`upper-body + front + back` 更适合肩颈、胸前装备和上半身细节。
+- 产物：`experiments/krea2_quadview_layout_ab_20260926/`，contact sheet 和 QC 见 `qc/README.md`。
+
+## 2026-09-27：QuadView 加宽左脸栏复测
+
+- 按 Sean 修正后的布局测试东方女剑士：前后保持原来的窄长全身矩形，左侧脸部栏加宽、脸部放大，整体改为 1792×1024，不留白。
+- 结果符合预期：左侧脸部明显更大更清楚；中间正面和右侧背面仍保持完整竖长比例与一致高度。马尾、肩甲、长外套、红腰带、武器和靴子保持统一。
+- 产物：`experiments/krea2_quadview_wide_face_test_20260927/`；当前建议先用该布局做两角色复测，再批量扩展。
+
+## 2026-09-27：固定 QuadView 布局与四角色复测
+
+- Sean 要求将多个已测试 prompt 和特征说明保留到同一目录，并固定生成流程。新目录：`experiments/krea2_quadview_fixed_layout_batch_20260927/`。
+- 目录内保存 4 个 prompt 版本：严格三视图、脸部+正面+背面、上半身+正面+背面、当前生产候选的加宽左脸布局；manifest、脚本、原图和 QC 均在同一目录。
+- 当前固定布局为 `1792×1024`：左侧加宽脸部+上半身栏，脸更大；中间正面全身、右侧背面全身保持原来窄长矩形；无留白。用东方女剑士、红法师、矮人工程师、冰狼分别测试，4/4 成功，平均约 27.4 秒/张。
+- 初检四个角色均保持脸/发型、服装、装备和背部轮廓统一；状态为 `pass for review`，等待 Sean 人工检查。未删除之前目录。
+
+## 2026-09-27：全部 QuadView 配置统一预览矩阵
+
+- 按 Sean 要求，将已保存的 4 种 prompt 配置全部对同一批 4 个角色生成：严格三视图、脸部+正面+背面、上半身+正面+背面、加宽左脸布局。
+- 共 16 张，16/16 成功；严格/脸部/上半身布局为 1536×1024，加宽左脸布局为 1792×1024。总输出和按角色/按布局预览均归档到 `experiments/krea2_quadview_fixed_layout_batch_20260927/all_layouts/`。
+- 目录内 `README.md` 提供所有比较入口；当前只交付 Sean 人工比对，不提升任何配置为最终 canonical。
+
+## 2026-09-26：DynamicCharacterSheet 结构化 prompt smoke
+
+- 下载 `DynamicCharacterSheet_krea2_v1.safetensors`，按官方结构化 prompt 格式对同一批 8 个正面锚点测试；未使用旧 turnaround 作为输入。
+- 官方推荐起点确认：1536×1024、10 steps、CFG 1、LCM sampler、simple scheduler、LoRA strength 1。实际 8/8 成功，平均约 27.1 秒/张。
+- 输出包含 metadata、hero、front/side/back、action poses、silhouettes、expression/state study 和 detail crops。整体身份、服装、发型、装备和怪物结构保持得很好，内容丰富度明显超过 QuadView。
+- 主要问题：Dynamic 的文字生成仍明显乱码/伪文字，部分 panel 标签错误；动作姿势和细节栏不能直接视为 canonical reference。定位为设计资料板和 QC 辅助，不替代 QuadView 或 H3。
+- 产物：`experiments/krea2_dynamic_charactersheet_20260926_v1/`，详见其中 `qc/README.md` 和 `qc/contact_sheet.png`。GPU 租约已释放。
+
+## 2026-09-27：收敛为两种 active 布局
+
+- 社区方案复核后确认：半身/bust 应完整露出双肩、衣领和上躯干；若只服务脸部，则应改成 head-focused portrait，不能把“脸部特写”和“完整半身”混在同一 prompt。
+- 当前只保存并激活两种配置：`face_front_back_focused_head` 与 `upper_front_back_full_upperbody`；两者均为 1792×1024、左 43% / 中右各 28.5%、无留白、正面/背面保持窄长全身矩形。
+- `face_front_back_focused_head`：脸占主体，保留发际线、耳朵、颈部和双肩顶部；`upper_front_back_full_upperbody`：头到腰/中躯干，双肩、衣领、上胸、上臂和肩甲/袖子/背带完整可见。
+- S/side 配置暂不加入。精确 prompt、特征和 active manifest 均在 `experiments/krea2_quadview_fixed_layout_batch_20260927/`。
+
+## 2026-09-27：active QuadView 两布局四角色 preview
+
+- 按当前 active 标准，对东方女剑士、红法师、矮人工程师、冰狼各生成一张 `face_front_back_focused_head` 和一张 `upper_front_back_full_upperbody`，共 8 张，8/8 成功。
+- 两种布局均使用 `1792×1024`、`QuadView_krea2_v1.safetensors`、10 steps、CFG 1、Euler/simple、ref boost 1；单张约 30.1–30.8 秒。
+- 结果统一归档在 `experiments/krea2_quadview_fixed_layout_batch_20260927/active_preview/`，总览、按角色和按版式 contact sheet 均已生成；GPU 租约已释放。
+- 初检中，`face_front_back_focused_head` 四个角色均形成目标三栏；`upper_front_back_full_upperbody` 的东方女剑士、矮人工程师、冰狼通过初检，但红法师发生布局漂移，额外出现侧面栏，成为四栏，标记为 `layout drift / review`。等待 Sean 人工验收。
+- 本批仍是静态预览，不进入 canonical；S/side 未生成，H3 turnaround 和 F/W/WB/S/Q/B manifest 未改变。
+
+## 2026-09-27：face + front + back 加宽脸部布局 v2
+
+- Sean 要求脸部栏继续加宽、正面/背面栏变窄，并指出此前矮人工程师出现两个背面。
+- 已将 `face_front_back_focused_head` 调整为 `52% / 24% / 24%`，并在 prompt 中强化“恰好三栏、唯一正面、唯一背面、禁止第二背面/侧面/三四分之三视图”。
+- 按要求只生成一张版式 preview，不再按人物批量生成：1/1 成功，约 30.4 秒。左侧脸部明显放大，正面/背面仍完整，未见重复背面。
+- 结果：`experiments/krea2_quadview_fixed_layout_batch_20260927/active_preview_v2/`；等待 Sean 检查后再决定是否批量复测。
+
+## 2026-09-27：基础 face + front + back 60/20/20 preview
+
+- 按 Sean 要求先测试通用基础布局，不加入大头发、翅膀等人物特殊适配，也不按人物批量生成。
+- 新建简洁通用 prompt：左脸部约 60%，中间正面约 20%，右侧背面约 20%；要求脸部突出、正反面完整、尽量减少空白，并禁止重复视图。
+- 单张 preview 1/1 成功，约 30.5 秒。初检脸部更聚焦，正面/背面窄但完整，整体空白较少。
+- 结果：`experiments/krea2_quadview_fixed_layout_batch_20260927/active_preview_base_60_20_20/`；等待 Sean 检查。
+
+## 2026-09-27：CharacterSheet / QuadView 社区资料复核与当前结论
+
+- Sean 要求核对社区对 `QuadView_krea2_v1` 的使用经验，重点确认视图数量、布局可控性、LoRA 强度和失败模式。
+- 官方模型卡、官方 ComfyUI workflow、官方 demo、ComfyUI Wiki、Tensor.Art 和社区长文的共同信息：QuadView Krea2 的默认目标是“脸部特写 + 正面全身 + 侧面全身 + 背面全身”；推荐 `1536×1024`、10 steps、CFG 1、Euler/simple、LoRA strength 1.0。官方没有面板宽度参数，也没有 `60/20/20` 的布局控制。
+- 已确认的可控范围：通过 prompt 可把四视图改成三视图，并改变第一栏内容（脸部/上半身等）；不能可靠改变三栏实际宽度。当前本地 `60/20/20` preview 仍生成接近等宽栏，证实 LoRA 的版式先验高于比例提示词。
+- 官方限制与本地现象一致：不同视角可能出现脸、服装、配件和比例变化；侧面/背面可能需要重生成或手工修正；复杂配件和非人类角色更不稳定。矮人工程师重复背面、红法师额外侧面栏属于已知失败类型。
+- 官方 workflow/demos 把 QuadView 当作固定多视图 reference-sheet 生成器；Dynamic 虽允许更自由的结构化 prompt，但属于实验模式，不用于当前基础布局结论。
+- 当前工作结论：[定论候选] QuadView 的强项是视角数量/语义和身份关系，不是精确排版。基础流程应接受其近似等宽组合图，再进行脸部栏裁切/放大和正反面独立裁切合成；不要继续依赖 prompt 直接实现精确栏宽。
+- 本轮只完成资料复核和总结，没有新增生成；GPU 空闲。续开入口：`experiments/krea2_quadview_fixed_layout_batch_20260927/active_preview_base_60_20_20/`，先由 Sean 检查基础版，再决定是否固定布局或测试后处理裁切。

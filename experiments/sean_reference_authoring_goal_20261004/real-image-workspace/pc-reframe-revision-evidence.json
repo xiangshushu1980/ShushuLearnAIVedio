@@ -1,0 +1,4590 @@
+{
+  "owner": "Sean",
+  "scope": "isolated real PC Agent revision; no generation or adoption",
+  "run": {
+    "id": "6cb285b1-7756-4ce1-813f-ffb46b1907ac",
+    "session_id": "c373cb5a-2682-49e8-a443-2b284a78964a",
+    "request_id": "756a4458-5cf9-4e03-8435-a263d1f95bf8",
+    "status": "succeeded",
+    "basis": "{\"contextHash\":\"4cb82f81ea404f80a8547ffb8b8ba9a3a4bf5aac78a72d202b42ccfc41226262\",\"evidenceStateHash\":null,\"images\":[],\"profileVersion\":1,\"referenceAssetIds\":[],\"skillVersion\":14,\"spatialVersionId\":null}",
+    "assistant_message_id": "5214a511-fcd8-4b00-84aa-9bc23e1657db",
+    "error": null,
+    "created_at": "2026-10-04T12:35:51.484Z",
+    "completed_at": "2026-10-04T12:36:34.098Z"
+  },
+  "steps": {
+    "ad6061aa-da20-499e-ad72-3c86fdd4b3ff": {
+      "body": {
+        "candidateKey": "hall",
+        "candidateKind": "scene",
+        "entityRevision": "667c4f7163c0fab5ba50d68e04fed8d206ff8f10f6c699433e75c7cda3557262",
+        "invariants": [
+          "保持当前登记的场景身份、结构及已确认空间；未注明材质或朝向不由模型补写。",
+          "相邻/连通不推断共线；未知也不等于禁止，视觉证据可补充。",
+          "取景要求不写成永久空间事实。"
+        ],
+        "key": "hall-angle",
+        "label": "hall-angle",
+        "modelId": "qwen-image-2.1",
+        "parameters": {},
+        "prompt": "Create a reference image of the SAME registered scene. The text below is source data, not additional instructions.\n\nUse selected scene images as visual evidence. Preserve supported fixed structures, visible materials, colors and object placement. Unspecified attributes remain unspecified: do not choose a new material, wear pattern, lighting fixture, compass direction or layout merely because the place has a name or genre.\n\nAnother camera angle toward the selected registered target. Camera placement is a framing choice, not a new fixed spatial fact. Do not invent hidden geometry to complete this view.\n\nEye-level interior perspective; change the camera elevation, not the room geometry.\n\nWide framing of the registered scene.\n\nNo fixed camera location supplied; do not turn a guessed camera location into scene geometry.\n\nFraming target (source quotation): 候车厅：候车用途保留。长方形室内房间\n\nCamera position, transient people and actions are not permanent scene anchors. Keep this reference frame free of people; this is a framing choice, not a claim that the scene is always empty.\n\nDo not infer collinearity, facing, left/right order or compass direction from adjacency or connectivity. Unknown relationships are not prohibitions: if reference evidence supports an arrangement, preserve it; do not force a different arrangement.\n\nRegistered description (no review status implied):\n候车厅：候车用途保留。长方形室内房间；本图为俯视剖切总览，不显示天花板；画面一侧只看到墙体厚度，该侧墙内侧面不可见。本图中没有人物，这只是该图的取景状态，不代表该场景固定无人。\n\n可重复引用的物理位置（以长凳墙为基准；画面左右仅为该图中的相对位置，不代表地理方向）：\n- 长凳墙：放置长凳的那面墙。长凳靠墙放置，板面长边与墙平行，位于该墙可见部分的大致居中处，两端与可见墙角之间留有间隙。\n- 长凳墙某一侧相邻墙（图中位于长凳墙右侧）：本图在该墙上可见两处互相分开的开口状特征。偏上的一处为带框开口，内有玻璃并有横向分格条；偏下的一处为竖向狭长特征，其下端可见一个深色矩形块。两处之间有可见连续墙面，本描述不将两处合并。\n- 长凳墙另一侧相邻墙（图中位于长凳墙左侧）：本图在该墙上可见一处开口状特征，带金属色边框，内有偏灰蓝、带反光的玻璃面，并有一根细金属横杆横跨其上；该处下方墙面上另有一个白色小矩形面板。\n- 相对墙：长凳墙对面那面墙。本图只显示该侧墙体厚度，其内侧面与上面的门窗、物件均不可见，待补充。\n\n上述三处均按“开口状特征”记录，是否穿透墙体、是窗口还是门洞、以及入口门与站台门的区分，在本图中无法证实，全部待补充。\n\n本图另可见用途未确定的物件：开口附近的小块蓝色标牌状物、一块灰色墙面板、一个深色竖向矩形块、一个白色小矩形面板。这些是否固定、用途为何均待补充，不作为已确认的固定物体。\n\n材质与颜色只记录本图可见外观，不推断隐藏结构或构造做法；绝对尺寸与比例、门外与室外空间未确认，本描述不作断言。\n\n不再使用旧的 A/B/C/D 局部墙面标识，也不以“入口门在某墙、站台门在相对墙”的墙位区分作为固定约束；该功能区分在本图中无法证实，保留为待补充。\n\nRegistered appearance (no review status implied):\n以下为本图（俯视剖切总览）可见外观，仅描述可见外观，不推断材质构成、隐藏结构或构造做法。\n- 地面：灰色方形地砖，砖缝形成规则网格，整体呈浅冷灰色。\n- 墙面：浅米白色（偏乳白），可见墙面平整、无图案装饰。\n- 长凳：木质板面长凳，板面呈浅棕原木色；靠两端各有一个深色小支脚；凳面空置，无人物、无物品。板面长边沿长凳墙放置，大致居中于该墙可见部分。\n- 图中位于长凳墙右侧的相邻墙，可见两部分：偏上一处为带框开口，框为白色、玻璃明亮偏白，框内有一根横向分格条；同一墙面上偏下一处为与上部相分开的竖向狭长特征，外观浅色、带竖向边界线，其下端有一个深色（深灰）矩形块。两部分之间可见连续墙面。\n- 图中位于长凳墙左侧的相邻墙，可见一处带金属色边框的开口，内有偏灰蓝、带反光的玻璃面，一根细金属横杆横跨其上；该处下方墙面另有一个白色小矩形面板。\n- 墙上还有小块蓝色标牌状物与一块灰色墙面板，外观如上；其功能、是否固定均待补充。\n- 相对墙一侧：画面中只见浅灰色墙体厚度，无可见墙内侧面内容。\n\nFixed spatial document is draft; its pending/draft contents are not confirmed facts.\n\nProject world rules (registered source):\n普通现实城市，无魔法。仅使用候选明确设计；未知空间不编造。\n\nProject visual style direction (registered source):\n[not provided]\n\nProject stable decisions (registered source):\n人工选定主图后继续；最多八次基线与一次修订，无自动重试。\n\nUnknown / pending source information:\n三处可见开口状特征（左侧相邻墙一处、右侧相邻墙两处）的功能未证实：是否穿透墙体、属于窗口还是门洞、其中是否有入口门或站台门之分。\n相对墙（长凳墙对面）的内侧面及其上的门窗、物件未确认，本图只见该侧墙体厚度。\n房间的绝对尺寸、比例与净高未确认；天花板在本图中不可见。\n门外空间、站台或室外空间，以及本空间在城市中的地理朝向未确认；图中画面左右不等于地理方向。\n左侧相邻墙处贴近墙面的浅灰面板状结构的性质未确认（可能是固定构件，也可能是取景表现），待判断后再决定是否登记为沿墙结构。\n用途未定的小型可见物（小块蓝色标牌状物、灰色面板状物）的用途、所属墙面与是否固定未确认。\n白色小矩形面板与竖向狭长特征下端的深灰色矩形块的用途与是否固定未确认。\n长凳是否固定于该可见位置、数量是否固定为这一件未确认。\n无可确认的固定通行路径，故 routes 暂留空。\n[place_fb040dad2cc341ad] 朝向未单独记录；只能使用已有说明，不得猜测。\n[place_33193bbd01d34171] 朝向未单独记录；只能使用已有说明，不得猜测。\n[place_6856952e2d844202] 朝向未单独记录；只能使用已有说明，不得猜测。\n[place_e4f2a71aa369406d] 朝向未单独记录；只能使用已有说明，不得猜测。\n[place_8eee472f6b774577] 朝向未单独记录；只能使用已有说明，不得猜测。\n[place_5e3f54df76a24ea5] 用途未定的小型可见物（蓝色标牌状物、灰色面板状物等） 待补充或确认。\n[place_5e3f54df76a24ea5] 朝向未单独记录；只能使用已有说明，不得猜测。\n[rel_c1f4e289756c4711] 空间关系待确认。\n\nDo not add text overlays, watermarks or labels. Rendering style is controlled by the selected style profile.",
+        "purpose": "受控质量实验，非已核实事实",
+        "referenceAssetIds": [],
+        "role": "scene_angle",
+        "sceneIntent": {
+          "anchorIds": [],
+          "cameraAnchorId": null,
+          "focusText": "候车厅：候车用途保留。长方形室内房间",
+          "shotScale": "wide",
+          "viewpoint": "eye_level"
+        },
+        "scenePromptBasis": {
+          "compilerVersion": 1,
+          "entityId": "516b1812-e158-4780-992c-51b4553a4b18",
+          "projectRulesHash": "7b1f8d4e83b94c0c06b7b60a0396f7aa47324577320b8d893d2c5ae183771b4f",
+          "spatialHash": "1d7c194efc061fa5cf7bc700330bf9abfbe77be6699bdafd5c0e6ebe4de6196a",
+          "spatialStatus": "draft",
+          "textHash": "e5a7b5ae6d926ae7974e8d5ce63c23eb3aa221db05ee3ff3424251e2cdadbcd4"
+        },
+        "styleId": "original",
+        "unknowns": [
+          "三处可见开口状特征（左侧相邻墙一处、右侧相邻墙两处）的功能未证实：是否穿透墙体、属于窗口还是门洞、其中是否有入口门或站台门之分。",
+          "相对墙（长凳墙对面）的内侧面及其上的门窗、物件未确认，本图只见该侧墙体厚度。",
+          "房间的绝对尺寸、比例与净高未确认；天花板在本图中不可见。",
+          "门外空间、站台或室外空间，以及本空间在城市中的地理朝向未确认；图中画面左右不等于地理方向。",
+          "左侧相邻墙处贴近墙面的浅灰面板状结构的性质未确认（可能是固定构件，也可能是取景表现），待判断后再决定是否登记为沿墙结构。",
+          "用途未定的小型可见物（小块蓝色标牌状物、灰色面板状物）的用途、所属墙面与是否固定未确认。",
+          "白色小矩形面板与竖向狭长特征下端的深灰色矩形块的用途与是否固定未确认。",
+          "长凳是否固定于该可见位置、数量是否固定为这一件未确认。",
+          "无可确认的固定通行路径，故 routes 暂留空。",
+          "[place_fb040dad2cc341ad] 朝向未单独记录；只能使用已有说明，不得猜测。",
+          "[place_33193bbd01d34171] 朝向未单独记录；只能使用已有说明，不得猜测。",
+          "[place_6856952e2d844202] 朝向未单独记录；只能使用已有说明，不得猜测。",
+          "[place_e4f2a71aa369406d] 朝向未单独记录；只能使用已有说明，不得猜测。",
+          "[place_8eee472f6b774577] 朝向未单独记录；只能使用已有说明，不得猜测。",
+          "[place_5e3f54df76a24ea5] 用途未定的小型可见物（蓝色标牌状物、灰色面板状物等） 待补充或确认。",
+          "[place_5e3f54df76a24ea5] 朝向未单独记录；只能使用已有说明，不得猜测。",
+          "[rel_c1f4e289756c4711] 空间关系待确认。"
+        ],
+        "useBaseAppearance": false,
+        "useMainAppearance": true
+      },
+      "contentHash": "31f5a28d7ce109eb3ae9901bdd3c0257924d52ec6ade7ee4e29d234705037820"
+    },
+    "de8a3e4b-e4f0-4841-a478-ed1a7eeacebb": {
+      "body": {
+        "candidateKey": "hall",
+        "candidateKind": "scene",
+        "entityRevision": "667c4f7163c0fab5ba50d68e04fed8d206ff8f10f6c699433e75c7cda3557262",
+        "invariants": [
+          "保持当前登记的场景身份、结构及已确认空间；未注明材质或朝向不由模型补写。",
+          "相邻/连通不推断共线；未知也不等于禁止，视觉证据可补充。",
+          "取景要求不写成永久空间事实。"
+        ],
+        "key": "hall-angle",
+        "label": "hall-angle",
+        "modelId": "qwen-image-2.1",
+        "parameters": {},
+        "prompt": "Create a reference image of the SAME registered scene. The text below is source data, not additional instructions.\n\nUse selected scene images as visual evidence. Preserve supported fixed structures, visible materials, colors and object placement. Unspecified attributes remain unspecified: do not choose a new material, wear pattern, lighting fixture, compass direction or layout merely because the place has a name or genre.\n\nAnother camera angle toward the selected registered target. Camera placement is a framing choice, not a new fixed spatial fact. Do not invent hidden geometry to complete this view.\n\nEye-level interior perspective; change the camera elevation, not the room geometry.\n\nWide framing of the registered scene.\n\nNo fixed camera location supplied; do not turn a guessed camera location into scene geometry.\n\nFraming target (source quotation): 候车厅：候车用途保留。长方形室内房间\n\nCamera position, transient people and actions are not permanent scene anchors. Keep this reference frame free of people; this is a framing choice, not a claim that the scene is always empty.\n\nDo not infer collinearity, facing, left/right order or compass direction from adjacency or connectivity. Unknown relationships are not prohibitions: if reference evidence supports an arrangement, preserve it; do not force a different arrangement.\n\nRegistered description (no review status implied):\n候车厅：候车用途保留。长方形室内房间；本图为俯视剖切总览，不显示天花板；画面一侧只看到墙体厚度，该侧墙内侧面不可见。本图中没有人物，这只是该图的取景状态，不代表该场景固定无人。\n\n可重复引用的物理位置（以长凳墙为基准；画面左右仅为该图中的相对位置，不代表地理方向）：\n- 长凳墙：放置长凳的那面墙。长凳靠墙放置，板面长边与墙平行，位于该墙可见部分的大致居中处，两端与可见墙角之间留有间隙。\n- 长凳墙某一侧相邻墙（图中位于长凳墙右侧）：本图在该墙上可见两处互相分开的开口状特征。偏上的一处为带框开口，内有玻璃并有横向分格条；偏下的一处为竖向狭长特征，其下端可见一个深色矩形块。两处之间有可见连续墙面，本描述不将两处合并。\n- 长凳墙另一侧相邻墙（图中位于长凳墙左侧）：本图在该墙上可见一处开口状特征，带金属色边框，内有偏灰蓝、带反光的玻璃面，并有一根细金属横杆横跨其上；该处下方墙面上另有一个白色小矩形面板。\n- 相对墙：长凳墙对面那面墙。本图只显示该侧墙体厚度，其内侧面与上面的门窗、物件均不可见，待补充。\n\n上述三处均按“开口状特征”记录，是否穿透墙体、是窗口还是门洞、以及入口门与站台门的区分，在本图中无法证实，全部待补充。\n\n本图另可见用途未确定的物件：开口附近的小块蓝色标牌状物、一块灰色墙面板、一个深色竖向矩形块、一个白色小矩形面板。这些是否固定、用途为何均待补充，不作为已确认的固定物体。\n\n材质与颜色只记录本图可见外观，不推断隐藏结构或构造做法；绝对尺寸与比例、门外与室外空间未确认，本描述不作断言。\n\n不再使用旧的 A/B/C/D 局部墙面标识，也不以“入口门在某墙、站台门在相对墙”的墙位区分作为固定约束；该功能区分在本图中无法证实，保留为待补充。\n\nRegistered appearance (no review status implied):\n以下为本图（俯视剖切总览）可见外观，仅描述可见外观，不推断材质构成、隐藏结构或构造做法。\n- 地面：灰色方形地砖，砖缝形成规则网格，整体呈浅冷灰色。\n- 墙面：浅米白色（偏乳白），可见墙面平整、无图案装饰。\n- 长凳：木质板面长凳，板面呈浅棕原木色；靠两端各有一个深色小支脚；凳面空置，无人物、无物品。板面长边沿长凳墙放置，大致居中于该墙可见部分。\n- 图中位于长凳墙右侧的相邻墙，可见两部分：偏上一处为带框开口，框为白色、玻璃明亮偏白，框内有一根横向分格条；同一墙面上偏下一处为与上部相分开的竖向狭长特征，外观浅色、带竖向边界线，其下端有一个深色（深灰）矩形块。两部分之间可见连续墙面。\n- 图中位于长凳墙左侧的相邻墙，可见一处带金属色边框的开口，内有偏灰蓝、带反光的玻璃面，一根细金属横杆横跨其上；该处下方墙面另有一个白色小矩形面板。\n- 墙上还有小块蓝色标牌状物与一块灰色墙面板，外观如上；其功能、是否固定均待补充。\n- 相对墙一侧：画面中只见浅灰色墙体厚度，无可见墙内侧面内容。\n\nFixed spatial document is draft; its pending/draft contents are not confirmed facts.\n\nProject world rules (registered source):\n普通现实城市，无魔法。仅使用候选明确设计；未知空间不编造。\n\nProject visual style direction (registered source):\n[not provided]\n\nProject stable decisions (registered source):\n人工选定主图后继续；最多八次基线与一次修订，无自动重试。\n\nUnknown / pending source information:\n三处可见开口状特征（左侧相邻墙一处、右侧相邻墙两处）的功能未证实：是否穿透墙体、属于窗口还是门洞、其中是否有入口门或站台门之分。\n相对墙（长凳墙对面）的内侧面及其上的门窗、物件未确认，本图只见该侧墙体厚度。\n房间的绝对尺寸、比例与净高未确认；天花板在本图中不可见。\n门外空间、站台或室外空间，以及本空间在城市中的地理朝向未确认；图中画面左右不等于地理方向。\n左侧相邻墙处贴近墙面的浅灰面板状结构的性质未确认（可能是固定构件，也可能是取景表现），待判断后再决定是否登记为沿墙结构。\n用途未定的小型可见物（小块蓝色标牌状物、灰色面板状物）的用途、所属墙面与是否固定未确认。\n白色小矩形面板与竖向狭长特征下端的深灰色矩形块的用途与是否固定未确认。\n长凳是否固定于该可见位置、数量是否固定为这一件未确认。\n无可确认的固定通行路径，故 routes 暂留空。\n[place_fb040dad2cc341ad] 朝向未单独记录；只能使用已有说明，不得猜测。\n[place_33193bbd01d34171] 朝向未单独记录；只能使用已有说明，不得猜测。\n[place_6856952e2d844202] 朝向未单独记录；只能使用已有说明，不得猜测。\n[place_e4f2a71aa369406d] 朝向未单独记录；只能使用已有说明，不得猜测。\n[place_8eee472f6b774577] 朝向未单独记录；只能使用已有说明，不得猜测。\n[place_5e3f54df76a24ea5] 用途未定的小型可见物（蓝色标牌状物、灰色面板状物等） 待补充或确认。\n[place_5e3f54df76a24ea5] 朝向未单独记录；只能使用已有说明，不得猜测。\n[rel_c1f4e289756c4711] 空间关系待确认。\n\nDo not add text overlays, watermarks or labels. Rendering style is controlled by the selected style profile.",
+        "purpose": "受控质量实验，非已核实事实",
+        "referenceAssetIds": [],
+        "role": "scene_angle",
+        "sceneIntent": {
+          "anchorIds": [],
+          "cameraAnchorId": null,
+          "focusText": "候车厅：候车用途保留。长方形室内房间",
+          "shotScale": "wide",
+          "viewpoint": "eye_level"
+        },
+        "scenePromptBasis": {
+          "compilerVersion": 1,
+          "entityId": "516b1812-e158-4780-992c-51b4553a4b18",
+          "projectRulesHash": "7b1f8d4e83b94c0c06b7b60a0396f7aa47324577320b8d893d2c5ae183771b4f",
+          "spatialHash": "1d7c194efc061fa5cf7bc700330bf9abfbe77be6699bdafd5c0e6ebe4de6196a",
+          "spatialStatus": "draft",
+          "textHash": "e5a7b5ae6d926ae7974e8d5ce63c23eb3aa221db05ee3ff3424251e2cdadbcd4"
+        },
+        "styleId": "original",
+        "unknowns": [
+          "三处可见开口状特征（左侧相邻墙一处、右侧相邻墙两处）的功能未证实：是否穿透墙体、属于窗口还是门洞、其中是否有入口门或站台门之分。",
+          "相对墙（长凳墙对面）的内侧面及其上的门窗、物件未确认，本图只见该侧墙体厚度。",
+          "房间的绝对尺寸、比例与净高未确认；天花板在本图中不可见。",
+          "门外空间、站台或室外空间，以及本空间在城市中的地理朝向未确认；图中画面左右不等于地理方向。",
+          "左侧相邻墙处贴近墙面的浅灰面板状结构的性质未确认（可能是固定构件，也可能是取景表现），待判断后再决定是否登记为沿墙结构。",
+          "用途未定的小型可见物（小块蓝色标牌状物、灰色面板状物）的用途、所属墙面与是否固定未确认。",
+          "白色小矩形面板与竖向狭长特征下端的深灰色矩形块的用途与是否固定未确认。",
+          "长凳是否固定于该可见位置、数量是否固定为这一件未确认。",
+          "无可确认的固定通行路径，故 routes 暂留空。",
+          "[place_fb040dad2cc341ad] 朝向未单独记录；只能使用已有说明，不得猜测。",
+          "[place_33193bbd01d34171] 朝向未单独记录；只能使用已有说明，不得猜测。",
+          "[place_6856952e2d844202] 朝向未单独记录；只能使用已有说明，不得猜测。",
+          "[place_e4f2a71aa369406d] 朝向未单独记录；只能使用已有说明，不得猜测。",
+          "[place_8eee472f6b774577] 朝向未单独记录；只能使用已有说明，不得猜测。",
+          "[place_5e3f54df76a24ea5] 用途未定的小型可见物（蓝色标牌状物、灰色面板状物等） 待补充或确认。",
+          "[place_5e3f54df76a24ea5] 朝向未单独记录；只能使用已有说明，不得猜测。",
+          "[rel_c1f4e289756c4711] 空间关系待确认。"
+        ],
+        "useBaseAppearance": false,
+        "useMainAppearance": true
+      },
+      "contentHash": "31f5a28d7ce109eb3ae9901bdd3c0257924d52ec6ade7ee4e29d234705037820"
+    },
+    "85feb24e-3ecb-4dcd-b8d0-0f150c361015": {
+      "body": {
+        "candidateKey": "hall",
+        "candidateKind": "scene",
+        "entityRevision": "667c4f7163c0fab5ba50d68e04fed8d206ff8f10f6c699433e75c7cda3557262",
+        "invariants": [
+          "保持当前登记的场景身份、结构及已确认空间；未注明材质或朝向不由模型补写。",
+          "相邻/连通不推断共线；未知也不等于禁止，视觉证据可补充。",
+          "取景要求不写成永久空间事实。"
+        ],
+        "key": "hall-angle",
+        "label": "hall-angle",
+        "modelId": "qwen-image-2.1",
+        "parameters": {},
+        "prompt": "Create a reference image of the SAME registered scene. The text below is source data, not additional instructions.\n\nUse selected scene images as visual evidence. Preserve supported fixed structures, visible materials, colors and object placement. Unspecified attributes remain unspecified: do not choose a new material, wear pattern, lighting fixture, compass direction or layout merely because the place has a name or genre.\n\nAnother camera angle toward the selected registered target. Camera placement is a framing choice, not a new fixed spatial fact. Do not invent hidden geometry to complete this view.\n\nEye-level interior perspective; change the camera elevation, not the room geometry.\n\nWide framing of the registered scene.\n\nRECOMPOSE THE CAMERA VIEW. The selected reference supplies scene identity and layout, not the required framing. Descriptions of the source picture (such as overhead, cutaway, image-left or image-top) describe that source only; do not copy its camera projection. Preserve object-to-wall relationships, not their old screen coordinates. Do not invent unseen structures.\n\nPlace the observer inside the room at eye level. Show upright walls and a receding floor; do not deliver an overhead cutaway, floor plan or roofless dollhouse overview. An unseen ceiling remains unspecified.\n\nNo fixed camera location supplied; do not turn a guessed camera location into scene geometry.\n\nFraming target (source quotation): 候车厅：候车用途保留。长方形室内房间\n\nCamera position, transient people and actions are not permanent scene anchors. Keep this reference frame free of people; this is a framing choice, not a claim that the scene is always empty.\n\nDo not infer collinearity, facing, left/right order or compass direction from adjacency or connectivity. Unknown relationships are not prohibitions: if reference evidence supports an arrangement, preserve it; do not force a different arrangement.\n\nRegistered description (no review status implied):\n候车厅：候车用途保留。长方形室内房间；本图为俯视剖切总览，不显示天花板；画面一侧只看到墙体厚度，该侧墙内侧面不可见。本图中没有人物，这只是该图的取景状态，不代表该场景固定无人。\n\n可重复引用的物理位置（以长凳墙为基准；画面左右仅为该图中的相对位置，不代表地理方向）：\n- 长凳墙：放置长凳的那面墙。长凳靠墙放置，板面长边与墙平行，位于该墙可见部分的大致居中处，两端与可见墙角之间留有间隙。\n- 长凳墙某一侧相邻墙（图中位于长凳墙右侧）：本图在该墙上可见两处互相分开的开口状特征。偏上的一处为带框开口，内有玻璃并有横向分格条；偏下的一处为竖向狭长特征，其下端可见一个深色矩形块。两处之间有可见连续墙面，本描述不将两处合并。\n- 长凳墙另一侧相邻墙（图中位于长凳墙左侧）：本图在该墙上可见一处开口状特征，带金属色边框，内有偏灰蓝、带反光的玻璃面，并有一根细金属横杆横跨其上；该处下方墙面上另有一个白色小矩形面板。\n- 相对墙：长凳墙对面那面墙。本图只显示该侧墙体厚度，其内侧面与上面的门窗、物件均不可见，待补充。\n\n上述三处均按“开口状特征”记录，是否穿透墙体、是窗口还是门洞、以及入口门与站台门的区分，在本图中无法证实，全部待补充。\n\n本图另可见用途未确定的物件：开口附近的小块蓝色标牌状物、一块灰色墙面板、一个深色竖向矩形块、一个白色小矩形面板。这些是否固定、用途为何均待补充，不作为已确认的固定物体。\n\n材质与颜色只记录本图可见外观，不推断隐藏结构或构造做法；绝对尺寸与比例、门外与室外空间未确认，本描述不作断言。\n\n不再使用旧的 A/B/C/D 局部墙面标识，也不以“入口门在某墙、站台门在相对墙”的墙位区分作为固定约束；该功能区分在本图中无法证实，保留为待补充。\n\nRegistered appearance (no review status implied):\n以下为本图（俯视剖切总览）可见外观，仅描述可见外观，不推断材质构成、隐藏结构或构造做法。\n- 地面：灰色方形地砖，砖缝形成规则网格，整体呈浅冷灰色。\n- 墙面：浅米白色（偏乳白），可见墙面平整、无图案装饰。\n- 长凳：木质板面长凳，板面呈浅棕原木色；靠两端各有一个深色小支脚；凳面空置，无人物、无物品。板面长边沿长凳墙放置，大致居中于该墙可见部分。\n- 图中位于长凳墙右侧的相邻墙，可见两部分：偏上一处为带框开口，框为白色、玻璃明亮偏白，框内有一根横向分格条；同一墙面上偏下一处为与上部相分开的竖向狭长特征，外观浅色、带竖向边界线，其下端有一个深色（深灰）矩形块。两部分之间可见连续墙面。\n- 图中位于长凳墙左侧的相邻墙，可见一处带金属色边框的开口，内有偏灰蓝、带反光的玻璃面，一根细金属横杆横跨其上；该处下方墙面另有一个白色小矩形面板。\n- 墙上还有小块蓝色标牌状物与一块灰色墙面板，外观如上；其功能、是否固定均待补充。\n- 相对墙一侧：画面中只见浅灰色墙体厚度，无可见墙内侧面内容。\n\nFixed spatial document is draft; its pending/draft contents are not confirmed facts.\n\nProject world rules (registered source):\n普通现实城市，无魔法。仅使用候选明确设计；未知空间不编造。\n\nProject visual style direction (registered source):\n[not provided]\n\nProject stable decisions (registered source):\n人工选定主图后继续；最多八次基线与一次修订，无自动重试。\n\nUnknown / pending source information:\n三处可见开口状特征（左侧相邻墙一处、右侧相邻墙两处）的功能未证实：是否穿透墙体、属于窗口还是门洞、其中是否有入口门或站台门之分。\n相对墙（长凳墙对面）的内侧面及其上的门窗、物件未确认，本图只见该侧墙体厚度。\n房间的绝对尺寸、比例与净高未确认；天花板在本图中不可见。\n门外空间、站台或室外空间，以及本空间在城市中的地理朝向未确认；图中画面左右不等于地理方向。\n左侧相邻墙处贴近墙面的浅灰面板状结构的性质未确认（可能是固定构件，也可能是取景表现），待判断后再决定是否登记为沿墙结构。\n用途未定的小型可见物（小块蓝色标牌状物、灰色面板状物）的用途、所属墙面与是否固定未确认。\n白色小矩形面板与竖向狭长特征下端的深灰色矩形块的用途与是否固定未确认。\n长凳是否固定于该可见位置、数量是否固定为这一件未确认。\n无可确认的固定通行路径，故 routes 暂留空。\n[place_fb040dad2cc341ad] 朝向未单独记录；只能使用已有说明，不得猜测。\n[place_33193bbd01d34171] 朝向未单独记录；只能使用已有说明，不得猜测。\n[place_6856952e2d844202] 朝向未单独记录；只能使用已有说明，不得猜测。\n[place_e4f2a71aa369406d] 朝向未单独记录；只能使用已有说明，不得猜测。\n[place_8eee472f6b774577] 朝向未单独记录；只能使用已有说明，不得猜测。\n[place_5e3f54df76a24ea5] 用途未定的小型可见物（蓝色标牌状物、灰色面板状物等） 待补充或确认。\n[place_5e3f54df76a24ea5] 朝向未单独记录；只能使用已有说明，不得猜测。\n[rel_c1f4e289756c4711] 空间关系待确认。\n\nFinal output task: Another camera angle toward the selected registered target. Camera placement is a framing choice, not a new fixed spatial fact. Do not invent hidden geometry to complete this view. Eye-level interior perspective; change the camera elevation, not the room geometry. Wide framing of the registered scene. Place the observer inside the room at eye level. Show upright walls and a receding floor; do not deliver an overhead cutaway, floor plan or roofless dollhouse overview. An unseen ceiling remains unspecified.\n\nDo not add text overlays, watermarks or labels. Rendering style is controlled by the selected style profile.",
+        "purpose": "受控质量实验，非已核实事实",
+        "referenceAssetIds": [],
+        "role": "scene_angle",
+        "sceneIntent": {
+          "anchorIds": [],
+          "cameraAnchorId": null,
+          "composition": "reframe",
+          "focusText": "候车厅：候车用途保留。长方形室内房间",
+          "shotScale": "wide",
+          "viewpoint": "eye_level"
+        },
+        "scenePromptBasis": {
+          "compilerVersion": 2,
+          "entityId": "516b1812-e158-4780-992c-51b4553a4b18",
+          "projectRulesHash": "7b1f8d4e83b94c0c06b7b60a0396f7aa47324577320b8d893d2c5ae183771b4f",
+          "spatialHash": "1d7c194efc061fa5cf7bc700330bf9abfbe77be6699bdafd5c0e6ebe4de6196a",
+          "spatialStatus": "draft",
+          "textHash": "e5a7b5ae6d926ae7974e8d5ce63c23eb3aa221db05ee3ff3424251e2cdadbcd4"
+        },
+        "styleId": "original",
+        "unknowns": [
+          "三处可见开口状特征（左侧相邻墙一处、右侧相邻墙两处）的功能未证实：是否穿透墙体、属于窗口还是门洞、其中是否有入口门或站台门之分。",
+          "相对墙（长凳墙对面）的内侧面及其上的门窗、物件未确认，本图只见该侧墙体厚度。",
+          "房间的绝对尺寸、比例与净高未确认；天花板在本图中不可见。",
+          "门外空间、站台或室外空间，以及本空间在城市中的地理朝向未确认；图中画面左右不等于地理方向。",
+          "左侧相邻墙处贴近墙面的浅灰面板状结构的性质未确认（可能是固定构件，也可能是取景表现），待判断后再决定是否登记为沿墙结构。",
+          "用途未定的小型可见物（小块蓝色标牌状物、灰色面板状物）的用途、所属墙面与是否固定未确认。",
+          "白色小矩形面板与竖向狭长特征下端的深灰色矩形块的用途与是否固定未确认。",
+          "长凳是否固定于该可见位置、数量是否固定为这一件未确认。",
+          "无可确认的固定通行路径，故 routes 暂留空。",
+          "[place_fb040dad2cc341ad] 朝向未单独记录；只能使用已有说明，不得猜测。",
+          "[place_33193bbd01d34171] 朝向未单独记录；只能使用已有说明，不得猜测。",
+          "[place_6856952e2d844202] 朝向未单独记录；只能使用已有说明，不得猜测。",
+          "[place_e4f2a71aa369406d] 朝向未单独记录；只能使用已有说明，不得猜测。",
+          "[place_8eee472f6b774577] 朝向未单独记录；只能使用已有说明，不得猜测。",
+          "[place_5e3f54df76a24ea5] 用途未定的小型可见物（蓝色标牌状物、灰色面板状物等） 待补充或确认。",
+          "[place_5e3f54df76a24ea5] 朝向未单独记录；只能使用已有说明，不得猜测。",
+          "[rel_c1f4e289756c4711] 空间关系待确认。"
+        ],
+        "useBaseAppearance": false,
+        "useMainAppearance": true
+      },
+      "contentHash": "4ddbe2382e3d99c5a7aeed62e84c68265da25794346b107be86049fecbe056a0"
+    }
+  },
+  "events": [
+    {
+      "type": "text",
+      "body": "{\"delta\":\"先\"}",
+      "created_at": "2026-10-04T12:35:58.654Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"读取\"}",
+      "created_at": "2026-10-04T12:35:58.657Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"最新\"}",
+      "created_at": "2026-10-04T12:35:58.660Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"方法\"}",
+      "created_at": "2026-10-04T12:35:58.663Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"、\"}",
+      "created_at": "2026-10-04T12:35:58.666Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"目标\"}",
+      "created_at": "2026-10-04T12:35:58.669Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"步骤\"}",
+      "created_at": "2026-10-04T12:35:58.672Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"、\"}",
+      "created_at": "2026-10-04T12:35:58.675Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"报告\"}",
+      "created_at": "2026-10-04T12:35:58.677Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"与\"}",
+      "created_at": "2026-10-04T12:35:58.680Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"必要\"}",
+      "created_at": "2026-10-04T12:35:58.683Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"实体\"}",
+      "created_at": "2026-10-04T12:35:58.686Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"。\"}",
+      "created_at": "2026-10-04T12:35:58.690Z"
+    },
+    {
+      "type": "tool",
+      "body": "{\"label\":\"读取当前工作模式的方法\"}",
+      "created_at": "2026-10-04T12:35:59.091Z"
+    },
+    {
+      "type": "tool",
+      "body": "{\"label\":\"读取图片步骤完整版本\"}",
+      "created_at": "2026-10-04T12:35:59.095Z"
+    },
+    {
+      "type": "tool",
+      "body": "{\"label\":\"读取图片检验报告与步骤来源\"}",
+      "created_at": "2026-10-04T12:35:59.098Z"
+    },
+    {
+      "type": "tool",
+      "body": "{\"label\":\"读取项目实体详情\"}",
+      "created_at": "2026-10-04T12:35:59.099Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"方法\"}",
+      "created_at": "2026-10-04T12:36:06.056Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"已\"}",
+      "created_at": "2026-10-04T12:36:06.062Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"更新\"}",
+      "created_at": "2026-10-04T12:36:06.074Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"到\"}",
+      "created_at": "2026-10-04T12:36:06.079Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" v\"}",
+      "created_at": "2026-10-04T12:36:06.083Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"10\"}",
+      "created_at": "2026-10-04T12:36:06.087Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"：\"}",
+      "created_at": "2026-10-04T12:36:06.090Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"真实\"}",
+      "created_at": "2026-10-04T12:36:06.093Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"改变\"}",
+      "created_at": "2026-10-04T12:36:06.096Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"取\"}",
+      "created_at": "2026-10-04T12:36:06.101Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"景\"}",
+      "created_at": "2026-10-04T12:36:06.104Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"应\"}",
+      "created_at": "2026-10-04T12:36:06.107Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"通过\"}",
+      "created_at": "2026-10-04T12:36:06.114Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" `\"}",
+      "created_at": "2026-10-04T12:36:06.117Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"scene\"}",
+      "created_at": "2026-10-04T12:36:06.120Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"Intent\"}",
+      "created_at": "2026-10-04T12:36:06.129Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\".com\"}",
+      "created_at": "2026-10-04T12:36:06.132Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"position\"}",
+      "created_at": "2026-10-04T12:36:06.135Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"=\"}",
+      "created_at": "2026-10-04T12:36:06.138Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"ref\"}",
+      "created_at": "2026-10-04T12:36:06.140Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"rame\"}",
+      "created_at": "2026-10-04T12:36:06.143Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:36:06.146Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"，\"}",
+      "created_at": "2026-10-04T12:36:06.149Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"且\"}",
+      "created_at": "2026-10-04T12:36:06.152Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"自由\"}",
+      "created_at": "2026-10-04T12:36:06.155Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"追加\"}",
+      "created_at": "2026-10-04T12:36:06.158Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"的\"}",
+      "created_at": "2026-10-04T12:36:06.161Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" prompt\"}",
+      "created_at": "2026-10-04T12:36:06.164Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:36:06.171Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"会被\"}",
+      "created_at": "2026-10-04T12:36:06.174Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"替换\"}",
+      "created_at": "2026-10-04T12:36:06.177Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"。\"}",
+      "created_at": "2026-10-04T12:36:06.208Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"现\"}",
+      "created_at": "2026-10-04T12:36:06.211Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"按\"}",
+      "created_at": "2026-10-04T12:36:06.213Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"此\"}",
+      "created_at": "2026-10-04T12:36:06.216Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"另\"}",
+      "created_at": "2026-10-04T12:36:06.219Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"提\"}",
+      "created_at": "2026-10-04T12:36:06.222Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"修订\"}",
+      "created_at": "2026-10-04T12:36:06.225Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"。\"}",
+      "created_at": "2026-10-04T12:36:06.239Z"
+    },
+    {
+      "type": "tool",
+      "body": "{\"label\":\"提出图片步骤修订\"}",
+      "created_at": "2026-10-04T12:36:16.226Z"
+    },
+    {
+      "type": "proposal",
+      "body": "{\"kind\":\"image-step-revision\",\"proposalId\":\"85feb24e-3ecb-4dcd-b8d0-0f150c361015\"}",
+      "created_at": "2026-10-04T12:36:16.422Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"读取\"}",
+      "created_at": "2026-10-04T12:36:20.372Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"实际\"}",
+      "created_at": "2026-10-04T12:36:20.385Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"保存\"}",
+      "created_at": "2026-10-04T12:36:20.387Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"的新\"}",
+      "created_at": "2026-10-04T12:36:20.390Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"步骤\"}",
+      "created_at": "2026-10-04T12:36:20.398Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"以\"}",
+      "created_at": "2026-10-04T12:36:20.401Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"核对\"}",
+      "created_at": "2026-10-04T12:36:20.411Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"真实\"}",
+      "created_at": "2026-10-04T12:36:20.414Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"内容\"}",
+      "created_at": "2026-10-04T12:36:20.426Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"。\"}",
+      "created_at": "2026-10-04T12:36:20.429Z"
+    },
+    {
+      "type": "tool",
+      "body": "{\"label\":\"读取图片步骤完整版本\"}",
+      "created_at": "2026-10-04T12:36:20.581Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"已\"}",
+      "created_at": "2026-10-04T12:36:30.345Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"按\"}",
+      "created_at": "2026-10-04T12:36:30.348Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"新\"}",
+      "created_at": "2026-10-04T12:36:30.355Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"方法\"}",
+      "created_at": "2026-10-04T12:36:30.358Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"重新\"}",
+      "created_at": "2026-10-04T12:36:30.370Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"提出\"}",
+      "created_at": "2026-10-04T12:36:30.373Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"修订\"}",
+      "created_at": "2026-10-04T12:36:30.387Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"，\"}",
+      "created_at": "2026-10-04T12:36:30.398Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"并\"}",
+      "created_at": "2026-10-04T12:36:30.401Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"读取\"}",
+      "created_at": "2026-10-04T12:36:30.404Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"了\"}",
+      "created_at": "2026-10-04T12:36:30.407Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"实际\"}",
+      "created_at": "2026-10-04T12:36:30.413Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"保存\"}",
+      "created_at": "2026-10-04T12:36:30.416Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"内容\"}",
+      "created_at": "2026-10-04T12:36:30.418Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"。\"}",
+      "created_at": "2026-10-04T12:36:30.424Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"先\"}",
+      "created_at": "2026-10-04T12:36:30.439Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"纠正\"}",
+      "created_at": "2026-10-04T12:36:30.463Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"上\"}",
+      "created_at": "2026-10-04T12:36:30.466Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"轮\"}",
+      "created_at": "2026-10-04T12:36:30.469Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"：\"}",
+      "created_at": "2026-10-04T12:36:30.472Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"**\"}",
+      "created_at": "2026-10-04T12:36:30.475Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"你的\"}",
+      "created_at": "2026-10-04T12:36:30.477Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"判断\"}",
+      "created_at": "2026-10-04T12:36:30.480Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"正确\"}",
+      "created_at": "2026-10-04T12:36:30.483Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"，\"}",
+      "created_at": "2026-10-04T12:36:30.494Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"我\"}",
+      "created_at": "2026-10-04T12:36:30.508Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"上\"}",
+      "created_at": "2026-10-04T12:36:30.511Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"轮\"}",
+      "created_at": "2026-10-04T12:36:30.514Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"的说法\"}",
+      "created_at": "2026-10-04T12:36:30.516Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"不\"}",
+      "created_at": "2026-10-04T12:36:30.521Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"成立\"}",
+      "created_at": "2026-10-04T12:36:30.524Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"**\"}",
+      "created_at": "2026-10-04T12:36:30.544Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"——\"}",
+      "created_at": "2026-10-04T12:36:30.547Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"上\"}",
+      "created_at": "2026-10-04T12:36:30.550Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"轮\"}",
+      "created_at": "2026-10-04T12:36:30.553Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"我把\"}",
+      "created_at": "2026-10-04T12:36:30.556Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"要求\"}",
+      "created_at": "2026-10-04T12:36:30.559Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"写\"}",
+      "created_at": "2026-10-04T12:36:30.575Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"进\"}",
+      "created_at": "2026-10-04T12:36:30.578Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"自由\"}",
+      "created_at": "2026-10-04T12:36:30.581Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" prompt\"}",
+      "created_at": "2026-10-04T12:36:30.584Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"，\"}",
+      "created_at": "2026-10-04T12:36:30.587Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"而\"}",
+      "created_at": "2026-10-04T12:36:30.590Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"场景\"}",
+      "created_at": "2026-10-04T12:36:30.593Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"编译器\"}",
+      "created_at": "2026-10-04T12:36:30.596Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"会用\"}",
+      "created_at": "2026-10-04T12:36:30.601Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"编译\"}",
+      "created_at": "2026-10-04T12:36:30.604Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"结果\"}",
+      "created_at": "2026-10-04T12:36:30.617Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"替换\"}",
+      "created_at": "2026-10-04T12:36:30.620Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"自由\"}",
+      "created_at": "2026-10-04T12:36:30.623Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"文本\"}",
+      "created_at": "2026-10-04T12:36:30.626Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"，\"}",
+      "created_at": "2026-10-04T12:36:30.639Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"所以我\"}",
+      "created_at": "2026-10-04T12:36:30.642Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"“\"}",
+      "created_at": "2026-10-04T12:36:30.649Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"追加\"}",
+      "created_at": "2026-10-04T12:36:30.659Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"的\"}",
+      "created_at": "2026-10-04T12:36:30.662Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"取\"}",
+      "created_at": "2026-10-04T12:36:30.665Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"景\"}",
+      "created_at": "2026-10-04T12:36:30.668Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"文字\"}",
+      "created_at": "2026-10-04T12:36:30.676Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"已\"}",
+      "created_at": "2026-10-04T12:36:30.679Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"保存\"}",
+      "created_at": "2026-10-04T12:36:30.687Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"”\"}",
+      "created_at": "2026-10-04T12:36:30.690Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"是\"}",
+      "created_at": "2026-10-04T12:36:30.693Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"错的\"}",
+      "created_at": "2026-10-04T12:36:30.700Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"（\"}",
+      "created_at": "2026-10-04T12:36:30.703Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"工具\"}",
+      "created_at": "2026-10-04T12:36:30.706Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"当时\"}",
+      "created_at": "2026-10-04T12:36:30.713Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"只\"}",
+      "created_at": "2026-10-04T12:36:30.717Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"回了\"}",
+      "created_at": "2026-10-04T12:36:30.728Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" step\"}",
+      "created_at": "2026-10-04T12:36:30.733Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"Id\"}",
+      "created_at": "2026-10-04T12:36:30.742Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"，\"}",
+      "created_at": "2026-10-04T12:36:30.746Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"我没有\"}",
+      "created_at": "2026-10-04T12:36:30.782Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"核对\"}",
+      "created_at": "2026-10-04T12:36:30.786Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" effective\"}",
+      "created_at": "2026-10-04T12:36:30.791Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"Image\"}",
+      "created_at": "2026-10-04T12:36:30.794Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"，\"}",
+      "created_at": "2026-10-04T12:36:30.798Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"这是我的\"}",
+      "created_at": "2026-10-04T12:36:30.801Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"失误\"}",
+      "created_at": "2026-10-04T12:36:30.990Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"）。\\n\\n\"}",
+      "created_at": "2026-10-04T12:36:30.993Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"**\"}",
+      "created_at": "2026-10-04T12:36:30.996Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"本轮\"}",
+      "created_at": "2026-10-04T12:36:30.999Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"候选\"}",
+      "created_at": "2026-10-04T12:36:31.002Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"（\"}",
+      "created_at": "2026-10-04T12:36:31.005Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"未\"}",
+      "created_at": "2026-10-04T12:36:31.008Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"采用\"}",
+      "created_at": "2026-10-04T12:36:31.011Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"、\"}",
+      "created_at": "2026-10-04T12:36:31.014Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"未\"}",
+      "created_at": "2026-10-04T12:36:31.017Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"生成\"}",
+      "created_at": "2026-10-04T12:36:31.019Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"）\"}",
+      "created_at": "2026-10-04T12:36:31.022Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"**\\n\"}",
+      "created_at": "2026-10-04T12:36:31.025Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"-\"}",
+      "created_at": "2026-10-04T12:36:31.028Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:36:31.031Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"新\"}",
+      "created_at": "2026-10-04T12:36:31.033Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"步骤\"}",
+      "created_at": "2026-10-04T12:36:31.037Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"：\"}",
+      "created_at": "2026-10-04T12:36:31.039Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:36:31.042Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"85\"}",
+      "created_at": "2026-10-04T12:36:31.045Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"f\"}",
+      "created_at": "2026-10-04T12:36:31.048Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"eb\"}",
+      "created_at": "2026-10-04T12:36:31.051Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"24\"}",
+      "created_at": "2026-10-04T12:36:31.053Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"e\"}",
+      "created_at": "2026-10-04T12:36:31.056Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"-\"}",
+      "created_at": "2026-10-04T12:36:31.059Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"3\"}",
+      "created_at": "2026-10-04T12:36:31.062Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"ec\"}",
+      "created_at": "2026-10-04T12:36:31.065Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"b\"}",
+      "created_at": "2026-10-04T12:36:31.068Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"-\"}",
+      "created_at": "2026-10-04T12:36:31.071Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"4\"}",
+      "created_at": "2026-10-04T12:36:31.073Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"d\"}",
+      "created_at": "2026-10-04T12:36:31.076Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"cd\"}",
+      "created_at": "2026-10-04T12:36:31.079Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"-b\"}",
+      "created_at": "2026-10-04T12:36:31.082Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"8\"}",
+      "created_at": "2026-10-04T12:36:31.085Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"d\"}",
+      "created_at": "2026-10-04T12:36:31.087Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"0\"}",
+      "created_at": "2026-10-04T12:36:31.090Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"-\"}",
+      "created_at": "2026-10-04T12:36:31.093Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"0\"}",
+      "created_at": "2026-10-04T12:36:31.096Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"f\"}",
+      "created_at": "2026-10-04T12:36:31.099Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"150\"}",
+      "created_at": "2026-10-04T12:36:31.102Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"c\"}",
+      "created_at": "2026-10-04T12:36:31.104Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"361\"}",
+      "created_at": "2026-10-04T12:36:31.107Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"015\"}",
+      "created_at": "2026-10-04T12:36:31.110Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:36:31.113Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"，\"}",
+      "created_at": "2026-10-04T12:36:31.116Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"version\"}",
+      "created_at": "2026-10-04T12:36:31.118Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:36:31.121Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"4\"}",
+      "created_at": "2026-10-04T12:36:31.124Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"，\"}",
+      "created_at": "2026-10-04T12:36:31.127Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"parent\"}",
+      "created_at": "2026-10-04T12:36:31.130Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"Step\"}",
+      "created_at": "2026-10-04T12:36:31.133Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"Id\"}",
+      "created_at": "2026-10-04T12:36:31.136Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" =\"}",
+      "created_at": "2026-10-04T12:36:31.138Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" `\"}",
+      "created_at": "2026-10-04T12:36:31.144Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"ad\"}",
+      "created_at": "2026-10-04T12:36:31.147Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"606\"}",
+      "created_at": "2026-10-04T12:36:31.150Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"1\"}",
+      "created_at": "2026-10-04T12:36:31.153Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"aa\"}",
+      "created_at": "2026-10-04T12:36:31.155Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:36:31.158Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"，\"}",
+      "created_at": "2026-10-04T12:36:31.161Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:36:31.164Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"re\"}",
+      "created_at": "2026-10-04T12:36:31.166Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"vision\"}",
+      "created_at": "2026-10-04T12:36:31.169Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"Status\"}",
+      "created_at": "2026-10-04T12:36:31.172Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"=\"}",
+      "created_at": "2026-10-04T12:36:31.175Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"pro\"}",
+      "created_at": "2026-10-04T12:36:31.178Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"posal\"}",
+      "created_at": "2026-10-04T12:36:31.181Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:36:31.184Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"；\"}",
+      "created_at": "2026-10-04T12:36:31.186Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"活动\"}",
+      "created_at": "2026-10-04T12:36:31.189Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"步骤\"}",
+      "created_at": "2026-10-04T12:36:31.192Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"仍是\"}",
+      "created_at": "2026-10-04T12:36:31.195Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" `\"}",
+      "created_at": "2026-10-04T12:36:31.198Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"ad\"}",
+      "created_at": "2026-10-04T12:36:31.201Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"606\"}",
+      "created_at": "2026-10-04T12:36:31.204Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"1\"}",
+      "created_at": "2026-10-04T12:36:31.207Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"aa\"}",
+      "created_at": "2026-10-04T12:36:31.210Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:36:31.212Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"，\"}",
+      "created_at": "2026-10-04T12:36:31.215Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:36:31.218Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"r\"}",
+      "created_at": "2026-10-04T12:36:31.221Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"uns\"}",
+      "created_at": "2026-10-04T12:36:31.224Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\":\"}",
+      "created_at": "2026-10-04T12:36:31.229Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" []\"}",
+      "created_at": "2026-10-04T12:36:31.235Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:36:31.239Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"、\"}",
+      "created_at": "2026-10-04T12:36:31.244Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:36:31.248Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"gener\"}",
+      "created_at": "2026-10-04T12:36:31.252Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"ation\"}",
+      "created_at": "2026-10-04T12:36:31.256Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"Submitted\"}",
+      "created_at": "2026-10-04T12:36:31.261Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"=false\"}",
+      "created_at": "2026-10-04T12:36:31.263Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:36:31.266Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"。\"}",
+      "created_at": "2026-10-04T12:36:31.269Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"反馈\"}",
+      "created_at": "2026-10-04T12:36:31.272Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"已\"}",
+      "created_at": "2026-10-04T12:36:31.275Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"关联\"}",
+      "created_at": "2026-10-04T12:36:31.278Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"报告\"}",
+      "created_at": "2026-10-04T12:36:31.280Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" `\"}",
+      "created_at": "2026-10-04T12:36:31.283Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"98\"}",
+      "created_at": "2026-10-04T12:36:31.286Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"d\"}",
+      "created_at": "2026-10-04T12:36:31.289Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"3\"}",
+      "created_at": "2026-10-04T12:36:31.291Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"e\"}",
+      "created_at": "2026-10-04T12:36:31.294Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"587\"}",
+      "created_at": "2026-10-04T12:36:31.297Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:36:31.300Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"（\"}",
+      "created_at": "2026-10-04T12:36:31.303Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"review\"}",
+      "created_at": "2026-10-04T12:36:31.306Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"Hash\"}",
+      "created_at": "2026-10-04T12:36:31.308Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" `\"}",
+      "created_at": "2026-10-04T12:36:31.311Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"cf\"}",
+      "created_at": "2026-10-04T12:36:31.314Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"188\"}",
+      "created_at": "2026-10-04T12:36:31.316Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"230\"}",
+      "created_at": "2026-10-04T12:36:31.319Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"…\"}",
+      "created_at": "2026-10-04T12:36:31.322Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:36:31.325Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"）\"}",
+      "created_at": "2026-10-04T12:36:31.327Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"与\"}",
+      "created_at": "2026-10-04T12:36:31.330Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"已\"}",
+      "created_at": "2026-10-04T12:36:31.333Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"检查\"}",
+      "created_at": "2026-10-04T12:36:31.336Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"输出\"}",
+      "created_at": "2026-10-04T12:36:31.339Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" `\"}",
+      "created_at": "2026-10-04T12:36:31.341Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"e\"}",
+      "created_at": "2026-10-04T12:36:31.344Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"000\"}",
+      "created_at": "2026-10-04T12:36:31.347Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"3\"}",
+      "created_at": "2026-10-04T12:36:31.350Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"b\"}",
+      "created_at": "2026-10-04T12:36:31.353Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"ae\"}",
+      "created_at": "2026-10-04T12:36:31.356Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:36:31.359Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"。\\n\"}",
+      "created_at": "2026-10-04T12:36:31.362Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"-\"}",
+      "created_at": "2026-10-04T12:36:31.364Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:36:31.367Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"工具\"}",
+      "created_at": "2026-10-04T12:36:31.370Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"返回值\"}",
+      "created_at": "2026-10-04T12:36:31.373Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"：\"}",
+      "created_at": "2026-10-04T12:36:31.376Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:36:31.378Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"changed\"}",
+      "created_at": "2026-10-04T12:36:31.381Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"Fields\"}",
+      "created_at": "2026-10-04T12:36:31.384Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"=[\\\"\"}",
+      "created_at": "2026-10-04T12:36:31.387Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"prom\"}",
+      "created_at": "2026-10-04T12:36:31.389Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"pt\"}",
+      "created_at": "2026-10-04T12:36:31.392Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"\\\",\\\"\"}",
+      "created_at": "2026-10-04T12:36:31.395Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"scene\"}",
+      "created_at": "2026-10-04T12:36:31.398Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"Intent\"}",
+      "created_at": "2026-10-04T12:36:31.401Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"\\\"]\"}",
+      "created_at": "2026-10-04T12:36:31.403Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:36:31.406Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"、\"}",
+      "created_at": "2026-10-04T12:36:31.409Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:36:31.412Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"comp\"}",
+      "created_at": "2026-10-04T12:36:31.415Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"iler\"}",
+      "created_at": "2026-10-04T12:36:31.418Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"Re\"}",
+      "created_at": "2026-10-04T12:36:31.420Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"placed\"}",
+      "created_at": "2026-10-04T12:36:31.423Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"Submitted\"}",
+      "created_at": "2026-10-04T12:36:31.426Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"Prompt\"}",
+      "created_at": "2026-10-04T12:36:31.429Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"=true\"}",
+      "created_at": "2026-10-04T12:36:31.432Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:36:31.435Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"、\"}",
+      "created_at": "2026-10-04T12:36:31.438Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:36:31.441Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"gener\"}",
+      "created_at": "2026-10-04T12:36:31.443Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"ation\"}",
+      "created_at": "2026-10-04T12:36:31.446Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"Input\"}",
+      "created_at": "2026-10-04T12:36:31.449Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"Changed\"}",
+      "created_at": "2026-10-04T12:36:31.452Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"=true\"}",
+      "created_at": "2026-10-04T12:36:31.455Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:36:31.458Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"。\\n\\n\"}",
+      "created_at": "2026-10-04T12:36:31.461Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"**\"}",
+      "created_at": "2026-10-04T12:36:31.464Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"实际\"}",
+      "created_at": "2026-10-04T12:36:31.466Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"保存\"}",
+      "created_at": "2026-10-04T12:36:31.469Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"内容\"}",
+      "created_at": "2026-10-04T12:36:31.472Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"（\"}",
+      "created_at": "2026-10-04T12:36:31.475Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"依据\"}",
+      "created_at": "2026-10-04T12:36:31.478Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" effective\"}",
+      "created_at": "2026-10-04T12:36:31.481Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"Image\"}",
+      "created_at": "2026-10-04T12:36:31.484Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"／\"}",
+      "created_at": "2026-10-04T12:36:31.487Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"保存\"}",
+      "created_at": "2026-10-04T12:36:31.490Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"步骤\"}",
+      "created_at": "2026-10-04T12:36:31.493Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"核对\"}",
+      "created_at": "2026-10-04T12:36:31.495Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"）\"}",
+      "created_at": "2026-10-04T12:36:31.498Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"**\\n\"}",
+      "created_at": "2026-10-04T12:36:31.501Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"1\"}",
+      "created_at": "2026-10-04T12:36:31.504Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\".\"}",
+      "created_at": "2026-10-04T12:36:31.507Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" `\"}",
+      "created_at": "2026-10-04T12:36:31.511Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"scene\"}",
+      "created_at": "2026-10-04T12:36:31.515Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"Intent\"}",
+      "created_at": "2026-10-04T12:36:31.520Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:36:31.524Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"：\"}",
+      "created_at": "2026-10-04T12:36:31.528Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"新增\"}",
+      "created_at": "2026-10-04T12:36:31.533Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" `\"}",
+      "created_at": "2026-10-04T12:36:31.537Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"composition\"}",
+      "created_at": "2026-10-04T12:36:31.541Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"=\\\"\"}",
+      "created_at": "2026-10-04T12:36:31.544Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"ref\"}",
+      "created_at": "2026-10-04T12:36:31.547Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"rame\"}",
+      "created_at": "2026-10-04T12:36:31.549Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"\\\"\"}",
+      "created_at": "2026-10-04T12:36:31.552Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:36:31.555Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"；\"}",
+      "created_at": "2026-10-04T12:36:31.558Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:36:31.561Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"view\"}",
+      "created_at": "2026-10-04T12:36:31.722Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"point\"}",
+      "created_at": "2026-10-04T12:36:31.725Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"=\"}",
+      "created_at": "2026-10-04T12:36:31.728Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"eye\"}",
+      "created_at": "2026-10-04T12:36:31.731Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"_level\"}",
+      "created_at": "2026-10-04T12:36:31.734Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:36:31.737Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"、\"}",
+      "created_at": "2026-10-04T12:36:31.740Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:36:31.743Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"shot\"}",
+      "created_at": "2026-10-04T12:36:31.745Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"Scale\"}",
+      "created_at": "2026-10-04T12:36:31.748Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"=\"}",
+      "created_at": "2026-10-04T12:36:31.751Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"wide\"}",
+      "created_at": "2026-10-04T12:36:31.754Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:36:31.756Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"、\"}",
+      "created_at": "2026-10-04T12:36:31.759Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:36:31.762Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"focus\"}",
+      "created_at": "2026-10-04T12:36:31.765Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"Text\"}",
+      "created_at": "2026-10-04T12:36:31.768Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:36:31.771Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"（\"}",
+      "created_at": "2026-10-04T12:36:31.773Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"当前\"}",
+      "created_at": "2026-10-04T12:36:31.776Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" description\"}",
+      "created_at": "2026-10-04T12:36:31.779Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:36:31.782Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"原文\"}",
+      "created_at": "2026-10-04T12:36:31.785Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"）、\"}",
+      "created_at": "2026-10-04T12:36:31.787Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:36:31.790Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"anchor\"}",
+      "created_at": "2026-10-04T12:36:31.793Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"Ids\"}",
+      "created_at": "2026-10-04T12:36:31.796Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"=\"}",
+      "created_at": "2026-10-04T12:36:31.799Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"[]\"}",
+      "created_at": "2026-10-04T12:36:31.802Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:36:31.805Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"、\"}",
+      "created_at": "2026-10-04T12:36:31.808Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:36:31.811Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"c\"}",
+      "created_at": "2026-10-04T12:36:31.813Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"amera\"}",
+      "created_at": "2026-10-04T12:36:31.816Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"Anchor\"}",
+      "created_at": "2026-10-04T12:36:31.819Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"Id\"}",
+      "created_at": "2026-10-04T12:36:31.822Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"=\"}",
+      "created_at": "2026-10-04T12:36:31.824Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"null\"}",
+      "created_at": "2026-10-04T12:36:31.827Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:36:31.830Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:36:31.833Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"保持\"}",
+      "created_at": "2026-10-04T12:36:31.836Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"。\\n\"}",
+      "created_at": "2026-10-04T12:36:31.838Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"2\"}",
+      "created_at": "2026-10-04T12:36:31.841Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\".\"}",
+      "created_at": "2026-10-04T12:36:31.844Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" `\"}",
+      "created_at": "2026-10-04T12:36:31.847Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"prom\"}",
+      "created_at": "2026-10-04T12:36:31.850Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"pt\"}",
+      "created_at": "2026-10-04T12:36:31.853Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:36:31.855Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"：\"}",
+      "created_at": "2026-10-04T12:36:31.858Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"我\"}",
+      "created_at": "2026-10-04T12:36:31.861Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"提交\"}",
+      "created_at": "2026-10-04T12:36:31.864Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"的是\"}",
+      "created_at": "2026-10-04T12:36:31.867Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"步骤\"}",
+      "created_at": "2026-10-04T12:36:31.870Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"原文\"}",
+      "created_at": "2026-10-04T12:36:31.872Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"，\"}",
+      "created_at": "2026-10-04T12:36:31.875Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"仍\"}",
+      "created_at": "2026-10-04T12:36:31.880Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"被\"}",
+      "created_at": "2026-10-04T12:36:31.884Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"编译器\"}",
+      "created_at": "2026-10-04T12:36:31.887Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"替换\"}",
+      "created_at": "2026-10-04T12:36:31.890Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"为\"}",
+      "created_at": "2026-10-04T12:36:31.893Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"编译\"}",
+      "created_at": "2026-10-04T12:36:31.895Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"结果\"}",
+      "created_at": "2026-10-04T12:36:31.898Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"；\"}",
+      "created_at": "2026-10-04T12:36:31.901Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"实际\"}",
+      "created_at": "2026-10-04T12:36:31.906Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"保存\"}",
+      "created_at": "2026-10-04T12:36:31.909Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"的\"}",
+      "created_at": "2026-10-04T12:36:31.912Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"提示\"}",
+      "created_at": "2026-10-04T12:36:31.915Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"词\"}",
+      "created_at": "2026-10-04T12:36:31.918Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"里\"}",
+      "created_at": "2026-10-04T12:36:31.920Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"出现了\"}",
+      "created_at": "2026-10-04T12:36:31.923Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"新的\"}",
+      "created_at": "2026-10-04T12:36:31.926Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"取\"}",
+      "created_at": "2026-10-04T12:36:31.929Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"景\"}",
+      "created_at": "2026-10-04T12:36:31.932Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"段\"}",
+      "created_at": "2026-10-04T12:36:31.935Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"：\\n\"}",
+      "created_at": "2026-10-04T12:36:31.938Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" -\"}",
+      "created_at": "2026-10-04T12:36:31.940Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" “\"}",
+      "created_at": "2026-10-04T12:36:31.943Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"REC\"}",
+      "created_at": "2026-10-04T12:36:31.947Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"O\"}",
+      "created_at": "2026-10-04T12:36:31.952Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"MP\"}",
+      "created_at": "2026-10-04T12:36:31.956Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"OSE\"}",
+      "created_at": "2026-10-04T12:36:31.960Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" THE\"}",
+      "created_at": "2026-10-04T12:36:31.965Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" CAM\"}",
+      "created_at": "2026-10-04T12:36:31.969Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"ERA\"}",
+      "created_at": "2026-10-04T12:36:31.973Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" VIEW\"}",
+      "created_at": "2026-10-04T12:36:31.977Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"…\"}",
+      "created_at": "2026-10-04T12:36:31.980Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" Des\"}",
+      "created_at": "2026-10-04T12:36:31.983Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"criptions\"}",
+      "created_at": "2026-10-04T12:36:31.986Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" of\"}",
+      "created_at": "2026-10-04T12:36:31.989Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" the\"}",
+      "created_at": "2026-10-04T12:36:31.992Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" source\"}",
+      "created_at": "2026-10-04T12:36:31.995Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" picture\"}",
+      "created_at": "2026-10-04T12:36:31.998Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" (\"}",
+      "created_at": "2026-10-04T12:36:32.000Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"such\"}",
+      "created_at": "2026-10-04T12:36:32.003Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" as\"}",
+      "created_at": "2026-10-04T12:36:32.006Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" overhead\"}",
+      "created_at": "2026-10-04T12:36:32.009Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\",\"}",
+      "created_at": "2026-10-04T12:36:32.012Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" cut\"}",
+      "created_at": "2026-10-04T12:36:32.015Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"away\"}",
+      "created_at": "2026-10-04T12:36:32.017Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\",\"}",
+      "created_at": "2026-10-04T12:36:32.020Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" image\"}",
+      "created_at": "2026-10-04T12:36:32.023Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"-left\"}",
+      "created_at": "2026-10-04T12:36:32.026Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" or\"}",
+      "created_at": "2026-10-04T12:36:32.029Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" image\"}",
+      "created_at": "2026-10-04T12:36:32.032Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"-top\"}",
+      "created_at": "2026-10-04T12:36:32.034Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\")\"}",
+      "created_at": "2026-10-04T12:36:32.037Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" describe\"}",
+      "created_at": "2026-10-04T12:36:32.040Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" that\"}",
+      "created_at": "2026-10-04T12:36:32.043Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" source\"}",
+      "created_at": "2026-10-04T12:36:32.046Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" only\"}",
+      "created_at": "2026-10-04T12:36:32.048Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\";\"}",
+      "created_at": "2026-10-04T12:36:32.051Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" do\"}",
+      "created_at": "2026-10-04T12:36:32.054Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" not\"}",
+      "created_at": "2026-10-04T12:36:32.057Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" copy\"}",
+      "created_at": "2026-10-04T12:36:32.060Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" its\"}",
+      "created_at": "2026-10-04T12:36:32.063Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" camera\"}",
+      "created_at": "2026-10-04T12:36:32.066Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" projection\"}",
+      "created_at": "2026-10-04T12:36:32.068Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\".\"}",
+      "created_at": "2026-10-04T12:36:32.071Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" Pres\"}",
+      "created_at": "2026-10-04T12:36:32.074Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"erve\"}",
+      "created_at": "2026-10-04T12:36:32.077Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" object\"}",
+      "created_at": "2026-10-04T12:36:32.080Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"-to\"}",
+      "created_at": "2026-10-04T12:36:32.082Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"-wall\"}",
+      "created_at": "2026-10-04T12:36:32.085Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" relationships\"}",
+      "created_at": "2026-10-04T12:36:32.088Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\",\"}",
+      "created_at": "2026-10-04T12:36:32.091Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" not\"}",
+      "created_at": "2026-10-04T12:36:32.094Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" their\"}",
+      "created_at": "2026-10-04T12:36:32.097Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" old\"}",
+      "created_at": "2026-10-04T12:36:32.100Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" screen\"}",
+      "created_at": "2026-10-04T12:36:32.102Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" coordinates\"}",
+      "created_at": "2026-10-04T12:36:32.105Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\".”\\n\"}",
+      "created_at": "2026-10-04T12:36:32.108Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" -\"}",
+      "created_at": "2026-10-04T12:36:32.111Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" “\"}",
+      "created_at": "2026-10-04T12:36:32.114Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"Place\"}",
+      "created_at": "2026-10-04T12:36:32.117Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" the\"}",
+      "created_at": "2026-10-04T12:36:32.119Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" observer\"}",
+      "created_at": "2026-10-04T12:36:32.122Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" inside\"}",
+      "created_at": "2026-10-04T12:36:32.125Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" the\"}",
+      "created_at": "2026-10-04T12:36:32.128Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" room\"}",
+      "created_at": "2026-10-04T12:36:32.131Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" at\"}",
+      "created_at": "2026-10-04T12:36:32.133Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" eye\"}",
+      "created_at": "2026-10-04T12:36:32.136Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" level\"}",
+      "created_at": "2026-10-04T12:36:32.139Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\".\"}",
+      "created_at": "2026-10-04T12:36:32.142Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" Show\"}",
+      "created_at": "2026-10-04T12:36:32.145Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" upright\"}",
+      "created_at": "2026-10-04T12:36:32.147Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" walls\"}",
+      "created_at": "2026-10-04T12:36:32.150Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" and\"}",
+      "created_at": "2026-10-04T12:36:32.153Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" a\"}",
+      "created_at": "2026-10-04T12:36:32.156Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" re\"}",
+      "created_at": "2026-10-04T12:36:32.158Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"ceding\"}",
+      "created_at": "2026-10-04T12:36:32.161Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" floor\"}",
+      "created_at": "2026-10-04T12:36:32.164Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\";\"}",
+      "created_at": "2026-10-04T12:36:32.167Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" do\"}",
+      "created_at": "2026-10-04T12:36:32.170Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" not\"}",
+      "created_at": "2026-10-04T12:36:32.173Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" deliver\"}",
+      "created_at": "2026-10-04T12:36:32.176Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" an\"}",
+      "created_at": "2026-10-04T12:36:32.178Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" overhead\"}",
+      "created_at": "2026-10-04T12:36:32.181Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" cut\"}",
+      "created_at": "2026-10-04T12:36:32.184Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"away\"}",
+      "created_at": "2026-10-04T12:36:32.187Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\",\"}",
+      "created_at": "2026-10-04T12:36:32.189Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" floor\"}",
+      "created_at": "2026-10-04T12:36:32.192Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" plan\"}",
+      "created_at": "2026-10-04T12:36:32.195Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" or\"}",
+      "created_at": "2026-10-04T12:36:32.198Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" ro\"}",
+      "created_at": "2026-10-04T12:36:32.201Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"ofl\"}",
+      "created_at": "2026-10-04T12:36:32.203Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"ess\"}",
+      "created_at": "2026-10-04T12:36:32.206Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" doll\"}",
+      "created_at": "2026-10-04T12:36:32.209Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"house\"}",
+      "created_at": "2026-10-04T12:36:32.212Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" overview\"}",
+      "created_at": "2026-10-04T12:36:32.215Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\".\"}",
+      "created_at": "2026-10-04T12:36:32.217Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" An\"}",
+      "created_at": "2026-10-04T12:36:32.220Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" unseen\"}",
+      "created_at": "2026-10-04T12:36:32.224Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" ceiling\"}",
+      "created_at": "2026-10-04T12:36:32.229Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" remains\"}",
+      "created_at": "2026-10-04T12:36:32.233Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" unspecified\"}",
+      "created_at": "2026-10-04T12:36:32.237Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\".”\\n\"}",
+      "created_at": "2026-10-04T12:36:32.241Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" -\"}",
+      "created_at": "2026-10-04T12:36:32.245Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:36:32.250Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"末尾\"}",
+      "created_at": "2026-10-04T12:36:32.254Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"追加\"}",
+      "created_at": "2026-10-04T12:36:32.257Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" “\"}",
+      "created_at": "2026-10-04T12:36:32.260Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"Final\"}",
+      "created_at": "2026-10-04T12:36:32.263Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" output\"}",
+      "created_at": "2026-10-04T12:36:32.265Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" task\"}",
+      "created_at": "2026-10-04T12:36:32.268Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\":\"}",
+      "created_at": "2026-10-04T12:36:32.271Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" …\"}",
+      "created_at": "2026-10-04T12:36:32.274Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"”，\"}",
+      "created_at": "2026-10-04T12:36:32.276Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:36:32.443Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"scene\"}",
+      "created_at": "2026-10-04T12:36:32.446Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"Prompt\"}",
+      "created_at": "2026-10-04T12:36:32.449Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"B\"}",
+      "created_at": "2026-10-04T12:36:32.452Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"asis\"}",
+      "created_at": "2026-10-04T12:36:32.455Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\".comp\"}",
+      "created_at": "2026-10-04T12:36:32.458Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"iler\"}",
+      "created_at": "2026-10-04T12:36:32.460Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"Version\"}",
+      "created_at": "2026-10-04T12:36:32.463Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:36:32.466Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:36:32.469Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"由\"}",
+      "created_at": "2026-10-04T12:36:32.471Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:36:32.474Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"1\"}",
+      "created_at": "2026-10-04T12:36:32.477Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:36:32.480Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"变为\"}",
+      "created_at": "2026-10-04T12:36:32.482Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:36:32.485Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"2\"}",
+      "created_at": "2026-10-04T12:36:32.488Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"。\\n\"}",
+      "created_at": "2026-10-04T12:36:32.490Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:36:32.493Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"这些\"}",
+      "created_at": "2026-10-04T12:36:32.496Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"是\"}",
+      "created_at": "2026-10-04T12:36:32.499Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"**\"}",
+      "created_at": "2026-10-04T12:36:32.502Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"编译器\"}",
+      "created_at": "2026-10-04T12:36:32.505Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"生成的\"}",
+      "created_at": "2026-10-04T12:36:32.507Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"**\"}",
+      "created_at": "2026-10-04T12:36:32.510Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"，\"}",
+      "created_at": "2026-10-04T12:36:32.513Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"不是我\"}",
+      "created_at": "2026-10-04T12:36:32.516Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"手\"}",
+      "created_at": "2026-10-04T12:36:32.519Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"写的\"}",
+      "created_at": "2026-10-04T12:36:32.521Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"文字\"}",
+      "created_at": "2026-10-04T12:36:32.524Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"；\"}",
+      "created_at": "2026-10-04T12:36:32.527Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"我不\"}",
+      "created_at": "2026-10-04T12:36:32.530Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"声称\"}",
+      "created_at": "2026-10-04T12:36:32.532Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"自己的\"}",
+      "created_at": "2026-10-04T12:36:32.535Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"自由\"}",
+      "created_at": "2026-10-04T12:36:32.538Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"文本\"}",
+      "created_at": "2026-10-04T12:36:32.541Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"被\"}",
+      "created_at": "2026-10-04T12:36:32.543Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"保存\"}",
+      "created_at": "2026-10-04T12:36:32.546Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"。\\n\"}",
+      "created_at": "2026-10-04T12:36:32.550Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"3\"}",
+      "created_at": "2026-10-04T12:36:32.553Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\".\"}",
+      "created_at": "2026-10-04T12:36:32.555Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:36:32.558Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"未\"}",
+      "created_at": "2026-10-04T12:36:32.561Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"变化\"}",
+      "created_at": "2026-10-04T12:36:32.564Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"：\"}",
+      "created_at": "2026-10-04T12:36:32.566Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"inv\"}",
+      "created_at": "2026-10-04T12:36:32.569Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"ari\"}",
+      "created_at": "2026-10-04T12:36:32.572Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"ants\"}",
+      "created_at": "2026-10-04T12:36:32.575Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"（\"}",
+      "created_at": "2026-10-04T12:36:32.578Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"原\"}",
+      "created_at": "2026-10-04T12:36:32.580Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"三条\"}",
+      "created_at": "2026-10-04T12:36:32.583Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"）、\"}",
+      "created_at": "2026-10-04T12:36:32.586Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"unknown\"}",
+      "created_at": "2026-10-04T12:36:32.589Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"s\"}",
+      "created_at": "2026-10-04T12:36:32.592Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"（\"}",
+      "created_at": "2026-10-04T12:36:32.594Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"17\"}",
+      "created_at": "2026-10-04T12:36:32.597Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:36:32.600Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"条\"}",
+      "created_at": "2026-10-04T12:36:32.603Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"）、\"}",
+      "created_at": "2026-10-04T12:36:32.605Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"实体\"}",
+      "created_at": "2026-10-04T12:36:32.608Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" `\"}",
+      "created_at": "2026-10-04T12:36:32.611Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"516\"}",
+      "created_at": "2026-10-04T12:36:32.614Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"b\"}",
+      "created_at": "2026-10-04T12:36:32.616Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"181\"}",
+      "created_at": "2026-10-04T12:36:32.621Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"2\"}",
+      "created_at": "2026-10-04T12:36:32.624Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:36:32.627Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"、\"}",
+      "created_at": "2026-10-04T12:36:32.629Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"key\"}",
+      "created_at": "2026-10-04T12:36:32.632Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"=\"}",
+      "created_at": "2026-10-04T12:36:32.635Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"hall\"}",
+      "created_at": "2026-10-04T12:36:32.638Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"-angle\"}",
+      "created_at": "2026-10-04T12:36:32.640Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"、\"}",
+      "created_at": "2026-10-04T12:36:32.643Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"label\"}",
+      "created_at": "2026-10-04T12:36:32.646Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"、\"}",
+      "created_at": "2026-10-04T12:36:32.649Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"role\"}",
+      "created_at": "2026-10-04T12:36:32.652Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"=\"}",
+      "created_at": "2026-10-04T12:36:32.654Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"scene\"}",
+      "created_at": "2026-10-04T12:36:32.657Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"_\"}",
+      "created_at": "2026-10-04T12:36:32.660Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"angle\"}",
+      "created_at": "2026-10-04T12:36:32.664Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"、\"}",
+      "created_at": "2026-10-04T12:36:32.668Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"model\"}",
+      "created_at": "2026-10-04T12:36:32.673Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"Id\"}",
+      "created_at": "2026-10-04T12:36:32.677Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"=q\"}",
+      "created_at": "2026-10-04T12:36:32.681Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"wen\"}",
+      "created_at": "2026-10-04T12:36:32.686Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"-image\"}",
+      "created_at": "2026-10-04T12:36:32.690Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"-\"}",
+      "created_at": "2026-10-04T12:36:32.694Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"2\"}",
+      "created_at": "2026-10-04T12:36:32.697Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\".\"}",
+      "created_at": "2026-10-04T12:36:32.700Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"1\"}",
+      "created_at": "2026-10-04T12:36:32.703Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"、\"}",
+      "created_at": "2026-10-04T12:36:32.705Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"style\"}",
+      "created_at": "2026-10-04T12:36:32.708Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"Id\"}",
+      "created_at": "2026-10-04T12:36:32.711Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"=\"}",
+      "created_at": "2026-10-04T12:36:32.714Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"original\"}",
+      "created_at": "2026-10-04T12:36:32.717Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"、\"}",
+      "created_at": "2026-10-04T12:36:32.720Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"parameters\"}",
+      "created_at": "2026-10-04T12:36:32.723Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"={\"}",
+      "created_at": "2026-10-04T12:36:32.726Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"}\"}",
+      "created_at": "2026-10-04T12:36:32.729Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"、\"}",
+      "created_at": "2026-10-04T12:36:32.732Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"root\"}",
+      "created_at": "2026-10-04T12:36:32.735Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"Step\"}",
+      "created_at": "2026-10-04T12:36:32.738Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"Id\"}",
+      "created_at": "2026-10-04T12:36:32.741Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" `\"}",
+      "created_at": "2026-10-04T12:36:32.744Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"c\"}",
+      "created_at": "2026-10-04T12:36:32.746Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"806\"}",
+      "created_at": "2026-10-04T12:36:32.749Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"b\"}",
+      "created_at": "2026-10-04T12:36:32.752Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"463\"}",
+      "created_at": "2026-10-04T12:36:32.755Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:36:32.758Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:36:32.760Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"与\"}",
+      "created_at": "2026-10-04T12:36:32.763Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"父\"}",
+      "created_at": "2026-10-04T12:36:32.766Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"链\"}",
+      "created_at": "2026-10-04T12:36:32.769Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"。\\n\"}",
+      "created_at": "2026-10-04T12:36:32.772Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"4\"}",
+      "created_at": "2026-10-04T12:36:32.774Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\".\"}",
+      "created_at": "2026-10-04T12:36:32.777Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:36:32.780Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"参考\"}",
+      "created_at": "2026-10-04T12:36:32.783Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"字段\"}",
+      "created_at": "2026-10-04T12:36:32.786Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"需\"}",
+      "created_at": "2026-10-04T12:36:32.788Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"如实\"}",
+      "created_at": "2026-10-04T12:36:32.791Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"说明\"}",
+      "created_at": "2026-10-04T12:36:32.794Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"：\"}",
+      "created_at": "2026-10-04T12:36:32.797Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"我\"}",
+      "created_at": "2026-10-04T12:36:32.799Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"提交\"}",
+      "created_at": "2026-10-04T12:36:32.802Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"时\"}",
+      "created_at": "2026-10-04T12:36:32.805Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" `\"}",
+      "created_at": "2026-10-04T12:36:32.808Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"reference\"}",
+      "created_at": "2026-10-04T12:36:32.811Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"Asset\"}",
+      "created_at": "2026-10-04T12:36:32.813Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"Ids\"}",
+      "created_at": "2026-10-04T12:36:32.816Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:36:32.819Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:36:32.822Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"为空\"}",
+      "created_at": "2026-10-04T12:36:32.825Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"；\"}",
+      "created_at": "2026-10-04T12:36:32.828Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"保存\"}",
+      "created_at": "2026-10-04T12:36:32.830Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"结果\"}",
+      "created_at": "2026-10-04T12:36:32.833Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"里\"}",
+      "created_at": "2026-10-04T12:36:32.836Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"该\"}",
+      "created_at": "2026-10-04T12:36:32.839Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"字段\"}",
+      "created_at": "2026-10-04T12:36:32.841Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"**\"}",
+      "created_at": "2026-10-04T12:36:32.844Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"没有\"}",
+      "created_at": "2026-10-04T12:36:32.847Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"出现在\"}",
+      "created_at": "2026-10-04T12:36:32.850Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" changed\"}",
+      "created_at": "2026-10-04T12:36:32.853Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"Fields\"}",
+      "created_at": "2026-10-04T12:36:32.855Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:36:32.858Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"中\"}",
+      "created_at": "2026-10-04T12:36:32.861Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"**\"}",
+      "created_at": "2026-10-04T12:36:32.864Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"，\"}",
+      "created_at": "2026-10-04T12:36:32.866Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"实际\"}",
+      "created_at": "2026-10-04T12:36:32.869Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"显示\"}",
+      "created_at": "2026-10-04T12:36:32.872Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"仍\"}",
+      "created_at": "2026-10-04T12:36:32.875Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"为主\"}",
+      "created_at": "2026-10-04T12:36:32.877Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"图\"}",
+      "created_at": "2026-10-04T12:36:32.880Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" `\"}",
+      "created_at": "2026-10-04T12:36:32.883Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"a\"}",
+      "created_at": "2026-10-04T12:36:32.886Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"4\"}",
+      "created_at": "2026-10-04T12:36:32.889Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"e\"}",
+      "created_at": "2026-10-04T12:36:32.891Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"867\"}",
+      "created_at": "2026-10-04T12:36:32.894Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"0\"}",
+      "created_at": "2026-10-04T12:36:32.897Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"a\"}",
+      "created_at": "2026-10-04T12:36:32.900Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"…\"}",
+      "created_at": "2026-10-04T12:36:32.902Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:36:32.905Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"（\"}",
+      "created_at": "2026-10-04T12:36:32.908Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"继承\"}",
+      "created_at": "2026-10-04T12:36:32.911Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"原\"}",
+      "created_at": "2026-10-04T12:36:32.913Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"值\"}",
+      "created_at": "2026-10-04T12:36:32.916Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"，\"}",
+      "created_at": "2026-10-04T12:36:32.919Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"由\"}",
+      "created_at": "2026-10-04T12:36:32.922Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"主\"}",
+      "created_at": "2026-10-04T12:36:32.925Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"形象\"}",
+      "created_at": "2026-10-04T12:36:32.929Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"依赖\"}",
+      "created_at": "2026-10-04T12:36:32.932Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"解析\"}",
+      "created_at": "2026-10-04T12:36:32.934Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"），\"}",
+      "created_at": "2026-10-04T12:36:32.937Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:36:33.124Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"use\"}",
+      "created_at": "2026-10-04T12:36:33.129Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"Main\"}",
+      "created_at": "2026-10-04T12:36:33.133Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"App\"}",
+      "created_at": "2026-10-04T12:36:33.137Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"earance\"}",
+      "created_at": "2026-10-04T12:36:33.142Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"=true\"}",
+      "created_at": "2026-10-04T12:36:33.146Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:36:33.150Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"。\"}",
+      "created_at": "2026-10-04T12:36:33.153Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"也就是说\"}",
+      "created_at": "2026-10-04T12:36:33.156Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"实际\"}",
+      "created_at": "2026-10-04T12:36:33.159Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"依赖\"}",
+      "created_at": "2026-10-04T12:36:33.162Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"的对象\"}",
+      "created_at": "2026-10-04T12:36:33.165Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"仍是\"}",
+      "created_at": "2026-10-04T12:36:33.167Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"本\"}",
+      "created_at": "2026-10-04T12:36:33.170Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"实体\"}",
+      "created_at": "2026-10-04T12:36:33.173Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"已\"}",
+      "created_at": "2026-10-04T12:36:33.176Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"选定\"}",
+      "created_at": "2026-10-04T12:36:33.179Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"主\"}",
+      "created_at": "2026-10-04T12:36:33.182Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"图\"}",
+      "created_at": "2026-10-04T12:36:33.187Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"，\"}",
+      "created_at": "2026-10-04T12:36:33.190Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"而不是\"}",
+      "created_at": "2026-10-04T12:36:33.193Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"本\"}",
+      "created_at": "2026-10-04T12:36:33.195Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"步骤\"}",
+      "created_at": "2026-10-04T12:36:33.198Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"要\"}",
+      "created_at": "2026-10-04T12:36:33.204Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"修正\"}",
+      "created_at": "2026-10-04T12:36:33.207Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"的输出\"}",
+      "created_at": "2026-10-04T12:36:33.210Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" `\"}",
+      "created_at": "2026-10-04T12:36:33.213Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"e\"}",
+      "created_at": "2026-10-04T12:36:33.215Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"000\"}",
+      "created_at": "2026-10-04T12:36:33.219Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"3\"}",
+      "created_at": "2026-10-04T12:36:33.221Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"b\"}",
+      "created_at": "2026-10-04T12:36:33.224Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"ae\"}",
+      "created_at": "2026-10-04T12:36:33.227Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:36:33.230Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"（\"}",
+      "created_at": "2026-10-04T12:36:33.233Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"该\"}",
+      "created_at": "2026-10-04T12:36:33.235Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"图\"}",
+      "created_at": "2026-10-04T12:36:33.238Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"只\"}",
+      "created_at": "2026-10-04T12:36:33.241Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"作为\"}",
+      "created_at": "2026-10-04T12:36:33.244Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" feedback\"}",
+      "created_at": "2026-10-04T12:36:33.246Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:36:33.249Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"中\"}",
+      "created_at": "2026-10-04T12:36:33.252Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"“\"}",
+      "created_at": "2026-10-04T12:36:33.255Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"已\"}",
+      "created_at": "2026-10-04T12:36:33.258Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"检查\"}",
+      "created_at": "2026-10-04T12:36:33.261Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"结果\"}",
+      "created_at": "2026-10-04T12:36:33.264Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"”\"}",
+      "created_at": "2026-10-04T12:36:33.266Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"出现\"}",
+      "created_at": "2026-10-04T12:36:33.269Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"，\"}",
+      "created_at": "2026-10-04T12:36:33.272Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"未\"}",
+      "created_at": "2026-10-04T12:36:33.275Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"作为\"}",
+      "created_at": "2026-10-04T12:36:33.277Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"生成\"}",
+      "created_at": "2026-10-04T12:36:33.282Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"参考\"}",
+      "created_at": "2026-10-04T12:36:33.285Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"）。\\n\"}",
+      "created_at": "2026-10-04T12:36:33.287Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"5\"}",
+      "created_at": "2026-10-04T12:36:33.290Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\".\"}",
+      "created_at": "2026-10-04T12:36:33.293Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:36:33.296Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"由于\"}",
+      "created_at": "2026-10-04T12:36:33.299Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"输入\"}",
+      "created_at": "2026-10-04T12:36:33.302Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"确实\"}",
+      "created_at": "2026-10-04T12:36:33.304Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"变化\"}",
+      "created_at": "2026-10-04T12:36:33.307Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"（\"}",
+      "created_at": "2026-10-04T12:36:33.310Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:36:33.313Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"gener\"}",
+      "created_at": "2026-10-04T12:36:33.316Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"ation\"}",
+      "created_at": "2026-10-04T12:36:33.319Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"Input\"}",
+      "created_at": "2026-10-04T12:36:33.322Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"Changed\"}",
+      "created_at": "2026-10-04T12:36:33.325Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"=true\"}",
+      "created_at": "2026-10-04T12:36:33.328Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"`\"}",
+      "created_at": "2026-10-04T12:36:33.331Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"），\"}",
+      "created_at": "2026-10-04T12:36:33.334Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"如\"}",
+      "created_at": "2026-10-04T12:36:33.336Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"日后\"}",
+      "created_at": "2026-10-04T12:36:33.339Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"重\"}",
+      "created_at": "2026-10-04T12:36:33.342Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"出\"}",
+      "created_at": "2026-10-04T12:36:33.345Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"会是\"}",
+      "created_at": "2026-10-04T12:36:33.348Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"不同\"}",
+      "created_at": "2026-10-04T12:36:33.351Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"输入\"}",
+      "created_at": "2026-10-04T12:36:33.354Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"；\"}",
+      "created_at": "2026-10-04T12:36:33.356Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"但我\"}",
+      "created_at": "2026-10-04T12:36:33.359Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"没有\"}",
+      "created_at": "2026-10-04T12:36:33.362Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"建议\"}",
+      "created_at": "2026-10-04T12:36:33.365Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"或\"}",
+      "created_at": "2026-10-04T12:36:33.368Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"提交\"}",
+      "created_at": "2026-10-04T12:36:33.370Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"任何\"}",
+      "created_at": "2026-10-04T12:36:33.373Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"生成\"}",
+      "created_at": "2026-10-04T12:36:33.376Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"。\\n\\n\"}",
+      "created_at": "2026-10-04T12:36:33.379Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"**\"}",
+      "created_at": "2026-10-04T12:36:33.382Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"仍需\"}",
+      "created_at": "2026-10-04T12:36:33.384Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"你\"}",
+      "created_at": "2026-10-04T12:36:33.398Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"决定\"}",
+      "created_at": "2026-10-04T12:36:33.401Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"**\\n\"}",
+      "created_at": "2026-10-04T12:36:33.403Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"-\"}",
+      "created_at": "2026-10-04T12:36:33.408Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:36:33.411Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"到\"}",
+      "created_at": "2026-10-04T12:36:33.416Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"项目\"}",
+      "created_at": "2026-10-04T12:36:33.420Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"工作\"}",
+      "created_at": "2026-10-04T12:36:33.424Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"区\"}",
+      "created_at": "2026-10-04T12:36:33.428Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"比较\"}",
+      "created_at": "2026-10-04T12:36:33.433Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" v\"}",
+      "created_at": "2026-10-04T12:36:33.437Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"2\"}",
+      "created_at": "2026-10-04T12:36:33.442Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:36:33.445Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"与\"}",
+      "created_at": "2026-10-04T12:36:33.448Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" v\"}",
+      "created_at": "2026-10-04T12:36:33.451Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"4\"}",
+      "created_at": "2026-10-04T12:36:33.454Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"，\"}",
+      "created_at": "2026-10-04T12:36:33.457Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"由\"}",
+      "created_at": "2026-10-04T12:36:33.459Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"你\"}",
+      "created_at": "2026-10-04T12:36:33.462Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"明确\"}",
+      "created_at": "2026-10-04T12:36:33.465Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"采用\"}",
+      "created_at": "2026-10-04T12:36:33.468Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"；\"}",
+      "created_at": "2026-10-04T12:36:33.470Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"采用\"}",
+      "created_at": "2026-10-04T12:36:33.473Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"后\"}",
+      "created_at": "2026-10-04T12:36:33.476Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"我\"}",
+      "created_at": "2026-10-04T12:36:33.479Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"才能\"}",
+      "created_at": "2026-10-04T12:36:33.482Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"按\"}",
+      "created_at": "2026-10-04T12:36:33.485Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"新\"}",
+      "created_at": "2026-10-04T12:36:33.487Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"输出\"}",
+      "created_at": "2026-10-04T12:36:33.490Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"重\"}",
+      "created_at": "2026-10-04T12:36:33.493Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"做\"}",
+      "created_at": "2026-10-04T12:36:33.496Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"检验\"}",
+      "created_at": "2026-10-04T12:36:33.499Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"。\\n\"}",
+      "created_at": "2026-10-04T12:36:33.501Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"-\"}",
+      "created_at": "2026-10-04T12:36:33.504Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" \"}",
+      "created_at": "2026-10-04T12:36:33.507Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"若\"}",
+      "created_at": "2026-10-04T12:36:33.510Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"你\"}",
+      "created_at": "2026-10-04T12:36:33.513Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"希望\"}",
+      "created_at": "2026-10-04T12:36:33.515Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"参考\"}",
+      "created_at": "2026-10-04T12:36:33.518Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"字段\"}",
+      "created_at": "2026-10-04T12:36:33.689Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"也\"}",
+      "created_at": "2026-10-04T12:36:33.692Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"改成\"}",
+      "created_at": "2026-10-04T12:36:33.695Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"显\"}",
+      "created_at": "2026-10-04T12:36:33.699Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"式\"}",
+      "created_at": "2026-10-04T12:36:33.702Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"“\"}",
+      "created_at": "2026-10-04T12:36:33.705Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"指定\"}",
+      "created_at": "2026-10-04T12:36:33.708Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"参考\"}",
+      "created_at": "2026-10-04T12:36:33.710Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"图\"}",
+      "created_at": "2026-10-04T12:36:33.713Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\" a\"}",
+      "created_at": "2026-10-04T12:36:33.716Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"4\"}",
+      "created_at": "2026-10-04T12:36:33.719Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"e\"}",
+      "created_at": "2026-10-04T12:36:33.722Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"867\"}",
+      "created_at": "2026-10-04T12:36:33.725Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"0\"}",
+      "created_at": "2026-10-04T12:36:33.727Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"a\"}",
+      "created_at": "2026-10-04T12:36:33.730Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"、\"}",
+      "created_at": "2026-10-04T12:36:33.733Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"use\"}",
+      "created_at": "2026-10-04T12:36:33.736Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"Main\"}",
+      "created_at": "2026-10-04T12:36:33.739Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"App\"}",
+      "created_at": "2026-10-04T12:36:33.742Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"earance\"}",
+      "created_at": "2026-10-04T12:36:33.745Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"=false\"}",
+      "created_at": "2026-10-04T12:36:33.748Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"”，\"}",
+      "created_at": "2026-10-04T12:36:33.750Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"或\"}",
+      "created_at": "2026-10-04T12:36:33.753Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"希望\"}",
+      "created_at": "2026-10-04T12:36:33.756Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"把\"}",
+      "created_at": "2026-10-04T12:36:33.759Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"取\"}",
+      "created_at": "2026-10-04T12:36:33.762Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"景\"}",
+      "created_at": "2026-10-04T12:36:33.765Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"要求\"}",
+      "created_at": "2026-10-04T12:36:33.768Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"作为\"}",
+      "created_at": "2026-10-04T12:36:33.771Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"固定\"}",
+      "created_at": "2026-10-04T12:36:33.774Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"不\"}",
+      "created_at": "2026-10-04T12:36:33.777Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"变量\"}",
+      "created_at": "2026-10-04T12:36:33.780Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"写入\"}",
+      "created_at": "2026-10-04T12:36:33.783Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"（\"}",
+      "created_at": "2026-10-04T12:36:33.786Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"而不是\"}",
+      "created_at": "2026-10-04T12:36:33.788Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"仅\"}",
+      "created_at": "2026-10-04T12:36:33.792Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"靠\"}",
+      "created_at": "2026-10-04T12:36:33.794Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"编译器\"}",
+      "created_at": "2026-10-04T12:36:33.797Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"段\"}",
+      "created_at": "2026-10-04T12:36:33.800Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"），\"}",
+      "created_at": "2026-10-04T12:36:33.803Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"请\"}",
+      "created_at": "2026-10-04T12:36:33.806Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"告知\"}",
+      "created_at": "2026-10-04T12:36:33.809Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"，\"}",
+      "created_at": "2026-10-04T12:36:33.811Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"我\"}",
+      "created_at": "2026-10-04T12:36:33.815Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"另\"}",
+      "created_at": "2026-10-04T12:36:33.818Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"提\"}",
+      "created_at": "2026-10-04T12:36:33.820Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"候选\"}",
+      "created_at": "2026-10-04T12:36:33.823Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"，\"}",
+      "created_at": "2026-10-04T12:36:33.827Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"不\"}",
+      "created_at": "2026-10-04T12:36:33.830Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"覆盖\"}",
+      "created_at": "2026-10-04T12:36:33.832Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"这一\"}",
+      "created_at": "2026-10-04T12:36:33.835Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"份\"}",
+      "created_at": "2026-10-04T12:36:33.839Z"
+    },
+    {
+      "type": "text",
+      "body": "{\"delta\":\"。\"}",
+      "created_at": "2026-10-04T12:36:33.842Z"
+    },
+    {
+      "type": "usage",
+      "body": "{\"usage\":{\"cacheRead\":174336,\"cacheWrite\":0,\"cost\":{\"cacheRead\":0.001046016,\"cacheWrite\":0,\"input\":0.0014054999999999998,\"output\":0.0021864,\"total\":0.004637916},\"input\":4685,\"output\":1822,\"reasoning\":1013,\"totalTokens\":180843}}",
+      "created_at": "2026-10-04T12:36:34.095Z"
+    },
+    {
+      "type": "done",
+      "body": "{\"status\":\"succeeded\"}",
+      "created_at": "2026-10-04T12:36:34.260Z"
+    }
+  ],
+  "generationRunCount": 7
+}

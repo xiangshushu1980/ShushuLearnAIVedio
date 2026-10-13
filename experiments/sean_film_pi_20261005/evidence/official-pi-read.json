@@ -1,0 +1,45 @@
+{
+  "owner": "Sean",
+  "sessionId": "01a10b67-dfd2-79a3-815e-13f5a56e61fb",
+  "instance": "production4190",
+  "modelRecords": [
+    {
+      "provider": "deepseek",
+      "model": "deepseek-flash",
+      "stopReason": "toolUse"
+    },
+    {
+      "provider": "deepseek",
+      "model": "deepseek-flash",
+      "stopReason": "toolUse"
+    },
+    {
+      "provider": "deepseek",
+      "model": "deepseek-flash",
+      "stopReason": "stop"
+    }
+  ],
+  "toolNames": [
+    "read",
+    "film",
+    "read",
+    "film"
+  ],
+  "observedRevision": 18,
+  "skillSources": [
+    {
+      "path": "/home/sean/.pi/agent/skills/film-production/SKILL.md",
+      "contentHash": "eabf9bb8cb76c1713c7a9c0a9c7c9ebfeb49bc56f39628ea23ccb94298791d2f",
+      "source": "pi-native-read",
+      "complete": true,
+      "loadedAt": "2026-10-05T09:32:06.429Z"
+    },
+    {
+      "path": "/home/sean/.pi/agent/skills/film-production/references/runtime.md",
+      "contentHash": "ffff3dbdf64674fd3bef1d2ea3528addc16032dcc21225a403a9291e3474cfab",
+      "source": "pi-native-read",
+      "complete": true,
+      "loadedAt": "2026-10-05T09:32:07.686Z"
+    }
+  ]
+}

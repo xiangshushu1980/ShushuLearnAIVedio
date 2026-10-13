@@ -1,0 +1,7 @@
+{
+  "owner": "Sean",
+  "cause": "editor restart omitted node env-file argument; dotenv key not loaded",
+  "fix": "restored canonical package start command node --env-file-if-exists=.env server/index.mjs",
+  "llmKeyConfigured": true,
+  "providerSuccessNotYetVerified": true
+}
