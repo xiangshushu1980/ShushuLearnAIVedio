@@ -26,10 +26,13 @@ scripts/.venv-vlm/
 **/.data/
 **/runtime-data/
 **/runtime-restored-*/
+experiments/**/_discarded_*/
 *.sqlite
 *.sqlite-*
 *.db
 *.db-*
+*.results.json
+*.refine_results.json
 *.ses
 *.log
 *.tmp
