@@ -1,0 +1,7 @@
+Design a polished landscape 3:2 infographic page with a clear reading path from the headline to the chart and then to a small source line. The subject is 种子发芽观察. Use the exact headline "种子发芽观察" and subtitle "合成示例数据 · 茎长随时间变化". Build the central visual as a horizontal timeline with five proportional growth markers. The visual style is 植物图鉴风，淡奶油底、叶绿和暖黄，克制线描种子图案. This is a data-accuracy task: reproduce every row below exactly, keeping category names, order, values, and units. Let visual lengths/areas accurately encode the values; use a zero baseline for bars and a consistent legend for repeated categories. Dataset:
+第1天: 2 厘米
+第3天: 4 厘米
+第5天: 7 厘米
+第7天: 10 厘米
+第9天: 13 厘米
+Render this exact source note: "合成示例观察；非真实实验结论". Key reading: chronological order; marker position and size increase proportionally; exact day and cm values. Do not calculate or add claims beyond this stated reading. Do not omit, duplicate, round, reorder, or invent a value. Keep all typography crisp and integrated with the design. Add no other words, decorative numerals, logo, or watermark.

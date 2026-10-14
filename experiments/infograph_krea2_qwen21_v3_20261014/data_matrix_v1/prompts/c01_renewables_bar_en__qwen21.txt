@@ -1,0 +1,9 @@
+Create one landscape 3:2 infographic. Describe and render the page region by region: top title and subtitle; central ranked horizontal bar chart, descending; a small source note at the bottom. Style: Swiss editorial minimalism, white space, navy and leaf-green accents. Exact title: 'Renewable electricity, 2021'. Exact subtitle: 'Share of total electricity output'. Show this dataset exactly, preserving every category, order, value, and unit:
+Denmark: 78.96 percent
+Brazil: 77.38 percent
+Canada: 67.02 percent
+Germany: 39.83 percent
+China: 28.43 percent
+United States: 20.27 percent
+India: 19.13 percent
+Source note, render verbatim: 'World Bank WDI indicator EG.ELC.RNEW.ZS; source page attributes indicator to IEA Energy Statistics; CC BY 4.0; accessed 2026-10-14'. Data-encoding requirements: Denmark is highest; India is lowest; all seven values and country labels must match exactly. Make the chart geometry directly proportional to the listed values; use a zero baseline for bars; do not infer, round, omit, duplicate, or invent any data. Render all quoted strings legibly and exactly. No extra text, legend labels only when needed to decode the listed categories, no logo or watermark.

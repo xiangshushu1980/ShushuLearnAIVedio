@@ -1,0 +1,569 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "arm": "Qwen-Image-2.1 BF16 with official T2I Prompt Rewrite PE",
+  "planned": 8,
+  "completed": 8,
+  "failed": 0,
+  "input_to_pe_files": [
+    "prompts/c01_renewables_bar_en__qwen21.txt",
+    "prompts/c02_commute_bar_zh__qwen21.txt",
+    "prompts/c03_garden_line_en__qwen21.txt",
+    "prompts/c04_energy_stacked_zh__qwen21.txt",
+    "prompts/c05_budget_donut_zh__qwen21.txt",
+    "prompts/c06_recycling_flow_en__qwen21.txt",
+    "prompts/c07_water_before_after_en__qwen21.txt",
+    "prompts/c08_seed_timeline_zh__qwen21.txt"
+  ],
+  "actual_positive_prompts": [
+    "prompts/qwen21_pe_outputs/c01_renewables_bar_en.txt",
+    "prompts/qwen21_pe_outputs/c02_commute_bar_zh.txt",
+    "prompts/qwen21_pe_outputs/c03_garden_line_en.txt",
+    "prompts/qwen21_pe_outputs/c04_energy_stacked_zh.txt",
+    "prompts/qwen21_pe_outputs/c05_budget_donut_zh.txt",
+    "prompts/qwen21_pe_outputs/c06_recycling_flow_en.txt",
+    "prompts/qwen21_pe_outputs/c07_water_before_after_en.txt",
+    "prompts/qwen21_pe_outputs/c08_seed_timeline_zh.txt"
+  ],
+  "runs": [
+    {
+      "owner": "Sean",
+      "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+      "job": "c01_renewables_bar_en",
+      "case_id": "c01_renewables_bar_en",
+      "model": "Qwen-Image-2.1 BF16 + Qwen Image 2.1 T2I Prompt Rewrite PE",
+      "language": "en",
+      "seed": 42,
+      "source_data": "World Bank WDI indicator EG.ELC.RNEW.ZS; source page attributes indicator to IEA Energy Statistics; CC BY 4.0; accessed 2026-10-14",
+      "case_ground_truth": [
+        [
+          "Denmark",
+          78.96
+        ],
+        [
+          "Brazil",
+          77.38
+        ],
+        [
+          "Canada",
+          67.02
+        ],
+        [
+          "Germany",
+          39.83
+        ],
+        [
+          "China",
+          28.43
+        ],
+        [
+          "United States",
+          20.27
+        ],
+        [
+          "India",
+          19.13
+        ]
+      ],
+      "input_prompt": "Create one landscape 3:2 infographic. Describe and render the page region by region: top title and subtitle; central ranked horizontal bar chart, descending; a small source note at the bottom. Style: Swiss editorial minimalism, white space, navy and leaf-green accents. Exact title: 'Renewable electricity, 2021'. Exact subtitle: 'Share of total electricity output'. Show this dataset exactly, preserving every category, order, value, and unit:\nDenmark: 78.96 percent\nBrazil: 77.38 percent\nCanada: 67.02 percent\nGermany: 39.83 percent\nChina: 28.43 percent\nUnited States: 20.27 percent\nIndia: 19.13 percent\nSource note, render verbatim: 'World Bank WDI indicator EG.ELC.RNEW.ZS; source page attributes indicator to IEA Energy Statistics; CC BY 4.0; accessed 2026-10-14'. Data-encoding requirements: Denmark is highest; India is lowest; all seven values and country labels must match exactly. Make the chart geometry directly proportional to the listed values; use a zero baseline for bars; do not infer, round, omit, duplicate, or invent any data. Render all quoted strings legibly and exactly. No extra text, legend labels only when needed to decode the listed categories, no logo or watermark.",
+      "actual_pe_prompt_file": "prompts/qwen21_pe_outputs/c01_renewables_bar_en.txt",
+      "parameters": {
+        "resolution": "1536x1024",
+        "steps": 40,
+        "cfg": 1.0,
+        "sampler": "euler",
+        "scheduler": "simple",
+        "diffusion_model": "qwen_image_2.1_bf16.safetensors",
+        "text_encoder": "qwen3vl_8b_bf16.safetensors",
+        "prompt_enhancer": "qwen3.5_9b_qwen_image_2.1_pe_t2i.int8_convrot.safetensors",
+        "pe_temperature": 1.0,
+        "pe_top_p": 0.95,
+        "pe_top_k": 20,
+        "pe_presence_penalty": 1.5
+      },
+      "workflow": "workflows/qwen21_pe/c01_renewables_bar_en.json",
+      "image": "images/qwen21_pe/c01_renewables_bar_en.png",
+      "prompt_id": "dfc66cb0-c5fc-4267-a580-540a57b591db",
+      "resource_lease_id": "80ab8e1d-606e-4783-8a5b-4efa3f1bd5c2",
+      "elapsed_seconds": 71.59,
+      "image_dimensions": [
+        1536,
+        1024
+      ],
+      "status": "success",
+      "peak_vram_mb_observed": 23042,
+      "peak_comfy_rss_mb_observed": 40173,
+      "peak_temperature_c_observed": 78,
+      "peak_gpu_utilization_pct_observed": 100,
+      "gpu_samples": 18,
+      "completed_at": "2026-10-14T12:25:11.430979+00:00",
+      "pe_required_label_value_substrings_missing": [],
+      "image_sha256": "4b7fae5b71c743fb60ba4857389c31bb605c247f57c421e61d2f74a5792aee39"
+    },
+    {
+      "owner": "Sean",
+      "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+      "job": "c02_commute_bar_zh",
+      "case_id": "c02_commute_bar_zh",
+      "model": "Qwen-Image-2.1 BF16 + Qwen Image 2.1 T2I Prompt Rewrite PE",
+      "language": "zh",
+      "seed": 42,
+      "source_data": "合成示例数据，仅用于图表表达测试",
+      "case_ground_truth": [
+        [
+          "海城",
+          52
+        ],
+        [
+          "云城",
+          46
+        ],
+        [
+          "林城",
+          39
+        ],
+        [
+          "河城",
+          34
+        ],
+        [
+          "山城",
+          28
+        ],
+        [
+          "湖城",
+          23
+        ]
+      ],
+      "input_prompt": "生成一张横向3:2信息图。按区域逐一描述并呈现：顶部标题与副标题；中央horizontal bar chart ranked descending; zero baseline；底部小号来源说明。风格：简洁瑞士编辑风，米白底、墨绿与朱红点缀、留白清晰。标题原文：『城市通勤时间』。副标题原文：『六座城市的单程平均分钟数』。逐项准确呈现以下数据，类别、顺序、数值、单位不得改动：\n海城: 52 分钟\n云城: 46 分钟\n林城: 39 分钟\n河城: 34 分钟\n山城: 28 分钟\n湖城: 23 分钟\n来源说明原文：『合成示例数据，仅用于图表表达测试』。编码要求：海城最长52分钟，湖城最短23分钟，按降序排列，条长与数值成比例。 图形长度或面积必须与数值成比例；柱状图从零基线开始；不得推算、四舍五入、遗漏、重复或编造数据。所有引号文字清晰、逐字正确。除解读数据所需图例外不要增加文字，不要logo或水印。",
+      "actual_pe_prompt_file": "prompts/qwen21_pe_outputs/c02_commute_bar_zh.txt",
+      "parameters": {
+        "resolution": "1536x1024",
+        "steps": 40,
+        "cfg": 1.0,
+        "sampler": "euler",
+        "scheduler": "simple",
+        "diffusion_model": "qwen_image_2.1_bf16.safetensors",
+        "text_encoder": "qwen3vl_8b_bf16.safetensors",
+        "prompt_enhancer": "qwen3.5_9b_qwen_image_2.1_pe_t2i.int8_convrot.safetensors",
+        "pe_temperature": 1.0,
+        "pe_top_p": 0.95,
+        "pe_top_k": 20,
+        "pe_presence_penalty": 1.5
+      },
+      "workflow": "workflows/qwen21_pe/c02_commute_bar_zh.json",
+      "image": "images/qwen21_pe/c02_commute_bar_zh.png",
+      "prompt_id": "606592e5-20cb-4912-8013-3d07c2884e83",
+      "resource_lease_id": "80ab8e1d-606e-4783-8a5b-4efa3f1bd5c2",
+      "elapsed_seconds": 48.89,
+      "image_dimensions": [
+        1536,
+        1024
+      ],
+      "status": "success",
+      "peak_vram_mb_observed": 23096,
+      "peak_comfy_rss_mb_observed": 40500,
+      "peak_temperature_c_observed": 80,
+      "peak_gpu_utilization_pct_observed": 100,
+      "gpu_samples": 13,
+      "completed_at": "2026-10-14T12:26:00.435354+00:00",
+      "pe_required_label_value_substrings_missing": [],
+      "image_sha256": "9ba589514ecdaa529a0949d16a75a9c740b50ae66561ca10d29b85bcfb435e7d"
+    },
+    {
+      "owner": "Sean",
+      "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+      "job": "c03_garden_line_en",
+      "case_id": "c03_garden_line_en",
+      "model": "Qwen-Image-2.1 BF16 + Qwen Image 2.1 T2I Prompt Rewrite PE",
+      "language": "en",
+      "seed": 42,
+      "source_data": "Synthetic sample measurements; not real climate observations",
+      "case_ground_truth": [
+        [
+          "Mon",
+          12
+        ],
+        [
+          "Tue",
+          14
+        ],
+        [
+          "Wed",
+          15
+        ],
+        [
+          "Thu",
+          19
+        ],
+        [
+          "Fri",
+          22
+        ],
+        [
+          "Sat",
+          24
+        ]
+      ],
+      "input_prompt": "Create one landscape 3:2 infographic. Describe and render the page region by region: top title and subtitle; central line chart with six points; connected in time order; a small source note at the bottom. Style: warm field-notes editorial, cream paper, terracotta and sage, small hand-drawn leaf accents. Exact title: 'A balcony garden warms up'. Exact subtitle: 'Daily noon temperature across six observations'. Show this dataset exactly, preserving every category, order, value, and unit:\nMon: 12 °C\nTue: 14 °C\nWed: 15 °C\nThu: 19 °C\nFri: 22 °C\nSat: 24 °C\nSource note, render verbatim: 'Synthetic sample measurements; not real climate observations'. Data-encoding requirements: The line rises overall, with every point plotted at its exact value; label synthetic sample. Make the chart geometry directly proportional to the listed values; use a zero baseline for bars; do not infer, round, omit, duplicate, or invent any data. Render all quoted strings legibly and exactly. No extra text, legend labels only when needed to decode the listed categories, no logo or watermark.",
+      "actual_pe_prompt_file": "prompts/qwen21_pe_outputs/c03_garden_line_en.txt",
+      "parameters": {
+        "resolution": "1536x1024",
+        "steps": 40,
+        "cfg": 1.0,
+        "sampler": "euler",
+        "scheduler": "simple",
+        "diffusion_model": "qwen_image_2.1_bf16.safetensors",
+        "text_encoder": "qwen3vl_8b_bf16.safetensors",
+        "prompt_enhancer": "qwen3.5_9b_qwen_image_2.1_pe_t2i.int8_convrot.safetensors",
+        "pe_temperature": 1.0,
+        "pe_top_p": 0.95,
+        "pe_top_k": 20,
+        "pe_presence_penalty": 1.5
+      },
+      "workflow": "workflows/qwen21_pe/c03_garden_line_en.json",
+      "image": "images/qwen21_pe/c03_garden_line_en.png",
+      "prompt_id": "3b112024-0c91-4489-9f44-dc0ea296addd",
+      "resource_lease_id": "80ab8e1d-606e-4783-8a5b-4efa3f1bd5c2",
+      "elapsed_seconds": 56.96,
+      "image_dimensions": [
+        1536,
+        1024
+      ],
+      "status": "success",
+      "peak_vram_mb_observed": 23064,
+      "peak_comfy_rss_mb_observed": 40555,
+      "peak_temperature_c_observed": 80,
+      "peak_gpu_utilization_pct_observed": 100,
+      "gpu_samples": 15,
+      "completed_at": "2026-10-14T12:26:57.498869+00:00",
+      "pe_required_label_value_substrings_missing": [],
+      "image_sha256": "5322f3d7f002f466ca3b2e9d6777a4b50787150a642f58cdf2a33834a92a1b94"
+    },
+    {
+      "owner": "Sean",
+      "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+      "job": "c04_energy_stacked_zh",
+      "case_id": "c04_energy_stacked_zh",
+      "model": "Qwen-Image-2.1 BF16 + Qwen Image 2.1 T2I Prompt Rewrite PE",
+      "language": "zh",
+      "seed": 42,
+      "source_data": "合成示例数据；每地合计100%",
+      "case_ground_truth": [
+        [
+          "甲地-太阳能",
+          40
+        ],
+        [
+          "甲地-风能",
+          35
+        ],
+        [
+          "甲地-水电",
+          25
+        ],
+        [
+          "乙地-太阳能",
+          25
+        ],
+        [
+          "乙地-风能",
+          25
+        ],
+        [
+          "乙地-水电",
+          50
+        ]
+      ],
+      "input_prompt": "生成一张横向3:2信息图。按区域逐一描述并呈现：顶部标题与副标题；中央two 100% stacked bars; same color per category, legend；底部小号来源说明。风格：复古印刷信息图，浅黄纸色、海军蓝与橘色、纹理克制。标题原文：『两地用电结构』。副标题原文：『各能源占比，合成示例数据』。逐项准确呈现以下数据，类别、顺序、数值、单位不得改动：\n甲地-太阳能: 40 %\n甲地-风能: 35 %\n甲地-水电: 25 %\n乙地-太阳能: 25 %\n乙地-风能: 25 %\n乙地-水电: 50 %\n来源说明原文：『合成示例数据；每地合计100%』。编码要求：甲地太阳40风35水25；乙地太阳25风25水50；each bar totals100; consistent legend colors. 图形长度或面积必须与数值成比例；柱状图从零基线开始；不得推算、四舍五入、遗漏、重复或编造数据。所有引号文字清晰、逐字正确。除解读数据所需图例外不要增加文字，不要logo或水印。",
+      "actual_pe_prompt_file": "prompts/qwen21_pe_outputs/c04_energy_stacked_zh.txt",
+      "parameters": {
+        "resolution": "1536x1024",
+        "steps": 40,
+        "cfg": 1.0,
+        "sampler": "euler",
+        "scheduler": "simple",
+        "diffusion_model": "qwen_image_2.1_bf16.safetensors",
+        "text_encoder": "qwen3vl_8b_bf16.safetensors",
+        "prompt_enhancer": "qwen3.5_9b_qwen_image_2.1_pe_t2i.int8_convrot.safetensors",
+        "pe_temperature": 1.0,
+        "pe_top_p": 0.95,
+        "pe_top_k": 20,
+        "pe_presence_penalty": 1.5
+      },
+      "workflow": "workflows/qwen21_pe/c04_energy_stacked_zh.json",
+      "image": "images/qwen21_pe/c04_energy_stacked_zh.png",
+      "prompt_id": "8c12a382-7fd2-4d78-86c4-84ca95852ac9",
+      "resource_lease_id": "80ab8e1d-606e-4783-8a5b-4efa3f1bd5c2",
+      "elapsed_seconds": 52.86,
+      "image_dimensions": [
+        1536,
+        1024
+      ],
+      "status": "success",
+      "peak_vram_mb_observed": 23106,
+      "peak_comfy_rss_mb_observed": 40555,
+      "peak_temperature_c_observed": 81,
+      "peak_gpu_utilization_pct_observed": 100,
+      "gpu_samples": 14,
+      "completed_at": "2026-10-14T12:27:50.459246+00:00",
+      "pe_required_label_value_substrings_missing": [
+        "label:甲地-太阳能",
+        "label:甲地-风能",
+        "label:甲地-水电",
+        "label:乙地-太阳能",
+        "label:乙地-风能",
+        "label:乙地-水电"
+      ],
+      "image_sha256": "943a9f516c5752483aafc6f7c8fdd05fa16f52ac1aff68a374c8b234065787b1"
+    },
+    {
+      "owner": "Sean",
+      "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+      "job": "c05_budget_donut_zh",
+      "case_id": "c05_budget_donut_zh",
+      "model": "Qwen-Image-2.1 BF16 + Qwen Image 2.1 T2I Prompt Rewrite PE",
+      "language": "zh",
+      "seed": 42,
+      "source_data": "合成示例数据；五项合计100%",
+      "case_ground_truth": [
+        [
+          "住房",
+          35
+        ],
+        [
+          "饮食",
+          25
+        ],
+        [
+          "交通",
+          20
+        ],
+        [
+          "储蓄",
+          12
+        ],
+        [
+          "其他",
+          8
+        ]
+      ],
+      "input_prompt": "生成一张横向3:2信息图。按区域逐一描述并呈现：顶部标题与副标题；中央donut chart with five labeled segments, proportional angles and values；底部小号来源说明。风格：明快杂志编辑风，柔和淡紫、橙、青绿，图标轻量且不抢数据。标题原文：『每月预算怎么分』。副标题原文：『合成示例数据 · 总额占比』。逐项准确呈现以下数据，类别、顺序、数值、单位不得改动：\n住房: 35 %\n饮食: 25 %\n交通: 20 %\n储蓄: 12 %\n其他: 8 %\n来源说明原文：『合成示例数据；五项合计100%』。编码要求：segments sum100 and are proportional; housing largest, other smallest. 图形长度或面积必须与数值成比例；柱状图从零基线开始；不得推算、四舍五入、遗漏、重复或编造数据。所有引号文字清晰、逐字正确。除解读数据所需图例外不要增加文字，不要logo或水印。",
+      "actual_pe_prompt_file": "prompts/qwen21_pe_outputs/c05_budget_donut_zh.txt",
+      "parameters": {
+        "resolution": "1536x1024",
+        "steps": 40,
+        "cfg": 1.0,
+        "sampler": "euler",
+        "scheduler": "simple",
+        "diffusion_model": "qwen_image_2.1_bf16.safetensors",
+        "text_encoder": "qwen3vl_8b_bf16.safetensors",
+        "prompt_enhancer": "qwen3.5_9b_qwen_image_2.1_pe_t2i.int8_convrot.safetensors",
+        "pe_temperature": 1.0,
+        "pe_top_p": 0.95,
+        "pe_top_k": 20,
+        "pe_presence_penalty": 1.5
+      },
+      "workflow": "workflows/qwen21_pe/c05_budget_donut_zh.json",
+      "image": "images/qwen21_pe/c05_budget_donut_zh.png",
+      "prompt_id": "ec032519-f565-48aa-bec1-0534fe7715ae",
+      "resource_lease_id": "80ab8e1d-606e-4783-8a5b-4efa3f1bd5c2",
+      "elapsed_seconds": 54.88,
+      "image_dimensions": [
+        1536,
+        1024
+      ],
+      "status": "success",
+      "peak_vram_mb_observed": 23096,
+      "peak_comfy_rss_mb_observed": 40507,
+      "peak_temperature_c_observed": 81,
+      "peak_gpu_utilization_pct_observed": 100,
+      "gpu_samples": 14,
+      "completed_at": "2026-10-14T12:28:45.432547+00:00",
+      "pe_required_label_value_substrings_missing": [],
+      "image_sha256": "8c60b291d77371428daff8a3bb390c8fe11f428c257c48579189ee548f7bb677"
+    },
+    {
+      "owner": "Sean",
+      "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+      "job": "c06_recycling_flow_en",
+      "case_id": "c06_recycling_flow_en",
+      "model": "Qwen-Image-2.1 BF16 + Qwen Image 2.1 T2I Prompt Rewrite PE",
+      "language": "en",
+      "seed": 42,
+      "source_data": "Synthetic audit data; not a real municipal report",
+      "case_ground_truth": [
+        [
+          "Collected",
+          120
+        ],
+        [
+          "Recycled",
+          84
+        ],
+        [
+          "Contaminated",
+          18
+        ],
+        [
+          "Unsorted loss",
+          18
+        ]
+      ],
+      "input_prompt": "Create one landscape 3:2 infographic. Describe and render the page region by region: top title and subtitle; central Sankey-style flow diagram with accurate branch widths; a small source note at the bottom. Style: eco-friendly flat editorial, pale paper, forest green and kraft brown. Exact title: 'Where 120 kg of paper goes'. Exact subtitle: 'A synthetic one-week recycling audit'. Show this dataset exactly, preserving every category, order, value, and unit:\nCollected: 120 kg\nRecycled: 84 kg\nContaminated: 18 kg\nUnsorted loss: 18 kg\nSource note, render verbatim: 'Synthetic audit data; not a real municipal report'. Data-encoding requirements: 120 splits exactly into 84+18+18; branch widths proportional; flows labeled with units. Make the chart geometry directly proportional to the listed values; use a zero baseline for bars; do not infer, round, omit, duplicate, or invent any data. Render all quoted strings legibly and exactly. No extra text, legend labels only when needed to decode the listed categories, no logo or watermark.",
+      "actual_pe_prompt_file": "prompts/qwen21_pe_outputs/c06_recycling_flow_en.txt",
+      "parameters": {
+        "resolution": "1536x1024",
+        "steps": 40,
+        "cfg": 1.0,
+        "sampler": "euler",
+        "scheduler": "simple",
+        "diffusion_model": "qwen_image_2.1_bf16.safetensors",
+        "text_encoder": "qwen3vl_8b_bf16.safetensors",
+        "prompt_enhancer": "qwen3.5_9b_qwen_image_2.1_pe_t2i.int8_convrot.safetensors",
+        "pe_temperature": 1.0,
+        "pe_top_p": 0.95,
+        "pe_top_k": 20,
+        "pe_presence_penalty": 1.5
+      },
+      "workflow": "workflows/qwen21_pe/c06_recycling_flow_en.json",
+      "image": "images/qwen21_pe/c06_recycling_flow_en.png",
+      "prompt_id": "c117eea5-f025-4d91-bf4c-5da65aa61116",
+      "resource_lease_id": "80ab8e1d-606e-4783-8a5b-4efa3f1bd5c2",
+      "elapsed_seconds": 58.95,
+      "image_dimensions": [
+        1536,
+        1024
+      ],
+      "status": "success",
+      "peak_vram_mb_observed": 23074,
+      "peak_comfy_rss_mb_observed": 40532,
+      "peak_temperature_c_observed": 81,
+      "peak_gpu_utilization_pct_observed": 100,
+      "gpu_samples": 15,
+      "completed_at": "2026-10-14T12:29:44.474640+00:00",
+      "pe_required_label_value_substrings_missing": [],
+      "image_sha256": "da25ad08aea21e275e026b115efefa6dda1f98aded6d6d884e18acc09a97a12f"
+    },
+    {
+      "owner": "Sean",
+      "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+      "job": "c07_water_before_after_en",
+      "case_id": "c07_water_before_after_en",
+      "model": "Qwen-Image-2.1 BF16 + Qwen Image 2.1 T2I Prompt Rewrite PE",
+      "language": "en",
+      "seed": 42,
+      "source_data": "Synthetic controlled example; reduction is exactly 25%",
+      "case_ground_truth": [
+        [
+          "Before",
+          72
+        ],
+        [
+          "After",
+          54
+        ]
+      ],
+      "input_prompt": "Create one landscape 3:2 infographic. Describe and render the page region by region: top title and subtitle; central paired before/after bars with common zero baseline; a small source note at the bottom. Style: technical blueprint editorial, pale blue grid, cobalt and amber, precise labels. Exact title: 'A small leak, a measurable fix'. Exact subtitle: 'Water used per test cycle · synthetic data'. Show this dataset exactly, preserving every category, order, value, and unit:\nBefore: 72 L\nAfter: 54 L\nSource note, render verbatim: 'Synthetic controlled example; reduction is exactly 25%'. Data-encoding requirements: Before is 72 L; after 54 L; show decrease of 18 L / 25% without reversing bars. Make the chart geometry directly proportional to the listed values; use a zero baseline for bars; do not infer, round, omit, duplicate, or invent any data. Render all quoted strings legibly and exactly. No extra text, legend labels only when needed to decode the listed categories, no logo or watermark.",
+      "actual_pe_prompt_file": "prompts/qwen21_pe_outputs/c07_water_before_after_en.txt",
+      "parameters": {
+        "resolution": "1536x1024",
+        "steps": 40,
+        "cfg": 1.0,
+        "sampler": "euler",
+        "scheduler": "simple",
+        "diffusion_model": "qwen_image_2.1_bf16.safetensors",
+        "text_encoder": "qwen3vl_8b_bf16.safetensors",
+        "prompt_enhancer": "qwen3.5_9b_qwen_image_2.1_pe_t2i.int8_convrot.safetensors",
+        "pe_temperature": 1.0,
+        "pe_top_p": 0.95,
+        "pe_top_k": 20,
+        "pe_presence_penalty": 1.5
+      },
+      "workflow": "workflows/qwen21_pe/c07_water_before_after_en.json",
+      "image": "images/qwen21_pe/c07_water_before_after_en.png",
+      "prompt_id": "bad3710c-db88-4a45-8afc-68dd18e127f4",
+      "resource_lease_id": "80ab8e1d-606e-4783-8a5b-4efa3f1bd5c2",
+      "elapsed_seconds": 54.91,
+      "image_dimensions": [
+        1536,
+        1024
+      ],
+      "status": "success",
+      "peak_vram_mb_observed": 22978,
+      "peak_comfy_rss_mb_observed": 40532,
+      "peak_temperature_c_observed": 82,
+      "peak_gpu_utilization_pct_observed": 100,
+      "gpu_samples": 14,
+      "completed_at": "2026-10-14T12:30:39.481473+00:00",
+      "pe_required_label_value_substrings_missing": [],
+      "image_sha256": "4bd478bd9294d913491c975f8d538bc9a9dbba52398fcf9f10fd38e745eb1a9e"
+    },
+    {
+      "owner": "Sean",
+      "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+      "job": "c08_seed_timeline_zh",
+      "case_id": "c08_seed_timeline_zh",
+      "model": "Qwen-Image-2.1 BF16 + Qwen Image 2.1 T2I Prompt Rewrite PE",
+      "language": "zh",
+      "seed": 42,
+      "source_data": "合成示例观察；非真实实验结论",
+      "case_ground_truth": [
+        [
+          "第1天",
+          2
+        ],
+        [
+          "第3天",
+          4
+        ],
+        [
+          "第5天",
+          7
+        ],
+        [
+          "第7天",
+          10
+        ],
+        [
+          "第9天",
+          13
+        ]
+      ],
+      "input_prompt": "生成一张横向3:2信息图。按区域逐一描述并呈现：顶部标题与副标题；中央horizontal timeline with five proportional growth markers；底部小号来源说明。风格：植物图鉴风，淡奶油底、叶绿和暖黄，克制线描种子图案。标题原文：『种子发芽观察』。副标题原文：『合成示例数据 · 茎长随时间变化』。逐项准确呈现以下数据，类别、顺序、数值、单位不得改动：\n第1天: 2 厘米\n第3天: 4 厘米\n第5天: 7 厘米\n第7天: 10 厘米\n第9天: 13 厘米\n来源说明原文：『合成示例观察；非真实实验结论』。编码要求：chronological order; marker position and size increase proportionally; exact day and cm values. 图形长度或面积必须与数值成比例；柱状图从零基线开始；不得推算、四舍五入、遗漏、重复或编造数据。所有引号文字清晰、逐字正确。除解读数据所需图例外不要增加文字，不要logo或水印。",
+      "actual_pe_prompt_file": "prompts/qwen21_pe_outputs/c08_seed_timeline_zh.txt",
+      "parameters": {
+        "resolution": "1536x1024",
+        "steps": 40,
+        "cfg": 1.0,
+        "sampler": "euler",
+        "scheduler": "simple",
+        "diffusion_model": "qwen_image_2.1_bf16.safetensors",
+        "text_encoder": "qwen3vl_8b_bf16.safetensors",
+        "prompt_enhancer": "qwen3.5_9b_qwen_image_2.1_pe_t2i.int8_convrot.safetensors",
+        "pe_temperature": 1.0,
+        "pe_top_p": 0.95,
+        "pe_top_k": 20,
+        "pe_presence_penalty": 1.5
+      },
+      "workflow": "workflows/qwen21_pe/c08_seed_timeline_zh.json",
+      "image": "images/qwen21_pe/c08_seed_timeline_zh.png",
+      "prompt_id": "7d67b9e5-bea2-4003-845e-bb2224688f54",
+      "resource_lease_id": "80ab8e1d-606e-4783-8a5b-4efa3f1bd5c2",
+      "elapsed_seconds": 59.23,
+      "image_dimensions": [
+        1536,
+        1024
+      ],
+      "status": "success",
+      "peak_vram_mb_observed": 23175,
+      "peak_comfy_rss_mb_observed": 40532,
+      "peak_temperature_c_observed": 81,
+      "peak_gpu_utilization_pct_observed": 100,
+      "gpu_samples": 15,
+      "completed_at": "2026-10-14T12:31:38.818166+00:00",
+      "pe_required_label_value_substrings_missing": [],
+      "image_sha256": "1bcdc620930fed8da19d8d59fd97f9ca0fc05ea44b700eed6804a2a406d3d5b4"
+    }
+  ]
+}

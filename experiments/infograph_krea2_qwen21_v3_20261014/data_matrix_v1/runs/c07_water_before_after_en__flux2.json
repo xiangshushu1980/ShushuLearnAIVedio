@@ -1,0 +1,56 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "job": "c07_water_before_after_en__flux2",
+  "case_id": "c07_water_before_after_en",
+  "model": "flux2",
+  "language": "en",
+  "seed": 42,
+  "source_data": "Synthetic controlled example; reduction is exactly 25%",
+  "case_ground_truth": [
+    [
+      "Before",
+      72
+    ],
+    [
+      "After",
+      54
+    ]
+  ],
+  "input_prompt": "Landscape 3:2 infographic. SUBJECT: A small leak, a measurable fix. STYLE: technical blueprint editorial, pale blue grid, cobalt and amber, precise labels. LAYOUT: headline 'A small leak, a measurable fix' at top; subtitle 'Water used per test cycle · synthetic data'; one central paired before/after bars with common zero baseline; small source footer 'Synthetic controlled example; reduction is exactly 25%'. DATA (verbatim labels, exact values and units): Before: 72 L\nAfter: 54 L. ENCODING: Before is 72 L; after 54 L; show decrease of 18 L / 25% without reversing bars. Bars start at zero and lengths are proportional; time series stays chronological; categories keep consistent colors. Visual hierarchy: title > chart/data labels > subtitle/source. Flat, legible, aligned, generous whitespace. No extra data or text, no invented labels, logo, or watermark.",
+  "parameters": {
+    "resolution": "1536x1024",
+    "seed": 42,
+    "sampler": "euler",
+    "scheduler": "Flux2Scheduler",
+    "prompt_file": "prompts/c07_water_before_after_en__flux2.txt",
+    "steps": 50,
+    "cfg": 3.5,
+    "diffusion_model": "flux-2-klein-9b.safetensors",
+    "text_encoder": "qwen_3_8b.safetensors",
+    "vae": "flux2-vae.safetensors"
+  },
+  "workflow": "workflows/c07_water_before_after_en__flux2.json",
+  "image": "images/c07_water_before_after_en__flux2.png",
+  "resource_lease_id": "4c5b9674-1c34-40e2-94c5-9f7d2f6f5c17",
+  "started_at": "2026-10-14T12:18:37.238801+00:00",
+  "prompt_id": "b75ac594-b28e-4248-90b3-98971f0a7638",
+  "status": "success",
+  "completed_at": "2026-10-14T12:19:38.224350+00:00",
+  "elapsed_seconds": 60.99,
+  "image_dimensions": [
+    1536,
+    1024
+  ],
+  "peak_vram_mb_observed": 22342,
+  "peak_comfy_rss_mb_observed": 35296,
+  "peak_temperature_c_observed": 82,
+  "peak_gpu_utilization_pct_observed": 100,
+  "gpu_samples": 16,
+  "image_filename": {
+    "filename": "c07_water_before_after_en__flux2_00001_.png",
+    "subfolder": "infograph-data-matrix-v1",
+    "type": "output",
+    "id": "4d3db8e6-443b-4088-bc2a-782f3fbc43ae"
+  }
+}

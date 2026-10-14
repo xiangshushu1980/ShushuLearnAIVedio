@@ -1,0 +1,75 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "job": "c02_commute_bar_zh__krea2",
+  "case_id": "c02_commute_bar_zh",
+  "model": "krea2",
+  "language": "zh",
+  "seed": 42,
+  "source_data": "合成示例数据，仅用于图表表达测试",
+  "case_ground_truth": [
+    [
+      "海城",
+      52
+    ],
+    [
+      "云城",
+      46
+    ],
+    [
+      "林城",
+      39
+    ],
+    [
+      "河城",
+      34
+    ],
+    [
+      "山城",
+      28
+    ],
+    [
+      "湖城",
+      23
+    ]
+  ],
+  "input_prompt": "Design a polished landscape 3:2 infographic page with a clear reading path from the headline to the chart and then to a small source line. The subject is 城市通勤时间. Use the exact headline \"城市通勤时间\" and subtitle \"六座城市的单程平均分钟数\". Build the central visual as a horizontal bar chart ranked descending; zero baseline. The visual style is 简洁瑞士编辑风，米白底、墨绿与朱红点缀、留白清晰. This is a data-accuracy task: reproduce every row below exactly, keeping category names, order, values, and units. Let visual lengths/areas accurately encode the values; use a zero baseline for bars and a consistent legend for repeated categories. Dataset:\n海城: 52 分钟\n云城: 46 分钟\n林城: 39 分钟\n河城: 34 分钟\n山城: 28 分钟\n湖城: 23 分钟\nRender this exact source note: \"合成示例数据，仅用于图表表达测试\". Key reading: 海城最长52分钟，湖城最短23分钟，按降序排列，条长与数值成比例。 Do not calculate or add claims beyond this stated reading. Do not omit, duplicate, round, reorder, or invent a value. Keep all typography crisp and integrated with the design. Add no other words, decorative numerals, logo, or watermark.",
+  "parameters": {
+    "resolution": "1536x1024",
+    "seed": 42,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "prompt_file": "prompts/c02_commute_bar_zh__krea2.txt",
+    "steps": 52,
+    "cfg": 3.5,
+    "diffusion_model": "krea2_raw_bf16.safetensors",
+    "text_encoder": "qwen3vl_4b_bf16.safetensors",
+    "vae": "qwen_image_vae.safetensors",
+    "negative_prompt": "text, watermark, logo, blurry"
+  },
+  "workflow": "workflows/c02_commute_bar_zh__krea2.json",
+  "image": "images/c02_commute_bar_zh__krea2.png",
+  "resource_lease_id": "4c5b9674-1c34-40e2-94c5-9f7d2f6f5c17",
+  "started_at": "2026-10-14T11:59:08.708004+00:00",
+  "prompt_id": "8d747287-3a6c-495e-a656-e00c7e556b56",
+  "status": "success",
+  "completed_at": "2026-10-14T12:00:58.473823+00:00",
+  "elapsed_seconds": 109.77,
+  "image_dimensions": [
+    1536,
+    1024
+  ],
+  "peak_vram_mb_observed": 22393,
+  "peak_comfy_rss_mb_observed": 36193,
+  "peak_temperature_c_observed": 80,
+  "peak_gpu_utilization_pct_observed": 100,
+  "gpu_samples": 28,
+  "image_filename": {
+    "filename": "c02_commute_bar_zh__krea2_00001_.png",
+    "subfolder": "infograph-data-matrix-v1",
+    "type": "output",
+    "id": "c72a6e4f-c21e-472f-bf77-50e9dc0b5289"
+  },
+  "prompt_strategy": "inherited control, negative prompt includes text",
+  "image_sha256": "c6d5fecf3379454393df1f5d6f2e8a2900231296ef765600721bd3e1952c40d5"
+}

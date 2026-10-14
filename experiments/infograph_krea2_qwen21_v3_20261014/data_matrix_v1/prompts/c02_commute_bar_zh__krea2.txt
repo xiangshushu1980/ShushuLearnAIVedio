@@ -1,0 +1,8 @@
+Design a polished landscape 3:2 infographic page with a clear reading path from the headline to the chart and then to a small source line. The subject is 城市通勤时间. Use the exact headline "城市通勤时间" and subtitle "六座城市的单程平均分钟数". Build the central visual as a horizontal bar chart ranked descending; zero baseline. The visual style is 简洁瑞士编辑风，米白底、墨绿与朱红点缀、留白清晰. This is a data-accuracy task: reproduce every row below exactly, keeping category names, order, values, and units. Let visual lengths/areas accurately encode the values; use a zero baseline for bars and a consistent legend for repeated categories. Dataset:
+海城: 52 分钟
+云城: 46 分钟
+林城: 39 分钟
+河城: 34 分钟
+山城: 28 分钟
+湖城: 23 分钟
+Render this exact source note: "合成示例数据，仅用于图表表达测试". Key reading: 海城最长52分钟，湖城最短23分钟，按降序排列，条长与数值成比例。 Do not calculate or add claims beyond this stated reading. Do not omit, duplicate, round, reorder, or invent a value. Keep all typography crisp and integrated with the design. Add no other words, decorative numerals, logo, or watermark.

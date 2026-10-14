@@ -1,0 +1,71 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "job": "c08_seed_timeline_zh__krea2",
+  "case_id": "c08_seed_timeline_zh",
+  "model": "krea2",
+  "language": "zh",
+  "seed": 42,
+  "source_data": "合成示例观察；非真实实验结论",
+  "case_ground_truth": [
+    [
+      "第1天",
+      2
+    ],
+    [
+      "第3天",
+      4
+    ],
+    [
+      "第5天",
+      7
+    ],
+    [
+      "第7天",
+      10
+    ],
+    [
+      "第9天",
+      13
+    ]
+  ],
+  "input_prompt": "Design a polished landscape 3:2 infographic page with a clear reading path from the headline to the chart and then to a small source line. The subject is 种子发芽观察. Use the exact headline \"种子发芽观察\" and subtitle \"合成示例数据 · 茎长随时间变化\". Build the central visual as a horizontal timeline with five proportional growth markers. The visual style is 植物图鉴风，淡奶油底、叶绿和暖黄，克制线描种子图案. This is a data-accuracy task: reproduce every row below exactly, keeping category names, order, values, and units. Let visual lengths/areas accurately encode the values; use a zero baseline for bars and a consistent legend for repeated categories. Dataset:\n第1天: 2 厘米\n第3天: 4 厘米\n第5天: 7 厘米\n第7天: 10 厘米\n第9天: 13 厘米\nRender this exact source note: \"合成示例观察；非真实实验结论\". Key reading: chronological order; marker position and size increase proportionally; exact day and cm values. Do not calculate or add claims beyond this stated reading. Do not omit, duplicate, round, reorder, or invent a value. Keep all typography crisp and integrated with the design. Add no other words, decorative numerals, logo, or watermark.",
+  "parameters": {
+    "resolution": "1536x1024",
+    "seed": 42,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "prompt_file": "prompts/c08_seed_timeline_zh__krea2.txt",
+    "steps": 52,
+    "cfg": 3.5,
+    "diffusion_model": "krea2_raw_bf16.safetensors",
+    "text_encoder": "qwen3vl_4b_bf16.safetensors",
+    "vae": "qwen_image_vae.safetensors",
+    "negative_prompt": "text, watermark, logo, blurry"
+  },
+  "workflow": "workflows/c08_seed_timeline_zh__krea2.json",
+  "image": "images/c08_seed_timeline_zh__krea2.png",
+  "resource_lease_id": "4c5b9674-1c34-40e2-94c5-9f7d2f6f5c17",
+  "started_at": "2026-10-14T12:10:03.208105+00:00",
+  "prompt_id": "2e997f6c-6cf7-4118-ac72-ace4374a9091",
+  "status": "success",
+  "completed_at": "2026-10-14T12:11:53.058922+00:00",
+  "elapsed_seconds": 109.85,
+  "image_dimensions": [
+    1536,
+    1024
+  ],
+  "peak_vram_mb_observed": 22393,
+  "peak_comfy_rss_mb_observed": 36209,
+  "peak_temperature_c_observed": 81,
+  "peak_gpu_utilization_pct_observed": 100,
+  "gpu_samples": 28,
+  "image_filename": {
+    "filename": "c08_seed_timeline_zh__krea2_00001_.png",
+    "subfolder": "infograph-data-matrix-v1",
+    "type": "output",
+    "id": "772e4bb1-462f-4f8d-938c-09f1fb5f573a"
+  },
+  "prompt_strategy": "inherited control, negative prompt includes text",
+  "image_sha256": "cb391f7d0a51fa84d94e147a18dbe78acde8cbfc5f8dc6eafff4c2d640ed262e"
+}

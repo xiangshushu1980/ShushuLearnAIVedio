@@ -1,0 +1,71 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "job": "c05_budget_donut_zh__krea2",
+  "case_id": "c05_budget_donut_zh",
+  "model": "krea2",
+  "language": "zh",
+  "seed": 42,
+  "source_data": "合成示例数据；五项合计100%",
+  "case_ground_truth": [
+    [
+      "住房",
+      35
+    ],
+    [
+      "饮食",
+      25
+    ],
+    [
+      "交通",
+      20
+    ],
+    [
+      "储蓄",
+      12
+    ],
+    [
+      "其他",
+      8
+    ]
+  ],
+  "input_prompt": "Design a polished landscape 3:2 infographic page with a clear reading path from the headline to the chart and then to a small source line. The subject is 每月预算怎么分. Use the exact headline \"每月预算怎么分\" and subtitle \"合成示例数据 · 总额占比\". Build the central visual as a donut chart with five labeled segments, proportional angles and values. The visual style is 明快杂志编辑风，柔和淡紫、橙、青绿，图标轻量且不抢数据. This is a data-accuracy task: reproduce every row below exactly, keeping category names, order, values, and units. Let visual lengths/areas accurately encode the values; use a zero baseline for bars and a consistent legend for repeated categories. Dataset:\n住房: 35 %\n饮食: 25 %\n交通: 20 %\n储蓄: 12 %\n其他: 8 %\nRender this exact source note: \"合成示例数据；五项合计100%\". Key reading: segments sum100 and are proportional; housing largest, other smallest. Do not calculate or add claims beyond this stated reading. Do not omit, duplicate, round, reorder, or invent a value. Keep all typography crisp and integrated with the design. Add no other words, decorative numerals, logo, or watermark.",
+  "parameters": {
+    "resolution": "1536x1024",
+    "seed": 42,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "prompt_file": "prompts/c05_budget_donut_zh__krea2.txt",
+    "steps": 52,
+    "cfg": 3.5,
+    "diffusion_model": "krea2_raw_bf16.safetensors",
+    "text_encoder": "qwen3vl_4b_bf16.safetensors",
+    "vae": "qwen_image_vae.safetensors",
+    "negative_prompt": "text, watermark, logo, blurry"
+  },
+  "workflow": "workflows/c05_budget_donut_zh__krea2.json",
+  "image": "images/c05_budget_donut_zh__krea2.png",
+  "resource_lease_id": "4c5b9674-1c34-40e2-94c5-9f7d2f6f5c17",
+  "started_at": "2026-10-14T12:04:38.414443+00:00",
+  "prompt_id": "b426c73c-5cc3-4e5a-97d3-e52cface5d87",
+  "status": "success",
+  "completed_at": "2026-10-14T12:06:26.946301+00:00",
+  "elapsed_seconds": 108.53,
+  "image_dimensions": [
+    1536,
+    1024
+  ],
+  "peak_vram_mb_observed": 22353,
+  "peak_comfy_rss_mb_observed": 36197,
+  "peak_temperature_c_observed": 80,
+  "peak_gpu_utilization_pct_observed": 100,
+  "gpu_samples": 27,
+  "image_filename": {
+    "filename": "c05_budget_donut_zh__krea2_00001_.png",
+    "subfolder": "infograph-data-matrix-v1",
+    "type": "output",
+    "id": "9a71cf9b-90ec-4775-bc65-24725b28ea6d"
+  },
+  "prompt_strategy": "inherited control, negative prompt includes text",
+  "image_sha256": "dedcd7d219a4bb10afe22821b64170f85ddf2abfcc5be1809233454cf85567d9"
+}

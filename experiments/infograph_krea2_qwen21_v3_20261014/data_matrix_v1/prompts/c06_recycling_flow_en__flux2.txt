@@ -1,0 +1,4 @@
+Landscape 3:2 infographic. SUBJECT: Where 120 kg of paper goes. STYLE: eco-friendly flat editorial, pale paper, forest green and kraft brown. LAYOUT: headline 'Where 120 kg of paper goes' at top; subtitle 'A synthetic one-week recycling audit'; one central Sankey-style flow diagram with accurate branch widths; small source footer 'Synthetic audit data; not a real municipal report'. DATA (verbatim labels, exact values and units): Collected: 120 kg
+Recycled: 84 kg
+Contaminated: 18 kg
+Unsorted loss: 18 kg. ENCODING: 120 splits exactly into 84+18+18; branch widths proportional; flows labeled with units. Bars start at zero and lengths are proportional; time series stays chronological; categories keep consistent colors. Visual hierarchy: title > chart/data labels > subtitle/source. Flat, legible, aligned, generous whitespace. No extra data or text, no invented labels, logo, or watermark.

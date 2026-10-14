@@ -1,0 +1,71 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "job": "c05_budget_donut_zh__krea2_opt",
+  "case_id": "c05_budget_donut_zh",
+  "model": "krea2_opt",
+  "language": "zh",
+  "seed": 42,
+  "source_data": "合成示例数据；五项合计100%",
+  "case_ground_truth": [
+    [
+      "住房",
+      35
+    ],
+    [
+      "饮食",
+      25
+    ],
+    [
+      "交通",
+      20
+    ],
+    [
+      "储蓄",
+      12
+    ],
+    [
+      "其他",
+      8
+    ]
+  ],
+  "input_prompt": "Create a polished landscape 3:2 infographic with a clear editorial reading path. The exact headline is \"每月预算怎么分\" and the exact subtitle is \"合成示例数据 · 总额占比\". Present the provided dataset as a donut chart with five labeled segments, proportional angles and values, with every label and value printed exactly as quoted: \"住房: 35 %\"; \"饮食: 25 %\"; \"交通: 20 %\"; \"储蓄: 12 %\"; \"其他: 8 %\". Use 明快杂志编辑风，柔和淡紫、橙、青绿，图标轻量且不抢数据. Keep the visual encoding proportional to the data, preserve the listed order and category-to-value mapping, and use clear axes or a legend only where needed. Key reading: segments sum100 and are proportional; housing largest, other smallest. The source line is \"合成示例数据；五项合计100%\". All requested words and numbers are quoted so they can be rendered verbatim; add no other text, values, decorative numerals, logo, or watermark. Use a balanced composition with enough space for every label to remain legible.",
+  "parameters": {
+    "resolution": "1536x1024",
+    "seed": 42,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "prompt_file": "prompts/krea2_optimized/c05_budget_donut_zh.txt",
+    "steps": 52,
+    "cfg": 3.5,
+    "diffusion_model": "krea2_raw_bf16.safetensors",
+    "text_encoder": "qwen3vl_4b_bf16.safetensors",
+    "vae": "qwen_image_vae.safetensors",
+    "negative_prompt": "watermark, logo, blurry"
+  },
+  "workflow": "workflows/c05_budget_donut_zh__krea2_opt.json",
+  "image": "images/c05_budget_donut_zh__krea2_opt.png",
+  "resource_lease_id": "4bb54e2e-3d89-4bf7-b6ab-1adbf89d2c1b",
+  "started_at": "2026-10-14T12:49:21.339982+00:00",
+  "prompt_id": "6be864ac-e94c-4075-9169-cd9dbc60d21b",
+  "status": "success",
+  "completed_at": "2026-10-14T12:51:09.084793+00:00",
+  "elapsed_seconds": 107.74,
+  "image_dimensions": [
+    1536,
+    1024
+  ],
+  "peak_vram_mb_observed": 22282,
+  "peak_comfy_rss_mb_observed": 36340,
+  "peak_temperature_c_observed": 80,
+  "peak_gpu_utilization_pct_observed": 100,
+  "gpu_samples": 27,
+  "image_filename": {
+    "filename": "c05_budget_donut_zh__krea2_opt_00001_.png",
+    "subfolder": "infograph-data-matrix-v1",
+    "type": "output",
+    "id": "7bea5451-974f-4e38-880d-e63fd54d1760"
+  },
+  "prompt_strategy": "Krea natural-language expansion style, all target strings quoted; no text-negative conditioning",
+  "image_sha256": "367ba26e957ba97eb4138f2cf676db4bbb86c6498584935adaa553329a25dd42"
+}

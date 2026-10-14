@@ -1,0 +1,75 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "job": "c04_energy_stacked_zh__krea2",
+  "case_id": "c04_energy_stacked_zh",
+  "model": "krea2",
+  "language": "zh",
+  "seed": 42,
+  "source_data": "合成示例数据；每地合计100%",
+  "case_ground_truth": [
+    [
+      "甲地-太阳能",
+      40
+    ],
+    [
+      "甲地-风能",
+      35
+    ],
+    [
+      "甲地-水电",
+      25
+    ],
+    [
+      "乙地-太阳能",
+      25
+    ],
+    [
+      "乙地-风能",
+      25
+    ],
+    [
+      "乙地-水电",
+      50
+    ]
+  ],
+  "input_prompt": "Design a polished landscape 3:2 infographic page with a clear reading path from the headline to the chart and then to a small source line. The subject is 两地用电结构. Use the exact headline \"两地用电结构\" and subtitle \"各能源占比，合成示例数据\". Build the central visual as a two 100% stacked bars; same color per category, legend. The visual style is 复古印刷信息图，浅黄纸色、海军蓝与橘色、纹理克制. This is a data-accuracy task: reproduce every row below exactly, keeping category names, order, values, and units. Let visual lengths/areas accurately encode the values; use a zero baseline for bars and a consistent legend for repeated categories. Dataset:\n甲地-太阳能: 40 %\n甲地-风能: 35 %\n甲地-水电: 25 %\n乙地-太阳能: 25 %\n乙地-风能: 25 %\n乙地-水电: 50 %\nRender this exact source note: \"合成示例数据；每地合计100%\". Key reading: 甲地太阳40风35水25；乙地太阳25风25水50；each bar totals100; consistent legend colors. Do not calculate or add claims beyond this stated reading. Do not omit, duplicate, round, reorder, or invent a value. Keep all typography crisp and integrated with the design. Add no other words, decorative numerals, logo, or watermark.",
+  "parameters": {
+    "resolution": "1536x1024",
+    "seed": 42,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "prompt_file": "prompts/c04_energy_stacked_zh__krea2.txt",
+    "steps": 52,
+    "cfg": 3.5,
+    "diffusion_model": "krea2_raw_bf16.safetensors",
+    "text_encoder": "qwen3vl_4b_bf16.safetensors",
+    "vae": "qwen_image_vae.safetensors",
+    "negative_prompt": "text, watermark, logo, blurry"
+  },
+  "workflow": "workflows/c04_energy_stacked_zh__krea2.json",
+  "image": "images/c04_energy_stacked_zh__krea2.png",
+  "resource_lease_id": "4c5b9674-1c34-40e2-94c5-9f7d2f6f5c17",
+  "started_at": "2026-10-14T12:02:48.396817+00:00",
+  "prompt_id": "7be6270a-2187-44f4-94bc-a75ac10bb6a5",
+  "status": "success",
+  "completed_at": "2026-10-14T12:04:38.349080+00:00",
+  "elapsed_seconds": 109.95,
+  "image_dimensions": [
+    1536,
+    1024
+  ],
+  "peak_vram_mb_observed": 22833,
+  "peak_comfy_rss_mb_observed": 36206,
+  "peak_temperature_c_observed": 80,
+  "peak_gpu_utilization_pct_observed": 100,
+  "gpu_samples": 28,
+  "image_filename": {
+    "filename": "c04_energy_stacked_zh__krea2_00001_.png",
+    "subfolder": "infograph-data-matrix-v1",
+    "type": "output",
+    "id": "2ac84044-5378-45d0-b976-7a4aa10c6e03"
+  },
+  "prompt_strategy": "inherited control, negative prompt includes text",
+  "image_sha256": "68612bd2f338b2d2913c67e4b41324264cdc3360ec4c2560a4cf8910e3b1c725"
+}

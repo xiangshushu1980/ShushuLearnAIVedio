@@ -1,0 +1,68 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "job": "c03_garden_line_en",
+  "case_id": "c03_garden_line_en",
+  "model": "Qwen-Image-2.1 BF16 + Qwen Image 2.1 T2I Prompt Rewrite PE",
+  "language": "en",
+  "seed": 42,
+  "source_data": "Synthetic sample measurements; not real climate observations",
+  "case_ground_truth": [
+    [
+      "Mon",
+      12
+    ],
+    [
+      "Tue",
+      14
+    ],
+    [
+      "Wed",
+      15
+    ],
+    [
+      "Thu",
+      19
+    ],
+    [
+      "Fri",
+      22
+    ],
+    [
+      "Sat",
+      24
+    ]
+  ],
+  "input_prompt": "Create one landscape 3:2 infographic. Describe and render the page region by region: top title and subtitle; central line chart with six points; connected in time order; a small source note at the bottom. Style: warm field-notes editorial, cream paper, terracotta and sage, small hand-drawn leaf accents. Exact title: 'A balcony garden warms up'. Exact subtitle: 'Daily noon temperature across six observations'. Show this dataset exactly, preserving every category, order, value, and unit:\nMon: 12 °C\nTue: 14 °C\nWed: 15 °C\nThu: 19 °C\nFri: 22 °C\nSat: 24 °C\nSource note, render verbatim: 'Synthetic sample measurements; not real climate observations'. Data-encoding requirements: The line rises overall, with every point plotted at its exact value; label synthetic sample. Make the chart geometry directly proportional to the listed values; use a zero baseline for bars; do not infer, round, omit, duplicate, or invent any data. Render all quoted strings legibly and exactly. No extra text, legend labels only when needed to decode the listed categories, no logo or watermark.",
+  "actual_pe_prompt_file": "prompts/qwen21_pe_outputs/c03_garden_line_en.txt",
+  "parameters": {
+    "resolution": "1536x1024",
+    "steps": 40,
+    "cfg": 1.0,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "diffusion_model": "qwen_image_2.1_bf16.safetensors",
+    "text_encoder": "qwen3vl_8b_bf16.safetensors",
+    "prompt_enhancer": "qwen3.5_9b_qwen_image_2.1_pe_t2i.int8_convrot.safetensors",
+    "pe_temperature": 1.0,
+    "pe_top_p": 0.95,
+    "pe_top_k": 20,
+    "pe_presence_penalty": 1.5
+  },
+  "workflow": "workflows/qwen21_pe/c03_garden_line_en.json",
+  "image": "images/qwen21_pe/c03_garden_line_en.png",
+  "prompt_id": "3b112024-0c91-4489-9f44-dc0ea296addd",
+  "resource_lease_id": "80ab8e1d-606e-4783-8a5b-4efa3f1bd5c2",
+  "elapsed_seconds": 56.96,
+  "image_dimensions": [
+    1536,
+    1024
+  ],
+  "status": "success",
+  "peak_vram_mb_observed": 23064,
+  "peak_comfy_rss_mb_observed": 40555,
+  "peak_temperature_c_observed": 80,
+  "peak_gpu_utilization_pct_observed": 100,
+  "gpu_samples": 15,
+  "completed_at": "2026-10-14T12:26:57.498869+00:00"
+}

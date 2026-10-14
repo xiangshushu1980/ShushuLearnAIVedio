@@ -1,0 +1,6 @@
+Design a polished landscape 3:2 infographic page with a clear reading path from the headline to the chart and then to a small source line. The subject is Where 120 kg of paper goes. Use the exact headline "Where 120 kg of paper goes" and subtitle "A synthetic one-week recycling audit". Build the central visual as a Sankey-style flow diagram with accurate branch widths. The visual style is eco-friendly flat editorial, pale paper, forest green and kraft brown. This is a data-accuracy task: reproduce every row below exactly, keeping category names, order, values, and units. Let visual lengths/areas accurately encode the values; use a zero baseline for bars and a consistent legend for repeated categories. Dataset:
+Collected: 120 kg
+Recycled: 84 kg
+Contaminated: 18 kg
+Unsorted loss: 18 kg
+Render this exact source note: "Synthetic audit data; not a real municipal report". Key reading: 120 splits exactly into 84+18+18; branch widths proportional; flows labeled with units. Do not calculate or add claims beyond this stated reading. Do not omit, duplicate, round, reorder, or invent a value. Keep all typography crisp and integrated with the design. Add no other words, decorative numerals, logo, or watermark.

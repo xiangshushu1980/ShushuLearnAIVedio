@@ -1,0 +1,79 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "job": "c01_renewables_bar_en__krea2_opt",
+  "case_id": "c01_renewables_bar_en",
+  "model": "krea2_opt",
+  "language": "en",
+  "seed": 42,
+  "source_data": "World Bank WDI indicator EG.ELC.RNEW.ZS; source page attributes indicator to IEA Energy Statistics; CC BY 4.0; accessed 2026-10-14",
+  "case_ground_truth": [
+    [
+      "Denmark",
+      78.96
+    ],
+    [
+      "Brazil",
+      77.38
+    ],
+    [
+      "Canada",
+      67.02
+    ],
+    [
+      "Germany",
+      39.83
+    ],
+    [
+      "China",
+      28.43
+    ],
+    [
+      "United States",
+      20.27
+    ],
+    [
+      "India",
+      19.13
+    ]
+  ],
+  "input_prompt": "Create a polished landscape 3:2 infographic with a clear editorial reading path. The exact headline is \"Renewable electricity, 2021\" and the exact subtitle is \"Share of total electricity output\". Present the provided dataset as a ranked horizontal bar chart, descending, with every label and value printed exactly as quoted: \"Denmark: 78.96 percent\"; \"Brazil: 77.38 percent\"; \"Canada: 67.02 percent\"; \"Germany: 39.83 percent\"; \"China: 28.43 percent\"; \"United States: 20.27 percent\"; \"India: 19.13 percent\". Use Swiss editorial minimalism, white space, navy and leaf-green accents. Keep the visual encoding proportional to the data, preserve the listed order and category-to-value mapping, and use clear axes or a legend only where needed. Key reading: Denmark is highest; India is lowest; all seven values and country labels must match exactly. The source line is \"World Bank WDI indicator EG.ELC.RNEW.ZS; source page attributes indicator to IEA Energy Statistics; CC BY 4.0; accessed 2026-10-14\". All requested words and numbers are quoted so they can be rendered verbatim; add no other text, values, decorative numerals, logo, or watermark. Use a balanced composition with enough space for every label to remain legible.",
+  "parameters": {
+    "resolution": "1536x1024",
+    "seed": 42,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "prompt_file": "prompts/krea2_optimized/c01_renewables_bar_en.txt",
+    "steps": 52,
+    "cfg": 3.5,
+    "diffusion_model": "krea2_raw_bf16.safetensors",
+    "text_encoder": "qwen3vl_4b_bf16.safetensors",
+    "vae": "qwen_image_vae.safetensors",
+    "negative_prompt": "watermark, logo, blurry"
+  },
+  "workflow": "workflows/c01_renewables_bar_en__krea2_opt.json",
+  "image": "images/c01_renewables_bar_en__krea2_opt.png",
+  "resource_lease_id": "4bb54e2e-3d89-4bf7-b6ab-1adbf89d2c1b",
+  "started_at": "2026-10-14T12:41:51.606974+00:00",
+  "prompt_id": "00f4155d-1332-4eff-8ab7-f32040851cb8",
+  "status": "success",
+  "completed_at": "2026-10-14T12:43:57.579545+00:00",
+  "elapsed_seconds": 125.97,
+  "image_dimensions": [
+    1536,
+    1024
+  ],
+  "peak_vram_mb_observed": 22970,
+  "peak_comfy_rss_mb_observed": 36129,
+  "peak_temperature_c_observed": 76,
+  "peak_gpu_utilization_pct_observed": 100,
+  "gpu_samples": 31,
+  "image_filename": {
+    "filename": "c01_renewables_bar_en__krea2_opt_00001_.png",
+    "subfolder": "infograph-data-matrix-v1",
+    "type": "output",
+    "id": "e1aed071-6e41-4933-b153-81f5e0f3742e"
+  },
+  "prompt_strategy": "Krea natural-language expansion style, all target strings quoted; no text-negative conditioning",
+  "image_sha256": "e2ef15a9c27926ced83fa4f7c62bd7c9c7f45c32449ccb82301e2125a1b23165"
+}

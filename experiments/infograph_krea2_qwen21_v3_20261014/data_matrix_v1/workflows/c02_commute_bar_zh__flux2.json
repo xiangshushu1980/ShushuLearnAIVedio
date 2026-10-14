@@ -1,0 +1,138 @@
+{
+  "prompt": {
+    "1": {
+      "class_type": "UNETLoader",
+      "inputs": {
+        "unet_name": "flux-2-klein-9b.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    "2": {
+      "class_type": "CLIPLoader",
+      "inputs": {
+        "clip_name": "qwen_3_8b.safetensors",
+        "type": "flux2"
+      }
+    },
+    "3": {
+      "class_type": "VAELoader",
+      "inputs": {
+        "vae_name": "flux2-vae.safetensors"
+      }
+    },
+    "4": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": "横向3:2信息图。主题：城市通勤时间。风格：简洁瑞士编辑风，米白底、墨绿与朱红点缀、留白清晰。布局：顶部标题『城市通勤时间』与副标题『六座城市的单程平均分钟数』；中央一个horizontal bar chart ranked descending; zero baseline；底部小号来源『合成示例数据，仅用于图表表达测试』。数据（标签、数值和单位逐字准确）：海城: 52 分钟\n云城: 46 分钟\n林城: 39 分钟\n河城: 34 分钟\n山城: 28 分钟\n湖城: 23 分钟。编码规则：海城最长52分钟，湖城最短23分钟，按降序排列，条长与数值成比例。 柱从零开始且长度按数值成比例；时间顺序不可变；同类使用统一颜色。层级：标题 > 图表与数据标签 > 副标题及来源。扁平清晰、对齐、留白充足。不得增加文字/数据/编造标签，不要logo或水印。"
+      }
+    },
+    "5": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": ""
+      }
+    },
+    "6": {
+      "class_type": "EmptyFlux2LatentImage",
+      "inputs": {
+        "width": 1536,
+        "height": 1024,
+        "batch_size": 1
+      }
+    },
+    "7": {
+      "class_type": "Flux2Scheduler",
+      "inputs": {
+        "steps": 50,
+        "width": 1536,
+        "height": 1024
+      }
+    },
+    "8": {
+      "class_type": "CFGGuider",
+      "inputs": {
+        "model": [
+          "1",
+          0
+        ],
+        "positive": [
+          "4",
+          0
+        ],
+        "negative": [
+          "5",
+          0
+        ],
+        "cfg": 3.5
+      }
+    },
+    "9": {
+      "class_type": "RandomNoise",
+      "inputs": {
+        "noise_seed": 42
+      }
+    },
+    "10": {
+      "class_type": "KSamplerSelect",
+      "inputs": {
+        "sampler_name": "euler"
+      }
+    },
+    "11": {
+      "class_type": "SamplerCustomAdvanced",
+      "inputs": {
+        "noise": [
+          "9",
+          0
+        ],
+        "guider": [
+          "8",
+          0
+        ],
+        "sampler": [
+          "10",
+          0
+        ],
+        "sigmas": [
+          "7",
+          0
+        ],
+        "latent_image": [
+          "6",
+          0
+        ]
+      }
+    },
+    "12": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "11",
+          0
+        ],
+        "vae": [
+          "3",
+          0
+        ]
+      }
+    },
+    "13": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "12",
+          0
+        ],
+        "filename_prefix": "infograph-data-matrix-v1/c02_commute_bar_zh__flux2"
+      }
+    }
+  }
+}

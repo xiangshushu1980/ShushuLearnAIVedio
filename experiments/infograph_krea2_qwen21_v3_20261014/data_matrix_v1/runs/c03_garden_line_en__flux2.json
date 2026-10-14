@@ -1,0 +1,72 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "job": "c03_garden_line_en__flux2",
+  "case_id": "c03_garden_line_en",
+  "model": "flux2",
+  "language": "en",
+  "seed": 42,
+  "source_data": "Synthetic sample measurements; not real climate observations",
+  "case_ground_truth": [
+    [
+      "Mon",
+      12
+    ],
+    [
+      "Tue",
+      14
+    ],
+    [
+      "Wed",
+      15
+    ],
+    [
+      "Thu",
+      19
+    ],
+    [
+      "Fri",
+      22
+    ],
+    [
+      "Sat",
+      24
+    ]
+  ],
+  "input_prompt": "Landscape 3:2 infographic. SUBJECT: A balcony garden warms up. STYLE: warm field-notes editorial, cream paper, terracotta and sage, small hand-drawn leaf accents. LAYOUT: headline 'A balcony garden warms up' at top; subtitle 'Daily noon temperature across six observations'; one central line chart with six points; connected in time order; small source footer 'Synthetic sample measurements; not real climate observations'. DATA (verbatim labels, exact values and units): Mon: 12 °C\nTue: 14 °C\nWed: 15 °C\nThu: 19 °C\nFri: 22 °C\nSat: 24 °C. ENCODING: The line rises overall, with every point plotted at its exact value; label synthetic sample. Bars start at zero and lengths are proportional; time series stays chronological; categories keep consistent colors. Visual hierarchy: title > chart/data labels > subtitle/source. Flat, legible, aligned, generous whitespace. No extra data or text, no invented labels, logo, or watermark.",
+  "parameters": {
+    "resolution": "1536x1024",
+    "seed": 42,
+    "sampler": "euler",
+    "scheduler": "Flux2Scheduler",
+    "prompt_file": "prompts/c03_garden_line_en__flux2.txt",
+    "steps": 50,
+    "cfg": 3.5,
+    "diffusion_model": "flux-2-klein-9b.safetensors",
+    "text_encoder": "qwen_3_8b.safetensors",
+    "vae": "flux2-vae.safetensors"
+  },
+  "workflow": "workflows/c03_garden_line_en__flux2.json",
+  "image": "images/c03_garden_line_en__flux2.png",
+  "resource_lease_id": "4c5b9674-1c34-40e2-94c5-9f7d2f6f5c17",
+  "started_at": "2026-10-14T12:14:33.069991+00:00",
+  "prompt_id": "a47a5d02-35fb-465a-80b6-63406536c5dd",
+  "status": "success",
+  "completed_at": "2026-10-14T12:15:34.064711+00:00",
+  "elapsed_seconds": 60.99,
+  "image_dimensions": [
+    1536,
+    1024
+  ],
+  "peak_vram_mb_observed": 22406,
+  "peak_comfy_rss_mb_observed": 35296,
+  "peak_temperature_c_observed": 82,
+  "peak_gpu_utilization_pct_observed": 100,
+  "gpu_samples": 16,
+  "image_filename": {
+    "filename": "c03_garden_line_en__flux2_00001_.png",
+    "subfolder": "infograph-data-matrix-v1",
+    "type": "output",
+    "id": "a3c00e46-6e8d-4dc3-9c0c-9df7679e864b"
+  }
+}

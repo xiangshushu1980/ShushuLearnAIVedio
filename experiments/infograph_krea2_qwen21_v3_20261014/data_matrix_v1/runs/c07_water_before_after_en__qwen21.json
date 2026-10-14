@@ -1,0 +1,56 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "job": "c07_water_before_after_en__qwen21",
+  "case_id": "c07_water_before_after_en",
+  "model": "qwen21",
+  "language": "en",
+  "seed": 42,
+  "source_data": "Synthetic controlled example; reduction is exactly 25%",
+  "case_ground_truth": [
+    [
+      "Before",
+      72
+    ],
+    [
+      "After",
+      54
+    ]
+  ],
+  "input_prompt": "Create one landscape 3:2 infographic. Describe and render the page region by region: top title and subtitle; central paired before/after bars with common zero baseline; a small source note at the bottom. Style: technical blueprint editorial, pale blue grid, cobalt and amber, precise labels. Exact title: 'A small leak, a measurable fix'. Exact subtitle: 'Water used per test cycle · synthetic data'. Show this dataset exactly, preserving every category, order, value, and unit:\nBefore: 72 L\nAfter: 54 L\nSource note, render verbatim: 'Synthetic controlled example; reduction is exactly 25%'. Data-encoding requirements: Before is 72 L; after 54 L; show decrease of 18 L / 25% without reversing bars. Make the chart geometry directly proportional to the listed values; use a zero baseline for bars; do not infer, round, omit, duplicate, or invent any data. Render all quoted strings legibly and exactly. No extra text, legend labels only when needed to decode the listed categories, no logo or watermark.",
+  "parameters": {
+    "resolution": "1536x1024",
+    "seed": 42,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "prompt_file": "prompts/c07_water_before_after_en__qwen21.txt",
+    "steps": 40,
+    "cfg": 1.0,
+    "diffusion_model": "qwen_image_2.1_bf16.safetensors",
+    "text_encoder": "qwen3vl_8b_bf16.safetensors (Qwen native encoder; PE not used to protect exact data strings)",
+    "vae": "qwen_image_2.1_vae_bf16.safetensors"
+  },
+  "workflow": "workflows/c07_water_before_after_en__qwen21.json",
+  "image": "images/c07_water_before_after_en__qwen21.png",
+  "resource_lease_id": "4c5b9674-1c34-40e2-94c5-9f7d2f6f5c17",
+  "started_at": "2026-10-14T11:56:01.143693+00:00",
+  "prompt_id": "0e24204a-156d-4b70-8159-e5e98fc7e4be",
+  "status": "success",
+  "completed_at": "2026-10-14T11:56:31.659238+00:00",
+  "elapsed_seconds": 30.52,
+  "image_dimensions": [
+    1536,
+    1024
+  ],
+  "peak_vram_mb_observed": 23089,
+  "peak_comfy_rss_mb_observed": 31688,
+  "peak_temperature_c_observed": 83,
+  "peak_gpu_utilization_pct_observed": 100,
+  "gpu_samples": 8,
+  "image_filename": {
+    "filename": "c07_water_before_after_en__qwen21_00001_.png",
+    "subfolder": "infograph-data-matrix-v1",
+    "type": "output",
+    "id": "7d3aa0e7-44d7-42c0-a017-20bd87a28c31"
+  }
+}

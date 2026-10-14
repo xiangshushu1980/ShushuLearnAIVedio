@@ -1,0 +1,142 @@
+{
+  "prompt": {
+    "1": {
+      "class_type": "UNETLoader",
+      "inputs": {
+        "unet_name": "qwen_image_2.1_bf16.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    "2": {
+      "class_type": "CLIPLoader",
+      "inputs": {
+        "clip_name": "qwen3.5_9b_qwen_image_2.1_pe_t2i.int8_convrot.safetensors",
+        "type": "qwen_image"
+      }
+    },
+    "3": {
+      "class_type": "CLIPLoader",
+      "inputs": {
+        "clip_name": "qwen3vl_8b_bf16.safetensors",
+        "type": "qwen_image"
+      }
+    },
+    "4": {
+      "class_type": "VAELoader",
+      "inputs": {
+        "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+      }
+    },
+    "5": {
+      "class_type": "QwenImage21_T2IPromptRewrite",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "prompt": "Create one landscape 3:2 infographic. Describe and render the page region by region: top title and subtitle; central Sankey-style flow diagram with accurate branch widths; a small source note at the bottom. Style: eco-friendly flat editorial, pale paper, forest green and kraft brown. Exact title: 'Where 120 kg of paper goes'. Exact subtitle: 'A synthetic one-week recycling audit'. Show this dataset exactly, preserving every category, order, value, and unit:\nCollected: 120 kg\nRecycled: 84 kg\nContaminated: 18 kg\nUnsorted loss: 18 kg\nSource note, render verbatim: 'Synthetic audit data; not a real municipal report'. Data-encoding requirements: 120 splits exactly into 84+18+18; branch widths proportional; flows labeled with units. Make the chart geometry directly proportional to the listed values; use a zero baseline for bars; do not infer, round, omit, duplicate, or invent any data. Render all quoted strings legibly and exactly. No extra text, legend labels only when needed to decode the listed categories, no logo or watermark.",
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "presence_penalty": 1.5,
+        "max_new_tokens": 16256,
+        "seed": 42
+      }
+    },
+    "6": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "3",
+          0
+        ],
+        "text": [
+          "5",
+          0
+        ]
+      }
+    },
+    "7": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "3",
+          0
+        ],
+        "text": [
+          "5",
+          1
+        ]
+      }
+    },
+    "8": {
+      "class_type": "EmptyLatentImage",
+      "inputs": {
+        "width": 1536,
+        "height": 1024,
+        "batch_size": 1
+      }
+    },
+    "9": {
+      "class_type": "KSampler",
+      "inputs": {
+        "model": [
+          "1",
+          0
+        ],
+        "positive": [
+          "6",
+          0
+        ],
+        "negative": [
+          "7",
+          0
+        ],
+        "latent_image": [
+          "8",
+          0
+        ],
+        "seed": 42,
+        "steps": 40,
+        "cfg": 1.0,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "denoise": 1.0
+      }
+    },
+    "10": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "9",
+          0
+        ],
+        "vae": [
+          "4",
+          0
+        ]
+      }
+    },
+    "11": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "10",
+          0
+        ],
+        "filename_prefix": "infograph-data-matrix-v1/qwen_pe/c06_recycling_flow_en"
+      }
+    },
+    "12": {
+      "class_type": "SaveText",
+      "inputs": {
+        "text": [
+          "5",
+          0
+        ],
+        "filename_prefix": "infograph-data-matrix-v1/qwen_pe/c06_recycling_flow_en",
+        "format": "txt"
+      }
+    }
+  }
+}

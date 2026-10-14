@@ -1,0 +1,8 @@
+Design a polished landscape 3:2 infographic page with a clear reading path from the headline to the chart and then to a small source line. The subject is 两地用电结构. Use the exact headline "两地用电结构" and subtitle "各能源占比，合成示例数据". Build the central visual as a two 100% stacked bars; same color per category, legend. The visual style is 复古印刷信息图，浅黄纸色、海军蓝与橘色、纹理克制. This is a data-accuracy task: reproduce every row below exactly, keeping category names, order, values, and units. Let visual lengths/areas accurately encode the values; use a zero baseline for bars and a consistent legend for repeated categories. Dataset:
+甲地-太阳能: 40 %
+甲地-风能: 35 %
+甲地-水电: 25 %
+乙地-太阳能: 25 %
+乙地-风能: 25 %
+乙地-水电: 50 %
+Render this exact source note: "合成示例数据；每地合计100%". Key reading: 甲地太阳40风35水25；乙地太阳25风25水50；each bar totals100; consistent legend colors. Do not calculate or add claims beyond this stated reading. Do not omit, duplicate, round, reorder, or invent a value. Keep all typography crisp and integrated with the design. Add no other words, decorative numerals, logo, or watermark.

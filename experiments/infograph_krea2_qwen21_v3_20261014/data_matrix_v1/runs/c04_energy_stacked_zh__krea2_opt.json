@@ -1,0 +1,75 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "job": "c04_energy_stacked_zh__krea2_opt",
+  "case_id": "c04_energy_stacked_zh",
+  "model": "krea2_opt",
+  "language": "zh",
+  "seed": 42,
+  "source_data": "合成示例数据；每地合计100%",
+  "case_ground_truth": [
+    [
+      "甲地-太阳能",
+      40
+    ],
+    [
+      "甲地-风能",
+      35
+    ],
+    [
+      "甲地-水电",
+      25
+    ],
+    [
+      "乙地-太阳能",
+      25
+    ],
+    [
+      "乙地-风能",
+      25
+    ],
+    [
+      "乙地-水电",
+      50
+    ]
+  ],
+  "input_prompt": "Create a polished landscape 3:2 infographic with a clear editorial reading path. The exact headline is \"两地用电结构\" and the exact subtitle is \"各能源占比，合成示例数据\". Present the provided dataset as a two 100% stacked bars; same color per category, legend, with every label and value printed exactly as quoted: \"甲地-太阳能: 40 %\"; \"甲地-风能: 35 %\"; \"甲地-水电: 25 %\"; \"乙地-太阳能: 25 %\"; \"乙地-风能: 25 %\"; \"乙地-水电: 50 %\". Use 复古印刷信息图，浅黄纸色、海军蓝与橘色、纹理克制. Keep the visual encoding proportional to the data, preserve the listed order and category-to-value mapping, and use clear axes or a legend only where needed. Key reading: 甲地太阳40风35水25；乙地太阳25风25水50；each bar totals100; consistent legend colors. The source line is \"合成示例数据；每地合计100%\". All requested words and numbers are quoted so they can be rendered verbatim; add no other text, values, decorative numerals, logo, or watermark. Use a balanced composition with enough space for every label to remain legible.",
+  "parameters": {
+    "resolution": "1536x1024",
+    "seed": 42,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "prompt_file": "prompts/krea2_optimized/c04_energy_stacked_zh.txt",
+    "steps": 52,
+    "cfg": 3.5,
+    "diffusion_model": "krea2_raw_bf16.safetensors",
+    "text_encoder": "qwen3vl_4b_bf16.safetensors",
+    "vae": "qwen_image_vae.safetensors",
+    "negative_prompt": "watermark, logo, blurry"
+  },
+  "workflow": "workflows/c04_energy_stacked_zh__krea2_opt.json",
+  "image": "images/c04_energy_stacked_zh__krea2_opt.png",
+  "resource_lease_id": "4bb54e2e-3d89-4bf7-b6ab-1adbf89d2c1b",
+  "started_at": "2026-10-14T12:47:33.281104+00:00",
+  "prompt_id": "ced200cb-8a92-4255-8ab2-6c738e182d51",
+  "status": "success",
+  "completed_at": "2026-10-14T12:49:21.278326+00:00",
+  "elapsed_seconds": 108.0,
+  "image_dimensions": [
+    1536,
+    1024
+  ],
+  "peak_vram_mb_observed": 22282,
+  "peak_comfy_rss_mb_observed": 36340,
+  "peak_temperature_c_observed": 80,
+  "peak_gpu_utilization_pct_observed": 100,
+  "gpu_samples": 27,
+  "image_filename": {
+    "filename": "c04_energy_stacked_zh__krea2_opt_00001_.png",
+    "subfolder": "infograph-data-matrix-v1",
+    "type": "output",
+    "id": "995cb2f3-9f46-4cbd-b2b9-98b21c37d1e5"
+  },
+  "prompt_strategy": "Krea natural-language expansion style, all target strings quoted; no text-negative conditioning",
+  "image_sha256": "213dd72f33b652365a07489742f033599ebb0d964e32eb1e28eb259df8d39f67"
+}

@@ -1,0 +1,39 @@
+{
+  "owner": "Sean",
+  "source": "World Bank WDI indicator EG.ELC.RNEW.ZS, attributed on indicator page to IEA Energy Statistics",
+  "source_url": "https://data.worldbank.org/indicator/EG.ELC.RNEW.ZS",
+  "license": "CC BY 4.0 as stated on World Bank indicator page",
+  "accessed": "2026-10-14",
+  "year": 2021,
+  "measure": "Renewable electricity output (% of total electricity output)",
+  "values": [
+    [
+      "Denmark",
+      78.96
+    ],
+    [
+      "Brazil",
+      77.38
+    ],
+    [
+      "Canada",
+      67.02
+    ],
+    [
+      "Germany",
+      39.83
+    ],
+    [
+      "China",
+      28.43
+    ],
+    [
+      "United States",
+      20.27
+    ],
+    [
+      "India",
+      19.13
+    ]
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "job": "c06_recycling_flow_en__flux2",
+  "case_id": "c06_recycling_flow_en",
+  "model": "flux2",
+  "language": "en",
+  "seed": 42,
+  "source_data": "Synthetic audit data; not a real municipal report",
+  "case_ground_truth": [
+    [
+      "Collected",
+      120
+    ],
+    [
+      "Recycled",
+      84
+    ],
+    [
+      "Contaminated",
+      18
+    ],
+    [
+      "Unsorted loss",
+      18
+    ]
+  ],
+  "input_prompt": "Landscape 3:2 infographic. SUBJECT: Where 120 kg of paper goes. STYLE: eco-friendly flat editorial, pale paper, forest green and kraft brown. LAYOUT: headline 'Where 120 kg of paper goes' at top; subtitle 'A synthetic one-week recycling audit'; one central Sankey-style flow diagram with accurate branch widths; small source footer 'Synthetic audit data; not a real municipal report'. DATA (verbatim labels, exact values and units): Collected: 120 kg\nRecycled: 84 kg\nContaminated: 18 kg\nUnsorted loss: 18 kg. ENCODING: 120 splits exactly into 84+18+18; branch widths proportional; flows labeled with units. Bars start at zero and lengths are proportional; time series stays chronological; categories keep consistent colors. Visual hierarchy: title > chart/data labels > subtitle/source. Flat, legible, aligned, generous whitespace. No extra data or text, no invented labels, logo, or watermark.",
+  "parameters": {
+    "resolution": "1536x1024",
+    "seed": 42,
+    "sampler": "euler",
+    "scheduler": "Flux2Scheduler",
+    "prompt_file": "prompts/c06_recycling_flow_en__flux2.txt",
+    "steps": 50,
+    "cfg": 3.5,
+    "diffusion_model": "flux-2-klein-9b.safetensors",
+    "text_encoder": "qwen_3_8b.safetensors",
+    "vae": "flux2-vae.safetensors"
+  },
+  "workflow": "workflows/c06_recycling_flow_en__flux2.json",
+  "image": "images/c06_recycling_flow_en__flux2.png",
+  "resource_lease_id": "4c5b9674-1c34-40e2-94c5-9f7d2f6f5c17",
+  "started_at": "2026-10-14T12:17:36.199963+00:00",
+  "prompt_id": "6a84f7fa-f49d-4a3c-b554-0b198f7d6ddd",
+  "status": "success",
+  "completed_at": "2026-10-14T12:18:37.176527+00:00",
+  "elapsed_seconds": 60.98,
+  "image_dimensions": [
+    1536,
+    1024
+  ],
+  "peak_vram_mb_observed": 22278,
+  "peak_comfy_rss_mb_observed": 35296,
+  "peak_temperature_c_observed": 82,
+  "peak_gpu_utilization_pct_observed": 100,
+  "gpu_samples": 16,
+  "image_filename": {
+    "filename": "c06_recycling_flow_en__flux2_00001_.png",
+    "subfolder": "infograph-data-matrix-v1",
+    "type": "output",
+    "id": "dfdc0c83-0c00-4f66-b533-677b87eab697"
+  }
+}

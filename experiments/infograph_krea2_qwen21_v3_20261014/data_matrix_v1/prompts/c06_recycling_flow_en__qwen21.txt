@@ -1,0 +1,6 @@
+Create one landscape 3:2 infographic. Describe and render the page region by region: top title and subtitle; central Sankey-style flow diagram with accurate branch widths; a small source note at the bottom. Style: eco-friendly flat editorial, pale paper, forest green and kraft brown. Exact title: 'Where 120 kg of paper goes'. Exact subtitle: 'A synthetic one-week recycling audit'. Show this dataset exactly, preserving every category, order, value, and unit:
+Collected: 120 kg
+Recycled: 84 kg
+Contaminated: 18 kg
+Unsorted loss: 18 kg
+Source note, render verbatim: 'Synthetic audit data; not a real municipal report'. Data-encoding requirements: 120 splits exactly into 84+18+18; branch widths proportional; flows labeled with units. Make the chart geometry directly proportional to the listed values; use a zero baseline for bars; do not infer, round, omit, duplicate, or invent any data. Render all quoted strings legibly and exactly. No extra text, legend labels only when needed to decode the listed categories, no logo or watermark.

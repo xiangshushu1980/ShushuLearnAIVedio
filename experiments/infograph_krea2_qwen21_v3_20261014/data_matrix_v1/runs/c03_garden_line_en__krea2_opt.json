@@ -1,0 +1,75 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "job": "c03_garden_line_en__krea2_opt",
+  "case_id": "c03_garden_line_en",
+  "model": "krea2_opt",
+  "language": "en",
+  "seed": 42,
+  "source_data": "Synthetic sample measurements; not real climate observations",
+  "case_ground_truth": [
+    [
+      "Mon",
+      12
+    ],
+    [
+      "Tue",
+      14
+    ],
+    [
+      "Wed",
+      15
+    ],
+    [
+      "Thu",
+      19
+    ],
+    [
+      "Fri",
+      22
+    ],
+    [
+      "Sat",
+      24
+    ]
+  ],
+  "input_prompt": "Create a polished landscape 3:2 infographic with a clear editorial reading path. The exact headline is \"A balcony garden warms up\" and the exact subtitle is \"Daily noon temperature across six observations\". Present the provided dataset as a line chart with six points; connected in time order, with every label and value printed exactly as quoted: \"Mon: 12 °C\"; \"Tue: 14 °C\"; \"Wed: 15 °C\"; \"Thu: 19 °C\"; \"Fri: 22 °C\"; \"Sat: 24 °C\". Use warm field-notes editorial, cream paper, terracotta and sage, small hand-drawn leaf accents. Keep the visual encoding proportional to the data, preserve the listed order and category-to-value mapping, and use clear axes or a legend only where needed. Key reading: The line rises overall, with every point plotted at its exact value; label synthetic sample. The source line is \"Synthetic sample measurements; not real climate observations\". All requested words and numbers are quoted so they can be rendered verbatim; add no other text, values, decorative numerals, logo, or watermark. Use a balanced composition with enough space for every label to remain legible.",
+  "parameters": {
+    "resolution": "1536x1024",
+    "seed": 42,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "prompt_file": "prompts/krea2_optimized/c03_garden_line_en.txt",
+    "steps": 52,
+    "cfg": 3.5,
+    "diffusion_model": "krea2_raw_bf16.safetensors",
+    "text_encoder": "qwen3vl_4b_bf16.safetensors",
+    "vae": "qwen_image_vae.safetensors",
+    "negative_prompt": "watermark, logo, blurry"
+  },
+  "workflow": "workflows/c03_garden_line_en__krea2_opt.json",
+  "image": "images/c03_garden_line_en__krea2_opt.png",
+  "resource_lease_id": "4bb54e2e-3d89-4bf7-b6ab-1adbf89d2c1b",
+  "started_at": "2026-10-14T12:45:45.473262+00:00",
+  "prompt_id": "f0997e95-0788-42c6-adaa-0e6c58bda111",
+  "status": "success",
+  "completed_at": "2026-10-14T12:47:33.218507+00:00",
+  "elapsed_seconds": 107.75,
+  "image_dimensions": [
+    1536,
+    1024
+  ],
+  "peak_vram_mb_observed": 22314,
+  "peak_comfy_rss_mb_observed": 36305,
+  "peak_temperature_c_observed": 80,
+  "peak_gpu_utilization_pct_observed": 100,
+  "gpu_samples": 27,
+  "image_filename": {
+    "filename": "c03_garden_line_en__krea2_opt_00001_.png",
+    "subfolder": "infograph-data-matrix-v1",
+    "type": "output",
+    "id": "5989dc18-dd85-437d-adde-1e22fbd33cf7"
+  },
+  "prompt_strategy": "Krea natural-language expansion style, all target strings quoted; no text-negative conditioning",
+  "image_sha256": "f5d026a3cc330b89c9aab18b93a17c4a3cfa34718d1359aea41f5a51f85f0ae6"
+}

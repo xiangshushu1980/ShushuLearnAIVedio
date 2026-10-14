@@ -1,0 +1,68 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "job": "c05_budget_donut_zh__flux2",
+  "case_id": "c05_budget_donut_zh",
+  "model": "flux2",
+  "language": "zh",
+  "seed": 42,
+  "source_data": "合成示例数据；五项合计100%",
+  "case_ground_truth": [
+    [
+      "住房",
+      35
+    ],
+    [
+      "饮食",
+      25
+    ],
+    [
+      "交通",
+      20
+    ],
+    [
+      "储蓄",
+      12
+    ],
+    [
+      "其他",
+      8
+    ]
+  ],
+  "input_prompt": "横向3:2信息图。主题：每月预算怎么分。风格：明快杂志编辑风，柔和淡紫、橙、青绿，图标轻量且不抢数据。布局：顶部标题『每月预算怎么分』与副标题『合成示例数据 · 总额占比』；中央一个donut chart with five labeled segments, proportional angles and values；底部小号来源『合成示例数据；五项合计100%』。数据（标签、数值和单位逐字准确）：住房: 35 %\n饮食: 25 %\n交通: 20 %\n储蓄: 12 %\n其他: 8 %。编码规则：segments sum100 and are proportional; housing largest, other smallest. 柱从零开始且长度按数值成比例；时间顺序不可变；同类使用统一颜色。层级：标题 > 图表与数据标签 > 副标题及来源。扁平清晰、对齐、留白充足。不得增加文字/数据/编造标签，不要logo或水印。",
+  "parameters": {
+    "resolution": "1536x1024",
+    "seed": 42,
+    "sampler": "euler",
+    "scheduler": "Flux2Scheduler",
+    "prompt_file": "prompts/c05_budget_donut_zh__flux2.txt",
+    "steps": 50,
+    "cfg": 3.5,
+    "diffusion_model": "flux-2-klein-9b.safetensors",
+    "text_encoder": "qwen_3_8b.safetensors",
+    "vae": "flux2-vae.safetensors"
+  },
+  "workflow": "workflows/c05_budget_donut_zh__flux2.json",
+  "image": "images/c05_budget_donut_zh__flux2.png",
+  "resource_lease_id": "4c5b9674-1c34-40e2-94c5-9f7d2f6f5c17",
+  "started_at": "2026-10-14T12:16:35.177185+00:00",
+  "prompt_id": "ddb01b42-018b-41a2-a259-10ca008591bc",
+  "status": "success",
+  "completed_at": "2026-10-14T12:17:36.136947+00:00",
+  "elapsed_seconds": 60.96,
+  "image_dimensions": [
+    1536,
+    1024
+  ],
+  "peak_vram_mb_observed": 22374,
+  "peak_comfy_rss_mb_observed": 35248,
+  "peak_temperature_c_observed": 82,
+  "peak_gpu_utilization_pct_observed": 100,
+  "gpu_samples": 16,
+  "image_filename": {
+    "filename": "c05_budget_donut_zh__flux2_00001_.png",
+    "subfolder": "infograph-data-matrix-v1",
+    "type": "output",
+    "id": "8cde8783-54c8-4b99-8b5d-8f120bc30cbb"
+  }
+}

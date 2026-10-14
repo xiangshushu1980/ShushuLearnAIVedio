@@ -1,0 +1,283 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "created_at": "2026-10-14",
+  "cases": [
+    {
+      "id": "c01_renewables_bar_en",
+      "lang": "en",
+      "title": "Renewable electricity, 2021",
+      "subtitle": "Share of total electricity output",
+      "chart": "ranked horizontal bar chart, descending",
+      "style": "Swiss editorial minimalism, white space, navy and leaf-green accents",
+      "data_source": "World Bank WDI indicator EG.ELC.RNEW.ZS; source page attributes indicator to IEA Energy Statistics; CC BY 4.0; accessed 2026-10-14",
+      "source_url": "https://data.worldbank.org/indicator/EG.ELC.RNEW.ZS",
+      "unit": "percent",
+      "rows": [
+        [
+          "Denmark",
+          78.96
+        ],
+        [
+          "Brazil",
+          77.38
+        ],
+        [
+          "Canada",
+          67.02
+        ],
+        [
+          "Germany",
+          39.83
+        ],
+        [
+          "China",
+          28.43
+        ],
+        [
+          "United States",
+          20.27
+        ],
+        [
+          "India",
+          19.13
+        ]
+      ],
+      "key": "Denmark is highest; India is lowest; all seven values and country labels must match exactly."
+    },
+    {
+      "id": "c02_commute_bar_zh",
+      "lang": "zh",
+      "title": "城市通勤时间",
+      "subtitle": "六座城市的单程平均分钟数",
+      "chart": "horizontal bar chart ranked descending; zero baseline",
+      "style": "简洁瑞士编辑风，米白底、墨绿与朱红点缀、留白清晰",
+      "data_source": "合成示例数据，仅用于图表表达测试",
+      "source_url": null,
+      "unit": "分钟",
+      "rows": [
+        [
+          "海城",
+          52
+        ],
+        [
+          "云城",
+          46
+        ],
+        [
+          "林城",
+          39
+        ],
+        [
+          "河城",
+          34
+        ],
+        [
+          "山城",
+          28
+        ],
+        [
+          "湖城",
+          23
+        ]
+      ],
+      "key": "海城最长52分钟，湖城最短23分钟，按降序排列，条长与数值成比例。"
+    },
+    {
+      "id": "c03_garden_line_en",
+      "lang": "en",
+      "title": "A balcony garden warms up",
+      "subtitle": "Daily noon temperature across six observations",
+      "chart": "line chart with six points; connected in time order",
+      "style": "warm field-notes editorial, cream paper, terracotta and sage, small hand-drawn leaf accents",
+      "data_source": "Synthetic sample measurements; not real climate observations",
+      "source_url": null,
+      "unit": "°C",
+      "rows": [
+        [
+          "Mon",
+          12
+        ],
+        [
+          "Tue",
+          14
+        ],
+        [
+          "Wed",
+          15
+        ],
+        [
+          "Thu",
+          19
+        ],
+        [
+          "Fri",
+          22
+        ],
+        [
+          "Sat",
+          24
+        ]
+      ],
+      "key": "The line rises overall, with every point plotted at its exact value; label synthetic sample."
+    },
+    {
+      "id": "c04_energy_stacked_zh",
+      "lang": "zh",
+      "title": "两地用电结构",
+      "subtitle": "各能源占比，合成示例数据",
+      "chart": "two 100% stacked bars; same color per category, legend",
+      "style": "复古印刷信息图，浅黄纸色、海军蓝与橘色、纹理克制",
+      "data_source": "合成示例数据；每地合计100%",
+      "source_url": null,
+      "unit": "%",
+      "rows": [
+        [
+          "甲地-太阳能",
+          40
+        ],
+        [
+          "甲地-风能",
+          35
+        ],
+        [
+          "甲地-水电",
+          25
+        ],
+        [
+          "乙地-太阳能",
+          25
+        ],
+        [
+          "乙地-风能",
+          25
+        ],
+        [
+          "乙地-水电",
+          50
+        ]
+      ],
+      "key": "甲地太阳40风35水25；乙地太阳25风25水50；each bar totals100; consistent legend colors."
+    },
+    {
+      "id": "c05_budget_donut_zh",
+      "lang": "zh",
+      "title": "每月预算怎么分",
+      "subtitle": "合成示例数据 · 总额占比",
+      "chart": "donut chart with five labeled segments, proportional angles and values",
+      "style": "明快杂志编辑风，柔和淡紫、橙、青绿，图标轻量且不抢数据",
+      "data_source": "合成示例数据；五项合计100%",
+      "source_url": null,
+      "unit": "%",
+      "rows": [
+        [
+          "住房",
+          35
+        ],
+        [
+          "饮食",
+          25
+        ],
+        [
+          "交通",
+          20
+        ],
+        [
+          "储蓄",
+          12
+        ],
+        [
+          "其他",
+          8
+        ]
+      ],
+      "key": "segments sum100 and are proportional; housing largest, other smallest."
+    },
+    {
+      "id": "c06_recycling_flow_en",
+      "lang": "en",
+      "title": "Where 120 kg of paper goes",
+      "subtitle": "A synthetic one-week recycling audit",
+      "chart": "Sankey-style flow diagram with accurate branch widths",
+      "style": "eco-friendly flat editorial, pale paper, forest green and kraft brown",
+      "data_source": "Synthetic audit data; not a real municipal report",
+      "source_url": null,
+      "unit": "kg",
+      "rows": [
+        [
+          "Collected",
+          120
+        ],
+        [
+          "Recycled",
+          84
+        ],
+        [
+          "Contaminated",
+          18
+        ],
+        [
+          "Unsorted loss",
+          18
+        ]
+      ],
+      "key": "120 splits exactly into 84+18+18; branch widths proportional; flows labeled with units."
+    },
+    {
+      "id": "c07_water_before_after_en",
+      "lang": "en",
+      "title": "A small leak, a measurable fix",
+      "subtitle": "Water used per test cycle · synthetic data",
+      "chart": "paired before/after bars with common zero baseline",
+      "style": "technical blueprint editorial, pale blue grid, cobalt and amber, precise labels",
+      "data_source": "Synthetic controlled example; reduction is exactly 25%",
+      "source_url": null,
+      "unit": "L",
+      "rows": [
+        [
+          "Before",
+          72
+        ],
+        [
+          "After",
+          54
+        ]
+      ],
+      "key": "Before is 72 L; after 54 L; show decrease of 18 L / 25% without reversing bars."
+    },
+    {
+      "id": "c08_seed_timeline_zh",
+      "lang": "zh",
+      "title": "种子发芽观察",
+      "subtitle": "合成示例数据 · 茎长随时间变化",
+      "chart": "horizontal timeline with five proportional growth markers",
+      "style": "植物图鉴风，淡奶油底、叶绿和暖黄，克制线描种子图案",
+      "data_source": "合成示例观察；非真实实验结论",
+      "source_url": null,
+      "unit": "厘米",
+      "rows": [
+        [
+          "第1天",
+          2
+        ],
+        [
+          "第3天",
+          4
+        ],
+        [
+          "第5天",
+          7
+        ],
+        [
+          "第7天",
+          10
+        ],
+        [
+          "第9天",
+          13
+        ]
+      ],
+      "key": "chronological order; marker position and size increase proportionally; exact day and cm values."
+    }
+  ]
+}

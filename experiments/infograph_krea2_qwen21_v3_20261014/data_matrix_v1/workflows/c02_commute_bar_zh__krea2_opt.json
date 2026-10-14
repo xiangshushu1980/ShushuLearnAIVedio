@@ -1,0 +1,102 @@
+{
+  "prompt": {
+    "1": {
+      "class_type": "UNETLoader",
+      "inputs": {
+        "unet_name": "krea2_raw_bf16.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    "2": {
+      "class_type": "CLIPLoader",
+      "inputs": {
+        "clip_name": "qwen3vl_4b_bf16.safetensors",
+        "type": "krea2"
+      }
+    },
+    "3": {
+      "class_type": "VAELoader",
+      "inputs": {
+        "vae_name": "qwen_image_vae.safetensors"
+      }
+    },
+    "4": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": "Create a polished landscape 3:2 infographic with a clear editorial reading path. The exact headline is \"城市通勤时间\" and the exact subtitle is \"六座城市的单程平均分钟数\". Present the provided dataset as a horizontal bar chart ranked descending; zero baseline, with every label and value printed exactly as quoted: \"海城: 52 分钟\"; \"云城: 46 分钟\"; \"林城: 39 分钟\"; \"河城: 34 分钟\"; \"山城: 28 分钟\"; \"湖城: 23 分钟\". Use 简洁瑞士编辑风，米白底、墨绿与朱红点缀、留白清晰. Keep the visual encoding proportional to the data, preserve the listed order and category-to-value mapping, and use clear axes or a legend only where needed. Key reading: 海城最长52分钟，湖城最短23分钟，按降序排列，条长与数值成比例。 The source line is \"合成示例数据，仅用于图表表达测试\". All requested words and numbers are quoted so they can be rendered verbatim; add no other text, values, decorative numerals, logo, or watermark. Use a balanced composition with enough space for every label to remain legible."
+      }
+    },
+    "5": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": "watermark, logo, blurry"
+      }
+    },
+    "6": {
+      "class_type": "EmptySD3LatentImage",
+      "inputs": {
+        "width": 1536,
+        "height": 1024,
+        "batch_size": 1
+      }
+    },
+    "7": {
+      "class_type": "KSampler",
+      "inputs": {
+        "model": [
+          "1",
+          0
+        ],
+        "positive": [
+          "4",
+          0
+        ],
+        "negative": [
+          "5",
+          0
+        ],
+        "latent_image": [
+          "6",
+          0
+        ],
+        "seed": 42,
+        "steps": 52,
+        "cfg": 3.5,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "denoise": 1.0
+      }
+    },
+    "8": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "7",
+          0
+        ],
+        "vae": [
+          "3",
+          0
+        ]
+      }
+    },
+    "9": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "8",
+          0
+        ],
+        "filename_prefix": "infograph-data-matrix-v1/c02_commute_bar_zh__krea2_opt"
+      }
+    }
+  }
+}

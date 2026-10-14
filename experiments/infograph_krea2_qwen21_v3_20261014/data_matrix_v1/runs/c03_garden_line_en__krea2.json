@@ -1,0 +1,75 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "job": "c03_garden_line_en__krea2",
+  "case_id": "c03_garden_line_en",
+  "model": "krea2",
+  "language": "en",
+  "seed": 42,
+  "source_data": "Synthetic sample measurements; not real climate observations",
+  "case_ground_truth": [
+    [
+      "Mon",
+      12
+    ],
+    [
+      "Tue",
+      14
+    ],
+    [
+      "Wed",
+      15
+    ],
+    [
+      "Thu",
+      19
+    ],
+    [
+      "Fri",
+      22
+    ],
+    [
+      "Sat",
+      24
+    ]
+  ],
+  "input_prompt": "Design a polished landscape 3:2 infographic page with a clear reading path from the headline to the chart and then to a small source line. The subject is A balcony garden warms up. Use the exact headline \"A balcony garden warms up\" and subtitle \"Daily noon temperature across six observations\". Build the central visual as a line chart with six points; connected in time order. The visual style is warm field-notes editorial, cream paper, terracotta and sage, small hand-drawn leaf accents. This is a data-accuracy task: reproduce every row below exactly, keeping category names, order, values, and units. Let visual lengths/areas accurately encode the values; use a zero baseline for bars and a consistent legend for repeated categories. Dataset:\nMon: 12 °C\nTue: 14 °C\nWed: 15 °C\nThu: 19 °C\nFri: 22 °C\nSat: 24 °C\nRender this exact source note: \"Synthetic sample measurements; not real climate observations\". Key reading: The line rises overall, with every point plotted at its exact value; label synthetic sample. Do not calculate or add claims beyond this stated reading. Do not omit, duplicate, round, reorder, or invent a value. Keep all typography crisp and integrated with the design. Add no other words, decorative numerals, logo, or watermark.",
+  "parameters": {
+    "resolution": "1536x1024",
+    "seed": 42,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "prompt_file": "prompts/c03_garden_line_en__krea2.txt",
+    "steps": 52,
+    "cfg": 3.5,
+    "diffusion_model": "krea2_raw_bf16.safetensors",
+    "text_encoder": "qwen3vl_4b_bf16.safetensors",
+    "vae": "qwen_image_vae.safetensors",
+    "negative_prompt": "text, watermark, logo, blurry"
+  },
+  "workflow": "workflows/c03_garden_line_en__krea2.json",
+  "image": "images/c03_garden_line_en__krea2.png",
+  "resource_lease_id": "4c5b9674-1c34-40e2-94c5-9f7d2f6f5c17",
+  "started_at": "2026-10-14T12:00:58.537131+00:00",
+  "prompt_id": "88d63e64-e379-4034-b49b-ef01e0caefa2",
+  "status": "success",
+  "completed_at": "2026-10-14T12:02:48.328145+00:00",
+  "elapsed_seconds": 109.79,
+  "image_dimensions": [
+    1536,
+    1024
+  ],
+  "peak_vram_mb_observed": 22689,
+  "peak_comfy_rss_mb_observed": 36191,
+  "peak_temperature_c_observed": 80,
+  "peak_gpu_utilization_pct_observed": 100,
+  "gpu_samples": 28,
+  "image_filename": {
+    "filename": "c03_garden_line_en__krea2_00001_.png",
+    "subfolder": "infograph-data-matrix-v1",
+    "type": "output",
+    "id": "0d39b41b-3500-4cfe-8347-595e84268188"
+  },
+  "prompt_strategy": "inherited control, negative prompt includes text",
+  "image_sha256": "46d712c85c4c0548de291ca70d7af051b5eb06eb73108cd376f6e525f528adc8"
+}

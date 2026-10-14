@@ -1,0 +1,9 @@
+Design a polished landscape 3:2 infographic page with a clear reading path from the headline to the chart and then to a small source line. The subject is Renewable electricity, 2021. Use the exact headline "Renewable electricity, 2021" and subtitle "Share of total electricity output". Build the central visual as a ranked horizontal bar chart, descending. The visual style is Swiss editorial minimalism, white space, navy and leaf-green accents. This is a data-accuracy task: reproduce every row below exactly, keeping category names, order, values, and units. Let visual lengths/areas accurately encode the values; use a zero baseline for bars and a consistent legend for repeated categories. Dataset:
+Denmark: 78.96 percent
+Brazil: 77.38 percent
+Canada: 67.02 percent
+Germany: 39.83 percent
+China: 28.43 percent
+United States: 20.27 percent
+India: 19.13 percent
+Render this exact source note: "World Bank WDI indicator EG.ELC.RNEW.ZS; source page attributes indicator to IEA Energy Statistics; CC BY 4.0; accessed 2026-10-14". Key reading: Denmark is highest; India is lowest; all seven values and country labels must match exactly. Do not calculate or add claims beyond this stated reading. Do not omit, duplicate, round, reorder, or invent a value. Keep all typography crisp and integrated with the design. Add no other words, decorative numerals, logo, or watermark.

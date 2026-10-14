@@ -1,0 +1,68 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "job": "c08_seed_timeline_zh__qwen21",
+  "case_id": "c08_seed_timeline_zh",
+  "model": "qwen21",
+  "language": "zh",
+  "seed": 42,
+  "source_data": "合成示例观察；非真实实验结论",
+  "case_ground_truth": [
+    [
+      "第1天",
+      2
+    ],
+    [
+      "第3天",
+      4
+    ],
+    [
+      "第5天",
+      7
+    ],
+    [
+      "第7天",
+      10
+    ],
+    [
+      "第9天",
+      13
+    ]
+  ],
+  "input_prompt": "生成一张横向3:2信息图。按区域逐一描述并呈现：顶部标题与副标题；中央horizontal timeline with five proportional growth markers；底部小号来源说明。风格：植物图鉴风，淡奶油底、叶绿和暖黄，克制线描种子图案。标题原文：『种子发芽观察』。副标题原文：『合成示例数据 · 茎长随时间变化』。逐项准确呈现以下数据，类别、顺序、数值、单位不得改动：\n第1天: 2 厘米\n第3天: 4 厘米\n第5天: 7 厘米\n第7天: 10 厘米\n第9天: 13 厘米\n来源说明原文：『合成示例观察；非真实实验结论』。编码要求：chronological order; marker position and size increase proportionally; exact day and cm values. 图形长度或面积必须与数值成比例；柱状图从零基线开始；不得推算、四舍五入、遗漏、重复或编造数据。所有引号文字清晰、逐字正确。除解读数据所需图例外不要增加文字，不要logo或水印。",
+  "parameters": {
+    "resolution": "1536x1024",
+    "seed": 42,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "prompt_file": "prompts/c08_seed_timeline_zh__qwen21.txt",
+    "steps": 40,
+    "cfg": 1.0,
+    "diffusion_model": "qwen_image_2.1_bf16.safetensors",
+    "text_encoder": "qwen3vl_8b_bf16.safetensors (Qwen native encoder; PE not used to protect exact data strings)",
+    "vae": "qwen_image_2.1_vae_bf16.safetensors"
+  },
+  "workflow": "workflows/c08_seed_timeline_zh__qwen21.json",
+  "image": "images/c08_seed_timeline_zh__qwen21.png",
+  "resource_lease_id": "4c5b9674-1c34-40e2-94c5-9f7d2f6f5c17",
+  "started_at": "2026-10-14T11:56:31.723664+00:00",
+  "prompt_id": "ba48c7f8-b605-4b36-aa19-573468461345",
+  "status": "success",
+  "completed_at": "2026-10-14T11:57:02.234819+00:00",
+  "elapsed_seconds": 30.51,
+  "image_dimensions": [
+    1536,
+    1024
+  ],
+  "peak_vram_mb_observed": 23121,
+  "peak_comfy_rss_mb_observed": 31688,
+  "peak_temperature_c_observed": 83,
+  "peak_gpu_utilization_pct_observed": 100,
+  "gpu_samples": 8,
+  "image_filename": {
+    "filename": "c08_seed_timeline_zh__qwen21_00001_.png",
+    "subfolder": "infograph-data-matrix-v1",
+    "type": "output",
+    "id": "1252fc13-6351-4cbc-bb0b-084416032e0f"
+  }
+}

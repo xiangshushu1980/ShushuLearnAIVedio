@@ -1,0 +1,8 @@
+Create one landscape 3:2 infographic. Describe and render the page region by region: top title and subtitle; central line chart with six points; connected in time order; a small source note at the bottom. Style: warm field-notes editorial, cream paper, terracotta and sage, small hand-drawn leaf accents. Exact title: 'A balcony garden warms up'. Exact subtitle: 'Daily noon temperature across six observations'. Show this dataset exactly, preserving every category, order, value, and unit:
+Mon: 12 °C
+Tue: 14 °C
+Wed: 15 °C
+Thu: 19 °C
+Fri: 22 °C
+Sat: 24 °C
+Source note, render verbatim: 'Synthetic sample measurements; not real climate observations'. Data-encoding requirements: The line rises overall, with every point plotted at its exact value; label synthetic sample. Make the chart geometry directly proportional to the listed values; use a zero baseline for bars; do not infer, round, omit, duplicate, or invent any data. Render all quoted strings legibly and exactly. No extra text, legend labels only when needed to decode the listed categories, no logo or watermark.

@@ -1,0 +1,72 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "job": "c02_commute_bar_zh__qwen21",
+  "case_id": "c02_commute_bar_zh",
+  "model": "qwen21",
+  "language": "zh",
+  "seed": 42,
+  "source_data": "合成示例数据，仅用于图表表达测试",
+  "case_ground_truth": [
+    [
+      "海城",
+      52
+    ],
+    [
+      "云城",
+      46
+    ],
+    [
+      "林城",
+      39
+    ],
+    [
+      "河城",
+      34
+    ],
+    [
+      "山城",
+      28
+    ],
+    [
+      "湖城",
+      23
+    ]
+  ],
+  "input_prompt": "生成一张横向3:2信息图。按区域逐一描述并呈现：顶部标题与副标题；中央horizontal bar chart ranked descending; zero baseline；底部小号来源说明。风格：简洁瑞士编辑风，米白底、墨绿与朱红点缀、留白清晰。标题原文：『城市通勤时间』。副标题原文：『六座城市的单程平均分钟数』。逐项准确呈现以下数据，类别、顺序、数值、单位不得改动：\n海城: 52 分钟\n云城: 46 分钟\n林城: 39 分钟\n河城: 34 分钟\n山城: 28 分钟\n湖城: 23 分钟\n来源说明原文：『合成示例数据，仅用于图表表达测试』。编码要求：海城最长52分钟，湖城最短23分钟，按降序排列，条长与数值成比例。 图形长度或面积必须与数值成比例；柱状图从零基线开始；不得推算、四舍五入、遗漏、重复或编造数据。所有引号文字清晰、逐字正确。除解读数据所需图例外不要增加文字，不要logo或水印。",
+  "parameters": {
+    "resolution": "1536x1024",
+    "seed": 42,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "prompt_file": "prompts/c02_commute_bar_zh__qwen21.txt",
+    "steps": 40,
+    "cfg": 1.0,
+    "diffusion_model": "qwen_image_2.1_bf16.safetensors",
+    "text_encoder": "qwen3vl_8b_bf16.safetensors (Qwen native encoder; PE not used to protect exact data strings)",
+    "vae": "qwen_image_2.1_vae_bf16.safetensors"
+  },
+  "workflow": "workflows/c02_commute_bar_zh__qwen21.json",
+  "image": "images/c02_commute_bar_zh__qwen21.png",
+  "resource_lease_id": "4c5b9674-1c34-40e2-94c5-9f7d2f6f5c17",
+  "started_at": "2026-10-14T11:53:28.229387+00:00",
+  "prompt_id": "5db6dd00-c6b7-475b-9098-b4924fa92689",
+  "status": "success",
+  "completed_at": "2026-10-14T11:53:58.759591+00:00",
+  "elapsed_seconds": 30.53,
+  "image_dimensions": [
+    1536,
+    1024
+  ],
+  "peak_vram_mb_observed": 23089,
+  "peak_comfy_rss_mb_observed": 31688,
+  "peak_temperature_c_observed": 81,
+  "peak_gpu_utilization_pct_observed": 100,
+  "gpu_samples": 8,
+  "image_filename": {
+    "filename": "c02_commute_bar_zh__qwen21_00001_.png",
+    "subfolder": "infograph-data-matrix-v1",
+    "type": "output",
+    "id": "ed5978c8-49b9-4273-b178-cdbb5218a5d3"
+  }
+}

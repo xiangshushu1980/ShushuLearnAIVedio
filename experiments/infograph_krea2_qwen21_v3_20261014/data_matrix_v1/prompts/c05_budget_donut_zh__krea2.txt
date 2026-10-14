@@ -1,0 +1,7 @@
+Design a polished landscape 3:2 infographic page with a clear reading path from the headline to the chart and then to a small source line. The subject is 每月预算怎么分. Use the exact headline "每月预算怎么分" and subtitle "合成示例数据 · 总额占比". Build the central visual as a donut chart with five labeled segments, proportional angles and values. The visual style is 明快杂志编辑风，柔和淡紫、橙、青绿，图标轻量且不抢数据. This is a data-accuracy task: reproduce every row below exactly, keeping category names, order, values, and units. Let visual lengths/areas accurately encode the values; use a zero baseline for bars and a consistent legend for repeated categories. Dataset:
+住房: 35 %
+饮食: 25 %
+交通: 20 %
+储蓄: 12 %
+其他: 8 %
+Render this exact source note: "合成示例数据；五项合计100%". Key reading: segments sum100 and are proportional; housing largest, other smallest. Do not calculate or add claims beyond this stated reading. Do not omit, duplicate, round, reorder, or invent a value. Keep all typography crisp and integrated with the design. Add no other words, decorative numerals, logo, or watermark.

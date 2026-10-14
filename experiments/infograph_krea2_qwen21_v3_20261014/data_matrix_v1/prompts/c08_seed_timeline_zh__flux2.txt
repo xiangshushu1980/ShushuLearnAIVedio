@@ -1,0 +1,5 @@
+横向3:2信息图。主题：种子发芽观察。风格：植物图鉴风，淡奶油底、叶绿和暖黄，克制线描种子图案。布局：顶部标题『种子发芽观察』与副标题『合成示例数据 · 茎长随时间变化』；中央一个horizontal timeline with five proportional growth markers；底部小号来源『合成示例观察；非真实实验结论』。数据（标签、数值和单位逐字准确）：第1天: 2 厘米
+第3天: 4 厘米
+第5天: 7 厘米
+第7天: 10 厘米
+第9天: 13 厘米。编码规则：chronological order; marker position and size increase proportionally; exact day and cm values. 柱从零开始且长度按数值成比例；时间顺序不可变；同类使用统一颜色。层级：标题 > 图表与数据标签 > 副标题及来源。扁平清晰、对齐、留白充足。不得增加文字/数据/编造标签，不要logo或水印。

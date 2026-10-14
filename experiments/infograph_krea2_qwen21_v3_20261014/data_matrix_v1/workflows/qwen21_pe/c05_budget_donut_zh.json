@@ -1,0 +1,142 @@
+{
+  "prompt": {
+    "1": {
+      "class_type": "UNETLoader",
+      "inputs": {
+        "unet_name": "qwen_image_2.1_bf16.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    "2": {
+      "class_type": "CLIPLoader",
+      "inputs": {
+        "clip_name": "qwen3.5_9b_qwen_image_2.1_pe_t2i.int8_convrot.safetensors",
+        "type": "qwen_image"
+      }
+    },
+    "3": {
+      "class_type": "CLIPLoader",
+      "inputs": {
+        "clip_name": "qwen3vl_8b_bf16.safetensors",
+        "type": "qwen_image"
+      }
+    },
+    "4": {
+      "class_type": "VAELoader",
+      "inputs": {
+        "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+      }
+    },
+    "5": {
+      "class_type": "QwenImage21_T2IPromptRewrite",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "prompt": "生成一张横向3:2信息图。按区域逐一描述并呈现：顶部标题与副标题；中央donut chart with five labeled segments, proportional angles and values；底部小号来源说明。风格：明快杂志编辑风，柔和淡紫、橙、青绿，图标轻量且不抢数据。标题原文：『每月预算怎么分』。副标题原文：『合成示例数据 · 总额占比』。逐项准确呈现以下数据，类别、顺序、数值、单位不得改动：\n住房: 35 %\n饮食: 25 %\n交通: 20 %\n储蓄: 12 %\n其他: 8 %\n来源说明原文：『合成示例数据；五项合计100%』。编码要求：segments sum100 and are proportional; housing largest, other smallest. 图形长度或面积必须与数值成比例；柱状图从零基线开始；不得推算、四舍五入、遗漏、重复或编造数据。所有引号文字清晰、逐字正确。除解读数据所需图例外不要增加文字，不要logo或水印。",
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "presence_penalty": 1.5,
+        "max_new_tokens": 16256,
+        "seed": 42
+      }
+    },
+    "6": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "3",
+          0
+        ],
+        "text": [
+          "5",
+          0
+        ]
+      }
+    },
+    "7": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "3",
+          0
+        ],
+        "text": [
+          "5",
+          1
+        ]
+      }
+    },
+    "8": {
+      "class_type": "EmptyLatentImage",
+      "inputs": {
+        "width": 1536,
+        "height": 1024,
+        "batch_size": 1
+      }
+    },
+    "9": {
+      "class_type": "KSampler",
+      "inputs": {
+        "model": [
+          "1",
+          0
+        ],
+        "positive": [
+          "6",
+          0
+        ],
+        "negative": [
+          "7",
+          0
+        ],
+        "latent_image": [
+          "8",
+          0
+        ],
+        "seed": 42,
+        "steps": 40,
+        "cfg": 1.0,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "denoise": 1.0
+      }
+    },
+    "10": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "9",
+          0
+        ],
+        "vae": [
+          "4",
+          0
+        ]
+      }
+    },
+    "11": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "10",
+          0
+        ],
+        "filename_prefix": "infograph-data-matrix-v1/qwen_pe/c05_budget_donut_zh"
+      }
+    },
+    "12": {
+      "class_type": "SaveText",
+      "inputs": {
+        "text": [
+          "5",
+          0
+        ],
+        "filename_prefix": "infograph-data-matrix-v1/qwen_pe/c05_budget_donut_zh",
+        "format": "txt"
+      }
+    }
+  }
+}

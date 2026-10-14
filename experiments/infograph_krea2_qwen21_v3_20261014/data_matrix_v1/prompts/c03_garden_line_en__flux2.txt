@@ -1,0 +1,6 @@
+Landscape 3:2 infographic. SUBJECT: A balcony garden warms up. STYLE: warm field-notes editorial, cream paper, terracotta and sage, small hand-drawn leaf accents. LAYOUT: headline 'A balcony garden warms up' at top; subtitle 'Daily noon temperature across six observations'; one central line chart with six points; connected in time order; small source footer 'Synthetic sample measurements; not real climate observations'. DATA (verbatim labels, exact values and units): Mon: 12 °C
+Tue: 14 °C
+Wed: 15 °C
+Thu: 19 °C
+Fri: 22 °C
+Sat: 24 °C. ENCODING: The line rises overall, with every point plotted at its exact value; label synthetic sample. Bars start at zero and lengths are proportional; time series stays chronological; categories keep consistent colors. Visual hierarchy: title > chart/data labels > subtitle/source. Flat, legible, aligned, generous whitespace. No extra data or text, no invented labels, logo, or watermark.

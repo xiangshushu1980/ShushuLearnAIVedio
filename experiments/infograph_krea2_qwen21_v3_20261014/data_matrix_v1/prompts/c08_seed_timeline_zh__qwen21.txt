@@ -1,0 +1,7 @@
+生成一张横向3:2信息图。按区域逐一描述并呈现：顶部标题与副标题；中央horizontal timeline with five proportional growth markers；底部小号来源说明。风格：植物图鉴风，淡奶油底、叶绿和暖黄，克制线描种子图案。标题原文：『种子发芽观察』。副标题原文：『合成示例数据 · 茎长随时间变化』。逐项准确呈现以下数据，类别、顺序、数值、单位不得改动：
+第1天: 2 厘米
+第3天: 4 厘米
+第5天: 7 厘米
+第7天: 10 厘米
+第9天: 13 厘米
+来源说明原文：『合成示例观察；非真实实验结论』。编码要求：chronological order; marker position and size increase proportionally; exact day and cm values. 图形长度或面积必须与数值成比例；柱状图从零基线开始；不得推算、四舍五入、遗漏、重复或编造数据。所有引号文字清晰、逐字正确。除解读数据所需图例外不要增加文字，不要logo或水印。

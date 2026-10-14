@@ -1,0 +1,67 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "job": "c06_recycling_flow_en__krea2_opt",
+  "case_id": "c06_recycling_flow_en",
+  "model": "krea2_opt",
+  "language": "en",
+  "seed": 42,
+  "source_data": "Synthetic audit data; not a real municipal report",
+  "case_ground_truth": [
+    [
+      "Collected",
+      120
+    ],
+    [
+      "Recycled",
+      84
+    ],
+    [
+      "Contaminated",
+      18
+    ],
+    [
+      "Unsorted loss",
+      18
+    ]
+  ],
+  "input_prompt": "Create a polished landscape 3:2 infographic with a clear editorial reading path. The exact headline is \"Where 120 kg of paper goes\" and the exact subtitle is \"A synthetic one-week recycling audit\". Present the provided dataset as a Sankey-style flow diagram with accurate branch widths, with every label and value printed exactly as quoted: \"Collected: 120 kg\"; \"Recycled: 84 kg\"; \"Contaminated: 18 kg\"; \"Unsorted loss: 18 kg\". Use eco-friendly flat editorial, pale paper, forest green and kraft brown. Keep the visual encoding proportional to the data, preserve the listed order and category-to-value mapping, and use clear axes or a legend only where needed. Key reading: 120 splits exactly into 84+18+18; branch widths proportional; flows labeled with units. The source line is \"Synthetic audit data; not a real municipal report\". All requested words and numbers are quoted so they can be rendered verbatim; add no other text, values, decorative numerals, logo, or watermark. Use a balanced composition with enough space for every label to remain legible.",
+  "parameters": {
+    "resolution": "1536x1024",
+    "seed": 42,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "prompt_file": "prompts/krea2_optimized/c06_recycling_flow_en.txt",
+    "steps": 52,
+    "cfg": 3.5,
+    "diffusion_model": "krea2_raw_bf16.safetensors",
+    "text_encoder": "qwen3vl_4b_bf16.safetensors",
+    "vae": "qwen_image_vae.safetensors",
+    "negative_prompt": "watermark, logo, blurry"
+  },
+  "workflow": "workflows/c06_recycling_flow_en__krea2_opt.json",
+  "image": "images/c06_recycling_flow_en__krea2_opt.png",
+  "resource_lease_id": "4bb54e2e-3d89-4bf7-b6ab-1adbf89d2c1b",
+  "started_at": "2026-10-14T12:51:09.149836+00:00",
+  "prompt_id": "94575b0e-5f1c-479b-a581-b42b5bbaf2d9",
+  "status": "success",
+  "completed_at": "2026-10-14T12:52:56.868976+00:00",
+  "elapsed_seconds": 107.72,
+  "image_dimensions": [
+    1536,
+    1024
+  ],
+  "peak_vram_mb_observed": 22698,
+  "peak_comfy_rss_mb_observed": 36305,
+  "peak_temperature_c_observed": 80,
+  "peak_gpu_utilization_pct_observed": 100,
+  "gpu_samples": 27,
+  "image_filename": {
+    "filename": "c06_recycling_flow_en__krea2_opt_00001_.png",
+    "subfolder": "infograph-data-matrix-v1",
+    "type": "output",
+    "id": "831ef596-209e-4007-8993-d7cb7ee67b92"
+  },
+  "prompt_strategy": "Krea natural-language expansion style, all target strings quoted; no text-negative conditioning",
+  "image_sha256": "65f1432adf631a759261966d888b04880301cafc1d1072e55602353c0a0adb1c"
+}

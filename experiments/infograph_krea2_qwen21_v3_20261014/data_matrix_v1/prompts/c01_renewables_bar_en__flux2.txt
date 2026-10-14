@@ -1,0 +1,7 @@
+Landscape 3:2 infographic. SUBJECT: Renewable electricity, 2021. STYLE: Swiss editorial minimalism, white space, navy and leaf-green accents. LAYOUT: headline 'Renewable electricity, 2021' at top; subtitle 'Share of total electricity output'; one central ranked horizontal bar chart, descending; small source footer 'World Bank WDI indicator EG.ELC.RNEW.ZS; source page attributes indicator to IEA Energy Statistics; CC BY 4.0; accessed 2026-10-14'. DATA (verbatim labels, exact values and units): Denmark: 78.96 percent
+Brazil: 77.38 percent
+Canada: 67.02 percent
+Germany: 39.83 percent
+China: 28.43 percent
+United States: 20.27 percent
+India: 19.13 percent. ENCODING: Denmark is highest; India is lowest; all seven values and country labels must match exactly. Bars start at zero and lengths are proportional; time series stays chronological; categories keep consistent colors. Visual hierarchy: title > chart/data labels > subtitle/source. Flat, legible, aligned, generous whitespace. No extra data or text, no invented labels, logo, or watermark.

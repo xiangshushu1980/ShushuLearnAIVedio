@@ -1,0 +1,79 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "job": "c01_renewables_bar_en__krea2",
+  "case_id": "c01_renewables_bar_en",
+  "model": "krea2",
+  "language": "en",
+  "seed": 42,
+  "source_data": "World Bank WDI indicator EG.ELC.RNEW.ZS; source page attributes indicator to IEA Energy Statistics; CC BY 4.0; accessed 2026-10-14",
+  "case_ground_truth": [
+    [
+      "Denmark",
+      78.96
+    ],
+    [
+      "Brazil",
+      77.38
+    ],
+    [
+      "Canada",
+      67.02
+    ],
+    [
+      "Germany",
+      39.83
+    ],
+    [
+      "China",
+      28.43
+    ],
+    [
+      "United States",
+      20.27
+    ],
+    [
+      "India",
+      19.13
+    ]
+  ],
+  "input_prompt": "Design a polished landscape 3:2 infographic page with a clear reading path from the headline to the chart and then to a small source line. The subject is Renewable electricity, 2021. Use the exact headline \"Renewable electricity, 2021\" and subtitle \"Share of total electricity output\". Build the central visual as a ranked horizontal bar chart, descending. The visual style is Swiss editorial minimalism, white space, navy and leaf-green accents. This is a data-accuracy task: reproduce every row below exactly, keeping category names, order, values, and units. Let visual lengths/areas accurately encode the values; use a zero baseline for bars and a consistent legend for repeated categories. Dataset:\nDenmark: 78.96 percent\nBrazil: 77.38 percent\nCanada: 67.02 percent\nGermany: 39.83 percent\nChina: 28.43 percent\nUnited States: 20.27 percent\nIndia: 19.13 percent\nRender this exact source note: \"World Bank WDI indicator EG.ELC.RNEW.ZS; source page attributes indicator to IEA Energy Statistics; CC BY 4.0; accessed 2026-10-14\". Key reading: Denmark is highest; India is lowest; all seven values and country labels must match exactly. Do not calculate or add claims beyond this stated reading. Do not omit, duplicate, round, reorder, or invent a value. Keep all typography crisp and integrated with the design. Add no other words, decorative numerals, logo, or watermark.",
+  "parameters": {
+    "resolution": "1536x1024",
+    "seed": 42,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "prompt_file": "prompts/c01_renewables_bar_en__krea2.txt",
+    "steps": 52,
+    "cfg": 3.5,
+    "diffusion_model": "krea2_raw_bf16.safetensors",
+    "text_encoder": "qwen3vl_4b_bf16.safetensors",
+    "vae": "qwen_image_vae.safetensors",
+    "negative_prompt": "text, watermark, logo, blurry"
+  },
+  "workflow": "workflows/c01_renewables_bar_en__krea2.json",
+  "image": "images/c01_renewables_bar_en__krea2.png",
+  "resource_lease_id": "4c5b9674-1c34-40e2-94c5-9f7d2f6f5c17",
+  "started_at": "2026-10-14T11:57:02.297040+00:00",
+  "prompt_id": "12e60b17-d778-4101-b08a-d72c6a92b593",
+  "status": "success",
+  "completed_at": "2026-10-14T11:59:08.646904+00:00",
+  "elapsed_seconds": 126.35,
+  "image_dimensions": [
+    1536,
+    1024
+  ],
+  "peak_vram_mb_observed": 22345,
+  "peak_comfy_rss_mb_observed": 36158,
+  "peak_temperature_c_observed": 80,
+  "peak_gpu_utilization_pct_observed": 100,
+  "gpu_samples": 32,
+  "image_filename": {
+    "filename": "c01_renewables_bar_en__krea2_00001_.png",
+    "subfolder": "infograph-data-matrix-v1",
+    "type": "output",
+    "id": "e12471f4-ed3a-4b61-ae7f-76c30dc6067c"
+  },
+  "prompt_strategy": "inherited control, negative prompt includes text",
+  "image_sha256": "dd28fb402ec5a1da86c780dab2c063df989e77749674aee7a015d2989c8a7cd0"
+}

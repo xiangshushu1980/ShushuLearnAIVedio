@@ -1,0 +1,64 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "job": "c08_seed_timeline_zh",
+  "case_id": "c08_seed_timeline_zh",
+  "model": "Qwen-Image-2.1 BF16 + Qwen Image 2.1 T2I Prompt Rewrite PE",
+  "language": "zh",
+  "seed": 42,
+  "source_data": "合成示例观察；非真实实验结论",
+  "case_ground_truth": [
+    [
+      "第1天",
+      2
+    ],
+    [
+      "第3天",
+      4
+    ],
+    [
+      "第5天",
+      7
+    ],
+    [
+      "第7天",
+      10
+    ],
+    [
+      "第9天",
+      13
+    ]
+  ],
+  "input_prompt": "生成一张横向3:2信息图。按区域逐一描述并呈现：顶部标题与副标题；中央horizontal timeline with five proportional growth markers；底部小号来源说明。风格：植物图鉴风，淡奶油底、叶绿和暖黄，克制线描种子图案。标题原文：『种子发芽观察』。副标题原文：『合成示例数据 · 茎长随时间变化』。逐项准确呈现以下数据，类别、顺序、数值、单位不得改动：\n第1天: 2 厘米\n第3天: 4 厘米\n第5天: 7 厘米\n第7天: 10 厘米\n第9天: 13 厘米\n来源说明原文：『合成示例观察；非真实实验结论』。编码要求：chronological order; marker position and size increase proportionally; exact day and cm values. 图形长度或面积必须与数值成比例；柱状图从零基线开始；不得推算、四舍五入、遗漏、重复或编造数据。所有引号文字清晰、逐字正确。除解读数据所需图例外不要增加文字，不要logo或水印。",
+  "actual_pe_prompt_file": "prompts/qwen21_pe_outputs/c08_seed_timeline_zh.txt",
+  "parameters": {
+    "resolution": "1536x1024",
+    "steps": 40,
+    "cfg": 1.0,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "diffusion_model": "qwen_image_2.1_bf16.safetensors",
+    "text_encoder": "qwen3vl_8b_bf16.safetensors",
+    "prompt_enhancer": "qwen3.5_9b_qwen_image_2.1_pe_t2i.int8_convrot.safetensors",
+    "pe_temperature": 1.0,
+    "pe_top_p": 0.95,
+    "pe_top_k": 20,
+    "pe_presence_penalty": 1.5
+  },
+  "workflow": "workflows/qwen21_pe/c08_seed_timeline_zh.json",
+  "image": "images/qwen21_pe/c08_seed_timeline_zh.png",
+  "prompt_id": "7d67b9e5-bea2-4003-845e-bb2224688f54",
+  "resource_lease_id": "80ab8e1d-606e-4783-8a5b-4efa3f1bd5c2",
+  "elapsed_seconds": 59.23,
+  "image_dimensions": [
+    1536,
+    1024
+  ],
+  "status": "success",
+  "peak_vram_mb_observed": 23175,
+  "peak_comfy_rss_mb_observed": 40532,
+  "peak_temperature_c_observed": 81,
+  "peak_gpu_utilization_pct_observed": 100,
+  "gpu_samples": 15,
+  "completed_at": "2026-10-14T12:31:38.818166+00:00"
+}

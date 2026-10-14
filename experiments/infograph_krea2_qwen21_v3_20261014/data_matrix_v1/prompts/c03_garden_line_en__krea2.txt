@@ -1,0 +1,8 @@
+Design a polished landscape 3:2 infographic page with a clear reading path from the headline to the chart and then to a small source line. The subject is A balcony garden warms up. Use the exact headline "A balcony garden warms up" and subtitle "Daily noon temperature across six observations". Build the central visual as a line chart with six points; connected in time order. The visual style is warm field-notes editorial, cream paper, terracotta and sage, small hand-drawn leaf accents. This is a data-accuracy task: reproduce every row below exactly, keeping category names, order, values, and units. Let visual lengths/areas accurately encode the values; use a zero baseline for bars and a consistent legend for repeated categories. Dataset:
+Mon: 12 °C
+Tue: 14 °C
+Wed: 15 °C
+Thu: 19 °C
+Fri: 22 °C
+Sat: 24 °C
+Render this exact source note: "Synthetic sample measurements; not real climate observations". Key reading: The line rises overall, with every point plotted at its exact value; label synthetic sample. Do not calculate or add claims beyond this stated reading. Do not omit, duplicate, round, reorder, or invent a value. Keep all typography crisp and integrated with the design. Add no other words, decorative numerals, logo, or watermark.
