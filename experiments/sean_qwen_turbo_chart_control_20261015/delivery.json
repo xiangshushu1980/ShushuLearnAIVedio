@@ -1,0 +1,21 @@
+{
+  "owner": "Sean",
+  "task": "remote-31c37e9c-c14a-45ca-a261-963e846990c2",
+  "summary": "176图+2PE改写完成。T2I2x2四格及比例明确v2均0/20；完整风格参考编辑5/20；程序准确参考＋仅换背景单系列20/20、扩展双系列20/20。达到限定背景编辑范围的稳定阈值，纯文本/重设计有上限证据。PE仅两次固定改写，不外推普遍效应。",
+  "report": "/home/sean/projects/infograph-research/hands-on/qwen-turbo-chart-control/notes.md",
+  "manifest": "/home/sean/projects/comfy-ops/experiments/sean_qwen_turbo_chart_control_20261015/manifest.json",
+  "qc": "/home/sean/projects/comfy-ops/experiments/sean_qwen_turbo_chart_control_20261015/qc.json",
+  "integrity": "/home/sean/projects/comfy-ops/experiments/sean_qwen_turbo_chart_control_20261015/integrity_check.json",
+  "commits": {
+    "infograph-research/master": "cfc34a0",
+    "comfy-ops/main": [
+      "44c3c3a",
+      "2cf46b1",
+      "621ef7e"
+    ]
+  },
+  "remote_sync": "infograph-research无remote；comfy-ops origin/main前有10个其他任务未推提交，因此未推送混合范围。所有本任务commit仅本任务路径。",
+  "local_only": "176原始生成PNG、联系表，约200MB，本地experiments目录保存，manifest逐图hash可追溯；程序参考PNG已committed。",
+  "resource_cleanup": "共享ComfyUI queue_running/queue_pending为空；hive-resource leases为空；未启动/停止/重启共享服务。",
+  "acceptance": "提交awaiting_acceptance，用户验收；不自行complete远程任务。"
+}
