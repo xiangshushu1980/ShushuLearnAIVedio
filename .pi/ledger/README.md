@@ -19,6 +19,7 @@
 | Motion Booster | [h3-motion-booster.md](h3-motion-booster.md) |
 | 视频分析与 OCR | [va-ocr.md](va-ocr.md) |
 | 多 Agent 协作治理 | [collab-governance.md](collab-governance.md) |
+| Qwen 数据图表 | [qwen-charts.md](qwen-charts.md) |
 | Film Editor | [film-editor.md](film-editor.md) |
 | Reference Agent | [reference-agent.md](reference-agent.md) |
 | Reference 工作区 | [reference-workspace.md](reference-workspace.md) |
