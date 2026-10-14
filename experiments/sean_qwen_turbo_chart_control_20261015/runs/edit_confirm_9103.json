@@ -1,0 +1,214 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-31c37e9c-c14a-45ca-a261-963e846990c2",
+  "job": "edit_confirm_9103",
+  "status": "success",
+  "prompt_id": "104c0a88-d395-4da7-8810-5718d1378cfc",
+  "elapsed_seconds": 4.14,
+  "files": [
+    "images/edit_confirm_9103.png"
+  ],
+  "history": {
+    "prompt": [
+      100,
+      "104c0a88-d395-4da7-8810-5718d1378cfc",
+      {
+        "1": {
+          "class_type": "UNETLoader",
+          "inputs": {
+            "unet_name": "qwen_image_2.1_turbo_int8_convrot.safetensors",
+            "weight_dtype": "default"
+          }
+        },
+        "2": {
+          "class_type": "CLIPLoader",
+          "inputs": {
+            "clip_name": "qwen3vl_8b_bf16.safetensors",
+            "type": "qwen_image"
+          }
+        },
+        "3": {
+          "class_type": "VAELoader",
+          "inputs": {
+            "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+          }
+        },
+        "4": {
+          "class_type": "TextEncodeQwenImage21",
+          "inputs": {
+            "clip": [
+              "2",
+              0
+            ],
+            "vae": [
+              "3",
+              0
+            ],
+            "prompt": "将<image1>的准确柱状图变为精致的现代数据报告风格，保留白底和蓝色矩形柱，改善字体与线条质感，标题下加短蓝色装饰线。严格保留原图的所有文字、类别、数值、坐标轴刻度、顺序、柱数、柱宽、柱顶与基线的位置，不能改变任何数据几何关系，不增加其他文字。",
+            "negative_prompt": "",
+            "resolution": 0,
+            "images.image_1": [
+              "12",
+              0
+            ]
+          }
+        },
+        "7": {
+          "class_type": "ManualSigmas",
+          "inputs": {
+            "sigmas": "1.0, 0.978453, 0.954180, 0.926626, 0.895080, 0.845148, 0.704534, 0.414568, 0.0"
+          }
+        },
+        "8": {
+          "class_type": "KSamplerSelect",
+          "inputs": {
+            "sampler_name": "euler"
+          }
+        },
+        "9": {
+          "class_type": "SamplerCustom",
+          "inputs": {
+            "model": [
+              "1",
+              0
+            ],
+            "add_noise": true,
+            "noise_seed": 9103,
+            "cfg": 1.0,
+            "positive": [
+              "4",
+              0
+            ],
+            "negative": [
+              "4",
+              1
+            ],
+            "sampler": [
+              "8",
+              0
+            ],
+            "sigmas": [
+              "7",
+              0
+            ],
+            "latent_image": [
+              "4",
+              2
+            ]
+          }
+        },
+        "10": {
+          "class_type": "VAEDecode",
+          "inputs": {
+            "samples": [
+              "9",
+              0
+            ],
+            "vae": [
+              "3",
+              0
+            ]
+          }
+        },
+        "11": {
+          "class_type": "SaveImage",
+          "inputs": {
+            "images": [
+              "10",
+              0
+            ],
+            "filename_prefix": "sean_chart_control/edit_confirm_9103"
+          }
+        },
+        "12": {
+          "class_type": "LoadImage",
+          "inputs": {
+            "image": "sean_chart_control_reference.png"
+          }
+        }
+      },
+      {
+        "client_id": "c50560a1-dc52-432e-9b26-061b23e35421",
+        "create_time": 1791998965789
+      },
+      [
+        "11"
+      ]
+    ],
+    "outputs": {
+      "11": {
+        "images": [
+          {
+            "filename": "edit_confirm_9103_00001_.png",
+            "subfolder": "sean_chart_control",
+            "type": "output",
+            "metadata": {
+              "kind": "image",
+              "width": 1536,
+              "height": 1024
+            },
+            "id": "7b5d2c19-3c1a-4b27-9730-d4f9fc20c8cd"
+          }
+        ]
+      }
+    },
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "104c0a88-d395-4da7-8810-5718d1378cfc",
+            "timestamp": 1791998965790
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "7",
+              "8",
+              "12"
+            ],
+            "prompt_id": "104c0a88-d395-4da7-8810-5718d1378cfc",
+            "timestamp": 1791998965794
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "104c0a88-d395-4da7-8810-5718d1378cfc",
+            "timestamp": 1791998969390
+          }
+        ]
+      ]
+    },
+    "meta": {
+      "11": {
+        "node_id": "11",
+        "display_node": "11",
+        "parent_node": null,
+        "real_node_id": "11"
+      }
+    }
+  },
+  "gpu_samples": [
+    {
+      "seconds": 0.07,
+      "gpu": "18350, 0, 54"
+    },
+    {
+      "seconds": 3.13,
+      "gpu": "18958, 100, 72"
+    }
+  ],
+  "lease": "787314c8-c6dd-48aa-8583-266029cb2abf",
+  "sha256": {
+    "images/edit_confirm_9103.png": "43f00ab5473c161ac9031d9a9efaea71e2aba150fc545c5e68ef958da0ca1f8a"
+  }
+}

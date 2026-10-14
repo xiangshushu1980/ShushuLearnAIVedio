@@ -1,0 +1,5 @@
+# Owner: Sean. Raw generated images and review sheets are kept locally.
+images/
+contact*.jpg
+debug_contact.jpg
+__pycache__/

@@ -1,0 +1,21 @@
+{
+  "owner": "Sean",
+  "checks": {
+    "receipts": 178,
+    "status_success_count": 178,
+    "artifact_hash_graph_dimension_errors": [],
+    "confirmation_images_expected": 160,
+    "debug_images_expected": 16,
+    "pe_rewrite_jobs_expected": 2
+  },
+  "pixel_hash_distinct": {
+    "edit_v2_confirm": {
+      "n": 20,
+      "unique_pixel_hashes": 20
+    },
+    "grouped_confirm": {
+      "n": 20,
+      "unique_pixel_hashes": 20
+    }
+  }
+}

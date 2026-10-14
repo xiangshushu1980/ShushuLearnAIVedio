@@ -1,0 +1,119 @@
+{
+  "prompt": {
+    "1": {
+      "class_type": "UNETLoader",
+      "inputs": {
+        "unet_name": "qwen_image_2.1_turbo_int8_convrot.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    "2": {
+      "class_type": "CLIPLoader",
+      "inputs": {
+        "clip_name": "qwen3vl_8b_bf16.safetensors",
+        "type": "qwen_image"
+      }
+    },
+    "3": {
+      "class_type": "VAELoader",
+      "inputs": {
+        "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+      }
+    },
+    "4": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": "The image is a clean, minimalist vertical bar chart on a white-to-light-gray background with a soft vignette-like gradient near the edges. At the top center, a large bold black Chinese title reads \"测试数据\", functioning as the main heading. Below the title, the plotting area occupies most of the canvas, with a thick black vertical y-axis on the left and a thick black horizontal x-axis along the bottom. The y-axis has black tick labels arranged vertically from bottom to top as \"0\", \"20\", \"40\", \"60\", \"80\", and \"100\". Light gray dashed horizontal gridlines span across the chart at the major y-axis levels, creating a structured measurement background. Four vivid blue vertical rectangular bars with subtle vertical gradients rise from the baseline: the first bar on the left corresponds to the x-axis category label \"甲\" and reaches the value labeled \"20\" above it; the second bar corresponds to \"乙\" and reaches \"70\"; the third bar corresponds to \"丙\" and reaches \"40\"; and the fourth bar on the right corresponds to \"丁\" and reaches \"90\". Each value label is placed just above its respective bar in bold black text, while each category label appears below the bar in large black Chinese characters centered under the column. The bars are saturated blue, approximately #0B7FEF to #158CF2, with smooth edges and a slightly brighter highlight toward the upper portion. The composition is spacious and uncluttered, using strong contrast between black text, dark axes, pale gridlines, and bright blue data columns."
+      }
+    },
+    "5": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": ""
+      }
+    },
+    "6": {
+      "class_type": "EmptySD3LatentImage",
+      "inputs": {
+        "width": 1536,
+        "height": 1024,
+        "batch_size": 1
+      }
+    },
+    "7": {
+      "class_type": "ManualSigmas",
+      "inputs": {
+        "sigmas": "1.0, 0.978453, 0.954180, 0.926626, 0.895080, 0.845148, 0.704534, 0.414568, 0.0"
+      }
+    },
+    "8": {
+      "class_type": "KSamplerSelect",
+      "inputs": {
+        "sampler_name": "euler"
+      }
+    },
+    "9": {
+      "class_type": "SamplerCustom",
+      "inputs": {
+        "model": [
+          "1",
+          0
+        ],
+        "add_noise": true,
+        "noise_seed": 10111,
+        "cfg": 1.0,
+        "positive": [
+          "4",
+          0
+        ],
+        "negative": [
+          "5",
+          0
+        ],
+        "sampler": [
+          "8",
+          0
+        ],
+        "sigmas": [
+          "7",
+          0
+        ],
+        "latent_image": [
+          "6",
+          0
+        ]
+      }
+    },
+    "10": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "9",
+          0
+        ],
+        "vae": [
+          "3",
+          0
+        ]
+      }
+    },
+    "11": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "10",
+          0
+        ],
+        "filename_prefix": "sean_chart_control/confirm_minimal_on_10111"
+      }
+    }
+  }
+}

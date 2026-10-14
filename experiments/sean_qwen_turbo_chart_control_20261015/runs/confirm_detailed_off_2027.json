@@ -1,0 +1,217 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-31c37e9c-c14a-45ca-a261-963e846990c2",
+  "job": "confirm_detailed_off_2027",
+  "status": "success",
+  "prompt_id": "4f58ad0d-498e-459e-94a6-c1b1f6e8bbc8",
+  "elapsed_seconds": 3.11,
+  "files": [
+    "images/confirm_detailed_off_2027.png"
+  ],
+  "history": {
+    "prompt": [
+      51,
+      "4f58ad0d-498e-459e-94a6-c1b1f6e8bbc8",
+      {
+        "1": {
+          "class_type": "UNETLoader",
+          "inputs": {
+            "unet_name": "qwen_image_2.1_turbo_int8_convrot.safetensors",
+            "weight_dtype": "default"
+          }
+        },
+        "2": {
+          "class_type": "CLIPLoader",
+          "inputs": {
+            "clip_name": "qwen3vl_8b_bf16.safetensors",
+            "type": "qwen_image"
+          }
+        },
+        "3": {
+          "class_type": "VAELoader",
+          "inputs": {
+            "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+          }
+        },
+        "4": {
+          "class_type": "CLIPTextEncode",
+          "inputs": {
+            "clip": [
+              "2",
+              0
+            ],
+            "text": "横向3:2白底柱状图，标题‘测试数据’。单系列四根蓝色竖直矩形柱，从左到右：甲=20、乙=70、丙=40、丁=90。纵轴从0到100，刻度0、20、40、60、80、100等距排列，共用零基线；柱高严格按数值线性比例。每根柱下方写类别，顶端标数值。仅显示标题、类别、数值和纵轴刻度。 版面采用精致的现代数据报告设计：顶部标题居中，深海军蓝无衬线字体，字重均匀，细腻抗锯齿；四周宽阔留白，绘图区居中占主体，标签整齐对齐。柱体均为饱和湖蓝色，边缘利落，宽度一致，间距均匀，矩形平顶；坐标轴为纤细深灰线，水平网格为浅灰细线。标题下方加入一条短蓝色装饰线，四角加入很小的浅蓝几何点缀，背景带极淡纸张纹理，整体安静、清爽、专业。装饰不遮挡图表，不增加文字，保留全部既定数据和轴约束。"
+          }
+        },
+        "5": {
+          "class_type": "CLIPTextEncode",
+          "inputs": {
+            "clip": [
+              "2",
+              0
+            ],
+            "text": ""
+          }
+        },
+        "6": {
+          "class_type": "EmptySD3LatentImage",
+          "inputs": {
+            "width": 1536,
+            "height": 1024,
+            "batch_size": 1
+          }
+        },
+        "7": {
+          "class_type": "ManualSigmas",
+          "inputs": {
+            "sigmas": "1.0, 0.978453, 0.954180, 0.926626, 0.895080, 0.845148, 0.704534, 0.414568, 0.0"
+          }
+        },
+        "8": {
+          "class_type": "KSamplerSelect",
+          "inputs": {
+            "sampler_name": "euler"
+          }
+        },
+        "9": {
+          "class_type": "SamplerCustom",
+          "inputs": {
+            "model": [
+              "1",
+              0
+            ],
+            "add_noise": true,
+            "noise_seed": 2027,
+            "cfg": 1.0,
+            "positive": [
+              "4",
+              0
+            ],
+            "negative": [
+              "5",
+              0
+            ],
+            "sampler": [
+              "8",
+              0
+            ],
+            "sigmas": [
+              "7",
+              0
+            ],
+            "latent_image": [
+              "6",
+              0
+            ]
+          }
+        },
+        "10": {
+          "class_type": "VAEDecode",
+          "inputs": {
+            "samples": [
+              "9",
+              0
+            ],
+            "vae": [
+              "3",
+              0
+            ]
+          }
+        },
+        "11": {
+          "class_type": "SaveImage",
+          "inputs": {
+            "images": [
+              "10",
+              0
+            ],
+            "filename_prefix": "sean_chart_control/confirm_detailed_off_2027"
+          }
+        }
+      },
+      {
+        "client_id": "eee9e8c8-b7c0-4084-ad4a-097cbf5dc9ae",
+        "create_time": 1791998712956
+      },
+      [
+        "11"
+      ]
+    ],
+    "outputs": {
+      "11": {
+        "images": [
+          {
+            "filename": "confirm_detailed_off_2027_00001_.png",
+            "subfolder": "sean_chart_control",
+            "type": "output",
+            "metadata": {
+              "kind": "image",
+              "width": 1536,
+              "height": 1024
+            },
+            "id": "f36d8a29-1083-47e9-a01f-a0aa4787cbe9"
+          }
+        ]
+      }
+    },
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "4f58ad0d-498e-459e-94a6-c1b1f6e8bbc8",
+            "timestamp": 1791998712956
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8"
+            ],
+            "prompt_id": "4f58ad0d-498e-459e-94a6-c1b1f6e8bbc8",
+            "timestamp": 1791998712957
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "4f58ad0d-498e-459e-94a6-c1b1f6e8bbc8",
+            "timestamp": 1791998715761
+          }
+        ]
+      ]
+    },
+    "meta": {
+      "11": {
+        "node_id": "11",
+        "display_node": "11",
+        "parent_node": null,
+        "real_node_id": "11"
+      }
+    }
+  },
+  "gpu_samples": [
+    {
+      "seconds": 0.06,
+      "gpu": "21157, 0, 54"
+    },
+    {
+      "seconds": 3.11,
+      "gpu": "21157, 0, 57"
+    }
+  ],
+  "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+  "sha256": {
+    "images/confirm_detailed_off_2027.png": "866085917f0d6327a335f3a552f9fa2adb2a05c25ef849332a30ccb0941ab10d"
+  }
+}

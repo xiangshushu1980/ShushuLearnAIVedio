@@ -1,0 +1,4312 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-31c37e9c-c14a-45ca-a261-963e846990c2",
+  "date_local": "2026-10-15 Asia/Shanghai",
+  "configuration": {
+    "owner": "Sean",
+    "task_id": "remote-31c37e9c-c14a-45ca-a261-963e846990c2",
+    "data_kind": "fixed artificial test data",
+    "categories": [
+      "甲",
+      "乙",
+      "丙",
+      "丁"
+    ],
+    "values": [
+      20,
+      70,
+      40,
+      90
+    ],
+    "canvas": [
+      1536,
+      1024
+    ],
+    "debug_seeds": [
+      42,
+      1337
+    ],
+    "confirmation_seeds": [
+      1009,
+      2027,
+      3037,
+      4051,
+      5059,
+      6073,
+      7079,
+      8089,
+      9103,
+      10111,
+      11113,
+      12119,
+      13121,
+      14143,
+      15149,
+      16183,
+      17189,
+      18199,
+      19207,
+      20231
+    ],
+    "pe_seed": 271828,
+    "pe_policy": "One frozen official PE rewrite per input prompt, same rewritten text across all diffusion seeds. Measures image stability conditional on this rewrite; does not establish rewrite stability across PE seeds.",
+    "acceptance": {
+      "complete_passes_required": 18,
+      "confirmation_n": 20,
+      "geometry_max_absolute_error_axis_fraction": 0.02,
+      "geometry_rule": "Measure bar tops relative to shared baseline and y-axis tick calibration; max error 2 units on 0-100 scale, inclusive. Exact category/value text, order, axis ticks and four bars required; no extra/missing data. Layout may move. Geometry and text independently assessed. Ambiguous image fails pending review."
+    },
+    "minimal_prompt": "横向3:2白底柱状图，标题‘测试数据’。单系列四根蓝色竖直矩形柱，从左到右：甲=20、乙=70、丙=40、丁=90。纵轴从0到100，刻度0、20、40、60、80、100等距排列，共用零基线；柱高严格按数值线性比例。每根柱下方写类别，顶端标数值。仅显示标题、类别、数值和纵轴刻度。",
+    "detail_append": " 版面采用精致的现代数据报告设计：顶部标题居中，深海军蓝无衬线字体，字重均匀，细腻抗锯齿；四周宽阔留白，绘图区居中占主体，标签整齐对齐。柱体均为饱和湖蓝色，边缘利落，宽度一致，间距均匀，矩形平顶；坐标轴为纤细深灰线，水平网格为浅灰细线。标题下方加入一条短蓝色装饰线，四角加入很小的浅蓝几何点缀，背景带极淡纸张纹理，整体安静、清爽、专业。装饰不遮挡图表，不增加文字，保留全部既定数据和轴约束。",
+    "sampling": {
+      "weights": "qwen_image_2.1_turbo_int8_convrot.safetensors",
+      "text_encoder": "qwen3vl_8b_bf16.safetensors",
+      "vae": "qwen_image_2.1_vae_bf16.safetensors",
+      "cfg": 1,
+      "sampler": "euler",
+      "sigmas": "1.0, 0.978453, 0.954180, 0.926626, 0.895080, 0.845148, 0.704534, 0.414568, 0.0"
+    },
+    "sources": [
+      "https://github.com/QwenLM/Qwen-Image-2.1",
+      "https://docs.comfy.org/tutorials/image/qwen/qwen-image-2-1"
+    ],
+    "review": "Human per-image text/axis review plus saved pixel measurements; no data overlays or repair in generated images. Debug excluded from confirmation; any iteration uses fresh held-out seeds."
+  },
+  "jobs": [
+    {
+      "job": "confirm_detailed_off_1009",
+      "status": "success",
+      "prompt_id": "7db7187e-9677-4f34-83b2-0848394fd117",
+      "elapsed_seconds": 4.11,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_detailed_off_1009.png": "26261e4f7f4c957741bc227a1af1f3a5f2c241a507f4d3c4e03e884d7530adce"
+      },
+      "files": [
+        "images/confirm_detailed_off_1009.png"
+      ],
+      "workflow": "workflows/confirm_detailed_off_1009.json",
+      "receipt": "runs/confirm_detailed_off_1009.json",
+      "seed": 1009,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21157,
+      "gpu_peak_temp_c_observed": 62,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_detailed_off_10111",
+      "status": "success",
+      "prompt_id": "c29b1e91-83c7-4edf-a44c-c40a4a692759",
+      "elapsed_seconds": 3.11,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_detailed_off_10111.png": "1e4fb937b214f9c3501cccc2774ea41c0b7b56873346f3410888a9a60b5ead68"
+      },
+      "files": [
+        "images/confirm_detailed_off_10111.png"
+      ],
+      "workflow": "workflows/confirm_detailed_off_10111.json",
+      "receipt": "runs/confirm_detailed_off_10111.json",
+      "seed": 10111,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21157,
+      "gpu_peak_temp_c_observed": 61,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_detailed_off_11113",
+      "status": "success",
+      "prompt_id": "1b6202cc-b8a5-40ca-9c68-1100207f12fe",
+      "elapsed_seconds": 3.29,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_detailed_off_11113.png": "ae3b9ef9dd549908d02d4012f823bb92e14745cfa147bdaa98b27e57de1001d7"
+      },
+      "files": [
+        "images/confirm_detailed_off_11113.png"
+      ],
+      "workflow": "workflows/confirm_detailed_off_11113.json",
+      "receipt": "runs/confirm_detailed_off_11113.json",
+      "seed": 11113,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21157,
+      "gpu_peak_temp_c_observed": 61,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_detailed_off_12119",
+      "status": "success",
+      "prompt_id": "af57229d-e37e-4a81-940a-6e41dc91b9d5",
+      "elapsed_seconds": 3.12,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_detailed_off_12119.png": "4e0a62ef658ab11f7b93e918d509f09fd6a86d3fc5c35e5c0780c4ecc5908919"
+      },
+      "files": [
+        "images/confirm_detailed_off_12119.png"
+      ],
+      "workflow": "workflows/confirm_detailed_off_12119.json",
+      "receipt": "runs/confirm_detailed_off_12119.json",
+      "seed": 12119,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21157,
+      "gpu_peak_temp_c_observed": 59,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_detailed_off_13121",
+      "status": "success",
+      "prompt_id": "f1741473-1a86-4a02-ae74-3004f057e8a1",
+      "elapsed_seconds": 3.12,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_detailed_off_13121.png": "1a35d4380373a18f87f52fad8cf3c243df228dbd5034d1a91c89c80a2459d3cc"
+      },
+      "files": [
+        "images/confirm_detailed_off_13121.png"
+      ],
+      "workflow": "workflows/confirm_detailed_off_13121.json",
+      "receipt": "runs/confirm_detailed_off_13121.json",
+      "seed": 13121,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21157,
+      "gpu_peak_temp_c_observed": 62,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_detailed_off_14143",
+      "status": "success",
+      "prompt_id": "1d848f13-e9c1-4aec-8d32-5084bc947504",
+      "elapsed_seconds": 3.11,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_detailed_off_14143.png": "62e7ef334f1e3cf71e5a845a42bbf9fe34d225a43597f11cd36b0a20960c8533"
+      },
+      "files": [
+        "images/confirm_detailed_off_14143.png"
+      ],
+      "workflow": "workflows/confirm_detailed_off_14143.json",
+      "receipt": "runs/confirm_detailed_off_14143.json",
+      "seed": 14143,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21157,
+      "gpu_peak_temp_c_observed": 62,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_detailed_off_15149",
+      "status": "success",
+      "prompt_id": "ffc632e1-3e6c-4ee0-81ad-506e3c4d6c28",
+      "elapsed_seconds": 3.28,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_detailed_off_15149.png": "801fecd2fadfb1e8108ba02fa00f7b946e1369182db6132665b5093a3640e98f"
+      },
+      "files": [
+        "images/confirm_detailed_off_15149.png"
+      ],
+      "workflow": "workflows/confirm_detailed_off_15149.json",
+      "receipt": "runs/confirm_detailed_off_15149.json",
+      "seed": 15149,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21157,
+      "gpu_peak_temp_c_observed": 58,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_detailed_off_16183",
+      "status": "success",
+      "prompt_id": "14ab7f42-0fdf-4216-a75d-408f18f80f29",
+      "elapsed_seconds": 3.14,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_detailed_off_16183.png": "8e968ea67329a8ae90eee8c982877854d530bd6507150ca39a0db494c36cce86"
+      },
+      "files": [
+        "images/confirm_detailed_off_16183.png"
+      ],
+      "workflow": "workflows/confirm_detailed_off_16183.json",
+      "receipt": "runs/confirm_detailed_off_16183.json",
+      "seed": 16183,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21157,
+      "gpu_peak_temp_c_observed": 63,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_detailed_off_17189",
+      "status": "success",
+      "prompt_id": "74fa7adb-50bd-4852-971a-2fa5e74d3fc8",
+      "elapsed_seconds": 3.19,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_detailed_off_17189.png": "8559111a58d41913fd7ecbcc74ce058a1e400c850fdf3be425085b73fa32e559"
+      },
+      "files": [
+        "images/confirm_detailed_off_17189.png"
+      ],
+      "workflow": "workflows/confirm_detailed_off_17189.json",
+      "receipt": "runs/confirm_detailed_off_17189.json",
+      "seed": 17189,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21157,
+      "gpu_peak_temp_c_observed": 63,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_detailed_off_18199",
+      "status": "success",
+      "prompt_id": "149f7a29-4f95-4e6f-b3f7-e1c6a2165bff",
+      "elapsed_seconds": 3.12,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_detailed_off_18199.png": "333fba0af59d4e8ff686457e3f6ad3ef3ecc4702851f0fba8ba5756d9525c5fc"
+      },
+      "files": [
+        "images/confirm_detailed_off_18199.png"
+      ],
+      "workflow": "workflows/confirm_detailed_off_18199.json",
+      "receipt": "runs/confirm_detailed_off_18199.json",
+      "seed": 18199,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21157,
+      "gpu_peak_temp_c_observed": 59,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_detailed_off_19207",
+      "status": "success",
+      "prompt_id": "c4942ec9-7499-481e-ac45-28f235b3b67d",
+      "elapsed_seconds": 3.26,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_detailed_off_19207.png": "39a26a3814356cf59c915277eca0c2d9a87624120461125bd132b0dc29e1c2dc"
+      },
+      "files": [
+        "images/confirm_detailed_off_19207.png"
+      ],
+      "workflow": "workflows/confirm_detailed_off_19207.json",
+      "receipt": "runs/confirm_detailed_off_19207.json",
+      "seed": 19207,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21157,
+      "gpu_peak_temp_c_observed": 59,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_detailed_off_20231",
+      "status": "success",
+      "prompt_id": "b6ce3c74-6163-4779-8c16-6b0a58664a27",
+      "elapsed_seconds": 3.11,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_detailed_off_20231.png": "198746ee34b749dd932ef5843ad0876b641ba43a70dfeadf4add22af65cb0eae"
+      },
+      "files": [
+        "images/confirm_detailed_off_20231.png"
+      ],
+      "workflow": "workflows/confirm_detailed_off_20231.json",
+      "receipt": "runs/confirm_detailed_off_20231.json",
+      "seed": 20231,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21157,
+      "gpu_peak_temp_c_observed": 58,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_detailed_off_2027",
+      "status": "success",
+      "prompt_id": "4f58ad0d-498e-459e-94a6-c1b1f6e8bbc8",
+      "elapsed_seconds": 3.11,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_detailed_off_2027.png": "866085917f0d6327a335f3a552f9fa2adb2a05c25ef849332a30ccb0941ab10d"
+      },
+      "files": [
+        "images/confirm_detailed_off_2027.png"
+      ],
+      "workflow": "workflows/confirm_detailed_off_2027.json",
+      "receipt": "runs/confirm_detailed_off_2027.json",
+      "seed": 2027,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21157,
+      "gpu_peak_temp_c_observed": 57,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_detailed_off_3037",
+      "status": "success",
+      "prompt_id": "5c4366dd-800d-41fb-b885-6d7f7cd08c32",
+      "elapsed_seconds": 3.26,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_detailed_off_3037.png": "edeef34f68f289748ef6566f3a137e56445834fb292cbb41f155f770560213e0"
+      },
+      "files": [
+        "images/confirm_detailed_off_3037.png"
+      ],
+      "workflow": "workflows/confirm_detailed_off_3037.json",
+      "receipt": "runs/confirm_detailed_off_3037.json",
+      "seed": 3037,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21157,
+      "gpu_peak_temp_c_observed": 58,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_detailed_off_4051",
+      "status": "success",
+      "prompt_id": "6ae4da68-dc6f-4852-932f-5e2ab066a83b",
+      "elapsed_seconds": 3.13,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_detailed_off_4051.png": "217adad1ae2d49ea73ad8bcc4c389def0437c72bb035c32284d8c53a3bbdb1d9"
+      },
+      "files": [
+        "images/confirm_detailed_off_4051.png"
+      ],
+      "workflow": "workflows/confirm_detailed_off_4051.json",
+      "receipt": "runs/confirm_detailed_off_4051.json",
+      "seed": 4051,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21157,
+      "gpu_peak_temp_c_observed": 58,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_detailed_off_5059",
+      "status": "success",
+      "prompt_id": "c0c0443c-ae9b-4702-8299-0daf4fc2e9cb",
+      "elapsed_seconds": 3.11,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_detailed_off_5059.png": "4ac2ebc3dd51e21ca720da82ae71141bb415800bb04659eb4799e28f9eb45df1"
+      },
+      "files": [
+        "images/confirm_detailed_off_5059.png"
+      ],
+      "workflow": "workflows/confirm_detailed_off_5059.json",
+      "receipt": "runs/confirm_detailed_off_5059.json",
+      "seed": 5059,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21157,
+      "gpu_peak_temp_c_observed": 58,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_detailed_off_6073",
+      "status": "success",
+      "prompt_id": "17ff91df-a03a-4868-a89e-e1264f049f37",
+      "elapsed_seconds": 3.11,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_detailed_off_6073.png": "cba80ec03edf8026b032c724cdd0ea3e352d70f626ba5f229ba5bb6d15eb2389"
+      },
+      "files": [
+        "images/confirm_detailed_off_6073.png"
+      ],
+      "workflow": "workflows/confirm_detailed_off_6073.json",
+      "receipt": "runs/confirm_detailed_off_6073.json",
+      "seed": 6073,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21157,
+      "gpu_peak_temp_c_observed": 58,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_detailed_off_7079",
+      "status": "success",
+      "prompt_id": "ef04c7ab-ac94-4ab2-8027-01756be2a560",
+      "elapsed_seconds": 3.27,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_detailed_off_7079.png": "b8ac54d3fadecd42a00cb1f2e69aaf5d548815ce05a65844d2e7f27519861281"
+      },
+      "files": [
+        "images/confirm_detailed_off_7079.png"
+      ],
+      "workflow": "workflows/confirm_detailed_off_7079.json",
+      "receipt": "runs/confirm_detailed_off_7079.json",
+      "seed": 7079,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21157,
+      "gpu_peak_temp_c_observed": 58,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_detailed_off_8089",
+      "status": "success",
+      "prompt_id": "40e8046d-789d-407a-8c83-9cb4e53b320b",
+      "elapsed_seconds": 3.11,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_detailed_off_8089.png": "29f9cc5dc7a8abaac5af71120609dc96d7524d41e590ecae03dd5d0dc4e39fb0"
+      },
+      "files": [
+        "images/confirm_detailed_off_8089.png"
+      ],
+      "workflow": "workflows/confirm_detailed_off_8089.json",
+      "receipt": "runs/confirm_detailed_off_8089.json",
+      "seed": 8089,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21157,
+      "gpu_peak_temp_c_observed": 57,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_detailed_off_9103",
+      "status": "success",
+      "prompt_id": "f53eaae5-ed85-42cc-9061-41e27aa53f91",
+      "elapsed_seconds": 3.12,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_detailed_off_9103.png": "26b7fa4287597d9a219d9c6dde7c4c251275dbcf66a2caa9b1bc8c4f44b7ec9b"
+      },
+      "files": [
+        "images/confirm_detailed_off_9103.png"
+      ],
+      "workflow": "workflows/confirm_detailed_off_9103.json",
+      "receipt": "runs/confirm_detailed_off_9103.json",
+      "seed": 9103,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21157,
+      "gpu_peak_temp_c_observed": 58,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_detailed_on_1009",
+      "status": "success",
+      "prompt_id": "3a314122-3b6e-4f86-b96a-c0dc105a6df2",
+      "elapsed_seconds": 4.12,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_detailed_on_1009.png": "006c9bb671c99240b8bafd685c67dd047ca10a7dadb972c37bd448d74b6f95a6"
+      },
+      "files": [
+        "images/confirm_detailed_on_1009.png"
+      ],
+      "workflow": "workflows/confirm_detailed_on_1009.json",
+      "receipt": "runs/confirm_detailed_on_1009.json",
+      "seed": 1009,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 22821,
+      "gpu_peak_temp_c_observed": 73,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_detailed_on_10111",
+      "status": "success",
+      "prompt_id": "3787039c-83b5-4010-beea-033fecaf4c61",
+      "elapsed_seconds": 3.29,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_detailed_on_10111.png": "db0a9bcd99b1b4ec04850f868de4902a57ad24a94bac5b5f7068aafb7dcf09a8"
+      },
+      "files": [
+        "images/confirm_detailed_on_10111.png"
+      ],
+      "workflow": "workflows/confirm_detailed_on_10111.json",
+      "receipt": "runs/confirm_detailed_on_10111.json",
+      "seed": 10111,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 20965,
+      "gpu_peak_temp_c_observed": 58,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_detailed_on_11113",
+      "status": "success",
+      "prompt_id": "54b095e6-8ef3-49a7-8542-c35eac6970c0",
+      "elapsed_seconds": 3.12,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_detailed_on_11113.png": "6a8d08fa8f7c0f34bcfca9ee4095b889eaca4338c35b787e1548a14be1a600fd"
+      },
+      "files": [
+        "images/confirm_detailed_on_11113.png"
+      ],
+      "workflow": "workflows/confirm_detailed_on_11113.json",
+      "receipt": "runs/confirm_detailed_on_11113.json",
+      "seed": 11113,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 20965,
+      "gpu_peak_temp_c_observed": 74,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_detailed_on_12119",
+      "status": "success",
+      "prompt_id": "5a7acfb2-ca05-4d75-92ed-246d6d65d25a",
+      "elapsed_seconds": 3.11,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_detailed_on_12119.png": "1720d220b3a3bdede253d5397e8d3aa7c5628237d299434ca5d0815759f78906"
+      },
+      "files": [
+        "images/confirm_detailed_on_12119.png"
+      ],
+      "workflow": "workflows/confirm_detailed_on_12119.json",
+      "receipt": "runs/confirm_detailed_on_12119.json",
+      "seed": 12119,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 20965,
+      "gpu_peak_temp_c_observed": 74,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_detailed_on_13121",
+      "status": "success",
+      "prompt_id": "cc944d44-5205-4858-8f5d-335277d266be",
+      "elapsed_seconds": 3.13,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_detailed_on_13121.png": "8e48476b4d9dbb9ee436c21a80138462969c07f3d5d5cea81ec200486700b4f2"
+      },
+      "files": [
+        "images/confirm_detailed_on_13121.png"
+      ],
+      "workflow": "workflows/confirm_detailed_on_13121.json",
+      "receipt": "runs/confirm_detailed_on_13121.json",
+      "seed": 13121,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 20965,
+      "gpu_peak_temp_c_observed": 59,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_detailed_on_14143",
+      "status": "success",
+      "prompt_id": "9c703404-60ad-4ca4-89f3-97b81d019edf",
+      "elapsed_seconds": 3.28,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_detailed_on_14143.png": "19663864aadeb018333f315948bd8a253f105af7a1cb110a2e97a7bff7f9b293"
+      },
+      "files": [
+        "images/confirm_detailed_on_14143.png"
+      ],
+      "workflow": "workflows/confirm_detailed_on_14143.json",
+      "receipt": "runs/confirm_detailed_on_14143.json",
+      "seed": 14143,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 20965,
+      "gpu_peak_temp_c_observed": 59,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_detailed_on_15149",
+      "status": "success",
+      "prompt_id": "e138aee9-b376-42ad-9907-9396fe268496",
+      "elapsed_seconds": 3.12,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_detailed_on_15149.png": "77177bd72b58cc0924319e7c78418cc8e1b249107d013161569c59d87f2f447b"
+      },
+      "files": [
+        "images/confirm_detailed_on_15149.png"
+      ],
+      "workflow": "workflows/confirm_detailed_on_15149.json",
+      "receipt": "runs/confirm_detailed_on_15149.json",
+      "seed": 15149,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 20965,
+      "gpu_peak_temp_c_observed": 58,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_detailed_on_16183",
+      "status": "success",
+      "prompt_id": "661e879e-fd8b-4144-912b-1e5c10639bb3",
+      "elapsed_seconds": 3.12,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_detailed_on_16183.png": "2e53dd7ed3dbf000c595cbd4130c932f1e2bf4586ff073fa10e92b9dd84ad427"
+      },
+      "files": [
+        "images/confirm_detailed_on_16183.png"
+      ],
+      "workflow": "workflows/confirm_detailed_on_16183.json",
+      "receipt": "runs/confirm_detailed_on_16183.json",
+      "seed": 16183,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 20965,
+      "gpu_peak_temp_c_observed": 60,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_detailed_on_17189",
+      "status": "success",
+      "prompt_id": "5475960f-58dd-4378-ab0e-6fc38a7140a1",
+      "elapsed_seconds": 3.13,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_detailed_on_17189.png": "531676f20b56717b3ff61edefdcc08200f0350894a0b8e4422ca05c83dd746c3"
+      },
+      "files": [
+        "images/confirm_detailed_on_17189.png"
+      ],
+      "workflow": "workflows/confirm_detailed_on_17189.json",
+      "receipt": "runs/confirm_detailed_on_17189.json",
+      "seed": 17189,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 20965,
+      "gpu_peak_temp_c_observed": 64,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_detailed_on_18199",
+      "status": "success",
+      "prompt_id": "47cad95c-287d-4716-a165-547c522e9d56",
+      "elapsed_seconds": 3.35,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_detailed_on_18199.png": "debd17df014ddabda832ba8fedffa60f877c9f2a54b1322e81f6fb88b6eb25ba"
+      },
+      "files": [
+        "images/confirm_detailed_on_18199.png"
+      ],
+      "workflow": "workflows/confirm_detailed_on_18199.json",
+      "receipt": "runs/confirm_detailed_on_18199.json",
+      "seed": 18199,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 20965,
+      "gpu_peak_temp_c_observed": 64,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_detailed_on_19207",
+      "status": "success",
+      "prompt_id": "3c2b1800-8e00-4f3a-80b7-99d0e4665ce2",
+      "elapsed_seconds": 3.11,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_detailed_on_19207.png": "07ce4941f277071a1e208345405653c1ecc8bca7bf1f85b6f8c36e4faf8a168d"
+      },
+      "files": [
+        "images/confirm_detailed_on_19207.png"
+      ],
+      "workflow": "workflows/confirm_detailed_on_19207.json",
+      "receipt": "runs/confirm_detailed_on_19207.json",
+      "seed": 19207,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 20965,
+      "gpu_peak_temp_c_observed": 62,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_detailed_on_20231",
+      "status": "success",
+      "prompt_id": "5a800c26-a365-4c8b-90c4-65ea80b3bf87",
+      "elapsed_seconds": 3.11,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_detailed_on_20231.png": "9b670ffbe563a1482017008ffd7af6b461d52779009729fec0f020af38858f5c"
+      },
+      "files": [
+        "images/confirm_detailed_on_20231.png"
+      ],
+      "workflow": "workflows/confirm_detailed_on_20231.json",
+      "receipt": "runs/confirm_detailed_on_20231.json",
+      "seed": 20231,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 20965,
+      "gpu_peak_temp_c_observed": 74,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_detailed_on_2027",
+      "status": "success",
+      "prompt_id": "a4a39ab0-196b-4c80-b3a2-2e0945d1eb1f",
+      "elapsed_seconds": 3.29,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_detailed_on_2027.png": "025a39760ac33c91547a45cba52171543151fc06686e4c54711085b9acb47b8b"
+      },
+      "files": [
+        "images/confirm_detailed_on_2027.png"
+      ],
+      "workflow": "workflows/confirm_detailed_on_2027.json",
+      "receipt": "runs/confirm_detailed_on_2027.json",
+      "seed": 2027,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 20965,
+      "gpu_peak_temp_c_observed": 56,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_detailed_on_3037",
+      "status": "success",
+      "prompt_id": "5736ed91-d28d-4b32-b3b5-fa08614cb947",
+      "elapsed_seconds": 3.11,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_detailed_on_3037.png": "d81c92de6dee86b724bd63cbdd21a4262cd52516fc11c4d6a790408c14ca97e6"
+      },
+      "files": [
+        "images/confirm_detailed_on_3037.png"
+      ],
+      "workflow": "workflows/confirm_detailed_on_3037.json",
+      "receipt": "runs/confirm_detailed_on_3037.json",
+      "seed": 3037,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 20965,
+      "gpu_peak_temp_c_observed": 58,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_detailed_on_4051",
+      "status": "success",
+      "prompt_id": "86ed409d-c6f9-4475-833b-0149b152d72d",
+      "elapsed_seconds": 3.11,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_detailed_on_4051.png": "b1c98c30e2ace1d6165ee9bc6b211410fdce4c322540f7f350a0c902b85bfaaf"
+      },
+      "files": [
+        "images/confirm_detailed_on_4051.png"
+      ],
+      "workflow": "workflows/confirm_detailed_on_4051.json",
+      "receipt": "runs/confirm_detailed_on_4051.json",
+      "seed": 4051,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 20965,
+      "gpu_peak_temp_c_observed": 59,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_detailed_on_5059",
+      "status": "success",
+      "prompt_id": "73e050d3-708c-41b7-88f2-a2cc592fb76c",
+      "elapsed_seconds": 3.11,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_detailed_on_5059.png": "39e4fec795453e94ca7721d2300a6f90b7fa9c613e0d8fba0f084e1f3934f722"
+      },
+      "files": [
+        "images/confirm_detailed_on_5059.png"
+      ],
+      "workflow": "workflows/confirm_detailed_on_5059.json",
+      "receipt": "runs/confirm_detailed_on_5059.json",
+      "seed": 5059,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 20965,
+      "gpu_peak_temp_c_observed": 64,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_detailed_on_6073",
+      "status": "success",
+      "prompt_id": "9f27be54-3018-4680-a921-da549dcf1850",
+      "elapsed_seconds": 3.31,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_detailed_on_6073.png": "968ac13721ae5ff76b1283d496a31eb6abb88a2f83d2194f9c0e1280f3b340c5"
+      },
+      "files": [
+        "images/confirm_detailed_on_6073.png"
+      ],
+      "workflow": "workflows/confirm_detailed_on_6073.json",
+      "receipt": "runs/confirm_detailed_on_6073.json",
+      "seed": 6073,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 20965,
+      "gpu_peak_temp_c_observed": 64,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_detailed_on_7079",
+      "status": "success",
+      "prompt_id": "7cb2051c-25a2-4728-b355-6b6da1f140a6",
+      "elapsed_seconds": 3.12,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_detailed_on_7079.png": "bda09989a8713b7f1ff9c1b3cb86452de2f7c190c92f29fcb5fc47b99081ecf6"
+      },
+      "files": [
+        "images/confirm_detailed_on_7079.png"
+      ],
+      "workflow": "workflows/confirm_detailed_on_7079.json",
+      "receipt": "runs/confirm_detailed_on_7079.json",
+      "seed": 7079,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 20965,
+      "gpu_peak_temp_c_observed": 61,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_detailed_on_8089",
+      "status": "success",
+      "prompt_id": "d01ef08f-7d48-4398-bcf7-627a37f77df5",
+      "elapsed_seconds": 3.12,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_detailed_on_8089.png": "2922e18d216fc2924cc418e9dbd7dc96572ba888b13468d92517f3b3dcede4b9"
+      },
+      "files": [
+        "images/confirm_detailed_on_8089.png"
+      ],
+      "workflow": "workflows/confirm_detailed_on_8089.json",
+      "receipt": "runs/confirm_detailed_on_8089.json",
+      "seed": 8089,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 20965,
+      "gpu_peak_temp_c_observed": 74,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_detailed_on_9103",
+      "status": "success",
+      "prompt_id": "2bf8b2dc-23b2-485d-9c33-425c59853225",
+      "elapsed_seconds": 3.12,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_detailed_on_9103.png": "fe87b7f89ff3a1143164f4cd95f04381f9ee081e9f24804bc14f21d56b2fe2cb"
+      },
+      "files": [
+        "images/confirm_detailed_on_9103.png"
+      ],
+      "workflow": "workflows/confirm_detailed_on_9103.json",
+      "receipt": "runs/confirm_detailed_on_9103.json",
+      "seed": 9103,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 20965,
+      "gpu_peak_temp_c_observed": 74,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_minimal_off_1009",
+      "status": "success",
+      "prompt_id": "cef9397c-e063-42ed-ab7b-b00c540aa700",
+      "elapsed_seconds": 4.12,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_minimal_off_1009.png": "b7f3f6aea3863c91c0097cfe1a40666ead6529f758e36da9047208e01eaaef43"
+      },
+      "files": [
+        "images/confirm_minimal_off_1009.png"
+      ],
+      "workflow": "workflows/confirm_minimal_off_1009.json",
+      "receipt": "runs/confirm_minimal_off_1009.json",
+      "seed": 1009,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 23020,
+      "gpu_peak_temp_c_observed": 70,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_minimal_off_10111",
+      "status": "success",
+      "prompt_id": "1a12b3d5-903d-4231-a922-8c62adf5bbc7",
+      "elapsed_seconds": 3.2,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_minimal_off_10111.png": "949585d43bf9548e6447bbde76c700bae9ca9eb8e457df1b9c89831f2709570d"
+      },
+      "files": [
+        "images/confirm_minimal_off_10111.png"
+      ],
+      "workflow": "workflows/confirm_minimal_off_10111.json",
+      "receipt": "runs/confirm_minimal_off_10111.json",
+      "seed": 10111,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21068,
+      "gpu_peak_temp_c_observed": 60,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_minimal_off_11113",
+      "status": "success",
+      "prompt_id": "f738f62b-9c37-456b-ba04-68b3641e2349",
+      "elapsed_seconds": 3.11,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_minimal_off_11113.png": "1bfe188281b25e437d807c9de23fb4eca219c9b6df7c91277b151dc14f1c7ace"
+      },
+      "files": [
+        "images/confirm_minimal_off_11113.png"
+      ],
+      "workflow": "workflows/confirm_minimal_off_11113.json",
+      "receipt": "runs/confirm_minimal_off_11113.json",
+      "seed": 11113,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21068,
+      "gpu_peak_temp_c_observed": 56,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_minimal_off_12119",
+      "status": "success",
+      "prompt_id": "ef800294-1b33-454b-93bd-82a7024cde35",
+      "elapsed_seconds": 3.11,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_minimal_off_12119.png": "4757ea5c33297d5c3b735f6940137781a23edfd7c4cb36090d1f386aba0be520"
+      },
+      "files": [
+        "images/confirm_minimal_off_12119.png"
+      ],
+      "workflow": "workflows/confirm_minimal_off_12119.json",
+      "receipt": "runs/confirm_minimal_off_12119.json",
+      "seed": 12119,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21068,
+      "gpu_peak_temp_c_observed": 59,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_minimal_off_13121",
+      "status": "success",
+      "prompt_id": "a04c5c7b-bb5c-4d8c-9f92-d61342be6a88",
+      "elapsed_seconds": 3.12,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_minimal_off_13121.png": "653be9ce93843118b8c6e00cc2100f1a67228959f43c34a809731c07a8255b83"
+      },
+      "files": [
+        "images/confirm_minimal_off_13121.png"
+      ],
+      "workflow": "workflows/confirm_minimal_off_13121.json",
+      "receipt": "runs/confirm_minimal_off_13121.json",
+      "seed": 13121,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21068,
+      "gpu_peak_temp_c_observed": 72,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_minimal_off_14143",
+      "status": "success",
+      "prompt_id": "d3ed17c7-a9aa-458c-8a40-bd0673d878ae",
+      "elapsed_seconds": 3.23,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_minimal_off_14143.png": "8b1229f4fbad21eb3184c00bab5fe5d5b7bebd4e71fbbc115e47908a077b2bea"
+      },
+      "files": [
+        "images/confirm_minimal_off_14143.png"
+      ],
+      "workflow": "workflows/confirm_minimal_off_14143.json",
+      "receipt": "runs/confirm_minimal_off_14143.json",
+      "seed": 14143,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21068,
+      "gpu_peak_temp_c_observed": 72,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_minimal_off_15149",
+      "status": "success",
+      "prompt_id": "4e2a3f8b-9c02-4bec-a1de-0a721265a4ab",
+      "elapsed_seconds": 3.12,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_minimal_off_15149.png": "cfc10979f39ca168bba3c39d493d5bf7c3581a5e5e897c555dc66c2f501f329e"
+      },
+      "files": [
+        "images/confirm_minimal_off_15149.png"
+      ],
+      "workflow": "workflows/confirm_minimal_off_15149.json",
+      "receipt": "runs/confirm_minimal_off_15149.json",
+      "seed": 15149,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21068,
+      "gpu_peak_temp_c_observed": 59,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_minimal_off_16183",
+      "status": "success",
+      "prompt_id": "dfc7cbe2-57ba-461d-b7f6-8eb3731510a9",
+      "elapsed_seconds": 3.12,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_minimal_off_16183.png": "8044e26c29f722453d235688add6f5aeb06241e967ca047e50cd6f4ad32a4871"
+      },
+      "files": [
+        "images/confirm_minimal_off_16183.png"
+      ],
+      "workflow": "workflows/confirm_minimal_off_16183.json",
+      "receipt": "runs/confirm_minimal_off_16183.json",
+      "seed": 16183,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21068,
+      "gpu_peak_temp_c_observed": 66,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_minimal_off_17189",
+      "status": "success",
+      "prompt_id": "865d3263-3e95-4fd4-a891-1c6c9aaea8d2",
+      "elapsed_seconds": 3.12,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_minimal_off_17189.png": "a5f1fc79c23e95f23ae37dd96fd68ed414c0666896b5c484a35b1b3799e4e3fd"
+      },
+      "files": [
+        "images/confirm_minimal_off_17189.png"
+      ],
+      "workflow": "workflows/confirm_minimal_off_17189.json",
+      "receipt": "runs/confirm_minimal_off_17189.json",
+      "seed": 17189,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21068,
+      "gpu_peak_temp_c_observed": 66,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_minimal_off_18199",
+      "status": "success",
+      "prompt_id": "68a3b362-21c3-47a5-bf73-775548782434",
+      "elapsed_seconds": 3.24,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_minimal_off_18199.png": "51afc1e6f3d79a02271fa98ec7f91f552824851e8f44cb7ead278758ffb829be"
+      },
+      "files": [
+        "images/confirm_minimal_off_18199.png"
+      ],
+      "workflow": "workflows/confirm_minimal_off_18199.json",
+      "receipt": "runs/confirm_minimal_off_18199.json",
+      "seed": 18199,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21068,
+      "gpu_peak_temp_c_observed": 57,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_minimal_off_19207",
+      "status": "success",
+      "prompt_id": "5789310e-8f7e-4ff5-920d-036c0a3251ce",
+      "elapsed_seconds": 3.13,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_minimal_off_19207.png": "aa9ae25705f3b50bd14a9bfc1c4c42d92893d1b4e90541a1a996983712a001dc"
+      },
+      "files": [
+        "images/confirm_minimal_off_19207.png"
+      ],
+      "workflow": "workflows/confirm_minimal_off_19207.json",
+      "receipt": "runs/confirm_minimal_off_19207.json",
+      "seed": 19207,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21068,
+      "gpu_peak_temp_c_observed": 68,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_minimal_off_20231",
+      "status": "success",
+      "prompt_id": "7a425dbe-baba-4ba3-b4fc-f280f2ab271f",
+      "elapsed_seconds": 3.13,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_minimal_off_20231.png": "7a142c7d08cc41598f242b9ed07b4c4978407151a07f6ddd56017ac4b5444924"
+      },
+      "files": [
+        "images/confirm_minimal_off_20231.png"
+      ],
+      "workflow": "workflows/confirm_minimal_off_20231.json",
+      "receipt": "runs/confirm_minimal_off_20231.json",
+      "seed": 20231,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21133,
+      "gpu_peak_temp_c_observed": 68,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_minimal_off_2027",
+      "status": "success",
+      "prompt_id": "883700d0-af75-45de-913e-dd4393924f50",
+      "elapsed_seconds": 3.2,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_minimal_off_2027.png": "7f71b0517947ceaa6f08080f2751c0ce76a09f1894193ebf4ca6ae2b0c956c8d"
+      },
+      "files": [
+        "images/confirm_minimal_off_2027.png"
+      ],
+      "workflow": "workflows/confirm_minimal_off_2027.json",
+      "receipt": "runs/confirm_minimal_off_2027.json",
+      "seed": 2027,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21068,
+      "gpu_peak_temp_c_observed": 51,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_minimal_off_3037",
+      "status": "success",
+      "prompt_id": "70951d64-964b-4954-b517-1b6613a9b67b",
+      "elapsed_seconds": 3.11,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_minimal_off_3037.png": "ac8377ef6d8896f5eed92ca075c24ecd1220df696352cd0690f39d1c9b330153"
+      },
+      "files": [
+        "images/confirm_minimal_off_3037.png"
+      ],
+      "workflow": "workflows/confirm_minimal_off_3037.json",
+      "receipt": "runs/confirm_minimal_off_3037.json",
+      "seed": 3037,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21068,
+      "gpu_peak_temp_c_observed": 53,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_minimal_off_4051",
+      "status": "success",
+      "prompt_id": "5d5725d1-ef4d-42c0-b74e-fb2b51ea38a7",
+      "elapsed_seconds": 3.11,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_minimal_off_4051.png": "5a0c595bdba150e7de1a5f62d1fc1b04a079cfbb8630a83abb4ff4cf3465b26d"
+      },
+      "files": [
+        "images/confirm_minimal_off_4051.png"
+      ],
+      "workflow": "workflows/confirm_minimal_off_4051.json",
+      "receipt": "runs/confirm_minimal_off_4051.json",
+      "seed": 4051,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21068,
+      "gpu_peak_temp_c_observed": 54,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_minimal_off_5059",
+      "status": "success",
+      "prompt_id": "777528b2-9f11-424f-af5f-1903f9dadd5e",
+      "elapsed_seconds": 3.11,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_minimal_off_5059.png": "5e052e73c2226c37829de1bdbadd4ac67b0d55024535d18cf62a35e843e9ddbb"
+      },
+      "files": [
+        "images/confirm_minimal_off_5059.png"
+      ],
+      "workflow": "workflows/confirm_minimal_off_5059.json",
+      "receipt": "runs/confirm_minimal_off_5059.json",
+      "seed": 5059,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21068,
+      "gpu_peak_temp_c_observed": 58,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_minimal_off_6073",
+      "status": "success",
+      "prompt_id": "f7ba1a3f-6072-4b42-a01b-3aec15c5135f",
+      "elapsed_seconds": 3.19,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_minimal_off_6073.png": "af7c2a1dc6c6480230cf163d546026c5e6b71901b338993b1b34ab540da2353e"
+      },
+      "files": [
+        "images/confirm_minimal_off_6073.png"
+      ],
+      "workflow": "workflows/confirm_minimal_off_6073.json",
+      "receipt": "runs/confirm_minimal_off_6073.json",
+      "seed": 6073,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21068,
+      "gpu_peak_temp_c_observed": 58,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_minimal_off_7079",
+      "status": "success",
+      "prompt_id": "e7ff54c2-c87c-4d8c-98a6-23b702fbe2f4",
+      "elapsed_seconds": 3.13,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_minimal_off_7079.png": "5d0840e2cb396c3307d96730c3dcc32f63c3b50cbff248770adce26e5097ad68"
+      },
+      "files": [
+        "images/confirm_minimal_off_7079.png"
+      ],
+      "workflow": "workflows/confirm_minimal_off_7079.json",
+      "receipt": "runs/confirm_minimal_off_7079.json",
+      "seed": 7079,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21068,
+      "gpu_peak_temp_c_observed": 54,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_minimal_off_8089",
+      "status": "success",
+      "prompt_id": "5a2b61ae-d6d6-4177-954a-dd6f13087836",
+      "elapsed_seconds": 3.12,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_minimal_off_8089.png": "d5ce6655702be0a79ac7ebcd02a6ab04290f0be85303a2b748b1306c69aefbe4"
+      },
+      "files": [
+        "images/confirm_minimal_off_8089.png"
+      ],
+      "workflow": "workflows/confirm_minimal_off_8089.json",
+      "receipt": "runs/confirm_minimal_off_8089.json",
+      "seed": 8089,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21068,
+      "gpu_peak_temp_c_observed": 56,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_minimal_off_9103",
+      "status": "success",
+      "prompt_id": "91802e16-1425-4fa6-a4a7-86eb3b9f7679",
+      "elapsed_seconds": 3.13,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_minimal_off_9103.png": "d708f2d5c8ebca122bf79e10319fe3f1d13a7f4f4d094488a13f680891860c66"
+      },
+      "files": [
+        "images/confirm_minimal_off_9103.png"
+      ],
+      "workflow": "workflows/confirm_minimal_off_9103.json",
+      "receipt": "runs/confirm_minimal_off_9103.json",
+      "seed": 9103,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21068,
+      "gpu_peak_temp_c_observed": 60,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_minimal_on_1009",
+      "status": "success",
+      "prompt_id": "be593e69-fc87-40ff-9823-0c8713c45181",
+      "elapsed_seconds": 4.12,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_minimal_on_1009.png": "af1ad71366c65c9bc81945e09b849bf81f4f0d670ca592642aa9e10ec586266b"
+      },
+      "files": [
+        "images/confirm_minimal_on_1009.png"
+      ],
+      "workflow": "workflows/confirm_minimal_on_1009.json",
+      "receipt": "runs/confirm_minimal_on_1009.json",
+      "seed": 1009,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 22981,
+      "gpu_peak_temp_c_observed": 71,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_minimal_on_10111",
+      "status": "success",
+      "prompt_id": "a3192f69-2d02-4f3a-b84b-71958d88dd86",
+      "elapsed_seconds": 3.12,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_minimal_on_10111.png": "2065b73158fd0941a981220b7107519fe4a492de422da505771136e6a1700b03"
+      },
+      "files": [
+        "images/confirm_minimal_on_10111.png"
+      ],
+      "workflow": "workflows/confirm_minimal_on_10111.json",
+      "receipt": "runs/confirm_minimal_on_10111.json",
+      "seed": 10111,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21093,
+      "gpu_peak_temp_c_observed": 59,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_minimal_on_11113",
+      "status": "success",
+      "prompt_id": "37a8359f-51ba-4838-9625-42945045dfd6",
+      "elapsed_seconds": 3.12,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_minimal_on_11113.png": "5d12bc4e2d45333ae79e35876b3fb7c312b537d709a0983f35eeac4e48f55a9e"
+      },
+      "files": [
+        "images/confirm_minimal_on_11113.png"
+      ],
+      "workflow": "workflows/confirm_minimal_on_11113.json",
+      "receipt": "runs/confirm_minimal_on_11113.json",
+      "seed": 11113,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21093,
+      "gpu_peak_temp_c_observed": 64,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_minimal_on_12119",
+      "status": "success",
+      "prompt_id": "5a0a3e4b-72e8-49ea-b297-5ab61031dcbb",
+      "elapsed_seconds": 3.31,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_minimal_on_12119.png": "21656383da7b87297c1e866d76149907b73f0b04508590e52756b022554554fc"
+      },
+      "files": [
+        "images/confirm_minimal_on_12119.png"
+      ],
+      "workflow": "workflows/confirm_minimal_on_12119.json",
+      "receipt": "runs/confirm_minimal_on_12119.json",
+      "seed": 12119,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21093,
+      "gpu_peak_temp_c_observed": 64,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_minimal_on_13121",
+      "status": "success",
+      "prompt_id": "275a85fb-069b-41cb-aaf4-1eba3f324512",
+      "elapsed_seconds": 3.12,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_minimal_on_13121.png": "915d55e89417bae63fe4b29e115b9eb959462d99104da54446e6f21f738d7cb4"
+      },
+      "files": [
+        "images/confirm_minimal_on_13121.png"
+      ],
+      "workflow": "workflows/confirm_minimal_on_13121.json",
+      "receipt": "runs/confirm_minimal_on_13121.json",
+      "seed": 13121,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21093,
+      "gpu_peak_temp_c_observed": 60,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_minimal_on_14143",
+      "status": "success",
+      "prompt_id": "c1e31cfc-35ab-411e-8af6-6df6e77cef4f",
+      "elapsed_seconds": 3.11,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_minimal_on_14143.png": "2ca7db831569a3a661385c0cc08e77161ba6913695543c6df3603dc11cf5f435"
+      },
+      "files": [
+        "images/confirm_minimal_on_14143.png"
+      ],
+      "workflow": "workflows/confirm_minimal_on_14143.json",
+      "receipt": "runs/confirm_minimal_on_14143.json",
+      "seed": 14143,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21093,
+      "gpu_peak_temp_c_observed": 74,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_minimal_on_15149",
+      "status": "success",
+      "prompt_id": "1441bd31-57ff-4305-89bd-fbb651b8a87d",
+      "elapsed_seconds": 3.11,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_minimal_on_15149.png": "43166ad24e55d9ae37be373299d672947e91fa86c535193b12deb866e85a6fd3"
+      },
+      "files": [
+        "images/confirm_minimal_on_15149.png"
+      ],
+      "workflow": "workflows/confirm_minimal_on_15149.json",
+      "receipt": "runs/confirm_minimal_on_15149.json",
+      "seed": 15149,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21093,
+      "gpu_peak_temp_c_observed": 74,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_minimal_on_16183",
+      "status": "success",
+      "prompt_id": "96b20cd1-03bc-4044-94a7-2b53fd189404",
+      "elapsed_seconds": 3.27,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_minimal_on_16183.png": "5b668f9f0474fce029b5c1d71d4323bcf54ec5f10059b5bd143c0dabdacd64f0"
+      },
+      "files": [
+        "images/confirm_minimal_on_16183.png"
+      ],
+      "workflow": "workflows/confirm_minimal_on_16183.json",
+      "receipt": "runs/confirm_minimal_on_16183.json",
+      "seed": 16183,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21093,
+      "gpu_peak_temp_c_observed": 58,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_minimal_on_17189",
+      "status": "success",
+      "prompt_id": "8d62c183-d3ae-4612-a629-8dc4a3bd0b4d",
+      "elapsed_seconds": 3.11,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_minimal_on_17189.png": "be81dd67aa875f4ab4bb2217fd638aeff07721b246326494ffad6eb5d7e76338"
+      },
+      "files": [
+        "images/confirm_minimal_on_17189.png"
+      ],
+      "workflow": "workflows/confirm_minimal_on_17189.json",
+      "receipt": "runs/confirm_minimal_on_17189.json",
+      "seed": 17189,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21093,
+      "gpu_peak_temp_c_observed": 74,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_minimal_on_18199",
+      "status": "success",
+      "prompt_id": "af201427-0c1e-4283-985a-384096129668",
+      "elapsed_seconds": 3.11,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_minimal_on_18199.png": "c294ddf3bb5f33df3dbca3614c32b552814c58c1cf812e7435c42fe94a11344a"
+      },
+      "files": [
+        "images/confirm_minimal_on_18199.png"
+      ],
+      "workflow": "workflows/confirm_minimal_on_18199.json",
+      "receipt": "runs/confirm_minimal_on_18199.json",
+      "seed": 18199,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21093,
+      "gpu_peak_temp_c_observed": 74,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_minimal_on_19207",
+      "status": "success",
+      "prompt_id": "0a30f115-04e1-49c5-8534-c17b12bf3ee8",
+      "elapsed_seconds": 3.11,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_minimal_on_19207.png": "815cca636529408eef10ee7fbd44729d27bf33101413b9fb73cf0c0f406f59c6"
+      },
+      "files": [
+        "images/confirm_minimal_on_19207.png"
+      ],
+      "workflow": "workflows/confirm_minimal_on_19207.json",
+      "receipt": "runs/confirm_minimal_on_19207.json",
+      "seed": 19207,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21093,
+      "gpu_peak_temp_c_observed": 57,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_minimal_on_20231",
+      "status": "success",
+      "prompt_id": "0407ee9a-5182-4103-8b37-8f8ff44c7fff",
+      "elapsed_seconds": 3.24,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_minimal_on_20231.png": "ee7a53003791951f7e46285b8b41644c4629fab306650369dc9e3f045ecf1bcf"
+      },
+      "files": [
+        "images/confirm_minimal_on_20231.png"
+      ],
+      "workflow": "workflows/confirm_minimal_on_20231.json",
+      "receipt": "runs/confirm_minimal_on_20231.json",
+      "seed": 20231,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21093,
+      "gpu_peak_temp_c_observed": 58,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_minimal_on_2027",
+      "status": "success",
+      "prompt_id": "bb89869f-daa1-479b-a580-b4169a0a81e9",
+      "elapsed_seconds": 3.12,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_minimal_on_2027.png": "9c8e4553b8dd2df6a20728041a696b3567bb3cb71e13209b72c02d8fb1ad41ce"
+      },
+      "files": [
+        "images/confirm_minimal_on_2027.png"
+      ],
+      "workflow": "workflows/confirm_minimal_on_2027.json",
+      "receipt": "runs/confirm_minimal_on_2027.json",
+      "seed": 2027,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21093,
+      "gpu_peak_temp_c_observed": 61,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_minimal_on_3037",
+      "status": "success",
+      "prompt_id": "eaf374e1-4ab4-41ff-8a13-ae8157832d4e",
+      "elapsed_seconds": 3.12,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_minimal_on_3037.png": "4f521bca512c99a1ac4ccdc4b2f016ef5c3ae96f293a7b3d31e8f2ab24bb4911"
+      },
+      "files": [
+        "images/confirm_minimal_on_3037.png"
+      ],
+      "workflow": "workflows/confirm_minimal_on_3037.json",
+      "receipt": "runs/confirm_minimal_on_3037.json",
+      "seed": 3037,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21093,
+      "gpu_peak_temp_c_observed": 73,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_minimal_on_4051",
+      "status": "success",
+      "prompt_id": "7afceb65-441f-42ee-9783-339d59905e16",
+      "elapsed_seconds": 3.4,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_minimal_on_4051.png": "a6acb21e512aeab87dfb221d816c6c76f2ea6f57e252b3237cfb7029e93185e7"
+      },
+      "files": [
+        "images/confirm_minimal_on_4051.png"
+      ],
+      "workflow": "workflows/confirm_minimal_on_4051.json",
+      "receipt": "runs/confirm_minimal_on_4051.json",
+      "seed": 4051,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21093,
+      "gpu_peak_temp_c_observed": 73,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_minimal_on_5059",
+      "status": "success",
+      "prompt_id": "6e836091-3f63-464b-b228-da0e57560c83",
+      "elapsed_seconds": 3.12,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_minimal_on_5059.png": "35a4a3bcf39f9cec38f189db165fdb458ba7666de8a0011e2d9c7552acda295f"
+      },
+      "files": [
+        "images/confirm_minimal_on_5059.png"
+      ],
+      "workflow": "workflows/confirm_minimal_on_5059.json",
+      "receipt": "runs/confirm_minimal_on_5059.json",
+      "seed": 5059,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21093,
+      "gpu_peak_temp_c_observed": 73,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_minimal_on_6073",
+      "status": "success",
+      "prompt_id": "35bd2a78-1879-49c7-81d5-8d5621621fdc",
+      "elapsed_seconds": 3.12,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_minimal_on_6073.png": "335e4be8aa92926e0127dc3be9d64f55aae64bfcf49a782539d232578c615b67"
+      },
+      "files": [
+        "images/confirm_minimal_on_6073.png"
+      ],
+      "workflow": "workflows/confirm_minimal_on_6073.json",
+      "receipt": "runs/confirm_minimal_on_6073.json",
+      "seed": 6073,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21093,
+      "gpu_peak_temp_c_observed": 73,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_minimal_on_7079",
+      "status": "success",
+      "prompt_id": "0296a082-2365-4603-a262-f76a7c344923",
+      "elapsed_seconds": 3.11,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_minimal_on_7079.png": "4698d4e45e3811c29af21caae9131785673eae384c574189513aa2a70f7bf7da"
+      },
+      "files": [
+        "images/confirm_minimal_on_7079.png"
+      ],
+      "workflow": "workflows/confirm_minimal_on_7079.json",
+      "receipt": "runs/confirm_minimal_on_7079.json",
+      "seed": 7079,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21093,
+      "gpu_peak_temp_c_observed": 58,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_minimal_on_8089",
+      "status": "success",
+      "prompt_id": "2dfb7b10-a76e-49f4-800c-d08a383bcef8",
+      "elapsed_seconds": 3.29,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_minimal_on_8089.png": "bd136b6fdd09a6dd3f50180126aaf5676902fafa4948f66a8265b2836c3d632e"
+      },
+      "files": [
+        "images/confirm_minimal_on_8089.png"
+      ],
+      "workflow": "workflows/confirm_minimal_on_8089.json",
+      "receipt": "runs/confirm_minimal_on_8089.json",
+      "seed": 8089,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21093,
+      "gpu_peak_temp_c_observed": 58,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "confirm_minimal_on_9103",
+      "status": "success",
+      "prompt_id": "27970db0-e859-45f9-91c5-cbc1d1595322",
+      "elapsed_seconds": 3.12,
+      "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+      "sha256": {
+        "images/confirm_minimal_on_9103.png": "2428da789f6dc306cfa66a6f7209ecd27f097abc4c11a71c5cf0226e001a0e3b"
+      },
+      "files": [
+        "images/confirm_minimal_on_9103.png"
+      ],
+      "workflow": "workflows/confirm_minimal_on_9103.json",
+      "receipt": "runs/confirm_minimal_on_9103.json",
+      "seed": 9103,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21093,
+      "gpu_peak_temp_c_observed": 57,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "debug_detailed_off_1337",
+      "status": "success",
+      "prompt_id": "e946ef1d-c13f-43ae-bcb2-07383d040613",
+      "elapsed_seconds": 3.12,
+      "lease": "4e21a571-7119-4624-bf5d-ff7667cfcb95",
+      "sha256": {
+        "images/debug_detailed_off_1337.png": "5c997419f5b34e3e255f050c749e1a8c17829ebaafa0f44605b2f127f48e9708"
+      },
+      "files": [
+        "images/debug_detailed_off_1337.png"
+      ],
+      "workflow": "workflows/debug_detailed_off_1337.json",
+      "receipt": "runs/debug_detailed_off_1337.json",
+      "seed": 1337,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21100,
+      "gpu_peak_temp_c_observed": 51,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "debug_detailed_off_42",
+      "status": "success",
+      "prompt_id": "07402270-5e71-4d71-bba4-3c10867f3628",
+      "elapsed_seconds": 4.11,
+      "lease": "4e21a571-7119-4624-bf5d-ff7667cfcb95",
+      "sha256": {
+        "images/debug_detailed_off_42.png": "7f84167ade94af7ab15fe98170fc9f69b8e1784c138b73b0f0ed130db08922d2"
+      },
+      "files": [
+        "images/debug_detailed_off_42.png"
+      ],
+      "workflow": "workflows/debug_detailed_off_42.json",
+      "receipt": "runs/debug_detailed_off_42.json",
+      "seed": 42,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21100,
+      "gpu_peak_temp_c_observed": 63,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "debug_detailed_on_1337",
+      "status": "success",
+      "prompt_id": "fedcd360-f543-46b6-bbc4-752ab5b20306",
+      "elapsed_seconds": 3.12,
+      "lease": "4e21a571-7119-4624-bf5d-ff7667cfcb95",
+      "sha256": {
+        "images/debug_detailed_on_1337.png": "58ffd6e6f43f0021fef913675ec1b48476fb59d02b2c382d938c7980e8cc8622"
+      },
+      "files": [
+        "images/debug_detailed_on_1337.png"
+      ],
+      "workflow": "workflows/debug_detailed_on_1337.json",
+      "receipt": "runs/debug_detailed_on_1337.json",
+      "seed": 1337,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21132,
+      "gpu_peak_temp_c_observed": 54,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "debug_detailed_on_42",
+      "status": "success",
+      "prompt_id": "0bba3fd8-5ee5-4133-aaa9-85776c6f496d",
+      "elapsed_seconds": 4.12,
+      "lease": "4e21a571-7119-4624-bf5d-ff7667cfcb95",
+      "sha256": {
+        "images/debug_detailed_on_42.png": "0bfdbb61a59f00ac42dcd9b059892f4f580ebb484e6b8927d9cfea86d4b3c537"
+      },
+      "files": [
+        "images/debug_detailed_on_42.png"
+      ],
+      "workflow": "workflows/debug_detailed_on_42.json",
+      "receipt": "runs/debug_detailed_on_42.json",
+      "seed": 42,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21132,
+      "gpu_peak_temp_c_observed": 62,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "debug_minimal_off_1337",
+      "status": "success",
+      "prompt_id": "ba538dfb-843f-4d9e-993b-9381fdb725a8",
+      "elapsed_seconds": 3.13,
+      "lease": "4e21a571-7119-4624-bf5d-ff7667cfcb95",
+      "sha256": {
+        "images/debug_minimal_off_1337.png": "a77f34df5398c3b60866cc8c8b5472b04810942370c62db18ff220b2cb096106"
+      },
+      "files": [
+        "images/debug_minimal_off_1337.png"
+      ],
+      "workflow": "workflows/debug_minimal_off_1337.json",
+      "receipt": "runs/debug_minimal_off_1337.json",
+      "seed": 1337,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21002,
+      "gpu_peak_temp_c_observed": 54,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "debug_minimal_off_42",
+      "status": "success",
+      "prompt_id": "cb27cdbc-c890-4e82-9698-400550b857b1",
+      "elapsed_seconds": 16.68,
+      "lease": "4e21a571-7119-4624-bf5d-ff7667cfcb95",
+      "sha256": {
+        "images/debug_minimal_off_42.png": "c6ad82411e13ecb36d3e6527274a9d056a47099f596c9ee9ca8e569425c8888b"
+      },
+      "files": [
+        "images/debug_minimal_off_42.png"
+      ],
+      "workflow": "workflows/debug_minimal_off_42.json",
+      "receipt": "runs/debug_minimal_off_42.json",
+      "seed": 42,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 22442,
+      "gpu_peak_temp_c_observed": 48,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "debug_minimal_on_1337",
+      "status": "success",
+      "prompt_id": "6050cfbd-78ee-4f7b-9732-c8b0f3971d23",
+      "elapsed_seconds": 3.21,
+      "lease": "4e21a571-7119-4624-bf5d-ff7667cfcb95",
+      "sha256": {
+        "images/debug_minimal_on_1337.png": "611c0adf059fd5c6afa6d0ab9d8804ab329c035b1f8394bb139d4b40e0fd0d8b"
+      },
+      "files": [
+        "images/debug_minimal_on_1337.png"
+      ],
+      "workflow": "workflows/debug_minimal_on_1337.json",
+      "receipt": "runs/debug_minimal_on_1337.json",
+      "seed": 1337,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21066,
+      "gpu_peak_temp_c_observed": 52,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "debug_minimal_on_42",
+      "status": "success",
+      "prompt_id": "bdb031fc-2d42-4c0b-8ef0-a10a9c900dfa",
+      "elapsed_seconds": 4.14,
+      "lease": "4e21a571-7119-4624-bf5d-ff7667cfcb95",
+      "sha256": {
+        "images/debug_minimal_on_42.png": "66bbf72e5c319d6cb65b700f17a81a8ed17e2350b3e27dc9d91b66b65f165b77"
+      },
+      "files": [
+        "images/debug_minimal_on_42.png"
+      ],
+      "workflow": "workflows/debug_minimal_on_42.json",
+      "receipt": "runs/debug_minimal_on_42.json",
+      "seed": 42,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21066,
+      "gpu_peak_temp_c_observed": 62,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "edit_confirm_1009",
+      "status": "success",
+      "prompt_id": "5c94e7d6-25f4-4756-8a35-5953e9f13c5d",
+      "elapsed_seconds": 4.19,
+      "lease": "787314c8-c6dd-48aa-8583-266029cb2abf",
+      "sha256": {
+        "images/edit_confirm_1009.png": "94fb4e51d87f2bc5197c98601ad37950c6ada5e49e7cca0f8105d3bb58c9ab89"
+      },
+      "files": [
+        "images/edit_confirm_1009.png"
+      ],
+      "workflow": "workflows/edit_confirm_1009.json",
+      "receipt": "runs/edit_confirm_1009.json",
+      "seed": 1009,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 22878,
+      "gpu_peak_temp_c_observed": 67,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "edit_confirm_10111",
+      "status": "success",
+      "prompt_id": "fa3481f5-04c5-4758-ab9f-4594f43832e2",
+      "elapsed_seconds": 4.13,
+      "lease": "787314c8-c6dd-48aa-8583-266029cb2abf",
+      "sha256": {
+        "images/edit_confirm_10111.png": "00a5549f8c5a6ce5fb6a7138728c3ab5bb34153961796e5a574524d47087a7c7"
+      },
+      "files": [
+        "images/edit_confirm_10111.png"
+      ],
+      "workflow": "workflows/edit_confirm_10111.json",
+      "receipt": "runs/edit_confirm_10111.json",
+      "seed": 10111,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 18862,
+      "gpu_peak_temp_c_observed": 62,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "edit_confirm_11113",
+      "status": "success",
+      "prompt_id": "e04c78bf-4f73-4f10-a358-345e755aed5a",
+      "elapsed_seconds": 4.13,
+      "lease": "787314c8-c6dd-48aa-8583-266029cb2abf",
+      "sha256": {
+        "images/edit_confirm_11113.png": "8a92448d17c8bb1c6641a54178dda2532e6e0b7a26620219771504edc2f2bbb7"
+      },
+      "files": [
+        "images/edit_confirm_11113.png"
+      ],
+      "workflow": "workflows/edit_confirm_11113.json",
+      "receipt": "runs/edit_confirm_11113.json",
+      "seed": 11113,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 19278,
+      "gpu_peak_temp_c_observed": 75,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "edit_confirm_12119",
+      "status": "success",
+      "prompt_id": "4bfb9f82-4f74-4da5-a4a5-3ed28d48d4b5",
+      "elapsed_seconds": 4.12,
+      "lease": "787314c8-c6dd-48aa-8583-266029cb2abf",
+      "sha256": {
+        "images/edit_confirm_12119.png": "ee86b062cf12f785e6b38dd22d4b50cab8e8c298978adf9a766ee60b17c32e68"
+      },
+      "files": [
+        "images/edit_confirm_12119.png"
+      ],
+      "workflow": "workflows/edit_confirm_12119.json",
+      "receipt": "runs/edit_confirm_12119.json",
+      "seed": 12119,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 18958,
+      "gpu_peak_temp_c_observed": 75,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "edit_confirm_13121",
+      "status": "success",
+      "prompt_id": "bd8f6715-6dfc-4a4f-9820-4bdf12acddd5",
+      "elapsed_seconds": 4.12,
+      "lease": "787314c8-c6dd-48aa-8583-266029cb2abf",
+      "sha256": {
+        "images/edit_confirm_13121.png": "c8ddcebba96d5ba5d0299ac1af5f8de10e346004c2579e840255664587601cbb"
+      },
+      "files": [
+        "images/edit_confirm_13121.png"
+      ],
+      "workflow": "workflows/edit_confirm_13121.json",
+      "receipt": "runs/edit_confirm_13121.json",
+      "seed": 13121,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 18766,
+      "gpu_peak_temp_c_observed": 74,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "edit_confirm_14143",
+      "status": "success",
+      "prompt_id": "25dfabdd-d942-4caf-b897-d2242a7e8f96",
+      "elapsed_seconds": 4.12,
+      "lease": "787314c8-c6dd-48aa-8583-266029cb2abf",
+      "sha256": {
+        "images/edit_confirm_14143.png": "3e5f531b113c8222ceb6ffae960c0f646c83c7122d8738416966c57d5869ac69"
+      },
+      "files": [
+        "images/edit_confirm_14143.png"
+      ],
+      "workflow": "workflows/edit_confirm_14143.json",
+      "receipt": "runs/edit_confirm_14143.json",
+      "seed": 14143,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 18958,
+      "gpu_peak_temp_c_observed": 62,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "edit_confirm_15149",
+      "status": "success",
+      "prompt_id": "5d3bc316-05cb-4d62-b777-8ed5ff3fd38f",
+      "elapsed_seconds": 4.12,
+      "lease": "787314c8-c6dd-48aa-8583-266029cb2abf",
+      "sha256": {
+        "images/edit_confirm_15149.png": "4e2632f552eb9b9309b0cf2999e7eaaa1fcc68eb0f3653a41429b407ad0531fd"
+      },
+      "files": [
+        "images/edit_confirm_15149.png"
+      ],
+      "workflow": "workflows/edit_confirm_15149.json",
+      "receipt": "runs/edit_confirm_15149.json",
+      "seed": 15149,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 18478,
+      "gpu_peak_temp_c_observed": 74,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "edit_confirm_16183",
+      "status": "success",
+      "prompt_id": "426cabeb-0bcc-4903-a244-519d7e88665d",
+      "elapsed_seconds": 4.12,
+      "lease": "787314c8-c6dd-48aa-8583-266029cb2abf",
+      "sha256": {
+        "images/edit_confirm_16183.png": "01c065e225786dde5e3314f173a494bde66ffa2c17cd5bf695f83459fa741e30"
+      },
+      "files": [
+        "images/edit_confirm_16183.png"
+      ],
+      "workflow": "workflows/edit_confirm_16183.json",
+      "receipt": "runs/edit_confirm_16183.json",
+      "seed": 16183,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 18894,
+      "gpu_peak_temp_c_observed": 75,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "edit_confirm_17189",
+      "status": "success",
+      "prompt_id": "85872310-7a3f-4387-ac96-96bdebfbd36e",
+      "elapsed_seconds": 4.12,
+      "lease": "787314c8-c6dd-48aa-8583-266029cb2abf",
+      "sha256": {
+        "images/edit_confirm_17189.png": "b7d0cc97c4a784b795f3634087557fcb83fa5b0af72eea19d68feb1d08db7f5d"
+      },
+      "files": [
+        "images/edit_confirm_17189.png"
+      ],
+      "workflow": "workflows/edit_confirm_17189.json",
+      "receipt": "runs/edit_confirm_17189.json",
+      "seed": 17189,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 18478,
+      "gpu_peak_temp_c_observed": 75,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "edit_confirm_18199",
+      "status": "success",
+      "prompt_id": "6423d02e-0625-464d-affe-239d865bf442",
+      "elapsed_seconds": 4.12,
+      "lease": "787314c8-c6dd-48aa-8583-266029cb2abf",
+      "sha256": {
+        "images/edit_confirm_18199.png": "99fdab978f06fa9b55510803166fa691fc8ab36a6be25e9bbf98c9b78d7d0404"
+      },
+      "files": [
+        "images/edit_confirm_18199.png"
+      ],
+      "workflow": "workflows/edit_confirm_18199.json",
+      "receipt": "runs/edit_confirm_18199.json",
+      "seed": 18199,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 18958,
+      "gpu_peak_temp_c_observed": 63,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "edit_confirm_19207",
+      "status": "success",
+      "prompt_id": "08f194d0-8cd2-45fe-b2eb-2f93f20516f9",
+      "elapsed_seconds": 4.13,
+      "lease": "787314c8-c6dd-48aa-8583-266029cb2abf",
+      "sha256": {
+        "images/edit_confirm_19207.png": "caff7368c266169c5d13acf9d4ce910eb6d19b26e667a22d3f4b9689703417b2"
+      },
+      "files": [
+        "images/edit_confirm_19207.png"
+      ],
+      "workflow": "workflows/edit_confirm_19207.json",
+      "receipt": "runs/edit_confirm_19207.json",
+      "seed": 19207,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 18958,
+      "gpu_peak_temp_c_observed": 76,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "edit_confirm_20231",
+      "status": "success",
+      "prompt_id": "ab690461-bb8f-452a-9355-d2115d844ffe",
+      "elapsed_seconds": 4.12,
+      "lease": "787314c8-c6dd-48aa-8583-266029cb2abf",
+      "sha256": {
+        "images/edit_confirm_20231.png": "37cb9407c2f1ac1baf9b3b9d950737794449e9089cf7f640074ba6f2f87d5bbe"
+      },
+      "files": [
+        "images/edit_confirm_20231.png"
+      ],
+      "workflow": "workflows/edit_confirm_20231.json",
+      "receipt": "runs/edit_confirm_20231.json",
+      "seed": 20231,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 18446,
+      "gpu_peak_temp_c_observed": 76,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "edit_confirm_2027",
+      "status": "success",
+      "prompt_id": "b0203b49-2f19-4c15-9afd-c089b9abd7e8",
+      "elapsed_seconds": 4.14,
+      "lease": "787314c8-c6dd-48aa-8583-266029cb2abf",
+      "sha256": {
+        "images/edit_confirm_2027.png": "d8c92b395129933e1dfb2d5c07846cb619211c0609419282c1dca6cd6c23e5b7"
+      },
+      "files": [
+        "images/edit_confirm_2027.png"
+      ],
+      "workflow": "workflows/edit_confirm_2027.json",
+      "receipt": "runs/edit_confirm_2027.json",
+      "seed": 2027,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 18958,
+      "gpu_peak_temp_c_observed": 57,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "edit_confirm_3037",
+      "status": "success",
+      "prompt_id": "840882d9-7cfe-45cd-8599-33dda37f4b8b",
+      "elapsed_seconds": 4.13,
+      "lease": "787314c8-c6dd-48aa-8583-266029cb2abf",
+      "sha256": {
+        "images/edit_confirm_3037.png": "d6c336136c3aa6b218ce8198235f90b0599411aa3b082624d64f8924bc3aa918"
+      },
+      "files": [
+        "images/edit_confirm_3037.png"
+      ],
+      "workflow": "workflows/edit_confirm_3037.json",
+      "receipt": "runs/edit_confirm_3037.json",
+      "seed": 3037,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 19438,
+      "gpu_peak_temp_c_observed": 60,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "edit_confirm_4051",
+      "status": "success",
+      "prompt_id": "6de2f718-cad2-4c47-88ea-b4179360c84f",
+      "elapsed_seconds": 4.13,
+      "lease": "787314c8-c6dd-48aa-8583-266029cb2abf",
+      "sha256": {
+        "images/edit_confirm_4051.png": "1940cda8390156ffb7b2bc58b67edddf7dd267fbb549b0bfcfa013ebc72c4ee4"
+      },
+      "files": [
+        "images/edit_confirm_4051.png"
+      ],
+      "workflow": "workflows/edit_confirm_4051.json",
+      "receipt": "runs/edit_confirm_4051.json",
+      "seed": 4051,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 19438,
+      "gpu_peak_temp_c_observed": 71,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "edit_confirm_5059",
+      "status": "success",
+      "prompt_id": "b1d23782-cec9-46ea-85d1-68024ed0fa54",
+      "elapsed_seconds": 4.14,
+      "lease": "787314c8-c6dd-48aa-8583-266029cb2abf",
+      "sha256": {
+        "images/edit_confirm_5059.png": "f9bea77ac14dd6da4254e59aefeb5badf295b4e8e7bcd86df6893d76dd85de61"
+      },
+      "files": [
+        "images/edit_confirm_5059.png"
+      ],
+      "workflow": "workflows/edit_confirm_5059.json",
+      "receipt": "runs/edit_confirm_5059.json",
+      "seed": 5059,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 18542,
+      "gpu_peak_temp_c_observed": 71,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "edit_confirm_6073",
+      "status": "success",
+      "prompt_id": "68f095f7-445d-4ef1-9b6e-3043e740d5e3",
+      "elapsed_seconds": 4.13,
+      "lease": "787314c8-c6dd-48aa-8583-266029cb2abf",
+      "sha256": {
+        "images/edit_confirm_6073.png": "77a82ecf5024b9d1139f24a34db4452caea74fa32432727e1e830a6137f8925f"
+      },
+      "files": [
+        "images/edit_confirm_6073.png"
+      ],
+      "workflow": "workflows/edit_confirm_6073.json",
+      "receipt": "runs/edit_confirm_6073.json",
+      "seed": 6073,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 18574,
+      "gpu_peak_temp_c_observed": 59,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "edit_confirm_7079",
+      "status": "success",
+      "prompt_id": "bd3c02a9-fe81-4803-821a-7cc8e8b7a26d",
+      "elapsed_seconds": 4.13,
+      "lease": "787314c8-c6dd-48aa-8583-266029cb2abf",
+      "sha256": {
+        "images/edit_confirm_7079.png": "aaf3809ba996b5f499955dd0041242450902e4ce80004166820f248415564db0"
+      },
+      "files": [
+        "images/edit_confirm_7079.png"
+      ],
+      "workflow": "workflows/edit_confirm_7079.json",
+      "receipt": "runs/edit_confirm_7079.json",
+      "seed": 7079,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 18958,
+      "gpu_peak_temp_c_observed": 73,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "edit_confirm_8089",
+      "status": "success",
+      "prompt_id": "9e0e9a41-7969-4935-91f7-fe3c9c176635",
+      "elapsed_seconds": 4.13,
+      "lease": "787314c8-c6dd-48aa-8583-266029cb2abf",
+      "sha256": {
+        "images/edit_confirm_8089.png": "5ff14c322f98b223fdc81d7ed965cadea6df4ebdfa863a228de41c335ef8f67a"
+      },
+      "files": [
+        "images/edit_confirm_8089.png"
+      ],
+      "workflow": "workflows/edit_confirm_8089.json",
+      "receipt": "runs/edit_confirm_8089.json",
+      "seed": 8089,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 18862,
+      "gpu_peak_temp_c_observed": 73,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "edit_confirm_9103",
+      "status": "success",
+      "prompt_id": "104c0a88-d395-4da7-8810-5718d1378cfc",
+      "elapsed_seconds": 4.14,
+      "lease": "787314c8-c6dd-48aa-8583-266029cb2abf",
+      "sha256": {
+        "images/edit_confirm_9103.png": "43f00ab5473c161ac9031d9a9efaea71e2aba150fc545c5e68ef958da0ca1f8a"
+      },
+      "files": [
+        "images/edit_confirm_9103.png"
+      ],
+      "workflow": "workflows/edit_confirm_9103.json",
+      "receipt": "runs/edit_confirm_9103.json",
+      "seed": 9103,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 18958,
+      "gpu_peak_temp_c_observed": 72,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "edit_debug_1337",
+      "status": "success",
+      "prompt_id": "c15b7910-900c-450c-980b-6c4bf456a141",
+      "elapsed_seconds": 4.12,
+      "lease": "d41657f6-dd85-4e55-96a0-3ecfb82a307d",
+      "sha256": {
+        "images/edit_debug_1337.png": "526eeb0cd0719b8630e0901ee4d611881425ef18180f1bcc18bbf03b34d03d7f"
+      },
+      "files": [
+        "images/edit_debug_1337.png"
+      ],
+      "workflow": "workflows/edit_debug_1337.json",
+      "receipt": "runs/edit_debug_1337.json",
+      "seed": 1337,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 19118,
+      "gpu_peak_temp_c_observed": 73,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "edit_debug_42",
+      "status": "success",
+      "prompt_id": "5f72f1e3-d32a-4c80-b4f7-f460bd2d5cc0",
+      "elapsed_seconds": 8.19,
+      "lease": "d41657f6-dd85-4e55-96a0-3ecfb82a307d",
+      "sha256": {
+        "images/edit_debug_42.png": "c756f1cd7f956dee8df286ab1741503dadacdad5d28ed0ddae5ed2e34d0aae93"
+      },
+      "files": [
+        "images/edit_debug_42.png"
+      ],
+      "workflow": "workflows/edit_debug_42.json",
+      "receipt": "runs/edit_debug_42.json",
+      "seed": 42,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 23070,
+      "gpu_peak_temp_c_observed": 71,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "edit_v2_confirm_21001",
+      "status": "success",
+      "prompt_id": "8c36b153-3757-4d5c-b451-3d594ff7df2b",
+      "elapsed_seconds": 4.31,
+      "lease": "6c2ad632-fc07-4cdc-a0e8-12638453f283",
+      "sha256": {
+        "images/edit_v2_confirm_21001.png": "35fab59c804405aab64c613eb3b08f2bec83137ef46a7cf28d20123326461ff5"
+      },
+      "files": [
+        "images/edit_v2_confirm_21001.png"
+      ],
+      "workflow": "workflows/edit_v2_confirm_21001.json",
+      "receipt": "runs/edit_v2_confirm_21001.json",
+      "seed": 21001,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 22974,
+      "gpu_peak_temp_c_observed": 70,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "edit_v2_confirm_22003",
+      "status": "success",
+      "prompt_id": "cfe00e68-d259-4694-92fe-a2c8c1dd8cc3",
+      "elapsed_seconds": 4.17,
+      "lease": "6c2ad632-fc07-4cdc-a0e8-12638453f283",
+      "sha256": {
+        "images/edit_v2_confirm_22003.png": "edf341141df963fc00658170b83c11e3343f4f30982a8c0162177a31b398c7b5"
+      },
+      "files": [
+        "images/edit_v2_confirm_22003.png"
+      ],
+      "workflow": "workflows/edit_v2_confirm_22003.json",
+      "receipt": "runs/edit_v2_confirm_22003.json",
+      "seed": 22003,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 18958,
+      "gpu_peak_temp_c_observed": 71,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "edit_v2_confirm_23003",
+      "status": "success",
+      "prompt_id": "a58a385c-62a7-4f4e-8efc-b4a7b243740d",
+      "elapsed_seconds": 4.13,
+      "lease": "6c2ad632-fc07-4cdc-a0e8-12638453f283",
+      "sha256": {
+        "images/edit_v2_confirm_23003.png": "bebe24d9ce4c0b39f654b3b3446bd1c8f5640d4ef2f67051c9461212095a11dd"
+      },
+      "files": [
+        "images/edit_v2_confirm_23003.png"
+      ],
+      "workflow": "workflows/edit_v2_confirm_23003.json",
+      "receipt": "runs/edit_v2_confirm_23003.json",
+      "seed": 23003,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 19054,
+      "gpu_peak_temp_c_observed": 72,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "edit_v2_confirm_24001",
+      "status": "success",
+      "prompt_id": "cc3af002-1dd2-42b4-845b-636ce4bfa26c",
+      "elapsed_seconds": 4.13,
+      "lease": "6c2ad632-fc07-4cdc-a0e8-12638453f283",
+      "sha256": {
+        "images/edit_v2_confirm_24001.png": "192663eebe48c0d38bba49e13682bfae17a970bc096494d4475208447b8d7fa7"
+      },
+      "files": [
+        "images/edit_v2_confirm_24001.png"
+      ],
+      "workflow": "workflows/edit_v2_confirm_24001.json",
+      "receipt": "runs/edit_v2_confirm_24001.json",
+      "seed": 24001,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 19118,
+      "gpu_peak_temp_c_observed": 63,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "edit_v2_confirm_25013",
+      "status": "success",
+      "prompt_id": "f105cd26-9906-4816-95e0-bb37918c7f3a",
+      "elapsed_seconds": 4.13,
+      "lease": "6c2ad632-fc07-4cdc-a0e8-12638453f283",
+      "sha256": {
+        "images/edit_v2_confirm_25013.png": "2dc6a791045195fa73ad763587c2f4c52eaaee562cb7c1a239a6a36f1c84692e"
+      },
+      "files": [
+        "images/edit_v2_confirm_25013.png"
+      ],
+      "workflow": "workflows/edit_v2_confirm_25013.json",
+      "receipt": "runs/edit_v2_confirm_25013.json",
+      "seed": 25013,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 18606,
+      "gpu_peak_temp_c_observed": 74,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "edit_v2_confirm_26003",
+      "status": "success",
+      "prompt_id": "f115ac84-1825-433c-9d82-53ff7967f21f",
+      "elapsed_seconds": 4.12,
+      "lease": "6c2ad632-fc07-4cdc-a0e8-12638453f283",
+      "sha256": {
+        "images/edit_v2_confirm_26003.png": "2e230ef68e234df75e53073688c29f2a491d7c747a896c7c04a8ed00a948ab2f"
+      },
+      "files": [
+        "images/edit_v2_confirm_26003.png"
+      ],
+      "workflow": "workflows/edit_v2_confirm_26003.json",
+      "receipt": "runs/edit_v2_confirm_26003.json",
+      "seed": 26003,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 18958,
+      "gpu_peak_temp_c_observed": 74,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "edit_v2_confirm_27011",
+      "status": "success",
+      "prompt_id": "250f750d-f27b-47eb-9796-c3bbacfe8bc8",
+      "elapsed_seconds": 4.13,
+      "lease": "6c2ad632-fc07-4cdc-a0e8-12638453f283",
+      "sha256": {
+        "images/edit_v2_confirm_27011.png": "b5c42896eae25879ae66b8f555105a3dc55cfdab464a7c8551ebfe170789cd69"
+      },
+      "files": [
+        "images/edit_v2_confirm_27011.png"
+      ],
+      "workflow": "workflows/edit_v2_confirm_27011.json",
+      "receipt": "runs/edit_v2_confirm_27011.json",
+      "seed": 27011,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 19054,
+      "gpu_peak_temp_c_observed": 74,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "edit_v2_confirm_28001",
+      "status": "success",
+      "prompt_id": "39ac1451-3773-4791-8623-e652269f42ac",
+      "elapsed_seconds": 4.12,
+      "lease": "6c2ad632-fc07-4cdc-a0e8-12638453f283",
+      "sha256": {
+        "images/edit_v2_confirm_28001.png": "53dc9b2bb96a45078ae180a621550e3c8334b82b77dd344a64002fdd67dad6e8"
+      },
+      "files": [
+        "images/edit_v2_confirm_28001.png"
+      ],
+      "workflow": "workflows/edit_v2_confirm_28001.json",
+      "receipt": "runs/edit_v2_confirm_28001.json",
+      "seed": 28001,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 19054,
+      "gpu_peak_temp_c_observed": 60,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "edit_v2_confirm_29009",
+      "status": "success",
+      "prompt_id": "44e5d1be-e109-4c6c-98f7-d660068a5175",
+      "elapsed_seconds": 4.13,
+      "lease": "6c2ad632-fc07-4cdc-a0e8-12638453f283",
+      "sha256": {
+        "images/edit_v2_confirm_29009.png": "8770fe2841a3c9b59258df1eb3f2368ab88a426dc4d90f07f8890734918e9d18"
+      },
+      "files": [
+        "images/edit_v2_confirm_29009.png"
+      ],
+      "workflow": "workflows/edit_v2_confirm_29009.json",
+      "receipt": "runs/edit_v2_confirm_29009.json",
+      "seed": 29009,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 19054,
+      "gpu_peak_temp_c_observed": 74,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "edit_v2_confirm_30011",
+      "status": "success",
+      "prompt_id": "2feef524-7d21-4f48-9fee-0e5db43f19b9",
+      "elapsed_seconds": 4.12,
+      "lease": "6c2ad632-fc07-4cdc-a0e8-12638453f283",
+      "sha256": {
+        "images/edit_v2_confirm_30011.png": "69beb61ebd282146f5e7f294b6d3d9184ac421ee9c03caee10c8bcd81b12c375"
+      },
+      "files": [
+        "images/edit_v2_confirm_30011.png"
+      ],
+      "workflow": "workflows/edit_v2_confirm_30011.json",
+      "receipt": "runs/edit_v2_confirm_30011.json",
+      "seed": 30011,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 18766,
+      "gpu_peak_temp_c_observed": 75,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "edit_v2_confirm_31013",
+      "status": "success",
+      "prompt_id": "4a746e0c-42d6-49de-b36f-38e44f79ffd4",
+      "elapsed_seconds": 4.12,
+      "lease": "6c2ad632-fc07-4cdc-a0e8-12638453f283",
+      "sha256": {
+        "images/edit_v2_confirm_31013.png": "114885951f821a45259b085bbbcc4b1c4d2294060aa2e0d5f3cc140e28b880a4"
+      },
+      "files": [
+        "images/edit_v2_confirm_31013.png"
+      ],
+      "workflow": "workflows/edit_v2_confirm_31013.json",
+      "receipt": "runs/edit_v2_confirm_31013.json",
+      "seed": 31013,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 18862,
+      "gpu_peak_temp_c_observed": 74,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "edit_v2_confirm_32003",
+      "status": "success",
+      "prompt_id": "11a240dd-4f87-47ad-b036-b625e03f0fce",
+      "elapsed_seconds": 4.13,
+      "lease": "6c2ad632-fc07-4cdc-a0e8-12638453f283",
+      "sha256": {
+        "images/edit_v2_confirm_32003.png": "f4a96955dd017905cd006f9cc5e9f170ac9ac6dc4d9c3484d08a6a9dd80aee9d"
+      },
+      "files": [
+        "images/edit_v2_confirm_32003.png"
+      ],
+      "workflow": "workflows/edit_v2_confirm_32003.json",
+      "receipt": "runs/edit_v2_confirm_32003.json",
+      "seed": 32003,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 19054,
+      "gpu_peak_temp_c_observed": 61,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "edit_v2_confirm_33013",
+      "status": "success",
+      "prompt_id": "321da911-9838-4ac1-bf98-823d3b5640cd",
+      "elapsed_seconds": 4.12,
+      "lease": "6c2ad632-fc07-4cdc-a0e8-12638453f283",
+      "sha256": {
+        "images/edit_v2_confirm_33013.png": "506d176a00e04bcd6f8ca12007f39883b918e2a4156f35bb8130c81ea0ab7713"
+      },
+      "files": [
+        "images/edit_v2_confirm_33013.png"
+      ],
+      "workflow": "workflows/edit_v2_confirm_33013.json",
+      "receipt": "runs/edit_v2_confirm_33013.json",
+      "seed": 33013,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 18958,
+      "gpu_peak_temp_c_observed": 75,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "edit_v2_confirm_34019",
+      "status": "success",
+      "prompt_id": "d6eedbcf-4771-4cac-923e-0e5802192c96",
+      "elapsed_seconds": 4.12,
+      "lease": "6c2ad632-fc07-4cdc-a0e8-12638453f283",
+      "sha256": {
+        "images/edit_v2_confirm_34019.png": "b49bca84381e2a38688d51405a4619b681838edab1669a7739249fa2c6651e31"
+      },
+      "files": [
+        "images/edit_v2_confirm_34019.png"
+      ],
+      "workflow": "workflows/edit_v2_confirm_34019.json",
+      "receipt": "runs/edit_v2_confirm_34019.json",
+      "seed": 34019,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 19054,
+      "gpu_peak_temp_c_observed": 76,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "edit_v2_confirm_35023",
+      "status": "success",
+      "prompt_id": "83173a08-9167-4c71-a2f8-feb27b5033fb",
+      "elapsed_seconds": 4.12,
+      "lease": "6c2ad632-fc07-4cdc-a0e8-12638453f283",
+      "sha256": {
+        "images/edit_v2_confirm_35023.png": "4518683f0b09d1c66a7bfec52df7ca883326ee9868ea02490d3c4d44f8bd41a7"
+      },
+      "files": [
+        "images/edit_v2_confirm_35023.png"
+      ],
+      "workflow": "workflows/edit_v2_confirm_35023.json",
+      "receipt": "runs/edit_v2_confirm_35023.json",
+      "seed": 35023,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 19054,
+      "gpu_peak_temp_c_observed": 74,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "edit_v2_confirm_36007",
+      "status": "success",
+      "prompt_id": "99b50217-fc68-4ecf-8cc3-ac36b81408f6",
+      "elapsed_seconds": 4.22,
+      "lease": "6c2ad632-fc07-4cdc-a0e8-12638453f283",
+      "sha256": {
+        "images/edit_v2_confirm_36007.png": "459fe6adbaa422ca8b46b83388567858f409320b3cc328486e0331e62826a0db"
+      },
+      "files": [
+        "images/edit_v2_confirm_36007.png"
+      ],
+      "workflow": "workflows/edit_v2_confirm_36007.json",
+      "receipt": "runs/edit_v2_confirm_36007.json",
+      "seed": 36007,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 19477,
+      "gpu_peak_temp_c_observed": 76,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "edit_v2_confirm_37003",
+      "status": "success",
+      "prompt_id": "69d808a9-6794-4430-ac72-e8ffc52f1053",
+      "elapsed_seconds": 4.14,
+      "lease": "6c2ad632-fc07-4cdc-a0e8-12638453f283",
+      "sha256": {
+        "images/edit_v2_confirm_37003.png": "3315f5f03c490cdefd6904995ebe04a70d133c9834a61271536d79b6328abcda"
+      },
+      "files": [
+        "images/edit_v2_confirm_37003.png"
+      ],
+      "workflow": "workflows/edit_v2_confirm_37003.json",
+      "receipt": "runs/edit_v2_confirm_37003.json",
+      "seed": 37003,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 18925,
+      "gpu_peak_temp_c_observed": 76,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "edit_v2_confirm_38011",
+      "status": "success",
+      "prompt_id": "32fa74bd-87a6-466e-9c14-87e1b799046d",
+      "elapsed_seconds": 4.12,
+      "lease": "6c2ad632-fc07-4cdc-a0e8-12638453f283",
+      "sha256": {
+        "images/edit_v2_confirm_38011.png": "b22b417c9ef39b7906f2099bd3d644088f65b54a6d015d56f9bb5ac3d2045a01"
+      },
+      "files": [
+        "images/edit_v2_confirm_38011.png"
+      ],
+      "workflow": "workflows/edit_v2_confirm_38011.json",
+      "receipt": "runs/edit_v2_confirm_38011.json",
+      "seed": 38011,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 18445,
+      "gpu_peak_temp_c_observed": 76,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "edit_v2_confirm_39019",
+      "status": "success",
+      "prompt_id": "85ae9598-1c92-45e9-bcb6-af984d25dd69",
+      "elapsed_seconds": 4.13,
+      "lease": "6c2ad632-fc07-4cdc-a0e8-12638453f283",
+      "sha256": {
+        "images/edit_v2_confirm_39019.png": "edca24cf484983a10012a9d96e509cf270e4f5ffb32810b3da2291350e48f334"
+      },
+      "files": [
+        "images/edit_v2_confirm_39019.png"
+      ],
+      "workflow": "workflows/edit_v2_confirm_39019.json",
+      "receipt": "runs/edit_v2_confirm_39019.json",
+      "seed": 39019,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 18445,
+      "gpu_peak_temp_c_observed": 63,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "edit_v2_confirm_40009",
+      "status": "success",
+      "prompt_id": "8106f33b-0bec-4d1f-af41-c8e93ce4dce4",
+      "elapsed_seconds": 4.12,
+      "lease": "6c2ad632-fc07-4cdc-a0e8-12638453f283",
+      "sha256": {
+        "images/edit_v2_confirm_40009.png": "f107ea6523b3be834968fc69855a2a645ac0338c18028ae8cf7b434b397d24e4"
+      },
+      "files": [
+        "images/edit_v2_confirm_40009.png"
+      ],
+      "workflow": "workflows/edit_v2_confirm_40009.json",
+      "receipt": "runs/edit_v2_confirm_40009.json",
+      "seed": 40009,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 18445,
+      "gpu_peak_temp_c_observed": 76,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "edit_v2_debug_1337",
+      "status": "success",
+      "prompt_id": "3b2d9ddd-7b69-409c-8295-d04e9d55d62d",
+      "elapsed_seconds": 4.14,
+      "lease": "da87bd6f-0675-4fc3-9036-b60f541624f4",
+      "sha256": {
+        "images/edit_v2_debug_1337.png": "958d861aab1d0b8bfcd9a72dd091cb041081b630342677f8f07357854b78388a"
+      },
+      "files": [
+        "images/edit_v2_debug_1337.png"
+      ],
+      "workflow": "workflows/edit_v2_debug_1337.json",
+      "receipt": "runs/edit_v2_debug_1337.json",
+      "seed": 1337,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 19086,
+      "gpu_peak_temp_c_observed": 71,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "edit_v2_debug_42",
+      "status": "success",
+      "prompt_id": "24c2c42f-105e-4768-b29e-195da7a9e47d",
+      "elapsed_seconds": 7.41,
+      "lease": "da87bd6f-0675-4fc3-9036-b60f541624f4",
+      "sha256": {
+        "images/edit_v2_debug_42.png": "009e5690720efd65cd19eedacf5bd433cb7244a24abe5062e8d9dfcb6d7a3db6"
+      },
+      "files": [
+        "images/edit_v2_debug_42.png"
+      ],
+      "workflow": "workflows/edit_v2_debug_42.json",
+      "receipt": "runs/edit_v2_debug_42.json",
+      "seed": 42,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 22814,
+      "gpu_peak_temp_c_observed": 72,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "grouped_confirm_41011",
+      "status": "success",
+      "prompt_id": "524aca6c-44b0-4b7c-8a2d-c9a0fcfc281f",
+      "elapsed_seconds": 4.16,
+      "lease": "dd52bd22-af8a-4cd3-8905-3c3b0e12f654",
+      "sha256": {
+        "images/grouped_confirm_41011.png": "c2dfebac609d099a1cbb8b26621d9fd2c391ded73e8405fd1c00e6303798bd58"
+      },
+      "files": [
+        "images/grouped_confirm_41011.png"
+      ],
+      "workflow": "workflows/grouped_confirm_41011.json",
+      "receipt": "runs/grouped_confirm_41011.json",
+      "seed": 41011,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 22654,
+      "gpu_peak_temp_c_observed": 66,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "grouped_confirm_42013",
+      "status": "success",
+      "prompt_id": "6ba286f7-c545-4fdb-ab0b-26036add05ef",
+      "elapsed_seconds": 4.13,
+      "lease": "dd52bd22-af8a-4cd3-8905-3c3b0e12f654",
+      "sha256": {
+        "images/grouped_confirm_42013.png": "b6b8b5c1acdb54e2b91e86f89a07d53a01d204276508932382fad079a80c2a32"
+      },
+      "files": [
+        "images/grouped_confirm_42013.png"
+      ],
+      "workflow": "workflows/grouped_confirm_42013.json",
+      "receipt": "runs/grouped_confirm_42013.json",
+      "seed": 42013,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 18510,
+      "gpu_peak_temp_c_observed": 64,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "grouped_confirm_43019",
+      "status": "success",
+      "prompt_id": "7152c930-5a5d-4160-b159-2a09382ebf7c",
+      "elapsed_seconds": 4.12,
+      "lease": "dd52bd22-af8a-4cd3-8905-3c3b0e12f654",
+      "sha256": {
+        "images/grouped_confirm_43019.png": "c1374bcffd769bbdbb3f6015e438d022808ea323063a14f08b2aeb792ed1c0b6"
+      },
+      "files": [
+        "images/grouped_confirm_43019.png"
+      ],
+      "workflow": "workflows/grouped_confirm_43019.json",
+      "receipt": "runs/grouped_confirm_43019.json",
+      "seed": 43019,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 18702,
+      "gpu_peak_temp_c_observed": 56,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "grouped_confirm_44017",
+      "status": "success",
+      "prompt_id": "65e88c38-145f-4d62-86b5-f0f071c61d87",
+      "elapsed_seconds": 4.13,
+      "lease": "dd52bd22-af8a-4cd3-8905-3c3b0e12f654",
+      "sha256": {
+        "images/grouped_confirm_44017.png": "2dcf57e6be6305ce6f8db1e92b2398d0bddc6564dae0b2aec40c95a7896388d3"
+      },
+      "files": [
+        "images/grouped_confirm_44017.png"
+      ],
+      "workflow": "workflows/grouped_confirm_44017.json",
+      "receipt": "runs/grouped_confirm_44017.json",
+      "seed": 44017,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 18734,
+      "gpu_peak_temp_c_observed": 70,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "grouped_confirm_45007",
+      "status": "success",
+      "prompt_id": "5ec5139d-5254-4945-b518-0ac719f938cf",
+      "elapsed_seconds": 4.13,
+      "lease": "dd52bd22-af8a-4cd3-8905-3c3b0e12f654",
+      "sha256": {
+        "images/grouped_confirm_45007.png": "c1ab5a5067f7011770f4d15d112fac1ccce01a9ea4131551fc1afd0aafdc1371"
+      },
+      "files": [
+        "images/grouped_confirm_45007.png"
+      ],
+      "workflow": "workflows/grouped_confirm_45007.json",
+      "receipt": "runs/grouped_confirm_45007.json",
+      "seed": 45007,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 18702,
+      "gpu_peak_temp_c_observed": 71,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "grouped_confirm_46021",
+      "status": "success",
+      "prompt_id": "f4ada25e-8f0a-4557-ae84-a86ce3d46757",
+      "elapsed_seconds": 4.12,
+      "lease": "dd52bd22-af8a-4cd3-8905-3c3b0e12f654",
+      "sha256": {
+        "images/grouped_confirm_46021.png": "8bc1f4c52bd0931f905efecd57bd4d5d7610c2ab1d64371152a395cdd27ccca3"
+      },
+      "files": [
+        "images/grouped_confirm_46021.png"
+      ],
+      "workflow": "workflows/grouped_confirm_46021.json",
+      "receipt": "runs/grouped_confirm_46021.json",
+      "seed": 46021,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 18734,
+      "gpu_peak_temp_c_observed": 71,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "grouped_confirm_47017",
+      "status": "success",
+      "prompt_id": "63dd6e5a-1785-45e4-a882-1312023cb485",
+      "elapsed_seconds": 4.12,
+      "lease": "dd52bd22-af8a-4cd3-8905-3c3b0e12f654",
+      "sha256": {
+        "images/grouped_confirm_47017.png": "056677d0d3b6174f9e06b3489621e405dc83b08db74ff0202ba0d32b3281be9b"
+      },
+      "files": [
+        "images/grouped_confirm_47017.png"
+      ],
+      "workflow": "workflows/grouped_confirm_47017.json",
+      "receipt": "runs/grouped_confirm_47017.json",
+      "seed": 47017,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 19022,
+      "gpu_peak_temp_c_observed": 60,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "grouped_confirm_48017",
+      "status": "success",
+      "prompt_id": "3128af17-31b7-4457-884e-eaebec6d3f58",
+      "elapsed_seconds": 4.14,
+      "lease": "dd52bd22-af8a-4cd3-8905-3c3b0e12f654",
+      "sha256": {
+        "images/grouped_confirm_48017.png": "1e891ec54530ad3006d8ebbce63f9d61511cabf5cd3e5c578b5eb9b1594a647f"
+      },
+      "files": [
+        "images/grouped_confirm_48017.png"
+      ],
+      "workflow": "workflows/grouped_confirm_48017.json",
+      "receipt": "runs/grouped_confirm_48017.json",
+      "seed": 48017,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 18862,
+      "gpu_peak_temp_c_observed": 72,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "grouped_confirm_49003",
+      "status": "success",
+      "prompt_id": "8d47658d-f694-4705-9dd2-14a4f8b58dce",
+      "elapsed_seconds": 4.13,
+      "lease": "dd52bd22-af8a-4cd3-8905-3c3b0e12f654",
+      "sha256": {
+        "images/grouped_confirm_49003.png": "b814b24d05636a4a666898e3e33beae9db08cbc9a97c35e19dd5f83aef3c2392"
+      },
+      "files": [
+        "images/grouped_confirm_49003.png"
+      ],
+      "workflow": "workflows/grouped_confirm_49003.json",
+      "receipt": "runs/grouped_confirm_49003.json",
+      "seed": 49003,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 19214,
+      "gpu_peak_temp_c_observed": 72,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "grouped_confirm_50021",
+      "status": "success",
+      "prompt_id": "87d2f9b2-99b7-4a36-9873-a2ed106f582c",
+      "elapsed_seconds": 4.12,
+      "lease": "dd52bd22-af8a-4cd3-8905-3c3b0e12f654",
+      "sha256": {
+        "images/grouped_confirm_50021.png": "537528e4690c9d47f707b6b118676582222742947364f9edaa343ec269154e36"
+      },
+      "files": [
+        "images/grouped_confirm_50021.png"
+      ],
+      "workflow": "workflows/grouped_confirm_50021.json",
+      "receipt": "runs/grouped_confirm_50021.json",
+      "seed": 50021,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 18734,
+      "gpu_peak_temp_c_observed": 73,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "grouped_confirm_51001",
+      "status": "success",
+      "prompt_id": "4c973ff2-fb39-4705-8d61-d8dfc4204c9f",
+      "elapsed_seconds": 4.13,
+      "lease": "dd52bd22-af8a-4cd3-8905-3c3b0e12f654",
+      "sha256": {
+        "images/grouped_confirm_51001.png": "3e24c63f6718c72065c4e45b61ee2c71b1815734de43a85ca02ce2fa7ac98f2f"
+      },
+      "files": [
+        "images/grouped_confirm_51001.png"
+      ],
+      "workflow": "workflows/grouped_confirm_51001.json",
+      "receipt": "runs/grouped_confirm_51001.json",
+      "seed": 51001,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 18798,
+      "gpu_peak_temp_c_observed": 64,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "grouped_confirm_52009",
+      "status": "success",
+      "prompt_id": "3dea66a2-2317-4a84-8582-09cf3c08d1b0",
+      "elapsed_seconds": 4.12,
+      "lease": "dd52bd22-af8a-4cd3-8905-3c3b0e12f654",
+      "sha256": {
+        "images/grouped_confirm_52009.png": "93d321cc8e6f2c2e6792d9e0a89e3d5471bc849d2eb9bb90375c9f393fb89362"
+      },
+      "files": [
+        "images/grouped_confirm_52009.png"
+      ],
+      "workflow": "workflows/grouped_confirm_52009.json",
+      "receipt": "runs/grouped_confirm_52009.json",
+      "seed": 52009,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 18638,
+      "gpu_peak_temp_c_observed": 74,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "grouped_confirm_53003",
+      "status": "success",
+      "prompt_id": "e1586884-3600-4477-be79-6d6f7c73702e",
+      "elapsed_seconds": 4.13,
+      "lease": "dd52bd22-af8a-4cd3-8905-3c3b0e12f654",
+      "sha256": {
+        "images/grouped_confirm_53003.png": "bc6c36d7c41c0c1b78abc587d7fb1ccc8f204d596f3ca553e181db5267202e75"
+      },
+      "files": [
+        "images/grouped_confirm_53003.png"
+      ],
+      "workflow": "workflows/grouped_confirm_53003.json",
+      "receipt": "runs/grouped_confirm_53003.json",
+      "seed": 53003,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 19214,
+      "gpu_peak_temp_c_observed": 73,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "grouped_confirm_54001",
+      "status": "success",
+      "prompt_id": "cdd75152-5b60-403c-a9f7-0b9da4b31212",
+      "elapsed_seconds": 4.13,
+      "lease": "dd52bd22-af8a-4cd3-8905-3c3b0e12f654",
+      "sha256": {
+        "images/grouped_confirm_54001.png": "996c1cbcaed932dd24b015b9902942856bcb83627b2dd29190c350ebe384e236"
+      },
+      "files": [
+        "images/grouped_confirm_54001.png"
+      ],
+      "workflow": "workflows/grouped_confirm_54001.json",
+      "receipt": "runs/grouped_confirm_54001.json",
+      "seed": 54001,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 18414,
+      "gpu_peak_temp_c_observed": 74,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "grouped_confirm_55001",
+      "status": "success",
+      "prompt_id": "687a0ec0-6563-4352-a1c2-7c0ee1e75b42",
+      "elapsed_seconds": 4.12,
+      "lease": "dd52bd22-af8a-4cd3-8905-3c3b0e12f654",
+      "sha256": {
+        "images/grouped_confirm_55001.png": "fd450129ab2f02097bdbdd0627dbb53d7892b535e3732ac9ae93c777f8cbedc0"
+      },
+      "files": [
+        "images/grouped_confirm_55001.png"
+      ],
+      "workflow": "workflows/grouped_confirm_55001.json",
+      "receipt": "runs/grouped_confirm_55001.json",
+      "seed": 55001,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 18702,
+      "gpu_peak_temp_c_observed": 74,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "grouped_confirm_56003",
+      "status": "success",
+      "prompt_id": "1f04767f-9f94-4eb7-8c2b-626cd73e6b24",
+      "elapsed_seconds": 4.12,
+      "lease": "dd52bd22-af8a-4cd3-8905-3c3b0e12f654",
+      "sha256": {
+        "images/grouped_confirm_56003.png": "c56dbf13718565f774b54f6385ebc70a54897873673726994a3f7896fa82bd8c"
+      },
+      "files": [
+        "images/grouped_confirm_56003.png"
+      ],
+      "workflow": "workflows/grouped_confirm_56003.json",
+      "receipt": "runs/grouped_confirm_56003.json",
+      "seed": 56003,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 18734,
+      "gpu_peak_temp_c_observed": 75,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "grouped_confirm_57037",
+      "status": "success",
+      "prompt_id": "a02b25d7-6a0a-4f2d-a9f7-99a40a6d00c2",
+      "elapsed_seconds": 4.12,
+      "lease": "dd52bd22-af8a-4cd3-8905-3c3b0e12f654",
+      "sha256": {
+        "images/grouped_confirm_57037.png": "023221862ca34c06f58c4cee9890ecc723470e36bd4642e69ece4951de8c7432"
+      },
+      "files": [
+        "images/grouped_confirm_57037.png"
+      ],
+      "workflow": "workflows/grouped_confirm_57037.json",
+      "receipt": "runs/grouped_confirm_57037.json",
+      "seed": 57037,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 18702,
+      "gpu_peak_temp_c_observed": 74,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "grouped_confirm_58013",
+      "status": "success",
+      "prompt_id": "c24da425-a90c-484b-9425-dea643f8ace5",
+      "elapsed_seconds": 4.12,
+      "lease": "dd52bd22-af8a-4cd3-8905-3c3b0e12f654",
+      "sha256": {
+        "images/grouped_confirm_58013.png": "86cd39f591785c0c227f33005f2e15dfe7df18dcac28c2c53c398e67d42b8ac2"
+      },
+      "files": [
+        "images/grouped_confirm_58013.png"
+      ],
+      "workflow": "workflows/grouped_confirm_58013.json",
+      "receipt": "runs/grouped_confirm_58013.json",
+      "seed": 58013,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 18702,
+      "gpu_peak_temp_c_observed": 75,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "grouped_confirm_59009",
+      "status": "success",
+      "prompt_id": "221f749e-8ade-44a4-9f86-f9468e9465fd",
+      "elapsed_seconds": 4.12,
+      "lease": "dd52bd22-af8a-4cd3-8905-3c3b0e12f654",
+      "sha256": {
+        "images/grouped_confirm_59009.png": "924a6da40988a4e25054a9d3b73082320bd8533d37f70e89d548e938459f7ea7"
+      },
+      "files": [
+        "images/grouped_confirm_59009.png"
+      ],
+      "workflow": "workflows/grouped_confirm_59009.json",
+      "receipt": "runs/grouped_confirm_59009.json",
+      "seed": 59009,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 18734,
+      "gpu_peak_temp_c_observed": 69,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "grouped_confirm_60013",
+      "status": "success",
+      "prompt_id": "ee1d75d6-ed18-4bbc-8101-54126cf3eaa7",
+      "elapsed_seconds": 4.15,
+      "lease": "dd52bd22-af8a-4cd3-8905-3c3b0e12f654",
+      "sha256": {
+        "images/grouped_confirm_60013.png": "e70274c685c12186e5f71f6c2550329192b4021411b2803bdb653deaf20d9f25"
+      },
+      "files": [
+        "images/grouped_confirm_60013.png"
+      ],
+      "workflow": "workflows/grouped_confirm_60013.json",
+      "receipt": "runs/grouped_confirm_60013.json",
+      "seed": 60013,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 18734,
+      "gpu_peak_temp_c_observed": 75,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "grouped_debug_1337",
+      "status": "success",
+      "prompt_id": "fade5854-fc17-4dc0-a28c-fd4555fd32d3",
+      "elapsed_seconds": 4.15,
+      "lease": "2cd8377b-1957-4171-a92b-1c7868b5445e",
+      "sha256": {
+        "images/grouped_debug_1337.png": "294bf7895ac657a9bc1d2f55f4d72c1bc9d1ac49c8d615f75f384f8c99f3eaf4"
+      },
+      "files": [
+        "images/grouped_debug_1337.png"
+      ],
+      "workflow": "workflows/grouped_debug_1337.json",
+      "receipt": "runs/grouped_debug_1337.json",
+      "seed": 1337,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 19246,
+      "gpu_peak_temp_c_observed": 68,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "grouped_debug_42",
+      "status": "success",
+      "prompt_id": "9b8d2665-8a7f-4474-b871-fce6bbc8945f",
+      "elapsed_seconds": 7.33,
+      "lease": "2cd8377b-1957-4171-a92b-1c7868b5445e",
+      "sha256": {
+        "images/grouped_debug_42.png": "cdb58b45077b97f20bcc222191ec9a11ef4b5c432a04567f04e37a3294e93954"
+      },
+      "files": [
+        "images/grouped_debug_42.png"
+      ],
+      "workflow": "workflows/grouped_debug_42.json",
+      "receipt": "runs/grouped_debug_42.json",
+      "seed": 42,
+      "route": "reference-guided image edit",
+      "gpu_peak_vram_mb_observed": 23246,
+      "gpu_peak_temp_c_observed": 66,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "pe_detailed",
+      "status": "success",
+      "prompt_id": "0af41f1b-319f-4edd-8b91-a348056eeaa6",
+      "elapsed_seconds": 17.48,
+      "lease": "e20a485e-cd6d-4cc7-ad34-10bc13653f91",
+      "sha256": {
+        "prompts/pe_detailed_thinking_00001_.txt": "d8e1f1e72c6e73bf32a5a82f11512a9f4e49308856cf274363d94111b32f8c9f",
+        "prompts/pe_detailed_positive_00001_.txt": "9da46a58f1d09012bfe2f8e5c80d3fd3381c442c89458a836e1ec28e4bd06c95"
+      },
+      "files": [
+        "prompts/pe_detailed_thinking_00001_.txt",
+        "prompts/pe_detailed_positive_00001_.txt"
+      ],
+      "workflow": "workflows/pe_detailed.json",
+      "receipt": "runs/pe_detailed.json",
+      "seed": null,
+      "route": "official PE rewrite",
+      "gpu_peak_vram_mb_observed": 10000,
+      "gpu_peak_temp_c_observed": 53
+    },
+    {
+      "job": "pe_minimal",
+      "status": "success",
+      "prompt_id": "e1f5aa6a-6447-4ff8-915e-20357676c8a0",
+      "elapsed_seconds": 25.61,
+      "lease": "e20a485e-cd6d-4cc7-ad34-10bc13653f91",
+      "sha256": {
+        "prompts/pe_minimal_thinking_00001_.txt": "4ce5b181e62939a3c78fbbc8fc8fb320c3bceb1c1c2dce8cac0af12b5f3c532e",
+        "prompts/pe_minimal_positive_00001_.txt": "1424cb2d0a8694ef9e46f5b55243c4f32a14afc4ae8eded34168eff250dd7a3d"
+      },
+      "files": [
+        "prompts/pe_minimal_thinking_00001_.txt",
+        "prompts/pe_minimal_positive_00001_.txt"
+      ],
+      "workflow": "workflows/pe_minimal.json",
+      "receipt": "runs/pe_minimal.json",
+      "seed": null,
+      "route": "official PE rewrite",
+      "gpu_peak_vram_mb_observed": 10064,
+      "gpu_peak_temp_c_observed": 52
+    },
+    {
+      "job": "v2_confirm_21001",
+      "status": "success",
+      "prompt_id": "5ed672f4-04ef-4296-99ac-49d3543b98c0",
+      "elapsed_seconds": 3.5,
+      "lease": "4cfbd983-4f2f-49f5-933f-5b105e2f5bb5",
+      "sha256": {
+        "images/v2_confirm_21001.png": "370106f030463f4aedb9c5cfb075e28f140ad041df58e732cd788d178eba2b5e"
+      },
+      "files": [
+        "images/v2_confirm_21001.png"
+      ],
+      "workflow": "workflows/v2_confirm_21001.json",
+      "receipt": "runs/v2_confirm_21001.json",
+      "seed": 21001,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21038,
+      "gpu_peak_temp_c_observed": 46,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "v2_confirm_22003",
+      "status": "success",
+      "prompt_id": "536a970f-ca2b-4b4f-af1e-3e390da0f68d",
+      "elapsed_seconds": 3.12,
+      "lease": "4cfbd983-4f2f-49f5-933f-5b105e2f5bb5",
+      "sha256": {
+        "images/v2_confirm_22003.png": "e9bdd3429805c59a4bfb29064ed79daad3582bf5fbed9596893ff569c498eabb"
+      },
+      "files": [
+        "images/v2_confirm_22003.png"
+      ],
+      "workflow": "workflows/v2_confirm_22003.json",
+      "receipt": "runs/v2_confirm_22003.json",
+      "seed": 22003,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21102,
+      "gpu_peak_temp_c_observed": 50,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "v2_confirm_23003",
+      "status": "success",
+      "prompt_id": "bb81c80a-d947-4465-8bc6-13702d517277",
+      "elapsed_seconds": 3.11,
+      "lease": "4cfbd983-4f2f-49f5-933f-5b105e2f5bb5",
+      "sha256": {
+        "images/v2_confirm_23003.png": "8404c9c532de15294b860b58ccbcf18e6de39065fd51eca2e3635f75f186c579"
+      },
+      "files": [
+        "images/v2_confirm_23003.png"
+      ],
+      "workflow": "workflows/v2_confirm_23003.json",
+      "receipt": "runs/v2_confirm_23003.json",
+      "seed": 23003,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21038,
+      "gpu_peak_temp_c_observed": 61,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "v2_confirm_24001",
+      "status": "success",
+      "prompt_id": "19d4ce43-4dec-468d-9bf0-c98da6584cbf",
+      "elapsed_seconds": 3.11,
+      "lease": "4cfbd983-4f2f-49f5-933f-5b105e2f5bb5",
+      "sha256": {
+        "images/v2_confirm_24001.png": "44504d8a2271b43b6a726b038ad16df77509d09419ca94fd7a510cfb74d67248"
+      },
+      "files": [
+        "images/v2_confirm_24001.png"
+      ],
+      "workflow": "workflows/v2_confirm_24001.json",
+      "receipt": "runs/v2_confirm_24001.json",
+      "seed": 24001,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21038,
+      "gpu_peak_temp_c_observed": 61,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "v2_confirm_25013",
+      "status": "success",
+      "prompt_id": "5c51ff28-5e4c-43b1-8614-db213c32e42b",
+      "elapsed_seconds": 3.2,
+      "lease": "4cfbd983-4f2f-49f5-933f-5b105e2f5bb5",
+      "sha256": {
+        "images/v2_confirm_25013.png": "3993c3d6fb0d24ebc34eccc3b7437e42baded757d0222907ebc2096b3f4c9ca0"
+      },
+      "files": [
+        "images/v2_confirm_25013.png"
+      ],
+      "workflow": "workflows/v2_confirm_25013.json",
+      "receipt": "runs/v2_confirm_25013.json",
+      "seed": 25013,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21038,
+      "gpu_peak_temp_c_observed": 51,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "v2_confirm_26003",
+      "status": "success",
+      "prompt_id": "0bbf5d62-d5f1-4c94-a081-f2d65c30a7d4",
+      "elapsed_seconds": 3.11,
+      "lease": "4cfbd983-4f2f-49f5-933f-5b105e2f5bb5",
+      "sha256": {
+        "images/v2_confirm_26003.png": "23da940dc25bb7a8fbf2cd42941f2a76202a09772ea31bc7679f7b314a4600aa"
+      },
+      "files": [
+        "images/v2_confirm_26003.png"
+      ],
+      "workflow": "workflows/v2_confirm_26003.json",
+      "receipt": "runs/v2_confirm_26003.json",
+      "seed": 26003,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21038,
+      "gpu_peak_temp_c_observed": 57,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "v2_confirm_27011",
+      "status": "success",
+      "prompt_id": "f86477b8-bdaf-4597-861b-fc71a372cf62",
+      "elapsed_seconds": 3.11,
+      "lease": "4cfbd983-4f2f-49f5-933f-5b105e2f5bb5",
+      "sha256": {
+        "images/v2_confirm_27011.png": "f6e76d90dea88d6805d1f258d55514348a2678aad1ca378dbf6ff861769ecf59"
+      },
+      "files": [
+        "images/v2_confirm_27011.png"
+      ],
+      "workflow": "workflows/v2_confirm_27011.json",
+      "receipt": "runs/v2_confirm_27011.json",
+      "seed": 27011,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21038,
+      "gpu_peak_temp_c_observed": 57,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "v2_confirm_28001",
+      "status": "success",
+      "prompt_id": "c18ae09a-aef3-4032-8b1d-53f310becef7",
+      "elapsed_seconds": 3.11,
+      "lease": "4cfbd983-4f2f-49f5-933f-5b105e2f5bb5",
+      "sha256": {
+        "images/v2_confirm_28001.png": "8e6b1f1f0eb8652e26904a8c507f71f3ad02e17f1d48d0f109d34425a7d1fa2f"
+      },
+      "files": [
+        "images/v2_confirm_28001.png"
+      ],
+      "workflow": "workflows/v2_confirm_28001.json",
+      "receipt": "runs/v2_confirm_28001.json",
+      "seed": 28001,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21038,
+      "gpu_peak_temp_c_observed": 53,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "v2_confirm_29009",
+      "status": "success",
+      "prompt_id": "e8d6ecb8-5a9f-4b94-9aa7-de4d9dfb23e3",
+      "elapsed_seconds": 3.24,
+      "lease": "4cfbd983-4f2f-49f5-933f-5b105e2f5bb5",
+      "sha256": {
+        "images/v2_confirm_29009.png": "46e4afed2380d5d779b31ca44a69fd3a124369fc9fda66917e0986849458167a"
+      },
+      "files": [
+        "images/v2_confirm_29009.png"
+      ],
+      "workflow": "workflows/v2_confirm_29009.json",
+      "receipt": "runs/v2_confirm_29009.json",
+      "seed": 29009,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21038,
+      "gpu_peak_temp_c_observed": 54,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "v2_confirm_30011",
+      "status": "success",
+      "prompt_id": "09a959bf-b832-462f-bb6a-8fd7381609e6",
+      "elapsed_seconds": 3.11,
+      "lease": "4cfbd983-4f2f-49f5-933f-5b105e2f5bb5",
+      "sha256": {
+        "images/v2_confirm_30011.png": "d1bc917c9b66e7a13d2d67447e6da0ab5f3bd6a3a0a29d5c66533f5f5f9d1806"
+      },
+      "files": [
+        "images/v2_confirm_30011.png"
+      ],
+      "workflow": "workflows/v2_confirm_30011.json",
+      "receipt": "runs/v2_confirm_30011.json",
+      "seed": 30011,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21038,
+      "gpu_peak_temp_c_observed": 69,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "v2_confirm_31013",
+      "status": "success",
+      "prompt_id": "7e0d1ffd-d49b-49c0-9d23-1689ace33916",
+      "elapsed_seconds": 3.11,
+      "lease": "4cfbd983-4f2f-49f5-933f-5b105e2f5bb5",
+      "sha256": {
+        "images/v2_confirm_31013.png": "576bd2997a79f6e643e27b9869584bdac02b99a0c98900a0929eacd3bed2636e"
+      },
+      "files": [
+        "images/v2_confirm_31013.png"
+      ],
+      "workflow": "workflows/v2_confirm_31013.json",
+      "receipt": "runs/v2_confirm_31013.json",
+      "seed": 31013,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21038,
+      "gpu_peak_temp_c_observed": 69,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "v2_confirm_32003",
+      "status": "success",
+      "prompt_id": "a52fae03-5e06-4d20-b5b7-1a3e838c5f9d",
+      "elapsed_seconds": 3.11,
+      "lease": "4cfbd983-4f2f-49f5-933f-5b105e2f5bb5",
+      "sha256": {
+        "images/v2_confirm_32003.png": "cde23092c9af94d694263a65180f2ccea04b51478c992379e698a55388e284c9"
+      },
+      "files": [
+        "images/v2_confirm_32003.png"
+      ],
+      "workflow": "workflows/v2_confirm_32003.json",
+      "receipt": "runs/v2_confirm_32003.json",
+      "seed": 32003,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21038,
+      "gpu_peak_temp_c_observed": 55,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "v2_confirm_33013",
+      "status": "success",
+      "prompt_id": "fb172f88-4540-4cb2-8541-48e13ec3d1fe",
+      "elapsed_seconds": 3.22,
+      "lease": "4cfbd983-4f2f-49f5-933f-5b105e2f5bb5",
+      "sha256": {
+        "images/v2_confirm_33013.png": "3d1fb38fd48a543e990b254a83cc9fcadad84875ace40f6a42b9591bddc684a7"
+      },
+      "files": [
+        "images/v2_confirm_33013.png"
+      ],
+      "workflow": "workflows/v2_confirm_33013.json",
+      "receipt": "runs/v2_confirm_33013.json",
+      "seed": 33013,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21038,
+      "gpu_peak_temp_c_observed": 57,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "v2_confirm_34019",
+      "status": "success",
+      "prompt_id": "dd8e769c-f3e4-481b-b302-3fc8d9b2e50e",
+      "elapsed_seconds": 3.11,
+      "lease": "4cfbd983-4f2f-49f5-933f-5b105e2f5bb5",
+      "sha256": {
+        "images/v2_confirm_34019.png": "2ddc6dab1eab62c73954b4f46e33c4beeb52eef17a46cff5464b5adcb1a84895"
+      },
+      "files": [
+        "images/v2_confirm_34019.png"
+      ],
+      "workflow": "workflows/v2_confirm_34019.json",
+      "receipt": "runs/v2_confirm_34019.json",
+      "seed": 34019,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21038,
+      "gpu_peak_temp_c_observed": 57,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "v2_confirm_35023",
+      "status": "success",
+      "prompt_id": "f419888a-3c63-44b6-aa5f-370a382e580a",
+      "elapsed_seconds": 3.11,
+      "lease": "4cfbd983-4f2f-49f5-933f-5b105e2f5bb5",
+      "sha256": {
+        "images/v2_confirm_35023.png": "6064497030f104cc7df1bc003495ce0f4a89061d07255ec9cfcc6a58a9a8c01c"
+      },
+      "files": [
+        "images/v2_confirm_35023.png"
+      ],
+      "workflow": "workflows/v2_confirm_35023.json",
+      "receipt": "runs/v2_confirm_35023.json",
+      "seed": 35023,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21038,
+      "gpu_peak_temp_c_observed": 55,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "v2_confirm_36007",
+      "status": "success",
+      "prompt_id": "7d33fcb5-5f67-4076-8cab-d2cf466de907",
+      "elapsed_seconds": 3.12,
+      "lease": "4cfbd983-4f2f-49f5-933f-5b105e2f5bb5",
+      "sha256": {
+        "images/v2_confirm_36007.png": "164963a120220e046e3872056475a2897f78a9a3176f0a582148c95a985446ce"
+      },
+      "files": [
+        "images/v2_confirm_36007.png"
+      ],
+      "workflow": "workflows/v2_confirm_36007.json",
+      "receipt": "runs/v2_confirm_36007.json",
+      "seed": 36007,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21038,
+      "gpu_peak_temp_c_observed": 57,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "v2_confirm_37003",
+      "status": "success",
+      "prompt_id": "d27ee8e7-eb4e-4e6b-bc8b-f15e70d087c9",
+      "elapsed_seconds": 3.24,
+      "lease": "4cfbd983-4f2f-49f5-933f-5b105e2f5bb5",
+      "sha256": {
+        "images/v2_confirm_37003.png": "0203613c8693d6b8d2f264381041f8b2560849db124a6e38f79397e1d5c67eed"
+      },
+      "files": [
+        "images/v2_confirm_37003.png"
+      ],
+      "workflow": "workflows/v2_confirm_37003.json",
+      "receipt": "runs/v2_confirm_37003.json",
+      "seed": 37003,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21038,
+      "gpu_peak_temp_c_observed": 57,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "v2_confirm_38011",
+      "status": "success",
+      "prompt_id": "6efcac5c-864d-44b9-ac90-959e432e8230",
+      "elapsed_seconds": 3.11,
+      "lease": "4cfbd983-4f2f-49f5-933f-5b105e2f5bb5",
+      "sha256": {
+        "images/v2_confirm_38011.png": "b0386ab93d164d70b9433c9c9bdc78217342e4d38b8b1ae8548100a06aff3493"
+      },
+      "files": [
+        "images/v2_confirm_38011.png"
+      ],
+      "workflow": "workflows/v2_confirm_38011.json",
+      "receipt": "runs/v2_confirm_38011.json",
+      "seed": 38011,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21038,
+      "gpu_peak_temp_c_observed": 55,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "v2_confirm_39019",
+      "status": "success",
+      "prompt_id": "26d48abe-1d0f-4e2f-b9ad-550e53dab68e",
+      "elapsed_seconds": 3.12,
+      "lease": "4cfbd983-4f2f-49f5-933f-5b105e2f5bb5",
+      "sha256": {
+        "images/v2_confirm_39019.png": "26e696ef66a4f0ddf8de210b692403119e0c02420b81e845e6aa637f47d04c07"
+      },
+      "files": [
+        "images/v2_confirm_39019.png"
+      ],
+      "workflow": "workflows/v2_confirm_39019.json",
+      "receipt": "runs/v2_confirm_39019.json",
+      "seed": 39019,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21038,
+      "gpu_peak_temp_c_observed": 56,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "v2_confirm_40009",
+      "status": "success",
+      "prompt_id": "8f408f56-c4b8-492d-9250-7007b7549445",
+      "elapsed_seconds": 3.12,
+      "lease": "4cfbd983-4f2f-49f5-933f-5b105e2f5bb5",
+      "sha256": {
+        "images/v2_confirm_40009.png": "320de45cc464c870c493cfc6aada22050afc4269c194a9491c3c671192fcc0fc"
+      },
+      "files": [
+        "images/v2_confirm_40009.png"
+      ],
+      "workflow": "workflows/v2_confirm_40009.json",
+      "receipt": "runs/v2_confirm_40009.json",
+      "seed": 40009,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21038,
+      "gpu_peak_temp_c_observed": 58,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "v2_debug_1337",
+      "status": "success",
+      "prompt_id": "e55cb283-4753-481f-b55b-55716663310a",
+      "elapsed_seconds": 3.12,
+      "lease": "b46cdc9f-61f4-4b42-ade7-33379b2a57fe",
+      "sha256": {
+        "images/v2_debug_1337.png": "cf3c649b2b6b3e2298c0ce66f9547b4a855d26d12944ac464d5422c4a8e064cd"
+      },
+      "files": [
+        "images/v2_debug_1337.png"
+      ],
+      "workflow": "workflows/v2_debug_1337.json",
+      "receipt": "runs/v2_debug_1337.json",
+      "seed": 1337,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 21038,
+      "gpu_peak_temp_c_observed": 51,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "job": "v2_debug_42",
+      "status": "success",
+      "prompt_id": "5cd19020-0264-467c-904f-79ea0e098d97",
+      "elapsed_seconds": 4.21,
+      "lease": "b46cdc9f-61f4-4b42-ade7-33379b2a57fe",
+      "sha256": {
+        "images/v2_debug_42.png": "9a9f95e7853783e5c5a8c164b78d6f2d3ff1830a4b3cc968b99460d543ea12cd"
+      },
+      "files": [
+        "images/v2_debug_42.png"
+      ],
+      "workflow": "workflows/v2_debug_42.json",
+      "receipt": "runs/v2_debug_42.json",
+      "seed": 42,
+      "route": "text-to-image",
+      "gpu_peak_vram_mb_observed": 22974,
+      "gpu_peak_temp_c_observed": 68,
+      "dimensions": [
+        1536,
+        1024
+      ]
+    }
+  ],
+  "artifacts": {
+    "reference.png": {
+      "bytes": 31591,
+      "sha256": "8cf2b743831117fbab7d8b644549e3d73e6c146c989a4597444eeb1faae6ce24"
+    },
+    "grouped_reference.png": {
+      "bytes": 41984,
+      "sha256": "c1779b29d67d52601f3986df5f25bc569eb4d5c5409a02d0d1b3bbacad3457a2"
+    },
+    "v2_plan.json": {
+      "bytes": 2290,
+      "sha256": "2ac6c3f89044d07ae95bc663b25d21f0f30603cacb989ad8534af9643a18ef1c"
+    },
+    "grouped_plan.json": {
+      "bytes": 1485,
+      "sha256": "bdf60870039a8a83f4bd138883fe81466f0d863269732d4e2aa2a4313920d608"
+    },
+    "plan.json": {
+      "bytes": 2632,
+      "sha256": "ef03c35b7f96ff2946a13193450bbceafe2178747e2ef045d29311c6467aeac3"
+    },
+    "prompts/minimal_on_actual.txt": {
+      "bytes": 1524,
+      "sha256": "1424cb2d0a8694ef9e46f5b55243c4f32a14afc4ae8eded34168eff250dd7a3d"
+    },
+    "prompts/edit_input.txt": {
+      "bytes": 356,
+      "sha256": "783ebaaf1174a172b862f694abcf043dc082a63bd63f9df2b23e4135590e2685"
+    },
+    "prompts/minimal_input.txt": {
+      "bytes": 361,
+      "sha256": "e4a5973c188300895444c43504b8f9bc82b2738c292719574608cdd5e8924637"
+    },
+    "prompts/detailed_input.txt": {
+      "bytes": 944,
+      "sha256": "d8d0dace5577167966ea946a6c44627299a19cb3b9a462f84bf103a4fc7704f0"
+    },
+    "prompts/detailed_on_actual.txt": {
+      "bytes": 1849,
+      "sha256": "9da46a58f1d09012bfe2f8e5c80d3fd3381c442c89458a836e1ec28e4bd06c95"
+    },
+    "prompts/minimal_off_actual.txt": {
+      "bytes": 361,
+      "sha256": "e4a5973c188300895444c43504b8f9bc82b2738c292719574608cdd5e8924637"
+    },
+    "prompts/pe_detailed_thinking_00001_.txt": {
+      "bytes": 3393,
+      "sha256": "d8e1f1e72c6e73bf32a5a82f11512a9f4e49308856cf274363d94111b32f8c9f"
+    },
+    "prompts/v2_input.txt": {
+      "bytes": 1218,
+      "sha256": "e1ebcb046156833acae27e336f7ee193406ddd9ea087c7b03a7ffeeeabe878da"
+    },
+    "prompts/grouped_input.txt": {
+      "bytes": 254,
+      "sha256": "8a7de82ff74041c59d259125e4813852183bdef909f0c2280fee7a97c44cda53"
+    },
+    "prompts/pe_minimal_thinking_00001_.txt": {
+      "bytes": 4040,
+      "sha256": "4ce5b181e62939a3c78fbbc8fc8fb320c3bceb1c1c2dce8cac0af12b5f3c532e"
+    },
+    "prompts/edit_v2_input.txt": {
+      "bytes": 248,
+      "sha256": "d272ba224474f93a28f64de380ccce96c2fdef64c77802df1b5d7529b4cbe07a"
+    },
+    "prompts/detailed_off_actual.txt": {
+      "bytes": 944,
+      "sha256": "d8d0dace5577167966ea946a6c44627299a19cb3b9a462f84bf103a4fc7704f0"
+    },
+    "prompts/pe_detailed_positive_00001_.txt": {
+      "bytes": 1849,
+      "sha256": "9da46a58f1d09012bfe2f8e5c80d3fd3381c442c89458a836e1ec28e4bd06c95"
+    },
+    "prompts/pe_minimal_positive_00001_.txt": {
+      "bytes": 1524,
+      "sha256": "1424cb2d0a8694ef9e46f5b55243c4f32a14afc4ae8eded34168eff250dd7a3d"
+    },
+    "grouped_measurements.json": {
+      "bytes": 36222,
+      "sha256": "9ee2af05038f45839b64d5f05e5640d0b5763312b2763c84c970dce5c8ebb47e"
+    },
+    "measurements.json": {
+      "bytes": 243874,
+      "sha256": "0c9218392d887ff59df63787fadae80353cc513cefed09068d88c066175202d5"
+    },
+    "text_review_grouped.json": {
+      "bytes": 9291,
+      "sha256": "9df9f46bb1037c01d7d7685ab2d14d2b40776401951f919b2b04a643f975a034"
+    },
+    "text_review_edit.json": {
+      "bytes": 7528,
+      "sha256": "70f6059630ee75d9c3e68568b91c49689b42ed9edb00dfcedae35af6d9a776f3"
+    },
+    "text_review_detailed_off.json": {
+      "bytes": 5200,
+      "sha256": "9a36cbc2a36ffb696bea56633c3f7bfb70ceb09764d550b49427a589f6552790"
+    },
+    "text_review_primary.json": {
+      "bytes": 30796,
+      "sha256": "d34172dfc0aa6ddd52d50cd835888e076a54629e5e1260abe3b3354a18ef64ee"
+    },
+    "text_review_v2.json": {
+      "bytes": 10443,
+      "sha256": "cd5ab10e16a4a76ad476abcc9c8ca508690ef342200711b342281ee0772a0e24"
+    },
+    "text_review_edit_v2.json": {
+      "bytes": 10523,
+      "sha256": "2e9fb7ce5bcb9b51b6113b23905e60e4b4e025c5db67aaf1e3aeca99ce0d027f"
+    }
+  },
+  "git_policy": "Generated PNGs and contact JPGs retained locally (ignored), all hashes/receipts/QC/scripts/reference inputs tracked. No remote in infograph-research.",
+  "generated_image_count": 176,
+  "total_elapsed_seconds": 695.04,
+  "gpu_peak_vram_mb_observed": 23246,
+  "gpu_peak_temp_c_observed": 76,
+  "versions": {
+    "/home/sean/projects/ComfyUI": "3541246a9c997f4b8c32f9f88f3c985d02021c79",
+    "/home/sean/projects/ComfyUI/custom_nodes/ComfyUI-Qwen-Image-2.1-Prompt-Enhancer": "fe166a199d3d1f2397a97bab230ae74657fc5c09"
+  },
+  "component_hashes": {
+    "diffusion_models/qwen_image_2.1_turbo_int8_convrot.safetensors": {
+      "path": "/home/sean/models/comfy/diffusion_models/qwen_image_2.1_turbo_int8_convrot.safetensors",
+      "size_bytes": 7256787829,
+      "mtime_ns": 1791717982621280215,
+      "sha256": "8144a0182964aa8403ad6dbc011db837304167d235161b9aabaa8532e967314c"
+    },
+    "text_encoders/qwen3vl_8b_bf16.safetensors": {
+      "path": "/home/sean/models/comfy/text_encoders/qwen3vl_8b_bf16.safetensors",
+      "size_bytes": 17534334616,
+      "mtime_ns": 1791717191329368401,
+      "sha256": "68bdc82bc1b66851162ae656225e7e2068166b603db19bd5d5a3b90eb12669a9"
+    },
+    "text_encoders/qwen3.5_9b_qwen_image_2.1_pe_t2i.int8_convrot.safetensors": {
+      "path": "/home/sean/models/comfy/text_encoders/qwen3.5_9b_qwen_image_2.1_pe_t2i.int8_convrot.safetensors",
+      "size_bytes": 9471072252,
+      "mtime_ns": 1791954753623775351,
+      "sha256": "9182abae56fe05459840a86d22abd21f972061c92fce032630af680c8c5178d3"
+    },
+    "vae/qwen_image_2.1_vae_bf16.safetensors": {
+      "path": "/home/sean/models/comfy/vae/qwen_image_2.1_vae_bf16.safetensors",
+      "size_bytes": 675509688,
+      "mtime_ns": 1790864132168151566,
+      "sha256": "bb21f7473051e1ac368515dd3f2e15cd44d7a11748ee8823e1ddca3e4876b7c9"
+    }
+  }
+}

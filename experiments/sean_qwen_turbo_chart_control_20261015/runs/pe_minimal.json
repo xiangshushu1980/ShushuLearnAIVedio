@@ -1,0 +1,146 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-31c37e9c-c14a-45ca-a261-963e846990c2",
+  "job": "pe_minimal",
+  "status": "success",
+  "prompt_id": "e1f5aa6a-6447-4ff8-915e-20357676c8a0",
+  "elapsed_seconds": 25.61,
+  "files": [
+    "prompts/pe_minimal_thinking_00001_.txt",
+    "prompts/pe_minimal_positive_00001_.txt"
+  ],
+  "history": {
+    "prompt": [
+      0,
+      "e1f5aa6a-6447-4ff8-915e-20357676c8a0",
+      {
+        "1": {
+          "class_type": "CLIPLoader",
+          "inputs": {
+            "clip_name": "qwen3.5_9b_qwen_image_2.1_pe_t2i.int8_convrot.safetensors",
+            "type": "qwen_image"
+          }
+        },
+        "2": {
+          "class_type": "QwenImage21_T2IPromptRewrite",
+          "inputs": {
+            "clip": [
+              "1",
+              0
+            ],
+            "prompt": "横向3:2白底柱状图，标题‘测试数据’。单系列四根蓝色竖直矩形柱，从左到右：甲=20、乙=70、丙=40、丁=90。纵轴从0到100，刻度0、20、40、60、80、100等距排列，共用零基线；柱高严格按数值线性比例。每根柱下方写类别，顶端标数值。仅显示标题、类别、数值和纵轴刻度。",
+            "temperature": 1.0,
+            "top_p": 0.95,
+            "top_k": 20,
+            "presence_penalty": 1.5,
+            "max_new_tokens": 16256,
+            "seed": 271828
+          }
+        },
+        "3": {
+          "class_type": "SaveStringKJ",
+          "inputs": {
+            "string": [
+              "2",
+              0
+            ],
+            "filename_prefix": "pe_minimal_positive",
+            "output_folder": "sean_chart_control"
+          }
+        },
+        "4": {
+          "class_type": "SaveStringKJ",
+          "inputs": {
+            "string": [
+              "2",
+              3
+            ],
+            "filename_prefix": "pe_minimal_thinking",
+            "output_folder": "sean_chart_control"
+          }
+        }
+      },
+      {
+        "client_id": "41abb946-3cd9-4d5b-9c3b-80653bd5920d",
+        "create_time": 1791998477575
+      },
+      [
+        "3",
+        "4"
+      ]
+    ],
+    "outputs": {},
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "e1f5aa6a-6447-4ff8-915e-20357676c8a0",
+            "timestamp": 1791998477575
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [],
+            "prompt_id": "e1f5aa6a-6447-4ff8-915e-20357676c8a0",
+            "timestamp": 1791998477576
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "e1f5aa6a-6447-4ff8-915e-20357676c8a0",
+            "timestamp": 1791998502159
+          }
+        ]
+      ]
+    },
+    "meta": {}
+  },
+  "gpu_samples": [
+    {
+      "seconds": 0.06,
+      "gpu": "384, 0, 37"
+    },
+    {
+      "seconds": 3.13,
+      "gpu": "2552, 7, 39"
+    },
+    {
+      "seconds": 6.22,
+      "gpu": "6624, 18, 42"
+    },
+    {
+      "seconds": 9.29,
+      "gpu": "10064, 76, 39"
+    },
+    {
+      "seconds": 12.35,
+      "gpu": "10064, 86, 48"
+    },
+    {
+      "seconds": 15.41,
+      "gpu": "10064, 87, 49"
+    },
+    {
+      "seconds": 18.48,
+      "gpu": "10064, 89, 50"
+    },
+    {
+      "seconds": 21.54,
+      "gpu": "10064, 88, 51"
+    },
+    {
+      "seconds": 24.6,
+      "gpu": "9192, 87, 52"
+    }
+  ],
+  "lease": "e20a485e-cd6d-4cc7-ad34-10bc13653f91",
+  "sha256": {
+    "prompts/pe_minimal_thinking_00001_.txt": "4ce5b181e62939a3c78fbbc8fc8fb320c3bceb1c1c2dce8cac0af12b5f3c532e",
+    "prompts/pe_minimal_positive_00001_.txt": "1424cb2d0a8694ef9e46f5b55243c4f32a14afc4ae8eded34168eff250dd7a3d"
+  }
+}

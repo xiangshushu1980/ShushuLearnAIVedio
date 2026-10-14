@@ -1,0 +1,217 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-31c37e9c-c14a-45ca-a261-963e846990c2",
+  "job": "v2_confirm_30011",
+  "status": "success",
+  "prompt_id": "09a959bf-b832-462f-bb6a-8fd7381609e6",
+  "elapsed_seconds": 3.11,
+  "files": [
+    "images/v2_confirm_30011.png"
+  ],
+  "history": {
+    "prompt": [
+      123,
+      "09a959bf-b832-462f-bb6a-8fd7381609e6",
+      {
+        "1": {
+          "class_type": "UNETLoader",
+          "inputs": {
+            "unet_name": "qwen_image_2.1_turbo_int8_convrot.safetensors",
+            "weight_dtype": "default"
+          }
+        },
+        "2": {
+          "class_type": "CLIPLoader",
+          "inputs": {
+            "clip_name": "qwen3vl_8b_bf16.safetensors",
+            "type": "qwen_image"
+          }
+        },
+        "3": {
+          "class_type": "VAELoader",
+          "inputs": {
+            "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+          }
+        },
+        "4": {
+          "class_type": "CLIPTextEncode",
+          "inputs": {
+            "clip": [
+              "2",
+              0
+            ],
+            "text": "A precise flat statistical bar chart on a white landscape canvas. The only title is \"测试数据\". A single series of four blue rectangular vertical bars shares a zero baseline. The y-axis has six equally spaced ticks, from bottom to top: \"0\", \"20\", \"40\", \"60\", \"80\", \"100\". The first bar, \"甲\", has label \"20\" and its top aligns exactly with the first gridline above zero; its height is exactly 20 percent of the full 0-to-100 axis height. The second bar, \"乙\", has label \"70\" and its top is exactly halfway between the 60 and 80 gridlines, at 70 percent axis height. The third bar, \"丙\", has label \"40\" and its top aligns exactly with the second gridline above zero, at 40 percent axis height. The fourth bar, \"丁\", has label \"90\" and its top is exactly halfway between the 80 and 100 gridlines, at 90 percent axis height. All bars have equal width and equal spacing, with square flat tops. Category labels appear once beneath their own bars, and numeric labels once above their own bars. Only the title, category labels, four value labels and six y-axis tick labels are visible. Thin gray axes, light gray horizontal gridlines, black legible type. The y-axis has no title. No other words, icons or decorations."
+          }
+        },
+        "5": {
+          "class_type": "CLIPTextEncode",
+          "inputs": {
+            "clip": [
+              "2",
+              0
+            ],
+            "text": ""
+          }
+        },
+        "6": {
+          "class_type": "EmptySD3LatentImage",
+          "inputs": {
+            "width": 1536,
+            "height": 1024,
+            "batch_size": 1
+          }
+        },
+        "7": {
+          "class_type": "ManualSigmas",
+          "inputs": {
+            "sigmas": "1.0, 0.978453, 0.954180, 0.926626, 0.895080, 0.845148, 0.704534, 0.414568, 0.0"
+          }
+        },
+        "8": {
+          "class_type": "KSamplerSelect",
+          "inputs": {
+            "sampler_name": "euler"
+          }
+        },
+        "9": {
+          "class_type": "SamplerCustom",
+          "inputs": {
+            "model": [
+              "1",
+              0
+            ],
+            "add_noise": true,
+            "noise_seed": 30011,
+            "cfg": 1.0,
+            "positive": [
+              "4",
+              0
+            ],
+            "negative": [
+              "5",
+              0
+            ],
+            "sampler": [
+              "8",
+              0
+            ],
+            "sigmas": [
+              "7",
+              0
+            ],
+            "latent_image": [
+              "6",
+              0
+            ]
+          }
+        },
+        "10": {
+          "class_type": "VAEDecode",
+          "inputs": {
+            "samples": [
+              "9",
+              0
+            ],
+            "vae": [
+              "3",
+              0
+            ]
+          }
+        },
+        "11": {
+          "class_type": "SaveImage",
+          "inputs": {
+            "images": [
+              "10",
+              0
+            ],
+            "filename_prefix": "sean_chart_control/v2_confirm_30011"
+          }
+        }
+      },
+      {
+        "client_id": "a56d2157-9155-4864-9756-9af15349f91b",
+        "create_time": 1791999140364
+      },
+      [
+        "11"
+      ]
+    ],
+    "outputs": {
+      "11": {
+        "images": [
+          {
+            "filename": "v2_confirm_30011_00001_.png",
+            "subfolder": "sean_chart_control",
+            "type": "output",
+            "metadata": {
+              "kind": "image",
+              "width": 1536,
+              "height": 1024
+            },
+            "id": "d0ca65ca-1665-4068-975e-186fd36f1072"
+          }
+        ]
+      }
+    },
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "09a959bf-b832-462f-bb6a-8fd7381609e6",
+            "timestamp": 1791999140365
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8"
+            ],
+            "prompt_id": "09a959bf-b832-462f-bb6a-8fd7381609e6",
+            "timestamp": 1791999140366
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "09a959bf-b832-462f-bb6a-8fd7381609e6",
+            "timestamp": 1791999143132
+          }
+        ]
+      ]
+    },
+    "meta": {
+      "11": {
+        "node_id": "11",
+        "display_node": "11",
+        "parent_node": null,
+        "real_node_id": "11"
+      }
+    }
+  },
+  "gpu_samples": [
+    {
+      "seconds": 0.06,
+      "gpu": "21038, 0, 54"
+    },
+    {
+      "seconds": 3.11,
+      "gpu": "21038, 0, 69"
+    }
+  ],
+  "lease": "4cfbd983-4f2f-49f5-933f-5b105e2f5bb5",
+  "sha256": {
+    "images/v2_confirm_30011.png": "d1bc917c9b66e7a13d2d67447e6da0ab5f3bd6a3a0a29d5c66533f5f5f9d1806"
+  }
+}

@@ -1,0 +1,217 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-31c37e9c-c14a-45ca-a261-963e846990c2",
+  "job": "confirm_detailed_on_8089",
+  "status": "success",
+  "prompt_id": "d01ef08f-7d48-4398-bcf7-627a37f77df5",
+  "elapsed_seconds": 3.12,
+  "files": [
+    "images/confirm_detailed_on_8089.png"
+  ],
+  "history": {
+    "prompt": [
+      77,
+      "d01ef08f-7d48-4398-bcf7-627a37f77df5",
+      {
+        "1": {
+          "class_type": "UNETLoader",
+          "inputs": {
+            "unet_name": "qwen_image_2.1_turbo_int8_convrot.safetensors",
+            "weight_dtype": "default"
+          }
+        },
+        "2": {
+          "class_type": "CLIPLoader",
+          "inputs": {
+            "clip_name": "qwen3vl_8b_bf16.safetensors",
+            "type": "qwen_image"
+          }
+        },
+        "3": {
+          "class_type": "VAELoader",
+          "inputs": {
+            "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+          }
+        },
+        "4": {
+          "class_type": "CLIPTextEncode",
+          "inputs": {
+            "clip": [
+              "2",
+              0
+            ],
+            "text": "The image is a clean, presentation-style bar chart on a white background with a subtle paper-like grain texture. At the top center, a large bold dark navy Chinese headline reads \"测试数据\", functioning as the main title. Directly beneath the title is a short horizontal blue decorative line, centered and colored in a bright medium blue. Small pale blue geometric corner decorations appear near all four corners of the canvas, resembling minimalist outlined right-angle brackets. The main chart occupies the central area and is framed by thin dark gray axes: a vertical y-axis on the left and a horizontal x-axis along the bottom, forming a rectangular plotting area. Light gray dashed horizontal gridlines span across the plot at regular intervals. The y-axis labels, shown in dark gray on the left side, read \"100\", \"80\", \"60\", \"40\", \"20\", and \"0\" from top to bottom. Four vertical rectangular bars are arranged from left to right within the plotting area. Each bar is filled with saturated lake blue, has sharp clean edges, and includes slight tonal variation giving a smooth digital-gradient effect. The first bar is labeled \"甲\" below the x-axis and has a value label \"20\" above it; its height reaches the 20 mark. The second bar is labeled \"乙\" and has a value label \"70\" above it; its height reaches about the 70 level. The third bar is labeled \"丙\" and has a value label \"40\" above it; its height reaches the 40 mark. The fourth bar is labeled \"丁\" and has a value label \"90\" above it; its height reaches just below the 100 mark. All labels use a clear sans-serif style, with the category names in dark gray or black and the numeric value labels in dark navy. The composition is balanced, with generous margins, consistent spacing between bars, and a restrained color palette dominated by white, gray, dark navy, and vivid lake blue."
+          }
+        },
+        "5": {
+          "class_type": "CLIPTextEncode",
+          "inputs": {
+            "clip": [
+              "2",
+              0
+            ],
+            "text": ""
+          }
+        },
+        "6": {
+          "class_type": "EmptySD3LatentImage",
+          "inputs": {
+            "width": 1536,
+            "height": 1024,
+            "batch_size": 1
+          }
+        },
+        "7": {
+          "class_type": "ManualSigmas",
+          "inputs": {
+            "sigmas": "1.0, 0.978453, 0.954180, 0.926626, 0.895080, 0.845148, 0.704534, 0.414568, 0.0"
+          }
+        },
+        "8": {
+          "class_type": "KSamplerSelect",
+          "inputs": {
+            "sampler_name": "euler"
+          }
+        },
+        "9": {
+          "class_type": "SamplerCustom",
+          "inputs": {
+            "model": [
+              "1",
+              0
+            ],
+            "add_noise": true,
+            "noise_seed": 8089,
+            "cfg": 1.0,
+            "positive": [
+              "4",
+              0
+            ],
+            "negative": [
+              "5",
+              0
+            ],
+            "sampler": [
+              "8",
+              0
+            ],
+            "sigmas": [
+              "7",
+              0
+            ],
+            "latent_image": [
+              "6",
+              0
+            ]
+          }
+        },
+        "10": {
+          "class_type": "VAEDecode",
+          "inputs": {
+            "samples": [
+              "9",
+              0
+            ],
+            "vae": [
+              "3",
+              0
+            ]
+          }
+        },
+        "11": {
+          "class_type": "SaveImage",
+          "inputs": {
+            "images": [
+              "10",
+              0
+            ],
+            "filename_prefix": "sean_chart_control/confirm_detailed_on_8089"
+          }
+        }
+      },
+      {
+        "client_id": "430af85d-68ff-4f68-8b96-cc9ef0614396",
+        "create_time": 1791998796284
+      },
+      [
+        "11"
+      ]
+    ],
+    "outputs": {
+      "11": {
+        "images": [
+          {
+            "filename": "confirm_detailed_on_8089_00001_.png",
+            "subfolder": "sean_chart_control",
+            "type": "output",
+            "metadata": {
+              "kind": "image",
+              "width": 1536,
+              "height": 1024
+            },
+            "id": "54a90251-09ac-42ff-99e3-8d177ec93b24"
+          }
+        ]
+      }
+    },
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "d01ef08f-7d48-4398-bcf7-627a37f77df5",
+            "timestamp": 1791998796284
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8"
+            ],
+            "prompt_id": "d01ef08f-7d48-4398-bcf7-627a37f77df5",
+            "timestamp": 1791998796285
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "d01ef08f-7d48-4398-bcf7-627a37f77df5",
+            "timestamp": 1791998799114
+          }
+        ]
+      ]
+    },
+    "meta": {
+      "11": {
+        "node_id": "11",
+        "display_node": "11",
+        "parent_node": null,
+        "real_node_id": "11"
+      }
+    }
+  },
+  "gpu_samples": [
+    {
+      "seconds": 0.06,
+      "gpu": "20965, 0, 61"
+    },
+    {
+      "seconds": 3.12,
+      "gpu": "20965, 0, 74"
+    }
+  ],
+  "lease": "f4790bf7-9d40-45b3-a6e4-902c7b2e8554",
+  "sha256": {
+    "images/confirm_detailed_on_8089.png": "2922e18d216fc2924cc418e9dbd7dc96572ba888b13468d92517f3b3dcede4b9"
+  }
+}

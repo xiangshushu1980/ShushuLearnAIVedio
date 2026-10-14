@@ -1,0 +1,36 @@
+{
+  "owner": "Sean",
+  "group": "edit_confirm",
+  "review_scope": "直接核对20张PNG原图中的标题、四个类别及顺序、柱顶值、纵轴刻度顺序、柱数和额外/遗漏文字；不评几何。",
+  "expected": {
+    "title": "测试数据",
+    "categories_in_order": ["甲", "乙", "丙", "丁"],
+    "top_values_in_order": [20, 70, 40, 90],
+    "y_axis_ticks_top_to_bottom": [100, 80, 60, 40, 20, 0],
+    "bar_count": 4
+  },
+  "review_note": "类别乙在部分图中呈类似拉丁Z的字形，按乙识别。PNG原图为判定依据。",
+  "images": [
+    {"seed": 1009, "file": "images/edit_confirm_1009.png", "observed_categories": ["甲", "乙", "丙", "丁"], "observed_top_values": [20, 70, 40, 90], "observed_ticks_top_to_bottom": [100, 80, 60, 40, 20, 0], "title_ok": true, "bar_count": 4, "extra_or_missing_text": "无", "text_review_pass": true, "note": "无异常"},
+    {"seed": 10111, "file": "images/edit_confirm_10111.png", "observed_categories": ["甲", "乙", "丙", "丁"], "observed_top_values": [20, 70, 40, 90], "observed_ticks_top_to_bottom": [100, 80, 60, 40, 20, 0], "title_ok": true, "bar_count": 4, "extra_or_missing_text": "无", "text_review_pass": true, "note": "无异常"},
+    {"seed": 11113, "file": "images/edit_confirm_11113.png", "observed_categories": ["甲", "乙", "丙", "丁"], "observed_top_values": [20, 70, 40, 90], "observed_ticks_top_to_bottom": [100, 80, 60, 40, 20, 0], "title_ok": true, "bar_count": 4, "extra_or_missing_text": "无", "text_review_pass": true, "note": "无异常"},
+    {"seed": 12119, "file": "images/edit_confirm_12119.png", "observed_categories": ["甲", "乙", "丙", "丁"], "observed_top_values": [20, 70, 40, 90], "observed_ticks_top_to_bottom": [100, 80, 60, 40, 20, 0], "title_ok": true, "bar_count": 4, "extra_or_missing_text": "无", "text_review_pass": true, "note": "无异常"},
+    {"seed": 13121, "file": "images/edit_confirm_13121.png", "observed_categories": ["甲", "乙", "丙", "下"], "observed_top_values": [20, 70, 40, 90], "observed_ticks_top_to_bottom": [100, 80, 60, 40, 20, 0], "title_ok": true, "bar_count": 4, "extra_or_missing_text": "末类别丁误为下", "text_review_pass": false, "note": "末类别清晰为下，不是丁；其余目标文字正确"},
+    {"seed": 14143, "file": "images/edit_confirm_14143.png", "observed_categories": ["甲", "乙", "丙", "丁"], "observed_top_values": [20, 70, 40, 90], "observed_ticks_top_to_bottom": [100, 80, 60, 40, 20, 0], "title_ok": true, "bar_count": 4, "extra_or_missing_text": "无", "text_review_pass": true, "note": "无异常"},
+    {"seed": 15149, "file": "images/edit_confirm_15149.png", "observed_categories": ["甲", "乙", "丙", "丁"], "observed_top_values": [20, 70, 40, 90], "observed_ticks_top_to_bottom": [100, 80, 60, 40, 20, 0], "title_ok": true, "bar_count": 4, "extra_or_missing_text": "无", "text_review_pass": true, "note": "无异常"},
+    {"seed": 16183, "file": "images/edit_confirm_16183.png", "observed_categories": ["甲", "乙", "丙", "丁"], "observed_top_values": [20, 70, 40, 90], "observed_ticks_top_to_bottom": [100, 80, 60, 40, 20, 0], "title_ok": true, "bar_count": 4, "extra_or_missing_text": "无", "text_review_pass": true, "note": "无异常"},
+    {"seed": 17189, "file": "images/edit_confirm_17189.png", "observed_categories": ["甲", "乙", "丙", "丁"], "observed_top_values": [20, 70, 40, 90], "observed_ticks_top_to_bottom": [100, 80, 60, 40, 20, 0], "title_ok": true, "bar_count": 4, "extra_or_missing_text": "无", "text_review_pass": true, "note": "无异常"},
+    {"seed": 18199, "file": "images/edit_confirm_18199.png", "observed_categories": ["甲", "乙", "丙", "丁"], "observed_top_values": [20, 70, 40, 90], "observed_ticks_top_to_bottom": [100, 80, 60, 40, 20, 0], "title_ok": true, "bar_count": 4, "extra_or_missing_text": "无", "text_review_pass": true, "note": "无异常"},
+    {"seed": 19207, "file": "images/edit_confirm_19207.png", "observed_categories": ["甲", "乙", "丙", "丁"], "observed_top_values": [20, 70, 40, 90], "observed_ticks_top_to_bottom": [100, 80, 60, 40, 20, 0], "title_ok": true, "bar_count": 4, "extra_or_missing_text": "无", "text_review_pass": true, "note": "无异常"},
+    {"seed": 20231, "file": "images/edit_confirm_20231.png", "observed_categories": ["甲", "乙", "丙", "丁"], "observed_top_values": [20, 70, 40, 90], "observed_ticks_top_to_bottom": [100, 80, 60, 40, 20, 0], "title_ok": true, "bar_count": 4, "extra_or_missing_text": "无", "text_review_pass": true, "note": "无异常"},
+    {"seed": 2027, "file": "images/edit_confirm_2027.png", "observed_categories": ["甲", "乙", "丙", "丁"], "observed_top_values": [20, 70, 40, 90], "observed_ticks_top_to_bottom": [100, 80, 60, 40, 20, 0], "title_ok": true, "bar_count": 4, "extra_or_missing_text": "无", "text_review_pass": true, "note": "无异常"},
+    {"seed": 3037, "file": "images/edit_confirm_3037.png", "observed_categories": ["甲", "乙", "丙", "丁"], "observed_top_values": [20, 70, 40, 90], "observed_ticks_top_to_bottom": [100, 80, 60, 40, 20, 0], "title_ok": true, "bar_count": 4, "extra_or_missing_text": "无", "text_review_pass": true, "note": "无异常"},
+    {"seed": 4051, "file": "images/edit_confirm_4051.png", "observed_categories": ["甲", "乙", "丙", "丁"], "observed_top_values": [20, 70, 40, 90], "observed_ticks_top_to_bottom": [100, 80, 60, 40, 20, 0], "title_ok": true, "bar_count": 4, "extra_or_missing_text": "无", "text_review_pass": true, "note": "无异常"},
+    {"seed": 5059, "file": "images/edit_confirm_5059.png", "observed_categories": ["甲", "乙", "丙", "丁"], "observed_top_values": [20, 70, 40, 90], "observed_ticks_top_to_bottom": [100, 80, 60, 40, 20, 0], "title_ok": true, "bar_count": 4, "extra_or_missing_text": "无", "text_review_pass": true, "note": "无异常"},
+    {"seed": 6073, "file": "images/edit_confirm_6073.png", "observed_categories": ["中", "乙", "丙", "丁"], "observed_top_values": [20, 70, 40, 90], "observed_ticks_top_to_bottom": [100, 80, 60, 40, 20, 0], "title_ok": true, "bar_count": 4, "extra_or_missing_text": "首类别甲误为中", "text_review_pass": false, "note": "首类别清晰为中，不是甲；其余目标文字正确"},
+    {"seed": 7079, "file": "images/edit_confirm_7079.png", "observed_categories": ["甲", "乙", "丙", "丁"], "observed_top_values": [20, 70, 40, 90], "observed_ticks_top_to_bottom": [100, 80, 60, 40, 20, 0], "title_ok": true, "bar_count": 4, "extra_or_missing_text": "无", "text_review_pass": true, "note": "无异常"},
+    {"seed": 8089, "file": "images/edit_confirm_8089.png", "observed_categories": ["甲", "乙", "丙", "丁"], "observed_top_values": [20, 70, 40, 90], "observed_ticks_top_to_bottom": [100, 80, 60, 40, 20, 0], "title_ok": true, "bar_count": 4, "extra_or_missing_text": "无", "text_review_pass": true, "note": "无异常"},
+    {"seed": 9103, "file": "images/edit_confirm_9103.png", "observed_categories": ["甲", "乙", "丙", "丁"], "observed_top_values": [20, 70, 40, 90], "observed_ticks_top_to_bottom": [100, 30, 60, 40, 20, 0], "title_ok": true, "bar_count": 4, "extra_or_missing_text": "纵轴第二个刻度80误为30", "text_review_pass": false, "note": "纵轴刻度从上到下清晰为100、30、60、40、20、0；80被误写为30"}
+  ],
+  "summary": {"reviewed": 20, "text_review_pass": 17, "text_review_fail": 3, "anomalies": {"13121": "末类别丁误为下", "6073": "首类别甲误为中", "9103": "纵轴80误为30"}}
+}

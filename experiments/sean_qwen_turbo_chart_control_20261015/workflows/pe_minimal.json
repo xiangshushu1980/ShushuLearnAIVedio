@@ -1,0 +1,49 @@
+{
+  "prompt": {
+    "1": {
+      "class_type": "CLIPLoader",
+      "inputs": {
+        "clip_name": "qwen3.5_9b_qwen_image_2.1_pe_t2i.int8_convrot.safetensors",
+        "type": "qwen_image"
+      }
+    },
+    "2": {
+      "class_type": "QwenImage21_T2IPromptRewrite",
+      "inputs": {
+        "clip": [
+          "1",
+          0
+        ],
+        "prompt": "横向3:2白底柱状图，标题‘测试数据’。单系列四根蓝色竖直矩形柱，从左到右：甲=20、乙=70、丙=40、丁=90。纵轴从0到100，刻度0、20、40、60、80、100等距排列，共用零基线；柱高严格按数值线性比例。每根柱下方写类别，顶端标数值。仅显示标题、类别、数值和纵轴刻度。",
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "presence_penalty": 1.5,
+        "max_new_tokens": 16256,
+        "seed": 271828
+      }
+    },
+    "3": {
+      "class_type": "SaveStringKJ",
+      "inputs": {
+        "string": [
+          "2",
+          0
+        ],
+        "filename_prefix": "pe_minimal_positive",
+        "output_folder": "sean_chart_control"
+      }
+    },
+    "4": {
+      "class_type": "SaveStringKJ",
+      "inputs": {
+        "string": [
+          "2",
+          3
+        ],
+        "filename_prefix": "pe_minimal_thinking",
+        "output_folder": "sean_chart_control"
+      }
+    }
+  }
+}

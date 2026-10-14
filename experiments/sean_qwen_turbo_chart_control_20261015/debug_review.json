@@ -1,0 +1,254 @@
+{
+  "owner": "Sean",
+  "images": [
+    {
+      "owner": "Sean",
+      "job": "debug_detailed_off_1337",
+      "role": "debug only, excluded from confirmation; inspected before corresponding holdout run",
+      "text_observation": "Target labels/numbers visible, reviewed in original/contact sheet; geometry considered separately.",
+      "geometry_pass_candidate": false,
+      "inferred_values": [
+        27.38,
+        72.09,
+        46.39,
+        90.04
+      ],
+      "measurement_file": "measurements.json",
+      "receipt": "runs/debug_detailed_off_1337.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "debug_detailed_off_42",
+      "role": "debug only, excluded from confirmation; inspected before corresponding holdout run",
+      "text_observation": "Target labels/numbers visible, reviewed in original/contact sheet; geometry considered separately.",
+      "geometry_pass_candidate": false,
+      "inferred_values": [
+        27.17,
+        71.29,
+        46.31,
+        98.03
+      ],
+      "measurement_file": "measurements.json",
+      "receipt": "runs/debug_detailed_off_42.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "debug_detailed_on_1337",
+      "role": "debug only, excluded from confirmation; inspected before corresponding holdout run",
+      "text_observation": "Target labels/numbers visible, reviewed in original/contact sheet; geometry considered separately.",
+      "geometry_pass_candidate": false,
+      "inferred_values": [
+        41.6,
+        74.89,
+        57.19,
+        91.98
+      ],
+      "measurement_file": "measurements.json",
+      "receipt": "runs/debug_detailed_on_1337.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "debug_detailed_on_42",
+      "role": "debug only, excluded from confirmation; inspected before corresponding holdout run",
+      "text_observation": "Target labels/numbers visible, reviewed in original/contact sheet; geometry considered separately.",
+      "geometry_pass_candidate": false,
+      "inferred_values": [
+        40.85,
+        68.9,
+        49.96,
+        90.11
+      ],
+      "measurement_file": "measurements.json",
+      "receipt": "runs/debug_detailed_on_42.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "debug_minimal_off_1337",
+      "role": "debug only, excluded from confirmation; inspected before corresponding holdout run",
+      "text_observation": "Extra甲 y-axis text; seed42 malformed category text.",
+      "geometry_pass_candidate": false,
+      "inferred_values": [
+        22.12,
+        65.22,
+        35.26,
+        98.08
+      ],
+      "measurement_file": "measurements.json",
+      "receipt": "runs/debug_minimal_off_1337.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "debug_minimal_off_42",
+      "role": "debug only, excluded from confirmation; inspected before corresponding holdout run",
+      "text_observation": "Extra甲 y-axis text; seed42 malformed category text.",
+      "geometry_pass_candidate": false,
+      "inferred_values": [
+        22.42,
+        69.21,
+        39.16,
+        99.92
+      ],
+      "measurement_file": "measurements.json",
+      "receipt": "runs/debug_minimal_off_42.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "debug_minimal_on_1337",
+      "role": "debug only, excluded from confirmation; inspected before corresponding holdout run",
+      "text_observation": "Target labels/numbers visible, reviewed in original/contact sheet; geometry considered separately.",
+      "geometry_pass_candidate": false,
+      "inferred_values": [
+        41.36,
+        81.19,
+        48.27,
+        85.2
+      ],
+      "measurement_file": "measurements.json",
+      "receipt": "runs/debug_minimal_on_1337.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "debug_minimal_on_42",
+      "role": "debug only, excluded from confirmation; inspected before corresponding holdout run",
+      "text_observation": "Target labels/numbers visible, reviewed in original/contact sheet; geometry considered separately.",
+      "geometry_pass_candidate": false,
+      "inferred_values": [
+        40.79,
+        76.27,
+        47.04,
+        85.93
+      ],
+      "measurement_file": "measurements.json",
+      "receipt": "runs/debug_minimal_on_42.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "edit_debug_1337",
+      "role": "debug only, excluded from confirmation; inspected before corresponding holdout run",
+      "text_observation": "Target labels/numbers visible, reviewed in original/contact sheet; geometry considered separately.",
+      "geometry_pass_candidate": false,
+      "inferred_values": [
+        22.13,
+        70.08,
+        43.58,
+        89.75
+      ],
+      "measurement_file": "measurements.json",
+      "receipt": "runs/edit_debug_1337.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "edit_debug_42",
+      "role": "debug only, excluded from confirmation; inspected before corresponding holdout run",
+      "text_observation": "Target labels/numbers visible, reviewed in original/contact sheet; geometry considered separately.",
+      "geometry_pass_candidate": true,
+      "inferred_values": [
+        19.9,
+        70.01,
+        40.93,
+        90.47
+      ],
+      "measurement_file": "measurements.json",
+      "receipt": "runs/edit_debug_42.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "edit_v2_debug_1337",
+      "role": "debug only, excluded from confirmation; inspected before corresponding holdout run",
+      "text_observation": "Target labels/numbers visible, reviewed in original/contact sheet; geometry considered separately.",
+      "geometry_pass_candidate": true,
+      "inferred_values": [
+        20.08,
+        70.12,
+        39.96,
+        89.99
+      ],
+      "measurement_file": "measurements.json",
+      "receipt": "runs/edit_v2_debug_1337.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "edit_v2_debug_42",
+      "role": "debug only, excluded from confirmation; inspected before corresponding holdout run",
+      "text_observation": "Target labels/numbers visible, reviewed in original/contact sheet; geometry considered separately.",
+      "geometry_pass_candidate": true,
+      "inferred_values": [
+        20.0,
+        70.0,
+        40.0,
+        90.0
+      ],
+      "measurement_file": "measurements.json",
+      "receipt": "runs/edit_v2_debug_42.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "grouped_debug_1337",
+      "role": "debug only, excluded from confirmation; inspected before corresponding holdout run",
+      "text_observation": "Target labels/numbers visible, reviewed in original/contact sheet; geometry considered separately.",
+      "geometry_pass_candidate": true,
+      "inferred_values": [
+        20.0,
+        50.0,
+        70.0,
+        30.0,
+        39.848,
+        80.0,
+        90.0,
+        60.0
+      ],
+      "measurement_file": "grouped_measurements.json",
+      "receipt": "runs/grouped_debug_1337.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "grouped_debug_42",
+      "role": "debug only, excluded from confirmation; inspected before corresponding holdout run",
+      "text_observation": "Target labels/numbers visible, reviewed in original/contact sheet; geometry considered separately.",
+      "geometry_pass_candidate": true,
+      "inferred_values": [
+        20.0,
+        50.0,
+        70.0,
+        30.0,
+        40.0,
+        80.152,
+        90.0,
+        60.0
+      ],
+      "measurement_file": "grouped_measurements.json",
+      "receipt": "runs/grouped_debug_42.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "v2_debug_1337",
+      "role": "debug only, excluded from confirmation; inspected before corresponding holdout run",
+      "text_observation": "Target labels/numbers visible, reviewed in original/contact sheet; geometry considered separately.",
+      "geometry_pass_candidate": false,
+      "inferred_values": [
+        39.94,
+        79.74,
+        59.91,
+        100.0
+      ],
+      "measurement_file": "measurements.json",
+      "receipt": "runs/v2_debug_1337.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "v2_debug_42",
+      "role": "debug only, excluded from confirmation; inspected before corresponding holdout run",
+      "text_observation": "Target labels/numbers visible, reviewed in original/contact sheet; geometry considered separately.",
+      "geometry_pass_candidate": false,
+      "inferred_values": [
+        36.82,
+        80.3,
+        43.03,
+        100.3
+      ],
+      "measurement_file": "measurements.json",
+      "receipt": "runs/v2_debug_42.json"
+    }
+  ],
+  "note": "Debug observations are for diagnosis, never substituted into frozen holdout counts."
+}

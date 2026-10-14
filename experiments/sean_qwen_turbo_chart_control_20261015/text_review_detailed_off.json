@@ -1,0 +1,36 @@
+{
+  "owner": "Sean",
+  "group": "confirm_detailed_off",
+  "review_scope": "逐图目视核对标题、类别标签、柱顶标值、纵轴刻度、类别顺序、四柱数量及可见额外/遗漏文字；不评几何。",
+  "expected": {
+    "title": "测试数据",
+    "categories_in_order": ["甲", "乙", "丙", "丁"],
+    "top_values_in_order": [20, 70, 40, 90],
+    "y_axis_ticks_in_order": [0, 20, 40, 60, 80, 100],
+    "bar_count": 4
+  },
+  "review_note": "部分图中的乙字形接近拉丁字母 Z，按中文乙识别，不作为错误。所有图均未发现额外或遗漏文字。",
+  "images": [
+    {"seed": 1009, "file": "images/confirm_detailed_off_1009.png", "title_ok": true, "categories_ok": true, "top_values_ok": true, "ticks_ok": true, "bar_count": 4, "extra_or_missing_text": "无", "text_review_pass": true},
+    {"seed": 10111, "file": "images/confirm_detailed_off_10111.png", "title_ok": true, "categories_ok": true, "top_values_ok": true, "ticks_ok": true, "bar_count": 4, "extra_or_missing_text": "无", "text_review_pass": true},
+    {"seed": 11113, "file": "images/confirm_detailed_off_11113.png", "title_ok": true, "categories_ok": true, "top_values_ok": true, "ticks_ok": true, "bar_count": 4, "extra_or_missing_text": "无", "text_review_pass": true},
+    {"seed": 12119, "file": "images/confirm_detailed_off_12119.png", "title_ok": true, "categories_ok": true, "top_values_ok": true, "ticks_ok": true, "bar_count": 4, "extra_or_missing_text": "无", "text_review_pass": true},
+    {"seed": 13121, "file": "images/confirm_detailed_off_13121.png", "title_ok": true, "categories_ok": true, "top_values_ok": true, "ticks_ok": true, "bar_count": 4, "extra_or_missing_text": "无", "text_review_pass": true},
+    {"seed": 14143, "file": "images/confirm_detailed_off_14143.png", "title_ok": true, "categories_ok": true, "top_values_ok": true, "ticks_ok": true, "bar_count": 4, "extra_or_missing_text": "无", "text_review_pass": true},
+    {"seed": 15149, "file": "images/confirm_detailed_off_15149.png", "title_ok": true, "categories_ok": true, "top_values_ok": true, "ticks_ok": true, "bar_count": 4, "extra_or_missing_text": "无", "text_review_pass": true},
+    {"seed": 16183, "file": "images/confirm_detailed_off_16183.png", "title_ok": true, "categories_ok": true, "top_values_ok": true, "ticks_ok": true, "bar_count": 4, "extra_or_missing_text": "无", "text_review_pass": true},
+    {"seed": 17189, "file": "images/confirm_detailed_off_17189.png", "title_ok": true, "categories_ok": true, "top_values_ok": true, "ticks_ok": true, "bar_count": 4, "extra_or_missing_text": "无", "text_review_pass": true},
+    {"seed": 18199, "file": "images/confirm_detailed_off_18199.png", "title_ok": true, "categories_ok": true, "top_values_ok": true, "ticks_ok": true, "bar_count": 4, "extra_or_missing_text": "无", "text_review_pass": true},
+    {"seed": 19207, "file": "images/confirm_detailed_off_19207.png", "title_ok": true, "categories_ok": true, "top_values_ok": true, "ticks_ok": true, "bar_count": 4, "extra_or_missing_text": "无", "text_review_pass": true},
+    {"seed": 20231, "file": "images/confirm_detailed_off_20231.png", "title_ok": true, "categories_ok": true, "top_values_ok": true, "ticks_ok": true, "bar_count": 4, "extra_or_missing_text": "无", "text_review_pass": true},
+    {"seed": 2027, "file": "images/confirm_detailed_off_2027.png", "title_ok": true, "categories_ok": true, "top_values_ok": true, "ticks_ok": true, "bar_count": 4, "extra_or_missing_text": "无", "text_review_pass": true},
+    {"seed": 3037, "file": "images/confirm_detailed_off_3037.png", "title_ok": true, "categories_ok": true, "top_values_ok": true, "ticks_ok": true, "bar_count": 4, "extra_or_missing_text": "无", "text_review_pass": true},
+    {"seed": 4051, "file": "images/confirm_detailed_off_4051.png", "title_ok": true, "categories_ok": true, "top_values_ok": true, "ticks_ok": true, "bar_count": 4, "extra_or_missing_text": "无", "text_review_pass": true},
+    {"seed": 5059, "file": "images/confirm_detailed_off_5059.png", "title_ok": true, "categories_ok": true, "top_values_ok": true, "ticks_ok": true, "bar_count": 4, "extra_or_missing_text": "无", "text_review_pass": true},
+    {"seed": 6073, "file": "images/confirm_detailed_off_6073.png", "title_ok": true, "categories_ok": true, "top_values_ok": true, "ticks_ok": true, "bar_count": 4, "extra_or_missing_text": "无", "text_review_pass": true},
+    {"seed": 7079, "file": "images/confirm_detailed_off_7079.png", "title_ok": true, "categories_ok": true, "top_values_ok": true, "ticks_ok": true, "bar_count": 4, "extra_or_missing_text": "无", "text_review_pass": true},
+    {"seed": 8089, "file": "images/confirm_detailed_off_8089.png", "title_ok": true, "categories_ok": true, "top_values_ok": true, "ticks_ok": true, "bar_count": 4, "extra_or_missing_text": "无", "text_review_pass": true},
+    {"seed": 9103, "file": "images/confirm_detailed_off_9103.png", "title_ok": true, "categories_ok": true, "top_values_ok": true, "ticks_ok": true, "bar_count": 4, "extra_or_missing_text": "无", "text_review_pass": true}
+  ],
+  "summary": {"reviewed": 20, "text_review_pass": 20, "text_review_fail": 0}
+}

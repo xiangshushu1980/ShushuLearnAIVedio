@@ -1,0 +1,1916 @@
+{
+  "grouped_confirm_41011": {
+    "owner": "Sean",
+    "bars": [
+      {
+        "left": 261,
+        "right": 361,
+        "top": 718,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 379,
+        "right": 479,
+        "top": 520,
+        "bottom": 849,
+        "color": "orange"
+      },
+      {
+        "left": 551,
+        "right": 651,
+        "top": 388,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 669,
+        "right": 769,
+        "top": 651,
+        "bottom": 849,
+        "color": "orange"
+      },
+      {
+        "left": 841,
+        "right": 941,
+        "top": 586,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 959,
+        "right": 1059,
+        "top": 322,
+        "bottom": 849,
+        "color": "orange"
+      },
+      {
+        "left": 1131,
+        "right": 1231,
+        "top": 255,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 1249,
+        "right": 1349,
+        "top": 454,
+        "bottom": 849,
+        "color": "orange"
+      }
+    ],
+    "n_bars": 8,
+    "method": "Colors segmented; baseline/axis manually verified equal to program reference, y100=190,y0=850. No rescaling.",
+    "values_interleaved": [
+      20.0,
+      50.0,
+      70.0,
+      30.152,
+      40.0,
+      80.0,
+      90.152,
+      60.0
+    ],
+    "errors_interleaved": [
+      0.0,
+      0.0,
+      0.0,
+      0.152,
+      0.0,
+      0.0,
+      0.152,
+      0.0
+    ],
+    "max_absolute_error_units": 0.152,
+    "max_baseline_error_units": 0.15151515151515152,
+    "series_colors_correct": true,
+    "geometry_pass": true
+  },
+  "grouped_confirm_42013": {
+    "owner": "Sean",
+    "bars": [
+      {
+        "left": 261,
+        "right": 361,
+        "top": 718,
+        "bottom": 851,
+        "color": "blue"
+      },
+      {
+        "left": 379,
+        "right": 479,
+        "top": 520,
+        "bottom": 851,
+        "color": "orange"
+      },
+      {
+        "left": 551,
+        "right": 651,
+        "top": 388,
+        "bottom": 851,
+        "color": "blue"
+      },
+      {
+        "left": 668,
+        "right": 769,
+        "top": 652,
+        "bottom": 851,
+        "color": "orange"
+      },
+      {
+        "left": 841,
+        "right": 941,
+        "top": 586,
+        "bottom": 851,
+        "color": "blue"
+      },
+      {
+        "left": 959,
+        "right": 1059,
+        "top": 322,
+        "bottom": 851,
+        "color": "orange"
+      },
+      {
+        "left": 1131,
+        "right": 1231,
+        "top": 256,
+        "bottom": 851,
+        "color": "blue"
+      },
+      {
+        "left": 1249,
+        "right": 1350,
+        "top": 454,
+        "bottom": 851,
+        "color": "orange"
+      }
+    ],
+    "n_bars": 8,
+    "method": "Colors segmented; baseline/axis manually verified equal to program reference, y100=190,y0=850. No rescaling.",
+    "values_interleaved": [
+      20.0,
+      50.0,
+      70.0,
+      30.0,
+      40.0,
+      80.0,
+      90.0,
+      60.0
+    ],
+    "errors_interleaved": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "max_absolute_error_units": 0.0,
+    "max_baseline_error_units": 0.15151515151515152,
+    "series_colors_correct": true,
+    "geometry_pass": true
+  },
+  "grouped_confirm_43019": {
+    "owner": "Sean",
+    "bars": [
+      {
+        "left": 261,
+        "right": 361,
+        "top": 718,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 379,
+        "right": 479,
+        "top": 520,
+        "bottom": 849,
+        "color": "orange"
+      },
+      {
+        "left": 551,
+        "right": 651,
+        "top": 388,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 669,
+        "right": 769,
+        "top": 652,
+        "bottom": 849,
+        "color": "orange"
+      },
+      {
+        "left": 841,
+        "right": 941,
+        "top": 586,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 959,
+        "right": 1059,
+        "top": 322,
+        "bottom": 849,
+        "color": "orange"
+      },
+      {
+        "left": 1131,
+        "right": 1231,
+        "top": 256,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 1249,
+        "right": 1349,
+        "top": 454,
+        "bottom": 849,
+        "color": "orange"
+      }
+    ],
+    "n_bars": 8,
+    "method": "Colors segmented; baseline/axis manually verified equal to program reference, y100=190,y0=850. No rescaling.",
+    "values_interleaved": [
+      20.0,
+      50.0,
+      70.0,
+      30.0,
+      40.0,
+      80.0,
+      90.0,
+      60.0
+    ],
+    "errors_interleaved": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "max_absolute_error_units": 0.0,
+    "max_baseline_error_units": 0.15151515151515152,
+    "series_colors_correct": true,
+    "geometry_pass": true
+  },
+  "grouped_confirm_44017": {
+    "owner": "Sean",
+    "bars": [
+      {
+        "left": 261,
+        "right": 361,
+        "top": 718,
+        "bottom": 851,
+        "color": "blue"
+      },
+      {
+        "left": 378,
+        "right": 479,
+        "top": 520,
+        "bottom": 850,
+        "color": "orange"
+      },
+      {
+        "left": 550,
+        "right": 651,
+        "top": 388,
+        "bottom": 851,
+        "color": "blue"
+      },
+      {
+        "left": 668,
+        "right": 769,
+        "top": 652,
+        "bottom": 850,
+        "color": "orange"
+      },
+      {
+        "left": 840,
+        "right": 941,
+        "top": 586,
+        "bottom": 851,
+        "color": "blue"
+      },
+      {
+        "left": 959,
+        "right": 1059,
+        "top": 321,
+        "bottom": 850,
+        "color": "orange"
+      },
+      {
+        "left": 1130,
+        "right": 1231,
+        "top": 255,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 1249,
+        "right": 1349,
+        "top": 454,
+        "bottom": 850,
+        "color": "orange"
+      }
+    ],
+    "n_bars": 8,
+    "method": "Colors segmented; baseline/axis manually verified equal to program reference, y100=190,y0=850. No rescaling.",
+    "values_interleaved": [
+      20.0,
+      50.0,
+      70.0,
+      30.0,
+      40.0,
+      80.152,
+      90.152,
+      60.0
+    ],
+    "errors_interleaved": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.152,
+      0.152,
+      0.0
+    ],
+    "max_absolute_error_units": 0.152,
+    "max_baseline_error_units": 0.15151515151515152,
+    "series_colors_correct": true,
+    "geometry_pass": true
+  },
+  "grouped_confirm_45007": {
+    "owner": "Sean",
+    "bars": [
+      {
+        "left": 261,
+        "right": 362,
+        "top": 718,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 379,
+        "right": 479,
+        "top": 520,
+        "bottom": 850,
+        "color": "orange"
+      },
+      {
+        "left": 550,
+        "right": 651,
+        "top": 388,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 669,
+        "right": 769,
+        "top": 652,
+        "bottom": 850,
+        "color": "orange"
+      },
+      {
+        "left": 840,
+        "right": 941,
+        "top": 586,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 959,
+        "right": 1059,
+        "top": 322,
+        "bottom": 850,
+        "color": "orange"
+      },
+      {
+        "left": 1131,
+        "right": 1231,
+        "top": 256,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 1249,
+        "right": 1349,
+        "top": 454,
+        "bottom": 850,
+        "color": "orange"
+      }
+    ],
+    "n_bars": 8,
+    "method": "Colors segmented; baseline/axis manually verified equal to program reference, y100=190,y0=850. No rescaling.",
+    "values_interleaved": [
+      20.0,
+      50.0,
+      70.0,
+      30.0,
+      40.0,
+      80.0,
+      90.0,
+      60.0
+    ],
+    "errors_interleaved": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "max_absolute_error_units": 0.0,
+    "max_baseline_error_units": 0.0,
+    "series_colors_correct": true,
+    "geometry_pass": true
+  },
+  "grouped_confirm_46021": {
+    "owner": "Sean",
+    "bars": [
+      {
+        "left": 261,
+        "right": 361,
+        "top": 718,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 379,
+        "right": 479,
+        "top": 520,
+        "bottom": 850,
+        "color": "orange"
+      },
+      {
+        "left": 551,
+        "right": 651,
+        "top": 388,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 669,
+        "right": 769,
+        "top": 652,
+        "bottom": 850,
+        "color": "orange"
+      },
+      {
+        "left": 841,
+        "right": 941,
+        "top": 586,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 958,
+        "right": 1059,
+        "top": 322,
+        "bottom": 850,
+        "color": "orange"
+      },
+      {
+        "left": 1131,
+        "right": 1231,
+        "top": 256,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 1249,
+        "right": 1349,
+        "top": 454,
+        "bottom": 850,
+        "color": "orange"
+      }
+    ],
+    "n_bars": 8,
+    "method": "Colors segmented; baseline/axis manually verified equal to program reference, y100=190,y0=850. No rescaling.",
+    "values_interleaved": [
+      20.0,
+      50.0,
+      70.0,
+      30.0,
+      40.0,
+      80.0,
+      90.0,
+      60.0
+    ],
+    "errors_interleaved": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "max_absolute_error_units": 0.0,
+    "max_baseline_error_units": 0.0,
+    "series_colors_correct": true,
+    "geometry_pass": true
+  },
+  "grouped_confirm_47017": {
+    "owner": "Sean",
+    "bars": [
+      {
+        "left": 261,
+        "right": 361,
+        "top": 718,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 379,
+        "right": 479,
+        "top": 520,
+        "bottom": 850,
+        "color": "orange"
+      },
+      {
+        "left": 551,
+        "right": 652,
+        "top": 388,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 669,
+        "right": 769,
+        "top": 652,
+        "bottom": 850,
+        "color": "orange"
+      },
+      {
+        "left": 841,
+        "right": 941,
+        "top": 586,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 959,
+        "right": 1059,
+        "top": 322,
+        "bottom": 850,
+        "color": "orange"
+      },
+      {
+        "left": 1131,
+        "right": 1231,
+        "top": 256,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 1249,
+        "right": 1349,
+        "top": 454,
+        "bottom": 850,
+        "color": "orange"
+      }
+    ],
+    "n_bars": 8,
+    "method": "Colors segmented; baseline/axis manually verified equal to program reference, y100=190,y0=850. No rescaling.",
+    "values_interleaved": [
+      20.0,
+      50.0,
+      70.0,
+      30.0,
+      40.0,
+      80.0,
+      90.0,
+      60.0
+    ],
+    "errors_interleaved": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "max_absolute_error_units": 0.0,
+    "max_baseline_error_units": 0.0,
+    "series_colors_correct": true,
+    "geometry_pass": true
+  },
+  "grouped_confirm_48017": {
+    "owner": "Sean",
+    "bars": [
+      {
+        "left": 261,
+        "right": 361,
+        "top": 718,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 379,
+        "right": 479,
+        "top": 520,
+        "bottom": 850,
+        "color": "orange"
+      },
+      {
+        "left": 551,
+        "right": 651,
+        "top": 388,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 668,
+        "right": 769,
+        "top": 652,
+        "bottom": 850,
+        "color": "orange"
+      },
+      {
+        "left": 841,
+        "right": 941,
+        "top": 586,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 959,
+        "right": 1059,
+        "top": 322,
+        "bottom": 850,
+        "color": "orange"
+      },
+      {
+        "left": 1131,
+        "right": 1231,
+        "top": 256,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 1249,
+        "right": 1349,
+        "top": 454,
+        "bottom": 850,
+        "color": "orange"
+      }
+    ],
+    "n_bars": 8,
+    "method": "Colors segmented; baseline/axis manually verified equal to program reference, y100=190,y0=850. No rescaling.",
+    "values_interleaved": [
+      20.0,
+      50.0,
+      70.0,
+      30.0,
+      40.0,
+      80.0,
+      90.0,
+      60.0
+    ],
+    "errors_interleaved": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "max_absolute_error_units": 0.0,
+    "max_baseline_error_units": 0.0,
+    "series_colors_correct": true,
+    "geometry_pass": true
+  },
+  "grouped_confirm_49003": {
+    "owner": "Sean",
+    "bars": [
+      {
+        "left": 261,
+        "right": 361,
+        "top": 718,
+        "bottom": 851,
+        "color": "blue"
+      },
+      {
+        "left": 379,
+        "right": 479,
+        "top": 520,
+        "bottom": 850,
+        "color": "orange"
+      },
+      {
+        "left": 551,
+        "right": 651,
+        "top": 388,
+        "bottom": 851,
+        "color": "blue"
+      },
+      {
+        "left": 669,
+        "right": 769,
+        "top": 652,
+        "bottom": 850,
+        "color": "orange"
+      },
+      {
+        "left": 841,
+        "right": 941,
+        "top": 586,
+        "bottom": 851,
+        "color": "blue"
+      },
+      {
+        "left": 958,
+        "right": 1059,
+        "top": 322,
+        "bottom": 850,
+        "color": "orange"
+      },
+      {
+        "left": 1131,
+        "right": 1231,
+        "top": 256,
+        "bottom": 851,
+        "color": "blue"
+      },
+      {
+        "left": 1249,
+        "right": 1349,
+        "top": 454,
+        "bottom": 850,
+        "color": "orange"
+      }
+    ],
+    "n_bars": 8,
+    "method": "Colors segmented; baseline/axis manually verified equal to program reference, y100=190,y0=850. No rescaling.",
+    "values_interleaved": [
+      20.0,
+      50.0,
+      70.0,
+      30.0,
+      40.0,
+      80.0,
+      90.0,
+      60.0
+    ],
+    "errors_interleaved": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "max_absolute_error_units": 0.0,
+    "max_baseline_error_units": 0.15151515151515152,
+    "series_colors_correct": true,
+    "geometry_pass": true
+  },
+  "grouped_confirm_50021": {
+    "owner": "Sean",
+    "bars": [
+      {
+        "left": 261,
+        "right": 361,
+        "top": 718,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 379,
+        "right": 479,
+        "top": 520,
+        "bottom": 850,
+        "color": "orange"
+      },
+      {
+        "left": 551,
+        "right": 651,
+        "top": 388,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 669,
+        "right": 769,
+        "top": 652,
+        "bottom": 850,
+        "color": "orange"
+      },
+      {
+        "left": 841,
+        "right": 941,
+        "top": 586,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 959,
+        "right": 1059,
+        "top": 322,
+        "bottom": 850,
+        "color": "orange"
+      },
+      {
+        "left": 1131,
+        "right": 1231,
+        "top": 256,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 1249,
+        "right": 1349,
+        "top": 454,
+        "bottom": 850,
+        "color": "orange"
+      }
+    ],
+    "n_bars": 8,
+    "method": "Colors segmented; baseline/axis manually verified equal to program reference, y100=190,y0=850. No rescaling.",
+    "values_interleaved": [
+      20.0,
+      50.0,
+      70.0,
+      30.0,
+      40.0,
+      80.0,
+      90.0,
+      60.0
+    ],
+    "errors_interleaved": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "max_absolute_error_units": 0.0,
+    "max_baseline_error_units": 0.0,
+    "series_colors_correct": true,
+    "geometry_pass": true
+  },
+  "grouped_confirm_51001": {
+    "owner": "Sean",
+    "bars": [
+      {
+        "left": 261,
+        "right": 361,
+        "top": 718,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 379,
+        "right": 479,
+        "top": 520,
+        "bottom": 850,
+        "color": "orange"
+      },
+      {
+        "left": 551,
+        "right": 651,
+        "top": 388,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 668,
+        "right": 769,
+        "top": 652,
+        "bottom": 850,
+        "color": "orange"
+      },
+      {
+        "left": 840,
+        "right": 941,
+        "top": 586,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 958,
+        "right": 1059,
+        "top": 322,
+        "bottom": 850,
+        "color": "orange"
+      },
+      {
+        "left": 1131,
+        "right": 1231,
+        "top": 256,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 1249,
+        "right": 1349,
+        "top": 454,
+        "bottom": 850,
+        "color": "orange"
+      }
+    ],
+    "n_bars": 8,
+    "method": "Colors segmented; baseline/axis manually verified equal to program reference, y100=190,y0=850. No rescaling.",
+    "values_interleaved": [
+      20.0,
+      50.0,
+      70.0,
+      30.0,
+      40.0,
+      80.0,
+      90.0,
+      60.0
+    ],
+    "errors_interleaved": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "max_absolute_error_units": 0.0,
+    "max_baseline_error_units": 0.0,
+    "series_colors_correct": true,
+    "geometry_pass": true
+  },
+  "grouped_confirm_52009": {
+    "owner": "Sean",
+    "bars": [
+      {
+        "left": 261,
+        "right": 361,
+        "top": 718,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 379,
+        "right": 479,
+        "top": 520,
+        "bottom": 850,
+        "color": "orange"
+      },
+      {
+        "left": 551,
+        "right": 651,
+        "top": 388,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 669,
+        "right": 769,
+        "top": 652,
+        "bottom": 850,
+        "color": "orange"
+      },
+      {
+        "left": 841,
+        "right": 941,
+        "top": 586,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 959,
+        "right": 1059,
+        "top": 322,
+        "bottom": 850,
+        "color": "orange"
+      },
+      {
+        "left": 1131,
+        "right": 1231,
+        "top": 256,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 1249,
+        "right": 1349,
+        "top": 454,
+        "bottom": 850,
+        "color": "orange"
+      }
+    ],
+    "n_bars": 8,
+    "method": "Colors segmented; baseline/axis manually verified equal to program reference, y100=190,y0=850. No rescaling.",
+    "values_interleaved": [
+      20.0,
+      50.0,
+      70.0,
+      30.0,
+      40.0,
+      80.0,
+      90.0,
+      60.0
+    ],
+    "errors_interleaved": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "max_absolute_error_units": 0.0,
+    "max_baseline_error_units": 0.0,
+    "series_colors_correct": true,
+    "geometry_pass": true
+  },
+  "grouped_confirm_53003": {
+    "owner": "Sean",
+    "bars": [
+      {
+        "left": 260,
+        "right": 361,
+        "top": 717,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 378,
+        "right": 479,
+        "top": 519,
+        "bottom": 849,
+        "color": "orange"
+      },
+      {
+        "left": 551,
+        "right": 651,
+        "top": 387,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 669,
+        "right": 769,
+        "top": 651,
+        "bottom": 849,
+        "color": "orange"
+      },
+      {
+        "left": 841,
+        "right": 941,
+        "top": 585,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 959,
+        "right": 1059,
+        "top": 321,
+        "bottom": 849,
+        "color": "orange"
+      },
+      {
+        "left": 1131,
+        "right": 1232,
+        "top": 255,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 1249,
+        "right": 1349,
+        "top": 453,
+        "bottom": 849,
+        "color": "orange"
+      }
+    ],
+    "n_bars": 8,
+    "method": "Colors segmented; baseline/axis manually verified equal to program reference, y100=190,y0=850. No rescaling.",
+    "values_interleaved": [
+      20.152,
+      50.152,
+      70.152,
+      30.152,
+      40.152,
+      80.152,
+      90.152,
+      60.152
+    ],
+    "errors_interleaved": [
+      0.152,
+      0.152,
+      0.152,
+      0.152,
+      0.152,
+      0.152,
+      0.152,
+      0.152
+    ],
+    "max_absolute_error_units": 0.152,
+    "max_baseline_error_units": 0.15151515151515152,
+    "series_colors_correct": true,
+    "geometry_pass": true
+  },
+  "grouped_confirm_54001": {
+    "owner": "Sean",
+    "bars": [
+      {
+        "left": 261,
+        "right": 362,
+        "top": 718,
+        "bottom": 851,
+        "color": "blue"
+      },
+      {
+        "left": 379,
+        "right": 479,
+        "top": 520,
+        "bottom": 850,
+        "color": "orange"
+      },
+      {
+        "left": 550,
+        "right": 651,
+        "top": 388,
+        "bottom": 851,
+        "color": "blue"
+      },
+      {
+        "left": 669,
+        "right": 769,
+        "top": 652,
+        "bottom": 850,
+        "color": "orange"
+      },
+      {
+        "left": 841,
+        "right": 941,
+        "top": 586,
+        "bottom": 851,
+        "color": "blue"
+      },
+      {
+        "left": 959,
+        "right": 1059,
+        "top": 322,
+        "bottom": 850,
+        "color": "orange"
+      },
+      {
+        "left": 1131,
+        "right": 1231,
+        "top": 256,
+        "bottom": 851,
+        "color": "blue"
+      },
+      {
+        "left": 1249,
+        "right": 1349,
+        "top": 454,
+        "bottom": 850,
+        "color": "orange"
+      }
+    ],
+    "n_bars": 8,
+    "method": "Colors segmented; baseline/axis manually verified equal to program reference, y100=190,y0=850. No rescaling.",
+    "values_interleaved": [
+      20.0,
+      50.0,
+      70.0,
+      30.0,
+      40.0,
+      80.0,
+      90.0,
+      60.0
+    ],
+    "errors_interleaved": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "max_absolute_error_units": 0.0,
+    "max_baseline_error_units": 0.15151515151515152,
+    "series_colors_correct": true,
+    "geometry_pass": true
+  },
+  "grouped_confirm_55001": {
+    "owner": "Sean",
+    "bars": [
+      {
+        "left": 261,
+        "right": 361,
+        "top": 718,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 378,
+        "right": 479,
+        "top": 520,
+        "bottom": 850,
+        "color": "orange"
+      },
+      {
+        "left": 551,
+        "right": 651,
+        "top": 388,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 669,
+        "right": 769,
+        "top": 651,
+        "bottom": 850,
+        "color": "orange"
+      },
+      {
+        "left": 841,
+        "right": 941,
+        "top": 586,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 958,
+        "right": 1059,
+        "top": 322,
+        "bottom": 850,
+        "color": "orange"
+      },
+      {
+        "left": 1131,
+        "right": 1231,
+        "top": 256,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 1249,
+        "right": 1349,
+        "top": 454,
+        "bottom": 850,
+        "color": "orange"
+      }
+    ],
+    "n_bars": 8,
+    "method": "Colors segmented; baseline/axis manually verified equal to program reference, y100=190,y0=850. No rescaling.",
+    "values_interleaved": [
+      20.0,
+      50.0,
+      70.0,
+      30.152,
+      40.0,
+      80.0,
+      90.0,
+      60.0
+    ],
+    "errors_interleaved": [
+      0.0,
+      0.0,
+      0.0,
+      0.152,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "max_absolute_error_units": 0.152,
+    "max_baseline_error_units": 0.0,
+    "series_colors_correct": true,
+    "geometry_pass": true
+  },
+  "grouped_confirm_56003": {
+    "owner": "Sean",
+    "bars": [
+      {
+        "left": 261,
+        "right": 361,
+        "top": 718,
+        "bottom": 851,
+        "color": "blue"
+      },
+      {
+        "left": 379,
+        "right": 479,
+        "top": 520,
+        "bottom": 850,
+        "color": "orange"
+      },
+      {
+        "left": 550,
+        "right": 651,
+        "top": 388,
+        "bottom": 851,
+        "color": "blue"
+      },
+      {
+        "left": 669,
+        "right": 770,
+        "top": 652,
+        "bottom": 850,
+        "color": "orange"
+      },
+      {
+        "left": 841,
+        "right": 941,
+        "top": 586,
+        "bottom": 851,
+        "color": "blue"
+      },
+      {
+        "left": 959,
+        "right": 1059,
+        "top": 322,
+        "bottom": 850,
+        "color": "orange"
+      },
+      {
+        "left": 1130,
+        "right": 1231,
+        "top": 256,
+        "bottom": 851,
+        "color": "blue"
+      },
+      {
+        "left": 1249,
+        "right": 1349,
+        "top": 454,
+        "bottom": 850,
+        "color": "orange"
+      }
+    ],
+    "n_bars": 8,
+    "method": "Colors segmented; baseline/axis manually verified equal to program reference, y100=190,y0=850. No rescaling.",
+    "values_interleaved": [
+      20.0,
+      50.0,
+      70.0,
+      30.0,
+      40.0,
+      80.0,
+      90.0,
+      60.0
+    ],
+    "errors_interleaved": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "max_absolute_error_units": 0.0,
+    "max_baseline_error_units": 0.15151515151515152,
+    "series_colors_correct": true,
+    "geometry_pass": true
+  },
+  "grouped_confirm_57037": {
+    "owner": "Sean",
+    "bars": [
+      {
+        "left": 261,
+        "right": 361,
+        "top": 718,
+        "bottom": 851,
+        "color": "blue"
+      },
+      {
+        "left": 379,
+        "right": 479,
+        "top": 520,
+        "bottom": 850,
+        "color": "orange"
+      },
+      {
+        "left": 550,
+        "right": 651,
+        "top": 388,
+        "bottom": 851,
+        "color": "blue"
+      },
+      {
+        "left": 669,
+        "right": 769,
+        "top": 652,
+        "bottom": 850,
+        "color": "orange"
+      },
+      {
+        "left": 841,
+        "right": 941,
+        "top": 586,
+        "bottom": 851,
+        "color": "blue"
+      },
+      {
+        "left": 959,
+        "right": 1059,
+        "top": 322,
+        "bottom": 850,
+        "color": "orange"
+      },
+      {
+        "left": 1131,
+        "right": 1231,
+        "top": 256,
+        "bottom": 851,
+        "color": "blue"
+      },
+      {
+        "left": 1249,
+        "right": 1349,
+        "top": 454,
+        "bottom": 850,
+        "color": "orange"
+      }
+    ],
+    "n_bars": 8,
+    "method": "Colors segmented; baseline/axis manually verified equal to program reference, y100=190,y0=850. No rescaling.",
+    "values_interleaved": [
+      20.0,
+      50.0,
+      70.0,
+      30.0,
+      40.0,
+      80.0,
+      90.0,
+      60.0
+    ],
+    "errors_interleaved": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "max_absolute_error_units": 0.0,
+    "max_baseline_error_units": 0.15151515151515152,
+    "series_colors_correct": true,
+    "geometry_pass": true
+  },
+  "grouped_confirm_58013": {
+    "owner": "Sean",
+    "bars": [
+      {
+        "left": 261,
+        "right": 361,
+        "top": 718,
+        "bottom": 851,
+        "color": "blue"
+      },
+      {
+        "left": 378,
+        "right": 479,
+        "top": 520,
+        "bottom": 850,
+        "color": "orange"
+      },
+      {
+        "left": 550,
+        "right": 651,
+        "top": 387,
+        "bottom": 851,
+        "color": "blue"
+      },
+      {
+        "left": 669,
+        "right": 769,
+        "top": 652,
+        "bottom": 850,
+        "color": "orange"
+      },
+      {
+        "left": 840,
+        "right": 941,
+        "top": 586,
+        "bottom": 851,
+        "color": "blue"
+      },
+      {
+        "left": 958,
+        "right": 1059,
+        "top": 321,
+        "bottom": 850,
+        "color": "orange"
+      },
+      {
+        "left": 1131,
+        "right": 1232,
+        "top": 255,
+        "bottom": 851,
+        "color": "blue"
+      },
+      {
+        "left": 1250,
+        "right": 1350,
+        "top": 454,
+        "bottom": 850,
+        "color": "orange"
+      }
+    ],
+    "n_bars": 8,
+    "method": "Colors segmented; baseline/axis manually verified equal to program reference, y100=190,y0=850. No rescaling.",
+    "values_interleaved": [
+      20.0,
+      50.0,
+      70.152,
+      30.0,
+      40.0,
+      80.152,
+      90.152,
+      60.0
+    ],
+    "errors_interleaved": [
+      0.0,
+      0.0,
+      0.152,
+      0.0,
+      0.0,
+      0.152,
+      0.152,
+      0.0
+    ],
+    "max_absolute_error_units": 0.152,
+    "max_baseline_error_units": 0.15151515151515152,
+    "series_colors_correct": true,
+    "geometry_pass": true
+  },
+  "grouped_confirm_59009": {
+    "owner": "Sean",
+    "bars": [
+      {
+        "left": 261,
+        "right": 362,
+        "top": 718,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 379,
+        "right": 479,
+        "top": 520,
+        "bottom": 850,
+        "color": "orange"
+      },
+      {
+        "left": 551,
+        "right": 652,
+        "top": 388,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 669,
+        "right": 769,
+        "top": 652,
+        "bottom": 850,
+        "color": "orange"
+      },
+      {
+        "left": 841,
+        "right": 941,
+        "top": 586,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 959,
+        "right": 1059,
+        "top": 322,
+        "bottom": 850,
+        "color": "orange"
+      },
+      {
+        "left": 1131,
+        "right": 1231,
+        "top": 256,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 1249,
+        "right": 1349,
+        "top": 454,
+        "bottom": 850,
+        "color": "orange"
+      }
+    ],
+    "n_bars": 8,
+    "method": "Colors segmented; baseline/axis manually verified equal to program reference, y100=190,y0=850. No rescaling.",
+    "values_interleaved": [
+      20.0,
+      50.0,
+      70.0,
+      30.0,
+      40.0,
+      80.0,
+      90.0,
+      60.0
+    ],
+    "errors_interleaved": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "max_absolute_error_units": 0.0,
+    "max_baseline_error_units": 0.0,
+    "series_colors_correct": true,
+    "geometry_pass": true
+  },
+  "grouped_confirm_60013": {
+    "owner": "Sean",
+    "bars": [
+      {
+        "left": 261,
+        "right": 361,
+        "top": 719,
+        "bottom": 851,
+        "color": "blue"
+      },
+      {
+        "left": 379,
+        "right": 479,
+        "top": 521,
+        "bottom": 851,
+        "color": "orange"
+      },
+      {
+        "left": 551,
+        "right": 651,
+        "top": 388,
+        "bottom": 851,
+        "color": "blue"
+      },
+      {
+        "left": 669,
+        "right": 769,
+        "top": 652,
+        "bottom": 851,
+        "color": "orange"
+      },
+      {
+        "left": 841,
+        "right": 941,
+        "top": 587,
+        "bottom": 851,
+        "color": "blue"
+      },
+      {
+        "left": 959,
+        "right": 1059,
+        "top": 322,
+        "bottom": 851,
+        "color": "orange"
+      },
+      {
+        "left": 1131,
+        "right": 1231,
+        "top": 256,
+        "bottom": 851,
+        "color": "blue"
+      },
+      {
+        "left": 1249,
+        "right": 1349,
+        "top": 454,
+        "bottom": 851,
+        "color": "orange"
+      }
+    ],
+    "n_bars": 8,
+    "method": "Colors segmented; baseline/axis manually verified equal to program reference, y100=190,y0=850. No rescaling.",
+    "values_interleaved": [
+      19.848,
+      49.848,
+      70.0,
+      30.0,
+      39.848,
+      80.0,
+      90.0,
+      60.0
+    ],
+    "errors_interleaved": [
+      -0.152,
+      -0.152,
+      0.0,
+      0.0,
+      -0.152,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "max_absolute_error_units": 0.152,
+    "max_baseline_error_units": 0.15151515151515152,
+    "series_colors_correct": true,
+    "geometry_pass": true
+  },
+  "grouped_debug_1337": {
+    "owner": "Sean",
+    "bars": [
+      {
+        "left": 261,
+        "right": 361,
+        "top": 718,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 379,
+        "right": 479,
+        "top": 520,
+        "bottom": 850,
+        "color": "orange"
+      },
+      {
+        "left": 551,
+        "right": 651,
+        "top": 388,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 669,
+        "right": 769,
+        "top": 652,
+        "bottom": 850,
+        "color": "orange"
+      },
+      {
+        "left": 840,
+        "right": 941,
+        "top": 587,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 958,
+        "right": 1059,
+        "top": 322,
+        "bottom": 850,
+        "color": "orange"
+      },
+      {
+        "left": 1130,
+        "right": 1231,
+        "top": 256,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 1249,
+        "right": 1349,
+        "top": 454,
+        "bottom": 850,
+        "color": "orange"
+      }
+    ],
+    "n_bars": 8,
+    "method": "Colors segmented; baseline/axis manually verified equal to program reference, y100=190,y0=850. No rescaling.",
+    "values_interleaved": [
+      20.0,
+      50.0,
+      70.0,
+      30.0,
+      39.848,
+      80.0,
+      90.0,
+      60.0
+    ],
+    "errors_interleaved": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      -0.152,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "max_absolute_error_units": 0.152,
+    "max_baseline_error_units": 0.0,
+    "series_colors_correct": true,
+    "geometry_pass": true
+  },
+  "grouped_debug_42": {
+    "owner": "Sean",
+    "bars": [
+      {
+        "left": 261,
+        "right": 361,
+        "top": 718,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 379,
+        "right": 479,
+        "top": 520,
+        "bottom": 850,
+        "color": "orange"
+      },
+      {
+        "left": 551,
+        "right": 651,
+        "top": 388,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 669,
+        "right": 769,
+        "top": 652,
+        "bottom": 850,
+        "color": "orange"
+      },
+      {
+        "left": 841,
+        "right": 941,
+        "top": 586,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 959,
+        "right": 1059,
+        "top": 321,
+        "bottom": 850,
+        "color": "orange"
+      },
+      {
+        "left": 1131,
+        "right": 1231,
+        "top": 256,
+        "bottom": 850,
+        "color": "blue"
+      },
+      {
+        "left": 1249,
+        "right": 1349,
+        "top": 454,
+        "bottom": 850,
+        "color": "orange"
+      }
+    ],
+    "n_bars": 8,
+    "method": "Colors segmented; baseline/axis manually verified equal to program reference, y100=190,y0=850. No rescaling.",
+    "values_interleaved": [
+      20.0,
+      50.0,
+      70.0,
+      30.0,
+      40.0,
+      80.152,
+      90.0,
+      60.0
+    ],
+    "errors_interleaved": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.152,
+      0.0,
+      0.0
+    ],
+    "max_absolute_error_units": 0.152,
+    "max_baseline_error_units": 0.0,
+    "series_colors_correct": true,
+    "geometry_pass": true
+  }
+}

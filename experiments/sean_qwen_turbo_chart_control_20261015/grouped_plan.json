@@ -1,0 +1,59 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-31c37e9c-c14a-45ca-a261-963e846990c2",
+  "route": "reference-guided background-only edit",
+  "prompt": "只将<image1>的白色背景改为非常浅的暖象牙色。图表的文字、数字、蓝色和橙色矩形柱、图例、坐标轴全部保持原样，精确保留每个位置、尺寸、轮廓和颜色。仅更换背景色，不重新设计图表。",
+  "categories": [
+    "甲",
+    "乙",
+    "丙",
+    "丁"
+  ],
+  "series": {
+    "系列一": [
+      20,
+      70,
+      40,
+      90
+    ],
+    "系列二": [
+      50,
+      30,
+      80,
+      60
+    ]
+  },
+  "debug_seeds": [
+    42,
+    1337
+  ],
+  "confirmation_seeds": [
+    41011,
+    42013,
+    43019,
+    44017,
+    45007,
+    46021,
+    47017,
+    48017,
+    49003,
+    50021,
+    51001,
+    52009,
+    53003,
+    54001,
+    55001,
+    56003,
+    57037,
+    58013,
+    59009,
+    60013
+  ],
+  "acceptance": {
+    "complete_passes_required": 18,
+    "confirmation_n": 20,
+    "geometry_max_absolute_error_axis_fraction": 0.02,
+    "geometry_rule": "Measure bar tops relative to shared baseline and y-axis tick calibration; max error 2 units on 0-100 scale, inclusive. Exact category/value text, order, axis ticks and four bars required; no extra/missing data. Layout may move. Geometry and text independently assessed. Ambiguous image fails pending review."
+  },
+  "gate": "single-series background-only edit complete20/20, maximum error0.14 units before this phase"
+}

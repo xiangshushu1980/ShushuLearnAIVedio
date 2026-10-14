@@ -1,0 +1,51 @@
+{
+  "owner": "Sean",
+  "purpose": "Post-baseline iteration, explicit percent and gridline encoding, no PE",
+  "debug_seeds": [
+    42,
+    1337
+  ],
+  "confirmation_seeds": [
+    21001,
+    22003,
+    23003,
+    24001,
+    25013,
+    26003,
+    27011,
+    28001,
+    29009,
+    30011,
+    31013,
+    32003,
+    33013,
+    34019,
+    35023,
+    36007,
+    37003,
+    38011,
+    39019,
+    40009
+  ],
+  "threshold": {
+    "complete_passes_required": 18,
+    "confirmation_n": 20,
+    "geometry_max_absolute_error_axis_fraction": 0.02,
+    "geometry_rule": "Measure bar tops relative to shared baseline and y-axis tick calibration; max error 2 units on 0-100 scale, inclusive. Exact category/value text, order, axis ticks and four bars required; no extra/missing data. Layout may move. Geometry and text independently assessed. Ambiguous image fails pending review."
+  },
+  "prompt": "A precise flat statistical bar chart on a white landscape canvas. The only title is \"测试数据\". A single series of four blue rectangular vertical bars shares a zero baseline. The y-axis has six equally spaced ticks, from bottom to top: \"0\", \"20\", \"40\", \"60\", \"80\", \"100\". The first bar, \"甲\", has label \"20\" and its top aligns exactly with the first gridline above zero; its height is exactly 20 percent of the full 0-to-100 axis height. The second bar, \"乙\", has label \"70\" and its top is exactly halfway between the 60 and 80 gridlines, at 70 percent axis height. The third bar, \"丙\", has label \"40\" and its top aligns exactly with the second gridline above zero, at 40 percent axis height. The fourth bar, \"丁\", has label \"90\" and its top is exactly halfway between the 80 and 100 gridlines, at 90 percent axis height. All bars have equal width and equal spacing, with square flat tops. Category labels appear once beneath their own bars, and numeric labels once above their own bars. Only the title, category labels, four value labels and six y-axis tick labels are visible. Thin gray axes, light gray horizontal gridlines, black legible type. The y-axis has no title. No other words, icons or decorations.",
+  "data": {
+    "categories": [
+      "甲",
+      "乙",
+      "丙",
+      "丁"
+    ],
+    "values": [
+      20,
+      70,
+      40,
+      90
+    ]
+  }
+}

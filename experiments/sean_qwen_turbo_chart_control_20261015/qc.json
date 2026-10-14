@@ -1,0 +1,6928 @@
+{
+  "owner": "Sean",
+  "rubric": "Frozen 2 unit absolute geometry and tick-spacing tolerance; exact inventory/order, no added/missing data. Human text and numeric pixel measurements. Non-blind, not independent benchmark.",
+  "images": [
+    {
+      "owner": "Sean",
+      "job": "confirm_minimal_off_1009",
+      "condition": "confirm_minimal_off",
+      "seed": 1009,
+      "text_pass": false,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "text_or_inventory",
+        "geometry"
+      ],
+      "inferred_values": [
+        20.05,
+        59.35,
+        35.64,
+        99.76
+      ],
+      "max_absolute_error_units": 10.65,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": false,
+        "category_order_correct": false,
+        "four_bars": true,
+        "no_extra_data_text": false,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Extra 甲 above y-axis in every image; some category labels contain extra/incorrect characters.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_minimal_off_2027",
+      "condition": "confirm_minimal_off",
+      "seed": 2027,
+      "text_pass": false,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "text_or_inventory",
+        "geometry"
+      ],
+      "inferred_values": [
+        19.03,
+        61.15,
+        30.73,
+        95.94
+      ],
+      "max_absolute_error_units": 9.27,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": false,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Extra 甲 above y-axis in every image; some category labels contain extra/incorrect characters.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_minimal_off_3037",
+      "condition": "confirm_minimal_off",
+      "seed": 3037,
+      "text_pass": false,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "text_or_inventory",
+        "geometry"
+      ],
+      "inferred_values": [
+        21.9,
+        66.18,
+        39.94,
+        99.52
+      ],
+      "max_absolute_error_units": 9.52,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": false,
+        "category_order_correct": false,
+        "four_bars": true,
+        "no_extra_data_text": false,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Extra 甲 above y-axis in every image; some category labels contain extra/incorrect characters.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_minimal_off_4051",
+      "condition": "confirm_minimal_off",
+      "seed": 4051,
+      "text_pass": false,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "text_or_inventory",
+        "geometry"
+      ],
+      "inferred_values": [
+        17.71,
+        58.81,
+        28.62,
+        99.92
+      ],
+      "max_absolute_error_units": 11.38,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": false,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Extra 甲 above y-axis in every image; some category labels contain extra/incorrect characters.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_minimal_off_5059",
+      "condition": "confirm_minimal_off",
+      "seed": 5059,
+      "text_pass": false,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "text_or_inventory",
+        "geometry"
+      ],
+      "inferred_values": [
+        19.75,
+        62.4,
+        35.39,
+        91.79
+      ],
+      "max_absolute_error_units": 7.6,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": false,
+        "category_order_correct": false,
+        "four_bars": true,
+        "no_extra_data_text": false,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Extra 甲 above y-axis in every image; some category labels contain extra/incorrect characters.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_minimal_off_6073",
+      "condition": "confirm_minimal_off",
+      "seed": 6073,
+      "text_pass": false,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "text_or_inventory",
+        "geometry"
+      ],
+      "inferred_values": [
+        22.38,
+        61.71,
+        35.49,
+        99.12
+      ],
+      "max_absolute_error_units": 9.12,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": false,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Extra 甲 above y-axis in every image; some category labels contain extra/incorrect characters.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_minimal_off_7079",
+      "condition": "confirm_minimal_off",
+      "seed": 7079,
+      "text_pass": false,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "text_or_inventory",
+        "geometry"
+      ],
+      "inferred_values": [
+        18.95,
+        60.83,
+        33.28,
+        99.68
+      ],
+      "max_absolute_error_units": 9.68,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": false,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Extra 甲 above y-axis in every image; some category labels contain extra/incorrect characters.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_minimal_off_8089",
+      "condition": "confirm_minimal_off",
+      "seed": 8089,
+      "text_pass": false,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "text_or_inventory",
+        "geometry"
+      ],
+      "inferred_values": [
+        28.23,
+        59.79,
+        36.95,
+        98.33
+      ],
+      "max_absolute_error_units": 10.21,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": false,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Extra 甲 above y-axis in every image; some category labels contain extra/incorrect characters.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_minimal_off_9103",
+      "condition": "confirm_minimal_off",
+      "seed": 9103,
+      "text_pass": false,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "text_or_inventory",
+        "geometry"
+      ],
+      "inferred_values": [
+        26.69,
+        63.05,
+        37.53,
+        99.92
+      ],
+      "max_absolute_error_units": 9.92,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": false,
+        "category_order_correct": false,
+        "four_bars": true,
+        "no_extra_data_text": false,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Extra 甲 above y-axis in every image; some category labels contain extra/incorrect characters.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_minimal_off_10111",
+      "condition": "confirm_minimal_off",
+      "seed": 10111,
+      "text_pass": false,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "text_or_inventory",
+        "geometry"
+      ],
+      "inferred_values": [
+        18.17,
+        63.67,
+        35.69,
+        97.27
+      ],
+      "max_absolute_error_units": 7.27,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": false,
+        "category_order_correct": false,
+        "four_bars": true,
+        "no_extra_data_text": false,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Extra 甲 above y-axis in every image; some category labels contain extra/incorrect characters.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_minimal_off_11113",
+      "condition": "confirm_minimal_off",
+      "seed": 11113,
+      "text_pass": false,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "text_or_inventory",
+        "geometry"
+      ],
+      "inferred_values": [
+        16.98,
+        54.76,
+        32.86,
+        98.25
+      ],
+      "max_absolute_error_units": 15.24,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": false,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Extra 甲 above y-axis in every image; some category labels contain extra/incorrect characters.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_minimal_off_12119",
+      "condition": "confirm_minimal_off",
+      "seed": 12119,
+      "text_pass": false,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "text_or_inventory",
+        "geometry"
+      ],
+      "inferred_values": [
+        17.35,
+        54.62,
+        31.16,
+        95.9
+      ],
+      "max_absolute_error_units": 15.38,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": false,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Extra 甲 above y-axis in every image; some category labels contain extra/incorrect characters.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_minimal_off_13121",
+      "condition": "confirm_minimal_off",
+      "seed": 13121,
+      "text_pass": false,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "text_or_inventory",
+        "geometry"
+      ],
+      "inferred_values": [
+        20.17,
+        58.82,
+        37.65,
+        95.97
+      ],
+      "max_absolute_error_units": 11.18,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": false,
+        "category_order_correct": false,
+        "four_bars": true,
+        "no_extra_data_text": false,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Extra 甲 above y-axis in every image; some category labels contain extra/incorrect characters.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_minimal_off_14143",
+      "condition": "confirm_minimal_off",
+      "seed": 14143,
+      "text_pass": false,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "text_or_inventory",
+        "geometry"
+      ],
+      "inferred_values": [
+        19.37,
+        80.16,
+        39.37,
+        99.37
+      ],
+      "max_absolute_error_units": 10.16,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": false,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Extra 甲 above y-axis in every image; some category labels contain extra/incorrect characters.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_minimal_off_15149",
+      "condition": "confirm_minimal_off",
+      "seed": 15149,
+      "text_pass": false,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "text_or_inventory",
+        "geometry"
+      ],
+      "inferred_values": [
+        19.6,
+        68.92,
+        34.86,
+        96.71
+      ],
+      "max_absolute_error_units": 6.71,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": false,
+        "category_order_correct": false,
+        "four_bars": true,
+        "no_extra_data_text": false,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Extra 甲 above y-axis in every image; some category labels contain extra/incorrect characters.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_minimal_off_16183",
+      "condition": "confirm_minimal_off",
+      "seed": 16183,
+      "text_pass": false,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "text_or_inventory",
+        "geometry"
+      ],
+      "inferred_values": [
+        17.88,
+        50.95,
+        33.39,
+        81.8
+      ],
+      "max_absolute_error_units": 19.05,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": false,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Extra 甲 above y-axis in every image; some category labels contain extra/incorrect characters.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_minimal_off_17189",
+      "condition": "confirm_minimal_off",
+      "seed": 17189,
+      "text_pass": false,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "text_or_inventory",
+        "geometry"
+      ],
+      "inferred_values": [
+        22.84,
+        59.0,
+        34.26,
+        96.91
+      ],
+      "max_absolute_error_units": 11.0,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": false,
+        "category_order_correct": false,
+        "four_bars": true,
+        "no_extra_data_text": false,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Extra 甲 above y-axis in every image; some category labels contain extra/incorrect characters.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_minimal_off_18199",
+      "condition": "confirm_minimal_off",
+      "seed": 18199,
+      "text_pass": false,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "text_or_inventory",
+        "geometry"
+      ],
+      "inferred_values": [
+        20.14,
+        57.39,
+        31.65,
+        98.48
+      ],
+      "max_absolute_error_units": 12.61,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": false,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Extra 甲 above y-axis in every image; some category labels contain extra/incorrect characters.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_minimal_off_19207",
+      "condition": "confirm_minimal_off",
+      "seed": 19207,
+      "text_pass": false,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "text_or_inventory",
+        "geometry"
+      ],
+      "inferred_values": [
+        21.17,
+        58.99,
+        35.18,
+        99.77
+      ],
+      "max_absolute_error_units": 11.01,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": false,
+        "category_order_correct": false,
+        "four_bars": true,
+        "no_extra_data_text": false,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Extra 甲 above y-axis in every image; some category labels contain extra/incorrect characters.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_minimal_off_20231",
+      "condition": "confirm_minimal_off",
+      "seed": 20231,
+      "text_pass": false,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "text_or_inventory",
+        "geometry"
+      ],
+      "inferred_values": [
+        22.56,
+        65.59,
+        34.17,
+        98.31
+      ],
+      "max_absolute_error_units": 8.31,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": false,
+        "category_order_correct": false,
+        "four_bars": true,
+        "no_extra_data_text": false,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Extra 甲 above y-axis in every image; some category labels contain extra/incorrect characters.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_minimal_on_1009",
+      "condition": "confirm_minimal_on",
+      "seed": 1009,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        40.21,
+        80.27,
+        46.42,
+        99.33
+      ],
+      "max_absolute_error_units": 20.21,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Text inventory preserved; geometry assessed separately.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_minimal_on_2027",
+      "condition": "confirm_minimal_on",
+      "seed": 2027,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        38.5,
+        80.53,
+        57.08,
+        96.9
+      ],
+      "max_absolute_error_units": 18.5,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Text inventory preserved; geometry assessed separately.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_minimal_on_3037",
+      "condition": "confirm_minimal_on",
+      "seed": 3037,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        40.31,
+        81.72,
+        47.26,
+        90.9
+      ],
+      "max_absolute_error_units": 20.31,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Text inventory preserved; geometry assessed separately.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_minimal_on_4051",
+      "condition": "confirm_minimal_on",
+      "seed": 4051,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": false,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry",
+        "axis_spacing"
+      ],
+      "inferred_values": [
+        42.51,
+        85.88,
+        61.34,
+        99.14
+      ],
+      "max_absolute_error_units": 22.51,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Text inventory preserved; geometry assessed separately.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_minimal_on_5059",
+      "condition": "confirm_minimal_on",
+      "seed": 5059,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        29.01,
+        79.15,
+        43.73,
+        79.59
+      ],
+      "max_absolute_error_units": 10.41,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Text inventory preserved; geometry assessed separately.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_minimal_on_6073",
+      "condition": "confirm_minimal_on",
+      "seed": 6073,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        36.62,
+        76.34,
+        42.11,
+        83.52
+      ],
+      "max_absolute_error_units": 16.62,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Text inventory preserved; geometry assessed separately.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_minimal_on_7079",
+      "condition": "confirm_minimal_on",
+      "seed": 7079,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": false,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry",
+        "ordering"
+      ],
+      "inferred_values": [
+        40.03,
+        80.06,
+        40.03,
+        80.06
+      ],
+      "max_absolute_error_units": 20.03,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Text inventory preserved; geometry assessed separately.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_minimal_on_8089",
+      "condition": "confirm_minimal_on",
+      "seed": 8089,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        37.92,
+        75.55,
+        44.36,
+        91.51
+      ],
+      "max_absolute_error_units": 17.92,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Text inventory preserved; geometry assessed separately.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_minimal_on_9103",
+      "condition": "confirm_minimal_on",
+      "seed": 9103,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        47.03,
+        88.73,
+        49.41,
+        99.09
+      ],
+      "max_absolute_error_units": 27.03,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Text inventory preserved; geometry assessed separately.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_minimal_on_10111",
+      "condition": "confirm_minimal_on",
+      "seed": 10111,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        41.09,
+        72.96,
+        49.62,
+        80.5
+      ],
+      "max_absolute_error_units": 21.09,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Text inventory preserved; geometry assessed separately.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_minimal_on_11113",
+      "condition": "confirm_minimal_on",
+      "seed": 11113,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": false,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry",
+        "ordering"
+      ],
+      "inferred_values": [
+        42.45,
+        76.97,
+        42.03,
+        94.64
+      ],
+      "max_absolute_error_units": 22.45,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Text inventory preserved; geometry assessed separately.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_minimal_on_12119",
+      "condition": "confirm_minimal_on",
+      "seed": 12119,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        35.96,
+        81.65,
+        43.3,
+        99.63
+      ],
+      "max_absolute_error_units": 15.96,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Text inventory preserved; geometry assessed separately.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_minimal_on_13121",
+      "condition": "confirm_minimal_on",
+      "seed": 13121,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        39.78,
+        79.97,
+        59.6,
+        94.43
+      ],
+      "max_absolute_error_units": 19.78,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Text inventory preserved; geometry assessed separately.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_minimal_on_14143",
+      "condition": "confirm_minimal_on",
+      "seed": 14143,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        40.14,
+        79.71,
+        44.03,
+        96.26
+      ],
+      "max_absolute_error_units": 20.14,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Text inventory preserved; geometry assessed separately.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_minimal_on_15149",
+      "condition": "confirm_minimal_on",
+      "seed": 15149,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        29.36,
+        69.3,
+        48.26,
+        84.85
+      ],
+      "max_absolute_error_units": 9.36,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Text inventory preserved; geometry assessed separately.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_minimal_on_16183",
+      "condition": "confirm_minimal_on",
+      "seed": 16183,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": false,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry",
+        "axis_spacing"
+      ],
+      "inferred_values": [
+        37.55,
+        78.44,
+        40.47,
+        79.83
+      ],
+      "max_absolute_error_units": 17.55,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Text inventory preserved; geometry assessed separately.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_minimal_on_17189",
+      "condition": "confirm_minimal_on",
+      "seed": 17189,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        45.89,
+        80.38,
+        52.26,
+        95.48
+      ],
+      "max_absolute_error_units": 25.89,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Text inventory preserved; geometry assessed separately.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_minimal_on_18199",
+      "condition": "confirm_minimal_on",
+      "seed": 18199,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        38.66,
+        80.39,
+        49.69,
+        97.84
+      ],
+      "max_absolute_error_units": 18.66,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Text inventory preserved; geometry assessed separately.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_minimal_on_19207",
+      "condition": "confirm_minimal_on",
+      "seed": 19207,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": false,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry",
+        "ordering"
+      ],
+      "inferred_values": [
+        39.59,
+        84.93,
+        45.48,
+        84.93
+      ],
+      "max_absolute_error_units": 19.59,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Text inventory preserved; geometry assessed separately.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_minimal_on_20231",
+      "condition": "confirm_minimal_on",
+      "seed": 20231,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        36.71,
+        75.12,
+        36.85,
+        79.94
+      ],
+      "max_absolute_error_units": 16.71,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Text inventory preserved; geometry assessed separately.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_detailed_off_1009",
+      "condition": "confirm_detailed_off",
+      "seed": 1009,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        25.23,
+        63.6,
+        40.33,
+        98.64
+      ],
+      "max_absolute_error_units": 8.64,
+      "text_evidence": {
+        "seed": 1009,
+        "file": "images/confirm_detailed_off_1009.png",
+        "title_ok": true,
+        "categories_ok": true,
+        "top_values_ok": true,
+        "ticks_ok": true,
+        "bar_count": 4,
+        "extra_or_missing_text": "无",
+        "text_review_pass": true
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_detailed_off_10111",
+      "condition": "confirm_detailed_off",
+      "seed": 10111,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        25.9,
+        67.89,
+        44.18,
+        97.44
+      ],
+      "max_absolute_error_units": 7.44,
+      "text_evidence": {
+        "seed": 10111,
+        "file": "images/confirm_detailed_off_10111.png",
+        "title_ok": true,
+        "categories_ok": true,
+        "top_values_ok": true,
+        "ticks_ok": true,
+        "bar_count": 4,
+        "extra_or_missing_text": "无",
+        "text_review_pass": true
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_detailed_off_11113",
+      "condition": "confirm_detailed_off",
+      "seed": 11113,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        22.48,
+        76.16,
+        37.37,
+        94.92
+      ],
+      "max_absolute_error_units": 6.16,
+      "text_evidence": {
+        "seed": 11113,
+        "file": "images/confirm_detailed_off_11113.png",
+        "title_ok": true,
+        "categories_ok": true,
+        "top_values_ok": true,
+        "ticks_ok": true,
+        "bar_count": 4,
+        "extra_or_missing_text": "无",
+        "text_review_pass": true
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_detailed_off_12119",
+      "condition": "confirm_detailed_off",
+      "seed": 12119,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        22.36,
+        55.59,
+        35.14,
+        95.53
+      ],
+      "max_absolute_error_units": 14.41,
+      "text_evidence": {
+        "seed": 12119,
+        "file": "images/confirm_detailed_off_12119.png",
+        "title_ok": true,
+        "categories_ok": true,
+        "top_values_ok": true,
+        "ticks_ok": true,
+        "bar_count": 4,
+        "extra_or_missing_text": "无",
+        "text_review_pass": true
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_detailed_off_13121",
+      "condition": "confirm_detailed_off",
+      "seed": 13121,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        28.01,
+        77.82,
+        42.85,
+        96.59
+      ],
+      "max_absolute_error_units": 8.01,
+      "text_evidence": {
+        "seed": 13121,
+        "file": "images/confirm_detailed_off_13121.png",
+        "title_ok": true,
+        "categories_ok": true,
+        "top_values_ok": true,
+        "ticks_ok": true,
+        "bar_count": 4,
+        "extra_or_missing_text": "无",
+        "text_review_pass": true
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_detailed_off_14143",
+      "condition": "confirm_detailed_off",
+      "seed": 14143,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        23.38,
+        72.21,
+        42.94,
+        97.21
+      ],
+      "max_absolute_error_units": 7.21,
+      "text_evidence": {
+        "seed": 14143,
+        "file": "images/confirm_detailed_off_14143.png",
+        "title_ok": true,
+        "categories_ok": true,
+        "top_values_ok": true,
+        "ticks_ok": true,
+        "bar_count": 4,
+        "extra_or_missing_text": "无",
+        "text_review_pass": true
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_detailed_off_15149",
+      "condition": "confirm_detailed_off",
+      "seed": 15149,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        28.68,
+        71.76,
+        44.25,
+        98.25
+      ],
+      "max_absolute_error_units": 8.68,
+      "text_evidence": {
+        "seed": 15149,
+        "file": "images/confirm_detailed_off_15149.png",
+        "title_ok": true,
+        "categories_ok": true,
+        "top_values_ok": true,
+        "ticks_ok": true,
+        "bar_count": 4,
+        "extra_or_missing_text": "无",
+        "text_review_pass": true
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_detailed_off_16183",
+      "condition": "confirm_detailed_off",
+      "seed": 16183,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        19.46,
+        52.23,
+        34.82,
+        80.76
+      ],
+      "max_absolute_error_units": 17.77,
+      "text_evidence": {
+        "seed": 16183,
+        "file": "images/confirm_detailed_off_16183.png",
+        "title_ok": true,
+        "categories_ok": true,
+        "top_values_ok": true,
+        "ticks_ok": true,
+        "bar_count": 4,
+        "extra_or_missing_text": "无",
+        "text_review_pass": true
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_detailed_off_17189",
+      "condition": "confirm_detailed_off",
+      "seed": 17189,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        25.83,
+        58.57,
+        35.97,
+        96.69
+      ],
+      "max_absolute_error_units": 11.43,
+      "text_evidence": {
+        "seed": 17189,
+        "file": "images/confirm_detailed_off_17189.png",
+        "title_ok": true,
+        "categories_ok": true,
+        "top_values_ok": true,
+        "ticks_ok": true,
+        "bar_count": 4,
+        "extra_or_missing_text": "无",
+        "text_review_pass": true
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_detailed_off_18199",
+      "condition": "confirm_detailed_off",
+      "seed": 18199,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        25.39,
+        64.01,
+        40.72,
+        96.92
+      ],
+      "max_absolute_error_units": 6.92,
+      "text_evidence": {
+        "seed": 18199,
+        "file": "images/confirm_detailed_off_18199.png",
+        "title_ok": true,
+        "categories_ok": true,
+        "top_values_ok": true,
+        "ticks_ok": true,
+        "bar_count": 4,
+        "extra_or_missing_text": "无",
+        "text_review_pass": true
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_detailed_off_19207",
+      "condition": "confirm_detailed_off",
+      "seed": 19207,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        25.99,
+        59.71,
+        40.0,
+        96.35
+      ],
+      "max_absolute_error_units": 10.29,
+      "text_evidence": {
+        "seed": 19207,
+        "file": "images/confirm_detailed_off_19207.png",
+        "title_ok": true,
+        "categories_ok": true,
+        "top_values_ok": true,
+        "ticks_ok": true,
+        "bar_count": 4,
+        "extra_or_missing_text": "无",
+        "text_review_pass": true
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_detailed_off_20231",
+      "condition": "confirm_detailed_off",
+      "seed": 20231,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        21.88,
+        71.37,
+        36.71,
+        97.21
+      ],
+      "max_absolute_error_units": 7.21,
+      "text_evidence": {
+        "seed": 20231,
+        "file": "images/confirm_detailed_off_20231.png",
+        "title_ok": true,
+        "categories_ok": true,
+        "top_values_ok": true,
+        "ticks_ok": true,
+        "bar_count": 4,
+        "extra_or_missing_text": "无",
+        "text_review_pass": true
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_detailed_off_2027",
+      "condition": "confirm_detailed_off",
+      "seed": 2027,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        20.57,
+        67.82,
+        33.59,
+        97.17
+      ],
+      "max_absolute_error_units": 7.17,
+      "text_evidence": {
+        "seed": 2027,
+        "file": "images/confirm_detailed_off_2027.png",
+        "title_ok": true,
+        "categories_ok": true,
+        "top_values_ok": true,
+        "ticks_ok": true,
+        "bar_count": 4,
+        "extra_or_missing_text": "无",
+        "text_review_pass": true
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_detailed_off_3037",
+      "condition": "confirm_detailed_off",
+      "seed": 3037,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        26.77,
+        70.48,
+        43.87,
+        94.42
+      ],
+      "max_absolute_error_units": 6.77,
+      "text_evidence": {
+        "seed": 3037,
+        "file": "images/confirm_detailed_off_3037.png",
+        "title_ok": true,
+        "categories_ok": true,
+        "top_values_ok": true,
+        "ticks_ok": true,
+        "bar_count": 4,
+        "extra_or_missing_text": "无",
+        "text_review_pass": true
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_detailed_off_4051",
+      "condition": "confirm_detailed_off",
+      "seed": 4051,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        19.19,
+        78.98,
+        38.86,
+        99.29
+      ],
+      "max_absolute_error_units": 9.29,
+      "text_evidence": {
+        "seed": 4051,
+        "file": "images/confirm_detailed_off_4051.png",
+        "title_ok": true,
+        "categories_ok": true,
+        "top_values_ok": true,
+        "ticks_ok": true,
+        "bar_count": 4,
+        "extra_or_missing_text": "无",
+        "text_review_pass": true
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_detailed_off_5059",
+      "condition": "confirm_detailed_off",
+      "seed": 5059,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        24.81,
+        68.53,
+        44.18,
+        96.67
+      ],
+      "max_absolute_error_units": 6.67,
+      "text_evidence": {
+        "seed": 5059,
+        "file": "images/confirm_detailed_off_5059.png",
+        "title_ok": true,
+        "categories_ok": true,
+        "top_values_ok": true,
+        "ticks_ok": true,
+        "bar_count": 4,
+        "extra_or_missing_text": "无",
+        "text_review_pass": true
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_detailed_off_6073",
+      "condition": "confirm_detailed_off",
+      "seed": 6073,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        24.44,
+        65.24,
+        39.21,
+        98.89
+      ],
+      "max_absolute_error_units": 8.89,
+      "text_evidence": {
+        "seed": 6073,
+        "file": "images/confirm_detailed_off_6073.png",
+        "title_ok": true,
+        "categories_ok": true,
+        "top_values_ok": true,
+        "ticks_ok": true,
+        "bar_count": 4,
+        "extra_or_missing_text": "无",
+        "text_review_pass": true
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_detailed_off_7079",
+      "condition": "confirm_detailed_off",
+      "seed": 7079,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        18.63,
+        64.01,
+        34.71,
+        90.91
+      ],
+      "max_absolute_error_units": 5.99,
+      "text_evidence": {
+        "seed": 7079,
+        "file": "images/confirm_detailed_off_7079.png",
+        "title_ok": true,
+        "categories_ok": true,
+        "top_values_ok": true,
+        "ticks_ok": true,
+        "bar_count": 4,
+        "extra_or_missing_text": "无",
+        "text_review_pass": true
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_detailed_off_8089",
+      "condition": "confirm_detailed_off",
+      "seed": 8089,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        31.4,
+        63.26,
+        42.07,
+        97.41
+      ],
+      "max_absolute_error_units": 11.4,
+      "text_evidence": {
+        "seed": 8089,
+        "file": "images/confirm_detailed_off_8089.png",
+        "title_ok": true,
+        "categories_ok": true,
+        "top_values_ok": true,
+        "ticks_ok": true,
+        "bar_count": 4,
+        "extra_or_missing_text": "无",
+        "text_review_pass": true
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_detailed_off_9103",
+      "condition": "confirm_detailed_off",
+      "seed": 9103,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        23.3,
+        70.94,
+        45.72,
+        98.53
+      ],
+      "max_absolute_error_units": 8.53,
+      "text_evidence": {
+        "seed": 9103,
+        "file": "images/confirm_detailed_off_9103.png",
+        "title_ok": true,
+        "categories_ok": true,
+        "top_values_ok": true,
+        "ticks_ok": true,
+        "bar_count": 4,
+        "extra_or_missing_text": "无",
+        "text_review_pass": true
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_detailed_on_1009",
+      "condition": "confirm_detailed_on",
+      "seed": 1009,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        40.92,
+        68.85,
+        47.94,
+        100.0
+      ],
+      "max_absolute_error_units": 20.92,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Text inventory preserved; geometry assessed separately.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_detailed_on_2027",
+      "condition": "confirm_detailed_on",
+      "seed": 2027,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        40.0,
+        69.31,
+        51.91,
+        95.57
+      ],
+      "max_absolute_error_units": 20.0,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Text inventory preserved; geometry assessed separately.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_detailed_on_3037",
+      "condition": "confirm_detailed_on",
+      "seed": 3037,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        41.16,
+        71.48,
+        48.52,
+        89.53
+      ],
+      "max_absolute_error_units": 21.16,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Text inventory preserved; geometry assessed separately.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_detailed_on_4051",
+      "condition": "confirm_detailed_on",
+      "seed": 4051,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        40.64,
+        80.41,
+        60.38,
+        99.42
+      ],
+      "max_absolute_error_units": 20.64,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Text inventory preserved; geometry assessed separately.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_detailed_on_5059",
+      "condition": "confirm_detailed_on",
+      "seed": 5059,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        37.98,
+        67.99,
+        49.16,
+        83.92
+      ],
+      "max_absolute_error_units": 17.98,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Text inventory preserved; geometry assessed separately.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_detailed_on_6073",
+      "condition": "confirm_detailed_on",
+      "seed": 6073,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        40.37,
+        68.21,
+        46.87,
+        98.99
+      ],
+      "max_absolute_error_units": 20.37,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Text inventory preserved; geometry assessed separately.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_detailed_on_7079",
+      "condition": "confirm_detailed_on",
+      "seed": 7079,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        42.72,
+        69.41,
+        48.67,
+        93.67
+      ],
+      "max_absolute_error_units": 22.72,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Text inventory preserved; geometry assessed separately.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_detailed_on_8089",
+      "condition": "confirm_detailed_on",
+      "seed": 8089,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        39.88,
+        63.93,
+        44.51,
+        90.52
+      ],
+      "max_absolute_error_units": 19.88,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Text inventory preserved; geometry assessed separately.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_detailed_on_9103",
+      "condition": "confirm_detailed_on",
+      "seed": 9103,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        40.65,
+        72.55,
+        51.63,
+        97.03
+      ],
+      "max_absolute_error_units": 20.65,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Text inventory preserved; geometry assessed separately.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_detailed_on_10111",
+      "condition": "confirm_detailed_on",
+      "seed": 10111,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        41.22,
+        68.66,
+        52.59,
+        96.09
+      ],
+      "max_absolute_error_units": 21.22,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Text inventory preserved; geometry assessed separately.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_detailed_on_11113",
+      "condition": "confirm_detailed_on",
+      "seed": 11113,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        44.17,
+        76.97,
+        44.75,
+        98.98
+      ],
+      "max_absolute_error_units": 24.17,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Text inventory preserved; geometry assessed separately.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_detailed_on_12119",
+      "condition": "confirm_detailed_on",
+      "seed": 12119,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        40.15,
+        60.0,
+        44.51,
+        79.85
+      ],
+      "max_absolute_error_units": 20.15,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Text inventory preserved; geometry assessed separately.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_detailed_on_13121",
+      "condition": "confirm_detailed_on",
+      "seed": 13121,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        40.48,
+        79.55,
+        60.58,
+        89.95
+      ],
+      "max_absolute_error_units": 20.58,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Text inventory preserved; geometry assessed separately.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_detailed_on_14143",
+      "condition": "confirm_detailed_on",
+      "seed": 14143,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        41.49,
+        73.43,
+        56.87,
+        96.72
+      ],
+      "max_absolute_error_units": 21.49,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Text inventory preserved; geometry assessed separately.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_detailed_on_15149",
+      "condition": "confirm_detailed_on",
+      "seed": 15149,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        39.58,
+        74.72,
+        55.74,
+        97.26
+      ],
+      "max_absolute_error_units": 19.58,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Text inventory preserved; geometry assessed separately.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_detailed_on_16183",
+      "condition": "confirm_detailed_on",
+      "seed": 16183,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": false,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry",
+        "axis_spacing"
+      ],
+      "inferred_values": [
+        38.08,
+        63.42,
+        45.1,
+        83.61
+      ],
+      "max_absolute_error_units": 18.08,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Text inventory preserved; geometry assessed separately.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_detailed_on_17189",
+      "condition": "confirm_detailed_on",
+      "seed": 17189,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": false,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry",
+        "ordering"
+      ],
+      "inferred_values": [
+        42.32,
+        61.73,
+        42.32,
+        87.85
+      ],
+      "max_absolute_error_units": 22.32,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Text inventory preserved; geometry assessed separately.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_detailed_on_18199",
+      "condition": "confirm_detailed_on",
+      "seed": 18199,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        40.33,
+        65.61,
+        44.7,
+        96.16
+      ],
+      "max_absolute_error_units": 20.33,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Text inventory preserved; geometry assessed separately.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_detailed_on_19207",
+      "condition": "confirm_detailed_on",
+      "seed": 19207,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        41.67,
+        63.24,
+        46.13,
+        89.29
+      ],
+      "max_absolute_error_units": 21.67,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Text inventory preserved; geometry assessed separately.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "confirm_detailed_on_20231",
+      "condition": "confirm_detailed_on",
+      "seed": 20231,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        39.56,
+        70.55,
+        42.95,
+        89.3
+      ],
+      "max_absolute_error_units": 19.56,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Text inventory preserved; geometry assessed separately.",
+        "review_method": "Contact sheet inspected per image, originals retained. Non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "v2_confirm_21001",
+      "condition": "v2_confirm",
+      "seed": 21001,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        19.97,
+        79.88,
+        39.94,
+        100.0
+      ],
+      "max_absolute_error_units": 10.0,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "All visible inventory correct, geometry wrong; prominent snapping70 to80 and90 to100/80.",
+        "review_method": "Contact sheets per-image review; originals retained, non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "v2_confirm_22003",
+      "condition": "v2_confirm",
+      "seed": 22003,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        20.28,
+        80.23,
+        40.26,
+        99.93
+      ],
+      "max_absolute_error_units": 10.23,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "All visible inventory correct, geometry wrong; prominent snapping70 to80 and90 to100/80.",
+        "review_method": "Contact sheets per-image review; originals retained, non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "v2_confirm_23003",
+      "condition": "v2_confirm",
+      "seed": 23003,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": false,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry",
+        "ordering"
+      ],
+      "inferred_values": [
+        27.9,
+        80.35,
+        40.32,
+        80.35
+      ],
+      "max_absolute_error_units": 10.35,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "All visible inventory correct, geometry wrong; prominent snapping70 to80 and90 to100/80.",
+        "review_method": "Contact sheets per-image review; originals retained, non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "v2_confirm_24001",
+      "condition": "v2_confirm",
+      "seed": 24001,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        19.74,
+        79.68,
+        39.91,
+        97.37
+      ],
+      "max_absolute_error_units": 9.68,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "All visible inventory correct, geometry wrong; prominent snapping70 to80 and90 to100/80.",
+        "review_method": "Contact sheets per-image review; originals retained, non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "v2_confirm_25013",
+      "condition": "v2_confirm",
+      "seed": 25013,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        22.66,
+        80.42,
+        40.42,
+        93.99
+      ],
+      "max_absolute_error_units": 10.42,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "All visible inventory correct, geometry wrong; prominent snapping70 to80 and90 to100/80.",
+        "review_method": "Contact sheets per-image review; originals retained, non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "v2_confirm_26003",
+      "condition": "v2_confirm",
+      "seed": 26003,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": false,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry",
+        "ordering"
+      ],
+      "inferred_values": [
+        40.36,
+        80.27,
+        40.36,
+        100.3
+      ],
+      "max_absolute_error_units": 20.36,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "All visible inventory correct, geometry wrong; prominent snapping70 to80 and90 to100/80.",
+        "review_method": "Contact sheets per-image review; originals retained, non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "v2_confirm_27011",
+      "condition": "v2_confirm",
+      "seed": 27011,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": false,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry",
+        "ordering"
+      ],
+      "inferred_values": [
+        20.16,
+        80.2,
+        40.32,
+        80.2
+      ],
+      "max_absolute_error_units": 10.2,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "All visible inventory correct, geometry wrong; prominent snapping70 to80 and90 to100/80.",
+        "review_method": "Contact sheets per-image review; originals retained, non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "v2_confirm_28001",
+      "condition": "v2_confirm",
+      "seed": 28001,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        30.1,
+        60.06,
+        40.23,
+        80.32
+      ],
+      "max_absolute_error_units": 10.1,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "All visible inventory correct, geometry wrong; prominent snapping70 to80 and90 to100/80.",
+        "review_method": "Contact sheets per-image review; originals retained, non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "v2_confirm_29009",
+      "condition": "v2_confirm",
+      "seed": 29009,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        20.15,
+        80.15,
+        40.15,
+        100.15
+      ],
+      "max_absolute_error_units": 10.15,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "All visible inventory correct, geometry wrong; prominent snapping70 to80 and90 to100/80.",
+        "review_method": "Contact sheets per-image review; originals retained, non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "v2_confirm_30011",
+      "condition": "v2_confirm",
+      "seed": 30011,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        27.16,
+        80.06,
+        40.17,
+        93.78
+      ],
+      "max_absolute_error_units": 10.06,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "All visible inventory correct, geometry wrong; prominent snapping70 to80 and90 to100/80.",
+        "review_method": "Contact sheets per-image review; originals retained, non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "v2_confirm_31013",
+      "condition": "v2_confirm",
+      "seed": 31013,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        20.39,
+        66.81,
+        42.05,
+        100.0
+      ],
+      "max_absolute_error_units": 10.0,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "All visible inventory correct, geometry wrong; prominent snapping70 to80 and90 to100/80.",
+        "review_method": "Contact sheets per-image review; originals retained, non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "v2_confirm_32003",
+      "condition": "v2_confirm",
+      "seed": 32003,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        20.29,
+        59.71,
+        40.0,
+        80.0
+      ],
+      "max_absolute_error_units": 10.29,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "All visible inventory correct, geometry wrong; prominent snapping70 to80 and90 to100/80.",
+        "review_method": "Contact sheets per-image review; originals retained, non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "v2_confirm_33013",
+      "condition": "v2_confirm",
+      "seed": 33013,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        20.17,
+        60.09,
+        40.06,
+        80.11
+      ],
+      "max_absolute_error_units": 9.91,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "All visible inventory correct, geometry wrong; prominent snapping70 to80 and90 to100/80.",
+        "review_method": "Contact sheets per-image review; originals retained, non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "v2_confirm_34019",
+      "condition": "v2_confirm",
+      "seed": 34019,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        40.45,
+        80.0,
+        59.48,
+        99.18
+      ],
+      "max_absolute_error_units": 20.45,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "All visible inventory correct, geometry wrong; prominent snapping70 to80 and90 to100/80.",
+        "review_method": "Contact sheets per-image review; originals retained, non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "v2_confirm_35023",
+      "condition": "v2_confirm",
+      "seed": 35023,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        20.6,
+        66.19,
+        34.23,
+        97.73
+      ],
+      "max_absolute_error_units": 7.73,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "All visible inventory correct, geometry wrong; prominent snapping70 to80 and90 to100/80.",
+        "review_method": "Contact sheets per-image review; originals retained, non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "v2_confirm_36007",
+      "condition": "v2_confirm",
+      "seed": 36007,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        20.36,
+        60.36,
+        40.43,
+        80.28
+      ],
+      "max_absolute_error_units": 9.72,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "All visible inventory correct, geometry wrong; prominent snapping70 to80 and90 to100/80.",
+        "review_method": "Contact sheets per-image review; originals retained, non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "v2_confirm_37003",
+      "condition": "v2_confirm",
+      "seed": 37003,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        27.41,
+        79.91,
+        51.05,
+        92.39
+      ],
+      "max_absolute_error_units": 11.05,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "All visible inventory correct, geometry wrong; prominent snapping70 to80 and90 to100/80.",
+        "review_method": "Contact sheets per-image review; originals retained, non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "v2_confirm_38011",
+      "condition": "v2_confirm",
+      "seed": 38011,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        20.22,
+        80.15,
+        58.28,
+        100.37
+      ],
+      "max_absolute_error_units": 18.28,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "All visible inventory correct, geometry wrong; prominent snapping70 to80 and90 to100/80.",
+        "review_method": "Contact sheets per-image review; originals retained, non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "v2_confirm_39019",
+      "condition": "v2_confirm",
+      "seed": 39019,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        20.1,
+        80.11,
+        39.92,
+        100.07
+      ],
+      "max_absolute_error_units": 10.11,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "All visible inventory correct, geometry wrong; prominent snapping70 to80 and90 to100/80.",
+        "review_method": "Contact sheets per-image review; originals retained, non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "v2_confirm_40009",
+      "condition": "v2_confirm",
+      "seed": 40009,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": false,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry",
+        "ordering"
+      ],
+      "inferred_values": [
+        20.11,
+        80.17,
+        40.08,
+        80.17
+      ],
+      "max_absolute_error_units": 10.17,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "All visible inventory correct, geometry wrong; prominent snapping70 to80 and90 to100/80.",
+        "review_method": "Contact sheets per-image review; originals retained, non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "edit_confirm_1009",
+      "condition": "edit_confirm",
+      "seed": 1009,
+      "text_pass": true,
+      "geometry_pass": true,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": true,
+      "failure_codes": [],
+      "inferred_values": [
+        19.28,
+        70.55,
+        39.91,
+        91.18
+      ],
+      "max_absolute_error_units": 1.18,
+      "text_evidence": {
+        "seed": 1009,
+        "file": "images/edit_confirm_1009.png",
+        "observed_categories": [
+          "甲",
+          "乙",
+          "丙",
+          "丁"
+        ],
+        "observed_top_values": [
+          20,
+          70,
+          40,
+          90
+        ],
+        "observed_ticks_top_to_bottom": [
+          100,
+          80,
+          60,
+          40,
+          20,
+          0
+        ],
+        "title_ok": true,
+        "bar_count": 4,
+        "extra_or_missing_text": "无",
+        "text_review_pass": true,
+        "note": "无异常"
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "edit_confirm_10111",
+      "condition": "edit_confirm",
+      "seed": 10111,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        20.42,
+        70.0,
+        42.11,
+        90.28
+      ],
+      "max_absolute_error_units": 2.11,
+      "text_evidence": {
+        "seed": 10111,
+        "file": "images/edit_confirm_10111.png",
+        "observed_categories": [
+          "甲",
+          "乙",
+          "丙",
+          "丁"
+        ],
+        "observed_top_values": [
+          20,
+          70,
+          40,
+          90
+        ],
+        "observed_ticks_top_to_bottom": [
+          100,
+          80,
+          60,
+          40,
+          20,
+          0
+        ],
+        "title_ok": true,
+        "bar_count": 4,
+        "extra_or_missing_text": "无",
+        "text_review_pass": true,
+        "note": "无异常"
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "edit_confirm_11113",
+      "condition": "edit_confirm",
+      "seed": 11113,
+      "text_pass": true,
+      "geometry_pass": true,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": true,
+      "failure_codes": [],
+      "inferred_values": [
+        20.94,
+        71.72,
+        40.69,
+        91.61
+      ],
+      "max_absolute_error_units": 1.72,
+      "text_evidence": {
+        "seed": 11113,
+        "file": "images/edit_confirm_11113.png",
+        "observed_categories": [
+          "甲",
+          "乙",
+          "丙",
+          "丁"
+        ],
+        "observed_top_values": [
+          20,
+          70,
+          40,
+          90
+        ],
+        "observed_ticks_top_to_bottom": [
+          100,
+          80,
+          60,
+          40,
+          20,
+          0
+        ],
+        "title_ok": true,
+        "bar_count": 4,
+        "extra_or_missing_text": "无",
+        "text_review_pass": true,
+        "note": "无异常"
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "edit_confirm_12119",
+      "condition": "edit_confirm",
+      "seed": 12119,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        19.09,
+        72.5,
+        41.29,
+        92.38
+      ],
+      "max_absolute_error_units": 2.5,
+      "text_evidence": {
+        "seed": 12119,
+        "file": "images/edit_confirm_12119.png",
+        "observed_categories": [
+          "甲",
+          "乙",
+          "丙",
+          "丁"
+        ],
+        "observed_top_values": [
+          20,
+          70,
+          40,
+          90
+        ],
+        "observed_ticks_top_to_bottom": [
+          100,
+          80,
+          60,
+          40,
+          20,
+          0
+        ],
+        "title_ok": true,
+        "bar_count": 4,
+        "extra_or_missing_text": "无",
+        "text_review_pass": true,
+        "note": "无异常"
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "edit_confirm_13121",
+      "condition": "edit_confirm",
+      "seed": 13121,
+      "text_pass": false,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "text_or_inventory",
+        "geometry"
+      ],
+      "inferred_values": [
+        22.09,
+        73.7,
+        43.25,
+        93.57
+      ],
+      "max_absolute_error_units": 3.7,
+      "text_evidence": {
+        "seed": 13121,
+        "file": "images/edit_confirm_13121.png",
+        "observed_categories": [
+          "甲",
+          "乙",
+          "丙",
+          "下"
+        ],
+        "observed_top_values": [
+          20,
+          70,
+          40,
+          90
+        ],
+        "observed_ticks_top_to_bottom": [
+          100,
+          80,
+          60,
+          40,
+          20,
+          0
+        ],
+        "title_ok": true,
+        "bar_count": 4,
+        "extra_or_missing_text": "末类别丁误为下",
+        "text_review_pass": false,
+        "note": "末类别清晰为下，不是丁；其余目标文字正确"
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "edit_confirm_14143",
+      "condition": "edit_confirm",
+      "seed": 14143,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        21.74,
+        72.37,
+        42.36,
+        90.74
+      ],
+      "max_absolute_error_units": 2.37,
+      "text_evidence": {
+        "seed": 14143,
+        "file": "images/edit_confirm_14143.png",
+        "observed_categories": [
+          "甲",
+          "乙",
+          "丙",
+          "丁"
+        ],
+        "observed_top_values": [
+          20,
+          70,
+          40,
+          90
+        ],
+        "observed_ticks_top_to_bottom": [
+          100,
+          80,
+          60,
+          40,
+          20,
+          0
+        ],
+        "title_ok": true,
+        "bar_count": 4,
+        "extra_or_missing_text": "无",
+        "text_review_pass": true,
+        "note": "无异常"
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "edit_confirm_15149",
+      "condition": "edit_confirm",
+      "seed": 15149,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        23.36,
+        69.12,
+        43.63,
+        90.21
+      ],
+      "max_absolute_error_units": 3.63,
+      "text_evidence": {
+        "seed": 15149,
+        "file": "images/edit_confirm_15149.png",
+        "observed_categories": [
+          "甲",
+          "乙",
+          "丙",
+          "丁"
+        ],
+        "observed_top_values": [
+          20,
+          70,
+          40,
+          90
+        ],
+        "observed_ticks_top_to_bottom": [
+          100,
+          80,
+          60,
+          40,
+          20,
+          0
+        ],
+        "title_ok": true,
+        "bar_count": 4,
+        "extra_or_missing_text": "无",
+        "text_review_pass": true,
+        "note": "无异常"
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "edit_confirm_16183",
+      "condition": "edit_confirm",
+      "seed": 16183,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        19.5,
+        70.5,
+        41.42,
+        86.49
+      ],
+      "max_absolute_error_units": 3.51,
+      "text_evidence": {
+        "seed": 16183,
+        "file": "images/edit_confirm_16183.png",
+        "observed_categories": [
+          "甲",
+          "乙",
+          "丙",
+          "丁"
+        ],
+        "observed_top_values": [
+          20,
+          70,
+          40,
+          90
+        ],
+        "observed_ticks_top_to_bottom": [
+          100,
+          80,
+          60,
+          40,
+          20,
+          0
+        ],
+        "title_ok": true,
+        "bar_count": 4,
+        "extra_or_missing_text": "无",
+        "text_review_pass": true,
+        "note": "无异常"
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "edit_confirm_17189",
+      "condition": "edit_confirm",
+      "seed": 17189,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        21.96,
+        72.94,
+        42.62,
+        89.12
+      ],
+      "max_absolute_error_units": 2.94,
+      "text_evidence": {
+        "seed": 17189,
+        "file": "images/edit_confirm_17189.png",
+        "observed_categories": [
+          "甲",
+          "乙",
+          "丙",
+          "丁"
+        ],
+        "observed_top_values": [
+          20,
+          70,
+          40,
+          90
+        ],
+        "observed_ticks_top_to_bottom": [
+          100,
+          80,
+          60,
+          40,
+          20,
+          0
+        ],
+        "title_ok": true,
+        "bar_count": 4,
+        "extra_or_missing_text": "无",
+        "text_review_pass": true,
+        "note": "无异常"
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "edit_confirm_18199",
+      "condition": "edit_confirm",
+      "seed": 18199,
+      "text_pass": true,
+      "geometry_pass": true,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": true,
+      "failure_codes": [],
+      "inferred_values": [
+        19.97,
+        70.22,
+        40.57,
+        89.7
+      ],
+      "max_absolute_error_units": 0.57,
+      "text_evidence": {
+        "seed": 18199,
+        "file": "images/edit_confirm_18199.png",
+        "observed_categories": [
+          "甲",
+          "乙",
+          "丙",
+          "丁"
+        ],
+        "observed_top_values": [
+          20,
+          70,
+          40,
+          90
+        ],
+        "observed_ticks_top_to_bottom": [
+          100,
+          80,
+          60,
+          40,
+          20,
+          0
+        ],
+        "title_ok": true,
+        "bar_count": 4,
+        "extra_or_missing_text": "无",
+        "text_review_pass": true,
+        "note": "无异常"
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "edit_confirm_19207",
+      "condition": "edit_confirm",
+      "seed": 19207,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        22.11,
+        70.35,
+        43.17,
+        92.46
+      ],
+      "max_absolute_error_units": 3.17,
+      "text_evidence": {
+        "seed": 19207,
+        "file": "images/edit_confirm_19207.png",
+        "observed_categories": [
+          "甲",
+          "乙",
+          "丙",
+          "丁"
+        ],
+        "observed_top_values": [
+          20,
+          70,
+          40,
+          90
+        ],
+        "observed_ticks_top_to_bottom": [
+          100,
+          80,
+          60,
+          40,
+          20,
+          0
+        ],
+        "title_ok": true,
+        "bar_count": 4,
+        "extra_or_missing_text": "无",
+        "text_review_pass": true,
+        "note": "无异常"
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "edit_confirm_20231",
+      "condition": "edit_confirm",
+      "seed": 20231,
+      "text_pass": true,
+      "geometry_pass": true,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": true,
+      "failure_codes": [],
+      "inferred_values": [
+        18.71,
+        69.31,
+        39.4,
+        89.87
+      ],
+      "max_absolute_error_units": 1.29,
+      "text_evidence": {
+        "seed": 20231,
+        "file": "images/edit_confirm_20231.png",
+        "observed_categories": [
+          "甲",
+          "乙",
+          "丙",
+          "丁"
+        ],
+        "observed_top_values": [
+          20,
+          70,
+          40,
+          90
+        ],
+        "observed_ticks_top_to_bottom": [
+          100,
+          80,
+          60,
+          40,
+          20,
+          0
+        ],
+        "title_ok": true,
+        "bar_count": 4,
+        "extra_or_missing_text": "无",
+        "text_review_pass": true,
+        "note": "无异常"
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "edit_confirm_2027",
+      "condition": "edit_confirm",
+      "seed": 2027,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        20.81,
+        72.03,
+        41.18,
+        92.4
+      ],
+      "max_absolute_error_units": 2.4,
+      "text_evidence": {
+        "seed": 2027,
+        "file": "images/edit_confirm_2027.png",
+        "observed_categories": [
+          "甲",
+          "乙",
+          "丙",
+          "丁"
+        ],
+        "observed_top_values": [
+          20,
+          70,
+          40,
+          90
+        ],
+        "observed_ticks_top_to_bottom": [
+          100,
+          80,
+          60,
+          40,
+          20,
+          0
+        ],
+        "title_ok": true,
+        "bar_count": 4,
+        "extra_or_missing_text": "无",
+        "text_review_pass": true,
+        "note": "无异常"
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "edit_confirm_3037",
+      "condition": "edit_confirm",
+      "seed": 3037,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        23.48,
+        73.63,
+        43.86,
+        95.01
+      ],
+      "max_absolute_error_units": 5.01,
+      "text_evidence": {
+        "seed": 3037,
+        "file": "images/edit_confirm_3037.png",
+        "observed_categories": [
+          "甲",
+          "乙",
+          "丙",
+          "丁"
+        ],
+        "observed_top_values": [
+          20,
+          70,
+          40,
+          90
+        ],
+        "observed_ticks_top_to_bottom": [
+          100,
+          80,
+          60,
+          40,
+          20,
+          0
+        ],
+        "title_ok": true,
+        "bar_count": 4,
+        "extra_or_missing_text": "无",
+        "text_review_pass": true,
+        "note": "无异常"
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "edit_confirm_4051",
+      "condition": "edit_confirm",
+      "seed": 4051,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        21.17,
+        71.24,
+        43.94,
+        91.74
+      ],
+      "max_absolute_error_units": 3.94,
+      "text_evidence": {
+        "seed": 4051,
+        "file": "images/edit_confirm_4051.png",
+        "observed_categories": [
+          "甲",
+          "乙",
+          "丙",
+          "丁"
+        ],
+        "observed_top_values": [
+          20,
+          70,
+          40,
+          90
+        ],
+        "observed_ticks_top_to_bottom": [
+          100,
+          80,
+          60,
+          40,
+          20,
+          0
+        ],
+        "title_ok": true,
+        "bar_count": 4,
+        "extra_or_missing_text": "无",
+        "text_review_pass": true,
+        "note": "无异常"
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "edit_confirm_5059",
+      "condition": "edit_confirm",
+      "seed": 5059,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        21.57,
+        72.53,
+        41.8,
+        91.14
+      ],
+      "max_absolute_error_units": 2.53,
+      "text_evidence": {
+        "seed": 5059,
+        "file": "images/edit_confirm_5059.png",
+        "observed_categories": [
+          "甲",
+          "乙",
+          "丙",
+          "丁"
+        ],
+        "observed_top_values": [
+          20,
+          70,
+          40,
+          90
+        ],
+        "observed_ticks_top_to_bottom": [
+          100,
+          80,
+          60,
+          40,
+          20,
+          0
+        ],
+        "title_ok": true,
+        "bar_count": 4,
+        "extra_or_missing_text": "无",
+        "text_review_pass": true,
+        "note": "无异常"
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "edit_confirm_6073",
+      "condition": "edit_confirm",
+      "seed": 6073,
+      "text_pass": false,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "text_or_inventory",
+        "geometry"
+      ],
+      "inferred_values": [
+        22.4,
+        72.02,
+        42.46,
+        93.29
+      ],
+      "max_absolute_error_units": 3.29,
+      "text_evidence": {
+        "seed": 6073,
+        "file": "images/edit_confirm_6073.png",
+        "observed_categories": [
+          "中",
+          "乙",
+          "丙",
+          "丁"
+        ],
+        "observed_top_values": [
+          20,
+          70,
+          40,
+          90
+        ],
+        "observed_ticks_top_to_bottom": [
+          100,
+          80,
+          60,
+          40,
+          20,
+          0
+        ],
+        "title_ok": true,
+        "bar_count": 4,
+        "extra_or_missing_text": "首类别甲误为中",
+        "text_review_pass": false,
+        "note": "首类别清晰为中，不是甲；其余目标文字正确"
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "edit_confirm_7079",
+      "condition": "edit_confirm",
+      "seed": 7079,
+      "text_pass": true,
+      "geometry_pass": true,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": true,
+      "failure_codes": [],
+      "inferred_values": [
+        21.36,
+        70.39,
+        41.0,
+        89.61
+      ],
+      "max_absolute_error_units": 1.36,
+      "text_evidence": {
+        "seed": 7079,
+        "file": "images/edit_confirm_7079.png",
+        "observed_categories": [
+          "甲",
+          "乙",
+          "丙",
+          "丁"
+        ],
+        "observed_top_values": [
+          20,
+          70,
+          40,
+          90
+        ],
+        "observed_ticks_top_to_bottom": [
+          100,
+          80,
+          60,
+          40,
+          20,
+          0
+        ],
+        "title_ok": true,
+        "bar_count": 4,
+        "extra_or_missing_text": "无",
+        "text_review_pass": true,
+        "note": "无异常"
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "edit_confirm_8089",
+      "condition": "edit_confirm",
+      "seed": 8089,
+      "text_pass": true,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "geometry"
+      ],
+      "inferred_values": [
+        20.66,
+        71.81,
+        41.98,
+        92.1
+      ],
+      "max_absolute_error_units": 2.1,
+      "text_evidence": {
+        "seed": 8089,
+        "file": "images/edit_confirm_8089.png",
+        "observed_categories": [
+          "甲",
+          "乙",
+          "丙",
+          "丁"
+        ],
+        "observed_top_values": [
+          20,
+          70,
+          40,
+          90
+        ],
+        "observed_ticks_top_to_bottom": [
+          100,
+          80,
+          60,
+          40,
+          20,
+          0
+        ],
+        "title_ok": true,
+        "bar_count": 4,
+        "extra_or_missing_text": "无",
+        "text_review_pass": true,
+        "note": "无异常"
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "edit_confirm_9103",
+      "condition": "edit_confirm",
+      "seed": 9103,
+      "text_pass": false,
+      "geometry_pass": false,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": false,
+      "failure_codes": [
+        "text_or_inventory",
+        "geometry"
+      ],
+      "inferred_values": [
+        21.71,
+        70.79,
+        42.5,
+        92.01
+      ],
+      "max_absolute_error_units": 2.5,
+      "text_evidence": {
+        "seed": 9103,
+        "file": "images/edit_confirm_9103.png",
+        "observed_categories": [
+          "甲",
+          "乙",
+          "丙",
+          "丁"
+        ],
+        "observed_top_values": [
+          20,
+          70,
+          40,
+          90
+        ],
+        "observed_ticks_top_to_bottom": [
+          100,
+          30,
+          60,
+          40,
+          20,
+          0
+        ],
+        "title_ok": true,
+        "bar_count": 4,
+        "extra_or_missing_text": "纵轴第二个刻度80误为30",
+        "text_review_pass": false,
+        "note": "纵轴刻度从上到下清晰为100、30、60、40、20、0；80被误写为30"
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "edit_v2_confirm_21001",
+      "condition": "edit_v2_confirm",
+      "seed": 21001,
+      "text_pass": true,
+      "geometry_pass": true,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": true,
+      "failure_codes": [],
+      "inferred_values": [
+        20.0,
+        70.0,
+        40.0,
+        90.14
+      ],
+      "max_absolute_error_units": 0.14,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Inventory preserved, background changed to warm ivory; geometry reviewed separately.",
+        "review_method": "Contact sheets inspected per image, originals retained; non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "edit_v2_confirm_22003",
+      "condition": "edit_v2_confirm",
+      "seed": 22003,
+      "text_pass": true,
+      "geometry_pass": true,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": true,
+      "failure_codes": [],
+      "inferred_values": [
+        20.05,
+        70.02,
+        40.04,
+        90.01
+      ],
+      "max_absolute_error_units": 0.05,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Inventory preserved, background changed to warm ivory; geometry reviewed separately.",
+        "review_method": "Contact sheets inspected per image, originals retained; non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "edit_v2_confirm_23003",
+      "condition": "edit_v2_confirm",
+      "seed": 23003,
+      "text_pass": true,
+      "geometry_pass": true,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": true,
+      "failure_codes": [],
+      "inferred_values": [
+        20.0,
+        70.0,
+        40.0,
+        90.0
+      ],
+      "max_absolute_error_units": 0.0,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Inventory preserved, background changed to warm ivory; geometry reviewed separately.",
+        "review_method": "Contact sheets inspected per image, originals retained; non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "edit_v2_confirm_24001",
+      "condition": "edit_v2_confirm",
+      "seed": 24001,
+      "text_pass": true,
+      "geometry_pass": true,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": true,
+      "failure_codes": [],
+      "inferred_values": [
+        20.0,
+        70.14,
+        40.0,
+        90.0
+      ],
+      "max_absolute_error_units": 0.14,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Inventory preserved, background changed to warm ivory; geometry reviewed separately.",
+        "review_method": "Contact sheets inspected per image, originals retained; non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "edit_v2_confirm_25013",
+      "condition": "edit_v2_confirm",
+      "seed": 25013,
+      "text_pass": true,
+      "geometry_pass": true,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": true,
+      "failure_codes": [],
+      "inferred_values": [
+        20.0,
+        70.0,
+        40.0,
+        90.0
+      ],
+      "max_absolute_error_units": 0.0,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Inventory preserved, background changed to warm ivory; geometry reviewed separately.",
+        "review_method": "Contact sheets inspected per image, originals retained; non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "edit_v2_confirm_26003",
+      "condition": "edit_v2_confirm",
+      "seed": 26003,
+      "text_pass": true,
+      "geometry_pass": true,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": true,
+      "failure_codes": [],
+      "inferred_values": [
+        20.0,
+        70.0,
+        40.0,
+        90.0
+      ],
+      "max_absolute_error_units": 0.0,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Inventory preserved, background changed to warm ivory; geometry reviewed separately.",
+        "review_method": "Contact sheets inspected per image, originals retained; non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "edit_v2_confirm_27011",
+      "condition": "edit_v2_confirm",
+      "seed": 27011,
+      "text_pass": true,
+      "geometry_pass": true,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": true,
+      "failure_codes": [],
+      "inferred_values": [
+        20.0,
+        70.0,
+        40.0,
+        90.0
+      ],
+      "max_absolute_error_units": 0.0,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Inventory preserved, background changed to warm ivory; geometry reviewed separately.",
+        "review_method": "Contact sheets inspected per image, originals retained; non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "edit_v2_confirm_28001",
+      "condition": "edit_v2_confirm",
+      "seed": 28001,
+      "text_pass": true,
+      "geometry_pass": true,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": true,
+      "failure_codes": [],
+      "inferred_values": [
+        20.0,
+        70.0,
+        40.0,
+        90.0
+      ],
+      "max_absolute_error_units": 0.0,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Inventory preserved, background changed to warm ivory; geometry reviewed separately.",
+        "review_method": "Contact sheets inspected per image, originals retained; non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "edit_v2_confirm_29009",
+      "condition": "edit_v2_confirm",
+      "seed": 29009,
+      "text_pass": true,
+      "geometry_pass": true,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": true,
+      "failure_codes": [],
+      "inferred_values": [
+        20.05,
+        70.02,
+        40.04,
+        90.14
+      ],
+      "max_absolute_error_units": 0.14,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Inventory preserved, background changed to warm ivory; geometry reviewed separately.",
+        "review_method": "Contact sheets inspected per image, originals retained; non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "edit_v2_confirm_30011",
+      "condition": "edit_v2_confirm",
+      "seed": 30011,
+      "text_pass": true,
+      "geometry_pass": true,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": true,
+      "failure_codes": [],
+      "inferred_values": [
+        20.0,
+        70.0,
+        40.0,
+        90.0
+      ],
+      "max_absolute_error_units": 0.0,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Inventory preserved, background changed to warm ivory; geometry reviewed separately.",
+        "review_method": "Contact sheets inspected per image, originals retained; non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "edit_v2_confirm_31013",
+      "condition": "edit_v2_confirm",
+      "seed": 31013,
+      "text_pass": true,
+      "geometry_pass": true,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": true,
+      "failure_codes": [],
+      "inferred_values": [
+        19.97,
+        70.04,
+        40.08,
+        90.01
+      ],
+      "max_absolute_error_units": 0.08,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Inventory preserved, background changed to warm ivory; geometry reviewed separately.",
+        "review_method": "Contact sheets inspected per image, originals retained; non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "edit_v2_confirm_32003",
+      "condition": "edit_v2_confirm",
+      "seed": 32003,
+      "text_pass": true,
+      "geometry_pass": true,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": true,
+      "failure_codes": [],
+      "inferred_values": [
+        20.0,
+        70.0,
+        40.0,
+        90.0
+      ],
+      "max_absolute_error_units": 0.0,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Inventory preserved, background changed to warm ivory; geometry reviewed separately.",
+        "review_method": "Contact sheets inspected per image, originals retained; non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "edit_v2_confirm_33013",
+      "condition": "edit_v2_confirm",
+      "seed": 33013,
+      "text_pass": true,
+      "geometry_pass": true,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": true,
+      "failure_codes": [],
+      "inferred_values": [
+        20.0,
+        70.0,
+        40.0,
+        90.0
+      ],
+      "max_absolute_error_units": 0.0,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Inventory preserved, background changed to warm ivory; geometry reviewed separately.",
+        "review_method": "Contact sheets inspected per image, originals retained; non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "edit_v2_confirm_34019",
+      "condition": "edit_v2_confirm",
+      "seed": 34019,
+      "text_pass": true,
+      "geometry_pass": true,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": true,
+      "failure_codes": [],
+      "inferred_values": [
+        20.05,
+        70.02,
+        40.04,
+        90.01
+      ],
+      "max_absolute_error_units": 0.05,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Inventory preserved, background changed to warm ivory; geometry reviewed separately.",
+        "review_method": "Contact sheets inspected per image, originals retained; non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "edit_v2_confirm_35023",
+      "condition": "edit_v2_confirm",
+      "seed": 35023,
+      "text_pass": true,
+      "geometry_pass": true,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": true,
+      "failure_codes": [],
+      "inferred_values": [
+        20.0,
+        70.0,
+        40.0,
+        90.0
+      ],
+      "max_absolute_error_units": 0.0,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Inventory preserved, background changed to warm ivory; geometry reviewed separately.",
+        "review_method": "Contact sheets inspected per image, originals retained; non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "edit_v2_confirm_36007",
+      "condition": "edit_v2_confirm",
+      "seed": 36007,
+      "text_pass": true,
+      "geometry_pass": true,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": true,
+      "failure_codes": [],
+      "inferred_values": [
+        20.0,
+        70.14,
+        40.0,
+        90.14
+      ],
+      "max_absolute_error_units": 0.14,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Inventory preserved, background changed to warm ivory; geometry reviewed separately.",
+        "review_method": "Contact sheets inspected per image, originals retained; non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "edit_v2_confirm_37003",
+      "condition": "edit_v2_confirm",
+      "seed": 37003,
+      "text_pass": true,
+      "geometry_pass": true,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": true,
+      "failure_codes": [],
+      "inferred_values": [
+        20.0,
+        70.0,
+        40.0,
+        90.0
+      ],
+      "max_absolute_error_units": 0.0,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Inventory preserved, background changed to warm ivory; geometry reviewed separately.",
+        "review_method": "Contact sheets inspected per image, originals retained; non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "edit_v2_confirm_38011",
+      "condition": "edit_v2_confirm",
+      "seed": 38011,
+      "text_pass": true,
+      "geometry_pass": true,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": true,
+      "failure_codes": [],
+      "inferred_values": [
+        20.0,
+        70.0,
+        40.0,
+        90.0
+      ],
+      "max_absolute_error_units": 0.0,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Inventory preserved, background changed to warm ivory; geometry reviewed separately.",
+        "review_method": "Contact sheets inspected per image, originals retained; non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "edit_v2_confirm_39019",
+      "condition": "edit_v2_confirm",
+      "seed": 39019,
+      "text_pass": true,
+      "geometry_pass": true,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": true,
+      "failure_codes": [],
+      "inferred_values": [
+        20.05,
+        70.02,
+        40.04,
+        90.01
+      ],
+      "max_absolute_error_units": 0.05,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Inventory preserved, background changed to warm ivory; geometry reviewed separately.",
+        "review_method": "Contact sheets inspected per image, originals retained; non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "edit_v2_confirm_40009",
+      "condition": "edit_v2_confirm",
+      "seed": 40009,
+      "text_pass": true,
+      "geometry_pass": true,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": true,
+      "failure_codes": [],
+      "inferred_values": [
+        20.0,
+        70.0,
+        40.0,
+        90.0
+      ],
+      "max_absolute_error_units": 0.0,
+      "text_evidence": {
+        "owner": "Sean",
+        "reviewer": "Codex primary",
+        "title_correct": true,
+        "value_labels_correct": true,
+        "categories_correct": true,
+        "category_order_correct": true,
+        "four_bars": true,
+        "no_extra_data_text": true,
+        "tick_text_correct": true,
+        "tick_order_correct": true,
+        "notes": "Inventory preserved, background changed to warm ivory; geometry reviewed separately.",
+        "review_method": "Contact sheets inspected per image, originals retained; non-blind."
+      },
+      "geometry_evidence": "measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "grouped_confirm_41011",
+      "condition": "grouped_confirm",
+      "seed": 41011,
+      "text_pass": true,
+      "geometry_pass": true,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": true,
+      "failure_codes": [],
+      "inferred_values": [
+        20.0,
+        50.0,
+        70.0,
+        30.152,
+        40.0,
+        80.0,
+        90.152,
+        60.0
+      ],
+      "max_absolute_error_units": 0.152,
+      "text_evidence": {
+        "seed": 41011,
+        "file": "images/grouped_confirm_41011.png",
+        "title": "双系列测试",
+        "legend": [
+          {
+            "text": "系列一",
+            "color": "蓝"
+          },
+          {
+            "text": "系列二",
+            "color": "橙"
+          }
+        ],
+        "categories": [
+          "甲",
+          "乙",
+          "丙",
+          "丁"
+        ],
+        "top_values_by_category_blue_orange": [
+          [
+            20,
+            50
+          ],
+          [
+            70,
+            30
+          ],
+          [
+            40,
+            80
+          ],
+          [
+            90,
+            60
+          ]
+        ],
+        "ticks_bottom_to_top": [
+          0,
+          20,
+          40,
+          60,
+          80,
+          100
+        ],
+        "bar_count": 8,
+        "extra_or_missing_data": "无",
+        "text_review_pass": true
+      },
+      "geometry_evidence": "grouped_measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "grouped_confirm_42013",
+      "condition": "grouped_confirm",
+      "seed": 42013,
+      "text_pass": true,
+      "geometry_pass": true,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": true,
+      "failure_codes": [],
+      "inferred_values": [
+        20.0,
+        50.0,
+        70.0,
+        30.0,
+        40.0,
+        80.0,
+        90.0,
+        60.0
+      ],
+      "max_absolute_error_units": 0.0,
+      "text_evidence": {
+        "seed": 42013,
+        "file": "images/grouped_confirm_42013.png",
+        "title": "双系列测试",
+        "legend": [
+          {
+            "text": "系列一",
+            "color": "蓝"
+          },
+          {
+            "text": "系列二",
+            "color": "橙"
+          }
+        ],
+        "categories": [
+          "甲",
+          "乙",
+          "丙",
+          "丁"
+        ],
+        "top_values_by_category_blue_orange": [
+          [
+            20,
+            50
+          ],
+          [
+            70,
+            30
+          ],
+          [
+            40,
+            80
+          ],
+          [
+            90,
+            60
+          ]
+        ],
+        "ticks_bottom_to_top": [
+          0,
+          20,
+          40,
+          60,
+          80,
+          100
+        ],
+        "bar_count": 8,
+        "extra_or_missing_data": "无",
+        "text_review_pass": true
+      },
+      "geometry_evidence": "grouped_measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "grouped_confirm_43019",
+      "condition": "grouped_confirm",
+      "seed": 43019,
+      "text_pass": true,
+      "geometry_pass": true,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": true,
+      "failure_codes": [],
+      "inferred_values": [
+        20.0,
+        50.0,
+        70.0,
+        30.0,
+        40.0,
+        80.0,
+        90.0,
+        60.0
+      ],
+      "max_absolute_error_units": 0.0,
+      "text_evidence": {
+        "seed": 43019,
+        "file": "images/grouped_confirm_43019.png",
+        "title": "双系列测试",
+        "legend": [
+          {
+            "text": "系列一",
+            "color": "蓝"
+          },
+          {
+            "text": "系列二",
+            "color": "橙"
+          }
+        ],
+        "categories": [
+          "甲",
+          "乙",
+          "丙",
+          "丁"
+        ],
+        "top_values_by_category_blue_orange": [
+          [
+            20,
+            50
+          ],
+          [
+            70,
+            30
+          ],
+          [
+            40,
+            80
+          ],
+          [
+            90,
+            60
+          ]
+        ],
+        "ticks_bottom_to_top": [
+          0,
+          20,
+          40,
+          60,
+          80,
+          100
+        ],
+        "bar_count": 8,
+        "extra_or_missing_data": "无",
+        "text_review_pass": true
+      },
+      "geometry_evidence": "grouped_measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "grouped_confirm_44017",
+      "condition": "grouped_confirm",
+      "seed": 44017,
+      "text_pass": true,
+      "geometry_pass": true,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": true,
+      "failure_codes": [],
+      "inferred_values": [
+        20.0,
+        50.0,
+        70.0,
+        30.0,
+        40.0,
+        80.152,
+        90.152,
+        60.0
+      ],
+      "max_absolute_error_units": 0.152,
+      "text_evidence": {
+        "seed": 44017,
+        "file": "images/grouped_confirm_44017.png",
+        "title": "双系列测试",
+        "legend": [
+          {
+            "text": "系列一",
+            "color": "蓝"
+          },
+          {
+            "text": "系列二",
+            "color": "橙"
+          }
+        ],
+        "categories": [
+          "甲",
+          "乙",
+          "丙",
+          "丁"
+        ],
+        "top_values_by_category_blue_orange": [
+          [
+            20,
+            50
+          ],
+          [
+            70,
+            30
+          ],
+          [
+            40,
+            80
+          ],
+          [
+            90,
+            60
+          ]
+        ],
+        "ticks_bottom_to_top": [
+          0,
+          20,
+          40,
+          60,
+          80,
+          100
+        ],
+        "bar_count": 8,
+        "extra_or_missing_data": "无",
+        "text_review_pass": true
+      },
+      "geometry_evidence": "grouped_measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "grouped_confirm_45007",
+      "condition": "grouped_confirm",
+      "seed": 45007,
+      "text_pass": true,
+      "geometry_pass": true,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": true,
+      "failure_codes": [],
+      "inferred_values": [
+        20.0,
+        50.0,
+        70.0,
+        30.0,
+        40.0,
+        80.0,
+        90.0,
+        60.0
+      ],
+      "max_absolute_error_units": 0.0,
+      "text_evidence": {
+        "seed": 45007,
+        "file": "images/grouped_confirm_45007.png",
+        "title": "双系列测试",
+        "legend": [
+          {
+            "text": "系列一",
+            "color": "蓝"
+          },
+          {
+            "text": "系列二",
+            "color": "橙"
+          }
+        ],
+        "categories": [
+          "甲",
+          "乙",
+          "丙",
+          "丁"
+        ],
+        "top_values_by_category_blue_orange": [
+          [
+            20,
+            50
+          ],
+          [
+            70,
+            30
+          ],
+          [
+            40,
+            80
+          ],
+          [
+            90,
+            60
+          ]
+        ],
+        "ticks_bottom_to_top": [
+          0,
+          20,
+          40,
+          60,
+          80,
+          100
+        ],
+        "bar_count": 8,
+        "extra_or_missing_data": "无",
+        "text_review_pass": true
+      },
+      "geometry_evidence": "grouped_measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "grouped_confirm_46021",
+      "condition": "grouped_confirm",
+      "seed": 46021,
+      "text_pass": true,
+      "geometry_pass": true,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": true,
+      "failure_codes": [],
+      "inferred_values": [
+        20.0,
+        50.0,
+        70.0,
+        30.0,
+        40.0,
+        80.0,
+        90.0,
+        60.0
+      ],
+      "max_absolute_error_units": 0.0,
+      "text_evidence": {
+        "seed": 46021,
+        "file": "images/grouped_confirm_46021.png",
+        "title": "双系列测试",
+        "legend": [
+          {
+            "text": "系列一",
+            "color": "蓝"
+          },
+          {
+            "text": "系列二",
+            "color": "橙"
+          }
+        ],
+        "categories": [
+          "甲",
+          "乙",
+          "丙",
+          "丁"
+        ],
+        "top_values_by_category_blue_orange": [
+          [
+            20,
+            50
+          ],
+          [
+            70,
+            30
+          ],
+          [
+            40,
+            80
+          ],
+          [
+            90,
+            60
+          ]
+        ],
+        "ticks_bottom_to_top": [
+          0,
+          20,
+          40,
+          60,
+          80,
+          100
+        ],
+        "bar_count": 8,
+        "extra_or_missing_data": "无",
+        "text_review_pass": true
+      },
+      "geometry_evidence": "grouped_measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "grouped_confirm_47017",
+      "condition": "grouped_confirm",
+      "seed": 47017,
+      "text_pass": true,
+      "geometry_pass": true,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": true,
+      "failure_codes": [],
+      "inferred_values": [
+        20.0,
+        50.0,
+        70.0,
+        30.0,
+        40.0,
+        80.0,
+        90.0,
+        60.0
+      ],
+      "max_absolute_error_units": 0.0,
+      "text_evidence": {
+        "seed": 47017,
+        "file": "images/grouped_confirm_47017.png",
+        "title": "双系列测试",
+        "legend": [
+          {
+            "text": "系列一",
+            "color": "蓝"
+          },
+          {
+            "text": "系列二",
+            "color": "橙"
+          }
+        ],
+        "categories": [
+          "甲",
+          "乙",
+          "丙",
+          "丁"
+        ],
+        "top_values_by_category_blue_orange": [
+          [
+            20,
+            50
+          ],
+          [
+            70,
+            30
+          ],
+          [
+            40,
+            80
+          ],
+          [
+            90,
+            60
+          ]
+        ],
+        "ticks_bottom_to_top": [
+          0,
+          20,
+          40,
+          60,
+          80,
+          100
+        ],
+        "bar_count": 8,
+        "extra_or_missing_data": "无",
+        "text_review_pass": true
+      },
+      "geometry_evidence": "grouped_measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "grouped_confirm_48017",
+      "condition": "grouped_confirm",
+      "seed": 48017,
+      "text_pass": true,
+      "geometry_pass": true,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": true,
+      "failure_codes": [],
+      "inferred_values": [
+        20.0,
+        50.0,
+        70.0,
+        30.0,
+        40.0,
+        80.0,
+        90.0,
+        60.0
+      ],
+      "max_absolute_error_units": 0.0,
+      "text_evidence": {
+        "seed": 48017,
+        "file": "images/grouped_confirm_48017.png",
+        "title": "双系列测试",
+        "legend": [
+          {
+            "text": "系列一",
+            "color": "蓝"
+          },
+          {
+            "text": "系列二",
+            "color": "橙"
+          }
+        ],
+        "categories": [
+          "甲",
+          "乙",
+          "丙",
+          "丁"
+        ],
+        "top_values_by_category_blue_orange": [
+          [
+            20,
+            50
+          ],
+          [
+            70,
+            30
+          ],
+          [
+            40,
+            80
+          ],
+          [
+            90,
+            60
+          ]
+        ],
+        "ticks_bottom_to_top": [
+          0,
+          20,
+          40,
+          60,
+          80,
+          100
+        ],
+        "bar_count": 8,
+        "extra_or_missing_data": "无",
+        "text_review_pass": true
+      },
+      "geometry_evidence": "grouped_measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "grouped_confirm_49003",
+      "condition": "grouped_confirm",
+      "seed": 49003,
+      "text_pass": true,
+      "geometry_pass": true,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": true,
+      "failure_codes": [],
+      "inferred_values": [
+        20.0,
+        50.0,
+        70.0,
+        30.0,
+        40.0,
+        80.0,
+        90.0,
+        60.0
+      ],
+      "max_absolute_error_units": 0.0,
+      "text_evidence": {
+        "seed": 49003,
+        "file": "images/grouped_confirm_49003.png",
+        "title": "双系列测试",
+        "legend": [
+          {
+            "text": "系列一",
+            "color": "蓝"
+          },
+          {
+            "text": "系列二",
+            "color": "橙"
+          }
+        ],
+        "categories": [
+          "甲",
+          "乙",
+          "丙",
+          "丁"
+        ],
+        "top_values_by_category_blue_orange": [
+          [
+            20,
+            50
+          ],
+          [
+            70,
+            30
+          ],
+          [
+            40,
+            80
+          ],
+          [
+            90,
+            60
+          ]
+        ],
+        "ticks_bottom_to_top": [
+          0,
+          20,
+          40,
+          60,
+          80,
+          100
+        ],
+        "bar_count": 8,
+        "extra_or_missing_data": "无",
+        "text_review_pass": true
+      },
+      "geometry_evidence": "grouped_measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "grouped_confirm_50021",
+      "condition": "grouped_confirm",
+      "seed": 50021,
+      "text_pass": true,
+      "geometry_pass": true,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": true,
+      "failure_codes": [],
+      "inferred_values": [
+        20.0,
+        50.0,
+        70.0,
+        30.0,
+        40.0,
+        80.0,
+        90.0,
+        60.0
+      ],
+      "max_absolute_error_units": 0.0,
+      "text_evidence": {
+        "seed": 50021,
+        "file": "images/grouped_confirm_50021.png",
+        "title": "双系列测试",
+        "legend": [
+          {
+            "text": "系列一",
+            "color": "蓝"
+          },
+          {
+            "text": "系列二",
+            "color": "橙"
+          }
+        ],
+        "categories": [
+          "甲",
+          "乙",
+          "丙",
+          "丁"
+        ],
+        "top_values_by_category_blue_orange": [
+          [
+            20,
+            50
+          ],
+          [
+            70,
+            30
+          ],
+          [
+            40,
+            80
+          ],
+          [
+            90,
+            60
+          ]
+        ],
+        "ticks_bottom_to_top": [
+          0,
+          20,
+          40,
+          60,
+          80,
+          100
+        ],
+        "bar_count": 8,
+        "extra_or_missing_data": "无",
+        "text_review_pass": true
+      },
+      "geometry_evidence": "grouped_measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "grouped_confirm_51001",
+      "condition": "grouped_confirm",
+      "seed": 51001,
+      "text_pass": true,
+      "geometry_pass": true,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": true,
+      "failure_codes": [],
+      "inferred_values": [
+        20.0,
+        50.0,
+        70.0,
+        30.0,
+        40.0,
+        80.0,
+        90.0,
+        60.0
+      ],
+      "max_absolute_error_units": 0.0,
+      "text_evidence": {
+        "seed": 51001,
+        "file": "images/grouped_confirm_51001.png",
+        "title": "双系列测试",
+        "legend": [
+          {
+            "text": "系列一",
+            "color": "蓝"
+          },
+          {
+            "text": "系列二",
+            "color": "橙"
+          }
+        ],
+        "categories": [
+          "甲",
+          "乙",
+          "丙",
+          "丁"
+        ],
+        "top_values_by_category_blue_orange": [
+          [
+            20,
+            50
+          ],
+          [
+            70,
+            30
+          ],
+          [
+            40,
+            80
+          ],
+          [
+            90,
+            60
+          ]
+        ],
+        "ticks_bottom_to_top": [
+          0,
+          20,
+          40,
+          60,
+          80,
+          100
+        ],
+        "bar_count": 8,
+        "extra_or_missing_data": "无",
+        "text_review_pass": true
+      },
+      "geometry_evidence": "grouped_measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "grouped_confirm_52009",
+      "condition": "grouped_confirm",
+      "seed": 52009,
+      "text_pass": true,
+      "geometry_pass": true,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": true,
+      "failure_codes": [],
+      "inferred_values": [
+        20.0,
+        50.0,
+        70.0,
+        30.0,
+        40.0,
+        80.0,
+        90.0,
+        60.0
+      ],
+      "max_absolute_error_units": 0.0,
+      "text_evidence": {
+        "seed": 52009,
+        "file": "images/grouped_confirm_52009.png",
+        "title": "双系列测试",
+        "legend": [
+          {
+            "text": "系列一",
+            "color": "蓝"
+          },
+          {
+            "text": "系列二",
+            "color": "橙"
+          }
+        ],
+        "categories": [
+          "甲",
+          "乙",
+          "丙",
+          "丁"
+        ],
+        "top_values_by_category_blue_orange": [
+          [
+            20,
+            50
+          ],
+          [
+            70,
+            30
+          ],
+          [
+            40,
+            80
+          ],
+          [
+            90,
+            60
+          ]
+        ],
+        "ticks_bottom_to_top": [
+          0,
+          20,
+          40,
+          60,
+          80,
+          100
+        ],
+        "bar_count": 8,
+        "extra_or_missing_data": "无",
+        "text_review_pass": true
+      },
+      "geometry_evidence": "grouped_measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "grouped_confirm_53003",
+      "condition": "grouped_confirm",
+      "seed": 53003,
+      "text_pass": true,
+      "geometry_pass": true,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": true,
+      "failure_codes": [],
+      "inferred_values": [
+        20.152,
+        50.152,
+        70.152,
+        30.152,
+        40.152,
+        80.152,
+        90.152,
+        60.152
+      ],
+      "max_absolute_error_units": 0.152,
+      "text_evidence": {
+        "seed": 53003,
+        "file": "images/grouped_confirm_53003.png",
+        "title": "双系列测试",
+        "legend": [
+          {
+            "text": "系列一",
+            "color": "蓝"
+          },
+          {
+            "text": "系列二",
+            "color": "橙"
+          }
+        ],
+        "categories": [
+          "甲",
+          "乙",
+          "丙",
+          "丁"
+        ],
+        "top_values_by_category_blue_orange": [
+          [
+            20,
+            50
+          ],
+          [
+            70,
+            30
+          ],
+          [
+            40,
+            80
+          ],
+          [
+            90,
+            60
+          ]
+        ],
+        "ticks_bottom_to_top": [
+          0,
+          20,
+          40,
+          60,
+          80,
+          100
+        ],
+        "bar_count": 8,
+        "extra_or_missing_data": "无",
+        "text_review_pass": true
+      },
+      "geometry_evidence": "grouped_measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "grouped_confirm_54001",
+      "condition": "grouped_confirm",
+      "seed": 54001,
+      "text_pass": true,
+      "geometry_pass": true,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": true,
+      "failure_codes": [],
+      "inferred_values": [
+        20.0,
+        50.0,
+        70.0,
+        30.0,
+        40.0,
+        80.0,
+        90.0,
+        60.0
+      ],
+      "max_absolute_error_units": 0.0,
+      "text_evidence": {
+        "seed": 54001,
+        "file": "images/grouped_confirm_54001.png",
+        "title": "双系列测试",
+        "legend": [
+          {
+            "text": "系列一",
+            "color": "蓝"
+          },
+          {
+            "text": "系列二",
+            "color": "橙"
+          }
+        ],
+        "categories": [
+          "甲",
+          "乙",
+          "丙",
+          "丁"
+        ],
+        "top_values_by_category_blue_orange": [
+          [
+            20,
+            50
+          ],
+          [
+            70,
+            30
+          ],
+          [
+            40,
+            80
+          ],
+          [
+            90,
+            60
+          ]
+        ],
+        "ticks_bottom_to_top": [
+          0,
+          20,
+          40,
+          60,
+          80,
+          100
+        ],
+        "bar_count": 8,
+        "extra_or_missing_data": "无",
+        "text_review_pass": true
+      },
+      "geometry_evidence": "grouped_measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "grouped_confirm_55001",
+      "condition": "grouped_confirm",
+      "seed": 55001,
+      "text_pass": true,
+      "geometry_pass": true,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": true,
+      "failure_codes": [],
+      "inferred_values": [
+        20.0,
+        50.0,
+        70.0,
+        30.152,
+        40.0,
+        80.0,
+        90.0,
+        60.0
+      ],
+      "max_absolute_error_units": 0.152,
+      "text_evidence": {
+        "seed": 55001,
+        "file": "images/grouped_confirm_55001.png",
+        "title": "双系列测试",
+        "legend": [
+          {
+            "text": "系列一",
+            "color": "蓝"
+          },
+          {
+            "text": "系列二",
+            "color": "橙"
+          }
+        ],
+        "categories": [
+          "甲",
+          "乙",
+          "丙",
+          "丁"
+        ],
+        "top_values_by_category_blue_orange": [
+          [
+            20,
+            50
+          ],
+          [
+            70,
+            30
+          ],
+          [
+            40,
+            80
+          ],
+          [
+            90,
+            60
+          ]
+        ],
+        "ticks_bottom_to_top": [
+          0,
+          20,
+          40,
+          60,
+          80,
+          100
+        ],
+        "bar_count": 8,
+        "extra_or_missing_data": "无",
+        "text_review_pass": true
+      },
+      "geometry_evidence": "grouped_measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "grouped_confirm_56003",
+      "condition": "grouped_confirm",
+      "seed": 56003,
+      "text_pass": true,
+      "geometry_pass": true,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": true,
+      "failure_codes": [],
+      "inferred_values": [
+        20.0,
+        50.0,
+        70.0,
+        30.0,
+        40.0,
+        80.0,
+        90.0,
+        60.0
+      ],
+      "max_absolute_error_units": 0.0,
+      "text_evidence": {
+        "seed": 56003,
+        "file": "images/grouped_confirm_56003.png",
+        "title": "双系列测试",
+        "legend": [
+          {
+            "text": "系列一",
+            "color": "蓝"
+          },
+          {
+            "text": "系列二",
+            "color": "橙"
+          }
+        ],
+        "categories": [
+          "甲",
+          "乙",
+          "丙",
+          "丁"
+        ],
+        "top_values_by_category_blue_orange": [
+          [
+            20,
+            50
+          ],
+          [
+            70,
+            30
+          ],
+          [
+            40,
+            80
+          ],
+          [
+            90,
+            60
+          ]
+        ],
+        "ticks_bottom_to_top": [
+          0,
+          20,
+          40,
+          60,
+          80,
+          100
+        ],
+        "bar_count": 8,
+        "extra_or_missing_data": "无",
+        "text_review_pass": true
+      },
+      "geometry_evidence": "grouped_measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "grouped_confirm_57037",
+      "condition": "grouped_confirm",
+      "seed": 57037,
+      "text_pass": true,
+      "geometry_pass": true,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": true,
+      "failure_codes": [],
+      "inferred_values": [
+        20.0,
+        50.0,
+        70.0,
+        30.0,
+        40.0,
+        80.0,
+        90.0,
+        60.0
+      ],
+      "max_absolute_error_units": 0.0,
+      "text_evidence": {
+        "seed": 57037,
+        "file": "images/grouped_confirm_57037.png",
+        "title": "双系列测试",
+        "legend": [
+          {
+            "text": "系列一",
+            "color": "蓝"
+          },
+          {
+            "text": "系列二",
+            "color": "橙"
+          }
+        ],
+        "categories": [
+          "甲",
+          "乙",
+          "丙",
+          "丁"
+        ],
+        "top_values_by_category_blue_orange": [
+          [
+            20,
+            50
+          ],
+          [
+            70,
+            30
+          ],
+          [
+            40,
+            80
+          ],
+          [
+            90,
+            60
+          ]
+        ],
+        "ticks_bottom_to_top": [
+          0,
+          20,
+          40,
+          60,
+          80,
+          100
+        ],
+        "bar_count": 8,
+        "extra_or_missing_data": "无",
+        "text_review_pass": true
+      },
+      "geometry_evidence": "grouped_measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "grouped_confirm_58013",
+      "condition": "grouped_confirm",
+      "seed": 58013,
+      "text_pass": true,
+      "geometry_pass": true,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": true,
+      "failure_codes": [],
+      "inferred_values": [
+        20.0,
+        50.0,
+        70.152,
+        30.0,
+        40.0,
+        80.152,
+        90.152,
+        60.0
+      ],
+      "max_absolute_error_units": 0.152,
+      "text_evidence": {
+        "seed": 58013,
+        "file": "images/grouped_confirm_58013.png",
+        "title": "双系列测试",
+        "legend": [
+          {
+            "text": "系列一",
+            "color": "蓝"
+          },
+          {
+            "text": "系列二",
+            "color": "橙"
+          }
+        ],
+        "categories": [
+          "甲",
+          "乙",
+          "丙",
+          "丁"
+        ],
+        "top_values_by_category_blue_orange": [
+          [
+            20,
+            50
+          ],
+          [
+            70,
+            30
+          ],
+          [
+            40,
+            80
+          ],
+          [
+            90,
+            60
+          ]
+        ],
+        "ticks_bottom_to_top": [
+          0,
+          20,
+          40,
+          60,
+          80,
+          100
+        ],
+        "bar_count": 8,
+        "extra_or_missing_data": "无",
+        "text_review_pass": true
+      },
+      "geometry_evidence": "grouped_measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "grouped_confirm_59009",
+      "condition": "grouped_confirm",
+      "seed": 59009,
+      "text_pass": true,
+      "geometry_pass": true,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": true,
+      "failure_codes": [],
+      "inferred_values": [
+        20.0,
+        50.0,
+        70.0,
+        30.0,
+        40.0,
+        80.0,
+        90.0,
+        60.0
+      ],
+      "max_absolute_error_units": 0.0,
+      "text_evidence": {
+        "seed": 59009,
+        "file": "images/grouped_confirm_59009.png",
+        "title": "双系列测试",
+        "legend": [
+          {
+            "text": "系列一",
+            "color": "蓝"
+          },
+          {
+            "text": "系列二",
+            "color": "橙"
+          }
+        ],
+        "categories": [
+          "甲",
+          "乙",
+          "丙",
+          "丁"
+        ],
+        "top_values_by_category_blue_orange": [
+          [
+            20,
+            50
+          ],
+          [
+            70,
+            30
+          ],
+          [
+            40,
+            80
+          ],
+          [
+            90,
+            60
+          ]
+        ],
+        "ticks_bottom_to_top": [
+          0,
+          20,
+          40,
+          60,
+          80,
+          100
+        ],
+        "bar_count": 8,
+        "extra_or_missing_data": "无",
+        "text_review_pass": true
+      },
+      "geometry_evidence": "grouped_measurements.json"
+    },
+    {
+      "owner": "Sean",
+      "job": "grouped_confirm_60013",
+      "condition": "grouped_confirm",
+      "seed": 60013,
+      "text_pass": true,
+      "geometry_pass": true,
+      "axis_spacing_pass": true,
+      "ordering_pass": true,
+      "complete_pass": true,
+      "failure_codes": [],
+      "inferred_values": [
+        19.848,
+        49.848,
+        70.0,
+        30.0,
+        39.848,
+        80.0,
+        90.0,
+        60.0
+      ],
+      "max_absolute_error_units": 0.152,
+      "text_evidence": {
+        "seed": 60013,
+        "file": "images/grouped_confirm_60013.png",
+        "title": "双系列测试",
+        "legend": [
+          {
+            "text": "系列一",
+            "color": "蓝"
+          },
+          {
+            "text": "系列二",
+            "color": "橙"
+          }
+        ],
+        "categories": [
+          "甲",
+          "乙",
+          "丙",
+          "丁"
+        ],
+        "top_values_by_category_blue_orange": [
+          [
+            20,
+            50
+          ],
+          [
+            70,
+            30
+          ],
+          [
+            40,
+            80
+          ],
+          [
+            90,
+            60
+          ]
+        ],
+        "ticks_bottom_to_top": [
+          0,
+          20,
+          40,
+          60,
+          80,
+          100
+        ],
+        "bar_count": 8,
+        "extra_or_missing_data": "无",
+        "text_review_pass": true
+      },
+      "geometry_evidence": "grouped_measurements.json"
+    }
+  ],
+  "summary": {
+    "confirm_minimal_off": {
+      "n": 20,
+      "complete_passes": 0,
+      "text_passes": 0,
+      "geometry_passes": 0,
+      "ordering_passes": 20,
+      "axis_spacing_passes": 20,
+      "wilson95": [
+        0.0,
+        0.1611
+      ],
+      "meets_operational_threshold": false,
+      "mean_per_image_max_error_units": 10.764,
+      "worst_max_error_units": 19.05,
+      "pass_seeds": []
+    },
+    "confirm_minimal_on": {
+      "n": 20,
+      "complete_passes": 0,
+      "text_passes": 20,
+      "geometry_passes": 0,
+      "ordering_passes": 17,
+      "axis_spacing_passes": 18,
+      "wilson95": [
+        0.0,
+        0.1611
+      ],
+      "meets_operational_threshold": false,
+      "mean_per_image_max_error_units": 19.036,
+      "worst_max_error_units": 27.03,
+      "pass_seeds": []
+    },
+    "confirm_detailed_off": {
+      "n": 20,
+      "complete_passes": 0,
+      "text_passes": 20,
+      "geometry_passes": 0,
+      "ordering_passes": 20,
+      "axis_spacing_passes": 20,
+      "wilson95": [
+        0.0,
+        0.1611
+      ],
+      "meets_operational_threshold": false,
+      "mean_per_image_max_error_units": 8.944,
+      "worst_max_error_units": 17.77,
+      "pass_seeds": []
+    },
+    "confirm_detailed_on": {
+      "n": 20,
+      "complete_passes": 0,
+      "text_passes": 20,
+      "geometry_passes": 0,
+      "ordering_passes": 19,
+      "axis_spacing_passes": 19,
+      "wilson95": [
+        0.0,
+        0.1611
+      ],
+      "meets_operational_threshold": false,
+      "mean_per_image_max_error_units": 20.674,
+      "worst_max_error_units": 24.17,
+      "pass_seeds": []
+    },
+    "v2_confirm": {
+      "n": 20,
+      "complete_passes": 0,
+      "text_passes": 20,
+      "geometry_passes": 0,
+      "ordering_passes": 16,
+      "axis_spacing_passes": 20,
+      "wilson95": [
+        0.0,
+        0.1611
+      ],
+      "meets_operational_threshold": false,
+      "mean_per_image_max_error_units": 11.463,
+      "worst_max_error_units": 20.45,
+      "pass_seeds": []
+    },
+    "edit_confirm": {
+      "n": 20,
+      "complete_passes": 5,
+      "text_passes": 17,
+      "geometry_passes": 5,
+      "ordering_passes": 20,
+      "axis_spacing_passes": 20,
+      "wilson95": [
+        0.1119,
+        0.4687
+      ],
+      "meets_operational_threshold": false,
+      "mean_per_image_max_error_units": 2.591,
+      "worst_max_error_units": 5.01,
+      "pass_seeds": [
+        1009,
+        11113,
+        18199,
+        20231,
+        7079
+      ]
+    },
+    "edit_v2_confirm": {
+      "n": 20,
+      "complete_passes": 20,
+      "text_passes": 20,
+      "geometry_passes": 20,
+      "ordering_passes": 20,
+      "axis_spacing_passes": 20,
+      "wilson95": [
+        0.8389,
+        1.0
+      ],
+      "meets_operational_threshold": true,
+      "mean_per_image_max_error_units": 0.04,
+      "worst_max_error_units": 0.14,
+      "pass_seeds": [
+        21001,
+        22003,
+        23003,
+        24001,
+        25013,
+        26003,
+        27011,
+        28001,
+        29009,
+        30011,
+        31013,
+        32003,
+        33013,
+        34019,
+        35023,
+        36007,
+        37003,
+        38011,
+        39019,
+        40009
+      ]
+    },
+    "grouped_confirm": {
+      "n": 20,
+      "complete_passes": 20,
+      "text_passes": 20,
+      "geometry_passes": 20,
+      "ordering_passes": 20,
+      "axis_spacing_passes": 20,
+      "wilson95": [
+        0.8389,
+        1.0
+      ],
+      "meets_operational_threshold": true,
+      "mean_per_image_max_error_units": 0.046,
+      "worst_max_error_units": 0.152,
+      "pass_seeds": [
+        41011,
+        42013,
+        43019,
+        44017,
+        45007,
+        46021,
+        47017,
+        48017,
+        49003,
+        50021,
+        51001,
+        52009,
+        53003,
+        54001,
+        55001,
+        56003,
+        57037,
+        58013,
+        59009,
+        60013
+      ]
+    }
+  }
+}
