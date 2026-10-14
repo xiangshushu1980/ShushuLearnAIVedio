@@ -1,63 +1,41 @@
-#!/bin/bash
-set -e
+#!/usr/bin/env bash
+# Owner: Sean
+# Download selected files from a ModelScope repository into a local model tree.
+set -euo pipefail
 
-# =============================================
-# ComfyUI 模型下载脚本 — Wan2.1 I2V-480P
-# =============================================
+usage() {
+  cat <<'USAGE'
+Usage:
+  ./download_models.sh <model-id> <local-dir> <repo-file> [repo-file ...]
 
-cd "$(dirname "$0")"
-source venv/bin/activate
+Examples:
+  ./download_models.sh Comfy-Org/MiniMax-H3 ./models \
+    diffusion_models/minimax_h3_fl2va_pruned_int8_convrot.safetensors
+  ./download_models.sh circlestone-labs/Anima ./models \
+    split_files/diffusion_models/anima-base-v1.0.safetensors
+  ./download_models.sh Aitrepreneur/FLX ./models \
+    4x-ClearRealityV1.pth
+  ./download_models.sh 1038lab/BiRefNet ./models/RMBG/BiRefNet \
+    BiRefNet_toonout.safetensors
 
-MODELS_DIR="models"
+Repository file paths are kept below <local-dir>. At least one file is required
+so an accidental full-repository download cannot consume large amounts of disk.
+USAGE
+}
 
-echo ""
-echo "╔══════════════════════════════════════════════╗"
-echo "║      ComfyUI 模型下载 - Wan2.1 I2V-480P     ║"
-echo "╚══════════════════════════════════════════════╝"
-echo ""
-echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-echo " 使用前请先完成以下操作（只需一次）："
-echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-echo ""
-echo " ① 浏览器打开（需 VPN）："
-echo "    https://huggingface.co/Wan-AI/Wan2.1-I2V-14B-480P"
-echo ""
-echo " ② 点击「Agree and access repository」接受许可"
-echo ""
-echo " ③ 然后复制你的 Access Token："
-echo "    右上角头像 → Settings → Access Tokens"
-echo ""
-echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-echo ""
-
-# 检查是否已登录
-if huggingface-cli whoami &> /dev/null; then
-    echo "✅ HuggingFace 已登录"
-else
-    echo "❌ 未登录。请输入你的 Access Token："
-    huggingface-cli login
+if (( $# < 3 )); then
+  usage >&2
+  exit 2
 fi
 
-# 配置国内镜像加速
-echo ""
-echo "配置国内镜像加速下载..."
-export HF_ENDPOINT=https://hf-mirror.com
+model_id=$1
+local_dir=$2
+shift 2
 
-# 开始下载
-echo ""
-echo "下载 Wan2.1 I2V-14B-480P（~13GB）..."
-echo "  - 如果中断，重新运行脚本会自动续传"
-echo "  - 脚本会放慢下载速度，不影响正常上网"
-echo ""
+if ! command -v modelscope >/dev/null 2>&1; then
+  echo "modelscope CLI is not installed in this environment." >&2
+  echo "Install it in the active Python environment with: python -m pip install modelscope" >&2
+  exit 127
+fi
 
-huggingface-cli download Wan-AI/Wan2.1-I2V-14B-480P \
-    --local-dir "$MODELS_DIR/diffusion_models/Wan2.1-I2V-14B-480P" \
-    --local-dir-use-symlinks False \
-    --resume-download
-
-echo ""
-echo "✅ 下载完成！"
-echo ""
-echo "启动 ComfyUI：./start.sh"
-echo "然后在 Workflow 中加载模型即可。"
-echo ""
+exec modelscope download --model "$model_id" --local_dir "$local_dir" "$@"

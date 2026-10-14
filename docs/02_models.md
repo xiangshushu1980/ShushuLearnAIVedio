@@ -90,19 +90,40 @@ H3 LoRA（models/loras/）：
 
 ## 下载源
 
+### 默认下载规则（2026-10-14）
+- 模型仓库优先使用 ModelScope；只在 ModelScope 没有**同一权重/同一版本**时，才保留原始来源（如 Hugging Face 或 CivitAI）。不要用相近模型替换同名权重。
+- 通过仓库根目录的 `download_models.sh` 下载 ModelScope 指定文件；必须列出仓库内文件路径，避免误下整个大仓库。公开仓库可匿名下载；私有/受限仓库仍需相应授权。
+- 本轮已对 H3、ANIMA、Krea 2、Qwen3-VL、Bernini-R、ClearReality 和 BiRefNet ToonOut 的 ModelScope 文件执行 HTTP Range 实际取样；均返回文件字节（206）。ToonOut 的 ModelScope SHA256 与原 HF 文件一致；ClearReality 9 MB 文件完成全量下载，并与 ModelScope API 提供的大小和 SHA256 完全一致。该验证证明文件可下载，不等于全量大模型下载、权重加载或生成已验证。
+
+示例（按需下载，不表示恢复已清理模型）：
+```bash
+./download_models.sh Comfy-Org/MiniMax-H3 ./models \
+  diffusion_models/minimax_h3_fl2va_pruned_int8_convrot.safetensors
+./download_models.sh circlestone-labs/Anima ./models \
+  split_files/diffusion_models/anima-base-v1.0.safetensors
+./download_models.sh Comfy-Org/Krea-2 ./models \
+  diffusion_models/krea2_turbo_fp8_scaled.safetensors
+./download_models.sh Comfy-Org/Qwen3-VL ./models \
+  text_encoders/qwen3vl_4b_fp8_scaled.safetensors
+./download_models.sh 1038lab/BiRefNet ./models/RMBG/BiRefNet \
+  BiRefNet_toonout.safetensors
+```
+
+`BiRefNet_toonout.safetensors` 使用 ModelScope `1038lab/BiRefNet`，并已核对 SHA256 与原 HF 文件一致。CivitAI LoRA 继续从 CivitAI 获取；目前没有确认 ModelScope 上相同版本的副本，不能用相近 LoRA 替换。
+
 ### Bernini-R int8_convrot（待重下时用）
-- **源**：`https://hf-mirror.com/Comfy-Org/Bernini-R/resolve/main/diffusion_models/wan2.2_bernini_r_{high,low}_noise_int8_convrot.safetensors`（各 14.54GB，revision e5674fad）
-- **命令**：`wget -c --tries=0 --timeout=30`（断点续传+无限重试）
-- **网络实测**：hf-mirror 直连 ~8.6MB/s；**开 VPN 后大幅提速**（18 分钟下完 29GB）；GitHub 直连时通时不通（7890 代理未监听，勿依赖）
+- **源**：ModelScope `Comfy-Org/Bernini-R`，文件位于 `diffusion_models/`（当前仍缺失，按用户决定暂不恢复）
+- **命令**：`./download_models.sh Comfy-Org/Bernini-R ./models diffusion_models/wan2.2_bernini_r_high_noise_int8_convrot.safetensors diffusion_models/wan2.2_bernini_r_low_noise_int8_convrot.safetensors`
+- 旧 HF-Mirror 下载速度记录仅作历史，不再作为默认下载源。
 - **完整性校验（三重）**：① 字节数精确等于目标 14535868680；② safetensors header（190464 字节）可解析；③ wget rc=0 正常收尾
 - int8 选型背景与平台差异见 docs/06 §三
 
 ### H3（Comfy-Org/MiniMax-H3）
-- 下载源：`Comfy-Org/MiniMax-H3`（hf-mirror，需 `HF_HUB_DISABLE_XET=1` 绕过 Xet 401）
+- 下载源：ModelScope `Comfy-Org/MiniMax-H3`；ComfyUI 文件保留仓库子目录路径。公开文件下载不需要 HF Token。
 
 ### ANIMA / KREA
-- ANIMA：CivitAI / HF `circlestone-labs`
-- KREA 2：HF 搜 `krea2_turbo_fp8`；编码器 `qwen3vl_4b_fp8_scaled`
+- ANIMA：ModelScope `circlestone-labs/Anima`；文件在 `split_files/diffusion_models/`、`split_files/text_encoders/`、`split_files/vae/` 子目录。
+- KREA 2：ModelScope `Comfy-Org/Krea-2`；`qwen3vl_4b_fp8_scaled.safetensors` 从 `Comfy-Org/Qwen3-VL` 获取。
 
 ### CivitAI（需 token）
 - 角色/风格 LoRA：civitai.com 搜索。当前 Civitai API Key 保存于 `/home/sean/.config/civitai/api-key`（权限 `600`），下载时从文件读取；密钥值不进入命令行参数、日志或 Git。作者限制登录下载的文件需认证，公开模型元数据可访问不代表文件可匿名下载。
@@ -127,11 +148,7 @@ H3 LoRA（models/loras/）：
 
 ### 3. 下载命令（带续传）
 ```bash
-TOKEN="<HF_TOKEN>"
-wget -c --timeout=120 --tries=0 \
-  --header="Authorization: Bearer $TOKEN" \
-  -O models/diffusion_models/<文件名> \
-  "https://hf-mirror.com/<repo>/resolve/main/<路径>/<文件名>"
+./download_models.sh <ModelScope仓库ID> ./models <仓库内文件路径> [其他文件路径...]
 ```
 
 ## 显存参考（RTX 4090 24GB）

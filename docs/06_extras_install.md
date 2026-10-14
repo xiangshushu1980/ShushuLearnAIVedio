@@ -5,13 +5,13 @@
 ## 一、RMBG 抠图（✅ 可用）
 
 - **节点**：`ComfyUI-RMBG`（仓库 `github.com/1038lab/ComfyUI-RMBG`——kijai 的仓库不存在）
-- **模型**：`models/RMBG/BiRefNet/BiRefNet_toonout.safetensors`（884MB，hf-mirror）
+- **模型**：`models/RMBG/BiRefNet/BiRefNet_toonout.safetensors`（884MB，ModelScope `1038lab/BiRefNet`）。ModelScope API 的 SHA256 与原 HF 权重一致；已验证文件端点可返回数据。
 - **依赖**：venv 需装 `onnxruntime-gpu` / `opencv-python-headless` / `timm`（缺 timm 报 `No module named 'timm'`）
 - **使用**：MCP `remove_background` 工具（先 upload/stage 图片），或 `wan-transparent` pack 的 BiRefNetRMBG 节点
 
 ## 二、ClearReality 超分（✅ 可用）
 
-- **模型**：`models/upscale_models/4x-ClearRealityV1.pth`（9MB，源 `hf-mirror.com/Aitrepreneur/FLX`）
+- **模型**：`models/upscale_models/4x-ClearRealityV1.pth`（9MB，ModelScope `Aitrepreneur/FLX`）。已完成全量下载和 SHA256 校验。
 - **使用**：MCP `upscale_image`（scale 2/4）；推荐"低清生成 → 补帧(RIFE) → 超分 → 1080p"流程
 
 ## 三、Bernini-R（编辑手册）
@@ -98,7 +98,7 @@ v2v 时：LoadVideo(input/路径) → GetVideoComponents 拆帧 → 注入 sourc
 - **Clash Rule 模式 + TUN 接管**（无 system proxy）：GitHub 走代理节点、国内直连；默认直连即可，`-x http://127.0.0.1:7890` 仅作失败兜底
 - git 报 "could not read Username" = 认证问题，不是网络被墙
 - **遇到网络异常，第一时间与用户确认和测试，不擅自改配置**
-- HF 下载用 hf-mirror.com；pip 用清华源
+- 模型下载默认优先使用 ModelScope；仅在没有同一权重版本时回退原始来源（HF-Mirror/CivitAI）。pip 使用清华源。
 
 ### 遗留：FLClash TUN 全劫持脚本（重装参考，勿用于新配置；自原 02 移入）
 
