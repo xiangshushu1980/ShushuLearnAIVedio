@@ -10,7 +10,7 @@
 - Base sampling: BF16 diffusion weights, BF16 Qwen3-VL 8B encoder, BF16 VAE, 40 steps, CFG 1, Euler/simple.
 - Turbo sampling: INT8 ConvRot Turbo diffusion weights, same BF16 encoder and VAE, CFG 1, Euler, official fixed 8-step sigma schedule recorded in each workflow.
 
-This comparison measures the practical base-versus-Turbo experience. The result combines Turbo distillation, its eight-step schedule, and INT8 ConvRot weights; it does not isolate weight precision as a single variable. The casebook contains controlled values, with the source and synthetic-data status recorded per case in `source_casebook.json` and `runs/manifest.json`.
+This comparison measures the practical base-versus-Turbo experience. The result combines Turbo distillation, its eight-step schedule, and INT8 ConvRot weights; it does not isolate weight precision as a single variable. The casebook contains fixed, prewritten values, with the source and synthetic-data status recorded per case in `source_casebook.json` and `runs/manifest.json`. Synthetic cases use deliberately constructed test values; they are not randomly generated during image creation.
 
 ## Files
 
@@ -25,4 +25,4 @@ This comparison measures the practical base-versus-Turbo experience. The result 
 
 Sampling reference: [official Qwen Image 2.1 repository](https://github.com/QwenLM/Qwen-Image-2.1). Prompts follow its observer-style guidance and the casebook's infographic skill structure; the PE node is absent from all saved workflows.
 
-Evaluation is pending generation. It will review exact text strings, data-to-mark mapping, infographic/illustration coordination, layout, visual finish, and elapsed generation time. All visual scores will be identified as non-blind human review unless an independent reviewer is added.
+Evaluation reviews exact text strings, data-to-mark mapping, infographic/illustration coordination, layout, visual finish, and elapsed generation time. Scores are non-blind human review; no independent reviewer or OCR was used.
