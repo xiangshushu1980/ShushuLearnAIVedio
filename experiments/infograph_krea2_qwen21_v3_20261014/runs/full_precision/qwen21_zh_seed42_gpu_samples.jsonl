@@ -1,0 +1,12 @@
+{"time": "2026-10-14T09:08:36.809161+00:00", "vram_used_mb": 524, "gpu_util_pct": 0, "temperature_c": 36, "comfy_rss_mb": 2910, "memtotal_mb": 61276, "memavailable_mb": 56850}
+{"time": "2026-10-14T09:08:40.896817+00:00", "vram_used_mb": 4556, "gpu_util_pct": 16, "temperature_c": 38, "comfy_rss_mb": 6698, "memtotal_mb": 61276, "memavailable_mb": 52972}
+{"time": "2026-10-14T09:08:45.678256+00:00", "vram_used_mb": 11084, "gpu_util_pct": 0, "temperature_c": 39, "comfy_rss_mb": 13226, "memtotal_mb": 61276, "memavailable_mb": 46297}
+{"time": "2026-10-14T09:08:49.758448+00:00", "vram_used_mb": 14468, "gpu_util_pct": 23, "temperature_c": 43, "comfy_rss_mb": 20159, "memtotal_mb": 61276, "memavailable_mb": 39406}
+{"time": "2026-10-14T09:08:53.835720+00:00", "vram_used_mb": 19908, "gpu_util_pct": 39, "temperature_c": 40, "comfy_rss_mb": 25471, "memtotal_mb": 61276, "memavailable_mb": 34117}
+{"time": "2026-10-14T09:08:57.903129+00:00", "vram_used_mb": 22980, "gpu_util_pct": 100, "temperature_c": 65, "comfy_rss_mb": 31007, "memtotal_mb": 61276, "memavailable_mb": 28497}
+{"time": "2026-10-14T09:09:01.970535+00:00", "vram_used_mb": 22980, "gpu_util_pct": 97, "temperature_c": 68, "comfy_rss_mb": 31007, "memtotal_mb": 61276, "memavailable_mb": 28514}
+{"time": "2026-10-14T09:09:06.031711+00:00", "vram_used_mb": 23012, "gpu_util_pct": 97, "temperature_c": 71, "comfy_rss_mb": 31007, "memtotal_mb": 61276, "memavailable_mb": 28513}
+{"time": "2026-10-14T09:09:10.095172+00:00", "vram_used_mb": 22980, "gpu_util_pct": 100, "temperature_c": 72, "comfy_rss_mb": 31007, "memtotal_mb": 61276, "memavailable_mb": 28520}
+{"time": "2026-10-14T09:09:14.164016+00:00", "vram_used_mb": 22980, "gpu_util_pct": 98, "temperature_c": 73, "comfy_rss_mb": 31007, "memtotal_mb": 61276, "memavailable_mb": 28501}
+{"time": "2026-10-14T09:09:18.223365+00:00", "vram_used_mb": 22980, "gpu_util_pct": 95, "temperature_c": 75, "comfy_rss_mb": 31007, "memtotal_mb": 61276, "memavailable_mb": 28530}
+{"time": "2026-10-14T09:09:22.289479+00:00", "vram_used_mb": 22980, "gpu_util_pct": 100, "temperature_c": 73, "comfy_rss_mb": 31007, "memtotal_mb": 61276, "memavailable_mb": 28527}

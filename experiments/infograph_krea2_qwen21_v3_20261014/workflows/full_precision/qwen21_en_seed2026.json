@@ -1,0 +1,102 @@
+{
+  "prompt": {
+    "1": {
+      "class_type": "UNETLoader",
+      "inputs": {
+        "unet_name": "qwen_image_2.1_bf16.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    "2": {
+      "class_type": "CLIPLoader",
+      "inputs": {
+        "clip_name": "qwen3vl_8b_bf16.safetensors",
+        "type": "qwen_image"
+      }
+    },
+    "3": {
+      "class_type": "VAELoader",
+      "inputs": {
+        "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+      }
+    },
+    "4": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": "The image is a landscape 3:2 flat vector infographic poster of caffeine and sleep, set against a pure white background with a blue and orange palette. Across the top, a bold black headline reads \"Caffeine and Sleep\", followed by a smaller subtitle in a lighter weight font that says \"Three numbers behind that afternoon coffee\". Below, three white rounded rectangular cards are arranged side by side across the center of the frame. The left card, labeled \"MECHANISM\" in uppercase blue sans-serif text, displays large orange text reading \"Blocks\", with smaller black body copy below stating \"Caffeine mimics adenosine and occupies its receptors, masking the sleep signal\". The middle card, labeled \"METABOLISM\" in the same style, features large orange text \"5-6 hours\", with body text explaining \"A 15:00 cup is still half active at 21:00\". The right card, labeled \"IMPACT\", contains large orange text \"-20%\", with body text reading \"Afternoon caffeine cuts night deep sleep by about a fifth\". All cards have subtle inner shadows and soft rounded corners. The overall composition uses clean negative space, a minimalist layout, and a consistent flat vector aesthetic with soft color blocking to emphasize readability and visual clarity."
+      }
+    },
+    "5": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": ""
+      }
+    },
+    "6": {
+      "class_type": "EmptyLatentImage",
+      "inputs": {
+        "width": 1536,
+        "height": 1024,
+        "batch_size": 1
+      }
+    },
+    "7": {
+      "class_type": "KSampler",
+      "inputs": {
+        "model": [
+          "1",
+          0
+        ],
+        "positive": [
+          "4",
+          0
+        ],
+        "negative": [
+          "5",
+          0
+        ],
+        "latent_image": [
+          "6",
+          0
+        ],
+        "seed": 2026,
+        "steps": 40,
+        "cfg": 1.0,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "denoise": 1.0
+      }
+    },
+    "8": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "7",
+          0
+        ],
+        "vae": [
+          "3",
+          0
+        ]
+      }
+    },
+    "9": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "8",
+          0
+        ],
+        "filename_prefix": "infograph-bench-v3-full/qwen21_en_seed2026"
+      }
+    }
+  }
+}

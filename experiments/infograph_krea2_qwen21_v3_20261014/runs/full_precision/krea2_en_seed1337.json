@@ -1,0 +1,78 @@
+{
+  "job": "krea2_en_seed1337",
+  "owner": "Sean",
+  "model": "krea2",
+  "precision": "BF16 diffusion weights; BF16 text encoder except Qwen PE int8_convrot",
+  "language": "en",
+  "seed": 1337,
+  "parameters": {
+    "resolution": "1536x1024",
+    "sampler": "euler",
+    "scheduler": "simple",
+    "steps": 52,
+    "cfg": 3.5,
+    "diffusion_model": "krea2_raw_bf16.safetensors",
+    "text_encoder": "qwen3vl_4b_bf16.safetensors",
+    "vae": "qwen_image_vae.safetensors"
+  },
+  "resolution": "1536x1024",
+  "input_prompt": "Create a landscape 3:2 infographic poster on a pure white background, using a clean flat vector design and a restrained blue and orange palette. At the top, set the exact title \"Caffeine and Sleep\" and subtitle \"Three numbers behind that afternoon coffee\". Below, arrange three evenly spaced white rounded cards side by side with a clear hierarchy and balanced composition. Pair each card's text with a small flat vector diagram that directly explains it: the first shows caffeine occupying adenosine receptors and includes the exact label \"MECHANISM\", large text \"Blocks\", and body text \"Caffeine mimics adenosine and occupies its receptors, masking the sleep signal\"; the second uses a half-life timeline from 15:00 to 21:00 and includes the exact label \"METABOLISM\", large text \"5-6 hours\", and body text \"A 15:00 cup is still half active at 21:00\"; the third clearly visualizes reduced deep sleep and includes the exact label \"IMPACT\", large text \"-20%\", and body text \"Afternoon caffeine cuts night deep sleep by about a fifth\". Render every quoted string verbatim and integrate it into the layout. Use graphics only to explain the corresponding text, without adding new facts. No text beyond the exact strings listed here; no logo and no watermark.",
+  "workflow": "workflows/full_precision/krea2_en_seed1337.json",
+  "submitted_at": "2026-10-14T09:25:21.910249+00:00",
+  "resource_lease_id": "148f219b-7884-4370-8017-b75023909ed7",
+  "prompt_id": "1a942305-0f72-4609-b73b-fa86efd2f2f6",
+  "image_dimensions": [
+    1536,
+    1024
+  ],
+  "status": "success",
+  "completed_at": "2026-10-14T09:27:09.748102+00:00",
+  "elapsed_seconds": 107.82,
+  "image": "images/full_precision/krea2_en_seed1337.png",
+  "image_file": {
+    "filename": "krea2_en_seed1337_00001_.png",
+    "subfolder": "infograph-bench-v3-full",
+    "type": "output",
+    "id": "65b4366c-9845-4d5d-b8b0-8603f4e3a4a9"
+  },
+  "peak_vram_mb_observed": 22406,
+  "peak_comfy_rss_mb_observed": 36133,
+  "peak_temperature_c_observed": 80,
+  "peak_gpu_utilization_pct_observed": 100,
+  "gpu_samples": "runs/full_precision/krea2_en_seed1337_gpu_samples.jsonl",
+  "comfy_history_status": {
+    "status_str": "success",
+    "completed": true,
+    "messages": [
+      [
+        "execution_start",
+        {
+          "prompt_id": "1a942305-0f72-4609-b73b-fa86efd2f2f6",
+          "timestamp": 1791969921912
+        }
+      ],
+      [
+        "execution_cached",
+        {
+          "nodes": [
+            "1",
+            "2",
+            "3",
+            "5",
+            "6"
+          ],
+          "prompt_id": "1a942305-0f72-4609-b73b-fa86efd2f2f6",
+          "timestamp": 1791969921913
+        }
+      ],
+      [
+        "execution_success",
+        {
+          "prompt_id": "1a942305-0f72-4609-b73b-fa86efd2f2f6",
+          "timestamp": 1791970029322
+        }
+      ]
+    ]
+  },
+  "image_sha256": "91e17d9affea3fab5c337551d57740c70f2ffef4fe940f4c5b20f18da9f912ce"
+}

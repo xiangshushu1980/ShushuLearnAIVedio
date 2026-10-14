@@ -1,0 +1,78 @@
+{
+  "job": "qwen21_en_seed1337",
+  "owner": "Sean",
+  "model": "qwen21",
+  "precision": "BF16 diffusion weights; BF16 text encoder except Qwen PE int8_convrot",
+  "language": "en",
+  "seed": 1337,
+  "parameters": {
+    "resolution": "1536x1024",
+    "sampler": "euler",
+    "scheduler": "simple",
+    "steps": 40,
+    "cfg": 1.0,
+    "diffusion_model": "qwen_image_2.1_bf16.safetensors",
+    "text_encoder": "qwen3vl_8b_bf16.safetensors + Qwen Image 2.1 PE t2i int8_convrot",
+    "vae": "qwen_image_2.1_vae_bf16.safetensors"
+  },
+  "resolution": "1536x1024",
+  "input_prompt": "The image is a landscape 3:2 flat vector infographic poster of caffeine and sleep, set against a pure white background with a blue and orange palette. Across the top, a bold black headline reads \"Caffeine and Sleep\", followed by a smaller subtitle in a lighter weight font that says \"Three numbers behind that afternoon coffee\". Below, three white rounded rectangular cards are arranged side by side across the center of the frame. The left card, labeled \"MECHANISM\" in uppercase blue sans-serif text, displays large orange text reading \"Blocks\", with smaller black body copy below stating \"Caffeine mimics adenosine and occupies its receptors, masking the sleep signal\". The middle card, labeled \"METABOLISM\" in the same style, features large orange text \"5-6 hours\", with body text explaining \"A 15:00 cup is still half active at 21:00\". The right card, labeled \"IMPACT\", contains large orange text \"-20%\", with body text reading \"Afternoon caffeine cuts night deep sleep by about a fifth\". All cards have subtle inner shadows and soft rounded corners. The overall composition uses clean negative space, a minimalist layout, and a consistent flat vector aesthetic with soft color blocking to emphasize readability and visual clarity.",
+  "workflow": "workflows/full_precision/qwen21_en_seed1337.json",
+  "submitted_at": "2026-10-14T09:20:29.899167+00:00",
+  "resource_lease_id": "148f219b-7884-4370-8017-b75023909ed7",
+  "prompt_id": "6a3cdde7-e692-4947-b3d8-482fc915d8c3",
+  "image_dimensions": [
+    1536,
+    1024
+  ],
+  "status": "success",
+  "completed_at": "2026-10-14T09:21:00.416008+00:00",
+  "elapsed_seconds": 30.49,
+  "image": "images/full_precision/qwen21_en_seed1337.png",
+  "image_file": {
+    "filename": "qwen21_en_seed1337_00001_.png",
+    "subfolder": "infograph-bench-v3-full",
+    "type": "output",
+    "id": "e570dc31-bbf8-42b0-ae57-22b6ddfb8fd9"
+  },
+  "peak_vram_mb_observed": 23038,
+  "peak_comfy_rss_mb_observed": 31679,
+  "peak_temperature_c_observed": 81,
+  "peak_gpu_utilization_pct_observed": 100,
+  "gpu_samples": "runs/full_precision/qwen21_en_seed1337_gpu_samples.jsonl",
+  "comfy_history_status": {
+    "status_str": "success",
+    "completed": true,
+    "messages": [
+      [
+        "execution_start",
+        {
+          "prompt_id": "6a3cdde7-e692-4947-b3d8-482fc915d8c3",
+          "timestamp": 1791969629901
+        }
+      ],
+      [
+        "execution_cached",
+        {
+          "nodes": [
+            "1",
+            "2",
+            "3",
+            "5",
+            "6"
+          ],
+          "prompt_id": "6a3cdde7-e692-4947-b3d8-482fc915d8c3",
+          "timestamp": 1791969629901
+        }
+      ],
+      [
+        "execution_success",
+        {
+          "prompt_id": "6a3cdde7-e692-4947-b3d8-482fc915d8c3",
+          "timestamp": 1791969659077
+        }
+      ]
+    ]
+  },
+  "image_sha256": "772dfafe5cb9c008ec9aecdc2b6707d81ad83f334d4001f816b67d248c943e62"
+}

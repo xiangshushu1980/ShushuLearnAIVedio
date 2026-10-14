@@ -173,5 +173,22 @@
       "input_prompt_file": "prompts/qwen21_zh_brief.txt"
     }
   ],
-  "assessment_note": "/home/sean/projects/infograph-research/hands-on/krea2-vs-qwen21-plan/notes.md"
+  "assessment_note": "/home/sean/projects/infograph-research/hands-on/krea2-vs-qwen21-plan/notes.md",
+  "supplemental_full_precision": {
+    "manifest": "full_precision_manifest.json",
+    "status": "completed",
+    "models": [
+      "Qwen-Image-2.1 BF16 + PE",
+      "Krea 2 RAW BF16",
+      "FLUX.2-klein 9B BF16"
+    ],
+    "seed_matrix": [
+      42,
+      1337,
+      2026
+    ],
+    "completed": 18,
+    "failed": 0,
+    "note": "This follow-up expands the earlier five-image run; the earlier records remain unchanged as the plan-v3 baseline. Krea BF16 and FLUX Klein 9B were absent from the original baseline. Qwen seed 42 is a repeat/control case."
+  }
 }

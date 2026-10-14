@@ -1,0 +1,79 @@
+{
+  "job": "krea2_zh_seed2026",
+  "owner": "Sean",
+  "model": "krea2",
+  "precision": "BF16 diffusion weights; BF16 text encoder except Qwen PE int8_convrot",
+  "language": "zh",
+  "seed": 2026,
+  "parameters": {
+    "resolution": "1536x1024",
+    "sampler": "euler",
+    "scheduler": "simple",
+    "steps": 52,
+    "cfg": 3.5,
+    "diffusion_model": "krea2_raw_bf16.safetensors",
+    "text_encoder": "qwen3vl_4b_bf16.safetensors",
+    "vae": "qwen_image_vae.safetensors"
+  },
+  "resolution": "1536x1024",
+  "input_prompt": "请制作一张横向 3:2 信息图海报，纯白背景，采用简洁的扁平矢量设计和克制的蓝橙配色。顶部放置准确文字标题「咖啡因与睡眠」及副标题「三个数字，看懂下午那杯咖啡」。下方并排放置三张等宽的白色圆角卡片，保持卡片间距整齐、层级清楚、画面平衡。每张卡片把文字与直接解释其含义的小型扁平矢量示意图结合：第一张表现咖啡因占据腺苷受体，准确呈现标签「机制」、大字「阻断」和说明「咖啡因结构与腺苷相似，抢占受体，屏蔽困意信号」；第二张以从 15:00 到 21:00 的半衰期时间线说明代谢过程，准确呈现标签「代谢」、大字「5-6 小时」和说明「午后 15:00 的一杯，到 21:00 仍有一半在体内」；第三张用清楚的图形表达深睡眠减少，准确呈现标签「后果」、大字「−20%」和说明「午后咖啡使夜间深睡眠减少约两成」。所有引号内文字必须逐字准确并清楚地融入排版；图形只用于解释对应文字，不添加新事实。除以上明确列出的文字外不要出现任何文字；不要 logo，不要水印。",
+  "workflow": "workflows/full_precision/krea2_zh_seed2026.json",
+  "submitted_at": "2026-10-14T09:23:34.037574+00:00",
+  "resource_lease_id": "148f219b-7884-4370-8017-b75023909ed7",
+  "prompt_id": "51ac86c7-e108-4888-a8a1-8ab75f4c63d8",
+  "image_dimensions": [
+    1536,
+    1024
+  ],
+  "status": "success",
+  "completed_at": "2026-10-14T09:25:21.846800+00:00",
+  "elapsed_seconds": 107.8,
+  "image": "images/full_precision/krea2_zh_seed2026.png",
+  "image_file": {
+    "filename": "krea2_zh_seed2026_00001_.png",
+    "subfolder": "infograph-bench-v3-full",
+    "type": "output",
+    "id": "341f82bf-757a-425a-9b58-a1fe96919fbe"
+  },
+  "peak_vram_mb_observed": 22374,
+  "peak_comfy_rss_mb_observed": 36170,
+  "peak_temperature_c_observed": 81,
+  "peak_gpu_utilization_pct_observed": 100,
+  "gpu_samples": "runs/full_precision/krea2_zh_seed2026_gpu_samples.jsonl",
+  "comfy_history_status": {
+    "status_str": "success",
+    "completed": true,
+    "messages": [
+      [
+        "execution_start",
+        {
+          "prompt_id": "51ac86c7-e108-4888-a8a1-8ab75f4c63d8",
+          "timestamp": 1791969814039
+        }
+      ],
+      [
+        "execution_cached",
+        {
+          "nodes": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"
+          ],
+          "prompt_id": "51ac86c7-e108-4888-a8a1-8ab75f4c63d8",
+          "timestamp": 1791969814040
+        }
+      ],
+      [
+        "execution_success",
+        {
+          "prompt_id": "51ac86c7-e108-4888-a8a1-8ab75f4c63d8",
+          "timestamp": 1791969920353
+        }
+      ]
+    ]
+  },
+  "image_sha256": "be5cb9b2c9e8b4e85967cd4c29cb7612791a9da8cd1403d2e187e9825ebfe839"
+}

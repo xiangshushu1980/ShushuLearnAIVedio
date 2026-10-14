@@ -1,0 +1,8 @@
+{"time": "2026-10-14T09:09:24.575418+00:00", "vram_used_mb": 21004, "gpu_util_pct": 0, "temperature_c": 53, "comfy_rss_mb": 31613, "memtotal_mb": 61276, "memavailable_mb": 27955}
+{"time": "2026-10-14T09:09:28.641824+00:00", "vram_used_mb": 23012, "gpu_util_pct": 100, "temperature_c": 74, "comfy_rss_mb": 31541, "memtotal_mb": 61276, "memavailable_mb": 27964}
+{"time": "2026-10-14T09:09:32.706100+00:00", "vram_used_mb": 22980, "gpu_util_pct": 97, "temperature_c": 76, "comfy_rss_mb": 31541, "memtotal_mb": 61276, "memavailable_mb": 27978}
+{"time": "2026-10-14T09:09:36.766788+00:00", "vram_used_mb": 22980, "gpu_util_pct": 100, "temperature_c": 77, "comfy_rss_mb": 31541, "memtotal_mb": 61276, "memavailable_mb": 28005}
+{"time": "2026-10-14T09:09:40.827962+00:00", "vram_used_mb": 22980, "gpu_util_pct": 98, "temperature_c": 78, "comfy_rss_mb": 31541, "memtotal_mb": 61276, "memavailable_mb": 28028}
+{"time": "2026-10-14T09:09:44.887483+00:00", "vram_used_mb": 22980, "gpu_util_pct": 97, "temperature_c": 78, "comfy_rss_mb": 31541, "memtotal_mb": 61276, "memavailable_mb": 28031}
+{"time": "2026-10-14T09:09:48.948111+00:00", "vram_used_mb": 22980, "gpu_util_pct": 98, "temperature_c": 78, "comfy_rss_mb": 31541, "memtotal_mb": 61276, "memavailable_mb": 28060}
+{"time": "2026-10-14T09:09:53.007078+00:00", "vram_used_mb": 23084, "gpu_util_pct": 68, "temperature_c": 79, "comfy_rss_mb": 31541, "memtotal_mb": 61276, "memavailable_mb": 28085}

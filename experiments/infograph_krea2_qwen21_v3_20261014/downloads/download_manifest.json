@@ -1,0 +1,59 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "download_source": "ModelScope",
+  "started_at": "2026-10-14T08:36:00Z",
+  "status": "completed",
+  "model_files": [
+    {
+      "repo": "Comfy-Org/Krea-2",
+      "repo_path": "diffusion_models/krea2_raw_bf16.safetensors",
+      "local_path": "/home/sean/models/comfy/diffusion_models/krea2_raw_bf16.safetensors",
+      "expected_bytes": 26283332608,
+      "precision": "BF16",
+      "license": "krea-2-community-license",
+      "log": "krea2_raw_bf16.log",
+      "status": "completed",
+      "sha256": "f99bb0ff8e362b77342bc4994e0c50906fe7ef7074864b181b7d48d2fa6d03d7",
+      "completed_at": "2026-10-14T09:04:00Z"
+    },
+    {
+      "repo": "black-forest-labs/FLUX.2-klein-9B",
+      "repo_path": "flux-2-klein-9b.safetensors",
+      "local_path": "/home/sean/models/comfy/diffusion_models/flux-2-klein-9b.safetensors",
+      "expected_bytes": 18157185168,
+      "precision": "BF16",
+      "license": "FLUX Non-Commercial License",
+      "log": "flux2_klein9b_bf16.log",
+      "status": "completed",
+      "sha256": "0975d6b77b5f510b99547d6724a208e36527df654e8f6134f59ece3f9f30da58",
+      "completed_at": "2026-10-14T09:00:00Z"
+    },
+    {
+      "repo": "Comfy-Org/vae-text-encorder-for-flux-klein-9b",
+      "repo_path": "split_files/text_encoders/qwen_3_8b.safetensors",
+      "local_path": "/home/sean/models/comfy/text_encoders/qwen_3_8b.safetensors",
+      "expected_bytes": 16381517176,
+      "precision": "BF16",
+      "license": "FLUX Non-Commercial License",
+      "log": "flux2_qwen3_8b_bf16.log",
+      "status": "completed",
+      "sha256": "f0ff9239d56269ca1d05e5f86da6a79fac111af464955681f11c7ab0ec5ef6c1",
+      "completed_at": "2026-10-14T09:00:00Z"
+    },
+    {
+      "repo": "Comfy-Org/vae-text-encorder-for-flux-klein-9b",
+      "repo_path": "split_files/vae/flux2-vae.safetensors",
+      "local_path": "/home/sean/models/comfy/vae/flux2-vae.safetensors",
+      "expected_bytes": 336211292,
+      "precision": "BF16",
+      "license": "FLUX Non-Commercial License",
+      "log": "flux2_vae.log",
+      "status": "completed",
+      "sha256": "868fe7b343cc8f3a19dbcfcafbc3d5f888802be3f89bd81b65b3621a066ce8f3",
+      "completed_at": "2026-10-14T09:00:00Z"
+    }
+  ],
+  "notes": "ComfyUI models symlink resolves to /home/sean/models/comfy. ModelScope CLI downloads preserve repository paths under the linked models root; FLUX diffusion, text encoder, and VAE will be moved into ComfyUI category directories after transfer. FLUX.2-klein diffusion, encoder, and VAE transfers completed and were moved to their ComfyUI category directories; ModelScope SHA-256 hashes recorded. Qwen encoder is qwen_3_8b (FLUX.2), distinct from the existing qwen3vl_8b_bf16 (Qwen Image). The dedicated historical Task Center task remote-dde2f863... covers only the 9.47GB Qwen Image PE t2i file, which exists at the expected size. Task Center list reports it completed while info returns HTTP 404. Krea 2 RAW BF16 download completed successfully (ModelScope exit 0), exact byte length and SHA-256 recorded. All four downloads are complete; disk had approximately 47 GiB free after transfer.",
+  "completed_at": "2026-10-14T09:04:00Z"
+}

@@ -1,0 +1,72 @@
+{
+  "job": "qwen21_zh_seed1337",
+  "owner": "Sean",
+  "model": "qwen21",
+  "precision": "BF16 diffusion weights; BF16 text encoder except Qwen PE int8_convrot",
+  "language": "zh",
+  "seed": 1337,
+  "parameters": {
+    "resolution": "1536x1024",
+    "sampler": "euler",
+    "scheduler": "simple",
+    "steps": 40,
+    "cfg": 1.0,
+    "diffusion_model": "qwen_image_2.1_bf16.safetensors",
+    "text_encoder": "qwen3vl_8b_bf16.safetensors + Qwen Image 2.1 PE t2i int8_convrot",
+    "vae": "qwen_image_2.1_vae_bf16.safetensors"
+  },
+  "resolution": "1536x1024",
+  "input_prompt": "The image is a wide flat-vector infographic poster of coffee’s impact on sleep, set against a pure white background with a blue and orange color palette. Across the top, a bold black headline reads \"咖啡因与睡眠\", followed by a smaller subtitle in black text: \"三个数字，看懂下午那杯咖啡\". Below, three white rounded-corner cards are arranged side-by-side across the center. The left card features a small uppercase label \"机制\" at its top, followed by large bold black text \"阻断\", with smaller grey explanatory text below: \"咖啡因结构与腺苷相似，抢占受体，屏蔽困意信号\". The middle card has a label \"代谢\" at its top, followed by large bold black text \"5-6 小时\", with smaller grey text beneath: \"午后 15:00 的一杯，到 21:00 仍有一半在体内\". The right card bears the label \"后果\" at its top, followed by large bold black text \"−20%\", with smaller grey text underneath: \"午后咖啡使夜间深睡眠减少约两成\". The overall composition uses clean spacing, consistent typography, and high contrast between text and background to ensure readability while maintaining visual balance and minimalism.",
+  "workflow": "workflows/full_precision/qwen21_zh_seed1337.json",
+  "submitted_at": "2026-10-14T09:19:14.297300+00:00",
+  "resource_lease_id": "148f219b-7884-4370-8017-b75023909ed7",
+  "prompt_id": "781ff825-b632-4a9d-b61c-0282affcbe9f",
+  "image_dimensions": [
+    1536,
+    1024
+  ],
+  "status": "success",
+  "completed_at": "2026-10-14T09:19:59.132814+00:00",
+  "elapsed_seconds": 44.79,
+  "image": "images/full_precision/qwen21_zh_seed1337.png",
+  "image_file": {
+    "filename": "qwen21_zh_seed1337_00001_.png",
+    "subfolder": "infograph-bench-v3-full",
+    "type": "output",
+    "id": "8d6b4d16-cff4-43c3-99a2-972f5d2a434f"
+  },
+  "peak_vram_mb_observed": 23102,
+  "peak_comfy_rss_mb_observed": 35467,
+  "peak_temperature_c_observed": 75,
+  "peak_gpu_utilization_pct_observed": 98,
+  "gpu_samples": "runs/full_precision/qwen21_zh_seed1337_gpu_samples.jsonl",
+  "comfy_history_status": {
+    "status_str": "success",
+    "completed": true,
+    "messages": [
+      [
+        "execution_start",
+        {
+          "prompt_id": "781ff825-b632-4a9d-b61c-0282affcbe9f",
+          "timestamp": 1791969554299
+        }
+      ],
+      [
+        "execution_cached",
+        {
+          "nodes": [],
+          "prompt_id": "781ff825-b632-4a9d-b61c-0282affcbe9f",
+          "timestamp": 1791969554300
+        }
+      ],
+      [
+        "execution_success",
+        {
+          "prompt_id": "781ff825-b632-4a9d-b61c-0282affcbe9f",
+          "timestamp": 1791969597066
+        }
+      ]
+    ]
+  },
+  "image_sha256": "a04e73490d75d3820f5bedf0fd9541d6991088cb72f0e959e4f291e68ab2051f"
+}

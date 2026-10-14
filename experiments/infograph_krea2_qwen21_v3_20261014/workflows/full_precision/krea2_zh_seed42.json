@@ -1,0 +1,102 @@
+{
+  "prompt": {
+    "1": {
+      "class_type": "UNETLoader",
+      "inputs": {
+        "unet_name": "krea2_raw_bf16.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    "2": {
+      "class_type": "CLIPLoader",
+      "inputs": {
+        "clip_name": "qwen3vl_4b_bf16.safetensors",
+        "type": "krea2"
+      }
+    },
+    "3": {
+      "class_type": "VAELoader",
+      "inputs": {
+        "vae_name": "qwen_image_vae.safetensors"
+      }
+    },
+    "4": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": "请制作一张横向 3:2 信息图海报，纯白背景，采用简洁的扁平矢量设计和克制的蓝橙配色。顶部放置准确文字标题「咖啡因与睡眠」及副标题「三个数字，看懂下午那杯咖啡」。下方并排放置三张等宽的白色圆角卡片，保持卡片间距整齐、层级清楚、画面平衡。每张卡片把文字与直接解释其含义的小型扁平矢量示意图结合：第一张表现咖啡因占据腺苷受体，准确呈现标签「机制」、大字「阻断」和说明「咖啡因结构与腺苷相似，抢占受体，屏蔽困意信号」；第二张以从 15:00 到 21:00 的半衰期时间线说明代谢过程，准确呈现标签「代谢」、大字「5-6 小时」和说明「午后 15:00 的一杯，到 21:00 仍有一半在体内」；第三张用清楚的图形表达深睡眠减少，准确呈现标签「后果」、大字「−20%」和说明「午后咖啡使夜间深睡眠减少约两成」。所有引号内文字必须逐字准确并清楚地融入排版；图形只用于解释对应文字，不添加新事实。除以上明确列出的文字外不要出现任何文字；不要 logo，不要水印。"
+      }
+    },
+    "5": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": "text, watermark, logo, collage, blurry, low detail"
+      }
+    },
+    "6": {
+      "class_type": "EmptySD3LatentImage",
+      "inputs": {
+        "width": 1536,
+        "height": 1024,
+        "batch_size": 1
+      }
+    },
+    "7": {
+      "class_type": "KSampler",
+      "inputs": {
+        "model": [
+          "1",
+          0
+        ],
+        "positive": [
+          "4",
+          0
+        ],
+        "negative": [
+          "5",
+          0
+        ],
+        "latent_image": [
+          "6",
+          0
+        ],
+        "seed": 42,
+        "steps": 52,
+        "cfg": 3.5,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "denoise": 1.0
+      }
+    },
+    "8": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "7",
+          0
+        ],
+        "vae": [
+          "3",
+          0
+        ]
+      }
+    },
+    "9": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "8",
+          0
+        ],
+        "filename_prefix": "infograph-bench-v3-full/krea2_zh_seed42"
+      }
+    }
+  }
+}

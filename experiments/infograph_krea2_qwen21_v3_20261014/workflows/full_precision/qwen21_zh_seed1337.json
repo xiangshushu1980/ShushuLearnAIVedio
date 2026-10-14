@@ -1,0 +1,102 @@
+{
+  "prompt": {
+    "1": {
+      "class_type": "UNETLoader",
+      "inputs": {
+        "unet_name": "qwen_image_2.1_bf16.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    "2": {
+      "class_type": "CLIPLoader",
+      "inputs": {
+        "clip_name": "qwen3vl_8b_bf16.safetensors",
+        "type": "qwen_image"
+      }
+    },
+    "3": {
+      "class_type": "VAELoader",
+      "inputs": {
+        "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+      }
+    },
+    "4": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": "The image is a wide flat-vector infographic poster of coffee’s impact on sleep, set against a pure white background with a blue and orange color palette. Across the top, a bold black headline reads \"咖啡因与睡眠\", followed by a smaller subtitle in black text: \"三个数字，看懂下午那杯咖啡\". Below, three white rounded-corner cards are arranged side-by-side across the center. The left card features a small uppercase label \"机制\" at its top, followed by large bold black text \"阻断\", with smaller grey explanatory text below: \"咖啡因结构与腺苷相似，抢占受体，屏蔽困意信号\". The middle card has a label \"代谢\" at its top, followed by large bold black text \"5-6 小时\", with smaller grey text beneath: \"午后 15:00 的一杯，到 21:00 仍有一半在体内\". The right card bears the label \"后果\" at its top, followed by large bold black text \"−20%\", with smaller grey text underneath: \"午后咖啡使夜间深睡眠减少约两成\". The overall composition uses clean spacing, consistent typography, and high contrast between text and background to ensure readability while maintaining visual balance and minimalism."
+      }
+    },
+    "5": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": ""
+      }
+    },
+    "6": {
+      "class_type": "EmptyLatentImage",
+      "inputs": {
+        "width": 1536,
+        "height": 1024,
+        "batch_size": 1
+      }
+    },
+    "7": {
+      "class_type": "KSampler",
+      "inputs": {
+        "model": [
+          "1",
+          0
+        ],
+        "positive": [
+          "4",
+          0
+        ],
+        "negative": [
+          "5",
+          0
+        ],
+        "latent_image": [
+          "6",
+          0
+        ],
+        "seed": 1337,
+        "steps": 40,
+        "cfg": 1.0,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "denoise": 1.0
+      }
+    },
+    "8": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "7",
+          0
+        ],
+        "vae": [
+          "3",
+          0
+        ]
+      }
+    },
+    "9": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "8",
+          0
+        ],
+        "filename_prefix": "infograph-bench-v3-full/qwen21_zh_seed1337"
+      }
+    }
+  }
+}

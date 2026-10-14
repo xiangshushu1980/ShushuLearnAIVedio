@@ -1,0 +1,15 @@
+Create one landscape 3:2 Chinese infographic poster on a pure white background, using a clean flat-vector editorial style and a restrained blue-and-orange palette. Make a clear title and subtitle at the top, then three evenly spaced rounded white cards with a strong visual hierarchy. Add simple accurate diagrams that directly explain the text in each card: a receptor-blocking mechanism, a half-life timeline from 15:00 to 21:00, and a deep-sleep comparison chart. Use only the exact Chinese text quoted here, rendered legibly and without any other words, numbers, labels, logos, or watermark:
+
+Title: '咖啡因与睡眠'
+Subtitle: '三个数字，看懂下午那杯咖啡'
+Card 1 label: '机制'
+Card 1 large text: '阻断'
+Card 1 body: '咖啡因结构与腺苷相似，抢占受体，屏蔽困意信号'
+Card 2 label: '代谢'
+Card 2 large text: '5-6 小时'
+Card 2 body: '午后 15:00 的一杯，到 21:00 仍有一半在体内'
+Card 3 label: '后果'
+Card 3 large text: '−20%'
+Card 3 body: '午后咖啡使夜间深睡眠减少约两成'
+
+Keep all Chinese glyphs intact, use generous whitespace and aligned card edges, and ensure that every diagram illustrates its associated statement without inventing extra quantitative claims.

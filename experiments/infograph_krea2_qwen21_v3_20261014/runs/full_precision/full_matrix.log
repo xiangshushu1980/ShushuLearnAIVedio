@@ -1,0 +1,18 @@
+[2026-10-14T09:19:14.228315+00:00] qwen21_zh_seed42 already complete; skipping
+[2026-10-14T09:19:59.133137+00:00] qwen21_zh_seed1337 complete in 44.8s; peak VRAM=23102 MB; image=/home/sean/projects/comfy-ops/experiments/infograph_krea2_qwen21_v3_20261014/images/full_precision/qwen21_zh_seed1337.png
+[2026-10-14T09:20:29.835701+00:00] qwen21_zh_seed2026 complete in 29.6s; peak VRAM=21918 MB; image=/home/sean/projects/comfy-ops/experiments/infograph_krea2_qwen21_v3_20261014/images/full_precision/qwen21_zh_seed2026.png
+[2026-10-14T09:20:29.835875+00:00] qwen21_en_seed42 already complete; skipping
+[2026-10-14T09:21:00.416311+00:00] qwen21_en_seed1337 complete in 30.5s; peak VRAM=23038 MB; image=/home/sean/projects/comfy-ops/experiments/infograph_krea2_qwen21_v3_20261014/images/full_precision/qwen21_en_seed1337.png
+[2026-10-14T09:21:29.000151+00:00] qwen21_en_seed2026 complete in 28.5s; peak VRAM=21886 MB; image=/home/sean/projects/comfy-ops/experiments/infograph_krea2_qwen21_v3_20261014/images/full_precision/qwen21_en_seed2026.png
+[2026-10-14T09:21:29.000332+00:00] krea2_zh_seed42 already complete; skipping
+[2026-10-14T09:23:33.962816+00:00] krea2_zh_seed1337 complete in 124.9s; peak VRAM=22998 MB; image=/home/sean/projects/comfy-ops/experiments/infograph_krea2_qwen21_v3_20261014/images/full_precision/krea2_zh_seed1337.png
+[2026-10-14T09:25:21.847133+00:00] krea2_zh_seed2026 complete in 107.8s; peak VRAM=22374 MB; image=/home/sean/projects/comfy-ops/experiments/infograph_krea2_qwen21_v3_20261014/images/full_precision/krea2_zh_seed2026.png
+[2026-10-14T09:25:21.847310+00:00] krea2_en_seed42 already complete; skipping
+[2026-10-14T09:27:09.748452+00:00] krea2_en_seed1337 complete in 107.8s; peak VRAM=22406 MB; image=/home/sean/projects/comfy-ops/experiments/infograph_krea2_qwen21_v3_20261014/images/full_precision/krea2_en_seed1337.png
+[2026-10-14T09:28:57.545994+00:00] krea2_en_seed2026 complete in 107.7s; peak VRAM=22182 MB; image=/home/sean/projects/comfy-ops/experiments/infograph_krea2_qwen21_v3_20261014/images/full_precision/krea2_en_seed2026.png
+[2026-10-14T09:28:57.546204+00:00] flux2_zh_seed42 already complete; skipping
+[2026-10-14T09:30:13.574479+00:00] flux2_zh_seed1337 complete in 75.9s; peak VRAM=22566 MB; image=/home/sean/projects/comfy-ops/experiments/infograph_krea2_qwen21_v3_20261014/images/full_precision/flux2_zh_seed1337.png
+[2026-10-14T09:31:12.662690+00:00] flux2_zh_seed2026 complete in 59.0s; peak VRAM=20710 MB; image=/home/sean/projects/comfy-ops/experiments/infograph_krea2_qwen21_v3_20261014/images/full_precision/flux2_zh_seed2026.png
+[2026-10-14T09:31:12.662873+00:00] flux2_en_seed42 already complete; skipping
+[2026-10-14T09:32:13.740904+00:00] flux2_en_seed1337 complete in 61.0s; peak VRAM=22662 MB; image=/home/sean/projects/comfy-ops/experiments/infograph_krea2_qwen21_v3_20261014/images/full_precision/flux2_en_seed1337.png
+[2026-10-14T09:33:12.945247+00:00] flux2_en_seed2026 complete in 59.1s; peak VRAM=20710 MB; image=/home/sean/projects/comfy-ops/experiments/infograph_krea2_qwen21_v3_20261014/images/full_precision/flux2_en_seed2026.png

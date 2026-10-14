@@ -1,0 +1,138 @@
+{
+  "prompt": {
+    "1": {
+      "class_type": "UNETLoader",
+      "inputs": {
+        "unet_name": "flux-2-klein-9b.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    "2": {
+      "class_type": "CLIPLoader",
+      "inputs": {
+        "clip_name": "qwen_3_8b.safetensors",
+        "type": "flux2"
+      }
+    },
+    "3": {
+      "class_type": "VAELoader",
+      "inputs": {
+        "vae_name": "flux2-vae.safetensors"
+      }
+    },
+    "4": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": "Create one landscape 3:2 English infographic poster on a pure white background, using a clean flat-vector editorial style and a restrained blue-and-orange palette. Put a clear title and subtitle at the top, followed by three evenly spaced rounded white cards with a strong visual hierarchy. Add simple accurate diagrams that directly explain the text in each card: a receptor-blocking mechanism, a half-life timeline from 15:00 to 21:00, and a deep-sleep comparison chart. Use only the exact English text quoted here, rendered legibly and without any other words, numbers, labels, logos, or watermark:\n\nTitle: 'Caffeine and Sleep'\nSubtitle: 'Three numbers behind that afternoon coffee'\nCard 1 label: 'MECHANISM'\nCard 1 large text: 'Blocks'\nCard 1 body: 'Caffeine mimics adenosine and occupies its receptors, masking the sleep signal'\nCard 2 label: 'METABOLISM'\nCard 2 large text: '5-6 hours'\nCard 2 body: 'A 15:00 cup is still half active at 21:00'\nCard 3 label: 'IMPACT'\nCard 3 large text: '-20%'\nCard 3 body: 'Afternoon caffeine cuts night deep sleep by about a fifth'\n\nKeep the text crisp, use generous whitespace and aligned card edges, and ensure that every diagram illustrates its associated statement without inventing extra quantitative claims."
+      }
+    },
+    "5": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": ""
+      }
+    },
+    "6": {
+      "class_type": "EmptyFlux2LatentImage",
+      "inputs": {
+        "width": 1536,
+        "height": 1024,
+        "batch_size": 1
+      }
+    },
+    "7": {
+      "class_type": "Flux2Scheduler",
+      "inputs": {
+        "steps": 50,
+        "width": 1536,
+        "height": 1024
+      }
+    },
+    "8": {
+      "class_type": "CFGGuider",
+      "inputs": {
+        "model": [
+          "1",
+          0
+        ],
+        "positive": [
+          "4",
+          0
+        ],
+        "negative": [
+          "5",
+          0
+        ],
+        "cfg": 3.5
+      }
+    },
+    "9": {
+      "class_type": "RandomNoise",
+      "inputs": {
+        "noise_seed": 1337
+      }
+    },
+    "10": {
+      "class_type": "KSamplerSelect",
+      "inputs": {
+        "sampler_name": "euler"
+      }
+    },
+    "11": {
+      "class_type": "SamplerCustomAdvanced",
+      "inputs": {
+        "noise": [
+          "9",
+          0
+        ],
+        "guider": [
+          "8",
+          0
+        ],
+        "sampler": [
+          "10",
+          0
+        ],
+        "sigmas": [
+          "7",
+          0
+        ],
+        "latent_image": [
+          "6",
+          0
+        ]
+      }
+    },
+    "12": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "11",
+          0
+        ],
+        "vae": [
+          "3",
+          0
+        ]
+      }
+    },
+    "13": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "12",
+          0
+        ],
+        "filename_prefix": "infograph-bench-v3-full/flux2_en_seed1337"
+      }
+    }
+  }
+}
