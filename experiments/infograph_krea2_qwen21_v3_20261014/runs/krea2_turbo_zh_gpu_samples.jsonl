@@ -1,0 +1,6 @@
+{"time": "2026-10-14T06:59:53.540594+00:00", "vram_used_mb": 20556, "gpu_util_pct": 0, "temperature_c": 60, "comfy_rss_mb": 24682}
+{"time": "2026-10-14T06:59:57.605735+00:00", "vram_used_mb": 15708, "gpu_util_pct": 31, "temperature_c": 57, "comfy_rss_mb": 16628}
+{"time": "2026-10-14T07:00:01.671006+00:00", "vram_used_mb": 22044, "gpu_util_pct": 98, "temperature_c": 74, "comfy_rss_mb": 23154}
+{"time": "2026-10-14T07:00:05.737125+00:00", "vram_used_mb": 22044, "gpu_util_pct": 98, "temperature_c": 77, "comfy_rss_mb": 23154}
+{"time": "2026-10-14T07:00:09.799275+00:00", "vram_used_mb": 22044, "gpu_util_pct": 100, "temperature_c": 78, "comfy_rss_mb": 23117}
+{"time": "2026-10-14T07:00:13.854841+00:00", "vram_used_mb": 22044, "gpu_util_pct": 100, "temperature_c": 79, "comfy_rss_mb": 23117}

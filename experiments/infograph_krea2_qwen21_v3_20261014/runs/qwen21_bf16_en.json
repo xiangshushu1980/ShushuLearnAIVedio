@@ -1,0 +1,60 @@
+{
+  "job": "qwen21_bf16_en",
+  "owner": "Sean",
+  "submitted_at": "2026-10-14T06:55:53.248989+00:00",
+  "workflow": "workflows/qwen21_bf16_en.json",
+  "input_prompt": "Infographic poster, landscape 3:2, flat vector style, pure white background, blue and orange palette. Top title \"Caffeine and Sleep\", subtitle \"Three numbers behind that afternoon coffee\". Three white rounded cards side by side: card 1 label \"MECHANISM\", big text \"Blocks\", body \"Caffeine mimics adenosine and occupies its receptors, masking the sleep signal\"; card 2 label \"METABOLISM\", big text \"5-6 hours\", body \"A 15:00 cup is still half active at 21:00\"; card 3 label \"IMPACT\", big text \"-20%\", body \"Afternoon caffeine cuts night deep sleep by about a fifth\". No other text, no logos, no watermark.",
+  "seed": 42,
+  "resolution": "1536x1024",
+  "prompt_id": "5d4447ee-c230-4db6-85a2-a6f50dcfb774",
+  "status": "success",
+  "completed_at": "2026-10-14T06:56:29.866664+00:00",
+  "elapsed_seconds": 36.62,
+  "image": "images/qwen21_bf16_en.png",
+  "image_file": {
+    "filename": "qwen21_bf16_en_00001_.png",
+    "subfolder": "infograph-bench-v3",
+    "type": "output",
+    "id": "6bfc7732-bcdd-457f-b9d2-8fc0e8fc513c"
+  },
+  "actual_prompt_file": "prompts/qwen21_bf16_en_pe_output.txt",
+  "peak_vram_mb_observed": 23108,
+  "peak_comfy_rss_mb_observed": 32842,
+  "peak_temperature_c_observed": 79,
+  "peak_gpu_utilization_pct_observed": 100,
+  "gpu_samples": 10,
+  "comfy_history_status": {
+    "status_str": "success",
+    "completed": true,
+    "messages": [
+      [
+        "execution_start",
+        {
+          "prompt_id": "5d4447ee-c230-4db6-85a2-a6f50dcfb774",
+          "timestamp": 1791960953252
+        }
+      ],
+      [
+        "execution_cached",
+        {
+          "nodes": [
+            "1",
+            "2",
+            "3",
+            "5",
+            "6"
+          ],
+          "prompt_id": "5d4447ee-c230-4db6-85a2-a6f50dcfb774",
+          "timestamp": 1791960953253
+        }
+      ],
+      [
+        "execution_success",
+        {
+          "prompt_id": "5d4447ee-c230-4db6-85a2-a6f50dcfb774",
+          "timestamp": 1791960988464
+        }
+      ]
+    ]
+  }
+}

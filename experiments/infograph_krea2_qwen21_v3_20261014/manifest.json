@@ -1,0 +1,177 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "task_title": "执行图文混排基线测试计划 v3",
+  "project": "infograph-research",
+  "plan": "/home/sean/projects/infograph-research/hands-on/krea2-vs-qwen21-plan.md",
+  "started_at": "2026-10-14T06:55:02.063233+00:00",
+  "completed_at": "2026-10-14T07:00:16.015713+00:00",
+  "status": "completed",
+  "scope": {
+    "planned_total": 5,
+    "planned_jobs": [
+      "qwen21_bf16_zh",
+      "qwen21_bf16_en",
+      "krea2_raw_fp8_zh",
+      "krea2_raw_fp8_en",
+      "krea2_turbo_zh"
+    ],
+    "not_run": [
+      {
+        "model": "FLUX.2-klein 9B",
+        "cases": [
+          "zh",
+          "en"
+        ],
+        "reason": "The 9B diffusion weight is not present; the plan says to run available models first and not substitute another sample."
+      }
+    ],
+    "plan_note": "The current working copy of the plan specifies 5 cases when FLUX is absent.",
+    "first_batch_note": "An initial five-image batch was retained under attempts/first_batch_lease_expired. It is excluded from evaluation; all five canonical cases were rerun under a valid lease."
+  },
+  "environment": {
+    "host": "Eric",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "vram_total_mb": 24564,
+    "ram_total_bytes": 64252198912,
+    "comfyui_version": "0.39.2",
+    "python_version": "3.13.13",
+    "pytorch_version": "2.13.0+cu130",
+    "model_root_symlink": "/home/sean/projects/ComfyUI/models -> /home/sean/models/comfy",
+    "comfyui_health_url": "http://127.0.0.1:8188/system_stats",
+    "initial_queue": {
+      "queue_running": 0,
+      "queue_pending": 0
+    },
+    "initial_gpu_metrics": {
+      "vram_used_mb": 384,
+      "utilization_pct": 0,
+      "temperature_c": 37
+    }
+  },
+  "resource_lease": {
+    "resource": "gpu:0",
+    "ttl_ms": 600000,
+    "heartbeat_interval_ms": 90000,
+    "first_lease_expired_before_runner_start": true,
+    "first_batch_archived_at": "attempts/first_batch_lease_expired/",
+    "first_batch_status": "not_used_for_evaluation; first batch retained for audit and all five cases were rerun under the valid lease below.",
+    "evaluation_batch_lease_id": "6d4cbea5-3594-4934-be1e-a2d72b66e140",
+    "evaluation_batch_acquired_at": "2026-10-14T06:54:00.521Z",
+    "evaluation_batch_released_at": "2026-10-14T07:06:24.322Z",
+    "evaluation_batch_heartbeats": "The runner heartbeated before every submission and at intervals below one third of the 600000 ms TTL.",
+    "resource_observation_id": "cf2c0958-48f1-4127-854b-8de60aa1a02c"
+  },
+  "results": {
+    "completed": 5,
+    "failed": 0,
+    "not_run": [
+      "FLUX.2-klein 9B ZH",
+      "FLUX.2-klein 9B EN",
+      "Arm C edit arm"
+    ],
+    "total_generation_seconds": 313.66,
+    "peak_vram_mb_observed": 23108,
+    "peak_comfy_process_rss_mb_observed": 32943,
+    "peak_temperature_c_observed": 82,
+    "peak_gpu_utilization_pct_observed": 100,
+    "queue_after_completion": {
+      "running": 0,
+      "pending": 0
+    },
+    "comfy_service_after_completion": "left running as requested"
+  },
+  "artifacts": {
+    "runner": "run_benchmark.py",
+    "inputs_and_prompts": "prompts/",
+    "api_workflows": "workflows/",
+    "images": "images/",
+    "run_records_and_gpu_samples": "runs/"
+  },
+  "previous_preflight_correction": "The first model search did not follow the ComfyUI/models directory symlink. A corrected search found Qwen-Image-2.1 BF16 and PE, Krea2 RAW FP8 scaled, and Krea2 Turbo weights.",
+  "assessment": "Single seed, one canonical output per planned condition, manually inspected by Codex. The plan states 12 text strings per language, but each actual prompt specifies 11.",
+  "canonical_batch_started_at": "2026-10-14T06:55:02.063233+00:00",
+  "cases": [
+    {
+      "job": "krea2_raw_fp8_en",
+      "status": "success",
+      "prompt_id": "da047239-8766-46e3-8c11-697c8094e155",
+      "image": "images/krea2_raw_fp8_en.png",
+      "image_sha256": "d28734e72e1141f60a6858bce9665de9655093ba7c75bd6b329cac4dd66b86b9",
+      "actual_prompt_file": "prompts/krea2_raw_en.txt",
+      "workflow": "workflows/krea2_raw_fp8_en.json",
+      "run_record": "runs/krea2_raw_fp8_en.json",
+      "elapsed_seconds": 95.58,
+      "peak_vram_mb_observed": 22124,
+      "peak_comfy_process_rss_mb_observed": 24715,
+      "peak_temperature_c_observed": 82,
+      "gpu_samples_file": "runs/krea2_raw_fp8_en_gpu_samples.jsonl",
+      "input_prompt_file": "prompts/krea2_raw_en.txt"
+    },
+    {
+      "job": "krea2_raw_fp8_zh",
+      "status": "success",
+      "prompt_id": "53b498b2-f4ff-48bb-ae80-eeefd327fc1c",
+      "image": "images/krea2_raw_fp8_zh.png",
+      "image_sha256": "9fed72ed2de9d517e6e4a3592e31278ba25b2c4157aba392e45d1e645f1cfb5b",
+      "actual_prompt_file": "prompts/krea2_raw_zh.txt",
+      "workflow": "workflows/krea2_raw_fp8_zh.json",
+      "run_record": "runs/krea2_raw_fp8_zh.json",
+      "elapsed_seconds": 107.83,
+      "peak_vram_mb_observed": 22396,
+      "peak_comfy_process_rss_mb_observed": 32943,
+      "peak_temperature_c_observed": 81,
+      "gpu_samples_file": "runs/krea2_raw_fp8_zh_gpu_samples.jsonl",
+      "input_prompt_file": "prompts/krea2_raw_zh.txt"
+    },
+    {
+      "job": "krea2_turbo_zh",
+      "status": "success",
+      "prompt_id": "88e727c2-6463-4a7b-aece-63cfda1bc484",
+      "image": "images/krea2_turbo_zh.png",
+      "image_sha256": "25971d40086ff30bed167d9e4bb74ea3e0d44acd732c9885f46631f078150d0d",
+      "actual_prompt_file": "prompts/krea2_raw_zh.txt",
+      "workflow": "workflows/krea2_turbo_zh.json",
+      "run_record": "runs/krea2_turbo_zh.json",
+      "elapsed_seconds": 22.54,
+      "peak_vram_mb_observed": 22044,
+      "peak_comfy_process_rss_mb_observed": 24682,
+      "peak_temperature_c_observed": 79,
+      "gpu_samples_file": "runs/krea2_turbo_zh_gpu_samples.jsonl",
+      "input_prompt_file": "prompts/krea2_raw_zh.txt"
+    },
+    {
+      "job": "qwen21_bf16_en",
+      "status": "success",
+      "prompt_id": "5d4447ee-c230-4db6-85a2-a6f50dcfb774",
+      "image": "images/qwen21_bf16_en.png",
+      "image_sha256": "0151c90a695998cf069253461cac217c678905b80de8ab9b2cbbcf098e8f776d",
+      "actual_prompt_file": "prompts/qwen21_bf16_en_pe_output.txt",
+      "workflow": "workflows/qwen21_bf16_en.json",
+      "run_record": "runs/qwen21_bf16_en.json",
+      "elapsed_seconds": 36.62,
+      "peak_vram_mb_observed": 23108,
+      "peak_comfy_process_rss_mb_observed": 32842,
+      "peak_temperature_c_observed": 79,
+      "gpu_samples_file": "runs/qwen21_bf16_en_gpu_samples.jsonl",
+      "input_prompt_file": "prompts/qwen21_en_brief.txt"
+    },
+    {
+      "job": "qwen21_bf16_zh",
+      "status": "success",
+      "prompt_id": "a4f7ad11-6dc2-4259-bd54-a6f3043ff737",
+      "image": "images/qwen21_bf16_zh.png",
+      "image_sha256": "3ee4d4832db163796cda768cea6b83b608729451382cbd670ebde7401a4ecb3c",
+      "actual_prompt_file": "prompts/qwen21_bf16_zh_pe_output.txt",
+      "workflow": "workflows/qwen21_bf16_zh.json",
+      "run_record": "runs/qwen21_bf16_zh.json",
+      "elapsed_seconds": 51.09,
+      "peak_vram_mb_observed": 23108,
+      "peak_comfy_process_rss_mb_observed": 32226,
+      "peak_temperature_c_observed": 76,
+      "gpu_samples_file": "runs/qwen21_bf16_zh_gpu_samples.jsonl",
+      "input_prompt_file": "prompts/qwen21_zh_brief.txt"
+    }
+  ],
+  "assessment_note": "/home/sean/projects/infograph-research/hands-on/krea2-vs-qwen21-plan/notes.md"
+}

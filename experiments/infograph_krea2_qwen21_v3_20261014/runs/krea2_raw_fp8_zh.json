@@ -1,0 +1,54 @@
+{
+  "job": "krea2_raw_fp8_zh",
+  "owner": "Sean",
+  "submitted_at": "2026-10-14T06:56:29.928743+00:00",
+  "workflow": "workflows/krea2_raw_fp8_zh.json",
+  "input_prompt": "请制作一张横向 3:2 信息图海报，纯白背景，采用简洁的扁平矢量设计和克制的蓝橙配色。顶部放置准确文字标题「咖啡因与睡眠」及副标题「三个数字，看懂下午那杯咖啡」。下方并排放置三张等宽的白色圆角卡片，保持卡片间距整齐、层级清楚、画面平衡。每张卡片把文字与直接解释其含义的小型扁平矢量示意图结合：第一张表现咖啡因占据腺苷受体，准确呈现标签「机制」、大字「阻断」和说明「咖啡因结构与腺苷相似，抢占受体，屏蔽困意信号」；第二张以从 15:00 到 21:00 的半衰期时间线说明代谢过程，准确呈现标签「代谢」、大字「5-6 小时」和说明「午后 15:00 的一杯，到 21:00 仍有一半在体内」；第三张用清楚的图形表达深睡眠减少，准确呈现标签「后果」、大字「−20%」和说明「午后咖啡使夜间深睡眠减少约两成」。所有引号内文字必须逐字准确并清楚地融入排版；图形只用于解释对应文字，不添加新事实。除以上明确列出的文字外不要出现任何文字；不要 logo，不要水印。",
+  "seed": 42,
+  "resolution": "1536x1024",
+  "prompt_id": "53b498b2-f4ff-48bb-ae80-eeefd327fc1c",
+  "status": "success",
+  "completed_at": "2026-10-14T06:58:17.762448+00:00",
+  "elapsed_seconds": 107.83,
+  "image": "images/krea2_raw_fp8_zh.png",
+  "image_file": {
+    "filename": "krea2_raw_fp8_zh_00001_.png",
+    "subfolder": "infograph-bench-v3",
+    "type": "output",
+    "id": "793fbf05-2459-4480-b414-16c4b2fdf407"
+  },
+  "actual_prompt_file": null,
+  "peak_vram_mb_observed": 22396,
+  "peak_comfy_rss_mb_observed": 32943,
+  "peak_temperature_c_observed": 81,
+  "peak_gpu_utilization_pct_observed": 100,
+  "gpu_samples": 27,
+  "comfy_history_status": {
+    "status_str": "success",
+    "completed": true,
+    "messages": [
+      [
+        "execution_start",
+        {
+          "prompt_id": "53b498b2-f4ff-48bb-ae80-eeefd327fc1c",
+          "timestamp": 1791960989930
+        }
+      ],
+      [
+        "execution_cached",
+        {
+          "nodes": [],
+          "prompt_id": "53b498b2-f4ff-48bb-ae80-eeefd327fc1c",
+          "timestamp": 1791960989931
+        }
+      ],
+      [
+        "execution_success",
+        {
+          "prompt_id": "53b498b2-f4ff-48bb-ae80-eeefd327fc1c",
+          "timestamp": 1791961096069
+        }
+      ]
+    ]
+  }
+}

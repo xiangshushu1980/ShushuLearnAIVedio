@@ -1,0 +1,133 @@
+{
+  "prompt": {
+    "1": {
+      "class_type": "UNETLoader",
+      "inputs": {
+        "unet_name": "qwen_image_2.1_bf16.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    "2": {
+      "class_type": "CLIPLoader",
+      "inputs": {
+        "clip_name": "qwen3vl_8b_bf16.safetensors",
+        "type": "qwen_image"
+      }
+    },
+    "3": {
+      "class_type": "VAELoader",
+      "inputs": {
+        "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+      }
+    },
+    "4": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": [
+          "10",
+          0
+        ]
+      }
+    },
+    "5": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": ""
+      }
+    },
+    "6": {
+      "class_type": "EmptyLatentImage",
+      "inputs": {
+        "width": 1536,
+        "height": 1024,
+        "batch_size": 1
+      }
+    },
+    "7": {
+      "class_type": "KSampler",
+      "inputs": {
+        "model": [
+          "1",
+          0
+        ],
+        "positive": [
+          "4",
+          0
+        ],
+        "negative": [
+          "5",
+          0
+        ],
+        "latent_image": [
+          "6",
+          0
+        ],
+        "seed": 42,
+        "steps": 40,
+        "cfg": 1.0,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "denoise": 1.0
+      }
+    },
+    "8": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "7",
+          0
+        ],
+        "vae": [
+          "3",
+          0
+        ]
+      }
+    },
+    "9": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "8",
+          0
+        ],
+        "filename_prefix": "infograph-bench-v3/qwen21_bf16_zh"
+      }
+    },
+    "10": {
+      "class_type": "QwenImage21_T2IPromptRewrite",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "prompt": "信息图海报，横向 3:2，扁平矢量风格，纯白背景，蓝橙配色。顶部大标题《咖啡因与睡眠》，副标题「三个数字，看懂下午那杯咖啡」。并排三张白色圆角卡片：卡片一顶部标签「机制」，大字「阻断」，说明「咖啡因结构与腺苷相似，抢占受体，屏蔽困意信号」；卡片二标签「代谢」，大字「5-6 小时」，说明「午后 15:00 的一杯，到 21:00 仍有一半在体内」；卡片三标签「后果」，大字「−20%」，说明「午后咖啡使夜间深睡眠减少约两成」。除上述文字外不要其他任何文字。不要 logo、水印。",
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "presence_penalty": 1.5,
+        "max_new_tokens": 16256,
+        "seed": 42
+      }
+    },
+    "11": {
+      "class_type": "SaveStringKJ",
+      "inputs": {
+        "string": [
+          "10",
+          0
+        ],
+        "filename_prefix": "qwen21_bf16_zh",
+        "output_folder": "infograph-bench-v3/prompts",
+        "file_extension": ".txt"
+      }
+    }
+  }
+}

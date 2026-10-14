@@ -1,0 +1,57 @@
+{
+  "job": "qwen21_bf16_zh",
+  "owner": "Sean",
+  "submitted_at": "2026-10-14T06:37:43.920696+00:00",
+  "workflow": "workflows/qwen21_bf16_zh.json",
+  "input_prompt": "信息图海报，横向 3:2，扁平矢量风格，纯白背景，蓝橙配色。顶部大标题《咖啡因与睡眠》，副标题「三个数字，看懂下午那杯咖啡」。并排三张白色圆角卡片：卡片一顶部标签「机制」，大字「阻断」，说明「咖啡因结构与腺苷相似，抢占受体，屏蔽困意信号」；卡片二标签「代谢」，大字「5-6 小时」，说明「午后 15:00 的一杯，到 21:00 仍有一半在体内」；卡片三标签「后果」，大字「−20%」，说明「午后咖啡使夜间深睡眠减少约两成」。除上述文字外不要其他任何文字。不要 logo、水印。",
+  "seed": 42,
+  "resolution": "1536x1024",
+  "prompt_id": "ff2e37bb-47ca-4c08-808b-92b246f7b6de",
+  "status": "success",
+  "completed_at": "2026-10-14T06:38:37.227820+00:00",
+  "elapsed_seconds": 53.3,
+  "image": "images/qwen21_bf16_zh.png",
+  "image_file": {
+    "filename": "qwen21_bf16_zh_00001_.png",
+    "subfolder": "infograph-bench-v3",
+    "type": "output",
+    "id": "19f4b935-7f1d-4b3a-939b-1b9fe2eddbb2"
+  },
+  "actual_prompt_file": "prompts/qwen21_bf16_zh_pe_output.txt",
+  "peak_vram_mb_observed": 23102,
+  "peak_comfy_rss_mb_observed": 3,
+  "peak_temperature_c_observed": 80,
+  "peak_gpu_utilization_pct_observed": 100,
+  "gpu_samples": 14,
+  "comfy_history_status": {
+    "status_str": "success",
+    "completed": true,
+    "messages": [
+      [
+        "execution_start",
+        {
+          "prompt_id": "ff2e37bb-47ca-4c08-808b-92b246f7b6de",
+          "timestamp": 1791959863923
+        }
+      ],
+      [
+        "execution_cached",
+        {
+          "nodes": [],
+          "prompt_id": "ff2e37bb-47ca-4c08-808b-92b246f7b6de",
+          "timestamp": 1791959863925
+        }
+      ],
+      [
+        "execution_success",
+        {
+          "prompt_id": "ff2e37bb-47ca-4c08-808b-92b246f7b6de",
+          "timestamp": 1791959915806
+        }
+      ]
+    ]
+  },
+  "evaluation_status": "excluded_from_final_scoring_first_batch",
+  "lease_valid_at_submission": false,
+  "lease_status_note": "The original gpu:0 lease had expired before this prompt was submitted; this output is archived for audit only."
+}

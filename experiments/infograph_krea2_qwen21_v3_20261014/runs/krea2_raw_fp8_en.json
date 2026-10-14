@@ -1,0 +1,60 @@
+{
+  "job": "krea2_raw_fp8_en",
+  "owner": "Sean",
+  "submitted_at": "2026-10-14T06:58:17.831518+00:00",
+  "workflow": "workflows/krea2_raw_fp8_en.json",
+  "input_prompt": "Create a landscape 3:2 infographic poster on a pure white background, using a clean flat vector design and a restrained blue and orange palette. At the top, set the exact title \"Caffeine and Sleep\" and subtitle \"Three numbers behind that afternoon coffee\". Below, arrange three evenly spaced white rounded cards side by side with a clear hierarchy and balanced composition. Pair each card's text with a small flat vector diagram that directly explains it: the first shows caffeine occupying adenosine receptors and includes the exact label \"MECHANISM\", large text \"Blocks\", and body text \"Caffeine mimics adenosine and occupies its receptors, masking the sleep signal\"; the second uses a half-life timeline from 15:00 to 21:00 and includes the exact label \"METABOLISM\", large text \"5-6 hours\", and body text \"A 15:00 cup is still half active at 21:00\"; the third clearly visualizes reduced deep sleep and includes the exact label \"IMPACT\", large text \"-20%\", and body text \"Afternoon caffeine cuts night deep sleep by about a fifth\". Render every quoted string verbatim and integrate it into the layout. Use graphics only to explain the corresponding text, without adding new facts. No text beyond the exact strings listed here; no logo and no watermark.",
+  "seed": 42,
+  "resolution": "1536x1024",
+  "prompt_id": "da047239-8766-46e3-8c11-697c8094e155",
+  "status": "success",
+  "completed_at": "2026-10-14T06:59:53.408301+00:00",
+  "elapsed_seconds": 95.58,
+  "image": "images/krea2_raw_fp8_en.png",
+  "image_file": {
+    "filename": "krea2_raw_fp8_en_00001_.png",
+    "subfolder": "infograph-bench-v3",
+    "type": "output",
+    "id": "94a19078-e2ad-4c6c-ae17-bc6e0e92c90c"
+  },
+  "actual_prompt_file": null,
+  "peak_vram_mb_observed": 22124,
+  "peak_comfy_rss_mb_observed": 24715,
+  "peak_temperature_c_observed": 82,
+  "peak_gpu_utilization_pct_observed": 100,
+  "gpu_samples": 24,
+  "comfy_history_status": {
+    "status_str": "success",
+    "completed": true,
+    "messages": [
+      [
+        "execution_start",
+        {
+          "prompt_id": "da047239-8766-46e3-8c11-697c8094e155",
+          "timestamp": 1791961097833
+        }
+      ],
+      [
+        "execution_cached",
+        {
+          "nodes": [
+            "1",
+            "2",
+            "3",
+            "5",
+            "6"
+          ],
+          "prompt_id": "da047239-8766-46e3-8c11-697c8094e155",
+          "timestamp": 1791961097834
+        }
+      ],
+      [
+        "execution_success",
+        {
+          "prompt_id": "da047239-8766-46e3-8c11-697c8094e155",
+          "timestamp": 1791961192401
+        }
+      ]
+    ]
+  }
+}
