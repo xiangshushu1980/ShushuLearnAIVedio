@@ -1,0 +1,37 @@
+Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: Modern education policy report, crisp grid, cobalt-to-mint palette, accessible contrast and tidy sans serif labels.. At the top, give the exact title "Attendance changes by region" clear visual priority; place the exact subtitle "School attendance rate · %" directly beneath it. Let the chart occupy most of the remaining canvas: A 4-by-3 heatmap: four region rows by three school stages; every cell contains its exact percentage and uses a consistent low-to-high color ramp.. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:
+North | Primary | 96%
+North | Middle | 91%
+North | Upper | 84%
+South | Primary | 93%
+South | Middle | 88%
+South | Upper | 79%
+East | Primary | 98%
+East | Middle | 94%
+East | Upper | 90%
+West | Primary | 89%
+West | Middle | 82%
+West | Upper | 73%
+Design intent: All 12 cells must be present at the correct row and column; do not invent a causal explanation. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.
+Exact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):
+• Attendance changes by region
+• School attendance rate · %
+• North
+• Primary
+• 96%
+• Middle
+• 91%
+• Upper
+• 84%
+• South
+• 93%
+• 88%
+• 79%
+• East
+• 98%
+• 94%
+• 90%
+• West
+• 89%
+• 82%
+• 73%
+Show only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text.

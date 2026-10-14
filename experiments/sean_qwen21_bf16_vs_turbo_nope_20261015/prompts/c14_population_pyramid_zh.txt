@@ -1,0 +1,26 @@
+Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: modern public data report, mist blue and coral orange, clean grid, very small simplified human silhouettes as accents. At the top, give the exact title "城市人口的年龄结构" clear visual priority; place the exact subtitle "示例社区 · 人数（千人）" directly beneath it. Let the chart occupy most of the remaining canvas: a population pyramid with male bars on the left and female bars on the right, sharing one central baseline across five age groups; bar lengths must match the counts. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:
+0–14 岁 | 男 18 | 女 17
+15–29 岁 | 男 22 | 女 23
+30–44 岁 | 男 26 | 女 27
+45–59 岁 | 男 20 | 女 21
+60 岁以上 | 男 14 | 女 16
+Design intent: Order age groups from youngest at the top to oldest at the bottom. Mirror bar lengths around the center without swapping counts. The 30–44 group is largest; women outnumber men among people aged 60 and above. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.
+Exact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):
+• 城市人口的年龄结构
+• 示例社区 · 人数（千人）
+• 0–14 岁
+• 男 18
+• 女 17
+• 15–29 岁
+• 男 22
+• 女 23
+• 30–44 岁
+• 男 26
+• 女 27
+• 45–59 岁
+• 男 20
+• 女 21
+• 60 岁以上
+• 男 14
+• 女 16
+Show only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text.

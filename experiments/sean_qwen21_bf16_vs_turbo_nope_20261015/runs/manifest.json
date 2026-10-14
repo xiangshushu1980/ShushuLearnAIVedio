@@ -1,0 +1,1537 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "experiment": "Qwen Image 2.1 BF16 vs Turbo INT8 ConvRot, direct prompt, no PE",
+  "status": "complete",
+  "created_at": "2026-10-14T16:05:17.429004+00:00",
+  "source_casebook": "/home/sean/projects/comfy-ops/experiments/infograph_krea2_qwen21_v3_20261014/data_matrix_v2/casebook.json",
+  "models": {
+    "qwen21_bf16": {
+      "weights": "qwen_image_2.1_bf16.safetensors",
+      "text_encoder": "qwen3vl_8b_bf16.safetensors",
+      "vae": "qwen_image_2.1_vae_bf16.safetensors",
+      "steps": 40,
+      "cfg": 1.0,
+      "sampler": "euler",
+      "scheduler": "simple"
+    },
+    "qwen21_turbo_int8": {
+      "weights": "qwen_image_2.1_turbo_int8_convrot.safetensors",
+      "text_encoder": "qwen3vl_8b_bf16.safetensors",
+      "vae": "qwen_image_2.1_vae_bf16.safetensors",
+      "steps": 8,
+      "sigma_schedule": "1.0, 0.978453, 0.954180, 0.926626, 0.895080, 0.845148, 0.704534, 0.414568, 0.0",
+      "cfg": 1.0,
+      "sampler": "euler"
+    }
+  },
+  "prompting": "Hand-authored in English using the Qwen official observer-style prompt guidance and infographic skill structure; no PE node or LLM rewriting at runtime. Exact same prompt is used for both checkpoints. Text labels retain the casebook language.",
+  "resolution": [
+    1536,
+    1024
+  ],
+  "seeds": [
+    42,
+    1337
+  ],
+  "cases": [
+    {
+      "id": "c09_electricity_access_en",
+      "language": "en",
+      "title": "Power reaches more people",
+      "ground_truth": [
+        [
+          "2010",
+          "83.5%"
+        ],
+        [
+          "2015",
+          "86.9%"
+        ],
+        [
+          "2020",
+          "90.4%"
+        ],
+        [
+          "2023",
+          "91.6%"
+        ]
+      ],
+      "target_text": [
+        "Power reaches more people",
+        "Global access to electricity · 2010–2023",
+        "2010",
+        "83.5%",
+        "2015",
+        "86.9%",
+        "2020",
+        "90.4%",
+        "2023",
+        "91.6%"
+      ],
+      "data_source": "World Bank WDI EG.ELC.ACCS.ZS; World Bank API snapshot retrieved 2026-10-14; CC BY 4.0.",
+      "source_url": "https://api.worldbank.org/v2/country/WLD/indicator/EG.ELC.ACCS.ZS?date=2010:2023&format=json"
+    },
+    {
+      "id": "c10_city_transport_zh",
+      "language": "zh",
+      "title": "一座城市，三种通勤",
+      "ground_truth": [
+        [
+          "地铁",
+          "46%",
+          "28 分钟"
+        ],
+        [
+          "公交",
+          "31%",
+          "42 分钟"
+        ],
+        [
+          "骑行",
+          "23%",
+          "19 分钟"
+        ]
+      ],
+      "target_text": [
+        "一座城市，三种通勤",
+        "早高峰出行方式与平均耗时",
+        "地铁",
+        "46%",
+        "28 分钟",
+        "公交",
+        "31%",
+        "42 分钟",
+        "骑行",
+        "23%",
+        "19 分钟"
+      ],
+      "data_source": "Synthetic controlled dataset for chart fidelity; not a real city survey.",
+      "source_url": null
+    },
+    {
+      "id": "c11_school_attendance_en",
+      "language": "en",
+      "title": "Attendance changes by region",
+      "ground_truth": [
+        [
+          "North",
+          "Primary",
+          "96%"
+        ],
+        [
+          "North",
+          "Middle",
+          "91%"
+        ],
+        [
+          "North",
+          "Upper",
+          "84%"
+        ],
+        [
+          "South",
+          "Primary",
+          "93%"
+        ],
+        [
+          "South",
+          "Middle",
+          "88%"
+        ],
+        [
+          "South",
+          "Upper",
+          "79%"
+        ],
+        [
+          "East",
+          "Primary",
+          "98%"
+        ],
+        [
+          "East",
+          "Middle",
+          "94%"
+        ],
+        [
+          "East",
+          "Upper",
+          "90%"
+        ],
+        [
+          "West",
+          "Primary",
+          "89%"
+        ],
+        [
+          "West",
+          "Middle",
+          "82%"
+        ],
+        [
+          "West",
+          "Upper",
+          "73%"
+        ]
+      ],
+      "target_text": [
+        "Attendance changes by region",
+        "School attendance rate · %",
+        "North",
+        "Primary",
+        "96%",
+        "Middle",
+        "91%",
+        "Upper",
+        "84%",
+        "South",
+        "93%",
+        "88%",
+        "79%",
+        "East",
+        "98%",
+        "94%",
+        "90%",
+        "West",
+        "89%",
+        "82%",
+        "73%"
+      ],
+      "data_source": "Synthetic controlled dataset; illustrative only.",
+      "source_url": null
+    },
+    {
+      "id": "c12_food_waste_zh",
+      "language": "zh",
+      "title": "食物浪费，在哪一步累积",
+      "ground_truth": [
+        [
+          "起始",
+          "100 千克"
+        ],
+        [
+          "采购损耗",
+          "−12 千克"
+        ],
+        [
+          "储存损耗",
+          "−18 千克"
+        ],
+        [
+          "备餐损耗",
+          "−20 千克"
+        ],
+        [
+          "最终保留",
+          "50 千克"
+        ]
+      ],
+      "target_text": [
+        "食物浪费，在哪一步累积",
+        "一周 100 千克可食食物的去向",
+        "起始",
+        "100 千克",
+        "采购损耗",
+        "−12 千克",
+        "储存损耗",
+        "−18 千克",
+        "备餐损耗",
+        "−20 千克",
+        "最终保留",
+        "50 千克"
+      ],
+      "data_source": "Synthetic controlled dataset; illustrative household flow, not measured data.",
+      "source_url": null
+    },
+    {
+      "id": "c13_sleep_distribution_en",
+      "language": "en",
+      "title": "Sleep is not one-size-fits-all",
+      "ground_truth": [
+        [
+          "Night 1",
+          "5.5 h"
+        ],
+        [
+          "Night 2",
+          "6.0 h"
+        ],
+        [
+          "Night 3",
+          "6.0 h"
+        ],
+        [
+          "Night 4",
+          "6.5 h"
+        ],
+        [
+          "Night 5",
+          "6.5 h"
+        ],
+        [
+          "Night 6",
+          "7.0 h"
+        ],
+        [
+          "Night 7",
+          "7.0 h"
+        ],
+        [
+          "Night 8",
+          "7.0 h"
+        ],
+        [
+          "Night 9",
+          "7.5 h"
+        ],
+        [
+          "Night 10",
+          "8.0 h"
+        ],
+        [
+          "Night 11",
+          "8.0 h"
+        ],
+        [
+          "Night 12",
+          "9.0 h"
+        ]
+      ],
+      "target_text": [
+        "Sleep is not one-size-fits-all",
+        "Hours slept across 12 sample nights",
+        "Night 1",
+        "5.5 h",
+        "Night 2",
+        "6.0 h",
+        "Night 3",
+        "Night 4",
+        "6.5 h",
+        "Night 5",
+        "Night 6",
+        "7.0 h",
+        "Night 7",
+        "Night 8",
+        "Night 9",
+        "7.5 h",
+        "Night 10",
+        "8.0 h",
+        "Night 11",
+        "Night 12",
+        "9.0 h"
+      ],
+      "data_source": "Synthetic controlled observations; not clinical guidance.",
+      "source_url": null
+    },
+    {
+      "id": "c14_population_pyramid_zh",
+      "language": "zh",
+      "title": "城市人口的年龄结构",
+      "ground_truth": [
+        [
+          "0–14 岁",
+          "男 18",
+          "女 17"
+        ],
+        [
+          "15–29 岁",
+          "男 22",
+          "女 23"
+        ],
+        [
+          "30–44 岁",
+          "男 26",
+          "女 27"
+        ],
+        [
+          "45–59 岁",
+          "男 20",
+          "女 21"
+        ],
+        [
+          "60 岁以上",
+          "男 14",
+          "女 16"
+        ]
+      ],
+      "target_text": [
+        "城市人口的年龄结构",
+        "示例社区 · 人数（千人）",
+        "0–14 岁",
+        "男 18",
+        "女 17",
+        "15–29 岁",
+        "男 22",
+        "女 23",
+        "30–44 岁",
+        "男 26",
+        "女 27",
+        "45–59 岁",
+        "男 20",
+        "女 21",
+        "60 岁以上",
+        "男 14",
+        "女 16"
+      ],
+      "data_source": "Synthetic controlled dataset; fictional community.",
+      "source_url": null
+    },
+    {
+      "id": "c15_household_water_zh",
+      "language": "zh",
+      "title": "修复漏水，节水看得见",
+      "ground_truth": [
+        [
+          "甲户",
+          "240 升",
+          "180 升"
+        ],
+        [
+          "乙户",
+          "210 升",
+          "150 升"
+        ],
+        [
+          "丙户",
+          "270 升",
+          "210 升"
+        ],
+        [
+          "丁户",
+          "180 升",
+          "150 升"
+        ]
+      ],
+      "target_text": [
+        "修复漏水，节水看得见",
+        "四户家庭每日用水量对比",
+        "甲户",
+        "240 升",
+        "180 升",
+        "乙户",
+        "210 升",
+        "150 升",
+        "丙户",
+        "270 升",
+        "丁户"
+      ],
+      "data_source": "Synthetic controlled dataset; illustrative households.",
+      "source_url": null
+    },
+    {
+      "id": "c16_community_solar_en",
+      "language": "en",
+      "title": "Where the solar budget goes",
+      "ground_truth": [
+        [
+          "Panels",
+          "$45,000"
+        ],
+        [
+          "Installation",
+          "$25,000"
+        ],
+        [
+          "Battery",
+          "$20,000"
+        ],
+        [
+          "Training",
+          "$10,000"
+        ]
+      ],
+      "target_text": [
+        "Where the solar budget goes",
+        "Community project · $100,000",
+        "Panels",
+        "$45,000",
+        "Installation",
+        "$25,000",
+        "Battery",
+        "$20,000",
+        "Training",
+        "$10,000"
+      ],
+      "data_source": "Synthetic controlled budget; illustrative project.",
+      "source_url": null
+    },
+    {
+      "id": "c17_internet_gap_zh",
+      "language": "zh",
+      "title": "网络接入，城乡差距",
+      "ground_truth": [
+        [
+          "东部",
+          "城市 92%",
+          "乡村 76%"
+        ],
+        [
+          "南部",
+          "城市 88%",
+          "乡村 61%"
+        ],
+        [
+          "西部",
+          "城市 81%",
+          "乡村 49%"
+        ],
+        [
+          "北部",
+          "城市 90%",
+          "乡村 72%"
+        ]
+      ],
+      "target_text": [
+        "网络接入，城乡差距",
+        "四个地区的互联网使用率",
+        "东部",
+        "城市 92%",
+        "乡村 76%",
+        "南部",
+        "城市 88%",
+        "乡村 61%",
+        "西部",
+        "城市 81%",
+        "乡村 49%",
+        "北部",
+        "城市 90%",
+        "乡村 72%"
+      ],
+      "data_source": "Synthetic controlled dataset; fictional regions.",
+      "source_url": null
+    },
+    {
+      "id": "c18_lab_results_en",
+      "language": "en",
+      "title": "A range tells more than a point",
+      "ground_truth": [
+        [
+          "Control",
+          "42",
+          "36–48"
+        ],
+        [
+          "Dose A",
+          "55",
+          "49–61"
+        ],
+        [
+          "Dose B",
+          "68",
+          "60–76"
+        ],
+        [
+          "Dose C",
+          "73",
+          "62–84"
+        ]
+      ],
+      "target_text": [
+        "A range tells more than a point",
+        "Measured response by test group · units",
+        "Control",
+        "42",
+        "36–48",
+        "Dose A",
+        "55",
+        "49–61",
+        "Dose B",
+        "68",
+        "60–76",
+        "Dose C",
+        "73",
+        "62–84"
+      ],
+      "data_source": "Synthetic controlled measurements; illustrative, not scientific findings.",
+      "source_url": null
+    },
+    {
+      "id": "c19_reuse_network_zh",
+      "language": "zh",
+      "title": "旧物，流向新的用途",
+      "ground_truth": [
+        [
+          "闲置物品",
+          "80 件"
+        ],
+        [
+          "捐赠",
+          "36 件"
+        ],
+        [
+          "维修再用",
+          "28 件"
+        ],
+        [
+          "材料回收",
+          "16 件"
+        ]
+      ],
+      "target_text": [
+        "旧物，流向新的用途",
+        "一批 80 件闲置物品的再分配",
+        "闲置物品",
+        "80 件",
+        "捐赠",
+        "36 件",
+        "维修再用",
+        "28 件",
+        "材料回收",
+        "16 件"
+      ],
+      "data_source": "Synthetic controlled dataset; illustrative reuse program.",
+      "source_url": null
+    },
+    {
+      "id": "c20_product_tradeoff_en",
+      "language": "en",
+      "title": "Price and battery life do not move together",
+      "ground_truth": [
+        [
+          "Aster",
+          "$300",
+          "8 h"
+        ],
+        [
+          "Birch",
+          "$450",
+          "12 h"
+        ],
+        [
+          "Cedar",
+          "$600",
+          "10 h"
+        ],
+        [
+          "Dune",
+          "$750",
+          "16 h"
+        ],
+        [
+          "Ember",
+          "$900",
+          "14 h"
+        ]
+      ],
+      "target_text": [
+        "Price and battery life do not move together",
+        "Five devices · price vs. battery life",
+        "Aster",
+        "$300",
+        "8 h",
+        "Birch",
+        "$450",
+        "12 h",
+        "Cedar",
+        "$600",
+        "10 h",
+        "Dune",
+        "$750",
+        "16 h",
+        "Ember",
+        "$900",
+        "14 h"
+      ],
+      "data_source": "Synthetic controlled product data; fictional devices.",
+      "source_url": null
+    }
+  ],
+  "planned_images": 48,
+  "successes": 48,
+  "failures": 0,
+  "jobs": [
+    {
+      "job": "c09_electricity_access_en__qwen21_bf16__seed42",
+      "case_id": "c09_electricity_access_en",
+      "model": "qwen21_bf16",
+      "seed": 42,
+      "prompt": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: Swiss editorial minimalism, large white margins, deep navy line with one warm yellow endpoint, restrained grid.. At the top, give the exact title \"Power reaches more people\" clear visual priority; place the exact subtitle \"Global access to electricity · 2010–2023\" directly beneath it. Let the chart occupy most of the remaining canvas: A four-point line chart with a gentle upward slope; exact year/value pairs, a clear 0–100% vertical scale, and a final callout.. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\n2010 | 83.5%\n2015 | 86.9%\n2020 | 90.4%\n2023 | 91.6%\nDesign intent: Keep the line rising, place every value at its matching year, and do not imply 100% access. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• Power reaches more people\n• Global access to electricity · 2010–2023\n• 2010\n• 83.5%\n• 2015\n• 86.9%\n• 2020\n• 90.4%\n• 2023\n• 91.6%\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+    },
+    {
+      "job": "c09_electricity_access_en__qwen21_bf16__seed1337",
+      "case_id": "c09_electricity_access_en",
+      "model": "qwen21_bf16",
+      "seed": 1337,
+      "prompt": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: Swiss editorial minimalism, large white margins, deep navy line with one warm yellow endpoint, restrained grid.. At the top, give the exact title \"Power reaches more people\" clear visual priority; place the exact subtitle \"Global access to electricity · 2010–2023\" directly beneath it. Let the chart occupy most of the remaining canvas: A four-point line chart with a gentle upward slope; exact year/value pairs, a clear 0–100% vertical scale, and a final callout.. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\n2010 | 83.5%\n2015 | 86.9%\n2020 | 90.4%\n2023 | 91.6%\nDesign intent: Keep the line rising, place every value at its matching year, and do not imply 100% access. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• Power reaches more people\n• Global access to electricity · 2010–2023\n• 2010\n• 83.5%\n• 2015\n• 86.9%\n• 2020\n• 90.4%\n• 2023\n• 91.6%\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+    },
+    {
+      "job": "c09_electricity_access_en__qwen21_turbo_int8__seed42",
+      "case_id": "c09_electricity_access_en",
+      "model": "qwen21_turbo_int8",
+      "seed": 42,
+      "prompt": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: Swiss editorial minimalism, large white margins, deep navy line with one warm yellow endpoint, restrained grid.. At the top, give the exact title \"Power reaches more people\" clear visual priority; place the exact subtitle \"Global access to electricity · 2010–2023\" directly beneath it. Let the chart occupy most of the remaining canvas: A four-point line chart with a gentle upward slope; exact year/value pairs, a clear 0–100% vertical scale, and a final callout.. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\n2010 | 83.5%\n2015 | 86.9%\n2020 | 90.4%\n2023 | 91.6%\nDesign intent: Keep the line rising, place every value at its matching year, and do not imply 100% access. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• Power reaches more people\n• Global access to electricity · 2010–2023\n• 2010\n• 83.5%\n• 2015\n• 86.9%\n• 2020\n• 90.4%\n• 2023\n• 91.6%\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+    },
+    {
+      "job": "c09_electricity_access_en__qwen21_turbo_int8__seed1337",
+      "case_id": "c09_electricity_access_en",
+      "model": "qwen21_turbo_int8",
+      "seed": 1337,
+      "prompt": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: Swiss editorial minimalism, large white margins, deep navy line with one warm yellow endpoint, restrained grid.. At the top, give the exact title \"Power reaches more people\" clear visual priority; place the exact subtitle \"Global access to electricity · 2010–2023\" directly beneath it. Let the chart occupy most of the remaining canvas: A four-point line chart with a gentle upward slope; exact year/value pairs, a clear 0–100% vertical scale, and a final callout.. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\n2010 | 83.5%\n2015 | 86.9%\n2020 | 90.4%\n2023 | 91.6%\nDesign intent: Keep the line rising, place every value at its matching year, and do not imply 100% access. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• Power reaches more people\n• Global access to electricity · 2010–2023\n• 2010\n• 83.5%\n• 2015\n• 86.9%\n• 2020\n• 90.4%\n• 2023\n• 91.6%\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+    },
+    {
+      "job": "c10_city_transport_zh__qwen21_bf16__seed42",
+      "case_id": "c10_city_transport_zh",
+      "model": "qwen21_bf16",
+      "seed": 42,
+      "prompt": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: restrained city newspaper graphic, warm ivory paper, dark green and vermilion, a few fine line icons, no photorealistic illustration. At the top, give the exact title \"一座城市，三种通勤\" clear visual priority; place the exact subtitle \"早高峰出行方式与平均耗时\" directly beneath it. Let the chart occupy most of the remaining canvas: a horizontal grouped bar chart with three transport rows and two clearly separated measures per row: mode share and average commute time. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\n地铁 | 46% | 28 分钟\n公交 | 31% | 42 分钟\n骑行 | 23% | 19 分钟\nDesign intent: Keep share and minutes in separate visual tracks; pair each mode with both of its own values. Metro has the greatest share and cycling the shortest commute. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• 一座城市，三种通勤\n• 早高峰出行方式与平均耗时\n• 地铁\n• 46%\n• 28 分钟\n• 公交\n• 31%\n• 42 分钟\n• 骑行\n• 23%\n• 19 分钟\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+    },
+    {
+      "job": "c10_city_transport_zh__qwen21_bf16__seed1337",
+      "case_id": "c10_city_transport_zh",
+      "model": "qwen21_bf16",
+      "seed": 1337,
+      "prompt": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: restrained city newspaper graphic, warm ivory paper, dark green and vermilion, a few fine line icons, no photorealistic illustration. At the top, give the exact title \"一座城市，三种通勤\" clear visual priority; place the exact subtitle \"早高峰出行方式与平均耗时\" directly beneath it. Let the chart occupy most of the remaining canvas: a horizontal grouped bar chart with three transport rows and two clearly separated measures per row: mode share and average commute time. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\n地铁 | 46% | 28 分钟\n公交 | 31% | 42 分钟\n骑行 | 23% | 19 分钟\nDesign intent: Keep share and minutes in separate visual tracks; pair each mode with both of its own values. Metro has the greatest share and cycling the shortest commute. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• 一座城市，三种通勤\n• 早高峰出行方式与平均耗时\n• 地铁\n• 46%\n• 28 分钟\n• 公交\n• 31%\n• 42 分钟\n• 骑行\n• 23%\n• 19 分钟\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+    },
+    {
+      "job": "c10_city_transport_zh__qwen21_turbo_int8__seed42",
+      "case_id": "c10_city_transport_zh",
+      "model": "qwen21_turbo_int8",
+      "seed": 42,
+      "prompt": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: restrained city newspaper graphic, warm ivory paper, dark green and vermilion, a few fine line icons, no photorealistic illustration. At the top, give the exact title \"一座城市，三种通勤\" clear visual priority; place the exact subtitle \"早高峰出行方式与平均耗时\" directly beneath it. Let the chart occupy most of the remaining canvas: a horizontal grouped bar chart with three transport rows and two clearly separated measures per row: mode share and average commute time. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\n地铁 | 46% | 28 分钟\n公交 | 31% | 42 分钟\n骑行 | 23% | 19 分钟\nDesign intent: Keep share and minutes in separate visual tracks; pair each mode with both of its own values. Metro has the greatest share and cycling the shortest commute. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• 一座城市，三种通勤\n• 早高峰出行方式与平均耗时\n• 地铁\n• 46%\n• 28 分钟\n• 公交\n• 31%\n• 42 分钟\n• 骑行\n• 23%\n• 19 分钟\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+    },
+    {
+      "job": "c10_city_transport_zh__qwen21_turbo_int8__seed1337",
+      "case_id": "c10_city_transport_zh",
+      "model": "qwen21_turbo_int8",
+      "seed": 1337,
+      "prompt": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: restrained city newspaper graphic, warm ivory paper, dark green and vermilion, a few fine line icons, no photorealistic illustration. At the top, give the exact title \"一座城市，三种通勤\" clear visual priority; place the exact subtitle \"早高峰出行方式与平均耗时\" directly beneath it. Let the chart occupy most of the remaining canvas: a horizontal grouped bar chart with three transport rows and two clearly separated measures per row: mode share and average commute time. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\n地铁 | 46% | 28 分钟\n公交 | 31% | 42 分钟\n骑行 | 23% | 19 分钟\nDesign intent: Keep share and minutes in separate visual tracks; pair each mode with both of its own values. Metro has the greatest share and cycling the shortest commute. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• 一座城市，三种通勤\n• 早高峰出行方式与平均耗时\n• 地铁\n• 46%\n• 28 分钟\n• 公交\n• 31%\n• 42 分钟\n• 骑行\n• 23%\n• 19 分钟\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+    },
+    {
+      "job": "c11_school_attendance_en__qwen21_bf16__seed42",
+      "case_id": "c11_school_attendance_en",
+      "model": "qwen21_bf16",
+      "seed": 42,
+      "prompt": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: Modern education policy report, crisp grid, cobalt-to-mint palette, accessible contrast and tidy sans serif labels.. At the top, give the exact title \"Attendance changes by region\" clear visual priority; place the exact subtitle \"School attendance rate · %\" directly beneath it. Let the chart occupy most of the remaining canvas: A 4-by-3 heatmap: four region rows by three school stages; every cell contains its exact percentage and uses a consistent low-to-high color ramp.. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\nNorth | Primary | 96%\nNorth | Middle | 91%\nNorth | Upper | 84%\nSouth | Primary | 93%\nSouth | Middle | 88%\nSouth | Upper | 79%\nEast | Primary | 98%\nEast | Middle | 94%\nEast | Upper | 90%\nWest | Primary | 89%\nWest | Middle | 82%\nWest | Upper | 73%\nDesign intent: All 12 cells must be present at the correct row and column; do not invent a causal explanation. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• Attendance changes by region\n• School attendance rate · %\n• North\n• Primary\n• 96%\n• Middle\n• 91%\n• Upper\n• 84%\n• South\n• 93%\n• 88%\n• 79%\n• East\n• 98%\n• 94%\n• 90%\n• West\n• 89%\n• 82%\n• 73%\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+    },
+    {
+      "job": "c11_school_attendance_en__qwen21_bf16__seed1337",
+      "case_id": "c11_school_attendance_en",
+      "model": "qwen21_bf16",
+      "seed": 1337,
+      "prompt": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: Modern education policy report, crisp grid, cobalt-to-mint palette, accessible contrast and tidy sans serif labels.. At the top, give the exact title \"Attendance changes by region\" clear visual priority; place the exact subtitle \"School attendance rate · %\" directly beneath it. Let the chart occupy most of the remaining canvas: A 4-by-3 heatmap: four region rows by three school stages; every cell contains its exact percentage and uses a consistent low-to-high color ramp.. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\nNorth | Primary | 96%\nNorth | Middle | 91%\nNorth | Upper | 84%\nSouth | Primary | 93%\nSouth | Middle | 88%\nSouth | Upper | 79%\nEast | Primary | 98%\nEast | Middle | 94%\nEast | Upper | 90%\nWest | Primary | 89%\nWest | Middle | 82%\nWest | Upper | 73%\nDesign intent: All 12 cells must be present at the correct row and column; do not invent a causal explanation. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• Attendance changes by region\n• School attendance rate · %\n• North\n• Primary\n• 96%\n• Middle\n• 91%\n• Upper\n• 84%\n• South\n• 93%\n• 88%\n• 79%\n• East\n• 98%\n• 94%\n• 90%\n• West\n• 89%\n• 82%\n• 73%\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+    },
+    {
+      "job": "c11_school_attendance_en__qwen21_turbo_int8__seed42",
+      "case_id": "c11_school_attendance_en",
+      "model": "qwen21_turbo_int8",
+      "seed": 42,
+      "prompt": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: Modern education policy report, crisp grid, cobalt-to-mint palette, accessible contrast and tidy sans serif labels.. At the top, give the exact title \"Attendance changes by region\" clear visual priority; place the exact subtitle \"School attendance rate · %\" directly beneath it. Let the chart occupy most of the remaining canvas: A 4-by-3 heatmap: four region rows by three school stages; every cell contains its exact percentage and uses a consistent low-to-high color ramp.. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\nNorth | Primary | 96%\nNorth | Middle | 91%\nNorth | Upper | 84%\nSouth | Primary | 93%\nSouth | Middle | 88%\nSouth | Upper | 79%\nEast | Primary | 98%\nEast | Middle | 94%\nEast | Upper | 90%\nWest | Primary | 89%\nWest | Middle | 82%\nWest | Upper | 73%\nDesign intent: All 12 cells must be present at the correct row and column; do not invent a causal explanation. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• Attendance changes by region\n• School attendance rate · %\n• North\n• Primary\n• 96%\n• Middle\n• 91%\n• Upper\n• 84%\n• South\n• 93%\n• 88%\n• 79%\n• East\n• 98%\n• 94%\n• 90%\n• West\n• 89%\n• 82%\n• 73%\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+    },
+    {
+      "job": "c11_school_attendance_en__qwen21_turbo_int8__seed1337",
+      "case_id": "c11_school_attendance_en",
+      "model": "qwen21_turbo_int8",
+      "seed": 1337,
+      "prompt": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: Modern education policy report, crisp grid, cobalt-to-mint palette, accessible contrast and tidy sans serif labels.. At the top, give the exact title \"Attendance changes by region\" clear visual priority; place the exact subtitle \"School attendance rate · %\" directly beneath it. Let the chart occupy most of the remaining canvas: A 4-by-3 heatmap: four region rows by three school stages; every cell contains its exact percentage and uses a consistent low-to-high color ramp.. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\nNorth | Primary | 96%\nNorth | Middle | 91%\nNorth | Upper | 84%\nSouth | Primary | 93%\nSouth | Middle | 88%\nSouth | Upper | 79%\nEast | Primary | 98%\nEast | Middle | 94%\nEast | Upper | 90%\nWest | Primary | 89%\nWest | Middle | 82%\nWest | Upper | 73%\nDesign intent: All 12 cells must be present at the correct row and column; do not invent a causal explanation. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• Attendance changes by region\n• School attendance rate · %\n• North\n• Primary\n• 96%\n• Middle\n• 91%\n• Upper\n• 84%\n• South\n• 93%\n• 88%\n• 79%\n• East\n• 98%\n• 94%\n• 90%\n• West\n• 89%\n• 82%\n• 73%\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+    },
+    {
+      "job": "c12_food_waste_zh__qwen21_bf16__seed42",
+      "case_id": "c12_food_waste_zh",
+      "model": "qwen21_bf16",
+      "seed": 42,
+      "prompt": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: warm hand-drawn editorial chart on cream paper, tomato red and leaf green, spare linework and prominent quantities. At the top, give the exact title \"食物浪费，在哪一步累积\" clear visual priority; place the exact subtitle \"一周 100 千克可食食物的去向\" directly beneath it. Let the chart occupy most of the remaining canvas: a waterfall chart: begin at 100 kg, subtract purchasing loss, storage loss, and meal-preparation loss in sequence, and end at 50 kg; each connector shows the cumulative decrease. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\n起始 | 100 千克\n采购损耗 | −12 千克\n储存损耗 | −18 千克\n备餐损耗 | −20 千克\n最终保留 | 50 千克\nDesign intent: The arithmetic must balance. Loss bars descend to the final 50 kg; the largest single loss is meal preparation. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• 食物浪费，在哪一步累积\n• 一周 100 千克可食食物的去向\n• 起始\n• 100 千克\n• 采购损耗\n• −12 千克\n• 储存损耗\n• −18 千克\n• 备餐损耗\n• −20 千克\n• 最终保留\n• 50 千克\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+    },
+    {
+      "job": "c12_food_waste_zh__qwen21_bf16__seed1337",
+      "case_id": "c12_food_waste_zh",
+      "model": "qwen21_bf16",
+      "seed": 1337,
+      "prompt": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: warm hand-drawn editorial chart on cream paper, tomato red and leaf green, spare linework and prominent quantities. At the top, give the exact title \"食物浪费，在哪一步累积\" clear visual priority; place the exact subtitle \"一周 100 千克可食食物的去向\" directly beneath it. Let the chart occupy most of the remaining canvas: a waterfall chart: begin at 100 kg, subtract purchasing loss, storage loss, and meal-preparation loss in sequence, and end at 50 kg; each connector shows the cumulative decrease. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\n起始 | 100 千克\n采购损耗 | −12 千克\n储存损耗 | −18 千克\n备餐损耗 | −20 千克\n最终保留 | 50 千克\nDesign intent: The arithmetic must balance. Loss bars descend to the final 50 kg; the largest single loss is meal preparation. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• 食物浪费，在哪一步累积\n• 一周 100 千克可食食物的去向\n• 起始\n• 100 千克\n• 采购损耗\n• −12 千克\n• 储存损耗\n• −18 千克\n• 备餐损耗\n• −20 千克\n• 最终保留\n• 50 千克\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+    },
+    {
+      "job": "c12_food_waste_zh__qwen21_turbo_int8__seed42",
+      "case_id": "c12_food_waste_zh",
+      "model": "qwen21_turbo_int8",
+      "seed": 42,
+      "prompt": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: warm hand-drawn editorial chart on cream paper, tomato red and leaf green, spare linework and prominent quantities. At the top, give the exact title \"食物浪费，在哪一步累积\" clear visual priority; place the exact subtitle \"一周 100 千克可食食物的去向\" directly beneath it. Let the chart occupy most of the remaining canvas: a waterfall chart: begin at 100 kg, subtract purchasing loss, storage loss, and meal-preparation loss in sequence, and end at 50 kg; each connector shows the cumulative decrease. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\n起始 | 100 千克\n采购损耗 | −12 千克\n储存损耗 | −18 千克\n备餐损耗 | −20 千克\n最终保留 | 50 千克\nDesign intent: The arithmetic must balance. Loss bars descend to the final 50 kg; the largest single loss is meal preparation. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• 食物浪费，在哪一步累积\n• 一周 100 千克可食食物的去向\n• 起始\n• 100 千克\n• 采购损耗\n• −12 千克\n• 储存损耗\n• −18 千克\n• 备餐损耗\n• −20 千克\n• 最终保留\n• 50 千克\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+    },
+    {
+      "job": "c12_food_waste_zh__qwen21_turbo_int8__seed1337",
+      "case_id": "c12_food_waste_zh",
+      "model": "qwen21_turbo_int8",
+      "seed": 1337,
+      "prompt": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: warm hand-drawn editorial chart on cream paper, tomato red and leaf green, spare linework and prominent quantities. At the top, give the exact title \"食物浪费，在哪一步累积\" clear visual priority; place the exact subtitle \"一周 100 千克可食食物的去向\" directly beneath it. Let the chart occupy most of the remaining canvas: a waterfall chart: begin at 100 kg, subtract purchasing loss, storage loss, and meal-preparation loss in sequence, and end at 50 kg; each connector shows the cumulative decrease. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\n起始 | 100 千克\n采购损耗 | −12 千克\n储存损耗 | −18 千克\n备餐损耗 | −20 千克\n最终保留 | 50 千克\nDesign intent: The arithmetic must balance. Loss bars descend to the final 50 kg; the largest single loss is meal preparation. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• 食物浪费，在哪一步累积\n• 一周 100 千克可食食物的去向\n• 起始\n• 100 千克\n• 采购损耗\n• −12 千克\n• 储存损耗\n• −18 千克\n• 备餐损耗\n• −20 千克\n• 最终保留\n• 50 千克\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+    },
+    {
+      "job": "c13_sleep_distribution_en__qwen21_bf16__seed42",
+      "case_id": "c13_sleep_distribution_en",
+      "model": "qwen21_bf16",
+      "seed": 42,
+      "prompt": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: Quiet science magazine, midnight blue background, soft lunar cream marks, one orange median rule, minimalist labels.. At the top, give the exact title \"Sleep is not one-size-fits-all\" clear visual priority; place the exact subtitle \"Hours slept across 12 sample nights\" directly beneath it. Let the chart occupy most of the remaining canvas: A horizontal dot plot on a 4–10 hour axis. Plot all twelve observations, show the median at 7.0 hours, and distinguish the median from individual dots.. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\nNight 1 | 5.5 h\nNight 2 | 6.0 h\nNight 3 | 6.0 h\nNight 4 | 6.5 h\nNight 5 | 6.5 h\nNight 6 | 7.0 h\nNight 7 | 7.0 h\nNight 8 | 7.0 h\nNight 9 | 7.5 h\nNight 10 | 8.0 h\nNight 11 | 8.0 h\nNight 12 | 9.0 h\nDesign intent: Show twelve separate observations, not a bar chart; do not label the sample as a population. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• Sleep is not one-size-fits-all\n• Hours slept across 12 sample nights\n• Night 1\n• 5.5 h\n• Night 2\n• 6.0 h\n• Night 3\n• Night 4\n• 6.5 h\n• Night 5\n• Night 6\n• 7.0 h\n• Night 7\n• Night 8\n• Night 9\n• 7.5 h\n• Night 10\n• 8.0 h\n• Night 11\n• Night 12\n• 9.0 h\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+    },
+    {
+      "job": "c13_sleep_distribution_en__qwen21_bf16__seed1337",
+      "case_id": "c13_sleep_distribution_en",
+      "model": "qwen21_bf16",
+      "seed": 1337,
+      "prompt": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: Quiet science magazine, midnight blue background, soft lunar cream marks, one orange median rule, minimalist labels.. At the top, give the exact title \"Sleep is not one-size-fits-all\" clear visual priority; place the exact subtitle \"Hours slept across 12 sample nights\" directly beneath it. Let the chart occupy most of the remaining canvas: A horizontal dot plot on a 4–10 hour axis. Plot all twelve observations, show the median at 7.0 hours, and distinguish the median from individual dots.. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\nNight 1 | 5.5 h\nNight 2 | 6.0 h\nNight 3 | 6.0 h\nNight 4 | 6.5 h\nNight 5 | 6.5 h\nNight 6 | 7.0 h\nNight 7 | 7.0 h\nNight 8 | 7.0 h\nNight 9 | 7.5 h\nNight 10 | 8.0 h\nNight 11 | 8.0 h\nNight 12 | 9.0 h\nDesign intent: Show twelve separate observations, not a bar chart; do not label the sample as a population. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• Sleep is not one-size-fits-all\n• Hours slept across 12 sample nights\n• Night 1\n• 5.5 h\n• Night 2\n• 6.0 h\n• Night 3\n• Night 4\n• 6.5 h\n• Night 5\n• Night 6\n• 7.0 h\n• Night 7\n• Night 8\n• Night 9\n• 7.5 h\n• Night 10\n• 8.0 h\n• Night 11\n• Night 12\n• 9.0 h\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+    },
+    {
+      "job": "c13_sleep_distribution_en__qwen21_turbo_int8__seed42",
+      "case_id": "c13_sleep_distribution_en",
+      "model": "qwen21_turbo_int8",
+      "seed": 42,
+      "prompt": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: Quiet science magazine, midnight blue background, soft lunar cream marks, one orange median rule, minimalist labels.. At the top, give the exact title \"Sleep is not one-size-fits-all\" clear visual priority; place the exact subtitle \"Hours slept across 12 sample nights\" directly beneath it. Let the chart occupy most of the remaining canvas: A horizontal dot plot on a 4–10 hour axis. Plot all twelve observations, show the median at 7.0 hours, and distinguish the median from individual dots.. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\nNight 1 | 5.5 h\nNight 2 | 6.0 h\nNight 3 | 6.0 h\nNight 4 | 6.5 h\nNight 5 | 6.5 h\nNight 6 | 7.0 h\nNight 7 | 7.0 h\nNight 8 | 7.0 h\nNight 9 | 7.5 h\nNight 10 | 8.0 h\nNight 11 | 8.0 h\nNight 12 | 9.0 h\nDesign intent: Show twelve separate observations, not a bar chart; do not label the sample as a population. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• Sleep is not one-size-fits-all\n• Hours slept across 12 sample nights\n• Night 1\n• 5.5 h\n• Night 2\n• 6.0 h\n• Night 3\n• Night 4\n• 6.5 h\n• Night 5\n• Night 6\n• 7.0 h\n• Night 7\n• Night 8\n• Night 9\n• 7.5 h\n• Night 10\n• 8.0 h\n• Night 11\n• Night 12\n• 9.0 h\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+    },
+    {
+      "job": "c13_sleep_distribution_en__qwen21_turbo_int8__seed1337",
+      "case_id": "c13_sleep_distribution_en",
+      "model": "qwen21_turbo_int8",
+      "seed": 1337,
+      "prompt": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: Quiet science magazine, midnight blue background, soft lunar cream marks, one orange median rule, minimalist labels.. At the top, give the exact title \"Sleep is not one-size-fits-all\" clear visual priority; place the exact subtitle \"Hours slept across 12 sample nights\" directly beneath it. Let the chart occupy most of the remaining canvas: A horizontal dot plot on a 4–10 hour axis. Plot all twelve observations, show the median at 7.0 hours, and distinguish the median from individual dots.. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\nNight 1 | 5.5 h\nNight 2 | 6.0 h\nNight 3 | 6.0 h\nNight 4 | 6.5 h\nNight 5 | 6.5 h\nNight 6 | 7.0 h\nNight 7 | 7.0 h\nNight 8 | 7.0 h\nNight 9 | 7.5 h\nNight 10 | 8.0 h\nNight 11 | 8.0 h\nNight 12 | 9.0 h\nDesign intent: Show twelve separate observations, not a bar chart; do not label the sample as a population. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• Sleep is not one-size-fits-all\n• Hours slept across 12 sample nights\n• Night 1\n• 5.5 h\n• Night 2\n• 6.0 h\n• Night 3\n• Night 4\n• 6.5 h\n• Night 5\n• Night 6\n• 7.0 h\n• Night 7\n• Night 8\n• Night 9\n• 7.5 h\n• Night 10\n• 8.0 h\n• Night 11\n• Night 12\n• 9.0 h\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+    },
+    {
+      "job": "c14_population_pyramid_zh__qwen21_bf16__seed42",
+      "case_id": "c14_population_pyramid_zh",
+      "model": "qwen21_bf16",
+      "seed": 42,
+      "prompt": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: modern public data report, mist blue and coral orange, clean grid, very small simplified human silhouettes as accents. At the top, give the exact title \"城市人口的年龄结构\" clear visual priority; place the exact subtitle \"示例社区 · 人数（千人）\" directly beneath it. Let the chart occupy most of the remaining canvas: a population pyramid with male bars on the left and female bars on the right, sharing one central baseline across five age groups; bar lengths must match the counts. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\n0–14 岁 | 男 18 | 女 17\n15–29 岁 | 男 22 | 女 23\n30–44 岁 | 男 26 | 女 27\n45–59 岁 | 男 20 | 女 21\n60 岁以上 | 男 14 | 女 16\nDesign intent: Order age groups from youngest at the top to oldest at the bottom. Mirror bar lengths around the center without swapping counts. The 30–44 group is largest; women outnumber men among people aged 60 and above. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• 城市人口的年龄结构\n• 示例社区 · 人数（千人）\n• 0–14 岁\n• 男 18\n• 女 17\n• 15–29 岁\n• 男 22\n• 女 23\n• 30–44 岁\n• 男 26\n• 女 27\n• 45–59 岁\n• 男 20\n• 女 21\n• 60 岁以上\n• 男 14\n• 女 16\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+    },
+    {
+      "job": "c14_population_pyramid_zh__qwen21_bf16__seed1337",
+      "case_id": "c14_population_pyramid_zh",
+      "model": "qwen21_bf16",
+      "seed": 1337,
+      "prompt": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: modern public data report, mist blue and coral orange, clean grid, very small simplified human silhouettes as accents. At the top, give the exact title \"城市人口的年龄结构\" clear visual priority; place the exact subtitle \"示例社区 · 人数（千人）\" directly beneath it. Let the chart occupy most of the remaining canvas: a population pyramid with male bars on the left and female bars on the right, sharing one central baseline across five age groups; bar lengths must match the counts. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\n0–14 岁 | 男 18 | 女 17\n15–29 岁 | 男 22 | 女 23\n30–44 岁 | 男 26 | 女 27\n45–59 岁 | 男 20 | 女 21\n60 岁以上 | 男 14 | 女 16\nDesign intent: Order age groups from youngest at the top to oldest at the bottom. Mirror bar lengths around the center without swapping counts. The 30–44 group is largest; women outnumber men among people aged 60 and above. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• 城市人口的年龄结构\n• 示例社区 · 人数（千人）\n• 0–14 岁\n• 男 18\n• 女 17\n• 15–29 岁\n• 男 22\n• 女 23\n• 30–44 岁\n• 男 26\n• 女 27\n• 45–59 岁\n• 男 20\n• 女 21\n• 60 岁以上\n• 男 14\n• 女 16\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+    },
+    {
+      "job": "c14_population_pyramid_zh__qwen21_turbo_int8__seed42",
+      "case_id": "c14_population_pyramid_zh",
+      "model": "qwen21_turbo_int8",
+      "seed": 42,
+      "prompt": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: modern public data report, mist blue and coral orange, clean grid, very small simplified human silhouettes as accents. At the top, give the exact title \"城市人口的年龄结构\" clear visual priority; place the exact subtitle \"示例社区 · 人数（千人）\" directly beneath it. Let the chart occupy most of the remaining canvas: a population pyramid with male bars on the left and female bars on the right, sharing one central baseline across five age groups; bar lengths must match the counts. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\n0–14 岁 | 男 18 | 女 17\n15–29 岁 | 男 22 | 女 23\n30–44 岁 | 男 26 | 女 27\n45–59 岁 | 男 20 | 女 21\n60 岁以上 | 男 14 | 女 16\nDesign intent: Order age groups from youngest at the top to oldest at the bottom. Mirror bar lengths around the center without swapping counts. The 30–44 group is largest; women outnumber men among people aged 60 and above. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• 城市人口的年龄结构\n• 示例社区 · 人数（千人）\n• 0–14 岁\n• 男 18\n• 女 17\n• 15–29 岁\n• 男 22\n• 女 23\n• 30–44 岁\n• 男 26\n• 女 27\n• 45–59 岁\n• 男 20\n• 女 21\n• 60 岁以上\n• 男 14\n• 女 16\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+    },
+    {
+      "job": "c14_population_pyramid_zh__qwen21_turbo_int8__seed1337",
+      "case_id": "c14_population_pyramid_zh",
+      "model": "qwen21_turbo_int8",
+      "seed": 1337,
+      "prompt": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: modern public data report, mist blue and coral orange, clean grid, very small simplified human silhouettes as accents. At the top, give the exact title \"城市人口的年龄结构\" clear visual priority; place the exact subtitle \"示例社区 · 人数（千人）\" directly beneath it. Let the chart occupy most of the remaining canvas: a population pyramid with male bars on the left and female bars on the right, sharing one central baseline across five age groups; bar lengths must match the counts. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\n0–14 岁 | 男 18 | 女 17\n15–29 岁 | 男 22 | 女 23\n30–44 岁 | 男 26 | 女 27\n45–59 岁 | 男 20 | 女 21\n60 岁以上 | 男 14 | 女 16\nDesign intent: Order age groups from youngest at the top to oldest at the bottom. Mirror bar lengths around the center without swapping counts. The 30–44 group is largest; women outnumber men among people aged 60 and above. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• 城市人口的年龄结构\n• 示例社区 · 人数（千人）\n• 0–14 岁\n• 男 18\n• 女 17\n• 15–29 岁\n• 男 22\n• 女 23\n• 30–44 岁\n• 男 26\n• 女 27\n• 45–59 岁\n• 男 20\n• 女 21\n• 60 岁以上\n• 男 14\n• 女 16\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+    },
+    {
+      "job": "c15_household_water_zh__qwen21_bf16__seed42",
+      "case_id": "c15_household_water_zh",
+      "model": "qwen21_bf16",
+      "seed": 42,
+      "prompt": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: minimal environmental public information design, white ground, deep teal and bright cyan, large readable values and only a few water-drop icons. At the top, give the exact title \"修复漏水，节水看得见\" clear visual priority; place the exact subtitle \"四户家庭每日用水量对比\" directly beneath it. Let the chart occupy most of the remaining canvas: a dumbbell chart with one thin horizontal connector per household and before/after endpoints on a shared zero-based 0–300 L scale. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\n甲户 | 240 升 | 180 升\n乙户 | 210 升 | 150 升\n丙户 | 270 升 | 210 升\n丁户 | 180 升 | 150 升\nDesign intent: Pair each household’s before and after values correctly. All four households save between 30 and 60 liters per day. Do not exaggerate the differences. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• 修复漏水，节水看得见\n• 四户家庭每日用水量对比\n• 甲户\n• 240 升\n• 180 升\n• 乙户\n• 210 升\n• 150 升\n• 丙户\n• 270 升\n• 丁户\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+    },
+    {
+      "job": "c15_household_water_zh__qwen21_bf16__seed1337",
+      "case_id": "c15_household_water_zh",
+      "model": "qwen21_bf16",
+      "seed": 1337,
+      "prompt": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: minimal environmental public information design, white ground, deep teal and bright cyan, large readable values and only a few water-drop icons. At the top, give the exact title \"修复漏水，节水看得见\" clear visual priority; place the exact subtitle \"四户家庭每日用水量对比\" directly beneath it. Let the chart occupy most of the remaining canvas: a dumbbell chart with one thin horizontal connector per household and before/after endpoints on a shared zero-based 0–300 L scale. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\n甲户 | 240 升 | 180 升\n乙户 | 210 升 | 150 升\n丙户 | 270 升 | 210 升\n丁户 | 180 升 | 150 升\nDesign intent: Pair each household’s before and after values correctly. All four households save between 30 and 60 liters per day. Do not exaggerate the differences. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• 修复漏水，节水看得见\n• 四户家庭每日用水量对比\n• 甲户\n• 240 升\n• 180 升\n• 乙户\n• 210 升\n• 150 升\n• 丙户\n• 270 升\n• 丁户\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+    },
+    {
+      "job": "c15_household_water_zh__qwen21_turbo_int8__seed42",
+      "case_id": "c15_household_water_zh",
+      "model": "qwen21_turbo_int8",
+      "seed": 42,
+      "prompt": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: minimal environmental public information design, white ground, deep teal and bright cyan, large readable values and only a few water-drop icons. At the top, give the exact title \"修复漏水，节水看得见\" clear visual priority; place the exact subtitle \"四户家庭每日用水量对比\" directly beneath it. Let the chart occupy most of the remaining canvas: a dumbbell chart with one thin horizontal connector per household and before/after endpoints on a shared zero-based 0–300 L scale. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\n甲户 | 240 升 | 180 升\n乙户 | 210 升 | 150 升\n丙户 | 270 升 | 210 升\n丁户 | 180 升 | 150 升\nDesign intent: Pair each household’s before and after values correctly. All four households save between 30 and 60 liters per day. Do not exaggerate the differences. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• 修复漏水，节水看得见\n• 四户家庭每日用水量对比\n• 甲户\n• 240 升\n• 180 升\n• 乙户\n• 210 升\n• 150 升\n• 丙户\n• 270 升\n• 丁户\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+    },
+    {
+      "job": "c15_household_water_zh__qwen21_turbo_int8__seed1337",
+      "case_id": "c15_household_water_zh",
+      "model": "qwen21_turbo_int8",
+      "seed": 1337,
+      "prompt": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: minimal environmental public information design, white ground, deep teal and bright cyan, large readable values and only a few water-drop icons. At the top, give the exact title \"修复漏水，节水看得见\" clear visual priority; place the exact subtitle \"四户家庭每日用水量对比\" directly beneath it. Let the chart occupy most of the remaining canvas: a dumbbell chart with one thin horizontal connector per household and before/after endpoints on a shared zero-based 0–300 L scale. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\n甲户 | 240 升 | 180 升\n乙户 | 210 升 | 150 升\n丙户 | 270 升 | 210 升\n丁户 | 180 升 | 150 升\nDesign intent: Pair each household’s before and after values correctly. All four households save between 30 and 60 liters per day. Do not exaggerate the differences. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• 修复漏水，节水看得见\n• 四户家庭每日用水量对比\n• 甲户\n• 240 升\n• 180 升\n• 乙户\n• 210 升\n• 150 升\n• 丙户\n• 270 升\n• 丁户\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+    },
+    {
+      "job": "c16_community_solar_en__qwen21_bf16__seed42",
+      "case_id": "c16_community_solar_en",
+      "model": "qwen21_bf16",
+      "seed": 42,
+      "prompt": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: Bold contemporary civic dashboard, warm yellow, charcoal and sky blue, clean geometric blocks, strong type hierarchy.. At the top, give the exact title \"Where the solar budget goes\" clear visual priority; place the exact subtitle \"Community project · $100,000\" directly beneath it. Let the chart occupy most of the remaining canvas: A treemap with four non-overlapping rectangles sized in proportion to the exact budget allocations; label each category and amount.. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\nPanels | $45,000\nInstallation | $25,000\nBattery | $20,000\nTraining | $10,000\nDesign intent: Rectangle areas must follow 45:25:20:10; labels and dollar amounts must stay attached. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• Where the solar budget goes\n• Community project · $100,000\n• Panels\n• $45,000\n• Installation\n• $25,000\n• Battery\n• $20,000\n• Training\n• $10,000\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+    },
+    {
+      "job": "c16_community_solar_en__qwen21_bf16__seed1337",
+      "case_id": "c16_community_solar_en",
+      "model": "qwen21_bf16",
+      "seed": 1337,
+      "prompt": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: Bold contemporary civic dashboard, warm yellow, charcoal and sky blue, clean geometric blocks, strong type hierarchy.. At the top, give the exact title \"Where the solar budget goes\" clear visual priority; place the exact subtitle \"Community project · $100,000\" directly beneath it. Let the chart occupy most of the remaining canvas: A treemap with four non-overlapping rectangles sized in proportion to the exact budget allocations; label each category and amount.. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\nPanels | $45,000\nInstallation | $25,000\nBattery | $20,000\nTraining | $10,000\nDesign intent: Rectangle areas must follow 45:25:20:10; labels and dollar amounts must stay attached. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• Where the solar budget goes\n• Community project · $100,000\n• Panels\n• $45,000\n• Installation\n• $25,000\n• Battery\n• $20,000\n• Training\n• $10,000\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+    },
+    {
+      "job": "c16_community_solar_en__qwen21_turbo_int8__seed42",
+      "case_id": "c16_community_solar_en",
+      "model": "qwen21_turbo_int8",
+      "seed": 42,
+      "prompt": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: Bold contemporary civic dashboard, warm yellow, charcoal and sky blue, clean geometric blocks, strong type hierarchy.. At the top, give the exact title \"Where the solar budget goes\" clear visual priority; place the exact subtitle \"Community project · $100,000\" directly beneath it. Let the chart occupy most of the remaining canvas: A treemap with four non-overlapping rectangles sized in proportion to the exact budget allocations; label each category and amount.. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\nPanels | $45,000\nInstallation | $25,000\nBattery | $20,000\nTraining | $10,000\nDesign intent: Rectangle areas must follow 45:25:20:10; labels and dollar amounts must stay attached. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• Where the solar budget goes\n• Community project · $100,000\n• Panels\n• $45,000\n• Installation\n• $25,000\n• Battery\n• $20,000\n• Training\n• $10,000\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+    },
+    {
+      "job": "c16_community_solar_en__qwen21_turbo_int8__seed1337",
+      "case_id": "c16_community_solar_en",
+      "model": "qwen21_turbo_int8",
+      "seed": 1337,
+      "prompt": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: Bold contemporary civic dashboard, warm yellow, charcoal and sky blue, clean geometric blocks, strong type hierarchy.. At the top, give the exact title \"Where the solar budget goes\" clear visual priority; place the exact subtitle \"Community project · $100,000\" directly beneath it. Let the chart occupy most of the remaining canvas: A treemap with four non-overlapping rectangles sized in proportion to the exact budget allocations; label each category and amount.. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\nPanels | $45,000\nInstallation | $25,000\nBattery | $20,000\nTraining | $10,000\nDesign intent: Rectangle areas must follow 45:25:20:10; labels and dollar amounts must stay attached. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• Where the solar budget goes\n• Community project · $100,000\n• Panels\n• $45,000\n• Installation\n• $25,000\n• Battery\n• $20,000\n• Training\n• $10,000\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+    },
+    {
+      "job": "c17_internet_gap_zh__qwen21_bf16__seed42",
+      "case_id": "c17_internet_gap_zh",
+      "model": "qwen21_bf16",
+      "seed": 42,
+      "prompt": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: newspaper data column, warm gray ground, black typography, lake blue and brick red, moderate chart density. At the top, give the exact title \"网络接入，城乡差距\" clear visual priority; place the exact subtitle \"四个地区的互联网使用率\" directly beneath it. Let the chart occupy most of the remaining canvas: four small-multiple paired bar charts for East, South, West, and North; every panel shares the same zero-based 0–100% vertical scale, with urban and rural bars paired. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\n东部 | 城市 92% | 乡村 76%\n南部 | 城市 88% | 乡村 61%\n西部 | 城市 81% | 乡村 49%\n北部 | 城市 90% | 乡村 72%\nDesign intent: Keep the urban and rural values attached to the correct region. The West has the widest gap at 32 percentage points. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• 网络接入，城乡差距\n• 四个地区的互联网使用率\n• 东部\n• 城市 92%\n• 乡村 76%\n• 南部\n• 城市 88%\n• 乡村 61%\n• 西部\n• 城市 81%\n• 乡村 49%\n• 北部\n• 城市 90%\n• 乡村 72%\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+    },
+    {
+      "job": "c17_internet_gap_zh__qwen21_bf16__seed1337",
+      "case_id": "c17_internet_gap_zh",
+      "model": "qwen21_bf16",
+      "seed": 1337,
+      "prompt": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: newspaper data column, warm gray ground, black typography, lake blue and brick red, moderate chart density. At the top, give the exact title \"网络接入，城乡差距\" clear visual priority; place the exact subtitle \"四个地区的互联网使用率\" directly beneath it. Let the chart occupy most of the remaining canvas: four small-multiple paired bar charts for East, South, West, and North; every panel shares the same zero-based 0–100% vertical scale, with urban and rural bars paired. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\n东部 | 城市 92% | 乡村 76%\n南部 | 城市 88% | 乡村 61%\n西部 | 城市 81% | 乡村 49%\n北部 | 城市 90% | 乡村 72%\nDesign intent: Keep the urban and rural values attached to the correct region. The West has the widest gap at 32 percentage points. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• 网络接入，城乡差距\n• 四个地区的互联网使用率\n• 东部\n• 城市 92%\n• 乡村 76%\n• 南部\n• 城市 88%\n• 乡村 61%\n• 西部\n• 城市 81%\n• 乡村 49%\n• 北部\n• 城市 90%\n• 乡村 72%\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+    },
+    {
+      "job": "c17_internet_gap_zh__qwen21_turbo_int8__seed42",
+      "case_id": "c17_internet_gap_zh",
+      "model": "qwen21_turbo_int8",
+      "seed": 42,
+      "prompt": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: newspaper data column, warm gray ground, black typography, lake blue and brick red, moderate chart density. At the top, give the exact title \"网络接入，城乡差距\" clear visual priority; place the exact subtitle \"四个地区的互联网使用率\" directly beneath it. Let the chart occupy most of the remaining canvas: four small-multiple paired bar charts for East, South, West, and North; every panel shares the same zero-based 0–100% vertical scale, with urban and rural bars paired. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\n东部 | 城市 92% | 乡村 76%\n南部 | 城市 88% | 乡村 61%\n西部 | 城市 81% | 乡村 49%\n北部 | 城市 90% | 乡村 72%\nDesign intent: Keep the urban and rural values attached to the correct region. The West has the widest gap at 32 percentage points. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• 网络接入，城乡差距\n• 四个地区的互联网使用率\n• 东部\n• 城市 92%\n• 乡村 76%\n• 南部\n• 城市 88%\n• 乡村 61%\n• 西部\n• 城市 81%\n• 乡村 49%\n• 北部\n• 城市 90%\n• 乡村 72%\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+    },
+    {
+      "job": "c17_internet_gap_zh__qwen21_turbo_int8__seed1337",
+      "case_id": "c17_internet_gap_zh",
+      "model": "qwen21_turbo_int8",
+      "seed": 1337,
+      "prompt": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: newspaper data column, warm gray ground, black typography, lake blue and brick red, moderate chart density. At the top, give the exact title \"网络接入，城乡差距\" clear visual priority; place the exact subtitle \"四个地区的互联网使用率\" directly beneath it. Let the chart occupy most of the remaining canvas: four small-multiple paired bar charts for East, South, West, and North; every panel shares the same zero-based 0–100% vertical scale, with urban and rural bars paired. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\n东部 | 城市 92% | 乡村 76%\n南部 | 城市 88% | 乡村 61%\n西部 | 城市 81% | 乡村 49%\n北部 | 城市 90% | 乡村 72%\nDesign intent: Keep the urban and rural values attached to the correct region. The West has the widest gap at 32 percentage points. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• 网络接入，城乡差距\n• 四个地区的互联网使用率\n• 东部\n• 城市 92%\n• 乡村 76%\n• 南部\n• 城市 88%\n• 乡村 61%\n• 西部\n• 城市 81%\n• 乡村 49%\n• 北部\n• 城市 90%\n• 乡村 72%\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+    },
+    {
+      "job": "c18_lab_results_en__qwen21_bf16__seed42",
+      "case_id": "c18_lab_results_en",
+      "model": "qwen21_bf16",
+      "seed": 42,
+      "prompt": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: Scientific notebook meets editorial infographic, thin graphite axes, restrained teal and coral, precise but approachable.. At the top, give the exact title \"A range tells more than a point\" clear visual priority; place the exact subtitle \"Measured response by test group · units\" directly beneath it. Let the chart occupy most of the remaining canvas: A horizontal interval plot with point estimates and whiskers for four groups; distinguish the estimate from its interval and use a 0–100 axis.. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\nControl | 42 | 36–48\nDose A | 55 | 49–61\nDose B | 68 | 60–76\nDose C | 73 | 62–84\nDesign intent: Each interval must center on its estimate; intervals show uncertainty, not a second data series. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• A range tells more than a point\n• Measured response by test group · units\n• Control\n• 42\n• 36–48\n• Dose A\n• 55\n• 49–61\n• Dose B\n• 68\n• 60–76\n• Dose C\n• 73\n• 62–84\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+    },
+    {
+      "job": "c18_lab_results_en__qwen21_bf16__seed1337",
+      "case_id": "c18_lab_results_en",
+      "model": "qwen21_bf16",
+      "seed": 1337,
+      "prompt": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: Scientific notebook meets editorial infographic, thin graphite axes, restrained teal and coral, precise but approachable.. At the top, give the exact title \"A range tells more than a point\" clear visual priority; place the exact subtitle \"Measured response by test group · units\" directly beneath it. Let the chart occupy most of the remaining canvas: A horizontal interval plot with point estimates and whiskers for four groups; distinguish the estimate from its interval and use a 0–100 axis.. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\nControl | 42 | 36–48\nDose A | 55 | 49–61\nDose B | 68 | 60–76\nDose C | 73 | 62–84\nDesign intent: Each interval must center on its estimate; intervals show uncertainty, not a second data series. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• A range tells more than a point\n• Measured response by test group · units\n• Control\n• 42\n• 36–48\n• Dose A\n• 55\n• 49–61\n• Dose B\n• 68\n• 60–76\n• Dose C\n• 73\n• 62–84\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+    },
+    {
+      "job": "c18_lab_results_en__qwen21_turbo_int8__seed42",
+      "case_id": "c18_lab_results_en",
+      "model": "qwen21_turbo_int8",
+      "seed": 42,
+      "prompt": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: Scientific notebook meets editorial infographic, thin graphite axes, restrained teal and coral, precise but approachable.. At the top, give the exact title \"A range tells more than a point\" clear visual priority; place the exact subtitle \"Measured response by test group · units\" directly beneath it. Let the chart occupy most of the remaining canvas: A horizontal interval plot with point estimates and whiskers for four groups; distinguish the estimate from its interval and use a 0–100 axis.. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\nControl | 42 | 36–48\nDose A | 55 | 49–61\nDose B | 68 | 60–76\nDose C | 73 | 62–84\nDesign intent: Each interval must center on its estimate; intervals show uncertainty, not a second data series. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• A range tells more than a point\n• Measured response by test group · units\n• Control\n• 42\n• 36–48\n• Dose A\n• 55\n• 49–61\n• Dose B\n• 68\n• 60–76\n• Dose C\n• 73\n• 62–84\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+    },
+    {
+      "job": "c18_lab_results_en__qwen21_turbo_int8__seed1337",
+      "case_id": "c18_lab_results_en",
+      "model": "qwen21_turbo_int8",
+      "seed": 1337,
+      "prompt": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: Scientific notebook meets editorial infographic, thin graphite axes, restrained teal and coral, precise but approachable.. At the top, give the exact title \"A range tells more than a point\" clear visual priority; place the exact subtitle \"Measured response by test group · units\" directly beneath it. Let the chart occupy most of the remaining canvas: A horizontal interval plot with point estimates and whiskers for four groups; distinguish the estimate from its interval and use a 0–100 axis.. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\nControl | 42 | 36–48\nDose A | 55 | 49–61\nDose B | 68 | 60–76\nDose C | 73 | 62–84\nDesign intent: Each interval must center on its estimate; intervals show uncertainty, not a second data series. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• A range tells more than a point\n• Measured response by test group · units\n• Control\n• 42\n• 36–48\n• Dose A\n• 55\n• 49–61\n• Dose B\n• 68\n• 60–76\n• Dose C\n• 73\n• 62–84\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+    },
+    {
+      "job": "c19_reuse_network_zh__qwen21_bf16__seed42",
+      "case_id": "c19_reuse_network_zh",
+      "model": "qwen21_bf16",
+      "seed": 42,
+      "prompt": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: recycled-paper collage poster, indigo and orange, a clear reading path and carefully aligned flow arrows. At the top, give the exact title \"旧物，流向新的用途\" clear visual priority; place the exact subtitle \"一批 80 件闲置物品的再分配\" directly beneath it. Let the chart occupy most of the remaining canvas: a directed flow diagram from 80 idle items into three destinations; branch widths must be proportional to their quantities and all arrows flow outward from the source. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\n闲置物品 | 80 件\n捐赠 | 36 件\n维修再用 | 28 件\n材料回收 | 16 件\nDesign intent: The three destination quantities must sum to 80. Donation is the largest branch. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• 旧物，流向新的用途\n• 一批 80 件闲置物品的再分配\n• 闲置物品\n• 80 件\n• 捐赠\n• 36 件\n• 维修再用\n• 28 件\n• 材料回收\n• 16 件\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+    },
+    {
+      "job": "c19_reuse_network_zh__qwen21_bf16__seed1337",
+      "case_id": "c19_reuse_network_zh",
+      "model": "qwen21_bf16",
+      "seed": 1337,
+      "prompt": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: recycled-paper collage poster, indigo and orange, a clear reading path and carefully aligned flow arrows. At the top, give the exact title \"旧物，流向新的用途\" clear visual priority; place the exact subtitle \"一批 80 件闲置物品的再分配\" directly beneath it. Let the chart occupy most of the remaining canvas: a directed flow diagram from 80 idle items into three destinations; branch widths must be proportional to their quantities and all arrows flow outward from the source. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\n闲置物品 | 80 件\n捐赠 | 36 件\n维修再用 | 28 件\n材料回收 | 16 件\nDesign intent: The three destination quantities must sum to 80. Donation is the largest branch. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• 旧物，流向新的用途\n• 一批 80 件闲置物品的再分配\n• 闲置物品\n• 80 件\n• 捐赠\n• 36 件\n• 维修再用\n• 28 件\n• 材料回收\n• 16 件\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+    },
+    {
+      "job": "c19_reuse_network_zh__qwen21_turbo_int8__seed42",
+      "case_id": "c19_reuse_network_zh",
+      "model": "qwen21_turbo_int8",
+      "seed": 42,
+      "prompt": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: recycled-paper collage poster, indigo and orange, a clear reading path and carefully aligned flow arrows. At the top, give the exact title \"旧物，流向新的用途\" clear visual priority; place the exact subtitle \"一批 80 件闲置物品的再分配\" directly beneath it. Let the chart occupy most of the remaining canvas: a directed flow diagram from 80 idle items into three destinations; branch widths must be proportional to their quantities and all arrows flow outward from the source. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\n闲置物品 | 80 件\n捐赠 | 36 件\n维修再用 | 28 件\n材料回收 | 16 件\nDesign intent: The three destination quantities must sum to 80. Donation is the largest branch. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• 旧物，流向新的用途\n• 一批 80 件闲置物品的再分配\n• 闲置物品\n• 80 件\n• 捐赠\n• 36 件\n• 维修再用\n• 28 件\n• 材料回收\n• 16 件\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+    },
+    {
+      "job": "c19_reuse_network_zh__qwen21_turbo_int8__seed1337",
+      "case_id": "c19_reuse_network_zh",
+      "model": "qwen21_turbo_int8",
+      "seed": 1337,
+      "prompt": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: recycled-paper collage poster, indigo and orange, a clear reading path and carefully aligned flow arrows. At the top, give the exact title \"旧物，流向新的用途\" clear visual priority; place the exact subtitle \"一批 80 件闲置物品的再分配\" directly beneath it. Let the chart occupy most of the remaining canvas: a directed flow diagram from 80 idle items into three destinations; branch widths must be proportional to their quantities and all arrows flow outward from the source. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\n闲置物品 | 80 件\n捐赠 | 36 件\n维修再用 | 28 件\n材料回收 | 16 件\nDesign intent: The three destination quantities must sum to 80. Donation is the largest branch. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• 旧物，流向新的用途\n• 一批 80 件闲置物品的再分配\n• 闲置物品\n• 80 件\n• 捐赠\n• 36 件\n• 维修再用\n• 28 件\n• 材料回收\n• 16 件\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+    },
+    {
+      "job": "c20_product_tradeoff_en__qwen21_bf16__seed42",
+      "case_id": "c20_product_tradeoff_en",
+      "model": "qwen21_bf16",
+      "seed": 42,
+      "prompt": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: Retro-futurist product review, cream paper, indigo grid, tomato-red accent, small device silhouettes used sparingly.. At the top, give the exact title \"Price and battery life do not move together\" clear visual priority; place the exact subtitle \"Five devices · price vs. battery life\" directly beneath it. Let the chart occupy most of the remaining canvas: A scatter plot with five labeled devices; x-axis price in dollars, y-axis battery life in hours. Preserve each exact coordinate and avoid implying causation.. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\nAster | $300 | 8 h\nBirch | $450 | 12 h\nCedar | $600 | 10 h\nDune | $750 | 16 h\nEmber | $900 | 14 h\nDesign intent: Map price horizontally and battery life vertically; do not reverse any device coordinates. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• Price and battery life do not move together\n• Five devices · price vs. battery life\n• Aster\n• $300\n• 8 h\n• Birch\n• $450\n• 12 h\n• Cedar\n• $600\n• 10 h\n• Dune\n• $750\n• 16 h\n• Ember\n• $900\n• 14 h\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+    },
+    {
+      "job": "c20_product_tradeoff_en__qwen21_bf16__seed1337",
+      "case_id": "c20_product_tradeoff_en",
+      "model": "qwen21_bf16",
+      "seed": 1337,
+      "prompt": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: Retro-futurist product review, cream paper, indigo grid, tomato-red accent, small device silhouettes used sparingly.. At the top, give the exact title \"Price and battery life do not move together\" clear visual priority; place the exact subtitle \"Five devices · price vs. battery life\" directly beneath it. Let the chart occupy most of the remaining canvas: A scatter plot with five labeled devices; x-axis price in dollars, y-axis battery life in hours. Preserve each exact coordinate and avoid implying causation.. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\nAster | $300 | 8 h\nBirch | $450 | 12 h\nCedar | $600 | 10 h\nDune | $750 | 16 h\nEmber | $900 | 14 h\nDesign intent: Map price horizontally and battery life vertically; do not reverse any device coordinates. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• Price and battery life do not move together\n• Five devices · price vs. battery life\n• Aster\n• $300\n• 8 h\n• Birch\n• $450\n• 12 h\n• Cedar\n• $600\n• 10 h\n• Dune\n• $750\n• 16 h\n• Ember\n• $900\n• 14 h\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+    },
+    {
+      "job": "c20_product_tradeoff_en__qwen21_turbo_int8__seed42",
+      "case_id": "c20_product_tradeoff_en",
+      "model": "qwen21_turbo_int8",
+      "seed": 42,
+      "prompt": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: Retro-futurist product review, cream paper, indigo grid, tomato-red accent, small device silhouettes used sparingly.. At the top, give the exact title \"Price and battery life do not move together\" clear visual priority; place the exact subtitle \"Five devices · price vs. battery life\" directly beneath it. Let the chart occupy most of the remaining canvas: A scatter plot with five labeled devices; x-axis price in dollars, y-axis battery life in hours. Preserve each exact coordinate and avoid implying causation.. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\nAster | $300 | 8 h\nBirch | $450 | 12 h\nCedar | $600 | 10 h\nDune | $750 | 16 h\nEmber | $900 | 14 h\nDesign intent: Map price horizontally and battery life vertically; do not reverse any device coordinates. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• Price and battery life do not move together\n• Five devices · price vs. battery life\n• Aster\n• $300\n• 8 h\n• Birch\n• $450\n• 12 h\n• Cedar\n• $600\n• 10 h\n• Dune\n• $750\n• 16 h\n• Ember\n• $900\n• 14 h\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+    },
+    {
+      "job": "c20_product_tradeoff_en__qwen21_turbo_int8__seed1337",
+      "case_id": "c20_product_tradeoff_en",
+      "model": "qwen21_turbo_int8",
+      "seed": 1337,
+      "prompt": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: Retro-futurist product review, cream paper, indigo grid, tomato-red accent, small device silhouettes used sparingly.. At the top, give the exact title \"Price and battery life do not move together\" clear visual priority; place the exact subtitle \"Five devices · price vs. battery life\" directly beneath it. Let the chart occupy most of the remaining canvas: A scatter plot with five labeled devices; x-axis price in dollars, y-axis battery life in hours. Preserve each exact coordinate and avoid implying causation.. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\nAster | $300 | 8 h\nBirch | $450 | 12 h\nCedar | $600 | 10 h\nDune | $750 | 16 h\nEmber | $900 | 14 h\nDesign intent: Map price horizontally and battery life vertically; do not reverse any device coordinates. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• Price and battery life do not move together\n• Five devices · price vs. battery life\n• Aster\n• $300\n• 8 h\n• Birch\n• $450\n• 12 h\n• Cedar\n• $600\n• 10 h\n• Dune\n• $750\n• 16 h\n• Ember\n• $900\n• 14 h\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+    }
+  ],
+  "execution_started_at": "2026-10-14T16:05:17.429017+00:00",
+  "comfyui_pid": 95925,
+  "comfyui_url": "http://127.0.0.1:8188",
+  "results": [
+    {
+      "job": "c09_electricity_access_en__qwen21_bf16__seed42",
+      "model": "qwen21_bf16",
+      "case_id": "c09_electricity_access_en",
+      "seed": 42,
+      "status": "success",
+      "seconds": 79.71,
+      "image": "images/qwen21_bf16/c09_electricity_access_en__qwen21_bf16__seed42.png",
+      "record": "runs/c09_electricity_access_en__qwen21_bf16__seed42.json",
+      "sha256": "db46f88bd15c3b0c7746c0bd446e2bb6652db1206588f5f77953d179bc9b7afa"
+    },
+    {
+      "job": "c09_electricity_access_en__qwen21_bf16__seed1337",
+      "model": "qwen21_bf16",
+      "case_id": "c09_electricity_access_en",
+      "seed": 1337,
+      "status": "success",
+      "seconds": 32.86,
+      "image": "images/qwen21_bf16/c09_electricity_access_en__qwen21_bf16__seed1337.png",
+      "record": "runs/c09_electricity_access_en__qwen21_bf16__seed1337.json",
+      "sha256": "34354ad0dca2ce16f81e65fca5d4d9ccf8ae36196681050983834135f7b9e65b"
+    },
+    {
+      "job": "c10_city_transport_zh__qwen21_bf16__seed42",
+      "model": "qwen21_bf16",
+      "case_id": "c10_city_transport_zh",
+      "seed": 42,
+      "status": "success",
+      "seconds": 30.04,
+      "image": "images/qwen21_bf16/c10_city_transport_zh__qwen21_bf16__seed42.png",
+      "record": "runs/c10_city_transport_zh__qwen21_bf16__seed42.json",
+      "sha256": "78916cdf2054e7518fb69ad554c8a86cd480233f684378e134f8601eb55fd97b"
+    },
+    {
+      "job": "c10_city_transport_zh__qwen21_bf16__seed1337",
+      "model": "qwen21_bf16",
+      "case_id": "c10_city_transport_zh",
+      "seed": 1337,
+      "status": "success",
+      "seconds": 29.63,
+      "image": "images/qwen21_bf16/c10_city_transport_zh__qwen21_bf16__seed1337.png",
+      "record": "runs/c10_city_transport_zh__qwen21_bf16__seed1337.json",
+      "sha256": "da59f9986bd5d85a8dfd995f504caf25f10e48efd8a56fd5e45fe285c8277497"
+    },
+    {
+      "job": "c11_school_attendance_en__qwen21_bf16__seed42",
+      "model": "qwen21_bf16",
+      "case_id": "c11_school_attendance_en",
+      "seed": 42,
+      "status": "success",
+      "seconds": 30.03,
+      "image": "images/qwen21_bf16/c11_school_attendance_en__qwen21_bf16__seed42.png",
+      "record": "runs/c11_school_attendance_en__qwen21_bf16__seed42.json",
+      "sha256": "c3a1a3e57ed8a753c68d7a03543e5a035bc178ee9b44fe1de3e1b0588ef62a78"
+    },
+    {
+      "job": "c11_school_attendance_en__qwen21_bf16__seed1337",
+      "model": "qwen21_bf16",
+      "case_id": "c11_school_attendance_en",
+      "seed": 1337,
+      "status": "success",
+      "seconds": 29.3,
+      "image": "images/qwen21_bf16/c11_school_attendance_en__qwen21_bf16__seed1337.png",
+      "record": "runs/c11_school_attendance_en__qwen21_bf16__seed1337.json",
+      "sha256": "43405eda7286767e443a3c15a189e638a80134bd24deb4d131c8045cf1ef6c40"
+    },
+    {
+      "job": "c12_food_waste_zh__qwen21_bf16__seed42",
+      "model": "qwen21_bf16",
+      "case_id": "c12_food_waste_zh",
+      "seed": 42,
+      "status": "success",
+      "seconds": 30.66,
+      "image": "images/qwen21_bf16/c12_food_waste_zh__qwen21_bf16__seed42.png",
+      "record": "runs/c12_food_waste_zh__qwen21_bf16__seed42.json",
+      "sha256": "e036921b1f8e2b4f6f907ae9e8406e95b10a22afc38d2ec54e41e412d0837f68"
+    },
+    {
+      "job": "c12_food_waste_zh__qwen21_bf16__seed1337",
+      "model": "qwen21_bf16",
+      "case_id": "c12_food_waste_zh",
+      "seed": 1337,
+      "status": "success",
+      "seconds": 28.71,
+      "image": "images/qwen21_bf16/c12_food_waste_zh__qwen21_bf16__seed1337.png",
+      "record": "runs/c12_food_waste_zh__qwen21_bf16__seed1337.json",
+      "sha256": "c8e1bccaff69f52225340868233ffe21f311616e4b857606a49b990739d762f6"
+    },
+    {
+      "job": "c13_sleep_distribution_en__qwen21_bf16__seed42",
+      "model": "qwen21_bf16",
+      "case_id": "c13_sleep_distribution_en",
+      "seed": 42,
+      "status": "success",
+      "seconds": 30.05,
+      "image": "images/qwen21_bf16/c13_sleep_distribution_en__qwen21_bf16__seed42.png",
+      "record": "runs/c13_sleep_distribution_en__qwen21_bf16__seed42.json",
+      "sha256": "5a565f47d7c2fc12c23abd32ea9589f1dacd386dbabf6583aeddf5c37a5495e7"
+    },
+    {
+      "job": "c13_sleep_distribution_en__qwen21_bf16__seed1337",
+      "model": "qwen21_bf16",
+      "case_id": "c13_sleep_distribution_en",
+      "seed": 1337,
+      "status": "success",
+      "seconds": 28.98,
+      "image": "images/qwen21_bf16/c13_sleep_distribution_en__qwen21_bf16__seed1337.png",
+      "record": "runs/c13_sleep_distribution_en__qwen21_bf16__seed1337.json",
+      "sha256": "488b26ac279dc0ba07df553653cd131387d5fa87ff15bb3716ca1d595a445433"
+    },
+    {
+      "job": "c14_population_pyramid_zh__qwen21_bf16__seed42",
+      "model": "qwen21_bf16",
+      "case_id": "c14_population_pyramid_zh",
+      "seed": 42,
+      "status": "success",
+      "seconds": 30.12,
+      "image": "images/qwen21_bf16/c14_population_pyramid_zh__qwen21_bf16__seed42.png",
+      "record": "runs/c14_population_pyramid_zh__qwen21_bf16__seed42.json",
+      "sha256": "49b29ffe5067d1ffbc1476c26cfa1b25386ee1340ad6317ea1c3609b2c7db37e"
+    },
+    {
+      "job": "c14_population_pyramid_zh__qwen21_bf16__seed1337",
+      "model": "qwen21_bf16",
+      "case_id": "c14_population_pyramid_zh",
+      "seed": 1337,
+      "status": "success",
+      "seconds": 28.99,
+      "image": "images/qwen21_bf16/c14_population_pyramid_zh__qwen21_bf16__seed1337.png",
+      "record": "runs/c14_population_pyramid_zh__qwen21_bf16__seed1337.json",
+      "sha256": "9f023f55b6d8bdb0d1cd57654172f0cc567cbb0ae528a43f1b7783838915b4d7"
+    },
+    {
+      "job": "c15_household_water_zh__qwen21_bf16__seed42",
+      "model": "qwen21_bf16",
+      "case_id": "c15_household_water_zh",
+      "seed": 42,
+      "status": "success",
+      "seconds": 29.97,
+      "image": "images/qwen21_bf16/c15_household_water_zh__qwen21_bf16__seed42.png",
+      "record": "runs/c15_household_water_zh__qwen21_bf16__seed42.json",
+      "sha256": "dabe0461b241968dd48143f5874535465d71b1654baf90e73e1e0e8377a5cd71"
+    },
+    {
+      "job": "c15_household_water_zh__qwen21_bf16__seed1337",
+      "model": "qwen21_bf16",
+      "case_id": "c15_household_water_zh",
+      "seed": 1337,
+      "status": "success",
+      "seconds": 28.99,
+      "image": "images/qwen21_bf16/c15_household_water_zh__qwen21_bf16__seed1337.png",
+      "record": "runs/c15_household_water_zh__qwen21_bf16__seed1337.json",
+      "sha256": "e2b6eac44299dbaa4905f686994bec960a549a236ec537d3cc6d37d33854ac75"
+    },
+    {
+      "job": "c16_community_solar_en__qwen21_bf16__seed42",
+      "model": "qwen21_bf16",
+      "case_id": "c16_community_solar_en",
+      "seed": 42,
+      "status": "success",
+      "seconds": 30.02,
+      "image": "images/qwen21_bf16/c16_community_solar_en__qwen21_bf16__seed42.png",
+      "record": "runs/c16_community_solar_en__qwen21_bf16__seed42.json",
+      "sha256": "53c7063ff1b369f420a20dfbe93c5a71aa55c981de9a7c64515995938681975c"
+    },
+    {
+      "job": "c16_community_solar_en__qwen21_bf16__seed1337",
+      "model": "qwen21_bf16",
+      "case_id": "c16_community_solar_en",
+      "seed": 1337,
+      "status": "success",
+      "seconds": 29.01,
+      "image": "images/qwen21_bf16/c16_community_solar_en__qwen21_bf16__seed1337.png",
+      "record": "runs/c16_community_solar_en__qwen21_bf16__seed1337.json",
+      "sha256": "da229f93a8e85700bf8e0781eb84c0419843826943df3d9f711dfa77dacbdaa1"
+    },
+    {
+      "job": "c17_internet_gap_zh__qwen21_bf16__seed42",
+      "model": "qwen21_bf16",
+      "case_id": "c17_internet_gap_zh",
+      "seed": 42,
+      "status": "success",
+      "seconds": 29.97,
+      "image": "images/qwen21_bf16/c17_internet_gap_zh__qwen21_bf16__seed42.png",
+      "record": "runs/c17_internet_gap_zh__qwen21_bf16__seed42.json",
+      "sha256": "b3baac43b49d364e584c8eb7ce81bfac5e8ee4bc34af868d502b61912143a3d1"
+    },
+    {
+      "job": "c17_internet_gap_zh__qwen21_bf16__seed1337",
+      "model": "qwen21_bf16",
+      "case_id": "c17_internet_gap_zh",
+      "seed": 1337,
+      "status": "success",
+      "seconds": 28.98,
+      "image": "images/qwen21_bf16/c17_internet_gap_zh__qwen21_bf16__seed1337.png",
+      "record": "runs/c17_internet_gap_zh__qwen21_bf16__seed1337.json",
+      "sha256": "515c677b2164c1fac301a0e9393dcae68b052cc1cf167fa3804c87205516a1dd"
+    },
+    {
+      "job": "c18_lab_results_en__qwen21_bf16__seed42",
+      "model": "qwen21_bf16",
+      "case_id": "c18_lab_results_en",
+      "seed": 42,
+      "status": "success",
+      "seconds": 29.99,
+      "image": "images/qwen21_bf16/c18_lab_results_en__qwen21_bf16__seed42.png",
+      "record": "runs/c18_lab_results_en__qwen21_bf16__seed42.json",
+      "sha256": "61a2720968bb14b710e8467b267efeafae78dbef26b4695490e3ba0e12987b3f"
+    },
+    {
+      "job": "c18_lab_results_en__qwen21_bf16__seed1337",
+      "model": "qwen21_bf16",
+      "case_id": "c18_lab_results_en",
+      "seed": 1337,
+      "status": "success",
+      "seconds": 29.0,
+      "image": "images/qwen21_bf16/c18_lab_results_en__qwen21_bf16__seed1337.png",
+      "record": "runs/c18_lab_results_en__qwen21_bf16__seed1337.json",
+      "sha256": "cbb51ca72de791f4c50bf399e6b520695f0fea52c0676050fcdeed768552d72e"
+    },
+    {
+      "job": "c19_reuse_network_zh__qwen21_bf16__seed42",
+      "model": "qwen21_bf16",
+      "case_id": "c19_reuse_network_zh",
+      "seed": 42,
+      "status": "success",
+      "seconds": 30.01,
+      "image": "images/qwen21_bf16/c19_reuse_network_zh__qwen21_bf16__seed42.png",
+      "record": "runs/c19_reuse_network_zh__qwen21_bf16__seed42.json",
+      "sha256": "4c53190ce2045dfc3392a2f51ad821164531d8b468fc49a4bbbf558c7477f69a"
+    },
+    {
+      "job": "c19_reuse_network_zh__qwen21_bf16__seed1337",
+      "model": "qwen21_bf16",
+      "case_id": "c19_reuse_network_zh",
+      "seed": 1337,
+      "status": "success",
+      "seconds": 28.99,
+      "image": "images/qwen21_bf16/c19_reuse_network_zh__qwen21_bf16__seed1337.png",
+      "record": "runs/c19_reuse_network_zh__qwen21_bf16__seed1337.json",
+      "sha256": "34e0bf7a6c12abeeeab77fb9537b1b87bb165fd4bb264d15acd92aa5b353061c"
+    },
+    {
+      "job": "c20_product_tradeoff_en__qwen21_bf16__seed42",
+      "model": "qwen21_bf16",
+      "case_id": "c20_product_tradeoff_en",
+      "seed": 42,
+      "status": "success",
+      "seconds": 30.01,
+      "image": "images/qwen21_bf16/c20_product_tradeoff_en__qwen21_bf16__seed42.png",
+      "record": "runs/c20_product_tradeoff_en__qwen21_bf16__seed42.json",
+      "sha256": "9d4599b13f7d82a44f8ef58f1a619d2df80fec5f8885ec6861948cfec65a7933"
+    },
+    {
+      "job": "c20_product_tradeoff_en__qwen21_bf16__seed1337",
+      "model": "qwen21_bf16",
+      "case_id": "c20_product_tradeoff_en",
+      "seed": 1337,
+      "status": "success",
+      "seconds": 28.99,
+      "image": "images/qwen21_bf16/c20_product_tradeoff_en__qwen21_bf16__seed1337.png",
+      "record": "runs/c20_product_tradeoff_en__qwen21_bf16__seed1337.json",
+      "sha256": "5ca40abb0d6283bff4a3c4072dc1210163ab3260590ebbc81344688d632b2719"
+    },
+    {
+      "job": "c09_electricity_access_en__qwen21_turbo_int8__seed42",
+      "model": "qwen21_turbo_int8",
+      "case_id": "c09_electricity_access_en",
+      "seed": 42,
+      "status": "success",
+      "seconds": 9.75,
+      "image": "images/qwen21_turbo_int8/c09_electricity_access_en__qwen21_turbo_int8__seed42.png",
+      "record": "runs/c09_electricity_access_en__qwen21_turbo_int8__seed42.json",
+      "sha256": "887f171c83b2422f3b9334c3b0f3a1827b98b5bdff8dee73ee545785d0d17ed3"
+    },
+    {
+      "job": "c09_electricity_access_en__qwen21_turbo_int8__seed1337",
+      "model": "qwen21_turbo_int8",
+      "case_id": "c09_electricity_access_en",
+      "seed": 1337,
+      "status": "success",
+      "seconds": 3.18,
+      "image": "images/qwen21_turbo_int8/c09_electricity_access_en__qwen21_turbo_int8__seed1337.png",
+      "record": "runs/c09_electricity_access_en__qwen21_turbo_int8__seed1337.json",
+      "sha256": "cd450f04010ec64b53de35b52feba2fd82c14eeb3c86862f9d25eb4b68748076"
+    },
+    {
+      "job": "c10_city_transport_zh__qwen21_turbo_int8__seed42",
+      "model": "qwen21_turbo_int8",
+      "case_id": "c10_city_transport_zh",
+      "seed": 42,
+      "status": "success",
+      "seconds": 4.22,
+      "image": "images/qwen21_turbo_int8/c10_city_transport_zh__qwen21_turbo_int8__seed42.png",
+      "record": "runs/c10_city_transport_zh__qwen21_turbo_int8__seed42.json",
+      "sha256": "64ce4dbb29542defae9259f34c0c4212b1c2216719be1022b71b0dc9918ec770"
+    },
+    {
+      "job": "c10_city_transport_zh__qwen21_turbo_int8__seed1337",
+      "model": "qwen21_turbo_int8",
+      "case_id": "c10_city_transport_zh",
+      "seed": 1337,
+      "status": "success",
+      "seconds": 3.32,
+      "image": "images/qwen21_turbo_int8/c10_city_transport_zh__qwen21_turbo_int8__seed1337.png",
+      "record": "runs/c10_city_transport_zh__qwen21_turbo_int8__seed1337.json",
+      "sha256": "31cca719da80546cb914590a9be14e55afe011a9010e7dd639872b22637b4ae7"
+    },
+    {
+      "job": "c11_school_attendance_en__qwen21_turbo_int8__seed42",
+      "model": "qwen21_turbo_int8",
+      "case_id": "c11_school_attendance_en",
+      "seed": 42,
+      "status": "success",
+      "seconds": 4.25,
+      "image": "images/qwen21_turbo_int8/c11_school_attendance_en__qwen21_turbo_int8__seed42.png",
+      "record": "runs/c11_school_attendance_en__qwen21_turbo_int8__seed42.json",
+      "sha256": "135cea27f776b1ff0257109dcb7bce94fd59153e9793c90ff6ceedb54b66b6c3"
+    },
+    {
+      "job": "c11_school_attendance_en__qwen21_turbo_int8__seed1337",
+      "model": "qwen21_turbo_int8",
+      "case_id": "c11_school_attendance_en",
+      "seed": 1337,
+      "status": "success",
+      "seconds": 5.65,
+      "image": "images/qwen21_turbo_int8/c11_school_attendance_en__qwen21_turbo_int8__seed1337.png",
+      "record": "runs/c11_school_attendance_en__qwen21_turbo_int8__seed1337.json",
+      "sha256": "a8b15f7ebefada84f466c9ccb7e4d92095edbe29e3e496bf5e94415dfc806d6b"
+    },
+    {
+      "job": "c12_food_waste_zh__qwen21_turbo_int8__seed42",
+      "model": "qwen21_turbo_int8",
+      "case_id": "c12_food_waste_zh",
+      "seed": 42,
+      "status": "success",
+      "seconds": 5.23,
+      "image": "images/qwen21_turbo_int8/c12_food_waste_zh__qwen21_turbo_int8__seed42.png",
+      "record": "runs/c12_food_waste_zh__qwen21_turbo_int8__seed42.json",
+      "sha256": "4816d9014c9ac963e518cb0c46cf9404124f688898427c5c085303bf8918b534"
+    },
+    {
+      "job": "c12_food_waste_zh__qwen21_turbo_int8__seed1337",
+      "model": "qwen21_turbo_int8",
+      "case_id": "c12_food_waste_zh",
+      "seed": 1337,
+      "status": "success",
+      "seconds": 3.16,
+      "image": "images/qwen21_turbo_int8/c12_food_waste_zh__qwen21_turbo_int8__seed1337.png",
+      "record": "runs/c12_food_waste_zh__qwen21_turbo_int8__seed1337.json",
+      "sha256": "6652720d2cfadff7e78b0faf074df86f0b538c7a3a1d02a92b94fc34ed07ccb0"
+    },
+    {
+      "job": "c13_sleep_distribution_en__qwen21_turbo_int8__seed42",
+      "model": "qwen21_turbo_int8",
+      "case_id": "c13_sleep_distribution_en",
+      "seed": 42,
+      "status": "success",
+      "seconds": 4.23,
+      "image": "images/qwen21_turbo_int8/c13_sleep_distribution_en__qwen21_turbo_int8__seed42.png",
+      "record": "runs/c13_sleep_distribution_en__qwen21_turbo_int8__seed42.json",
+      "sha256": "94de5c6c6f23d054a38966b0a345d8f772a3553bc3d3a7bfa58ae6a127a69bbd"
+    },
+    {
+      "job": "c13_sleep_distribution_en__qwen21_turbo_int8__seed1337",
+      "model": "qwen21_turbo_int8",
+      "case_id": "c13_sleep_distribution_en",
+      "seed": 1337,
+      "status": "success",
+      "seconds": 3.17,
+      "image": "images/qwen21_turbo_int8/c13_sleep_distribution_en__qwen21_turbo_int8__seed1337.png",
+      "record": "runs/c13_sleep_distribution_en__qwen21_turbo_int8__seed1337.json",
+      "sha256": "f06c0c423859abd9b3612fa60b4d879090096ae6a2714af61504dce47289b3a3"
+    },
+    {
+      "job": "c14_population_pyramid_zh__qwen21_turbo_int8__seed42",
+      "model": "qwen21_turbo_int8",
+      "case_id": "c14_population_pyramid_zh",
+      "seed": 42,
+      "status": "success",
+      "seconds": 4.22,
+      "image": "images/qwen21_turbo_int8/c14_population_pyramid_zh__qwen21_turbo_int8__seed42.png",
+      "record": "runs/c14_population_pyramid_zh__qwen21_turbo_int8__seed42.json",
+      "sha256": "e3a08c426b33356577b67736dd446c3267dd42cdb8da9bb629eb40bc8a8bf014"
+    },
+    {
+      "job": "c14_population_pyramid_zh__qwen21_turbo_int8__seed1337",
+      "model": "qwen21_turbo_int8",
+      "case_id": "c14_population_pyramid_zh",
+      "seed": 1337,
+      "status": "success",
+      "seconds": 3.16,
+      "image": "images/qwen21_turbo_int8/c14_population_pyramid_zh__qwen21_turbo_int8__seed1337.png",
+      "record": "runs/c14_population_pyramid_zh__qwen21_turbo_int8__seed1337.json",
+      "sha256": "063be6ac50efbfe7b15031afaf2e6e804896ef4003bbe91d49b0e4f678592d1e"
+    },
+    {
+      "job": "c15_household_water_zh__qwen21_turbo_int8__seed42",
+      "model": "qwen21_turbo_int8",
+      "case_id": "c15_household_water_zh",
+      "seed": 42,
+      "status": "success",
+      "seconds": 4.22,
+      "image": "images/qwen21_turbo_int8/c15_household_water_zh__qwen21_turbo_int8__seed42.png",
+      "record": "runs/c15_household_water_zh__qwen21_turbo_int8__seed42.json",
+      "sha256": "966648c69c6a8cb277b7878a7b054caa7669d09179f70b4fde94b970f23a63ed"
+    },
+    {
+      "job": "c15_household_water_zh__qwen21_turbo_int8__seed1337",
+      "model": "qwen21_turbo_int8",
+      "case_id": "c15_household_water_zh",
+      "seed": 1337,
+      "status": "success",
+      "seconds": 3.26,
+      "image": "images/qwen21_turbo_int8/c15_household_water_zh__qwen21_turbo_int8__seed1337.png",
+      "record": "runs/c15_household_water_zh__qwen21_turbo_int8__seed1337.json",
+      "sha256": "c78918699705ea9da4441d638ad3d8a830b89f0f1aef4d6eb970f8e037f8bab9"
+    },
+    {
+      "job": "c16_community_solar_en__qwen21_turbo_int8__seed42",
+      "model": "qwen21_turbo_int8",
+      "case_id": "c16_community_solar_en",
+      "seed": 42,
+      "status": "success",
+      "seconds": 4.22,
+      "image": "images/qwen21_turbo_int8/c16_community_solar_en__qwen21_turbo_int8__seed42.png",
+      "record": "runs/c16_community_solar_en__qwen21_turbo_int8__seed42.json",
+      "sha256": "8eb2e9471dc95d96bff846f3aacd26d88642312fb7f06d0bb7b1b25efd2cc6a1"
+    },
+    {
+      "job": "c16_community_solar_en__qwen21_turbo_int8__seed1337",
+      "model": "qwen21_turbo_int8",
+      "case_id": "c16_community_solar_en",
+      "seed": 1337,
+      "status": "success",
+      "seconds": 3.16,
+      "image": "images/qwen21_turbo_int8/c16_community_solar_en__qwen21_turbo_int8__seed1337.png",
+      "record": "runs/c16_community_solar_en__qwen21_turbo_int8__seed1337.json",
+      "sha256": "f45c79613b9980158b211c1decf65dd1aaa9a61958cd3443f7e48c7a5c74d9ba"
+    },
+    {
+      "job": "c17_internet_gap_zh__qwen21_turbo_int8__seed42",
+      "model": "qwen21_turbo_int8",
+      "case_id": "c17_internet_gap_zh",
+      "seed": 42,
+      "status": "success",
+      "seconds": 4.23,
+      "image": "images/qwen21_turbo_int8/c17_internet_gap_zh__qwen21_turbo_int8__seed42.png",
+      "record": "runs/c17_internet_gap_zh__qwen21_turbo_int8__seed42.json",
+      "sha256": "bbaefc70c765c57f4f80e2971a2c74f6a3f2e5f598d6eb72d2c22d3da000950e"
+    },
+    {
+      "job": "c17_internet_gap_zh__qwen21_turbo_int8__seed1337",
+      "model": "qwen21_turbo_int8",
+      "case_id": "c17_internet_gap_zh",
+      "seed": 1337,
+      "status": "success",
+      "seconds": 3.17,
+      "image": "images/qwen21_turbo_int8/c17_internet_gap_zh__qwen21_turbo_int8__seed1337.png",
+      "record": "runs/c17_internet_gap_zh__qwen21_turbo_int8__seed1337.json",
+      "sha256": "b0e2fecc35ec6e8fe9b1e50a702f2ad44811026074bbd00d28c7c59843c1e503"
+    },
+    {
+      "job": "c18_lab_results_en__qwen21_turbo_int8__seed42",
+      "model": "qwen21_turbo_int8",
+      "case_id": "c18_lab_results_en",
+      "seed": 42,
+      "status": "success",
+      "seconds": 4.23,
+      "image": "images/qwen21_turbo_int8/c18_lab_results_en__qwen21_turbo_int8__seed42.png",
+      "record": "runs/c18_lab_results_en__qwen21_turbo_int8__seed42.json",
+      "sha256": "be1f684cfc905beee0b3f4bfd12e32c7043b2d0cb5ffb4b811424b1f22868fc1"
+    },
+    {
+      "job": "c18_lab_results_en__qwen21_turbo_int8__seed1337",
+      "model": "qwen21_turbo_int8",
+      "case_id": "c18_lab_results_en",
+      "seed": 1337,
+      "status": "success",
+      "seconds": 3.26,
+      "image": "images/qwen21_turbo_int8/c18_lab_results_en__qwen21_turbo_int8__seed1337.png",
+      "record": "runs/c18_lab_results_en__qwen21_turbo_int8__seed1337.json",
+      "sha256": "a942ac67573ae0c8ca4d327ae5c68be5920076e373214f9c8cc2ee9469f48e31"
+    },
+    {
+      "job": "c19_reuse_network_zh__qwen21_turbo_int8__seed42",
+      "model": "qwen21_turbo_int8",
+      "case_id": "c19_reuse_network_zh",
+      "seed": 42,
+      "status": "success",
+      "seconds": 4.24,
+      "image": "images/qwen21_turbo_int8/c19_reuse_network_zh__qwen21_turbo_int8__seed42.png",
+      "record": "runs/c19_reuse_network_zh__qwen21_turbo_int8__seed42.json",
+      "sha256": "f94bdcf9a57a64bfb2ec02e08168a86d1b143b5b7904b1deb5896c9491f87952"
+    },
+    {
+      "job": "c19_reuse_network_zh__qwen21_turbo_int8__seed1337",
+      "model": "qwen21_turbo_int8",
+      "case_id": "c19_reuse_network_zh",
+      "seed": 1337,
+      "status": "success",
+      "seconds": 3.17,
+      "image": "images/qwen21_turbo_int8/c19_reuse_network_zh__qwen21_turbo_int8__seed1337.png",
+      "record": "runs/c19_reuse_network_zh__qwen21_turbo_int8__seed1337.json",
+      "sha256": "821018c1887ee7afe5427244652644a0cc768c4053ffd484bd1ea21eb0019454"
+    },
+    {
+      "job": "c20_product_tradeoff_en__qwen21_turbo_int8__seed42",
+      "model": "qwen21_turbo_int8",
+      "case_id": "c20_product_tradeoff_en",
+      "seed": 42,
+      "status": "success",
+      "seconds": 4.22,
+      "image": "images/qwen21_turbo_int8/c20_product_tradeoff_en__qwen21_turbo_int8__seed42.png",
+      "record": "runs/c20_product_tradeoff_en__qwen21_turbo_int8__seed42.json",
+      "sha256": "0edb6a6a96e84ee22f6667c87bdee0a3cb8f308b0df70172f2d0e915032288e2"
+    },
+    {
+      "job": "c20_product_tradeoff_en__qwen21_turbo_int8__seed1337",
+      "model": "qwen21_turbo_int8",
+      "case_id": "c20_product_tradeoff_en",
+      "seed": 1337,
+      "status": "success",
+      "seconds": 3.16,
+      "image": "images/qwen21_turbo_int8/c20_product_tradeoff_en__qwen21_turbo_int8__seed1337.png",
+      "record": "runs/c20_product_tradeoff_en__qwen21_turbo_int8__seed1337.json",
+      "sha256": "5651f5b6982a0eae8193f7fd002325f57f27dc3a02c591dbb51e08d79041a3b9"
+    }
+  ],
+  "model_hashes": {
+    "qwen_image_2.1_bf16.safetensors": {
+      "path": "/home/sean/models/comfy/diffusion_models/qwen_image_2.1_bf16.safetensors",
+      "size_bytes": 14230280616,
+      "sha256": "89f4158d066cc33906a199fca85634f766892dd78f49b6698dabf187ac86c4bc"
+    },
+    "qwen_image_2.1_turbo_int8_convrot.safetensors": {
+      "path": "/home/sean/models/comfy/diffusion_models/qwen_image_2.1_turbo_int8_convrot.safetensors",
+      "size_bytes": 7256787829,
+      "sha256": "8144a0182964aa8403ad6dbc011db837304167d235161b9aabaa8532e967314c"
+    }
+  },
+  "shared_component_hashes": {
+    "/home/sean/models/comfy/text_encoders/qwen3vl_8b_bf16.safetensors": {
+      "size_bytes": 17534334616,
+      "sha256": "68bdc82bc1b66851162ae656225e7e2068166b603db19bd5d5a3b90eb12669a9"
+    },
+    "/home/sean/models/comfy/vae/qwen_image_2.1_vae_bf16.safetensors": {
+      "size_bytes": 675509688,
+      "sha256": "bb21f7473051e1ac368515dd3f2e15cd44d7a11748ee8823e1ddca3e4876b7c9"
+    }
+  },
+  "execution_finished_at": "2026-10-14T16:20:26.145903+00:00"
+}

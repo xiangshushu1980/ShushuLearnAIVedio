@@ -1,0 +1,102 @@
+{
+  "prompt": {
+    "1": {
+      "class_type": "UNETLoader",
+      "inputs": {
+        "unet_name": "qwen_image_2.1_bf16.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    "2": {
+      "class_type": "CLIPLoader",
+      "inputs": {
+        "clip_name": "qwen3vl_8b_bf16.safetensors",
+        "type": "qwen_image"
+      }
+    },
+    "3": {
+      "class_type": "VAELoader",
+      "inputs": {
+        "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+      }
+    },
+    "4": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: modern public data report, mist blue and coral orange, clean grid, very small simplified human silhouettes as accents. At the top, give the exact title \"城市人口的年龄结构\" clear visual priority; place the exact subtitle \"示例社区 · 人数（千人）\" directly beneath it. Let the chart occupy most of the remaining canvas: a population pyramid with male bars on the left and female bars on the right, sharing one central baseline across five age groups; bar lengths must match the counts. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\n0–14 岁 | 男 18 | 女 17\n15–29 岁 | 男 22 | 女 23\n30–44 岁 | 男 26 | 女 27\n45–59 岁 | 男 20 | 女 21\n60 岁以上 | 男 14 | 女 16\nDesign intent: Order age groups from youngest at the top to oldest at the bottom. Mirror bar lengths around the center without swapping counts. The 30–44 group is largest; women outnumber men among people aged 60 and above. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• 城市人口的年龄结构\n• 示例社区 · 人数（千人）\n• 0–14 岁\n• 男 18\n• 女 17\n• 15–29 岁\n• 男 22\n• 女 23\n• 30–44 岁\n• 男 26\n• 女 27\n• 45–59 岁\n• 男 20\n• 女 21\n• 60 岁以上\n• 男 14\n• 女 16\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+      }
+    },
+    "5": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": ""
+      }
+    },
+    "6": {
+      "class_type": "EmptySD3LatentImage",
+      "inputs": {
+        "width": 1536,
+        "height": 1024,
+        "batch_size": 1
+      }
+    },
+    "7": {
+      "class_type": "KSampler",
+      "inputs": {
+        "model": [
+          "1",
+          0
+        ],
+        "positive": [
+          "4",
+          0
+        ],
+        "negative": [
+          "5",
+          0
+        ],
+        "latent_image": [
+          "6",
+          0
+        ],
+        "seed": 1337,
+        "steps": 40,
+        "cfg": 1.0,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "denoise": 1.0
+      }
+    },
+    "8": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "7",
+          0
+        ],
+        "vae": [
+          "3",
+          0
+        ]
+      }
+    },
+    "9": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "8",
+          0
+        ],
+        "filename_prefix": "sean_qwen21_compare_20261015/c14_population_pyramid_zh__qwen21_bf16__seed1337"
+      }
+    }
+  }
+}

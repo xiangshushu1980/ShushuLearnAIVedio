@@ -1,0 +1,18 @@
+Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: Bold contemporary civic dashboard, warm yellow, charcoal and sky blue, clean geometric blocks, strong type hierarchy.. At the top, give the exact title "Where the solar budget goes" clear visual priority; place the exact subtitle "Community project · $100,000" directly beneath it. Let the chart occupy most of the remaining canvas: A treemap with four non-overlapping rectangles sized in proportion to the exact budget allocations; label each category and amount.. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:
+Panels | $45,000
+Installation | $25,000
+Battery | $20,000
+Training | $10,000
+Design intent: Rectangle areas must follow 45:25:20:10; labels and dollar amounts must stay attached. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.
+Exact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):
+• Where the solar budget goes
+• Community project · $100,000
+• Panels
+• $45,000
+• Installation
+• $25,000
+• Battery
+• $20,000
+• Training
+• $10,000
+Show only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text.

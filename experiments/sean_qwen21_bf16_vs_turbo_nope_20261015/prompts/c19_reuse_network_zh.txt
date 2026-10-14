@@ -1,0 +1,18 @@
+Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: recycled-paper collage poster, indigo and orange, a clear reading path and carefully aligned flow arrows. At the top, give the exact title "旧物，流向新的用途" clear visual priority; place the exact subtitle "一批 80 件闲置物品的再分配" directly beneath it. Let the chart occupy most of the remaining canvas: a directed flow diagram from 80 idle items into three destinations; branch widths must be proportional to their quantities and all arrows flow outward from the source. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:
+闲置物品 | 80 件
+捐赠 | 36 件
+维修再用 | 28 件
+材料回收 | 16 件
+Design intent: The three destination quantities must sum to 80. Donation is the largest branch. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.
+Exact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):
+• 旧物，流向新的用途
+• 一批 80 件闲置物品的再分配
+• 闲置物品
+• 80 件
+• 捐赠
+• 36 件
+• 维修再用
+• 28 件
+• 材料回收
+• 16 件
+Show only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text.

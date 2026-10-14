@@ -1,0 +1,22 @@
+Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: newspaper data column, warm gray ground, black typography, lake blue and brick red, moderate chart density. At the top, give the exact title "网络接入，城乡差距" clear visual priority; place the exact subtitle "四个地区的互联网使用率" directly beneath it. Let the chart occupy most of the remaining canvas: four small-multiple paired bar charts for East, South, West, and North; every panel shares the same zero-based 0–100% vertical scale, with urban and rural bars paired. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:
+东部 | 城市 92% | 乡村 76%
+南部 | 城市 88% | 乡村 61%
+西部 | 城市 81% | 乡村 49%
+北部 | 城市 90% | 乡村 72%
+Design intent: Keep the urban and rural values attached to the correct region. The West has the widest gap at 32 percentage points. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.
+Exact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):
+• 网络接入，城乡差距
+• 四个地区的互联网使用率
+• 东部
+• 城市 92%
+• 乡村 76%
+• 南部
+• 城市 88%
+• 乡村 61%
+• 西部
+• 城市 81%
+• 乡村 49%
+• 北部
+• 城市 90%
+• 乡村 72%
+Show only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text.

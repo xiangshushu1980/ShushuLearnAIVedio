@@ -1,0 +1,145 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "experiment": "sean_qwen21_bf16_vs_turbo_nope_20261015",
+  "job": "c11_school_attendance_en__qwen21_bf16__seed1337",
+  "case_id": "c11_school_attendance_en",
+  "model": "qwen21_bf16",
+  "checkpoint": "qwen_image_2.1_bf16.safetensors",
+  "checkpoint_sha256": "89f4158d066cc33906a199fca85634f766892dd78f49b6698dabf187ac86c4bc",
+  "language": "en",
+  "seed": 1337,
+  "input_prompt": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: Modern education policy report, crisp grid, cobalt-to-mint palette, accessible contrast and tidy sans serif labels.. At the top, give the exact title \"Attendance changes by region\" clear visual priority; place the exact subtitle \"School attendance rate · %\" directly beneath it. Let the chart occupy most of the remaining canvas: A 4-by-3 heatmap: four region rows by three school stages; every cell contains its exact percentage and uses a consistent low-to-high color ramp.. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\nNorth | Primary | 96%\nNorth | Middle | 91%\nNorth | Upper | 84%\nSouth | Primary | 93%\nSouth | Middle | 88%\nSouth | Upper | 79%\nEast | Primary | 98%\nEast | Middle | 94%\nEast | Upper | 90%\nWest | Primary | 89%\nWest | Middle | 82%\nWest | Upper | 73%\nDesign intent: All 12 cells must be present at the correct row and column; do not invent a causal explanation. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• Attendance changes by region\n• School attendance rate · %\n• North\n• Primary\n• 96%\n• Middle\n• 91%\n• Upper\n• 84%\n• South\n• 93%\n• 88%\n• 79%\n• East\n• 98%\n• 94%\n• 90%\n• West\n• 89%\n• 82%\n• 73%\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text.",
+  "prompt_file": "prompts/c11_school_attendance_en.txt",
+  "workflow_file": "workflows/c11_school_attendance_en__qwen21_bf16__seed1337.json",
+  "workflow": {
+    "1": {
+      "class_type": "UNETLoader",
+      "inputs": {
+        "unet_name": "qwen_image_2.1_bf16.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    "2": {
+      "class_type": "CLIPLoader",
+      "inputs": {
+        "clip_name": "qwen3vl_8b_bf16.safetensors",
+        "type": "qwen_image"
+      }
+    },
+    "3": {
+      "class_type": "VAELoader",
+      "inputs": {
+        "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+      }
+    },
+    "4": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: Modern education policy report, crisp grid, cobalt-to-mint palette, accessible contrast and tidy sans serif labels.. At the top, give the exact title \"Attendance changes by region\" clear visual priority; place the exact subtitle \"School attendance rate · %\" directly beneath it. Let the chart occupy most of the remaining canvas: A 4-by-3 heatmap: four region rows by three school stages; every cell contains its exact percentage and uses a consistent low-to-high color ramp.. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\nNorth | Primary | 96%\nNorth | Middle | 91%\nNorth | Upper | 84%\nSouth | Primary | 93%\nSouth | Middle | 88%\nSouth | Upper | 79%\nEast | Primary | 98%\nEast | Middle | 94%\nEast | Upper | 90%\nWest | Primary | 89%\nWest | Middle | 82%\nWest | Upper | 73%\nDesign intent: All 12 cells must be present at the correct row and column; do not invent a causal explanation. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• Attendance changes by region\n• School attendance rate · %\n• North\n• Primary\n• 96%\n• Middle\n• 91%\n• Upper\n• 84%\n• South\n• 93%\n• 88%\n• 79%\n• East\n• 98%\n• 94%\n• 90%\n• West\n• 89%\n• 82%\n• 73%\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+      }
+    },
+    "5": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": ""
+      }
+    },
+    "6": {
+      "class_type": "EmptySD3LatentImage",
+      "inputs": {
+        "width": 1536,
+        "height": 1024,
+        "batch_size": 1
+      }
+    },
+    "7": {
+      "class_type": "KSampler",
+      "inputs": {
+        "model": [
+          "1",
+          0
+        ],
+        "positive": [
+          "4",
+          0
+        ],
+        "negative": [
+          "5",
+          0
+        ],
+        "latent_image": [
+          "6",
+          0
+        ],
+        "seed": 1337,
+        "steps": 40,
+        "cfg": 1.0,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "denoise": 1.0
+      }
+    },
+    "8": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "7",
+          0
+        ],
+        "vae": [
+          "3",
+          0
+        ]
+      }
+    },
+    "9": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "8",
+          0
+        ],
+        "filename_prefix": "sean_qwen21_compare_20261015/c11_school_attendance_en__qwen21_bf16__seed1337"
+      }
+    }
+  },
+  "prompt_id": "7358ed79-0a61-4e98-99f5-06d59b729275",
+  "resolution": [
+    1536,
+    1024
+  ],
+  "parameters": {
+    "weights": "qwen_image_2.1_bf16.safetensors",
+    "text_encoder": "qwen3vl_8b_bf16.safetensors",
+    "vae": "qwen_image_2.1_vae_bf16.safetensors",
+    "steps": 40,
+    "cfg": 1.0,
+    "sampler": "euler",
+    "scheduler": "simple"
+  },
+  "image_file": "images/qwen21_bf16/c11_school_attendance_en__qwen21_bf16__seed1337.png",
+  "image_sha256": "43405eda7286767e443a3c15a189e638a80134bd24deb4d131c8045cf1ef6c40",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "status": "success",
+  "started_at": "2026-10-14T16:09:22.733892+00:00",
+  "completed_at": "2026-10-14T16:09:52.035587+00:00",
+  "elapsed_seconds": 29.3,
+  "gpu_lease_id": "34a01d9f-75e9-487e-b52f-41a28ec8cf5e",
+  "gpu_samples_file": "runs/c11_school_attendance_en__qwen21_bf16__seed1337_gpu_samples.jsonl",
+  "gpu_sample_count": 15,
+  "peak_vram_mb_observed": 22052,
+  "peak_comfy_rss_mb_observed": 32304,
+  "peak_temperature_c_observed": 81
+}

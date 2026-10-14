@@ -1,0 +1,145 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "experiment": "sean_qwen21_bf16_vs_turbo_nope_20261015",
+  "job": "c14_population_pyramid_zh__qwen21_bf16__seed42",
+  "case_id": "c14_population_pyramid_zh",
+  "model": "qwen21_bf16",
+  "checkpoint": "qwen_image_2.1_bf16.safetensors",
+  "checkpoint_sha256": "89f4158d066cc33906a199fca85634f766892dd78f49b6698dabf187ac86c4bc",
+  "language": "zh",
+  "seed": 42,
+  "input_prompt": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: modern public data report, mist blue and coral orange, clean grid, very small simplified human silhouettes as accents. At the top, give the exact title \"城市人口的年龄结构\" clear visual priority; place the exact subtitle \"示例社区 · 人数（千人）\" directly beneath it. Let the chart occupy most of the remaining canvas: a population pyramid with male bars on the left and female bars on the right, sharing one central baseline across five age groups; bar lengths must match the counts. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\n0–14 岁 | 男 18 | 女 17\n15–29 岁 | 男 22 | 女 23\n30–44 岁 | 男 26 | 女 27\n45–59 岁 | 男 20 | 女 21\n60 岁以上 | 男 14 | 女 16\nDesign intent: Order age groups from youngest at the top to oldest at the bottom. Mirror bar lengths around the center without swapping counts. The 30–44 group is largest; women outnumber men among people aged 60 and above. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• 城市人口的年龄结构\n• 示例社区 · 人数（千人）\n• 0–14 岁\n• 男 18\n• 女 17\n• 15–29 岁\n• 男 22\n• 女 23\n• 30–44 岁\n• 男 26\n• 女 27\n• 45–59 岁\n• 男 20\n• 女 21\n• 60 岁以上\n• 男 14\n• 女 16\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text.",
+  "prompt_file": "prompts/c14_population_pyramid_zh.txt",
+  "workflow_file": "workflows/c14_population_pyramid_zh__qwen21_bf16__seed42.json",
+  "workflow": {
+    "1": {
+      "class_type": "UNETLoader",
+      "inputs": {
+        "unet_name": "qwen_image_2.1_bf16.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    "2": {
+      "class_type": "CLIPLoader",
+      "inputs": {
+        "clip_name": "qwen3vl_8b_bf16.safetensors",
+        "type": "qwen_image"
+      }
+    },
+    "3": {
+      "class_type": "VAELoader",
+      "inputs": {
+        "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+      }
+    },
+    "4": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: modern public data report, mist blue and coral orange, clean grid, very small simplified human silhouettes as accents. At the top, give the exact title \"城市人口的年龄结构\" clear visual priority; place the exact subtitle \"示例社区 · 人数（千人）\" directly beneath it. Let the chart occupy most of the remaining canvas: a population pyramid with male bars on the left and female bars on the right, sharing one central baseline across five age groups; bar lengths must match the counts. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\n0–14 岁 | 男 18 | 女 17\n15–29 岁 | 男 22 | 女 23\n30–44 岁 | 男 26 | 女 27\n45–59 岁 | 男 20 | 女 21\n60 岁以上 | 男 14 | 女 16\nDesign intent: Order age groups from youngest at the top to oldest at the bottom. Mirror bar lengths around the center without swapping counts. The 30–44 group is largest; women outnumber men among people aged 60 and above. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• 城市人口的年龄结构\n• 示例社区 · 人数（千人）\n• 0–14 岁\n• 男 18\n• 女 17\n• 15–29 岁\n• 男 22\n• 女 23\n• 30–44 岁\n• 男 26\n• 女 27\n• 45–59 岁\n• 男 20\n• 女 21\n• 60 岁以上\n• 男 14\n• 女 16\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+      }
+    },
+    "5": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": ""
+      }
+    },
+    "6": {
+      "class_type": "EmptySD3LatentImage",
+      "inputs": {
+        "width": 1536,
+        "height": 1024,
+        "batch_size": 1
+      }
+    },
+    "7": {
+      "class_type": "KSampler",
+      "inputs": {
+        "model": [
+          "1",
+          0
+        ],
+        "positive": [
+          "4",
+          0
+        ],
+        "negative": [
+          "5",
+          0
+        ],
+        "latent_image": [
+          "6",
+          0
+        ],
+        "seed": 42,
+        "steps": 40,
+        "cfg": 1.0,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "denoise": 1.0
+      }
+    },
+    "8": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "7",
+          0
+        ],
+        "vae": [
+          "3",
+          0
+        ]
+      }
+    },
+    "9": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "8",
+          0
+        ],
+        "filename_prefix": "sean_qwen21_compare_20261015/c14_population_pyramid_zh__qwen21_bf16__seed42"
+      }
+    }
+  },
+  "prompt_id": "850cbe4d-0df6-4ef7-b3fb-0d788ff5bd9d",
+  "resolution": [
+    1536,
+    1024
+  ],
+  "parameters": {
+    "weights": "qwen_image_2.1_bf16.safetensors",
+    "text_encoder": "qwen3vl_8b_bf16.safetensors",
+    "vae": "qwen_image_2.1_vae_bf16.safetensors",
+    "steps": 40,
+    "cfg": 1.0,
+    "sampler": "euler",
+    "scheduler": "simple"
+  },
+  "image_file": "images/qwen21_bf16/c14_population_pyramid_zh__qwen21_bf16__seed42.png",
+  "image_sha256": "49b29ffe5067d1ffbc1476c26cfa1b25386ee1340ad6317ea1c3609b2c7db37e",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "status": "success",
+  "started_at": "2026-10-14T16:11:50.790987+00:00",
+  "completed_at": "2026-10-14T16:12:20.914409+00:00",
+  "elapsed_seconds": 30.12,
+  "gpu_lease_id": "34a01d9f-75e9-487e-b52f-41a28ec8cf5e",
+  "gpu_samples_file": "runs/c14_population_pyramid_zh__qwen21_bf16__seed42_gpu_samples.jsonl",
+  "gpu_sample_count": 15,
+  "peak_vram_mb_observed": 23108,
+  "peak_comfy_rss_mb_observed": 32304,
+  "peak_temperature_c_observed": 81
+}

@@ -1,0 +1,102 @@
+{
+  "prompt": {
+    "1": {
+      "class_type": "UNETLoader",
+      "inputs": {
+        "unet_name": "qwen_image_2.1_bf16.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    "2": {
+      "class_type": "CLIPLoader",
+      "inputs": {
+        "clip_name": "qwen3vl_8b_bf16.safetensors",
+        "type": "qwen_image"
+      }
+    },
+    "3": {
+      "class_type": "VAELoader",
+      "inputs": {
+        "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+      }
+    },
+    "4": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: minimal environmental public information design, white ground, deep teal and bright cyan, large readable values and only a few water-drop icons. At the top, give the exact title \"修复漏水，节水看得见\" clear visual priority; place the exact subtitle \"四户家庭每日用水量对比\" directly beneath it. Let the chart occupy most of the remaining canvas: a dumbbell chart with one thin horizontal connector per household and before/after endpoints on a shared zero-based 0–300 L scale. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\n甲户 | 240 升 | 180 升\n乙户 | 210 升 | 150 升\n丙户 | 270 升 | 210 升\n丁户 | 180 升 | 150 升\nDesign intent: Pair each household’s before and after values correctly. All four households save between 30 and 60 liters per day. Do not exaggerate the differences. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• 修复漏水，节水看得见\n• 四户家庭每日用水量对比\n• 甲户\n• 240 升\n• 180 升\n• 乙户\n• 210 升\n• 150 升\n• 丙户\n• 270 升\n• 丁户\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+      }
+    },
+    "5": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": ""
+      }
+    },
+    "6": {
+      "class_type": "EmptySD3LatentImage",
+      "inputs": {
+        "width": 1536,
+        "height": 1024,
+        "batch_size": 1
+      }
+    },
+    "7": {
+      "class_type": "KSampler",
+      "inputs": {
+        "model": [
+          "1",
+          0
+        ],
+        "positive": [
+          "4",
+          0
+        ],
+        "negative": [
+          "5",
+          0
+        ],
+        "latent_image": [
+          "6",
+          0
+        ],
+        "seed": 1337,
+        "steps": 40,
+        "cfg": 1.0,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "denoise": 1.0
+      }
+    },
+    "8": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "7",
+          0
+        ],
+        "vae": [
+          "3",
+          0
+        ]
+      }
+    },
+    "9": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "8",
+          0
+        ],
+        "filename_prefix": "sean_qwen21_compare_20261015/c15_household_water_zh__qwen21_bf16__seed1337"
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: warm hand-drawn editorial chart on cream paper, tomato red and leaf green, spare linework and prominent quantities. At the top, give the exact title "食物浪费，在哪一步累积" clear visual priority; place the exact subtitle "一周 100 千克可食食物的去向" directly beneath it. Let the chart occupy most of the remaining canvas: a waterfall chart: begin at 100 kg, subtract purchasing loss, storage loss, and meal-preparation loss in sequence, and end at 50 kg; each connector shows the cumulative decrease. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:
+起始 | 100 千克
+采购损耗 | −12 千克
+储存损耗 | −18 千克
+备餐损耗 | −20 千克
+最终保留 | 50 千克
+Design intent: The arithmetic must balance. Loss bars descend to the final 50 kg; the largest single loss is meal preparation. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.
+Exact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):
+• 食物浪费，在哪一步累积
+• 一周 100 千克可食食物的去向
+• 起始
+• 100 千克
+• 采购损耗
+• −12 千克
+• 储存损耗
+• −18 千克
+• 备餐损耗
+• −20 千克
+• 最终保留
+• 50 千克
+Show only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text.

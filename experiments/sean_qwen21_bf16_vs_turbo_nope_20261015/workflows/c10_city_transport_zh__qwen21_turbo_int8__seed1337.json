@@ -1,0 +1,119 @@
+{
+  "prompt": {
+    "1": {
+      "class_type": "UNETLoader",
+      "inputs": {
+        "unet_name": "qwen_image_2.1_turbo_int8_convrot.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    "2": {
+      "class_type": "CLIPLoader",
+      "inputs": {
+        "clip_name": "qwen3vl_8b_bf16.safetensors",
+        "type": "qwen_image"
+      }
+    },
+    "3": {
+      "class_type": "VAELoader",
+      "inputs": {
+        "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+      }
+    },
+    "4": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: restrained city newspaper graphic, warm ivory paper, dark green and vermilion, a few fine line icons, no photorealistic illustration. At the top, give the exact title \"一座城市，三种通勤\" clear visual priority; place the exact subtitle \"早高峰出行方式与平均耗时\" directly beneath it. Let the chart occupy most of the remaining canvas: a horizontal grouped bar chart with three transport rows and two clearly separated measures per row: mode share and average commute time. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\n地铁 | 46% | 28 分钟\n公交 | 31% | 42 分钟\n骑行 | 23% | 19 分钟\nDesign intent: Keep share and minutes in separate visual tracks; pair each mode with both of its own values. Metro has the greatest share and cycling the shortest commute. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• 一座城市，三种通勤\n• 早高峰出行方式与平均耗时\n• 地铁\n• 46%\n• 28 分钟\n• 公交\n• 31%\n• 42 分钟\n• 骑行\n• 23%\n• 19 分钟\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+      }
+    },
+    "5": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": ""
+      }
+    },
+    "6": {
+      "class_type": "EmptySD3LatentImage",
+      "inputs": {
+        "width": 1536,
+        "height": 1024,
+        "batch_size": 1
+      }
+    },
+    "7": {
+      "class_type": "ManualSigmas",
+      "inputs": {
+        "sigmas": "1.0, 0.978453, 0.954180, 0.926626, 0.895080, 0.845148, 0.704534, 0.414568, 0.0"
+      }
+    },
+    "8": {
+      "class_type": "KSamplerSelect",
+      "inputs": {
+        "sampler_name": "euler"
+      }
+    },
+    "9": {
+      "class_type": "SamplerCustom",
+      "inputs": {
+        "model": [
+          "1",
+          0
+        ],
+        "add_noise": true,
+        "noise_seed": 1337,
+        "cfg": 1.0,
+        "positive": [
+          "4",
+          0
+        ],
+        "negative": [
+          "5",
+          0
+        ],
+        "sampler": [
+          "8",
+          0
+        ],
+        "sigmas": [
+          "7",
+          0
+        ],
+        "latent_image": [
+          "6",
+          0
+        ]
+      }
+    },
+    "10": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "9",
+          0
+        ],
+        "vae": [
+          "3",
+          0
+        ]
+      }
+    },
+    "11": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "10",
+          0
+        ],
+        "filename_prefix": "sean_qwen21_compare_20261015/c10_city_transport_zh__qwen21_turbo_int8__seed1337"
+      }
+    }
+  }
+}

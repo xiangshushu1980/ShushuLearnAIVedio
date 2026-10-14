@@ -1,0 +1,162 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "experiment": "sean_qwen21_bf16_vs_turbo_nope_20261015",
+  "job": "c12_food_waste_zh__qwen21_turbo_int8__seed42",
+  "case_id": "c12_food_waste_zh",
+  "model": "qwen21_turbo_int8",
+  "checkpoint": "qwen_image_2.1_turbo_int8_convrot.safetensors",
+  "checkpoint_sha256": "8144a0182964aa8403ad6dbc011db837304167d235161b9aabaa8532e967314c",
+  "language": "zh",
+  "seed": 42,
+  "input_prompt": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: warm hand-drawn editorial chart on cream paper, tomato red and leaf green, spare linework and prominent quantities. At the top, give the exact title \"食物浪费，在哪一步累积\" clear visual priority; place the exact subtitle \"一周 100 千克可食食物的去向\" directly beneath it. Let the chart occupy most of the remaining canvas: a waterfall chart: begin at 100 kg, subtract purchasing loss, storage loss, and meal-preparation loss in sequence, and end at 50 kg; each connector shows the cumulative decrease. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\n起始 | 100 千克\n采购损耗 | −12 千克\n储存损耗 | −18 千克\n备餐损耗 | −20 千克\n最终保留 | 50 千克\nDesign intent: The arithmetic must balance. Loss bars descend to the final 50 kg; the largest single loss is meal preparation. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• 食物浪费，在哪一步累积\n• 一周 100 千克可食食物的去向\n• 起始\n• 100 千克\n• 采购损耗\n• −12 千克\n• 储存损耗\n• −18 千克\n• 备餐损耗\n• −20 千克\n• 最终保留\n• 50 千克\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text.",
+  "prompt_file": "prompts/c12_food_waste_zh.txt",
+  "workflow_file": "workflows/c12_food_waste_zh__qwen21_turbo_int8__seed42.json",
+  "workflow": {
+    "1": {
+      "class_type": "UNETLoader",
+      "inputs": {
+        "unet_name": "qwen_image_2.1_turbo_int8_convrot.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    "2": {
+      "class_type": "CLIPLoader",
+      "inputs": {
+        "clip_name": "qwen3vl_8b_bf16.safetensors",
+        "type": "qwen_image"
+      }
+    },
+    "3": {
+      "class_type": "VAELoader",
+      "inputs": {
+        "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+      }
+    },
+    "4": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: warm hand-drawn editorial chart on cream paper, tomato red and leaf green, spare linework and prominent quantities. At the top, give the exact title \"食物浪费，在哪一步累积\" clear visual priority; place the exact subtitle \"一周 100 千克可食食物的去向\" directly beneath it. Let the chart occupy most of the remaining canvas: a waterfall chart: begin at 100 kg, subtract purchasing loss, storage loss, and meal-preparation loss in sequence, and end at 50 kg; each connector shows the cumulative decrease. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\n起始 | 100 千克\n采购损耗 | −12 千克\n储存损耗 | −18 千克\n备餐损耗 | −20 千克\n最终保留 | 50 千克\nDesign intent: The arithmetic must balance. Loss bars descend to the final 50 kg; the largest single loss is meal preparation. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• 食物浪费，在哪一步累积\n• 一周 100 千克可食食物的去向\n• 起始\n• 100 千克\n• 采购损耗\n• −12 千克\n• 储存损耗\n• −18 千克\n• 备餐损耗\n• −20 千克\n• 最终保留\n• 50 千克\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+      }
+    },
+    "5": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": ""
+      }
+    },
+    "6": {
+      "class_type": "EmptySD3LatentImage",
+      "inputs": {
+        "width": 1536,
+        "height": 1024,
+        "batch_size": 1
+      }
+    },
+    "7": {
+      "class_type": "ManualSigmas",
+      "inputs": {
+        "sigmas": "1.0, 0.978453, 0.954180, 0.926626, 0.895080, 0.845148, 0.704534, 0.414568, 0.0"
+      }
+    },
+    "8": {
+      "class_type": "KSamplerSelect",
+      "inputs": {
+        "sampler_name": "euler"
+      }
+    },
+    "9": {
+      "class_type": "SamplerCustom",
+      "inputs": {
+        "model": [
+          "1",
+          0
+        ],
+        "add_noise": true,
+        "noise_seed": 42,
+        "cfg": 1.0,
+        "positive": [
+          "4",
+          0
+        ],
+        "negative": [
+          "5",
+          0
+        ],
+        "sampler": [
+          "8",
+          0
+        ],
+        "sigmas": [
+          "7",
+          0
+        ],
+        "latent_image": [
+          "6",
+          0
+        ]
+      }
+    },
+    "10": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "9",
+          0
+        ],
+        "vae": [
+          "3",
+          0
+        ]
+      }
+    },
+    "11": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "10",
+          0
+        ],
+        "filename_prefix": "sean_qwen21_compare_20261015/c12_food_waste_zh__qwen21_turbo_int8__seed42"
+      }
+    }
+  },
+  "prompt_id": "edcbd2f9-a4f3-4107-890a-d639e99c9636",
+  "resolution": [
+    1536,
+    1024
+  ],
+  "parameters": {
+    "weights": "qwen_image_2.1_turbo_int8_convrot.safetensors",
+    "text_encoder": "qwen3vl_8b_bf16.safetensors",
+    "vae": "qwen_image_2.1_vae_bf16.safetensors",
+    "steps": 8,
+    "sigma_schedule": "1.0, 0.978453, 0.954180, 0.926626, 0.895080, 0.845148, 0.704534, 0.414568, 0.0",
+    "cfg": 1.0,
+    "sampler": "euler"
+  },
+  "image_file": "images/qwen21_turbo_int8/c12_food_waste_zh__qwen21_turbo_int8__seed42.png",
+  "image_sha256": "4816d9014c9ac963e518cb0c46cf9404124f688898427c5c085303bf8918b534",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "status": "success",
+  "started_at": "2026-10-14T16:19:15.611577+00:00",
+  "completed_at": "2026-10-14T16:19:20.846554+00:00",
+  "elapsed_seconds": 5.23,
+  "gpu_lease_id": "34a01d9f-75e9-487e-b52f-41a28ec8cf5e",
+  "gpu_samples_file": "runs/c12_food_waste_zh__qwen21_turbo_int8__seed42_gpu_samples.jsonl",
+  "gpu_sample_count": 3,
+  "peak_vram_mb_observed": 22974,
+  "peak_comfy_rss_mb_observed": 25616,
+  "peak_temperature_c_observed": 74
+}

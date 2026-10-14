@@ -1,0 +1,26 @@
+Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: Retro-futurist product review, cream paper, indigo grid, tomato-red accent, small device silhouettes used sparingly.. At the top, give the exact title "Price and battery life do not move together" clear visual priority; place the exact subtitle "Five devices · price vs. battery life" directly beneath it. Let the chart occupy most of the remaining canvas: A scatter plot with five labeled devices; x-axis price in dollars, y-axis battery life in hours. Preserve each exact coordinate and avoid implying causation.. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:
+Aster | $300 | 8 h
+Birch | $450 | 12 h
+Cedar | $600 | 10 h
+Dune | $750 | 16 h
+Ember | $900 | 14 h
+Design intent: Map price horizontally and battery life vertically; do not reverse any device coordinates. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.
+Exact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):
+• Price and battery life do not move together
+• Five devices · price vs. battery life
+• Aster
+• $300
+• 8 h
+• Birch
+• $450
+• 12 h
+• Cedar
+• $600
+• 10 h
+• Dune
+• $750
+• 16 h
+• Ember
+• $900
+• 14 h
+Show only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text.

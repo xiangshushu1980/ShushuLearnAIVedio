@@ -1,0 +1,119 @@
+{
+  "prompt": {
+    "1": {
+      "class_type": "UNETLoader",
+      "inputs": {
+        "unet_name": "qwen_image_2.1_turbo_int8_convrot.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    "2": {
+      "class_type": "CLIPLoader",
+      "inputs": {
+        "clip_name": "qwen3vl_8b_bf16.safetensors",
+        "type": "qwen_image"
+      }
+    },
+    "3": {
+      "class_type": "VAELoader",
+      "inputs": {
+        "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+      }
+    },
+    "4": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: newspaper data column, warm gray ground, black typography, lake blue and brick red, moderate chart density. At the top, give the exact title \"网络接入，城乡差距\" clear visual priority; place the exact subtitle \"四个地区的互联网使用率\" directly beneath it. Let the chart occupy most of the remaining canvas: four small-multiple paired bar charts for East, South, West, and North; every panel shares the same zero-based 0–100% vertical scale, with urban and rural bars paired. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\n东部 | 城市 92% | 乡村 76%\n南部 | 城市 88% | 乡村 61%\n西部 | 城市 81% | 乡村 49%\n北部 | 城市 90% | 乡村 72%\nDesign intent: Keep the urban and rural values attached to the correct region. The West has the widest gap at 32 percentage points. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• 网络接入，城乡差距\n• 四个地区的互联网使用率\n• 东部\n• 城市 92%\n• 乡村 76%\n• 南部\n• 城市 88%\n• 乡村 61%\n• 西部\n• 城市 81%\n• 乡村 49%\n• 北部\n• 城市 90%\n• 乡村 72%\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+      }
+    },
+    "5": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": ""
+      }
+    },
+    "6": {
+      "class_type": "EmptySD3LatentImage",
+      "inputs": {
+        "width": 1536,
+        "height": 1024,
+        "batch_size": 1
+      }
+    },
+    "7": {
+      "class_type": "ManualSigmas",
+      "inputs": {
+        "sigmas": "1.0, 0.978453, 0.954180, 0.926626, 0.895080, 0.845148, 0.704534, 0.414568, 0.0"
+      }
+    },
+    "8": {
+      "class_type": "KSamplerSelect",
+      "inputs": {
+        "sampler_name": "euler"
+      }
+    },
+    "9": {
+      "class_type": "SamplerCustom",
+      "inputs": {
+        "model": [
+          "1",
+          0
+        ],
+        "add_noise": true,
+        "noise_seed": 1337,
+        "cfg": 1.0,
+        "positive": [
+          "4",
+          0
+        ],
+        "negative": [
+          "5",
+          0
+        ],
+        "sampler": [
+          "8",
+          0
+        ],
+        "sigmas": [
+          "7",
+          0
+        ],
+        "latent_image": [
+          "6",
+          0
+        ]
+      }
+    },
+    "10": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "9",
+          0
+        ],
+        "vae": [
+          "3",
+          0
+        ]
+      }
+    },
+    "11": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "10",
+          0
+        ],
+        "filename_prefix": "sean_qwen21_compare_20261015/c17_internet_gap_zh__qwen21_turbo_int8__seed1337"
+      }
+    }
+  }
+}

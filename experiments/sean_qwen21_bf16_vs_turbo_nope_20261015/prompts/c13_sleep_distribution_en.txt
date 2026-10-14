@@ -1,0 +1,37 @@
+Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: Quiet science magazine, midnight blue background, soft lunar cream marks, one orange median rule, minimalist labels.. At the top, give the exact title "Sleep is not one-size-fits-all" clear visual priority; place the exact subtitle "Hours slept across 12 sample nights" directly beneath it. Let the chart occupy most of the remaining canvas: A horizontal dot plot on a 4–10 hour axis. Plot all twelve observations, show the median at 7.0 hours, and distinguish the median from individual dots.. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:
+Night 1 | 5.5 h
+Night 2 | 6.0 h
+Night 3 | 6.0 h
+Night 4 | 6.5 h
+Night 5 | 6.5 h
+Night 6 | 7.0 h
+Night 7 | 7.0 h
+Night 8 | 7.0 h
+Night 9 | 7.5 h
+Night 10 | 8.0 h
+Night 11 | 8.0 h
+Night 12 | 9.0 h
+Design intent: Show twelve separate observations, not a bar chart; do not label the sample as a population. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.
+Exact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):
+• Sleep is not one-size-fits-all
+• Hours slept across 12 sample nights
+• Night 1
+• 5.5 h
+• Night 2
+• 6.0 h
+• Night 3
+• Night 4
+• 6.5 h
+• Night 5
+• Night 6
+• 7.0 h
+• Night 7
+• Night 8
+• Night 9
+• 7.5 h
+• Night 10
+• 8.0 h
+• Night 11
+• Night 12
+• 9.0 h
+Show only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text.

@@ -1,0 +1,162 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "experiment": "sean_qwen21_bf16_vs_turbo_nope_20261015",
+  "job": "c16_community_solar_en__qwen21_turbo_int8__seed42",
+  "case_id": "c16_community_solar_en",
+  "model": "qwen21_turbo_int8",
+  "checkpoint": "qwen_image_2.1_turbo_int8_convrot.safetensors",
+  "checkpoint_sha256": "8144a0182964aa8403ad6dbc011db837304167d235161b9aabaa8532e967314c",
+  "language": "en",
+  "seed": 42,
+  "input_prompt": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: Bold contemporary civic dashboard, warm yellow, charcoal and sky blue, clean geometric blocks, strong type hierarchy.. At the top, give the exact title \"Where the solar budget goes\" clear visual priority; place the exact subtitle \"Community project · $100,000\" directly beneath it. Let the chart occupy most of the remaining canvas: A treemap with four non-overlapping rectangles sized in proportion to the exact budget allocations; label each category and amount.. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\nPanels | $45,000\nInstallation | $25,000\nBattery | $20,000\nTraining | $10,000\nDesign intent: Rectangle areas must follow 45:25:20:10; labels and dollar amounts must stay attached. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• Where the solar budget goes\n• Community project · $100,000\n• Panels\n• $45,000\n• Installation\n• $25,000\n• Battery\n• $20,000\n• Training\n• $10,000\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text.",
+  "prompt_file": "prompts/c16_community_solar_en.txt",
+  "workflow_file": "workflows/c16_community_solar_en__qwen21_turbo_int8__seed42.json",
+  "workflow": {
+    "1": {
+      "class_type": "UNETLoader",
+      "inputs": {
+        "unet_name": "qwen_image_2.1_turbo_int8_convrot.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    "2": {
+      "class_type": "CLIPLoader",
+      "inputs": {
+        "clip_name": "qwen3vl_8b_bf16.safetensors",
+        "type": "qwen_image"
+      }
+    },
+    "3": {
+      "class_type": "VAELoader",
+      "inputs": {
+        "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+      }
+    },
+    "4": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": "Create one finished landscape 3:2 editorial infographic as an article illustration. Use a quiet, clean composition in this art direction: Bold contemporary civic dashboard, warm yellow, charcoal and sky blue, clean geometric blocks, strong type hierarchy.. At the top, give the exact title \"Where the solar budget goes\" clear visual priority; place the exact subtitle \"Community project · $100,000\" directly beneath it. Let the chart occupy most of the remaining canvas: A treemap with four non-overlapping rectangles sized in proportion to the exact budget allocations; label each category and amount.. The rows below are the ground truth. Keep each value attached to its exact category and preserve order, units, signs, and scale relationships:\nPanels | $45,000\nInstallation | $25,000\nBattery | $20,000\nTraining | $10,000\nDesign intent: Rectangle areas must follow 45:25:20:10; labels and dollar amounts must stay attached. Make the main visual carry the comparison, with labels close to their marks, consistent alignment, generous spacing, legible type, and restrained decoration. Use small icons only when they clarify the subject; the data chart remains the focal point. Do not turn the composition into a table of text.\nExact visible text inventory (copy the strings exactly, including script, punctuation, spaces, and symbols):\n• Where the solar budget goes\n• Community project · $100,000\n• Panels\n• $45,000\n• Installation\n• $25,000\n• Battery\n• $20,000\n• Training\n• $10,000\nShow only strings from this inventory. Do not invent captions, axis numbers, legends, claims, labels, letters, logos, or watermarks. No extra text."
+      }
+    },
+    "5": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": ""
+      }
+    },
+    "6": {
+      "class_type": "EmptySD3LatentImage",
+      "inputs": {
+        "width": 1536,
+        "height": 1024,
+        "batch_size": 1
+      }
+    },
+    "7": {
+      "class_type": "ManualSigmas",
+      "inputs": {
+        "sigmas": "1.0, 0.978453, 0.954180, 0.926626, 0.895080, 0.845148, 0.704534, 0.414568, 0.0"
+      }
+    },
+    "8": {
+      "class_type": "KSamplerSelect",
+      "inputs": {
+        "sampler_name": "euler"
+      }
+    },
+    "9": {
+      "class_type": "SamplerCustom",
+      "inputs": {
+        "model": [
+          "1",
+          0
+        ],
+        "add_noise": true,
+        "noise_seed": 42,
+        "cfg": 1.0,
+        "positive": [
+          "4",
+          0
+        ],
+        "negative": [
+          "5",
+          0
+        ],
+        "sampler": [
+          "8",
+          0
+        ],
+        "sigmas": [
+          "7",
+          0
+        ],
+        "latent_image": [
+          "6",
+          0
+        ]
+      }
+    },
+    "10": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "9",
+          0
+        ],
+        "vae": [
+          "3",
+          0
+        ]
+      }
+    },
+    "11": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "10",
+          0
+        ],
+        "filename_prefix": "sean_qwen21_compare_20261015/c16_community_solar_en__qwen21_turbo_int8__seed42"
+      }
+    }
+  },
+  "prompt_id": "78b177eb-1a12-445d-bd2b-a9537bcd1096",
+  "resolution": [
+    1536,
+    1024
+  ],
+  "parameters": {
+    "weights": "qwen_image_2.1_turbo_int8_convrot.safetensors",
+    "text_encoder": "qwen3vl_8b_bf16.safetensors",
+    "vae": "qwen_image_2.1_vae_bf16.safetensors",
+    "steps": 8,
+    "sigma_schedule": "1.0, 0.978453, 0.954180, 0.926626, 0.895080, 0.845148, 0.704534, 0.414568, 0.0",
+    "cfg": 1.0,
+    "sampler": "euler"
+  },
+  "image_file": "images/qwen21_turbo_int8/c16_community_solar_en__qwen21_turbo_int8__seed42.png",
+  "image_sha256": "8eb2e9471dc95d96bff846f3aacd26d88642312fb7f06d0bb7b1b25efd2cc6a1",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "status": "success",
+  "started_at": "2026-10-14T16:19:48.480082+00:00",
+  "completed_at": "2026-10-14T16:19:52.700252+00:00",
+  "elapsed_seconds": 4.22,
+  "gpu_lease_id": "34a01d9f-75e9-487e-b52f-41a28ec8cf5e",
+  "gpu_samples_file": "runs/c16_community_solar_en__qwen21_turbo_int8__seed42_gpu_samples.jsonl",
+  "gpu_sample_count": 3,
+  "peak_vram_mb_observed": 23070,
+  "peak_comfy_rss_mb_observed": 25640,
+  "peak_temperature_c_observed": 74
+}
