@@ -1,0 +1,67 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "experiment": "data_matrix_v2",
+  "job": "c17_internet_gap_zh__flux2",
+  "case_id": "c17_internet_gap_zh",
+  "model": "flux2",
+  "language": "zh",
+  "seed": 42,
+  "data_source": "Synthetic controlled dataset; fictional regions.",
+  "source_url": null,
+  "ground_truth": [
+    [
+      "东部",
+      "城市 92%",
+      "乡村 76%"
+    ],
+    [
+      "南部",
+      "城市 88%",
+      "乡村 61%"
+    ],
+    [
+      "西部",
+      "城市 81%",
+      "乡村 49%"
+    ],
+    [
+      "北部",
+      "城市 90%",
+      "乡村 72%"
+    ]
+  ],
+  "key_claim": "四地都用同一零起点比例尺；城乡值不能调换，差距必须对应数据。",
+  "input_prompt_file": "prompts/flux2/c17_internet_gap_zh.txt",
+  "input_prompt": "Design one finished landscape 3:2 infographic. Headline: '网络接入，城乡差距'. Subtitle: '四个地区的互联网使用率'. Visual style: 报纸数据专栏风格，暖灰底、黑色字、湖蓝与砖红对照，图表密度适中。 Composition and chart: 小倍图：东、南、西、北四个独立迷你柱图，共用 0–100% 纵轴，城市与乡村成对比较。\nExact data labels and values:\n'东部 | 城市 92% | 乡村 76%'\n'南部 | 城市 88% | 乡村 61%'\n'西部 | 城市 81% | 乡村 49%'\n'北部 | 城市 90% | 乡村 72%'\nTakeaway: '西部城乡差距最大，为 32 个百分点。'. 四地都用同一零起点比例尺；城乡值不能调换，差距必须对应数据。 Keep chart marks proportional, preserve label-value pairing and units, use a clean editorial hierarchy, and make the visualization the focal point. Render the quoted text accurately. Add no unsupported values, labels, series, or claims.",
+  "parameters": {
+    "resolution": "1536x1024",
+    "seed": 42,
+    "diffusion_weights": "BF16",
+    "sampler": "euler",
+    "steps": 50,
+    "cfg": 3.5,
+    "scheduler": "Flux2Scheduler",
+    "text_encoder": "qwen_3_8b.safetensors",
+    "vae": "flux2-vae.safetensors"
+  },
+  "workflow": "workflows/flux2/c17_internet_gap_zh__flux2.json",
+  "image": "images/flux2/c17_internet_gap_zh__flux2.png",
+  "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+  "started_at": "2026-10-14T14:04:43.302559+00:00",
+  "prompt_id": "ab5b89f1-6e6c-46c4-8a9a-73bf1a8c9249",
+  "status": "success",
+  "completed_at": "2026-10-14T14:05:44.375310+00:00",
+  "elapsed_seconds": 61.07,
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "image_sha256": "f3b05ea366e4b272930775a659e561d9be90ecab59c8a8ed86f3b6d905c290e6",
+  "actual_pe_prompt_file": null,
+  "peak_vram_mb_observed": 22284,
+  "peak_comfy_rss_mb_observed": 35424,
+  "peak_temperature_c_observed": 77,
+  "gpu_samples_file": "runs/flux2/c17_internet_gap_zh__flux2_gpu_samples.jsonl",
+  "gpu_sample_count": 16
+}

@@ -1,0 +1,7 @@
+Design one finished landscape 3:2 infographic. Headline: 'Where the solar budget goes'. Subtitle: 'Community project · $100,000'. Visual style: Bold contemporary civic dashboard, warm yellow, charcoal and sky blue, clean geometric blocks, strong type hierarchy. Composition and chart: A treemap with four non-overlapping rectangles sized in proportion to the exact budget allocations; label each category and amount.
+Exact data labels and values:
+'Panels | $45,000'
+'Installation | $25,000'
+'Battery | $20,000'
+'Training | $10,000'
+Takeaway: 'Panels receive the largest share; training receives the smallest.'. Rectangle areas must follow 45:25:20:10; labels and dollar amounts must stay attached. Keep chart marks proportional, preserve label-value pairing and units, use a clean editorial hierarchy, and make the visualization the focal point. Render the quoted text accurately. Add no unsupported values, labels, series, or claims.

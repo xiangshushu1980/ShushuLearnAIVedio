@@ -1,0 +1,64 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "experiment": "data_matrix_v2",
+  "job": "c09_electricity_access_en__krea2",
+  "case_id": "c09_electricity_access_en",
+  "model": "krea2",
+  "language": "en",
+  "seed": 42,
+  "data_source": "World Bank WDI EG.ELC.ACCS.ZS; World Bank API snapshot retrieved 2026-10-14; CC BY 4.0.",
+  "source_url": "https://api.worldbank.org/v2/country/WLD/indicator/EG.ELC.ACCS.ZS?date=2010:2023&format=json",
+  "ground_truth": [
+    [
+      "2010",
+      "83.5%"
+    ],
+    [
+      "2015",
+      "86.9%"
+    ],
+    [
+      "2020",
+      "90.4%"
+    ],
+    [
+      "2023",
+      "91.6%"
+    ]
+  ],
+  "key_claim": "Keep the line rising, place every value at its matching year, and do not imply 100% access.",
+  "input_prompt_file": "prompts/krea2/c09_electricity_access_en.txt",
+  "input_prompt": "Create a polished editorial infographic on a landscape 3:2 canvas. The headline reads \"Power reaches more people\" and the subtitle reads \"Global access to electricity · 2010–2023\". Use Swiss editorial minimalism, large white margins, deep navy line with one warm yellow endpoint, restrained grid. The central visualization is A four-point line chart with a gentle upward slope; exact year/value pairs, a clear 0–100% vertical scale, and a final callout. Put every value next to its correct category and preserve the given ordering. The short takeaway reads \"Access rose 8.1 percentage points across the period.\". The complete source labels and data are exactly:\n\"2010 · 83.5%\"\n\"2015 · 86.9%\"\n\"2020 · 90.4%\"\n\"2023 · 91.6%\"\nKeep the line rising, place every value at its matching year, and do not imply 100% access. Give the data visualization most of the page, with excellent visual hierarchy, generous spacing, clear marks, and legible typography. Render the quoted wording and numbers faithfully; do not invent any extra text, labels, values, or decorative pseudo-writing. Keep the visual style attractive but the chart quantitatively honest.",
+  "parameters": {
+    "resolution": "1536x1024",
+    "seed": 42,
+    "diffusion_weights": "BF16",
+    "sampler": "euler",
+    "steps": 52,
+    "cfg": 3.5,
+    "scheduler": "simple",
+    "text_encoder": "qwen3vl_4b_bf16.safetensors",
+    "negative_prompt": "watermark, logo, blurry",
+    "vae": "qwen_image_vae.safetensors"
+  },
+  "workflow": "workflows/krea2/c09_electricity_access_en__krea2.json",
+  "image": "images/krea2/c09_electricity_access_en__krea2.png",
+  "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+  "started_at": "2026-10-14T13:34:20.122739+00:00",
+  "prompt_id": "457ca29f-0764-45d1-b72a-faf14a368b3b",
+  "status": "success",
+  "completed_at": "2026-10-14T13:36:26.504297+00:00",
+  "elapsed_seconds": 126.38,
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "image_sha256": "b4ca4b980bec4242a19da4ec2076b3188bcc322419af6cca4902429176c2710d",
+  "actual_pe_prompt_file": null,
+  "peak_vram_mb_observed": 22620,
+  "peak_comfy_rss_mb_observed": 40655,
+  "peak_temperature_c_observed": 80,
+  "gpu_samples_file": "runs/krea2/c09_electricity_access_en__krea2_gpu_samples.jsonl",
+  "gpu_sample_count": 31
+}

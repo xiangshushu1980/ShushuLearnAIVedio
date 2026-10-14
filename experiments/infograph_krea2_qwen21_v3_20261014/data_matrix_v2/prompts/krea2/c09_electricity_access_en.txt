@@ -1,0 +1,6 @@
+Create a polished editorial infographic on a landscape 3:2 canvas. The headline reads "Power reaches more people" and the subtitle reads "Global access to electricity · 2010–2023". Use Swiss editorial minimalism, large white margins, deep navy line with one warm yellow endpoint, restrained grid. The central visualization is A four-point line chart with a gentle upward slope; exact year/value pairs, a clear 0–100% vertical scale, and a final callout. Put every value next to its correct category and preserve the given ordering. The short takeaway reads "Access rose 8.1 percentage points across the period.". The complete source labels and data are exactly:
+"2010 · 83.5%"
+"2015 · 86.9%"
+"2020 · 90.4%"
+"2023 · 91.6%"
+Keep the line rising, place every value at its matching year, and do not imply 100% access. Give the data visualization most of the page, with excellent visual hierarchy, generous spacing, clear marks, and legible typography. Render the quoted wording and numbers faithfully; do not invent any extra text, labels, values, or decorative pseudo-writing. Keep the visual style attractive but the chart quantitatively honest.

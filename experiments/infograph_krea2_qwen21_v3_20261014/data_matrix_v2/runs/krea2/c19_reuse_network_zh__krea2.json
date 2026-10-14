@@ -1,0 +1,64 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "experiment": "data_matrix_v2",
+  "job": "c19_reuse_network_zh__krea2",
+  "case_id": "c19_reuse_network_zh",
+  "model": "krea2",
+  "language": "zh",
+  "seed": 42,
+  "data_source": "Synthetic controlled dataset; illustrative reuse program.",
+  "source_url": null,
+  "ground_truth": [
+    [
+      "闲置物品",
+      "80 件"
+    ],
+    [
+      "捐赠",
+      "36 件"
+    ],
+    [
+      "维修再用",
+      "28 件"
+    ],
+    [
+      "材料回收",
+      "16 件"
+    ]
+  ],
+  "key_claim": "三支流必须守恒相加为 80，箭头方向由起点流向去向。",
+  "input_prompt_file": "prompts/krea2/c19_reuse_network_zh.txt",
+  "input_prompt": "Create a polished editorial infographic on a landscape 3:2 canvas. The headline reads \"旧物，流向新的用途\" and the subtitle reads \"一批 80 件闲置物品的再分配\". Use 纸艺拼贴风格的循环经济海报，回收纸纹理、靛蓝和橘色，保留规整的阅读路径。 The central visualization is 有向网络流图：起点 80 件，分成捐赠 36、维修再用 28、材料回收 16；线宽按流量比例变化。 Put every value next to its correct category and preserve the given ordering. The short takeaway reads \"三条去向合计 80 件，捐赠最多。\". The complete source labels and data are exactly:\n\"闲置物品 · 80 件\"\n\"捐赠 · 36 件\"\n\"维修再用 · 28 件\"\n\"材料回收 · 16 件\"\n三支流必须守恒相加为 80，箭头方向由起点流向去向。 Give the data visualization most of the page, with excellent visual hierarchy, generous spacing, clear marks, and legible typography. Render the quoted wording and numbers faithfully; do not invent any extra text, labels, values, or decorative pseudo-writing. Keep the visual style attractive but the chart quantitatively honest.",
+  "parameters": {
+    "resolution": "1536x1024",
+    "seed": 42,
+    "diffusion_weights": "BF16",
+    "sampler": "euler",
+    "steps": 52,
+    "cfg": 3.5,
+    "scheduler": "simple",
+    "text_encoder": "qwen3vl_4b_bf16.safetensors",
+    "negative_prompt": "watermark, logo, blurry",
+    "vae": "qwen_image_vae.safetensors"
+  },
+  "workflow": "workflows/krea2/c19_reuse_network_zh__krea2.json",
+  "image": "images/krea2/c19_reuse_network_zh__krea2.png",
+  "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+  "started_at": "2026-10-14T13:52:42.149515+00:00",
+  "prompt_id": "335d0cdb-99f3-4d2f-94fb-1614b43de60c",
+  "status": "success",
+  "completed_at": "2026-10-14T13:54:29.922702+00:00",
+  "elapsed_seconds": 107.77,
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "image_sha256": "f090c11e6803b736921c54e64bb67b4f427d12953cd62b85ee3d7412ed00612b",
+  "actual_pe_prompt_file": null,
+  "peak_vram_mb_observed": 22284,
+  "peak_comfy_rss_mb_observed": 36403,
+  "peak_temperature_c_observed": 76,
+  "gpu_samples_file": "runs/krea2/c19_reuse_network_zh__krea2_gpu_samples.jsonl",
+  "gpu_sample_count": 27
+}

@@ -1,0 +1,72 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "experiment": "data_matrix_v2",
+  "job": "c15_household_water_zh__qwen21",
+  "case_id": "c15_household_water_zh",
+  "model": "qwen21",
+  "language": "zh",
+  "seed": 42,
+  "data_source": "Synthetic controlled dataset; illustrative households.",
+  "source_url": null,
+  "ground_truth": [
+    [
+      "甲户",
+      "240 升",
+      "180 升"
+    ],
+    [
+      "乙户",
+      "210 升",
+      "150 升"
+    ],
+    [
+      "丙户",
+      "270 升",
+      "210 升"
+    ],
+    [
+      "丁户",
+      "180 升",
+      "150 升"
+    ]
+  ],
+  "key_claim": "每户 before/after 端点正确配对，轴从零开始，不把差值夸大。",
+  "input_prompt_file": "prompts/qwen21/c15_household_water_zh.txt",
+  "input_prompt": "Create a finished bilingual-safe infographic in a landscape 3:2 canvas. Use the exact title \"修复漏水，节水看得见\" and subtitle \"四户家庭每日用水量对比\". Chart: 哑铃图：每户一条水平细线连接修复前与修复后两个端点；横轴 0–300 升。 Art direction: 极简环保公益视觉，白底、深青与亮青，清晰大数字，水滴图标仅作少量装饰。\nDATA (preserve every label and value exactly):\n甲户 | 240 升 | 180 升\n乙户 | 210 升 | 150 升\n丙户 | 270 升 | 210 升\n丁户 | 180 升 | 150 升\nKey takeaway: \"四户每日都减少 30–60 升用水。\". 每户 before/after 端点正确配对，轴从零开始，不把差值夸大。 Use a clear grid, readable typography, a strong title hierarchy, and data labels placed beside their matching marks. Render only the supplied text, with exact spelling, punctuation, units, category order, and numeric values. Do not add labels, numbers, legends, or claims. Make it a coherent article illustration, not a text-only table.",
+  "parameters": {
+    "resolution": "1536x1024",
+    "seed": 42,
+    "diffusion_weights": "BF16",
+    "sampler": "euler",
+    "steps": 40,
+    "cfg": 1.0,
+    "scheduler": "simple",
+    "text_encoder": "qwen3vl_8b_bf16.safetensors",
+    "prompt_enhancer": "qwen3.5_9b_qwen_image_2.1_pe_t2i.int8_convrot.safetensors",
+    "pe_temperature": 1.0,
+    "pe_top_p": 0.95,
+    "pe_top_k": 20,
+    "pe_presence_penalty": 1.5,
+    "vae": "qwen_image_2.1_vae_bf16.safetensors"
+  },
+  "workflow": "workflows/qwen21/c15_household_water_zh__qwen21.json",
+  "image": "images/qwen21/c15_household_water_zh__qwen21.png",
+  "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+  "started_at": "2026-10-14T13:28:48.071982+00:00",
+  "prompt_id": "0200f79b-8a5f-4a1c-906f-8b2aeb37b261",
+  "status": "success",
+  "completed_at": "2026-10-14T13:29:42.990997+00:00",
+  "elapsed_seconds": 54.92,
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "image_sha256": "41ab6a09457944572175f701a8b5140e011896da9d8d94994b4519188e837b9b",
+  "actual_pe_prompt_file": "prompts/qwen21_pe_outputs/c15_household_water_zh__qwen21.txt",
+  "peak_vram_mb_observed": 23000,
+  "peak_comfy_rss_mb_observed": 40530,
+  "peak_temperature_c_observed": 81,
+  "gpu_samples_file": "runs/qwen21/c15_household_water_zh__qwen21_gpu_samples.jsonl",
+  "gpu_sample_count": 14
+}

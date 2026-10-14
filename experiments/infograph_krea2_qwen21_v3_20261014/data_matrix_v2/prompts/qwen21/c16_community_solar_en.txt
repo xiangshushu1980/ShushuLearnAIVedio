@@ -1,0 +1,7 @@
+Create a finished bilingual-safe infographic in a landscape 3:2 canvas. Use the exact title "Where the solar budget goes" and subtitle "Community project · $100,000". Chart: A treemap with four non-overlapping rectangles sized in proportion to the exact budget allocations; label each category and amount. Art direction: Bold contemporary civic dashboard, warm yellow, charcoal and sky blue, clean geometric blocks, strong type hierarchy.
+DATA (preserve every label and value exactly):
+Panels | $45,000
+Installation | $25,000
+Battery | $20,000
+Training | $10,000
+Key takeaway: "Panels receive the largest share; training receives the smallest.". Rectangle areas must follow 45:25:20:10; labels and dollar amounts must stay attached. Use a clear grid, readable typography, a strong title hierarchy, and data labels placed beside their matching marks. Render only the supplied text, with exact spelling, punctuation, units, category order, and numeric values. Do not add labels, numbers, legends, or claims. Make it a coherent article illustration, not a text-only table.

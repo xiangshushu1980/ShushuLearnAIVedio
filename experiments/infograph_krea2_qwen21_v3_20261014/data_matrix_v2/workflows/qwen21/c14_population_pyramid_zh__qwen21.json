@@ -1,0 +1,142 @@
+{
+  "prompt": {
+    "1": {
+      "class_type": "UNETLoader",
+      "inputs": {
+        "unet_name": "qwen_image_2.1_bf16.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    "2": {
+      "class_type": "CLIPLoader",
+      "inputs": {
+        "clip_name": "qwen3.5_9b_qwen_image_2.1_pe_t2i.int8_convrot.safetensors",
+        "type": "qwen_image"
+      }
+    },
+    "3": {
+      "class_type": "CLIPLoader",
+      "inputs": {
+        "clip_name": "qwen3vl_8b_bf16.safetensors",
+        "type": "qwen_image"
+      }
+    },
+    "4": {
+      "class_type": "VAELoader",
+      "inputs": {
+        "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+      }
+    },
+    "5": {
+      "class_type": "QwenImage21_T2IPromptRewrite",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "prompt": "Create a finished bilingual-safe infographic in a landscape 3:2 canvas. Use the exact title \"城市人口的年龄结构\" and subtitle \"示例社区 · 人数（千人）\". Chart: 人口金字塔：左侧男性、右侧女性；五个年龄组共享中心基线，条长严格反映人数。 Art direction: 现代公共数据报告，雾蓝与珊瑚橙，干净网格、简化人物剪影作轻量点缀。\nDATA (preserve every label and value exactly):\n0–14 岁 | 男 18 | 女 17\n15–29 岁 | 男 22 | 女 23\n30–44 岁 | 男 26 | 女 27\n45–59 岁 | 男 20 | 女 21\n60 岁以上 | 男 14 | 女 16\nKey takeaway: \"30–44 岁组人数最多；60 岁以上女性多于男性。\". 左右镜像条形图；年龄组顺序从年轻到年长，人数左右不反。 Use a clear grid, readable typography, a strong title hierarchy, and data labels placed beside their matching marks. Render only the supplied text, with exact spelling, punctuation, units, category order, and numeric values. Do not add labels, numbers, legends, or claims. Make it a coherent article illustration, not a text-only table.",
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "presence_penalty": 1.5,
+        "max_new_tokens": 16256,
+        "seed": 42
+      }
+    },
+    "6": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "3",
+          0
+        ],
+        "text": [
+          "5",
+          0
+        ]
+      }
+    },
+    "7": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "3",
+          0
+        ],
+        "text": [
+          "5",
+          1
+        ]
+      }
+    },
+    "8": {
+      "class_type": "EmptyLatentImage",
+      "inputs": {
+        "width": 1536,
+        "height": 1024,
+        "batch_size": 1
+      }
+    },
+    "9": {
+      "class_type": "KSampler",
+      "inputs": {
+        "model": [
+          "1",
+          0
+        ],
+        "positive": [
+          "6",
+          0
+        ],
+        "negative": [
+          "7",
+          0
+        ],
+        "latent_image": [
+          "8",
+          0
+        ],
+        "seed": 42,
+        "steps": 40,
+        "cfg": 1.0,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "denoise": 1.0
+      }
+    },
+    "10": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "9",
+          0
+        ],
+        "vae": [
+          "4",
+          0
+        ]
+      }
+    },
+    "11": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "10",
+          0
+        ],
+        "filename_prefix": "infograph-data-matrix-v2/c14_population_pyramid_zh__qwen21"
+      }
+    },
+    "12": {
+      "class_type": "SaveText",
+      "inputs": {
+        "text": [
+          "5",
+          0
+        ],
+        "filename_prefix": "infograph-data-matrix-v2/c14_population_pyramid_zh__qwen21",
+        "format": "txt"
+      }
+    }
+  }
+}

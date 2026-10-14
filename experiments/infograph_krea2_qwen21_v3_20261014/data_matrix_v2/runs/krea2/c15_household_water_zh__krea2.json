@@ -1,0 +1,68 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "experiment": "data_matrix_v2",
+  "job": "c15_household_water_zh__krea2",
+  "case_id": "c15_household_water_zh",
+  "model": "krea2",
+  "language": "zh",
+  "seed": 42,
+  "data_source": "Synthetic controlled dataset; illustrative households.",
+  "source_url": null,
+  "ground_truth": [
+    [
+      "甲户",
+      "240 升",
+      "180 升"
+    ],
+    [
+      "乙户",
+      "210 升",
+      "150 升"
+    ],
+    [
+      "丙户",
+      "270 升",
+      "210 升"
+    ],
+    [
+      "丁户",
+      "180 升",
+      "150 升"
+    ]
+  ],
+  "key_claim": "每户 before/after 端点正确配对，轴从零开始，不把差值夸大。",
+  "input_prompt_file": "prompts/krea2/c15_household_water_zh.txt",
+  "input_prompt": "Create a polished editorial infographic on a landscape 3:2 canvas. The headline reads \"修复漏水，节水看得见\" and the subtitle reads \"四户家庭每日用水量对比\". Use 极简环保公益视觉，白底、深青与亮青，清晰大数字，水滴图标仅作少量装饰。 The central visualization is 哑铃图：每户一条水平细线连接修复前与修复后两个端点；横轴 0–300 升。 Put every value next to its correct category and preserve the given ordering. The short takeaway reads \"四户每日都减少 30–60 升用水。\". The complete source labels and data are exactly:\n\"甲户 · 240 升 · 180 升\"\n\"乙户 · 210 升 · 150 升\"\n\"丙户 · 270 升 · 210 升\"\n\"丁户 · 180 升 · 150 升\"\n每户 before/after 端点正确配对，轴从零开始，不把差值夸大。 Give the data visualization most of the page, with excellent visual hierarchy, generous spacing, clear marks, and legible typography. Render the quoted wording and numbers faithfully; do not invent any extra text, labels, values, or decorative pseudo-writing. Keep the visual style attractive but the chart quantitatively honest.",
+  "parameters": {
+    "resolution": "1536x1024",
+    "seed": 42,
+    "diffusion_weights": "BF16",
+    "sampler": "euler",
+    "steps": 52,
+    "cfg": 3.5,
+    "scheduler": "simple",
+    "text_encoder": "qwen3vl_4b_bf16.safetensors",
+    "negative_prompt": "watermark, logo, blurry",
+    "vae": "qwen_image_vae.safetensors"
+  },
+  "workflow": "workflows/krea2/c15_household_water_zh__krea2.json",
+  "image": "images/krea2/c15_household_water_zh__krea2.png",
+  "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+  "started_at": "2026-10-14T13:45:30.448960+00:00",
+  "prompt_id": "e5372ccc-58dd-47d7-896d-079bdf57e9e0",
+  "status": "success",
+  "completed_at": "2026-10-14T13:47:18.567836+00:00",
+  "elapsed_seconds": 108.12,
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "image_sha256": "7f3e48c29908976f179a6801d26c41353592bf9b8e8d22d8ed7064bf141b2fee",
+  "actual_pe_prompt_file": null,
+  "peak_vram_mb_observed": 23276,
+  "peak_comfy_rss_mb_observed": 36390,
+  "peak_temperature_c_observed": 81,
+  "gpu_samples_file": "runs/krea2/c15_household_water_zh__krea2_gpu_samples.jsonl",
+  "gpu_sample_count": 27
+}

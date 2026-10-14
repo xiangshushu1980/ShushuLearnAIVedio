@@ -1,0 +1,250 @@
+{
+  "owner": "Sean",
+  "dataset": "World Bank WDI EG.ELC.ACCS.ZS",
+  "indicator": "Access to electricity (% of population)",
+  "retrieved_at": "2026-10-14",
+  "license": "CC BY 4.0",
+  "api_url": "https://api.worldbank.org/v2/country/WLD/indicator/EG.ELC.ACCS.ZS?date=2010:2023&format=json",
+  "raw_response": [
+    {
+      "page": 1,
+      "pages": 1,
+      "per_page": 50,
+      "total": 14,
+      "sourceid": "2",
+      "lastupdated": "2026-10-08"
+    },
+    [
+      {
+        "indicator": {
+          "id": "EG.ELC.ACCS.ZS",
+          "value": "Access to electricity (% of population)"
+        },
+        "country": {
+          "id": "1W",
+          "value": "World"
+        },
+        "countryiso3code": "WLD",
+        "date": "2023",
+        "value": 91.6034762480239,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "EG.ELC.ACCS.ZS",
+          "value": "Access to electricity (% of population)"
+        },
+        "country": {
+          "id": "1W",
+          "value": "World"
+        },
+        "countryiso3code": "WLD",
+        "date": "2022",
+        "value": 91.2817736699915,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "EG.ELC.ACCS.ZS",
+          "value": "Access to electricity (% of population)"
+        },
+        "country": {
+          "id": "1W",
+          "value": "World"
+        },
+        "countryiso3code": "WLD",
+        "date": "2021",
+        "value": 91.3385144099012,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "EG.ELC.ACCS.ZS",
+          "value": "Access to electricity (% of population)"
+        },
+        "country": {
+          "id": "1W",
+          "value": "World"
+        },
+        "countryiso3code": "WLD",
+        "date": "2020",
+        "value": 90.3995467820191,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "EG.ELC.ACCS.ZS",
+          "value": "Access to electricity (% of population)"
+        },
+        "country": {
+          "id": "1W",
+          "value": "World"
+        },
+        "countryiso3code": "WLD",
+        "date": "2019",
+        "value": 90.1089635853778,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "EG.ELC.ACCS.ZS",
+          "value": "Access to electricity (% of population)"
+        },
+        "country": {
+          "id": "1W",
+          "value": "World"
+        },
+        "countryiso3code": "WLD",
+        "date": "2018",
+        "value": 89.8011777019155,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "EG.ELC.ACCS.ZS",
+          "value": "Access to electricity (% of population)"
+        },
+        "country": {
+          "id": "1W",
+          "value": "World"
+        },
+        "countryiso3code": "WLD",
+        "date": "2017",
+        "value": 88.9357124003312,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "EG.ELC.ACCS.ZS",
+          "value": "Access to electricity (% of population)"
+        },
+        "country": {
+          "id": "1W",
+          "value": "World"
+        },
+        "countryiso3code": "WLD",
+        "date": "2016",
+        "value": 88.1080967238498,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "EG.ELC.ACCS.ZS",
+          "value": "Access to electricity (% of population)"
+        },
+        "country": {
+          "id": "1W",
+          "value": "World"
+        },
+        "countryiso3code": "WLD",
+        "date": "2015",
+        "value": 86.9273667608946,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "EG.ELC.ACCS.ZS",
+          "value": "Access to electricity (% of population)"
+        },
+        "country": {
+          "id": "1W",
+          "value": "World"
+        },
+        "countryiso3code": "WLD",
+        "date": "2014",
+        "value": 86.198537437738,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "EG.ELC.ACCS.ZS",
+          "value": "Access to electricity (% of population)"
+        },
+        "country": {
+          "id": "1W",
+          "value": "World"
+        },
+        "countryiso3code": "WLD",
+        "date": "2013",
+        "value": 85.7136907083818,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "EG.ELC.ACCS.ZS",
+          "value": "Access to electricity (% of population)"
+        },
+        "country": {
+          "id": "1W",
+          "value": "World"
+        },
+        "countryiso3code": "WLD",
+        "date": "2012",
+        "value": 84.9391555731035,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "EG.ELC.ACCS.ZS",
+          "value": "Access to electricity (% of population)"
+        },
+        "country": {
+          "id": "1W",
+          "value": "World"
+        },
+        "countryiso3code": "WLD",
+        "date": "2011",
+        "value": 84.5088722141776,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      },
+      {
+        "indicator": {
+          "id": "EG.ELC.ACCS.ZS",
+          "value": "Access to electricity (% of population)"
+        },
+        "country": {
+          "id": "1W",
+          "value": "World"
+        },
+        "countryiso3code": "WLD",
+        "date": "2010",
+        "value": 83.4501564252405,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 1
+      }
+    ]
+  ],
+  "used_rounded_values": {
+    "2023": 91.6,
+    "2020": 90.4,
+    "2015": 86.9,
+    "2010": 83.5
+  }
+}

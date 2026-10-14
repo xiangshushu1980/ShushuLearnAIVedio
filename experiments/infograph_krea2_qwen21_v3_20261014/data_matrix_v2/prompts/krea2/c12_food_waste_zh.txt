@@ -1,0 +1,7 @@
+Create a polished editorial infographic on a landscape 3:2 canvas. The headline reads "食物浪费，在哪一步累积" and the subtitle reads "一周 100 千克可食食物的去向". Use 温暖手绘编辑插图与严格图表结合，奶油纸色、番茄红与叶绿，线条简洁，数字醒目。 The central visualization is 瀑布图：起始 100 千克，经采购损耗 −12、储存损耗 −18、备餐损耗 −20，最后剩余 50 千克；连接线表示逐步递减。 Put every value next to its correct category and preserve the given ordering. The short takeaway reads "一半食物最终保留，备餐环节损耗最大。". The complete source labels and data are exactly:
+"起始 · 100 千克"
+"采购损耗 · −12 千克"
+"储存损耗 · −18 千克"
+"备餐损耗 · −20 千克"
+"最终保留 · 50 千克"
+瀑布条的方向和终点必须符合算术；不要把损耗画成增加。 Give the data visualization most of the page, with excellent visual hierarchy, generous spacing, clear marks, and legible typography. Render the quoted wording and numbers faithfully; do not invent any extra text, labels, values, or decorative pseudo-writing. Keep the visual style attractive but the chart quantitatively honest.

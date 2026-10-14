@@ -1,0 +1,68 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "experiment": "data_matrix_v2",
+  "job": "c17_internet_gap_zh__krea2",
+  "case_id": "c17_internet_gap_zh",
+  "model": "krea2",
+  "language": "zh",
+  "seed": 42,
+  "data_source": "Synthetic controlled dataset; fictional regions.",
+  "source_url": null,
+  "ground_truth": [
+    [
+      "东部",
+      "城市 92%",
+      "乡村 76%"
+    ],
+    [
+      "南部",
+      "城市 88%",
+      "乡村 61%"
+    ],
+    [
+      "西部",
+      "城市 81%",
+      "乡村 49%"
+    ],
+    [
+      "北部",
+      "城市 90%",
+      "乡村 72%"
+    ]
+  ],
+  "key_claim": "四地都用同一零起点比例尺；城乡值不能调换，差距必须对应数据。",
+  "input_prompt_file": "prompts/krea2/c17_internet_gap_zh.txt",
+  "input_prompt": "Create a polished editorial infographic on a landscape 3:2 canvas. The headline reads \"网络接入，城乡差距\" and the subtitle reads \"四个地区的互联网使用率\". Use 报纸数据专栏风格，暖灰底、黑色字、湖蓝与砖红对照，图表密度适中。 The central visualization is 小倍图：东、南、西、北四个独立迷你柱图，共用 0–100% 纵轴，城市与乡村成对比较。 Put every value next to its correct category and preserve the given ordering. The short takeaway reads \"西部城乡差距最大，为 32 个百分点。\". The complete source labels and data are exactly:\n\"东部 · 城市 92% · 乡村 76%\"\n\"南部 · 城市 88% · 乡村 61%\"\n\"西部 · 城市 81% · 乡村 49%\"\n\"北部 · 城市 90% · 乡村 72%\"\n四地都用同一零起点比例尺；城乡值不能调换，差距必须对应数据。 Give the data visualization most of the page, with excellent visual hierarchy, generous spacing, clear marks, and legible typography. Render the quoted wording and numbers faithfully; do not invent any extra text, labels, values, or decorative pseudo-writing. Keep the visual style attractive but the chart quantitatively honest.",
+  "parameters": {
+    "resolution": "1536x1024",
+    "seed": 42,
+    "diffusion_weights": "BF16",
+    "sampler": "euler",
+    "steps": 52,
+    "cfg": 3.5,
+    "scheduler": "simple",
+    "text_encoder": "qwen3vl_4b_bf16.safetensors",
+    "negative_prompt": "watermark, logo, blurry",
+    "vae": "qwen_image_vae.safetensors"
+  },
+  "workflow": "workflows/krea2/c17_internet_gap_zh__krea2.json",
+  "image": "images/krea2/c17_internet_gap_zh__krea2.png",
+  "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+  "started_at": "2026-10-14T13:49:06.449791+00:00",
+  "prompt_id": "e1c8f3e2-4418-4fbe-a863-e7e57ccfec18",
+  "status": "success",
+  "completed_at": "2026-10-14T13:50:54.256421+00:00",
+  "elapsed_seconds": 107.81,
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "image_sha256": "6e46275fe2578e9a5562033d3e9b4622004a305fb6436e0ea1db0986ab52a0d3",
+  "actual_pe_prompt_file": null,
+  "peak_vram_mb_observed": 22316,
+  "peak_comfy_rss_mb_observed": 36400,
+  "peak_temperature_c_observed": 76,
+  "gpu_samples_file": "runs/krea2/c17_internet_gap_zh__krea2_gpu_samples.jsonl",
+  "gpu_sample_count": 27
+}

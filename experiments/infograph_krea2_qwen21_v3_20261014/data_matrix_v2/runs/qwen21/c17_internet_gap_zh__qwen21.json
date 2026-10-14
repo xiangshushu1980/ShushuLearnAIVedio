@@ -1,0 +1,72 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "experiment": "data_matrix_v2",
+  "job": "c17_internet_gap_zh__qwen21",
+  "case_id": "c17_internet_gap_zh",
+  "model": "qwen21",
+  "language": "zh",
+  "seed": 42,
+  "data_source": "Synthetic controlled dataset; fictional regions.",
+  "source_url": null,
+  "ground_truth": [
+    [
+      "东部",
+      "城市 92%",
+      "乡村 76%"
+    ],
+    [
+      "南部",
+      "城市 88%",
+      "乡村 61%"
+    ],
+    [
+      "西部",
+      "城市 81%",
+      "乡村 49%"
+    ],
+    [
+      "北部",
+      "城市 90%",
+      "乡村 72%"
+    ]
+  ],
+  "key_claim": "四地都用同一零起点比例尺；城乡值不能调换，差距必须对应数据。",
+  "input_prompt_file": "prompts/qwen21/c17_internet_gap_zh.txt",
+  "input_prompt": "Create a finished bilingual-safe infographic in a landscape 3:2 canvas. Use the exact title \"网络接入，城乡差距\" and subtitle \"四个地区的互联网使用率\". Chart: 小倍图：东、南、西、北四个独立迷你柱图，共用 0–100% 纵轴，城市与乡村成对比较。 Art direction: 报纸数据专栏风格，暖灰底、黑色字、湖蓝与砖红对照，图表密度适中。\nDATA (preserve every label and value exactly):\n东部 | 城市 92% | 乡村 76%\n南部 | 城市 88% | 乡村 61%\n西部 | 城市 81% | 乡村 49%\n北部 | 城市 90% | 乡村 72%\nKey takeaway: \"西部城乡差距最大，为 32 个百分点。\". 四地都用同一零起点比例尺；城乡值不能调换，差距必须对应数据。 Use a clear grid, readable typography, a strong title hierarchy, and data labels placed beside their matching marks. Render only the supplied text, with exact spelling, punctuation, units, category order, and numeric values. Do not add labels, numbers, legends, or claims. Make it a coherent article illustration, not a text-only table.",
+  "parameters": {
+    "resolution": "1536x1024",
+    "seed": 42,
+    "diffusion_weights": "BF16",
+    "sampler": "euler",
+    "steps": 40,
+    "cfg": 1.0,
+    "scheduler": "simple",
+    "text_encoder": "qwen3vl_8b_bf16.safetensors",
+    "prompt_enhancer": "qwen3.5_9b_qwen_image_2.1_pe_t2i.int8_convrot.safetensors",
+    "pe_temperature": 1.0,
+    "pe_top_p": 0.95,
+    "pe_top_k": 20,
+    "pe_presence_penalty": 1.5,
+    "vae": "qwen_image_2.1_vae_bf16.safetensors"
+  },
+  "workflow": "workflows/qwen21/c17_internet_gap_zh__qwen21.json",
+  "image": "images/qwen21/c17_internet_gap_zh__qwen21.png",
+  "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+  "started_at": "2026-10-14T13:30:34.107072+00:00",
+  "prompt_id": "4bd0914b-3355-4964-9ccc-85fb63d73fa3",
+  "status": "success",
+  "completed_at": "2026-10-14T13:31:29.042551+00:00",
+  "elapsed_seconds": 54.94,
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "image_sha256": "9dadb764e0ef9aa5f306574cdadf1b1fe337d07b03e68ec45e25e838c52cf482",
+  "actual_pe_prompt_file": "prompts/qwen21_pe_outputs/c17_internet_gap_zh__qwen21.txt",
+  "peak_vram_mb_observed": 22978,
+  "peak_comfy_rss_mb_observed": 40539,
+  "peak_temperature_c_observed": 81,
+  "gpu_samples_file": "runs/qwen21/c17_internet_gap_zh__qwen21_gpu_samples.jsonl",
+  "gpu_sample_count": 14
+}

@@ -1,0 +1,95 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "experiment": "data_matrix_v2",
+  "job": "c13_sleep_distribution_en__flux2",
+  "case_id": "c13_sleep_distribution_en",
+  "model": "flux2",
+  "language": "en",
+  "seed": 42,
+  "data_source": "Synthetic controlled observations; not clinical guidance.",
+  "source_url": null,
+  "ground_truth": [
+    [
+      "Night 1",
+      "5.5 h"
+    ],
+    [
+      "Night 2",
+      "6.0 h"
+    ],
+    [
+      "Night 3",
+      "6.0 h"
+    ],
+    [
+      "Night 4",
+      "6.5 h"
+    ],
+    [
+      "Night 5",
+      "6.5 h"
+    ],
+    [
+      "Night 6",
+      "7.0 h"
+    ],
+    [
+      "Night 7",
+      "7.0 h"
+    ],
+    [
+      "Night 8",
+      "7.0 h"
+    ],
+    [
+      "Night 9",
+      "7.5 h"
+    ],
+    [
+      "Night 10",
+      "8.0 h"
+    ],
+    [
+      "Night 11",
+      "8.0 h"
+    ],
+    [
+      "Night 12",
+      "9.0 h"
+    ]
+  ],
+  "key_claim": "Show twelve separate observations, not a bar chart; do not label the sample as a population.",
+  "input_prompt_file": "prompts/flux2/c13_sleep_distribution_en.txt",
+  "input_prompt": "Design one finished landscape 3:2 infographic. Headline: 'Sleep is not one-size-fits-all'. Subtitle: 'Hours slept across 12 sample nights'. Visual style: Quiet science magazine, midnight blue background, soft lunar cream marks, one orange median rule, minimalist labels. Composition and chart: A horizontal dot plot on a 4–10 hour axis. Plot all twelve observations, show the median at 7.0 hours, and distinguish the median from individual dots.\nExact data labels and values:\n'Night 1 | 5.5 h'\n'Night 2 | 6.0 h'\n'Night 3 | 6.0 h'\n'Night 4 | 6.5 h'\n'Night 5 | 6.5 h'\n'Night 6 | 7.0 h'\n'Night 7 | 7.0 h'\n'Night 8 | 7.0 h'\n'Night 9 | 7.5 h'\n'Night 10 | 8.0 h'\n'Night 11 | 8.0 h'\n'Night 12 | 9.0 h'\nTakeaway: 'Median: 7.0 hours. Range: 5.5–9.0 hours.'. Show twelve separate observations, not a bar chart; do not label the sample as a population. Keep chart marks proportional, preserve label-value pairing and units, use a clean editorial hierarchy, and make the visualization the focal point. Render the quoted text accurately. Add no unsupported values, labels, series, or claims.",
+  "parameters": {
+    "resolution": "1536x1024",
+    "seed": 42,
+    "diffusion_weights": "BF16",
+    "sampler": "euler",
+    "steps": 50,
+    "cfg": 3.5,
+    "scheduler": "Flux2Scheduler",
+    "text_encoder": "qwen_3_8b.safetensors",
+    "vae": "flux2-vae.safetensors"
+  },
+  "workflow": "workflows/flux2/c13_sleep_distribution_en__flux2.json",
+  "image": "images/flux2/c13_sleep_distribution_en__flux2.png",
+  "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+  "started_at": "2026-10-14T14:00:38.978156+00:00",
+  "prompt_id": "060e22fb-8242-4844-b192-5475b8aadd9d",
+  "status": "success",
+  "completed_at": "2026-10-14T14:01:39.978661+00:00",
+  "elapsed_seconds": 61.0,
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "image_sha256": "05ed22d2ff1edc28c1106294112342e9eaabc0d436ee362bd3bffd7e3f62d9cb",
+  "actual_pe_prompt_file": null,
+  "peak_vram_mb_observed": 22284,
+  "peak_comfy_rss_mb_observed": 35424,
+  "peak_temperature_c_observed": 78,
+  "gpu_samples_file": "runs/flux2/c13_sleep_distribution_en__flux2_gpu_samples.jsonl",
+  "gpu_sample_count": 16
+}

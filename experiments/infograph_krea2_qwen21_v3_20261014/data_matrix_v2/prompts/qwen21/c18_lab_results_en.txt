@@ -1,0 +1,7 @@
+Create a finished bilingual-safe infographic in a landscape 3:2 canvas. Use the exact title "A range tells more than a point" and subtitle "Measured response by test group · units". Chart: A horizontal interval plot with point estimates and whiskers for four groups; distinguish the estimate from its interval and use a 0–100 axis. Art direction: Scientific notebook meets editorial infographic, thin graphite axes, restrained teal and coral, precise but approachable.
+DATA (preserve every label and value exactly):
+Control | 42 | 36–48
+Dose A | 55 | 49–61
+Dose B | 68 | 60–76
+Dose C | 73 | 62–84
+Key takeaway: "Dose C has the highest estimate and widest interval.". Each interval must center on its estimate; intervals show uncertainty, not a second data series. Use a clear grid, readable typography, a strong title hierarchy, and data labels placed beside their matching marks. Render only the supplied text, with exact spelling, punctuation, units, category order, and numeric values. Do not add labels, numbers, legends, or claims. Make it a coherent article illustration, not a text-only table.

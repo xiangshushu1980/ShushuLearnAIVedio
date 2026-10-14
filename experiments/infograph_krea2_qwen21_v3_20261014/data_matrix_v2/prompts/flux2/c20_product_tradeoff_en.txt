@@ -1,0 +1,8 @@
+Design one finished landscape 3:2 infographic. Headline: 'Price and battery life do not move together'. Subtitle: 'Five devices · price vs. battery life'. Visual style: Retro-futurist product review, cream paper, indigo grid, tomato-red accent, small device silhouettes used sparingly. Composition and chart: A scatter plot with five labeled devices; x-axis price in dollars, y-axis battery life in hours. Preserve each exact coordinate and avoid implying causation.
+Exact data labels and values:
+'Aster | $300 | 8 h'
+'Birch | $450 | 12 h'
+'Cedar | $600 | 10 h'
+'Dune | $750 | 16 h'
+'Ember | $900 | 14 h'
+Takeaway: 'Dune lasts longest; Aster costs least.'. Map price horizontally and battery life vertically; do not reverse any device coordinates. Keep chart marks proportional, preserve label-value pairing and units, use a clean editorial hierarchy, and make the visualization the focal point. Render the quoted text accurately. Add no unsupported values, labels, series, or claims.

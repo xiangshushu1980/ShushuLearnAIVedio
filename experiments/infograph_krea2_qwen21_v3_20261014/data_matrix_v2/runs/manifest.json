@@ -1,0 +1,2684 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "version": "v2",
+  "cases": 12,
+  "models": [
+    "qwen21",
+    "krea2",
+    "flux2"
+  ],
+  "planned_images": 36,
+  "successes": 36,
+  "failures": 0,
+  "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+  "results": [
+    {
+      "owner": "Sean",
+      "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+      "experiment": "data_matrix_v2",
+      "job": "c09_electricity_access_en__qwen21",
+      "case_id": "c09_electricity_access_en",
+      "model": "qwen21",
+      "language": "en",
+      "seed": 42,
+      "data_source": "World Bank WDI EG.ELC.ACCS.ZS; World Bank API snapshot retrieved 2026-10-14; CC BY 4.0.",
+      "source_url": "https://api.worldbank.org/v2/country/WLD/indicator/EG.ELC.ACCS.ZS?date=2010:2023&format=json",
+      "ground_truth": [
+        [
+          "2010",
+          "83.5%"
+        ],
+        [
+          "2015",
+          "86.9%"
+        ],
+        [
+          "2020",
+          "90.4%"
+        ],
+        [
+          "2023",
+          "91.6%"
+        ]
+      ],
+      "key_claim": "Keep the line rising, place every value at its matching year, and do not imply 100% access.",
+      "input_prompt_file": "prompts/qwen21/c09_electricity_access_en.txt",
+      "input_prompt": "Create a finished bilingual-safe infographic in a landscape 3:2 canvas. Use the exact title \"Power reaches more people\" and subtitle \"Global access to electricity · 2010–2023\". Chart: A four-point line chart with a gentle upward slope; exact year/value pairs, a clear 0–100% vertical scale, and a final callout. Art direction: Swiss editorial minimalism, large white margins, deep navy line with one warm yellow endpoint, restrained grid.\nDATA (preserve every label and value exactly):\n2010 | 83.5%\n2015 | 86.9%\n2020 | 90.4%\n2023 | 91.6%\nKey takeaway: \"Access rose 8.1 percentage points across the period.\". Keep the line rising, place every value at its matching year, and do not imply 100% access. Use a clear grid, readable typography, a strong title hierarchy, and data labels placed beside their matching marks. Render only the supplied text, with exact spelling, punctuation, units, category order, and numeric values. Do not add labels, numbers, legends, or claims. Make it a coherent article illustration, not a text-only table.",
+      "parameters": {
+        "resolution": "1536x1024",
+        "seed": 42,
+        "diffusion_weights": "BF16",
+        "sampler": "euler",
+        "steps": 40,
+        "cfg": 1.0,
+        "scheduler": "simple",
+        "text_encoder": "qwen3vl_8b_bf16.safetensors",
+        "prompt_enhancer": "qwen3.5_9b_qwen_image_2.1_pe_t2i.int8_convrot.safetensors",
+        "pe_temperature": 1.0,
+        "pe_top_p": 0.95,
+        "pe_top_k": 20,
+        "pe_presence_penalty": 1.5,
+        "vae": "qwen_image_2.1_vae_bf16.safetensors"
+      },
+      "workflow": "workflows/qwen21/c09_electricity_access_en__qwen21.json",
+      "image": "images/qwen21/c09_electricity_access_en__qwen21.png",
+      "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+      "started_at": "2026-10-14T13:22:49.482465+00:00",
+      "prompt_id": "2377da9b-b18c-42e4-b499-c74bf9fb6272",
+      "status": "success",
+      "completed_at": "2026-10-14T13:23:58.760827+00:00",
+      "elapsed_seconds": 69.28,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "image_sha256": "4e0ad300348f5d59b2fcdad6098a5a343c2a072556a367960878315c8b667fda",
+      "actual_pe_prompt_file": "prompts/qwen21_pe_outputs/c09_electricity_access_en__qwen21.txt",
+      "peak_vram_mb_observed": 23042,
+      "peak_comfy_rss_mb_observed": 40536,
+      "peak_temperature_c_observed": 77,
+      "gpu_samples_file": "runs/qwen21/c09_electricity_access_en__qwen21_gpu_samples.jsonl",
+      "gpu_sample_count": 18
+    },
+    {
+      "owner": "Sean",
+      "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+      "experiment": "data_matrix_v2",
+      "job": "c10_city_transport_zh__qwen21",
+      "case_id": "c10_city_transport_zh",
+      "model": "qwen21",
+      "language": "zh",
+      "seed": 42,
+      "data_source": "Synthetic controlled dataset for chart fidelity; not a real city survey.",
+      "source_url": null,
+      "ground_truth": [
+        [
+          "地铁",
+          "46%",
+          "28 分钟"
+        ],
+        [
+          "公交",
+          "31%",
+          "42 分钟"
+        ],
+        [
+          "骑行",
+          "23%",
+          "19 分钟"
+        ]
+      ],
+      "key_claim": "两组度量不得混成同一刻度；三种方式与两个指标一一对应。",
+      "input_prompt_file": "prompts/qwen21/c10_city_transport_zh.txt",
+      "input_prompt": "Create a finished bilingual-safe infographic in a landscape 3:2 canvas. Use the exact title \"一座城市，三种通勤\" and subtitle \"早高峰出行方式与平均耗时\". Chart: 横向分组条形图：三种出行方式各有一条占比条与一条耗时条，双指标清晰分区并标出单位。 Art direction: 克制的城市报刊信息图，米白纸色、墨绿与朱红，细线图标点缀，不做写实插画。\nDATA (preserve every label and value exactly):\n地铁 | 46% | 28 分钟\n公交 | 31% | 42 分钟\n骑行 | 23% | 19 分钟\nKey takeaway: \"地铁占比最高，骑行平均耗时最短。\". 两组度量不得混成同一刻度；三种方式与两个指标一一对应。 Use a clear grid, readable typography, a strong title hierarchy, and data labels placed beside their matching marks. Render only the supplied text, with exact spelling, punctuation, units, category order, and numeric values. Do not add labels, numbers, legends, or claims. Make it a coherent article illustration, not a text-only table.",
+      "parameters": {
+        "resolution": "1536x1024",
+        "seed": 42,
+        "diffusion_weights": "BF16",
+        "sampler": "euler",
+        "steps": 40,
+        "cfg": 1.0,
+        "scheduler": "simple",
+        "text_encoder": "qwen3vl_8b_bf16.safetensors",
+        "prompt_enhancer": "qwen3.5_9b_qwen_image_2.1_pe_t2i.int8_convrot.safetensors",
+        "pe_temperature": 1.0,
+        "pe_top_p": 0.95,
+        "pe_top_k": 20,
+        "pe_presence_penalty": 1.5,
+        "vae": "qwen_image_2.1_vae_bf16.safetensors"
+      },
+      "workflow": "workflows/qwen21/c10_city_transport_zh__qwen21.json",
+      "image": "images/qwen21/c10_city_transport_zh__qwen21.png",
+      "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+      "started_at": "2026-10-14T13:23:58.825534+00:00",
+      "prompt_id": "aee79bcd-2afc-45ee-b6d5-0741f236d3ba",
+      "status": "success",
+      "completed_at": "2026-10-14T13:24:55.800014+00:00",
+      "elapsed_seconds": 56.97,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "image_sha256": "437cd3677cb5e287a3547f2459a350ab78c71f797be115dd856c673f3a114bec",
+      "actual_pe_prompt_file": "prompts/qwen21_pe_outputs/c10_city_transport_zh__qwen21.txt",
+      "peak_vram_mb_observed": 23096,
+      "peak_comfy_rss_mb_observed": 40539,
+      "peak_temperature_c_observed": 79,
+      "gpu_samples_file": "runs/qwen21/c10_city_transport_zh__qwen21_gpu_samples.jsonl",
+      "gpu_sample_count": 15
+    },
+    {
+      "owner": "Sean",
+      "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+      "experiment": "data_matrix_v2",
+      "job": "c11_school_attendance_en__qwen21",
+      "case_id": "c11_school_attendance_en",
+      "model": "qwen21",
+      "language": "en",
+      "seed": 42,
+      "data_source": "Synthetic controlled dataset; illustrative only.",
+      "source_url": null,
+      "ground_truth": [
+        [
+          "North",
+          "Primary",
+          "96%"
+        ],
+        [
+          "North",
+          "Middle",
+          "91%"
+        ],
+        [
+          "North",
+          "Upper",
+          "84%"
+        ],
+        [
+          "South",
+          "Primary",
+          "93%"
+        ],
+        [
+          "South",
+          "Middle",
+          "88%"
+        ],
+        [
+          "South",
+          "Upper",
+          "79%"
+        ],
+        [
+          "East",
+          "Primary",
+          "98%"
+        ],
+        [
+          "East",
+          "Middle",
+          "94%"
+        ],
+        [
+          "East",
+          "Upper",
+          "90%"
+        ],
+        [
+          "West",
+          "Primary",
+          "89%"
+        ],
+        [
+          "West",
+          "Middle",
+          "82%"
+        ],
+        [
+          "West",
+          "Upper",
+          "73%"
+        ]
+      ],
+      "key_claim": "All 12 cells must be present at the correct row and column; do not invent a causal explanation.",
+      "input_prompt_file": "prompts/qwen21/c11_school_attendance_en.txt",
+      "input_prompt": "Create a finished bilingual-safe infographic in a landscape 3:2 canvas. Use the exact title \"Attendance changes by region\" and subtitle \"School attendance rate · %\". Chart: A 4-by-3 heatmap: four region rows by three school stages; every cell contains its exact percentage and uses a consistent low-to-high color ramp. Art direction: Modern education policy report, crisp grid, cobalt-to-mint palette, accessible contrast and tidy sans serif labels.\nDATA (preserve every label and value exactly):\nNorth | Primary | 96%\nNorth | Middle | 91%\nNorth | Upper | 84%\nSouth | Primary | 93%\nSouth | Middle | 88%\nSouth | Upper | 79%\nEast | Primary | 98%\nEast | Middle | 94%\nEast | Upper | 90%\nWest | Primary | 89%\nWest | Middle | 82%\nWest | Upper | 73%\nKey takeaway: \"The largest stage-to-stage gap appears in the West.\". All 12 cells must be present at the correct row and column; do not invent a causal explanation. Use a clear grid, readable typography, a strong title hierarchy, and data labels placed beside their matching marks. Render only the supplied text, with exact spelling, punctuation, units, category order, and numeric values. Do not add labels, numbers, legends, or claims. Make it a coherent article illustration, not a text-only table.",
+      "parameters": {
+        "resolution": "1536x1024",
+        "seed": 42,
+        "diffusion_weights": "BF16",
+        "sampler": "euler",
+        "steps": 40,
+        "cfg": 1.0,
+        "scheduler": "simple",
+        "text_encoder": "qwen3vl_8b_bf16.safetensors",
+        "prompt_enhancer": "qwen3.5_9b_qwen_image_2.1_pe_t2i.int8_convrot.safetensors",
+        "pe_temperature": 1.0,
+        "pe_top_p": 0.95,
+        "pe_top_k": 20,
+        "pe_presence_penalty": 1.5,
+        "vae": "qwen_image_2.1_vae_bf16.safetensors"
+      },
+      "workflow": "workflows/qwen21/c11_school_attendance_en__qwen21.json",
+      "image": "images/qwen21/c11_school_attendance_en__qwen21.png",
+      "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+      "started_at": "2026-10-14T13:24:55.868846+00:00",
+      "prompt_id": "68ef0408-50e3-4a49-8973-8ea8f263dc37",
+      "status": "success",
+      "completed_at": "2026-10-14T13:25:52.881939+00:00",
+      "elapsed_seconds": 57.01,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "image_sha256": "b12f2c547194ca16c940f7062f9d22081f6ca114574aa6fff767dc8b2f21f6a7",
+      "actual_pe_prompt_file": "prompts/qwen21_pe_outputs/c11_school_attendance_en__qwen21.txt",
+      "peak_vram_mb_observed": 23010,
+      "peak_comfy_rss_mb_observed": 40539,
+      "peak_temperature_c_observed": 80,
+      "gpu_samples_file": "runs/qwen21/c11_school_attendance_en__qwen21_gpu_samples.jsonl",
+      "gpu_sample_count": 15
+    },
+    {
+      "owner": "Sean",
+      "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+      "experiment": "data_matrix_v2",
+      "job": "c12_food_waste_zh__qwen21",
+      "case_id": "c12_food_waste_zh",
+      "model": "qwen21",
+      "language": "zh",
+      "seed": 42,
+      "data_source": "Synthetic controlled dataset; illustrative household flow, not measured data.",
+      "source_url": null,
+      "ground_truth": [
+        [
+          "起始",
+          "100 千克"
+        ],
+        [
+          "采购损耗",
+          "−12 千克"
+        ],
+        [
+          "储存损耗",
+          "−18 千克"
+        ],
+        [
+          "备餐损耗",
+          "−20 千克"
+        ],
+        [
+          "最终保留",
+          "50 千克"
+        ]
+      ],
+      "key_claim": "瀑布条的方向和终点必须符合算术；不要把损耗画成增加。",
+      "input_prompt_file": "prompts/qwen21/c12_food_waste_zh.txt",
+      "input_prompt": "Create a finished bilingual-safe infographic in a landscape 3:2 canvas. Use the exact title \"食物浪费，在哪一步累积\" and subtitle \"一周 100 千克可食食物的去向\". Chart: 瀑布图：起始 100 千克，经采购损耗 −12、储存损耗 −18、备餐损耗 −20，最后剩余 50 千克；连接线表示逐步递减。 Art direction: 温暖手绘编辑插图与严格图表结合，奶油纸色、番茄红与叶绿，线条简洁，数字醒目。\nDATA (preserve every label and value exactly):\n起始 | 100 千克\n采购损耗 | −12 千克\n储存损耗 | −18 千克\n备餐损耗 | −20 千克\n最终保留 | 50 千克\nKey takeaway: \"一半食物最终保留，备餐环节损耗最大。\". 瀑布条的方向和终点必须符合算术；不要把损耗画成增加。 Use a clear grid, readable typography, a strong title hierarchy, and data labels placed beside their matching marks. Render only the supplied text, with exact spelling, punctuation, units, category order, and numeric values. Do not add labels, numbers, legends, or claims. Make it a coherent article illustration, not a text-only table.",
+      "parameters": {
+        "resolution": "1536x1024",
+        "seed": 42,
+        "diffusion_weights": "BF16",
+        "sampler": "euler",
+        "steps": 40,
+        "cfg": 1.0,
+        "scheduler": "simple",
+        "text_encoder": "qwen3vl_8b_bf16.safetensors",
+        "prompt_enhancer": "qwen3.5_9b_qwen_image_2.1_pe_t2i.int8_convrot.safetensors",
+        "pe_temperature": 1.0,
+        "pe_top_p": 0.95,
+        "pe_top_k": 20,
+        "pe_presence_penalty": 1.5,
+        "vae": "qwen_image_2.1_vae_bf16.safetensors"
+      },
+      "workflow": "workflows/qwen21/c12_food_waste_zh__qwen21.json",
+      "image": "images/qwen21/c12_food_waste_zh__qwen21.png",
+      "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+      "started_at": "2026-10-14T13:25:52.946285+00:00",
+      "prompt_id": "9bc4958a-de3f-43d5-9072-c90a067ba5e5",
+      "status": "success",
+      "completed_at": "2026-10-14T13:26:51.960793+00:00",
+      "elapsed_seconds": 59.01,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "image_sha256": "a6eb1e92a0a0ab9bffd632125e2481c498bf03074044d4bbb0db260cb6c4aafe",
+      "actual_pe_prompt_file": "prompts/qwen21_pe_outputs/c12_food_waste_zh__qwen21.txt",
+      "peak_vram_mb_observed": 23096,
+      "peak_comfy_rss_mb_observed": 40539,
+      "peak_temperature_c_observed": 81,
+      "gpu_samples_file": "runs/qwen21/c12_food_waste_zh__qwen21_gpu_samples.jsonl",
+      "gpu_sample_count": 15
+    },
+    {
+      "owner": "Sean",
+      "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+      "experiment": "data_matrix_v2",
+      "job": "c13_sleep_distribution_en__qwen21",
+      "case_id": "c13_sleep_distribution_en",
+      "model": "qwen21",
+      "language": "en",
+      "seed": 42,
+      "data_source": "Synthetic controlled observations; not clinical guidance.",
+      "source_url": null,
+      "ground_truth": [
+        [
+          "Night 1",
+          "5.5 h"
+        ],
+        [
+          "Night 2",
+          "6.0 h"
+        ],
+        [
+          "Night 3",
+          "6.0 h"
+        ],
+        [
+          "Night 4",
+          "6.5 h"
+        ],
+        [
+          "Night 5",
+          "6.5 h"
+        ],
+        [
+          "Night 6",
+          "7.0 h"
+        ],
+        [
+          "Night 7",
+          "7.0 h"
+        ],
+        [
+          "Night 8",
+          "7.0 h"
+        ],
+        [
+          "Night 9",
+          "7.5 h"
+        ],
+        [
+          "Night 10",
+          "8.0 h"
+        ],
+        [
+          "Night 11",
+          "8.0 h"
+        ],
+        [
+          "Night 12",
+          "9.0 h"
+        ]
+      ],
+      "key_claim": "Show twelve separate observations, not a bar chart; do not label the sample as a population.",
+      "input_prompt_file": "prompts/qwen21/c13_sleep_distribution_en.txt",
+      "input_prompt": "Create a finished bilingual-safe infographic in a landscape 3:2 canvas. Use the exact title \"Sleep is not one-size-fits-all\" and subtitle \"Hours slept across 12 sample nights\". Chart: A horizontal dot plot on a 4–10 hour axis. Plot all twelve observations, show the median at 7.0 hours, and distinguish the median from individual dots. Art direction: Quiet science magazine, midnight blue background, soft lunar cream marks, one orange median rule, minimalist labels.\nDATA (preserve every label and value exactly):\nNight 1 | 5.5 h\nNight 2 | 6.0 h\nNight 3 | 6.0 h\nNight 4 | 6.5 h\nNight 5 | 6.5 h\nNight 6 | 7.0 h\nNight 7 | 7.0 h\nNight 8 | 7.0 h\nNight 9 | 7.5 h\nNight 10 | 8.0 h\nNight 11 | 8.0 h\nNight 12 | 9.0 h\nKey takeaway: \"Median: 7.0 hours. Range: 5.5–9.0 hours.\". Show twelve separate observations, not a bar chart; do not label the sample as a population. Use a clear grid, readable typography, a strong title hierarchy, and data labels placed beside their matching marks. Render only the supplied text, with exact spelling, punctuation, units, category order, and numeric values. Do not add labels, numbers, legends, or claims. Make it a coherent article illustration, not a text-only table.",
+      "parameters": {
+        "resolution": "1536x1024",
+        "seed": 42,
+        "diffusion_weights": "BF16",
+        "sampler": "euler",
+        "steps": 40,
+        "cfg": 1.0,
+        "scheduler": "simple",
+        "text_encoder": "qwen3vl_8b_bf16.safetensors",
+        "prompt_enhancer": "qwen3.5_9b_qwen_image_2.1_pe_t2i.int8_convrot.safetensors",
+        "pe_temperature": 1.0,
+        "pe_top_p": 0.95,
+        "pe_top_k": 20,
+        "pe_presence_penalty": 1.5,
+        "vae": "qwen_image_2.1_vae_bf16.safetensors"
+      },
+      "workflow": "workflows/qwen21/c13_sleep_distribution_en__qwen21.json",
+      "image": "images/qwen21/c13_sleep_distribution_en__qwen21.png",
+      "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+      "started_at": "2026-10-14T13:26:52.025243+00:00",
+      "prompt_id": "6e817007-4b40-41eb-a950-aec0b6398de8",
+      "status": "success",
+      "completed_at": "2026-10-14T13:27:48.971029+00:00",
+      "elapsed_seconds": 56.95,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "image_sha256": "36ac66d876eed1fa32e32a76f6d99fc0812abfaf204bf4655607cce83a4c8f2a",
+      "actual_pe_prompt_file": "prompts/qwen21_pe_outputs/c13_sleep_distribution_en__qwen21.txt",
+      "peak_vram_mb_observed": 23074,
+      "peak_comfy_rss_mb_observed": 40539,
+      "peak_temperature_c_observed": 81,
+      "gpu_samples_file": "runs/qwen21/c13_sleep_distribution_en__qwen21_gpu_samples.jsonl",
+      "gpu_sample_count": 15
+    },
+    {
+      "owner": "Sean",
+      "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+      "experiment": "data_matrix_v2",
+      "job": "c14_population_pyramid_zh__qwen21",
+      "case_id": "c14_population_pyramid_zh",
+      "model": "qwen21",
+      "language": "zh",
+      "seed": 42,
+      "data_source": "Synthetic controlled dataset; fictional community.",
+      "source_url": null,
+      "ground_truth": [
+        [
+          "0–14 岁",
+          "男 18",
+          "女 17"
+        ],
+        [
+          "15–29 岁",
+          "男 22",
+          "女 23"
+        ],
+        [
+          "30–44 岁",
+          "男 26",
+          "女 27"
+        ],
+        [
+          "45–59 岁",
+          "男 20",
+          "女 21"
+        ],
+        [
+          "60 岁以上",
+          "男 14",
+          "女 16"
+        ]
+      ],
+      "key_claim": "左右镜像条形图；年龄组顺序从年轻到年长，人数左右不反。",
+      "input_prompt_file": "prompts/qwen21/c14_population_pyramid_zh.txt",
+      "input_prompt": "Create a finished bilingual-safe infographic in a landscape 3:2 canvas. Use the exact title \"城市人口的年龄结构\" and subtitle \"示例社区 · 人数（千人）\". Chart: 人口金字塔：左侧男性、右侧女性；五个年龄组共享中心基线，条长严格反映人数。 Art direction: 现代公共数据报告，雾蓝与珊瑚橙，干净网格、简化人物剪影作轻量点缀。\nDATA (preserve every label and value exactly):\n0–14 岁 | 男 18 | 女 17\n15–29 岁 | 男 22 | 女 23\n30–44 岁 | 男 26 | 女 27\n45–59 岁 | 男 20 | 女 21\n60 岁以上 | 男 14 | 女 16\nKey takeaway: \"30–44 岁组人数最多；60 岁以上女性多于男性。\". 左右镜像条形图；年龄组顺序从年轻到年长，人数左右不反。 Use a clear grid, readable typography, a strong title hierarchy, and data labels placed beside their matching marks. Render only the supplied text, with exact spelling, punctuation, units, category order, and numeric values. Do not add labels, numbers, legends, or claims. Make it a coherent article illustration, not a text-only table.",
+      "parameters": {
+        "resolution": "1536x1024",
+        "seed": 42,
+        "diffusion_weights": "BF16",
+        "sampler": "euler",
+        "steps": 40,
+        "cfg": 1.0,
+        "scheduler": "simple",
+        "text_encoder": "qwen3vl_8b_bf16.safetensors",
+        "prompt_enhancer": "qwen3.5_9b_qwen_image_2.1_pe_t2i.int8_convrot.safetensors",
+        "pe_temperature": 1.0,
+        "pe_top_p": 0.95,
+        "pe_top_k": 20,
+        "pe_presence_penalty": 1.5,
+        "vae": "qwen_image_2.1_vae_bf16.safetensors"
+      },
+      "workflow": "workflows/qwen21/c14_population_pyramid_zh__qwen21.json",
+      "image": "images/qwen21/c14_population_pyramid_zh__qwen21.png",
+      "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+      "started_at": "2026-10-14T13:27:49.037381+00:00",
+      "prompt_id": "65be01aa-4e42-4148-9cc2-8d150ed1dc70",
+      "status": "success",
+      "completed_at": "2026-10-14T13:28:48.010317+00:00",
+      "elapsed_seconds": 58.97,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "image_sha256": "632ccc01792ac17500a20f408130bbfeaa235cb335dc26365e1a11cc532862fc",
+      "actual_pe_prompt_file": "prompts/qwen21_pe_outputs/c14_population_pyramid_zh__qwen21.txt",
+      "peak_vram_mb_observed": 22882,
+      "peak_comfy_rss_mb_observed": 40539,
+      "peak_temperature_c_observed": 81,
+      "gpu_samples_file": "runs/qwen21/c14_population_pyramid_zh__qwen21_gpu_samples.jsonl",
+      "gpu_sample_count": 15
+    },
+    {
+      "owner": "Sean",
+      "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+      "experiment": "data_matrix_v2",
+      "job": "c15_household_water_zh__qwen21",
+      "case_id": "c15_household_water_zh",
+      "model": "qwen21",
+      "language": "zh",
+      "seed": 42,
+      "data_source": "Synthetic controlled dataset; illustrative households.",
+      "source_url": null,
+      "ground_truth": [
+        [
+          "甲户",
+          "240 升",
+          "180 升"
+        ],
+        [
+          "乙户",
+          "210 升",
+          "150 升"
+        ],
+        [
+          "丙户",
+          "270 升",
+          "210 升"
+        ],
+        [
+          "丁户",
+          "180 升",
+          "150 升"
+        ]
+      ],
+      "key_claim": "每户 before/after 端点正确配对，轴从零开始，不把差值夸大。",
+      "input_prompt_file": "prompts/qwen21/c15_household_water_zh.txt",
+      "input_prompt": "Create a finished bilingual-safe infographic in a landscape 3:2 canvas. Use the exact title \"修复漏水，节水看得见\" and subtitle \"四户家庭每日用水量对比\". Chart: 哑铃图：每户一条水平细线连接修复前与修复后两个端点；横轴 0–300 升。 Art direction: 极简环保公益视觉，白底、深青与亮青，清晰大数字，水滴图标仅作少量装饰。\nDATA (preserve every label and value exactly):\n甲户 | 240 升 | 180 升\n乙户 | 210 升 | 150 升\n丙户 | 270 升 | 210 升\n丁户 | 180 升 | 150 升\nKey takeaway: \"四户每日都减少 30–60 升用水。\". 每户 before/after 端点正确配对，轴从零开始，不把差值夸大。 Use a clear grid, readable typography, a strong title hierarchy, and data labels placed beside their matching marks. Render only the supplied text, with exact spelling, punctuation, units, category order, and numeric values. Do not add labels, numbers, legends, or claims. Make it a coherent article illustration, not a text-only table.",
+      "parameters": {
+        "resolution": "1536x1024",
+        "seed": 42,
+        "diffusion_weights": "BF16",
+        "sampler": "euler",
+        "steps": 40,
+        "cfg": 1.0,
+        "scheduler": "simple",
+        "text_encoder": "qwen3vl_8b_bf16.safetensors",
+        "prompt_enhancer": "qwen3.5_9b_qwen_image_2.1_pe_t2i.int8_convrot.safetensors",
+        "pe_temperature": 1.0,
+        "pe_top_p": 0.95,
+        "pe_top_k": 20,
+        "pe_presence_penalty": 1.5,
+        "vae": "qwen_image_2.1_vae_bf16.safetensors"
+      },
+      "workflow": "workflows/qwen21/c15_household_water_zh__qwen21.json",
+      "image": "images/qwen21/c15_household_water_zh__qwen21.png",
+      "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+      "started_at": "2026-10-14T13:28:48.071982+00:00",
+      "prompt_id": "0200f79b-8a5f-4a1c-906f-8b2aeb37b261",
+      "status": "success",
+      "completed_at": "2026-10-14T13:29:42.990997+00:00",
+      "elapsed_seconds": 54.92,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "image_sha256": "41ab6a09457944572175f701a8b5140e011896da9d8d94994b4519188e837b9b",
+      "actual_pe_prompt_file": "prompts/qwen21_pe_outputs/c15_household_water_zh__qwen21.txt",
+      "peak_vram_mb_observed": 23000,
+      "peak_comfy_rss_mb_observed": 40530,
+      "peak_temperature_c_observed": 81,
+      "gpu_samples_file": "runs/qwen21/c15_household_water_zh__qwen21_gpu_samples.jsonl",
+      "gpu_sample_count": 14
+    },
+    {
+      "owner": "Sean",
+      "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+      "experiment": "data_matrix_v2",
+      "job": "c16_community_solar_en__qwen21",
+      "case_id": "c16_community_solar_en",
+      "model": "qwen21",
+      "language": "en",
+      "seed": 42,
+      "data_source": "Synthetic controlled budget; illustrative project.",
+      "source_url": null,
+      "ground_truth": [
+        [
+          "Panels",
+          "$45,000"
+        ],
+        [
+          "Installation",
+          "$25,000"
+        ],
+        [
+          "Battery",
+          "$20,000"
+        ],
+        [
+          "Training",
+          "$10,000"
+        ]
+      ],
+      "key_claim": "Rectangle areas must follow 45:25:20:10; labels and dollar amounts must stay attached.",
+      "input_prompt_file": "prompts/qwen21/c16_community_solar_en.txt",
+      "input_prompt": "Create a finished bilingual-safe infographic in a landscape 3:2 canvas. Use the exact title \"Where the solar budget goes\" and subtitle \"Community project · $100,000\". Chart: A treemap with four non-overlapping rectangles sized in proportion to the exact budget allocations; label each category and amount. Art direction: Bold contemporary civic dashboard, warm yellow, charcoal and sky blue, clean geometric blocks, strong type hierarchy.\nDATA (preserve every label and value exactly):\nPanels | $45,000\nInstallation | $25,000\nBattery | $20,000\nTraining | $10,000\nKey takeaway: \"Panels receive the largest share; training receives the smallest.\". Rectangle areas must follow 45:25:20:10; labels and dollar amounts must stay attached. Use a clear grid, readable typography, a strong title hierarchy, and data labels placed beside their matching marks. Render only the supplied text, with exact spelling, punctuation, units, category order, and numeric values. Do not add labels, numbers, legends, or claims. Make it a coherent article illustration, not a text-only table.",
+      "parameters": {
+        "resolution": "1536x1024",
+        "seed": 42,
+        "diffusion_weights": "BF16",
+        "sampler": "euler",
+        "steps": 40,
+        "cfg": 1.0,
+        "scheduler": "simple",
+        "text_encoder": "qwen3vl_8b_bf16.safetensors",
+        "prompt_enhancer": "qwen3.5_9b_qwen_image_2.1_pe_t2i.int8_convrot.safetensors",
+        "pe_temperature": 1.0,
+        "pe_top_p": 0.95,
+        "pe_top_k": 20,
+        "pe_presence_penalty": 1.5,
+        "vae": "qwen_image_2.1_vae_bf16.safetensors"
+      },
+      "workflow": "workflows/qwen21/c16_community_solar_en__qwen21.json",
+      "image": "images/qwen21/c16_community_solar_en__qwen21.png",
+      "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+      "started_at": "2026-10-14T13:29:43.052976+00:00",
+      "prompt_id": "4006316d-e104-4e13-a69f-fedaa8566d77",
+      "status": "success",
+      "completed_at": "2026-10-14T13:30:34.042533+00:00",
+      "elapsed_seconds": 50.99,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "image_sha256": "9b1d22a2c12355efa88474692a30858a1e53f7ad54abe26d6dfdd77bd8632970",
+      "actual_pe_prompt_file": "prompts/qwen21_pe_outputs/c16_community_solar_en__qwen21.txt",
+      "peak_vram_mb_observed": 22978,
+      "peak_comfy_rss_mb_observed": 40539,
+      "peak_temperature_c_observed": 81,
+      "gpu_samples_file": "runs/qwen21/c16_community_solar_en__qwen21_gpu_samples.jsonl",
+      "gpu_sample_count": 13
+    },
+    {
+      "owner": "Sean",
+      "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+      "experiment": "data_matrix_v2",
+      "job": "c17_internet_gap_zh__qwen21",
+      "case_id": "c17_internet_gap_zh",
+      "model": "qwen21",
+      "language": "zh",
+      "seed": 42,
+      "data_source": "Synthetic controlled dataset; fictional regions.",
+      "source_url": null,
+      "ground_truth": [
+        [
+          "东部",
+          "城市 92%",
+          "乡村 76%"
+        ],
+        [
+          "南部",
+          "城市 88%",
+          "乡村 61%"
+        ],
+        [
+          "西部",
+          "城市 81%",
+          "乡村 49%"
+        ],
+        [
+          "北部",
+          "城市 90%",
+          "乡村 72%"
+        ]
+      ],
+      "key_claim": "四地都用同一零起点比例尺；城乡值不能调换，差距必须对应数据。",
+      "input_prompt_file": "prompts/qwen21/c17_internet_gap_zh.txt",
+      "input_prompt": "Create a finished bilingual-safe infographic in a landscape 3:2 canvas. Use the exact title \"网络接入，城乡差距\" and subtitle \"四个地区的互联网使用率\". Chart: 小倍图：东、南、西、北四个独立迷你柱图，共用 0–100% 纵轴，城市与乡村成对比较。 Art direction: 报纸数据专栏风格，暖灰底、黑色字、湖蓝与砖红对照，图表密度适中。\nDATA (preserve every label and value exactly):\n东部 | 城市 92% | 乡村 76%\n南部 | 城市 88% | 乡村 61%\n西部 | 城市 81% | 乡村 49%\n北部 | 城市 90% | 乡村 72%\nKey takeaway: \"西部城乡差距最大，为 32 个百分点。\". 四地都用同一零起点比例尺；城乡值不能调换，差距必须对应数据。 Use a clear grid, readable typography, a strong title hierarchy, and data labels placed beside their matching marks. Render only the supplied text, with exact spelling, punctuation, units, category order, and numeric values. Do not add labels, numbers, legends, or claims. Make it a coherent article illustration, not a text-only table.",
+      "parameters": {
+        "resolution": "1536x1024",
+        "seed": 42,
+        "diffusion_weights": "BF16",
+        "sampler": "euler",
+        "steps": 40,
+        "cfg": 1.0,
+        "scheduler": "simple",
+        "text_encoder": "qwen3vl_8b_bf16.safetensors",
+        "prompt_enhancer": "qwen3.5_9b_qwen_image_2.1_pe_t2i.int8_convrot.safetensors",
+        "pe_temperature": 1.0,
+        "pe_top_p": 0.95,
+        "pe_top_k": 20,
+        "pe_presence_penalty": 1.5,
+        "vae": "qwen_image_2.1_vae_bf16.safetensors"
+      },
+      "workflow": "workflows/qwen21/c17_internet_gap_zh__qwen21.json",
+      "image": "images/qwen21/c17_internet_gap_zh__qwen21.png",
+      "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+      "started_at": "2026-10-14T13:30:34.107072+00:00",
+      "prompt_id": "4bd0914b-3355-4964-9ccc-85fb63d73fa3",
+      "status": "success",
+      "completed_at": "2026-10-14T13:31:29.042551+00:00",
+      "elapsed_seconds": 54.94,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "image_sha256": "9dadb764e0ef9aa5f306574cdadf1b1fe337d07b03e68ec45e25e838c52cf482",
+      "actual_pe_prompt_file": "prompts/qwen21_pe_outputs/c17_internet_gap_zh__qwen21.txt",
+      "peak_vram_mb_observed": 22978,
+      "peak_comfy_rss_mb_observed": 40539,
+      "peak_temperature_c_observed": 81,
+      "gpu_samples_file": "runs/qwen21/c17_internet_gap_zh__qwen21_gpu_samples.jsonl",
+      "gpu_sample_count": 14
+    },
+    {
+      "owner": "Sean",
+      "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+      "experiment": "data_matrix_v2",
+      "job": "c18_lab_results_en__qwen21",
+      "case_id": "c18_lab_results_en",
+      "model": "qwen21",
+      "language": "en",
+      "seed": 42,
+      "data_source": "Synthetic controlled measurements; illustrative, not scientific findings.",
+      "source_url": null,
+      "ground_truth": [
+        [
+          "Control",
+          "42",
+          "36–48"
+        ],
+        [
+          "Dose A",
+          "55",
+          "49–61"
+        ],
+        [
+          "Dose B",
+          "68",
+          "60–76"
+        ],
+        [
+          "Dose C",
+          "73",
+          "62–84"
+        ]
+      ],
+      "key_claim": "Each interval must center on its estimate; intervals show uncertainty, not a second data series.",
+      "input_prompt_file": "prompts/qwen21/c18_lab_results_en.txt",
+      "input_prompt": "Create a finished bilingual-safe infographic in a landscape 3:2 canvas. Use the exact title \"A range tells more than a point\" and subtitle \"Measured response by test group · units\". Chart: A horizontal interval plot with point estimates and whiskers for four groups; distinguish the estimate from its interval and use a 0–100 axis. Art direction: Scientific notebook meets editorial infographic, thin graphite axes, restrained teal and coral, precise but approachable.\nDATA (preserve every label and value exactly):\nControl | 42 | 36–48\nDose A | 55 | 49–61\nDose B | 68 | 60–76\nDose C | 73 | 62–84\nKey takeaway: \"Dose C has the highest estimate and widest interval.\". Each interval must center on its estimate; intervals show uncertainty, not a second data series. Use a clear grid, readable typography, a strong title hierarchy, and data labels placed beside their matching marks. Render only the supplied text, with exact spelling, punctuation, units, category order, and numeric values. Do not add labels, numbers, legends, or claims. Make it a coherent article illustration, not a text-only table.",
+      "parameters": {
+        "resolution": "1536x1024",
+        "seed": 42,
+        "diffusion_weights": "BF16",
+        "sampler": "euler",
+        "steps": 40,
+        "cfg": 1.0,
+        "scheduler": "simple",
+        "text_encoder": "qwen3vl_8b_bf16.safetensors",
+        "prompt_enhancer": "qwen3.5_9b_qwen_image_2.1_pe_t2i.int8_convrot.safetensors",
+        "pe_temperature": 1.0,
+        "pe_top_p": 0.95,
+        "pe_top_k": 20,
+        "pe_presence_penalty": 1.5,
+        "vae": "qwen_image_2.1_vae_bf16.safetensors"
+      },
+      "workflow": "workflows/qwen21/c18_lab_results_en__qwen21.json",
+      "image": "images/qwen21/c18_lab_results_en__qwen21.png",
+      "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+      "started_at": "2026-10-14T13:31:29.104830+00:00",
+      "prompt_id": "cd8e0e2a-c73e-4a68-a13d-79a4241ddcf2",
+      "status": "success",
+      "completed_at": "2026-10-14T13:32:24.000748+00:00",
+      "elapsed_seconds": 54.9,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "image_sha256": "977740dad841cf6e23cc7d74d126ee078f404296b31ea449e8f870924bf2a245",
+      "actual_pe_prompt_file": "prompts/qwen21_pe_outputs/c18_lab_results_en__qwen21.txt",
+      "peak_vram_mb_observed": 23010,
+      "peak_comfy_rss_mb_observed": 40522,
+      "peak_temperature_c_observed": 81,
+      "gpu_samples_file": "runs/qwen21/c18_lab_results_en__qwen21_gpu_samples.jsonl",
+      "gpu_sample_count": 14
+    },
+    {
+      "owner": "Sean",
+      "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+      "experiment": "data_matrix_v2",
+      "job": "c19_reuse_network_zh__qwen21",
+      "case_id": "c19_reuse_network_zh",
+      "model": "qwen21",
+      "language": "zh",
+      "seed": 42,
+      "data_source": "Synthetic controlled dataset; illustrative reuse program.",
+      "source_url": null,
+      "ground_truth": [
+        [
+          "闲置物品",
+          "80 件"
+        ],
+        [
+          "捐赠",
+          "36 件"
+        ],
+        [
+          "维修再用",
+          "28 件"
+        ],
+        [
+          "材料回收",
+          "16 件"
+        ]
+      ],
+      "key_claim": "三支流必须守恒相加为 80，箭头方向由起点流向去向。",
+      "input_prompt_file": "prompts/qwen21/c19_reuse_network_zh.txt",
+      "input_prompt": "Create a finished bilingual-safe infographic in a landscape 3:2 canvas. Use the exact title \"旧物，流向新的用途\" and subtitle \"一批 80 件闲置物品的再分配\". Chart: 有向网络流图：起点 80 件，分成捐赠 36、维修再用 28、材料回收 16；线宽按流量比例变化。 Art direction: 纸艺拼贴风格的循环经济海报，回收纸纹理、靛蓝和橘色，保留规整的阅读路径。\nDATA (preserve every label and value exactly):\n闲置物品 | 80 件\n捐赠 | 36 件\n维修再用 | 28 件\n材料回收 | 16 件\nKey takeaway: \"三条去向合计 80 件，捐赠最多。\". 三支流必须守恒相加为 80，箭头方向由起点流向去向。 Use a clear grid, readable typography, a strong title hierarchy, and data labels placed beside their matching marks. Render only the supplied text, with exact spelling, punctuation, units, category order, and numeric values. Do not add labels, numbers, legends, or claims. Make it a coherent article illustration, not a text-only table.",
+      "parameters": {
+        "resolution": "1536x1024",
+        "seed": 42,
+        "diffusion_weights": "BF16",
+        "sampler": "euler",
+        "steps": 40,
+        "cfg": 1.0,
+        "scheduler": "simple",
+        "text_encoder": "qwen3vl_8b_bf16.safetensors",
+        "prompt_enhancer": "qwen3.5_9b_qwen_image_2.1_pe_t2i.int8_convrot.safetensors",
+        "pe_temperature": 1.0,
+        "pe_top_p": 0.95,
+        "pe_top_k": 20,
+        "pe_presence_penalty": 1.5,
+        "vae": "qwen_image_2.1_vae_bf16.safetensors"
+      },
+      "workflow": "workflows/qwen21/c19_reuse_network_zh__qwen21.json",
+      "image": "images/qwen21/c19_reuse_network_zh__qwen21.png",
+      "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+      "started_at": "2026-10-14T13:32:24.060836+00:00",
+      "prompt_id": "73d6887e-3189-4283-921b-869dd4a4e7a8",
+      "status": "success",
+      "completed_at": "2026-10-14T13:33:23.014526+00:00",
+      "elapsed_seconds": 58.95,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "image_sha256": "336553354bcd33a5a5e79492bcfc7ae46d01b66a883c6ef62fe04c634ee4154e",
+      "actual_pe_prompt_file": "prompts/qwen21_pe_outputs/c19_reuse_network_zh__qwen21.txt",
+      "peak_vram_mb_observed": 23010,
+      "peak_comfy_rss_mb_observed": 40540,
+      "peak_temperature_c_observed": 81,
+      "gpu_samples_file": "runs/qwen21/c19_reuse_network_zh__qwen21_gpu_samples.jsonl",
+      "gpu_sample_count": 15
+    },
+    {
+      "owner": "Sean",
+      "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+      "experiment": "data_matrix_v2",
+      "job": "c20_product_tradeoff_en__qwen21",
+      "case_id": "c20_product_tradeoff_en",
+      "model": "qwen21",
+      "language": "en",
+      "seed": 42,
+      "data_source": "Synthetic controlled product data; fictional devices.",
+      "source_url": null,
+      "ground_truth": [
+        [
+          "Aster",
+          "$300",
+          "8 h"
+        ],
+        [
+          "Birch",
+          "$450",
+          "12 h"
+        ],
+        [
+          "Cedar",
+          "$600",
+          "10 h"
+        ],
+        [
+          "Dune",
+          "$750",
+          "16 h"
+        ],
+        [
+          "Ember",
+          "$900",
+          "14 h"
+        ]
+      ],
+      "key_claim": "Map price horizontally and battery life vertically; do not reverse any device coordinates.",
+      "input_prompt_file": "prompts/qwen21/c20_product_tradeoff_en.txt",
+      "input_prompt": "Create a finished bilingual-safe infographic in a landscape 3:2 canvas. Use the exact title \"Price and battery life do not move together\" and subtitle \"Five devices · price vs. battery life\". Chart: A scatter plot with five labeled devices; x-axis price in dollars, y-axis battery life in hours. Preserve each exact coordinate and avoid implying causation. Art direction: Retro-futurist product review, cream paper, indigo grid, tomato-red accent, small device silhouettes used sparingly.\nDATA (preserve every label and value exactly):\nAster | $300 | 8 h\nBirch | $450 | 12 h\nCedar | $600 | 10 h\nDune | $750 | 16 h\nEmber | $900 | 14 h\nKey takeaway: \"Dune lasts longest; Aster costs least.\". Map price horizontally and battery life vertically; do not reverse any device coordinates. Use a clear grid, readable typography, a strong title hierarchy, and data labels placed beside their matching marks. Render only the supplied text, with exact spelling, punctuation, units, category order, and numeric values. Do not add labels, numbers, legends, or claims. Make it a coherent article illustration, not a text-only table.",
+      "parameters": {
+        "resolution": "1536x1024",
+        "seed": 42,
+        "diffusion_weights": "BF16",
+        "sampler": "euler",
+        "steps": 40,
+        "cfg": 1.0,
+        "scheduler": "simple",
+        "text_encoder": "qwen3vl_8b_bf16.safetensors",
+        "prompt_enhancer": "qwen3.5_9b_qwen_image_2.1_pe_t2i.int8_convrot.safetensors",
+        "pe_temperature": 1.0,
+        "pe_top_p": 0.95,
+        "pe_top_k": 20,
+        "pe_presence_penalty": 1.5,
+        "vae": "qwen_image_2.1_vae_bf16.safetensors"
+      },
+      "workflow": "workflows/qwen21/c20_product_tradeoff_en__qwen21.json",
+      "image": "images/qwen21/c20_product_tradeoff_en__qwen21.png",
+      "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+      "started_at": "2026-10-14T13:33:23.080358+00:00",
+      "prompt_id": "80e45ff4-b9f2-4178-9d43-2179c6141f9c",
+      "status": "success",
+      "completed_at": "2026-10-14T13:34:20.061282+00:00",
+      "elapsed_seconds": 56.98,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "image_sha256": "65615afff8d4f4095f7465666300d7d7441ccf6b0db3178e3beb4a4e6692f82a",
+      "actual_pe_prompt_file": "prompts/qwen21_pe_outputs/c20_product_tradeoff_en__qwen21.txt",
+      "peak_vram_mb_observed": 23108,
+      "peak_comfy_rss_mb_observed": 40546,
+      "peak_temperature_c_observed": 81,
+      "gpu_samples_file": "runs/qwen21/c20_product_tradeoff_en__qwen21_gpu_samples.jsonl",
+      "gpu_sample_count": 15
+    },
+    {
+      "owner": "Sean",
+      "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+      "experiment": "data_matrix_v2",
+      "job": "c09_electricity_access_en__krea2",
+      "case_id": "c09_electricity_access_en",
+      "model": "krea2",
+      "language": "en",
+      "seed": 42,
+      "data_source": "World Bank WDI EG.ELC.ACCS.ZS; World Bank API snapshot retrieved 2026-10-14; CC BY 4.0.",
+      "source_url": "https://api.worldbank.org/v2/country/WLD/indicator/EG.ELC.ACCS.ZS?date=2010:2023&format=json",
+      "ground_truth": [
+        [
+          "2010",
+          "83.5%"
+        ],
+        [
+          "2015",
+          "86.9%"
+        ],
+        [
+          "2020",
+          "90.4%"
+        ],
+        [
+          "2023",
+          "91.6%"
+        ]
+      ],
+      "key_claim": "Keep the line rising, place every value at its matching year, and do not imply 100% access.",
+      "input_prompt_file": "prompts/krea2/c09_electricity_access_en.txt",
+      "input_prompt": "Create a polished editorial infographic on a landscape 3:2 canvas. The headline reads \"Power reaches more people\" and the subtitle reads \"Global access to electricity · 2010–2023\". Use Swiss editorial minimalism, large white margins, deep navy line with one warm yellow endpoint, restrained grid. The central visualization is A four-point line chart with a gentle upward slope; exact year/value pairs, a clear 0–100% vertical scale, and a final callout. Put every value next to its correct category and preserve the given ordering. The short takeaway reads \"Access rose 8.1 percentage points across the period.\". The complete source labels and data are exactly:\n\"2010 · 83.5%\"\n\"2015 · 86.9%\"\n\"2020 · 90.4%\"\n\"2023 · 91.6%\"\nKeep the line rising, place every value at its matching year, and do not imply 100% access. Give the data visualization most of the page, with excellent visual hierarchy, generous spacing, clear marks, and legible typography. Render the quoted wording and numbers faithfully; do not invent any extra text, labels, values, or decorative pseudo-writing. Keep the visual style attractive but the chart quantitatively honest.",
+      "parameters": {
+        "resolution": "1536x1024",
+        "seed": 42,
+        "diffusion_weights": "BF16",
+        "sampler": "euler",
+        "steps": 52,
+        "cfg": 3.5,
+        "scheduler": "simple",
+        "text_encoder": "qwen3vl_4b_bf16.safetensors",
+        "negative_prompt": "watermark, logo, blurry",
+        "vae": "qwen_image_vae.safetensors"
+      },
+      "workflow": "workflows/krea2/c09_electricity_access_en__krea2.json",
+      "image": "images/krea2/c09_electricity_access_en__krea2.png",
+      "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+      "started_at": "2026-10-14T13:34:20.122739+00:00",
+      "prompt_id": "457ca29f-0764-45d1-b72a-faf14a368b3b",
+      "status": "success",
+      "completed_at": "2026-10-14T13:36:26.504297+00:00",
+      "elapsed_seconds": 126.38,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "image_sha256": "b4ca4b980bec4242a19da4ec2076b3188bcc322419af6cca4902429176c2710d",
+      "actual_pe_prompt_file": null,
+      "peak_vram_mb_observed": 22620,
+      "peak_comfy_rss_mb_observed": 40655,
+      "peak_temperature_c_observed": 80,
+      "gpu_samples_file": "runs/krea2/c09_electricity_access_en__krea2_gpu_samples.jsonl",
+      "gpu_sample_count": 31
+    },
+    {
+      "owner": "Sean",
+      "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+      "experiment": "data_matrix_v2",
+      "job": "c10_city_transport_zh__krea2",
+      "case_id": "c10_city_transport_zh",
+      "model": "krea2",
+      "language": "zh",
+      "seed": 42,
+      "data_source": "Synthetic controlled dataset for chart fidelity; not a real city survey.",
+      "source_url": null,
+      "ground_truth": [
+        [
+          "地铁",
+          "46%",
+          "28 分钟"
+        ],
+        [
+          "公交",
+          "31%",
+          "42 分钟"
+        ],
+        [
+          "骑行",
+          "23%",
+          "19 分钟"
+        ]
+      ],
+      "key_claim": "两组度量不得混成同一刻度；三种方式与两个指标一一对应。",
+      "input_prompt_file": "prompts/krea2/c10_city_transport_zh.txt",
+      "input_prompt": "Create a polished editorial infographic on a landscape 3:2 canvas. The headline reads \"一座城市，三种通勤\" and the subtitle reads \"早高峰出行方式与平均耗时\". Use 克制的城市报刊信息图，米白纸色、墨绿与朱红，细线图标点缀，不做写实插画。 The central visualization is 横向分组条形图：三种出行方式各有一条占比条与一条耗时条，双指标清晰分区并标出单位。 Put every value next to its correct category and preserve the given ordering. The short takeaway reads \"地铁占比最高，骑行平均耗时最短。\". The complete source labels and data are exactly:\n\"地铁 · 46% · 28 分钟\"\n\"公交 · 31% · 42 分钟\"\n\"骑行 · 23% · 19 分钟\"\n两组度量不得混成同一刻度；三种方式与两个指标一一对应。 Give the data visualization most of the page, with excellent visual hierarchy, generous spacing, clear marks, and legible typography. Render the quoted wording and numbers faithfully; do not invent any extra text, labels, values, or decorative pseudo-writing. Keep the visual style attractive but the chart quantitatively honest.",
+      "parameters": {
+        "resolution": "1536x1024",
+        "seed": 42,
+        "diffusion_weights": "BF16",
+        "sampler": "euler",
+        "steps": 52,
+        "cfg": 3.5,
+        "scheduler": "simple",
+        "text_encoder": "qwen3vl_4b_bf16.safetensors",
+        "negative_prompt": "watermark, logo, blurry",
+        "vae": "qwen_image_vae.safetensors"
+      },
+      "workflow": "workflows/krea2/c10_city_transport_zh__krea2.json",
+      "image": "images/krea2/c10_city_transport_zh__krea2.png",
+      "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+      "started_at": "2026-10-14T13:36:26.571152+00:00",
+      "prompt_id": "c45e8d78-cf1d-47a8-be76-0559df904cd2",
+      "status": "success",
+      "completed_at": "2026-10-14T13:38:14.356292+00:00",
+      "elapsed_seconds": 107.79,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "image_sha256": "0365003db69ec6d3ce0dcaa014935b189b9e977cb64a5174c5f86aff43dfd313",
+      "actual_pe_prompt_file": null,
+      "peak_vram_mb_observed": 22316,
+      "peak_comfy_rss_mb_observed": 36379,
+      "peak_temperature_c_observed": 80,
+      "gpu_samples_file": "runs/krea2/c10_city_transport_zh__krea2_gpu_samples.jsonl",
+      "gpu_sample_count": 27
+    },
+    {
+      "owner": "Sean",
+      "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+      "experiment": "data_matrix_v2",
+      "job": "c11_school_attendance_en__krea2",
+      "case_id": "c11_school_attendance_en",
+      "model": "krea2",
+      "language": "en",
+      "seed": 42,
+      "data_source": "Synthetic controlled dataset; illustrative only.",
+      "source_url": null,
+      "ground_truth": [
+        [
+          "North",
+          "Primary",
+          "96%"
+        ],
+        [
+          "North",
+          "Middle",
+          "91%"
+        ],
+        [
+          "North",
+          "Upper",
+          "84%"
+        ],
+        [
+          "South",
+          "Primary",
+          "93%"
+        ],
+        [
+          "South",
+          "Middle",
+          "88%"
+        ],
+        [
+          "South",
+          "Upper",
+          "79%"
+        ],
+        [
+          "East",
+          "Primary",
+          "98%"
+        ],
+        [
+          "East",
+          "Middle",
+          "94%"
+        ],
+        [
+          "East",
+          "Upper",
+          "90%"
+        ],
+        [
+          "West",
+          "Primary",
+          "89%"
+        ],
+        [
+          "West",
+          "Middle",
+          "82%"
+        ],
+        [
+          "West",
+          "Upper",
+          "73%"
+        ]
+      ],
+      "key_claim": "All 12 cells must be present at the correct row and column; do not invent a causal explanation.",
+      "input_prompt_file": "prompts/krea2/c11_school_attendance_en.txt",
+      "input_prompt": "Create a polished editorial infographic on a landscape 3:2 canvas. The headline reads \"Attendance changes by region\" and the subtitle reads \"School attendance rate · %\". Use Modern education policy report, crisp grid, cobalt-to-mint palette, accessible contrast and tidy sans serif labels. The central visualization is A 4-by-3 heatmap: four region rows by three school stages; every cell contains its exact percentage and uses a consistent low-to-high color ramp. Put every value next to its correct category and preserve the given ordering. The short takeaway reads \"The largest stage-to-stage gap appears in the West.\". The complete source labels and data are exactly:\n\"North · Primary · 96%\"\n\"North · Middle · 91%\"\n\"North · Upper · 84%\"\n\"South · Primary · 93%\"\n\"South · Middle · 88%\"\n\"South · Upper · 79%\"\n\"East · Primary · 98%\"\n\"East · Middle · 94%\"\n\"East · Upper · 90%\"\n\"West · Primary · 89%\"\n\"West · Middle · 82%\"\n\"West · Upper · 73%\"\nAll 12 cells must be present at the correct row and column; do not invent a causal explanation. Give the data visualization most of the page, with excellent visual hierarchy, generous spacing, clear marks, and legible typography. Render the quoted wording and numbers faithfully; do not invent any extra text, labels, values, or decorative pseudo-writing. Keep the visual style attractive but the chart quantitatively honest.",
+      "parameters": {
+        "resolution": "1536x1024",
+        "seed": 42,
+        "diffusion_weights": "BF16",
+        "sampler": "euler",
+        "steps": 52,
+        "cfg": 3.5,
+        "scheduler": "simple",
+        "text_encoder": "qwen3vl_4b_bf16.safetensors",
+        "negative_prompt": "watermark, logo, blurry",
+        "vae": "qwen_image_vae.safetensors"
+      },
+      "workflow": "workflows/krea2/c11_school_attendance_en__krea2.json",
+      "image": "images/krea2/c11_school_attendance_en__krea2.png",
+      "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+      "started_at": "2026-10-14T13:38:14.418646+00:00",
+      "prompt_id": "c6b72cc5-f737-463b-9996-b0f592f7d0c6",
+      "status": "success",
+      "completed_at": "2026-10-14T13:40:02.490413+00:00",
+      "elapsed_seconds": 108.07,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "image_sha256": "4060041a8e64709c74968b829f482a0fcabee140e71b3ee9639d6c5fc02e5faf",
+      "actual_pe_prompt_file": null,
+      "peak_vram_mb_observed": 22956,
+      "peak_comfy_rss_mb_observed": 36384,
+      "peak_temperature_c_observed": 81,
+      "gpu_samples_file": "runs/krea2/c11_school_attendance_en__krea2_gpu_samples.jsonl",
+      "gpu_sample_count": 27
+    },
+    {
+      "owner": "Sean",
+      "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+      "experiment": "data_matrix_v2",
+      "job": "c12_food_waste_zh__krea2",
+      "case_id": "c12_food_waste_zh",
+      "model": "krea2",
+      "language": "zh",
+      "seed": 42,
+      "data_source": "Synthetic controlled dataset; illustrative household flow, not measured data.",
+      "source_url": null,
+      "ground_truth": [
+        [
+          "起始",
+          "100 千克"
+        ],
+        [
+          "采购损耗",
+          "−12 千克"
+        ],
+        [
+          "储存损耗",
+          "−18 千克"
+        ],
+        [
+          "备餐损耗",
+          "−20 千克"
+        ],
+        [
+          "最终保留",
+          "50 千克"
+        ]
+      ],
+      "key_claim": "瀑布条的方向和终点必须符合算术；不要把损耗画成增加。",
+      "input_prompt_file": "prompts/krea2/c12_food_waste_zh.txt",
+      "input_prompt": "Create a polished editorial infographic on a landscape 3:2 canvas. The headline reads \"食物浪费，在哪一步累积\" and the subtitle reads \"一周 100 千克可食食物的去向\". Use 温暖手绘编辑插图与严格图表结合，奶油纸色、番茄红与叶绿，线条简洁，数字醒目。 The central visualization is 瀑布图：起始 100 千克，经采购损耗 −12、储存损耗 −18、备餐损耗 −20，最后剩余 50 千克；连接线表示逐步递减。 Put every value next to its correct category and preserve the given ordering. The short takeaway reads \"一半食物最终保留，备餐环节损耗最大。\". The complete source labels and data are exactly:\n\"起始 · 100 千克\"\n\"采购损耗 · −12 千克\"\n\"储存损耗 · −18 千克\"\n\"备餐损耗 · −20 千克\"\n\"最终保留 · 50 千克\"\n瀑布条的方向和终点必须符合算术；不要把损耗画成增加。 Give the data visualization most of the page, with excellent visual hierarchy, generous spacing, clear marks, and legible typography. Render the quoted wording and numbers faithfully; do not invent any extra text, labels, values, or decorative pseudo-writing. Keep the visual style attractive but the chart quantitatively honest.",
+      "parameters": {
+        "resolution": "1536x1024",
+        "seed": 42,
+        "diffusion_weights": "BF16",
+        "sampler": "euler",
+        "steps": 52,
+        "cfg": 3.5,
+        "scheduler": "simple",
+        "text_encoder": "qwen3vl_4b_bf16.safetensors",
+        "negative_prompt": "watermark, logo, blurry",
+        "vae": "qwen_image_vae.safetensors"
+      },
+      "workflow": "workflows/krea2/c12_food_waste_zh__krea2.json",
+      "image": "images/krea2/c12_food_waste_zh__krea2.png",
+      "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+      "started_at": "2026-10-14T13:40:02.554360+00:00",
+      "prompt_id": "f940c007-6464-4a87-85c2-d6a422f19dd6",
+      "status": "success",
+      "completed_at": "2026-10-14T13:41:50.622963+00:00",
+      "elapsed_seconds": 108.07,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "image_sha256": "9a511cf478c9c2a57377de15621a91daef235475ce68c29df7fe3477c90671db",
+      "actual_pe_prompt_file": null,
+      "peak_vram_mb_observed": 22284,
+      "peak_comfy_rss_mb_observed": 36384,
+      "peak_temperature_c_observed": 80,
+      "gpu_samples_file": "runs/krea2/c12_food_waste_zh__krea2_gpu_samples.jsonl",
+      "gpu_sample_count": 27
+    },
+    {
+      "owner": "Sean",
+      "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+      "experiment": "data_matrix_v2",
+      "job": "c13_sleep_distribution_en__krea2",
+      "case_id": "c13_sleep_distribution_en",
+      "model": "krea2",
+      "language": "en",
+      "seed": 42,
+      "data_source": "Synthetic controlled observations; not clinical guidance.",
+      "source_url": null,
+      "ground_truth": [
+        [
+          "Night 1",
+          "5.5 h"
+        ],
+        [
+          "Night 2",
+          "6.0 h"
+        ],
+        [
+          "Night 3",
+          "6.0 h"
+        ],
+        [
+          "Night 4",
+          "6.5 h"
+        ],
+        [
+          "Night 5",
+          "6.5 h"
+        ],
+        [
+          "Night 6",
+          "7.0 h"
+        ],
+        [
+          "Night 7",
+          "7.0 h"
+        ],
+        [
+          "Night 8",
+          "7.0 h"
+        ],
+        [
+          "Night 9",
+          "7.5 h"
+        ],
+        [
+          "Night 10",
+          "8.0 h"
+        ],
+        [
+          "Night 11",
+          "8.0 h"
+        ],
+        [
+          "Night 12",
+          "9.0 h"
+        ]
+      ],
+      "key_claim": "Show twelve separate observations, not a bar chart; do not label the sample as a population.",
+      "input_prompt_file": "prompts/krea2/c13_sleep_distribution_en.txt",
+      "input_prompt": "Create a polished editorial infographic on a landscape 3:2 canvas. The headline reads \"Sleep is not one-size-fits-all\" and the subtitle reads \"Hours slept across 12 sample nights\". Use Quiet science magazine, midnight blue background, soft lunar cream marks, one orange median rule, minimalist labels. The central visualization is A horizontal dot plot on a 4–10 hour axis. Plot all twelve observations, show the median at 7.0 hours, and distinguish the median from individual dots. Put every value next to its correct category and preserve the given ordering. The short takeaway reads \"Median: 7.0 hours. Range: 5.5–9.0 hours.\". The complete source labels and data are exactly:\n\"Night 1 · 5.5 h\"\n\"Night 2 · 6.0 h\"\n\"Night 3 · 6.0 h\"\n\"Night 4 · 6.5 h\"\n\"Night 5 · 6.5 h\"\n\"Night 6 · 7.0 h\"\n\"Night 7 · 7.0 h\"\n\"Night 8 · 7.0 h\"\n\"Night 9 · 7.5 h\"\n\"Night 10 · 8.0 h\"\n\"Night 11 · 8.0 h\"\n\"Night 12 · 9.0 h\"\nShow twelve separate observations, not a bar chart; do not label the sample as a population. Give the data visualization most of the page, with excellent visual hierarchy, generous spacing, clear marks, and legible typography. Render the quoted wording and numbers faithfully; do not invent any extra text, labels, values, or decorative pseudo-writing. Keep the visual style attractive but the chart quantitatively honest.",
+      "parameters": {
+        "resolution": "1536x1024",
+        "seed": 42,
+        "diffusion_weights": "BF16",
+        "sampler": "euler",
+        "steps": 52,
+        "cfg": 3.5,
+        "scheduler": "simple",
+        "text_encoder": "qwen3vl_4b_bf16.safetensors",
+        "negative_prompt": "watermark, logo, blurry",
+        "vae": "qwen_image_vae.safetensors"
+      },
+      "workflow": "workflows/krea2/c13_sleep_distribution_en__krea2.json",
+      "image": "images/krea2/c13_sleep_distribution_en__krea2.png",
+      "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+      "started_at": "2026-10-14T13:41:50.690136+00:00",
+      "prompt_id": "6957c5e5-11d2-48c4-ad07-7911d97be70e",
+      "status": "success",
+      "completed_at": "2026-10-14T13:43:40.490969+00:00",
+      "elapsed_seconds": 109.8,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "image_sha256": "c900d019f935b55c68055c4c4a6384094ce104f75bfba2d200746d2f9aa6f0d8",
+      "actual_pe_prompt_file": null,
+      "peak_vram_mb_observed": 22444,
+      "peak_comfy_rss_mb_observed": 36391,
+      "peak_temperature_c_observed": 80,
+      "gpu_samples_file": "runs/krea2/c13_sleep_distribution_en__krea2_gpu_samples.jsonl",
+      "gpu_sample_count": 28
+    },
+    {
+      "owner": "Sean",
+      "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+      "experiment": "data_matrix_v2",
+      "job": "c14_population_pyramid_zh__krea2",
+      "case_id": "c14_population_pyramid_zh",
+      "model": "krea2",
+      "language": "zh",
+      "seed": 42,
+      "data_source": "Synthetic controlled dataset; fictional community.",
+      "source_url": null,
+      "ground_truth": [
+        [
+          "0–14 岁",
+          "男 18",
+          "女 17"
+        ],
+        [
+          "15–29 岁",
+          "男 22",
+          "女 23"
+        ],
+        [
+          "30–44 岁",
+          "男 26",
+          "女 27"
+        ],
+        [
+          "45–59 岁",
+          "男 20",
+          "女 21"
+        ],
+        [
+          "60 岁以上",
+          "男 14",
+          "女 16"
+        ]
+      ],
+      "key_claim": "左右镜像条形图；年龄组顺序从年轻到年长，人数左右不反。",
+      "input_prompt_file": "prompts/krea2/c14_population_pyramid_zh.txt",
+      "input_prompt": "Create a polished editorial infographic on a landscape 3:2 canvas. The headline reads \"城市人口的年龄结构\" and the subtitle reads \"示例社区 · 人数（千人）\". Use 现代公共数据报告，雾蓝与珊瑚橙，干净网格、简化人物剪影作轻量点缀。 The central visualization is 人口金字塔：左侧男性、右侧女性；五个年龄组共享中心基线，条长严格反映人数。 Put every value next to its correct category and preserve the given ordering. The short takeaway reads \"30–44 岁组人数最多；60 岁以上女性多于男性。\". The complete source labels and data are exactly:\n\"0–14 岁 · 男 18 · 女 17\"\n\"15–29 岁 · 男 22 · 女 23\"\n\"30–44 岁 · 男 26 · 女 27\"\n\"45–59 岁 · 男 20 · 女 21\"\n\"60 岁以上 · 男 14 · 女 16\"\n左右镜像条形图；年龄组顺序从年轻到年长，人数左右不反。 Give the data visualization most of the page, with excellent visual hierarchy, generous spacing, clear marks, and legible typography. Render the quoted wording and numbers faithfully; do not invent any extra text, labels, values, or decorative pseudo-writing. Keep the visual style attractive but the chart quantitatively honest.",
+      "parameters": {
+        "resolution": "1536x1024",
+        "seed": 42,
+        "diffusion_weights": "BF16",
+        "sampler": "euler",
+        "steps": 52,
+        "cfg": 3.5,
+        "scheduler": "simple",
+        "text_encoder": "qwen3vl_4b_bf16.safetensors",
+        "negative_prompt": "watermark, logo, blurry",
+        "vae": "qwen_image_vae.safetensors"
+      },
+      "workflow": "workflows/krea2/c14_population_pyramid_zh__krea2.json",
+      "image": "images/krea2/c14_population_pyramid_zh__krea2.png",
+      "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+      "started_at": "2026-10-14T13:43:40.556920+00:00",
+      "prompt_id": "e16dd84d-e6c7-4cb7-ae08-9fdc0781ff49",
+      "status": "success",
+      "completed_at": "2026-10-14T13:45:30.386817+00:00",
+      "elapsed_seconds": 109.83,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "image_sha256": "2ccede61fb207bc401239776ad92d293809fd51e73bbc6e8523344bfee0ef727",
+      "actual_pe_prompt_file": null,
+      "peak_vram_mb_observed": 23116,
+      "peak_comfy_rss_mb_observed": 36391,
+      "peak_temperature_c_observed": 81,
+      "gpu_samples_file": "runs/krea2/c14_population_pyramid_zh__krea2_gpu_samples.jsonl",
+      "gpu_sample_count": 28
+    },
+    {
+      "owner": "Sean",
+      "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+      "experiment": "data_matrix_v2",
+      "job": "c15_household_water_zh__krea2",
+      "case_id": "c15_household_water_zh",
+      "model": "krea2",
+      "language": "zh",
+      "seed": 42,
+      "data_source": "Synthetic controlled dataset; illustrative households.",
+      "source_url": null,
+      "ground_truth": [
+        [
+          "甲户",
+          "240 升",
+          "180 升"
+        ],
+        [
+          "乙户",
+          "210 升",
+          "150 升"
+        ],
+        [
+          "丙户",
+          "270 升",
+          "210 升"
+        ],
+        [
+          "丁户",
+          "180 升",
+          "150 升"
+        ]
+      ],
+      "key_claim": "每户 before/after 端点正确配对，轴从零开始，不把差值夸大。",
+      "input_prompt_file": "prompts/krea2/c15_household_water_zh.txt",
+      "input_prompt": "Create a polished editorial infographic on a landscape 3:2 canvas. The headline reads \"修复漏水，节水看得见\" and the subtitle reads \"四户家庭每日用水量对比\". Use 极简环保公益视觉，白底、深青与亮青，清晰大数字，水滴图标仅作少量装饰。 The central visualization is 哑铃图：每户一条水平细线连接修复前与修复后两个端点；横轴 0–300 升。 Put every value next to its correct category and preserve the given ordering. The short takeaway reads \"四户每日都减少 30–60 升用水。\". The complete source labels and data are exactly:\n\"甲户 · 240 升 · 180 升\"\n\"乙户 · 210 升 · 150 升\"\n\"丙户 · 270 升 · 210 升\"\n\"丁户 · 180 升 · 150 升\"\n每户 before/after 端点正确配对，轴从零开始，不把差值夸大。 Give the data visualization most of the page, with excellent visual hierarchy, generous spacing, clear marks, and legible typography. Render the quoted wording and numbers faithfully; do not invent any extra text, labels, values, or decorative pseudo-writing. Keep the visual style attractive but the chart quantitatively honest.",
+      "parameters": {
+        "resolution": "1536x1024",
+        "seed": 42,
+        "diffusion_weights": "BF16",
+        "sampler": "euler",
+        "steps": 52,
+        "cfg": 3.5,
+        "scheduler": "simple",
+        "text_encoder": "qwen3vl_4b_bf16.safetensors",
+        "negative_prompt": "watermark, logo, blurry",
+        "vae": "qwen_image_vae.safetensors"
+      },
+      "workflow": "workflows/krea2/c15_household_water_zh__krea2.json",
+      "image": "images/krea2/c15_household_water_zh__krea2.png",
+      "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+      "started_at": "2026-10-14T13:45:30.448960+00:00",
+      "prompt_id": "e5372ccc-58dd-47d7-896d-079bdf57e9e0",
+      "status": "success",
+      "completed_at": "2026-10-14T13:47:18.567836+00:00",
+      "elapsed_seconds": 108.12,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "image_sha256": "7f3e48c29908976f179a6801d26c41353592bf9b8e8d22d8ed7064bf141b2fee",
+      "actual_pe_prompt_file": null,
+      "peak_vram_mb_observed": 23276,
+      "peak_comfy_rss_mb_observed": 36390,
+      "peak_temperature_c_observed": 81,
+      "gpu_samples_file": "runs/krea2/c15_household_water_zh__krea2_gpu_samples.jsonl",
+      "gpu_sample_count": 27
+    },
+    {
+      "owner": "Sean",
+      "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+      "experiment": "data_matrix_v2",
+      "job": "c16_community_solar_en__krea2",
+      "case_id": "c16_community_solar_en",
+      "model": "krea2",
+      "language": "en",
+      "seed": 42,
+      "data_source": "Synthetic controlled budget; illustrative project.",
+      "source_url": null,
+      "ground_truth": [
+        [
+          "Panels",
+          "$45,000"
+        ],
+        [
+          "Installation",
+          "$25,000"
+        ],
+        [
+          "Battery",
+          "$20,000"
+        ],
+        [
+          "Training",
+          "$10,000"
+        ]
+      ],
+      "key_claim": "Rectangle areas must follow 45:25:20:10; labels and dollar amounts must stay attached.",
+      "input_prompt_file": "prompts/krea2/c16_community_solar_en.txt",
+      "input_prompt": "Create a polished editorial infographic on a landscape 3:2 canvas. The headline reads \"Where the solar budget goes\" and the subtitle reads \"Community project · $100,000\". Use Bold contemporary civic dashboard, warm yellow, charcoal and sky blue, clean geometric blocks, strong type hierarchy. The central visualization is A treemap with four non-overlapping rectangles sized in proportion to the exact budget allocations; label each category and amount. Put every value next to its correct category and preserve the given ordering. The short takeaway reads \"Panels receive the largest share; training receives the smallest.\". The complete source labels and data are exactly:\n\"Panels · $45,000\"\n\"Installation · $25,000\"\n\"Battery · $20,000\"\n\"Training · $10,000\"\nRectangle areas must follow 45:25:20:10; labels and dollar amounts must stay attached. Give the data visualization most of the page, with excellent visual hierarchy, generous spacing, clear marks, and legible typography. Render the quoted wording and numbers faithfully; do not invent any extra text, labels, values, or decorative pseudo-writing. Keep the visual style attractive but the chart quantitatively honest.",
+      "parameters": {
+        "resolution": "1536x1024",
+        "seed": 42,
+        "diffusion_weights": "BF16",
+        "sampler": "euler",
+        "steps": 52,
+        "cfg": 3.5,
+        "scheduler": "simple",
+        "text_encoder": "qwen3vl_4b_bf16.safetensors",
+        "negative_prompt": "watermark, logo, blurry",
+        "vae": "qwen_image_vae.safetensors"
+      },
+      "workflow": "workflows/krea2/c16_community_solar_en__krea2.json",
+      "image": "images/krea2/c16_community_solar_en__krea2.png",
+      "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+      "started_at": "2026-10-14T13:47:18.630660+00:00",
+      "prompt_id": "27e9479f-9876-4e76-a40d-ba0ec7c06b96",
+      "status": "success",
+      "completed_at": "2026-10-14T13:49:06.383266+00:00",
+      "elapsed_seconds": 107.75,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "image_sha256": "dc71cbecd772cb8237d92edc4e282a7bbdf20c88464971c949c30f0d853d1625",
+      "actual_pe_prompt_file": null,
+      "peak_vram_mb_observed": 22284,
+      "peak_comfy_rss_mb_observed": 36389,
+      "peak_temperature_c_observed": 79,
+      "gpu_samples_file": "runs/krea2/c16_community_solar_en__krea2_gpu_samples.jsonl",
+      "gpu_sample_count": 27
+    },
+    {
+      "owner": "Sean",
+      "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+      "experiment": "data_matrix_v2",
+      "job": "c17_internet_gap_zh__krea2",
+      "case_id": "c17_internet_gap_zh",
+      "model": "krea2",
+      "language": "zh",
+      "seed": 42,
+      "data_source": "Synthetic controlled dataset; fictional regions.",
+      "source_url": null,
+      "ground_truth": [
+        [
+          "东部",
+          "城市 92%",
+          "乡村 76%"
+        ],
+        [
+          "南部",
+          "城市 88%",
+          "乡村 61%"
+        ],
+        [
+          "西部",
+          "城市 81%",
+          "乡村 49%"
+        ],
+        [
+          "北部",
+          "城市 90%",
+          "乡村 72%"
+        ]
+      ],
+      "key_claim": "四地都用同一零起点比例尺；城乡值不能调换，差距必须对应数据。",
+      "input_prompt_file": "prompts/krea2/c17_internet_gap_zh.txt",
+      "input_prompt": "Create a polished editorial infographic on a landscape 3:2 canvas. The headline reads \"网络接入，城乡差距\" and the subtitle reads \"四个地区的互联网使用率\". Use 报纸数据专栏风格，暖灰底、黑色字、湖蓝与砖红对照，图表密度适中。 The central visualization is 小倍图：东、南、西、北四个独立迷你柱图，共用 0–100% 纵轴，城市与乡村成对比较。 Put every value next to its correct category and preserve the given ordering. The short takeaway reads \"西部城乡差距最大，为 32 个百分点。\". The complete source labels and data are exactly:\n\"东部 · 城市 92% · 乡村 76%\"\n\"南部 · 城市 88% · 乡村 61%\"\n\"西部 · 城市 81% · 乡村 49%\"\n\"北部 · 城市 90% · 乡村 72%\"\n四地都用同一零起点比例尺；城乡值不能调换，差距必须对应数据。 Give the data visualization most of the page, with excellent visual hierarchy, generous spacing, clear marks, and legible typography. Render the quoted wording and numbers faithfully; do not invent any extra text, labels, values, or decorative pseudo-writing. Keep the visual style attractive but the chart quantitatively honest.",
+      "parameters": {
+        "resolution": "1536x1024",
+        "seed": 42,
+        "diffusion_weights": "BF16",
+        "sampler": "euler",
+        "steps": 52,
+        "cfg": 3.5,
+        "scheduler": "simple",
+        "text_encoder": "qwen3vl_4b_bf16.safetensors",
+        "negative_prompt": "watermark, logo, blurry",
+        "vae": "qwen_image_vae.safetensors"
+      },
+      "workflow": "workflows/krea2/c17_internet_gap_zh__krea2.json",
+      "image": "images/krea2/c17_internet_gap_zh__krea2.png",
+      "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+      "started_at": "2026-10-14T13:49:06.449791+00:00",
+      "prompt_id": "e1c8f3e2-4418-4fbe-a863-e7e57ccfec18",
+      "status": "success",
+      "completed_at": "2026-10-14T13:50:54.256421+00:00",
+      "elapsed_seconds": 107.81,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "image_sha256": "6e46275fe2578e9a5562033d3e9b4622004a305fb6436e0ea1db0986ab52a0d3",
+      "actual_pe_prompt_file": null,
+      "peak_vram_mb_observed": 22316,
+      "peak_comfy_rss_mb_observed": 36400,
+      "peak_temperature_c_observed": 76,
+      "gpu_samples_file": "runs/krea2/c17_internet_gap_zh__krea2_gpu_samples.jsonl",
+      "gpu_sample_count": 27
+    },
+    {
+      "owner": "Sean",
+      "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+      "experiment": "data_matrix_v2",
+      "job": "c18_lab_results_en__krea2",
+      "case_id": "c18_lab_results_en",
+      "model": "krea2",
+      "language": "en",
+      "seed": 42,
+      "data_source": "Synthetic controlled measurements; illustrative, not scientific findings.",
+      "source_url": null,
+      "ground_truth": [
+        [
+          "Control",
+          "42",
+          "36–48"
+        ],
+        [
+          "Dose A",
+          "55",
+          "49–61"
+        ],
+        [
+          "Dose B",
+          "68",
+          "60–76"
+        ],
+        [
+          "Dose C",
+          "73",
+          "62–84"
+        ]
+      ],
+      "key_claim": "Each interval must center on its estimate; intervals show uncertainty, not a second data series.",
+      "input_prompt_file": "prompts/krea2/c18_lab_results_en.txt",
+      "input_prompt": "Create a polished editorial infographic on a landscape 3:2 canvas. The headline reads \"A range tells more than a point\" and the subtitle reads \"Measured response by test group · units\". Use Scientific notebook meets editorial infographic, thin graphite axes, restrained teal and coral, precise but approachable. The central visualization is A horizontal interval plot with point estimates and whiskers for four groups; distinguish the estimate from its interval and use a 0–100 axis. Put every value next to its correct category and preserve the given ordering. The short takeaway reads \"Dose C has the highest estimate and widest interval.\". The complete source labels and data are exactly:\n\"Control · 42 · 36–48\"\n\"Dose A · 55 · 49–61\"\n\"Dose B · 68 · 60–76\"\n\"Dose C · 73 · 62–84\"\nEach interval must center on its estimate; intervals show uncertainty, not a second data series. Give the data visualization most of the page, with excellent visual hierarchy, generous spacing, clear marks, and legible typography. Render the quoted wording and numbers faithfully; do not invent any extra text, labels, values, or decorative pseudo-writing. Keep the visual style attractive but the chart quantitatively honest.",
+      "parameters": {
+        "resolution": "1536x1024",
+        "seed": 42,
+        "diffusion_weights": "BF16",
+        "sampler": "euler",
+        "steps": 52,
+        "cfg": 3.5,
+        "scheduler": "simple",
+        "text_encoder": "qwen3vl_4b_bf16.safetensors",
+        "negative_prompt": "watermark, logo, blurry",
+        "vae": "qwen_image_vae.safetensors"
+      },
+      "workflow": "workflows/krea2/c18_lab_results_en__krea2.json",
+      "image": "images/krea2/c18_lab_results_en__krea2.png",
+      "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+      "started_at": "2026-10-14T13:50:54.319525+00:00",
+      "prompt_id": "2ed6e34d-d612-490c-9193-2a74d82ebf66",
+      "status": "success",
+      "completed_at": "2026-10-14T13:52:42.086124+00:00",
+      "elapsed_seconds": 107.77,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "image_sha256": "f70d98886304d184e9b33c638842813b365970f587598dae989d2ee32c3a56ee",
+      "actual_pe_prompt_file": null,
+      "peak_vram_mb_observed": 22348,
+      "peak_comfy_rss_mb_observed": 36401,
+      "peak_temperature_c_observed": 76,
+      "gpu_samples_file": "runs/krea2/c18_lab_results_en__krea2_gpu_samples.jsonl",
+      "gpu_sample_count": 27
+    },
+    {
+      "owner": "Sean",
+      "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+      "experiment": "data_matrix_v2",
+      "job": "c19_reuse_network_zh__krea2",
+      "case_id": "c19_reuse_network_zh",
+      "model": "krea2",
+      "language": "zh",
+      "seed": 42,
+      "data_source": "Synthetic controlled dataset; illustrative reuse program.",
+      "source_url": null,
+      "ground_truth": [
+        [
+          "闲置物品",
+          "80 件"
+        ],
+        [
+          "捐赠",
+          "36 件"
+        ],
+        [
+          "维修再用",
+          "28 件"
+        ],
+        [
+          "材料回收",
+          "16 件"
+        ]
+      ],
+      "key_claim": "三支流必须守恒相加为 80，箭头方向由起点流向去向。",
+      "input_prompt_file": "prompts/krea2/c19_reuse_network_zh.txt",
+      "input_prompt": "Create a polished editorial infographic on a landscape 3:2 canvas. The headline reads \"旧物，流向新的用途\" and the subtitle reads \"一批 80 件闲置物品的再分配\". Use 纸艺拼贴风格的循环经济海报，回收纸纹理、靛蓝和橘色，保留规整的阅读路径。 The central visualization is 有向网络流图：起点 80 件，分成捐赠 36、维修再用 28、材料回收 16；线宽按流量比例变化。 Put every value next to its correct category and preserve the given ordering. The short takeaway reads \"三条去向合计 80 件，捐赠最多。\". The complete source labels and data are exactly:\n\"闲置物品 · 80 件\"\n\"捐赠 · 36 件\"\n\"维修再用 · 28 件\"\n\"材料回收 · 16 件\"\n三支流必须守恒相加为 80，箭头方向由起点流向去向。 Give the data visualization most of the page, with excellent visual hierarchy, generous spacing, clear marks, and legible typography. Render the quoted wording and numbers faithfully; do not invent any extra text, labels, values, or decorative pseudo-writing. Keep the visual style attractive but the chart quantitatively honest.",
+      "parameters": {
+        "resolution": "1536x1024",
+        "seed": 42,
+        "diffusion_weights": "BF16",
+        "sampler": "euler",
+        "steps": 52,
+        "cfg": 3.5,
+        "scheduler": "simple",
+        "text_encoder": "qwen3vl_4b_bf16.safetensors",
+        "negative_prompt": "watermark, logo, blurry",
+        "vae": "qwen_image_vae.safetensors"
+      },
+      "workflow": "workflows/krea2/c19_reuse_network_zh__krea2.json",
+      "image": "images/krea2/c19_reuse_network_zh__krea2.png",
+      "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+      "started_at": "2026-10-14T13:52:42.149515+00:00",
+      "prompt_id": "335d0cdb-99f3-4d2f-94fb-1614b43de60c",
+      "status": "success",
+      "completed_at": "2026-10-14T13:54:29.922702+00:00",
+      "elapsed_seconds": 107.77,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "image_sha256": "f090c11e6803b736921c54e64bb67b4f427d12953cd62b85ee3d7412ed00612b",
+      "actual_pe_prompt_file": null,
+      "peak_vram_mb_observed": 22284,
+      "peak_comfy_rss_mb_observed": 36403,
+      "peak_temperature_c_observed": 76,
+      "gpu_samples_file": "runs/krea2/c19_reuse_network_zh__krea2_gpu_samples.jsonl",
+      "gpu_sample_count": 27
+    },
+    {
+      "owner": "Sean",
+      "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+      "experiment": "data_matrix_v2",
+      "job": "c20_product_tradeoff_en__krea2",
+      "case_id": "c20_product_tradeoff_en",
+      "model": "krea2",
+      "language": "en",
+      "seed": 42,
+      "data_source": "Synthetic controlled product data; fictional devices.",
+      "source_url": null,
+      "ground_truth": [
+        [
+          "Aster",
+          "$300",
+          "8 h"
+        ],
+        [
+          "Birch",
+          "$450",
+          "12 h"
+        ],
+        [
+          "Cedar",
+          "$600",
+          "10 h"
+        ],
+        [
+          "Dune",
+          "$750",
+          "16 h"
+        ],
+        [
+          "Ember",
+          "$900",
+          "14 h"
+        ]
+      ],
+      "key_claim": "Map price horizontally and battery life vertically; do not reverse any device coordinates.",
+      "input_prompt_file": "prompts/krea2/c20_product_tradeoff_en.txt",
+      "input_prompt": "Create a polished editorial infographic on a landscape 3:2 canvas. The headline reads \"Price and battery life do not move together\" and the subtitle reads \"Five devices · price vs. battery life\". Use Retro-futurist product review, cream paper, indigo grid, tomato-red accent, small device silhouettes used sparingly. The central visualization is A scatter plot with five labeled devices; x-axis price in dollars, y-axis battery life in hours. Preserve each exact coordinate and avoid implying causation. Put every value next to its correct category and preserve the given ordering. The short takeaway reads \"Dune lasts longest; Aster costs least.\". The complete source labels and data are exactly:\n\"Aster · $300 · 8 h\"\n\"Birch · $450 · 12 h\"\n\"Cedar · $600 · 10 h\"\n\"Dune · $750 · 16 h\"\n\"Ember · $900 · 14 h\"\nMap price horizontally and battery life vertically; do not reverse any device coordinates. Give the data visualization most of the page, with excellent visual hierarchy, generous spacing, clear marks, and legible typography. Render the quoted wording and numbers faithfully; do not invent any extra text, labels, values, or decorative pseudo-writing. Keep the visual style attractive but the chart quantitatively honest.",
+      "parameters": {
+        "resolution": "1536x1024",
+        "seed": 42,
+        "diffusion_weights": "BF16",
+        "sampler": "euler",
+        "steps": 52,
+        "cfg": 3.5,
+        "scheduler": "simple",
+        "text_encoder": "qwen3vl_4b_bf16.safetensors",
+        "negative_prompt": "watermark, logo, blurry",
+        "vae": "qwen_image_vae.safetensors"
+      },
+      "workflow": "workflows/krea2/c20_product_tradeoff_en__krea2.json",
+      "image": "images/krea2/c20_product_tradeoff_en__krea2.png",
+      "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+      "started_at": "2026-10-14T13:54:29.987286+00:00",
+      "prompt_id": "44842c5f-6b74-4ebe-94f0-240854195d6b",
+      "status": "success",
+      "completed_at": "2026-10-14T13:56:17.727517+00:00",
+      "elapsed_seconds": 107.74,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "image_sha256": "dee10707a2c3974f97a0dce532b23c3a811c6f3431dd379281934823230d8c0b",
+      "actual_pe_prompt_file": null,
+      "peak_vram_mb_observed": 22284,
+      "peak_comfy_rss_mb_observed": 36406,
+      "peak_temperature_c_observed": 76,
+      "gpu_samples_file": "runs/krea2/c20_product_tradeoff_en__krea2_gpu_samples.jsonl",
+      "gpu_sample_count": 27
+    },
+    {
+      "owner": "Sean",
+      "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+      "experiment": "data_matrix_v2",
+      "job": "c09_electricity_access_en__flux2",
+      "case_id": "c09_electricity_access_en",
+      "model": "flux2",
+      "language": "en",
+      "seed": 42,
+      "data_source": "World Bank WDI EG.ELC.ACCS.ZS; World Bank API snapshot retrieved 2026-10-14; CC BY 4.0.",
+      "source_url": "https://api.worldbank.org/v2/country/WLD/indicator/EG.ELC.ACCS.ZS?date=2010:2023&format=json",
+      "ground_truth": [
+        [
+          "2010",
+          "83.5%"
+        ],
+        [
+          "2015",
+          "86.9%"
+        ],
+        [
+          "2020",
+          "90.4%"
+        ],
+        [
+          "2023",
+          "91.6%"
+        ]
+      ],
+      "key_claim": "Keep the line rising, place every value at its matching year, and do not imply 100% access.",
+      "input_prompt_file": "prompts/flux2/c09_electricity_access_en.txt",
+      "input_prompt": "Design one finished landscape 3:2 infographic. Headline: 'Power reaches more people'. Subtitle: 'Global access to electricity · 2010–2023'. Visual style: Swiss editorial minimalism, large white margins, deep navy line with one warm yellow endpoint, restrained grid. Composition and chart: A four-point line chart with a gentle upward slope; exact year/value pairs, a clear 0–100% vertical scale, and a final callout.\nExact data labels and values:\n'2010 | 83.5%'\n'2015 | 86.9%'\n'2020 | 90.4%'\n'2023 | 91.6%'\nTakeaway: 'Access rose 8.1 percentage points across the period.'. Keep the line rising, place every value at its matching year, and do not imply 100% access. Keep chart marks proportional, preserve label-value pairing and units, use a clean editorial hierarchy, and make the visualization the focal point. Render the quoted text accurately. Add no unsupported values, labels, series, or claims.",
+      "parameters": {
+        "resolution": "1536x1024",
+        "seed": 42,
+        "diffusion_weights": "BF16",
+        "sampler": "euler",
+        "steps": 50,
+        "cfg": 3.5,
+        "scheduler": "Flux2Scheduler",
+        "text_encoder": "qwen_3_8b.safetensors",
+        "vae": "flux2-vae.safetensors"
+      },
+      "workflow": "workflows/flux2/c09_electricity_access_en__flux2.json",
+      "image": "images/flux2/c09_electricity_access_en__flux2.png",
+      "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+      "started_at": "2026-10-14T13:56:17.789123+00:00",
+      "prompt_id": "ea27db3a-99f4-4974-9135-2dc078a6f2b7",
+      "status": "success",
+      "completed_at": "2026-10-14T13:57:35.546992+00:00",
+      "elapsed_seconds": 77.76,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "image_sha256": "d7b40f6f053cb63fa9561456bc77a94c4abc72f560f7876867318db725ccd735",
+      "actual_pe_prompt_file": null,
+      "peak_vram_mb_observed": 21676,
+      "peak_comfy_rss_mb_observed": 36361,
+      "peak_temperature_c_observed": 76,
+      "gpu_samples_file": "runs/flux2/c09_electricity_access_en__flux2_gpu_samples.jsonl",
+      "gpu_sample_count": 20
+    },
+    {
+      "owner": "Sean",
+      "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+      "experiment": "data_matrix_v2",
+      "job": "c10_city_transport_zh__flux2",
+      "case_id": "c10_city_transport_zh",
+      "model": "flux2",
+      "language": "zh",
+      "seed": 42,
+      "data_source": "Synthetic controlled dataset for chart fidelity; not a real city survey.",
+      "source_url": null,
+      "ground_truth": [
+        [
+          "地铁",
+          "46%",
+          "28 分钟"
+        ],
+        [
+          "公交",
+          "31%",
+          "42 分钟"
+        ],
+        [
+          "骑行",
+          "23%",
+          "19 分钟"
+        ]
+      ],
+      "key_claim": "两组度量不得混成同一刻度；三种方式与两个指标一一对应。",
+      "input_prompt_file": "prompts/flux2/c10_city_transport_zh.txt",
+      "input_prompt": "Design one finished landscape 3:2 infographic. Headline: '一座城市，三种通勤'. Subtitle: '早高峰出行方式与平均耗时'. Visual style: 克制的城市报刊信息图，米白纸色、墨绿与朱红，细线图标点缀，不做写实插画。 Composition and chart: 横向分组条形图：三种出行方式各有一条占比条与一条耗时条，双指标清晰分区并标出单位。\nExact data labels and values:\n'地铁 | 46% | 28 分钟'\n'公交 | 31% | 42 分钟'\n'骑行 | 23% | 19 分钟'\nTakeaway: '地铁占比最高，骑行平均耗时最短。'. 两组度量不得混成同一刻度；三种方式与两个指标一一对应。 Keep chart marks proportional, preserve label-value pairing and units, use a clean editorial hierarchy, and make the visualization the focal point. Render the quoted text accurately. Add no unsupported values, labels, series, or claims.",
+      "parameters": {
+        "resolution": "1536x1024",
+        "seed": 42,
+        "diffusion_weights": "BF16",
+        "sampler": "euler",
+        "steps": 50,
+        "cfg": 3.5,
+        "scheduler": "Flux2Scheduler",
+        "text_encoder": "qwen_3_8b.safetensors",
+        "vae": "flux2-vae.safetensors"
+      },
+      "workflow": "workflows/flux2/c10_city_transport_zh__flux2.json",
+      "image": "images/flux2/c10_city_transport_zh__flux2.png",
+      "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+      "started_at": "2026-10-14T13:57:35.611390+00:00",
+      "prompt_id": "f1529d78-6d55-4d25-8425-7a8c40bb9f96",
+      "status": "success",
+      "completed_at": "2026-10-14T13:58:36.691399+00:00",
+      "elapsed_seconds": 61.08,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "image_sha256": "6fe728e6f2419339e18f61581d327c9019b318886102605eae2db6deaad216d8",
+      "actual_pe_prompt_file": null,
+      "peak_vram_mb_observed": 22348,
+      "peak_comfy_rss_mb_observed": 35424,
+      "peak_temperature_c_observed": 77,
+      "gpu_samples_file": "runs/flux2/c10_city_transport_zh__flux2_gpu_samples.jsonl",
+      "gpu_sample_count": 16
+    },
+    {
+      "owner": "Sean",
+      "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+      "experiment": "data_matrix_v2",
+      "job": "c11_school_attendance_en__flux2",
+      "case_id": "c11_school_attendance_en",
+      "model": "flux2",
+      "language": "en",
+      "seed": 42,
+      "data_source": "Synthetic controlled dataset; illustrative only.",
+      "source_url": null,
+      "ground_truth": [
+        [
+          "North",
+          "Primary",
+          "96%"
+        ],
+        [
+          "North",
+          "Middle",
+          "91%"
+        ],
+        [
+          "North",
+          "Upper",
+          "84%"
+        ],
+        [
+          "South",
+          "Primary",
+          "93%"
+        ],
+        [
+          "South",
+          "Middle",
+          "88%"
+        ],
+        [
+          "South",
+          "Upper",
+          "79%"
+        ],
+        [
+          "East",
+          "Primary",
+          "98%"
+        ],
+        [
+          "East",
+          "Middle",
+          "94%"
+        ],
+        [
+          "East",
+          "Upper",
+          "90%"
+        ],
+        [
+          "West",
+          "Primary",
+          "89%"
+        ],
+        [
+          "West",
+          "Middle",
+          "82%"
+        ],
+        [
+          "West",
+          "Upper",
+          "73%"
+        ]
+      ],
+      "key_claim": "All 12 cells must be present at the correct row and column; do not invent a causal explanation.",
+      "input_prompt_file": "prompts/flux2/c11_school_attendance_en.txt",
+      "input_prompt": "Design one finished landscape 3:2 infographic. Headline: 'Attendance changes by region'. Subtitle: 'School attendance rate · %'. Visual style: Modern education policy report, crisp grid, cobalt-to-mint palette, accessible contrast and tidy sans serif labels. Composition and chart: A 4-by-3 heatmap: four region rows by three school stages; every cell contains its exact percentage and uses a consistent low-to-high color ramp.\nExact data labels and values:\n'North | Primary | 96%'\n'North | Middle | 91%'\n'North | Upper | 84%'\n'South | Primary | 93%'\n'South | Middle | 88%'\n'South | Upper | 79%'\n'East | Primary | 98%'\n'East | Middle | 94%'\n'East | Upper | 90%'\n'West | Primary | 89%'\n'West | Middle | 82%'\n'West | Upper | 73%'\nTakeaway: 'The largest stage-to-stage gap appears in the West.'. All 12 cells must be present at the correct row and column; do not invent a causal explanation. Keep chart marks proportional, preserve label-value pairing and units, use a clean editorial hierarchy, and make the visualization the focal point. Render the quoted text accurately. Add no unsupported values, labels, series, or claims.",
+      "parameters": {
+        "resolution": "1536x1024",
+        "seed": 42,
+        "diffusion_weights": "BF16",
+        "sampler": "euler",
+        "steps": 50,
+        "cfg": 3.5,
+        "scheduler": "Flux2Scheduler",
+        "text_encoder": "qwen_3_8b.safetensors",
+        "vae": "flux2-vae.safetensors"
+      },
+      "workflow": "workflows/flux2/c11_school_attendance_en__flux2.json",
+      "image": "images/flux2/c11_school_attendance_en__flux2.png",
+      "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+      "started_at": "2026-10-14T13:58:36.752512+00:00",
+      "prompt_id": "d054db03-7b2f-4ea0-b010-28860370d334",
+      "status": "success",
+      "completed_at": "2026-10-14T13:59:37.774873+00:00",
+      "elapsed_seconds": 61.02,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "image_sha256": "66784de4aa73baeed709a6dc3a5c6592cf0494fb994aa55ab374cf6a295767f3",
+      "actual_pe_prompt_file": null,
+      "peak_vram_mb_observed": 22284,
+      "peak_comfy_rss_mb_observed": 35424,
+      "peak_temperature_c_observed": 77,
+      "gpu_samples_file": "runs/flux2/c11_school_attendance_en__flux2_gpu_samples.jsonl",
+      "gpu_sample_count": 16
+    },
+    {
+      "owner": "Sean",
+      "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+      "experiment": "data_matrix_v2",
+      "job": "c12_food_waste_zh__flux2",
+      "case_id": "c12_food_waste_zh",
+      "model": "flux2",
+      "language": "zh",
+      "seed": 42,
+      "data_source": "Synthetic controlled dataset; illustrative household flow, not measured data.",
+      "source_url": null,
+      "ground_truth": [
+        [
+          "起始",
+          "100 千克"
+        ],
+        [
+          "采购损耗",
+          "−12 千克"
+        ],
+        [
+          "储存损耗",
+          "−18 千克"
+        ],
+        [
+          "备餐损耗",
+          "−20 千克"
+        ],
+        [
+          "最终保留",
+          "50 千克"
+        ]
+      ],
+      "key_claim": "瀑布条的方向和终点必须符合算术；不要把损耗画成增加。",
+      "input_prompt_file": "prompts/flux2/c12_food_waste_zh.txt",
+      "input_prompt": "Design one finished landscape 3:2 infographic. Headline: '食物浪费，在哪一步累积'. Subtitle: '一周 100 千克可食食物的去向'. Visual style: 温暖手绘编辑插图与严格图表结合，奶油纸色、番茄红与叶绿，线条简洁，数字醒目。 Composition and chart: 瀑布图：起始 100 千克，经采购损耗 −12、储存损耗 −18、备餐损耗 −20，最后剩余 50 千克；连接线表示逐步递减。\nExact data labels and values:\n'起始 | 100 千克'\n'采购损耗 | −12 千克'\n'储存损耗 | −18 千克'\n'备餐损耗 | −20 千克'\n'最终保留 | 50 千克'\nTakeaway: '一半食物最终保留，备餐环节损耗最大。'. 瀑布条的方向和终点必须符合算术；不要把损耗画成增加。 Keep chart marks proportional, preserve label-value pairing and units, use a clean editorial hierarchy, and make the visualization the focal point. Render the quoted text accurately. Add no unsupported values, labels, series, or claims.",
+      "parameters": {
+        "resolution": "1536x1024",
+        "seed": 42,
+        "diffusion_weights": "BF16",
+        "sampler": "euler",
+        "steps": 50,
+        "cfg": 3.5,
+        "scheduler": "Flux2Scheduler",
+        "text_encoder": "qwen_3_8b.safetensors",
+        "vae": "flux2-vae.safetensors"
+      },
+      "workflow": "workflows/flux2/c12_food_waste_zh__flux2.json",
+      "image": "images/flux2/c12_food_waste_zh__flux2.png",
+      "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+      "started_at": "2026-10-14T13:59:37.836284+00:00",
+      "prompt_id": "095d758d-cd00-41be-a086-6e939189f232",
+      "status": "success",
+      "completed_at": "2026-10-14T14:00:38.916650+00:00",
+      "elapsed_seconds": 61.08,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "image_sha256": "fad2e6b9eb853e40770e34df5085be2fbd8aa27aefb722668794d9cd4b1f9d81",
+      "actual_pe_prompt_file": null,
+      "peak_vram_mb_observed": 22284,
+      "peak_comfy_rss_mb_observed": 35424,
+      "peak_temperature_c_observed": 77,
+      "gpu_samples_file": "runs/flux2/c12_food_waste_zh__flux2_gpu_samples.jsonl",
+      "gpu_sample_count": 16
+    },
+    {
+      "owner": "Sean",
+      "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+      "experiment": "data_matrix_v2",
+      "job": "c13_sleep_distribution_en__flux2",
+      "case_id": "c13_sleep_distribution_en",
+      "model": "flux2",
+      "language": "en",
+      "seed": 42,
+      "data_source": "Synthetic controlled observations; not clinical guidance.",
+      "source_url": null,
+      "ground_truth": [
+        [
+          "Night 1",
+          "5.5 h"
+        ],
+        [
+          "Night 2",
+          "6.0 h"
+        ],
+        [
+          "Night 3",
+          "6.0 h"
+        ],
+        [
+          "Night 4",
+          "6.5 h"
+        ],
+        [
+          "Night 5",
+          "6.5 h"
+        ],
+        [
+          "Night 6",
+          "7.0 h"
+        ],
+        [
+          "Night 7",
+          "7.0 h"
+        ],
+        [
+          "Night 8",
+          "7.0 h"
+        ],
+        [
+          "Night 9",
+          "7.5 h"
+        ],
+        [
+          "Night 10",
+          "8.0 h"
+        ],
+        [
+          "Night 11",
+          "8.0 h"
+        ],
+        [
+          "Night 12",
+          "9.0 h"
+        ]
+      ],
+      "key_claim": "Show twelve separate observations, not a bar chart; do not label the sample as a population.",
+      "input_prompt_file": "prompts/flux2/c13_sleep_distribution_en.txt",
+      "input_prompt": "Design one finished landscape 3:2 infographic. Headline: 'Sleep is not one-size-fits-all'. Subtitle: 'Hours slept across 12 sample nights'. Visual style: Quiet science magazine, midnight blue background, soft lunar cream marks, one orange median rule, minimalist labels. Composition and chart: A horizontal dot plot on a 4–10 hour axis. Plot all twelve observations, show the median at 7.0 hours, and distinguish the median from individual dots.\nExact data labels and values:\n'Night 1 | 5.5 h'\n'Night 2 | 6.0 h'\n'Night 3 | 6.0 h'\n'Night 4 | 6.5 h'\n'Night 5 | 6.5 h'\n'Night 6 | 7.0 h'\n'Night 7 | 7.0 h'\n'Night 8 | 7.0 h'\n'Night 9 | 7.5 h'\n'Night 10 | 8.0 h'\n'Night 11 | 8.0 h'\n'Night 12 | 9.0 h'\nTakeaway: 'Median: 7.0 hours. Range: 5.5–9.0 hours.'. Show twelve separate observations, not a bar chart; do not label the sample as a population. Keep chart marks proportional, preserve label-value pairing and units, use a clean editorial hierarchy, and make the visualization the focal point. Render the quoted text accurately. Add no unsupported values, labels, series, or claims.",
+      "parameters": {
+        "resolution": "1536x1024",
+        "seed": 42,
+        "diffusion_weights": "BF16",
+        "sampler": "euler",
+        "steps": 50,
+        "cfg": 3.5,
+        "scheduler": "Flux2Scheduler",
+        "text_encoder": "qwen_3_8b.safetensors",
+        "vae": "flux2-vae.safetensors"
+      },
+      "workflow": "workflows/flux2/c13_sleep_distribution_en__flux2.json",
+      "image": "images/flux2/c13_sleep_distribution_en__flux2.png",
+      "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+      "started_at": "2026-10-14T14:00:38.978156+00:00",
+      "prompt_id": "060e22fb-8242-4844-b192-5475b8aadd9d",
+      "status": "success",
+      "completed_at": "2026-10-14T14:01:39.978661+00:00",
+      "elapsed_seconds": 61.0,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "image_sha256": "05ed22d2ff1edc28c1106294112342e9eaabc0d436ee362bd3bffd7e3f62d9cb",
+      "actual_pe_prompt_file": null,
+      "peak_vram_mb_observed": 22284,
+      "peak_comfy_rss_mb_observed": 35424,
+      "peak_temperature_c_observed": 78,
+      "gpu_samples_file": "runs/flux2/c13_sleep_distribution_en__flux2_gpu_samples.jsonl",
+      "gpu_sample_count": 16
+    },
+    {
+      "owner": "Sean",
+      "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+      "experiment": "data_matrix_v2",
+      "job": "c14_population_pyramid_zh__flux2",
+      "case_id": "c14_population_pyramid_zh",
+      "model": "flux2",
+      "language": "zh",
+      "seed": 42,
+      "data_source": "Synthetic controlled dataset; fictional community.",
+      "source_url": null,
+      "ground_truth": [
+        [
+          "0–14 岁",
+          "男 18",
+          "女 17"
+        ],
+        [
+          "15–29 岁",
+          "男 22",
+          "女 23"
+        ],
+        [
+          "30–44 岁",
+          "男 26",
+          "女 27"
+        ],
+        [
+          "45–59 岁",
+          "男 20",
+          "女 21"
+        ],
+        [
+          "60 岁以上",
+          "男 14",
+          "女 16"
+        ]
+      ],
+      "key_claim": "左右镜像条形图；年龄组顺序从年轻到年长，人数左右不反。",
+      "input_prompt_file": "prompts/flux2/c14_population_pyramid_zh.txt",
+      "input_prompt": "Design one finished landscape 3:2 infographic. Headline: '城市人口的年龄结构'. Subtitle: '示例社区 · 人数（千人）'. Visual style: 现代公共数据报告，雾蓝与珊瑚橙，干净网格、简化人物剪影作轻量点缀。 Composition and chart: 人口金字塔：左侧男性、右侧女性；五个年龄组共享中心基线，条长严格反映人数。\nExact data labels and values:\n'0–14 岁 | 男 18 | 女 17'\n'15–29 岁 | 男 22 | 女 23'\n'30–44 岁 | 男 26 | 女 27'\n'45–59 岁 | 男 20 | 女 21'\n'60 岁以上 | 男 14 | 女 16'\nTakeaway: '30–44 岁组人数最多；60 岁以上女性多于男性。'. 左右镜像条形图；年龄组顺序从年轻到年长，人数左右不反。 Keep chart marks proportional, preserve label-value pairing and units, use a clean editorial hierarchy, and make the visualization the focal point. Render the quoted text accurately. Add no unsupported values, labels, series, or claims.",
+      "parameters": {
+        "resolution": "1536x1024",
+        "seed": 42,
+        "diffusion_weights": "BF16",
+        "sampler": "euler",
+        "steps": 50,
+        "cfg": 3.5,
+        "scheduler": "Flux2Scheduler",
+        "text_encoder": "qwen_3_8b.safetensors",
+        "vae": "flux2-vae.safetensors"
+      },
+      "workflow": "workflows/flux2/c14_population_pyramid_zh__flux2.json",
+      "image": "images/flux2/c14_population_pyramid_zh__flux2.png",
+      "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+      "started_at": "2026-10-14T14:01:40.041893+00:00",
+      "prompt_id": "2f81c376-aaff-4655-a8bc-7667f1a6ecfb",
+      "status": "success",
+      "completed_at": "2026-10-14T14:02:41.102960+00:00",
+      "elapsed_seconds": 61.06,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "image_sha256": "aa26d46d59dac302b8e3d85316fd3ab89b87944f1f07a726c9e5fb9f55b22fde",
+      "actual_pe_prompt_file": null,
+      "peak_vram_mb_observed": 22348,
+      "peak_comfy_rss_mb_observed": 35424,
+      "peak_temperature_c_observed": 77,
+      "gpu_samples_file": "runs/flux2/c14_population_pyramid_zh__flux2_gpu_samples.jsonl",
+      "gpu_sample_count": 16
+    },
+    {
+      "owner": "Sean",
+      "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+      "experiment": "data_matrix_v2",
+      "job": "c15_household_water_zh__flux2",
+      "case_id": "c15_household_water_zh",
+      "model": "flux2",
+      "language": "zh",
+      "seed": 42,
+      "data_source": "Synthetic controlled dataset; illustrative households.",
+      "source_url": null,
+      "ground_truth": [
+        [
+          "甲户",
+          "240 升",
+          "180 升"
+        ],
+        [
+          "乙户",
+          "210 升",
+          "150 升"
+        ],
+        [
+          "丙户",
+          "270 升",
+          "210 升"
+        ],
+        [
+          "丁户",
+          "180 升",
+          "150 升"
+        ]
+      ],
+      "key_claim": "每户 before/after 端点正确配对，轴从零开始，不把差值夸大。",
+      "input_prompt_file": "prompts/flux2/c15_household_water_zh.txt",
+      "input_prompt": "Design one finished landscape 3:2 infographic. Headline: '修复漏水，节水看得见'. Subtitle: '四户家庭每日用水量对比'. Visual style: 极简环保公益视觉，白底、深青与亮青，清晰大数字，水滴图标仅作少量装饰。 Composition and chart: 哑铃图：每户一条水平细线连接修复前与修复后两个端点；横轴 0–300 升。\nExact data labels and values:\n'甲户 | 240 升 | 180 升'\n'乙户 | 210 升 | 150 升'\n'丙户 | 270 升 | 210 升'\n'丁户 | 180 升 | 150 升'\nTakeaway: '四户每日都减少 30–60 升用水。'. 每户 before/after 端点正确配对，轴从零开始，不把差值夸大。 Keep chart marks proportional, preserve label-value pairing and units, use a clean editorial hierarchy, and make the visualization the focal point. Render the quoted text accurately. Add no unsupported values, labels, series, or claims.",
+      "parameters": {
+        "resolution": "1536x1024",
+        "seed": 42,
+        "diffusion_weights": "BF16",
+        "sampler": "euler",
+        "steps": 50,
+        "cfg": 3.5,
+        "scheduler": "Flux2Scheduler",
+        "text_encoder": "qwen_3_8b.safetensors",
+        "vae": "flux2-vae.safetensors"
+      },
+      "workflow": "workflows/flux2/c15_household_water_zh__flux2.json",
+      "image": "images/flux2/c15_household_water_zh__flux2.png",
+      "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+      "started_at": "2026-10-14T14:02:41.166365+00:00",
+      "prompt_id": "0f3c2c7d-acf5-4ee9-83a6-8f5f2b4d797b",
+      "status": "success",
+      "completed_at": "2026-10-14T14:03:42.161982+00:00",
+      "elapsed_seconds": 61.0,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "image_sha256": "4a01af5795bbe2eb839f610d4f1dc6e5d45b5eb27b8db95dcedd6693a66e2340",
+      "actual_pe_prompt_file": null,
+      "peak_vram_mb_observed": 22284,
+      "peak_comfy_rss_mb_observed": 35424,
+      "peak_temperature_c_observed": 77,
+      "gpu_samples_file": "runs/flux2/c15_household_water_zh__flux2_gpu_samples.jsonl",
+      "gpu_sample_count": 16
+    },
+    {
+      "owner": "Sean",
+      "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+      "experiment": "data_matrix_v2",
+      "job": "c16_community_solar_en__flux2",
+      "case_id": "c16_community_solar_en",
+      "model": "flux2",
+      "language": "en",
+      "seed": 42,
+      "data_source": "Synthetic controlled budget; illustrative project.",
+      "source_url": null,
+      "ground_truth": [
+        [
+          "Panels",
+          "$45,000"
+        ],
+        [
+          "Installation",
+          "$25,000"
+        ],
+        [
+          "Battery",
+          "$20,000"
+        ],
+        [
+          "Training",
+          "$10,000"
+        ]
+      ],
+      "key_claim": "Rectangle areas must follow 45:25:20:10; labels and dollar amounts must stay attached.",
+      "input_prompt_file": "prompts/flux2/c16_community_solar_en.txt",
+      "input_prompt": "Design one finished landscape 3:2 infographic. Headline: 'Where the solar budget goes'. Subtitle: 'Community project · $100,000'. Visual style: Bold contemporary civic dashboard, warm yellow, charcoal and sky blue, clean geometric blocks, strong type hierarchy. Composition and chart: A treemap with four non-overlapping rectangles sized in proportion to the exact budget allocations; label each category and amount.\nExact data labels and values:\n'Panels | $45,000'\n'Installation | $25,000'\n'Battery | $20,000'\n'Training | $10,000'\nTakeaway: 'Panels receive the largest share; training receives the smallest.'. Rectangle areas must follow 45:25:20:10; labels and dollar amounts must stay attached. Keep chart marks proportional, preserve label-value pairing and units, use a clean editorial hierarchy, and make the visualization the focal point. Render the quoted text accurately. Add no unsupported values, labels, series, or claims.",
+      "parameters": {
+        "resolution": "1536x1024",
+        "seed": 42,
+        "diffusion_weights": "BF16",
+        "sampler": "euler",
+        "steps": 50,
+        "cfg": 3.5,
+        "scheduler": "Flux2Scheduler",
+        "text_encoder": "qwen_3_8b.safetensors",
+        "vae": "flux2-vae.safetensors"
+      },
+      "workflow": "workflows/flux2/c16_community_solar_en__flux2.json",
+      "image": "images/flux2/c16_community_solar_en__flux2.png",
+      "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+      "started_at": "2026-10-14T14:03:42.223320+00:00",
+      "prompt_id": "49c81641-ab78-4e65-9cc5-e9b2dce607c2",
+      "status": "success",
+      "completed_at": "2026-10-14T14:04:43.239658+00:00",
+      "elapsed_seconds": 61.02,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "image_sha256": "ca5ed4cdff0fd84927fd73e2eb37c298c13f17f1b48826d20d8d53feaeb48f97",
+      "actual_pe_prompt_file": null,
+      "peak_vram_mb_observed": 22348,
+      "peak_comfy_rss_mb_observed": 35424,
+      "peak_temperature_c_observed": 77,
+      "gpu_samples_file": "runs/flux2/c16_community_solar_en__flux2_gpu_samples.jsonl",
+      "gpu_sample_count": 16
+    },
+    {
+      "owner": "Sean",
+      "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+      "experiment": "data_matrix_v2",
+      "job": "c17_internet_gap_zh__flux2",
+      "case_id": "c17_internet_gap_zh",
+      "model": "flux2",
+      "language": "zh",
+      "seed": 42,
+      "data_source": "Synthetic controlled dataset; fictional regions.",
+      "source_url": null,
+      "ground_truth": [
+        [
+          "东部",
+          "城市 92%",
+          "乡村 76%"
+        ],
+        [
+          "南部",
+          "城市 88%",
+          "乡村 61%"
+        ],
+        [
+          "西部",
+          "城市 81%",
+          "乡村 49%"
+        ],
+        [
+          "北部",
+          "城市 90%",
+          "乡村 72%"
+        ]
+      ],
+      "key_claim": "四地都用同一零起点比例尺；城乡值不能调换，差距必须对应数据。",
+      "input_prompt_file": "prompts/flux2/c17_internet_gap_zh.txt",
+      "input_prompt": "Design one finished landscape 3:2 infographic. Headline: '网络接入，城乡差距'. Subtitle: '四个地区的互联网使用率'. Visual style: 报纸数据专栏风格，暖灰底、黑色字、湖蓝与砖红对照，图表密度适中。 Composition and chart: 小倍图：东、南、西、北四个独立迷你柱图，共用 0–100% 纵轴，城市与乡村成对比较。\nExact data labels and values:\n'东部 | 城市 92% | 乡村 76%'\n'南部 | 城市 88% | 乡村 61%'\n'西部 | 城市 81% | 乡村 49%'\n'北部 | 城市 90% | 乡村 72%'\nTakeaway: '西部城乡差距最大，为 32 个百分点。'. 四地都用同一零起点比例尺；城乡值不能调换，差距必须对应数据。 Keep chart marks proportional, preserve label-value pairing and units, use a clean editorial hierarchy, and make the visualization the focal point. Render the quoted text accurately. Add no unsupported values, labels, series, or claims.",
+      "parameters": {
+        "resolution": "1536x1024",
+        "seed": 42,
+        "diffusion_weights": "BF16",
+        "sampler": "euler",
+        "steps": 50,
+        "cfg": 3.5,
+        "scheduler": "Flux2Scheduler",
+        "text_encoder": "qwen_3_8b.safetensors",
+        "vae": "flux2-vae.safetensors"
+      },
+      "workflow": "workflows/flux2/c17_internet_gap_zh__flux2.json",
+      "image": "images/flux2/c17_internet_gap_zh__flux2.png",
+      "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+      "started_at": "2026-10-14T14:04:43.302559+00:00",
+      "prompt_id": "ab5b89f1-6e6c-46c4-8a9a-73bf1a8c9249",
+      "status": "success",
+      "completed_at": "2026-10-14T14:05:44.375310+00:00",
+      "elapsed_seconds": 61.07,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "image_sha256": "f3b05ea366e4b272930775a659e561d9be90ecab59c8a8ed86f3b6d905c290e6",
+      "actual_pe_prompt_file": null,
+      "peak_vram_mb_observed": 22284,
+      "peak_comfy_rss_mb_observed": 35424,
+      "peak_temperature_c_observed": 77,
+      "gpu_samples_file": "runs/flux2/c17_internet_gap_zh__flux2_gpu_samples.jsonl",
+      "gpu_sample_count": 16
+    },
+    {
+      "owner": "Sean",
+      "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+      "experiment": "data_matrix_v2",
+      "job": "c18_lab_results_en__flux2",
+      "case_id": "c18_lab_results_en",
+      "model": "flux2",
+      "language": "en",
+      "seed": 42,
+      "data_source": "Synthetic controlled measurements; illustrative, not scientific findings.",
+      "source_url": null,
+      "ground_truth": [
+        [
+          "Control",
+          "42",
+          "36–48"
+        ],
+        [
+          "Dose A",
+          "55",
+          "49–61"
+        ],
+        [
+          "Dose B",
+          "68",
+          "60–76"
+        ],
+        [
+          "Dose C",
+          "73",
+          "62–84"
+        ]
+      ],
+      "key_claim": "Each interval must center on its estimate; intervals show uncertainty, not a second data series.",
+      "input_prompt_file": "prompts/flux2/c18_lab_results_en.txt",
+      "input_prompt": "Design one finished landscape 3:2 infographic. Headline: 'A range tells more than a point'. Subtitle: 'Measured response by test group · units'. Visual style: Scientific notebook meets editorial infographic, thin graphite axes, restrained teal and coral, precise but approachable. Composition and chart: A horizontal interval plot with point estimates and whiskers for four groups; distinguish the estimate from its interval and use a 0–100 axis.\nExact data labels and values:\n'Control | 42 | 36–48'\n'Dose A | 55 | 49–61'\n'Dose B | 68 | 60–76'\n'Dose C | 73 | 62–84'\nTakeaway: 'Dose C has the highest estimate and widest interval.'. Each interval must center on its estimate; intervals show uncertainty, not a second data series. Keep chart marks proportional, preserve label-value pairing and units, use a clean editorial hierarchy, and make the visualization the focal point. Render the quoted text accurately. Add no unsupported values, labels, series, or claims.",
+      "parameters": {
+        "resolution": "1536x1024",
+        "seed": 42,
+        "diffusion_weights": "BF16",
+        "sampler": "euler",
+        "steps": 50,
+        "cfg": 3.5,
+        "scheduler": "Flux2Scheduler",
+        "text_encoder": "qwen_3_8b.safetensors",
+        "vae": "flux2-vae.safetensors"
+      },
+      "workflow": "workflows/flux2/c18_lab_results_en__flux2.json",
+      "image": "images/flux2/c18_lab_results_en__flux2.png",
+      "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+      "started_at": "2026-10-14T14:05:44.436142+00:00",
+      "prompt_id": "e71fef6b-aeca-4fc6-b438-5477aab5beb5",
+      "status": "success",
+      "completed_at": "2026-10-14T14:06:45.445418+00:00",
+      "elapsed_seconds": 61.01,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "image_sha256": "3688555d7a1b129ba9a4857d2109b598fa7ef4183ca5a509381bb95d6456b926",
+      "actual_pe_prompt_file": null,
+      "peak_vram_mb_observed": 22828,
+      "peak_comfy_rss_mb_observed": 35424,
+      "peak_temperature_c_observed": 77,
+      "gpu_samples_file": "runs/flux2/c18_lab_results_en__flux2_gpu_samples.jsonl",
+      "gpu_sample_count": 16
+    },
+    {
+      "owner": "Sean",
+      "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+      "experiment": "data_matrix_v2",
+      "job": "c19_reuse_network_zh__flux2",
+      "case_id": "c19_reuse_network_zh",
+      "model": "flux2",
+      "language": "zh",
+      "seed": 42,
+      "data_source": "Synthetic controlled dataset; illustrative reuse program.",
+      "source_url": null,
+      "ground_truth": [
+        [
+          "闲置物品",
+          "80 件"
+        ],
+        [
+          "捐赠",
+          "36 件"
+        ],
+        [
+          "维修再用",
+          "28 件"
+        ],
+        [
+          "材料回收",
+          "16 件"
+        ]
+      ],
+      "key_claim": "三支流必须守恒相加为 80，箭头方向由起点流向去向。",
+      "input_prompt_file": "prompts/flux2/c19_reuse_network_zh.txt",
+      "input_prompt": "Design one finished landscape 3:2 infographic. Headline: '旧物，流向新的用途'. Subtitle: '一批 80 件闲置物品的再分配'. Visual style: 纸艺拼贴风格的循环经济海报，回收纸纹理、靛蓝和橘色，保留规整的阅读路径。 Composition and chart: 有向网络流图：起点 80 件，分成捐赠 36、维修再用 28、材料回收 16；线宽按流量比例变化。\nExact data labels and values:\n'闲置物品 | 80 件'\n'捐赠 | 36 件'\n'维修再用 | 28 件'\n'材料回收 | 16 件'\nTakeaway: '三条去向合计 80 件，捐赠最多。'. 三支流必须守恒相加为 80，箭头方向由起点流向去向。 Keep chart marks proportional, preserve label-value pairing and units, use a clean editorial hierarchy, and make the visualization the focal point. Render the quoted text accurately. Add no unsupported values, labels, series, or claims.",
+      "parameters": {
+        "resolution": "1536x1024",
+        "seed": 42,
+        "diffusion_weights": "BF16",
+        "sampler": "euler",
+        "steps": 50,
+        "cfg": 3.5,
+        "scheduler": "Flux2Scheduler",
+        "text_encoder": "qwen_3_8b.safetensors",
+        "vae": "flux2-vae.safetensors"
+      },
+      "workflow": "workflows/flux2/c19_reuse_network_zh__flux2.json",
+      "image": "images/flux2/c19_reuse_network_zh__flux2.png",
+      "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+      "started_at": "2026-10-14T14:06:45.506506+00:00",
+      "prompt_id": "50ef5186-4eec-4023-9445-8f57f28499d4",
+      "status": "success",
+      "completed_at": "2026-10-14T14:07:46.531640+00:00",
+      "elapsed_seconds": 61.03,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "image_sha256": "bcc0a65c31e26b11f13512579df213395cfdec010e16d69857d0b518e801865a",
+      "actual_pe_prompt_file": null,
+      "peak_vram_mb_observed": 22348,
+      "peak_comfy_rss_mb_observed": 35424,
+      "peak_temperature_c_observed": 77,
+      "gpu_samples_file": "runs/flux2/c19_reuse_network_zh__flux2_gpu_samples.jsonl",
+      "gpu_sample_count": 16
+    },
+    {
+      "owner": "Sean",
+      "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+      "experiment": "data_matrix_v2",
+      "job": "c20_product_tradeoff_en__flux2",
+      "case_id": "c20_product_tradeoff_en",
+      "model": "flux2",
+      "language": "en",
+      "seed": 42,
+      "data_source": "Synthetic controlled product data; fictional devices.",
+      "source_url": null,
+      "ground_truth": [
+        [
+          "Aster",
+          "$300",
+          "8 h"
+        ],
+        [
+          "Birch",
+          "$450",
+          "12 h"
+        ],
+        [
+          "Cedar",
+          "$600",
+          "10 h"
+        ],
+        [
+          "Dune",
+          "$750",
+          "16 h"
+        ],
+        [
+          "Ember",
+          "$900",
+          "14 h"
+        ]
+      ],
+      "key_claim": "Map price horizontally and battery life vertically; do not reverse any device coordinates.",
+      "input_prompt_file": "prompts/flux2/c20_product_tradeoff_en.txt",
+      "input_prompt": "Design one finished landscape 3:2 infographic. Headline: 'Price and battery life do not move together'. Subtitle: 'Five devices · price vs. battery life'. Visual style: Retro-futurist product review, cream paper, indigo grid, tomato-red accent, small device silhouettes used sparingly. Composition and chart: A scatter plot with five labeled devices; x-axis price in dollars, y-axis battery life in hours. Preserve each exact coordinate and avoid implying causation.\nExact data labels and values:\n'Aster | $300 | 8 h'\n'Birch | $450 | 12 h'\n'Cedar | $600 | 10 h'\n'Dune | $750 | 16 h'\n'Ember | $900 | 14 h'\nTakeaway: 'Dune lasts longest; Aster costs least.'. Map price horizontally and battery life vertically; do not reverse any device coordinates. Keep chart marks proportional, preserve label-value pairing and units, use a clean editorial hierarchy, and make the visualization the focal point. Render the quoted text accurately. Add no unsupported values, labels, series, or claims.",
+      "parameters": {
+        "resolution": "1536x1024",
+        "seed": 42,
+        "diffusion_weights": "BF16",
+        "sampler": "euler",
+        "steps": 50,
+        "cfg": 3.5,
+        "scheduler": "Flux2Scheduler",
+        "text_encoder": "qwen_3_8b.safetensors",
+        "vae": "flux2-vae.safetensors"
+      },
+      "workflow": "workflows/flux2/c20_product_tradeoff_en__flux2.json",
+      "image": "images/flux2/c20_product_tradeoff_en__flux2.png",
+      "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+      "started_at": "2026-10-14T14:07:46.598271+00:00",
+      "prompt_id": "59627f07-0751-42cb-a21b-264e76a4b0e8",
+      "status": "success",
+      "completed_at": "2026-10-14T14:08:47.592252+00:00",
+      "elapsed_seconds": 60.99,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "image_sha256": "c4a754ba7d7a0272b36b7b68a1245f6885057ba6267acf8d71aa8a3e05ec6d0e",
+      "actual_pe_prompt_file": null,
+      "peak_vram_mb_observed": 22284,
+      "peak_comfy_rss_mb_observed": 35424,
+      "peak_temperature_c_observed": 77,
+      "gpu_samples_file": "runs/flux2/c20_product_tradeoff_en__flux2_gpu_samples.jsonl",
+      "gpu_sample_count": 16
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "experiment": "data_matrix_v2",
+  "job": "c14_population_pyramid_zh__krea2",
+  "case_id": "c14_population_pyramid_zh",
+  "model": "krea2",
+  "language": "zh",
+  "seed": 42,
+  "data_source": "Synthetic controlled dataset; fictional community.",
+  "source_url": null,
+  "ground_truth": [
+    [
+      "0–14 岁",
+      "男 18",
+      "女 17"
+    ],
+    [
+      "15–29 岁",
+      "男 22",
+      "女 23"
+    ],
+    [
+      "30–44 岁",
+      "男 26",
+      "女 27"
+    ],
+    [
+      "45–59 岁",
+      "男 20",
+      "女 21"
+    ],
+    [
+      "60 岁以上",
+      "男 14",
+      "女 16"
+    ]
+  ],
+  "key_claim": "左右镜像条形图；年龄组顺序从年轻到年长，人数左右不反。",
+  "input_prompt_file": "prompts/krea2/c14_population_pyramid_zh.txt",
+  "input_prompt": "Create a polished editorial infographic on a landscape 3:2 canvas. The headline reads \"城市人口的年龄结构\" and the subtitle reads \"示例社区 · 人数（千人）\". Use 现代公共数据报告，雾蓝与珊瑚橙，干净网格、简化人物剪影作轻量点缀。 The central visualization is 人口金字塔：左侧男性、右侧女性；五个年龄组共享中心基线，条长严格反映人数。 Put every value next to its correct category and preserve the given ordering. The short takeaway reads \"30–44 岁组人数最多；60 岁以上女性多于男性。\". The complete source labels and data are exactly:\n\"0–14 岁 · 男 18 · 女 17\"\n\"15–29 岁 · 男 22 · 女 23\"\n\"30–44 岁 · 男 26 · 女 27\"\n\"45–59 岁 · 男 20 · 女 21\"\n\"60 岁以上 · 男 14 · 女 16\"\n左右镜像条形图；年龄组顺序从年轻到年长，人数左右不反。 Give the data visualization most of the page, with excellent visual hierarchy, generous spacing, clear marks, and legible typography. Render the quoted wording and numbers faithfully; do not invent any extra text, labels, values, or decorative pseudo-writing. Keep the visual style attractive but the chart quantitatively honest.",
+  "parameters": {
+    "resolution": "1536x1024",
+    "seed": 42,
+    "diffusion_weights": "BF16",
+    "sampler": "euler",
+    "steps": 52,
+    "cfg": 3.5,
+    "scheduler": "simple",
+    "text_encoder": "qwen3vl_4b_bf16.safetensors",
+    "negative_prompt": "watermark, logo, blurry",
+    "vae": "qwen_image_vae.safetensors"
+  },
+  "workflow": "workflows/krea2/c14_population_pyramid_zh__krea2.json",
+  "image": "images/krea2/c14_population_pyramid_zh__krea2.png",
+  "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+  "started_at": "2026-10-14T13:43:40.556920+00:00",
+  "prompt_id": "e16dd84d-e6c7-4cb7-ae08-9fdc0781ff49",
+  "status": "success",
+  "completed_at": "2026-10-14T13:45:30.386817+00:00",
+  "elapsed_seconds": 109.83,
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "image_sha256": "2ccede61fb207bc401239776ad92d293809fd51e73bbc6e8523344bfee0ef727",
+  "actual_pe_prompt_file": null,
+  "peak_vram_mb_observed": 23116,
+  "peak_comfy_rss_mb_observed": 36391,
+  "peak_temperature_c_observed": 81,
+  "gpu_samples_file": "runs/krea2/c14_population_pyramid_zh__krea2_gpu_samples.jsonl",
+  "gpu_sample_count": 28
+}

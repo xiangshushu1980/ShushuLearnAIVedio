@@ -1,0 +1,112 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "experiment": "data_matrix_v2",
+  "job": "c11_school_attendance_en__qwen21",
+  "case_id": "c11_school_attendance_en",
+  "model": "qwen21",
+  "language": "en",
+  "seed": 42,
+  "data_source": "Synthetic controlled dataset; illustrative only.",
+  "source_url": null,
+  "ground_truth": [
+    [
+      "North",
+      "Primary",
+      "96%"
+    ],
+    [
+      "North",
+      "Middle",
+      "91%"
+    ],
+    [
+      "North",
+      "Upper",
+      "84%"
+    ],
+    [
+      "South",
+      "Primary",
+      "93%"
+    ],
+    [
+      "South",
+      "Middle",
+      "88%"
+    ],
+    [
+      "South",
+      "Upper",
+      "79%"
+    ],
+    [
+      "East",
+      "Primary",
+      "98%"
+    ],
+    [
+      "East",
+      "Middle",
+      "94%"
+    ],
+    [
+      "East",
+      "Upper",
+      "90%"
+    ],
+    [
+      "West",
+      "Primary",
+      "89%"
+    ],
+    [
+      "West",
+      "Middle",
+      "82%"
+    ],
+    [
+      "West",
+      "Upper",
+      "73%"
+    ]
+  ],
+  "key_claim": "All 12 cells must be present at the correct row and column; do not invent a causal explanation.",
+  "input_prompt_file": "prompts/qwen21/c11_school_attendance_en.txt",
+  "input_prompt": "Create a finished bilingual-safe infographic in a landscape 3:2 canvas. Use the exact title \"Attendance changes by region\" and subtitle \"School attendance rate · %\". Chart: A 4-by-3 heatmap: four region rows by three school stages; every cell contains its exact percentage and uses a consistent low-to-high color ramp. Art direction: Modern education policy report, crisp grid, cobalt-to-mint palette, accessible contrast and tidy sans serif labels.\nDATA (preserve every label and value exactly):\nNorth | Primary | 96%\nNorth | Middle | 91%\nNorth | Upper | 84%\nSouth | Primary | 93%\nSouth | Middle | 88%\nSouth | Upper | 79%\nEast | Primary | 98%\nEast | Middle | 94%\nEast | Upper | 90%\nWest | Primary | 89%\nWest | Middle | 82%\nWest | Upper | 73%\nKey takeaway: \"The largest stage-to-stage gap appears in the West.\". All 12 cells must be present at the correct row and column; do not invent a causal explanation. Use a clear grid, readable typography, a strong title hierarchy, and data labels placed beside their matching marks. Render only the supplied text, with exact spelling, punctuation, units, category order, and numeric values. Do not add labels, numbers, legends, or claims. Make it a coherent article illustration, not a text-only table.",
+  "parameters": {
+    "resolution": "1536x1024",
+    "seed": 42,
+    "diffusion_weights": "BF16",
+    "sampler": "euler",
+    "steps": 40,
+    "cfg": 1.0,
+    "scheduler": "simple",
+    "text_encoder": "qwen3vl_8b_bf16.safetensors",
+    "prompt_enhancer": "qwen3.5_9b_qwen_image_2.1_pe_t2i.int8_convrot.safetensors",
+    "pe_temperature": 1.0,
+    "pe_top_p": 0.95,
+    "pe_top_k": 20,
+    "pe_presence_penalty": 1.5,
+    "vae": "qwen_image_2.1_vae_bf16.safetensors"
+  },
+  "workflow": "workflows/qwen21/c11_school_attendance_en__qwen21.json",
+  "image": "images/qwen21/c11_school_attendance_en__qwen21.png",
+  "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+  "started_at": "2026-10-14T13:24:55.868846+00:00",
+  "prompt_id": "68ef0408-50e3-4a49-8973-8ea8f263dc37",
+  "status": "success",
+  "completed_at": "2026-10-14T13:25:52.881939+00:00",
+  "elapsed_seconds": 57.01,
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "image_sha256": "b12f2c547194ca16c940f7062f9d22081f6ca114574aa6fff767dc8b2f21f6a7",
+  "actual_pe_prompt_file": "prompts/qwen21_pe_outputs/c11_school_attendance_en__qwen21.txt",
+  "peak_vram_mb_observed": 23010,
+  "peak_comfy_rss_mb_observed": 40539,
+  "peak_temperature_c_observed": 80,
+  "gpu_samples_file": "runs/qwen21/c11_school_attendance_en__qwen21_gpu_samples.jsonl",
+  "gpu_sample_count": 15
+}

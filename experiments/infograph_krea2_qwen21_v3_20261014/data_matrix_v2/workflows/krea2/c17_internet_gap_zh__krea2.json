@@ -1,0 +1,102 @@
+{
+  "prompt": {
+    "1": {
+      "class_type": "UNETLoader",
+      "inputs": {
+        "unet_name": "krea2_raw_bf16.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    "2": {
+      "class_type": "CLIPLoader",
+      "inputs": {
+        "clip_name": "qwen3vl_4b_bf16.safetensors",
+        "type": "krea2"
+      }
+    },
+    "3": {
+      "class_type": "VAELoader",
+      "inputs": {
+        "vae_name": "qwen_image_vae.safetensors"
+      }
+    },
+    "4": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": "Create a polished editorial infographic on a landscape 3:2 canvas. The headline reads \"网络接入，城乡差距\" and the subtitle reads \"四个地区的互联网使用率\". Use 报纸数据专栏风格，暖灰底、黑色字、湖蓝与砖红对照，图表密度适中。 The central visualization is 小倍图：东、南、西、北四个独立迷你柱图，共用 0–100% 纵轴，城市与乡村成对比较。 Put every value next to its correct category and preserve the given ordering. The short takeaway reads \"西部城乡差距最大，为 32 个百分点。\". The complete source labels and data are exactly:\n\"东部 · 城市 92% · 乡村 76%\"\n\"南部 · 城市 88% · 乡村 61%\"\n\"西部 · 城市 81% · 乡村 49%\"\n\"北部 · 城市 90% · 乡村 72%\"\n四地都用同一零起点比例尺；城乡值不能调换，差距必须对应数据。 Give the data visualization most of the page, with excellent visual hierarchy, generous spacing, clear marks, and legible typography. Render the quoted wording and numbers faithfully; do not invent any extra text, labels, values, or decorative pseudo-writing. Keep the visual style attractive but the chart quantitatively honest."
+      }
+    },
+    "5": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": "watermark, logo, blurry"
+      }
+    },
+    "6": {
+      "class_type": "EmptySD3LatentImage",
+      "inputs": {
+        "width": 1536,
+        "height": 1024,
+        "batch_size": 1
+      }
+    },
+    "7": {
+      "class_type": "KSampler",
+      "inputs": {
+        "model": [
+          "1",
+          0
+        ],
+        "positive": [
+          "4",
+          0
+        ],
+        "negative": [
+          "5",
+          0
+        ],
+        "latent_image": [
+          "6",
+          0
+        ],
+        "seed": 42,
+        "steps": 52,
+        "cfg": 3.5,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "denoise": 1.0
+      }
+    },
+    "8": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "7",
+          0
+        ],
+        "vae": [
+          "3",
+          0
+        ]
+      }
+    },
+    "9": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "8",
+          0
+        ],
+        "filename_prefix": "infograph-data-matrix-v2/c17_internet_gap_zh__krea2"
+      }
+    }
+  }
+}

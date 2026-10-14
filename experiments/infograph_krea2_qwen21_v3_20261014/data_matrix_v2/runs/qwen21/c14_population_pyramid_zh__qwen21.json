@@ -1,0 +1,77 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "experiment": "data_matrix_v2",
+  "job": "c14_population_pyramid_zh__qwen21",
+  "case_id": "c14_population_pyramid_zh",
+  "model": "qwen21",
+  "language": "zh",
+  "seed": 42,
+  "data_source": "Synthetic controlled dataset; fictional community.",
+  "source_url": null,
+  "ground_truth": [
+    [
+      "0–14 岁",
+      "男 18",
+      "女 17"
+    ],
+    [
+      "15–29 岁",
+      "男 22",
+      "女 23"
+    ],
+    [
+      "30–44 岁",
+      "男 26",
+      "女 27"
+    ],
+    [
+      "45–59 岁",
+      "男 20",
+      "女 21"
+    ],
+    [
+      "60 岁以上",
+      "男 14",
+      "女 16"
+    ]
+  ],
+  "key_claim": "左右镜像条形图；年龄组顺序从年轻到年长，人数左右不反。",
+  "input_prompt_file": "prompts/qwen21/c14_population_pyramid_zh.txt",
+  "input_prompt": "Create a finished bilingual-safe infographic in a landscape 3:2 canvas. Use the exact title \"城市人口的年龄结构\" and subtitle \"示例社区 · 人数（千人）\". Chart: 人口金字塔：左侧男性、右侧女性；五个年龄组共享中心基线，条长严格反映人数。 Art direction: 现代公共数据报告，雾蓝与珊瑚橙，干净网格、简化人物剪影作轻量点缀。\nDATA (preserve every label and value exactly):\n0–14 岁 | 男 18 | 女 17\n15–29 岁 | 男 22 | 女 23\n30–44 岁 | 男 26 | 女 27\n45–59 岁 | 男 20 | 女 21\n60 岁以上 | 男 14 | 女 16\nKey takeaway: \"30–44 岁组人数最多；60 岁以上女性多于男性。\". 左右镜像条形图；年龄组顺序从年轻到年长，人数左右不反。 Use a clear grid, readable typography, a strong title hierarchy, and data labels placed beside their matching marks. Render only the supplied text, with exact spelling, punctuation, units, category order, and numeric values. Do not add labels, numbers, legends, or claims. Make it a coherent article illustration, not a text-only table.",
+  "parameters": {
+    "resolution": "1536x1024",
+    "seed": 42,
+    "diffusion_weights": "BF16",
+    "sampler": "euler",
+    "steps": 40,
+    "cfg": 1.0,
+    "scheduler": "simple",
+    "text_encoder": "qwen3vl_8b_bf16.safetensors",
+    "prompt_enhancer": "qwen3.5_9b_qwen_image_2.1_pe_t2i.int8_convrot.safetensors",
+    "pe_temperature": 1.0,
+    "pe_top_p": 0.95,
+    "pe_top_k": 20,
+    "pe_presence_penalty": 1.5,
+    "vae": "qwen_image_2.1_vae_bf16.safetensors"
+  },
+  "workflow": "workflows/qwen21/c14_population_pyramid_zh__qwen21.json",
+  "image": "images/qwen21/c14_population_pyramid_zh__qwen21.png",
+  "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+  "started_at": "2026-10-14T13:27:49.037381+00:00",
+  "prompt_id": "65be01aa-4e42-4148-9cc2-8d150ed1dc70",
+  "status": "success",
+  "completed_at": "2026-10-14T13:28:48.010317+00:00",
+  "elapsed_seconds": 58.97,
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "image_sha256": "632ccc01792ac17500a20f408130bbfeaa235cb335dc26365e1a11cc532862fc",
+  "actual_pe_prompt_file": "prompts/qwen21_pe_outputs/c14_population_pyramid_zh__qwen21.txt",
+  "peak_vram_mb_observed": 22882,
+  "peak_comfy_rss_mb_observed": 40539,
+  "peak_temperature_c_observed": 81,
+  "gpu_samples_file": "runs/qwen21/c14_population_pyramid_zh__qwen21_gpu_samples.jsonl",
+  "gpu_sample_count": 15
+}

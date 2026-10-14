@@ -1,0 +1,96 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "experiment": "data_matrix_v2",
+  "job": "c13_sleep_distribution_en__krea2",
+  "case_id": "c13_sleep_distribution_en",
+  "model": "krea2",
+  "language": "en",
+  "seed": 42,
+  "data_source": "Synthetic controlled observations; not clinical guidance.",
+  "source_url": null,
+  "ground_truth": [
+    [
+      "Night 1",
+      "5.5 h"
+    ],
+    [
+      "Night 2",
+      "6.0 h"
+    ],
+    [
+      "Night 3",
+      "6.0 h"
+    ],
+    [
+      "Night 4",
+      "6.5 h"
+    ],
+    [
+      "Night 5",
+      "6.5 h"
+    ],
+    [
+      "Night 6",
+      "7.0 h"
+    ],
+    [
+      "Night 7",
+      "7.0 h"
+    ],
+    [
+      "Night 8",
+      "7.0 h"
+    ],
+    [
+      "Night 9",
+      "7.5 h"
+    ],
+    [
+      "Night 10",
+      "8.0 h"
+    ],
+    [
+      "Night 11",
+      "8.0 h"
+    ],
+    [
+      "Night 12",
+      "9.0 h"
+    ]
+  ],
+  "key_claim": "Show twelve separate observations, not a bar chart; do not label the sample as a population.",
+  "input_prompt_file": "prompts/krea2/c13_sleep_distribution_en.txt",
+  "input_prompt": "Create a polished editorial infographic on a landscape 3:2 canvas. The headline reads \"Sleep is not one-size-fits-all\" and the subtitle reads \"Hours slept across 12 sample nights\". Use Quiet science magazine, midnight blue background, soft lunar cream marks, one orange median rule, minimalist labels. The central visualization is A horizontal dot plot on a 4–10 hour axis. Plot all twelve observations, show the median at 7.0 hours, and distinguish the median from individual dots. Put every value next to its correct category and preserve the given ordering. The short takeaway reads \"Median: 7.0 hours. Range: 5.5–9.0 hours.\". The complete source labels and data are exactly:\n\"Night 1 · 5.5 h\"\n\"Night 2 · 6.0 h\"\n\"Night 3 · 6.0 h\"\n\"Night 4 · 6.5 h\"\n\"Night 5 · 6.5 h\"\n\"Night 6 · 7.0 h\"\n\"Night 7 · 7.0 h\"\n\"Night 8 · 7.0 h\"\n\"Night 9 · 7.5 h\"\n\"Night 10 · 8.0 h\"\n\"Night 11 · 8.0 h\"\n\"Night 12 · 9.0 h\"\nShow twelve separate observations, not a bar chart; do not label the sample as a population. Give the data visualization most of the page, with excellent visual hierarchy, generous spacing, clear marks, and legible typography. Render the quoted wording and numbers faithfully; do not invent any extra text, labels, values, or decorative pseudo-writing. Keep the visual style attractive but the chart quantitatively honest.",
+  "parameters": {
+    "resolution": "1536x1024",
+    "seed": 42,
+    "diffusion_weights": "BF16",
+    "sampler": "euler",
+    "steps": 52,
+    "cfg": 3.5,
+    "scheduler": "simple",
+    "text_encoder": "qwen3vl_4b_bf16.safetensors",
+    "negative_prompt": "watermark, logo, blurry",
+    "vae": "qwen_image_vae.safetensors"
+  },
+  "workflow": "workflows/krea2/c13_sleep_distribution_en__krea2.json",
+  "image": "images/krea2/c13_sleep_distribution_en__krea2.png",
+  "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+  "started_at": "2026-10-14T13:41:50.690136+00:00",
+  "prompt_id": "6957c5e5-11d2-48c4-ad07-7911d97be70e",
+  "status": "success",
+  "completed_at": "2026-10-14T13:43:40.490969+00:00",
+  "elapsed_seconds": 109.8,
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "image_sha256": "c900d019f935b55c68055c4c4a6384094ce104f75bfba2d200746d2f9aa6f0d8",
+  "actual_pe_prompt_file": null,
+  "peak_vram_mb_observed": 22444,
+  "peak_comfy_rss_mb_observed": 36391,
+  "peak_temperature_c_observed": 80,
+  "gpu_samples_file": "runs/krea2/c13_sleep_distribution_en__krea2_gpu_samples.jsonl",
+  "gpu_sample_count": 28
+}

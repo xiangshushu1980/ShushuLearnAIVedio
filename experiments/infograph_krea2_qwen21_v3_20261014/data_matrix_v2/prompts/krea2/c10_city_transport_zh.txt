@@ -1,0 +1,5 @@
+Create a polished editorial infographic on a landscape 3:2 canvas. The headline reads "一座城市，三种通勤" and the subtitle reads "早高峰出行方式与平均耗时". Use 克制的城市报刊信息图，米白纸色、墨绿与朱红，细线图标点缀，不做写实插画。 The central visualization is 横向分组条形图：三种出行方式各有一条占比条与一条耗时条，双指标清晰分区并标出单位。 Put every value next to its correct category and preserve the given ordering. The short takeaway reads "地铁占比最高，骑行平均耗时最短。". The complete source labels and data are exactly:
+"地铁 · 46% · 28 分钟"
+"公交 · 31% · 42 分钟"
+"骑行 · 23% · 19 分钟"
+两组度量不得混成同一刻度；三种方式与两个指标一一对应。 Give the data visualization most of the page, with excellent visual hierarchy, generous spacing, clear marks, and legible typography. Render the quoted wording and numbers faithfully; do not invent any extra text, labels, values, or decorative pseudo-writing. Keep the visual style attractive but the chart quantitatively honest.

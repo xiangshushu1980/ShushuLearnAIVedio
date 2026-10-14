@@ -1,0 +1,102 @@
+{
+  "prompt": {
+    "1": {
+      "class_type": "UNETLoader",
+      "inputs": {
+        "unet_name": "krea2_raw_bf16.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    "2": {
+      "class_type": "CLIPLoader",
+      "inputs": {
+        "clip_name": "qwen3vl_4b_bf16.safetensors",
+        "type": "krea2"
+      }
+    },
+    "3": {
+      "class_type": "VAELoader",
+      "inputs": {
+        "vae_name": "qwen_image_vae.safetensors"
+      }
+    },
+    "4": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": "Create a polished editorial infographic on a landscape 3:2 canvas. The headline reads \"Attendance changes by region\" and the subtitle reads \"School attendance rate · %\". Use Modern education policy report, crisp grid, cobalt-to-mint palette, accessible contrast and tidy sans serif labels. The central visualization is A 4-by-3 heatmap: four region rows by three school stages; every cell contains its exact percentage and uses a consistent low-to-high color ramp. Put every value next to its correct category and preserve the given ordering. The short takeaway reads \"The largest stage-to-stage gap appears in the West.\". The complete source labels and data are exactly:\n\"North · Primary · 96%\"\n\"North · Middle · 91%\"\n\"North · Upper · 84%\"\n\"South · Primary · 93%\"\n\"South · Middle · 88%\"\n\"South · Upper · 79%\"\n\"East · Primary · 98%\"\n\"East · Middle · 94%\"\n\"East · Upper · 90%\"\n\"West · Primary · 89%\"\n\"West · Middle · 82%\"\n\"West · Upper · 73%\"\nAll 12 cells must be present at the correct row and column; do not invent a causal explanation. Give the data visualization most of the page, with excellent visual hierarchy, generous spacing, clear marks, and legible typography. Render the quoted wording and numbers faithfully; do not invent any extra text, labels, values, or decorative pseudo-writing. Keep the visual style attractive but the chart quantitatively honest."
+      }
+    },
+    "5": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": "watermark, logo, blurry"
+      }
+    },
+    "6": {
+      "class_type": "EmptySD3LatentImage",
+      "inputs": {
+        "width": 1536,
+        "height": 1024,
+        "batch_size": 1
+      }
+    },
+    "7": {
+      "class_type": "KSampler",
+      "inputs": {
+        "model": [
+          "1",
+          0
+        ],
+        "positive": [
+          "4",
+          0
+        ],
+        "negative": [
+          "5",
+          0
+        ],
+        "latent_image": [
+          "6",
+          0
+        ],
+        "seed": 42,
+        "steps": 52,
+        "cfg": 3.5,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "denoise": 1.0
+      }
+    },
+    "8": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "7",
+          0
+        ],
+        "vae": [
+          "3",
+          0
+        ]
+      }
+    },
+    "9": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "8",
+          0
+        ],
+        "filename_prefix": "infograph-data-matrix-v2/c11_school_attendance_en__krea2"
+      }
+    }
+  }
+}

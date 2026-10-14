@@ -1,0 +1,67 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "experiment": "data_matrix_v2",
+  "job": "c10_city_transport_zh__qwen21",
+  "case_id": "c10_city_transport_zh",
+  "model": "qwen21",
+  "language": "zh",
+  "seed": 42,
+  "data_source": "Synthetic controlled dataset for chart fidelity; not a real city survey.",
+  "source_url": null,
+  "ground_truth": [
+    [
+      "地铁",
+      "46%",
+      "28 分钟"
+    ],
+    [
+      "公交",
+      "31%",
+      "42 分钟"
+    ],
+    [
+      "骑行",
+      "23%",
+      "19 分钟"
+    ]
+  ],
+  "key_claim": "两组度量不得混成同一刻度；三种方式与两个指标一一对应。",
+  "input_prompt_file": "prompts/qwen21/c10_city_transport_zh.txt",
+  "input_prompt": "Create a finished bilingual-safe infographic in a landscape 3:2 canvas. Use the exact title \"一座城市，三种通勤\" and subtitle \"早高峰出行方式与平均耗时\". Chart: 横向分组条形图：三种出行方式各有一条占比条与一条耗时条，双指标清晰分区并标出单位。 Art direction: 克制的城市报刊信息图，米白纸色、墨绿与朱红，细线图标点缀，不做写实插画。\nDATA (preserve every label and value exactly):\n地铁 | 46% | 28 分钟\n公交 | 31% | 42 分钟\n骑行 | 23% | 19 分钟\nKey takeaway: \"地铁占比最高，骑行平均耗时最短。\". 两组度量不得混成同一刻度；三种方式与两个指标一一对应。 Use a clear grid, readable typography, a strong title hierarchy, and data labels placed beside their matching marks. Render only the supplied text, with exact spelling, punctuation, units, category order, and numeric values. Do not add labels, numbers, legends, or claims. Make it a coherent article illustration, not a text-only table.",
+  "parameters": {
+    "resolution": "1536x1024",
+    "seed": 42,
+    "diffusion_weights": "BF16",
+    "sampler": "euler",
+    "steps": 40,
+    "cfg": 1.0,
+    "scheduler": "simple",
+    "text_encoder": "qwen3vl_8b_bf16.safetensors",
+    "prompt_enhancer": "qwen3.5_9b_qwen_image_2.1_pe_t2i.int8_convrot.safetensors",
+    "pe_temperature": 1.0,
+    "pe_top_p": 0.95,
+    "pe_top_k": 20,
+    "pe_presence_penalty": 1.5,
+    "vae": "qwen_image_2.1_vae_bf16.safetensors"
+  },
+  "workflow": "workflows/qwen21/c10_city_transport_zh__qwen21.json",
+  "image": "images/qwen21/c10_city_transport_zh__qwen21.png",
+  "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+  "started_at": "2026-10-14T13:23:58.825534+00:00",
+  "prompt_id": "aee79bcd-2afc-45ee-b6d5-0741f236d3ba",
+  "status": "success",
+  "completed_at": "2026-10-14T13:24:55.800014+00:00",
+  "elapsed_seconds": 56.97,
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "image_sha256": "437cd3677cb5e287a3547f2459a350ab78c71f797be115dd856c673f3a114bec",
+  "actual_pe_prompt_file": "prompts/qwen21_pe_outputs/c10_city_transport_zh__qwen21.txt",
+  "peak_vram_mb_observed": 23096,
+  "peak_comfy_rss_mb_observed": 40539,
+  "peak_temperature_c_observed": 79,
+  "gpu_samples_file": "runs/qwen21/c10_city_transport_zh__qwen21_gpu_samples.jsonl",
+  "gpu_sample_count": 15
+}

@@ -1,0 +1,100 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "experiment": "data_matrix_v2",
+  "job": "c13_sleep_distribution_en__qwen21",
+  "case_id": "c13_sleep_distribution_en",
+  "model": "qwen21",
+  "language": "en",
+  "seed": 42,
+  "data_source": "Synthetic controlled observations; not clinical guidance.",
+  "source_url": null,
+  "ground_truth": [
+    [
+      "Night 1",
+      "5.5 h"
+    ],
+    [
+      "Night 2",
+      "6.0 h"
+    ],
+    [
+      "Night 3",
+      "6.0 h"
+    ],
+    [
+      "Night 4",
+      "6.5 h"
+    ],
+    [
+      "Night 5",
+      "6.5 h"
+    ],
+    [
+      "Night 6",
+      "7.0 h"
+    ],
+    [
+      "Night 7",
+      "7.0 h"
+    ],
+    [
+      "Night 8",
+      "7.0 h"
+    ],
+    [
+      "Night 9",
+      "7.5 h"
+    ],
+    [
+      "Night 10",
+      "8.0 h"
+    ],
+    [
+      "Night 11",
+      "8.0 h"
+    ],
+    [
+      "Night 12",
+      "9.0 h"
+    ]
+  ],
+  "key_claim": "Show twelve separate observations, not a bar chart; do not label the sample as a population.",
+  "input_prompt_file": "prompts/qwen21/c13_sleep_distribution_en.txt",
+  "input_prompt": "Create a finished bilingual-safe infographic in a landscape 3:2 canvas. Use the exact title \"Sleep is not one-size-fits-all\" and subtitle \"Hours slept across 12 sample nights\". Chart: A horizontal dot plot on a 4–10 hour axis. Plot all twelve observations, show the median at 7.0 hours, and distinguish the median from individual dots. Art direction: Quiet science magazine, midnight blue background, soft lunar cream marks, one orange median rule, minimalist labels.\nDATA (preserve every label and value exactly):\nNight 1 | 5.5 h\nNight 2 | 6.0 h\nNight 3 | 6.0 h\nNight 4 | 6.5 h\nNight 5 | 6.5 h\nNight 6 | 7.0 h\nNight 7 | 7.0 h\nNight 8 | 7.0 h\nNight 9 | 7.5 h\nNight 10 | 8.0 h\nNight 11 | 8.0 h\nNight 12 | 9.0 h\nKey takeaway: \"Median: 7.0 hours. Range: 5.5–9.0 hours.\". Show twelve separate observations, not a bar chart; do not label the sample as a population. Use a clear grid, readable typography, a strong title hierarchy, and data labels placed beside their matching marks. Render only the supplied text, with exact spelling, punctuation, units, category order, and numeric values. Do not add labels, numbers, legends, or claims. Make it a coherent article illustration, not a text-only table.",
+  "parameters": {
+    "resolution": "1536x1024",
+    "seed": 42,
+    "diffusion_weights": "BF16",
+    "sampler": "euler",
+    "steps": 40,
+    "cfg": 1.0,
+    "scheduler": "simple",
+    "text_encoder": "qwen3vl_8b_bf16.safetensors",
+    "prompt_enhancer": "qwen3.5_9b_qwen_image_2.1_pe_t2i.int8_convrot.safetensors",
+    "pe_temperature": 1.0,
+    "pe_top_p": 0.95,
+    "pe_top_k": 20,
+    "pe_presence_penalty": 1.5,
+    "vae": "qwen_image_2.1_vae_bf16.safetensors"
+  },
+  "workflow": "workflows/qwen21/c13_sleep_distribution_en__qwen21.json",
+  "image": "images/qwen21/c13_sleep_distribution_en__qwen21.png",
+  "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+  "started_at": "2026-10-14T13:26:52.025243+00:00",
+  "prompt_id": "6e817007-4b40-41eb-a950-aec0b6398de8",
+  "status": "success",
+  "completed_at": "2026-10-14T13:27:48.971029+00:00",
+  "elapsed_seconds": 56.95,
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "image_sha256": "36ac66d876eed1fa32e32a76f6d99fc0812abfaf204bf4655607cce83a4c8f2a",
+  "actual_pe_prompt_file": "prompts/qwen21_pe_outputs/c13_sleep_distribution_en__qwen21.txt",
+  "peak_vram_mb_observed": 23074,
+  "peak_comfy_rss_mb_observed": 40539,
+  "peak_temperature_c_observed": 81,
+  "gpu_samples_file": "runs/qwen21/c13_sleep_distribution_en__qwen21_gpu_samples.jsonl",
+  "gpu_sample_count": 15
+}

@@ -1,0 +1,64 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "experiment": "data_matrix_v2",
+  "job": "c16_community_solar_en__krea2",
+  "case_id": "c16_community_solar_en",
+  "model": "krea2",
+  "language": "en",
+  "seed": 42,
+  "data_source": "Synthetic controlled budget; illustrative project.",
+  "source_url": null,
+  "ground_truth": [
+    [
+      "Panels",
+      "$45,000"
+    ],
+    [
+      "Installation",
+      "$25,000"
+    ],
+    [
+      "Battery",
+      "$20,000"
+    ],
+    [
+      "Training",
+      "$10,000"
+    ]
+  ],
+  "key_claim": "Rectangle areas must follow 45:25:20:10; labels and dollar amounts must stay attached.",
+  "input_prompt_file": "prompts/krea2/c16_community_solar_en.txt",
+  "input_prompt": "Create a polished editorial infographic on a landscape 3:2 canvas. The headline reads \"Where the solar budget goes\" and the subtitle reads \"Community project · $100,000\". Use Bold contemporary civic dashboard, warm yellow, charcoal and sky blue, clean geometric blocks, strong type hierarchy. The central visualization is A treemap with four non-overlapping rectangles sized in proportion to the exact budget allocations; label each category and amount. Put every value next to its correct category and preserve the given ordering. The short takeaway reads \"Panels receive the largest share; training receives the smallest.\". The complete source labels and data are exactly:\n\"Panels · $45,000\"\n\"Installation · $25,000\"\n\"Battery · $20,000\"\n\"Training · $10,000\"\nRectangle areas must follow 45:25:20:10; labels and dollar amounts must stay attached. Give the data visualization most of the page, with excellent visual hierarchy, generous spacing, clear marks, and legible typography. Render the quoted wording and numbers faithfully; do not invent any extra text, labels, values, or decorative pseudo-writing. Keep the visual style attractive but the chart quantitatively honest.",
+  "parameters": {
+    "resolution": "1536x1024",
+    "seed": 42,
+    "diffusion_weights": "BF16",
+    "sampler": "euler",
+    "steps": 52,
+    "cfg": 3.5,
+    "scheduler": "simple",
+    "text_encoder": "qwen3vl_4b_bf16.safetensors",
+    "negative_prompt": "watermark, logo, blurry",
+    "vae": "qwen_image_vae.safetensors"
+  },
+  "workflow": "workflows/krea2/c16_community_solar_en__krea2.json",
+  "image": "images/krea2/c16_community_solar_en__krea2.png",
+  "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+  "started_at": "2026-10-14T13:47:18.630660+00:00",
+  "prompt_id": "27e9479f-9876-4e76-a40d-ba0ec7c06b96",
+  "status": "success",
+  "completed_at": "2026-10-14T13:49:06.383266+00:00",
+  "elapsed_seconds": 107.75,
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "image_sha256": "dc71cbecd772cb8237d92edc4e282a7bbdf20c88464971c949c30f0d853d1625",
+  "actual_pe_prompt_file": null,
+  "peak_vram_mb_observed": 22284,
+  "peak_comfy_rss_mb_observed": 36389,
+  "peak_temperature_c_observed": 79,
+  "gpu_samples_file": "runs/krea2/c16_community_solar_en__krea2_gpu_samples.jsonl",
+  "gpu_sample_count": 27
+}

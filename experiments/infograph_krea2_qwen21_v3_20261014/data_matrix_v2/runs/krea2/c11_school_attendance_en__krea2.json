@@ -1,0 +1,108 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "experiment": "data_matrix_v2",
+  "job": "c11_school_attendance_en__krea2",
+  "case_id": "c11_school_attendance_en",
+  "model": "krea2",
+  "language": "en",
+  "seed": 42,
+  "data_source": "Synthetic controlled dataset; illustrative only.",
+  "source_url": null,
+  "ground_truth": [
+    [
+      "North",
+      "Primary",
+      "96%"
+    ],
+    [
+      "North",
+      "Middle",
+      "91%"
+    ],
+    [
+      "North",
+      "Upper",
+      "84%"
+    ],
+    [
+      "South",
+      "Primary",
+      "93%"
+    ],
+    [
+      "South",
+      "Middle",
+      "88%"
+    ],
+    [
+      "South",
+      "Upper",
+      "79%"
+    ],
+    [
+      "East",
+      "Primary",
+      "98%"
+    ],
+    [
+      "East",
+      "Middle",
+      "94%"
+    ],
+    [
+      "East",
+      "Upper",
+      "90%"
+    ],
+    [
+      "West",
+      "Primary",
+      "89%"
+    ],
+    [
+      "West",
+      "Middle",
+      "82%"
+    ],
+    [
+      "West",
+      "Upper",
+      "73%"
+    ]
+  ],
+  "key_claim": "All 12 cells must be present at the correct row and column; do not invent a causal explanation.",
+  "input_prompt_file": "prompts/krea2/c11_school_attendance_en.txt",
+  "input_prompt": "Create a polished editorial infographic on a landscape 3:2 canvas. The headline reads \"Attendance changes by region\" and the subtitle reads \"School attendance rate · %\". Use Modern education policy report, crisp grid, cobalt-to-mint palette, accessible contrast and tidy sans serif labels. The central visualization is A 4-by-3 heatmap: four region rows by three school stages; every cell contains its exact percentage and uses a consistent low-to-high color ramp. Put every value next to its correct category and preserve the given ordering. The short takeaway reads \"The largest stage-to-stage gap appears in the West.\". The complete source labels and data are exactly:\n\"North · Primary · 96%\"\n\"North · Middle · 91%\"\n\"North · Upper · 84%\"\n\"South · Primary · 93%\"\n\"South · Middle · 88%\"\n\"South · Upper · 79%\"\n\"East · Primary · 98%\"\n\"East · Middle · 94%\"\n\"East · Upper · 90%\"\n\"West · Primary · 89%\"\n\"West · Middle · 82%\"\n\"West · Upper · 73%\"\nAll 12 cells must be present at the correct row and column; do not invent a causal explanation. Give the data visualization most of the page, with excellent visual hierarchy, generous spacing, clear marks, and legible typography. Render the quoted wording and numbers faithfully; do not invent any extra text, labels, values, or decorative pseudo-writing. Keep the visual style attractive but the chart quantitatively honest.",
+  "parameters": {
+    "resolution": "1536x1024",
+    "seed": 42,
+    "diffusion_weights": "BF16",
+    "sampler": "euler",
+    "steps": 52,
+    "cfg": 3.5,
+    "scheduler": "simple",
+    "text_encoder": "qwen3vl_4b_bf16.safetensors",
+    "negative_prompt": "watermark, logo, blurry",
+    "vae": "qwen_image_vae.safetensors"
+  },
+  "workflow": "workflows/krea2/c11_school_attendance_en__krea2.json",
+  "image": "images/krea2/c11_school_attendance_en__krea2.png",
+  "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+  "started_at": "2026-10-14T13:38:14.418646+00:00",
+  "prompt_id": "c6b72cc5-f737-463b-9996-b0f592f7d0c6",
+  "status": "success",
+  "completed_at": "2026-10-14T13:40:02.490413+00:00",
+  "elapsed_seconds": 108.07,
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "image_sha256": "4060041a8e64709c74968b829f482a0fcabee140e71b3ee9639d6c5fc02e5faf",
+  "actual_pe_prompt_file": null,
+  "peak_vram_mb_observed": 22956,
+  "peak_comfy_rss_mb_observed": 36384,
+  "peak_temperature_c_observed": 81,
+  "gpu_samples_file": "runs/krea2/c11_school_attendance_en__krea2_gpu_samples.jsonl",
+  "gpu_sample_count": 27
+}

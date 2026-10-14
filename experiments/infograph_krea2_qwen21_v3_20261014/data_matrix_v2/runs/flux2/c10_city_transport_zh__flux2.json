@@ -1,0 +1,62 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "experiment": "data_matrix_v2",
+  "job": "c10_city_transport_zh__flux2",
+  "case_id": "c10_city_transport_zh",
+  "model": "flux2",
+  "language": "zh",
+  "seed": 42,
+  "data_source": "Synthetic controlled dataset for chart fidelity; not a real city survey.",
+  "source_url": null,
+  "ground_truth": [
+    [
+      "地铁",
+      "46%",
+      "28 分钟"
+    ],
+    [
+      "公交",
+      "31%",
+      "42 分钟"
+    ],
+    [
+      "骑行",
+      "23%",
+      "19 分钟"
+    ]
+  ],
+  "key_claim": "两组度量不得混成同一刻度；三种方式与两个指标一一对应。",
+  "input_prompt_file": "prompts/flux2/c10_city_transport_zh.txt",
+  "input_prompt": "Design one finished landscape 3:2 infographic. Headline: '一座城市，三种通勤'. Subtitle: '早高峰出行方式与平均耗时'. Visual style: 克制的城市报刊信息图，米白纸色、墨绿与朱红，细线图标点缀，不做写实插画。 Composition and chart: 横向分组条形图：三种出行方式各有一条占比条与一条耗时条，双指标清晰分区并标出单位。\nExact data labels and values:\n'地铁 | 46% | 28 分钟'\n'公交 | 31% | 42 分钟'\n'骑行 | 23% | 19 分钟'\nTakeaway: '地铁占比最高，骑行平均耗时最短。'. 两组度量不得混成同一刻度；三种方式与两个指标一一对应。 Keep chart marks proportional, preserve label-value pairing and units, use a clean editorial hierarchy, and make the visualization the focal point. Render the quoted text accurately. Add no unsupported values, labels, series, or claims.",
+  "parameters": {
+    "resolution": "1536x1024",
+    "seed": 42,
+    "diffusion_weights": "BF16",
+    "sampler": "euler",
+    "steps": 50,
+    "cfg": 3.5,
+    "scheduler": "Flux2Scheduler",
+    "text_encoder": "qwen_3_8b.safetensors",
+    "vae": "flux2-vae.safetensors"
+  },
+  "workflow": "workflows/flux2/c10_city_transport_zh__flux2.json",
+  "image": "images/flux2/c10_city_transport_zh__flux2.png",
+  "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+  "started_at": "2026-10-14T13:57:35.611390+00:00",
+  "prompt_id": "f1529d78-6d55-4d25-8425-7a8c40bb9f96",
+  "status": "success",
+  "completed_at": "2026-10-14T13:58:36.691399+00:00",
+  "elapsed_seconds": 61.08,
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "image_sha256": "6fe728e6f2419339e18f61581d327c9019b318886102605eae2db6deaad216d8",
+  "actual_pe_prompt_file": null,
+  "peak_vram_mb_observed": 22348,
+  "peak_comfy_rss_mb_observed": 35424,
+  "peak_temperature_c_observed": 77,
+  "gpu_samples_file": "runs/flux2/c10_city_transport_zh__flux2_gpu_samples.jsonl",
+  "gpu_sample_count": 16
+}

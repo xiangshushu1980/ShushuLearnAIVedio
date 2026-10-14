@@ -1,0 +1,72 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "experiment": "data_matrix_v2",
+  "job": "c14_population_pyramid_zh__flux2",
+  "case_id": "c14_population_pyramid_zh",
+  "model": "flux2",
+  "language": "zh",
+  "seed": 42,
+  "data_source": "Synthetic controlled dataset; fictional community.",
+  "source_url": null,
+  "ground_truth": [
+    [
+      "0–14 岁",
+      "男 18",
+      "女 17"
+    ],
+    [
+      "15–29 岁",
+      "男 22",
+      "女 23"
+    ],
+    [
+      "30–44 岁",
+      "男 26",
+      "女 27"
+    ],
+    [
+      "45–59 岁",
+      "男 20",
+      "女 21"
+    ],
+    [
+      "60 岁以上",
+      "男 14",
+      "女 16"
+    ]
+  ],
+  "key_claim": "左右镜像条形图；年龄组顺序从年轻到年长，人数左右不反。",
+  "input_prompt_file": "prompts/flux2/c14_population_pyramid_zh.txt",
+  "input_prompt": "Design one finished landscape 3:2 infographic. Headline: '城市人口的年龄结构'. Subtitle: '示例社区 · 人数（千人）'. Visual style: 现代公共数据报告，雾蓝与珊瑚橙，干净网格、简化人物剪影作轻量点缀。 Composition and chart: 人口金字塔：左侧男性、右侧女性；五个年龄组共享中心基线，条长严格反映人数。\nExact data labels and values:\n'0–14 岁 | 男 18 | 女 17'\n'15–29 岁 | 男 22 | 女 23'\n'30–44 岁 | 男 26 | 女 27'\n'45–59 岁 | 男 20 | 女 21'\n'60 岁以上 | 男 14 | 女 16'\nTakeaway: '30–44 岁组人数最多；60 岁以上女性多于男性。'. 左右镜像条形图；年龄组顺序从年轻到年长，人数左右不反。 Keep chart marks proportional, preserve label-value pairing and units, use a clean editorial hierarchy, and make the visualization the focal point. Render the quoted text accurately. Add no unsupported values, labels, series, or claims.",
+  "parameters": {
+    "resolution": "1536x1024",
+    "seed": 42,
+    "diffusion_weights": "BF16",
+    "sampler": "euler",
+    "steps": 50,
+    "cfg": 3.5,
+    "scheduler": "Flux2Scheduler",
+    "text_encoder": "qwen_3_8b.safetensors",
+    "vae": "flux2-vae.safetensors"
+  },
+  "workflow": "workflows/flux2/c14_population_pyramid_zh__flux2.json",
+  "image": "images/flux2/c14_population_pyramid_zh__flux2.png",
+  "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+  "started_at": "2026-10-14T14:01:40.041893+00:00",
+  "prompt_id": "2f81c376-aaff-4655-a8bc-7667f1a6ecfb",
+  "status": "success",
+  "completed_at": "2026-10-14T14:02:41.102960+00:00",
+  "elapsed_seconds": 61.06,
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "image_sha256": "aa26d46d59dac302b8e3d85316fd3ab89b87944f1f07a726c9e5fb9f55b22fde",
+  "actual_pe_prompt_file": null,
+  "peak_vram_mb_observed": 22348,
+  "peak_comfy_rss_mb_observed": 35424,
+  "peak_temperature_c_observed": 77,
+  "gpu_samples_file": "runs/flux2/c14_population_pyramid_zh__flux2_gpu_samples.jsonl",
+  "gpu_sample_count": 16
+}

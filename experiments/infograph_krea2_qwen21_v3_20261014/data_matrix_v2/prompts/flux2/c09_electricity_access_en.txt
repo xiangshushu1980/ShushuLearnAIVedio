@@ -1,0 +1,7 @@
+Design one finished landscape 3:2 infographic. Headline: 'Power reaches more people'. Subtitle: 'Global access to electricity · 2010–2023'. Visual style: Swiss editorial minimalism, large white margins, deep navy line with one warm yellow endpoint, restrained grid. Composition and chart: A four-point line chart with a gentle upward slope; exact year/value pairs, a clear 0–100% vertical scale, and a final callout.
+Exact data labels and values:
+'2010 | 83.5%'
+'2015 | 86.9%'
+'2020 | 90.4%'
+'2023 | 91.6%'
+Takeaway: 'Access rose 8.1 percentage points across the period.'. Keep the line rising, place every value at its matching year, and do not imply 100% access. Keep chart marks proportional, preserve label-value pairing and units, use a clean editorial hierarchy, and make the visualization the focal point. Render the quoted text accurately. Add no unsupported values, labels, series, or claims.

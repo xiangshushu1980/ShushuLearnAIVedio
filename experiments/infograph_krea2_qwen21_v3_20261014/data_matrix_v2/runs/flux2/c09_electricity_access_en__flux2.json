@@ -1,0 +1,63 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "experiment": "data_matrix_v2",
+  "job": "c09_electricity_access_en__flux2",
+  "case_id": "c09_electricity_access_en",
+  "model": "flux2",
+  "language": "en",
+  "seed": 42,
+  "data_source": "World Bank WDI EG.ELC.ACCS.ZS; World Bank API snapshot retrieved 2026-10-14; CC BY 4.0.",
+  "source_url": "https://api.worldbank.org/v2/country/WLD/indicator/EG.ELC.ACCS.ZS?date=2010:2023&format=json",
+  "ground_truth": [
+    [
+      "2010",
+      "83.5%"
+    ],
+    [
+      "2015",
+      "86.9%"
+    ],
+    [
+      "2020",
+      "90.4%"
+    ],
+    [
+      "2023",
+      "91.6%"
+    ]
+  ],
+  "key_claim": "Keep the line rising, place every value at its matching year, and do not imply 100% access.",
+  "input_prompt_file": "prompts/flux2/c09_electricity_access_en.txt",
+  "input_prompt": "Design one finished landscape 3:2 infographic. Headline: 'Power reaches more people'. Subtitle: 'Global access to electricity · 2010–2023'. Visual style: Swiss editorial minimalism, large white margins, deep navy line with one warm yellow endpoint, restrained grid. Composition and chart: A four-point line chart with a gentle upward slope; exact year/value pairs, a clear 0–100% vertical scale, and a final callout.\nExact data labels and values:\n'2010 | 83.5%'\n'2015 | 86.9%'\n'2020 | 90.4%'\n'2023 | 91.6%'\nTakeaway: 'Access rose 8.1 percentage points across the period.'. Keep the line rising, place every value at its matching year, and do not imply 100% access. Keep chart marks proportional, preserve label-value pairing and units, use a clean editorial hierarchy, and make the visualization the focal point. Render the quoted text accurately. Add no unsupported values, labels, series, or claims.",
+  "parameters": {
+    "resolution": "1536x1024",
+    "seed": 42,
+    "diffusion_weights": "BF16",
+    "sampler": "euler",
+    "steps": 50,
+    "cfg": 3.5,
+    "scheduler": "Flux2Scheduler",
+    "text_encoder": "qwen_3_8b.safetensors",
+    "vae": "flux2-vae.safetensors"
+  },
+  "workflow": "workflows/flux2/c09_electricity_access_en__flux2.json",
+  "image": "images/flux2/c09_electricity_access_en__flux2.png",
+  "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+  "started_at": "2026-10-14T13:56:17.789123+00:00",
+  "prompt_id": "ea27db3a-99f4-4974-9135-2dc078a6f2b7",
+  "status": "success",
+  "completed_at": "2026-10-14T13:57:35.546992+00:00",
+  "elapsed_seconds": 77.76,
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "image_sha256": "d7b40f6f053cb63fa9561456bc77a94c4abc72f560f7876867318db725ccd735",
+  "actual_pe_prompt_file": null,
+  "peak_vram_mb_observed": 21676,
+  "peak_comfy_rss_mb_observed": 36361,
+  "peak_temperature_c_observed": 76,
+  "gpu_samples_file": "runs/flux2/c09_electricity_access_en__flux2_gpu_samples.jsonl",
+  "gpu_sample_count": 20
+}

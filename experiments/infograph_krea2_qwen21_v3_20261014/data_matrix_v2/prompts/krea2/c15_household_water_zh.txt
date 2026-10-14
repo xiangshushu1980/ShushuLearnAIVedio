@@ -1,0 +1,6 @@
+Create a polished editorial infographic on a landscape 3:2 canvas. The headline reads "修复漏水，节水看得见" and the subtitle reads "四户家庭每日用水量对比". Use 极简环保公益视觉，白底、深青与亮青，清晰大数字，水滴图标仅作少量装饰。 The central visualization is 哑铃图：每户一条水平细线连接修复前与修复后两个端点；横轴 0–300 升。 Put every value next to its correct category and preserve the given ordering. The short takeaway reads "四户每日都减少 30–60 升用水。". The complete source labels and data are exactly:
+"甲户 · 240 升 · 180 升"
+"乙户 · 210 升 · 150 升"
+"丙户 · 270 升 · 210 升"
+"丁户 · 180 升 · 150 升"
+每户 before/after 端点正确配对，轴从零开始，不把差值夸大。 Give the data visualization most of the page, with excellent visual hierarchy, generous spacing, clear marks, and legible typography. Render the quoted wording and numbers faithfully; do not invent any extra text, labels, values, or decorative pseudo-writing. Keep the visual style attractive but the chart quantitatively honest.

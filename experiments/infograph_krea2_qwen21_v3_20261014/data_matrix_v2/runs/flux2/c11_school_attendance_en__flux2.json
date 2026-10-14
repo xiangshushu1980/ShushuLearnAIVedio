@@ -1,0 +1,107 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "experiment": "data_matrix_v2",
+  "job": "c11_school_attendance_en__flux2",
+  "case_id": "c11_school_attendance_en",
+  "model": "flux2",
+  "language": "en",
+  "seed": 42,
+  "data_source": "Synthetic controlled dataset; illustrative only.",
+  "source_url": null,
+  "ground_truth": [
+    [
+      "North",
+      "Primary",
+      "96%"
+    ],
+    [
+      "North",
+      "Middle",
+      "91%"
+    ],
+    [
+      "North",
+      "Upper",
+      "84%"
+    ],
+    [
+      "South",
+      "Primary",
+      "93%"
+    ],
+    [
+      "South",
+      "Middle",
+      "88%"
+    ],
+    [
+      "South",
+      "Upper",
+      "79%"
+    ],
+    [
+      "East",
+      "Primary",
+      "98%"
+    ],
+    [
+      "East",
+      "Middle",
+      "94%"
+    ],
+    [
+      "East",
+      "Upper",
+      "90%"
+    ],
+    [
+      "West",
+      "Primary",
+      "89%"
+    ],
+    [
+      "West",
+      "Middle",
+      "82%"
+    ],
+    [
+      "West",
+      "Upper",
+      "73%"
+    ]
+  ],
+  "key_claim": "All 12 cells must be present at the correct row and column; do not invent a causal explanation.",
+  "input_prompt_file": "prompts/flux2/c11_school_attendance_en.txt",
+  "input_prompt": "Design one finished landscape 3:2 infographic. Headline: 'Attendance changes by region'. Subtitle: 'School attendance rate · %'. Visual style: Modern education policy report, crisp grid, cobalt-to-mint palette, accessible contrast and tidy sans serif labels. Composition and chart: A 4-by-3 heatmap: four region rows by three school stages; every cell contains its exact percentage and uses a consistent low-to-high color ramp.\nExact data labels and values:\n'North | Primary | 96%'\n'North | Middle | 91%'\n'North | Upper | 84%'\n'South | Primary | 93%'\n'South | Middle | 88%'\n'South | Upper | 79%'\n'East | Primary | 98%'\n'East | Middle | 94%'\n'East | Upper | 90%'\n'West | Primary | 89%'\n'West | Middle | 82%'\n'West | Upper | 73%'\nTakeaway: 'The largest stage-to-stage gap appears in the West.'. All 12 cells must be present at the correct row and column; do not invent a causal explanation. Keep chart marks proportional, preserve label-value pairing and units, use a clean editorial hierarchy, and make the visualization the focal point. Render the quoted text accurately. Add no unsupported values, labels, series, or claims.",
+  "parameters": {
+    "resolution": "1536x1024",
+    "seed": 42,
+    "diffusion_weights": "BF16",
+    "sampler": "euler",
+    "steps": 50,
+    "cfg": 3.5,
+    "scheduler": "Flux2Scheduler",
+    "text_encoder": "qwen_3_8b.safetensors",
+    "vae": "flux2-vae.safetensors"
+  },
+  "workflow": "workflows/flux2/c11_school_attendance_en__flux2.json",
+  "image": "images/flux2/c11_school_attendance_en__flux2.png",
+  "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+  "started_at": "2026-10-14T13:58:36.752512+00:00",
+  "prompt_id": "d054db03-7b2f-4ea0-b010-28860370d334",
+  "status": "success",
+  "completed_at": "2026-10-14T13:59:37.774873+00:00",
+  "elapsed_seconds": 61.02,
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "image_sha256": "66784de4aa73baeed709a6dc3a5c6592cf0494fb994aa55ab374cf6a295767f3",
+  "actual_pe_prompt_file": null,
+  "peak_vram_mb_observed": 22284,
+  "peak_comfy_rss_mb_observed": 35424,
+  "peak_temperature_c_observed": 77,
+  "gpu_samples_file": "runs/flux2/c11_school_attendance_en__flux2_gpu_samples.jsonl",
+  "gpu_sample_count": 16
+}

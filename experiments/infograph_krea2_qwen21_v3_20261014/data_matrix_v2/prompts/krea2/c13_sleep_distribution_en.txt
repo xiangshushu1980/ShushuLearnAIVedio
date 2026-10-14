@@ -1,0 +1,14 @@
+Create a polished editorial infographic on a landscape 3:2 canvas. The headline reads "Sleep is not one-size-fits-all" and the subtitle reads "Hours slept across 12 sample nights". Use Quiet science magazine, midnight blue background, soft lunar cream marks, one orange median rule, minimalist labels. The central visualization is A horizontal dot plot on a 4–10 hour axis. Plot all twelve observations, show the median at 7.0 hours, and distinguish the median from individual dots. Put every value next to its correct category and preserve the given ordering. The short takeaway reads "Median: 7.0 hours. Range: 5.5–9.0 hours.". The complete source labels and data are exactly:
+"Night 1 · 5.5 h"
+"Night 2 · 6.0 h"
+"Night 3 · 6.0 h"
+"Night 4 · 6.5 h"
+"Night 5 · 6.5 h"
+"Night 6 · 7.0 h"
+"Night 7 · 7.0 h"
+"Night 8 · 7.0 h"
+"Night 9 · 7.5 h"
+"Night 10 · 8.0 h"
+"Night 11 · 8.0 h"
+"Night 12 · 9.0 h"
+Show twelve separate observations, not a bar chart; do not label the sample as a population. Give the data visualization most of the page, with excellent visual hierarchy, generous spacing, clear marks, and legible typography. Render the quoted wording and numbers faithfully; do not invent any extra text, labels, values, or decorative pseudo-writing. Keep the visual style attractive but the chart quantitatively honest.

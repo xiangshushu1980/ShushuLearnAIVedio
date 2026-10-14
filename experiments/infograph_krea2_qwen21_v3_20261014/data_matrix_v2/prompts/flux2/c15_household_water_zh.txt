@@ -1,0 +1,7 @@
+Design one finished landscape 3:2 infographic. Headline: '修复漏水，节水看得见'. Subtitle: '四户家庭每日用水量对比'. Visual style: 极简环保公益视觉，白底、深青与亮青，清晰大数字，水滴图标仅作少量装饰。 Composition and chart: 哑铃图：每户一条水平细线连接修复前与修复后两个端点；横轴 0–300 升。
+Exact data labels and values:
+'甲户 | 240 升 | 180 升'
+'乙户 | 210 升 | 150 升'
+'丙户 | 270 升 | 210 升'
+'丁户 | 180 升 | 150 升'
+Takeaway: '四户每日都减少 30–60 升用水。'. 每户 before/after 端点正确配对，轴从零开始，不把差值夸大。 Keep chart marks proportional, preserve label-value pairing and units, use a clean editorial hierarchy, and make the visualization the focal point. Render the quoted text accurately. Add no unsupported values, labels, series, or claims.

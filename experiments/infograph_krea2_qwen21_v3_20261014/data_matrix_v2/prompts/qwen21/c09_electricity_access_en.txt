@@ -1,0 +1,7 @@
+Create a finished bilingual-safe infographic in a landscape 3:2 canvas. Use the exact title "Power reaches more people" and subtitle "Global access to electricity · 2010–2023". Chart: A four-point line chart with a gentle upward slope; exact year/value pairs, a clear 0–100% vertical scale, and a final callout. Art direction: Swiss editorial minimalism, large white margins, deep navy line with one warm yellow endpoint, restrained grid.
+DATA (preserve every label and value exactly):
+2010 | 83.5%
+2015 | 86.9%
+2020 | 90.4%
+2023 | 91.6%
+Key takeaway: "Access rose 8.1 percentage points across the period.". Keep the line rising, place every value at its matching year, and do not imply 100% access. Use a clear grid, readable typography, a strong title hierarchy, and data labels placed beside their matching marks. Render only the supplied text, with exact spelling, punctuation, units, category order, and numeric values. Do not add labels, numbers, legends, or claims. Make it a coherent article illustration, not a text-only table.

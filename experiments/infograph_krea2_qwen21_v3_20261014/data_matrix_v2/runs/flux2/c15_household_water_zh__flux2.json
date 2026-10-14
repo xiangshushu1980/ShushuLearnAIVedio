@@ -1,0 +1,67 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "experiment": "data_matrix_v2",
+  "job": "c15_household_water_zh__flux2",
+  "case_id": "c15_household_water_zh",
+  "model": "flux2",
+  "language": "zh",
+  "seed": 42,
+  "data_source": "Synthetic controlled dataset; illustrative households.",
+  "source_url": null,
+  "ground_truth": [
+    [
+      "甲户",
+      "240 升",
+      "180 升"
+    ],
+    [
+      "乙户",
+      "210 升",
+      "150 升"
+    ],
+    [
+      "丙户",
+      "270 升",
+      "210 升"
+    ],
+    [
+      "丁户",
+      "180 升",
+      "150 升"
+    ]
+  ],
+  "key_claim": "每户 before/after 端点正确配对，轴从零开始，不把差值夸大。",
+  "input_prompt_file": "prompts/flux2/c15_household_water_zh.txt",
+  "input_prompt": "Design one finished landscape 3:2 infographic. Headline: '修复漏水，节水看得见'. Subtitle: '四户家庭每日用水量对比'. Visual style: 极简环保公益视觉，白底、深青与亮青，清晰大数字，水滴图标仅作少量装饰。 Composition and chart: 哑铃图：每户一条水平细线连接修复前与修复后两个端点；横轴 0–300 升。\nExact data labels and values:\n'甲户 | 240 升 | 180 升'\n'乙户 | 210 升 | 150 升'\n'丙户 | 270 升 | 210 升'\n'丁户 | 180 升 | 150 升'\nTakeaway: '四户每日都减少 30–60 升用水。'. 每户 before/after 端点正确配对，轴从零开始，不把差值夸大。 Keep chart marks proportional, preserve label-value pairing and units, use a clean editorial hierarchy, and make the visualization the focal point. Render the quoted text accurately. Add no unsupported values, labels, series, or claims.",
+  "parameters": {
+    "resolution": "1536x1024",
+    "seed": 42,
+    "diffusion_weights": "BF16",
+    "sampler": "euler",
+    "steps": 50,
+    "cfg": 3.5,
+    "scheduler": "Flux2Scheduler",
+    "text_encoder": "qwen_3_8b.safetensors",
+    "vae": "flux2-vae.safetensors"
+  },
+  "workflow": "workflows/flux2/c15_household_water_zh__flux2.json",
+  "image": "images/flux2/c15_household_water_zh__flux2.png",
+  "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+  "started_at": "2026-10-14T14:02:41.166365+00:00",
+  "prompt_id": "0f3c2c7d-acf5-4ee9-83a6-8f5f2b4d797b",
+  "status": "success",
+  "completed_at": "2026-10-14T14:03:42.161982+00:00",
+  "elapsed_seconds": 61.0,
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "image_sha256": "4a01af5795bbe2eb839f610d4f1dc6e5d45b5eb27b8db95dcedd6693a66e2340",
+  "actual_pe_prompt_file": null,
+  "peak_vram_mb_observed": 22284,
+  "peak_comfy_rss_mb_observed": 35424,
+  "peak_temperature_c_observed": 77,
+  "gpu_samples_file": "runs/flux2/c15_household_water_zh__flux2_gpu_samples.jsonl",
+  "gpu_sample_count": 16
+}

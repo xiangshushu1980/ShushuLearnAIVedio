@@ -1,0 +1,15 @@
+Create a finished bilingual-safe infographic in a landscape 3:2 canvas. Use the exact title "Attendance changes by region" and subtitle "School attendance rate · %". Chart: A 4-by-3 heatmap: four region rows by three school stages; every cell contains its exact percentage and uses a consistent low-to-high color ramp. Art direction: Modern education policy report, crisp grid, cobalt-to-mint palette, accessible contrast and tidy sans serif labels.
+DATA (preserve every label and value exactly):
+North | Primary | 96%
+North | Middle | 91%
+North | Upper | 84%
+South | Primary | 93%
+South | Middle | 88%
+South | Upper | 79%
+East | Primary | 98%
+East | Middle | 94%
+East | Upper | 90%
+West | Primary | 89%
+West | Middle | 82%
+West | Upper | 73%
+Key takeaway: "The largest stage-to-stage gap appears in the West.". All 12 cells must be present at the correct row and column; do not invent a causal explanation. Use a clear grid, readable typography, a strong title hierarchy, and data labels placed beside their matching marks. Render only the supplied text, with exact spelling, punctuation, units, category order, and numeric values. Do not add labels, numbers, legends, or claims. Make it a coherent article illustration, not a text-only table.

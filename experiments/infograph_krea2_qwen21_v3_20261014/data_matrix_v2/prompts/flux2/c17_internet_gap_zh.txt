@@ -1,0 +1,7 @@
+Design one finished landscape 3:2 infographic. Headline: '网络接入，城乡差距'. Subtitle: '四个地区的互联网使用率'. Visual style: 报纸数据专栏风格，暖灰底、黑色字、湖蓝与砖红对照，图表密度适中。 Composition and chart: 小倍图：东、南、西、北四个独立迷你柱图，共用 0–100% 纵轴，城市与乡村成对比较。
+Exact data labels and values:
+'东部 | 城市 92% | 乡村 76%'
+'南部 | 城市 88% | 乡村 61%'
+'西部 | 城市 81% | 乡村 49%'
+'北部 | 城市 90% | 乡村 72%'
+Takeaway: '西部城乡差距最大，为 32 个百分点。'. 四地都用同一零起点比例尺；城乡值不能调换，差距必须对应数据。 Keep chart marks proportional, preserve label-value pairing and units, use a clean editorial hierarchy, and make the visualization the focal point. Render the quoted text accurately. Add no unsupported values, labels, series, or claims.

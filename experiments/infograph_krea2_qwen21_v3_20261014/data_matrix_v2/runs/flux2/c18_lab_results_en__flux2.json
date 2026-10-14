@@ -1,0 +1,67 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "experiment": "data_matrix_v2",
+  "job": "c18_lab_results_en__flux2",
+  "case_id": "c18_lab_results_en",
+  "model": "flux2",
+  "language": "en",
+  "seed": 42,
+  "data_source": "Synthetic controlled measurements; illustrative, not scientific findings.",
+  "source_url": null,
+  "ground_truth": [
+    [
+      "Control",
+      "42",
+      "36–48"
+    ],
+    [
+      "Dose A",
+      "55",
+      "49–61"
+    ],
+    [
+      "Dose B",
+      "68",
+      "60–76"
+    ],
+    [
+      "Dose C",
+      "73",
+      "62–84"
+    ]
+  ],
+  "key_claim": "Each interval must center on its estimate; intervals show uncertainty, not a second data series.",
+  "input_prompt_file": "prompts/flux2/c18_lab_results_en.txt",
+  "input_prompt": "Design one finished landscape 3:2 infographic. Headline: 'A range tells more than a point'. Subtitle: 'Measured response by test group · units'. Visual style: Scientific notebook meets editorial infographic, thin graphite axes, restrained teal and coral, precise but approachable. Composition and chart: A horizontal interval plot with point estimates and whiskers for four groups; distinguish the estimate from its interval and use a 0–100 axis.\nExact data labels and values:\n'Control | 42 | 36–48'\n'Dose A | 55 | 49–61'\n'Dose B | 68 | 60–76'\n'Dose C | 73 | 62–84'\nTakeaway: 'Dose C has the highest estimate and widest interval.'. Each interval must center on its estimate; intervals show uncertainty, not a second data series. Keep chart marks proportional, preserve label-value pairing and units, use a clean editorial hierarchy, and make the visualization the focal point. Render the quoted text accurately. Add no unsupported values, labels, series, or claims.",
+  "parameters": {
+    "resolution": "1536x1024",
+    "seed": 42,
+    "diffusion_weights": "BF16",
+    "sampler": "euler",
+    "steps": 50,
+    "cfg": 3.5,
+    "scheduler": "Flux2Scheduler",
+    "text_encoder": "qwen_3_8b.safetensors",
+    "vae": "flux2-vae.safetensors"
+  },
+  "workflow": "workflows/flux2/c18_lab_results_en__flux2.json",
+  "image": "images/flux2/c18_lab_results_en__flux2.png",
+  "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+  "started_at": "2026-10-14T14:05:44.436142+00:00",
+  "prompt_id": "e71fef6b-aeca-4fc6-b438-5477aab5beb5",
+  "status": "success",
+  "completed_at": "2026-10-14T14:06:45.445418+00:00",
+  "elapsed_seconds": 61.01,
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "image_sha256": "3688555d7a1b129ba9a4857d2109b598fa7ef4183ca5a509381bb95d6456b926",
+  "actual_pe_prompt_file": null,
+  "peak_vram_mb_observed": 22828,
+  "peak_comfy_rss_mb_observed": 35424,
+  "peak_temperature_c_observed": 77,
+  "gpu_samples_file": "runs/flux2/c18_lab_results_en__flux2_gpu_samples.jsonl",
+  "gpu_sample_count": 16
+}

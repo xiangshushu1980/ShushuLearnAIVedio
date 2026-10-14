@@ -1,0 +1,8 @@
+Design one finished landscape 3:2 infographic. Headline: '城市人口的年龄结构'. Subtitle: '示例社区 · 人数（千人）'. Visual style: 现代公共数据报告，雾蓝与珊瑚橙，干净网格、简化人物剪影作轻量点缀。 Composition and chart: 人口金字塔：左侧男性、右侧女性；五个年龄组共享中心基线，条长严格反映人数。
+Exact data labels and values:
+'0–14 岁 | 男 18 | 女 17'
+'15–29 岁 | 男 22 | 女 23'
+'30–44 岁 | 男 26 | 女 27'
+'45–59 岁 | 男 20 | 女 21'
+'60 岁以上 | 男 14 | 女 16'
+Takeaway: '30–44 岁组人数最多；60 岁以上女性多于男性。'. 左右镜像条形图；年龄组顺序从年轻到年长，人数左右不反。 Keep chart marks proportional, preserve label-value pairing and units, use a clean editorial hierarchy, and make the visualization the focal point. Render the quoted text accurately. Add no unsupported values, labels, series, or claims.

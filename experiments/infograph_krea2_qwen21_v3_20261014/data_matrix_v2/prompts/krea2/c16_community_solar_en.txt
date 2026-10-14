@@ -1,0 +1,6 @@
+Create a polished editorial infographic on a landscape 3:2 canvas. The headline reads "Where the solar budget goes" and the subtitle reads "Community project · $100,000". Use Bold contemporary civic dashboard, warm yellow, charcoal and sky blue, clean geometric blocks, strong type hierarchy. The central visualization is A treemap with four non-overlapping rectangles sized in proportion to the exact budget allocations; label each category and amount. Put every value next to its correct category and preserve the given ordering. The short takeaway reads "Panels receive the largest share; training receives the smallest.". The complete source labels and data are exactly:
+"Panels · $45,000"
+"Installation · $25,000"
+"Battery · $20,000"
+"Training · $10,000"
+Rectangle areas must follow 45:25:20:10; labels and dollar amounts must stay attached. Give the data visualization most of the page, with excellent visual hierarchy, generous spacing, clear marks, and legible typography. Render the quoted wording and numbers faithfully; do not invent any extra text, labels, values, or decorative pseudo-writing. Keep the visual style attractive but the chart quantitatively honest.

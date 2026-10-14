@@ -1,0 +1,14 @@
+Create a polished editorial infographic on a landscape 3:2 canvas. The headline reads "Attendance changes by region" and the subtitle reads "School attendance rate · %". Use Modern education policy report, crisp grid, cobalt-to-mint palette, accessible contrast and tidy sans serif labels. The central visualization is A 4-by-3 heatmap: four region rows by three school stages; every cell contains its exact percentage and uses a consistent low-to-high color ramp. Put every value next to its correct category and preserve the given ordering. The short takeaway reads "The largest stage-to-stage gap appears in the West.". The complete source labels and data are exactly:
+"North · Primary · 96%"
+"North · Middle · 91%"
+"North · Upper · 84%"
+"South · Primary · 93%"
+"South · Middle · 88%"
+"South · Upper · 79%"
+"East · Primary · 98%"
+"East · Middle · 94%"
+"East · Upper · 90%"
+"West · Primary · 89%"
+"West · Middle · 82%"
+"West · Upper · 73%"
+All 12 cells must be present at the correct row and column; do not invent a causal explanation. Give the data visualization most of the page, with excellent visual hierarchy, generous spacing, clear marks, and legible typography. Render the quoted wording and numbers faithfully; do not invent any extra text, labels, values, or decorative pseudo-writing. Keep the visual style attractive but the chart quantitatively honest.

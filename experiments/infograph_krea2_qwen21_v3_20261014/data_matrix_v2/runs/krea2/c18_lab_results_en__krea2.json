@@ -1,0 +1,68 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "experiment": "data_matrix_v2",
+  "job": "c18_lab_results_en__krea2",
+  "case_id": "c18_lab_results_en",
+  "model": "krea2",
+  "language": "en",
+  "seed": 42,
+  "data_source": "Synthetic controlled measurements; illustrative, not scientific findings.",
+  "source_url": null,
+  "ground_truth": [
+    [
+      "Control",
+      "42",
+      "36–48"
+    ],
+    [
+      "Dose A",
+      "55",
+      "49–61"
+    ],
+    [
+      "Dose B",
+      "68",
+      "60–76"
+    ],
+    [
+      "Dose C",
+      "73",
+      "62–84"
+    ]
+  ],
+  "key_claim": "Each interval must center on its estimate; intervals show uncertainty, not a second data series.",
+  "input_prompt_file": "prompts/krea2/c18_lab_results_en.txt",
+  "input_prompt": "Create a polished editorial infographic on a landscape 3:2 canvas. The headline reads \"A range tells more than a point\" and the subtitle reads \"Measured response by test group · units\". Use Scientific notebook meets editorial infographic, thin graphite axes, restrained teal and coral, precise but approachable. The central visualization is A horizontal interval plot with point estimates and whiskers for four groups; distinguish the estimate from its interval and use a 0–100 axis. Put every value next to its correct category and preserve the given ordering. The short takeaway reads \"Dose C has the highest estimate and widest interval.\". The complete source labels and data are exactly:\n\"Control · 42 · 36–48\"\n\"Dose A · 55 · 49–61\"\n\"Dose B · 68 · 60–76\"\n\"Dose C · 73 · 62–84\"\nEach interval must center on its estimate; intervals show uncertainty, not a second data series. Give the data visualization most of the page, with excellent visual hierarchy, generous spacing, clear marks, and legible typography. Render the quoted wording and numbers faithfully; do not invent any extra text, labels, values, or decorative pseudo-writing. Keep the visual style attractive but the chart quantitatively honest.",
+  "parameters": {
+    "resolution": "1536x1024",
+    "seed": 42,
+    "diffusion_weights": "BF16",
+    "sampler": "euler",
+    "steps": 52,
+    "cfg": 3.5,
+    "scheduler": "simple",
+    "text_encoder": "qwen3vl_4b_bf16.safetensors",
+    "negative_prompt": "watermark, logo, blurry",
+    "vae": "qwen_image_vae.safetensors"
+  },
+  "workflow": "workflows/krea2/c18_lab_results_en__krea2.json",
+  "image": "images/krea2/c18_lab_results_en__krea2.png",
+  "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+  "started_at": "2026-10-14T13:50:54.319525+00:00",
+  "prompt_id": "2ed6e34d-d612-490c-9193-2a74d82ebf66",
+  "status": "success",
+  "completed_at": "2026-10-14T13:52:42.086124+00:00",
+  "elapsed_seconds": 107.77,
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "image_sha256": "f70d98886304d184e9b33c638842813b365970f587598dae989d2ee32c3a56ee",
+  "actual_pe_prompt_file": null,
+  "peak_vram_mb_observed": 22348,
+  "peak_comfy_rss_mb_observed": 36401,
+  "peak_temperature_c_observed": 76,
+  "gpu_samples_file": "runs/krea2/c18_lab_results_en__krea2_gpu_samples.jsonl",
+  "gpu_sample_count": 27
+}

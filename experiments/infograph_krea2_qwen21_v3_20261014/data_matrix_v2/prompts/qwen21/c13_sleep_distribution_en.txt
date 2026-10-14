@@ -1,0 +1,15 @@
+Create a finished bilingual-safe infographic in a landscape 3:2 canvas. Use the exact title "Sleep is not one-size-fits-all" and subtitle "Hours slept across 12 sample nights". Chart: A horizontal dot plot on a 4–10 hour axis. Plot all twelve observations, show the median at 7.0 hours, and distinguish the median from individual dots. Art direction: Quiet science magazine, midnight blue background, soft lunar cream marks, one orange median rule, minimalist labels.
+DATA (preserve every label and value exactly):
+Night 1 | 5.5 h
+Night 2 | 6.0 h
+Night 3 | 6.0 h
+Night 4 | 6.5 h
+Night 5 | 6.5 h
+Night 6 | 7.0 h
+Night 7 | 7.0 h
+Night 8 | 7.0 h
+Night 9 | 7.5 h
+Night 10 | 8.0 h
+Night 11 | 8.0 h
+Night 12 | 9.0 h
+Key takeaway: "Median: 7.0 hours. Range: 5.5–9.0 hours.". Show twelve separate observations, not a bar chart; do not label the sample as a population. Use a clear grid, readable typography, a strong title hierarchy, and data labels placed beside their matching marks. Render only the supplied text, with exact spelling, punctuation, units, category order, and numeric values. Do not add labels, numbers, legends, or claims. Make it a coherent article illustration, not a text-only table.

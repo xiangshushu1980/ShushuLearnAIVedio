@@ -1,0 +1,72 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "experiment": "data_matrix_v2",
+  "job": "c20_product_tradeoff_en__flux2",
+  "case_id": "c20_product_tradeoff_en",
+  "model": "flux2",
+  "language": "en",
+  "seed": 42,
+  "data_source": "Synthetic controlled product data; fictional devices.",
+  "source_url": null,
+  "ground_truth": [
+    [
+      "Aster",
+      "$300",
+      "8 h"
+    ],
+    [
+      "Birch",
+      "$450",
+      "12 h"
+    ],
+    [
+      "Cedar",
+      "$600",
+      "10 h"
+    ],
+    [
+      "Dune",
+      "$750",
+      "16 h"
+    ],
+    [
+      "Ember",
+      "$900",
+      "14 h"
+    ]
+  ],
+  "key_claim": "Map price horizontally and battery life vertically; do not reverse any device coordinates.",
+  "input_prompt_file": "prompts/flux2/c20_product_tradeoff_en.txt",
+  "input_prompt": "Design one finished landscape 3:2 infographic. Headline: 'Price and battery life do not move together'. Subtitle: 'Five devices · price vs. battery life'. Visual style: Retro-futurist product review, cream paper, indigo grid, tomato-red accent, small device silhouettes used sparingly. Composition and chart: A scatter plot with five labeled devices; x-axis price in dollars, y-axis battery life in hours. Preserve each exact coordinate and avoid implying causation.\nExact data labels and values:\n'Aster | $300 | 8 h'\n'Birch | $450 | 12 h'\n'Cedar | $600 | 10 h'\n'Dune | $750 | 16 h'\n'Ember | $900 | 14 h'\nTakeaway: 'Dune lasts longest; Aster costs least.'. Map price horizontally and battery life vertically; do not reverse any device coordinates. Keep chart marks proportional, preserve label-value pairing and units, use a clean editorial hierarchy, and make the visualization the focal point. Render the quoted text accurately. Add no unsupported values, labels, series, or claims.",
+  "parameters": {
+    "resolution": "1536x1024",
+    "seed": 42,
+    "diffusion_weights": "BF16",
+    "sampler": "euler",
+    "steps": 50,
+    "cfg": 3.5,
+    "scheduler": "Flux2Scheduler",
+    "text_encoder": "qwen_3_8b.safetensors",
+    "vae": "flux2-vae.safetensors"
+  },
+  "workflow": "workflows/flux2/c20_product_tradeoff_en__flux2.json",
+  "image": "images/flux2/c20_product_tradeoff_en__flux2.png",
+  "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+  "started_at": "2026-10-14T14:07:46.598271+00:00",
+  "prompt_id": "59627f07-0751-42cb-a21b-264e76a4b0e8",
+  "status": "success",
+  "completed_at": "2026-10-14T14:08:47.592252+00:00",
+  "elapsed_seconds": 60.99,
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "image_sha256": "c4a754ba7d7a0272b36b7b68a1245f6885057ba6267acf8d71aa8a3e05ec6d0e",
+  "actual_pe_prompt_file": null,
+  "peak_vram_mb_observed": 22284,
+  "peak_comfy_rss_mb_observed": 35424,
+  "peak_temperature_c_observed": 77,
+  "gpu_samples_file": "runs/flux2/c20_product_tradeoff_en__flux2_gpu_samples.jsonl",
+  "gpu_sample_count": 16
+}

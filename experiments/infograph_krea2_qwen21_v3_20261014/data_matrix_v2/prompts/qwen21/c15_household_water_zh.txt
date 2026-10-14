@@ -1,0 +1,7 @@
+Create a finished bilingual-safe infographic in a landscape 3:2 canvas. Use the exact title "修复漏水，节水看得见" and subtitle "四户家庭每日用水量对比". Chart: 哑铃图：每户一条水平细线连接修复前与修复后两个端点；横轴 0–300 升。 Art direction: 极简环保公益视觉，白底、深青与亮青，清晰大数字，水滴图标仅作少量装饰。
+DATA (preserve every label and value exactly):
+甲户 | 240 升 | 180 升
+乙户 | 210 升 | 150 升
+丙户 | 270 升 | 210 升
+丁户 | 180 升 | 150 升
+Key takeaway: "四户每日都减少 30–60 升用水。". 每户 before/after 端点正确配对，轴从零开始，不把差值夸大。 Use a clear grid, readable typography, a strong title hierarchy, and data labels placed beside their matching marks. Render only the supplied text, with exact spelling, punctuation, units, category order, and numeric values. Do not add labels, numbers, legends, or claims. Make it a coherent article illustration, not a text-only table.

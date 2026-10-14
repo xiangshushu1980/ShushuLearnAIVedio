@@ -1,0 +1,72 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "experiment": "data_matrix_v2",
+  "job": "c18_lab_results_en__qwen21",
+  "case_id": "c18_lab_results_en",
+  "model": "qwen21",
+  "language": "en",
+  "seed": 42,
+  "data_source": "Synthetic controlled measurements; illustrative, not scientific findings.",
+  "source_url": null,
+  "ground_truth": [
+    [
+      "Control",
+      "42",
+      "36–48"
+    ],
+    [
+      "Dose A",
+      "55",
+      "49–61"
+    ],
+    [
+      "Dose B",
+      "68",
+      "60–76"
+    ],
+    [
+      "Dose C",
+      "73",
+      "62–84"
+    ]
+  ],
+  "key_claim": "Each interval must center on its estimate; intervals show uncertainty, not a second data series.",
+  "input_prompt_file": "prompts/qwen21/c18_lab_results_en.txt",
+  "input_prompt": "Create a finished bilingual-safe infographic in a landscape 3:2 canvas. Use the exact title \"A range tells more than a point\" and subtitle \"Measured response by test group · units\". Chart: A horizontal interval plot with point estimates and whiskers for four groups; distinguish the estimate from its interval and use a 0–100 axis. Art direction: Scientific notebook meets editorial infographic, thin graphite axes, restrained teal and coral, precise but approachable.\nDATA (preserve every label and value exactly):\nControl | 42 | 36–48\nDose A | 55 | 49–61\nDose B | 68 | 60–76\nDose C | 73 | 62–84\nKey takeaway: \"Dose C has the highest estimate and widest interval.\". Each interval must center on its estimate; intervals show uncertainty, not a second data series. Use a clear grid, readable typography, a strong title hierarchy, and data labels placed beside their matching marks. Render only the supplied text, with exact spelling, punctuation, units, category order, and numeric values. Do not add labels, numbers, legends, or claims. Make it a coherent article illustration, not a text-only table.",
+  "parameters": {
+    "resolution": "1536x1024",
+    "seed": 42,
+    "diffusion_weights": "BF16",
+    "sampler": "euler",
+    "steps": 40,
+    "cfg": 1.0,
+    "scheduler": "simple",
+    "text_encoder": "qwen3vl_8b_bf16.safetensors",
+    "prompt_enhancer": "qwen3.5_9b_qwen_image_2.1_pe_t2i.int8_convrot.safetensors",
+    "pe_temperature": 1.0,
+    "pe_top_p": 0.95,
+    "pe_top_k": 20,
+    "pe_presence_penalty": 1.5,
+    "vae": "qwen_image_2.1_vae_bf16.safetensors"
+  },
+  "workflow": "workflows/qwen21/c18_lab_results_en__qwen21.json",
+  "image": "images/qwen21/c18_lab_results_en__qwen21.png",
+  "resource_lease_id": "e8fc78b2-9eeb-431e-aca3-6a901e70c957",
+  "started_at": "2026-10-14T13:31:29.104830+00:00",
+  "prompt_id": "cd8e0e2a-c73e-4a68-a13d-79a4241ddcf2",
+  "status": "success",
+  "completed_at": "2026-10-14T13:32:24.000748+00:00",
+  "elapsed_seconds": 54.9,
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "image_sha256": "977740dad841cf6e23cc7d74d126ee078f404296b31ea449e8f870924bf2a245",
+  "actual_pe_prompt_file": "prompts/qwen21_pe_outputs/c18_lab_results_en__qwen21.txt",
+  "peak_vram_mb_observed": 23010,
+  "peak_comfy_rss_mb_observed": 40522,
+  "peak_temperature_c_observed": 81,
+  "gpu_samples_file": "runs/qwen21/c18_lab_results_en__qwen21_gpu_samples.jsonl",
+  "gpu_sample_count": 14
+}

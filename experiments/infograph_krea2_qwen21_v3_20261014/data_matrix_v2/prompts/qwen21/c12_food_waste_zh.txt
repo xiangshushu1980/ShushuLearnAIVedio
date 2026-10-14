@@ -1,0 +1,8 @@
+Create a finished bilingual-safe infographic in a landscape 3:2 canvas. Use the exact title "食物浪费，在哪一步累积" and subtitle "一周 100 千克可食食物的去向". Chart: 瀑布图：起始 100 千克，经采购损耗 −12、储存损耗 −18、备餐损耗 −20，最后剩余 50 千克；连接线表示逐步递减。 Art direction: 温暖手绘编辑插图与严格图表结合，奶油纸色、番茄红与叶绿，线条简洁，数字醒目。
+DATA (preserve every label and value exactly):
+起始 | 100 千克
+采购损耗 | −12 千克
+储存损耗 | −18 千克
+备餐损耗 | −20 千克
+最终保留 | 50 千克
+Key takeaway: "一半食物最终保留，备餐环节损耗最大。". 瀑布条的方向和终点必须符合算术；不要把损耗画成增加。 Use a clear grid, readable typography, a strong title hierarchy, and data labels placed beside their matching marks. Render only the supplied text, with exact spelling, punctuation, units, category order, and numeric values. Do not add labels, numbers, legends, or claims. Make it a coherent article illustration, not a text-only table.

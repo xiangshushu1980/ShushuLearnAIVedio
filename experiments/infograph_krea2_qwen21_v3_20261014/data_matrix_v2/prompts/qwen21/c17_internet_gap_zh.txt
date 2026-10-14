@@ -1,0 +1,7 @@
+Create a finished bilingual-safe infographic in a landscape 3:2 canvas. Use the exact title "网络接入，城乡差距" and subtitle "四个地区的互联网使用率". Chart: 小倍图：东、南、西、北四个独立迷你柱图，共用 0–100% 纵轴，城市与乡村成对比较。 Art direction: 报纸数据专栏风格，暖灰底、黑色字、湖蓝与砖红对照，图表密度适中。
+DATA (preserve every label and value exactly):
+东部 | 城市 92% | 乡村 76%
+南部 | 城市 88% | 乡村 61%
+西部 | 城市 81% | 乡村 49%
+北部 | 城市 90% | 乡村 72%
+Key takeaway: "西部城乡差距最大，为 32 个百分点。". 四地都用同一零起点比例尺；城乡值不能调换，差距必须对应数据。 Use a clear grid, readable typography, a strong title hierarchy, and data labels placed beside their matching marks. Render only the supplied text, with exact spelling, punctuation, units, category order, and numeric values. Do not add labels, numbers, legends, or claims. Make it a coherent article illustration, not a text-only table.

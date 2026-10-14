@@ -1,0 +1,7 @@
+Create a polished editorial infographic on a landscape 3:2 canvas. The headline reads "Price and battery life do not move together" and the subtitle reads "Five devices · price vs. battery life". Use Retro-futurist product review, cream paper, indigo grid, tomato-red accent, small device silhouettes used sparingly. The central visualization is A scatter plot with five labeled devices; x-axis price in dollars, y-axis battery life in hours. Preserve each exact coordinate and avoid implying causation. Put every value next to its correct category and preserve the given ordering. The short takeaway reads "Dune lasts longest; Aster costs least.". The complete source labels and data are exactly:
+"Aster · $300 · 8 h"
+"Birch · $450 · 12 h"
+"Cedar · $600 · 10 h"
+"Dune · $750 · 16 h"
+"Ember · $900 · 14 h"
+Map price horizontally and battery life vertically; do not reverse any device coordinates. Give the data visualization most of the page, with excellent visual hierarchy, generous spacing, clear marks, and legible typography. Render the quoted wording and numbers faithfully; do not invent any extra text, labels, values, or decorative pseudo-writing. Keep the visual style attractive but the chart quantitatively honest.
