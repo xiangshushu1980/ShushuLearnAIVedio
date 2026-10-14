@@ -1,0 +1,142 @@
+{
+  "prompt": {
+    "1": {
+      "class_type": "UNETLoader",
+      "inputs": {
+        "unet_name": "qwen_image_2.1_bf16.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    "2": {
+      "class_type": "CLIPLoader",
+      "inputs": {
+        "clip_name": "qwen3.5_9b_qwen_image_2.1_pe_t2i.int8_convrot.safetensors",
+        "type": "qwen_image"
+      }
+    },
+    "3": {
+      "class_type": "CLIPLoader",
+      "inputs": {
+        "clip_name": "qwen3vl_8b_bf16.safetensors",
+        "type": "qwen_image"
+      }
+    },
+    "4": {
+      "class_type": "VAELoader",
+      "inputs": {
+        "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+      }
+    },
+    "5": {
+      "class_type": "QwenImage21_T2IPromptRewrite",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "prompt": "Finished landscape 3:2 editorial infographic. Its five-second takeaway is: \"Rail has the largest share; cycling is fastest.\". Information structure: two-measure comparison. Give the main visual about 70% of the canvas; let Three distinct, large transport illustrations—rail train, bus, bicycle—each paired with one share mark and one travel-time mark. Keep the two measures visually distinct and aligned by mode. Keep one obvious reading path from the title to the visual and then to the conclusion. Title: \"Three ways to get to work\". Subtitle: \"Illustrative weekday commute\". Exact supplied text and data (preserve spelling, punctuation, units, order, and values):\nRail | 46% | 28 min\nBus | 31% | 42 min\nBike | 23% | 19 min\nKeep mode, share, and minutes paired correctly. Rail has the largest share; Bike has the shortest time. Use only this short copy: the title, subtitle, category labels, and supplied values; no explanatory paragraphs, decorative lettering, extra numbers, legends, or unsupported claims. Keep the key marks and labels legible at thumbnail size. Use a quiet background, ample negative space, one functional accent color, and distinct editorial composition rather than a repeated card grid.",
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "presence_penalty": 1.5,
+        "max_new_tokens": 16256,
+        "seed": 42
+      }
+    },
+    "6": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "3",
+          0
+        ],
+        "text": [
+          "5",
+          0
+        ]
+      }
+    },
+    "7": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "3",
+          0
+        ],
+        "text": [
+          "5",
+          1
+        ]
+      }
+    },
+    "8": {
+      "class_type": "EmptyLatentImage",
+      "inputs": {
+        "width": 1536,
+        "height": 1024,
+        "batch_size": 1
+      }
+    },
+    "9": {
+      "class_type": "KSampler",
+      "inputs": {
+        "model": [
+          "1",
+          0
+        ],
+        "positive": [
+          "6",
+          0
+        ],
+        "negative": [
+          "7",
+          0
+        ],
+        "latent_image": [
+          "8",
+          0
+        ],
+        "seed": 42,
+        "steps": 40,
+        "cfg": 1.0,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "denoise": 1.0
+      }
+    },
+    "10": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "9",
+          0
+        ],
+        "vae": [
+          "4",
+          0
+        ]
+      }
+    },
+    "11": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "10",
+          0
+        ],
+        "filename_prefix": "infograph-skill-prompt-ab-20261014/case03_city_commute__skill_guided__seed42"
+      }
+    },
+    "12": {
+      "class_type": "SaveText",
+      "inputs": {
+        "text": [
+          "5",
+          0
+        ],
+        "filename_prefix": "infograph-skill-prompt-ab-20261014/case03_city_commute__skill_guided__seed42",
+        "format": "txt"
+      }
+    }
+  }
+}

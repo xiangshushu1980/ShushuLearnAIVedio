@@ -1,0 +1,74 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "experiment": "skill_prompt_ab_20261014",
+  "job": "case02_food_waste_flow__skill_guided__seed42",
+  "case_id": "case02_food_waste_flow",
+  "prompt_arm": "skill_guided",
+  "language": "en",
+  "seed": 42,
+  "takeaway": "Half remains; preparation is the largest single loss.",
+  "topology": "proportional process flow",
+  "data_source": "Synthetic controlled example; illustrative only, not measured data",
+  "source_url": null,
+  "ground_truth": [
+    [
+      "Starting food",
+      "100 kg"
+    ],
+    [
+      "Purchase loss",
+      "−12 kg"
+    ],
+    [
+      "Storage loss",
+      "−18 kg"
+    ],
+    [
+      "Prep loss",
+      "−20 kg"
+    ],
+    [
+      "Kept",
+      "50 kg"
+    ]
+  ],
+  "input_prompt_file": "prompts/skill_guided/case02_food_waste_flow.txt",
+  "input_prompt": "Finished landscape 3:2 editorial infographic. Its five-second takeaway is: \"Half remains; preparation is the largest single loss.\". Information structure: proportional process flow. Give the main visual about 70% of the canvas; let A left-to-right illustrated flow of groceries through purchase, storage, and preparation, ending with food kept; flow widths and loss marks reflect the exact quantities. Keep one obvious reading path from the title to the visual and then to the conclusion. Title: \"Where 100 kg of food goes\". Subtitle: \"Illustrative weekly household flow\". Exact supplied text and data (preserve spelling, punctuation, units, order, and values):\nStarting food | 100 kg\nPurchase loss | −12 kg\nStorage loss | −18 kg\nPrep loss | −20 kg\nKept | 50 kg\nThe flow balances 100 − 12 − 18 − 20 = 50 kg. Losses move downward; preparation is the largest loss. Use only this short copy: the title, subtitle, category labels, and supplied values; no explanatory paragraphs, decorative lettering, extra numbers, legends, or unsupported claims. Keep the key marks and labels legible at thumbnail size. Use a quiet background, ample negative space, one functional accent color, and distinct editorial composition rather than a repeated card grid.",
+  "parameters": {
+    "resolution": "1536x1024",
+    "seed": 42,
+    "diffusion_weights": "BF16",
+    "text_encoder": "qwen3vl_8b_bf16.safetensors",
+    "prompt_enhancer": "qwen3.5_9b_qwen_image_2.1_pe_t2i.int8_convrot.safetensors",
+    "pe_temperature": 1.0,
+    "pe_top_p": 0.95,
+    "pe_top_k": 20,
+    "pe_presence_penalty": 1.5,
+    "vae": "qwen_image_2.1_vae_bf16.safetensors",
+    "sampler": "euler",
+    "steps": 40,
+    "cfg": 1.0,
+    "scheduler": "simple",
+    "lora": null
+  },
+  "workflow": "workflows/case02_food_waste_flow__skill_guided__seed42.json",
+  "image": "images/case02_food_waste_flow__skill_guided__seed42.png",
+  "resource_lease_id": "69cdd821-6882-4e78-b20f-3a47f8946da8",
+  "started_at": "2026-10-14T15:01:02.849379+00:00",
+  "prompt_id": "257f821f-fc19-4883-953c-1e8ee04bc095",
+  "status": "success",
+  "completed_at": "2026-10-14T15:02:01.836941+00:00",
+  "elapsed_seconds": 58.99,
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "image_sha256": "6a32a32a077aea6d80c8af9638b48381ed7e3e34c715ab398309d0fe062979be",
+  "actual_pe_prompt_file": "prompts/qwen_pe_outputs/case02_food_waste_flow__skill_guided__seed42.txt",
+  "peak_vram_mb_observed": 23084,
+  "peak_comfy_rss_mb_observed": 40618,
+  "peak_temperature_c_observed": 78,
+  "gpu_samples_file": "runs/case02_food_waste_flow__skill_guided__seed42_gpu_samples.jsonl",
+  "gpu_sample_count": 15
+}

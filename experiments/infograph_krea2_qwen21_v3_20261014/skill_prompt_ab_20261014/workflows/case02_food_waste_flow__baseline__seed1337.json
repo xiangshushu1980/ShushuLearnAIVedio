@@ -1,0 +1,142 @@
+{
+  "prompt": {
+    "1": {
+      "class_type": "UNETLoader",
+      "inputs": {
+        "unet_name": "qwen_image_2.1_bf16.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    "2": {
+      "class_type": "CLIPLoader",
+      "inputs": {
+        "clip_name": "qwen3.5_9b_qwen_image_2.1_pe_t2i.int8_convrot.safetensors",
+        "type": "qwen_image"
+      }
+    },
+    "3": {
+      "class_type": "CLIPLoader",
+      "inputs": {
+        "clip_name": "qwen3vl_8b_bf16.safetensors",
+        "type": "qwen_image"
+      }
+    },
+    "4": {
+      "class_type": "VAELoader",
+      "inputs": {
+        "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+      }
+    },
+    "5": {
+      "class_type": "QwenImage21_T2IPromptRewrite",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "prompt": "Create a finished landscape 3:2 infographic titled \"Where 100 kg of food goes\" with subtitle \"Illustrative weekly household flow\". Use a clean editorial vector style with a restrained palette and clear typography. Chart or diagram: proportional process flow. A left-to-right illustrated flow of groceries through purchase, storage, and preparation, ending with food kept; flow widths and loss marks reflect the exact quantities. Exact supplied text and data (preserve spelling, punctuation, units, order, and values):\nStarting food | 100 kg\nPurchase loss | −12 kg\nStorage loss | −18 kg\nPrep loss | −20 kg\nKept | 50 kg\nKey takeaway: \"Half remains; preparation is the largest single loss.\". The flow balances 100 − 12 − 18 − 20 = 50 kg. Losses move downward; preparation is the largest loss. Use a clear grid, readable labels, and a strong title hierarchy. Render only the supplied text. Do not add labels, values, legends, or claims. Make the chart or diagram a major part of the image.",
+        "temperature": 1.0,
+        "top_p": 0.95,
+        "top_k": 20,
+        "presence_penalty": 1.5,
+        "max_new_tokens": 16256,
+        "seed": 1337
+      }
+    },
+    "6": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "3",
+          0
+        ],
+        "text": [
+          "5",
+          0
+        ]
+      }
+    },
+    "7": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "3",
+          0
+        ],
+        "text": [
+          "5",
+          1
+        ]
+      }
+    },
+    "8": {
+      "class_type": "EmptyLatentImage",
+      "inputs": {
+        "width": 1536,
+        "height": 1024,
+        "batch_size": 1
+      }
+    },
+    "9": {
+      "class_type": "KSampler",
+      "inputs": {
+        "model": [
+          "1",
+          0
+        ],
+        "positive": [
+          "6",
+          0
+        ],
+        "negative": [
+          "7",
+          0
+        ],
+        "latent_image": [
+          "8",
+          0
+        ],
+        "seed": 1337,
+        "steps": 40,
+        "cfg": 1.0,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "denoise": 1.0
+      }
+    },
+    "10": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "9",
+          0
+        ],
+        "vae": [
+          "4",
+          0
+        ]
+      }
+    },
+    "11": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "10",
+          0
+        ],
+        "filename_prefix": "infograph-skill-prompt-ab-20261014/case02_food_waste_flow__baseline__seed1337"
+      }
+    },
+    "12": {
+      "class_type": "SaveText",
+      "inputs": {
+        "text": [
+          "5",
+          0
+        ],
+        "filename_prefix": "infograph-skill-prompt-ab-20261014/case02_food_waste_flow__baseline__seed1337",
+        "format": "txt"
+      }
+    }
+  }
+}

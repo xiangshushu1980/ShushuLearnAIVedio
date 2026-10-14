@@ -1,0 +1,6 @@
+Create a finished landscape 3:2 infographic titled "Power reaches more people" with subtitle "Global electricity access · 2010–2023". Use a clean editorial vector style with a restrained palette and clear typography. Chart or diagram: annotated trend chart. A rising line chart linked to small household and light illustrations; chart marks remain primary and exact. Exact supplied text and data (preserve spelling, punctuation, units, order, and values):
+2010 | 83.5%
+2015 | 86.9%
+2020 | 90.4%
+2023 | 91.6%
+Key takeaway: "Global electricity access rose from 83.5% to 91.6% between 2010 and 2023.". The line rises through all four exact year-value pairs. Use a 0–100% scale and do not imply universal access. Use a clear grid, readable labels, and a strong title hierarchy. Render only the supplied text. Do not add labels, values, legends, or claims. Make the chart or diagram a major part of the image.

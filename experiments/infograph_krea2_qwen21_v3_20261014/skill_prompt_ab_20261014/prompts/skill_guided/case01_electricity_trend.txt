@@ -1,0 +1,6 @@
+Finished landscape 3:2 editorial infographic. Its five-second takeaway is: "Global electricity access rose from 83.5% to 91.6% between 2010 and 2023.". Information structure: annotated trend chart. Give the main visual about 70% of the canvas; let A rising line chart linked to small household and light illustrations; chart marks remain primary and exact. Keep one obvious reading path from the title to the visual and then to the conclusion. Title: "Power reaches more people". Subtitle: "Global electricity access · 2010–2023". Exact supplied text and data (preserve spelling, punctuation, units, order, and values):
+2010 | 83.5%
+2015 | 86.9%
+2020 | 90.4%
+2023 | 91.6%
+The line rises through all four exact year-value pairs. Use a 0–100% scale and do not imply universal access. Use only this short copy: the title, subtitle, category labels, and supplied values; no explanatory paragraphs, decorative lettering, extra numbers, legends, or unsupported claims. Keep the key marks and labels legible at thumbnail size. Use a quiet background, ample negative space, one functional accent color, and distinct editorial composition rather than a repeated card grid.

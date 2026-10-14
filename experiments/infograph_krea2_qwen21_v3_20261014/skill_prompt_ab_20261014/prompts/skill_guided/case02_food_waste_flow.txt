@@ -1,0 +1,7 @@
+Finished landscape 3:2 editorial infographic. Its five-second takeaway is: "Half remains; preparation is the largest single loss.". Information structure: proportional process flow. Give the main visual about 70% of the canvas; let A left-to-right illustrated flow of groceries through purchase, storage, and preparation, ending with food kept; flow widths and loss marks reflect the exact quantities. Keep one obvious reading path from the title to the visual and then to the conclusion. Title: "Where 100 kg of food goes". Subtitle: "Illustrative weekly household flow". Exact supplied text and data (preserve spelling, punctuation, units, order, and values):
+Starting food | 100 kg
+Purchase loss | −12 kg
+Storage loss | −18 kg
+Prep loss | −20 kg
+Kept | 50 kg
+The flow balances 100 − 12 − 18 − 20 = 50 kg. Losses move downward; preparation is the largest loss. Use only this short copy: the title, subtitle, category labels, and supplied values; no explanatory paragraphs, decorative lettering, extra numbers, legends, or unsupported claims. Keep the key marks and labels legible at thumbnail size. Use a quiet background, ample negative space, one functional accent color, and distinct editorial composition rather than a repeated card grid.

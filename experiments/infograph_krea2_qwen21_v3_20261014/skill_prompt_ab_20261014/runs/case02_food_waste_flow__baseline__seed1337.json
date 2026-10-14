@@ -1,0 +1,74 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "experiment": "skill_prompt_ab_20261014",
+  "job": "case02_food_waste_flow__baseline__seed1337",
+  "case_id": "case02_food_waste_flow",
+  "prompt_arm": "baseline",
+  "language": "en",
+  "seed": 1337,
+  "takeaway": "Half remains; preparation is the largest single loss.",
+  "topology": "proportional process flow",
+  "data_source": "Synthetic controlled example; illustrative only, not measured data",
+  "source_url": null,
+  "ground_truth": [
+    [
+      "Starting food",
+      "100 kg"
+    ],
+    [
+      "Purchase loss",
+      "−12 kg"
+    ],
+    [
+      "Storage loss",
+      "−18 kg"
+    ],
+    [
+      "Prep loss",
+      "−20 kg"
+    ],
+    [
+      "Kept",
+      "50 kg"
+    ]
+  ],
+  "input_prompt_file": "prompts/baseline/case02_food_waste_flow.txt",
+  "input_prompt": "Create a finished landscape 3:2 infographic titled \"Where 100 kg of food goes\" with subtitle \"Illustrative weekly household flow\". Use a clean editorial vector style with a restrained palette and clear typography. Chart or diagram: proportional process flow. A left-to-right illustrated flow of groceries through purchase, storage, and preparation, ending with food kept; flow widths and loss marks reflect the exact quantities. Exact supplied text and data (preserve spelling, punctuation, units, order, and values):\nStarting food | 100 kg\nPurchase loss | −12 kg\nStorage loss | −18 kg\nPrep loss | −20 kg\nKept | 50 kg\nKey takeaway: \"Half remains; preparation is the largest single loss.\". The flow balances 100 − 12 − 18 − 20 = 50 kg. Losses move downward; preparation is the largest loss. Use a clear grid, readable labels, and a strong title hierarchy. Render only the supplied text. Do not add labels, values, legends, or claims. Make the chart or diagram a major part of the image.",
+  "parameters": {
+    "resolution": "1536x1024",
+    "seed": 1337,
+    "diffusion_weights": "BF16",
+    "text_encoder": "qwen3vl_8b_bf16.safetensors",
+    "prompt_enhancer": "qwen3.5_9b_qwen_image_2.1_pe_t2i.int8_convrot.safetensors",
+    "pe_temperature": 1.0,
+    "pe_top_p": 0.95,
+    "pe_top_k": 20,
+    "pe_presence_penalty": 1.5,
+    "vae": "qwen_image_2.1_vae_bf16.safetensors",
+    "sampler": "euler",
+    "steps": 40,
+    "cfg": 1.0,
+    "scheduler": "simple",
+    "lora": null
+  },
+  "workflow": "workflows/case02_food_waste_flow__baseline__seed1337.json",
+  "image": "images/case02_food_waste_flow__baseline__seed1337.png",
+  "resource_lease_id": "69cdd821-6882-4e78-b20f-3a47f8946da8",
+  "started_at": "2026-10-14T15:02:01.898893+00:00",
+  "prompt_id": "ee250372-6d29-449e-b75c-8eb5c6524984",
+  "status": "success",
+  "completed_at": "2026-10-14T15:03:05.038405+00:00",
+  "elapsed_seconds": 63.14,
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "image_sha256": "9d1ff65460a4b0d6b19624d347862f6b6e679b067172857f84692bcaf9c5c3e8",
+  "actual_pe_prompt_file": "prompts/qwen_pe_outputs/case02_food_waste_flow__baseline__seed1337.txt",
+  "peak_vram_mb_observed": 23172,
+  "peak_comfy_rss_mb_observed": 40618,
+  "peak_temperature_c_observed": 79,
+  "gpu_samples_file": "runs/case02_food_waste_flow__baseline__seed1337_gpu_samples.jsonl",
+  "gpu_sample_count": 16
+}

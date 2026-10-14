@@ -1,0 +1,7 @@
+Create a finished landscape 3:2 infographic titled "Where 100 kg of food goes" with subtitle "Illustrative weekly household flow". Use a clean editorial vector style with a restrained palette and clear typography. Chart or diagram: proportional process flow. A left-to-right illustrated flow of groceries through purchase, storage, and preparation, ending with food kept; flow widths and loss marks reflect the exact quantities. Exact supplied text and data (preserve spelling, punctuation, units, order, and values):
+Starting food | 100 kg
+Purchase loss | −12 kg
+Storage loss | −18 kg
+Prep loss | −20 kg
+Kept | 50 kg
+Key takeaway: "Half remains; preparation is the largest single loss.". The flow balances 100 − 12 − 18 − 20 = 50 kg. Losses move downward; preparation is the largest loss. Use a clear grid, readable labels, and a strong title hierarchy. Render only the supplied text. Do not add labels, values, legends, or claims. Make the chart or diagram a major part of the image.

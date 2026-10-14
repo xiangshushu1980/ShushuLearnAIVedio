@@ -1,0 +1,5 @@
+Create a finished landscape 3:2 infographic titled "Three ways to get to work" with subtitle "Illustrative weekday commute". Use a clean editorial vector style with a restrained palette and clear typography. Chart or diagram: two-measure comparison. Three distinct, large transport illustrations—rail train, bus, bicycle—each paired with one share mark and one travel-time mark. Keep the two measures visually distinct and aligned by mode. Exact supplied text and data (preserve spelling, punctuation, units, order, and values):
+Rail | 46% | 28 min
+Bus | 31% | 42 min
+Bike | 23% | 19 min
+Key takeaway: "Rail has the largest share; cycling is fastest.". Keep mode, share, and minutes paired correctly. Rail has the largest share; Bike has the shortest time. Use a clear grid, readable labels, and a strong title hierarchy. Render only the supplied text. Do not add labels, values, legends, or claims. Make the chart or diagram a major part of the image.

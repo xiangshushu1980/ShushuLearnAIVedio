@@ -1,0 +1,59 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "version": "skill-prompt-ab-v1",
+  "language": "English",
+  "seed_set": [42, 1337],
+  "models": ["Qwen-Image-2.1 BF16 + official T2I PE"],
+  "prompt_arms": ["baseline", "skill_guided"],
+  "cases": [
+    {
+      "id": "case01_electricity_trend",
+      "title": "Power reaches more people",
+      "subtitle": "Global electricity access · 2010–2023",
+      "topology": "annotated trend chart",
+      "visual_concept": "A rising line chart linked to small household and light illustrations; chart marks remain primary and exact.",
+      "takeaway": "Global electricity access rose from 83.5% to 91.6% between 2010 and 2023.",
+      "data_source": "World Bank WDI EG.ELC.ACCS.ZS; API snapshot retrieved 2026-10-14",
+      "source_url": "https://api.worldbank.org/v2/country/WLD/indicator/EG.ELC.ACCS.ZS?date=2010:2023&format=json",
+      "rows": [["2010", "83.5%"], ["2015", "86.9%"], ["2020", "90.4%"], ["2023", "91.6%"]],
+      "must_preserve": "The line rises through all four exact year-value pairs. Use a 0–100% scale and do not imply universal access."
+    },
+    {
+      "id": "case02_food_waste_flow",
+      "title": "Where 100 kg of food goes",
+      "subtitle": "Illustrative weekly household flow",
+      "topology": "proportional process flow",
+      "visual_concept": "A left-to-right illustrated flow of groceries through purchase, storage, and preparation, ending with food kept; flow widths and loss marks reflect the exact quantities.",
+      "takeaway": "Half remains; preparation is the largest single loss.",
+      "data_source": "Synthetic controlled example; illustrative only, not measured data",
+      "source_url": null,
+      "rows": [["Starting food", "100 kg"], ["Purchase loss", "−12 kg"], ["Storage loss", "−18 kg"], ["Prep loss", "−20 kg"], ["Kept", "50 kg"]],
+      "must_preserve": "The flow balances 100 − 12 − 18 − 20 = 50 kg. Losses move downward; preparation is the largest loss."
+    },
+    {
+      "id": "case03_city_commute",
+      "title": "Three ways to get to work",
+      "subtitle": "Illustrative weekday commute",
+      "topology": "two-measure comparison",
+      "visual_concept": "Three distinct, large transport illustrations—rail train, bus, bicycle—each paired with one share mark and one travel-time mark. Keep the two measures visually distinct and aligned by mode.",
+      "takeaway": "Rail has the largest share; cycling is fastest.",
+      "data_source": "Synthetic controlled example; illustrative city, not a real survey",
+      "source_url": null,
+      "rows": [["Rail", "46%", "28 min"], ["Bus", "31%", "42 min"], ["Bike", "23%", "19 min"]],
+      "must_preserve": "Keep mode, share, and minutes paired correctly. Rail has the largest share; Bike has the shortest time."
+    },
+    {
+      "id": "case04_solar_budget",
+      "title": "A $100,000 solar project",
+      "subtitle": "Illustrative community budget",
+      "topology": "proportional treemap with pictograms",
+      "visual_concept": "Four connected geometric areas sized by budget share, with a bold simple pictogram integrated into each area: solar panels, installation tools, battery, and a small training group. Let shape area and pictograms carry the story.",
+      "takeaway": "Panels receive the largest share; training receives the smallest.",
+      "data_source": "Synthetic controlled example; illustrative project budget",
+      "source_url": null,
+      "rows": [["Panels", "$45,000"], ["Installation", "$25,000"], ["Battery", "$20,000"], ["Training", "$10,000"]],
+      "must_preserve": "Rectangle areas follow 45:25:20:10. Attach each exact amount to the matching category."
+    }
+  ]
+}

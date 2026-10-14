@@ -1,0 +1,70 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-97ccaaac-e730-4c57-875c-c86954ca0518",
+  "experiment": "skill_prompt_ab_20261014",
+  "job": "case01_electricity_trend__baseline__seed42",
+  "case_id": "case01_electricity_trend",
+  "prompt_arm": "baseline",
+  "language": "en",
+  "seed": 42,
+  "takeaway": "Global electricity access rose from 83.5% to 91.6% between 2010 and 2023.",
+  "topology": "annotated trend chart",
+  "data_source": "World Bank WDI EG.ELC.ACCS.ZS; API snapshot retrieved 2026-10-14",
+  "source_url": "https://api.worldbank.org/v2/country/WLD/indicator/EG.ELC.ACCS.ZS?date=2010:2023&format=json",
+  "ground_truth": [
+    [
+      "2010",
+      "83.5%"
+    ],
+    [
+      "2015",
+      "86.9%"
+    ],
+    [
+      "2020",
+      "90.4%"
+    ],
+    [
+      "2023",
+      "91.6%"
+    ]
+  ],
+  "input_prompt_file": "prompts/baseline/case01_electricity_trend.txt",
+  "input_prompt": "Create a finished landscape 3:2 infographic titled \"Power reaches more people\" with subtitle \"Global electricity access · 2010–2023\". Use a clean editorial vector style with a restrained palette and clear typography. Chart or diagram: annotated trend chart. A rising line chart linked to small household and light illustrations; chart marks remain primary and exact. Exact supplied text and data (preserve spelling, punctuation, units, order, and values):\n2010 | 83.5%\n2015 | 86.9%\n2020 | 90.4%\n2023 | 91.6%\nKey takeaway: \"Global electricity access rose from 83.5% to 91.6% between 2010 and 2023.\". The line rises through all four exact year-value pairs. Use a 0–100% scale and do not imply universal access. Use a clear grid, readable labels, and a strong title hierarchy. Render only the supplied text. Do not add labels, values, legends, or claims. Make the chart or diagram a major part of the image.",
+  "parameters": {
+    "resolution": "1536x1024",
+    "seed": 42,
+    "diffusion_weights": "BF16",
+    "text_encoder": "qwen3vl_8b_bf16.safetensors",
+    "prompt_enhancer": "qwen3.5_9b_qwen_image_2.1_pe_t2i.int8_convrot.safetensors",
+    "pe_temperature": 1.0,
+    "pe_top_p": 0.95,
+    "pe_top_k": 20,
+    "pe_presence_penalty": 1.5,
+    "vae": "qwen_image_2.1_vae_bf16.safetensors",
+    "sampler": "euler",
+    "steps": 40,
+    "cfg": 1.0,
+    "scheduler": "simple",
+    "lora": null
+  },
+  "workflow": "workflows/case01_electricity_trend__baseline__seed42.json",
+  "image": "images/case01_electricity_trend__baseline__seed42.png",
+  "resource_lease_id": "69cdd821-6882-4e78-b20f-3a47f8946da8",
+  "started_at": "2026-10-14T14:55:58.962942+00:00",
+  "prompt_id": "0ffbcd06-19aa-4710-b078-62ecc08de135",
+  "status": "success",
+  "completed_at": "2026-10-14T14:57:14.445791+00:00",
+  "elapsed_seconds": 75.48,
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "image_sha256": "9244831224d24d86648b3318ae2da9000f5ffffdcfd4968d75673cb67d415a72",
+  "actual_pe_prompt_file": "prompts/qwen_pe_outputs/case01_electricity_trend__baseline__seed42.txt",
+  "peak_vram_mb_observed": 23076,
+  "peak_comfy_rss_mb_observed": 40589,
+  "peak_temperature_c_observed": 76,
+  "gpu_samples_file": "runs/case01_electricity_trend__baseline__seed42_gpu_samples.jsonl",
+  "gpu_sample_count": 19
+}
