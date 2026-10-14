@@ -49,6 +49,15 @@
 - 旧节点归档：`/home/sean/projects/ComfyUI/archive/custom_nodes/ComfyUI-SolAttn_triton`
 - 旧工作流归档：`workflows/archive/solattn-legacy/attn3way_dance_sol.json`、`workflows/archive/solattn-legacy/attn3way_wave_sol.json`
 
+## 2026-10-15 ComfyUI 核心更新
+
+- 更新前：官方 `v0.39.2`，commit `3c1b7a17fdf239d35ce98cc777756f572d089795`；Torch `2.13.0+cu130`；前端 `1.53.10`；工作流模板 `0.11.78`；嵌入文档 `0.5.13`；`comfy-kitchen 0.2.37`；`comfy-aimdo 0.5.5`。
+- 更新后：官方 `v0.40.0`，commit `3541246a9c997f4b8c32f9f88f3c985d02021c79`；前端 `1.55.17`；工作流模板 `0.11.82`（core `0.3.373`、json `0.1.108`、assets-01 `0.1.48`、assets-02 `0.1.14`）；嵌入文档 `0.5.14`；`comfy-kitchen 0.2.37`；`comfy-aimdo 0.5.6`。Torch/CUDA 未变，仍为 `2.13.0+cu130` / CUDA `13.0`。
+- 操作：更新前队列为空、无活跃 GPU lease；停 `comfyui.service` 后切换正式 tag，再按 release requirements 更新固定版本依赖；未清理升级前工作树已有删除项和未跟踪文件。
+- 检查：`pip check` 通过；`comfy-stack.sh start/status` 成功；`/system_stats` healthy；`/queue` 空；`/object_info` 注册 59 个 `MiniMaxH3*` 节点。GPU 仅识别 RTX 4090，服务空闲显存占用约 384 MiB。
+- H3 相关：release 含单张 H3 image 作为视频首个 latent 解码的支持；没有运行代表性 Ref2VA 生成，因此画质、音频和生产速度回归尚未验证。
+- 回滚点：代码 `3c1b7a17fdf239d35ce98cc777756f572d089795`；依赖恢复为前述旧版四个包。工作树其他既有变更保持原状。
+
 ## 2026-10-13 ComfyUI 核心更新
 
 - 更新前：`v0.37.0`，commit `73c9bad4d21e7addbe1d13bc92eee0f1431b017d`；Torch `2.13.0+cu130`；前端 `1.52.7`；工作流模板 `0.11.66`；嵌入文档 `0.5.12`；`comfy-kitchen 0.2.35`。
