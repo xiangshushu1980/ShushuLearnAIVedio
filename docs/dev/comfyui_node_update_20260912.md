@@ -66,3 +66,14 @@
 - 安装检查：`pip check` 通过。ComfyUI 服务更新前为停止状态；本轮临时启动后 `/system_stats` 健康检查通过，随后已恢复停止。未运行代表性 H3 工作流，因此生成回归和画质/音频影响尚未验证。
 - GPU 可见性：本轮 WSL `nvidia-smi` 与 ComfyUI venv 的 PyTorch 均只枚举到 RTX 4090（24 GiB）。第二张显卡当前没有暴露给此运行环境。
 - 工作树保留升级前已有的删除 `input/example.png`、`output/_output_images_will_be_put_here` 及未跟踪目录/文件，没有清理或覆盖这些内容。
+
+## 2026-10-15 H3 custom node 更新（Owner: Sean）
+
+- ComfyUI 核心维持 `v0.40.0`（commit `3541246a`）；更新前 `/queue` 为空、无活跃 GPU lease。通过 `scripts/comfy-stack.sh stop/start` 停止并恢复唯一共享实例。
+- `ComfyUI-H3-Continuum-Plus`：`e870875`（v3.4.4）→ `e5d9037`（v3.4.8）。包含 V3.4 audible-tail/continuity 修复；新建 V3.4 assembler 默认 Video Seam 改为 Auto 3。升级后 `H3Continuum*` 节点已注册。
+- `ComfyUI-Spectrum-MiniMax-H3`：`5161f04`（v0.2.28）→ `806fe49`（v0.2.29）。恢复对 Core BSA/Flow/Untwist 当前运行结构的 forecast 兼容；升级后 `SpectrumApplyMiniMaxH3` 已注册。
+- `ComfyUI-MiniMaxH3-TimelineDirector`：`a81f13b` → `8fe06e3`（上游 main）。新增低内存分段视频输出节点；`MiniMaxH3FiniteSegmentVideoSampler`、`MiniMaxH3SegmentVideoOutput` 已在 `/object_info` 注册。
+- `Comfyui_Minimax_h3_latent_Upscaler`：`620165a`（v0.2.1）→ `1ddcc33`（含 v0.2.2）。增加 H3 feature transfer lattice 与 Flow handoff provider；`MinimaxH3LatentUpscaler3DProvider` 已注册。异构 checkpoint continuation 尚无视觉资格验证，使用时应按上游协调版本单独 smoke。
+- `ComfyUI_MiniMax_H3_Extender`：`939f773`（v2.8.4）→ `5183ad4`（上游 main，v3.0.12）。包括 refine VRAM preflight offload 实验功能及 FullBatch 片段间 AIMDO 资源清理；该版本高于最新正式 tag v3.0.6，按 Sean 要求跟进 main。`MiniMaxH3Extender` 已注册。
+- 五个仓库均为 Git fast-forward；更新差异没有 Python 依赖文件变化。原 commit 保留在各自 Git 历史中。FaceRefine 本地 `nodes.py` 改动、Latent Upscaler 和 Extender 的未跟踪缓存均保留。
+- 启动后 ComfyUI `v0.40.0` 健康，`/object_info` 共 1743 个节点，五组目标节点可加载，队列为空。未执行 H3 视频生成回归；生成质量、速度、音频与新工作流行为仍待实际 smoke 验证。
