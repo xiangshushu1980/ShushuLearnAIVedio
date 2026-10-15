@@ -1,0 +1,20 @@
+{
+  "owner": "Sean",
+  "frozen_before_concepts": true,
+  "scope": "Encoding methods are selected from the generated concept; any revised contract is versioned before new confirmation seeds are inspected.",
+  "data_checks": ["all supplied categories exactly once", "all values and units exact", "category bindings exact", "no invented data", "baseline/reference recoverable", "no contradictory secondary encoding"],
+  "area": {"measurement": "Segment complete solid planar island interior including internal texture; exclude cast shadow, external vegetation and label. Calibrate pixels per hectare from the generated 10 hectare square interior; infer every island value with same area scale.", "max_absolute_error_hectares": 2, "unjudgeable": "occluded/transparent/ambiguous boundary or missing calibration; never pass"},
+  "time": {"measurement": "Read generated hour-ruler tick centers, fit one affine x-to-hour calibration to all seven ticks, measure event-node centers; y/path length carries no time. All ticks must be present, ordered and uniformly spaced with residual <= 0.12 hour.", "max_absolute_error_hour": 0.24, "unjudgeable": "no unambiguous node centers or ruler; never pass"},
+  "flow": {"measurement": "At preregistered straight transects after split and before labels, segment actual stream thickness normal to centerline. Calibrate with generated 10-unit gauge; check sum of three branch widths against upstream width.", "max_absolute_error_units": 2, "max_conservation_error_units": 2, "unjudgeable": "crossings, perspective, ambiguous boundary or no straight measurement transects; never pass"},
+  "design_rubric": {
+    "novelty": ["ordinary chart/background change", "ordinary chart with illustration", "substantive nontraditional data carriers", "distinctive narrative data composition"],
+    "concept_retention": ["abandoned", "only color/theme retained", "core silhouette, composition and reading device retained", "core plus detailed design grammar retained"],
+    "hierarchy": ["unreadable", "cluttered or weak hierarchy", "clear primary story and labels", "polished pacing and hierarchy"],
+    "numbers_units_scale": ["absent/wrong", "detached or poorly legible", "legible integrated plaques/ruler/gauge", "expressive integrated typography supporting comparison"],
+    "finish": ["broken", "rough/obscuring", "coherent clean finish", "polished detailed finish"],
+    "comparison": ["impossible", "ambiguous", "recoverable shared scale and comparison", "immediate and nuanced comparison"],
+    "joint_pass": "all data checks and encoding tolerance pass AND all design dimensions >=2; no traditional bar-chart material substitution"
+  },
+  "review": "Primary agent visual review, nonblind to overall project; shuffle anonymous review sheets when feasible. Not independent user aesthetic judgment.",
+  "confirmation": {"paired_A_B_n_per_structure":20,"joint_threshold":18,"claim_limit":"local threshold only, not proof population success rate >=90%", "holdout":"apply same frozen design to second dataset; recompute geometry, do not select a new concept"}
+}

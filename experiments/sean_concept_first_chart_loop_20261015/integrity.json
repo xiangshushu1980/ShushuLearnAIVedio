@@ -1,0 +1,10 @@
+{
+  "owner": "Sean",
+  "runs": [],
+  "issues": [],
+  "frozen_sha256": {
+    "plan.json": "7aff9d1356110c35ed806e08b2ec816485b418aa871188beb63aa84d1fddd45a",
+    "preregister.json": "6094c70e140a55949cdb4492d79d0fdf427471e85627adb8451f2d5ac6e2e83b"
+  },
+  "note": "No image repair; missing/unjudgeable QC cannot pass."
+}
