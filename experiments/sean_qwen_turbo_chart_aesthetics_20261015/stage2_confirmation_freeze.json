@@ -1,0 +1,8 @@
+{
+  "owner": "Sean",
+  "candidate": "glass_building_v1",
+  "reason": "Both debug seeds show clear architecture through curtain wall, mullions, floors and entrances. Cylinders violate registered front camera by showing ellipses; do not treat silhouette heights as recovered cylinder physical height. Building candidate selected before held-out generation.",
+  "n": 20,
+  "seeds": "stage2_plan.json confirmation_seeds",
+  "no_prompt_or_tolerance_change": true
+}

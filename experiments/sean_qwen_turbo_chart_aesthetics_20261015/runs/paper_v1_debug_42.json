@@ -1,0 +1,217 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-caf48d7f-9cb6-4a6a-a035-be7b6357879d",
+  "job": "paper_v1_debug_42",
+  "status": "success",
+  "prompt_id": "c0c12105-6bb2-4ec8-bbf7-08df83d63294",
+  "elapsed_seconds": 7.55,
+  "files": [
+    "images/paper_v1_debug_42.png"
+  ],
+  "history": {
+    "prompt": [
+      12,
+      "c0c12105-6bb2-4ec8-bbf7-08df83d63294",
+      {
+        "1": {
+          "class_type": "UNETLoader",
+          "inputs": {
+            "unet_name": "qwen_image_2.1_turbo_int8_convrot.safetensors",
+            "weight_dtype": "default"
+          }
+        },
+        "2": {
+          "class_type": "CLIPLoader",
+          "inputs": {
+            "clip_name": "qwen3vl_8b_bf16.safetensors",
+            "type": "qwen_image"
+          }
+        },
+        "3": {
+          "class_type": "VAELoader",
+          "inputs": {
+            "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+          }
+        },
+        "4": {
+          "class_type": "TextEncodeQwenImage21",
+          "inputs": {
+            "clip": [
+              "2",
+              0
+            ],
+            "vae": [
+              "3",
+              0
+            ],
+            "prompt": "将<image1>作为准确的数据几何蓝图，重新制作柱体本身的材质。保持正交正视，四根等宽柱共用原来的零基线；四柱顶边、底边与横向占位精确沿用参考图，柱高按甲20、乙70、丙40、丁90，不改变数值几何。保留标题“测试数据”、类别、数值、坐标轴和网格的原有内容、位置与清晰度。不添加任何文字或数据。 四根蓝柱变成手工纸雕长方体：海蓝厚卡纸分层构造，清晰可见的纸层断面、内侧折边、纸纤维与柔和层间阴影；体现精致纸雕的实体构造，正面仍为完整平顶矩形，层次向柱内展开。 这是柱体实体的材质重构：须在柱内呈现明确的物理质感、边缘与光照结构，不能仅改变背景、颜色或贴一层纹理。浅色干净背景，柔和产品摄影照明，图表清晰可读。柱的正面外轮廓顶端平直且可准确测量，无圆角侵蚀高度，无透视缩短，投影不能充当柱高。",
+            "negative_prompt": "",
+            "resolution": 0,
+            "images.image_1": [
+              "12",
+              0
+            ]
+          }
+        },
+        "7": {
+          "class_type": "ManualSigmas",
+          "inputs": {
+            "sigmas": "1.0, 0.978453, 0.954180, 0.926626, 0.895080, 0.845148, 0.704534, 0.414568, 0.0"
+          }
+        },
+        "8": {
+          "class_type": "KSamplerSelect",
+          "inputs": {
+            "sampler_name": "euler"
+          }
+        },
+        "9": {
+          "class_type": "SamplerCustom",
+          "inputs": {
+            "model": [
+              "1",
+              0
+            ],
+            "add_noise": true,
+            "noise_seed": 42,
+            "cfg": 1.0,
+            "positive": [
+              "4",
+              0
+            ],
+            "negative": [
+              "4",
+              1
+            ],
+            "sampler": [
+              "8",
+              0
+            ],
+            "sigmas": [
+              "7",
+              0
+            ],
+            "latent_image": [
+              "4",
+              2
+            ]
+          }
+        },
+        "10": {
+          "class_type": "VAEDecode",
+          "inputs": {
+            "samples": [
+              "9",
+              0
+            ],
+            "vae": [
+              "3",
+              0
+            ]
+          }
+        },
+        "11": {
+          "class_type": "SaveImage",
+          "inputs": {
+            "images": [
+              "10",
+              0
+            ],
+            "filename_prefix": "sean_chart_aesthetics/paper_v1_debug_42"
+          }
+        },
+        "12": {
+          "class_type": "LoadImage",
+          "inputs": {
+            "image": "sean_chart_aesthetics_reference.png"
+          }
+        }
+      },
+      {
+        "client_id": "87912fd4-5c53-493b-a0de-a2ddb9730e50",
+        "create_time": 1792053712750
+      },
+      [
+        "11"
+      ]
+    ],
+    "outputs": {
+      "11": {
+        "images": [
+          {
+            "filename": "paper_v1_debug_42_00001_.png",
+            "subfolder": "sean_chart_aesthetics",
+            "type": "output",
+            "metadata": {
+              "kind": "image",
+              "width": 1536,
+              "height": 1024
+            },
+            "id": "f4012ddf-c253-471c-94e1-6635f81b471b"
+          }
+        ]
+      }
+    },
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "c0c12105-6bb2-4ec8-bbf7-08df83d63294",
+            "timestamp": 1792053712751
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "1",
+              "2",
+              "3",
+              "7",
+              "8",
+              "12"
+            ],
+            "prompt_id": "c0c12105-6bb2-4ec8-bbf7-08df83d63294",
+            "timestamp": 1792053712754
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "c0c12105-6bb2-4ec8-bbf7-08df83d63294",
+            "timestamp": 1792053719879
+          }
+        ]
+      ]
+    },
+    "meta": {
+      "11": {
+        "node_id": "11",
+        "display_node": "11",
+        "parent_node": null,
+        "real_node_id": "11"
+      }
+    }
+  },
+  "gpu_samples": [
+    {
+      "seconds": 0.07,
+      "gpu": "19283, 0, 50"
+    },
+    {
+      "seconds": 3.14,
+      "gpu": "22387, 78, 67"
+    },
+    {
+      "seconds": 6.19,
+      "gpu": "22947, 100, 64"
+    }
+  ],
+  "lease": "503f237b-85de-4ddf-966b-20122012adc3",
+  "sha256": {
+    "images/paper_v1_debug_42.png": "61bce5e51e632ecfe54ad2d4feb1e70026034a66e248db6cf2afc30ce8b48e02"
+  }
+}

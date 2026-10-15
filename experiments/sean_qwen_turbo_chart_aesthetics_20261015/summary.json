@@ -1,0 +1,52 @@
+{
+  "glass_building_v1": {
+    "confirmation_n": 20,
+    "debug_n": 2,
+    "text_passes": 20,
+    "aesthetic_passes": 20,
+    "projected_necessary_checks_pass": 8,
+    "joint_success": "not established; <=necessary-check count",
+    "stability": "not demonstrated"
+  },
+  "glass_cylinder_v1": {
+    "confirmation_n": 0,
+    "debug_n": 2,
+    "text_passes": 0,
+    "aesthetic_passes": 0,
+    "stability": "debug camera failure; no confirmation"
+  },
+  "glass_spatial_v1": {
+    "confirmation_n": 20,
+    "debug_n": 2,
+    "text_passes": 20,
+    "aesthetic_passes": 20,
+    "front_height_candidates": 8,
+    "verified_failures": 3,
+    "joint_success": "not certified; <=17/20 from at least3 clear failures",
+    "stability": "not demonstrated"
+  },
+  "glass_v1": {
+    "confirmation_n": 20,
+    "debug_n": 2,
+    "text_passes": 20,
+    "aesthetic_passes": 20,
+    "joint_passes": 20,
+    "maximum_body_height_error": 1.918
+  },
+  "metal_v1": {
+    "confirmation_n": 20,
+    "debug_n": 2,
+    "text_passes": 20,
+    "aesthetic_passes": 20,
+    "joint_passes": 20,
+    "maximum_body_height_error": 1.087
+  },
+  "paper_v1": {
+    "confirmation_n": 20,
+    "debug_n": 2,
+    "text_passes": 20,
+    "aesthetic_passes": 20,
+    "joint_passes": 14,
+    "maximum_body_height_error": 3.569
+  }
+}

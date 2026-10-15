@@ -1,0 +1,76 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-caf48d7f-9cb6-4a6a-a035-be7b6357879d",
+  "sampling": {
+    "weights": "qwen_image_2.1_turbo_int8_convrot.safetensors",
+    "text_encoder": "qwen3vl_8b_bf16.safetensors",
+    "vae": "qwen_image_2.1_vae_bf16.safetensors",
+    "cfg": 1,
+    "sampler": "euler",
+    "sigmas": "1.0, 0.978453, 0.954180, 0.926626, 0.895080, 0.845148, 0.704534, 0.414568, 0.0"
+  },
+  "canvas": [
+    1536,
+    1024
+  ],
+  "categories": [
+    "甲",
+    "乙",
+    "丙",
+    "丁"
+  ],
+  "values": [
+    20,
+    70,
+    40,
+    90
+  ],
+  "acceptance": {
+    "n": 20,
+    "required_joint_pass": 18,
+    "max_error_units": 2,
+    "axes": "0..100, ticks every20; generated axis calibration; baseline and top actual solid outline, excluding highlights/cast shadows",
+    "text": "测试数据; 甲20 乙70 丙40 丁90; 4 objects, no extra/missing category/value, correct order and bindings",
+    "aesthetics": {
+      "material_recognizability": "0 absent,1 ambiguous/flat texture,2 clear coherent material,3 convincing characteristic light/structure",
+      "design_finish": "0 broken,1 rough/obscuring,2 clean coherent legible,3 polished",
+      "substantive_change": "0 background only,1 recolor/flat texture only,2 bar bodies reconstructed with material-specific structure/shading,3 designed physical objects",
+      "joint_rule": "all numeric/text/axis pass AND all three aesthetic dimensions >=2; ambiguous outline fails"
+    },
+    "no_repair": true
+  },
+  "stage": "2_form",
+  "prerequisite": "glass_v1 independently reviewed 20/20 jointly; measurements max error1.096 units",
+  "reference": "reference.png",
+  "debug_seeds": [
+    42,
+    1337
+  ],
+  "confirmation_seeds": [
+    71001,
+    72003,
+    73003,
+    74001,
+    75013,
+    76003,
+    77011,
+    78001,
+    79009,
+    80011,
+    81013,
+    82003,
+    83013,
+    84019,
+    85023,
+    86007,
+    87003,
+    88011,
+    89019,
+    90009
+  ],
+  "encoding": "height only, equal footprint; orthographic front; top and bottom silhouettes anchored to original geometry; no volume encoding",
+  "prompts": {
+    "glass_building_v1": "把<image1>的四根蓝色柱重新设计成四座精致的蓝色玻璃幕墙建筑模型。以准确数据几何为硬约束：保持原来正交正立面视图、四个相同宽度和相同进深的矩形建筑占位，共用原来零基线，各建筑外轮廓最高点必须与原柱顶完全重合，高度仍对应甲20、乙70、丙40、丁90。仅用高度编码数值，底面积完全相等。把平面色块变成真正可识别的现代建筑：玻璃幕墙窗格、纤细竖向金属龙骨、层间窗框、通透边壁与内部结构、具有层次的建筑玻璃环境反射。屋顶保持水平，不能有天线、尖顶、台阶或超过既定高度的附属物。所有建筑使用同一种建筑设计语言。保留标题“测试数据”、类别、数字、原坐标轴的文字与位置，无新文字。清爽高级建筑模型摄影质感，背景简洁，真实光学材质和构造层次；不能只给原柱叠加纹理。",
+    "glass_cylinder_v1": "把<image1>的四根蓝色矩形柱重新制作成四根相同底面积、相同直径的蓝色厚玻璃实心圆柱。仅用高度编码数据，四圆柱高度按甲20、乙70、丙40、丁90，零基线和各柱外轮廓最高点严格沿用参考。相机严格正交正视，光轴水平，圆柱两侧为垂直母线，顶底圆面从侧面看为水平直线，不俯视，不画椭圆顶盖，不改变可量的高度。实体须具有明确连续的圆柱曲面反射、弧形折射、通透内壁和精致蓝玻璃体积感，不能只是矩形贴渐变。保留标题“测试数据”、类别、数字、原坐标轴文字、位置和清晰度，不添加新文字。浅色干净背景，精致产品摄影。"
+  }
+}

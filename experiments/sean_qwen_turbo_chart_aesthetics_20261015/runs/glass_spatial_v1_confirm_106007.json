@@ -1,0 +1,214 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-caf48d7f-9cb6-4a6a-a035-be7b6357879d",
+  "job": "glass_spatial_v1_confirm_106007",
+  "status": "success",
+  "prompt_id": "d842a610-7447-4466-9cf2-74f6a865e176",
+  "elapsed_seconds": 4.12,
+  "files": [
+    "images/glass_spatial_v1_confirm_106007.png"
+  ],
+  "history": {
+    "prompt": [
+      115,
+      "d842a610-7447-4466-9cf2-74f6a865e176",
+      {
+        "1": {
+          "class_type": "UNETLoader",
+          "inputs": {
+            "unet_name": "qwen_image_2.1_turbo_int8_convrot.safetensors",
+            "weight_dtype": "default"
+          }
+        },
+        "2": {
+          "class_type": "CLIPLoader",
+          "inputs": {
+            "clip_name": "qwen3vl_8b_bf16.safetensors",
+            "type": "qwen_image"
+          }
+        },
+        "3": {
+          "class_type": "VAELoader",
+          "inputs": {
+            "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+          }
+        },
+        "4": {
+          "class_type": "TextEncodeQwenImage21",
+          "inputs": {
+            "clip": [
+              "2",
+              0
+            ],
+            "vae": [
+              "3",
+              0
+            ],
+            "prompt": "将<image1>中的四个准确三维几何体重新制作成精致蓝色厚玻璃实体。必须完全保持参考的相机投影、底部菱形足迹、顶面四角、所有竖直棱线的端点、各实体的宽度和深度。保持正交斜视，平行线不汇聚；四物体处于相同相机深度、同一地面，等正方形底面积，仅竖直高度编码甲20、乙70、丙40、丁90。沿用每根柱最前方竖直棱的上端与下端，用它对应左侧0到100轴；不可用整个外包框高度代替实体高度。重新设计为具有厚玻璃折射边壁、光学内部反射、通透内部与不同面的精致光照层次的真实物体，不能只换背景或叠加纹理。保留标题“测试数据”、四类别与四数值和左侧轴文字、位置和清晰度，不增删任何文字。背景简洁，柔和摄影棚光照，不能添加底座、脚或改变足迹。",
+            "negative_prompt": "",
+            "resolution": 0,
+            "images.image_1": [
+              "12",
+              0
+            ]
+          }
+        },
+        "7": {
+          "class_type": "ManualSigmas",
+          "inputs": {
+            "sigmas": "1.0, 0.978453, 0.954180, 0.926626, 0.895080, 0.845148, 0.704534, 0.414568, 0.0"
+          }
+        },
+        "8": {
+          "class_type": "KSamplerSelect",
+          "inputs": {
+            "sampler_name": "euler"
+          }
+        },
+        "9": {
+          "class_type": "SamplerCustom",
+          "inputs": {
+            "model": [
+              "1",
+              0
+            ],
+            "add_noise": true,
+            "noise_seed": 106007,
+            "cfg": 1.0,
+            "positive": [
+              "4",
+              0
+            ],
+            "negative": [
+              "4",
+              1
+            ],
+            "sampler": [
+              "8",
+              0
+            ],
+            "sigmas": [
+              "7",
+              0
+            ],
+            "latent_image": [
+              "4",
+              2
+            ]
+          }
+        },
+        "10": {
+          "class_type": "VAEDecode",
+          "inputs": {
+            "samples": [
+              "9",
+              0
+            ],
+            "vae": [
+              "3",
+              0
+            ]
+          }
+        },
+        "11": {
+          "class_type": "SaveImage",
+          "inputs": {
+            "images": [
+              "10",
+              0
+            ],
+            "filename_prefix": "sean_chart_aesthetics/glass_spatial_v1_confirm_106007"
+          }
+        },
+        "12": {
+          "class_type": "LoadImage",
+          "inputs": {
+            "image": "sean_chart_aesthetics_stage_reference.png"
+          }
+        }
+      },
+      {
+        "client_id": "4f373226-b283-49c3-8e0d-684b6732cc26",
+        "create_time": 1792054339990
+      },
+      [
+        "11"
+      ]
+    ],
+    "outputs": {
+      "11": {
+        "images": [
+          {
+            "filename": "glass_spatial_v1_confirm_106007_00001_.png",
+            "subfolder": "sean_chart_aesthetics",
+            "type": "output",
+            "metadata": {
+              "kind": "image",
+              "width": 1536,
+              "height": 1024
+            },
+            "id": "333204c0-a978-4d33-bde7-a8a540d5dd29"
+          }
+        ]
+      }
+    },
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "d842a610-7447-4466-9cf2-74f6a865e176",
+            "timestamp": 1792054339991
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "7",
+              "8",
+              "12"
+            ],
+            "prompt_id": "d842a610-7447-4466-9cf2-74f6a865e176",
+            "timestamp": 1792054339995
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "d842a610-7447-4466-9cf2-74f6a865e176",
+            "timestamp": 1792054343695
+          }
+        ]
+      ]
+    },
+    "meta": {
+      "11": {
+        "node_id": "11",
+        "display_node": "11",
+        "parent_node": null,
+        "real_node_id": "11"
+      }
+    }
+  },
+  "gpu_samples": [
+    {
+      "seconds": 0.06,
+      "gpu": "18515, 3, 54"
+    },
+    {
+      "seconds": 3.12,
+      "gpu": "18515, 59, 75"
+    }
+  ],
+  "lease": "0c6e59ed-a95c-427b-940d-4dabdf2e220e",
+  "sha256": {
+    "images/glass_spatial_v1_confirm_106007.png": "a9ff20e699c0029eebcf66541d5573c6c165c0efba3067931d9f63ab3157eb00"
+  }
+}

@@ -1,0 +1,193 @@
+{
+  "owner": "Sean",
+  "canvas": [
+    1536,
+    1024
+  ],
+  "encoding": "height only; not overall silhouette extent",
+  "projection": {
+    "type": "orthographic",
+    "yaw_degrees": 45,
+    "elevation_degrees": 22.115233366740966,
+    "scale_vertical_pixels_per_value": 6.5,
+    "equal_camera_depth_centers": true,
+    "equal_square_footprints": true,
+    "formula": "screenX=(X-Z)/sqrt(2); screenY=sin(elev)*(X+Z)/sqrt(2)-cos(elev)*H; centers obey X+Z=constant",
+    "footprint_half_diagonals_pixels": [
+      85,
+      32
+    ]
+  },
+  "axis_y0": 850,
+  "axis_y100": 200,
+  "bars": [
+    {
+      "category": "甲",
+      "value": 20,
+      "base": {
+        "front": [
+          350,
+          850
+        ],
+        "right": [
+          435,
+          818
+        ],
+        "back": [
+          350,
+          786
+        ],
+        "left": [
+          265,
+          818
+        ]
+      },
+      "top": {
+        "front": [
+          350,
+          720.0
+        ],
+        "right": [
+          435,
+          688.0
+        ],
+        "back": [
+          350,
+          656.0
+        ],
+        "left": [
+          265,
+          688.0
+        ]
+      },
+      "physical_height_in_projected_value_units": 20,
+      "note": "Measure any corresponding vertical base/top corner pair. Max silhouette height adds64px footprint term; never use it as height."
+    },
+    {
+      "category": "乙",
+      "value": 70,
+      "base": {
+        "front": [
+          650,
+          850
+        ],
+        "right": [
+          735,
+          818
+        ],
+        "back": [
+          650,
+          786
+        ],
+        "left": [
+          565,
+          818
+        ]
+      },
+      "top": {
+        "front": [
+          650,
+          395.0
+        ],
+        "right": [
+          735,
+          363.0
+        ],
+        "back": [
+          650,
+          331.0
+        ],
+        "left": [
+          565,
+          363.0
+        ]
+      },
+      "physical_height_in_projected_value_units": 70,
+      "note": "Measure any corresponding vertical base/top corner pair. Max silhouette height adds64px footprint term; never use it as height."
+    },
+    {
+      "category": "丙",
+      "value": 40,
+      "base": {
+        "front": [
+          950,
+          850
+        ],
+        "right": [
+          1035,
+          818
+        ],
+        "back": [
+          950,
+          786
+        ],
+        "left": [
+          865,
+          818
+        ]
+      },
+      "top": {
+        "front": [
+          950,
+          590.0
+        ],
+        "right": [
+          1035,
+          558.0
+        ],
+        "back": [
+          950,
+          526.0
+        ],
+        "left": [
+          865,
+          558.0
+        ]
+      },
+      "physical_height_in_projected_value_units": 40,
+      "note": "Measure any corresponding vertical base/top corner pair. Max silhouette height adds64px footprint term; never use it as height."
+    },
+    {
+      "category": "丁",
+      "value": 90,
+      "base": {
+        "front": [
+          1250,
+          850
+        ],
+        "right": [
+          1335,
+          818
+        ],
+        "back": [
+          1250,
+          786
+        ],
+        "left": [
+          1165,
+          818
+        ]
+      },
+      "top": {
+        "front": [
+          1250,
+          265.0
+        ],
+        "right": [
+          1335,
+          233.0
+        ],
+        "back": [
+          1250,
+          201.0
+        ],
+        "left": [
+          1165,
+          233.0
+        ]
+      },
+      "physical_height_in_projected_value_units": 90,
+      "note": "Measure any corresponding vertical base/top corner pair. Max silhouette height adds64px footprint term; never use it as height."
+    }
+  ]
+}

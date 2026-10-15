@@ -1,0 +1,82 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-caf48d7f-9cb6-4a6a-a035-be7b6357879d",
+  "sampling": {
+    "weights": "qwen_image_2.1_turbo_int8_convrot.safetensors",
+    "text_encoder": "qwen3vl_8b_bf16.safetensors",
+    "vae": "qwen_image_2.1_vae_bf16.safetensors",
+    "cfg": 1,
+    "sampler": "euler",
+    "sigmas": "1.0, 0.978453, 0.954180, 0.926626, 0.895080, 0.845148, 0.704534, 0.414568, 0.0"
+  },
+  "canvas": [
+    1536,
+    1024
+  ],
+  "categories": [
+    "甲",
+    "乙",
+    "丙",
+    "丁"
+  ],
+  "values": [
+    20,
+    70,
+    40,
+    90
+  ],
+  "acceptance": {
+    "n": 20,
+    "required_joint_pass": 18,
+    "max_error_units": 2,
+    "axes": "0..100, ticks every20; generated axis calibration; baseline and top actual solid outline, excluding highlights/cast shadows",
+    "text": "测试数据; 甲20 乙70 丙40 丁90; 4 objects, no extra/missing category/value, correct order and bindings",
+    "aesthetics": {
+      "material_recognizability": "0 absent,1 ambiguous/flat texture,2 clear coherent material,3 convincing characteristic light/structure",
+      "design_finish": "0 broken,1 rough/obscuring,2 clean coherent legible,3 polished",
+      "substantive_change": "0 background only,1 recolor/flat texture only,2 bar bodies reconstructed with material-specific structure/shading,3 designed physical objects",
+      "joint_rule": "all numeric/text/axis pass AND all three aesthetic dimensions >=2; ambiguous outline fails"
+    },
+    "no_repair": true,
+    "spatial": {
+      "tolerance_units": 2,
+      "corner_correspondence": "identify front bottom and front top matching vertex, plus left/right vertical edges as cross-check; each calibrated height within2units",
+      "projection": "vertical edges parallel; all bases equal diamond footprint within +/-10px vertices (nominal halfdiagonals85/32); corresponding vertical corners within10px in x; generated axis calibration used",
+      "readability": "front vertical edge correspondence clear, count/order/text correct; ambiguous correspondence => indeterminate => not pass",
+      "forbidden": "do not compare maximum silhouette extents; footprint adds64px. Do not infer general perspective physical dimensions from single raster."
+    }
+  },
+  "stage": "3_spatial",
+  "prerequisite": "glass_v1 independently reviewed 20/20 jointly; measurements max error1.096 units",
+  "reference": "spatial_reference.png",
+  "debug_seeds": [
+    42,
+    1337
+  ],
+  "confirmation_seeds": [
+    91001,
+    92003,
+    93003,
+    94001,
+    95013,
+    96003,
+    97011,
+    98001,
+    99009,
+    100011,
+    101013,
+    102003,
+    103013,
+    104019,
+    105023,
+    106007,
+    107003,
+    108011,
+    109019,
+    110009
+  ],
+  "encoding": "height only; orthographic yaw45 elevation22.115? exact elevation in geometry.json; equal square bases; centers at identical camera depth; vertical corners use generated axis calibration6.5px/unit nominal",
+  "prompts": {
+    "glass_spatial_v1": "将<image1>中的四个准确三维几何体重新制作成精致蓝色厚玻璃实体。必须完全保持参考的相机投影、底部菱形足迹、顶面四角、所有竖直棱线的端点、各实体的宽度和深度。保持正交斜视，平行线不汇聚；四物体处于相同相机深度、同一地面，等正方形底面积，仅竖直高度编码甲20、乙70、丙40、丁90。沿用每根柱最前方竖直棱的上端与下端，用它对应左侧0到100轴；不可用整个外包框高度代替实体高度。重新设计为具有厚玻璃折射边壁、光学内部反射、通透内部与不同面的精致光照层次的真实物体，不能只换背景或叠加纹理。保留标题“测试数据”、四类别与四数值和左侧轴文字、位置和清晰度，不增删任何文字。背景简洁，柔和摄影棚光照，不能添加底座、脚或改变足迹。"
+  }
+}

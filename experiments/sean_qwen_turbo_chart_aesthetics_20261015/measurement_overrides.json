@@ -1,0 +1,102 @@
+{
+  "metal_v1_confirm_59009": {
+    "reviewer": "Codex main",
+    "reason": "Blue threshold segments a white metal reflection rather than body. Full-size visual confirms solid edge; use achromatic body edge with gray210/225/240 sensitivity, tolerance unchanged.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          702,
+          703
+        ],
+        "bottom_range": [
+          853,
+          853
+        ]
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          336,
+          336
+        ],
+        "bottom_range": [
+          853,
+          853
+        ]
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          557,
+          557
+        ],
+        "bottom_range": [
+          853,
+          853
+        ]
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          191,
+          191
+        ],
+        "bottom_range": [
+          853,
+          854
+        ]
+      }
+    ]
+  },
+  "metal_v1_confirm_70009": {
+    "reviewer": "Codex main",
+    "reason": "Blue threshold segments a white metal reflection rather than body. Full-size visual confirms solid edge; use achromatic body edge with gray210/225/240 sensitivity, tolerance unchanged.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          703,
+          703
+        ],
+        "bottom_range": [
+          853,
+          853
+        ]
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          338,
+          338
+        ],
+        "bottom_range": [
+          853,
+          853
+        ]
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          557,
+          557
+        ],
+        "bottom_range": [
+          853,
+          853
+        ]
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          191,
+          192
+        ],
+        "bottom_range": [
+          853,
+          853
+        ]
+      }
+    ]
+  }
+}

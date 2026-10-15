@@ -1,0 +1,12 @@
+{
+  "owner": "Sean",
+  "conditions": [
+    "glass_v1",
+    "metal_v1",
+    "paper_v1"
+  ],
+  "reason": "All six debug outputs preserve legible chart and show changes to bar bodies. Glass/paper material structures clear; metal finish requires full-size review. Confirm all three to measure boundaries rather than report only winner.",
+  "seeds_source": "plan.json confirmation_seeds",
+  "no_changes_to_prompts_or_acceptance": true,
+  "debug_excluded": true
+}

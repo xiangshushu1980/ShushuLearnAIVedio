@@ -1,0 +1,5578 @@
+{
+  "glass_building_v1_debug_1337": {
+    "owner": "Sean",
+    "image": "images/glass_building_v1_debug_1337.png",
+    "axis_tick_centers_0_to_100": [
+      849.0,
+      702.0,
+      557.0,
+      411.0,
+      265.5,
+      120.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          695,
+          709
+        ],
+        "bottom_range": [
+          808,
+          847
+        ],
+        "inferred_value_range": [
+          19.204,
+          21.125
+        ],
+        "max_error_with_threshold_uncertainty": 1.125
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          321,
+          338
+        ],
+        "bottom_range": [
+          801,
+          847
+        ],
+        "inferred_value_range": [
+          70.096,
+          72.428
+        ],
+        "max_error_with_threshold_uncertainty": 2.428
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          538,
+          554
+        ],
+        "bottom_range": [
+          801,
+          847
+        ],
+        "inferred_value_range": [
+          40.466,
+          42.661
+        ],
+        "max_error_with_threshold_uncertainty": 2.661
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          184,
+          196
+        ],
+        "bottom_range": [
+          826,
+          832
+        ],
+        "inferred_value_range": [
+          89.575,
+          91.221
+        ],
+        "max_error_with_threshold_uncertainty": 1.221
+      }
+    ],
+    "axis_tick_max_error_units": 0.165,
+    "geometry_candidate_pass": false
+  },
+  "glass_building_v1_debug_42": {
+    "owner": "Sean",
+    "image": "images/glass_building_v1_debug_42.png",
+    "axis_tick_centers_0_to_100": [
+      846.0,
+      700.0,
+      555.0,
+      409.5,
+      264.0,
+      119.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          694,
+          694
+        ],
+        "bottom_range": [
+          841,
+          843
+        ],
+        "inferred_value_range": [
+          20.908,
+          20.908
+        ],
+        "max_error_with_threshold_uncertainty": 0.908
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          330,
+          334
+        ],
+        "bottom_range": [
+          841,
+          843
+        ],
+        "inferred_value_range": [
+          70.426,
+          70.977
+        ],
+        "max_error_with_threshold_uncertainty": 0.977
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          547,
+          547
+        ],
+        "bottom_range": [
+          841,
+          843
+        ],
+        "inferred_value_range": [
+          41.128,
+          41.128
+        ],
+        "max_error_with_threshold_uncertainty": 1.128
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          186,
+          186
+        ],
+        "bottom_range": [
+          842,
+          843
+        ],
+        "inferred_value_range": [
+          90.784,
+          90.784
+        ],
+        "max_error_with_threshold_uncertainty": 0.784
+      }
+    ],
+    "axis_tick_max_error_units": 0.083,
+    "geometry_candidate_pass": true
+  },
+  "glass_v1_confirm_51001": {
+    "owner": "Sean",
+    "image": "images/glass_v1_confirm_51001.png",
+    "axis_tick_centers_0_to_100": [
+      850.0,
+      704.0,
+      558.0,
+      412.0,
+      266.0,
+      120.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          701,
+          701
+        ],
+        "bottom_range": [
+          850,
+          850
+        ],
+        "inferred_value_range": [
+          20.411,
+          20.411
+        ],
+        "max_error_with_threshold_uncertainty": 0.411
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          334,
+          334
+        ],
+        "bottom_range": [
+          850,
+          851
+        ],
+        "inferred_value_range": [
+          70.685,
+          70.685
+        ],
+        "max_error_with_threshold_uncertainty": 0.685
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          556,
+          556
+        ],
+        "bottom_range": [
+          850,
+          850
+        ],
+        "inferred_value_range": [
+          40.274,
+          40.274
+        ],
+        "max_error_with_threshold_uncertainty": 0.274
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          187,
+          187
+        ],
+        "bottom_range": [
+          850,
+          850
+        ],
+        "inferred_value_range": [
+          90.822,
+          90.822
+        ],
+        "max_error_with_threshold_uncertainty": 0.822
+      }
+    ],
+    "axis_tick_max_error_units": 0.0,
+    "geometry_candidate_pass": true
+  },
+  "glass_v1_confirm_52003": {
+    "owner": "Sean",
+    "image": "images/glass_v1_confirm_52003.png",
+    "axis_tick_centers_0_to_100": [
+      853.0,
+      704.0,
+      557.0,
+      411.5,
+      265.0,
+      119.5
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          705,
+          705
+        ],
+        "bottom_range": [
+          853,
+          853
+        ],
+        "inferred_value_range": [
+          20.177,
+          20.177
+        ],
+        "max_error_with_threshold_uncertainty": 0.177
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          338,
+          339
+        ],
+        "bottom_range": [
+          853,
+          853
+        ],
+        "inferred_value_range": [
+          70.075,
+          70.211
+        ],
+        "max_error_with_threshold_uncertainty": 0.211
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          558,
+          558
+        ],
+        "bottom_range": [
+          853,
+          853
+        ],
+        "inferred_value_range": [
+          40.218,
+          40.218
+        ],
+        "max_error_with_threshold_uncertainty": 0.218
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          192,
+          193
+        ],
+        "bottom_range": [
+          852,
+          852
+        ],
+        "inferred_value_range": [
+          89.98,
+          90.116
+        ],
+        "max_error_with_threshold_uncertainty": 0.116
+      }
+    ],
+    "axis_tick_max_error_units": 0.354,
+    "geometry_candidate_pass": true
+  },
+  "glass_v1_confirm_53003": {
+    "owner": "Sean",
+    "image": "images/glass_v1_confirm_53003.png",
+    "axis_tick_centers_0_to_100": [
+      851.0,
+      704.0,
+      557.0,
+      411.0,
+      264.0,
+      118.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          699,
+          699
+        ],
+        "bottom_range": [
+          853,
+          853
+        ],
+        "inferred_value_range": [
+          20.737,
+          20.737
+        ],
+        "max_error_with_threshold_uncertainty": 0.737
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          334,
+          334
+        ],
+        "bottom_range": [
+          852,
+          852
+        ],
+        "inferred_value_range": [
+          70.532,
+          70.532
+        ],
+        "max_error_with_threshold_uncertainty": 0.532
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          554,
+          555
+        ],
+        "bottom_range": [
+          852,
+          852
+        ],
+        "inferred_value_range": [
+          40.382,
+          40.518
+        ],
+        "max_error_with_threshold_uncertainty": 0.518
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          189,
+          189
+        ],
+        "bottom_range": [
+          852,
+          853
+        ],
+        "inferred_value_range": [
+          90.314,
+          90.314
+        ],
+        "max_error_with_threshold_uncertainty": 0.314
+      }
+    ],
+    "axis_tick_max_error_units": 0.109,
+    "geometry_candidate_pass": true
+  },
+  "glass_v1_confirm_54001": {
+    "owner": "Sean",
+    "image": "images/glass_v1_confirm_54001.png",
+    "axis_tick_centers_0_to_100": [
+      850.5,
+      704.0,
+      558.0,
+      412.0,
+      265.5,
+      120.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          700,
+          700
+        ],
+        "bottom_range": [
+          851,
+          851
+        ],
+        "inferred_value_range": [
+          20.602,
+          20.602
+        ],
+        "max_error_with_threshold_uncertainty": 0.602
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          334,
+          334
+        ],
+        "bottom_range": [
+          852,
+          852
+        ],
+        "inferred_value_range": [
+          70.705,
+          70.705
+        ],
+        "max_error_with_threshold_uncertainty": 0.705
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          557,
+          557
+        ],
+        "bottom_range": [
+          852,
+          853
+        ],
+        "inferred_value_range": [
+          40.178,
+          40.178
+        ],
+        "max_error_with_threshold_uncertainty": 0.178
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          191,
+          191
+        ],
+        "bottom_range": [
+          851,
+          852
+        ],
+        "inferred_value_range": [
+          90.281,
+          90.281
+        ],
+        "max_error_with_threshold_uncertainty": 0.281
+      }
+    ],
+    "axis_tick_max_error_units": 0.082,
+    "geometry_candidate_pass": true
+  },
+  "glass_v1_confirm_55013": {
+    "owner": "Sean",
+    "image": "images/glass_v1_confirm_55013.png",
+    "axis_tick_centers_0_to_100": [
+      850.0,
+      704.0,
+      558.0,
+      412.0,
+      266.0,
+      120.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          704,
+          705
+        ],
+        "bottom_range": [
+          851,
+          852
+        ],
+        "inferred_value_range": [
+          19.863,
+          20.0
+        ],
+        "max_error_with_threshold_uncertainty": 0.137
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          335,
+          338
+        ],
+        "bottom_range": [
+          851,
+          852
+        ],
+        "inferred_value_range": [
+          70.137,
+          70.548
+        ],
+        "max_error_with_threshold_uncertainty": 0.548
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          557,
+          558
+        ],
+        "bottom_range": [
+          851,
+          852
+        ],
+        "inferred_value_range": [
+          40.0,
+          40.137
+        ],
+        "max_error_with_threshold_uncertainty": 0.137
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          193,
+          193
+        ],
+        "bottom_range": [
+          851,
+          852
+        ],
+        "inferred_value_range": [
+          90.0,
+          90.0
+        ],
+        "max_error_with_threshold_uncertainty": 0.0
+      }
+    ],
+    "axis_tick_max_error_units": 0.0,
+    "geometry_candidate_pass": true
+  },
+  "glass_v1_confirm_56003": {
+    "owner": "Sean",
+    "image": "images/glass_v1_confirm_56003.png",
+    "axis_tick_centers_0_to_100": [
+      850.0,
+      704.0,
+      558.0,
+      412.0,
+      266.0,
+      120.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          702,
+          702
+        ],
+        "bottom_range": [
+          851,
+          851
+        ],
+        "inferred_value_range": [
+          20.274,
+          20.274
+        ],
+        "max_error_with_threshold_uncertainty": 0.274
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          339,
+          339
+        ],
+        "bottom_range": [
+          851,
+          851
+        ],
+        "inferred_value_range": [
+          70.0,
+          70.0
+        ],
+        "max_error_with_threshold_uncertainty": 0.0
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          555,
+          555
+        ],
+        "bottom_range": [
+          851,
+          851
+        ],
+        "inferred_value_range": [
+          40.411,
+          40.411
+        ],
+        "max_error_with_threshold_uncertainty": 0.411
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          193,
+          193
+        ],
+        "bottom_range": [
+          850,
+          851
+        ],
+        "inferred_value_range": [
+          90.0,
+          90.0
+        ],
+        "max_error_with_threshold_uncertainty": 0.0
+      }
+    ],
+    "axis_tick_max_error_units": 0.0,
+    "geometry_candidate_pass": true
+  },
+  "glass_v1_confirm_57011": {
+    "owner": "Sean",
+    "image": "images/glass_v1_confirm_57011.png",
+    "axis_tick_centers_0_to_100": [
+      850.0,
+      704.0,
+      558.0,
+      411.5,
+      265.5,
+      120.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          704,
+          704
+        ],
+        "bottom_range": [
+          850,
+          850
+        ],
+        "inferred_value_range": [
+          20.0,
+          20.0
+        ],
+        "max_error_with_threshold_uncertainty": 0.0
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          338,
+          338
+        ],
+        "bottom_range": [
+          850,
+          850
+        ],
+        "inferred_value_range": [
+          70.137,
+          70.137
+        ],
+        "max_error_with_threshold_uncertainty": 0.137
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          559,
+          559
+        ],
+        "bottom_range": [
+          850,
+          850
+        ],
+        "inferred_value_range": [
+          39.863,
+          39.863
+        ],
+        "max_error_with_threshold_uncertainty": 0.137
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          191,
+          192
+        ],
+        "bottom_range": [
+          850,
+          851
+        ],
+        "inferred_value_range": [
+          90.137,
+          90.274
+        ],
+        "max_error_with_threshold_uncertainty": 0.274
+      }
+    ],
+    "axis_tick_max_error_units": 0.068,
+    "geometry_candidate_pass": true
+  },
+  "glass_v1_confirm_58001": {
+    "owner": "Sean",
+    "image": "images/glass_v1_confirm_58001.png",
+    "axis_tick_centers_0_to_100": [
+      850.0,
+      704.0,
+      558.0,
+      412.0,
+      266.0,
+      120.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          703,
+          703
+        ],
+        "bottom_range": [
+          854,
+          855
+        ],
+        "inferred_value_range": [
+          20.137,
+          20.137
+        ],
+        "max_error_with_threshold_uncertainty": 0.137
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          339,
+          339
+        ],
+        "bottom_range": [
+          854,
+          855
+        ],
+        "inferred_value_range": [
+          70.0,
+          70.0
+        ],
+        "max_error_with_threshold_uncertainty": 0.0
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          557,
+          558
+        ],
+        "bottom_range": [
+          854,
+          855
+        ],
+        "inferred_value_range": [
+          40.0,
+          40.137
+        ],
+        "max_error_with_threshold_uncertainty": 0.137
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          193,
+          193
+        ],
+        "bottom_range": [
+          855,
+          855
+        ],
+        "inferred_value_range": [
+          90.0,
+          90.0
+        ],
+        "max_error_with_threshold_uncertainty": 0.0
+      }
+    ],
+    "axis_tick_max_error_units": 0.0,
+    "geometry_candidate_pass": true
+  },
+  "glass_v1_confirm_59009": {
+    "owner": "Sean",
+    "image": "images/glass_v1_confirm_59009.png",
+    "axis_tick_centers_0_to_100": [
+      850.0,
+      704.0,
+      558.0,
+      412.0,
+      266.0,
+      120.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          703,
+          703
+        ],
+        "bottom_range": [
+          850,
+          851
+        ],
+        "inferred_value_range": [
+          20.137,
+          20.137
+        ],
+        "max_error_with_threshold_uncertainty": 0.137
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          336,
+          337
+        ],
+        "bottom_range": [
+          851,
+          851
+        ],
+        "inferred_value_range": [
+          70.274,
+          70.411
+        ],
+        "max_error_with_threshold_uncertainty": 0.411
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          558,
+          558
+        ],
+        "bottom_range": [
+          851,
+          851
+        ],
+        "inferred_value_range": [
+          40.0,
+          40.0
+        ],
+        "max_error_with_threshold_uncertainty": 0.0
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          191,
+          191
+        ],
+        "bottom_range": [
+          851,
+          851
+        ],
+        "inferred_value_range": [
+          90.274,
+          90.274
+        ],
+        "max_error_with_threshold_uncertainty": 0.274
+      }
+    ],
+    "axis_tick_max_error_units": 0.0,
+    "geometry_candidate_pass": true
+  },
+  "glass_v1_confirm_60011": {
+    "owner": "Sean",
+    "image": "images/glass_v1_confirm_60011.png",
+    "axis_tick_centers_0_to_100": [
+      850.0,
+      704.0,
+      558.0,
+      412.0,
+      266.0,
+      120.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          696,
+          697
+        ],
+        "bottom_range": [
+          855,
+          855
+        ],
+        "inferred_value_range": [
+          20.959,
+          21.096
+        ],
+        "max_error_with_threshold_uncertainty": 1.096
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          334,
+          334
+        ],
+        "bottom_range": [
+          855,
+          855
+        ],
+        "inferred_value_range": [
+          70.685,
+          70.685
+        ],
+        "max_error_with_threshold_uncertainty": 0.685
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          552,
+          552
+        ],
+        "bottom_range": [
+          855,
+          855
+        ],
+        "inferred_value_range": [
+          40.822,
+          40.822
+        ],
+        "max_error_with_threshold_uncertainty": 0.822
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          188,
+          188
+        ],
+        "bottom_range": [
+          855,
+          855
+        ],
+        "inferred_value_range": [
+          90.685,
+          90.685
+        ],
+        "max_error_with_threshold_uncertainty": 0.685
+      }
+    ],
+    "axis_tick_max_error_units": 0.0,
+    "geometry_candidate_pass": true
+  },
+  "glass_v1_confirm_61013": {
+    "owner": "Sean",
+    "image": "images/glass_v1_confirm_61013.png",
+    "axis_tick_centers_0_to_100": [
+      850.0,
+      704.0,
+      558.0,
+      412.0,
+      266.0,
+      120.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          703,
+          703
+        ],
+        "bottom_range": [
+          850,
+          850
+        ],
+        "inferred_value_range": [
+          20.137,
+          20.137
+        ],
+        "max_error_with_threshold_uncertainty": 0.137
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          337,
+          338
+        ],
+        "bottom_range": [
+          850,
+          850
+        ],
+        "inferred_value_range": [
+          70.137,
+          70.274
+        ],
+        "max_error_with_threshold_uncertainty": 0.274
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          557,
+          557
+        ],
+        "bottom_range": [
+          850,
+          850
+        ],
+        "inferred_value_range": [
+          40.137,
+          40.137
+        ],
+        "max_error_with_threshold_uncertainty": 0.137
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          192,
+          192
+        ],
+        "bottom_range": [
+          849,
+          850
+        ],
+        "inferred_value_range": [
+          90.137,
+          90.137
+        ],
+        "max_error_with_threshold_uncertainty": 0.137
+      }
+    ],
+    "axis_tick_max_error_units": 0.0,
+    "geometry_candidate_pass": true
+  },
+  "glass_v1_confirm_62003": {
+    "owner": "Sean",
+    "image": "images/glass_v1_confirm_62003.png",
+    "axis_tick_centers_0_to_100": [
+      853.0,
+      707.5,
+      561.0,
+      413.5,
+      267.0,
+      120.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          706,
+          707
+        ],
+        "bottom_range": [
+          858,
+          859
+        ],
+        "inferred_value_range": [
+          19.918,
+          20.055
+        ],
+        "max_error_with_threshold_uncertainty": 0.082
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          337,
+          337
+        ],
+        "bottom_range": [
+          859,
+          859
+        ],
+        "inferred_value_range": [
+          70.396,
+          70.396
+        ],
+        "max_error_with_threshold_uncertainty": 0.396
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          558,
+          558
+        ],
+        "bottom_range": [
+          859,
+          859
+        ],
+        "inferred_value_range": [
+          40.246,
+          40.246
+        ],
+        "max_error_with_threshold_uncertainty": 0.246
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          192,
+          192
+        ],
+        "bottom_range": [
+          859,
+          859
+        ],
+        "inferred_value_range": [
+          90.177,
+          90.177
+        ],
+        "max_error_with_threshold_uncertainty": 0.177
+      }
+    ],
+    "axis_tick_max_error_units": 0.164,
+    "geometry_candidate_pass": true
+  },
+  "glass_v1_confirm_63013": {
+    "owner": "Sean",
+    "image": "images/glass_v1_confirm_63013.png",
+    "axis_tick_centers_0_to_100": [
+      850.5,
+      704.0,
+      558.0,
+      412.0,
+      266.0,
+      120.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          704,
+          704
+        ],
+        "bottom_range": [
+          853,
+          854
+        ],
+        "inferred_value_range": [
+          20.055,
+          20.055
+        ],
+        "max_error_with_threshold_uncertainty": 0.055
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          338,
+          339
+        ],
+        "bottom_range": [
+          853,
+          854
+        ],
+        "inferred_value_range": [
+          70.021,
+          70.157
+        ],
+        "max_error_with_threshold_uncertainty": 0.157
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          554,
+          555
+        ],
+        "bottom_range": [
+          853,
+          854
+        ],
+        "inferred_value_range": [
+          40.452,
+          40.589
+        ],
+        "max_error_with_threshold_uncertainty": 0.589
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          190,
+          190
+        ],
+        "bottom_range": [
+          854,
+          854
+        ],
+        "inferred_value_range": [
+          90.418,
+          90.418
+        ],
+        "max_error_with_threshold_uncertainty": 0.418
+      }
+    ],
+    "axis_tick_max_error_units": 0.055,
+    "geometry_candidate_pass": true
+  },
+  "glass_v1_confirm_64019": {
+    "owner": "Sean",
+    "image": "images/glass_v1_confirm_64019.png",
+    "axis_tick_centers_0_to_100": [
+      851.5,
+      704.0,
+      558.0,
+      411.5,
+      265.5,
+      119.5
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          703,
+          703
+        ],
+        "bottom_range": [
+          859,
+          859
+        ],
+        "inferred_value_range": [
+          20.287,
+          20.287
+        ],
+        "max_error_with_threshold_uncertainty": 0.287
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          335,
+          335
+        ],
+        "bottom_range": [
+          859,
+          859
+        ],
+        "inferred_value_range": [
+          70.56,
+          70.56
+        ],
+        "max_error_with_threshold_uncertainty": 0.56
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          555,
+          555
+        ],
+        "bottom_range": [
+          859,
+          859
+        ],
+        "inferred_value_range": [
+          40.505,
+          40.505
+        ],
+        "max_error_with_threshold_uncertainty": 0.505
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          190,
+          190
+        ],
+        "bottom_range": [
+          859,
+          859
+        ],
+        "inferred_value_range": [
+          90.369,
+          90.369
+        ],
+        "max_error_with_threshold_uncertainty": 0.369
+      }
+    ],
+    "axis_tick_max_error_units": 0.15,
+    "geometry_candidate_pass": true
+  },
+  "glass_v1_confirm_65023": {
+    "owner": "Sean",
+    "image": "images/glass_v1_confirm_65023.png",
+    "axis_tick_centers_0_to_100": [
+      850.0,
+      704.0,
+      558.0,
+      412.0,
+      266.0,
+      120.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          703,
+          703
+        ],
+        "bottom_range": [
+          852,
+          852
+        ],
+        "inferred_value_range": [
+          20.137,
+          20.137
+        ],
+        "max_error_with_threshold_uncertainty": 0.137
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          335,
+          336
+        ],
+        "bottom_range": [
+          852,
+          852
+        ],
+        "inferred_value_range": [
+          70.411,
+          70.548
+        ],
+        "max_error_with_threshold_uncertainty": 0.548
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          555,
+          555
+        ],
+        "bottom_range": [
+          852,
+          852
+        ],
+        "inferred_value_range": [
+          40.411,
+          40.411
+        ],
+        "max_error_with_threshold_uncertainty": 0.411
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          191,
+          191
+        ],
+        "bottom_range": [
+          852,
+          852
+        ],
+        "inferred_value_range": [
+          90.274,
+          90.274
+        ],
+        "max_error_with_threshold_uncertainty": 0.274
+      }
+    ],
+    "axis_tick_max_error_units": 0.0,
+    "geometry_candidate_pass": true
+  },
+  "glass_v1_confirm_66007": {
+    "owner": "Sean",
+    "image": "images/glass_v1_confirm_66007.png",
+    "axis_tick_centers_0_to_100": [
+      851.5,
+      704.5,
+      558.5,
+      412.5,
+      265.5,
+      119.5
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          701,
+          702
+        ],
+        "bottom_range": [
+          853,
+          854
+        ],
+        "inferred_value_range": [
+          20.423,
+          20.56
+        ],
+        "max_error_with_threshold_uncertainty": 0.56
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          337,
+          339
+        ],
+        "bottom_range": [
+          853,
+          853
+        ],
+        "inferred_value_range": [
+          70.014,
+          70.287
+        ],
+        "max_error_with_threshold_uncertainty": 0.287
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          557,
+          558
+        ],
+        "bottom_range": [
+          852,
+          853
+        ],
+        "inferred_value_range": [
+          40.096,
+          40.232
+        ],
+        "max_error_with_threshold_uncertainty": 0.232
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          191,
+          191
+        ],
+        "bottom_range": [
+          851,
+          853
+        ],
+        "inferred_value_range": [
+          90.232,
+          90.232
+        ],
+        "max_error_with_threshold_uncertainty": 0.232
+      }
+    ],
+    "axis_tick_max_error_units": 0.082,
+    "geometry_candidate_pass": true
+  },
+  "glass_v1_confirm_67003": {
+    "owner": "Sean",
+    "image": "images/glass_v1_confirm_67003.png",
+    "axis_tick_centers_0_to_100": [
+      850.0,
+      704.0,
+      558.0,
+      412.0,
+      265.5,
+      119.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          704,
+          704
+        ],
+        "bottom_range": [
+          848,
+          850
+        ],
+        "inferred_value_range": [
+          19.973,
+          19.973
+        ],
+        "max_error_with_threshold_uncertainty": 0.027
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          337,
+          337
+        ],
+        "bottom_range": [
+          849,
+          850
+        ],
+        "inferred_value_range": [
+          70.178,
+          70.178
+        ],
+        "max_error_with_threshold_uncertainty": 0.178
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          558,
+          558
+        ],
+        "bottom_range": [
+          849,
+          850
+        ],
+        "inferred_value_range": [
+          39.945,
+          39.945
+        ],
+        "max_error_with_threshold_uncertainty": 0.055
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          192,
+          192
+        ],
+        "bottom_range": [
+          850,
+          850
+        ],
+        "inferred_value_range": [
+          90.014,
+          90.014
+        ],
+        "max_error_with_threshold_uncertainty": 0.014
+      }
+    ],
+    "axis_tick_max_error_units": 0.082,
+    "geometry_candidate_pass": true
+  },
+  "glass_v1_confirm_68011": {
+    "owner": "Sean",
+    "image": "images/glass_v1_confirm_68011.png",
+    "axis_tick_centers_0_to_100": [
+      850.0,
+      704.0,
+      558.0,
+      412.0,
+      266.0,
+      120.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          700,
+          700
+        ],
+        "bottom_range": [
+          852,
+          853
+        ],
+        "inferred_value_range": [
+          20.548,
+          20.548
+        ],
+        "max_error_with_threshold_uncertainty": 0.548
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          337,
+          337
+        ],
+        "bottom_range": [
+          852,
+          853
+        ],
+        "inferred_value_range": [
+          70.274,
+          70.274
+        ],
+        "max_error_with_threshold_uncertainty": 0.274
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          555,
+          555
+        ],
+        "bottom_range": [
+          852,
+          853
+        ],
+        "inferred_value_range": [
+          40.411,
+          40.411
+        ],
+        "max_error_with_threshold_uncertainty": 0.411
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          191,
+          191
+        ],
+        "bottom_range": [
+          852,
+          853
+        ],
+        "inferred_value_range": [
+          90.274,
+          90.274
+        ],
+        "max_error_with_threshold_uncertainty": 0.274
+      }
+    ],
+    "axis_tick_max_error_units": 0.0,
+    "geometry_candidate_pass": true
+  },
+  "glass_v1_confirm_69019": {
+    "owner": "Sean",
+    "image": "images/glass_v1_confirm_69019.png",
+    "axis_tick_centers_0_to_100": [
+      854.0,
+      705.5,
+      559.5,
+      413.0,
+      266.5,
+      120.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          704,
+          705
+        ],
+        "bottom_range": [
+          853,
+          853
+        ],
+        "inferred_value_range": [
+          20.3,
+          20.436
+        ],
+        "max_error_with_threshold_uncertainty": 0.436
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          337,
+          338
+        ],
+        "bottom_range": [
+          853,
+          853
+        ],
+        "inferred_value_range": [
+          70.3,
+          70.436
+        ],
+        "max_error_with_threshold_uncertainty": 0.436
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          558,
+          558
+        ],
+        "bottom_range": [
+          853,
+          853
+        ],
+        "inferred_value_range": [
+          40.327,
+          40.327
+        ],
+        "max_error_with_threshold_uncertainty": 0.327
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          191,
+          191
+        ],
+        "bottom_range": [
+          853,
+          853
+        ],
+        "inferred_value_range": [
+          90.327,
+          90.327
+        ],
+        "max_error_with_threshold_uncertainty": 0.327
+      }
+    ],
+    "axis_tick_max_error_units": 0.232,
+    "geometry_candidate_pass": true
+  },
+  "glass_v1_confirm_70009": {
+    "owner": "Sean",
+    "image": "images/glass_v1_confirm_70009.png",
+    "axis_tick_centers_0_to_100": [
+      850.5,
+      704.5,
+      558.0,
+      412.0,
+      266.0,
+      120.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          701,
+          702
+        ],
+        "bottom_range": [
+          854,
+          854
+        ],
+        "inferred_value_range": [
+          20.329,
+          20.465
+        ],
+        "max_error_with_threshold_uncertainty": 0.465
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          335,
+          335
+        ],
+        "bottom_range": [
+          855,
+          855
+        ],
+        "inferred_value_range": [
+          70.568,
+          70.568
+        ],
+        "max_error_with_threshold_uncertainty": 0.568
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          556,
+          556
+        ],
+        "bottom_range": [
+          855,
+          855
+        ],
+        "inferred_value_range": [
+          40.315,
+          40.315
+        ],
+        "max_error_with_threshold_uncertainty": 0.315
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          190,
+          191
+        ],
+        "bottom_range": [
+          855,
+          855
+        ],
+        "inferred_value_range": [
+          90.281,
+          90.418
+        ],
+        "max_error_with_threshold_uncertainty": 0.418
+      }
+    ],
+    "axis_tick_max_error_units": 0.041,
+    "geometry_candidate_pass": true
+  },
+  "glass_v1_debug_1337": {
+    "owner": "Sean",
+    "image": "images/glass_v1_debug_1337.png",
+    "axis_tick_centers_0_to_100": [
+      848.0,
+      702.0,
+      556.0,
+      410.0,
+      265.0,
+      120.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          695,
+          695
+        ],
+        "bottom_range": [
+          848,
+          849
+        ],
+        "inferred_value_range": [
+          21.016,
+          21.016
+        ],
+        "max_error_with_threshold_uncertainty": 1.016
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          333,
+          333
+        ],
+        "bottom_range": [
+          848,
+          849
+        ],
+        "inferred_value_range": [
+          70.742,
+          70.742
+        ],
+        "max_error_with_threshold_uncertainty": 0.742
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          553,
+          553
+        ],
+        "bottom_range": [
+          848,
+          849
+        ],
+        "inferred_value_range": [
+          40.522,
+          40.522
+        ],
+        "max_error_with_threshold_uncertainty": 0.522
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          188,
+          188
+        ],
+        "bottom_range": [
+          848,
+          849
+        ],
+        "inferred_value_range": [
+          90.659,
+          90.659
+        ],
+        "max_error_with_threshold_uncertainty": 0.659
+      }
+    ],
+    "axis_tick_max_error_units": 0.165,
+    "geometry_candidate_pass": true
+  },
+  "glass_v1_debug_42": {
+    "owner": "Sean",
+    "image": "images/glass_v1_debug_42.png",
+    "axis_tick_centers_0_to_100": [
+      851.0,
+      705.0,
+      558.5,
+      412.0,
+      266.0,
+      119.5
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          699,
+          699
+        ],
+        "bottom_range": [
+          853,
+          853
+        ],
+        "inferred_value_range": [
+          20.779,
+          20.779
+        ],
+        "max_error_with_threshold_uncertainty": 0.779
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          337,
+          337
+        ],
+        "bottom_range": [
+          853,
+          853
+        ],
+        "inferred_value_range": [
+          70.267,
+          70.267
+        ],
+        "max_error_with_threshold_uncertainty": 0.267
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          556,
+          556
+        ],
+        "bottom_range": [
+          853,
+          853
+        ],
+        "inferred_value_range": [
+          40.328,
+          40.328
+        ],
+        "max_error_with_threshold_uncertainty": 0.328
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          190,
+          190
+        ],
+        "bottom_range": [
+          853,
+          854
+        ],
+        "inferred_value_range": [
+          90.362,
+          90.362
+        ],
+        "max_error_with_threshold_uncertainty": 0.362
+      }
+    ],
+    "axis_tick_max_error_units": 0.041,
+    "geometry_candidate_pass": true
+  },
+  "metal_v1_confirm_51001": {
+    "owner": "Sean",
+    "image": "images/metal_v1_confirm_51001.png",
+    "axis_tick_centers_0_to_100": [
+      850.0,
+      704.0,
+      558.0,
+      412.0,
+      266.0,
+      120.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          702,
+          703
+        ],
+        "bottom_range": [
+          849,
+          849
+        ],
+        "inferred_value_range": [
+          20.137,
+          20.274
+        ],
+        "max_error_with_threshold_uncertainty": 0.274
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          338,
+          339
+        ],
+        "bottom_range": [
+          849,
+          850
+        ],
+        "inferred_value_range": [
+          70.0,
+          70.137
+        ],
+        "max_error_with_threshold_uncertainty": 0.137
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          557,
+          557
+        ],
+        "bottom_range": [
+          849,
+          850
+        ],
+        "inferred_value_range": [
+          40.137,
+          40.137
+        ],
+        "max_error_with_threshold_uncertainty": 0.137
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          192,
+          192
+        ],
+        "bottom_range": [
+          849,
+          849
+        ],
+        "inferred_value_range": [
+          90.137,
+          90.137
+        ],
+        "max_error_with_threshold_uncertainty": 0.137
+      }
+    ],
+    "axis_tick_max_error_units": 0.0,
+    "geometry_candidate_pass": true
+  },
+  "metal_v1_confirm_52003": {
+    "owner": "Sean",
+    "image": "images/metal_v1_confirm_52003.png",
+    "axis_tick_centers_0_to_100": [
+      854.0,
+      705.5,
+      558.0,
+      412.0,
+      265.0,
+      120.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          706,
+          706
+        ],
+        "bottom_range": [
+          853,
+          853
+        ],
+        "inferred_value_range": [
+          20.163,
+          20.163
+        ],
+        "max_error_with_threshold_uncertainty": 0.163
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          339,
+          339
+        ],
+        "bottom_range": [
+          853,
+          853
+        ],
+        "inferred_value_range": [
+          70.163,
+          70.163
+        ],
+        "max_error_with_threshold_uncertainty": 0.163
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          559,
+          559
+        ],
+        "bottom_range": [
+          853,
+          853
+        ],
+        "inferred_value_range": [
+          40.191,
+          40.191
+        ],
+        "max_error_with_threshold_uncertainty": 0.191
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          193,
+          196
+        ],
+        "bottom_range": [
+          853,
+          853
+        ],
+        "inferred_value_range": [
+          89.646,
+          90.054
+        ],
+        "max_error_with_threshold_uncertainty": 0.354
+      }
+    ],
+    "axis_tick_max_error_units": 0.327,
+    "geometry_candidate_pass": true
+  },
+  "metal_v1_confirm_53003": {
+    "owner": "Sean",
+    "image": "images/metal_v1_confirm_53003.png",
+    "axis_tick_centers_0_to_100": [
+      850.0,
+      704.0,
+      557.0,
+      411.0,
+      264.5,
+      119.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          700,
+          701
+        ],
+        "bottom_range": [
+          848,
+          849
+        ],
+        "inferred_value_range": [
+          20.383,
+          20.52
+        ],
+        "max_error_with_threshold_uncertainty": 0.52
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          334,
+          335
+        ],
+        "bottom_range": [
+          848,
+          849
+        ],
+        "inferred_value_range": [
+          70.451,
+          70.588
+        ],
+        "max_error_with_threshold_uncertainty": 0.588
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          554,
+          555
+        ],
+        "bottom_range": [
+          848,
+          849
+        ],
+        "inferred_value_range": [
+          40.356,
+          40.492
+        ],
+        "max_error_with_threshold_uncertainty": 0.492
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          189,
+          190
+        ],
+        "bottom_range": [
+          848,
+          849
+        ],
+        "inferred_value_range": [
+          90.287,
+          90.424
+        ],
+        "max_error_with_threshold_uncertainty": 0.424
+      }
+    ],
+    "axis_tick_max_error_units": 0.096,
+    "geometry_candidate_pass": true
+  },
+  "metal_v1_confirm_54001": {
+    "owner": "Sean",
+    "image": "images/metal_v1_confirm_54001.png",
+    "axis_tick_centers_0_to_100": [
+      850.5,
+      704.0,
+      558.0,
+      412.0,
+      266.0,
+      120.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          700,
+          701
+        ],
+        "bottom_range": [
+          849,
+          850
+        ],
+        "inferred_value_range": [
+          20.465,
+          20.602
+        ],
+        "max_error_with_threshold_uncertainty": 0.602
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          338,
+          339
+        ],
+        "bottom_range": [
+          849,
+          850
+        ],
+        "inferred_value_range": [
+          70.021,
+          70.157
+        ],
+        "max_error_with_threshold_uncertainty": 0.157
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          558,
+          559
+        ],
+        "bottom_range": [
+          849,
+          850
+        ],
+        "inferred_value_range": [
+          39.904,
+          40.041
+        ],
+        "max_error_with_threshold_uncertainty": 0.096
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          192,
+          193
+        ],
+        "bottom_range": [
+          849,
+          850
+        ],
+        "inferred_value_range": [
+          90.007,
+          90.144
+        ],
+        "max_error_with_threshold_uncertainty": 0.144
+      }
+    ],
+    "axis_tick_max_error_units": 0.055,
+    "geometry_candidate_pass": true
+  },
+  "metal_v1_confirm_55013": {
+    "owner": "Sean",
+    "image": "images/metal_v1_confirm_55013.png",
+    "axis_tick_centers_0_to_100": [
+      850.0,
+      704.0,
+      558.0,
+      412.0,
+      266.0,
+      120.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          704,
+          704
+        ],
+        "bottom_range": [
+          851,
+          852
+        ],
+        "inferred_value_range": [
+          20.0,
+          20.0
+        ],
+        "max_error_with_threshold_uncertainty": 0.0
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          339,
+          339
+        ],
+        "bottom_range": [
+          851,
+          851
+        ],
+        "inferred_value_range": [
+          70.0,
+          70.0
+        ],
+        "max_error_with_threshold_uncertainty": 0.0
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          558,
+          559
+        ],
+        "bottom_range": [
+          851,
+          852
+        ],
+        "inferred_value_range": [
+          39.863,
+          40.0
+        ],
+        "max_error_with_threshold_uncertainty": 0.137
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          192,
+          193
+        ],
+        "bottom_range": [
+          851,
+          851
+        ],
+        "inferred_value_range": [
+          90.0,
+          90.137
+        ],
+        "max_error_with_threshold_uncertainty": 0.137
+      }
+    ],
+    "axis_tick_max_error_units": 0.0,
+    "geometry_candidate_pass": true
+  },
+  "metal_v1_confirm_56003": {
+    "owner": "Sean",
+    "image": "images/metal_v1_confirm_56003.png",
+    "axis_tick_centers_0_to_100": [
+      850.0,
+      704.0,
+      558.0,
+      412.0,
+      266.0,
+      120.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          703,
+          703
+        ],
+        "bottom_range": [
+          850,
+          850
+        ],
+        "inferred_value_range": [
+          20.137,
+          20.137
+        ],
+        "max_error_with_threshold_uncertainty": 0.137
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          339,
+          340
+        ],
+        "bottom_range": [
+          850,
+          850
+        ],
+        "inferred_value_range": [
+          69.863,
+          70.0
+        ],
+        "max_error_with_threshold_uncertainty": 0.137
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          557,
+          558
+        ],
+        "bottom_range": [
+          850,
+          850
+        ],
+        "inferred_value_range": [
+          40.0,
+          40.137
+        ],
+        "max_error_with_threshold_uncertainty": 0.137
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          193,
+          194
+        ],
+        "bottom_range": [
+          850,
+          850
+        ],
+        "inferred_value_range": [
+          89.863,
+          90.0
+        ],
+        "max_error_with_threshold_uncertainty": 0.137
+      }
+    ],
+    "axis_tick_max_error_units": 0.0,
+    "geometry_candidate_pass": true
+  },
+  "metal_v1_confirm_57011": {
+    "owner": "Sean",
+    "image": "images/metal_v1_confirm_57011.png",
+    "axis_tick_centers_0_to_100": [
+      850.0,
+      704.0,
+      558.0,
+      412.0,
+      266.0,
+      120.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          704,
+          704
+        ],
+        "bottom_range": [
+          849,
+          850
+        ],
+        "inferred_value_range": [
+          20.0,
+          20.0
+        ],
+        "max_error_with_threshold_uncertainty": 0.0
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          338,
+          339
+        ],
+        "bottom_range": [
+          850,
+          850
+        ],
+        "inferred_value_range": [
+          70.0,
+          70.137
+        ],
+        "max_error_with_threshold_uncertainty": 0.137
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          558,
+          559
+        ],
+        "bottom_range": [
+          850,
+          850
+        ],
+        "inferred_value_range": [
+          39.863,
+          40.0
+        ],
+        "max_error_with_threshold_uncertainty": 0.137
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          192,
+          193
+        ],
+        "bottom_range": [
+          850,
+          850
+        ],
+        "inferred_value_range": [
+          90.0,
+          90.137
+        ],
+        "max_error_with_threshold_uncertainty": 0.137
+      }
+    ],
+    "axis_tick_max_error_units": 0.0,
+    "geometry_candidate_pass": true
+  },
+  "metal_v1_confirm_58001": {
+    "owner": "Sean",
+    "image": "images/metal_v1_confirm_58001.png",
+    "axis_tick_centers_0_to_100": [
+      850.0,
+      704.0,
+      558.0,
+      412.0,
+      266.0,
+      120.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          703,
+          703
+        ],
+        "bottom_range": [
+          851,
+          852
+        ],
+        "inferred_value_range": [
+          20.137,
+          20.137
+        ],
+        "max_error_with_threshold_uncertainty": 0.137
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          339,
+          339
+        ],
+        "bottom_range": [
+          851,
+          852
+        ],
+        "inferred_value_range": [
+          70.0,
+          70.0
+        ],
+        "max_error_with_threshold_uncertainty": 0.0
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          557,
+          558
+        ],
+        "bottom_range": [
+          851,
+          851
+        ],
+        "inferred_value_range": [
+          40.0,
+          40.137
+        ],
+        "max_error_with_threshold_uncertainty": 0.137
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          193,
+          194
+        ],
+        "bottom_range": [
+          851,
+          852
+        ],
+        "inferred_value_range": [
+          89.863,
+          90.0
+        ],
+        "max_error_with_threshold_uncertainty": 0.137
+      }
+    ],
+    "axis_tick_max_error_units": 0.0,
+    "geometry_candidate_pass": true
+  },
+  "metal_v1_confirm_59009": {
+    "owner": "Sean",
+    "image": "images/metal_v1_confirm_59009.png",
+    "axis_tick_centers_0_to_100": [
+      850.0,
+      704.0,
+      558.0,
+      412.0,
+      266.0,
+      120.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          703,
+          703
+        ],
+        "bottom_range": [
+          849,
+          849
+        ],
+        "inferred_value_range": [
+          20.137,
+          20.137
+        ],
+        "max_error_with_threshold_uncertainty": 0.137
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          336,
+          343
+        ],
+        "bottom_range": [
+          849,
+          850
+        ],
+        "inferred_value_range": [
+          69.452,
+          70.411
+        ],
+        "max_error_with_threshold_uncertainty": 0.548
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          558,
+          559
+        ],
+        "bottom_range": [
+          848,
+          849
+        ],
+        "inferred_value_range": [
+          39.863,
+          40.0
+        ],
+        "max_error_with_threshold_uncertainty": 0.137
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          191,
+          317
+        ],
+        "bottom_range": [
+          849,
+          849
+        ],
+        "inferred_value_range": [
+          73.014,
+          90.274
+        ],
+        "max_error_with_threshold_uncertainty": 16.986
+      }
+    ],
+    "axis_tick_max_error_units": 0.0,
+    "geometry_candidate_pass": false
+  },
+  "metal_v1_confirm_60011": {
+    "owner": "Sean",
+    "image": "images/metal_v1_confirm_60011.png",
+    "axis_tick_centers_0_to_100": [
+      850.0,
+      704.0,
+      558.0,
+      412.0,
+      266.0,
+      120.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          702,
+          703
+        ],
+        "bottom_range": [
+          850,
+          851
+        ],
+        "inferred_value_range": [
+          20.137,
+          20.274
+        ],
+        "max_error_with_threshold_uncertainty": 0.274
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          337,
+          341
+        ],
+        "bottom_range": [
+          849,
+          850
+        ],
+        "inferred_value_range": [
+          69.726,
+          70.274
+        ],
+        "max_error_with_threshold_uncertainty": 0.274
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          556,
+          557
+        ],
+        "bottom_range": [
+          849,
+          850
+        ],
+        "inferred_value_range": [
+          40.137,
+          40.274
+        ],
+        "max_error_with_threshold_uncertainty": 0.274
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          191,
+          191
+        ],
+        "bottom_range": [
+          849,
+          850
+        ],
+        "inferred_value_range": [
+          90.274,
+          90.274
+        ],
+        "max_error_with_threshold_uncertainty": 0.274
+      }
+    ],
+    "axis_tick_max_error_units": 0.0,
+    "geometry_candidate_pass": true
+  },
+  "metal_v1_confirm_61013": {
+    "owner": "Sean",
+    "image": "images/metal_v1_confirm_61013.png",
+    "axis_tick_centers_0_to_100": [
+      850.0,
+      704.0,
+      558.0,
+      412.0,
+      266.0,
+      120.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          702,
+          703
+        ],
+        "bottom_range": [
+          849,
+          850
+        ],
+        "inferred_value_range": [
+          20.137,
+          20.274
+        ],
+        "max_error_with_threshold_uncertainty": 0.274
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          337,
+          338
+        ],
+        "bottom_range": [
+          849,
+          850
+        ],
+        "inferred_value_range": [
+          70.137,
+          70.274
+        ],
+        "max_error_with_threshold_uncertainty": 0.274
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          557,
+          558
+        ],
+        "bottom_range": [
+          849,
+          850
+        ],
+        "inferred_value_range": [
+          40.0,
+          40.137
+        ],
+        "max_error_with_threshold_uncertainty": 0.137
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          192,
+          193
+        ],
+        "bottom_range": [
+          849,
+          849
+        ],
+        "inferred_value_range": [
+          90.0,
+          90.137
+        ],
+        "max_error_with_threshold_uncertainty": 0.137
+      }
+    ],
+    "axis_tick_max_error_units": 0.0,
+    "geometry_candidate_pass": true
+  },
+  "metal_v1_confirm_62003": {
+    "owner": "Sean",
+    "image": "images/metal_v1_confirm_62003.png",
+    "axis_tick_centers_0_to_100": [
+      851.0,
+      704.0,
+      558.0,
+      412.0,
+      266.0,
+      120.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          704,
+          706
+        ],
+        "bottom_range": [
+          848,
+          848
+        ],
+        "inferred_value_range": [
+          19.836,
+          20.109
+        ],
+        "max_error_with_threshold_uncertainty": 0.164
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          338,
+          344
+        ],
+        "bottom_range": [
+          848,
+          849
+        ],
+        "inferred_value_range": [
+          69.357,
+          70.178
+        ],
+        "max_error_with_threshold_uncertainty": 0.643
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          558,
+          563
+        ],
+        "bottom_range": [
+          848,
+          849
+        ],
+        "inferred_value_range": [
+          39.398,
+          40.082
+        ],
+        "max_error_with_threshold_uncertainty": 0.602
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          192,
+          193
+        ],
+        "bottom_range": [
+          848,
+          849
+        ],
+        "inferred_value_range": [
+          90.014,
+          90.15
+        ],
+        "max_error_with_threshold_uncertainty": 0.15
+      }
+    ],
+    "axis_tick_max_error_units": 0.109,
+    "geometry_candidate_pass": true
+  },
+  "metal_v1_confirm_63013": {
+    "owner": "Sean",
+    "image": "images/metal_v1_confirm_63013.png",
+    "axis_tick_centers_0_to_100": [
+      850.5,
+      704.0,
+      558.0,
+      412.0,
+      266.0,
+      120.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          703,
+          704
+        ],
+        "bottom_range": [
+          849,
+          851
+        ],
+        "inferred_value_range": [
+          20.055,
+          20.192
+        ],
+        "max_error_with_threshold_uncertainty": 0.192
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          334,
+          338
+        ],
+        "bottom_range": [
+          849,
+          851
+        ],
+        "inferred_value_range": [
+          70.157,
+          70.705
+        ],
+        "max_error_with_threshold_uncertainty": 0.705
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          554,
+          555
+        ],
+        "bottom_range": [
+          849,
+          851
+        ],
+        "inferred_value_range": [
+          40.452,
+          40.589
+        ],
+        "max_error_with_threshold_uncertainty": 0.589
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          190,
+          190
+        ],
+        "bottom_range": [
+          849,
+          851
+        ],
+        "inferred_value_range": [
+          90.418,
+          90.418
+        ],
+        "max_error_with_threshold_uncertainty": 0.418
+      }
+    ],
+    "axis_tick_max_error_units": 0.055,
+    "geometry_candidate_pass": true
+  },
+  "metal_v1_confirm_64019": {
+    "owner": "Sean",
+    "image": "images/metal_v1_confirm_64019.png",
+    "axis_tick_centers_0_to_100": [
+      851.0,
+      704.0,
+      558.0,
+      411.5,
+      265.5,
+      119.5
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          703,
+          703
+        ],
+        "bottom_range": [
+          853,
+          854
+        ],
+        "inferred_value_range": [
+          20.232,
+          20.232
+        ],
+        "max_error_with_threshold_uncertainty": 0.232
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          335,
+          336
+        ],
+        "bottom_range": [
+          853,
+          854
+        ],
+        "inferred_value_range": [
+          70.403,
+          70.54
+        ],
+        "max_error_with_threshold_uncertainty": 0.54
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          556,
+          556
+        ],
+        "bottom_range": [
+          853,
+          854
+        ],
+        "inferred_value_range": [
+          40.328,
+          40.328
+        ],
+        "max_error_with_threshold_uncertainty": 0.328
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          190,
+          191
+        ],
+        "bottom_range": [
+          853,
+          854
+        ],
+        "inferred_value_range": [
+          90.226,
+          90.362
+        ],
+        "max_error_with_threshold_uncertainty": 0.362
+      }
+    ],
+    "axis_tick_max_error_units": 0.096,
+    "geometry_candidate_pass": true
+  },
+  "metal_v1_confirm_65023": {
+    "owner": "Sean",
+    "image": "images/metal_v1_confirm_65023.png",
+    "axis_tick_centers_0_to_100": [
+      850.0,
+      704.0,
+      558.0,
+      412.0,
+      266.0,
+      120.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          703,
+          704
+        ],
+        "bottom_range": [
+          850,
+          851
+        ],
+        "inferred_value_range": [
+          20.0,
+          20.137
+        ],
+        "max_error_with_threshold_uncertainty": 0.137
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          338,
+          338
+        ],
+        "bottom_range": [
+          850,
+          851
+        ],
+        "inferred_value_range": [
+          70.137,
+          70.137
+        ],
+        "max_error_with_threshold_uncertainty": 0.137
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          555,
+          559
+        ],
+        "bottom_range": [
+          850,
+          851
+        ],
+        "inferred_value_range": [
+          39.863,
+          40.411
+        ],
+        "max_error_with_threshold_uncertainty": 0.411
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          191,
+          192
+        ],
+        "bottom_range": [
+          850,
+          851
+        ],
+        "inferred_value_range": [
+          90.137,
+          90.274
+        ],
+        "max_error_with_threshold_uncertainty": 0.274
+      }
+    ],
+    "axis_tick_max_error_units": 0.0,
+    "geometry_candidate_pass": true
+  },
+  "metal_v1_confirm_66007": {
+    "owner": "Sean",
+    "image": "images/metal_v1_confirm_66007.png",
+    "axis_tick_centers_0_to_100": [
+      851.5,
+      704.5,
+      558.5,
+      412.0,
+      265.5,
+      120.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          700,
+          701
+        ],
+        "bottom_range": [
+          851,
+          852
+        ],
+        "inferred_value_range": [
+          20.574,
+          20.711
+        ],
+        "max_error_with_threshold_uncertainty": 0.711
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          335,
+          336
+        ],
+        "bottom_range": [
+          851,
+          851
+        ],
+        "inferred_value_range": [
+          70.472,
+          70.608
+        ],
+        "max_error_with_threshold_uncertainty": 0.608
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          554,
+          555
+        ],
+        "bottom_range": [
+          851,
+          851
+        ],
+        "inferred_value_range": [
+          40.533,
+          40.67
+        ],
+        "max_error_with_threshold_uncertainty": 0.67
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          190,
+          191
+        ],
+        "bottom_range": [
+          851,
+          851
+        ],
+        "inferred_value_range": [
+          90.294,
+          90.431
+        ],
+        "max_error_with_threshold_uncertainty": 0.431
+      }
+    ],
+    "axis_tick_max_error_units": 0.109,
+    "geometry_candidate_pass": true
+  },
+  "metal_v1_confirm_67003": {
+    "owner": "Sean",
+    "image": "images/metal_v1_confirm_67003.png",
+    "axis_tick_centers_0_to_100": [
+      850.0,
+      704.0,
+      558.0,
+      412.0,
+      265.5,
+      119.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          704,
+          704
+        ],
+        "bottom_range": [
+          848,
+          849
+        ],
+        "inferred_value_range": [
+          19.973,
+          19.973
+        ],
+        "max_error_with_threshold_uncertainty": 0.027
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          338,
+          338
+        ],
+        "bottom_range": [
+          848,
+          849
+        ],
+        "inferred_value_range": [
+          70.041,
+          70.041
+        ],
+        "max_error_with_threshold_uncertainty": 0.041
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          558,
+          562
+        ],
+        "bottom_range": [
+          848,
+          849
+        ],
+        "inferred_value_range": [
+          39.398,
+          39.945
+        ],
+        "max_error_with_threshold_uncertainty": 0.602
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          192,
+          196
+        ],
+        "bottom_range": [
+          848,
+          849
+        ],
+        "inferred_value_range": [
+          89.466,
+          90.014
+        ],
+        "max_error_with_threshold_uncertainty": 0.534
+      }
+    ],
+    "axis_tick_max_error_units": 0.082,
+    "geometry_candidate_pass": true
+  },
+  "metal_v1_confirm_68011": {
+    "owner": "Sean",
+    "image": "images/metal_v1_confirm_68011.png",
+    "axis_tick_centers_0_to_100": [
+      850.0,
+      704.0,
+      558.0,
+      412.0,
+      266.0,
+      120.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          702,
+          702
+        ],
+        "bottom_range": [
+          849,
+          850
+        ],
+        "inferred_value_range": [
+          20.274,
+          20.274
+        ],
+        "max_error_with_threshold_uncertainty": 0.274
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          338,
+          345
+        ],
+        "bottom_range": [
+          849,
+          850
+        ],
+        "inferred_value_range": [
+          69.178,
+          70.137
+        ],
+        "max_error_with_threshold_uncertainty": 0.822
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          556,
+          556
+        ],
+        "bottom_range": [
+          849,
+          850
+        ],
+        "inferred_value_range": [
+          40.274,
+          40.274
+        ],
+        "max_error_with_threshold_uncertainty": 0.274
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          191,
+          192
+        ],
+        "bottom_range": [
+          849,
+          851
+        ],
+        "inferred_value_range": [
+          90.137,
+          90.274
+        ],
+        "max_error_with_threshold_uncertainty": 0.274
+      }
+    ],
+    "axis_tick_max_error_units": 0.0,
+    "geometry_candidate_pass": true
+  },
+  "metal_v1_confirm_69019": {
+    "owner": "Sean",
+    "image": "images/metal_v1_confirm_69019.png",
+    "axis_tick_centers_0_to_100": [
+      854.0,
+      706.0,
+      559.5,
+      413.0,
+      266.5,
+      120.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          706,
+          706
+        ],
+        "bottom_range": [
+          852,
+          853
+        ],
+        "inferred_value_range": [
+          20.163,
+          20.163
+        ],
+        "max_error_with_threshold_uncertainty": 0.163
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          338,
+          339
+        ],
+        "bottom_range": [
+          852,
+          853
+        ],
+        "inferred_value_range": [
+          70.163,
+          70.3
+        ],
+        "max_error_with_threshold_uncertainty": 0.3
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          559,
+          559
+        ],
+        "bottom_range": [
+          852,
+          853
+        ],
+        "inferred_value_range": [
+          40.191,
+          40.191
+        ],
+        "max_error_with_threshold_uncertainty": 0.191
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          192,
+          193
+        ],
+        "bottom_range": [
+          852,
+          853
+        ],
+        "inferred_value_range": [
+          90.054,
+          90.191
+        ],
+        "max_error_with_threshold_uncertainty": 0.191
+      }
+    ],
+    "axis_tick_max_error_units": 0.163,
+    "geometry_candidate_pass": true
+  },
+  "metal_v1_confirm_70009": {
+    "owner": "Sean",
+    "image": "images/metal_v1_confirm_70009.png",
+    "axis_tick_centers_0_to_100": [
+      850.5,
+      704.0,
+      558.0,
+      412.0,
+      266.0,
+      120.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          703,
+          704
+        ],
+        "bottom_range": [
+          849,
+          852
+        ],
+        "inferred_value_range": [
+          20.055,
+          20.192
+        ],
+        "max_error_with_threshold_uncertainty": 0.192
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          338,
+          532
+        ],
+        "bottom_range": [
+          849,
+          852
+        ],
+        "inferred_value_range": [
+          43.6,
+          70.157
+        ],
+        "max_error_with_threshold_uncertainty": 26.4
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          557,
+          558
+        ],
+        "bottom_range": [
+          849,
+          852
+        ],
+        "inferred_value_range": [
+          40.041,
+          40.178
+        ],
+        "max_error_with_threshold_uncertainty": 0.178
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          192,
+          192
+        ],
+        "bottom_range": [
+          849,
+          852
+        ],
+        "inferred_value_range": [
+          90.144,
+          90.144
+        ],
+        "max_error_with_threshold_uncertainty": 0.144
+      }
+    ],
+    "axis_tick_max_error_units": 0.055,
+    "geometry_candidate_pass": false
+  },
+  "metal_v1_debug_1337": {
+    "owner": "Sean",
+    "image": "images/metal_v1_debug_1337.png",
+    "axis_tick_centers_0_to_100": [
+      848.0,
+      702.0,
+      556.0,
+      410.0,
+      265.0,
+      120.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          700,
+          706
+        ],
+        "bottom_range": [
+          846,
+          847
+        ],
+        "inferred_value_range": [
+          19.505,
+          20.33
+        ],
+        "max_error_with_threshold_uncertainty": 0.495
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          336,
+          337
+        ],
+        "bottom_range": [
+          846,
+          848
+        ],
+        "inferred_value_range": [
+          70.192,
+          70.33
+        ],
+        "max_error_with_threshold_uncertainty": 0.33
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          554,
+          554
+        ],
+        "bottom_range": [
+          846,
+          848
+        ],
+        "inferred_value_range": [
+          40.385,
+          40.385
+        ],
+        "max_error_with_threshold_uncertainty": 0.385
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          190,
+          191
+        ],
+        "bottom_range": [
+          846,
+          848
+        ],
+        "inferred_value_range": [
+          90.247,
+          90.385
+        ],
+        "max_error_with_threshold_uncertainty": 0.385
+      }
+    ],
+    "axis_tick_max_error_units": 0.165,
+    "geometry_candidate_pass": true
+  },
+  "metal_v1_debug_42": {
+    "owner": "Sean",
+    "image": "images/metal_v1_debug_42.png",
+    "axis_tick_centers_0_to_100": [
+      850.5,
+      704.5,
+      558.0,
+      412.0,
+      266.0,
+      120.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          704,
+          704
+        ],
+        "bottom_range": [
+          849,
+          850
+        ],
+        "inferred_value_range": [
+          20.055,
+          20.055
+        ],
+        "max_error_with_threshold_uncertainty": 0.055
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          338,
+          338
+        ],
+        "bottom_range": [
+          849,
+          850
+        ],
+        "inferred_value_range": [
+          70.157,
+          70.157
+        ],
+        "max_error_with_threshold_uncertainty": 0.157
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          557,
+          558
+        ],
+        "bottom_range": [
+          849,
+          850
+        ],
+        "inferred_value_range": [
+          40.041,
+          40.178
+        ],
+        "max_error_with_threshold_uncertainty": 0.178
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          194,
+          194
+        ],
+        "bottom_range": [
+          849,
+          850
+        ],
+        "inferred_value_range": [
+          89.87,
+          89.87
+        ],
+        "max_error_with_threshold_uncertainty": 0.13
+      }
+    ],
+    "axis_tick_max_error_units": 0.041,
+    "geometry_candidate_pass": true
+  },
+  "paper_v1_confirm_51001": {
+    "owner": "Sean",
+    "image": "images/paper_v1_confirm_51001.png",
+    "axis_tick_centers_0_to_100": [
+      850.0,
+      704.0,
+      558.0,
+      412.0,
+      266.0,
+      120.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          701,
+          701
+        ],
+        "bottom_range": [
+          850,
+          851
+        ],
+        "inferred_value_range": [
+          20.411,
+          20.411
+        ],
+        "max_error_with_threshold_uncertainty": 0.411
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          337,
+          338
+        ],
+        "bottom_range": [
+          851,
+          851
+        ],
+        "inferred_value_range": [
+          70.137,
+          70.274
+        ],
+        "max_error_with_threshold_uncertainty": 0.274
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          556,
+          556
+        ],
+        "bottom_range": [
+          851,
+          851
+        ],
+        "inferred_value_range": [
+          40.274,
+          40.274
+        ],
+        "max_error_with_threshold_uncertainty": 0.274
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          191,
+          191
+        ],
+        "bottom_range": [
+          851,
+          851
+        ],
+        "inferred_value_range": [
+          90.274,
+          90.274
+        ],
+        "max_error_with_threshold_uncertainty": 0.274
+      }
+    ],
+    "axis_tick_max_error_units": 0.0,
+    "geometry_candidate_pass": true
+  },
+  "paper_v1_confirm_52003": {
+    "owner": "Sean",
+    "image": "images/paper_v1_confirm_52003.png",
+    "axis_tick_centers_0_to_100": [
+      854.5,
+      705.5,
+      557.5,
+      412.0,
+      265.0,
+      119.5
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          706,
+          706
+        ],
+        "bottom_range": [
+          853,
+          854
+        ],
+        "inferred_value_range": [
+          20.204,
+          20.204
+        ],
+        "max_error_with_threshold_uncertainty": 0.204
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          338,
+          338
+        ],
+        "bottom_range": [
+          854,
+          854
+        ],
+        "inferred_value_range": [
+          70.272,
+          70.272
+        ],
+        "max_error_with_threshold_uncertainty": 0.272
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          557,
+          557
+        ],
+        "bottom_range": [
+          853,
+          854
+        ],
+        "inferred_value_range": [
+          40.476,
+          40.476
+        ],
+        "max_error_with_threshold_uncertainty": 0.476
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          192,
+          192
+        ],
+        "bottom_range": [
+          853,
+          853
+        ],
+        "inferred_value_range": [
+          90.136,
+          90.136
+        ],
+        "max_error_with_threshold_uncertainty": 0.136
+      }
+    ],
+    "axis_tick_max_error_units": 0.408,
+    "geometry_candidate_pass": true
+  },
+  "paper_v1_confirm_53003": {
+    "owner": "Sean",
+    "image": "images/paper_v1_confirm_53003.png",
+    "axis_tick_centers_0_to_100": [
+      850.5,
+      704.0,
+      556.5,
+      410.0,
+      263.5,
+      117.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          698,
+          698
+        ],
+        "bottom_range": [
+          867,
+          867
+        ],
+        "inferred_value_range": [
+          20.791,
+          20.791
+        ],
+        "max_error_with_threshold_uncertainty": 0.791
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          333,
+          334
+        ],
+        "bottom_range": [
+          867,
+          868
+        ],
+        "inferred_value_range": [
+          70.416,
+          70.552
+        ],
+        "max_error_with_threshold_uncertainty": 0.552
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          554,
+          554
+        ],
+        "bottom_range": [
+          869,
+          869
+        ],
+        "inferred_value_range": [
+          40.423,
+          40.423
+        ],
+        "max_error_with_threshold_uncertainty": 0.423
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          189,
+          189
+        ],
+        "bottom_range": [
+          869,
+          869
+        ],
+        "inferred_value_range": [
+          90.184,
+          90.184
+        ],
+        "max_error_with_threshold_uncertainty": 0.184
+      }
+    ],
+    "axis_tick_max_error_units": 0.082,
+    "geometry_candidate_pass": false
+  },
+  "paper_v1_confirm_54001": {
+    "owner": "Sean",
+    "image": "images/paper_v1_confirm_54001.png",
+    "axis_tick_centers_0_to_100": [
+      850.5,
+      704.0,
+      558.0,
+      412.0,
+      265.5,
+      120.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          700,
+          700
+        ],
+        "bottom_range": [
+          852,
+          852
+        ],
+        "inferred_value_range": [
+          20.602,
+          20.602
+        ],
+        "max_error_with_threshold_uncertainty": 0.602
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          334,
+          334
+        ],
+        "bottom_range": [
+          852,
+          852
+        ],
+        "inferred_value_range": [
+          70.705,
+          70.705
+        ],
+        "max_error_with_threshold_uncertainty": 0.705
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          557,
+          557
+        ],
+        "bottom_range": [
+          852,
+          853
+        ],
+        "inferred_value_range": [
+          40.178,
+          40.178
+        ],
+        "max_error_with_threshold_uncertainty": 0.178
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          192,
+          192
+        ],
+        "bottom_range": [
+          852,
+          852
+        ],
+        "inferred_value_range": [
+          90.144,
+          90.144
+        ],
+        "max_error_with_threshold_uncertainty": 0.144
+      }
+    ],
+    "axis_tick_max_error_units": 0.082,
+    "geometry_candidate_pass": true
+  },
+  "paper_v1_confirm_55013": {
+    "owner": "Sean",
+    "image": "images/paper_v1_confirm_55013.png",
+    "axis_tick_centers_0_to_100": [
+      850.0,
+      705.0,
+      558.5,
+      412.0,
+      266.0,
+      120.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          705,
+          705
+        ],
+        "bottom_range": [
+          857,
+          858
+        ],
+        "inferred_value_range": [
+          19.863,
+          19.863
+        ],
+        "max_error_with_threshold_uncertainty": 0.137
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          338,
+          338
+        ],
+        "bottom_range": [
+          858,
+          859
+        ],
+        "inferred_value_range": [
+          70.137,
+          70.137
+        ],
+        "max_error_with_threshold_uncertainty": 0.137
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          558,
+          558
+        ],
+        "bottom_range": [
+          858,
+          859
+        ],
+        "inferred_value_range": [
+          40.0,
+          40.0
+        ],
+        "max_error_with_threshold_uncertainty": 0.0
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          192,
+          192
+        ],
+        "bottom_range": [
+          858,
+          859
+        ],
+        "inferred_value_range": [
+          90.137,
+          90.137
+        ],
+        "max_error_with_threshold_uncertainty": 0.137
+      }
+    ],
+    "axis_tick_max_error_units": 0.137,
+    "geometry_candidate_pass": true
+  },
+  "paper_v1_confirm_56003": {
+    "owner": "Sean",
+    "image": "images/paper_v1_confirm_56003.png",
+    "axis_tick_centers_0_to_100": [
+      850.0,
+      704.0,
+      558.0,
+      412.0,
+      266.0,
+      120.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          701,
+          701
+        ],
+        "bottom_range": [
+          851,
+          851
+        ],
+        "inferred_value_range": [
+          20.411,
+          20.411
+        ],
+        "max_error_with_threshold_uncertainty": 0.411
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          332,
+          333
+        ],
+        "bottom_range": [
+          851,
+          851
+        ],
+        "inferred_value_range": [
+          70.822,
+          70.959
+        ],
+        "max_error_with_threshold_uncertainty": 0.959
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          554,
+          554
+        ],
+        "bottom_range": [
+          851,
+          852
+        ],
+        "inferred_value_range": [
+          40.548,
+          40.548
+        ],
+        "max_error_with_threshold_uncertainty": 0.548
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          188,
+          188
+        ],
+        "bottom_range": [
+          851,
+          851
+        ],
+        "inferred_value_range": [
+          90.685,
+          90.685
+        ],
+        "max_error_with_threshold_uncertainty": 0.685
+      }
+    ],
+    "axis_tick_max_error_units": 0.0,
+    "geometry_candidate_pass": true
+  },
+  "paper_v1_confirm_57011": {
+    "owner": "Sean",
+    "image": "images/paper_v1_confirm_57011.png",
+    "axis_tick_centers_0_to_100": [
+      849.0,
+      703.0,
+      557.5,
+      411.0,
+      265.0,
+      119.5
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          695,
+          696
+        ],
+        "bottom_range": [
+          850,
+          853
+        ],
+        "inferred_value_range": [
+          20.973,
+          21.11
+        ],
+        "max_error_with_threshold_uncertainty": 1.11
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          326,
+          327
+        ],
+        "bottom_range": [
+          850,
+          855
+        ],
+        "inferred_value_range": [
+          71.556,
+          71.693
+        ],
+        "max_error_with_threshold_uncertainty": 1.693
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          548,
+          549
+        ],
+        "bottom_range": [
+          850,
+          854
+        ],
+        "inferred_value_range": [
+          41.124,
+          41.261
+        ],
+        "max_error_with_threshold_uncertainty": 1.261
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          183,
+          184
+        ],
+        "bottom_range": [
+          851,
+          855
+        ],
+        "inferred_value_range": [
+          91.158,
+          91.295
+        ],
+        "max_error_with_threshold_uncertainty": 1.295
+      }
+    ],
+    "axis_tick_max_error_units": 0.055,
+    "geometry_candidate_pass": true
+  },
+  "paper_v1_confirm_58001": {
+    "owner": "Sean",
+    "image": "images/paper_v1_confirm_58001.png",
+    "axis_tick_centers_0_to_100": [
+      850.0,
+      704.0,
+      558.0,
+      412.0,
+      266.0,
+      120.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          703,
+          704
+        ],
+        "bottom_range": [
+          855,
+          855
+        ],
+        "inferred_value_range": [
+          20.0,
+          20.137
+        ],
+        "max_error_with_threshold_uncertainty": 0.137
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          338,
+          338
+        ],
+        "bottom_range": [
+          855,
+          855
+        ],
+        "inferred_value_range": [
+          70.137,
+          70.137
+        ],
+        "max_error_with_threshold_uncertainty": 0.137
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          558,
+          558
+        ],
+        "bottom_range": [
+          855,
+          855
+        ],
+        "inferred_value_range": [
+          40.0,
+          40.0
+        ],
+        "max_error_with_threshold_uncertainty": 0.0
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          193,
+          193
+        ],
+        "bottom_range": [
+          855,
+          855
+        ],
+        "inferred_value_range": [
+          90.0,
+          90.0
+        ],
+        "max_error_with_threshold_uncertainty": 0.0
+      }
+    ],
+    "axis_tick_max_error_units": 0.0,
+    "geometry_candidate_pass": true
+  },
+  "paper_v1_confirm_59009": {
+    "owner": "Sean",
+    "image": "images/paper_v1_confirm_59009.png",
+    "axis_tick_centers_0_to_100": [
+      850.0,
+      704.0,
+      558.0,
+      412.0,
+      266.0,
+      120.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          703,
+          703
+        ],
+        "bottom_range": [
+          850,
+          850
+        ],
+        "inferred_value_range": [
+          20.137,
+          20.137
+        ],
+        "max_error_with_threshold_uncertainty": 0.137
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          336,
+          336
+        ],
+        "bottom_range": [
+          850,
+          851
+        ],
+        "inferred_value_range": [
+          70.411,
+          70.411
+        ],
+        "max_error_with_threshold_uncertainty": 0.411
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          558,
+          558
+        ],
+        "bottom_range": [
+          850,
+          851
+        ],
+        "inferred_value_range": [
+          40.0,
+          40.0
+        ],
+        "max_error_with_threshold_uncertainty": 0.0
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          191,
+          191
+        ],
+        "bottom_range": [
+          850,
+          851
+        ],
+        "inferred_value_range": [
+          90.274,
+          90.274
+        ],
+        "max_error_with_threshold_uncertainty": 0.274
+      }
+    ],
+    "axis_tick_max_error_units": 0.0,
+    "geometry_candidate_pass": true
+  },
+  "paper_v1_confirm_60011": {
+    "owner": "Sean",
+    "image": "images/paper_v1_confirm_60011.png",
+    "axis_tick_centers_0_to_100": [
+      855.0,
+      704.0,
+      558.0,
+      412.0,
+      266.0,
+      120.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          696,
+          696
+        ],
+        "bottom_range": [
+          854,
+          855
+        ],
+        "inferred_value_range": [
+          21.633,
+          21.633
+        ],
+        "max_error_with_threshold_uncertainty": 1.633
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          333,
+          334
+        ],
+        "bottom_range": [
+          854,
+          855
+        ],
+        "inferred_value_range": [
+          70.884,
+          71.02
+        ],
+        "max_error_with_threshold_uncertainty": 1.02
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          551,
+          552
+        ],
+        "bottom_range": [
+          854,
+          855
+        ],
+        "inferred_value_range": [
+          41.224,
+          41.361
+        ],
+        "max_error_with_threshold_uncertainty": 1.361
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          186,
+          186
+        ],
+        "bottom_range": [
+          854,
+          855
+        ],
+        "inferred_value_range": [
+          91.02,
+          91.02
+        ],
+        "max_error_with_threshold_uncertainty": 1.02
+      }
+    ],
+    "axis_tick_max_error_units": 0.544,
+    "geometry_candidate_pass": true
+  },
+  "paper_v1_confirm_61013": {
+    "owner": "Sean",
+    "image": "images/paper_v1_confirm_61013.png",
+    "axis_tick_centers_0_to_100": [
+      850.0,
+      704.0,
+      558.0,
+      412.0,
+      266.0,
+      120.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          702,
+          703
+        ],
+        "bottom_range": [
+          850,
+          850
+        ],
+        "inferred_value_range": [
+          20.137,
+          20.274
+        ],
+        "max_error_with_threshold_uncertainty": 0.274
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          336,
+          336
+        ],
+        "bottom_range": [
+          850,
+          850
+        ],
+        "inferred_value_range": [
+          70.411,
+          70.411
+        ],
+        "max_error_with_threshold_uncertainty": 0.411
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          557,
+          557
+        ],
+        "bottom_range": [
+          850,
+          850
+        ],
+        "inferred_value_range": [
+          40.137,
+          40.137
+        ],
+        "max_error_with_threshold_uncertainty": 0.137
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          191,
+          192
+        ],
+        "bottom_range": [
+          850,
+          850
+        ],
+        "inferred_value_range": [
+          90.137,
+          90.274
+        ],
+        "max_error_with_threshold_uncertainty": 0.274
+      }
+    ],
+    "axis_tick_max_error_units": 0.0,
+    "geometry_candidate_pass": true
+  },
+  "paper_v1_confirm_62003": {
+    "owner": "Sean",
+    "image": "images/paper_v1_confirm_62003.png",
+    "axis_tick_centers_0_to_100": [
+      854.0,
+      707.5,
+      561.0,
+      413.5,
+      267.0,
+      119.5
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          706,
+          706
+        ],
+        "bottom_range": [
+          857,
+          859
+        ],
+        "inferred_value_range": [
+          20.15,
+          20.15
+        ],
+        "max_error_with_threshold_uncertainty": 0.15
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          336,
+          337
+        ],
+        "bottom_range": [
+          858,
+          859
+        ],
+        "inferred_value_range": [
+          70.388,
+          70.524
+        ],
+        "max_error_with_threshold_uncertainty": 0.524
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          558,
+          558
+        ],
+        "bottom_range": [
+          858,
+          859
+        ],
+        "inferred_value_range": [
+          40.3,
+          40.3
+        ],
+        "max_error_with_threshold_uncertainty": 0.3
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          191,
+          191
+        ],
+        "bottom_range": [
+          858,
+          859
+        ],
+        "inferred_value_range": [
+          90.265,
+          90.265
+        ],
+        "max_error_with_threshold_uncertainty": 0.265
+      }
+    ],
+    "axis_tick_max_error_units": 0.109,
+    "geometry_candidate_pass": true
+  },
+  "paper_v1_confirm_63013": {
+    "owner": "Sean",
+    "image": "images/paper_v1_confirm_63013.png",
+    "axis_tick_centers_0_to_100": [
+      850.5,
+      704.0,
+      558.0,
+      412.0,
+      266.0,
+      120.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          702,
+          703
+        ],
+        "bottom_range": [
+          859,
+          859
+        ],
+        "inferred_value_range": [
+          20.192,
+          20.329
+        ],
+        "max_error_with_threshold_uncertainty": 0.329
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          334,
+          334
+        ],
+        "bottom_range": [
+          857,
+          858
+        ],
+        "inferred_value_range": [
+          70.705,
+          70.705
+        ],
+        "max_error_with_threshold_uncertainty": 0.705
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          553,
+          554
+        ],
+        "bottom_range": [
+          858,
+          858
+        ],
+        "inferred_value_range": [
+          40.589,
+          40.726
+        ],
+        "max_error_with_threshold_uncertainty": 0.726
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          189,
+          189
+        ],
+        "bottom_range": [
+          858,
+          859
+        ],
+        "inferred_value_range": [
+          90.554,
+          90.554
+        ],
+        "max_error_with_threshold_uncertainty": 0.554
+      }
+    ],
+    "axis_tick_max_error_units": 0.055,
+    "geometry_candidate_pass": true
+  },
+  "paper_v1_confirm_64019": {
+    "owner": "Sean",
+    "image": "images/paper_v1_confirm_64019.png",
+    "axis_tick_centers_0_to_100": [
+      852.5,
+      705.0,
+      558.0,
+      411.5,
+      265.0,
+      119.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          699,
+          699
+        ],
+        "bottom_range": [
+          864,
+          865
+        ],
+        "inferred_value_range": [
+          20.927,
+          20.927
+        ],
+        "max_error_with_threshold_uncertainty": 0.927
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          334,
+          334
+        ],
+        "bottom_range": [
+          863,
+          863
+        ],
+        "inferred_value_range": [
+          70.688,
+          70.688
+        ],
+        "max_error_with_threshold_uncertainty": 0.688
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          553,
+          553
+        ],
+        "bottom_range": [
+          865,
+          865
+        ],
+        "inferred_value_range": [
+          40.832,
+          40.832
+        ],
+        "max_error_with_threshold_uncertainty": 0.832
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          189,
+          189
+        ],
+        "bottom_range": [
+          865,
+          865
+        ],
+        "inferred_value_range": [
+          90.457,
+          90.457
+        ],
+        "max_error_with_threshold_uncertainty": 0.457
+      }
+    ],
+    "axis_tick_max_error_units": 0.15,
+    "geometry_candidate_pass": true
+  },
+  "paper_v1_confirm_65023": {
+    "owner": "Sean",
+    "image": "images/paper_v1_confirm_65023.png",
+    "axis_tick_centers_0_to_100": [
+      850.0,
+      704.0,
+      558.0,
+      412.0,
+      266.0,
+      120.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          703,
+          703
+        ],
+        "bottom_range": [
+          855,
+          856
+        ],
+        "inferred_value_range": [
+          20.137,
+          20.137
+        ],
+        "max_error_with_threshold_uncertainty": 0.137
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          337,
+          338
+        ],
+        "bottom_range": [
+          855,
+          855
+        ],
+        "inferred_value_range": [
+          70.137,
+          70.274
+        ],
+        "max_error_with_threshold_uncertainty": 0.274
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          555,
+          555
+        ],
+        "bottom_range": [
+          855,
+          856
+        ],
+        "inferred_value_range": [
+          40.411,
+          40.411
+        ],
+        "max_error_with_threshold_uncertainty": 0.411
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          190,
+          191
+        ],
+        "bottom_range": [
+          855,
+          856
+        ],
+        "inferred_value_range": [
+          90.274,
+          90.411
+        ],
+        "max_error_with_threshold_uncertainty": 0.411
+      }
+    ],
+    "axis_tick_max_error_units": 0.0,
+    "geometry_candidate_pass": true
+  },
+  "paper_v1_confirm_66007": {
+    "owner": "Sean",
+    "image": "images/paper_v1_confirm_66007.png",
+    "axis_tick_centers_0_to_100": [
+      853.5,
+      705.5,
+      559.0,
+      412.0,
+      265.5,
+      119.5
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          700,
+          700
+        ],
+        "bottom_range": [
+          868,
+          868
+        ],
+        "inferred_value_range": [
+          20.913,
+          20.913
+        ],
+        "max_error_with_threshold_uncertainty": 0.913
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          330,
+          330
+        ],
+        "bottom_range": [
+          868,
+          869
+        ],
+        "inferred_value_range": [
+          71.322,
+          71.322
+        ],
+        "max_error_with_threshold_uncertainty": 1.322
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          553,
+          553
+        ],
+        "bottom_range": [
+          869,
+          869
+        ],
+        "inferred_value_range": [
+          40.94,
+          40.94
+        ],
+        "max_error_with_threshold_uncertainty": 0.94
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          187,
+          187
+        ],
+        "bottom_range": [
+          868,
+          868
+        ],
+        "inferred_value_range": [
+          90.804,
+          90.804
+        ],
+        "max_error_with_threshold_uncertainty": 0.804
+      }
+    ],
+    "axis_tick_max_error_units": 0.163,
+    "geometry_candidate_pass": false
+  },
+  "paper_v1_confirm_67003": {
+    "owner": "Sean",
+    "image": "images/paper_v1_confirm_67003.png",
+    "axis_tick_centers_0_to_100": [
+      850.0,
+      704.0,
+      558.0,
+      411.5,
+      265.5,
+      119.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          699,
+          700
+        ],
+        "bottom_range": [
+          854,
+          855
+        ],
+        "inferred_value_range": [
+          20.52,
+          20.657
+        ],
+        "max_error_with_threshold_uncertainty": 0.657
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          335,
+          336
+        ],
+        "bottom_range": [
+          854,
+          855
+        ],
+        "inferred_value_range": [
+          70.315,
+          70.451
+        ],
+        "max_error_with_threshold_uncertainty": 0.451
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          552,
+          553
+        ],
+        "bottom_range": [
+          855,
+          855
+        ],
+        "inferred_value_range": [
+          40.629,
+          40.766
+        ],
+        "max_error_with_threshold_uncertainty": 0.766
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          191,
+          191
+        ],
+        "bottom_range": [
+          855,
+          855
+        ],
+        "inferred_value_range": [
+          90.15,
+          90.15
+        ],
+        "max_error_with_threshold_uncertainty": 0.15
+      }
+    ],
+    "axis_tick_max_error_units": 0.055,
+    "geometry_candidate_pass": true
+  },
+  "paper_v1_confirm_68011": {
+    "owner": "Sean",
+    "image": "images/paper_v1_confirm_68011.png",
+    "axis_tick_centers_0_to_100": [
+      850.5,
+      704.0,
+      558.0,
+      412.0,
+      266.0,
+      120.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          691,
+          692
+        ],
+        "bottom_range": [
+          855,
+          856
+        ],
+        "inferred_value_range": [
+          21.697,
+          21.834
+        ],
+        "max_error_with_threshold_uncertainty": 1.834
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          334,
+          334
+        ],
+        "bottom_range": [
+          855,
+          856
+        ],
+        "inferred_value_range": [
+          70.705,
+          70.705
+        ],
+        "max_error_with_threshold_uncertainty": 0.705
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          550,
+          550
+        ],
+        "bottom_range": [
+          854,
+          855
+        ],
+        "inferred_value_range": [
+          41.136,
+          41.136
+        ],
+        "max_error_with_threshold_uncertainty": 1.136
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          185,
+          185
+        ],
+        "bottom_range": [
+          854,
+          855
+        ],
+        "inferred_value_range": [
+          91.102,
+          91.102
+        ],
+        "max_error_with_threshold_uncertainty": 1.102
+      }
+    ],
+    "axis_tick_max_error_units": 0.055,
+    "geometry_candidate_pass": true
+  },
+  "paper_v1_confirm_69019": {
+    "owner": "Sean",
+    "image": "images/paper_v1_confirm_69019.png",
+    "axis_tick_centers_0_to_100": [
+      855.0,
+      706.5,
+      560.0,
+      413.0,
+      266.5,
+      120.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          704,
+          704
+        ],
+        "bottom_range": [
+          854,
+          855
+        ],
+        "inferred_value_range": [
+          20.544,
+          20.544
+        ],
+        "max_error_with_threshold_uncertainty": 0.544
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          332,
+          332
+        ],
+        "bottom_range": [
+          854,
+          855
+        ],
+        "inferred_value_range": [
+          71.156,
+          71.156
+        ],
+        "max_error_with_threshold_uncertainty": 1.156
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          556,
+          557
+        ],
+        "bottom_range": [
+          854,
+          855
+        ],
+        "inferred_value_range": [
+          40.544,
+          40.68
+        ],
+        "max_error_with_threshold_uncertainty": 0.68
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          191,
+          191
+        ],
+        "bottom_range": [
+          854,
+          855
+        ],
+        "inferred_value_range": [
+          90.34,
+          90.34
+        ],
+        "max_error_with_threshold_uncertainty": 0.34
+      }
+    ],
+    "axis_tick_max_error_units": 0.204,
+    "geometry_candidate_pass": true
+  },
+  "paper_v1_confirm_70009": {
+    "owner": "Sean",
+    "image": "images/paper_v1_confirm_70009.png",
+    "axis_tick_centers_0_to_100": [
+      850.5,
+      704.0,
+      558.0,
+      412.0,
+      266.0,
+      120.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          701,
+          701
+        ],
+        "bottom_range": [
+          858,
+          859
+        ],
+        "inferred_value_range": [
+          20.465,
+          20.465
+        ],
+        "max_error_with_threshold_uncertainty": 0.465
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          334,
+          334
+        ],
+        "bottom_range": [
+          859,
+          859
+        ],
+        "inferred_value_range": [
+          70.705,
+          70.705
+        ],
+        "max_error_with_threshold_uncertainty": 0.705
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          556,
+          556
+        ],
+        "bottom_range": [
+          860,
+          860
+        ],
+        "inferred_value_range": [
+          40.315,
+          40.315
+        ],
+        "max_error_with_threshold_uncertainty": 0.315
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          190,
+          190
+        ],
+        "bottom_range": [
+          860,
+          860
+        ],
+        "inferred_value_range": [
+          90.418,
+          90.418
+        ],
+        "max_error_with_threshold_uncertainty": 0.418
+      }
+    ],
+    "axis_tick_max_error_units": 0.055,
+    "geometry_candidate_pass": true
+  },
+  "paper_v1_debug_1337": {
+    "owner": "Sean",
+    "image": "images/paper_v1_debug_1337.png",
+    "axis_tick_centers_0_to_100": [
+      848.0,
+      702.0,
+      556.0,
+      410.0,
+      265.0,
+      120.0
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          695,
+          696
+        ],
+        "bottom_range": [
+          848,
+          849
+        ],
+        "inferred_value_range": [
+          20.879,
+          21.016
+        ],
+        "max_error_with_threshold_uncertainty": 1.016
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          334,
+          335
+        ],
+        "bottom_range": [
+          848,
+          849
+        ],
+        "inferred_value_range": [
+          70.467,
+          70.604
+        ],
+        "max_error_with_threshold_uncertainty": 0.604
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          553,
+          553
+        ],
+        "bottom_range": [
+          848,
+          849
+        ],
+        "inferred_value_range": [
+          40.522,
+          40.522
+        ],
+        "max_error_with_threshold_uncertainty": 0.522
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          191,
+          191
+        ],
+        "bottom_range": [
+          848,
+          849
+        ],
+        "inferred_value_range": [
+          90.247,
+          90.247
+        ],
+        "max_error_with_threshold_uncertainty": 0.247
+      }
+    ],
+    "axis_tick_max_error_units": 0.165,
+    "geometry_candidate_pass": true
+  },
+  "paper_v1_debug_42": {
+    "owner": "Sean",
+    "image": "images/paper_v1_debug_42.png",
+    "axis_tick_centers_0_to_100": [
+      850.0,
+      705.0,
+      558.0,
+      411.5,
+      265.5,
+      119.5
+    ],
+    "visual_review_required": true,
+    "method": "blue chroma mask across central 120px of each nominal bar; threshold sensitivity 8/12/20 B-R, B-G>2. Axis ticks dark pixels x189:199. Bottom excludes cast shadow only after visual confirmation. Range includes threshold uncertainty; no image repair.",
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          698,
+          698
+        ],
+        "bottom_range": [
+          851,
+          852
+        ],
+        "inferred_value_range": [
+          20.808,
+          20.808
+        ],
+        "max_error_with_threshold_uncertainty": 0.808
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          336,
+          336
+        ],
+        "bottom_range": [
+          851,
+          852
+        ],
+        "inferred_value_range": [
+          70.363,
+          70.363
+        ],
+        "max_error_with_threshold_uncertainty": 0.363
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          553,
+          553
+        ],
+        "bottom_range": [
+          851,
+          851
+        ],
+        "inferred_value_range": [
+          40.657,
+          40.657
+        ],
+        "max_error_with_threshold_uncertainty": 0.657
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          189,
+          189
+        ],
+        "bottom_range": [
+          851,
+          851
+        ],
+        "inferred_value_range": [
+          90.486,
+          90.486
+        ],
+        "max_error_with_threshold_uncertainty": 0.486
+      }
+    ],
+    "axis_tick_max_error_units": 0.151,
+    "geometry_candidate_pass": true
+  }
+}

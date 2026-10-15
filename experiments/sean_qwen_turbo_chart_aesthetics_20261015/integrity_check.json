@@ -1,0 +1,9 @@
+{
+  "owner": "Sean",
+  "images_checked": 112,
+  "unique_raw_sha256": 112,
+  "workflow_chains_checked": 112,
+  "errors": [],
+  "raw_images_repaired": false,
+  "note": "Evidence integrity audit, not an automated aesthetic or physical3D test."
+}

@@ -1,0 +1,7 @@
+{
+  "owner": "Sean",
+  "candidate": "glass_spatial_v1",
+  "n": 20,
+  "reason": "Matched debug seeds show preserved parallel verticals and distinguishable front top/bottom corresponding vertices; material reconstruction clear. Confirm before claiming spatial accuracy.",
+  "measurement": "stage3_plan.json spatial acceptance; corner pairs not total bounding box; no tolerance change"
+}

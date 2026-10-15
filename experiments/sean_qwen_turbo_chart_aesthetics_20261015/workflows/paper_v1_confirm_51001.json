@@ -1,0 +1,117 @@
+{
+  "prompt": {
+    "1": {
+      "class_type": "UNETLoader",
+      "inputs": {
+        "unet_name": "qwen_image_2.1_turbo_int8_convrot.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    "2": {
+      "class_type": "CLIPLoader",
+      "inputs": {
+        "clip_name": "qwen3vl_8b_bf16.safetensors",
+        "type": "qwen_image"
+      }
+    },
+    "3": {
+      "class_type": "VAELoader",
+      "inputs": {
+        "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+      }
+    },
+    "4": {
+      "class_type": "TextEncodeQwenImage21",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "vae": [
+          "3",
+          0
+        ],
+        "prompt": "将<image1>作为准确的数据几何蓝图，重新制作柱体本身的材质。保持正交正视，四根等宽柱共用原来的零基线；四柱顶边、底边与横向占位精确沿用参考图，柱高按甲20、乙70、丙40、丁90，不改变数值几何。保留标题“测试数据”、类别、数值、坐标轴和网格的原有内容、位置与清晰度。不添加任何文字或数据。 四根蓝柱变成手工纸雕长方体：海蓝厚卡纸分层构造，清晰可见的纸层断面、内侧折边、纸纤维与柔和层间阴影；体现精致纸雕的实体构造，正面仍为完整平顶矩形，层次向柱内展开。 这是柱体实体的材质重构：须在柱内呈现明确的物理质感、边缘与光照结构，不能仅改变背景、颜色或贴一层纹理。浅色干净背景，柔和产品摄影照明，图表清晰可读。柱的正面外轮廓顶端平直且可准确测量，无圆角侵蚀高度，无透视缩短，投影不能充当柱高。",
+        "negative_prompt": "",
+        "resolution": 0,
+        "images.image_1": [
+          "12",
+          0
+        ]
+      }
+    },
+    "7": {
+      "class_type": "ManualSigmas",
+      "inputs": {
+        "sigmas": "1.0, 0.978453, 0.954180, 0.926626, 0.895080, 0.845148, 0.704534, 0.414568, 0.0"
+      }
+    },
+    "8": {
+      "class_type": "KSamplerSelect",
+      "inputs": {
+        "sampler_name": "euler"
+      }
+    },
+    "9": {
+      "class_type": "SamplerCustom",
+      "inputs": {
+        "model": [
+          "1",
+          0
+        ],
+        "add_noise": true,
+        "noise_seed": 51001,
+        "cfg": 1.0,
+        "positive": [
+          "4",
+          0
+        ],
+        "negative": [
+          "4",
+          1
+        ],
+        "sampler": [
+          "8",
+          0
+        ],
+        "sigmas": [
+          "7",
+          0
+        ],
+        "latent_image": [
+          "4",
+          2
+        ]
+      }
+    },
+    "10": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "9",
+          0
+        ],
+        "vae": [
+          "3",
+          0
+        ]
+      }
+    },
+    "11": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "10",
+          0
+        ],
+        "filename_prefix": "sean_chart_aesthetics/paper_v1_confirm_51001"
+      }
+    },
+    "12": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "sean_chart_aesthetics_reference.png"
+      }
+    }
+  }
+}

@@ -1,0 +1,1422 @@
+{
+  "glass_building_v1_confirm_71001": {
+    "axis_ticks": [
+      850.5,
+      704.0,
+      558.0,
+      412.0,
+      266.0,
+      120.0
+    ],
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          701,
+          702
+        ],
+        "bottom_range": [
+          848,
+          848
+        ],
+        "max_error": 0.465,
+        "baseline_error": 0.342
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          335,
+          336
+        ],
+        "bottom_range": [
+          848,
+          848
+        ],
+        "max_error": 0.568,
+        "baseline_error": 0.342
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          556,
+          558
+        ],
+        "bottom_range": [
+          848,
+          848
+        ],
+        "max_error": 0.315,
+        "baseline_error": 0.342
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          190,
+          191
+        ],
+        "bottom_range": [
+          848,
+          848
+        ],
+        "max_error": 0.418,
+        "baseline_error": 0.342
+      }
+    ],
+    "review_required": true,
+    "method": "Achromatic roof silhouette across central120px at gray210/225/240, >60px occupancy; body lower bound blue mask. Axis measured from generated ticks. Label clusters narrower than60px excluded.",
+    "geometry_candidate_pass": true
+  },
+  "glass_building_v1_confirm_72003": {
+    "axis_ticks": [
+      null,
+      709.0,
+      558.0,
+      412.0,
+      266.0,
+      120.0
+    ],
+    "bars": [],
+    "review_required": true,
+    "method": "Achromatic roof silhouette across central120px at gray210/225/240, >60px occupancy; body lower bound blue mask. Axis measured from generated ticks. Label clusters narrower than60px excluded."
+  },
+  "glass_building_v1_confirm_73003": {
+    "axis_ticks": [
+      853.0,
+      704.5,
+      559.0,
+      412.5,
+      266.5,
+      120.0
+    ],
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          697,
+          697
+        ],
+        "bottom_range": [
+          850,
+          855
+        ],
+        "max_error": 1.282,
+        "baseline_error": 0.409
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          323,
+          324
+        ],
+        "bottom_range": [
+          850,
+          861
+        ],
+        "max_error": 2.306,
+        "baseline_error": 1.091
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          553,
+          553
+        ],
+        "bottom_range": [
+          850,
+          862
+        ],
+        "max_error": 0.928,
+        "baseline_error": 1.228
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          177,
+          177
+        ],
+        "bottom_range": [
+          851,
+          861
+        ],
+        "max_error": 2.224,
+        "baseline_error": 1.091
+      }
+    ],
+    "review_required": true,
+    "method": "Achromatic roof silhouette across central120px at gray210/225/240, >60px occupancy; body lower bound blue mask. Axis measured from generated ticks. Label clusters narrower than60px excluded.",
+    "geometry_candidate_pass": false
+  },
+  "glass_building_v1_confirm_74001": {
+    "axis_ticks": [
+      850.0,
+      703.5,
+      558.0,
+      412.0,
+      266.0,
+      119.5
+    ],
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          691,
+          691
+        ],
+        "bottom_range": [
+          857,
+          861
+        ],
+        "max_error": 1.766,
+        "baseline_error": 1.506
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          326,
+          326
+        ],
+        "bottom_range": [
+          810,
+          860
+        ],
+        "max_error": 1.732,
+        "baseline_error": 5.476
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          546,
+          546
+        ],
+        "bottom_range": [
+          809,
+          861
+        ],
+        "max_error": 1.615,
+        "baseline_error": 5.613
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          184,
+          184
+        ],
+        "bottom_range": [
+          810,
+          861
+        ],
+        "max_error": 1.17,
+        "baseline_error": 5.476
+      }
+    ],
+    "review_required": true,
+    "method": "Achromatic roof silhouette across central120px at gray210/225/240, >60px occupancy; body lower bound blue mask. Axis measured from generated ticks. Label clusters narrower than60px excluded.",
+    "geometry_candidate_pass": false
+  },
+  "glass_building_v1_confirm_75013": {
+    "axis_ticks": [
+      851.0,
+      704.0,
+      557.5,
+      411.5,
+      265.0,
+      119.0
+    ],
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          701,
+          701
+        ],
+        "bottom_range": [
+          848,
+          848
+        ],
+        "max_error": 0.492,
+        "baseline_error": 0.41
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          333,
+          334
+        ],
+        "bottom_range": [
+          848,
+          848
+        ],
+        "max_error": 0.765,
+        "baseline_error": 0.41
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          555,
+          555
+        ],
+        "bottom_range": [
+          848,
+          848
+        ],
+        "max_error": 0.437,
+        "baseline_error": 0.41
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          188,
+          188
+        ],
+        "bottom_range": [
+          848,
+          849
+        ],
+        "max_error": 0.574,
+        "baseline_error": 0.41
+      }
+    ],
+    "review_required": true,
+    "method": "Achromatic roof silhouette across central120px at gray210/225/240, >60px occupancy; body lower bound blue mask. Axis measured from generated ticks. Label clusters narrower than60px excluded.",
+    "geometry_candidate_pass": true
+  },
+  "glass_building_v1_confirm_76003": {
+    "axis_ticks": [
+      853.0,
+      705.0,
+      558.5,
+      412.5,
+      266.0,
+      119.5
+    ],
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          700,
+          700
+        ],
+        "bottom_range": [
+          850,
+          854
+        ],
+        "max_error": 0.859,
+        "baseline_error": 0.409
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          329,
+          331
+        ],
+        "bottom_range": [
+          850,
+          854
+        ],
+        "max_error": 1.438,
+        "baseline_error": 0.409
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          553,
+          554
+        ],
+        "bottom_range": [
+          850,
+          854
+        ],
+        "max_error": 0.9,
+        "baseline_error": 0.409
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          190,
+          191
+        ],
+        "bottom_range": [
+          850,
+          855
+        ],
+        "max_error": 0.389,
+        "baseline_error": 0.409
+      }
+    ],
+    "review_required": true,
+    "method": "Achromatic roof silhouette across central120px at gray210/225/240, >60px occupancy; body lower bound blue mask. Axis measured from generated ticks. Label clusters narrower than60px excluded.",
+    "geometry_candidate_pass": true
+  },
+  "glass_building_v1_confirm_77011": {
+    "axis_ticks": [
+      851.0,
+      704.5,
+      558.0,
+      412.0,
+      265.5,
+      120.0
+    ],
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          702,
+          702
+        ],
+        "bottom_range": [
+          848,
+          848
+        ],
+        "max_error": 0.383,
+        "baseline_error": 0.41
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          337,
+          338
+        ],
+        "bottom_range": [
+          848,
+          849
+        ],
+        "max_error": 0.315,
+        "baseline_error": 0.41
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          553,
+          554
+        ],
+        "bottom_range": [
+          848,
+          849
+        ],
+        "max_error": 0.766,
+        "baseline_error": 0.41
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          192,
+          192
+        ],
+        "bottom_range": [
+          848,
+          849
+        ],
+        "max_error": 0.15,
+        "baseline_error": 0.41
+      }
+    ],
+    "review_required": true,
+    "method": "Achromatic roof silhouette across central120px at gray210/225/240, >60px occupancy; body lower bound blue mask. Axis measured from generated ticks. Label clusters narrower than60px excluded.",
+    "geometry_candidate_pass": true
+  },
+  "glass_building_v1_confirm_78001": {
+    "axis_ticks": [
+      854.0,
+      705.0,
+      557.5,
+      411.5,
+      265.5,
+      119.0
+    ],
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          697,
+          697
+        ],
+        "bottom_range": [
+          851,
+          851
+        ],
+        "max_error": 1.361,
+        "baseline_error": 0.408
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          331,
+          337
+        ],
+        "bottom_range": [
+          851,
+          851
+        ],
+        "max_error": 1.156,
+        "baseline_error": 0.408
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          549,
+          549
+        ],
+        "bottom_range": [
+          851,
+          851
+        ],
+        "max_error": 1.497,
+        "baseline_error": 0.408
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          190,
+          190
+        ],
+        "bottom_range": [
+          851,
+          852
+        ],
+        "max_error": 0.34,
+        "baseline_error": 0.408
+      }
+    ],
+    "review_required": true,
+    "method": "Achromatic roof silhouette across central120px at gray210/225/240, >60px occupancy; body lower bound blue mask. Axis measured from generated ticks. Label clusters narrower than60px excluded.",
+    "geometry_candidate_pass": true
+  },
+  "glass_building_v1_confirm_79009": {
+    "axis_ticks": [
+      850.0,
+      704.0,
+      558.0,
+      412.0,
+      266.0,
+      120.0
+    ],
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          689,
+          690
+        ],
+        "bottom_range": [
+          848,
+          849
+        ],
+        "max_error": 2.055,
+        "baseline_error": 0.274
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          318,
+          318
+        ],
+        "bottom_range": [
+          848,
+          849
+        ],
+        "max_error": 2.877,
+        "baseline_error": 0.274
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          547,
+          548
+        ],
+        "bottom_range": [
+          848,
+          849
+        ],
+        "max_error": 1.507,
+        "baseline_error": 0.274
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          182,
+          183
+        ],
+        "bottom_range": [
+          848,
+          849
+        ],
+        "max_error": 1.507,
+        "baseline_error": 0.274
+      }
+    ],
+    "review_required": true,
+    "method": "Achromatic roof silhouette across central120px at gray210/225/240, >60px occupancy; body lower bound blue mask. Axis measured from generated ticks. Label clusters narrower than60px excluded.",
+    "geometry_candidate_pass": false
+  },
+  "glass_building_v1_confirm_80011": {
+    "axis_ticks": [
+      861.0,
+      709.5,
+      560.0,
+      411.5,
+      264.0,
+      117.0
+    ],
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          707,
+          710
+        ],
+        "bottom_range": [
+          856,
+          858
+        ],
+        "max_error": 0.699,
+        "baseline_error": 0.672
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          319,
+          322
+        ],
+        "bottom_range": [
+          812,
+          856
+        ],
+        "max_error": 2.849,
+        "baseline_error": 6.586
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          556,
+          559
+        ],
+        "bottom_range": [
+          813,
+          858
+        ],
+        "max_error": 0.995,
+        "baseline_error": 6.452
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          171,
+          171
+        ],
+        "bottom_range": [
+          812,
+          863
+        ],
+        "max_error": 2.742,
+        "baseline_error": 6.586
+      }
+    ],
+    "review_required": true,
+    "method": "Achromatic roof silhouette across central120px at gray210/225/240, >60px occupancy; body lower bound blue mask. Axis measured from generated ticks. Label clusters narrower than60px excluded.",
+    "geometry_candidate_pass": false
+  },
+  "glass_building_v1_confirm_81013": {
+    "axis_ticks": [
+      859.5,
+      703.5,
+      557.5,
+      412.0,
+      266.0,
+      119.5
+    ],
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          698,
+          698
+        ],
+        "bottom_range": [
+          828,
+          852
+        ],
+        "max_error": 1.824,
+        "baseline_error": 4.257
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          327,
+          327
+        ],
+        "bottom_range": [
+          833,
+          852
+        ],
+        "max_error": 1.959,
+        "baseline_error": 3.581
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          548,
+          548
+        ],
+        "bottom_range": [
+          844,
+          851
+        ],
+        "max_error": 2.095,
+        "baseline_error": 2.095
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          183,
+          184
+        ],
+        "bottom_range": [
+          832,
+          852
+        ],
+        "max_error": 1.419,
+        "baseline_error": 3.716
+      }
+    ],
+    "review_required": true,
+    "method": "Achromatic roof silhouette across central120px at gray210/225/240, >60px occupancy; body lower bound blue mask. Axis measured from generated ticks. Label clusters narrower than60px excluded.",
+    "geometry_candidate_pass": false
+  },
+  "glass_building_v1_confirm_82003": {
+    "axis_ticks": [
+      847.5,
+      703.0,
+      557.5,
+      411.0,
+      266.5,
+      121.0
+    ],
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          685,
+          686
+        ],
+        "bottom_range": [
+          859,
+          859
+        ],
+        "max_error": 2.368,
+        "baseline_error": 1.583
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          309,
+          311
+        ],
+        "bottom_range": [
+          859,
+          860
+        ],
+        "max_error": 4.123,
+        "baseline_error": 1.721
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          536,
+          536
+        ],
+        "bottom_range": [
+          859,
+          859
+        ],
+        "max_error": 2.877,
+        "baseline_error": 1.583
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          174,
+          174
+        ],
+        "bottom_range": [
+          858,
+          859
+        ],
+        "max_error": 2.705,
+        "baseline_error": 1.583
+      }
+    ],
+    "review_required": true,
+    "method": "Achromatic roof silhouette across central120px at gray210/225/240, >60px occupancy; body lower bound blue mask. Axis measured from generated ticks. Label clusters narrower than60px excluded.",
+    "geometry_candidate_pass": false
+  },
+  "glass_building_v1_confirm_83013": {
+    "axis_ticks": [
+      851.0,
+      704.0,
+      558.0,
+      412.0,
+      266.0,
+      120.0
+    ],
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          703,
+          704
+        ],
+        "bottom_range": [
+          846,
+          847
+        ],
+        "max_error": 0.246,
+        "baseline_error": 0.684
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          338,
+          338
+        ],
+        "bottom_range": [
+          840,
+          847
+        ],
+        "max_error": 0.178,
+        "baseline_error": 1.505
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          555,
+          556
+        ],
+        "bottom_range": [
+          846,
+          847
+        ],
+        "max_error": 0.492,
+        "baseline_error": 0.684
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          191,
+          191
+        ],
+        "bottom_range": [
+          846,
+          847
+        ],
+        "max_error": 0.287,
+        "baseline_error": 0.684
+      }
+    ],
+    "review_required": true,
+    "method": "Achromatic roof silhouette across central120px at gray210/225/240, >60px occupancy; body lower bound blue mask. Axis measured from generated ticks. Label clusters narrower than60px excluded.",
+    "geometry_candidate_pass": true
+  },
+  "glass_building_v1_confirm_84019": {
+    "axis_ticks": [
+      853.5,
+      704.5,
+      558.0,
+      412.0,
+      265.5,
+      119.0
+    ],
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          698,
+          698
+        ],
+        "bottom_range": [
+          849,
+          851
+        ],
+        "max_error": 1.171,
+        "baseline_error": 0.613
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          333,
+          334
+        ],
+        "bottom_range": [
+          844,
+          854
+        ],
+        "max_error": 0.865,
+        "baseline_error": 1.293
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          550,
+          550
+        ],
+        "bottom_range": [
+          811,
+          855
+        ],
+        "max_error": 1.321,
+        "baseline_error": 5.786
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          189,
+          190
+        ],
+        "bottom_range": [
+          795,
+          850
+        ],
+        "max_error": 0.47,
+        "baseline_error": 7.965
+      }
+    ],
+    "review_required": true,
+    "method": "Achromatic roof silhouette across central120px at gray210/225/240, >60px occupancy; body lower bound blue mask. Axis measured from generated ticks. Label clusters narrower than60px excluded.",
+    "geometry_candidate_pass": false
+  },
+  "glass_building_v1_confirm_85023": {
+    "axis_ticks": [
+      855.0,
+      707.5,
+      560.5,
+      414.0,
+      267.0,
+      120.0
+    ],
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          702,
+          702
+        ],
+        "bottom_range": [
+          852,
+          855
+        ],
+        "max_error": 0.816,
+        "baseline_error": 0.408
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          332,
+          335
+        ],
+        "bottom_range": [
+          852,
+          855
+        ],
+        "max_error": 1.156,
+        "baseline_error": 0.408
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          553,
+          553
+        ],
+        "bottom_range": [
+          852,
+          852
+        ],
+        "max_error": 1.088,
+        "baseline_error": 0.408
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          189,
+          190
+        ],
+        "bottom_range": [
+          852,
+          852
+        ],
+        "max_error": 0.612,
+        "baseline_error": 0.408
+      }
+    ],
+    "review_required": true,
+    "method": "Achromatic roof silhouette across central120px at gray210/225/240, >60px occupancy; body lower bound blue mask. Axis measured from generated ticks. Label clusters narrower than60px excluded.",
+    "geometry_candidate_pass": true
+  },
+  "glass_building_v1_confirm_86007": {
+    "axis_ticks": [
+      856.5,
+      703.5,
+      558.0,
+      412.0,
+      266.5,
+      120.5
+    ],
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          694,
+          695
+        ],
+        "bottom_range": [
+          849,
+          855
+        ],
+        "max_error": 2.079,
+        "baseline_error": 1.019
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          328,
+          328
+        ],
+        "bottom_range": [
+          807,
+          855
+        ],
+        "max_error": 1.807,
+        "baseline_error": 6.726
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          549,
+          550
+        ],
+        "bottom_range": [
+          801,
+          855
+        ],
+        "max_error": 1.78,
+        "baseline_error": 7.541
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          185,
+          186
+        ],
+        "bottom_range": [
+          795,
+          855
+        ],
+        "max_error": 1.236,
+        "baseline_error": 8.356
+      }
+    ],
+    "review_required": true,
+    "method": "Achromatic roof silhouette across central120px at gray210/225/240, >60px occupancy; body lower bound blue mask. Axis measured from generated ticks. Label clusters narrower than60px excluded.",
+    "geometry_candidate_pass": false
+  },
+  "glass_building_v1_confirm_87003": {
+    "axis_ticks": [
+      853.0,
+      704.0,
+      559.0,
+      411.0,
+      265.5,
+      119.5
+    ],
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          699,
+          700
+        ],
+        "bottom_range": [
+          849,
+          850
+        ],
+        "max_error": 0.995,
+        "baseline_error": 0.545
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          323,
+          324
+        ],
+        "bottom_range": [
+          850,
+          852
+        ],
+        "max_error": 2.256,
+        "baseline_error": 0.409
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          551,
+          551
+        ],
+        "bottom_range": [
+          850,
+          851
+        ],
+        "max_error": 1.172,
+        "baseline_error": 0.409
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          178,
+          178
+        ],
+        "bottom_range": [
+          851,
+          853
+        ],
+        "max_error": 2.025,
+        "baseline_error": 0.273
+      }
+    ],
+    "review_required": true,
+    "method": "Achromatic roof silhouette across central120px at gray210/225/240, >60px occupancy; body lower bound blue mask. Axis measured from generated ticks. Label clusters narrower than60px excluded.",
+    "geometry_candidate_pass": false
+  },
+  "glass_building_v1_confirm_88011": {
+    "axis_ticks": [
+      851.0,
+      704.0,
+      558.0,
+      412.0,
+      265.5,
+      119.5
+    ],
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          700,
+          701
+        ],
+        "bottom_range": [
+          848,
+          848
+        ],
+        "max_error": 0.643,
+        "baseline_error": 0.41
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          335,
+          336
+        ],
+        "bottom_range": [
+          848,
+          849
+        ],
+        "max_error": 0.54,
+        "baseline_error": 0.41
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          555,
+          558
+        ],
+        "bottom_range": [
+          848,
+          848
+        ],
+        "max_error": 0.465,
+        "baseline_error": 0.41
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          190,
+          190
+        ],
+        "bottom_range": [
+          848,
+          848
+        ],
+        "max_error": 0.362,
+        "baseline_error": 0.41
+      }
+    ],
+    "review_required": true,
+    "method": "Achromatic roof silhouette across central120px at gray210/225/240, >60px occupancy; body lower bound blue mask. Axis measured from generated ticks. Label clusters narrower than60px excluded.",
+    "geometry_candidate_pass": true
+  },
+  "glass_building_v1_confirm_89019": {
+    "axis_ticks": [
+      852.0,
+      701.0,
+      556.0,
+      410.0,
+      264.0,
+      118.0
+    ],
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          691,
+          692
+        ],
+        "bottom_range": [
+          861,
+          867
+        ],
+        "max_error": 1.935,
+        "baseline_error": 2.044
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          322,
+          323
+        ],
+        "bottom_range": [
+          865,
+          867
+        ],
+        "max_error": 2.207,
+        "baseline_error": 2.044
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          543,
+          543
+        ],
+        "bottom_range": [
+          862,
+          868
+        ],
+        "max_error": 2.098,
+        "baseline_error": 2.18
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          182,
+          183
+        ],
+        "bottom_range": [
+          863,
+          870
+        ],
+        "max_error": 1.281,
+        "baseline_error": 2.452
+      }
+    ],
+    "review_required": true,
+    "method": "Achromatic roof silhouette across central120px at gray210/225/240, >60px occupancy; body lower bound blue mask. Axis measured from generated ticks. Label clusters narrower than60px excluded.",
+    "geometry_candidate_pass": false
+  },
+  "glass_building_v1_confirm_90009": {
+    "axis_ticks": [
+      851.0,
+      704.0,
+      558.0,
+      412.0,
+      265.0,
+      121.0
+    ],
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          688,
+          692
+        ],
+        "bottom_range": [
+          846,
+          847
+        ],
+        "max_error": 2.329,
+        "baseline_error": 0.685
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          319,
+          319
+        ],
+        "bottom_range": [
+          832,
+          847
+        ],
+        "max_error": 2.877,
+        "baseline_error": 2.603
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          538,
+          539
+        ],
+        "bottom_range": [
+          843,
+          847
+        ],
+        "max_error": 2.877,
+        "baseline_error": 1.096
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          184,
+          185
+        ],
+        "bottom_range": [
+          846,
+          847
+        ],
+        "max_error": 1.37,
+        "baseline_error": 0.685
+      }
+    ],
+    "review_required": true,
+    "method": "Achromatic roof silhouette across central120px at gray210/225/240, >60px occupancy; body lower bound blue mask. Axis measured from generated ticks. Label clusters narrower than60px excluded.",
+    "geometry_candidate_pass": false
+  },
+  "glass_building_v1_debug_1337": {
+    "axis_ticks": [
+      849.0,
+      702.0,
+      557.0,
+      411.0,
+      265.5,
+      120.0
+    ],
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          691,
+          691
+        ],
+        "bottom_range": [
+          808,
+          847
+        ],
+        "max_error": 1.674,
+        "baseline_error": 5.624
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          319,
+          320
+        ],
+        "bottom_range": [
+          801,
+          847
+        ],
+        "max_error": 2.702,
+        "baseline_error": 6.584
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          538,
+          538
+        ],
+        "bottom_range": [
+          801,
+          847
+        ],
+        "max_error": 2.661,
+        "baseline_error": 6.584
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          183,
+          183
+        ],
+        "bottom_range": [
+          826,
+          832
+        ],
+        "max_error": 1.358,
+        "baseline_error": 3.155
+      }
+    ],
+    "review_required": true,
+    "method": "Achromatic roof silhouette across central120px at gray210/225/240, >60px occupancy; body lower bound blue mask. Axis measured from generated ticks. Label clusters narrower than60px excluded.",
+    "geometry_candidate_pass": false
+  },
+  "glass_building_v1_debug_42": {
+    "axis_ticks": [
+      846.0,
+      700.0,
+      555.0,
+      409.5,
+      264.0,
+      119.0
+    ],
+    "bars": [
+      {
+        "expected": 20,
+        "top_range": [
+          693,
+          694
+        ],
+        "bottom_range": [
+          841,
+          843
+        ],
+        "max_error": 1.045,
+        "baseline_error": 0.688
+      },
+      {
+        "expected": 70,
+        "top_range": [
+          329,
+          330
+        ],
+        "bottom_range": [
+          841,
+          843
+        ],
+        "max_error": 1.114,
+        "baseline_error": 0.688
+      },
+      {
+        "expected": 40,
+        "top_range": [
+          547,
+          547
+        ],
+        "bottom_range": [
+          841,
+          843
+        ],
+        "max_error": 1.128,
+        "baseline_error": 0.688
+      },
+      {
+        "expected": 90,
+        "top_range": [
+          186,
+          186
+        ],
+        "bottom_range": [
+          842,
+          843
+        ],
+        "max_error": 0.784,
+        "baseline_error": 0.55
+      }
+    ],
+    "review_required": true,
+    "method": "Achromatic roof silhouette across central120px at gray210/225/240, >60px occupancy; body lower bound blue mask. Axis measured from generated ticks. Label clusters narrower than60px excluded.",
+    "geometry_candidate_pass": true
+  }
+}

@@ -1,0 +1,214 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-caf48d7f-9cb6-4a6a-a035-be7b6357879d",
+  "job": "glass_v1_confirm_69019",
+  "status": "success",
+  "prompt_id": "be2c466d-5097-44b9-8980-b71b17ca16a0",
+  "elapsed_seconds": 4.12,
+  "files": [
+    "images/glass_v1_confirm_69019.png"
+  ],
+  "history": {
+    "prompt": [
+      32,
+      "be2c466d-5097-44b9-8980-b71b17ca16a0",
+      {
+        "1": {
+          "class_type": "UNETLoader",
+          "inputs": {
+            "unet_name": "qwen_image_2.1_turbo_int8_convrot.safetensors",
+            "weight_dtype": "default"
+          }
+        },
+        "2": {
+          "class_type": "CLIPLoader",
+          "inputs": {
+            "clip_name": "qwen3vl_8b_bf16.safetensors",
+            "type": "qwen_image"
+          }
+        },
+        "3": {
+          "class_type": "VAELoader",
+          "inputs": {
+            "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+          }
+        },
+        "4": {
+          "class_type": "TextEncodeQwenImage21",
+          "inputs": {
+            "clip": [
+              "2",
+              0
+            ],
+            "vae": [
+              "3",
+              0
+            ],
+            "prompt": "将<image1>作为准确的数据几何蓝图，重新制作柱体本身的材质。保持正交正视，四根等宽柱共用原来的零基线；四柱顶边、底边与横向占位精确沿用参考图，柱高按甲20、乙70、丙40、丁90，不改变数值几何。保留标题“测试数据”、类别、数值、坐标轴和网格的原有内容、位置与清晰度。不添加任何文字或数据。 四根蓝柱变成精致的蓝色厚玻璃实心长方体：通透玻璃内部、清楚的折射边缘、厚实边壁、细窄镜面高光、淡蓝透光与内部反射，呈现真正玻璃体的光学层次，正面保留完整矩形边界。 这是柱体实体的材质重构：须在柱内呈现明确的物理质感、边缘与光照结构，不能仅改变背景、颜色或贴一层纹理。浅色干净背景，柔和产品摄影照明，图表清晰可读。柱的正面外轮廓顶端平直且可准确测量，无圆角侵蚀高度，无透视缩短，投影不能充当柱高。",
+            "negative_prompt": "",
+            "resolution": 0,
+            "images.image_1": [
+              "12",
+              0
+            ]
+          }
+        },
+        "7": {
+          "class_type": "ManualSigmas",
+          "inputs": {
+            "sigmas": "1.0, 0.978453, 0.954180, 0.926626, 0.895080, 0.845148, 0.704534, 0.414568, 0.0"
+          }
+        },
+        "8": {
+          "class_type": "KSamplerSelect",
+          "inputs": {
+            "sampler_name": "euler"
+          }
+        },
+        "9": {
+          "class_type": "SamplerCustom",
+          "inputs": {
+            "model": [
+              "1",
+              0
+            ],
+            "add_noise": true,
+            "noise_seed": 69019,
+            "cfg": 1.0,
+            "positive": [
+              "4",
+              0
+            ],
+            "negative": [
+              "4",
+              1
+            ],
+            "sampler": [
+              "8",
+              0
+            ],
+            "sigmas": [
+              "7",
+              0
+            ],
+            "latent_image": [
+              "4",
+              2
+            ]
+          }
+        },
+        "10": {
+          "class_type": "VAEDecode",
+          "inputs": {
+            "samples": [
+              "9",
+              0
+            ],
+            "vae": [
+              "3",
+              0
+            ]
+          }
+        },
+        "11": {
+          "class_type": "SaveImage",
+          "inputs": {
+            "images": [
+              "10",
+              0
+            ],
+            "filename_prefix": "sean_chart_aesthetics/glass_v1_confirm_69019"
+          }
+        },
+        "12": {
+          "class_type": "LoadImage",
+          "inputs": {
+            "image": "sean_chart_aesthetics_reference.png"
+          }
+        }
+      },
+      {
+        "client_id": "7aa87fec-306b-4b82-a883-88047f2cbd7a",
+        "create_time": 1792053824575
+      },
+      [
+        "11"
+      ]
+    ],
+    "outputs": {
+      "11": {
+        "images": [
+          {
+            "filename": "glass_v1_confirm_69019_00001_.png",
+            "subfolder": "sean_chart_aesthetics",
+            "type": "output",
+            "metadata": {
+              "kind": "image",
+              "width": 1536,
+              "height": 1024
+            },
+            "id": "065b3c21-0cd5-46e8-bff9-b88c5e6170eb"
+          }
+        ]
+      }
+    },
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "be2c466d-5097-44b9-8980-b71b17ca16a0",
+            "timestamp": 1792053824575
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "7",
+              "8",
+              "12"
+            ],
+            "prompt_id": "be2c466d-5097-44b9-8980-b71b17ca16a0",
+            "timestamp": 1792053824579
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "be2c466d-5097-44b9-8980-b71b17ca16a0",
+            "timestamp": 1792053828252
+          }
+        ]
+      ]
+    },
+    "meta": {
+      "11": {
+        "node_id": "11",
+        "display_node": "11",
+        "parent_node": null,
+        "real_node_id": "11"
+      }
+    }
+  },
+  "gpu_samples": [
+    {
+      "seconds": 0.06,
+      "gpu": "18515, 2, 54"
+    },
+    {
+      "seconds": 3.12,
+      "gpu": "22419, 100, 73"
+    }
+  ],
+  "lease": "36748ec8-873d-49ed-bc77-3b704470198a",
+  "sha256": {
+    "images/glass_v1_confirm_69019.png": "1c7a567a46819099427685af797ea84bac8009be95cf6dfc0471cc8753362e1d"
+  }
+}

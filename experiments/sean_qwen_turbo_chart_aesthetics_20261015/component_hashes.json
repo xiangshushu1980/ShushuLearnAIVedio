@@ -1,0 +1,50 @@
+{
+  "diffusion_models/qwen_image_2.1_turbo_int8_convrot.safetensors": {
+    "path": "/home/sean/models/comfy/diffusion_models/qwen_image_2.1_turbo_int8_convrot.safetensors",
+    "size_bytes": 7256787829,
+    "mtime_ns": 1791717982621280215,
+    "sha256": "8144a0182964aa8403ad6dbc011db837304167d235161b9aabaa8532e967314c",
+    "matches_previous_size_mtime": true,
+    "hash_provenance": "inherited prior full hash; verified same size/mtime, not rehashed this run"
+  },
+  "text_encoders/qwen3vl_8b_bf16.safetensors": {
+    "path": "/home/sean/models/comfy/text_encoders/qwen3vl_8b_bf16.safetensors",
+    "size_bytes": 17534334616,
+    "mtime_ns": 1791717191329368401,
+    "sha256": "68bdc82bc1b66851162ae656225e7e2068166b603db19bd5d5a3b90eb12669a9",
+    "matches_previous_size_mtime": true,
+    "hash_provenance": "inherited prior full hash; verified same size/mtime, not rehashed this run"
+  },
+  "text_encoders/qwen3.5_9b_qwen_image_2.1_pe_t2i.int8_convrot.safetensors": {
+    "path": "/home/sean/models/comfy/text_encoders/qwen3.5_9b_qwen_image_2.1_pe_t2i.int8_convrot.safetensors",
+    "size_bytes": 9471072252,
+    "mtime_ns": 1791954753623775351,
+    "sha256": "9182abae56fe05459840a86d22abd21f972061c92fce032630af680c8c5178d3",
+    "matches_previous_size_mtime": true,
+    "hash_provenance": "inherited prior full hash; verified same size/mtime, not rehashed this run"
+  },
+  "vae/qwen_image_2.1_vae_bf16.safetensors": {
+    "path": "/home/sean/models/comfy/vae/qwen_image_2.1_vae_bf16.safetensors",
+    "size_bytes": 675509688,
+    "mtime_ns": 1790864132168151566,
+    "sha256": "bb21f7473051e1ac368515dd3f2e15cd44d7a11748ee8823e1ddca3e4876b7c9",
+    "matches_previous_size_mtime": true,
+    "hash_provenance": "inherited prior full hash; verified same size/mtime, not rehashed this run"
+  },
+  "/home/sean/projects/ComfyUI/comfy_extras/nodes_qwen.py": {
+    "sha256": "54ce02aa9e167c0b497ce026ac6b558f539427d2d1ed4fc1fcc2ec8e6bc529da",
+    "size_bytes": 11872
+  },
+  "/home/sean/projects/comfy-ops/experiments/sean_qwen_turbo_chart_aesthetics_20261015/plan.json": {
+    "sha256": "be639fc348967e74a54efab22d28489e4a5aefbc7919a01ecaa15f25accb2955",
+    "size_bytes": 5232
+  },
+  "/home/sean/projects/comfy-ops/experiments/sean_qwen_turbo_chart_aesthetics_20261015/reference.png": {
+    "sha256": "8cf2b743831117fbab7d8b644549e3d73e6c146c989a4597444eeb1faae6ce24",
+    "size_bytes": 31591
+  },
+  "/home/sean/projects/comfy-ops/experiments/sean_qwen_turbo_chart_aesthetics_20261015/official_edit_template.json": {
+    "sha256": "c1e6551759de131f083a040da072ac6f032c3c8401ceca202412cd912897d0fc",
+    "size_bytes": 96740
+  }
+}

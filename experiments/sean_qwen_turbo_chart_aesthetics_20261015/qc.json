@@ -1,0 +1,3135 @@
+{
+  "glass_building_v1_confirm_71001": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_building_v1",
+    "seed": 71001,
+    "image": "images/glass_building_v1_confirm_71001.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 3
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": false,
+    "geometry_refs": [
+      "building_measurements.json"
+    ],
+    "geometry_status": "indeterminate_equal_footprint_and_camera",
+    "projected_top_baseline_candidate_pass": true,
+    "geometry_pass": false,
+    "form_recognizable": true,
+    "note": "8/20 satisfy necessary projected top/baseline checks; not a certified joint count. Roof/base additions and unequal facades/depth make strict equal-footprint front-view success unestablished. No inverse physical3D claim."
+  },
+  "glass_building_v1_confirm_72003": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_building_v1",
+    "seed": 72003,
+    "image": "images/glass_building_v1_confirm_72003.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 3
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": false,
+    "geometry_refs": [
+      "building_measurements.json"
+    ],
+    "geometry_status": "fail_or_indeterminate",
+    "projected_top_baseline_candidate_pass": false,
+    "geometry_pass": false,
+    "form_recognizable": true,
+    "note": "8/20 satisfy necessary projected top/baseline checks; not a certified joint count. Roof/base additions and unequal facades/depth make strict equal-footprint front-view success unestablished. No inverse physical3D claim."
+  },
+  "glass_building_v1_confirm_73003": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_building_v1",
+    "seed": 73003,
+    "image": "images/glass_building_v1_confirm_73003.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 3
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": false,
+    "geometry_refs": [
+      "building_measurements.json"
+    ],
+    "geometry_status": "fail_or_indeterminate",
+    "projected_top_baseline_candidate_pass": false,
+    "geometry_pass": false,
+    "form_recognizable": true,
+    "note": "8/20 satisfy necessary projected top/baseline checks; not a certified joint count. Roof/base additions and unequal facades/depth make strict equal-footprint front-view success unestablished. No inverse physical3D claim."
+  },
+  "glass_building_v1_confirm_74001": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_building_v1",
+    "seed": 74001,
+    "image": "images/glass_building_v1_confirm_74001.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 3
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": false,
+    "geometry_refs": [
+      "building_measurements.json"
+    ],
+    "geometry_status": "fail_or_indeterminate",
+    "projected_top_baseline_candidate_pass": false,
+    "geometry_pass": false,
+    "form_recognizable": true,
+    "note": "8/20 satisfy necessary projected top/baseline checks; not a certified joint count. Roof/base additions and unequal facades/depth make strict equal-footprint front-view success unestablished. No inverse physical3D claim."
+  },
+  "glass_building_v1_confirm_75013": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_building_v1",
+    "seed": 75013,
+    "image": "images/glass_building_v1_confirm_75013.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 3
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": false,
+    "geometry_refs": [
+      "building_measurements.json"
+    ],
+    "geometry_status": "indeterminate_equal_footprint_and_camera",
+    "projected_top_baseline_candidate_pass": true,
+    "geometry_pass": false,
+    "form_recognizable": true,
+    "note": "8/20 satisfy necessary projected top/baseline checks; not a certified joint count. Roof/base additions and unequal facades/depth make strict equal-footprint front-view success unestablished. No inverse physical3D claim."
+  },
+  "glass_building_v1_confirm_76003": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_building_v1",
+    "seed": 76003,
+    "image": "images/glass_building_v1_confirm_76003.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 3
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": false,
+    "geometry_refs": [
+      "building_measurements.json"
+    ],
+    "geometry_status": "indeterminate_equal_footprint_and_camera",
+    "projected_top_baseline_candidate_pass": true,
+    "geometry_pass": false,
+    "form_recognizable": true,
+    "note": "8/20 satisfy necessary projected top/baseline checks; not a certified joint count. Roof/base additions and unequal facades/depth make strict equal-footprint front-view success unestablished. No inverse physical3D claim."
+  },
+  "glass_building_v1_confirm_77011": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_building_v1",
+    "seed": 77011,
+    "image": "images/glass_building_v1_confirm_77011.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 3
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": false,
+    "geometry_refs": [
+      "building_measurements.json"
+    ],
+    "geometry_status": "indeterminate_equal_footprint_and_camera",
+    "projected_top_baseline_candidate_pass": true,
+    "geometry_pass": false,
+    "form_recognizable": true,
+    "note": "8/20 satisfy necessary projected top/baseline checks; not a certified joint count. Roof/base additions and unequal facades/depth make strict equal-footprint front-view success unestablished. No inverse physical3D claim."
+  },
+  "glass_building_v1_confirm_78001": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_building_v1",
+    "seed": 78001,
+    "image": "images/glass_building_v1_confirm_78001.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 3
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": false,
+    "geometry_refs": [
+      "building_measurements.json"
+    ],
+    "geometry_status": "indeterminate_equal_footprint_and_camera",
+    "projected_top_baseline_candidate_pass": true,
+    "geometry_pass": false,
+    "form_recognizable": true,
+    "note": "8/20 satisfy necessary projected top/baseline checks; not a certified joint count. Roof/base additions and unequal facades/depth make strict equal-footprint front-view success unestablished. No inverse physical3D claim."
+  },
+  "glass_building_v1_confirm_79009": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_building_v1",
+    "seed": 79009,
+    "image": "images/glass_building_v1_confirm_79009.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 3
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": false,
+    "geometry_refs": [
+      "building_measurements.json"
+    ],
+    "geometry_status": "fail_or_indeterminate",
+    "projected_top_baseline_candidate_pass": false,
+    "geometry_pass": false,
+    "form_recognizable": true,
+    "note": "8/20 satisfy necessary projected top/baseline checks; not a certified joint count. Roof/base additions and unequal facades/depth make strict equal-footprint front-view success unestablished. No inverse physical3D claim."
+  },
+  "glass_building_v1_confirm_80011": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_building_v1",
+    "seed": 80011,
+    "image": "images/glass_building_v1_confirm_80011.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 3
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": false,
+    "geometry_refs": [
+      "building_measurements.json"
+    ],
+    "geometry_status": "fail_or_indeterminate",
+    "projected_top_baseline_candidate_pass": false,
+    "geometry_pass": false,
+    "form_recognizable": true,
+    "note": "8/20 satisfy necessary projected top/baseline checks; not a certified joint count. Roof/base additions and unequal facades/depth make strict equal-footprint front-view success unestablished. No inverse physical3D claim."
+  },
+  "glass_building_v1_confirm_81013": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_building_v1",
+    "seed": 81013,
+    "image": "images/glass_building_v1_confirm_81013.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 3
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": false,
+    "geometry_refs": [
+      "building_measurements.json"
+    ],
+    "geometry_status": "fail_or_indeterminate",
+    "projected_top_baseline_candidate_pass": false,
+    "geometry_pass": false,
+    "form_recognizable": true,
+    "note": "8/20 satisfy necessary projected top/baseline checks; not a certified joint count. Roof/base additions and unequal facades/depth make strict equal-footprint front-view success unestablished. No inverse physical3D claim."
+  },
+  "glass_building_v1_confirm_82003": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_building_v1",
+    "seed": 82003,
+    "image": "images/glass_building_v1_confirm_82003.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 3
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": false,
+    "geometry_refs": [
+      "building_measurements.json"
+    ],
+    "geometry_status": "fail_or_indeterminate",
+    "projected_top_baseline_candidate_pass": false,
+    "geometry_pass": false,
+    "form_recognizable": true,
+    "note": "8/20 satisfy necessary projected top/baseline checks; not a certified joint count. Roof/base additions and unequal facades/depth make strict equal-footprint front-view success unestablished. No inverse physical3D claim."
+  },
+  "glass_building_v1_confirm_83013": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_building_v1",
+    "seed": 83013,
+    "image": "images/glass_building_v1_confirm_83013.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 3
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": false,
+    "geometry_refs": [
+      "building_measurements.json"
+    ],
+    "geometry_status": "indeterminate_equal_footprint_and_camera",
+    "projected_top_baseline_candidate_pass": true,
+    "geometry_pass": false,
+    "form_recognizable": true,
+    "note": "8/20 satisfy necessary projected top/baseline checks; not a certified joint count. Roof/base additions and unequal facades/depth make strict equal-footprint front-view success unestablished. No inverse physical3D claim."
+  },
+  "glass_building_v1_confirm_84019": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_building_v1",
+    "seed": 84019,
+    "image": "images/glass_building_v1_confirm_84019.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 3
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": false,
+    "geometry_refs": [
+      "building_measurements.json"
+    ],
+    "geometry_status": "fail_or_indeterminate",
+    "projected_top_baseline_candidate_pass": false,
+    "geometry_pass": false,
+    "form_recognizable": true,
+    "note": "8/20 satisfy necessary projected top/baseline checks; not a certified joint count. Roof/base additions and unequal facades/depth make strict equal-footprint front-view success unestablished. No inverse physical3D claim."
+  },
+  "glass_building_v1_confirm_85023": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_building_v1",
+    "seed": 85023,
+    "image": "images/glass_building_v1_confirm_85023.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 3
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": false,
+    "geometry_refs": [
+      "building_measurements.json"
+    ],
+    "geometry_status": "indeterminate_equal_footprint_and_camera",
+    "projected_top_baseline_candidate_pass": true,
+    "geometry_pass": false,
+    "form_recognizable": true,
+    "note": "8/20 satisfy necessary projected top/baseline checks; not a certified joint count. Roof/base additions and unequal facades/depth make strict equal-footprint front-view success unestablished. No inverse physical3D claim."
+  },
+  "glass_building_v1_confirm_86007": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_building_v1",
+    "seed": 86007,
+    "image": "images/glass_building_v1_confirm_86007.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 3
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": false,
+    "geometry_refs": [
+      "building_measurements.json"
+    ],
+    "geometry_status": "fail_or_indeterminate",
+    "projected_top_baseline_candidate_pass": false,
+    "geometry_pass": false,
+    "form_recognizable": true,
+    "note": "8/20 satisfy necessary projected top/baseline checks; not a certified joint count. Roof/base additions and unequal facades/depth make strict equal-footprint front-view success unestablished. No inverse physical3D claim."
+  },
+  "glass_building_v1_confirm_87003": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_building_v1",
+    "seed": 87003,
+    "image": "images/glass_building_v1_confirm_87003.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 3
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": false,
+    "geometry_refs": [
+      "building_measurements.json"
+    ],
+    "geometry_status": "fail_or_indeterminate",
+    "projected_top_baseline_candidate_pass": false,
+    "geometry_pass": false,
+    "form_recognizable": true,
+    "note": "8/20 satisfy necessary projected top/baseline checks; not a certified joint count. Roof/base additions and unequal facades/depth make strict equal-footprint front-view success unestablished. No inverse physical3D claim."
+  },
+  "glass_building_v1_confirm_88011": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_building_v1",
+    "seed": 88011,
+    "image": "images/glass_building_v1_confirm_88011.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 3
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": false,
+    "geometry_refs": [
+      "building_measurements.json"
+    ],
+    "geometry_status": "indeterminate_equal_footprint_and_camera",
+    "projected_top_baseline_candidate_pass": true,
+    "geometry_pass": false,
+    "form_recognizable": true,
+    "note": "8/20 satisfy necessary projected top/baseline checks; not a certified joint count. Roof/base additions and unequal facades/depth make strict equal-footprint front-view success unestablished. No inverse physical3D claim."
+  },
+  "glass_building_v1_confirm_89019": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_building_v1",
+    "seed": 89019,
+    "image": "images/glass_building_v1_confirm_89019.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 3
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": false,
+    "geometry_refs": [
+      "building_measurements.json"
+    ],
+    "geometry_status": "fail_or_indeterminate",
+    "projected_top_baseline_candidate_pass": false,
+    "geometry_pass": false,
+    "form_recognizable": true,
+    "note": "8/20 satisfy necessary projected top/baseline checks; not a certified joint count. Roof/base additions and unequal facades/depth make strict equal-footprint front-view success unestablished. No inverse physical3D claim."
+  },
+  "glass_building_v1_confirm_90009": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_building_v1",
+    "seed": 90009,
+    "image": "images/glass_building_v1_confirm_90009.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 3
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": false,
+    "geometry_refs": [
+      "building_measurements.json"
+    ],
+    "geometry_status": "fail_or_indeterminate",
+    "projected_top_baseline_candidate_pass": false,
+    "geometry_pass": false,
+    "form_recognizable": true,
+    "note": "8/20 satisfy necessary projected top/baseline checks; not a certified joint count. Roof/base additions and unequal facades/depth make strict equal-footprint front-view success unestablished. No inverse physical3D claim."
+  },
+  "glass_building_v1_debug_1337": {
+    "owner": "Sean",
+    "phase": "debug",
+    "condition": "glass_building_v1",
+    "seed": 1337,
+    "image": "images/glass_building_v1_debug_1337.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 3
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": false,
+    "geometry_refs": [
+      "building_measurements.json"
+    ],
+    "geometry_status": "fail_or_indeterminate",
+    "projected_top_baseline_candidate_pass": false,
+    "geometry_pass": false,
+    "form_recognizable": true,
+    "note": "8/20 satisfy necessary projected top/baseline checks; not a certified joint count. Roof/base additions and unequal facades/depth make strict equal-footprint front-view success unestablished. No inverse physical3D claim."
+  },
+  "glass_building_v1_debug_42": {
+    "owner": "Sean",
+    "phase": "debug",
+    "condition": "glass_building_v1",
+    "seed": 42,
+    "image": "images/glass_building_v1_debug_42.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 3
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": false,
+    "geometry_refs": [
+      "building_measurements.json"
+    ],
+    "geometry_status": "indeterminate_equal_footprint_and_camera",
+    "projected_top_baseline_candidate_pass": true,
+    "geometry_pass": false,
+    "form_recognizable": true,
+    "note": "8/20 satisfy necessary projected top/baseline checks; not a certified joint count. Roof/base additions and unequal facades/depth make strict equal-footprint front-view success unestablished. No inverse physical3D claim."
+  },
+  "glass_cylinder_v1_debug_1337": {
+    "owner": "Sean",
+    "phase": "debug",
+    "condition": "glass_cylinder_v1",
+    "seed": 1337,
+    "image": "images/glass_cylinder_v1_debug_1337.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": false,
+    "geometry_status": "camera_constraint_fail",
+    "geometry_pass": false,
+    "form_recognizable": true,
+    "note": "Both debug outputs show elliptical top caps despite registered horizontal front camera. No formal stability claim."
+  },
+  "glass_cylinder_v1_debug_42": {
+    "owner": "Sean",
+    "phase": "debug",
+    "condition": "glass_cylinder_v1",
+    "seed": 42,
+    "image": "images/glass_cylinder_v1_debug_42.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": false,
+    "geometry_status": "camera_constraint_fail",
+    "geometry_pass": false,
+    "form_recognizable": true,
+    "note": "Both debug outputs show elliptical top caps despite registered horizontal front camera. No formal stability claim."
+  },
+  "glass_spatial_v1_confirm_100011": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_spatial_v1",
+    "seed": 100011,
+    "image": "images/glass_spatial_v1_confirm_100011.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": false,
+    "geometry_refs": [
+      "spatial_measurements.json",
+      "spatial_review_sheets.py"
+    ],
+    "height_candidate_pass": false,
+    "geometry_pass": false,
+    "geometry_status": "indeterminate_full_projection",
+    "note": "RGB V-fit candidates visually checked on QC copies; not all side-corner and equal-footprint constraints independently recoverable in transparent raster. Do not promote 8/20 front-height candidates to full3D pass. At least3 clear failures rule out18/20 stability even if all other17 passed."
+  },
+  "glass_spatial_v1_confirm_101013": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_spatial_v1",
+    "seed": 101013,
+    "image": "images/glass_spatial_v1_confirm_101013.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": false,
+    "geometry_refs": [
+      "spatial_measurements.json",
+      "spatial_review_sheets.py"
+    ],
+    "height_candidate_pass": true,
+    "geometry_pass": false,
+    "geometry_status": "indeterminate_full_projection",
+    "note": "RGB V-fit candidates visually checked on QC copies; not all side-corner and equal-footprint constraints independently recoverable in transparent raster. Do not promote 8/20 front-height candidates to full3D pass. At least3 clear failures rule out18/20 stability even if all other17 passed."
+  },
+  "glass_spatial_v1_confirm_102003": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_spatial_v1",
+    "seed": 102003,
+    "image": "images/glass_spatial_v1_confirm_102003.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": false,
+    "geometry_refs": [
+      "spatial_measurements.json",
+      "spatial_review_sheets.py"
+    ],
+    "height_candidate_pass": true,
+    "geometry_pass": false,
+    "geometry_status": "indeterminate_full_projection",
+    "note": "RGB V-fit candidates visually checked on QC copies; not all side-corner and equal-footprint constraints independently recoverable in transparent raster. Do not promote 8/20 front-height candidates to full3D pass. At least3 clear failures rule out18/20 stability even if all other17 passed."
+  },
+  "glass_spatial_v1_confirm_103013": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_spatial_v1",
+    "seed": 103013,
+    "image": "images/glass_spatial_v1_confirm_103013.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": false,
+    "geometry_refs": [
+      "spatial_measurements.json",
+      "spatial_review_sheets.py"
+    ],
+    "height_candidate_pass": true,
+    "geometry_pass": false,
+    "geometry_status": "indeterminate_full_projection",
+    "note": "RGB V-fit candidates visually checked on QC copies; not all side-corner and equal-footprint constraints independently recoverable in transparent raster. Do not promote 8/20 front-height candidates to full3D pass. At least3 clear failures rule out18/20 stability even if all other17 passed."
+  },
+  "glass_spatial_v1_confirm_104019": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_spatial_v1",
+    "seed": 104019,
+    "image": "images/glass_spatial_v1_confirm_104019.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": false,
+    "geometry_refs": [
+      "spatial_measurements.json",
+      "spatial_review_sheets.py"
+    ],
+    "height_candidate_pass": true,
+    "geometry_pass": false,
+    "geometry_status": "indeterminate_full_projection",
+    "note": "RGB V-fit candidates visually checked on QC copies; not all side-corner and equal-footprint constraints independently recoverable in transparent raster. Do not promote 8/20 front-height candidates to full3D pass. At least3 clear failures rule out18/20 stability even if all other17 passed."
+  },
+  "glass_spatial_v1_confirm_105023": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_spatial_v1",
+    "seed": 105023,
+    "image": "images/glass_spatial_v1_confirm_105023.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": false,
+    "geometry_refs": [
+      "spatial_measurements.json",
+      "spatial_review_sheets.py"
+    ],
+    "height_candidate_pass": false,
+    "geometry_pass": false,
+    "geometry_status": "indeterminate_full_projection",
+    "note": "RGB V-fit candidates visually checked on QC copies; not all side-corner and equal-footprint constraints independently recoverable in transparent raster. Do not promote 8/20 front-height candidates to full3D pass. At least3 clear failures rule out18/20 stability even if all other17 passed."
+  },
+  "glass_spatial_v1_confirm_106007": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_spatial_v1",
+    "seed": 106007,
+    "image": "images/glass_spatial_v1_confirm_106007.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": false,
+    "geometry_refs": [
+      "spatial_measurements.json",
+      "spatial_review_sheets.py"
+    ],
+    "height_candidate_pass": false,
+    "geometry_pass": false,
+    "geometry_status": "indeterminate_full_projection",
+    "note": "RGB V-fit candidates visually checked on QC copies; not all side-corner and equal-footprint constraints independently recoverable in transparent raster. Do not promote 8/20 front-height candidates to full3D pass. At least3 clear failures rule out18/20 stability even if all other17 passed."
+  },
+  "glass_spatial_v1_confirm_107003": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_spatial_v1",
+    "seed": 107003,
+    "image": "images/glass_spatial_v1_confirm_107003.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": false,
+    "geometry_refs": [
+      "spatial_measurements.json",
+      "spatial_review_sheets.py"
+    ],
+    "height_candidate_pass": true,
+    "geometry_pass": false,
+    "geometry_status": "indeterminate_full_projection",
+    "note": "RGB V-fit candidates visually checked on QC copies; not all side-corner and equal-footprint constraints independently recoverable in transparent raster. Do not promote 8/20 front-height candidates to full3D pass. At least3 clear failures rule out18/20 stability even if all other17 passed."
+  },
+  "glass_spatial_v1_confirm_108011": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_spatial_v1",
+    "seed": 108011,
+    "image": "images/glass_spatial_v1_confirm_108011.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": false,
+    "geometry_refs": [
+      "spatial_measurements.json",
+      "spatial_review_sheets.py"
+    ],
+    "height_candidate_pass": true,
+    "geometry_pass": false,
+    "geometry_status": "indeterminate_full_projection",
+    "note": "RGB V-fit candidates visually checked on QC copies; not all side-corner and equal-footprint constraints independently recoverable in transparent raster. Do not promote 8/20 front-height candidates to full3D pass. At least3 clear failures rule out18/20 stability even if all other17 passed."
+  },
+  "glass_spatial_v1_confirm_109019": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_spatial_v1",
+    "seed": 109019,
+    "image": "images/glass_spatial_v1_confirm_109019.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": false,
+    "geometry_refs": [
+      "spatial_measurements.json",
+      "spatial_review_sheets.py"
+    ],
+    "height_candidate_pass": false,
+    "geometry_pass": false,
+    "geometry_status": "verified_fail",
+    "note": "RGB V-fit candidates visually checked on QC copies; not all side-corner and equal-footprint constraints independently recoverable in transparent raster. Do not promote 8/20 front-height candidates to full3D pass. At least3 clear failures rule out18/20 stability even if all other17 passed.",
+    "failure_detail": "Front body bottom90 approx867, axis0 tick850 and separate horizontal line867: original zero calibration not preserved;90 edge y253..867 is too long."
+  },
+  "glass_spatial_v1_confirm_110009": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_spatial_v1",
+    "seed": 110009,
+    "image": "images/glass_spatial_v1_confirm_110009.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": false,
+    "geometry_refs": [
+      "spatial_measurements.json",
+      "spatial_review_sheets.py"
+    ],
+    "height_candidate_pass": false,
+    "geometry_pass": false,
+    "geometry_status": "verified_fail",
+    "note": "RGB V-fit candidates visually checked on QC copies; not all side-corner and equal-footprint constraints independently recoverable in transparent raster. Do not promote 8/20 front-height candidates to full3D pass. At least3 clear failures rule out18/20 stability even if all other17 passed.",
+    "failure_detail": "90 front edge approx y241..848, generated axis6.5px/unit =>93.385; exceeds tolerance with2px endpoint uncertainty."
+  },
+  "glass_spatial_v1_confirm_91001": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_spatial_v1",
+    "seed": 91001,
+    "image": "images/glass_spatial_v1_confirm_91001.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": false,
+    "geometry_refs": [
+      "spatial_measurements.json",
+      "spatial_review_sheets.py"
+    ],
+    "height_candidate_pass": false,
+    "geometry_pass": false,
+    "geometry_status": "indeterminate_full_projection",
+    "note": "RGB V-fit candidates visually checked on QC copies; not all side-corner and equal-footprint constraints independently recoverable in transparent raster. Do not promote 8/20 front-height candidates to full3D pass. At least3 clear failures rule out18/20 stability even if all other17 passed."
+  },
+  "glass_spatial_v1_confirm_92003": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_spatial_v1",
+    "seed": 92003,
+    "image": "images/glass_spatial_v1_confirm_92003.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": false,
+    "geometry_refs": [
+      "spatial_measurements.json",
+      "spatial_review_sheets.py"
+    ],
+    "height_candidate_pass": false,
+    "geometry_pass": false,
+    "geometry_status": "indeterminate_full_projection",
+    "note": "RGB V-fit candidates visually checked on QC copies; not all side-corner and equal-footprint constraints independently recoverable in transparent raster. Do not promote 8/20 front-height candidates to full3D pass. At least3 clear failures rule out18/20 stability even if all other17 passed."
+  },
+  "glass_spatial_v1_confirm_93003": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_spatial_v1",
+    "seed": 93003,
+    "image": "images/glass_spatial_v1_confirm_93003.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": false,
+    "geometry_refs": [
+      "spatial_measurements.json",
+      "spatial_review_sheets.py"
+    ],
+    "height_candidate_pass": false,
+    "geometry_pass": false,
+    "geometry_status": "indeterminate_full_projection",
+    "note": "RGB V-fit candidates visually checked on QC copies; not all side-corner and equal-footprint constraints independently recoverable in transparent raster. Do not promote 8/20 front-height candidates to full3D pass. At least3 clear failures rule out18/20 stability even if all other17 passed."
+  },
+  "glass_spatial_v1_confirm_94001": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_spatial_v1",
+    "seed": 94001,
+    "image": "images/glass_spatial_v1_confirm_94001.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": false,
+    "geometry_refs": [
+      "spatial_measurements.json",
+      "spatial_review_sheets.py"
+    ],
+    "height_candidate_pass": false,
+    "geometry_pass": false,
+    "geometry_status": "verified_fail",
+    "note": "RGB V-fit candidates visually checked on QC copies; not all side-corner and equal-footprint constraints independently recoverable in transparent raster. Do not promote 8/20 front-height candidates to full3D pass. At least3 clear failures rule out18/20 stability even if all other17 passed.",
+    "failure_detail": "40 front edge approx568..843, calibrated42.669; >2 error even allowing2px uncertainty at each endpoint."
+  },
+  "glass_spatial_v1_confirm_95013": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_spatial_v1",
+    "seed": 95013,
+    "image": "images/glass_spatial_v1_confirm_95013.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": false,
+    "geometry_refs": [
+      "spatial_measurements.json",
+      "spatial_review_sheets.py"
+    ],
+    "height_candidate_pass": true,
+    "geometry_pass": false,
+    "geometry_status": "indeterminate_full_projection",
+    "note": "RGB V-fit candidates visually checked on QC copies; not all side-corner and equal-footprint constraints independently recoverable in transparent raster. Do not promote 8/20 front-height candidates to full3D pass. At least3 clear failures rule out18/20 stability even if all other17 passed."
+  },
+  "glass_spatial_v1_confirm_96003": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_spatial_v1",
+    "seed": 96003,
+    "image": "images/glass_spatial_v1_confirm_96003.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": false,
+    "geometry_refs": [
+      "spatial_measurements.json",
+      "spatial_review_sheets.py"
+    ],
+    "height_candidate_pass": false,
+    "geometry_pass": false,
+    "geometry_status": "indeterminate_full_projection",
+    "note": "RGB V-fit candidates visually checked on QC copies; not all side-corner and equal-footprint constraints independently recoverable in transparent raster. Do not promote 8/20 front-height candidates to full3D pass. At least3 clear failures rule out18/20 stability even if all other17 passed."
+  },
+  "glass_spatial_v1_confirm_97011": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_spatial_v1",
+    "seed": 97011,
+    "image": "images/glass_spatial_v1_confirm_97011.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": false,
+    "geometry_refs": [
+      "spatial_measurements.json",
+      "spatial_review_sheets.py"
+    ],
+    "height_candidate_pass": false,
+    "geometry_pass": false,
+    "geometry_status": "indeterminate_full_projection",
+    "note": "RGB V-fit candidates visually checked on QC copies; not all side-corner and equal-footprint constraints independently recoverable in transparent raster. Do not promote 8/20 front-height candidates to full3D pass. At least3 clear failures rule out18/20 stability even if all other17 passed."
+  },
+  "glass_spatial_v1_confirm_98001": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_spatial_v1",
+    "seed": 98001,
+    "image": "images/glass_spatial_v1_confirm_98001.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": false,
+    "geometry_refs": [
+      "spatial_measurements.json",
+      "spatial_review_sheets.py"
+    ],
+    "height_candidate_pass": true,
+    "geometry_pass": false,
+    "geometry_status": "indeterminate_full_projection",
+    "note": "RGB V-fit candidates visually checked on QC copies; not all side-corner and equal-footprint constraints independently recoverable in transparent raster. Do not promote 8/20 front-height candidates to full3D pass. At least3 clear failures rule out18/20 stability even if all other17 passed."
+  },
+  "glass_spatial_v1_confirm_99009": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_spatial_v1",
+    "seed": 99009,
+    "image": "images/glass_spatial_v1_confirm_99009.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": false,
+    "geometry_refs": [
+      "spatial_measurements.json",
+      "spatial_review_sheets.py"
+    ],
+    "height_candidate_pass": false,
+    "geometry_pass": false,
+    "geometry_status": "indeterminate_full_projection",
+    "note": "RGB V-fit candidates visually checked on QC copies; not all side-corner and equal-footprint constraints independently recoverable in transparent raster. Do not promote 8/20 front-height candidates to full3D pass. At least3 clear failures rule out18/20 stability even if all other17 passed."
+  },
+  "glass_spatial_v1_debug_1337": {
+    "owner": "Sean",
+    "phase": "debug",
+    "condition": "glass_spatial_v1",
+    "seed": 1337,
+    "image": "images/glass_spatial_v1_debug_1337.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": false,
+    "geometry_refs": [
+      "spatial_measurements.json",
+      "spatial_review_sheets.py"
+    ],
+    "height_candidate_pass": false,
+    "geometry_pass": false,
+    "geometry_status": "indeterminate_full_projection",
+    "note": "RGB V-fit candidates visually checked on QC copies; not all side-corner and equal-footprint constraints independently recoverable in transparent raster. Do not promote 8/20 front-height candidates to full3D pass. At least3 clear failures rule out18/20 stability even if all other17 passed."
+  },
+  "glass_spatial_v1_debug_42": {
+    "owner": "Sean",
+    "phase": "debug",
+    "condition": "glass_spatial_v1",
+    "seed": 42,
+    "image": "images/glass_spatial_v1_debug_42.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": false,
+    "geometry_refs": [
+      "spatial_measurements.json",
+      "spatial_review_sheets.py"
+    ],
+    "height_candidate_pass": false,
+    "geometry_pass": false,
+    "geometry_status": "indeterminate_full_projection",
+    "note": "RGB V-fit candidates visually checked on QC copies; not all side-corner and equal-footprint constraints independently recoverable in transparent raster. Do not promote 8/20 front-height candidates to full3D pass. At least3 clear failures rule out18/20 stability even if all other17 passed."
+  },
+  "glass_v1_confirm_51001": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_v1",
+    "seed": 51001,
+    "image": "images/glass_v1_confirm_51001.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 0.959,
+    "baseline_max_error": 0.137,
+    "top_registration_max_error": 0.822,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "glass_v1_confirm_52003": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_v1",
+    "seed": 52003,
+    "image": "images/glass_v1_confirm_52003.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 0.354,
+    "baseline_max_error": 0.136,
+    "top_registration_max_error": 0.218,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "glass_v1_confirm_53003": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_v1",
+    "seed": 53003,
+    "image": "images/glass_v1_confirm_53003.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 1.146,
+    "baseline_max_error": 0.273,
+    "top_registration_max_error": 0.737,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "glass_v1_confirm_54001": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_v1",
+    "seed": 54001,
+    "image": "images/glass_v1_confirm_54001.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 1.047,
+    "baseline_max_error": 0.342,
+    "top_registration_max_error": 0.705,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "glass_v1_confirm_55013": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_v1",
+    "seed": 55013,
+    "image": "images/glass_v1_confirm_55013.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 0.959,
+    "baseline_max_error": 0.274,
+    "top_registration_max_error": 0.548,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "glass_v1_confirm_56003": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_v1",
+    "seed": 56003,
+    "image": "images/glass_v1_confirm_56003.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 0.685,
+    "baseline_max_error": 0.137,
+    "top_registration_max_error": 0.411,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "glass_v1_confirm_57011": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_v1",
+    "seed": 57011,
+    "image": "images/glass_v1_confirm_57011.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 0.548,
+    "baseline_max_error": 0.137,
+    "top_registration_max_error": 0.274,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "glass_v1_confirm_58001": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_v1",
+    "seed": 58001,
+    "image": "images/glass_v1_confirm_58001.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 0.959,
+    "baseline_max_error": 0.685,
+    "top_registration_max_error": 0.137,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "glass_v1_confirm_59009": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_v1",
+    "seed": 59009,
+    "image": "images/glass_v1_confirm_59009.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 0.685,
+    "baseline_max_error": 0.137,
+    "top_registration_max_error": 0.411,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "glass_v1_confirm_60011": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_v1",
+    "seed": 60011,
+    "image": "images/glass_v1_confirm_60011.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 1.918,
+    "baseline_max_error": 0.685,
+    "top_registration_max_error": 1.096,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "glass_v1_confirm_61013": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_v1",
+    "seed": 61013,
+    "image": "images/glass_v1_confirm_61013.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 0.411,
+    "baseline_max_error": 0.137,
+    "top_registration_max_error": 0.274,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "glass_v1_confirm_62003": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_v1",
+    "seed": 62003,
+    "image": "images/glass_v1_confirm_62003.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 1.351,
+    "baseline_max_error": 0.819,
+    "top_registration_max_error": 0.396,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "glass_v1_confirm_63013": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_v1",
+    "seed": 63013,
+    "image": "images/glass_v1_confirm_63013.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 1.205,
+    "baseline_max_error": 0.479,
+    "top_registration_max_error": 0.589,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "glass_v1_confirm_64019": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_v1",
+    "seed": 64019,
+    "image": "images/glass_v1_confirm_64019.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 1.721,
+    "baseline_max_error": 1.025,
+    "top_registration_max_error": 0.56,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "glass_v1_confirm_65023": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_v1",
+    "seed": 65023,
+    "image": "images/glass_v1_confirm_65023.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 0.959,
+    "baseline_max_error": 0.274,
+    "top_registration_max_error": 0.548,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "glass_v1_confirm_66007": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_v1",
+    "seed": 66007,
+    "image": "images/glass_v1_confirm_66007.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 1.038,
+    "baseline_max_error": 0.342,
+    "top_registration_max_error": 0.56,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "glass_v1_confirm_67003": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_v1",
+    "seed": 67003,
+    "image": "images/glass_v1_confirm_67003.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 0.315,
+    "baseline_max_error": 0.274,
+    "top_registration_max_error": 0.178,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "glass_v1_confirm_68011": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_v1",
+    "seed": 68011,
+    "image": "images/glass_v1_confirm_68011.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 1.096,
+    "baseline_max_error": 0.411,
+    "top_registration_max_error": 0.548,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "glass_v1_confirm_69019": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_v1",
+    "seed": 69019,
+    "image": "images/glass_v1_confirm_69019.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 0.436,
+    "baseline_max_error": 0.136,
+    "top_registration_max_error": 0.436,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "glass_v1_confirm_70009": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "glass_v1",
+    "seed": 70009,
+    "image": "images/glass_v1_confirm_70009.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 1.321,
+    "baseline_max_error": 0.616,
+    "top_registration_max_error": 0.568,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "glass_v1_debug_1337": {
+    "owner": "Sean",
+    "phase": "debug",
+    "condition": "glass_v1",
+    "seed": 1337,
+    "image": "images/glass_v1_debug_1337.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 1.291,
+    "baseline_max_error": 0.137,
+    "top_registration_max_error": 1.016,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "glass_v1_debug_42": {
+    "owner": "Sean",
+    "phase": "debug",
+    "condition": "glass_v1",
+    "seed": 42,
+    "image": "images/glass_v1_debug_42.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 1.189,
+    "baseline_max_error": 0.41,
+    "top_registration_max_error": 0.779,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "metal_v1_confirm_51001": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "metal_v1",
+    "seed": 51001,
+    "image": "images/metal_v1_confirm_51001.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 2,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 0.274,
+    "baseline_max_error": 0.137,
+    "top_registration_max_error": 0.274,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "metal_v1_confirm_52003": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "metal_v1",
+    "seed": 52003,
+    "image": "images/metal_v1_confirm_52003.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 2,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 0.354,
+    "baseline_max_error": 0.136,
+    "top_registration_max_error": 0.354,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "metal_v1_confirm_53003": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "metal_v1",
+    "seed": 53003,
+    "image": "images/metal_v1_confirm_53003.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 2,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 0.588,
+    "baseline_max_error": 0.274,
+    "top_registration_max_error": 0.588,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "metal_v1_confirm_54001": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "metal_v1",
+    "seed": 54001,
+    "image": "images/metal_v1_confirm_54001.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 2,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 0.671,
+    "baseline_max_error": 0.205,
+    "top_registration_max_error": 0.602,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "metal_v1_confirm_55013": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "metal_v1",
+    "seed": 55013,
+    "image": "images/metal_v1_confirm_55013.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 2,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 0.411,
+    "baseline_max_error": 0.274,
+    "top_registration_max_error": 0.137,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "metal_v1_confirm_56003": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "metal_v1",
+    "seed": 56003,
+    "image": "images/metal_v1_confirm_56003.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 2,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 0.274,
+    "baseline_max_error": 0.0,
+    "top_registration_max_error": 0.137,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "metal_v1_confirm_57011": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "metal_v1",
+    "seed": 57011,
+    "image": "images/metal_v1_confirm_57011.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 2,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 0.274,
+    "baseline_max_error": 0.137,
+    "top_registration_max_error": 0.137,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "metal_v1_confirm_58001": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "metal_v1",
+    "seed": 58001,
+    "image": "images/metal_v1_confirm_58001.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 2,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 0.548,
+    "baseline_max_error": 0.274,
+    "top_registration_max_error": 0.137,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "metal_v1_confirm_59009": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "metal_v1",
+    "seed": 59009,
+    "image": "images/metal_v1_confirm_59009.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 2,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 0.959,
+    "baseline_max_error": 0.548,
+    "top_registration_max_error": 0.411,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json",
+      "measurement_overrides.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "metal_v1_confirm_60011": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "metal_v1",
+    "seed": 60011,
+    "image": "images/metal_v1_confirm_60011.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 2,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 0.548,
+    "baseline_max_error": 0.137,
+    "top_registration_max_error": 0.274,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "metal_v1_confirm_61013": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "metal_v1",
+    "seed": 61013,
+    "image": "images/metal_v1_confirm_61013.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 2,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 0.411,
+    "baseline_max_error": 0.137,
+    "top_registration_max_error": 0.274,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "metal_v1_confirm_62003": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "metal_v1",
+    "seed": 62003,
+    "image": "images/metal_v1_confirm_62003.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 2,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 0.917,
+    "baseline_max_error": 0.41,
+    "top_registration_max_error": 0.643,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "metal_v1_confirm_63013": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "metal_v1",
+    "seed": 63013,
+    "image": "images/metal_v1_confirm_63013.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 2,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 0.91,
+    "baseline_max_error": 0.205,
+    "top_registration_max_error": 0.705,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "metal_v1_confirm_64019": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "metal_v1",
+    "seed": 64019,
+    "image": "images/metal_v1_confirm_64019.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 2,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 1.087,
+    "baseline_max_error": 0.41,
+    "top_registration_max_error": 0.54,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "metal_v1_confirm_65023": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "metal_v1",
+    "seed": 65023,
+    "image": "images/metal_v1_confirm_65023.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 2,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 0.685,
+    "baseline_max_error": 0.137,
+    "top_registration_max_error": 0.411,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "metal_v1_confirm_66007": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "metal_v1",
+    "seed": 66007,
+    "image": "images/metal_v1_confirm_66007.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 2,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 0.916,
+    "baseline_max_error": 0.068,
+    "top_registration_max_error": 0.711,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "metal_v1_confirm_67003": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "metal_v1",
+    "seed": 67003,
+    "image": "images/metal_v1_confirm_67003.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 2,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 0.739,
+    "baseline_max_error": 0.274,
+    "top_registration_max_error": 0.602,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "metal_v1_confirm_68011": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "metal_v1",
+    "seed": 68011,
+    "image": "images/metal_v1_confirm_68011.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 2,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 0.822,
+    "baseline_max_error": 0.137,
+    "top_registration_max_error": 0.822,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "metal_v1_confirm_69019": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "metal_v1",
+    "seed": 69019,
+    "image": "images/metal_v1_confirm_69019.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 2,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 0.3,
+    "baseline_max_error": 0.272,
+    "top_registration_max_error": 0.3,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "metal_v1_confirm_70009": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "metal_v1",
+    "seed": 70009,
+    "image": "images/metal_v1_confirm_70009.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 2,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 0.76,
+    "baseline_max_error": 0.342,
+    "top_registration_max_error": 0.281,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json",
+      "measurement_overrides.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "metal_v1_debug_1337": {
+    "owner": "Sean",
+    "phase": "debug",
+    "condition": "metal_v1",
+    "seed": 1337,
+    "image": "images/metal_v1_debug_1337.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 2,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 0.632,
+    "baseline_max_error": 0.275,
+    "top_registration_max_error": 0.495,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "metal_v1_debug_42": {
+    "owner": "Sean",
+    "phase": "debug",
+    "condition": "metal_v1",
+    "seed": 42,
+    "image": "images/metal_v1_debug_42.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 2,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 0.246,
+    "baseline_max_error": 0.205,
+    "top_registration_max_error": 0.178,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "paper_v1_confirm_51001": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "paper_v1",
+    "seed": 51001,
+    "image": "images/paper_v1_confirm_51001.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 0.685,
+    "baseline_max_error": 0.137,
+    "top_registration_max_error": 0.411,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "paper_v1_confirm_52003": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "paper_v1",
+    "seed": 52003,
+    "image": "images/paper_v1_confirm_52003.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 0.544,
+    "baseline_max_error": 0.204,
+    "top_registration_max_error": 0.476,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "paper_v1_confirm_53003": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "paper_v1",
+    "seed": 53003,
+    "image": "images/paper_v1_confirm_53003.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": false,
+    "actual_body_height_max_error": 3.177,
+    "baseline_max_error": 2.522,
+    "top_registration_max_error": 0.791,
+    "geometry_pass": false,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "fail"
+  },
+  "paper_v1_confirm_54001": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "paper_v1",
+    "seed": 54001,
+    "image": "images/paper_v1_confirm_54001.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 1.047,
+    "baseline_max_error": 0.342,
+    "top_registration_max_error": 0.705,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "paper_v1_confirm_55013": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "paper_v1",
+    "seed": 55013,
+    "image": "images/paper_v1_confirm_55013.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 1.507,
+    "baseline_max_error": 1.233,
+    "top_registration_max_error": 0.137,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "paper_v1_confirm_56003": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "paper_v1",
+    "seed": 56003,
+    "image": "images/paper_v1_confirm_56003.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 1.233,
+    "baseline_max_error": 0.274,
+    "top_registration_max_error": 0.959,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "paper_v1_confirm_57011": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "paper_v1",
+    "seed": 57011,
+    "image": "images/paper_v1_confirm_57011.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": false,
+    "actual_body_height_max_error": 2.653,
+    "baseline_max_error": 0.822,
+    "top_registration_max_error": 1.693,
+    "geometry_pass": false,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "fail"
+  },
+  "paper_v1_confirm_58001": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "paper_v1",
+    "seed": 58001,
+    "image": "images/paper_v1_confirm_58001.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 0.959,
+    "baseline_max_error": 0.685,
+    "top_registration_max_error": 0.137,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "paper_v1_confirm_59009": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "paper_v1",
+    "seed": 59009,
+    "image": "images/paper_v1_confirm_59009.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 0.685,
+    "baseline_max_error": 0.137,
+    "top_registration_max_error": 0.411,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "paper_v1_confirm_60011": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "paper_v1",
+    "seed": 60011,
+    "image": "images/paper_v1_confirm_60011.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 1.769,
+    "baseline_max_error": 0.136,
+    "top_registration_max_error": 1.633,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "paper_v1_confirm_61013": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "paper_v1",
+    "seed": 61013,
+    "image": "images/paper_v1_confirm_61013.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 0.548,
+    "baseline_max_error": 0.0,
+    "top_registration_max_error": 0.411,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "paper_v1_confirm_62003": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "paper_v1",
+    "seed": 62003,
+    "image": "images/paper_v1_confirm_62003.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 1.341,
+    "baseline_max_error": 0.681,
+    "top_registration_max_error": 0.524,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "paper_v1_confirm_63013": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "paper_v1",
+    "seed": 63013,
+    "image": "images/paper_v1_confirm_63013.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 1.889,
+    "baseline_max_error": 1.164,
+    "top_registration_max_error": 0.726,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "paper_v1_confirm_64019": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "paper_v1",
+    "seed": 64019,
+    "image": "images/paper_v1_confirm_64019.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": false,
+    "actual_body_height_max_error": 2.768,
+    "baseline_max_error": 1.704,
+    "top_registration_max_error": 0.927,
+    "geometry_pass": false,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "fail"
+  },
+  "paper_v1_confirm_65023": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "paper_v1",
+    "seed": 65023,
+    "image": "images/paper_v1_confirm_65023.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 1.37,
+    "baseline_max_error": 0.822,
+    "top_registration_max_error": 0.411,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "paper_v1_confirm_66007": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "paper_v1",
+    "seed": 66007,
+    "image": "images/paper_v1_confirm_66007.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": false,
+    "actual_body_height_max_error": 3.569,
+    "baseline_max_error": 2.112,
+    "top_registration_max_error": 1.322,
+    "geometry_pass": false,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "fail"
+  },
+  "paper_v1_confirm_67003": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "paper_v1",
+    "seed": 67003,
+    "image": "images/paper_v1_confirm_67003.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 1.587,
+    "baseline_max_error": 0.684,
+    "top_registration_max_error": 0.766,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "paper_v1_confirm_68011": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "paper_v1",
+    "seed": 68011,
+    "image": "images/paper_v1_confirm_68011.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": false,
+    "actual_body_height_max_error": 2.724,
+    "baseline_max_error": 0.753,
+    "top_registration_max_error": 1.834,
+    "geometry_pass": false,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "fail"
+  },
+  "paper_v1_confirm_69019": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "paper_v1",
+    "seed": 69019,
+    "image": "images/paper_v1_confirm_69019.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 1.293,
+    "baseline_max_error": 0.136,
+    "top_registration_max_error": 1.156,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "paper_v1_confirm_70009": {
+    "owner": "Sean",
+    "phase": "confirmation",
+    "condition": "paper_v1",
+    "seed": 70009,
+    "image": "images/paper_v1_confirm_70009.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": false,
+    "actual_body_height_max_error": 2.005,
+    "baseline_max_error": 1.3,
+    "top_registration_max_error": 0.705,
+    "geometry_pass": false,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "fail"
+  },
+  "paper_v1_debug_1337": {
+    "owner": "Sean",
+    "phase": "debug",
+    "condition": "paper_v1",
+    "seed": 1337,
+    "image": "images/paper_v1_debug_1337.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 1.291,
+    "baseline_max_error": 0.137,
+    "top_registration_max_error": 1.016,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  },
+  "paper_v1_debug_42": {
+    "owner": "Sean",
+    "phase": "debug",
+    "condition": "paper_v1",
+    "seed": 42,
+    "image": "images/paper_v1_debug_42.png",
+    "text_pass": true,
+    "category_value_binding_count_order_pass": true,
+    "extra_or_missing_data": false,
+    "aesthetic_scores": {
+      "material": 3,
+      "finish": 2,
+      "substantive_change": 2
+    },
+    "reviewer": "Codex main; nonblind; reviewed all output images on contact sheets, selected raw full resolution and QC vertex sheets",
+    "review_refs": [
+      "visual_review.json"
+    ],
+    "joint_pass": true,
+    "actual_body_height_max_error": 1.218,
+    "baseline_max_error": 0.274,
+    "top_registration_max_error": 0.808,
+    "geometry_pass": true,
+    "geometry_refs": [
+      "measurements.json"
+    ],
+    "geometry_status": "pass"
+  }
+}

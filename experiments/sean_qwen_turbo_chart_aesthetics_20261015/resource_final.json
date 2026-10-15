@@ -1,0 +1,12 @@
+{
+  "owner": "Sean",
+  "occupancy": {
+    "leases": {},
+    "occupied": [],
+    "generatedAt": "2026-10-15T09:00:24.910Z"
+  },
+  "queue": {
+    "queue_running": [],
+    "queue_pending": []
+  }
+}

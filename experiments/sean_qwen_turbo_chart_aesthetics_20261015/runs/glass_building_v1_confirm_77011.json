@@ -1,0 +1,214 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-caf48d7f-9cb6-4a6a-a035-be7b6357879d",
+  "job": "glass_building_v1_confirm_77011",
+  "status": "success",
+  "prompt_id": "0bcee27d-3e65-44d4-aab5-ebfe51c878b6",
+  "elapsed_seconds": 4.13,
+  "files": [
+    "images/glass_building_v1_confirm_77011.png"
+  ],
+  "history": {
+    "prompt": [
+      84,
+      "0bcee27d-3e65-44d4-aab5-ebfe51c878b6",
+      {
+        "1": {
+          "class_type": "UNETLoader",
+          "inputs": {
+            "unet_name": "qwen_image_2.1_turbo_int8_convrot.safetensors",
+            "weight_dtype": "default"
+          }
+        },
+        "2": {
+          "class_type": "CLIPLoader",
+          "inputs": {
+            "clip_name": "qwen3vl_8b_bf16.safetensors",
+            "type": "qwen_image"
+          }
+        },
+        "3": {
+          "class_type": "VAELoader",
+          "inputs": {
+            "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+          }
+        },
+        "4": {
+          "class_type": "TextEncodeQwenImage21",
+          "inputs": {
+            "clip": [
+              "2",
+              0
+            ],
+            "vae": [
+              "3",
+              0
+            ],
+            "prompt": "把<image1>的四根蓝色柱重新设计成四座精致的蓝色玻璃幕墙建筑模型。以准确数据几何为硬约束：保持原来正交正立面视图、四个相同宽度和相同进深的矩形建筑占位，共用原来零基线，各建筑外轮廓最高点必须与原柱顶完全重合，高度仍对应甲20、乙70、丙40、丁90。仅用高度编码数值，底面积完全相等。把平面色块变成真正可识别的现代建筑：玻璃幕墙窗格、纤细竖向金属龙骨、层间窗框、通透边壁与内部结构、具有层次的建筑玻璃环境反射。屋顶保持水平，不能有天线、尖顶、台阶或超过既定高度的附属物。所有建筑使用同一种建筑设计语言。保留标题“测试数据”、类别、数字、原坐标轴的文字与位置，无新文字。清爽高级建筑模型摄影质感，背景简洁，真实光学材质和构造层次；不能只给原柱叠加纹理。",
+            "negative_prompt": "",
+            "resolution": 0,
+            "images.image_1": [
+              "12",
+              0
+            ]
+          }
+        },
+        "7": {
+          "class_type": "ManualSigmas",
+          "inputs": {
+            "sigmas": "1.0, 0.978453, 0.954180, 0.926626, 0.895080, 0.845148, 0.704534, 0.414568, 0.0"
+          }
+        },
+        "8": {
+          "class_type": "KSamplerSelect",
+          "inputs": {
+            "sampler_name": "euler"
+          }
+        },
+        "9": {
+          "class_type": "SamplerCustom",
+          "inputs": {
+            "model": [
+              "1",
+              0
+            ],
+            "add_noise": true,
+            "noise_seed": 77011,
+            "cfg": 1.0,
+            "positive": [
+              "4",
+              0
+            ],
+            "negative": [
+              "4",
+              1
+            ],
+            "sampler": [
+              "8",
+              0
+            ],
+            "sigmas": [
+              "7",
+              0
+            ],
+            "latent_image": [
+              "4",
+              2
+            ]
+          }
+        },
+        "10": {
+          "class_type": "VAEDecode",
+          "inputs": {
+            "samples": [
+              "9",
+              0
+            ],
+            "vae": [
+              "3",
+              0
+            ]
+          }
+        },
+        "11": {
+          "class_type": "SaveImage",
+          "inputs": {
+            "images": [
+              "10",
+              0
+            ],
+            "filename_prefix": "sean_chart_aesthetics/glass_building_v1_confirm_77011"
+          }
+        },
+        "12": {
+          "class_type": "LoadImage",
+          "inputs": {
+            "image": "sean_chart_aesthetics_stage_reference.png"
+          }
+        }
+      },
+      {
+        "client_id": "6e298bbc-c107-4306-a44b-4fc31c4c1886",
+        "create_time": 1792054124049
+      },
+      [
+        "11"
+      ]
+    ],
+    "outputs": {
+      "11": {
+        "images": [
+          {
+            "filename": "glass_building_v1_confirm_77011_00001_.png",
+            "subfolder": "sean_chart_aesthetics",
+            "type": "output",
+            "metadata": {
+              "kind": "image",
+              "width": 1536,
+              "height": 1024
+            },
+            "id": "4d64c864-dd07-472e-96f5-2230e7f9b7a6"
+          }
+        ]
+      }
+    },
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "0bcee27d-3e65-44d4-aab5-ebfe51c878b6",
+            "timestamp": 1792054124050
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "7",
+              "8",
+              "12"
+            ],
+            "prompt_id": "0bcee27d-3e65-44d4-aab5-ebfe51c878b6",
+            "timestamp": 1792054124053
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "0bcee27d-3e65-44d4-aab5-ebfe51c878b6",
+            "timestamp": 1792054127778
+          }
+        ]
+      ]
+    },
+    "meta": {
+      "11": {
+        "node_id": "11",
+        "display_node": "11",
+        "parent_node": null,
+        "real_node_id": "11"
+      }
+    }
+  },
+  "gpu_samples": [
+    {
+      "seconds": 0.06,
+      "gpu": "18547, 2, 53"
+    },
+    {
+      "seconds": 3.13,
+      "gpu": "19219, 66, 74"
+    }
+  ],
+  "lease": "a926f5c3-62af-4a9a-b7ee-634453c1c2e3",
+  "sha256": {
+    "images/glass_building_v1_confirm_77011.png": "eecedb9870f6ba5cf6448e92aa15c58bfb866f8294126b5dcc2be62164d1268f"
+  }
+}

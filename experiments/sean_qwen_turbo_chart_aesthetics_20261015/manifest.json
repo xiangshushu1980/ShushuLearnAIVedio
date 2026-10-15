@@ -1,0 +1,1786 @@
+{
+  "owner": "Sean",
+  "task_id": "remote-caf48d7f-9cb6-4a6a-a035-be7b6357879d",
+  "counts": {
+    "images": 112,
+    "confirmation": 100,
+    "debug": 12,
+    "pe_rewrites": 0
+  },
+  "summary": {
+    "glass_building_v1": {
+      "confirmation_n": 20,
+      "debug_n": 2,
+      "text_passes": 20,
+      "aesthetic_passes": 20,
+      "projected_necessary_checks_pass": 8,
+      "joint_success": "not established; <=necessary-check count",
+      "stability": "not demonstrated"
+    },
+    "glass_cylinder_v1": {
+      "confirmation_n": 0,
+      "debug_n": 2,
+      "text_passes": 0,
+      "aesthetic_passes": 0,
+      "stability": "debug camera failure; no confirmation"
+    },
+    "glass_spatial_v1": {
+      "confirmation_n": 20,
+      "debug_n": 2,
+      "text_passes": 20,
+      "aesthetic_passes": 20,
+      "front_height_candidates": 8,
+      "verified_failures": 3,
+      "joint_success": "not certified; <=17/20 from at least3 clear failures",
+      "stability": "not demonstrated"
+    },
+    "glass_v1": {
+      "confirmation_n": 20,
+      "debug_n": 2,
+      "text_passes": 20,
+      "aesthetic_passes": 20,
+      "joint_passes": 20,
+      "maximum_body_height_error": 1.918
+    },
+    "metal_v1": {
+      "confirmation_n": 20,
+      "debug_n": 2,
+      "text_passes": 20,
+      "aesthetic_passes": 20,
+      "joint_passes": 20,
+      "maximum_body_height_error": 1.087
+    },
+    "paper_v1": {
+      "confirmation_n": 20,
+      "debug_n": 2,
+      "text_passes": 20,
+      "aesthetic_passes": 20,
+      "joint_passes": 14,
+      "maximum_body_height_error": 3.569
+    }
+  },
+  "total_recorded_execution_seconds": 507.49,
+  "observed_peak_vram_mb": 23283.0,
+  "observed_peak_temperature_c": 76.0,
+  "resource_note": "GPU sampled about every3s; instantaneous peaks may be missed. Each batch owns its resource lease, heartbeat<=90s TTL600s, finally release. Final snapshots separate.",
+  "records": [
+    {
+      "job": "glass_building_v1_confirm_71001",
+      "condition": "glass_building_v1",
+      "seed": 71001,
+      "phase": "confirmation",
+      "prompt_id": "72a23957-3bde-4542-8d59-60c9cd0e36fa",
+      "elapsed_seconds": 7.42,
+      "sha256": {
+        "images/glass_building_v1_confirm_71001.png": "b027f27997ec1f58071d404d8e990f1796d37b619f7e483123ae0f409f0cdc28"
+      },
+      "lease": "a926f5c3-62af-4a9a-b7ee-634453c1c2e3"
+    },
+    {
+      "job": "glass_building_v1_confirm_72003",
+      "condition": "glass_building_v1",
+      "seed": 72003,
+      "phase": "confirmation",
+      "prompt_id": "268bc6ed-3e1d-4848-ad3a-9dea12b32f37",
+      "elapsed_seconds": 4.13,
+      "sha256": {
+        "images/glass_building_v1_confirm_72003.png": "f6af5aeecd93ef338afdcd0d109227a3037536fcc3f416429aa742b538e5a94d"
+      },
+      "lease": "a926f5c3-62af-4a9a-b7ee-634453c1c2e3"
+    },
+    {
+      "job": "glass_building_v1_confirm_73003",
+      "condition": "glass_building_v1",
+      "seed": 73003,
+      "phase": "confirmation",
+      "prompt_id": "797e2126-f288-479e-a352-f644116577d8",
+      "elapsed_seconds": 4.12,
+      "sha256": {
+        "images/glass_building_v1_confirm_73003.png": "f6462ef1ed535a25ac318f473d2912cd334079b567de377447e0819f4651e0a6"
+      },
+      "lease": "a926f5c3-62af-4a9a-b7ee-634453c1c2e3"
+    },
+    {
+      "job": "glass_building_v1_confirm_74001",
+      "condition": "glass_building_v1",
+      "seed": 74001,
+      "phase": "confirmation",
+      "prompt_id": "f851ed45-8d8a-4122-914e-512fcd18a570",
+      "elapsed_seconds": 4.17,
+      "sha256": {
+        "images/glass_building_v1_confirm_74001.png": "c1f97f5447439511198b9c122f7929c4e784d2394fb8c9abfd9b94ca84b071c8"
+      },
+      "lease": "a926f5c3-62af-4a9a-b7ee-634453c1c2e3"
+    },
+    {
+      "job": "glass_building_v1_confirm_75013",
+      "condition": "glass_building_v1",
+      "seed": 75013,
+      "phase": "confirmation",
+      "prompt_id": "a93a3058-e70a-4d80-be3f-343aff39a460",
+      "elapsed_seconds": 4.14,
+      "sha256": {
+        "images/glass_building_v1_confirm_75013.png": "9b0e4c382e250f32ea37ee3b1d839aa4c6334c98e4871666c4ece564062c2ba0"
+      },
+      "lease": "a926f5c3-62af-4a9a-b7ee-634453c1c2e3"
+    },
+    {
+      "job": "glass_building_v1_confirm_76003",
+      "condition": "glass_building_v1",
+      "seed": 76003,
+      "phase": "confirmation",
+      "prompt_id": "cf47b1c8-7c01-4c1d-846d-a3b71facae0a",
+      "elapsed_seconds": 4.13,
+      "sha256": {
+        "images/glass_building_v1_confirm_76003.png": "8e7d9e894a935029837ae27ef0a7a3331d34c6712fd66797cc27826889fcf525"
+      },
+      "lease": "a926f5c3-62af-4a9a-b7ee-634453c1c2e3"
+    },
+    {
+      "job": "glass_building_v1_confirm_77011",
+      "condition": "glass_building_v1",
+      "seed": 77011,
+      "phase": "confirmation",
+      "prompt_id": "0bcee27d-3e65-44d4-aab5-ebfe51c878b6",
+      "elapsed_seconds": 4.13,
+      "sha256": {
+        "images/glass_building_v1_confirm_77011.png": "eecedb9870f6ba5cf6448e92aa15c58bfb866f8294126b5dcc2be62164d1268f"
+      },
+      "lease": "a926f5c3-62af-4a9a-b7ee-634453c1c2e3"
+    },
+    {
+      "job": "glass_building_v1_confirm_78001",
+      "condition": "glass_building_v1",
+      "seed": 78001,
+      "phase": "confirmation",
+      "prompt_id": "6d8dd8aa-298c-4db4-bc51-b9c9068a4042",
+      "elapsed_seconds": 4.14,
+      "sha256": {
+        "images/glass_building_v1_confirm_78001.png": "dcbb768026396665f688c17f0865f4ccffdbb8d1034b93d76390ba13c9e6620f"
+      },
+      "lease": "a926f5c3-62af-4a9a-b7ee-634453c1c2e3"
+    },
+    {
+      "job": "glass_building_v1_confirm_79009",
+      "condition": "glass_building_v1",
+      "seed": 79009,
+      "phase": "confirmation",
+      "prompt_id": "b438771d-c6e5-47f5-b974-62191ea6ea66",
+      "elapsed_seconds": 4.12,
+      "sha256": {
+        "images/glass_building_v1_confirm_79009.png": "da29ab44a19931769dfc525e9687f7f202ebaf07e08038b4eeafc6938629016c"
+      },
+      "lease": "a926f5c3-62af-4a9a-b7ee-634453c1c2e3"
+    },
+    {
+      "job": "glass_building_v1_confirm_80011",
+      "condition": "glass_building_v1",
+      "seed": 80011,
+      "phase": "confirmation",
+      "prompt_id": "8e1728ff-2fa7-4eed-9b56-72c16bb0d6a7",
+      "elapsed_seconds": 4.13,
+      "sha256": {
+        "images/glass_building_v1_confirm_80011.png": "c30d1e4454f50ebfcdbbe5d3e15bfaaca0b940777039f085aed9bc95f8b43c1b"
+      },
+      "lease": "a926f5c3-62af-4a9a-b7ee-634453c1c2e3"
+    },
+    {
+      "job": "glass_building_v1_confirm_81013",
+      "condition": "glass_building_v1",
+      "seed": 81013,
+      "phase": "confirmation",
+      "prompt_id": "0fc01dae-e940-42c1-ab88-0890158bf903",
+      "elapsed_seconds": 4.12,
+      "sha256": {
+        "images/glass_building_v1_confirm_81013.png": "b72941a76bc0b1a6384ab5d0ef9b903072c84ae6044c8177ecce94dead51ad56"
+      },
+      "lease": "a926f5c3-62af-4a9a-b7ee-634453c1c2e3"
+    },
+    {
+      "job": "glass_building_v1_confirm_82003",
+      "condition": "glass_building_v1",
+      "seed": 82003,
+      "phase": "confirmation",
+      "prompt_id": "4669f998-4707-4738-8ffb-ecdc01e4c204",
+      "elapsed_seconds": 4.13,
+      "sha256": {
+        "images/glass_building_v1_confirm_82003.png": "c705c95e00a12c9a7a625817a9cea5c5d94b038e6bef187c62a79199ebea3a32"
+      },
+      "lease": "a926f5c3-62af-4a9a-b7ee-634453c1c2e3"
+    },
+    {
+      "job": "glass_building_v1_confirm_83013",
+      "condition": "glass_building_v1",
+      "seed": 83013,
+      "phase": "confirmation",
+      "prompt_id": "77d4e017-b36c-483e-ab5f-654e0cc72f23",
+      "elapsed_seconds": 4.12,
+      "sha256": {
+        "images/glass_building_v1_confirm_83013.png": "b61d4b633ca33ee85e1b8cbf409efb57fb90b7e40c88e2a8218ad63e5748d26e"
+      },
+      "lease": "a926f5c3-62af-4a9a-b7ee-634453c1c2e3"
+    },
+    {
+      "job": "glass_building_v1_confirm_84019",
+      "condition": "glass_building_v1",
+      "seed": 84019,
+      "phase": "confirmation",
+      "prompt_id": "a15b2534-b900-4e51-a324-cc6754f53d0c",
+      "elapsed_seconds": 4.12,
+      "sha256": {
+        "images/glass_building_v1_confirm_84019.png": "9ecd82600a332c60d0bfb51fe5327d1821dedc4326d3fd99bdc62cd71163e76b"
+      },
+      "lease": "a926f5c3-62af-4a9a-b7ee-634453c1c2e3"
+    },
+    {
+      "job": "glass_building_v1_confirm_85023",
+      "condition": "glass_building_v1",
+      "seed": 85023,
+      "phase": "confirmation",
+      "prompt_id": "24d77285-57a1-4160-86c2-e347e006a4c6",
+      "elapsed_seconds": 4.12,
+      "sha256": {
+        "images/glass_building_v1_confirm_85023.png": "c6f7003588e74b3605c42b4d54e1ae86d768c6e9e179b4a340207f7ebd7e9d08"
+      },
+      "lease": "a926f5c3-62af-4a9a-b7ee-634453c1c2e3"
+    },
+    {
+      "job": "glass_building_v1_confirm_86007",
+      "condition": "glass_building_v1",
+      "seed": 86007,
+      "phase": "confirmation",
+      "prompt_id": "d1af4fc9-bd60-4ff0-a800-4bebde22f96d",
+      "elapsed_seconds": 4.17,
+      "sha256": {
+        "images/glass_building_v1_confirm_86007.png": "dc7f1378f01811cd568e3e428adf07ba85a1d41a5b8194a1f2d715dccd4fd3aa"
+      },
+      "lease": "a926f5c3-62af-4a9a-b7ee-634453c1c2e3"
+    },
+    {
+      "job": "glass_building_v1_confirm_87003",
+      "condition": "glass_building_v1",
+      "seed": 87003,
+      "phase": "confirmation",
+      "prompt_id": "e2cf3666-e11a-45c4-aece-7b19fcb34a35",
+      "elapsed_seconds": 4.14,
+      "sha256": {
+        "images/glass_building_v1_confirm_87003.png": "d16ff47446ed9e4932bb2aa609f4268898910eead6d3011caffbc2b9e6aaa86a"
+      },
+      "lease": "a926f5c3-62af-4a9a-b7ee-634453c1c2e3"
+    },
+    {
+      "job": "glass_building_v1_confirm_88011",
+      "condition": "glass_building_v1",
+      "seed": 88011,
+      "phase": "confirmation",
+      "prompt_id": "84c5f467-36ec-4de2-b7f7-4871df618bc3",
+      "elapsed_seconds": 4.12,
+      "sha256": {
+        "images/glass_building_v1_confirm_88011.png": "7bfc4454744f0b9ddf1350119ef01dfed85544a2eaf13152bcfeddb5b56ac69c"
+      },
+      "lease": "a926f5c3-62af-4a9a-b7ee-634453c1c2e3"
+    },
+    {
+      "job": "glass_building_v1_confirm_89019",
+      "condition": "glass_building_v1",
+      "seed": 89019,
+      "phase": "confirmation",
+      "prompt_id": "ed1884f5-b5c4-4795-9a41-99a010e6ea80",
+      "elapsed_seconds": 4.15,
+      "sha256": {
+        "images/glass_building_v1_confirm_89019.png": "ea70d80e73adffa6e81da79e59a448a5cec9812b3b0744083f661c4e5c8d0146"
+      },
+      "lease": "a926f5c3-62af-4a9a-b7ee-634453c1c2e3"
+    },
+    {
+      "job": "glass_building_v1_confirm_90009",
+      "condition": "glass_building_v1",
+      "seed": 90009,
+      "phase": "confirmation",
+      "prompt_id": "cee5d6c6-4685-4f99-8832-1dd10e2a6752",
+      "elapsed_seconds": 4.13,
+      "sha256": {
+        "images/glass_building_v1_confirm_90009.png": "b522d0a25610cb942bdb8c170cbf7e77b9995a2c7ac70acb95e1f4d0ca8b0aaf"
+      },
+      "lease": "a926f5c3-62af-4a9a-b7ee-634453c1c2e3"
+    },
+    {
+      "job": "glass_building_v1_debug_1337",
+      "condition": "glass_building_v1",
+      "seed": 1337,
+      "phase": "debug",
+      "prompt_id": "f7e1ca47-390f-448b-8167-d4dc300cfbd4",
+      "elapsed_seconds": 4.13,
+      "sha256": {
+        "images/glass_building_v1_debug_1337.png": "17980abd018c981b682539fe297991a19165a50e5b3ccfe12fe916dbe2d71f12"
+      },
+      "lease": "1215d599-f93e-4fb9-93a5-dd9e56bed003"
+    },
+    {
+      "job": "glass_building_v1_debug_42",
+      "condition": "glass_building_v1",
+      "seed": 42,
+      "phase": "debug",
+      "prompt_id": "605a3eaa-1bd3-44fd-93a8-bf9a5fda48ed",
+      "elapsed_seconds": 7.44,
+      "sha256": {
+        "images/glass_building_v1_debug_42.png": "c18dbf6d4e5e0b22c390b5e34246387a40de3aacce60c0838586adcb32b11ecf"
+      },
+      "lease": "1215d599-f93e-4fb9-93a5-dd9e56bed003"
+    },
+    {
+      "job": "glass_cylinder_v1_debug_1337",
+      "condition": "glass_cylinder_v1",
+      "seed": 1337,
+      "phase": "debug",
+      "prompt_id": "c65b0271-841e-437c-8787-1c2d2c7884fe",
+      "elapsed_seconds": 4.14,
+      "sha256": {
+        "images/glass_cylinder_v1_debug_1337.png": "f4bc130a5efb31954636bfab1ff6a737c1c46302489583e194d6819df6446c25"
+      },
+      "lease": "1215d599-f93e-4fb9-93a5-dd9e56bed003"
+    },
+    {
+      "job": "glass_cylinder_v1_debug_42",
+      "condition": "glass_cylinder_v1",
+      "seed": 42,
+      "phase": "debug",
+      "prompt_id": "4298d884-7df1-4c26-aa5a-e97810045531",
+      "elapsed_seconds": 7.52,
+      "sha256": {
+        "images/glass_cylinder_v1_debug_42.png": "1b86591bc1cb91a8015b238ced668296e6c8bdb3716020d55e17b42439ed98b8"
+      },
+      "lease": "1215d599-f93e-4fb9-93a5-dd9e56bed003"
+    },
+    {
+      "job": "glass_spatial_v1_confirm_100011",
+      "condition": "glass_spatial_v1",
+      "seed": 100011,
+      "phase": "confirmation",
+      "prompt_id": "84c3c497-aa3a-4483-82ea-500d309146fc",
+      "elapsed_seconds": 4.13,
+      "sha256": {
+        "images/glass_spatial_v1_confirm_100011.png": "1f3415249616e33da031d1554983c08f408e67924dc34d2d8f777cefbb00751f"
+      },
+      "lease": "0c6e59ed-a95c-427b-940d-4dabdf2e220e"
+    },
+    {
+      "job": "glass_spatial_v1_confirm_101013",
+      "condition": "glass_spatial_v1",
+      "seed": 101013,
+      "phase": "confirmation",
+      "prompt_id": "abad8079-b1d2-431b-bbe9-42de07df0007",
+      "elapsed_seconds": 4.13,
+      "sha256": {
+        "images/glass_spatial_v1_confirm_101013.png": "14907b6ed1b96c7c30b2ea3684ebe45a2b23bfe40e62f87ccb289ca745acb37d"
+      },
+      "lease": "0c6e59ed-a95c-427b-940d-4dabdf2e220e"
+    },
+    {
+      "job": "glass_spatial_v1_confirm_102003",
+      "condition": "glass_spatial_v1",
+      "seed": 102003,
+      "phase": "confirmation",
+      "prompt_id": "110a614b-f419-4687-a788-cae667a4d008",
+      "elapsed_seconds": 4.12,
+      "sha256": {
+        "images/glass_spatial_v1_confirm_102003.png": "26bb4622011127b9867e29cbe9afbfb54798dbf366172ffa2e912cf00efcb580"
+      },
+      "lease": "0c6e59ed-a95c-427b-940d-4dabdf2e220e"
+    },
+    {
+      "job": "glass_spatial_v1_confirm_103013",
+      "condition": "glass_spatial_v1",
+      "seed": 103013,
+      "phase": "confirmation",
+      "prompt_id": "a4902391-87f2-4360-b0cb-d7598a02da23",
+      "elapsed_seconds": 4.12,
+      "sha256": {
+        "images/glass_spatial_v1_confirm_103013.png": "9eba6d3e21030cf69023342ab4312411dbe21cc38d02da39e55ac29d7c6ee52f"
+      },
+      "lease": "0c6e59ed-a95c-427b-940d-4dabdf2e220e"
+    },
+    {
+      "job": "glass_spatial_v1_confirm_104019",
+      "condition": "glass_spatial_v1",
+      "seed": 104019,
+      "phase": "confirmation",
+      "prompt_id": "8ae1aef8-9c24-420e-82d2-d73d6ed627d0",
+      "elapsed_seconds": 4.13,
+      "sha256": {
+        "images/glass_spatial_v1_confirm_104019.png": "a019f02695986e9c6de85d9aadf8a392a36537ceabb71e9d4bbecd1f65eba947"
+      },
+      "lease": "0c6e59ed-a95c-427b-940d-4dabdf2e220e"
+    },
+    {
+      "job": "glass_spatial_v1_confirm_105023",
+      "condition": "glass_spatial_v1",
+      "seed": 105023,
+      "phase": "confirmation",
+      "prompt_id": "13035076-426b-4303-9bcf-c997358554b2",
+      "elapsed_seconds": 4.13,
+      "sha256": {
+        "images/glass_spatial_v1_confirm_105023.png": "ac6cea9592424e4c1895903cc5b9217f6bd3d52aeab72ea8255978f05e724fcd"
+      },
+      "lease": "0c6e59ed-a95c-427b-940d-4dabdf2e220e"
+    },
+    {
+      "job": "glass_spatial_v1_confirm_106007",
+      "condition": "glass_spatial_v1",
+      "seed": 106007,
+      "phase": "confirmation",
+      "prompt_id": "d842a610-7447-4466-9cf2-74f6a865e176",
+      "elapsed_seconds": 4.12,
+      "sha256": {
+        "images/glass_spatial_v1_confirm_106007.png": "a9ff20e699c0029eebcf66541d5573c6c165c0efba3067931d9f63ab3157eb00"
+      },
+      "lease": "0c6e59ed-a95c-427b-940d-4dabdf2e220e"
+    },
+    {
+      "job": "glass_spatial_v1_confirm_107003",
+      "condition": "glass_spatial_v1",
+      "seed": 107003,
+      "phase": "confirmation",
+      "prompt_id": "d211ed67-7b22-4ded-892d-78d38060ac6f",
+      "elapsed_seconds": 4.12,
+      "sha256": {
+        "images/glass_spatial_v1_confirm_107003.png": "113e4d7372ed5e92787a376711daf35af8654d9ae9ceffd13d78ec98b410f2e7"
+      },
+      "lease": "0c6e59ed-a95c-427b-940d-4dabdf2e220e"
+    },
+    {
+      "job": "glass_spatial_v1_confirm_108011",
+      "condition": "glass_spatial_v1",
+      "seed": 108011,
+      "phase": "confirmation",
+      "prompt_id": "d3176016-3189-4b71-ba9e-a7dad3d13f0a",
+      "elapsed_seconds": 4.12,
+      "sha256": {
+        "images/glass_spatial_v1_confirm_108011.png": "f9aa89e850d5a27c614cf0edf5b7dc5158c1e0959f4d91e2962eec7398edd968"
+      },
+      "lease": "0c6e59ed-a95c-427b-940d-4dabdf2e220e"
+    },
+    {
+      "job": "glass_spatial_v1_confirm_109019",
+      "condition": "glass_spatial_v1",
+      "seed": 109019,
+      "phase": "confirmation",
+      "prompt_id": "95916e02-5922-44dd-8b77-f9b1880a45d2",
+      "elapsed_seconds": 4.14,
+      "sha256": {
+        "images/glass_spatial_v1_confirm_109019.png": "b912811e610dc70d20b1c9be888f06dcad9fba2dd5998caa21e46e209348ae10"
+      },
+      "lease": "0c6e59ed-a95c-427b-940d-4dabdf2e220e"
+    },
+    {
+      "job": "glass_spatial_v1_confirm_110009",
+      "condition": "glass_spatial_v1",
+      "seed": 110009,
+      "phase": "confirmation",
+      "prompt_id": "f6c92a17-81bb-48f4-8b40-515f6b95f7d8",
+      "elapsed_seconds": 4.13,
+      "sha256": {
+        "images/glass_spatial_v1_confirm_110009.png": "62d0cf5350553244d284052ac970a318c215509fd234650a3b33b47fa9489c97"
+      },
+      "lease": "0c6e59ed-a95c-427b-940d-4dabdf2e220e"
+    },
+    {
+      "job": "glass_spatial_v1_confirm_91001",
+      "condition": "glass_spatial_v1",
+      "seed": 91001,
+      "phase": "confirmation",
+      "prompt_id": "ea57dd6c-ce61-410a-afd9-727dad9ed58e",
+      "elapsed_seconds": 4.14,
+      "sha256": {
+        "images/glass_spatial_v1_confirm_91001.png": "91cd05a8481a5548797bfc0a36599d94361f879b08209a3aa67fce2b8326ab8e"
+      },
+      "lease": "0c6e59ed-a95c-427b-940d-4dabdf2e220e"
+    },
+    {
+      "job": "glass_spatial_v1_confirm_92003",
+      "condition": "glass_spatial_v1",
+      "seed": 92003,
+      "phase": "confirmation",
+      "prompt_id": "a1f91d4f-4a2d-43bd-8436-ea1f8ce34f0d",
+      "elapsed_seconds": 4.13,
+      "sha256": {
+        "images/glass_spatial_v1_confirm_92003.png": "aa75b226bdf5754b6fabe4305868b1ba1402ced5a1208ae132c81d23fa9926a1"
+      },
+      "lease": "0c6e59ed-a95c-427b-940d-4dabdf2e220e"
+    },
+    {
+      "job": "glass_spatial_v1_confirm_93003",
+      "condition": "glass_spatial_v1",
+      "seed": 93003,
+      "phase": "confirmation",
+      "prompt_id": "f8c039f9-09c9-47a0-9bc2-bf3f4ed58838",
+      "elapsed_seconds": 4.12,
+      "sha256": {
+        "images/glass_spatial_v1_confirm_93003.png": "a8793b694444730c0be75295a75ea1793a1d79d08acfea69a5066b38ec372e1c"
+      },
+      "lease": "0c6e59ed-a95c-427b-940d-4dabdf2e220e"
+    },
+    {
+      "job": "glass_spatial_v1_confirm_94001",
+      "condition": "glass_spatial_v1",
+      "seed": 94001,
+      "phase": "confirmation",
+      "prompt_id": "f42b56dc-496d-4da0-84c0-4d48261b2f04",
+      "elapsed_seconds": 4.17,
+      "sha256": {
+        "images/glass_spatial_v1_confirm_94001.png": "3c1a1436db97cc46ce1df38ef2c8f28f03993d0e310596ec493582d835baf770"
+      },
+      "lease": "0c6e59ed-a95c-427b-940d-4dabdf2e220e"
+    },
+    {
+      "job": "glass_spatial_v1_confirm_95013",
+      "condition": "glass_spatial_v1",
+      "seed": 95013,
+      "phase": "confirmation",
+      "prompt_id": "de5403d4-b97a-4074-baf8-6f5cf9023fda",
+      "elapsed_seconds": 4.13,
+      "sha256": {
+        "images/glass_spatial_v1_confirm_95013.png": "cce009951f490380e0f2a68d546a6133153e3997318f02ba19ee75f29e4608af"
+      },
+      "lease": "0c6e59ed-a95c-427b-940d-4dabdf2e220e"
+    },
+    {
+      "job": "glass_spatial_v1_confirm_96003",
+      "condition": "glass_spatial_v1",
+      "seed": 96003,
+      "phase": "confirmation",
+      "prompt_id": "dc3bfb5b-d550-4cd4-a06b-bf5908ccdac5",
+      "elapsed_seconds": 4.11,
+      "sha256": {
+        "images/glass_spatial_v1_confirm_96003.png": "310ead93be12e7e24f5c8a888d3117cd1f8ba3307d535f7c93853553ea9512d6"
+      },
+      "lease": "0c6e59ed-a95c-427b-940d-4dabdf2e220e"
+    },
+    {
+      "job": "glass_spatial_v1_confirm_97011",
+      "condition": "glass_spatial_v1",
+      "seed": 97011,
+      "phase": "confirmation",
+      "prompt_id": "6dc4c257-47fa-4b31-80ff-021e946133ca",
+      "elapsed_seconds": 4.18,
+      "sha256": {
+        "images/glass_spatial_v1_confirm_97011.png": "51557976822b811d09de2ca0f72f6fe9114a9d51c88dc191177667028ba0815c"
+      },
+      "lease": "0c6e59ed-a95c-427b-940d-4dabdf2e220e"
+    },
+    {
+      "job": "glass_spatial_v1_confirm_98001",
+      "condition": "glass_spatial_v1",
+      "seed": 98001,
+      "phase": "confirmation",
+      "prompt_id": "59e929b7-6643-4c93-9ef8-7a9bebf6f9bb",
+      "elapsed_seconds": 4.14,
+      "sha256": {
+        "images/glass_spatial_v1_confirm_98001.png": "50f93c7c158695c392b6ae5b40312a462248110893a1cbed4047dd008de0a3a2"
+      },
+      "lease": "0c6e59ed-a95c-427b-940d-4dabdf2e220e"
+    },
+    {
+      "job": "glass_spatial_v1_confirm_99009",
+      "condition": "glass_spatial_v1",
+      "seed": 99009,
+      "phase": "confirmation",
+      "prompt_id": "7832c42b-b14a-4aa0-b060-997f049567c0",
+      "elapsed_seconds": 4.12,
+      "sha256": {
+        "images/glass_spatial_v1_confirm_99009.png": "df2e727355e02dda959b539bf5650ef2acf71d8642e6a522cbb29e8d6178c7fe"
+      },
+      "lease": "0c6e59ed-a95c-427b-940d-4dabdf2e220e"
+    },
+    {
+      "job": "glass_spatial_v1_debug_1337",
+      "condition": "glass_spatial_v1",
+      "seed": 1337,
+      "phase": "debug",
+      "prompt_id": "06e9ea70-357c-4702-9c6a-9e4b74ce4ee6",
+      "elapsed_seconds": 4.13,
+      "sha256": {
+        "images/glass_spatial_v1_debug_1337.png": "0407f5f19d6095fad7c72873f6cdf049273d4234f917260c5ab6f804df42e3a7"
+      },
+      "lease": "0500b48e-3907-4e5b-a7d7-662cc6185018"
+    },
+    {
+      "job": "glass_spatial_v1_debug_42",
+      "condition": "glass_spatial_v1",
+      "seed": 42,
+      "phase": "debug",
+      "prompt_id": "7ee602ab-bb3b-45eb-a057-b4d98d1771a2",
+      "elapsed_seconds": 7.37,
+      "sha256": {
+        "images/glass_spatial_v1_debug_42.png": "484b73fd56a2f5d0a45f9b52c8f5d0b617df66438d543ac04bb37b5137563dd4"
+      },
+      "lease": "0500b48e-3907-4e5b-a7d7-662cc6185018"
+    },
+    {
+      "job": "glass_v1_confirm_51001",
+      "condition": "glass_v1",
+      "seed": 51001,
+      "phase": "confirmation",
+      "prompt_id": "0c0ad294-1458-4f48-b41d-024efa49ca07",
+      "elapsed_seconds": 7.3,
+      "sha256": {
+        "images/glass_v1_confirm_51001.png": "ee4cd64c00124e05c6de9b912f29ddbf8d94f35b53628dbf195b961c2ce14e91"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "glass_v1_confirm_52003",
+      "condition": "glass_v1",
+      "seed": 52003,
+      "phase": "confirmation",
+      "prompt_id": "ab373881-6c40-43de-abfc-f45b00f39cce",
+      "elapsed_seconds": 4.14,
+      "sha256": {
+        "images/glass_v1_confirm_52003.png": "3920d96c6227d9255502cc50ceb5e1b4d93fcd73ef9110d0617cb5721a06a9af"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "glass_v1_confirm_53003",
+      "condition": "glass_v1",
+      "seed": 53003,
+      "phase": "confirmation",
+      "prompt_id": "631b1bef-e5b5-4280-8213-813c0c8dd131",
+      "elapsed_seconds": 4.13,
+      "sha256": {
+        "images/glass_v1_confirm_53003.png": "37ac21fd0c42b97d39a263ba24c92a82b25e1f575e7c6822148b88501c88ddf3"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "glass_v1_confirm_54001",
+      "condition": "glass_v1",
+      "seed": 54001,
+      "phase": "confirmation",
+      "prompt_id": "ccc6e9a6-39ba-4c25-8874-dce9df22914b",
+      "elapsed_seconds": 4.12,
+      "sha256": {
+        "images/glass_v1_confirm_54001.png": "4480749a3f0e9bd9f9d0e20ca94344c662929939af825363635cc3e35b74bbe6"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "glass_v1_confirm_55013",
+      "condition": "glass_v1",
+      "seed": 55013,
+      "phase": "confirmation",
+      "prompt_id": "5a40a155-bbdc-460d-aa6c-7d8024f1ccfb",
+      "elapsed_seconds": 4.12,
+      "sha256": {
+        "images/glass_v1_confirm_55013.png": "f0973864172a728dfadc56907e3288ae5829d4abf482c5fe7e67c0d656c95313"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "glass_v1_confirm_56003",
+      "condition": "glass_v1",
+      "seed": 56003,
+      "phase": "confirmation",
+      "prompt_id": "8707da42-f1ef-434e-8a02-f4e197b66f77",
+      "elapsed_seconds": 4.12,
+      "sha256": {
+        "images/glass_v1_confirm_56003.png": "7c6b40f0c1cdc089bf214a9883bb428280640735ec1f8fcb84afb410072d7a45"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "glass_v1_confirm_57011",
+      "condition": "glass_v1",
+      "seed": 57011,
+      "phase": "confirmation",
+      "prompt_id": "112a5ec8-8f58-4601-9d40-4707017f47be",
+      "elapsed_seconds": 4.12,
+      "sha256": {
+        "images/glass_v1_confirm_57011.png": "2b56f86de8e1fdde4d43d5c82efa92067d9c84b16bcbbe310e4ac4ae529f31bc"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "glass_v1_confirm_58001",
+      "condition": "glass_v1",
+      "seed": 58001,
+      "phase": "confirmation",
+      "prompt_id": "9ad98755-7eec-4a94-acff-c6e89ccdb25c",
+      "elapsed_seconds": 4.13,
+      "sha256": {
+        "images/glass_v1_confirm_58001.png": "55bf61ed7d5a71844e16d57277f8525518c7ee54c5b711058719d1bbe2fe9026"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "glass_v1_confirm_59009",
+      "condition": "glass_v1",
+      "seed": 59009,
+      "phase": "confirmation",
+      "prompt_id": "bf23b44d-55b0-4d95-bb8c-6e1b0312d778",
+      "elapsed_seconds": 4.12,
+      "sha256": {
+        "images/glass_v1_confirm_59009.png": "a52b8a7fde28edfaeced116ed498cb1d58122525f2548158a2d83113d968a329"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "glass_v1_confirm_60011",
+      "condition": "glass_v1",
+      "seed": 60011,
+      "phase": "confirmation",
+      "prompt_id": "a377452d-6256-47ee-8c1d-3c4690759583",
+      "elapsed_seconds": 4.15,
+      "sha256": {
+        "images/glass_v1_confirm_60011.png": "987a42740c4d470c9486d325b90c189bcda2e3ba30087761357a0b06fca9ef47"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "glass_v1_confirm_61013",
+      "condition": "glass_v1",
+      "seed": 61013,
+      "phase": "confirmation",
+      "prompt_id": "af579626-73ea-44d8-9121-df4e2d8413ba",
+      "elapsed_seconds": 4.14,
+      "sha256": {
+        "images/glass_v1_confirm_61013.png": "2f715459f3c5052de691e0ce9bacd28fba8cf11f657b78ffd729dd88c95727d6"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "glass_v1_confirm_62003",
+      "condition": "glass_v1",
+      "seed": 62003,
+      "phase": "confirmation",
+      "prompt_id": "8af15d37-a687-4f3e-bc47-d0015cafd44f",
+      "elapsed_seconds": 4.12,
+      "sha256": {
+        "images/glass_v1_confirm_62003.png": "d0ffed82195572ac8909b86b9222c01dcad0419915ac46bdb0e87f4ca432b628"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "glass_v1_confirm_63013",
+      "condition": "glass_v1",
+      "seed": 63013,
+      "phase": "confirmation",
+      "prompt_id": "a2a21bc0-0785-412e-8ead-2f550c5506d7",
+      "elapsed_seconds": 4.13,
+      "sha256": {
+        "images/glass_v1_confirm_63013.png": "260a7c4c1aa6e66fab17ee548a63237da629480f2155b6f6377c57bce8238df1"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "glass_v1_confirm_64019",
+      "condition": "glass_v1",
+      "seed": 64019,
+      "phase": "confirmation",
+      "prompt_id": "d60260b6-ea3e-4fff-b719-e5b5493be3e1",
+      "elapsed_seconds": 4.13,
+      "sha256": {
+        "images/glass_v1_confirm_64019.png": "6b4deb488b7ade2c87566f11320407280a142c75753b67c17641c57c842208b1"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "glass_v1_confirm_65023",
+      "condition": "glass_v1",
+      "seed": 65023,
+      "phase": "confirmation",
+      "prompt_id": "039db677-0a94-4b49-b397-ab9ccc079e21",
+      "elapsed_seconds": 4.12,
+      "sha256": {
+        "images/glass_v1_confirm_65023.png": "e4497b53c6dadb2752bf43ec2a39067589366e8bcd5158db0370c363f000be9c"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "glass_v1_confirm_66007",
+      "condition": "glass_v1",
+      "seed": 66007,
+      "phase": "confirmation",
+      "prompt_id": "a1949950-c34d-4988-8172-9bfddc6fb5e1",
+      "elapsed_seconds": 4.12,
+      "sha256": {
+        "images/glass_v1_confirm_66007.png": "a526dcf41145d78159732847da74eea1026d8db9e5b69e46ded775299dd3a73b"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "glass_v1_confirm_67003",
+      "condition": "glass_v1",
+      "seed": 67003,
+      "phase": "confirmation",
+      "prompt_id": "dc9df599-801b-468d-ace1-c03926e967c4",
+      "elapsed_seconds": 4.12,
+      "sha256": {
+        "images/glass_v1_confirm_67003.png": "0cbedfdd9208421388acd95f7eaba7ee11e37a6ce4299f47105ad91ffa9548d7"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "glass_v1_confirm_68011",
+      "condition": "glass_v1",
+      "seed": 68011,
+      "phase": "confirmation",
+      "prompt_id": "88acfbfc-146f-4402-88e8-3b97652baf02",
+      "elapsed_seconds": 4.12,
+      "sha256": {
+        "images/glass_v1_confirm_68011.png": "9d4493f619339d41e36d6d60c2b93c23073c1f32b9e9b96ddbe3b8af5cfe99ef"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "glass_v1_confirm_69019",
+      "condition": "glass_v1",
+      "seed": 69019,
+      "phase": "confirmation",
+      "prompt_id": "be2c466d-5097-44b9-8980-b71b17ca16a0",
+      "elapsed_seconds": 4.12,
+      "sha256": {
+        "images/glass_v1_confirm_69019.png": "1c7a567a46819099427685af797ea84bac8009be95cf6dfc0471cc8753362e1d"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "glass_v1_confirm_70009",
+      "condition": "glass_v1",
+      "seed": 70009,
+      "phase": "confirmation",
+      "prompt_id": "f1c9c6d8-f163-4f05-962a-8b766f0bc151",
+      "elapsed_seconds": 4.11,
+      "sha256": {
+        "images/glass_v1_confirm_70009.png": "338a7142f9e5e6adb29a17d492c417baab1ad689ff0fa335cf30649eadf8c91a"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "glass_v1_debug_1337",
+      "condition": "glass_v1",
+      "seed": 1337,
+      "phase": "debug",
+      "prompt_id": "3a18c733-c740-4749-b421-f805ecd141e8",
+      "elapsed_seconds": 4.13,
+      "sha256": {
+        "images/glass_v1_debug_1337.png": "ee434d53b5757876ce35f61941dab021db855623470c2ddee22f1a0d52269131"
+      },
+      "lease": "503f237b-85de-4ddf-966b-20122012adc3"
+    },
+    {
+      "job": "glass_v1_debug_42",
+      "condition": "glass_v1",
+      "seed": 42,
+      "phase": "debug",
+      "prompt_id": "e50566ce-a9c3-4e76-b369-5bc65b56f41e",
+      "elapsed_seconds": 19.03,
+      "sha256": {
+        "images/glass_v1_debug_42.png": "5cb2c688deee922f10fb8b9c5f5cb740a1ad9083ae137216fc9f5750b07a2d3a"
+      },
+      "lease": "503f237b-85de-4ddf-966b-20122012adc3"
+    },
+    {
+      "job": "metal_v1_confirm_51001",
+      "condition": "metal_v1",
+      "seed": 51001,
+      "phase": "confirmation",
+      "prompt_id": "bf2d116a-d39e-49b5-8242-0e13e3e8a6b6",
+      "elapsed_seconds": 7.43,
+      "sha256": {
+        "images/metal_v1_confirm_51001.png": "1202a27834157b945a9346929ee354f12ca0326c2da395f35393b6cd1fc3c39f"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "metal_v1_confirm_52003",
+      "condition": "metal_v1",
+      "seed": 52003,
+      "phase": "confirmation",
+      "prompt_id": "fecf84b5-9800-475b-b538-2b8630a855a0",
+      "elapsed_seconds": 4.12,
+      "sha256": {
+        "images/metal_v1_confirm_52003.png": "54ea293708eb1809a647193cbed2b0fbbe08b8b3cb7f0465b13b319f7f00df77"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "metal_v1_confirm_53003",
+      "condition": "metal_v1",
+      "seed": 53003,
+      "phase": "confirmation",
+      "prompt_id": "0af50f64-27d9-4dd9-a424-22d8ba972f2c",
+      "elapsed_seconds": 4.12,
+      "sha256": {
+        "images/metal_v1_confirm_53003.png": "2ffb79b420d921b0b02f68ffc476a215b7ad49d8c1ea0db4faba3e6d9e4147bb"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "metal_v1_confirm_54001",
+      "condition": "metal_v1",
+      "seed": 54001,
+      "phase": "confirmation",
+      "prompt_id": "315f6cb7-63b4-43a2-a54e-b1bd9110f691",
+      "elapsed_seconds": 4.13,
+      "sha256": {
+        "images/metal_v1_confirm_54001.png": "a15f2da8c49bd878f950bd158ed52e7a526f074883e9064be5d62cef0704ac58"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "metal_v1_confirm_55013",
+      "condition": "metal_v1",
+      "seed": 55013,
+      "phase": "confirmation",
+      "prompt_id": "5092b9a6-1240-4dd2-ac17-ead9744a0926",
+      "elapsed_seconds": 4.12,
+      "sha256": {
+        "images/metal_v1_confirm_55013.png": "a06baec00a98d0e21667fb46c63003a43c8d27cff7b86546e862c92164167644"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "metal_v1_confirm_56003",
+      "condition": "metal_v1",
+      "seed": 56003,
+      "phase": "confirmation",
+      "prompt_id": "77e19aae-5047-435c-b3b4-2a4d3cf49100",
+      "elapsed_seconds": 4.12,
+      "sha256": {
+        "images/metal_v1_confirm_56003.png": "71c4357bc0e0796dbfc52c822f4d2280c8af8a5b8cf6e76437684dec538166fd"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "metal_v1_confirm_57011",
+      "condition": "metal_v1",
+      "seed": 57011,
+      "phase": "confirmation",
+      "prompt_id": "eefb2d82-51a6-4ffe-beff-fe732de29284",
+      "elapsed_seconds": 4.22,
+      "sha256": {
+        "images/metal_v1_confirm_57011.png": "7fef48d92406208c7b7a14918da34b2e0b53933ab9a35f913aa7bba4381ae17e"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "metal_v1_confirm_58001",
+      "condition": "metal_v1",
+      "seed": 58001,
+      "phase": "confirmation",
+      "prompt_id": "b42d8667-7121-43c8-b607-fcc38f4dc6a8",
+      "elapsed_seconds": 4.13,
+      "sha256": {
+        "images/metal_v1_confirm_58001.png": "bfbf6bea8a2daa36a58e874bfd107c726c4521ac6c569c226bb78e12a6bd9dcc"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "metal_v1_confirm_59009",
+      "condition": "metal_v1",
+      "seed": 59009,
+      "phase": "confirmation",
+      "prompt_id": "03cd42aa-4081-4a78-8dcf-36abd7a67a18",
+      "elapsed_seconds": 4.12,
+      "sha256": {
+        "images/metal_v1_confirm_59009.png": "38825a1dc5427ab6afe71935f6628a47e9cfa64ec2f676579d5efb4f66106535"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "metal_v1_confirm_60011",
+      "condition": "metal_v1",
+      "seed": 60011,
+      "phase": "confirmation",
+      "prompt_id": "750e5bdd-9c6a-4111-9aa0-8241ccdf4637",
+      "elapsed_seconds": 4.17,
+      "sha256": {
+        "images/metal_v1_confirm_60011.png": "4c22e1fb8601b6b496543a3090faad904a468e1522bb3c4c6a36ac94384d9a29"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "metal_v1_confirm_61013",
+      "condition": "metal_v1",
+      "seed": 61013,
+      "phase": "confirmation",
+      "prompt_id": "f27894bb-b1e4-426c-83d7-bbf468fada10",
+      "elapsed_seconds": 4.13,
+      "sha256": {
+        "images/metal_v1_confirm_61013.png": "a9b0e783fae0bd392d24efc2d90ae7314c635486e1aaf349e4d08f3dbafda666"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "metal_v1_confirm_62003",
+      "condition": "metal_v1",
+      "seed": 62003,
+      "phase": "confirmation",
+      "prompt_id": "f39c9fdd-fad2-423b-a76c-fb18aacf5ff9",
+      "elapsed_seconds": 4.12,
+      "sha256": {
+        "images/metal_v1_confirm_62003.png": "ddb32c0fda1bb2da478353f59c36a59856b6604eb1dcbebd54836427d2e82226"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "metal_v1_confirm_63013",
+      "condition": "metal_v1",
+      "seed": 63013,
+      "phase": "confirmation",
+      "prompt_id": "e755c27d-f19d-4d3b-8a26-116f2a482703",
+      "elapsed_seconds": 4.13,
+      "sha256": {
+        "images/metal_v1_confirm_63013.png": "165e27bcc2dd08814585dce00e148ca5ba7f2927ebe3ba514e77581eb5477173"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "metal_v1_confirm_64019",
+      "condition": "metal_v1",
+      "seed": 64019,
+      "phase": "confirmation",
+      "prompt_id": "72b7b2e8-d1fa-4cb7-9605-f507bcf78872",
+      "elapsed_seconds": 4.14,
+      "sha256": {
+        "images/metal_v1_confirm_64019.png": "ff85f815704a4b4fb7a5bec54ff9e61c13207f7d21db53b58c825b2efd877fd9"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "metal_v1_confirm_65023",
+      "condition": "metal_v1",
+      "seed": 65023,
+      "phase": "confirmation",
+      "prompt_id": "4f9a3bda-b48d-48e4-8a03-698fe274469e",
+      "elapsed_seconds": 4.12,
+      "sha256": {
+        "images/metal_v1_confirm_65023.png": "25f2304d1bcf9625b89adeb866f5ab5a21a691c468f52e6230900bbf8527f0eb"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "metal_v1_confirm_66007",
+      "condition": "metal_v1",
+      "seed": 66007,
+      "phase": "confirmation",
+      "prompt_id": "b5257153-cd50-4b51-b978-95c991c96ee5",
+      "elapsed_seconds": 4.16,
+      "sha256": {
+        "images/metal_v1_confirm_66007.png": "bd7004154544d69fa96c8f96572b91ff8769fce70ad95ac4758d178874787138"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "metal_v1_confirm_67003",
+      "condition": "metal_v1",
+      "seed": 67003,
+      "phase": "confirmation",
+      "prompt_id": "e0f512d9-7ed7-422e-b7c7-ecbcfc4c9c92",
+      "elapsed_seconds": 4.13,
+      "sha256": {
+        "images/metal_v1_confirm_67003.png": "3d33644da26a7f372b95bf5888129a2c261d30e6c3799ef794f36cfa9a9852e6"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "metal_v1_confirm_68011",
+      "condition": "metal_v1",
+      "seed": 68011,
+      "phase": "confirmation",
+      "prompt_id": "423da3b3-634c-445d-8d8b-57503a99d238",
+      "elapsed_seconds": 4.12,
+      "sha256": {
+        "images/metal_v1_confirm_68011.png": "f91f7bd0f458b7252e034d34f430c5b674fef3274ac3b35e991103131a4eddf4"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "metal_v1_confirm_69019",
+      "condition": "metal_v1",
+      "seed": 69019,
+      "phase": "confirmation",
+      "prompt_id": "6187f9c6-c142-4a18-9e8c-18b4bf24a145",
+      "elapsed_seconds": 4.15,
+      "sha256": {
+        "images/metal_v1_confirm_69019.png": "f2428a74b6de02b8bc822d5fa7e328cff3b15852cc95ce9c241897a75467e211"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "metal_v1_confirm_70009",
+      "condition": "metal_v1",
+      "seed": 70009,
+      "phase": "confirmation",
+      "prompt_id": "c96563c6-312f-4b65-bca0-6aff9e461351",
+      "elapsed_seconds": 4.14,
+      "sha256": {
+        "images/metal_v1_confirm_70009.png": "e2db0f663cf6ab555c1e25237a72ddf4275a5307ac59d349298a0a2252f62eaf"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "metal_v1_debug_1337",
+      "condition": "metal_v1",
+      "seed": 1337,
+      "phase": "debug",
+      "prompt_id": "40dac74e-3151-4558-95cf-c91c3d15b073",
+      "elapsed_seconds": 4.14,
+      "sha256": {
+        "images/metal_v1_debug_1337.png": "20f42ed20f76687cfd86ef5430c0957a205728b2515d2f99ef110686b71fd347"
+      },
+      "lease": "503f237b-85de-4ddf-966b-20122012adc3"
+    },
+    {
+      "job": "metal_v1_debug_42",
+      "condition": "metal_v1",
+      "seed": 42,
+      "phase": "debug",
+      "prompt_id": "250ac304-5be0-41dd-9e39-691cd8a99fd4",
+      "elapsed_seconds": 7.5,
+      "sha256": {
+        "images/metal_v1_debug_42.png": "23ad1b11d6d5d2c483457db74c9f204009d0b90fb996d4e0e365859decbf622b"
+      },
+      "lease": "503f237b-85de-4ddf-966b-20122012adc3"
+    },
+    {
+      "job": "paper_v1_confirm_51001",
+      "condition": "paper_v1",
+      "seed": 51001,
+      "phase": "confirmation",
+      "prompt_id": "32e81fc3-2c93-4f03-9c2b-c4b96394c360",
+      "elapsed_seconds": 7.47,
+      "sha256": {
+        "images/paper_v1_confirm_51001.png": "bfb461f5a9eba5f1d2a8b45532b8d3464c6f95fa692603cbf59100791a864971"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "paper_v1_confirm_52003",
+      "condition": "paper_v1",
+      "seed": 52003,
+      "phase": "confirmation",
+      "prompt_id": "4213ceaa-4330-4fc1-b2bd-825f68c62cf8",
+      "elapsed_seconds": 4.22,
+      "sha256": {
+        "images/paper_v1_confirm_52003.png": "f9e77122e4a7681721aad5b8bf2e7648014abb0bd8ea7ac6420b6ab4d93aaf5c"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "paper_v1_confirm_53003",
+      "condition": "paper_v1",
+      "seed": 53003,
+      "phase": "confirmation",
+      "prompt_id": "8776995f-bbe9-4b25-9275-14e7a655011e",
+      "elapsed_seconds": 4.13,
+      "sha256": {
+        "images/paper_v1_confirm_53003.png": "9210ff9457905223320403e8fdb66e0a170a7b9a8ddde0481df13321b6624c3a"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "paper_v1_confirm_54001",
+      "condition": "paper_v1",
+      "seed": 54001,
+      "phase": "confirmation",
+      "prompt_id": "e7416851-b910-40fa-8c4d-3ad2853c1ed1",
+      "elapsed_seconds": 4.12,
+      "sha256": {
+        "images/paper_v1_confirm_54001.png": "d0df5cccca2a2e48e737e7ecbd111528052d5050f5de9967b6cb2b47d4e76607"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "paper_v1_confirm_55013",
+      "condition": "paper_v1",
+      "seed": 55013,
+      "phase": "confirmation",
+      "prompt_id": "1239d1f1-b02a-4aae-afb9-a59f4d7068fc",
+      "elapsed_seconds": 4.12,
+      "sha256": {
+        "images/paper_v1_confirm_55013.png": "308f067f4b759d915b353654e2f773837739921ab8461ed450429b2d3b064328"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "paper_v1_confirm_56003",
+      "condition": "paper_v1",
+      "seed": 56003,
+      "phase": "confirmation",
+      "prompt_id": "aac6d7ad-8696-4ea6-b134-1c3d73fa597f",
+      "elapsed_seconds": 4.12,
+      "sha256": {
+        "images/paper_v1_confirm_56003.png": "4ae1e91e921231a7c1b8ffb029d9ae6ae133c2c8888d46217716ee3c4feb45e4"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "paper_v1_confirm_57011",
+      "condition": "paper_v1",
+      "seed": 57011,
+      "phase": "confirmation",
+      "prompt_id": "a4b3ea9e-5e54-47d4-ba71-ea77c029db7e",
+      "elapsed_seconds": 4.12,
+      "sha256": {
+        "images/paper_v1_confirm_57011.png": "ef79216aed5e1dcb54db4d483580a8156e2eb6c85b33fcef80018d794a18368d"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "paper_v1_confirm_58001",
+      "condition": "paper_v1",
+      "seed": 58001,
+      "phase": "confirmation",
+      "prompt_id": "496e33d4-70e7-45b5-8f4a-b83d56395e81",
+      "elapsed_seconds": 4.13,
+      "sha256": {
+        "images/paper_v1_confirm_58001.png": "c6029661cecd83fa623d4c6d4c23c3cfca62c3a44ff68f319ed9959f65b397b8"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "paper_v1_confirm_59009",
+      "condition": "paper_v1",
+      "seed": 59009,
+      "phase": "confirmation",
+      "prompt_id": "6460ab12-1751-488c-93af-f9aaa92c40ff",
+      "elapsed_seconds": 4.12,
+      "sha256": {
+        "images/paper_v1_confirm_59009.png": "8d879c8e33db250972d3cf581be449cb65361ae912a1be43b96d07c7840240b3"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "paper_v1_confirm_60011",
+      "condition": "paper_v1",
+      "seed": 60011,
+      "phase": "confirmation",
+      "prompt_id": "7389df2c-2a1c-4756-8b22-e51cb7bef55a",
+      "elapsed_seconds": 4.13,
+      "sha256": {
+        "images/paper_v1_confirm_60011.png": "f742d2526ed9eb49307cd1c33a4dcf889cab295c6c5fbca674b258fd370856a2"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "paper_v1_confirm_61013",
+      "condition": "paper_v1",
+      "seed": 61013,
+      "phase": "confirmation",
+      "prompt_id": "29fd0a6d-d318-4fb4-a221-b1ebfceccc45",
+      "elapsed_seconds": 4.13,
+      "sha256": {
+        "images/paper_v1_confirm_61013.png": "59b7c6e776b95babba02864d559b0b40d61c041a80070d65164252ee267b42fc"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "paper_v1_confirm_62003",
+      "condition": "paper_v1",
+      "seed": 62003,
+      "phase": "confirmation",
+      "prompt_id": "c7896a91-3116-45ea-91e5-6189a5fd9abf",
+      "elapsed_seconds": 4.12,
+      "sha256": {
+        "images/paper_v1_confirm_62003.png": "f94f10a5d9c2240c60ef3fd48e30406f0019a93b80db748167dd781f6ecd3fe2"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "paper_v1_confirm_63013",
+      "condition": "paper_v1",
+      "seed": 63013,
+      "phase": "confirmation",
+      "prompt_id": "2af204a6-4b01-4c48-b228-4fedcdee0542",
+      "elapsed_seconds": 4.13,
+      "sha256": {
+        "images/paper_v1_confirm_63013.png": "d969e8cbd1b440d66944421e6dd8984f68f4d6159f4afd05d143ba30c074f5b7"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "paper_v1_confirm_64019",
+      "condition": "paper_v1",
+      "seed": 64019,
+      "phase": "confirmation",
+      "prompt_id": "06aa6cb9-7b72-4c18-98c2-13b48a6830d7",
+      "elapsed_seconds": 4.12,
+      "sha256": {
+        "images/paper_v1_confirm_64019.png": "8c260ff9f2c211ef6e63e8ab636a700b67530177206e189c3444e7a2f11c9d9d"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "paper_v1_confirm_65023",
+      "condition": "paper_v1",
+      "seed": 65023,
+      "phase": "confirmation",
+      "prompt_id": "bab278ac-7ba6-46a1-81c4-778489661f98",
+      "elapsed_seconds": 4.12,
+      "sha256": {
+        "images/paper_v1_confirm_65023.png": "8176eaa6562bb7673c693de785ab32e71a364664693fe86432a70959ffd1756c"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "paper_v1_confirm_66007",
+      "condition": "paper_v1",
+      "seed": 66007,
+      "phase": "confirmation",
+      "prompt_id": "1431f5b6-634a-4b8b-8e8b-6eb48afaed8b",
+      "elapsed_seconds": 4.15,
+      "sha256": {
+        "images/paper_v1_confirm_66007.png": "71e4d7b5198c1ebef104fb21feeb8f35a129b84949cb3ef57f15a6576a1a554b"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "paper_v1_confirm_67003",
+      "condition": "paper_v1",
+      "seed": 67003,
+      "phase": "confirmation",
+      "prompt_id": "c1ba4010-c30d-4976-9e74-ea160464c4df",
+      "elapsed_seconds": 4.14,
+      "sha256": {
+        "images/paper_v1_confirm_67003.png": "4538bfea5d08b9ff67760289cf39adaed3856f0ad273f7cc0d7293cd6bc846fe"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "paper_v1_confirm_68011",
+      "condition": "paper_v1",
+      "seed": 68011,
+      "phase": "confirmation",
+      "prompt_id": "bbefdc43-c95d-4534-a74a-4994300b6384",
+      "elapsed_seconds": 4.12,
+      "sha256": {
+        "images/paper_v1_confirm_68011.png": "71381a7b4e9092469d5e4a24bfbfbba77d21a64f10dd5aeb114a7f833b28c848"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "paper_v1_confirm_69019",
+      "condition": "paper_v1",
+      "seed": 69019,
+      "phase": "confirmation",
+      "prompt_id": "9f193e8c-125c-460a-8444-114fdcfb6823",
+      "elapsed_seconds": 4.13,
+      "sha256": {
+        "images/paper_v1_confirm_69019.png": "ef213a17a823c5d753cbb0504e501c0d70dbc791356c31d5a3fb4d3304de01c4"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "paper_v1_confirm_70009",
+      "condition": "paper_v1",
+      "seed": 70009,
+      "phase": "confirmation",
+      "prompt_id": "c33b48d7-e9d0-4f2a-8adc-0a87fa689cf4",
+      "elapsed_seconds": 4.13,
+      "sha256": {
+        "images/paper_v1_confirm_70009.png": "e8c2d41039be4cb1572556309601b6bada2de550f25c5a4fcd582dfd4dc57faf"
+      },
+      "lease": "36748ec8-873d-49ed-bc77-3b704470198a"
+    },
+    {
+      "job": "paper_v1_debug_1337",
+      "condition": "paper_v1",
+      "seed": 1337,
+      "phase": "debug",
+      "prompt_id": "6084cebe-3afb-4b72-8579-5cb4a6288509",
+      "elapsed_seconds": 4.16,
+      "sha256": {
+        "images/paper_v1_debug_1337.png": "95e7890d13e77cebfef16451791ebe2b113aed07d00165404f17105c257f18ef"
+      },
+      "lease": "503f237b-85de-4ddf-966b-20122012adc3"
+    },
+    {
+      "job": "paper_v1_debug_42",
+      "condition": "paper_v1",
+      "seed": 42,
+      "phase": "debug",
+      "prompt_id": "c0c12105-6bb2-4ec8-bbf7-08df83d63294",
+      "elapsed_seconds": 7.55,
+      "sha256": {
+        "images/paper_v1_debug_42.png": "61bce5e51e632ecfe54ad2d4feb1e70026034a66e248db6cf2afc30ce8b48e02"
+      },
+      "lease": "503f237b-85de-4ddf-966b-20122012adc3"
+    }
+  ],
+  "files_sha256": {
+    "building_measurements.json": "f23ed1e7652620fcd89a0724aee7c3b424cec4df188d93b46623d382fda4ad2e",
+    "component_hashes.json": "1f4b68dab975891625a6df42781f4b7c9d067d091490ab26298b7317f043e117",
+    "confirmation_freeze.json": "55e27bd36afb5a96539679940d76fda4d9a796affc9f4e3b4ffdbe6b544860b8",
+    "contacts.py": "dbf3a3600c22aea61657b8e5d5bca84ad5756c05b9dd439642490b1cabb35660",
+    "generate.py": "b997d8478a7b08febfed4f57883507d691610e31a58bf96be2e3095a54ff1ff2",
+    "generate_stage.py": "cb95e88beda71ebc7f00e0814b3beee8e92f69086a3772077a627d00308d07e9",
+    "images/glass_building_v1_confirm_71001.png": "b027f27997ec1f58071d404d8e990f1796d37b619f7e483123ae0f409f0cdc28",
+    "images/glass_building_v1_confirm_72003.png": "f6af5aeecd93ef338afdcd0d109227a3037536fcc3f416429aa742b538e5a94d",
+    "images/glass_building_v1_confirm_73003.png": "f6462ef1ed535a25ac318f473d2912cd334079b567de377447e0819f4651e0a6",
+    "images/glass_building_v1_confirm_74001.png": "c1f97f5447439511198b9c122f7929c4e784d2394fb8c9abfd9b94ca84b071c8",
+    "images/glass_building_v1_confirm_75013.png": "9b0e4c382e250f32ea37ee3b1d839aa4c6334c98e4871666c4ece564062c2ba0",
+    "images/glass_building_v1_confirm_76003.png": "8e7d9e894a935029837ae27ef0a7a3331d34c6712fd66797cc27826889fcf525",
+    "images/glass_building_v1_confirm_77011.png": "eecedb9870f6ba5cf6448e92aa15c58bfb866f8294126b5dcc2be62164d1268f",
+    "images/glass_building_v1_confirm_78001.png": "dcbb768026396665f688c17f0865f4ccffdbb8d1034b93d76390ba13c9e6620f",
+    "images/glass_building_v1_confirm_79009.png": "da29ab44a19931769dfc525e9687f7f202ebaf07e08038b4eeafc6938629016c",
+    "images/glass_building_v1_confirm_80011.png": "c30d1e4454f50ebfcdbbe5d3e15bfaaca0b940777039f085aed9bc95f8b43c1b",
+    "images/glass_building_v1_confirm_81013.png": "b72941a76bc0b1a6384ab5d0ef9b903072c84ae6044c8177ecce94dead51ad56",
+    "images/glass_building_v1_confirm_82003.png": "c705c95e00a12c9a7a625817a9cea5c5d94b038e6bef187c62a79199ebea3a32",
+    "images/glass_building_v1_confirm_83013.png": "b61d4b633ca33ee85e1b8cbf409efb57fb90b7e40c88e2a8218ad63e5748d26e",
+    "images/glass_building_v1_confirm_84019.png": "9ecd82600a332c60d0bfb51fe5327d1821dedc4326d3fd99bdc62cd71163e76b",
+    "images/glass_building_v1_confirm_85023.png": "c6f7003588e74b3605c42b4d54e1ae86d768c6e9e179b4a340207f7ebd7e9d08",
+    "images/glass_building_v1_confirm_86007.png": "dc7f1378f01811cd568e3e428adf07ba85a1d41a5b8194a1f2d715dccd4fd3aa",
+    "images/glass_building_v1_confirm_87003.png": "d16ff47446ed9e4932bb2aa609f4268898910eead6d3011caffbc2b9e6aaa86a",
+    "images/glass_building_v1_confirm_88011.png": "7bfc4454744f0b9ddf1350119ef01dfed85544a2eaf13152bcfeddb5b56ac69c",
+    "images/glass_building_v1_confirm_89019.png": "ea70d80e73adffa6e81da79e59a448a5cec9812b3b0744083f661c4e5c8d0146",
+    "images/glass_building_v1_confirm_90009.png": "b522d0a25610cb942bdb8c170cbf7e77b9995a2c7ac70acb95e1f4d0ca8b0aaf",
+    "images/glass_building_v1_debug_1337.png": "17980abd018c981b682539fe297991a19165a50e5b3ccfe12fe916dbe2d71f12",
+    "images/glass_building_v1_debug_42.png": "c18dbf6d4e5e0b22c390b5e34246387a40de3aacce60c0838586adcb32b11ecf",
+    "images/glass_cylinder_v1_debug_1337.png": "f4bc130a5efb31954636bfab1ff6a737c1c46302489583e194d6819df6446c25",
+    "images/glass_cylinder_v1_debug_42.png": "1b86591bc1cb91a8015b238ced668296e6c8bdb3716020d55e17b42439ed98b8",
+    "images/glass_spatial_v1_confirm_100011.png": "1f3415249616e33da031d1554983c08f408e67924dc34d2d8f777cefbb00751f",
+    "images/glass_spatial_v1_confirm_101013.png": "14907b6ed1b96c7c30b2ea3684ebe45a2b23bfe40e62f87ccb289ca745acb37d",
+    "images/glass_spatial_v1_confirm_102003.png": "26bb4622011127b9867e29cbe9afbfb54798dbf366172ffa2e912cf00efcb580",
+    "images/glass_spatial_v1_confirm_103013.png": "9eba6d3e21030cf69023342ab4312411dbe21cc38d02da39e55ac29d7c6ee52f",
+    "images/glass_spatial_v1_confirm_104019.png": "a019f02695986e9c6de85d9aadf8a392a36537ceabb71e9d4bbecd1f65eba947",
+    "images/glass_spatial_v1_confirm_105023.png": "ac6cea9592424e4c1895903cc5b9217f6bd3d52aeab72ea8255978f05e724fcd",
+    "images/glass_spatial_v1_confirm_106007.png": "a9ff20e699c0029eebcf66541d5573c6c165c0efba3067931d9f63ab3157eb00",
+    "images/glass_spatial_v1_confirm_107003.png": "113e4d7372ed5e92787a376711daf35af8654d9ae9ceffd13d78ec98b410f2e7",
+    "images/glass_spatial_v1_confirm_108011.png": "f9aa89e850d5a27c614cf0edf5b7dc5158c1e0959f4d91e2962eec7398edd968",
+    "images/glass_spatial_v1_confirm_109019.png": "b912811e610dc70d20b1c9be888f06dcad9fba2dd5998caa21e46e209348ae10",
+    "images/glass_spatial_v1_confirm_110009.png": "62d0cf5350553244d284052ac970a318c215509fd234650a3b33b47fa9489c97",
+    "images/glass_spatial_v1_confirm_91001.png": "91cd05a8481a5548797bfc0a36599d94361f879b08209a3aa67fce2b8326ab8e",
+    "images/glass_spatial_v1_confirm_92003.png": "aa75b226bdf5754b6fabe4305868b1ba1402ced5a1208ae132c81d23fa9926a1",
+    "images/glass_spatial_v1_confirm_93003.png": "a8793b694444730c0be75295a75ea1793a1d79d08acfea69a5066b38ec372e1c",
+    "images/glass_spatial_v1_confirm_94001.png": "3c1a1436db97cc46ce1df38ef2c8f28f03993d0e310596ec493582d835baf770",
+    "images/glass_spatial_v1_confirm_95013.png": "cce009951f490380e0f2a68d546a6133153e3997318f02ba19ee75f29e4608af",
+    "images/glass_spatial_v1_confirm_96003.png": "310ead93be12e7e24f5c8a888d3117cd1f8ba3307d535f7c93853553ea9512d6",
+    "images/glass_spatial_v1_confirm_97011.png": "51557976822b811d09de2ca0f72f6fe9114a9d51c88dc191177667028ba0815c",
+    "images/glass_spatial_v1_confirm_98001.png": "50f93c7c158695c392b6ae5b40312a462248110893a1cbed4047dd008de0a3a2",
+    "images/glass_spatial_v1_confirm_99009.png": "df2e727355e02dda959b539bf5650ef2acf71d8642e6a522cbb29e8d6178c7fe",
+    "images/glass_spatial_v1_debug_1337.png": "0407f5f19d6095fad7c72873f6cdf049273d4234f917260c5ab6f804df42e3a7",
+    "images/glass_spatial_v1_debug_42.png": "484b73fd56a2f5d0a45f9b52c8f5d0b617df66438d543ac04bb37b5137563dd4",
+    "images/glass_v1_confirm_51001.png": "ee4cd64c00124e05c6de9b912f29ddbf8d94f35b53628dbf195b961c2ce14e91",
+    "images/glass_v1_confirm_52003.png": "3920d96c6227d9255502cc50ceb5e1b4d93fcd73ef9110d0617cb5721a06a9af",
+    "images/glass_v1_confirm_53003.png": "37ac21fd0c42b97d39a263ba24c92a82b25e1f575e7c6822148b88501c88ddf3",
+    "images/glass_v1_confirm_54001.png": "4480749a3f0e9bd9f9d0e20ca94344c662929939af825363635cc3e35b74bbe6",
+    "images/glass_v1_confirm_55013.png": "f0973864172a728dfadc56907e3288ae5829d4abf482c5fe7e67c0d656c95313",
+    "images/glass_v1_confirm_56003.png": "7c6b40f0c1cdc089bf214a9883bb428280640735ec1f8fcb84afb410072d7a45",
+    "images/glass_v1_confirm_57011.png": "2b56f86de8e1fdde4d43d5c82efa92067d9c84b16bcbbe310e4ac4ae529f31bc",
+    "images/glass_v1_confirm_58001.png": "55bf61ed7d5a71844e16d57277f8525518c7ee54c5b711058719d1bbe2fe9026",
+    "images/glass_v1_confirm_59009.png": "a52b8a7fde28edfaeced116ed498cb1d58122525f2548158a2d83113d968a329",
+    "images/glass_v1_confirm_60011.png": "987a42740c4d470c9486d325b90c189bcda2e3ba30087761357a0b06fca9ef47",
+    "images/glass_v1_confirm_61013.png": "2f715459f3c5052de691e0ce9bacd28fba8cf11f657b78ffd729dd88c95727d6",
+    "images/glass_v1_confirm_62003.png": "d0ffed82195572ac8909b86b9222c01dcad0419915ac46bdb0e87f4ca432b628",
+    "images/glass_v1_confirm_63013.png": "260a7c4c1aa6e66fab17ee548a63237da629480f2155b6f6377c57bce8238df1",
+    "images/glass_v1_confirm_64019.png": "6b4deb488b7ade2c87566f11320407280a142c75753b67c17641c57c842208b1",
+    "images/glass_v1_confirm_65023.png": "e4497b53c6dadb2752bf43ec2a39067589366e8bcd5158db0370c363f000be9c",
+    "images/glass_v1_confirm_66007.png": "a526dcf41145d78159732847da74eea1026d8db9e5b69e46ded775299dd3a73b",
+    "images/glass_v1_confirm_67003.png": "0cbedfdd9208421388acd95f7eaba7ee11e37a6ce4299f47105ad91ffa9548d7",
+    "images/glass_v1_confirm_68011.png": "9d4493f619339d41e36d6d60c2b93c23073c1f32b9e9b96ddbe3b8af5cfe99ef",
+    "images/glass_v1_confirm_69019.png": "1c7a567a46819099427685af797ea84bac8009be95cf6dfc0471cc8753362e1d",
+    "images/glass_v1_confirm_70009.png": "338a7142f9e5e6adb29a17d492c417baab1ad689ff0fa335cf30649eadf8c91a",
+    "images/glass_v1_debug_1337.png": "ee434d53b5757876ce35f61941dab021db855623470c2ddee22f1a0d52269131",
+    "images/glass_v1_debug_42.png": "5cb2c688deee922f10fb8b9c5f5cb740a1ad9083ae137216fc9f5750b07a2d3a",
+    "images/metal_v1_confirm_51001.png": "1202a27834157b945a9346929ee354f12ca0326c2da395f35393b6cd1fc3c39f",
+    "images/metal_v1_confirm_52003.png": "54ea293708eb1809a647193cbed2b0fbbe08b8b3cb7f0465b13b319f7f00df77",
+    "images/metal_v1_confirm_53003.png": "2ffb79b420d921b0b02f68ffc476a215b7ad49d8c1ea0db4faba3e6d9e4147bb",
+    "images/metal_v1_confirm_54001.png": "a15f2da8c49bd878f950bd158ed52e7a526f074883e9064be5d62cef0704ac58",
+    "images/metal_v1_confirm_55013.png": "a06baec00a98d0e21667fb46c63003a43c8d27cff7b86546e862c92164167644",
+    "images/metal_v1_confirm_56003.png": "71c4357bc0e0796dbfc52c822f4d2280c8af8a5b8cf6e76437684dec538166fd",
+    "images/metal_v1_confirm_57011.png": "7fef48d92406208c7b7a14918da34b2e0b53933ab9a35f913aa7bba4381ae17e",
+    "images/metal_v1_confirm_58001.png": "bfbf6bea8a2daa36a58e874bfd107c726c4521ac6c569c226bb78e12a6bd9dcc",
+    "images/metal_v1_confirm_59009.png": "38825a1dc5427ab6afe71935f6628a47e9cfa64ec2f676579d5efb4f66106535",
+    "images/metal_v1_confirm_60011.png": "4c22e1fb8601b6b496543a3090faad904a468e1522bb3c4c6a36ac94384d9a29",
+    "images/metal_v1_confirm_61013.png": "a9b0e783fae0bd392d24efc2d90ae7314c635486e1aaf349e4d08f3dbafda666",
+    "images/metal_v1_confirm_62003.png": "ddb32c0fda1bb2da478353f59c36a59856b6604eb1dcbebd54836427d2e82226",
+    "images/metal_v1_confirm_63013.png": "165e27bcc2dd08814585dce00e148ca5ba7f2927ebe3ba514e77581eb5477173",
+    "images/metal_v1_confirm_64019.png": "ff85f815704a4b4fb7a5bec54ff9e61c13207f7d21db53b58c825b2efd877fd9",
+    "images/metal_v1_confirm_65023.png": "25f2304d1bcf9625b89adeb866f5ab5a21a691c468f52e6230900bbf8527f0eb",
+    "images/metal_v1_confirm_66007.png": "bd7004154544d69fa96c8f96572b91ff8769fce70ad95ac4758d178874787138",
+    "images/metal_v1_confirm_67003.png": "3d33644da26a7f372b95bf5888129a2c261d30e6c3799ef794f36cfa9a9852e6",
+    "images/metal_v1_confirm_68011.png": "f91f7bd0f458b7252e034d34f430c5b674fef3274ac3b35e991103131a4eddf4",
+    "images/metal_v1_confirm_69019.png": "f2428a74b6de02b8bc822d5fa7e328cff3b15852cc95ce9c241897a75467e211",
+    "images/metal_v1_confirm_70009.png": "e2db0f663cf6ab555c1e25237a72ddf4275a5307ac59d349298a0a2252f62eaf",
+    "images/metal_v1_debug_1337.png": "20f42ed20f76687cfd86ef5430c0957a205728b2515d2f99ef110686b71fd347",
+    "images/metal_v1_debug_42.png": "23ad1b11d6d5d2c483457db74c9f204009d0b90fb996d4e0e365859decbf622b",
+    "images/paper_v1_confirm_51001.png": "bfb461f5a9eba5f1d2a8b45532b8d3464c6f95fa692603cbf59100791a864971",
+    "images/paper_v1_confirm_52003.png": "f9e77122e4a7681721aad5b8bf2e7648014abb0bd8ea7ac6420b6ab4d93aaf5c",
+    "images/paper_v1_confirm_53003.png": "9210ff9457905223320403e8fdb66e0a170a7b9a8ddde0481df13321b6624c3a",
+    "images/paper_v1_confirm_54001.png": "d0df5cccca2a2e48e737e7ecbd111528052d5050f5de9967b6cb2b47d4e76607",
+    "images/paper_v1_confirm_55013.png": "308f067f4b759d915b353654e2f773837739921ab8461ed450429b2d3b064328",
+    "images/paper_v1_confirm_56003.png": "4ae1e91e921231a7c1b8ffb029d9ae6ae133c2c8888d46217716ee3c4feb45e4",
+    "images/paper_v1_confirm_57011.png": "ef79216aed5e1dcb54db4d483580a8156e2eb6c85b33fcef80018d794a18368d",
+    "images/paper_v1_confirm_58001.png": "c6029661cecd83fa623d4c6d4c23c3cfca62c3a44ff68f319ed9959f65b397b8",
+    "images/paper_v1_confirm_59009.png": "8d879c8e33db250972d3cf581be449cb65361ae912a1be43b96d07c7840240b3",
+    "images/paper_v1_confirm_60011.png": "f742d2526ed9eb49307cd1c33a4dcf889cab295c6c5fbca674b258fd370856a2",
+    "images/paper_v1_confirm_61013.png": "59b7c6e776b95babba02864d559b0b40d61c041a80070d65164252ee267b42fc",
+    "images/paper_v1_confirm_62003.png": "f94f10a5d9c2240c60ef3fd48e30406f0019a93b80db748167dd781f6ecd3fe2",
+    "images/paper_v1_confirm_63013.png": "d969e8cbd1b440d66944421e6dd8984f68f4d6159f4afd05d143ba30c074f5b7",
+    "images/paper_v1_confirm_64019.png": "8c260ff9f2c211ef6e63e8ab636a700b67530177206e189c3444e7a2f11c9d9d",
+    "images/paper_v1_confirm_65023.png": "8176eaa6562bb7673c693de785ab32e71a364664693fe86432a70959ffd1756c",
+    "images/paper_v1_confirm_66007.png": "71e4d7b5198c1ebef104fb21feeb8f35a129b84949cb3ef57f15a6576a1a554b",
+    "images/paper_v1_confirm_67003.png": "4538bfea5d08b9ff67760289cf39adaed3856f0ad273f7cc0d7293cd6bc846fe",
+    "images/paper_v1_confirm_68011.png": "71381a7b4e9092469d5e4a24bfbfbba77d21a64f10dd5aeb114a7f833b28c848",
+    "images/paper_v1_confirm_69019.png": "ef213a17a823c5d753cbb0504e501c0d70dbc791356c31d5a3fb4d3304de01c4",
+    "images/paper_v1_confirm_70009.png": "e8c2d41039be4cb1572556309601b6bada2de550f25c5a4fcd582dfd4dc57faf",
+    "images/paper_v1_debug_1337.png": "95e7890d13e77cebfef16451791ebe2b113aed07d00165404f17105c257f18ef",
+    "images/paper_v1_debug_42.png": "61bce5e51e632ecfe54ad2d4feb1e70026034a66e248db6cf2afc30ce8b48e02",
+    "make_spatial_reference.py": "86fa361a4b0b59fac6f97336f811d47725721cbd68711694ad32af9cee7710f4",
+    "measure.py": "1d4d57fcf70eb6f7b496ee69d8f27afd7a354afc8e13671296cea6a8a9e617d4",
+    "measure_buildings.py": "8e4419d2697b3ab3d12f477e4bf3278dbe968e33208ae363e2df3bcfccd5910d",
+    "measure_spatial.py": "e03d2f2b280732023d78f70dc5ad5bbd7a758dff2ede75f179135cb0b86e576a",
+    "measurement_overrides.json": "7050246e4fa7e5a79c394b7bceecf685c6f44c92448e220f3cb970113e805539",
+    "measurements.json": "21f1f40b0be95dd0085c71b01c0157293d7bdb7e91423df205c889d3df451828",
+    "official_edit_template.json": "c1e6551759de131f083a040da072ac6f032c3c8401ceca202412cd912897d0fc",
+    "plan.json": "be639fc348967e74a54efab22d28489e4a5aefbc7919a01ecaa15f25accb2955",
+    "prompts/glass_building_v1_actual.txt": "344c63bd348641b7b2c406deb91baaec842cb1d2123317fabfcf17d2e9c1bff1",
+    "prompts/glass_cylinder_v1_actual.txt": "10bc111e7c77d875bc58236c8452618231dbd16701a5537619a62baddf3d80aa",
+    "prompts/glass_spatial_v1_actual.txt": "bbe9d44815fb4de587374ec7fd180f53c509dfcb1dc3d63d6f772f41b8976ed0",
+    "prompts/glass_v1_actual.txt": "58d05495f694cbbe06b51d787bcc75765b5ce51087271fed059f71c4d5f285f6",
+    "prompts/metal_v1_actual.txt": "0e48a6b8cf4699e442c69df6120dc387ec9deb99404081a396b1396742cb0587",
+    "prompts/paper_v1_actual.txt": "0eb12641fc328d1543baa5bdee8974fd71d5fc516a30fc4c65d4eafd75b32262",
+    "reference.png": "8cf2b743831117fbab7d8b644549e3d73e6c146c989a4597444eeb1faae6ce24",
+    "reference_geometry.json": "c6fefb3d33354aa3829c9650a84bdba9adbc143e49f45ae8799111e0a4f80129",
+    "runner.py": "5621844e3fdc70d7e2ad7ef562ce689f575dd4f0628af6b8fde050d5d028b24b",
+    "runs/glass_building_v1_confirm_71001.json": "8a0ac21522993bab5967f8868d14546bb592ab47d5cb7f929e3e316babedb23b",
+    "runs/glass_building_v1_confirm_72003.json": "179cede64d24a46e13f2a5320bba4037af6c4e13db3ea2852d2597de165ec328",
+    "runs/glass_building_v1_confirm_73003.json": "31277e8bfbf19f459dcffaf7883f2838159a5b65af7eee39561c565810633112",
+    "runs/glass_building_v1_confirm_74001.json": "c517989858ac71365d1c193374b03b8a5e81c252473919bc896e400aee46e16e",
+    "runs/glass_building_v1_confirm_75013.json": "bb01bb5f10025ad44788af973d3691d980c414a23d1a571816cd80f5450e2098",
+    "runs/glass_building_v1_confirm_76003.json": "678b067a2f83ff300da7cd9b9aa3dba783849e57bdad145db27bbeab0a347007",
+    "runs/glass_building_v1_confirm_77011.json": "c9975d1af06c01871a6b7ee5375a68dd8c221e79847defe48b64591c949be455",
+    "runs/glass_building_v1_confirm_78001.json": "9624028068854e2cfdaa477ed69ca21fb7944bd3c425d86ac25b91cec4b579c6",
+    "runs/glass_building_v1_confirm_79009.json": "9f10dca989a5af26230ce36c300a86636fc3353ab76a9e407b7c47e82c6d7058",
+    "runs/glass_building_v1_confirm_80011.json": "b9e076bc4d390bbf23584f7ba86ff8639b9bb57294c3f0a84a7fac0956e5aa8f",
+    "runs/glass_building_v1_confirm_81013.json": "fdad5fe5acaeeed6cc91f179c7d9894f8a673ede75aa36d40ce110d2fb878c55",
+    "runs/glass_building_v1_confirm_82003.json": "dd4d2d559fb8b9c18b536382c53c28ea29ead78a8df5f0586c1eb2d6cce82218",
+    "runs/glass_building_v1_confirm_83013.json": "a4875f9a5e3115c0940fc4d3e6f029db21c8215bc1b8872e77f5c54d8f81b282",
+    "runs/glass_building_v1_confirm_84019.json": "bd39677f27a83f7b3c611494748de9128dfee63a06082dec532068759fdf671e",
+    "runs/glass_building_v1_confirm_85023.json": "ef4d11a9d10168ee0a32e987925d8429fec3eee498ea14b146df4a76926f30d4",
+    "runs/glass_building_v1_confirm_86007.json": "334e156ecc9888f92e67202d974001f2dd328750c3ad753a440b27e638dadf93",
+    "runs/glass_building_v1_confirm_87003.json": "17da78cc6417de09fe3dd83bf2dd97c15aaea95dbecdacfb2d888654e07d1572",
+    "runs/glass_building_v1_confirm_88011.json": "2ee9b0d4e90fd66d99df760ad2b12c1fe3cb3761da7bfd03b790690c4c27928a",
+    "runs/glass_building_v1_confirm_89019.json": "5ac64d91c547ced3fb285b79bc052692496d42cdda6e3cbbcceb57ea913bd319",
+    "runs/glass_building_v1_confirm_90009.json": "7570b8f5325ff6ded372172838f84cf1bb2e5c747cf32e994c74810f9009c14e",
+    "runs/glass_building_v1_debug_1337.json": "7a930e918f392342541fddbe22a88519e3ea30d21cd8135e8fae868747016c29",
+    "runs/glass_building_v1_debug_42.json": "0e5d6f97e7a3cff8c81bb9057a6b02c6daaeb7bf845f057faa012d6d2a14053a",
+    "runs/glass_cylinder_v1_debug_1337.json": "0ff4520cb2732a9f6ffd16996b77a221c469526a4dcb1a4f97c792143cee2b15",
+    "runs/glass_cylinder_v1_debug_42.json": "f86ccb9924c5dae75a5a80c97145706403936ca9cc8c97e6f5f11d3cd7d6d9c2",
+    "runs/glass_spatial_v1_confirm_100011.json": "a1f966daba9b7ba60a41c776d61634318bb08d6954006d49d1c879fb083f3359",
+    "runs/glass_spatial_v1_confirm_101013.json": "ca2840d76777d69bff85e0cc23c8f6b5e76d5bafe14c72d5d6b07448682d855b",
+    "runs/glass_spatial_v1_confirm_102003.json": "7ab4d5b9440f5b849c96a3a07f05a604ac9c77f83f27d7177b5117b85aac608f",
+    "runs/glass_spatial_v1_confirm_103013.json": "d78f231fde92dd8ee36ed95c6936d79208f4208fb7991f8c57541c3f801933f9",
+    "runs/glass_spatial_v1_confirm_104019.json": "e073ae889d1264eaffc5161b23c680537840eb5764dbe794cef7d1a4ca5c5263",
+    "runs/glass_spatial_v1_confirm_105023.json": "f33a317ad607757f391a7f542081ff6e5cc3bec7008f8942963ce545648146a7",
+    "runs/glass_spatial_v1_confirm_106007.json": "39abecf2bc486cf2f3270eca7303db5f268d3c256922731b4bf6f07fb0d97a53",
+    "runs/glass_spatial_v1_confirm_107003.json": "2608c980df722b8691766dd274a94519128c5860556090a80e9e5be6b2c9bc64",
+    "runs/glass_spatial_v1_confirm_108011.json": "fb43fcc609de023ccfce7d08b3662ea47400557c1611403731bd61c9af22cd0d",
+    "runs/glass_spatial_v1_confirm_109019.json": "0dd7f5cc56dd6417652c8f2c605761b39dc196ed00a1685f515c07759afa10ae",
+    "runs/glass_spatial_v1_confirm_110009.json": "68391f6ab9a43d1c9c0822b34c8117badd2a034912efee9cf4333c653aa02f44",
+    "runs/glass_spatial_v1_confirm_91001.json": "c5eb9bbd6339856d7eea23ae9964f0b33723a90046a4bb4083c3997e49d2a926",
+    "runs/glass_spatial_v1_confirm_92003.json": "d1749833ec83d4c4fd91acea25cc7caaab7f9ddf34a329e07fec8c041ac92532",
+    "runs/glass_spatial_v1_confirm_93003.json": "4a9b13fca3c3ca6ebc9751e8eac8c6f9e9c569bbdda4b39b744661deceb98e90",
+    "runs/glass_spatial_v1_confirm_94001.json": "552b462845581ab290332fa7477f429247b23fb7bf635c052c56833936b17adf",
+    "runs/glass_spatial_v1_confirm_95013.json": "cac78d7580d6a47563285c3500072b66f6d6b2fb2d8f33d813fa966f7828d1de",
+    "runs/glass_spatial_v1_confirm_96003.json": "9c03a91bdd674300e40854a3edc62c6099e47ec4a9783d407c497162f78db63e",
+    "runs/glass_spatial_v1_confirm_97011.json": "6c1fe31840b77531d272f620200fa7e4bc4ac736ea7a1fbf267cfd9e476e52f9",
+    "runs/glass_spatial_v1_confirm_98001.json": "e50dd79c23bd6b8451b792f7cc95d9bd9038de6642866b5922158174012fe932",
+    "runs/glass_spatial_v1_confirm_99009.json": "029623ad1bca7007e81d389dad6d9f4e2754d62540cb2e52b3c600a52a53d95e",
+    "runs/glass_spatial_v1_debug_1337.json": "6a9e5b16f6b72b9e78ce745d609137fc30a81795c88ec96c80f4741cc57727cb",
+    "runs/glass_spatial_v1_debug_42.json": "7e7acc435bd1cd64a71791f2b3876644ff8d25e445c3c3c01d83b51244ff64f8",
+    "runs/glass_v1_confirm_51001.json": "b4e53ffa46b01712ad74b39f41a6f1c6d73b861af809c2b4d63e8041db60f818",
+    "runs/glass_v1_confirm_52003.json": "8320d3726e59302315fbdff9683c17a3a29b524eb99d6b540bbd639cbf161921",
+    "runs/glass_v1_confirm_53003.json": "437f157827c31ca81692b951a7275a20eb3c193116955a57dfb22e434a369091",
+    "runs/glass_v1_confirm_54001.json": "14911d24e704b329daac4342bc1bf7388e483d6d7ab0009c8b3590595833a957",
+    "runs/glass_v1_confirm_55013.json": "951e84e79b76f1489f6b8a50ec7a1754686ec36303249f603df55d4ef2a278c9",
+    "runs/glass_v1_confirm_56003.json": "61e2a2ae823e58d1d3d48c2a6c09afb5414071a12646dfa8c4ddcaf02ded0178",
+    "runs/glass_v1_confirm_57011.json": "ad79f140fed2ec366d32b22fb3d9e80a29dbca519982a5614988ada5c2edcf38",
+    "runs/glass_v1_confirm_58001.json": "1e15f74868aaea972358e9d21ded50a03026b44f2986f109b055fd3f9e68af43",
+    "runs/glass_v1_confirm_59009.json": "4f51ca183f83bce16b97c423f0e8299285b595688193cac079ac12884a0e291c",
+    "runs/glass_v1_confirm_60011.json": "aaa22ec386fe2ac22c1ebb56b1a5343a5c48f89a8241144071a973adcc0bb5a7",
+    "runs/glass_v1_confirm_61013.json": "c4b2cdd31814117235f4c38954573d8b5bee6cfcef757a977a6830c85dbe244b",
+    "runs/glass_v1_confirm_62003.json": "9372505c48f8406394eb62bc3b36f8f4632a116ed73f82fa8db06a988d516517",
+    "runs/glass_v1_confirm_63013.json": "170cb6ec1ca05588cc0f181c6f8b54ae1ca508e87d5daad6ee654aba240b831c",
+    "runs/glass_v1_confirm_64019.json": "83355fa7cff80e31181875fb36a12ba46f543ba77e7150a8696e252823c73f26",
+    "runs/glass_v1_confirm_65023.json": "2350f1057550f2c003b7c11254043f548351ca4849a26e137cf381d71b030f78",
+    "runs/glass_v1_confirm_66007.json": "fd29613b6ef6d2380b980b97f27c7613052898242daf5bda41ad1d718589f98d",
+    "runs/glass_v1_confirm_67003.json": "ecf1f1a2cd2255725873e381e6b68521b58a931ebb5f03d1b0168f5eadf4dbb4",
+    "runs/glass_v1_confirm_68011.json": "99b7b4a65a72465dd03c04059265a7b48fd8f18c9ee6bf9efb4ed91f5aee13b1",
+    "runs/glass_v1_confirm_69019.json": "6761dfc197ce4856249051c44996efdcb8224a0392407780c69d9e2a24239a72",
+    "runs/glass_v1_confirm_70009.json": "9265b7de62bd156552bb2c13488b140be0c0226e9eb85ec50dfec221d2c94e52",
+    "runs/glass_v1_debug_1337.json": "6c868bf06b35a70e1d502455d262212698aa8b342fadb89b11fc2bb05cfa8ba8",
+    "runs/glass_v1_debug_42.json": "5511a56846c12153b6157cdf9c6ed31757efa0c62344b8670e00e612153939e1",
+    "runs/metal_v1_confirm_51001.json": "c9e3eefb935868009fe1d5f440230cd8e7c3e83902163067125353323299f03c",
+    "runs/metal_v1_confirm_52003.json": "0bbaabf22bd7c9ed019ff18918be055ed87a4e4c22f76d12c2f024136fa43351",
+    "runs/metal_v1_confirm_53003.json": "1723550b5df75817884bf256b7b3769d3c1947c39e8f359fbe71d62e20a19ec7",
+    "runs/metal_v1_confirm_54001.json": "00016a50af243543cd653e14b8c3d2b75431b1e7d47987a3f869c85a282d3109",
+    "runs/metal_v1_confirm_55013.json": "d19e60f6685bdf58b2eb44467e4624dfd515888d0f460b7894112c30227a8605",
+    "runs/metal_v1_confirm_56003.json": "967ed38eaca302cd09c4ca88459e0c4cb06dd05b2d5275c2ef12ab245b207449",
+    "runs/metal_v1_confirm_57011.json": "1d05b20db26693ac913e47b4e1a4b62174b01b0cdd19562996a6a863d6d433b1",
+    "runs/metal_v1_confirm_58001.json": "33f4df3c23c79ccff646936fc89a1bc64c0e1115223ef526da6510e1209a1252",
+    "runs/metal_v1_confirm_59009.json": "4cce3c0b16921a5302f695772320aa4819d072f05d8170dcb395647eb6ad100f",
+    "runs/metal_v1_confirm_60011.json": "bef9d117abd825b82fc8397396bcde61aabd7a1648eaa2895fc3f9fe7bcdf26f",
+    "runs/metal_v1_confirm_61013.json": "cd29c7c7e8af32ba85c5dbbb15aa0d39883382c160d5a8526dc57e87a3e29ed8",
+    "runs/metal_v1_confirm_62003.json": "58b0ca6bba10863d8aff823d991bc54461c443ee12e1e185e0a48daed035197e",
+    "runs/metal_v1_confirm_63013.json": "5cebe1042be73c10b9b0aa66be6a0eb89773bb54cad5009b86e9b07de98cf75a",
+    "runs/metal_v1_confirm_64019.json": "0767a64d01da59227f2b926e4fd1c9eabaad7e929b5e4e54ae8ff346ae8ac058",
+    "runs/metal_v1_confirm_65023.json": "24ef0dd1eaacd26a49615bb0ec79fc83d4452891c008704cd2b638733cba152f",
+    "runs/metal_v1_confirm_66007.json": "0d9b18b37fe1ce86782167b401250bd72354e17954d5f7f6027a38cd1d6a47de",
+    "runs/metal_v1_confirm_67003.json": "4a38f3f009efe0aa3423702bbf77a216ffe76f0fc82df6aa219cc86f32a3a483",
+    "runs/metal_v1_confirm_68011.json": "62b90037401b1a6909dcffe3d934b1f382e21a5d91fd6a31954d0843ab2b8cf1",
+    "runs/metal_v1_confirm_69019.json": "e4d44211b43de645204e8472f6c535a6dc19591e3cd1ae179a41132463ccccdf",
+    "runs/metal_v1_confirm_70009.json": "cc508ca816cffd5eaaf7b7cd7ce1e477eceea71e5b595a5a29e7ab2e23295c3b",
+    "runs/metal_v1_debug_1337.json": "45f0ea4f527150f62388b31b14bce965ae65114061cab9e46109302c7dbee066",
+    "runs/metal_v1_debug_42.json": "90077f002b84af8aee39a5c1c9e03b11dbb206461ff80a6aca3a95c3ced4de3e",
+    "runs/paper_v1_confirm_51001.json": "19457abc6f5e6b81e019d5795714c1cbfb2e6a3c6f9de3916ace45cfe6278cb3",
+    "runs/paper_v1_confirm_52003.json": "663e0483fb362712a5e1f6904cdbbe5c1e6a047d95b36443cc6d68f2d22e1130",
+    "runs/paper_v1_confirm_53003.json": "176e68e518aad40bf248a776d9b1323169e36d489fb191e0f0c92e9d940415c3",
+    "runs/paper_v1_confirm_54001.json": "dda15538c329d40a741342f721b976917fe8049436c4555339d74dcd64b10760",
+    "runs/paper_v1_confirm_55013.json": "32901292d6d38a30ef8e9efb3224c2a3d9b3be82661075c87ed1ebb58e2860ec",
+    "runs/paper_v1_confirm_56003.json": "09085e6969431b52e243365c3ef9488e7c6c453de1b77c88081d7b5fe1f0295b",
+    "runs/paper_v1_confirm_57011.json": "ab645efd50774d15c9d5432affc52cabe360ab4761ea0952ab3ff19965138725",
+    "runs/paper_v1_confirm_58001.json": "80470e35d28e9718105e7541e918c7ca4c4b02954060c8a3462679fe56d1016d",
+    "runs/paper_v1_confirm_59009.json": "d1610cfeb3119f98b39dc50981420dc979e3d5ac025748f447c7077e5bf3d943",
+    "runs/paper_v1_confirm_60011.json": "858a413198164750fdabd60c842ee6bac58794662d6f83c9fa3051a3fda751d7",
+    "runs/paper_v1_confirm_61013.json": "e390b3ace7b47b160124ecd94edd92bf84d551359094b6dbb1334e1c6579aee5",
+    "runs/paper_v1_confirm_62003.json": "166a6022eb064fa0f2b0ac384118006ea6e418296934f4605d6607c99f0b61cd",
+    "runs/paper_v1_confirm_63013.json": "0121e6b0bafd681b9d3498b1c6d8bf4bce0b944ba8e6762dae2921840e108f2b",
+    "runs/paper_v1_confirm_64019.json": "f415fcc4ac68a93c512842939fb70be974e9077d02179bb1825f44847612bd36",
+    "runs/paper_v1_confirm_65023.json": "001b639ad9aeb12ab9e060bb0747b62202a2201f812159a9eb11c3bd43b06db6",
+    "runs/paper_v1_confirm_66007.json": "dc2b242d839730853ba992d3cc1c8f392bc5a8df1a51721a19f92ee714e91355",
+    "runs/paper_v1_confirm_67003.json": "b4701c8abc5d7dcfe7f09a683bb85129e33795f112cf20fbe0fd67a65140628f",
+    "runs/paper_v1_confirm_68011.json": "2f8795b8b00bb62c264cd624716fde772f93576d6e34b54c8e5708b080a90ba7",
+    "runs/paper_v1_confirm_69019.json": "eb5d7825d71aec1d1e4ae699883de2ffed347757cf9c5fecec4bd6b71f9d4de6",
+    "runs/paper_v1_confirm_70009.json": "819cb91a6ece9421345a1fbc9c96b22df9b2d37e48277d2e7cc1cf24c6de1966",
+    "runs/paper_v1_debug_1337.json": "15d7972a214554cf8bb5f3b0fe09b961344c3d8c5e85108afbff0a6375fda856",
+    "runs/paper_v1_debug_42.json": "cf0b78b3d8b7849b876efa84b994b33e81237d0ebf29ca66812b888b0cac1a80",
+    "spatial_measurements.json": "b788237b6e72652c1fb771584bbc315fd6a4fec69bc1139a7b0b39c1b183e28f",
+    "spatial_reference.png": "4e6572395f02eea503a94431d7c3da169a8a00447c705ccca965579c07a1c3e6",
+    "spatial_reference_geometry.json": "b2239c52e53d8a9b4259ff27cdfc2328e0316516fc8e1e77726d4148e68751ed",
+    "spatial_review_sheets.py": "09fb1d615d4a352c3b976bd10523028a32d7693f3eefec4013d271b823f8b5f6",
+    "stage2_confirmation_freeze.json": "4ade485dd025b0a0bcef2658ae11d672dd9a7e4b9c981d318aed15b4e4a19059",
+    "stage2_plan.json": "280c53c5ca62551daccca09b65250b72f35393e890f4ab1158b15f0b80e563ed",
+    "stage3_confirmation_freeze.json": "81533ef0c7297520bc331405bafcc818efeb14d1911dee6c31ce310f80a07c62",
+    "stage3_plan.json": "3feea87dece19985c22002c56137edf9a24cb2a5ba3b6adec2f9b1ec069ea89c",
+    "summarize.py": "bc5f11253f5d066d4e0c09726a4045b198c92e1534b83a337e698375452ce261",
+    "summary.json": "6659babab5b18dcf90b911d3e1ea1cfe9dbe7c88444657402d1d2546e0ff1047",
+    "visual_review.json": "e39b06a17cc6796a652ad9942bfc0b347f0fb7550a905be5a4e857dcdbc250a8",
+    "workflows/glass_building_v1_confirm_71001.json": "4b2e4fc324210937afecdb85a95e354e80314e46acc69ac89784c602e9a38925",
+    "workflows/glass_building_v1_confirm_72003.json": "8c9b8fefcea451e4c80a011fd702edad2f7cd56710b0849772b15acfb9f3f4f2",
+    "workflows/glass_building_v1_confirm_73003.json": "e1885a450c7c7d2104487d6b3c24f89487fb4ab307758924ef63039a693dd383",
+    "workflows/glass_building_v1_confirm_74001.json": "c3e18da7fe9177e725c19a27fc5b173587cffe4e191f90239fd7277937db9e90",
+    "workflows/glass_building_v1_confirm_75013.json": "057ab3d8cbe81d625160d6baa9eca28555e5681994b36472552ca79dab3e5865",
+    "workflows/glass_building_v1_confirm_76003.json": "d64acf2ad5cd53a1073181f3df6ba463c192a0efcdfa8078cfb9177b0259b844",
+    "workflows/glass_building_v1_confirm_77011.json": "80e364dda921c53522b4d7fe6f5c24bae401aef32bf89ae84acba88e1791f9c7",
+    "workflows/glass_building_v1_confirm_78001.json": "54fe52fbdc2882d57b1c3db187b3a72ca1eb135ca15ee6e4401e7df17f00ce9a",
+    "workflows/glass_building_v1_confirm_79009.json": "2cbc03519c730a0fa2ffce881e50f24351c6b6b60478fb4d7fd6096d6e31b54e",
+    "workflows/glass_building_v1_confirm_80011.json": "56b42c3667e1c49c302951429178c2f6647f04e5383394c24903bbfa14aff1f3",
+    "workflows/glass_building_v1_confirm_81013.json": "020cba5f566563016c293a232ae0e5983c84c9f553691b4bb75720c7e8c86011",
+    "workflows/glass_building_v1_confirm_82003.json": "f8990b02624be426b7c96845d45cd7f239ed7123f3b8b89b0f2f7ce7dc2ee372",
+    "workflows/glass_building_v1_confirm_83013.json": "b6ad5495f540fde79c6eb9cd13136711e991dc24aa663d8fbde0c47c474dd15d",
+    "workflows/glass_building_v1_confirm_84019.json": "f17ad5d17912f43e6713c7791f35d2d82ab373c937d850e170bdebacc553d685",
+    "workflows/glass_building_v1_confirm_85023.json": "e7860b5ddf26c3191a5e8e2aeee70028453e53fda4ce4072c576d02e3a19b980",
+    "workflows/glass_building_v1_confirm_86007.json": "2a3375170b351ca791f811ce629683494af19d36574ac1de85e6909eae70a3db",
+    "workflows/glass_building_v1_confirm_87003.json": "2c18edbba78230f3a4f44bfe5eb13727db1949987a448114908283227b8e68cc",
+    "workflows/glass_building_v1_confirm_88011.json": "3b75fc4423dbd9e93a240f40e2edd676b5ae33b89f4bc782664fdbf81e22958d",
+    "workflows/glass_building_v1_confirm_89019.json": "cfa118c8856e7ae1cc33fc203eefd5e790b0b87363130c8687ff7d395e85d207",
+    "workflows/glass_building_v1_confirm_90009.json": "8de6b66fe6a6e347003421d7991a75169cf5e1fd00d3e1415a420419dbf27242",
+    "workflows/glass_building_v1_debug_1337.json": "20e6ccb33082798f8f83aa5630ad6a7760860fc861d46e5cf7debf0544eec891",
+    "workflows/glass_building_v1_debug_42.json": "f2b2b62ab72466813bbdb8117834daafd08a0ba2511a4a3ee575693f15eb29f0",
+    "workflows/glass_cylinder_v1_debug_1337.json": "7f6f2cdb2c730ee7723f52d4419f414b64e411e88eb4ebe6f26a7c33f25ffc93",
+    "workflows/glass_cylinder_v1_debug_42.json": "e91352375df295821ee188254db00b4ee6a0d755cb98853055f263276eca188b",
+    "workflows/glass_spatial_v1_confirm_100011.json": "de0721f3b175a0bc438dadb9b02e5692bfb66c57842034c2141d78f7d19720a7",
+    "workflows/glass_spatial_v1_confirm_101013.json": "ae5aced0483f6d1715e5f6ec669c3a8a402de7a84f8cf34a602f2af8800bbfc4",
+    "workflows/glass_spatial_v1_confirm_102003.json": "e63e061aea5f1d1e81b0e5a725594aedcc3ec5ce9ada2dd7176c01466f4057f1",
+    "workflows/glass_spatial_v1_confirm_103013.json": "f256a37c759fd119a0ff3da6da917086e713aa24d84f4d88bba71964400ea52f",
+    "workflows/glass_spatial_v1_confirm_104019.json": "a5998de4dad9f99fe2b9d168f9e75a9f121936e05509b9c083f40df99a07d8a5",
+    "workflows/glass_spatial_v1_confirm_105023.json": "2c0b80a4c27d3f02324eda360d6e3b7dcc4ca068292a15bc71786df6b2994cde",
+    "workflows/glass_spatial_v1_confirm_106007.json": "72c5307cf76752cd126627eec152157bab31b289c59a0904613e7f9a491e7d13",
+    "workflows/glass_spatial_v1_confirm_107003.json": "ab4247b5dc7b7d43bb7436872137a0329765dd002b9974bcec8e2c1950ae5b2f",
+    "workflows/glass_spatial_v1_confirm_108011.json": "7594e4523f6838891aee40b1a00e5992803380d052b1976b37a24a8bfbed3de5",
+    "workflows/glass_spatial_v1_confirm_109019.json": "cff9b89cecd25c93ee767341626d428a0a02ccf4b97449049e4d92d0e6ac0887",
+    "workflows/glass_spatial_v1_confirm_110009.json": "a018d1911c131cbc9fdc9ac0f42562225587d17f4a7d91be2f520c085d3c6f59",
+    "workflows/glass_spatial_v1_confirm_91001.json": "0ebb1789f2cc60eae416ad85193560bc07da4d5165088e63f61180cdfaa03a7a",
+    "workflows/glass_spatial_v1_confirm_92003.json": "55b25a8b053aa73666827306cbd244a73150bf4b3dbbf3a0dcc0278d99ee3f4b",
+    "workflows/glass_spatial_v1_confirm_93003.json": "1dbc6b7a1b6530d2a4434a550c72b8f2c0bd8a9250eb2e4c32a33b5511b05e8e",
+    "workflows/glass_spatial_v1_confirm_94001.json": "3af4d60726068a76bdf5beb174c495626932e52d5cde855371fd5e8ec29df3c3",
+    "workflows/glass_spatial_v1_confirm_95013.json": "d0a7dbe8f750ba5da9857ff972c66af83d4ec22b39bbe66d2fab47b39485e8ad",
+    "workflows/glass_spatial_v1_confirm_96003.json": "a5ab0b3dc9b4c38532cca4b61136347283f325b3cdab7d79b07e0c3020668e10",
+    "workflows/glass_spatial_v1_confirm_97011.json": "4cdc920285f323363ce43edd02462254df647e06ec19c986420989dfe7037f68",
+    "workflows/glass_spatial_v1_confirm_98001.json": "28c9305146596d66e721d68a213dccdea5680f7290b75d8ec1b097ba820a6556",
+    "workflows/glass_spatial_v1_confirm_99009.json": "08400118ecb2ddf704c055fd15c4eb3e9f3e4aa4901aaec2b2609cba15a2f892",
+    "workflows/glass_spatial_v1_debug_1337.json": "09ccaeb54bff2eddf869ec1e97dbed66d679a39e3cc79eb3c11af4799c6737d7",
+    "workflows/glass_spatial_v1_debug_42.json": "de52ee66bd2716791d108659252241b3b3051f19bb1f1c512a91825bd4fb098b",
+    "workflows/glass_v1_confirm_51001.json": "5dc7b6da8e76ece41396d109aaa49ee41f513819622665ae2545ed8e1556ec49",
+    "workflows/glass_v1_confirm_52003.json": "f64bfb0a107db4de14cfec642bf2c2e91e29ac291cc703aa4b1fc9edba7a1e87",
+    "workflows/glass_v1_confirm_53003.json": "afa6509f962a4c1eec9f0a2a889cf3d76360f69048807ef349a5fdd4f8bd1b77",
+    "workflows/glass_v1_confirm_54001.json": "5b41bf41b06c14d1c553e2b399be33b8f494ffdbaa514118d99c11f0b5f24382",
+    "workflows/glass_v1_confirm_55013.json": "bc6d20bff44f276a360efc16c0d117d542ca016ceca9e5d829707791ac8ddc7e",
+    "workflows/glass_v1_confirm_56003.json": "4bb067f7d8303c9b087bcab5a5b7b32ffe70760388a7a9b070778249ee757759",
+    "workflows/glass_v1_confirm_57011.json": "dde0e2f7c2045e06e3e771c876c03be83efc970a82fc3464bca201f43209f972",
+    "workflows/glass_v1_confirm_58001.json": "859af8cf9f7820702b41a3fd6fdd7b92a283bf4da854e23bdbad1b649fe818a9",
+    "workflows/glass_v1_confirm_59009.json": "3b67b6ad81d5d40ea79584a48eb996d2d4279ce262e8cc8f52fa5647d68e4766",
+    "workflows/glass_v1_confirm_60011.json": "d2b96295d078aa8e072081daab098771c4bc2baa5ba9c59bf84571addc0e58bd",
+    "workflows/glass_v1_confirm_61013.json": "b8538bddcb7718184b5f8da20362dc1ad12e12f3736d5edc6beeec105e4b26fd",
+    "workflows/glass_v1_confirm_62003.json": "e2dbd4fd64b708d9d2f597f16ab613ac272ce59f3b7ef519594f3b6e04b0cb5e",
+    "workflows/glass_v1_confirm_63013.json": "bebe5c871974d1fb2246178543602bcb31ab5f4400809ffa7eff5ccc404eac13",
+    "workflows/glass_v1_confirm_64019.json": "ca6df00e7681f04b3b3b69772fd28c731cd7455c3804ca447ea7e99c6ef45566",
+    "workflows/glass_v1_confirm_65023.json": "9695ff69d6f1ac70a589900ccedfc53573b5bc05838fcfd19a7a444cb503b567",
+    "workflows/glass_v1_confirm_66007.json": "48ba680ffb5556c2a8ebef1a9677e1ca6a685f60df397fa52bc5d909a1dd4896",
+    "workflows/glass_v1_confirm_67003.json": "056c9a54d7b147508f303c7d12e453598843d0946dab5e32797be4a7f7303321",
+    "workflows/glass_v1_confirm_68011.json": "f4088585eb5d018caa7c0b09ab2183929cf78640184a154ccca5143c7fe7c03d",
+    "workflows/glass_v1_confirm_69019.json": "3a96077fa05bf1bd5a3053720f78398974495bbb38e0d0907dea42c7251cb44e",
+    "workflows/glass_v1_confirm_70009.json": "fd3feae4cce699707a7e4bc8c71b3248dd60e381007b1ea615f526fe7712ff13",
+    "workflows/glass_v1_debug_1337.json": "81550786987bd560a8a1b224a819bfba7ca9d8dcaf1270fbabf257e78accfc4c",
+    "workflows/glass_v1_debug_42.json": "b0a58974c8fef467ebe30d196586d1a61ba0fb9507140410cf8fb5de9cd17d03",
+    "workflows/metal_v1_confirm_51001.json": "3b8dd6ee5732d305c9b805958579168f5e00583906523889143858960b4a9016",
+    "workflows/metal_v1_confirm_52003.json": "35fe496ee76fd55c1e83cc4953324fe2a8bdca6ea708dcce43f8387898323620",
+    "workflows/metal_v1_confirm_53003.json": "75728a5c27b5e82b8f2272d5b9a57cb82938f5bf4aed6501812ce56d221dd2d3",
+    "workflows/metal_v1_confirm_54001.json": "fd327964d0315d3c2a2d94c33a717e6bd6b3a5fbce255736cb26f98c0df60089",
+    "workflows/metal_v1_confirm_55013.json": "30066ef4127ad61fb6fe1b8db6f46d47f8ce5476334f493fbb58ee6c3895eb20",
+    "workflows/metal_v1_confirm_56003.json": "4f8efe81842063fdabca7445e0742c986392276c9de23bcee97e99368527f1d2",
+    "workflows/metal_v1_confirm_57011.json": "5821e25674ff2a1af076e64f7f446098b4bd4dd77cc5f2187f36a7e85ba21f09",
+    "workflows/metal_v1_confirm_58001.json": "a172bd1de7ab6dabacbe8308a0372351537407ba112424f67d070ea5cc36539d",
+    "workflows/metal_v1_confirm_59009.json": "dfff34e8981d23a023f600b8314416423e9af06c840c42be8c0c0ba326d8eadb",
+    "workflows/metal_v1_confirm_60011.json": "dbf1e047ecad1888b17e8a56362b5deb661aeed11ac0a8146cae4c7917ae6f33",
+    "workflows/metal_v1_confirm_61013.json": "cf7e3e220352ab86c8ad977cd76fda8005ffd7135014687daf7fb8f87427c65e",
+    "workflows/metal_v1_confirm_62003.json": "3478fad8db832c95ba06c898e8399c6a1e372594b980c2a127cb17672be0b088",
+    "workflows/metal_v1_confirm_63013.json": "8fd852dc3d6956d7a049e43f28f02f1f615f8c9c6e83142a9caf71bc0d6c7159",
+    "workflows/metal_v1_confirm_64019.json": "bfc919dce9ece0e0f218018d1b0e7a0980d8411873a8fb475d650ea17f9c1bbe",
+    "workflows/metal_v1_confirm_65023.json": "da65bfd82e5136b9a06609641bdd70829b605498890ec1c15c05b6d707962a17",
+    "workflows/metal_v1_confirm_66007.json": "1cab1319fa71086c35996813123cd37db15371df3e84e3b2fb5fb3ee4d9fcdc0",
+    "workflows/metal_v1_confirm_67003.json": "6b7befcab72f2087789e6ffe36aa3ba86c9fa23a546a7c9fd21c2c3b9fa6455a",
+    "workflows/metal_v1_confirm_68011.json": "26c150835da8183f6dde98d70c380eac5b3d259700fcda82ae866fc50feba217",
+    "workflows/metal_v1_confirm_69019.json": "efb30115ed2f0c2fa26487a1c832c16b6466af3a5e67c66dd7c1f10a67df3315",
+    "workflows/metal_v1_confirm_70009.json": "70b61102957c500126d30ed57e543e77cde5c1230bc0fc781feee9b758b96119",
+    "workflows/metal_v1_debug_1337.json": "fa6e08accbaf285358b9a8cee3bc6bdd3259a9b3f1e2b168f68b6310d4b5bf88",
+    "workflows/metal_v1_debug_42.json": "25dd9b22839d5493a51db2165ad51712835dbed0b597ea4f0d53baf81ce35b37",
+    "workflows/paper_v1_confirm_51001.json": "6a9b3e1fb87164c0622290d1f1a0b4f2954011b84057199091d4076db7fd9f30",
+    "workflows/paper_v1_confirm_52003.json": "989b0c3352e4d861cf8aea4fd6bde77cb1ab88c15ec31fc5a5f0f117fe5a57af",
+    "workflows/paper_v1_confirm_53003.json": "2646faddb031f41ba23df8dbf2620c3ad40a93e384e0d0a741491c41abd30524",
+    "workflows/paper_v1_confirm_54001.json": "1337510383732e026fccb1969f2e84c86308812db0c5525377de3c61f440cb4e",
+    "workflows/paper_v1_confirm_55013.json": "dc45a29c44fbb53da230ab42b98ec2d0c2f61b990620be73f62a518b97e38c58",
+    "workflows/paper_v1_confirm_56003.json": "4ec5dd2ee3729205e3e21c3550e9e03ff0403d53a9a297c2725733fbdb95678c",
+    "workflows/paper_v1_confirm_57011.json": "d15dd05152ba2d893145e1ca3e32310f65391653f8440fe8b9795cb4630ac623",
+    "workflows/paper_v1_confirm_58001.json": "63b0fab49b17f06a953349e9796dbc854a9d8d96d58077c6ccea7e4f217edc87",
+    "workflows/paper_v1_confirm_59009.json": "0e70dd1697085cd1161abb872922d611b79cd0d7aaf4a9af055f852316be7ad8",
+    "workflows/paper_v1_confirm_60011.json": "23a4e78537325c7789c5e67d004fa64a6849f085fc41a9e10456d6b5b5f8e441",
+    "workflows/paper_v1_confirm_61013.json": "86302f6f163c15192d9934a9a16a415341d102f29dd3275d6014393a1fbfcb82",
+    "workflows/paper_v1_confirm_62003.json": "1fa952d5ade4a355092273e8430307e62e79ceb0688fa7ba156e801cf292c343",
+    "workflows/paper_v1_confirm_63013.json": "4ee47072d6536339059f6c4bf00f946eb645c9e4b8d72c9c8cfb6aacc3af857a",
+    "workflows/paper_v1_confirm_64019.json": "259273555808347ae1af73e8fbf69b1ff1cfdb335b6c1968b6a47ed7383f34cc",
+    "workflows/paper_v1_confirm_65023.json": "41dc2ff483800d14fa335015d27c2dd5fa5f41115e05ddf196a65ad932d8d867",
+    "workflows/paper_v1_confirm_66007.json": "5c7b4e4593246ffc2b6dd2f3d5216b204f3882b272f61c152570520918e589f0",
+    "workflows/paper_v1_confirm_67003.json": "57fb3560a0c8ec10af48e962e771a5e39bb4b6095b849af3a76a2aefcaa53b03",
+    "workflows/paper_v1_confirm_68011.json": "ebe822dd4e4da28aed2bc91f715ef167c82393da7fac1821deb8a3fb5a9f7992",
+    "workflows/paper_v1_confirm_69019.json": "e4ca0d70e7a631920800d6110ba8a281d2569df48fe4ffe195755c27b9bc58ef",
+    "workflows/paper_v1_confirm_70009.json": "b92ab10851a8da291d4edf923cf7e4772530a2cf459e75bdc4dd5b37e4061052",
+    "workflows/paper_v1_debug_1337.json": "3aa0b5a93995908a309c61601ad0d571f686597f36c5fdcebcba82aacc756be5",
+    "workflows/paper_v1_debug_42.json": "6eb6193e59a144bb0f697528c7fa2c75b8c634ebd5b457923b727c962629d0d1"
+  },
+  "no_repairs": true,
+  "models_hash_provenance": "component_hashes.json; previous full hashes with same size/mtime verified. Unused T2I PE not used in this experiment."
+}
