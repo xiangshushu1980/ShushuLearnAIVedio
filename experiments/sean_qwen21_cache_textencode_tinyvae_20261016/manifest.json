@@ -1,0 +1,46 @@
+{
+  "owner": "Sean",
+  "experiment": "sean_qwen21_cache_textencode_tinyvae_20261016",
+  "created": "2026-10-16",
+  "purpose": "Smoke test QwenImage21Cache variants, four ordered TextEncodeQwenImage21 reference inputs, and KJNodes Tiny VAE live preview.",
+  "runtime": {
+    "comfyui": "v0.40.0",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "model": "qwen_image_2.1_turbo_int8_convrot.safetensors",
+    "text_encoder": "qwen3vl_8b_int8_convrot.safetensors",
+    "final_vae": "qwen_image_2.1_vae_bf16.safetensors",
+    "preview_decoder": "taeqi2_1_decoder.pth",
+    "resolution": "1024x1024",
+    "seed": 421016,
+    "steps": 8,
+    "cfg": 1.0,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "references": ["face_identity.png", "uniform_clothing.png", "silver_armor_gear.png", "katana_item.png"]
+  },
+  "cache_variants": [
+    {"device": "auto", "dtype": "default", "elapsed_s": 32.05, "output": "auto_default.png"},
+    {"device": "off", "dtype": "default", "elapsed_s": 12.02, "output": "off_default.png"},
+    {"device": "auto", "dtype": "int8", "elapsed_s": 6.01, "output": "auto_int8.png"}
+  ],
+  "comparison": {
+    "auto_default_vs_off_default_pixel_identical": true,
+    "auto_int8_vs_default_mean_absolute_rgb": 0.572,
+    "auto_int8_vs_default_changed_pixel_fraction": 0.3746,
+    "timings_are_cache_benchmark": false
+  },
+  "models": {
+    "taeh3.safetensors": {
+      "path": "/home/sean/projects/models/comfy/vae_approx/taeh3.safetensors",
+      "source": "ModelScope Kijai/MiniMax-H3-TAE",
+      "sha256": "f0f60fa072089997f817402098c2fd90777cb2660dd79cf5df42fc1e3e08e527"
+    },
+    "taeqi2_1_decoder.pth": {
+      "path": "/home/sean/projects/models/comfy/vae_approx/taeqi2_1_decoder.pth",
+      "source": "Hugging Face huangdffs/taesd",
+      "bytes": 15314938,
+      "sha256": "53c2212f4ea6c8ad06a30d4969d891f80339ff87bb3f77fe793848613d3a9042"
+    }
+  },
+  "task_center_id": null
+}

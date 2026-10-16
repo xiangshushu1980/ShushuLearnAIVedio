@@ -1,0 +1,89 @@
+[
+  {
+    "variant": "auto_default",
+    "prompt_id": "e28c2f54-b913-43cc-b2c1-cddd4676bf7b",
+    "elapsed_s": 32.05,
+    "output": "auto_default.png",
+    "seed": 421016,
+    "cache": {
+      "device": "auto",
+      "dtype": "default"
+    },
+    "preview_tiny_vae": "taeqi2_1_decoder.pth",
+    "references": [
+      "face_identity.png",
+      "uniform_clothing.png",
+      "silver_armor_gear.png",
+      "katana_item.png"
+    ],
+    "comfy_image": {
+      "filename": "auto_default_00001_.png",
+      "subfolder": "sean_qwen21_cache_textencode_20261016",
+      "type": "output",
+      "metadata": {
+        "kind": "image",
+        "width": 1024,
+        "height": 1024
+      },
+      "id": "80a204dd-a7ca-4450-9102-9a3e249254a2"
+    }
+  },
+  {
+    "variant": "off_default",
+    "prompt_id": "47d57c13-1707-4b8e-b3b2-bb99ce94a56d",
+    "elapsed_s": 12.02,
+    "output": "off_default.png",
+    "seed": 421016,
+    "cache": {
+      "device": "off",
+      "dtype": "default"
+    },
+    "preview_tiny_vae": "taeqi2_1_decoder.pth",
+    "references": [
+      "face_identity.png",
+      "uniform_clothing.png",
+      "silver_armor_gear.png",
+      "katana_item.png"
+    ],
+    "comfy_image": {
+      "filename": "off_default_00001_.png",
+      "subfolder": "sean_qwen21_cache_textencode_20261016",
+      "type": "output",
+      "metadata": {
+        "kind": "image",
+        "width": 1024,
+        "height": 1024
+      },
+      "id": "ff5a6301-4092-4264-aba3-cf0c53ad2269"
+    }
+  },
+  {
+    "variant": "auto_int8",
+    "prompt_id": "c3b2500d-dc77-435e-91d2-3222617c09bb",
+    "elapsed_s": 6.01,
+    "output": "auto_int8.png",
+    "seed": 421016,
+    "cache": {
+      "device": "auto",
+      "dtype": "int8"
+    },
+    "preview_tiny_vae": "taeqi2_1_decoder.pth",
+    "references": [
+      "face_identity.png",
+      "uniform_clothing.png",
+      "silver_armor_gear.png",
+      "katana_item.png"
+    ],
+    "comfy_image": {
+      "filename": "auto_int8_00001_.png",
+      "subfolder": "sean_qwen21_cache_textencode_20261016",
+      "type": "output",
+      "metadata": {
+        "kind": "image",
+        "width": 1024,
+        "height": 1024
+      },
+      "id": "484df67d-0aab-413c-9079-29aa48e46f43"
+    }
+  }
+]
