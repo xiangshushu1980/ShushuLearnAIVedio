@@ -11,7 +11,7 @@
 | 问题 | 入口 |
 |---|---|
 | 环境、模型、节点、升级 | [ComfyUI 索引](../.pi/skills/comfyui/INDEX.md) · [环境](01_environment.md) · [模型](02_models.md) · [升级](44_comfyui_h3_upgrade_runbook.md) |
-| 生图、Krea2、质检 | [图像索引](../.pi/skills/comfyui/references/image/README.md) · [Krea2](40_krea2_prompt_and_identity_pipeline.md) · [VL 质检](24_vl_qc_api.md) |
+| 生图、Qwen、三视图、Krea2、质检 | [共享生图入口](/home/sean/.pi/agent/skills/comfyui/SKILL.md) · [图像索引](../.pi/skills/comfyui/references/image/README.md) · [Krea2](40_krea2_prompt_and_identity_pipeline.md) · [VL 质检](24_vl_qc_api.md) |
 | H3 生成、提示词、参数 | [Ref2VA 日常生成](34_ref2va_generation_guide.md) · [提示词 skill](../.pi/skills/h3-prompt-writing/SKILL.md) · [测试数据](09_h3_test_plan.md) |
 | 长视频、音频、数字人 | [MC 工程](33_h3_mc_engineering.md) · [Breeze TTS](breeze-tts-standard.md) · [数字人研究](h3-digital-human-research/) |
 | 参考图、多视图、FaceRefine | [Reference 主题导航](reference/README.md) · [Reference 手册](45_ref_asset_handbook.md) · [多视图研究](46_multiview_consistency_research.md) · [FaceRefine 现状](43_h3_facerefine_current_state.md) |
