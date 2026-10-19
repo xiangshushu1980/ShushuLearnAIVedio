@@ -56,7 +56,7 @@
 - 时间线：
   - 2026-08-08 提出：架构决策用户拍板（在线 IR 为主、本地视觉 LLM 弃用；来源任务 h3-prompt-agent）
   - 2026-08-08 补充：IR 样本库 13 条建成、官方媒体格式 bug 修复、i2v/t2v 差异观察
-- 证据锚：docs/08_h3_prompt_agent.md（接入落地节）/ docs/17_h3_prompt_writing_rules.md / docs/18_ir_sample_teardown.md / scripts/h3_ir_rewrite.py / .pi/tasks/h3-prompt-agent/progress.md
+- 证据锚：docs/08_h3_prompt_agent.md（接入落地节）/ docs/17_h3_prompt_writing_rules.md / docs/archive/research/18_ir_sample_teardown.md / scripts/h3_ir_rewrite.py / .pi/tasks/h3-prompt-agent/progress.md
 
 ### C-20260816-19 | turnaround LoRA 适用域
 - 状态：✅现行（valid_from 2026-08-15）

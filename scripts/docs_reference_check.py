@@ -34,7 +34,13 @@ def check_links() -> list[str]:
     checked = 0
     external_absolute = 0
     for source in markdown_files():
+        in_code_block = False
         for line_no, line in enumerate(source.read_text(errors="replace").splitlines(), 1):
+            if re.match(r"^(`{3,}|~{3,})", line):
+                in_code_block = not in_code_block
+                continue
+            if in_code_block:
+                continue
             for match in LINK_RE.finditer(line):
                 raw = match.group(1).strip()
                 target = raw[1:-1] if raw.startswith("<") and raw.endswith(">") else raw.split()[0]

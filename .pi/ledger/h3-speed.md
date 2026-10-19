@@ -262,7 +262,7 @@ C-20260914-02 | 普通 Ref2VA Turbo LoRA 1024×576 双角色长时基线 | 2026-
 - 现行值：RTX 4090 跑 H3 Ref2VA 本身已有公开证据，但截至 2026-09-20 没有找到同一 4090 上 Ref2VA conditioning 与 SelfLift 渐进采样的可复核视频、日志或 A/B 质量数据；SelfLift 路线暂不继续前沿测试。
 - 时间线：
 - 2026-09-20 提出：社区已有 SelfLift H3 实验节点、Ref2VA/SelfLift 工作流接口和 4090 单独 Ref2VA 证据，但组合证据不足（来源任务 T-comfy-ops-42）。
-- 证据锚：`docs/38_h3_selflift_ref2va_4090_research.md`；[comfyui-SelfLift](https://github.com/facok/comfyui-SelfLift)；[X-MinimaxH3 validation](https://github.com/PullMyBoots/X-MinimaxH3/blob/main/VALIDATION.md)；[X-MinimaxH3 SelfLift constraints](https://github.com/PullMyBoots/X-MinimaxH3/blob/main/docs/SELFLIFT_PROGRESSIVE_GENERATION.md)。
+- 证据锚：`docs/archive/research/38_h3_selflift_ref2va_4090_research.md`；[comfyui-SelfLift](https://github.com/facok/comfyui-SelfLift)；[X-MinimaxH3 validation](https://github.com/PullMyBoots/X-MinimaxH3/blob/main/VALIDATION.md)；[X-MinimaxH3 SelfLift constraints](https://github.com/PullMyBoots/X-MinimaxH3/blob/main/docs/SELFLIFT_PROGRESSIVE_GENERATION.md)。
 
 ### C-20260925-01 | Continuum Timeline 多 chunk 长片一采链路与资源边界
 - 状态：✅实测（valid_from 2026-09-25）

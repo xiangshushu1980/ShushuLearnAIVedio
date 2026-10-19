@@ -30,7 +30,7 @@ Comfy-Ops 是围绕 ComfyUI 的本地视频生成研究与工具化项目，重�
 - 研究了角色卡、实体、参考图、镜头主体、声音和 BGM 描述的结构化注入。
 - 形成了提示词校验、引用标色和拍摄本验收规则。
 
-相关文档：[`docs/08_h3_prompt_agent.md`](../08_h3_prompt_agent.md)、[`docs/16_prompt_generator_plan.md`](../16_prompt_generator_plan.md)、[`docs/17_h3_prompt_writing_rules.md`](../17_h3_prompt_writing_rules.md)、[`docs/21_pipeline_acceptance.md`](../21_pipeline_acceptance.md)。
+相关文档：[`docs/08_h3_prompt_agent.md`](../08_h3_prompt_agent.md)、[`docs/16_prompt_generator_plan.md`](../archive/research/16_prompt_generator_plan.md)、[`docs/17_h3_prompt_writing_rules.md`](../17_h3_prompt_writing_rules.md)、[`docs/21_pipeline_acceptance.md`](../21_pipeline_acceptance.md)。
 
 ### 2.3 速度、连续性和画质优化
 
@@ -170,7 +170,7 @@ H3 FL2VA 或 Ref2VA
 - `scripts/h3_ref2v_runner.py`；
 - `scripts/h3_facerefine_batch.py`。
 
-详细研究资料：[`docs/h3-digital-human-research/README.md`](../h3-digital-human-research/README.md)、[`docs/27_DUIX_Avatar_数字人评估.md`](../27_DUIX_Avatar_数字人评估.md)。
+详细研究资料：[`docs/h3-digital-human-research/README.md`](../h3-digital-human-research/README.md)、[`docs/27_DUIX_Avatar_数字人评估.md`](../archive/research/27_DUIX_Avatar_数字人评估.md)。
 
 ### 4.2 LongCat 外部测试
 
@@ -182,7 +182,7 @@ LongCat 属于外部开源项目/独立测试方向。项目对其进行了方�
 
 DUIX-Avatar 是另一条路线：使用真人参考视频，通过音频驱动口型和脸部替换，属于低算力、接近实时的数字分身方案，不是 H3 式的生成式视频模型。它适合已有真人主播/演员的口播分身，和需要凭空生成虚拟角色的 H3 场景定位不同。
 
-项目已有 DUIX 方案调研和评估文档：[`docs/27_DUIX_Avatar_数字人评估.md`](../27_DUIX_Avatar_数字人评估.md)、[`docs/28_数字人在线方案_对比与价位.md`](../28_数字人在线方案_对比与价位.md)。DUIX/LongCat 的开源工程代码不纳入本项目交接包。
+项目已有 DUIX 方案调研和评估文档：[`docs/27_DUIX_Avatar_数字人评估.md`](../archive/research/27_DUIX_Avatar_数字人评估.md)、[`docs/28_数字人在线方案_对比与价位.md`](../archive/research/28_数字人在线方案_对比与价位.md)。DUIX/LongCat 的开源工程代码不纳入本项目交接包。
 
 ## 5. 代码与资料索引
 
@@ -190,7 +190,7 @@ DUIX-Avatar 是另一条路线：使用真人参考视频，通过音频驱动�
 |---|---|
 | 项目导航 | `docs/INDEX.md` |
 | 环境与模型 | `docs/01_environment.md`、`docs/02_models.md` |
-| H3 提示词与拍摄本 | `docs/08_h3_prompt_agent.md`、`docs/16_prompt_generator_plan.md`、`docs/22_shotlist_web_tool.md` |
+| H3 提示词与拍摄本 | `docs/08_h3_prompt_agent.md`、`docs/archive/research/16_prompt_generator_plan.md`、`docs/22_shotlist_web_tool.md` |
 | H3 工作流 | `workflows/minimax_h3_*.json`、`workflows/h3v1_*.json` |
 | Wan/Bernini/ANIMA/KREA | `workflows/wan*`、`workflows/bernini*`、`workflows/anima*`、`workflows/krea*` |
 | 视频与音频脚本 | `scripts/`、`experiments/speech-video/` |

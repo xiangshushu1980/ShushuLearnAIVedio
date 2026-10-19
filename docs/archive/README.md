@@ -22,6 +22,16 @@
 | Krea2 旧探针 | `../../experiments/archive/krea2_probes/` | 独立风格探针和早期 H3 桥接探针，不能替代当前 turnaround 主线 | `Krea2 Jibs magic H3 probe` |
 | H3 MC 孤立案例 | `../../experiments/archive/h3_mc_orphan_cases/` | 已被任务记录和 `mc_test`/H3 主线资料取代的单文件案例 | `MC face clothing scene` |
 | 已完成任务进度 | `../../.pi/tasks/archive/` | 仅保留任务过程和证据链；结论以 docs、ledger 和 Mem0 为准 | `h3 turbo speech video ledger backfill` |
+| 提示词生成器计划 | `research/16_prompt_generator_plan.md` | 目标已由 h3-prompt-writing skill 实现；分层管线设计可作历史参考 | `prompt generator IR 分层管线` |
+| IR 样本拆解 | `research/18_ir_sample_teardown.md` | 服务于 16 的学习基准；结构规律已吸收到 17 和 skill | `IR sample teardown 拆解` |
+| antirez h3.c 架构研究 | `research/25_h3c_study.md` | 纯 C Metal 推理引擎架构笔记，本机 NVIDIA 不可运行；方法论参考 | `antirez h3.c Metal MLX` |
+| DUIX Avatar 评估 | `research/27_DUIX_Avatar_数字人评估.md` | 4090 产能不达标；结论已反映在 h3-digital-human-research/ | `DUIX Avatar 数字人 4090` |
+| 数字人在线方案对比 | `research/28_数字人在线方案_对比与价位.md` | 2026-09 时点快照，价格可能已变；仅作历史参考 | `数字人 在线 价格 HeyGen` |
+| 每日视频系统设计旧稿 | `research/29_daily_video_system.md` | 被 31 服务架构替代；早期架构讨论记录 | `daily video system 每日话题` |
+| 开源工作流 UI 调研 | `research/30_open_source_workflow_ui_research.md` | 调研阶段记录；选型结论在 31/32 | `workflow UI n8n Prefect Dagster` |
+| 编排框架评估 | `research/32_orchestrator_framework_evaluation.md` | Conductor 验收完成；详细结果在 experiments/ | `orchestrator Conductor vertical slice` |
+| HyperFlow 4090 研究 | `research/37_hyperflow_4090_ref2va_research.md` | 结论：不应写入生产推荐；pruned backbone 实验门槛记录 | `HyperFlow pruned 4090 Ref2VA` |
+| SelfLift 4090 研究 | `research/38_h3_selflift_ref2va_4090_research.md` | 结论：Ref2VA+SelfLift 未证明，不值得继续测试 | `SelfLift Ref2VA 4090 latent lift` |
 
 ## 当前相关话题的查找顺序
 
