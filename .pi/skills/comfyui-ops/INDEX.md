@@ -1,6 +1,6 @@
-# ComfyUI 能力索引
+# ComfyUI 项目研究与运维索引（`comfyui-ops`）
 
-本索引是 ComfyUI skill 的按需入口。先按“我要完成什么”定位，再只读取对应分册；不要默认全文读取所有 references。
+本索引是项目级 `comfyui-ops` skill 的按需入口（用户级共享生图契约在 `/home/sean/.pi/agent/skills/comfyui/`，不在本目录）。先按“我要完成什么”定位，再只读取对应分册；不要默认全文读取所有 references。
 
 ## 按任务目的查找
 

@@ -68,7 +68,7 @@ Ref2VA 是 H3 的多参考条件生成：文字提示结合角色、场景、道
 - 正式档加速组件：PDD Acc（核心自带 LoRA/patch 路线）、`PatchSageAttentionKJ`、KJ `MiniMax H3 Low VRAM Attention`、KJ `MiniMax H3 Chunk FeedForward`；原生 H3 Sparse 只作备用，且不与显式 SageAttention 叠加
 - 运行器：`scripts/h3_ref2v_runner.py`；批量用例：`experiments/h3_ref2v/`
 
-节点输入和 shift/sigma 配对见 [.pi/skills/comfyui/references/nodes.md](../.pi/skills/comfyui/references/nodes.md) 与 [params.md](../.pi/skills/comfyui/references/params.md)。
+节点输入和 shift/sigma 配对见 [.pi/skills/comfyui-ops/references/nodes.md](../.pi/skills/comfyui-ops/references/nodes.md) 与 [params.md](../.pi/skills/comfyui-ops/references/params.md)。
 
 ## 4090 参数基线
 

@@ -79,7 +79,7 @@ v2v 时：LoadVideo(input/路径) → GetVideoComponents 拆帧 → 注入 sourc
 ### int8 vs fp8 对比（2025-08-02）
 - 视频任务（81帧）：int8 105.1s/清晰度1023 vs fp8 133.1s/999 → **int8 快21% 略优**；单帧图像 int8 反而慢（加载开销）
 - 同 seed 像素差异均值 2.08 → 画质几乎一致；int8 省 1GB 显存
-- 详见 `.pi/skills/comfyui/references/params.md`
+- 详见 `.pi/skills/comfyui-ops/references/params.md`
 
 ## 四、MCP 工具状态
 

@@ -47,7 +47,7 @@
 
 ## 内容落盘（项目专属位置）
 
-- 原始实验数据与产物 → `experiments/`；当前模型清单、工作流结构、参数基线和安装步骤 → `docs/`；跨任务的稳定操作方法 → `.pi/skills/comfyui/`。ComfyUI `output` 仅作单次生成的临时落点；实验完成后立即把选定产物、manifest、prompt、QC 和分析文本迁入对应 `experiments/<任务>/`，更新引用后清理本批次 output 文件。Agent 只读取当前任务的 `experiments/<任务>/`，不递归扫描整个 experiments 树。不得将历史实验积累在 `output`，也不得把 `output` 子目录当作长期归档。归档文件放在 ComfyUI 扫描根目录和项目工作区之外，并在 experiments 中保留归档索引。同一事实只保留一处权威正文，其余位置链接引用。
+- 原始实验数据与产物 → `experiments/`；当前模型清单、工作流结构、参数基线和安装步骤 → `docs/`；跨任务的稳定操作方法 → `.pi/skills/comfyui-ops/`。ComfyUI `output` 仅作单次生成的临时落点；实验完成后立即把选定产物、manifest、prompt、QC 和分析文本迁入对应 `experiments/<任务>/`，更新引用后清理本批次 output 文件。Agent 只读取当前任务的 `experiments/<任务>/`，不递归扫描整个 experiments 树。不得将历史实验积累在 `output`，也不得把 `output` 子目录当作长期归档。归档文件放在 ComfyUI 扫描根目录和项目工作区之外，并在 experiments 中保留归档索引。同一事实只保留一处权威正文，其余位置链接引用。
 - **实测定论**（参数值、加速比、可行性、选型）→ 现行值及适用条件写 `docs/`，演进史、覆盖链和证据锚 append 到 `.pi/ledger/`（见 `.pi/ledger/README.md`）。任务收尾按 `multi-agent-collab` 的远程流程执行；本地 progress/ledger 只保存证据和上下文，会话结束 retain 的实测定论打标 `[定论候选]`（见 mem0 skill）。
 - 动态经验、踩坑、偏好 → Mem0 池 `comfy-ops`（跨界 → `global`）
 
