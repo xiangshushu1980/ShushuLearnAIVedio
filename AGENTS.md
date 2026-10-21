@@ -29,12 +29,10 @@
 
 - 查历史任务/实验结论、较长 `progress.md`、`done/` 归档或追加日志时，用 `incdoc grep <文件> <关键词>` 按条目取原文；小于 100 行的文件直接读，JSON 等结构化文件不适用。incdoc 覆盖有限，关键结论需核对命中原文。
 
-## ComfyUI 唯一启动入口
+## ComfyUI 服务管理
 
-- ComfyUI 共享实例的唯一启动入口是 `scripts/comfy-stack.sh`：
-  `start`、`stop`、`status`、`restart`；禁止直接使用 `start.sh`、`nohup` 或另一个脚本拉起第二个实例。
-- `comfy-stack.sh` 使用本地 `flock`、8188 健康检查和精确 PID 校验实现单实例；发现已有健康实例时必须复用，发现端口或进程异常占用时必须停止并报告，不能盲目启动。
-- Agent/MCP 由客户端根据项目 `.mcp.json` 管理；`comfy-stack.sh` 不启动 `comfyui-mcp`，避免 Agent 自己启动的 MCP 与手工启动的 MCP 重复。Agent 只连接现有 `http://127.0.0.1:8188`。
+- ComfyUI 共享实例由用户级 `comfyui.service` 管理。Agent 与 Hivemind 面板使用同一个 unit：`systemctl --user start|stop|restart|status comfyui.service`；禁止使用 `start.sh`、`nohup` 或另一个脚本拉起第二个实例。
+- `scripts/comfy-stack.sh` 保留作人工兼容/诊断 wrapper，不是另一套生命周期管理器；它委托给 `comfyui.service`。Agent/MCP 由客户端根据项目 `.mcp.json` 管理，不由服务 unit 或 wrapper 再启动；Agent 只连接现有 `http://127.0.0.1:8188`。
 - `hive-resource` 只负责资源预检、`service:comfyui` 服务登记和生成任务的 GPU lease；不把长驻 ComfyUI 当作短 TTL 的 GPU 独占 lease，也不把资源 lease 当作进程单例锁。
 - 启动前可由 wrapper 展示 `hive-resource occupancy`；具体生成任务仍按 hive-resource 规则申请 lease、heartbeat、observe 和 release。
 
