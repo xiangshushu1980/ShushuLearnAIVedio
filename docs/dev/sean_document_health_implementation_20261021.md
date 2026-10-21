@@ -7,7 +7,7 @@ Owner: Sean。实施日期：2026-10-21。
 - 当前配置与操作在项目手册；ledger 是结论历史层，保留证据和覆盖链；Mem0 是可检索经验。任务状态只在远程 Task Center。
 - 统一工具及运行手册：`/home/sean/.pi/agent/tools/document-health/README.md`；源码 `health.py`，项目注册表 `projects.json`。项目配置见 [本项目配置](../../.document-health.json)。
 - 云端原 `mem0-l0-audit.timer` 每日北京时间 05:00 保持既有 L0 自动处理范围，新增 ideas 池。新增只读桥接 `/home/ubuntu/app/mem0/document_health_review.py`，读取最近非 dry-run 的 L0 报告与项目/global 记忆，使用现有 DeepSeek 凭证作一致性审阅。没有重启 Mem0。
-- 本地 `document-health.timer` 已启用，每日北京时间 05:30、Persistent 补跑，实际 unit 环境手动运行成功。下一次定时执行为 2026-10-22 05:30。开发机离线时不能扫描本机文档，在线后补跑。
+- 本地 `document-health.timer` 初次部署为每日 05:30；同日按用户开机不规律的实际情况改为 WSL 用户服务启动约 3 分钟后执行，持续在线每 24 小时再执行；失败后每 5 分钟有限重试，45 分钟内最多 3 次。实际 unit 环境已运行成功。开机指 WSL／用户服务启动，不会自动拉起尚未启动的 WSL 发行版。
 - 检查器只读项目与记忆，不自动修文、提交、推送或建任务。通知体现为变化时的服务日志；私有报告在 `~/.local/share/document-health/`，未接入额外外部通知渠道。原有 L0 的自动去重等权限没有扩展到文档事实裁决。
 
 ## 验证后再推广
@@ -41,3 +41,7 @@ Owner: Sean。实施日期：2026-10-21。
 中央工具提交 `57d0382`、`4aaff4c`；comfy-ops ledger 提交 `b580021`、`a75ed04`。本轮全部未推送。`docs/09_h3_test_plan.md`、`docs/34_ref2va_generation_guide.md`、`.pi/skills/comfyui-ops/references/params.md` 原有未提交改动与本轮修订混合，保留工作树不整文件提交。原有 film-editor、预览实验、工作流及其他用户级修改不纳入本轮提交。
 
 停用每日检查：`systemctl --user disable --now document-health.timer`。云端原 L0 不受此影响；其本轮仅增加扫描池，旧部署备份在 `/home/ubuntu/app/mem0/mem0_l0_maintain.py.pre-document-health-20261021`。文档回退使用本轮各 scoped commit，不执行整树重置，也不把 Git 回退当作 Mem0 回退。
+
+## 同日补充：开机与手动入口
+
+Owner: Sean。新增共享 skill `/home/sean/.pi/agent/skills/document-health/SKILL.md`，Codex 通过同名软链使用。任意项目或子目录可执行 `~/.pi/agent/bin/document-health`，或对 Agent 说“用 document-health 检查当前项目”。未配置目录临时推断范围，仅本地结构检查，不写项目配置、不注册后台、不发云端。当前共 18 项自动测试通过，配置项目子目录与临时无 Git 目录均已实测；skill 格式与 systemd unit 校验通过。
