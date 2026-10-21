@@ -58,7 +58,7 @@
 
 ### C-20260917-02 | Breeze TTS 2 生成耗时基线（GPU vs CPU）
 - 状态：📝已修正（2026-10-21，比较口径被 C-H3AUDIO-20261021-01 取代，原测量表保留）
-- 现行值（ComfyUI 0.36.0，execution_start→success 口径）：
+- 原测量值（ComfyUI 0.36.0，execution_start→success 口径；比较边界见后继条目）：
   | 场景 | 模式 | 产物 | 耗时 | 实时倍率 |
   |---|---|---|---|---|
   | 两角色克隆 + MultiSpeaker，两句中文 | device=cpu, eager | 4.36s / 24kHz mono | 64.019s | ~14.7× |
