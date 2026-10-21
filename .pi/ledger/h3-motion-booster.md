@@ -3,6 +3,8 @@
 Owner: Sean。独立记录本次新测试，避免修改其他任务正在维护的 h3-models.md。
 
 ### C-20261003-01 | Motion Booster V0.2 REF2VA 可加载、可生成；侧步单例存在白边代价
+
+> 2026-10-21 覆盖提示（Owner: Sean）：白边观察仅限本条原竖图参考与对应权重；适用条件已被 C-20261003-02/04/05 细化。技术兼容观察保留，不将单例推广为所有横幅参考或权重。
 - 状态：🟡质量待用户验收；技术兼容性已验证（2026-10-03）。
 - 现行值：Civitai 2840146 / version 3246346，`ref2VA_Motion_v2.safetensors`，触发 `dynv2`，与本机 Ref2VA INT8 ConvRot 底模的 208 组目标名称和矩阵形状匹配，ComfyUI 原生解析 208/208 补丁；0.7 和 0.8 两档均完整生成，运行日志无未加载键警告，无 OOM。
 - 条件：ComfyUI 0.37.0、RTX 4090 24GB、单角色全身参考、正常侧步、同 seed 和完整六段式 prompt、768×448 / 124 帧 / 24fps、20 steps / res_multistep / simple、无加速 LoRA、原生 attention、INT8 video VAE / FP32 audio VAE / tiled decode。

@@ -11,7 +11,8 @@
 | C-20260816-13 | Ref2VA 纯音频参考可用 | ✅现行 | 语音生成必要条件 |
 | C-20260816-14 | H3 音频劣化归因（sage 零影响 / MC 跳步） | ✅现行 | |
 | C-20260917-01 | Breeze TTS 2 标准流程与运行模式（BF16/cuda_graphs） | ✅现行 | GPU 主流；CPU 为兜底 |
-| C-20260917-02 | Breeze TTS 2 生成耗时基线（GPU vs CPU） | ✅现行 | 同参对照 |
+| C-H3AUDIO-20261021-01 | Breeze RTF 与设备比较边界 | ✅现行 | 口径纠正，未新增生成实测 |
+| C-20260917-02 | Breeze TTS 2 生成耗时基线（GPU vs CPU） | 📝已修正 | 原数据保留；比较口径见 C-H3AUDIO-20261021-01 |
 | C-20260917-03 | Doctor Wang 声音克隆产出与参数 | ✅现行 | 含情绪增强版 |
 
 ---
@@ -56,7 +57,7 @@
 - 证据锚：.pi/tasks/T-comfy-ops-breeze-docker/progress.md（后续 TTS 标准流程节）/ mem0 1b5fed07、50531ceb
 
 ### C-20260917-02 | Breeze TTS 2 生成耗时基线（GPU vs CPU）
-- 状态：✅现行（valid_from 2026-09-17）
+- 状态：📝已修正（2026-10-21，比较口径被 C-H3AUDIO-20261021-01 取代，原测量表保留）
 - 现行值（ComfyUI 0.36.0，execution_start→success 口径）：
   | 场景 | 模式 | 产物 | 耗时 | 实时倍率 |
   |---|---|---|---|---|
@@ -64,7 +65,7 @@
   | 双人克隆 + MultiSpeaker，8 轮中文对话 | device=cpu, eager, bf16 | 18.92s / 24kHz mono | 245.203s | ~13.0× |
   | VoiceDirection（对话/口播） | device=cuda, sdpa, cuda_graphs, cfg_scale=2.0 | 82.48s / 24kHz mono | 131.289s | ~1.6× |
   | VoiceDirection 情绪增强版 | device=cuda, sdpa, cuda_graphs, cfg_scale=2.8, seed=20260918 | 74.40s / 24kHz mono | 107.935s | ~1.45× |
-- 结论：**CPU 约 13-15× 实时，GPU 约 1.5-1.6× 实时**（GPU 快约一个数量级）；双人克隆场景中节点 1-3 命中缓存，实际耗时主要来自 MultiSpeaker 的 CPU 生成
+- 历史结论（跨场景速度外推已撤销）：当时写作“CPU 约 13-15× 实时，GPU 约 1.5-1.6× 实时，GPU 快约一个数量级”。这里的倍率是耗时/音频时长，越小越快；但 CPU 克隆与 GPU VoiceDirection 并非同参场景，不能据表认定设备切换的加速比。双人克隆场景中节点 1-3 命中缓存，实际耗时主要来自 MultiSpeaker 的 CPU 生成。
 - 时间线：
   - 2026-09-17 提出：CPU/GPU 四条基线同批实测（来源任务 T-comfy-ops-breeze-docker）
 - 证据锚：ComfyUI output/h3_digital_human/ 下对应 FLAC / mem0 50531ceb、4db724ec、ecbb1491、2c872640
@@ -76,3 +77,13 @@
 - 时间线：
   - 2026-09-17 提出：基准版与情绪增强版同批产出（来源任务 T-comfy-ops-breeze-docker）
 - 证据锚：mem0 7ede5d49、ecbb1491、2c872640、1f3ec4cc、996518e1
+
+
+### C-H3AUDIO-20261021-01 | Breeze 耗时倍率与设备比较边界
+- Owner: Sean
+- 状态：✅现行（valid_from 2026-10-21，既有数字的口径纠正，未新增生成实测）
+- 现行值：C-20260917-02 的倍率为 RTF=执行耗时/产物时长，越小表示执行越快；64.019/4.36≈14.7，131.289/82.48≈1.59。表中 CPU 克隆与 GPU VoiceDirection 的场景、长度及执行链不同，保留各自观测值，不称同参对照，不推导设备本身“快一个数量级”。
+- 时间线：2026-10-21 每日文档检查试跑发现比较疑点；人工复核原始表格与除法，纠正方向解释及跨场景外推。模型曾把倍率方向读反，其“CPU反而更快”建议不采纳。
+- 覆盖关系：取代本文件 C-20260917-02 的同参对照标签及通用设备加速比推论，不撤销原测量。
+- 来源：用户授权的文档纯净治理；未新建任务。
+- 证据锚：本文件 C-20260917-02 原表、[当前 Breeze 流程](../../docs/breeze-tts-standard.md)。

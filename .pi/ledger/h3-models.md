@@ -6,6 +6,7 @@
 
 | C-ID | 主题 | 状态 | 备注 |
 |---|---|---|---|
+| C-H3MODELS-20261021-01 | 视频参考固定 CPU 旧建议撤销 | ✅现行 | 文档与模板审计；未做 GPU 回归 |
 | C-20260816-20 | Hybrid b25-49（fl2va+ref2va merge） | 🟡待验证 | 已拆 T-20260815-09 深度测试 |
 | C-20260816-21 | 防 OOM flags 全退 | ✅现行 | 灾难性慢 3.7x |
 | C-20260816-22 | SageAttention v2 无需 patch | ✅现行 | int8QK+fp8PV kernel |
@@ -155,3 +156,15 @@
   - 2026-09-07 提出：Ref2VA+MC 30s 初版用户确认口型未对上（来源 T-comfy-ops-28）
   - 2026-09-07 修正：补接 NativeAudioLock 并修复 runner 节点编号冲突，A/B/C 全部完成；后续转 T-comfy-ops-31 验证 Extender 2.0 的多参考连续性
 - 证据锚：`.pi/tasks/T-comfy-ops-28/progress.md`；`experiments/h3_digital_human/zh_breeze_ref2va_audio_lock_mc_30s_cases.json.results.json`；产物 `/home/sean/projects/ComfyUI/output/video/h3_avatar_zh_breeze_ref2va_audio_lock_mc_30s/joined_30s_master_audio_timeline_fixed.mp4`
+
+
+### C-H3MODELS-20261021-01 | 视频参考固定 CPU 旧建议撤销
+- Owner: Sean
+- 状态：✅现行（valid_from 2026-10-21；配置与文档治理结论，非新的性能实测）
+- 现行值：普通 Ref2VA 沿用当前模板的 CLIPLoader `device=default`；不因 2026-08 的显存压力观察固定为 CPU。若当前运行发生实际 OOM，按输入条件、版本与资源证据排查，不推断默认设备必然无 OOM。
+- 时间线：
+  - 2026-08：旧测试计划 R2/R2b 记录默认设备显存压力及 CPU 出片约 756s，随后节点/参数册写成通用必须 CPU。原始条件和耗时留在历史计划。
+  - 2026-10-21：用户指出按旧文档改 CPU 的误操作；本轮核对图＋视频参考模板及 PDD6 模板均为 default，撤销旧通用建议，修复 nodes 残留和 H3 导航的权威关系。两份模板不证明所有视频参考场景均已验证。
+- 覆盖对象：旧记录未分配 C-ID，明确覆盖 docs/09 的 R2b 通用推论、旧 params 的视频参考强制设备建议、旧 nodes 的 2026-08-14 强制 CPU 建议。历史 CPU 成功出片观察本身不删除。
+- 来源：当前用户授权的文档纯净治理，未新建远程任务；不伪造 T-ID。
+- 证据锚：[现行生成手册](../../docs/34_ref2va_generation_guide.md)、[历史实验](../../docs/09_h3_test_plan.md)、[参考模板](../../workflows/minimax_h3_ref2va_img_vid_api.json)、[预览模板](../../workflows/sean_h3_preview_pdd6_lightvae_api.json)、[审计记录](../../docs/dev/sean_documentation_audit_20261021.md)。
