@@ -1,8 +1,10 @@
-# 工作流档案
+# 历史工作流档案
+
+> Owner: Sean。本册记录旧实验结构，不保证依赖模型仍在本机。当前模型与禁止恢复项以 [模型清单](../../../../docs/02_models.md) 为准，现行普通 Ref2VA 见 [生成手册](../../../../docs/34_ref2va_generation_guide.md)。不得因本册历史主力/推荐措辞自动下载已清理权重。
 
 > 每个工作流的节点结构、用途、参数与已生成结果。工作流 JSON 在 `/home/sean/projects/comfy-ops/workflows/`。
 
-## 1. wan2.2_i2v_lightning_test.json — 主力快速视频（17 节点）
+## 1. wan2.2_i2v_lightning_test.json — 历史快速视频（17 节点，Wan 栈已清理）
 
 **任务**: 图生视频（起始图 → 动画）｜ **耗时**: 480²×17帧 ≈ 10-16 秒/次（对比 Wan2.1 的 3 分钟）
 
@@ -55,7 +57,7 @@ LoadImage(起始图) ───────────────────�
 | 扩散模型 | UNETLoader | anima-base-v1.0.safetensors | weight_dtype default |
 | 文本编码器 | CLIPLoader | qwen_3_06b_base.safetensors | **type=stable_diffusion**（非 qwen_image！）|
 | VAE | VAELoader | qwen_image_vae.safetensors | 与 wan_2.1_vae 同结构 |
-| 加速 | LoraLoaderModelOnly | anima-turbo-lora-v0.1.safetensors | strength 1.0 |
+| 历史加速 | LoraLoaderModelOnly | anima-turbo-lora-v0.1.safetensors | 旧 v0.1 已被 v0.2 取代并清理；不直接执行此旧配置 |
 
 ### 参数
 - Base 30步 / cfg 4.5 / er_sde/simple（主体突出）；Turbo 12步 / cfg 1.0（快速）
@@ -106,7 +108,7 @@ LoadImage(起始图) ───────────────────�
 
 ## 8. Bernini 编辑管线（2025-08-02 实测沉淀）
 
-### pipeline_wan22_bernini_golden.json — 推荐主管线
+### pipeline_wan22_bernini_golden.json — 历史推荐（Bernini/Wan 依赖已清理，非当前主管线）
 `参考图 → Wan2.2 I2V（第一帧锁定）→ Bernini v2v（编辑）→ RIFE×3 → ClearReality×4 → 1080p`
 - 已验证：脸部/动作/风格全保持，v2v 编辑约 120s
 

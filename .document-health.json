@@ -1,0 +1,75 @@
+{
+  "version": 1,
+  "owner": "Sean",
+  "project": "comfy-ops",
+  "mem0_pool": "comfy-ops",
+  "include": [
+    "AGENTS.md",
+    "docs/INDEX.md",
+    "docs/*.md",
+    "docs/reference/*.md",
+    "docs/dev/comfyui_node_update_*.md",
+    ".pi/ledger/*.md",
+    ".pi/skills/comfyui-ops/**/*.md"
+  ],
+  "exclude": [
+    "docs/archive/",
+    "docs/project/"
+  ],
+  "historical": [
+    "docs/09_h3_test_plan.md",
+    "docs/19_h3_dual_track_gap_test.md",
+    ".pi/ledger/",
+    ".pi/skills/comfyui-ops/references/params.md",
+    ".pi/skills/comfyui-ops/references/nodes.md"
+  ],
+  "protected_content": [],
+  "authority": {
+    "entry": "docs/INDEX.md",
+    "models": "docs/02_models.md",
+    "ref2va": "docs/34_ref2va_generation_guide.md",
+    "ledger_rules": ".pi/ledger/README.md",
+    "rules": "AGENTS.md"
+  },
+  "memory_topics": [
+    "H3 Ref2VA CPU CLIPLoader PDD SageAttention",
+    "文档 ledger 结论 Task Center"
+  ],
+  "review_byte_limit": 110000,
+  "git_policy": {
+    "auto_commit": false,
+    "auto_push": false,
+    "remote": "origin",
+    "branch": null,
+    "scope": "explicit reviewed files only; preserve mixed changes; inspect every ahead commit before push"
+  },
+  "retired_rules": [
+    {
+      "id": "retired-cpu-requirement",
+      "files": [
+        "docs/09_h3_test_plan.md",
+        ".pi/skills/comfyui-ops/references/nodes.md",
+        ".pi/skills/comfyui-ops/references/params.md"
+      ],
+      "pattern": "视频参考必须 CLIPLoader|视频参考：\\*\\*必须 CLIPLoader",
+      "message": "已撤销的强制 CPU 建议重新进入手册"
+    },
+    {
+      "id": "unconditional-restart",
+      "files": [
+        "docs/09_h3_test_plan.md",
+        ".pi/skills/comfyui-ops/references/params.md"
+      ],
+      "pattern": "\\*\\*跑测试/批产前先重启|铁律\\*\\*：跑批前重启|测试纪律：长跑测试前先重启",
+      "message": "旧性能观察被重新写为无条件重启共享服务"
+    },
+    {
+      "id": "retired-fp8-preference",
+      "files": [
+        ".pi/skills/comfyui-ops/references/params.md"
+      ],
+      "pattern": "量化\\*\\*：fp8_scaled",
+      "message": "已退役模型的历史量化结论重新变成当前推荐"
+    }
+  ]
+}

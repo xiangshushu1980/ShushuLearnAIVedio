@@ -1,8 +1,9 @@
 # H3 Ref2VA + NativeAudioLock + Motion Context 工程流程
 
-## 当前标准
+> Owner: Sean。本文前半是逐段 MC 链的历史工程约束，不作为当前长片默认路线；多 chunk 长片读下方「现行长片路线：Continuum Timeline」。历史单链复现仍需遵守其帧数与音轨约束。
+## 历史逐段 MC 标准
 
-当前数字人连续视频使用 `MiniMaxH3ReferenceToVideo`（Ref2VA）作为起始条件，随后接 `MiniMaxH3NativeAudioLock` 固定台词音频，再由 `MiniMaxH3MotionContext` 使用上一段保存的 AV latent 做续接。每个续接段的 `MotionContextTrim` 必须同时裁视频和音频，最终母片只挂载一次原始 Breeze 母带。
+当时的逐段数字人连续视频使用 `MiniMaxH3ReferenceToVideo`（Ref2VA）作为起始条件，随后接 `MiniMaxH3NativeAudioLock` 固定台词音频，再由 `MiniMaxH3MotionContext` 使用上一段保存的 AV latent 做续接。每个续接段的 `MotionContextTrim` 必须同时裁视频和音频，最终母片只挂载一次原始 Breeze 母带。
 
 ## Reference 的组成
 

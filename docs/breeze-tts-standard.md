@@ -16,7 +16,7 @@
 - decode：`cuda_graphs`
 - 多人：`BreezeTTS2Speaker` + `BreezeTTS2MultiSpeaker`
 - 输出：24kHz、单声道，优先 FLAC；需要兼容时使用 WAV
-- 连续任务：一次加载模型，连续生成后再停止/重启 ComfyUI 释放显存
+- 连续任务：复用已加载模型；不把任务结束自动转换为停止或重启共享 ComfyUI。确需生命周期操作时，按项目 AGENTS 核对其他任务与队列，并统一使用 comfyui.service。
 
 ## 三套环境的定位
 

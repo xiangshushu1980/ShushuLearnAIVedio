@@ -1,5 +1,6 @@
 # 节点速查（本项目实际用过的节点）
 
+> Owner: Sean。历史节点档案：输入输出语义可供定位，旧模型与性能不代表当前可用；现行模型及禁止恢复项见 [模型清单](../../../../docs/02_models.md)，普通 Ref2VA 参数见 [生成手册](../../../../docs/34_ref2va_generation_guide.md)。
 > 记录每个用过的节点：干什么（语义）→ 官方/社区推荐（出处+理由）→ 本地实测（4090 24GB）。
 > 用途：搭工作流前先查本表，避免重复查源码；新节点首次落地后必须补录（流程见 learning.md §3.5）。
 
@@ -104,7 +105,7 @@
 - **ref_image_size**：`match`=参考图等比缩到生成像素面积（只降不升，训练一致）；`max`=保持 2048 短边（身份保真最好，参考 token 全程参与采样故可能慢数倍）
 - 参考视频约束：≥5 帧（~0.2s@24fps）、24fps 2-15s、帧数截断到 17n+5、Qwen 以 2fps+时间戳看视频；参考视频帧数超出生成帧数则截断
 - 实现：ref_blocks 经 conditioning `minimax_refs` 注入 DiT payload；ref_items 走 clip.tokenize(minimax_ref_items=) 给 tokenizer 呈现
-- 本地实测（2026-08-14）：视频参考必须 CLIPLoader device="cpu"（否则显存爆）；纯音频参考可用（ref_audios 单接，20 步 -11.3 LUFS 有真语音）
+- 历史观察（2026-08-14）：旧环境视频参考曾发生显存压力；当时固定 CPU 的建议已撤销，不能据此改当前设备。当前 Ref2VA 设备配置见 [生成手册](../../../../docs/34_ref2va_generation_guide.md)，演进见 ledger `C-H3MODELS-20261021-01`。纯音频参考曾可用（ref_audios 单接，20 步 -11.3 LUFS 有真语音），该旧结果不替代当前版本回归。
 
 ### MiniMaxH3SigmaShift（官方核心节点）
 - 作用：设置 video/audio 双流 shift（ModelSamplingAV）
@@ -114,10 +115,10 @@
 ### H3FaceTrackCrop / H3InjectVideoLatent / H3PerFrameDenoise / H3FaceStitch（ComfyUI-H3-FaceRefine）
 - 作用：逐帧人脸精修——远处小脸合成、特写保细节（脸崩=头部占画面比例小，与分辨率无关）
 - 机制：TrackCrop 检测裁剪(512² crop_factor3 auto_capped_768) → InjectVideoLatent 把 crops 注入 latent → ReferenceToVideo(512 画布+2 身份参考图+原音频 ref_audios+**原视频 prompt**) → PerFrameDenoise 按脸大小调每帧 denoise（noise_mask）→ NativeAudioLock 锁音频 → Stitch face_only 拼接(fade_out)
-- **PerFrameDenoise 语义（源码确认）**：脸越小重绘越强（合成脸）、脸越大越保守（保细节）；strength_small_face 0.8 / strength_large_face 0.35 / absolute_px 30-120px / gamma 1 / smooth 9
-- **必须官方参数原样（2026-08-14 实测）**：LoRA=fl2v_lightx2v_turbo_4step_v0.1_comfy @0.75（⚠️换 v1.0 768p 会产生马赛克——shift 规格不同）、er_sde+simple 4 步 denoise 0.45、fallback_detector='none'（本地无 person 检测器）；本地化=UNET ref2va_pruned_int8_convrot + CLIP qwen3vl_32b
+- **PerFrameDenoise 历史语义与参数（当时源码确认，非现行默认）**：脸越小重绘越强（合成脸）、脸越大越保守（保细节）；strength_small_face 0.8 / strength_large_face 0.35 / absolute_px 30-120px / gamma 1 / smooth 9
+- **历史参数（2026-08-14 单批观察；不再作为必须原样的指令）**：LoRA=fl2v_lightx2v_turbo_4step_v0.1_comfy @0.75（⚠️换 v1.0 768p 会产生马赛克——shift 规格不同）、er_sde+simple 4 步 denoise 0.45、fallback_detector='none'（本地无 person 检测器）；本地化=UNET ref2va_pruned_int8_convrot + CLIP qwen3vl_32b
 - 依赖：face_yolov8m.pt 52MB（models/ultralytics/bbox/，源=Bingsu/adetailer HF）、NativeAudioLock 节点（Shrek3OnVH5 仓库 custom_nodes 子目录）、VHS
-- 本地实测：124 帧精修 10-45s/条；改参数（强度/步数/LoRA 版本）全部马赛克，官方原样干净；完整管线=Turbo 4 步 40s + FaceRefine 30s = 70s 可验收
+- 历史实测：当时 124 帧精修 10-45s/条，部分改参组合出现马赛克；该批次不能证明后续版本不能改参。现行 FaceRefine 的已验证档位与限制见 [43](../../../../docs/43_h3_facerefine_current_state.md)，不以旧 4 步时间作为当前吞吐承诺。
 
 ### Florence2ModelLoader / Florence2Run（ComfyUI-Florence2，Kijai）
 - 作用：图片反推（caption/OCR/region 等 15 任务）

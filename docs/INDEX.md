@@ -12,7 +12,7 @@
 |---|---|
 | 环境、模型、节点、升级 | [ComfyUI 项目研究索引（comfyui-ops）](../.pi/skills/comfyui-ops/INDEX.md) · [环境](01_environment.md) · [模型](02_models.md) · [升级](44_comfyui_h3_upgrade_runbook.md) |
 | 生图、Qwen、三视图、Krea2、质检 | [共享生图入口（用户级 comfyui）](/home/sean/.pi/agent/skills/comfyui/SKILL.md) · [图像索引](../.pi/skills/comfyui-ops/references/image/README.md) · [Krea2](40_krea2_prompt_and_identity_pipeline.md) · [VL 质检](24_vl_qc_api.md) |
-| H3 生成、提示词、参数 | [Ref2VA 日常生成](34_ref2va_generation_guide.md) · [提示词 skill](../.pi/skills/h3-prompt-writing/SKILL.md) · [测试数据](09_h3_test_plan.md) |
+| H3 生成、提示词、参数 | [Ref2VA 日常生成](34_ref2va_generation_guide.md) · [提示词 skill](../.pi/skills/h3-prompt-writing/SKILL.md) · [历史测试证据（不作配置依据）](09_h3_test_plan.md) |
 | 长视频、音频、数字人 | [MC 工程](33_h3_mc_engineering.md) · [Breeze TTS](breeze-tts-standard.md) · [数字人研究](h3-digital-human-research/) |
 | 参考图、多视图、FaceRefine | [Reference 主题导航](reference/README.md) · [Reference 手册](45_ref_asset_handbook.md) · [多视图研究](46_multiview_consistency_research.md) · [FaceRefine 现状](43_h3_facerefine_current_state.md) |
 | Reference 创建与编辑 | [主题导航](reference/README.md) · [创建/编辑流程](48_h3_reference_creation_editing_flow.md) · [实现前架构](49_h3_reference_workspace_architecture.md) |
@@ -54,6 +54,10 @@
 1. **编号与索引**：新文档用未占用编号；`scripts/docs_check.sh` 检查顶层文档是否入索引、重复编号是否登记，以及本地 Markdown 链接和 Ledger ID 映射
 2. **归档流程**：内容并入他处（docs 或 mem0）→ 删除文件（git 保留历史）→ 本 INDEX「已归档」行登记 → 清理全仓引用 → 跑 `scripts/docs_check.sh` 验证
 3. **经验不进 docs**：实测/踩坑/偏好 → mem0（判定树见用户级 AGENTS.md）；docs 只留手册/参考/数据记录
-4. **合并先问**：跨任务线动文件前，read 最新版 + `git status` 查 WIP + recall [STATE] 确认无活跃占用
+4. **合并先问**：跨任务线动文件前，读最新版、检查工作树，并查询远程 Task Center 的 controller/generation 确认活跃任务；不以记忆作为占用状态
 5. **引用即同步**：改文件名/合并时 grep 全仓（docs/.pi 全部 .md）；删除后立即验证
 6. **单写者 + scoped commit**：每个文档一个任务线负责；改动只 `git add <自己的文件>`（禁止 -A）
+
+## 文档与 Git 维护
+
+Owner: Sean。每日增量检查的范围、权威正文、退役指令和 Git 开关统一见 [项目维护配置](../.document-health.json)。当前自动检查只读，不自动提交或推送；原有混合改动保留，推送前核对全部待上传提交。结论变化时同步现行手册、ledger 替代关系与直接引用，每日检查只作漏项兜底。

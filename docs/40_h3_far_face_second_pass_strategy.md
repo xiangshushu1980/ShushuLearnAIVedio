@@ -1,5 +1,6 @@
 # H3 二采与远景脸防糊方案：分流策略与深度探索
 
+> Owner: Sean。本文保留 2026-09-20 的分流研究；FaceRefine 当前操作与参数范围见 [43 当前状态](43_h3_facerefine_current_state.md)，不要将早期 T44 参数当作唯一现行基线。
 > 任务：T-comfy-ops-46  
 > 日期：2026-09-20  
 > 范围：基于 T-comfy-ops-43/44/45 的本地 RTX 4090 实测，整理远景小脸的可生产方案；本轮不重复启动共享 ComfyUI。
@@ -53,7 +54,7 @@ T-45 已安装 `MinimaxH3LatentUpscaler3DRefineHandoff` 与 BF16 权重，并完
   → face_only stitch，保留原音频
 ```
 
-当前安全基线：base denoise 0.40、8 steps、small-face multiplier 1.0、large-face multiplier 0.35、脸高 30–120 px 插值、smooth_frames 9；坐标不可靠时用 `closest_to_xy`，不要依赖“最大脸”选择兜帽/小脸目标。快速转头、硬切、严重遮挡和多人交叉遮挡需要按镜头切段或人工 ROI。
+早期 T44 动态基线（历史对照，非唯一现行档）：base denoise 0.40、8 steps、small-face multiplier 1.0、large-face multiplier 0.35、脸高 30–120 px 插值、smooth_frames 9；坐标不可靠时用 `closest_to_xy`，不要依赖“最大脸”选择兜帽/小脸目标。快速转头、硬切、严重遮挡和多人交叉遮挡需要按镜头切段或人工 ROI。
 
 ### C. 对全片做结构性二采
 

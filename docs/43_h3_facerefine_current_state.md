@@ -44,19 +44,19 @@ face-only 图不能同时充当 H3 object reference。多人必须每人独立 r
 - 2026-09-26 长度基准：清缓存后 8 秒/192 帧单脸完成 222.3 秒；采样阶段显存约 23.1GiB，系统可用内存最低约 375MiB。16 秒/384 帧进入采样后系统可用内存降至约 300–500MiB并开始使用 swap，为避免主机 OOM 主动中止；因此当前 8 秒是已验证安全分段，16 秒是风险边界，不继续直接扩大到 20/24 秒。
 - 2026-09-26 源长度对照：`H3FaceSelect` 会先完整解码源视频，再应用 `frame_load_cap`；因此 32 秒源即使只处理前 5 秒，仍比物理裁成 5.17 秒的源慢约 12.4%（140.6s vs 125.1s）。8 秒物理裁剪源处理 8 秒成功（180.2s），未出现 16 秒测试那种可用内存降至数百 MiB的危险状态。生产前应先物理裁剪，再进入 FaceRefine。
 
-## 当前任务地图
+## 相关任务与证据主题
 
-| T-ID | 主题 | 当前状态 | 后续处理 |
-|---|---|---|---|
-| `T-comfy-ops-47` | 远景/中景 FaceRefine 防劣化主线 | 🟡 续开 | 以 manifest/ROI 解决目标锁定，继续短窗口验收 |
-| `T-comfy-ops-facerefine-upgrade-20260925` | 官方 v1.1.2 升级回归 | ✅ 证据完成 | 结论已并入本入口，等待用户验收/关闭 |
-| `T-comfy-ops-facerefine-output-tidy-20260925` | 输出整理与升级审计 | ✅ 整理完成 | 保留代表产物；不把回收站旧文件当现行证据 |
-| `T-comfy-ops-45` | 完整 latent 二采 | 🟡 待验收 | 作为全片结构慢车道，与局部 FaceRefine 做同源对照 |
-| `T-comfy-ops-46` | H3 二采与远景脸方案 | 🟡 研究中 | 不与 T47 的局部脸任务混淆，按独立 T-ID 继续 |
+以下只用于定位历史任务；生命周期、controller/generation 与验收状态实时查询远程 Task Center，本页不维护状态投影。
 
-Hive 状态当前显示 T47、T45、T46 仍为进行/待验收；本文件只是续开索引，不替代 Task Center 状态。
+| T-ID | 证据主题 |
+|---|---|
+| `T-comfy-ops-47` | 远景/中景 FaceRefine 防劣化与目标锁定 |
+| `T-comfy-ops-facerefine-upgrade-20260925` | 官方 v1.1.2 升级回归 |
+| `T-comfy-ops-facerefine-output-tidy-20260925` | 输出整理与升级审计 |
+| `T-comfy-ops-45` | 完整 latent 二采 |
+| `T-comfy-ops-46` | H3 二采与远景脸方案 |
 
-## 后续执行顺序
+## 研究执行建议（任务范围以远程系统为准）
 
 1. **P0：先解决目标选择**。用 `H3FaceManifestSave` 生成并复用 manifest；优先坐标/ROI + identity gate，验证红发/精灵双人 8 秒窗口。验收必须有 tracking preview、每帧目标框和错误目标否决。
 2. **P1：做同源短窗口 A/B**。同一源片、同一帧数比较原片 / FaceRefine / latent 二采 / latent 二采后 FaceRefine；分开记录稳定性与细节恢复，记录实际输出网格（1344 请求可能得到 1376×800）。
