@@ -1,0 +1,35 @@
+{
+  "status": "success",
+  "prompt_id": "b5fb56ca-374c-42fb-a994-3a981c3ec638",
+  "source_output": "/home/sean/projects/ComfyUI/output/sean_krea2_quadview_turbo_fourview_20261022/v2/swordswoman/result_00001_.png",
+  "output": "output.png",
+  "sha256": "dce2709e9c71a852b70f794fd31f63f0e86464bd07d006f224ed86357b2b52e0",
+  "bytes": 1826888,
+  "wall_seconds": 21.27,
+  "seed": 202610220401,
+  "settings": {
+    "base_model": "krea2_turbo_fp8.safetensors",
+    "lora": "QuadView_krea2_v1.safetensors",
+    "lora_strength": 1.0,
+    "width": 1536,
+    "height": 1024,
+    "steps": 10,
+    "cfg": 1.0,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "ref_boost": 1.0,
+    "grounding_px": 768,
+    "positive_grounding_px": 0
+  },
+  "comfy_output_metadata": {
+    "filename": "result_00001_.png",
+    "subfolder": "sean_krea2_quadview_turbo_fourview_20261022/v2/swordswoman",
+    "type": "output",
+    "metadata": {
+      "kind": "image",
+      "width": 1536,
+      "height": 1024
+    },
+    "id": "04801315-16fc-468b-9f6e-f968ad2b9f63"
+  }
+}

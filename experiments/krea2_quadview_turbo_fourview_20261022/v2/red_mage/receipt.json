@@ -1,0 +1,35 @@
+{
+  "status": "success",
+  "prompt_id": "88a05ac0-6a35-4363-9eaf-5f42ead9beb0",
+  "source_output": "/home/sean/projects/ComfyUI/output/sean_krea2_quadview_turbo_fourview_20261022/v2/red_mage/result_00001_.png",
+  "output": "output.png",
+  "sha256": "8e7f0e64f2064fd698de3b09b556460e3405271024c4e1a455948b669785c391",
+  "bytes": 1876996,
+  "wall_seconds": 21.123,
+  "seed": 202610220402,
+  "settings": {
+    "base_model": "krea2_turbo_fp8.safetensors",
+    "lora": "QuadView_krea2_v1.safetensors",
+    "lora_strength": 1.0,
+    "width": 1536,
+    "height": 1024,
+    "steps": 10,
+    "cfg": 1.0,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "ref_boost": 1.0,
+    "grounding_px": 768,
+    "positive_grounding_px": 0
+  },
+  "comfy_output_metadata": {
+    "filename": "result_00001_.png",
+    "subfolder": "sean_krea2_quadview_turbo_fourview_20261022/v2/red_mage",
+    "type": "output",
+    "metadata": {
+      "kind": "image",
+      "width": 1536,
+      "height": 1024
+    },
+    "id": "8a372eeb-4431-4c3b-ae5c-01a059198455"
+  }
+}

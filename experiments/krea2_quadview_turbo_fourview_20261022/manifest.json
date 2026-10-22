@@ -1,0 +1,136 @@
+{
+  "date": "2026-10-22",
+  "task": "T-comfy-ops-48",
+  "purpose": "Restore the official Krea2 QuadView four-view prompt/layout, use the local Krea2 Turbo model and QuadView LoRA, and keep the front full-body face blank while retaining faces in the close-up and side view.",
+  "workflow_ui": "/home/sean/projects/comfy-ops/workflows/ui/krea2_quadview_turbo_fourview_frontblank.json",
+  "workflow_api_template": "workflows/krea2_quadview_turbo_fourview_frontblank_api.json",
+  "parameters": {
+    "base_model": "krea2_turbo_fp8.safetensors",
+    "lora": "QuadView_krea2_v1.safetensors",
+    "lora_strength": 1.0,
+    "width": 1536,
+    "height": 1024,
+    "steps": 10,
+    "cfg": 1.0,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "ref_boost": 1.0,
+    "grounding_px": 768,
+    "positive_grounding_px": 0
+  },
+  "prompt_template": {
+    "official_quadview_prompt": "Convert the character in the image to a Character Sheet showing a face close-up, front full body, side full body and back full body views.",
+    "shared_face_rule": "Panel-specific face rule: In the leftmost first panel, the face close-up shows the normal recognizable face with eyes, eyebrows, nose, and mouth. In the second panel (front full-body view) only, the face is a smooth blank surface with no eyes, eyebrows, nose, or mouth. In the third panel (side full-body profile), show the normal visible profile face. Do not leave the face blank in the close-up or side-view panel.",
+    "role_feature_rule": "Append only distinctive character features or signature items; do not repeat the QuadView layout instructions.",
+    "source": "https://huggingface.co/Alissonerdx/CharacterSheet",
+    "shared_face_rule_v1": "In the front full-body view only, leave the face blank with no eyes, eyebrows, nose, or mouth. Keep normal facial features visible in the face close-up and side view."
+  },
+  "status": "visually_reviewed_prompt_pass_prop_limits",
+  "iterations": {
+    "v1": {
+      "status": "reviewed_prompt_revision_needed",
+      "cases": [
+        {
+          "id": "swordswoman",
+          "seed": 202610220401,
+          "source_reference": "/home/sean/projects/comfy-ops/experiments/krea2_quadview_stability_20260928/role_anchors/outputs/sean_eastern_swordswoman_role_front_seed4803001.png",
+          "reference": "v1/swordswoman/reference.png",
+          "reference_sha256": "1017619397ae67070ac4ac8f72d9eca76d9f7902331c8ab9c9663a5f138e76da",
+          "character_features": "Black high ponytail with a red tie, ivory tunic under a navy split coat, and a katana with a short utility blade at the waist.",
+          "prompt": "Convert the character in the image to a Character Sheet showing a face close-up, front full body, side full body and back full body views. In the front full-body view only, leave the face blank with no eyes, eyebrows, nose, or mouth. Keep normal facial features visible in the face close-up and side view. Black high ponytail with a red tie, ivory tunic under a navy split coat, and a katana with a short utility blade at the waist.",
+          "status": "success",
+          "prompt_id": "28b2c5c2-cfba-4c1d-8b3f-3f01c8d9fc04",
+          "output": "v1/swordswoman/output.png",
+          "sha256": "bb60b8e0ce01bdbc73c030f931bdc54f239ee09cd501f485393dabd6e038af20",
+          "wall_seconds": 51.288
+        },
+        {
+          "id": "red_mage",
+          "seed": 202610220402,
+          "source_reference": "/home/sean/projects/comfy-ops/experiments/krea2_quadview_stability_20260928/role_anchors/outputs/sean_red_mage_role_front_seed4803002.png",
+          "reference": "v1/red_mage/reference.png",
+          "reference_sha256": "07934d7e56f6dc7fb70820d0cf9b1da53eca49ada9f2dd715e98cc81d1e9a9b2",
+          "character_features": "Copper-red braided hair, a burgundy long coat, a blue crystal pendant, a blue-orb staff, and potion loops on the belt.",
+          "prompt": "Convert the character in the image to a Character Sheet showing a face close-up, front full body, side full body and back full body views. In the front full-body view only, leave the face blank with no eyes, eyebrows, nose, or mouth. Keep normal facial features visible in the face close-up and side view. Copper-red braided hair, a burgundy long coat, a blue crystal pendant, a blue-orb staff, and potion loops on the belt.",
+          "status": "success",
+          "prompt_id": "7d65ecc5-c37a-4b68-83e3-81fa14b42fb8",
+          "output": "v1/red_mage/output.png",
+          "sha256": "91263d3026e076c82ef907deb8ff736f2d99b9b08c7371eedddf6a9d30f2b1f3",
+          "wall_seconds": 21.163
+        },
+        {
+          "id": "dwarf_engineer",
+          "seed": 202610220403,
+          "source_reference": "/home/sean/projects/comfy-ops/experiments/krea2_quadview_stability_20260928/role_anchors/outputs/sean_dwarf_engineer_role_front_seed4803003.png",
+          "reference": "v1/dwarf_engineer/reference.png",
+          "reference_sha256": "5ef90408cff2da5c8003feb44393123dfd4811e08432899b572aaf6fbc359141",
+          "character_features": "Broad dwarf engineer with a copper braided beard, leather cap and goggles, a moss-green jacket, tool apron, wrench, and copper gear pack.",
+          "prompt": "Convert the character in the image to a Character Sheet showing a face close-up, front full body, side full body and back full body views. In the front full-body view only, leave the face blank with no eyes, eyebrows, nose, or mouth. Keep normal facial features visible in the face close-up and side view. Broad dwarf engineer with a copper braided beard, leather cap and goggles, a moss-green jacket, tool apron, wrench, and copper gear pack.",
+          "status": "success",
+          "prompt_id": "795e43c8-dc9b-4b82-8924-59ba55c873ff",
+          "output": "v1/dwarf_engineer/output.png",
+          "sha256": "ec7b2c5b009c6aed37ad05a47f9c2737fad07d75f17962d529f89b1eb75f4cf3",
+          "wall_seconds": 21.087
+        }
+      ],
+      "visual_findings": [
+        "All three outputs had correct four-panel order.",
+        "Face close-ups were blank in all three; front full-body faces remained visible in the swordswoman and mage outputs.",
+        "Mage staff was absent; dwarf back gear differed from the reference."
+      ]
+    },
+    "v2": {
+      "status": "visually_reviewed_prompt_pass_prop_limits",
+      "cases": [
+        {
+          "id": "swordswoman",
+          "seed": 202610220401,
+          "source_reference": "/home/sean/projects/comfy-ops/experiments/krea2_quadview_stability_20260928/role_anchors/outputs/sean_eastern_swordswoman_role_front_seed4803001.png",
+          "reference": "v2/swordswoman/reference.png",
+          "reference_sha256": "1017619397ae67070ac4ac8f72d9eca76d9f7902331c8ab9c9663a5f138e76da",
+          "character_features": "Black high ponytail with a red tie, ivory tunic under a navy split coat, and a katana with a short utility blade at the waist.",
+          "prompt": "Convert the character in the image to a Character Sheet showing a face close-up, front full body, side full body and back full body views. Panel-specific face rule: In the leftmost first panel, the face close-up shows the normal recognizable face with eyes, eyebrows, nose, and mouth. In the second panel (front full-body view) only, the face is a smooth blank surface with no eyes, eyebrows, nose, or mouth. In the third panel (side full-body profile), show the normal visible profile face. Do not leave the face blank in the close-up or side-view panel. Black high ponytail with a red tie, ivory tunic under a navy split coat, and a katana with a short utility blade at the waist.",
+          "status": "success",
+          "prompt_id": "b5fb56ca-374c-42fb-a994-3a981c3ec638",
+          "output": "v2/swordswoman/output.png",
+          "sha256": "dce2709e9c71a852b70f794fd31f63f0e86464bd07d006f224ed86357b2b52e0",
+          "wall_seconds": 21.27
+        },
+        {
+          "id": "red_mage",
+          "seed": 202610220402,
+          "source_reference": "/home/sean/projects/comfy-ops/experiments/krea2_quadview_stability_20260928/role_anchors/outputs/sean_red_mage_role_front_seed4803002.png",
+          "reference": "v2/red_mage/reference.png",
+          "reference_sha256": "07934d7e56f6dc7fb70820d0cf9b1da53eca49ada9f2dd715e98cc81d1e9a9b2",
+          "character_features": "Copper-red braided hair, a burgundy long coat, a blue crystal pendant, a blue-orb staff, and potion loops on the belt.",
+          "prompt": "Convert the character in the image to a Character Sheet showing a face close-up, front full body, side full body and back full body views. Panel-specific face rule: In the leftmost first panel, the face close-up shows the normal recognizable face with eyes, eyebrows, nose, and mouth. In the second panel (front full-body view) only, the face is a smooth blank surface with no eyes, eyebrows, nose, or mouth. In the third panel (side full-body profile), show the normal visible profile face. Do not leave the face blank in the close-up or side-view panel. Copper-red braided hair, a burgundy long coat, a blue crystal pendant, a blue-orb staff, and potion loops on the belt.",
+          "status": "success",
+          "prompt_id": "88a05ac0-6a35-4363-9eaf-5f42ead9beb0",
+          "output": "v2/red_mage/output.png",
+          "sha256": "8e7f0e64f2064fd698de3b09b556460e3405271024c4e1a455948b669785c391",
+          "wall_seconds": 21.123
+        },
+        {
+          "id": "dwarf_engineer",
+          "seed": 202610220403,
+          "source_reference": "/home/sean/projects/comfy-ops/experiments/krea2_quadview_stability_20260928/role_anchors/outputs/sean_dwarf_engineer_role_front_seed4803003.png",
+          "reference": "v2/dwarf_engineer/reference.png",
+          "reference_sha256": "5ef90408cff2da5c8003feb44393123dfd4811e08432899b572aaf6fbc359141",
+          "character_features": "Broad dwarf engineer with a copper braided beard, leather cap and goggles, a moss-green jacket, tool apron, wrench, and copper gear pack.",
+          "prompt": "Convert the character in the image to a Character Sheet showing a face close-up, front full body, side full body and back full body views. Panel-specific face rule: In the leftmost first panel, the face close-up shows the normal recognizable face with eyes, eyebrows, nose, and mouth. In the second panel (front full-body view) only, the face is a smooth blank surface with no eyes, eyebrows, nose, or mouth. In the third panel (side full-body profile), show the normal visible profile face. Do not leave the face blank in the close-up or side-view panel. Broad dwarf engineer with a copper braided beard, leather cap and goggles, a moss-green jacket, tool apron, wrench, and copper gear pack.",
+          "status": "success",
+          "prompt_id": "27bec1ba-95e8-4d6b-8f3f-6e2068a1c2de",
+          "output": "v2/dwarf_engineer/output.png",
+          "sha256": "c52380b3743ee9e1afb8fc84f07d64ebd5e1653c7425a8673b4da2cb743071ca",
+          "wall_seconds": 21.156
+        }
+      ],
+      "visual_findings": [
+        "All three outputs have four panels in the expected order.",
+        "All three face close-ups show normal facial features; all three second-panel front full-body faces are blank; all three third-panel side profiles retain visible faces.",
+        "The swordswoman keeps the sword in the turnaround. The red mage staff is absent in both prompt versions. The dwarf back view does not reliably reproduce the reference copper gear pack.",
+        "The face rule passed this three-character prompt iteration; accessory completeness remains inconsistent and these sheets are not canonical references."
+      ]
+    }
+  }
+}

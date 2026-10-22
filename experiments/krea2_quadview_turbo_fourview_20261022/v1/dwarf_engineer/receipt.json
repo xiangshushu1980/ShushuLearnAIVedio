@@ -1,0 +1,35 @@
+{
+  "status": "success",
+  "prompt_id": "795e43c8-dc9b-4b82-8924-59ba55c873ff",
+  "source_output": "/home/sean/projects/ComfyUI/output/sean_krea2_quadview_turbo_fourview_20261022/dwarf_engineer/result_00001_.png",
+  "output": "output.png",
+  "sha256": "ec7b2c5b009c6aed37ad05a47f9c2737fad07d75f17962d529f89b1eb75f4cf3",
+  "bytes": 1997179,
+  "wall_seconds": 21.087,
+  "seed": 202610220403,
+  "settings": {
+    "base_model": "krea2_turbo_fp8.safetensors",
+    "lora": "QuadView_krea2_v1.safetensors",
+    "lora_strength": 1.0,
+    "width": 1536,
+    "height": 1024,
+    "steps": 10,
+    "cfg": 1.0,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "ref_boost": 1.0,
+    "grounding_px": 768,
+    "positive_grounding_px": 0
+  },
+  "comfy_output_metadata": {
+    "filename": "result_00001_.png",
+    "subfolder": "sean_krea2_quadview_turbo_fourview_20261022/dwarf_engineer",
+    "type": "output",
+    "metadata": {
+      "kind": "image",
+      "width": 1536,
+      "height": 1024
+    },
+    "id": "85febec0-4bf8-4749-8ae5-0b310a3d3d2c"
+  }
+}

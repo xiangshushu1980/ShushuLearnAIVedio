@@ -1,0 +1,10 @@
+{
+  "id": "red_mage",
+  "seed": 202610220402,
+  "source_reference": "/home/sean/projects/comfy-ops/experiments/krea2_quadview_stability_20260928/role_anchors/outputs/sean_red_mage_role_front_seed4803002.png",
+  "reference": "reference.png",
+  "reference_sha256": "07934d7e56f6dc7fb70820d0cf9b1da53eca49ada9f2dd715e98cc81d1e9a9b2",
+  "character_features": "Copper-red braided hair, a burgundy long coat, a blue crystal pendant, a blue-orb staff, and potion loops on the belt.",
+  "prompt": "Convert the character in the image to a Character Sheet showing a face close-up, front full body, side full body and back full body views. In the front full-body view only, leave the face blank with no eyes, eyebrows, nose, or mouth. Keep normal facial features visible in the face close-up and side view. Copper-red braided hair, a burgundy long coat, a blue crystal pendant, a blue-orb staff, and potion loops on the belt.",
+  "status": "prepared"
+}

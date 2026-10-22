@@ -3,6 +3,7 @@
 | 目的 | 当前入口 | 说明 |
 |---|---|---|
 | KREA 文生图 | [workflows/krea2_t2i_test.json](../../../../../workflows/krea2_t2i_test.json) | 8 节点基础链 |
+| Krea2 QuadView 参考图多视图 | [Turbo 四视图 UI 工作流](../../../../../workflows/ui/krea2_quadview_turbo_fourview_frontblank.json) / [API 工作流](../../../../../workflows/krea2_quadview_turbo_fourview_frontblank_api.json) | 原版 QuadView 提示词；脸部特写与侧脸保留五官，正面全身脸部留空 |
 | ANIMA 文生图 | [workflows/anima_t2i_test.json](../../../../../workflows/anima_t2i_test.json) | 动漫生图基线 |
 | H3 文生视频 | [workflows/minimax_h3_t2v.json](../../../../../workflows/minimax_h3_t2v.json) 等 | 以 H3 文档为准 |
 | H3 图生/参考生视频 | [workflows/minimax_h3_ref2va_img_vid_api.json](../../../../../workflows/minimax_h3_ref2va_img_vid_api.json) 等 | 读 video/ref2va |

@@ -134,6 +134,12 @@ date: 2026-09-26
 
 Krea2 QuadView 的推荐起点也是 1536×1024、10 steps、CFG 1；但模型卡明确写出视图一致性不是 100%，侧面和背面可能需要重复生成或手工清理。因此它值得做静态 A/B，但不能据此假设会自动解决本轮 eastern/red mage 的结构错位。
 
+#### 2026-10-22 Turbo QuadView 正面留空脸试跑
+
+将官方 UI workflow 复制为本机 Turbo 版本，保留模型卡原句作为通用触发提示，只追加面板级规则：左侧脸部特写与第三栏侧面显示正常五官，第二栏正面全身留空脸；角色专属提示只补充辨识性外观和签名物品。对剑士、红法师、矮人工程师三张参考图做同 seed 两轮对照。首轮把特写脸也画空，第二轮按“第 1/2/3 栏”写清面板归属后，三例均正确显示特写脸、正面留空、侧面保留脸。四栏结构三例均正确。
+
+配件仍不稳定：红法师法杖在两轮都缺失；矮人工程师背部铜齿轮包未稳定还原。Turbo 运行器 wall time 第二轮约 21.1 秒/张（包含提交和轮询，不等同纯采样时间）。这验证的是 prompt 对脸部 panel 的局部控制，不是 H3 下游或 canonical reference 验收。输入、prompt、seed、两轮图和实际 workflow 见 [`krea2_quadview_turbo_fourview_20261022`](../experiments/krea2_quadview_turbo_fourview_20261022/REPORT.md)。
+
 ### 6. Flux Kontext / CharaConsist
 
 `reverentelusarca/kontext-turnaround-sheet-lora-v1` 用 Flux Kontext LoRA 直接生成 5/6 视图静态 sheet；其 prompt 要求 front、3/4 left、left profile、back、right profile、3/4 right。它与当前 Krea2 双栏测试的思路接近，但需要另一个基础模型生态。

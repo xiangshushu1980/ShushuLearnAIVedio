@@ -1,0 +1,10 @@
+{
+  "id": "swordswoman",
+  "seed": 202610220401,
+  "source_reference": "/home/sean/projects/comfy-ops/experiments/krea2_quadview_stability_20260928/role_anchors/outputs/sean_eastern_swordswoman_role_front_seed4803001.png",
+  "reference": "reference.png",
+  "reference_sha256": "1017619397ae67070ac4ac8f72d9eca76d9f7902331c8ab9c9663a5f138e76da",
+  "character_features": "Black high ponytail with a red tie, ivory tunic under a navy split coat, and a katana with a short utility blade at the waist.",
+  "prompt": "Convert the character in the image to a Character Sheet showing a face close-up, front full body, side full body and back full body views. Panel-specific face rule: In the leftmost first panel, the face close-up shows the normal recognizable face with eyes, eyebrows, nose, and mouth. In the second panel (front full-body view) only, the face is a smooth blank surface with no eyes, eyebrows, nose, or mouth. In the third panel (side full-body profile), show the normal visible profile face. Do not leave the face blank in the close-up or side-view panel. Black high ponytail with a red tie, ivory tunic under a navy split coat, and a katana with a short utility blade at the waist.",
+  "status": "prepared"
+}

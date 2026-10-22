@@ -1,0 +1,10 @@
+{
+  "id": "dwarf_engineer",
+  "seed": 202610220403,
+  "source_reference": "/home/sean/projects/comfy-ops/experiments/krea2_quadview_stability_20260928/role_anchors/outputs/sean_dwarf_engineer_role_front_seed4803003.png",
+  "reference": "reference.png",
+  "reference_sha256": "5ef90408cff2da5c8003feb44393123dfd4811e08432899b572aaf6fbc359141",
+  "character_features": "Broad dwarf engineer with a copper braided beard, leather cap and goggles, a moss-green jacket, tool apron, wrench, and copper gear pack.",
+  "prompt": "Convert the character in the image to a Character Sheet showing a face close-up, front full body, side full body and back full body views. In the front full-body view only, leave the face blank with no eyes, eyebrows, nose, or mouth. Keep normal facial features visible in the face close-up and side view. Broad dwarf engineer with a copper braided beard, leather cap and goggles, a moss-green jacket, tool apron, wrench, and copper gear pack.",
+  "status": "prepared"
+}
