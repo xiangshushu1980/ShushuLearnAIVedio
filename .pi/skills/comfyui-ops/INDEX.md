@@ -7,6 +7,7 @@
 | 任务 | 先读 | 然后按需读 |
 |---|---|---|
 | 了解本机环境、模型、启动/API | [core/environment.md](references/core/environment.md) | `docs/01_environment.md`、`docs/02_models.md` |
+| Seed Audio 1.0 剧本转音频、角色对白与提示词 | [项目级 seed-audio skill](../seed-audio/SKILL.md) | [官方能力与节点使用指南](../seed-audio/references/usage-guide.md)、[自有节点说明](../../../custom_nodes/ComfyUI-SeedAudio-BytePlus/README.md) |
 | 升级 ComfyUI/H3 或做版本回归 | `docs/44_comfyui_h3_upgrade_runbook.md` | [core/environment.md](references/core/environment.md)、[video/h3.md](references/video/h3.md)、[video/ref2va.md](references/video/ref2va.md) |
 | 查通用节点含义和输入输出 | [core/nodes.md](references/core/nodes.md) | 旧版完整节点档案 [nodes.md](references/nodes.md) |
 | Qwen 文生图、参考图编辑、三视图 | 用户级 `/home/sean/.pi/agent/skills/comfyui/SKILL.md` | [当前节点与四参考图实测](/home/sean/projects/comfy-ops/docs/50_qwen_image_2_1_nodes_and_tiny_vae.md) |

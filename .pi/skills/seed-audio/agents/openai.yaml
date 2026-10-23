@@ -1,0 +1,3 @@
+interface:
+  display_name: "Seed Audio"
+  short_description: "Write script prompts and generate audio with the ComfyUI node"
