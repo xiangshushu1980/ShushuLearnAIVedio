@@ -24,9 +24,9 @@ def save(p,obj): common.save(p,obj)
 def validate_request(req):
     if not isinstance(req,dict): raise ValueError('request must be a JSON object')
     unknown=set(req)-ALLOWED
-    missing=ALLOWED-set(req)
+    missing=(ALLOWED-{'view'})-set(req)
     if unknown or missing: raise ValueError(f'unknown keys={sorted(unknown)} missing keys={sorted(missing)}')
-    if req['view'] not in PHRASES: raise ValueError('runner supports front and left_profile only; back is unvalidated')
+    if 'view' in req and req['view'] not in PHRASES: raise ValueError('optional view supports front and left_profile only; omit it to avoid imposing a view')
     if type(req['seed']) is not int or not 0<=req['seed']<=MAX_SEED: raise ValueError('seed must be an integer in [0, 2^64-1]; booleans/strings are rejected')
     for key in ('appearance_path','depth_path','output_dir'):
         if not isinstance(req[key],str) or not Path(req[key]).is_absolute(): raise ValueError(f'{key} must be an absolute path string')
@@ -81,7 +81,9 @@ def main():
     app,depth,outdir=validate_request(req); outdir.mkdir(parents=True,exist_ok=True)
     app_sha=common.sha(app); depth_sha=common.sha(depth)
     raw=(HERE/'generic_prompt.txt').read_text().strip()
-    prompt=raw.replace('{view_phrase}',PHRASES[req['view']])
+    prompt=raw
+    if 'view' in req:
+        prompt += ' Show a ' + PHRASES[req['view']] + ' view.'
     receipt_path=outdir/'receipt.json'
     if receipt_path.exists():
         old=json.loads(receipt_path.read_text())
@@ -115,7 +117,7 @@ def main():
     graph=copy.deepcopy(TEMPLATE)
     graph['5']['inputs']['image']=refs['depth']['uploaded']['name']; graph['6']['inputs']['image']=refs['appearance']['uploaded']['name']
     graph['7']['inputs']['prompt']=prompt; graph['12']['inputs']['seed']=req['seed']
-    graph['14']['inputs']['filename_prefix']=f"generic_candidate_{req['view']}_{req['seed']}"
+    graph['14']['inputs']['filename_prefix']=f"generic_candidate_{req.get('view', 'unspecified')}_{req['seed']}"
     for n in graph.values():
         if n['class_type'] not in schemas: raise RuntimeError('live schema missing graph node '+n['class_type'])
     save(outdir/'node_schemas.json',schemas)

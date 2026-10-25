@@ -1,7 +1,7 @@
 # Qwen Image 2.1 appearance and depth role validation
 
 Task: `remote-dc7a1512-0429-4264-9163-4378e1f6671b`  
-Status: reopened for prompt-cause isolation and a target-only generic reference-plus-depth baseline; Frost Scout front and left-profile matrices completed, final local single-run entry regression passed. No cross-character claim.
+Status: current minimal generic default configured but not generated; historical standing full-body front/left-profile tests and entry regressions remain evidence for the previous version only.
 
 ## Result summary
 
@@ -47,3 +47,7 @@ The same two-seed prompt test now isolates the historical grayscale-depth wordin
 - [Task-local reusable flow](prompt_cause_20261025/candidate/README.md), with the frozen generic prompt, API graph, request schema and single-view entry. Current exact validation/entry status is recorded there.
 
 The flow uses the appearance image only through EditPlus image1 and the matching depth image only through Fun Control. Prompt text describes the requested picture, with no input-source role allocation or character-specific palette. The bounded baseline is Qwen Image2.1 BF16, Fun Control BF16 strength0.5/interval0–1, 768×1024, 25 steps, CFG1, Euler/simple. Other roles and back views remain unverified. Equipment/bow problems remain with the original character-sheet task; no shared skill/preset is modified by this task-local baseline.
+
+## Current configuration correction and next conversation
+
+The user identified that the tested prompt imposed an arm position and standing full-body composition that initial references are not guaranteed to have. The current default in [candidate/generic_prompt.txt](prompt_cause_20261025/candidate/generic_prompt.txt) is now minimal and has no pose/view/framing/background/light assumptions. `view` is optional in the single-image entry. This revision has not been generated; previous standing/full-body tests remain historical evidence. See [handoff](HANDOFF.md) before revising the overall flow in the next conversation.
