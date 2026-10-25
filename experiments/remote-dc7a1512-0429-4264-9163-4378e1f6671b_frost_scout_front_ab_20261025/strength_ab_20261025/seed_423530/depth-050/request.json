@@ -1,0 +1,62 @@
+{
+  "seed": 423530,
+  "mode": "depth-050",
+  "prompt": "Create one finished full-body strict straight-on frontal view of the same adult woman shown in the appearance reference. The appearance reference is authoritative for identity, face, hairstyle, skin tone, outfit design, palette, materials, and painterly rendering style. Keep a neutral upright stance with both arms relaxed slightly away from the torso, both boots fully visible, centered full-body framing, and a straight-on front view. Preserve the visible outfit and equipment from the appearance reference without adding, removing, duplicating, relocating, resizing, or redesigning them. Render against a warm off-white studio background with soft even lighting and a subtle floor shadow. No labels or text.",
+  "width": 768,
+  "height": 1024,
+  "steps": 25,
+  "cfg": 1.0,
+  "sampler": "euler",
+  "scheduler": "simple",
+  "depth_strength": 0.5,
+  "references": {
+    "appearance": {
+      "local_path": "/home/sean/projects/comfy-ops/experiments/qwen_3d_guided_cross_reference_20261024/frost_scout/reference-run/image-01.png",
+      "sha256": "143533307a2b505a0137401d66ce1c3b46b0ac0fdbc1c7fe598780f92ec4d2ea",
+      "uploaded": {
+        "name": "codex_01ed5fe7d91d_appearance.png",
+        "subfolder": "",
+        "type": "input",
+        "asset": {
+          "id": "94d41005-c6c2-4553-8de8-6cafe2d5e395",
+          "name": "codex_01ed5fe7d91d_appearance.png",
+          "asset_hash": "blake3:9fac74418f881dddda9481129016ddbe379ad65e3af701e1cdea98498e4b9135",
+          "size": 1546560,
+          "mime_type": "image/png",
+          "tags": [
+            "input",
+            "uploaded"
+          ],
+          "preview_url": "/api/view?type=input&filename=codex_01ed5fe7d91d_appearance.png"
+        }
+      }
+    },
+    "depth": {
+      "local_path": "/home/sean/projects/comfy-ops/experiments/qwen_3d_guided_cross_reference_20261024/frost_scout/hunyuan-input/shape-only-edit/run_423407_restart_execute/hunyuan_shape_run/front_depth_20261025/front_depth.png",
+      "sha256": "7a7b47af376c7cd5d2adf5e7c538f3d3975fc3f992879794e86eb5406678f011",
+      "uploaded": {
+        "name": "codex_01ed5fe7d91d_depth.png",
+        "subfolder": "",
+        "type": "input",
+        "asset": {
+          "id": "7a661f78-dd16-4d63-95dd-78a25b712830",
+          "name": "codex_01ed5fe7d91d_depth.png",
+          "asset_hash": "blake3:92f9300bd5f3663a4d344216d9f57ad6997aa94f0ab25848d3ebfe4f9ff7dd03",
+          "size": 22211,
+          "mime_type": "image/png",
+          "tags": [
+            "input",
+            "uploaded"
+          ],
+          "preview_url": "/api/view?type=input&filename=codex_01ed5fe7d91d_depth.png"
+        }
+      }
+    }
+  },
+  "graph_contract": {
+    "TextEncodeQwenImageEditPlus.image1": "appearance reference only",
+    "TextEncodeQwenImageEditPlus.image2": "disconnected",
+    "QwenImageDiffsynthControlnet.image": "depth map only",
+    "QwenImageDiffsynthControlnet.strength": 0.5
+  }
+}

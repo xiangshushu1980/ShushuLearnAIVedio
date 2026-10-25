@@ -1,0 +1,32 @@
+{
+  "status": "completed",
+  "endpoint": "http://127.0.0.1:8188",
+  "client_id": "1d76add2-f1c4-4639-94dc-49bf89d9ed69",
+  "lease_id": "d8780737-b231-4af6-9634-3ceab5a5e138",
+  "seed": 423530,
+  "mode": "depth-050",
+  "strength": 0.5,
+  "queue_preflight": {
+    "queue_running": [],
+    "queue_pending": []
+  },
+  "prompt_id": "8d43f470-4640-42a3-af5d-56a117988744",
+  "outputs": [
+    {
+      "path": "/home/sean/projects/comfy-ops/experiments/remote-dc7a1512-0429-4264-9163-4378e1f6671b_frost_scout_front_ab_20261025/strength_ab_20261025/seed_423530/depth-050/output.png",
+      "sha256": "e80d6e3c2122e55ee9b0a13d89abe0173d6b794385b5793e3aa19640ba17ce6f",
+      "bytes": 853262,
+      "comfy_output": {
+        "filename": "remote_dc7a1512_frost_front_423530_depth050_00001_.png",
+        "subfolder": "",
+        "type": "output",
+        "metadata": {
+          "kind": "image",
+          "width": 768,
+          "height": 1024
+        },
+        "id": "e326964d-9a80-4f6e-9eb2-1f2947f62f52"
+      }
+    }
+  ]
+}

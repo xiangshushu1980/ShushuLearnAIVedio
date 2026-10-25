@@ -21,6 +21,10 @@ Four matched seed pairs were generated: two frontal (423520, 423521) and two lef
 | Left side | 423522 | [image](side_view/seed_423522/appearance-only/output.png) | [image](side_view/seed_423522/depth-guided/output.png) |
 | Left side | 423523 | [image](side_view/seed_423523/appearance-only/output.png) | [image](side_view/seed_423523/depth-guided/output.png) |
 
+## Follow-up: depth strength and gray appearance
+
+A later matched dose-response check tested appearance-only versus depth strength 0.50, 0.75, and 1.00 across seeds 423530 and 423531. It did not show obvious palette washout at 0.75 or 1.00, although the 1.00 outputs were somewhat darker. In one seed, all depth branches omitted a bow that remained in appearance-only; the depth map did not encode it. See the [strength QC and limits](strength_ab_20261025/QC.md) and [contact sheet](strength_ab_20261025/strength_contact_sheet.png). This remains a bounded local sample, not a color guarantee.
+
 ## Evidence
 
 - Front phase: [QC](QC.md) · [contact sheet](front_ab_contact_sheet.png)
