@@ -1,0 +1,39 @@
+{
+  "task_id": "remote-dc7a1512-0429-4264-9163-4378e1f6671b",
+  "question": "With the Frost Scout appearance reference, side-view prompt, model and sampler held fixed, does adding the matching left-profile depth control improve structural direction or silhouette while preserving appearance?",
+  "phase": "Frost Scout left-side view; matched A/B across two new seeds",
+  "seeds": [423522, 423523],
+  "fixed": {
+    "base_model": "qwen_image_2.1_bf16.safetensors",
+    "depth_control_patch": "qwen_image_2.1_fun_controlnet_union_bf16.safetensors",
+    "text_encoder": "qwen3vl_8b_int8_convrot.safetensors",
+    "vae": "qwen_image_2.1_vae_bf16.safetensors",
+    "width": 768,
+    "height": 1024,
+    "steps": 25,
+    "cfg": 1.0,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "depth_strength": 0.5,
+    "depth_start_percent": 0.0,
+    "depth_end_percent": 1.0
+  },
+  "inputs": {
+    "appearance_reference": {
+      "path": "/home/sean/projects/comfy-ops/experiments/qwen_3d_guided_cross_reference_20261024/frost_scout/reference-run/image-01.png",
+      "sha256": "143533307a2b505a0137401d66ce1c3b46b0ac0fdbc1c7fe598780f92ec4d2ea"
+    },
+    "side_depth": {
+      "path": "/home/sean/projects/comfy-ops/experiments/qwen_3d_guided_cross_reference_20261024/frost_scout/blender-depth/left_side_depth.png",
+      "sha256": "e3bccaa52e5f449d1be997c0941ab42df2af87371e2ddef9976a9c8a41db1d82",
+      "format": "768x1024, 8-bit single-channel grayscale Blender Z-pass depth, camera direction from character [1,0,0], orthographic scale 2.35 m, normalized per view"
+    }
+  },
+  "prompt": "Create one finished, complete full-body strict left-facing side-profile view of the same adult woman shown in the appearance reference. Her nose, chest, hips and boots point toward image-left; keep her head-to-toe silhouette fully visible and centered, with a neutral balanced stance and arms slightly separated from the torso where visible. The appearance reference is authoritative for identity, face and hairstyle, outfit design, palette, materials, and painterly rendering style. Preserve the same clothing and visible equipment without adding, removing, duplicating, relocating, resizing, or redesigning them. Use a warm off-white studio background, soft even lighting, and a subtle floor shadow. No labels or text.",
+  "comparison": "For each seed compare appearance-only (no depth map and no ControlNet branch) with the same appearance reference and prompt plus the matching side depth map connected only to QwenImageDiffsynthControlnet.image. Evaluate side-view direction, silhouette, stance and broad geometry separately from appearance retention. Do not infer the identity of the ambiguous upper-back projection in the depth map; exclude semantic equipment correctness and bowstring claims.",
+  "depth_source_notes": "The source mesh is a single fused/unlabelled Hunyuan3D mesh. Existing review confirms a protruding upper-back geometry mass appears in this depth map but its identity (pack, bow/harness component, or other) is unresolved. Score only geometric presence/position, never prop correctness.",
+  "sources": [
+    "https://github.com/Comfy-Org/docs/blob/main/tutorials/image/qwen/qwen-image.mdx",
+    "https://github.com/Comfy-Org/workflow_templates/blob/main/templates/image_qwen_image_controlnet_patch.json"
+  ]
+}

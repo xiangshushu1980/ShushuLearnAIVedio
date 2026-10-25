@@ -1,0 +1,38 @@
+{
+  "task_id": "remote-dc7a1512-0429-4264-9163-4378e1f6671b",
+  "question": "With the Frost Scout appearance reference, prompt, model and sampler held fixed, what changes when the matching frontal depth condition is added through Qwen Image DiffSynth ControlNet?",
+  "phase": "Frost Scout frontal view; initial matched A/B across two new seeds",
+  "seeds": [423520, 423521],
+  "fixed": {
+    "base_model": "qwen_image_2.1_bf16.safetensors",
+    "depth_control_patch": "qwen_image_2.1_fun_controlnet_union_bf16.safetensors",
+    "text_encoder": "qwen3vl_8b_int8_convrot.safetensors",
+    "vae": "qwen_image_2.1_vae_bf16.safetensors",
+    "width": 768,
+    "height": 1024,
+    "steps": 25,
+    "cfg": 1.0,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "depth_strength": 0.5,
+    "depth_start_percent": 0.0,
+    "depth_end_percent": 1.0
+  },
+  "inputs": {
+    "appearance_reference": {
+      "path": "/home/sean/projects/comfy-ops/experiments/qwen_3d_guided_cross_reference_20261024/frost_scout/reference-run/image-01.png",
+      "sha256": "143533307a2b505a0137401d66ce1c3b46b0ac0fdbc1c7fe598780f92ec4d2ea"
+    },
+    "front_depth": {
+      "path": "/home/sean/projects/comfy-ops/experiments/qwen_3d_guided_cross_reference_20261024/frost_scout/hunyuan-input/shape-only-edit/run_423407_restart_execute/hunyuan_shape_run/front_depth_20261025/front_depth.png",
+      "sha256": "7a7b47af376c7cd5d2adf5e7c538f3d3975fc3f992879794e86eb5406678f011",
+      "format": "768x1024, 8-bit single-channel Blender-rendered grayscale depth; silhouette/pose visible, small equipment detail is not observable"
+    }
+  },
+  "prompt": "Create one finished full-body strict straight-on frontal view of the same adult woman shown in the appearance reference. The appearance reference is authoritative for identity, face, hairstyle, skin tone, outfit design, palette, materials, and painterly rendering style. Keep a neutral upright stance with both arms relaxed slightly away from the torso, both boots fully visible, centered full-body framing, and a straight-on front view. Preserve the visible outfit and equipment from the appearance reference without adding, removing, duplicating, relocating, resizing, or redesigning them. Render against a warm off-white studio background with soft even lighting and a subtle floor shadow. No labels or text.",
+  "comparison": "For each seed compare appearance-only (no depth map and no ControlNet branch) with depth-guided (same appearance image and prompt; frontal depth map connected only to QwenImageDiffsynthControlnet.image). Evaluate appearance retention separately from structure/silhouette/pose. Do not treat details absent or indistinct in the depth input as transferred by depth, and do not treat any appearance change as proof that depth provides appearance information.",
+  "sources": [
+    "https://github.com/Comfy-Org/docs/blob/main/tutorials/image/qwen/qwen-image.mdx",
+    "https://github.com/Comfy-Org/workflow_templates/blob/main/templates/image_qwen_image_controlnet_patch.json"
+  ]
+}

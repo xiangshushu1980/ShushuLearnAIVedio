@@ -1,0 +1,235 @@
+{
+  "prompt": [
+    131,
+    "020837c4-64ed-4475-9ffc-3c81d4423b6a",
+    {
+      "1": {
+        "class_type": "UNETLoader",
+        "inputs": {
+          "unet_name": "qwen_image_2.1_bf16.safetensors",
+          "weight_dtype": "default"
+        }
+      },
+      "2": {
+        "class_type": "CLIPLoader",
+        "inputs": {
+          "clip_name": "qwen3vl_8b_int8_convrot.safetensors",
+          "type": "qwen_image",
+          "device": "default"
+        }
+      },
+      "3": {
+        "class_type": "VAELoader",
+        "inputs": {
+          "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+        }
+      },
+      "6": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "codex_e96e183626ef_appearance.png"
+        }
+      },
+      "7": {
+        "class_type": "TextEncodeQwenImageEditPlus",
+        "inputs": {
+          "clip": [
+            "2",
+            0
+          ],
+          "prompt": "Create one finished, complete full-body strict left-facing side-profile view of the same adult woman shown in the appearance reference. Her nose, chest, hips and boots point toward image-left; keep her head-to-toe silhouette fully visible and centered, with a neutral balanced stance and arms slightly separated from the torso where visible. The appearance reference is authoritative for identity, face and hairstyle, outfit design, palette, materials, and painterly rendering style. Preserve the same clothing and visible equipment without adding, removing, duplicating, relocating, resizing, or redesigning them. Use a warm off-white studio background, soft even lighting, and a subtle floor shadow. No labels or text.",
+          "vae": [
+            "3",
+            0
+          ],
+          "image1": [
+            "6",
+            0
+          ]
+        }
+      },
+      "9": {
+        "class_type": "QwenImage21Cache",
+        "inputs": {
+          "model": [
+            "8",
+            0
+          ],
+          "device": "auto",
+          "dtype": "default"
+        }
+      },
+      "10": {
+        "class_type": "EmptySD3LatentImage",
+        "inputs": {
+          "width": 768,
+          "height": 1024,
+          "batch_size": 1
+        }
+      },
+      "11": {
+        "class_type": "ConditioningZeroOut",
+        "inputs": {
+          "conditioning": [
+            "7",
+            0
+          ]
+        }
+      },
+      "12": {
+        "class_type": "KSampler",
+        "inputs": {
+          "model": [
+            "9",
+            0
+          ],
+          "positive": [
+            "7",
+            0
+          ],
+          "negative": [
+            "11",
+            0
+          ],
+          "latent_image": [
+            "10",
+            0
+          ],
+          "seed": 423522,
+          "steps": 25,
+          "cfg": 1.0,
+          "sampler_name": "euler",
+          "scheduler": "simple",
+          "denoise": 1.0
+        }
+      },
+      "13": {
+        "class_type": "VAEDecode",
+        "inputs": {
+          "samples": [
+            "12",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        }
+      },
+      "14": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "13",
+            0
+          ],
+          "filename_prefix": "remote_dc7a1512_frost_front_423522_depth"
+        }
+      },
+      "4": {
+        "class_type": "ModelPatchLoader",
+        "inputs": {
+          "name": "qwen_image_2.1_fun_controlnet_union_bf16.safetensors"
+        }
+      },
+      "5": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "codex_e96e183626ef_depth.png"
+        }
+      },
+      "8": {
+        "class_type": "QwenImageDiffsynthControlnet",
+        "inputs": {
+          "model": [
+            "1",
+            0
+          ],
+          "model_patch": [
+            "4",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ],
+          "image": [
+            "5",
+            0
+          ],
+          "strength": 0.5,
+          "start_percent": 0.0,
+          "end_percent": 1.0
+        }
+      }
+    },
+    {
+      "client_id": "aea940ac-bde3-4e5e-ac3c-e9ee985681de",
+      "create_time": 1792908201923
+    },
+    [
+      "14"
+    ]
+  ],
+  "outputs": {
+    "14": {
+      "images": [
+        {
+          "filename": "remote_dc7a1512_frost_front_423522_depth_00001_.png",
+          "subfolder": "",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 768,
+            "height": 1024
+          },
+          "id": "97bcc6bf-d9f4-448a-a126-61556404589d"
+        }
+      ]
+    }
+  },
+  "status": {
+    "status_str": "success",
+    "completed": true,
+    "messages": [
+      [
+        "execution_start",
+        {
+          "prompt_id": "020837c4-64ed-4475-9ffc-3c81d4423b6a",
+          "timestamp": 1792908201924
+        }
+      ],
+      [
+        "execution_cached",
+        {
+          "nodes": [
+            "1",
+            "2",
+            "3",
+            "6",
+            "7",
+            "10",
+            "11"
+          ],
+          "prompt_id": "020837c4-64ed-4475-9ffc-3c81d4423b6a",
+          "timestamp": 1792908201936
+        }
+      ],
+      [
+        "execution_success",
+        {
+          "prompt_id": "020837c4-64ed-4475-9ffc-3c81d4423b6a",
+          "timestamp": 1792908235688
+        }
+      ]
+    ]
+  },
+  "meta": {
+    "14": {
+      "node_id": "14",
+      "display_node": "14",
+      "parent_node": null,
+      "real_node_id": "14"
+    }
+  }
+}

@@ -1,0 +1,196 @@
+{
+  "prompt": [
+    130,
+    "486e7b33-1fc8-4d74-a3fc-399cb4a0d0a1",
+    {
+      "1": {
+        "class_type": "UNETLoader",
+        "inputs": {
+          "unet_name": "qwen_image_2.1_bf16.safetensors",
+          "weight_dtype": "default"
+        }
+      },
+      "2": {
+        "class_type": "CLIPLoader",
+        "inputs": {
+          "clip_name": "qwen3vl_8b_int8_convrot.safetensors",
+          "type": "qwen_image",
+          "device": "default"
+        }
+      },
+      "3": {
+        "class_type": "VAELoader",
+        "inputs": {
+          "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+        }
+      },
+      "6": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "codex_e96e183626ef_appearance.png"
+        }
+      },
+      "7": {
+        "class_type": "TextEncodeQwenImageEditPlus",
+        "inputs": {
+          "clip": [
+            "2",
+            0
+          ],
+          "prompt": "Create one finished, complete full-body strict left-facing side-profile view of the same adult woman shown in the appearance reference. Her nose, chest, hips and boots point toward image-left; keep her head-to-toe silhouette fully visible and centered, with a neutral balanced stance and arms slightly separated from the torso where visible. The appearance reference is authoritative for identity, face and hairstyle, outfit design, palette, materials, and painterly rendering style. Preserve the same clothing and visible equipment without adding, removing, duplicating, relocating, resizing, or redesigning them. Use a warm off-white studio background, soft even lighting, and a subtle floor shadow. No labels or text.",
+          "vae": [
+            "3",
+            0
+          ],
+          "image1": [
+            "6",
+            0
+          ]
+        }
+      },
+      "9": {
+        "class_type": "QwenImage21Cache",
+        "inputs": {
+          "model": [
+            "1",
+            0
+          ],
+          "device": "auto",
+          "dtype": "default"
+        }
+      },
+      "10": {
+        "class_type": "EmptySD3LatentImage",
+        "inputs": {
+          "width": 768,
+          "height": 1024,
+          "batch_size": 1
+        }
+      },
+      "11": {
+        "class_type": "ConditioningZeroOut",
+        "inputs": {
+          "conditioning": [
+            "7",
+            0
+          ]
+        }
+      },
+      "12": {
+        "class_type": "KSampler",
+        "inputs": {
+          "model": [
+            "9",
+            0
+          ],
+          "positive": [
+            "7",
+            0
+          ],
+          "negative": [
+            "11",
+            0
+          ],
+          "latent_image": [
+            "10",
+            0
+          ],
+          "seed": 423522,
+          "steps": 25,
+          "cfg": 1.0,
+          "sampler_name": "euler",
+          "scheduler": "simple",
+          "denoise": 1.0
+        }
+      },
+      "13": {
+        "class_type": "VAEDecode",
+        "inputs": {
+          "samples": [
+            "12",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        }
+      },
+      "14": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "13",
+            0
+          ],
+          "filename_prefix": "remote_dc7a1512_frost_front_423522_appearance"
+        }
+      }
+    },
+    {
+      "client_id": "33757b7c-6f51-4e92-86a2-36f0da75cbfb",
+      "create_time": 1792908186887
+    },
+    [
+      "14"
+    ]
+  ],
+  "outputs": {
+    "14": {
+      "images": [
+        {
+          "filename": "remote_dc7a1512_frost_front_423522_appearance_00001_.png",
+          "subfolder": "",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 768,
+            "height": 1024
+          },
+          "id": "be7c7850-093b-463e-9020-688107565410"
+        }
+      ]
+    }
+  },
+  "status": {
+    "status_str": "success",
+    "completed": true,
+    "messages": [
+      [
+        "execution_start",
+        {
+          "prompt_id": "486e7b33-1fc8-4d74-a3fc-399cb4a0d0a1",
+          "timestamp": 1792908186888
+        }
+      ],
+      [
+        "execution_cached",
+        {
+          "nodes": [
+            "1",
+            "2",
+            "3",
+            "10"
+          ],
+          "prompt_id": "486e7b33-1fc8-4d74-a3fc-399cb4a0d0a1",
+          "timestamp": 1792908186894
+        }
+      ],
+      [
+        "execution_success",
+        {
+          "prompt_id": "486e7b33-1fc8-4d74-a3fc-399cb4a0d0a1",
+          "timestamp": 1792908199058
+        }
+      ]
+    ]
+  },
+  "meta": {
+    "14": {
+      "node_id": "14",
+      "display_node": "14",
+      "parent_node": null,
+      "real_node_id": "14"
+    }
+  }
+}

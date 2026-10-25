@@ -1,0 +1,197 @@
+{
+  "prompt": [
+    126,
+    "d4d75349-f7de-47de-80cd-2e80a96eaa95",
+    {
+      "1": {
+        "class_type": "UNETLoader",
+        "inputs": {
+          "unet_name": "qwen_image_2.1_bf16.safetensors",
+          "weight_dtype": "default"
+        }
+      },
+      "2": {
+        "class_type": "CLIPLoader",
+        "inputs": {
+          "clip_name": "qwen3vl_8b_int8_convrot.safetensors",
+          "type": "qwen_image",
+          "device": "default"
+        }
+      },
+      "3": {
+        "class_type": "VAELoader",
+        "inputs": {
+          "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+        }
+      },
+      "6": {
+        "class_type": "LoadImage",
+        "inputs": {
+          "image": "codex_1cf20028ccdf_appearance.png"
+        }
+      },
+      "7": {
+        "class_type": "TextEncodeQwenImageEditPlus",
+        "inputs": {
+          "clip": [
+            "2",
+            0
+          ],
+          "prompt": "Create one finished full-body strict straight-on frontal view of the same adult woman shown in the appearance reference. The appearance reference is authoritative for identity, face, hairstyle, skin tone, outfit design, palette, materials, and painterly rendering style. Keep a neutral upright stance with both arms relaxed slightly away from the torso, both boots fully visible, centered full-body framing, and a straight-on front view. Preserve the visible outfit and equipment from the appearance reference without adding, removing, duplicating, relocating, resizing, or redesigning them. Render against a warm off-white studio background with soft even lighting and a subtle floor shadow. No labels or text.",
+          "vae": [
+            "3",
+            0
+          ],
+          "image1": [
+            "6",
+            0
+          ]
+        }
+      },
+      "9": {
+        "class_type": "QwenImage21Cache",
+        "inputs": {
+          "model": [
+            "1",
+            0
+          ],
+          "device": "auto",
+          "dtype": "default"
+        }
+      },
+      "10": {
+        "class_type": "EmptySD3LatentImage",
+        "inputs": {
+          "width": 768,
+          "height": 1024,
+          "batch_size": 1
+        }
+      },
+      "11": {
+        "class_type": "ConditioningZeroOut",
+        "inputs": {
+          "conditioning": [
+            "7",
+            0
+          ]
+        }
+      },
+      "12": {
+        "class_type": "KSampler",
+        "inputs": {
+          "model": [
+            "9",
+            0
+          ],
+          "positive": [
+            "7",
+            0
+          ],
+          "negative": [
+            "11",
+            0
+          ],
+          "latent_image": [
+            "10",
+            0
+          ],
+          "seed": 423520,
+          "steps": 25,
+          "cfg": 1.0,
+          "sampler_name": "euler",
+          "scheduler": "simple",
+          "denoise": 1.0
+        }
+      },
+      "13": {
+        "class_type": "VAEDecode",
+        "inputs": {
+          "samples": [
+            "12",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        }
+      },
+      "14": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "images": [
+            "13",
+            0
+          ],
+          "filename_prefix": "remote_dc7a1512_frost_front_423520_appearance"
+        }
+      }
+    },
+    {
+      "client_id": "158898ba-171f-46b4-a647-a49b1657e249",
+      "create_time": 1792907951565
+    },
+    [
+      "14"
+    ]
+  ],
+  "outputs": {
+    "14": {
+      "images": [
+        {
+          "filename": "remote_dc7a1512_frost_front_423520_appearance_00001_.png",
+          "subfolder": "",
+          "type": "output",
+          "metadata": {
+            "kind": "image",
+            "width": 768,
+            "height": 1024
+          },
+          "id": "751e0e4c-ac79-4d72-888e-b0c3006378f2"
+        }
+      ]
+    }
+  },
+  "status": {
+    "status_str": "success",
+    "completed": true,
+    "messages": [
+      [
+        "execution_start",
+        {
+          "prompt_id": "d4d75349-f7de-47de-80cd-2e80a96eaa95",
+          "timestamp": 1792907951679
+        }
+      ],
+      [
+        "execution_cached",
+        {
+          "nodes": [
+            "1",
+            "2",
+            "3",
+            "9",
+            "10"
+          ],
+          "prompt_id": "d4d75349-f7de-47de-80cd-2e80a96eaa95",
+          "timestamp": 1792907951924
+        }
+      ],
+      [
+        "execution_success",
+        {
+          "prompt_id": "d4d75349-f7de-47de-80cd-2e80a96eaa95",
+          "timestamp": 1792907969123
+        }
+      ]
+    ]
+  },
+  "meta": {
+    "14": {
+      "node_id": "14",
+      "display_node": "14",
+      "parent_node": null,
+      "real_node_id": "14"
+    }
+  }
+}

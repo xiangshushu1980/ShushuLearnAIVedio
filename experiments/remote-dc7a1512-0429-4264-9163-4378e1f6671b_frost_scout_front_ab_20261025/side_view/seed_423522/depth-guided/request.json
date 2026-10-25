@@ -1,0 +1,61 @@
+{
+  "seed": 423522,
+  "mode": "depth-guided",
+  "prompt": "Create one finished, complete full-body strict left-facing side-profile view of the same adult woman shown in the appearance reference. Her nose, chest, hips and boots point toward image-left; keep her head-to-toe silhouette fully visible and centered, with a neutral balanced stance and arms slightly separated from the torso where visible. The appearance reference is authoritative for identity, face and hairstyle, outfit design, palette, materials, and painterly rendering style. Preserve the same clothing and visible equipment without adding, removing, duplicating, relocating, resizing, or redesigning them. Use a warm off-white studio background, soft even lighting, and a subtle floor shadow. No labels or text.",
+  "width": 768,
+  "height": 1024,
+  "steps": 25,
+  "cfg": 1.0,
+  "sampler": "euler",
+  "scheduler": "simple",
+  "depth_strength": 0.5,
+  "references": {
+    "appearance": {
+      "local_path": "/home/sean/projects/comfy-ops/experiments/qwen_3d_guided_cross_reference_20261024/frost_scout/reference-run/image-01.png",
+      "sha256": "143533307a2b505a0137401d66ce1c3b46b0ac0fdbc1c7fe598780f92ec4d2ea",
+      "uploaded": {
+        "name": "codex_e96e183626ef_appearance.png",
+        "subfolder": "",
+        "type": "input",
+        "asset": {
+          "id": "2b7bfaa2-d8fa-48c6-85bd-9389b1c52e92",
+          "name": "codex_e96e183626ef_appearance.png",
+          "asset_hash": "blake3:9fac74418f881dddda9481129016ddbe379ad65e3af701e1cdea98498e4b9135",
+          "size": 1546560,
+          "mime_type": "image/png",
+          "tags": [
+            "input",
+            "uploaded"
+          ],
+          "preview_url": "/api/view?type=input&filename=codex_e96e183626ef_appearance.png"
+        }
+      }
+    },
+    "depth": {
+      "local_path": "/home/sean/projects/comfy-ops/experiments/qwen_3d_guided_cross_reference_20261024/frost_scout/blender-depth/left_side_depth.png",
+      "sha256": "e3bccaa52e5f449d1be997c0941ab42df2af87371e2ddef9976a9c8a41db1d82",
+      "uploaded": {
+        "name": "codex_e96e183626ef_depth.png",
+        "subfolder": "",
+        "type": "input",
+        "asset": {
+          "id": "850dcf52-65ee-48ea-86d9-1dbf5ace3035",
+          "name": "codex_e96e183626ef_depth.png",
+          "asset_hash": "blake3:6c4727c49020c88231aaa9e99a1e437533dab7be8818632a42d7a871d6e310c6",
+          "size": 30095,
+          "mime_type": "image/png",
+          "tags": [
+            "input",
+            "uploaded"
+          ],
+          "preview_url": "/api/view?type=input&filename=codex_e96e183626ef_depth.png"
+        }
+      }
+    }
+  },
+  "graph_contract": {
+    "TextEncodeQwenImageEditPlus.image1": "appearance reference only",
+    "TextEncodeQwenImageEditPlus.image2": "disconnected",
+    "QwenImageDiffsynthControlnet.image": "depth map only"
+  }
+}
