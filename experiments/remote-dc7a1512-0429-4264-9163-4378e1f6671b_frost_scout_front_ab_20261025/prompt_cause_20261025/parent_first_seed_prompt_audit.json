@@ -1,0 +1,91 @@
+{
+  "seed": 423490,
+  "B_C_workflow_differing_fields": [
+    [
+      "7",
+      "prompt"
+    ],
+    [
+      "14",
+      "filename_prefix"
+    ]
+  ],
+  "rows": [
+    {
+      "condition": "A_historical_full",
+      "fixed_roi_proxies": {
+        "torso": {
+          "roi": [
+            300,
+            260,
+            475,
+            415
+          ],
+          "median_s_0_255": 55.0,
+          "median_v_0_255": 90.0
+        },
+        "shoulder": {
+          "roi": [
+            270,
+            185,
+            500,
+            285
+          ],
+          "median_s_0_255": 48.0,
+          "median_v_0_255": 98.0
+        }
+      }
+    },
+    {
+      "condition": "B_minimal_target",
+      "fixed_roi_proxies": {
+        "torso": {
+          "roi": [
+            300,
+            260,
+            475,
+            415
+          ],
+          "median_s_0_255": 78.0,
+          "median_v_0_255": 60.0
+        },
+        "shoulder": {
+          "roi": [
+            270,
+            185,
+            500,
+            285
+          ],
+          "median_s_0_255": 65.0,
+          "median_v_0_255": 70.0
+        }
+      }
+    },
+    {
+      "condition": "C_minimal_plus_grayscale_depth_block",
+      "fixed_roi_proxies": {
+        "torso": {
+          "roi": [
+            300,
+            260,
+            475,
+            415
+          ],
+          "median_s_0_255": 9.0,
+          "median_v_0_255": 120.0
+        },
+        "shoulder": {
+          "roi": [
+            270,
+            185,
+            500,
+            285
+          ],
+          "median_s_0_255": 16.0,
+          "median_v_0_255": 145.0
+        }
+      }
+    }
+  ],
+  "limits": "fixed image-coordinate pixel proxies, not semantic material segmentation; direct visual QC is primary"
+}

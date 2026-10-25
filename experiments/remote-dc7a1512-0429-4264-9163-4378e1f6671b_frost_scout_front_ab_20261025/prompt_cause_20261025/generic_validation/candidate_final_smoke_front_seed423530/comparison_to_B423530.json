@@ -1,0 +1,22 @@
+{
+  "runner_sha256": "7f6c0ed07418c131fa71a48a0df4f0e640c416e5b73ace40b387ddfe1b55ee2b",
+  "helper_sha256": "10104ff51bbc5a808111dd01b4935f3a8edecaf3c7502160d12fbff920eee9a2",
+  "api_graph_template_sha256": "f97e59605abcd6b52860798a59e3d02ac70ee5910bcf84be2398115a64a3b20f",
+  "prompt_template_sha256": "b54f17a98431775d3b7aeb61b3938f4d49956988b5f33c3ffb92b88951e81c45",
+  "rendered_prompt_sha256": "d80c9bbf444c0f4e9de83af5f34da3dd20ed01ca17f487cded31a911f917f710",
+  "output_sha256": "797709423541ae25149682b9c9aec3d2de927bb6c5028f1f5282acfe79653be8",
+  "B_output_sha256": "92c24bbf18e894eb8df00654b986a782df5ec50a578d90a4585c7126968604e1",
+  "prompt_byte_equal_to_B": true,
+  "same_dimensions": true,
+  "pixel_identical": true,
+  "receipt_status": "completed",
+  "lease_released": {
+    "lease_id": "efeae20b-733b-4b4e-861b-aa069efd21b0",
+    "released": true,
+    "prompt_terminal": true
+  },
+  "postrun_queue": {
+    "queue_running": [],
+    "queue_pending": []
+  }
+}

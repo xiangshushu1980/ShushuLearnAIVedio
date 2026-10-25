@@ -1,0 +1,158 @@
+{
+  "timestamp": "2026-10-25T07:37:40.160338+00:00",
+  "action": "POST /free {unload_models:true,free_memory:true}",
+  "authorization": "User explicitly authorized release of unused ComfyUI cache",
+  "scope": "idle ComfyUI models/cache only; queue empty; only lease is this task lease",
+  "lease_id": "cee6eec5-bc8b-435b-8ad8-81317e8b8867",
+  "queue_before": {
+    "queue_running": [],
+    "queue_pending": []
+  },
+  "occupancy_before": {
+    "generatedAt": "2026-10-25T07:37:40.150905536Z",
+    "leases": {
+      "cee6eec5-bc8b-435b-8ad8-81317e8b8867": {
+        "acquiredAt": "2026-10-25T07:35:52.082731117Z",
+        "expiresAt": "2026-10-25T07:47:34.597017854Z",
+        "heartbeatAt": "2026-10-25T07:37:34.597019207Z",
+        "id": "cee6eec5-bc8b-435b-8ad8-81317e8b8867",
+        "kind": "job",
+        "metadata": {
+          "conversationId": "01a17196-d81d-7d73-839b-b3f51564bfae",
+          "threadId": "01a17196-d81d-7d73-839b-b3f51564bfae"
+        },
+        "owner": "remote-dc7a1512-0429-4264-9163-4378e1f6671b-prompt-cause",
+        "resources": [
+          "gpu:0"
+        ]
+      }
+    },
+    "occupied": [
+      {
+        "expiresAt": "2026-10-25T07:47:34.597017854Z",
+        "leaseId": "cee6eec5-bc8b-435b-8ad8-81317e8b8867",
+        "owner": "remote-dc7a1512-0429-4264-9163-4378e1f6671b-prompt-cause",
+        "resource": "gpu:0"
+      }
+    ]
+  },
+  "stats_before": {
+    "system": {
+      "os": "linux",
+      "ram_total": 57910415360,
+      "ram_free": 22729482240,
+      "comfyui_version": "0.42.1",
+      "required_frontend_version": "1.55.18",
+      "installed_templates_version": "0.11.89",
+      "required_templates_version": "0.11.89",
+      "comfy_package_versions": [
+        {
+          "name": "comfyui-frontend-package",
+          "installed": "1.55.18",
+          "required": "1.55.18"
+        },
+        {
+          "name": "comfyui-workflow-templates",
+          "installed": "0.11.89",
+          "required": "0.11.89"
+        },
+        {
+          "name": "comfyui-embedded-docs",
+          "installed": "0.5.14",
+          "required": "0.5.14"
+        },
+        {
+          "name": "comfy-kitchen",
+          "installed": "0.2.39",
+          "required": "0.2.39"
+        },
+        {
+          "name": "comfy-aimdo",
+          "installed": "0.5.6",
+          "required": "0.5.6"
+        }
+      ],
+      "python_version": "3.13.13 | packaged by Anaconda, Inc. | (main, Apr 14 2026, 06:19:41) [GCC 14.3.0]",
+      "pytorch_version": "2.13.0+cu130",
+      "embedded_python": false,
+      "deploy_environment": "local-git",
+      "argv": [
+        "main.py",
+        "--enable-assets",
+        "--enable-cors-header",
+        "--fast",
+        "fp16_accumulation"
+      ]
+    },
+    "devices": [
+      {
+        "name": "cuda:0 NVIDIA GeForce RTX 4090 : cudaMallocAsync",
+        "type": "cuda",
+        "index": 0,
+        "vram_total": 25756696576,
+        "vram_free": 2286486444,
+        "torch_vram_total": 33554432,
+        "torch_vram_free": 23724972
+      }
+    ]
+  },
+  "post_attempted": true,
+  "post_status_code": 200,
+  "post_response_text": "",
+  "samples_after": [
+    {
+      "timestamp": "2026-10-25T07:37:40.162035+00:00",
+      "queue": {
+        "queue_running": [],
+        "queue_pending": []
+      },
+      "devices": [
+        {
+          "name": "cuda:0 NVIDIA GeForce RTX 4090 : cudaMallocAsync",
+          "type": "cuda",
+          "index": 0,
+          "vram_total": 25756696576,
+          "vram_free": 2286486444,
+          "torch_vram_total": 33554432,
+          "torch_vram_free": 23724972
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-10-25T07:37:42.169871+00:00",
+      "queue": {
+        "queue_running": [],
+        "queue_pending": []
+      },
+      "devices": [
+        {
+          "name": "cuda:0 NVIDIA GeForce RTX 4090 : cudaMallocAsync",
+          "type": "cuda",
+          "index": 0,
+          "vram_total": 25756696576,
+          "vram_free": 9721938876,
+          "torch_vram_total": 33554432,
+          "torch_vram_free": 24708028
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-10-25T07:37:44.178274+00:00",
+      "queue": {
+        "queue_running": [],
+        "queue_pending": []
+      },
+      "devices": [
+        {
+          "name": "cuda:0 NVIDIA GeForce RTX 4090 : cudaMallocAsync",
+          "type": "cuda",
+          "index": 0,
+          "vram_total": 25756696576,
+          "vram_free": 23982637056,
+          "torch_vram_total": 33554432,
+          "torch_vram_free": 24772608
+        }
+      ]
+    }
+  ]
+}

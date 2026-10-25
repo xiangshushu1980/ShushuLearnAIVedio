@@ -1,0 +1,32 @@
+{
+  "status": "completed",
+  "view": "left_profile",
+  "seed": 423533,
+  "condition": "reference_plus_depth",
+  "lease_id": "8b6cb017-30a4-497b-a7df-b401e1b61c2f",
+  "queue_preflight": {
+    "queue_running": [],
+    "queue_pending": []
+  },
+  "vram_free_preflight": 2991137708,
+  "client_id": "ea41e8c1d6b24043b50a2e06294be19d",
+  "prompt_id": "cafa5ec9-f1f0-47b6-94d4-bb6090f2fd20",
+  "outputs": [
+    {
+      "path": "/home/sean/projects/comfy-ops/experiments/remote-dc7a1512-0429-4264-9163-4378e1f6671b_frost_scout_front_ab_20261025/prompt_cause_20261025/generic_validation/left_profile_seed_423533/reference_plus_depth/output.png",
+      "sha256": "d220883895a780e1a556d4ee4b92461b84c6d6072e8218bc0e4eb07d4ffb02d3",
+      "bytes": 809019,
+      "comfy_output": {
+        "filename": "remote_dc7a1512_generic_left_profile_423533_reference_plus_depth_00001_.png",
+        "subfolder": "",
+        "type": "output",
+        "metadata": {
+          "kind": "image",
+          "width": 768,
+          "height": 1024
+        },
+        "id": "780fe6ff-bfb4-458a-aa3d-31827232025d"
+      }
+    }
+  ]
+}

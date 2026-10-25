@@ -1,0 +1,132 @@
+{
+  "view": "left_profile",
+  "seed": 423532,
+  "condition": "appearance_only",
+  "use_depth": false,
+  "prompt": "Create one finished full-body, strict left-facing side profile view of the same character. Keep a natural upright stance, both arms slightly away from the torso, both feet fully visible, and the complete figure centered. Preserve the character design and rendering style. Use a warm off-white studio background, soft even lighting, and a subtle floor shadow. No labels or text.",
+  "fixed": {
+    "base_model": "qwen_image_2.1_bf16.safetensors",
+    "depth_control_patch": "qwen_image_2.1_fun_controlnet_union_bf16.safetensors",
+    "text_encoder": "qwen3vl_8b_int8_convrot.safetensors",
+    "vae": "qwen_image_2.1_vae_bf16.safetensors",
+    "width": 768,
+    "height": 1024,
+    "steps": 25,
+    "cfg": 1.0,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "control_strength": 0.5,
+    "control_start_percent": 0.0,
+    "control_end_percent": 1.0
+  },
+  "references": {
+    "appearance": {
+      "local_path": "/home/sean/projects/comfy-ops/experiments/remote-dc7a1512-0429-4264-9163-4378e1f6671b_frost_scout_front_ab_20261025/strength_ab_20261025/inputs/appearance_reference.png",
+      "sha256": "143533307a2b505a0137401d66ce1c3b46b0ac0fdbc1c7fe598780f92ec4d2ea",
+      "uploaded": {
+        "name": "codex_71b6e91956b0_appearance.png",
+        "subfolder": "",
+        "type": "input",
+        "asset": {
+          "id": "d5587243-f510-40a5-a03e-28d56090c22d",
+          "name": "codex_71b6e91956b0_appearance.png",
+          "asset_hash": "blake3:9fac74418f881dddda9481129016ddbe379ad65e3af701e1cdea98498e4b9135",
+          "size": 1546560,
+          "mime_type": "image/png",
+          "tags": [
+            "input",
+            "uploaded"
+          ],
+          "preview_url": "/api/view?type=input&filename=codex_71b6e91956b0_appearance.png"
+        }
+      }
+    },
+    "side_depth": {
+      "local_path": "/home/sean/projects/comfy-ops/experiments/remote-dc7a1512-0429-4264-9163-4378e1f6671b_frost_scout_front_ab_20261025/side_view/inputs/side_depth.png",
+      "sha256": "e3bccaa52e5f449d1be997c0941ab42df2af87371e2ddef9976a9c8a41db1d82",
+      "uploaded": {
+        "name": "codex_5d0dd526cf93_side_depth.png",
+        "subfolder": "",
+        "type": "input",
+        "asset": {
+          "id": "5e290929-ecf4-4deb-9ce9-9b98b79e15ab",
+          "name": "codex_5d0dd526cf93_side_depth.png",
+          "asset_hash": "blake3:6c4727c49020c88231aaa9e99a1e437533dab7be8818632a42d7a871d6e310c6",
+          "size": 30095,
+          "mime_type": "image/png",
+          "tags": [
+            "input",
+            "uploaded"
+          ],
+          "preview_url": "/api/view?type=input&filename=codex_5d0dd526cf93_side_depth.png"
+        }
+      }
+    }
+  },
+  "depth_strength": null,
+  "queue_preflight": {
+    "queue_running": [],
+    "queue_pending": []
+  },
+  "system_stats_preflight": {
+    "system": {
+      "os": "linux",
+      "ram_total": 57910415360,
+      "ram_free": 30246195200,
+      "comfyui_version": "0.42.1",
+      "required_frontend_version": "1.55.18",
+      "installed_templates_version": "0.11.89",
+      "required_templates_version": "0.11.89",
+      "comfy_package_versions": [
+        {
+          "name": "comfyui-frontend-package",
+          "installed": "1.55.18",
+          "required": "1.55.18"
+        },
+        {
+          "name": "comfyui-workflow-templates",
+          "installed": "0.11.89",
+          "required": "0.11.89"
+        },
+        {
+          "name": "comfyui-embedded-docs",
+          "installed": "0.5.14",
+          "required": "0.5.14"
+        },
+        {
+          "name": "comfy-kitchen",
+          "installed": "0.2.39",
+          "required": "0.2.39"
+        },
+        {
+          "name": "comfy-aimdo",
+          "installed": "0.5.6",
+          "required": "0.5.6"
+        }
+      ],
+      "python_version": "3.13.13 | packaged by Anaconda, Inc. | (main, Apr 14 2026, 06:19:41) [GCC 14.3.0]",
+      "pytorch_version": "2.13.0+cu130",
+      "embedded_python": false,
+      "deploy_environment": "local-git",
+      "argv": [
+        "main.py",
+        "--enable-assets",
+        "--enable-cors-header",
+        "--fast",
+        "fp16_accumulation"
+      ]
+    },
+    "devices": [
+      {
+        "name": "cuda:0 NVIDIA GeForce RTX 4090 : cudaMallocAsync",
+        "type": "cuda",
+        "index": 0,
+        "vram_total": 25756696576,
+        "vram_free": 3561563052,
+        "torch_vram_total": 33554432,
+        "torch_vram_free": 23733164
+      }
+    ]
+  },
+  "lease_id": "8b6cb017-30a4-497b-a7df-b401e1b61c2f"
+}

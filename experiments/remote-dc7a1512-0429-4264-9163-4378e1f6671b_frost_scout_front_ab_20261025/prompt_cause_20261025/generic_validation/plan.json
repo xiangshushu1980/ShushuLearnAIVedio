@@ -1,0 +1,121 @@
+{
+  "task_id": "remote-dc7a1512-0429-4264-9163-4378e1f6671b",
+  "status": "PREPARED_NOT_SUBMITTED",
+  "title": "Bounded generic prompt validation: front reference-only controls and left-profile reference/depth pairs",
+  "submit_gate": "Do not submit until every row in ../plan.json prompt-cause matrix has a terminal completed receipt with verified output hash. Then recheck task controller, GPU occupancy, queue and refreshed resources, and acquire/retain the active task lease.",
+  "fixed": {
+    "base_model": "qwen_image_2.1_bf16.safetensors",
+    "depth_control_patch": "qwen_image_2.1_fun_controlnet_union_bf16.safetensors",
+    "text_encoder": "qwen3vl_8b_int8_convrot.safetensors",
+    "vae": "qwen_image_2.1_vae_bf16.safetensors",
+    "width": 768,
+    "height": 1024,
+    "steps": 25,
+    "cfg": 1.0,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "control_strength": 0.5,
+    "control_start_percent": 0.0,
+    "control_end_percent": 1.0
+  },
+  "inputs": {
+    "appearance_reference": {
+      "path": "/home/sean/projects/comfy-ops/experiments/remote-dc7a1512-0429-4264-9163-4378e1f6671b_frost_scout_front_ab_20261025/strength_ab_20261025/inputs/appearance_reference.png",
+      "source_path": "/home/sean/projects/comfy-ops/experiments/qwen_3d_guided_cross_reference_20261024/frost_scout/reference-run/image-01.png",
+      "sha256": "143533307a2b505a0137401d66ce1c3b46b0ac0fdbc1c7fe598780f92ec4d2ea"
+    },
+    "front_depth": {
+      "path": "/home/sean/projects/comfy-ops/experiments/remote-dc7a1512-0429-4264-9163-4378e1f6671b_frost_scout_front_ab_20261025/strength_ab_20261025/inputs/front_depth.png",
+      "source_path": "/home/sean/projects/comfy-ops/experiments/qwen_3d_guided_cross_reference_20261024/frost_scout/hunyuan-input/shape-only-edit/run_423407_restart_execute/hunyuan_shape_run/front_depth_20261025/front_depth.png",
+      "sha256": "7a7b47af376c7cd5d2adf5e7c538f3d3975fc3f992879794e86eb5406678f011"
+    },
+    "side_depth": {
+      "path": "/home/sean/projects/comfy-ops/experiments/remote-dc7a1512-0429-4264-9163-4378e1f6671b_frost_scout_front_ab_20261025/side_view/inputs/side_depth.png",
+      "source_path": "/home/sean/projects/comfy-ops/experiments/qwen_3d_guided_cross_reference_20261024/frost_scout/blender-depth/left_side_depth.png",
+      "sha256": "e3bccaa52e5f449d1be997c0941ab42df2af87371e2ddef9976a9c8a41db1d82"
+    }
+  },
+  "prompts": {
+    "front_B_exact": "Create one finished full-body, strict straight-on frontal view of the same character. Keep a natural upright stance, both arms slightly away from the torso, both feet fully visible, and the complete figure centered. Preserve the character design and rendering style. Use a warm off-white studio background, soft even lighting, and a subtle floor shadow. No labels or text.",
+    "left_profile_generic": "Create one finished full-body, strict left-facing side profile view of the same character. Keep a natural upright stance, both arms slightly away from the torso, both feet fully visible, and the complete figure centered. Preserve the character design and rendering style. Use a warm off-white studio background, soft even lighting, and a subtle floor shadow. No labels or text."
+  },
+  "prompt_sha256": {
+    "front_B_exact": "d80c9bbf444c0f4e9de83af5f34da3dd20ed01ca17f487cded31a911f917f710",
+    "left_profile_generic": "fbaab7f07880cc78b1fe30a486614ccb4111005b8d0bc95baea68de0a0321f18"
+  },
+  "front_comparison": {
+    "depth_condition": "Existing prompt-cause B output at same seed, reference, depth map, and frozen settings; no extra depth-conditioned render in this phase.",
+    "appearance_only_pair": "New no-ControlNet output using exactly B prompt and same seed.",
+    "scope": "Test whether the generic target-only prompt retains stronger visible color/material when depth control is absent; this does not attribute appearance shifts to grayscale wording."
+  },
+  "side_comparison": {
+    "appearance_only": "No ControlNet branch.",
+    "reference_plus_depth": "Same image, side prompt, seed and sampler, with the matching left-side depth map connected only to ControlNet image input at strength 0.5 from 0 to 1.",
+    "scope": "Bounded transfer check for one non-front view; not cross-character stability and not semantic equipment validation."
+  },
+  "matrix": [
+    {
+      "view": "front",
+      "seed": 423490,
+      "condition": "appearance_only",
+      "use_depth": false,
+      "prompt_key": "front_B_exact",
+      "paired_existing_output": "/home/sean/projects/comfy-ops/experiments/remote-dc7a1512-0429-4264-9163-4378e1f6671b_frost_scout_front_ab_20261025/prompt_cause_20261025/seed_423490/B_minimal_target/output.png"
+    },
+    {
+      "view": "front",
+      "seed": 423530,
+      "condition": "appearance_only",
+      "use_depth": false,
+      "prompt_key": "front_B_exact",
+      "paired_existing_output": "/home/sean/projects/comfy-ops/experiments/remote-dc7a1512-0429-4264-9163-4378e1f6671b_frost_scout_front_ab_20261025/prompt_cause_20261025/seed_423530/B_minimal_target/output.png"
+    },
+    {
+      "view": "left_profile",
+      "seed": 423532,
+      "condition": "appearance_only",
+      "use_depth": false,
+      "prompt_key": "left_profile_generic",
+      "depth_strength": null
+    },
+    {
+      "view": "left_profile",
+      "seed": 423532,
+      "condition": "reference_plus_depth",
+      "use_depth": true,
+      "prompt_key": "left_profile_generic",
+      "depth_strength": 0.5,
+      "depth_start_percent": 0.0,
+      "depth_end_percent": 1.0
+    },
+    {
+      "view": "left_profile",
+      "seed": 423533,
+      "condition": "appearance_only",
+      "use_depth": false,
+      "prompt_key": "left_profile_generic",
+      "depth_strength": null
+    },
+    {
+      "view": "left_profile",
+      "seed": 423533,
+      "condition": "reference_plus_depth",
+      "use_depth": true,
+      "prompt_key": "left_profile_generic",
+      "depth_strength": 0.5,
+      "depth_start_percent": 0.0,
+      "depth_end_percent": 1.0
+    }
+  ],
+  "graph_contract": {
+    "appearance": "TextEncodeQwenImageEditPlus.image1 receives appearance image only; image2 is omitted.",
+    "structure": "For depth rows only, QwenImageDiffsynthControlnet.image receives matching view depth. For appearance-only rows, omit ModelPatchLoader, depth LoadImage, and ControlNet node entirely.",
+    "sampler": "25 steps, CFG 1, Euler/simple, denoise 1.0; 768x1024."
+  },
+  "limits": [
+    "Front appearance-only rows pair with already completed B depth outputs; confirm those receipts/hashes before running.",
+    "Six outputs cover one character, one front setup and one left-profile setup only.",
+    "Back view remains unvalidated.",
+    "Equipment semantics and bow issues are out of scope."
+  ]
+}

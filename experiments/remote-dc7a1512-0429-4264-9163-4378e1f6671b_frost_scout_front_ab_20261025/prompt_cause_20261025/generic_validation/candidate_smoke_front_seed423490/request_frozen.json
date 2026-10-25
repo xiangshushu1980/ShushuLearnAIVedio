@@ -1,0 +1,156 @@
+{
+  "request": {
+    "appearance_path": "/home/sean/projects/comfy-ops/experiments/remote-dc7a1512-0429-4264-9163-4378e1f6671b_frost_scout_front_ab_20261025/strength_ab_20261025/inputs/appearance_reference.png",
+    "depth_path": "/home/sean/projects/comfy-ops/experiments/remote-dc7a1512-0429-4264-9163-4378e1f6671b_frost_scout_front_ab_20261025/strength_ab_20261025/inputs/front_depth.png",
+    "view": "front",
+    "seed": 423490,
+    "output_dir": "/home/sean/projects/comfy-ops/experiments/remote-dc7a1512-0429-4264-9163-4378e1f6671b_frost_scout_front_ab_20261025/prompt_cause_20261025/generic_validation/candidate_smoke_front_seed423490"
+  },
+  "prompt": "Create one finished full-body, strict straight-on frontal view of the same character. Keep a natural upright stance, both arms slightly away from the torso, both feet fully visible, and the complete figure centered. Preserve the character design and rendering style. Use a warm off-white studio background, soft even lighting, and a subtle floor shadow. No labels or text.",
+  "inputs": {
+    "appearance": {
+      "path": "/home/sean/projects/comfy-ops/experiments/remote-dc7a1512-0429-4264-9163-4378e1f6671b_frost_scout_front_ab_20261025/strength_ab_20261025/inputs/appearance_reference.png",
+      "sha256": "143533307a2b505a0137401d66ce1c3b46b0ac0fdbc1c7fe598780f92ec4d2ea",
+      "upload": {
+        "local_path": "/home/sean/projects/comfy-ops/experiments/remote-dc7a1512-0429-4264-9163-4378e1f6671b_frost_scout_front_ab_20261025/strength_ab_20261025/inputs/appearance_reference.png",
+        "sha256": "143533307a2b505a0137401d66ce1c3b46b0ac0fdbc1c7fe598780f92ec4d2ea",
+        "uploaded": {
+          "name": "codex_8d372f879363_appearance.png",
+          "subfolder": "",
+          "type": "input",
+          "asset": {
+            "id": "a58db439-d415-4e2d-a69a-5ffd776270e8",
+            "name": "codex_8d372f879363_appearance.png",
+            "asset_hash": "blake3:9fac74418f881dddda9481129016ddbe379ad65e3af701e1cdea98498e4b9135",
+            "size": 1546560,
+            "mime_type": "image/png",
+            "tags": [
+              "input",
+              "uploaded"
+            ],
+            "preview_url": "/api/view?type=input&filename=codex_8d372f879363_appearance.png"
+          }
+        }
+      }
+    },
+    "depth": {
+      "path": "/home/sean/projects/comfy-ops/experiments/remote-dc7a1512-0429-4264-9163-4378e1f6671b_frost_scout_front_ab_20261025/strength_ab_20261025/inputs/front_depth.png",
+      "sha256": "7a7b47af376c7cd5d2adf5e7c538f3d3975fc3f992879794e86eb5406678f011",
+      "upload": {
+        "local_path": "/home/sean/projects/comfy-ops/experiments/remote-dc7a1512-0429-4264-9163-4378e1f6671b_frost_scout_front_ab_20261025/strength_ab_20261025/inputs/front_depth.png",
+        "sha256": "7a7b47af376c7cd5d2adf5e7c538f3d3975fc3f992879794e86eb5406678f011",
+        "uploaded": {
+          "name": "codex_85b8137ca53a_depth.png",
+          "subfolder": "",
+          "type": "input",
+          "asset": {
+            "id": "5d3c2802-660f-40f6-af72-f0e65e09be58",
+            "name": "codex_85b8137ca53a_depth.png",
+            "asset_hash": "blake3:92f9300bd5f3663a4d344216d9f57ad6997aa94f0ab25848d3ebfe4f9ff7dd03",
+            "size": 22211,
+            "mime_type": "image/png",
+            "tags": [
+              "input",
+              "uploaded"
+            ],
+            "preview_url": "/api/view?type=input&filename=codex_85b8137ca53a_depth.png"
+          }
+        }
+      }
+    }
+  },
+  "queue_preflight": {
+    "queue_running": [],
+    "queue_pending": []
+  },
+  "system_stats_preflight": {
+    "system": {
+      "os": "linux",
+      "ram_total": 57910415360,
+      "ram_free": 54184902656,
+      "comfyui_version": "0.42.1",
+      "required_frontend_version": "1.55.18",
+      "installed_templates_version": "0.11.89",
+      "required_templates_version": "0.11.89",
+      "comfy_package_versions": [
+        {
+          "name": "comfyui-frontend-package",
+          "installed": "1.55.18",
+          "required": "1.55.18"
+        },
+        {
+          "name": "comfyui-workflow-templates",
+          "installed": "0.11.89",
+          "required": "0.11.89"
+        },
+        {
+          "name": "comfyui-embedded-docs",
+          "installed": "0.5.14",
+          "required": "0.5.14"
+        },
+        {
+          "name": "comfy-kitchen",
+          "installed": "0.2.39",
+          "required": "0.2.39"
+        },
+        {
+          "name": "comfy-aimdo",
+          "installed": "0.5.6",
+          "required": "0.5.6"
+        }
+      ],
+      "python_version": "3.13.13 | packaged by Anaconda, Inc. | (main, Apr 14 2026, 06:19:41) [GCC 14.3.0]",
+      "pytorch_version": "2.13.0+cu130",
+      "embedded_python": false,
+      "deploy_environment": "local-git",
+      "argv": [
+        "main.py",
+        "--enable-assets",
+        "--enable-cors-header",
+        "--fast",
+        "fp16_accumulation"
+      ]
+    },
+    "devices": [
+      {
+        "name": "cuda:0 NVIDIA GeForce RTX 4090 : cudaMallocAsync",
+        "type": "cuda",
+        "index": 0,
+        "vram_total": 25756696576,
+        "vram_free": 23982637056,
+        "torch_vram_total": 33554432,
+        "torch_vram_free": 24772608
+      }
+    ]
+  },
+  "occupancy_preflight": {
+    "generatedAt": "2026-10-25T07:55:25.442522401Z",
+    "leases": {
+      "e7ca5d87-25ad-464d-9129-e3feece33c86": {
+        "acquiredAt": "2026-10-25T07:55:20.210301376Z",
+        "expiresAt": "2026-10-25T08:05:20.210301376Z",
+        "id": "e7ca5d87-25ad-464d-9129-e3feece33c86",
+        "kind": "job",
+        "metadata": {
+          "conversationId": "01a17196-d81d-7d73-839b-b3f51564bfae",
+          "threadId": "01a17196-d81d-7d73-839b-b3f51564bfae"
+        },
+        "owner": "remote-dc7a1512-0429-4264-9163-4378e1f6671b-single-view-smoke",
+        "resources": [
+          "gpu:0"
+        ]
+      }
+    },
+    "occupied": [
+      {
+        "expiresAt": "2026-10-25T08:05:20.210301376Z",
+        "leaseId": "e7ca5d87-25ad-464d-9129-e3feece33c86",
+        "owner": "remote-dc7a1512-0429-4264-9163-4378e1f6671b-single-view-smoke",
+        "resource": "gpu:0"
+      }
+    ]
+  },
+  "lease_id": "e7ca5d87-25ad-464d-9129-e3feece33c86",
+  "runner_sha256": "c88cceec3af056a46e420b9c6560b3515f35e0658b77bace16d2e80891c6b977",
+  "prompt_template_sha256": "b54f17a98431775d3b7aeb61b3938f4d49956988b5f33c3ffb92b88951e81c45"
+}

@@ -1,0 +1,31 @@
+{
+  "status": "completed",
+  "seed": 423530,
+  "condition": "C_minimal_plus_grayscale_depth_block",
+  "lease_id": "cee6eec5-bc8b-435b-8ad8-81317e8b8867",
+  "queue_preflight": {
+    "queue_running": [],
+    "queue_pending": []
+  },
+  "vram_free_preflight": 9721938876,
+  "prompt_id": "94208507-d25e-4ce5-bc18-6077b6d505fd",
+  "client_id": "dea3fe9c-9b27-4446-8e96-d1af9380843e",
+  "outputs": [
+    {
+      "path": "/home/sean/projects/comfy-ops/experiments/remote-dc7a1512-0429-4264-9163-4378e1f6671b_frost_scout_front_ab_20261025/prompt_cause_20261025/seed_423530/C_minimal_plus_grayscale_depth_block/output.png",
+      "sha256": "fba67d35bb200aa43d8fa0d0ee3a746c26de9b3b7984a7a51b887f93aea9ad23",
+      "bytes": 801884,
+      "comfy_output": {
+        "filename": "remote_dc7a1512_prompt_cause_423530_C_minimal_plus_grayscale_depth_block_00001_.png",
+        "subfolder": "",
+        "type": "output",
+        "metadata": {
+          "kind": "image",
+          "width": 768,
+          "height": 1024
+        },
+        "id": "fe13728c-7186-4066-ba8b-6a125ed0c7fb"
+      }
+    }
+  ]
+}

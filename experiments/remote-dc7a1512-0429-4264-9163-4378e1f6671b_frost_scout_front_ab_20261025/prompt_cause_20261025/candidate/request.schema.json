@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.invalid/comfy-ops/reference-depth-single-view-request.schema.json",
+  "title": "Reference plus depth single-view request candidate",
+  "description": "Local candidate request schema; back view remains future work and is not accepted by the current runner.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["appearance_path", "depth_path", "view", "seed", "output_dir"],
+  "properties": {
+    "appearance_path": {"type": "string", "pattern": "^/", "description": "Absolute path to the appearance reference image."},
+    "depth_path": {"type": "string", "pattern": "^/", "description": "Absolute path to the depth map matching the selected view."},
+    "view": {"type": "string", "enum": ["front", "left_profile"]},
+    "seed": {"type": "integer", "minimum": 0, "maximum": 18446744073709551615},
+    "output_dir": {"type": "string", "pattern": "^/", "description": "Absolute, new or existing task-local output directory."}
+  }
+}

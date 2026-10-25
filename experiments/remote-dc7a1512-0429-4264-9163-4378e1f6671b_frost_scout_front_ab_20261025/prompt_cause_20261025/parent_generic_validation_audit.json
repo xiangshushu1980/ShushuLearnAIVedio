@@ -1,0 +1,102 @@
+{
+  "scope": "Frost Scout front seeds423490/423530 plus left_profile seeds423532/423533, 4 matched depth/no-depth pairs (8 images, including 2 reused B outputs).",
+  "verified_outputs": [
+    {
+      "run": "seed_423490/B_minimal_target",
+      "prompt_id": "2159bbf2-6fa3-4923-8138-2a21e3c8caca",
+      "sha256": "9764a10d07b9a8b3bc5f4ad9e04b1aec6d2e90099ca03c0adf35b7c8ec6ae7d5",
+      "dimensions": [
+        768,
+        1024
+      ],
+      "uses_depth": true,
+      "fixed_template_matches": true,
+      "parent_visual_QC": "complete full-body target view; preserved blue/brown/charcoal material separation and coherent style; no broad gray/near-monochrome conversion. Equipment semantics excluded."
+    },
+    {
+      "run": "seed_423530/B_minimal_target",
+      "prompt_id": "ca496d34-f15e-41b3-9782-100c60627a11",
+      "sha256": "92c24bbf18e894eb8df00654b986a782df5ec50a578d90a4585c7126968604e1",
+      "dimensions": [
+        768,
+        1024
+      ],
+      "uses_depth": true,
+      "fixed_template_matches": true,
+      "parent_visual_QC": "complete full-body target view; preserved blue/brown/charcoal material separation and coherent style; no broad gray/near-monochrome conversion. Equipment semantics excluded."
+    },
+    {
+      "run": "generic_validation/front_seed_423490/appearance_only",
+      "prompt_id": "f283113b-07ad-49cd-a14f-f5d4cd5c1afd",
+      "sha256": "d2df22e5f550fa17917a1af2e3b8a4aafeabebb624a3151d54739b9bb521301c",
+      "dimensions": [
+        768,
+        1024
+      ],
+      "uses_depth": false,
+      "fixed_template_matches": true,
+      "parent_visual_QC": "complete full-body target view; preserved blue/brown/charcoal material separation and coherent style; no broad gray/near-monochrome conversion. Equipment semantics excluded."
+    },
+    {
+      "run": "generic_validation/front_seed_423530/appearance_only",
+      "prompt_id": "e279cbe8-32e3-4ba0-a756-8c1e82c7531b",
+      "sha256": "8df98761c005cb003388767e725ed485f063d714f7aa8da119fdae6d5e226735",
+      "dimensions": [
+        768,
+        1024
+      ],
+      "uses_depth": false,
+      "fixed_template_matches": true,
+      "parent_visual_QC": "complete full-body target view; preserved blue/brown/charcoal material separation and coherent style; no broad gray/near-monochrome conversion. Equipment semantics excluded."
+    },
+    {
+      "run": "generic_validation/left_profile_seed_423532/appearance_only",
+      "prompt_id": "d6e4b077-5c06-4463-8bbc-ccfbbd19778d",
+      "sha256": "f240c1b96c84392b02a53d22cc842239ffcce76b9acac87bf6dee6207551e744",
+      "dimensions": [
+        768,
+        1024
+      ],
+      "uses_depth": false,
+      "fixed_template_matches": true,
+      "parent_visual_QC": "complete full-body target view; preserved blue/brown/charcoal material separation and coherent style; no broad gray/near-monochrome conversion. Equipment semantics excluded."
+    },
+    {
+      "run": "generic_validation/left_profile_seed_423532/reference_plus_depth",
+      "prompt_id": "7429575d-3dbf-48e1-b3de-dfcdc67cf634",
+      "sha256": "cd4572a349e104dc6dcb2f1bacebc8c5b634fd0c8c6b8bf2cbd8824c0223e3e6",
+      "dimensions": [
+        768,
+        1024
+      ],
+      "uses_depth": true,
+      "fixed_template_matches": true,
+      "parent_visual_QC": "complete full-body target view; preserved blue/brown/charcoal material separation and coherent style; no broad gray/near-monochrome conversion. Equipment semantics excluded."
+    },
+    {
+      "run": "generic_validation/left_profile_seed_423533/appearance_only",
+      "prompt_id": "b647e562-0fb9-47d9-b93f-e0c50839785a",
+      "sha256": "afcd3cc74b701506c91f7b9da59418d0dda4cf79db6f6040eb5ee40740798c12",
+      "dimensions": [
+        768,
+        1024
+      ],
+      "uses_depth": false,
+      "fixed_template_matches": true,
+      "parent_visual_QC": "complete full-body target view; preserved blue/brown/charcoal material separation and coherent style; no broad gray/near-monochrome conversion. Equipment semantics excluded."
+    },
+    {
+      "run": "generic_validation/left_profile_seed_423533/reference_plus_depth",
+      "prompt_id": "cafa5ec9-f1f0-47b6-94d4-bb6090f2fd20",
+      "sha256": "d220883895a780e1a556d4ee4b92461b84c6d6072e8218bc0e4eb07d4ffb02d3",
+      "dimensions": [
+        768,
+        1024
+      ],
+      "uses_depth": true,
+      "fixed_template_matches": true,
+      "parent_visual_QC": "complete full-body target view; preserved blue/brown/charcoal material separation and coherent style; no broad gray/near-monochrome conversion. Equipment semantics excluded."
+    }
+  ],
+  "limits": "One character and these two views only; no back-view or universal cross-character stability claim."
+}

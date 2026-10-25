@@ -1,0 +1,13 @@
+{
+  "at": "2026-10-25T07:38:49.564140+00:00",
+  "new": "experiments/remote-dc7a1512-0429-4264-9163-4378e1f6671b_frost_scout_front_ab_20261025/prompt_cause_20261025/seed_423490/A_historical_full/output.png",
+  "historical": "experiments/qwen_3d_guided_cross_reference_20261024/frost_scout/shape_only_front_depth_guided_20261025/seed_423490/output.png",
+  "file_sha256_new": "30f3a3978d8e73a939d5de7278822067def2a51558ac579aca9ae2a773e55b86",
+  "file_sha256_historical": "0233e3c8d8dc9d1a49b5d479c9a0ee283a81164323adff1cbcec8fdb7f75f828",
+  "rgb_pixel_identical": true,
+  "dimensions": [
+    768,
+    1024
+  ],
+  "interpretation": "Historical washed appearance was exactly reproduced; PNG file hashes differ but RGB content matches. This is a relative saturation/material wash, not pure grayscale."
+}

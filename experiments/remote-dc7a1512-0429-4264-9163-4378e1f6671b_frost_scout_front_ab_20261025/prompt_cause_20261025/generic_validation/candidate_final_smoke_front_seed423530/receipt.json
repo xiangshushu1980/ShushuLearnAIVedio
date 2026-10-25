@@ -1,0 +1,28 @@
+{
+  "status": "completed",
+  "lease_id": "efeae20b-733b-4b4e-861b-aa069efd21b0",
+  "queue_preflight": {
+    "queue_running": [],
+    "queue_pending": []
+  },
+  "free_vram_bytes": 23982637056,
+  "client_id": "71eab373d6544dd68b0f6c955f3e982c",
+  "prompt_id": "201ccbcb-215b-437c-988b-659ac603098e",
+  "outputs": [
+    {
+      "path": "/home/sean/projects/comfy-ops/experiments/remote-dc7a1512-0429-4264-9163-4378e1f6671b_frost_scout_front_ab_20261025/prompt_cause_20261025/generic_validation/candidate_final_smoke_front_seed423530/output.png",
+      "sha256": "797709423541ae25149682b9c9aec3d2de927bb6c5028f1f5282acfe79653be8",
+      "comfy_output": {
+        "filename": "generic_candidate_front_423530_00001_.png",
+        "subfolder": "",
+        "type": "output",
+        "metadata": {
+          "kind": "image",
+          "width": 768,
+          "height": 1024
+        },
+        "id": "80dee082-20cf-485f-b2c3-5de9d485c444"
+      }
+    }
+  ]
+}

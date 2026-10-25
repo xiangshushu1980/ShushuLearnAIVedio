@@ -1,7 +1,7 @@
 # Qwen Image 2.1 appearance and depth role validation
 
 Task: `remote-dc7a1512-0429-4264-9163-4378e1f6671b`  
-Status: initial experiment matrix completed for Frost Scout front and left-side views; no cross-character claim.
+Status: reopened for prompt-cause isolation and a target-only generic reference-plus-depth baseline; Frost Scout front and left-profile matrices completed, final local single-run entry regression passed. No cross-character claim.
 
 ## Result summary
 
@@ -36,3 +36,14 @@ A later matched dose-response check tested appearance-only versus depth strength
 ## Recovery
 
 The front runner is `run_matched_ab.py`; the side runner is `side_view/run_matched_ab.py`. Each reads the local `plan.json` beside it and writes run receipts under its own directory. Before rerunning, verify current Task Center controller/generation, shared ComfyUI queue, GPU occupancy, and acquire a new `gpu:0` lease with the active conversation ID. Use new seed IDs for new samples; do not overwrite this evidence.
+
+## Prompt-cause follow-up and generic flow
+
+The same two-seed prompt test now isolates the historical grayscale-depth wording block: B is a target-only prompt with no descriptions of input sources; C is exactly B plus the old two-sentence grayscale-depth instruction block. With the same images, model graph, seed and sampler, both B outputs retain normal color while both C outputs become near-monochrome. The old full prompt reproduces the historical washed seed423490 output pixel-for-pixel in RGB, but behaves differently at seed423530. This identifies the inserted instruction block as a reproducible appearance-interference cause for these local cases; it does not identify one word or explain every possible appearance shift.
+
+- [Prompt-cause QC](prompt_cause_20261025/QC.md) and [six-image board](prompt_cause_20261025/prompt_cause_contact_sheet.png).
+- [Independent parent audit](prompt_cause_20261025/parent_cause_audit.json) verifies all six receipts/hashes and that B/C graphs differ only in prompt and output prefix.
+- [Generic validation QC](prompt_cause_20261025/generic_validation/QC.md): front seeds423490/423530 plus left-profile seeds423532/423533, four matched depth/no-depth pairs (eight outputs, including two reused B outputs). All were visually reviewed without gray conversion.
+- [Task-local reusable flow](prompt_cause_20261025/candidate/README.md), with the frozen generic prompt, API graph, request schema and single-view entry. Current exact validation/entry status is recorded there.
+
+The flow uses the appearance image only through EditPlus image1 and the matching depth image only through Fun Control. Prompt text describes the requested picture, with no input-source role allocation or character-specific palette. The bounded baseline is Qwen Image2.1 BF16, Fun Control BF16 strength0.5/interval0–1, 768×1024, 25 steps, CFG1, Euler/simple. Other roles and back views remain unverified. Equipment/bow problems remain with the original character-sheet task; no shared skill/preset is modified by this task-local baseline.

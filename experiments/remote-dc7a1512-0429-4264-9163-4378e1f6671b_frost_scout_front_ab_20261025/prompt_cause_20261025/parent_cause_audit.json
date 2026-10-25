@@ -1,0 +1,83 @@
+{
+  "prompt_B_C_only_added_block": true,
+  "graph_audits": [
+    {
+      "seed": 423490,
+      "B_C_graph_diffs": [
+        [
+          "7",
+          "prompt"
+        ],
+        [
+          "14",
+          "filename_prefix"
+        ]
+      ]
+    },
+    {
+      "seed": 423530,
+      "B_C_graph_diffs": [
+        [
+          "7",
+          "prompt"
+        ],
+        [
+          "14",
+          "filename_prefix"
+        ]
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "seed": 423490,
+      "condition": "A_historical_full",
+      "prompt_id": "5e8aa362-94e1-453a-bda4-18fd027c9e4d",
+      "sha256": "30f3a3978d8e73a939d5de7278822067def2a51558ac579aca9ae2a773e55b86",
+      "torso_raw_s_median_0_255": 55.0,
+      "shoulder_raw_s_median_0_255": 48.0
+    },
+    {
+      "seed": 423490,
+      "condition": "B_minimal_target",
+      "prompt_id": "2159bbf2-6fa3-4923-8138-2a21e3c8caca",
+      "sha256": "9764a10d07b9a8b3bc5f4ad9e04b1aec6d2e90099ca03c0adf35b7c8ec6ae7d5",
+      "torso_raw_s_median_0_255": 78.0,
+      "shoulder_raw_s_median_0_255": 65.0
+    },
+    {
+      "seed": 423490,
+      "condition": "C_minimal_plus_grayscale_depth_block",
+      "prompt_id": "6b946281-c0b2-42ff-be3c-df705c915ecf",
+      "sha256": "d35717ceccf493ad7d97b52cc8d492cc42e5a7047542c841cb9baae2df19f629",
+      "torso_raw_s_median_0_255": 9.0,
+      "shoulder_raw_s_median_0_255": 16.0
+    },
+    {
+      "seed": 423530,
+      "condition": "A_historical_full",
+      "prompt_id": "94d8c76a-6fa9-42b9-a77e-f7c01187ae4a",
+      "sha256": "145422145992f461b46976da8797e4873545918e8ad39ae7ceca308d01bedb9f",
+      "torso_raw_s_median_0_255": 78.0,
+      "shoulder_raw_s_median_0_255": 78.0
+    },
+    {
+      "seed": 423530,
+      "condition": "B_minimal_target",
+      "prompt_id": "ca496d34-f15e-41b3-9782-100c60627a11",
+      "sha256": "92c24bbf18e894eb8df00654b986a782df5ec50a578d90a4585c7126968604e1",
+      "torso_raw_s_median_0_255": 80.0,
+      "shoulder_raw_s_median_0_255": 71.0
+    },
+    {
+      "seed": 423530,
+      "condition": "C_minimal_plus_grayscale_depth_block",
+      "prompt_id": "94208507-d25e-4ce5-bc18-6077b6d505fd",
+      "sha256": "fba67d35bb200aa43d8fa0d0ee3a746c26de9b3b7984a7a51b887f93aea9ad23",
+      "torso_raw_s_median_0_255": 13.0,
+      "shoulder_raw_s_median_0_255": 16.0
+    }
+  ],
+  "visual_QC_parent": "Both B outputs preserve color/material appearance. Both C outputs have near-monochrome gray subjects. A423490 exactly reproduces historical washed output in RGB. A423530 remains colored; no bow/equipment scoring here.",
+  "limits": "Two seeds, one character/front/map/model. Cause localized to the full inserted text block, not one word or every depth-related instruction. ROI values are fixed-coordinate raw HSV saturation proxies, not semantic material measurements."
+}

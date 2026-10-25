@@ -1,0 +1,7 @@
+{
+  "appearance_path": "/home/sean/projects/comfy-ops/experiments/remote-dc7a1512-0429-4264-9163-4378e1f6671b_frost_scout_front_ab_20261025/strength_ab_20261025/inputs/appearance_reference.png",
+  "depth_path": "/home/sean/projects/comfy-ops/experiments/remote-dc7a1512-0429-4264-9163-4378e1f6671b_frost_scout_front_ab_20261025/strength_ab_20261025/inputs/front_depth.png",
+  "view": "front",
+  "seed": 423490,
+  "output_dir": "/home/sean/projects/comfy-ops/experiments/remote-dc7a1512-0429-4264-9163-4378e1f6671b_frost_scout_front_ab_20261025/prompt_cause_20261025/generic_validation/candidate_smoke_front_seed423490"
+}

@@ -1,0 +1,12 @@
+{
+  "at": "2026-10-25T08:03:10.733455+00:00",
+  "receipt_status": "completed",
+  "prompt_id": "201ccbcb-215b-437c-988b-659ac603098e",
+  "lease_id": "efeae20b-733b-4b4e-861b-aa069efd21b0",
+  "output_sha256": "797709423541ae25149682b9c9aec3d2de927bb6c5028f1f5282acfe79653be8",
+  "RGB_equal_to_B423530": true,
+  "prompt_byte_equal_to_B423530": true,
+  "current_runner_helper_templates_match_execution_hashes": true,
+  "final_runner_sha256": "7f6c0ed07418c131fa71a48a0df4f0e640c416e5b73ace40b387ddfe1b55ee2b",
+  "scope": "bounded Frost Scout front/left_profile validation; back and other characters unverified"
+}

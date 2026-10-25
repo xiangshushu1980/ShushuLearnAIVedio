@@ -1,0 +1,144 @@
+{
+  "captured_at_utc": "2026-10-25T07:56:24.593159+00:00",
+  "authorization": "User explicitly authorized freeing unused ComfyUI cache; parent requested post-smoke cleanup after terminal queue empty.",
+  "lease_id_for_smoke": "e7ca5d87-25ad-464d-9129-e3feece33c86",
+  "note": "Smoke runner already released this lease; no released lease was reused. Cleanup is only an idle ComfyUI cache release.",
+  "queue_before": {
+    "queue_running": [],
+    "queue_pending": []
+  },
+  "occupancy_before": {
+    "generatedAt": "2026-10-25T07:56:24.581969432Z",
+    "leases": {},
+    "occupied": []
+  },
+  "stats_before": {
+    "system": {
+      "os": "linux",
+      "ram_total": 57910415360,
+      "ram_free": 22479220736,
+      "comfyui_version": "0.42.1",
+      "required_frontend_version": "1.55.18",
+      "installed_templates_version": "0.11.89",
+      "required_templates_version": "0.11.89",
+      "comfy_package_versions": [
+        {
+          "name": "comfyui-frontend-package",
+          "installed": "1.55.18",
+          "required": "1.55.18"
+        },
+        {
+          "name": "comfyui-workflow-templates",
+          "installed": "0.11.89",
+          "required": "0.11.89"
+        },
+        {
+          "name": "comfyui-embedded-docs",
+          "installed": "0.5.14",
+          "required": "0.5.14"
+        },
+        {
+          "name": "comfy-kitchen",
+          "installed": "0.2.39",
+          "required": "0.2.39"
+        },
+        {
+          "name": "comfy-aimdo",
+          "installed": "0.5.6",
+          "required": "0.5.6"
+        }
+      ],
+      "python_version": "3.13.13 | packaged by Anaconda, Inc. | (main, Apr 14 2026, 06:19:41) [GCC 14.3.0]",
+      "pytorch_version": "2.13.0+cu130",
+      "embedded_python": false,
+      "deploy_environment": "local-git",
+      "argv": [
+        "main.py",
+        "--enable-assets",
+        "--enable-cors-header",
+        "--fast",
+        "fp16_accumulation"
+      ]
+    },
+    "devices": [
+      {
+        "name": "cuda:0 NVIDIA GeForce RTX 4090 : cudaMallocAsync",
+        "type": "cuda",
+        "index": 0,
+        "vram_total": 25756696576,
+        "vram_free": 2286486444,
+        "torch_vram_total": 33554432,
+        "torch_vram_free": 23724972
+      }
+    ]
+  },
+  "post_attempted_once": true,
+  "http_status": 200,
+  "response_text": "",
+  "queue_after": {
+    "queue_running": [],
+    "queue_pending": []
+  },
+  "stats_after": {
+    "system": {
+      "os": "linux",
+      "ram_total": 57910415360,
+      "ram_free": 51634790400,
+      "comfyui_version": "0.42.1",
+      "required_frontend_version": "1.55.18",
+      "installed_templates_version": "0.11.89",
+      "required_templates_version": "0.11.89",
+      "comfy_package_versions": [
+        {
+          "name": "comfyui-frontend-package",
+          "installed": "1.55.18",
+          "required": "1.55.18"
+        },
+        {
+          "name": "comfyui-workflow-templates",
+          "installed": "0.11.89",
+          "required": "0.11.89"
+        },
+        {
+          "name": "comfyui-embedded-docs",
+          "installed": "0.5.14",
+          "required": "0.5.14"
+        },
+        {
+          "name": "comfy-kitchen",
+          "installed": "0.2.39",
+          "required": "0.2.39"
+        },
+        {
+          "name": "comfy-aimdo",
+          "installed": "0.5.6",
+          "required": "0.5.6"
+        }
+      ],
+      "python_version": "3.13.13 | packaged by Anaconda, Inc. | (main, Apr 14 2026, 06:19:41) [GCC 14.3.0]",
+      "pytorch_version": "2.13.0+cu130",
+      "embedded_python": false,
+      "deploy_environment": "local-git",
+      "argv": [
+        "main.py",
+        "--enable-assets",
+        "--enable-cors-header",
+        "--fast",
+        "fp16_accumulation"
+      ]
+    },
+    "devices": [
+      {
+        "name": "cuda:0 NVIDIA GeForce RTX 4090 : cudaMallocAsync",
+        "type": "cuda",
+        "index": 0,
+        "vram_total": 25756696576,
+        "vram_free": 9721938876,
+        "torch_vram_total": 33554432,
+        "torch_vram_free": 24708028
+      }
+    ]
+  },
+  "free_before": 2286486444,
+  "free_after": 9721938876
+}
