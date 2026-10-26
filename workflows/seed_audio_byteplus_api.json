@@ -1,0 +1,36 @@
+{
+  "1": {
+    "class_type": "SeedAudioBytePlus",
+    "inputs": {
+      "text_prompt": "A warm, cinematic narrator speaks in Mandarin Chinese: 欢迎来到声音设计工作台。窗外有细雨，远处传来柔和的城市环境声。",
+      "provider": "Volcengine Doubao Voice",
+      "reference_mode": "text only",
+      "sample_rate": 24000,
+      "speech_rate": 0,
+      "loudness_rate": 0,
+      "pitch_rate": 0,
+      "audio_format": "wav",
+      "enable_subtitle": false,
+      "audible_watermark": false,
+      "metadata_watermark": false,
+      "content_producer": "",
+      "produce_id": "",
+      "content_propagator": "",
+      "propagate_id": "",
+      "ref_audio_1_source": "",
+      "ref_audio_2_source": "",
+      "ref_audio_3_source": "",
+      "ref_image_url": "",
+      "preset_voice": "",
+      "generation_count": 1,
+      "seed": 42
+    }
+  },
+  "2": {
+    "class_type": "SaveAudio",
+    "inputs": {
+      "audio": ["1", 0],
+      "filename_prefix": "seed_audio_byteplus"
+    }
+  }
+}
