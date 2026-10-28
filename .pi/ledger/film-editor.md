@@ -1,6 +1,6 @@
 # [Sean] 短片编辑器交付证据
 
-Owner: Sean。当前操作契约只写在 film-editor 文档，本文件记录版本和证据演进。
+Owner: Sean。Film Editor 已迁入独立仓库 https://github.com/xiangshushu1980/FilmEditor 并停止开发；后续产品由 Entity Canvas Studio 统一承接。本 ledger 记录版本和证据演进，原操作契约作为历史参考保留在独立仓库。
 
 ## 2026-10-05 · 固定工作流、互动方法与程序诊断
 
@@ -9,7 +9,7 @@ Owner: Sean。当前操作契约只写在 film-editor 文档，本文件记录�
 - 功能定论：40 项服务端回归及前端构建通过；临时源码采用/恢复均经过完整回归。真实 Agent 诊断缺剧本错误、保存方法，浏览器采用后下一轮 Agent 与真实固定 LLM 读取相同方法，冻结 input/response 哈希一致。本轮没有视频提交或视觉验收，不推导画面一致性结论。
 - 部署：4190 和 4194 均为 profile13/method10。原项目5269 revision18及旧隔离538 revision83保持。凭据、SQLite、blobs、日志与历史视频留本地；未推送远端。
 - 证据：`.pi/tasks/remote-92ecb0d7-d1db-4bd5-8a3e-83732b7404f1/delivery.md`及两份sean JSON；验收项目d6ae53a8 revision3在4194。
-- 当前契约：[工作流改进与调试](../../film-editor/WORKFLOW_IMPROVEMENT.md)。保留问题：[目标与效果登记](../../film-editor/WORKFLOW_GOAL.md)。
+- 历史契约：[工作流改进与调试](https://github.com/xiangshushu1980/FilmEditor/blob/main/WORKFLOW_IMPROVEMENT.md)。保留问题：[目标与效果登记](https://github.com/xiangshushu1980/FilmEditor/blob/main/WORKFLOW_GOAL.md)。
 
 ## 2026-10-05 · 助手入口可发现性修正
 

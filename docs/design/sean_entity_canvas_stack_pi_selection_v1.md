@@ -50,7 +50,7 @@ React Flow 提供浏览和交互开关；自动布局需要另行实现。[组�
 
 ## 4. PI：明确参考视频端原生接入
 
-本地证据入口：[视频接入说明](../../film-editor/PIWEB_IMPLEMENTATION.md)、[扩展说明](../../film-editor/pi/README.md)、`film-editor/server/pi-bridge.mjs`、`film-editor/pi/film-extension.mjs`、`film-editor/src/FilmPiPanel.jsx`。源码通过 codegraph 读取。
+历史证据入口：[视频接入说明](https://github.com/xiangshushu1980/FilmEditor/blob/main/PIWEB_IMPLEMENTATION.md)、[扩展说明](https://github.com/xiangshushu1980/FilmEditor/blob/main/pi/README.md)、[PI bridge](https://github.com/xiangshushu1980/FilmEditor/blob/main/server/pi-bridge.mjs)、[film extension](https://github.com/xiangshushu1980/FilmEditor/blob/main/pi/film-extension.mjs)、[FilmPiPanel](https://github.com/xiangshushu1980/FilmEditor/blob/main/src/FilmPiPanel.jsx)。Film Editor 已迁入独立仓库并停止开发；此处仅作历史参考。
 
 ### 已有且可借鉴
 

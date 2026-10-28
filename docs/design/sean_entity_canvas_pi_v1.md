@@ -45,7 +45,7 @@ v0.2 调整：依据用户进一步澄清，讨论可以来自小说、剧本或
 - [实体创作流程](../../reference-workspace/docs/entity-authoring-workflow-v1.md)
 - [步骤修订](../../reference-workspace/docs/workflow-step-revisions-v1.md)
 - [批次执行](../../reference-workspace/docs/authoring-batches-v1.md)
-- [影片 PI 接入参考](../../film-editor/PIWEB_IMPLEMENTATION.md)
+- [影片 PI 接入历史参考](https://github.com/xiangshushu1980/FilmEditor/blob/main/PIWEB_IMPLEMENTATION.md)（Film Editor 已迁入独立仓库并停止开发）
 
 早期 docs/47、docs/49 和 `reference-entity-authoring` skill 含 Krea2 或旧页面约束，不是本期模型和交互规范。施工时需注册 Qwen 对应方法包，不直接给 PI 加载旧 Krea2 skill。
 
