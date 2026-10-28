@@ -212,3 +212,28 @@
   - 2026-09-26 提出：A/B 直出批次暴露发色、精灵耳、装备和视角漂移；该批 12 张标记 rejected，不进入正式 manifest。
   - 2026-09-26 修正：合并 reference 手册与 H3 链路说明，增加 manifest 的 H3 multi-view provider 门禁（来源任务 T47-1 reference pipeline 修订）。
 - 证据锚：`docs/45_ref_asset_handbook.md`；`workflows/h3_shushu_object_ref_probe.json`；`experiments/h3_reference_pipeline/characters/`；A/B `generated/krea2_v1/` direct-Krea2 rejected manifest。
+
+### C-H3PROMPT-20261022-01 | Ref2VA 涉水动作提示词复测未通过验收
+- 状态：🟡待更多提示方案/样本验证；本轮不改共享 H3 规则
+- 运行：`h3-preview-v1` Ref2VA，参考 SHA-256 `cff77dea7333e9d0138efce544be1f291b8c078daf7d759f0de8dc8885027427`，seed `202610220106`，768×448，121 请求帧；同 seed 单变量修改，突出前景水洼、反光和远侧干燥落脚区。
+- 结果：抽查输出可见深色圆形路面物体但更像井盖/排水口；人物仍按步行节奏继续，未清楚呈现脚越过积水并落在干地。未满足预设动作验收；不能由单组对照推断 H3 通用上限或确定修改因果。
+- 处理：不将本轮措辞升级成默认规则，不改 runner/工作流。后续如复测，先重画水洼与路径的空间关系并另设成对验收。
+- 证据锚：[本轮报告](../../experiments/workflow_skill_optimization_20261022/REPORT.md)、`experiments/workflow_skill_optimization_20261022/h3_puddle_crossing/run-v002-log.md`。来源任务 `remote-4b2d4193-7915-4ddc-aaea-c81210eccaf4`。
+
+
+### C-H3PROMPT-20261022-02 | Krea2 QuadView 正面留空规则有效但跨视角一致性不足
+- 状态：🟡待验证（不得作为 canonical/H3 生产 reference）
+- 现行值：QuadView `QuadView_krea2_v1` 的面板级提示在 2026-10-22 的六张 Turbo 样本中均实现“特写有脸、正面留空、侧面保留脸”；但用户复核认为跨视角一致性仍有问题，装备/配件也有缺失，不足以作为可靠的角色 reference 一致性方案。
+- 时间线：
+  - 2026-10-22 初测：同 seed 提示修订后，3/3 符合脸部面板规则；法杖和背部装备不稳定。
+  - 2026-10-22 追加：再生成 3 个角色，面部面板规则 3/3 符合；精灵长弓未保留。用户总体验收仍认为跨视角一致性不足，任务收尾时不提升为 canonical。
+- 证据锚：`experiments/krea2_quadview_turbo_fourview_20261022/REPORT.md`；`experiments/krea2_quadview_turbo_fourview_more_20261022/REPORT.md`；用户级共享流程及边界 `~/.pi/agent/skills/comfyui/references/krea2-quadview.md`。
+
+
+### C-H3PROMPT-20261022-03 | 清晰锚图下三栏布局未普遍改善 QuadView 道具一致性
+- 状态：🟡待验证（当前样本不支持普遍优越性结论）
+- 现行值：同一批 Krea2 Turbo/Jibs 清晰锚图、同 seed 和 QuadView 参数的配对试验中，三栏正/侧/背布局遵循率 2/3，四栏脸/正/侧/背布局遵循率 3/3。红鞘长剑在两者均保留；长柄斧在侧/背有缺失或换边；双药瓶与匕首背面缺失。清晰的武器/饰物锚图不能单独解决跨视角对应。三栏可能让部分物件更突出，但不是一致性保证。
+- 时间线：
+  - 2026-09-28：三栏脸特写/正面/背面保留签名装备 10/10，四栏完整装备 4/10；三栏样例不含侧视图。
+  - 2026-10-22：新增正/侧/背三栏与脸/正/侧/背四栏配对，3角色各1个同 seed；三栏 2/3 布局通过，四栏 3/3。风暴信使剑两者皆稳；长柄斧会错位，药瓶/匕首背面消失。
+- 证据锚：`experiments/krea2_quadview_items_3vs4_20261022/REPORT.md`、`experiments/krea2_quadview_stability_20260928/QC.md`、`docs/46_multiview_consistency_research.md`、共享 ComfyUI skill `references/krea2-quadview.md`。

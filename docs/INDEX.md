@@ -11,9 +11,11 @@
 | 问题 | 入口 |
 |---|---|
 | 环境、模型、节点、升级 | [ComfyUI 项目研究索引（comfyui-ops）](../.pi/skills/comfyui-ops/INDEX.md) · [环境](01_environment.md) · [模型](02_models.md) · [升级](44_comfyui_h3_upgrade_runbook.md) |
-| 生图、Qwen、三视图、Krea2、质检 | [共享生图入口（用户级 comfyui）](/home/sean/.pi/agent/skills/comfyui/SKILL.md) · [图像索引](../.pi/skills/comfyui-ops/references/image/README.md) · [Krea2](40_krea2_prompt_and_identity_pipeline.md) · [VL 质检](24_vl_qc_api.md) |
+| ComfyUI API、固定工作流调用与维护 | [基础 API](/home/sean/.pi/agent/skills/comfyui/references/api.md) · [固定工作流：H3／Qwen](/home/sean/.pi/agent/skills/comfyui/references/workflows.md) · [角色设定图工作流说明](qwen-image/character-sheet-workflow.md) · [本机节点与工作流索引](../.pi/skills/comfyui-ops/INDEX.md) |
+| 图片生成、Qwen、三视图、Krea2、质检 | [项目图片生成入口](image-generation/README.md) · [共享生图调用](../.pi/skills/comfyui-ops/references/image/README.md) · [3D 深度引导角色三视图 skill](../.pi/skills/qwen-3d-guided-character-turnaround/SKILL.md) · [VL 质检](24_vl_qc_api.md) |
+| Qwen Image 2.1 专题资料 | [Qwen Image 2.1 子索引](qwen-image/README.md) · [当前 ComfyUI 图像索引](../.pi/skills/comfyui-ops/references/image/README.md) |
 | H3 生成、提示词、参数 | [Ref2VA 日常生成](34_ref2va_generation_guide.md) · [提示词 skill](../.pi/skills/h3-prompt-writing/SKILL.md) · [历史测试证据（不作配置依据）](09_h3_test_plan.md) |
-| 长视频、音频、数字人 | [MC 工程](33_h3_mc_engineering.md) · [Breeze TTS](breeze-tts-standard.md) · [数字人研究](h3-digital-human-research/) |
+| 长视频、音频、数字人 | [MC 工程](33_h3_mc_engineering.md) · [Breeze TTS](breeze-tts-standard.md) · [云语音服务免费额度](reference/cloud-voice-free-quotas.md) · [数字人研究](h3-digital-human-research/) |
 | 参考图、多视图、FaceRefine | [Reference 主题导航](reference/README.md) · [Reference 手册](45_ref_asset_handbook.md) · [多视图研究](46_multiview_consistency_research.md) · [FaceRefine 现状](43_h3_facerefine_current_state.md) |
 | Reference 创建与编辑 | [主题导航](reference/README.md) · [创建/编辑流程](48_h3_reference_creation_editing_flow.md) · [实现前架构](49_h3_reference_workspace_architecture.md) |
 | 视频生产系统与 Web 工具 | [服务架构](31_daily_video_service_architecture.md) · [拍摄本看板](22_shotlist_web_tool.md) |

@@ -33,6 +33,16 @@ H3 LoRA（models/loras/）：
 | minimax_h3_turbo_4step_ema_ckpt850_pruned_comfyui.safetensors | 592MB | 4 步试点 ckpt850（淘汰档）|
 | ref2VA_Motion_v2.safetensors | 147.9 MiB | Motion Booster V0.2 REF2VA；Civitai 2840146 / version 3246346；触发 `dynv2`；兼容与生成已验证；目标比例横幅在已测0.7可全幅，1.0同图转体重现近方形内容与黑边（竖图0.7/0.8曾有白边）；长发动态时机/轨迹变化，飘带/根须未见稳定增益，暂不改变默认配置；[初测与白边诊断](../experiments/sean_h3_motion_booster_ref2va_20261002/README.md)、[长发/根须/飘带0/0.7/1.0](../experiments/sean_h3_motion_booster_secondary_20261003/README.md) |
 
+### Qwen Image 2.1（BF16 + Fun Control）
+| 文件 | 位置 | 大小 | 用途 |
+|------|------|------|------|
+| qwen_image_2.1_bf16.safetensors | models/diffusion_models/ | 14.2GB | Qwen Image 2.1 BF16 主模型；Character Sheet LoRA 配方现用底模 |
+| qwen_image_2.1_fun_controlnet_union_bf16.safetensors | models/model_patches/ | 7.55GB | Qwen Image 2.1 Fun Control Union BF16 模型补丁；2026-10-24 与 BF16 主模型完成单视图加载及生成验证；Character Sheet LoRA 组合未测，见[试验记录](../experiments/qwen_fun_control_bf16_side_view_20261024/QC.md) |
+| qwen_image_2.1_fun_controlnet_union_int8_convrot.safetensors | models/model_patches/ | 3.78GB | Qwen Image 2.1 Fun Control Union INT8 ConvRot 模型补丁；已下载并被 ComfyUI ModelPatchLoader 枚举，尚未验证加载/生成 |
+| character-sheet-qwen-image-2.1-edit-lora-e9.safetensors | models/loras/ | 42MB | Character Sheet BF16 LoRA；仍与 BF16 主模型配用，Fun Control 组合待实测 |
+
+Fun Control 两个补丁来自 ModelScope `Comfy-Org/Qwen-Image-2.1` 的 `model_patches/`。两个文件头均可解析；2026-10-24 的单视图试跑确认 BF16 主模型 + BF16 补丁可在本机 RTX 4090 上以 768×1024、25 步完成生成（试验未叠加 Character Sheet LoRA）。该组合约 21.8GB（十进制）权重，需要 ComfyUI offload；已观测的显存读数为阶段性样本，不是峰值。Character Sheet LoRA 组合、更高分辨率及 INT8 ConvRot 补丁配方仍未验证。详见[试验记录](../experiments/qwen_fun_control_bf16_side_view_20261024/QC.md)。
+
 ### 生图（ANIMA + KREA）
 | 文件 | 位置 | 大小 | 用途 |
 |------|------|------|------|

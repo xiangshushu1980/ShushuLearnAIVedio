@@ -1,0 +1,198 @@
+{
+  "1": {
+    "class_type": "UNETLoader",
+    "inputs": {
+      "unet_name": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+      "weight_dtype": "default"
+    }
+  },
+  "2": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+      "type": "minimax",
+      "device": "default"
+    }
+  },
+  "3": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "minimax_h3_video_vae_int8_convrot.safetensors"
+    }
+  },
+  "4": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "minimax_h3_audio_vae_fp32.safetensors"
+    }
+  },
+  "5": {
+    "class_type": "MiniMaxH3SigmaShift",
+    "inputs": {
+      "model": [
+        "1",
+        0
+      ],
+      "shift_video": 12,
+      "shift_audio": 3
+    }
+  },
+  "6": {
+    "class_type": "MiniMaxH3PDDAccApply",
+    "inputs": {
+      "model": [
+        "5",
+        0
+      ],
+      "pdd_file": "minimax_h3_ref2va_pdd_acc_8step_comfyui.safetensors",
+      "nfe": "8",
+      "lora_strength": 1.0,
+      "head_strength": 1.0,
+      "on_off_grid": "error",
+      "partition": "",
+      "enabled": true,
+      "partition_check": "error"
+    }
+  },
+  "7": {
+    "class_type": "PathchSageAttentionKJ",
+    "inputs": {
+      "model": [
+        "6",
+        0
+      ],
+      "sage_attention": "auto",
+      "allow_compile": false
+    }
+  },
+  "8": {
+    "class_type": "LightVAELoader",
+    "inputs": {
+      "base_vae": [
+        "3",
+        0
+      ],
+      "decoder": "lightvae-lite-h3-decoder-int8-convrot.safetensors",
+      "encoder": "none"
+    }
+  },
+  "9": {
+    "class_type": "MiniMaxH3ReferenceToVideo",
+    "inputs": {
+      "clip": [
+        "2",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ],
+      "audio_vae": [
+        "4",
+        0
+      ],
+      "prompt": "subject_definitions:\n<Subject 1> is a young woman with a short dark bob haircut, wearing a mustard-yellow raincoat over a white shirt and dark trousers. She carries a closed red umbrella in her right hand.\n<Subject 2> is a narrow city street after rainfall, with wet asphalt, a small blue storefront, warm window light, and a shallow puddle near the curb.\n\nsummary:\n[reference generation] Create a five-second continuous street moment showing <Subject 1> carefully stepping over a puddle beside <Subject 2>, with a gentle left-to-right camera track.\n\nretention_analysis:\n<Subject 1> (appears in [Shot 1]): weak_reference - Establish the described young woman, raincoat, clothing, hairstyle, and red umbrella as the generated character design.\n<Subject 2> (appears in [Shot 1]): weak_reference - Establish the described wet street, blue storefront, warm window light, and curbside puddle as the generated setting.\n\ndetailed_description:\nGrounded live-action rendering, natural body mechanics, restrained color, soft overcast daylight, and clear spatial relationships. Keep the woman, storefront, curb, and puddle visually distinct and stable throughout the shot. The woman is the only person in the scene. The red umbrella remains closed and stays in her right hand; the blue storefront remains behind her, and the shallow puddle stays beside the curb. The camera remains at eye level and maintains a medium-wide full-body composition so the woman's feet and the puddle are visible together.\n[Shot 1] A quiet narrow city street fills the frame after rainfall. Wet asphalt reflects soft gray daylight and a modest patch of warm light from the blue storefront window. A shallow puddle lies near the curb in the foreground. <Subject 1> enters from the left at a natural walking pace, holding the closed red umbrella at her right side. Her mustard-yellow raincoat hangs over a white shirt and dark trousers; the short dark bob moves slightly as she walks. The camera tracks smoothly from left to right with small amplitude, keeping her full figure near the center while the blue storefront drifts gently across the background. The framing stays wide enough to show both shoes, the curb, and the puddle without cutting off her head or feet.\nAs she reaches the puddle, she notices it, shortens one step, and carefully lifts her leading foot over the water. Her weight shifts visibly onto the supporting leg; the lifted shoe clears the puddle, then lands on the dry pavement beyond it. The raincoat hem swings a little with the step and settles after her body weight transfers. The umbrella remains closed and moves naturally with her right arm. The puddle surface makes a few small ripples from nearby falling droplets, without a large splash. She briefly turns her eyes toward the warm storefront window while continuing forward, then returns her gaze to the path ahead. The camera continues its steady left-to-right track and eases to a stop as she takes one more ordinary step. Keep the street layout, storefront, curb, and puddle fixed relative to one another; only the woman, her clothing, the umbrella, and the small water ripples move. Use one continuous shot with no cuts, no sudden zoom, no additional people, and no abrupt change in lighting. Motion should remain readable at normal playback speed, with the step over the puddle as the single clear action and the tracking camera supporting that action rather than drawing attention away from it.\n\noverall_soundscape:\nSoft distant traffic, light water dripping from awnings, and quiet shoe steps on wet pavement. No intelligible speech.\n\nnon_diegetic_music:\nN/A",
+      "width": 928,
+      "height": 544,
+      "length": 121,
+      "ref_image_size": "match"
+    }
+  },
+  "10": {
+    "class_type": "BasicGuider",
+    "inputs": {
+      "model": [
+        "7",
+        0
+      ],
+      "conditioning": [
+        "9",
+        0
+      ]
+    }
+  },
+  "11": {
+    "class_type": "KSamplerSelect",
+    "inputs": {
+      "sampler_name": "euler"
+    }
+  },
+  "12": {
+    "class_type": "RandomNoise",
+    "inputs": {
+      "noise_seed": 202610190301
+    }
+  },
+  "13": {
+    "class_type": "SplitSigmas",
+    "inputs": {
+      "sigmas": [
+        "6",
+        1
+      ],
+      "step": 6
+    }
+  },
+  "14": {
+    "class_type": "SamplerCustomAdvanced",
+    "inputs": {
+      "noise": [
+        "12",
+        0
+      ],
+      "guider": [
+        "10",
+        0
+      ],
+      "sampler": [
+        "11",
+        0
+      ],
+      "sigmas": [
+        "13",
+        0
+      ],
+      "latent_image": [
+        "9",
+        1
+      ]
+    }
+  },
+  "15": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "14",
+        1
+      ],
+      "vae": [
+        "8",
+        0
+      ]
+    }
+  },
+  "16": {
+    "class_type": "CreateVideo",
+    "inputs": {
+      "images": [
+        "15",
+        0
+      ],
+      "fps": 24.0,
+      "codec": "none",
+      "bit_depth": 8
+    }
+  },
+  "17": {
+    "class_type": "SaveVideo",
+    "inputs": {
+      "video": [
+        "16",
+        0
+      ],
+      "filename_prefix": "sean_h3_preview_lane/pdd6_lightvae",
+      "format": "mp4",
+      "codec": "auto"
+    }
+  }
+}

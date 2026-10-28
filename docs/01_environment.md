@@ -9,18 +9,9 @@
 
 ## 启动与维护
 
-```bash
-systemctl --user start comfyui.service
-systemctl --user status comfyui.service
-systemctl --user restart comfyui.service
-systemctl --user stop comfyui.service
-# 日志: tail -f /tmp/comfyui_start.log（采样进度也打印在这里）
-# 磁盘: df -h /home/sean
-```
+服务生命周期由用户级 `comfyui.service` 承载；统一通过 Hive0 服务面板 `http://hive0.localhost` 的 ComfyUI 卡片启停和查看状态。规范 Web/API 地址为 `http://comfy.localhost`。项目不配置 ComfyUI MCP；工作流由项目 runner 或应用通过 HTTP API 提交。GPU 租约仍由 `hive-resource` 针对具体生成任务协调。
 
-ComfyUI 进程生命周期由用户级 `comfyui.service` 统一管理，Agent 和 Hivemind 面板共用该 unit。`scripts/comfy-stack.sh` 保留为人工兼容/诊断 wrapper，启停委托给 systemd；Agent/MCP 由 `.mcp.json` 的客户端生命周期管理。Hive 资源中心用于服务登记、资源预检和具体生成任务的 GPU lease。
-
-- 界面 http://localhost:8188；局域网/远程需 `--listen 0.0.0.0`（无鉴权，勿公网暴露）
+- 局域网/远程监听设置需按当前服务配置核对；本机服务不得直接暴露公网。
 - 模型首载较慢（Anima 4GB ~6s / Krea 12.9GB ~16s / Wan GGUF ~45s），同模型任务有缓存
 
 ## 关键脚本（comfy-ops/）
@@ -32,6 +23,8 @@ ComfyUI 进程生命周期由用户级 `comfyui.service` 统一管理，Agent �
 | `scripts/mem0.sh` | Mem0 运维跳板（exec 全局 `~/.pi/agent/mem0/mem0.sh`；手册见用户级 skill `~/.pi/agent/skills/mem0/`） |
 
 ## 核心 API 端点
+
+跨项目共享的接口契约、节点 schema 查询、提交/重试边界见[用户级 ComfyUI API skill](/home/sean/.pi/agent/skills/comfyui/references/api.md)。下表只作本机入口速查；节点用法和工作流接线从 `comfyui-ops` 索引进入。
 
 | 端点 | 方法 | 用途 |
 |------|------|------|

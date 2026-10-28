@@ -1,7 +1,7 @@
 # H3 普通 Ref2VA 生成手册
 
 > 普通 Ref2VA 的唯一日常入口。历史矩阵见 [09](09_h3_test_plan.md)、[19](19_h3_dual_track_gap_test.md)，提示词细则见 [17](17_h3_prompt_writing_rules.md)，连续视频见 [33](33_h3_mc_engineering.md)，VDN 独立路线见 [35](35_vdn_h3_ref2va_route.md)。
-> 最后更新：2026-10-04（正式路线更正：PDD + SageAttention + KJ 低显存双节点取代 VDN，见第 0 节与文末历史节标注）。
+> 最后更新：2026-10-19（新增 PDD6 + LightVAE 超速预览实跑确认，并记录不在当前快车道/预览车道接 Sol-Attn 的选型）。
 
 ## 0. 当前正式路线（2026-10 更正）
 
@@ -23,10 +23,31 @@ Ref2VA int8 convrot 底模
 
 | 路线 | 采样过程 | 节点/组件 | 定位 |
 |---|---|---|---|
-| 快车道 | Ref2VA int8 ConvRot → PDD Acc（`nfe=8`）→ `euler` + PDD 节点 sigmas → 8 步采样 | `PDD Acc`；正式出片链再加 `PatchSageAttentionKJ`、KJ `MiniMax H3 Low VRAM Attention(head_chunks=4)`、`MiniMax H3 Chunk FeedForward(chunks=4, seq_threshold=4096)`；需要外部音频锁口型时接 `MiniMaxH3NativeAudioLock` | 少步数快速生成；当前默认正式出片路线是在此基础上叠加加速/显存组件 |
+| 快车道 | Ref2VA int8 ConvRot → PDD Acc（`nfe=8`）→ `euler` + PDD 节点 sigmas → 8 步采样 | `PDD Acc` + `SageAttention`；正式出片链可再加 KJ `MiniMax H3 Low VRAM Attention(head_chunks=4)`、`MiniMax H3 Chunk FeedForward(chunks=4, seq_threshold=4096)`；需要外部音频锁口型时接 `MiniMaxH3NativeAudioLock`；不接 Sol-Attn | 少步数快速生成；当前默认正式出片路线是在此基础上叠加加速/显存组件 |
 | 慢车道 | 同一 Ref2VA 底模 → `res_multistep` + `simple` scheduler → 20 步标准采样 | 标准 `KSamplerSelect`、`BasicScheduler`、`BasicGuider`、`SamplerCustomAdvanced`；可接 `PatchSageAttentionKJ`。若测试目标是隔离采样差异，其他条件保持一致 | 高步数质量对照基线，不代表默认正式出片配置 |
+| 超速预览车道 | Ref2VA int8 ConvRot → PDD Acc 官方 8-step sigmas → 从完整 schedule 只执行前 6 次评估 → 解码 denoised x0 estimate | `euler`、shift 12/3、`PatchSageAttentionKJ(auto)`、LightVAE INT8 H3 decoder；不接 Sol-Attn、KJ LowVRAM 双节点或 ChunkFeedForward；默认 928×544、约 5 秒、仅画面 | Sean 于 2026-10-19 选择默认 6 次评估；单次确认实测 28.168 秒产出 124 帧/5.167 秒；只看构图、主体大形和动作方向，不验收细节、身份稳定性、动作时序或音频；初版 3 步实测见 [run 001](../experiments/sean_h3_preview_lane_20261019/run_001/run-log.md)，6 步确认见 [run 011](../experiments/sean_h3_preview_lane_20261019/run_011_pdd6_workflow_confirmation/run-log.md)，默认工作流为 [sean_h3_preview_pdd6_lightvae_api.json](../workflows/sean_h3_preview_pdd6_lightvae_api.json) |
+
+2026-10-23 扩规格试跑使用独立 `h3-preview-v2` definition，在不改动 `h3-preview-v1` 边界的前提下测试 1088×608、8 秒：runner 161.891 秒完成，较同 seed/提示词/画布/时长的快车道音频版单次快约 7%；该规格仅单次实测，抽帧仍见近景裁掉脸、LightVAE 细节偏软，不能外推为稳定吞吐或质量基线。详见[试跑 QC](../experiments/h3_preview_8s_1088_20261023/solar_oracle/run_002_h3_preview_v2/QC.md)。
 
 两条路线共用参考条件编码、latent 初始化和输出解码；进行快慢车道对照时，两边都使用 SageAttention 并尽量保持其他条件一致。采样后可按显存情况加入 `VRAM_Debug(unload_all_models)` 与视频 `VAEDecodeTiled`。PDD 对照实测的主要提速来自步数从 20 降至 8，单步耗时近似；PDD 8 步的画质仍应按具体素材验收。KJ 双节点用于降低正式成片的显存峰值，不是快车道定义本身的必要条件。
+
+固定调用入口：共享 [工作流接口](/home/sean/.pi/agent/skills/comfyui/references/workflows.md) 提供 `h3-preview-v1`、实验扩规格 `h3-preview-v2`、`h3-fast-v1`、`h3-slow-v1` 四条 H3 流程。调用方只传参数与有序参考图；共享模板是固定调用快照，仓库 `workflows/` 中的图是维护来源。预览接口封装实测见 [接口实验](../experiments/h3_workflow_interface_20261022/REPORT.md)；快、慢车道定义已接入。`h3-fast-v1` 的标准音频解码、MP4 音轨封装已于 2026-10-23 完成一次 8 秒真实生成验证（见[音频样片](../experiments/h3_fast_audio_test_20261023/solar_oracle/run_003_h3_fast_v1_audio/QC.md)）；该验证确认 AAC 音轨存在且时长匹配，但未做主观试听，不能据此判断声音内容质量或作为多样本质量基线。慢车道仍按共享 definition 状态另行完成 Live preflight 和生成验收后，才可升级为已验证基线。
+
+维护快/慢车道时成对更新 [`h3-fast_api.json`](../workflows/h3-fast_api.json) 与 [`h3-slow_api.json`](../workflows/h3-slow_api.json)，再同步用户级共享 skill 的 `assets/workflows/{h3-fast-v1,h3-slow-v1}.api.json` 节点图和同名 `.json` 参数定义/来源哈希。快车道音频由采样联合 latent 经 `VAEDecodeAudio` 解码后接到 `CreateVideo.audio`；2026-10-23 的[真实生成记录](../experiments/h3_fast_audio_test_20261023/solar_oracle/run_003_h3_fast_v1_audio/QC.md)验证了该接线及 AAC 封装。两条图都必须启用 `PatchSageAttentionKJ(sage_attention=auto)`；快车道固定 PDD8 + Euler + 节点 sigmas，慢车道固定原生 `res_multistep` / `simple` / 20 步。仅更改提示词、尺寸范围或模型参数时，仍同步更新 definition 的默认值、边界、映射和验证状态。保持预览 `h3-preview-v1` 独立，避免把 PDD 前六段和 LightVAE 设置带入完整 8 步快车道。
+
+**超速预览车道**与快车道的区别是截断采样：它仍使用训练好的 PDD 8-step 完整 sigma schedule，只执行前 6 个 sigma 区间，并将 `SamplerCustomAdvanced.denoised_output` 作为 x0 估计交给 LightVAE 解码；不是把 PDD 改成 6 步蒸馏模型，也不从 latent 中途状态直接套完整 VAE。首次验证运行前 3 步，约 37.8 秒生成 928×544、124 帧/5.167 秒预览；768×448 的 3/4/5/8 步对照见 run 004/005。默认 6 步经 [run 011](../experiments/sean_h3_preview_lane_20261019/run_011_pdd6_workflow_confirmation/run-log.md) 单次实跑确认，28.168 秒输出相同规格；单次运行不足以建立稳定速度基准。当前默认 API 工作流见 `workflows/sean_h3_preview_pdd6_lightvae_api.json`。
+
+若目标仅是看大形和动作，可参考 [run 003 分辨率阶梯](../experiments/sean_h3_preview_lane_20261019/run_003_resolution_ladder/)。同提示词/seed、5 秒、PDD 前 4 次评估的热跑中，640×352 用时约 9.84 秒且人物行走仍可辨，是当前最快可用候选；768×448 用时约 13.16 秒，人物轮廓更清楚。512×288 仅快约 1.2 秒但明显更糊。该分辨率阶梯实验只比较前 4 次评估，没有用于决定当前的 6 次默认值；6 次工作流现已由 [run 011](../experiments/sean_h3_preview_lane_20261019/run_011_pdd6_workflow_confirmation/run-log.md) 单独实跑确认。
+
+768×448 下的 PDD 前 3/4/5 次评估对照见 [run 004](../experiments/sean_h3_preview_lane_20261019/run_004_768_step_ladder/)，8 步见 [run 005](../experiments/sean_h3_preview_lane_20261019/run_005_768_pdd8/)：单次分别约 16.4/12.8/13.9/17.9 秒。非单调的 3 步数据说明单次运行波动不可用来推断步数斜率；8 步比 4 步多约 5.1 秒。画面上 3 次较糊，4 次已能辨认走路姿态，5 次轮廓略清楚，8 步更完整。Sean 将车道默认定为 6 次评估。run 011 单次确认耗时 28.168 秒；计时仍需更多同条件重复运行，不能视为稳定基准。
+
+### Sol-Attn（ComfyUI 官方 `Model Sparse Attention` 节点）调研，2026-10-19
+
+当前 ComfyUI 0.42.1 已内置并注册 `BlockSparseAttention`（显示名 `Model Sparse Attention`），无需另装节点。`method=sol-attn` 对基础 H3 生效；`sla`/`vsa` 需要匹配训练权重。节点默认仅在序列达到 `min_tokens=12288` 且符合 CUDA、BF16、head_dim=128、无 mask 等条件时走稀疏 kernel；否则走 dense backend。官方说明短序列收益有限。用户决策：Sol-Attn 不接入当前 PDD 快车道或超速预览车道；两条标准路线保留 SageAttention 配置。
+
+基于 ComfyUI 核心实现的阅读，`Model Sparse Attention` 会保留先前 attention override 作为 dense fallback，因此从代码路径看可接在 `PatchSageAttentionKJ` 后、sampler/guider 前；这不是当前车道的工作流建议。即使长序列可能受益，短片低分辨率的速度和画面收益也不确定；遵循用户选型，不将 Sol-Attn 加入快车道或超速预览默认图。若未来单独开展 Sol 研究，应作为独立实验与默认路线隔离。
+
+参考：[ComfyUI H3 官方指南](https://docs.comfy.org/tutorials/video/minimax/minimax-h3#speeding-up-generation-with-sparse-attention)、[ComfyUI 核心 `BlockSparseAttention` 实现](https://github.com/Comfy-Org/ComfyUI/blob/master/comfy_extras/nodes_sparse_attention.py)、[Sol-Attn H3 上游节点说明与 GPU 支持矩阵](https://github.com/Saganaki22/ComfyUI-sol-attn)。上游 H3 kernel 的主要性能数据来自 RTX 5090/SM120；SM89（RTX 4090）有社区 smoke test，但尚无该仓库发布的性能基准。
 
 | 档 | 画布 | 采样 | 加速组件 | 实测 |
 |---|---|---|---|---|
@@ -93,7 +114,7 @@ H3 帧数按 `17k+5` 网格对齐；请求帧数不一定等于输出帧数，�
 
 - 显存不足：先降到 768×448、减少参考条件、关闭 live preview，并使用 tiled decode。
 - 参考不生效：检查图片是否独立、`<Picture N>` 顺序是否一致、prompt 是否明确绑定。
-- 视频参考极慢或爆显存：检查 CLIP 编码设备，必要时按 [09](09_h3_test_plan.md) 的 CPU 编码方案处理。
+- 视频参考异常：先核对当前 ComfyUI 工作流、DynamicVRAM 日志与 hive-resource 运行时快照；TE 沿用默认设备，不使用历史 CPU 编码方案（见 [09](09_h3_test_plan.md)）。仅在确认实际 OOM 后按证据排查。
 - 漂移或接缝异常：先回到无 LoRA 20-step 基线，不要直接叠加 FL2VA LoRA、VDN、SOL 等未验证 patch。
 
 ## 当前结论与资料边界
@@ -103,7 +124,7 @@ H3 帧数按 `17k+5` 网格对齐；请求帧数不一定等于输出帧数，�
 - 4090 上 768×448 是首次生成默认尺寸；1024×576 可行但吞吐和显存压力更高。
 - 普通 Ref2VA、VDN、FL2VA、MC 是不同实验维度；比较时记录底模、参考图、帧数、seed、steps、采样器、LoRA、显存和 decode 时间。
 - 新增稳定参数/流程进入本文；历史实验留在专题文档；单次耗时、画质印象和踩坑经验同步到 Mem0，并带日期与适用条件。
-- 当前双角色测试视频已按路线整理到 ComfyUI 输出目录：VDN 见 `output/video/h3_vdn_ref2va_clean/`，PDD + SageAttention 见 `output/video/h3_pdd_sage_ref2va_clean/`；普通 PDD/标准 20-step 对照不再混放在主视频目录。
+- 历史产物索引（路径未在本轮复核，不保证仍在 output；当前产物须按项目规则迁入 experiments）：当时双角色测试视频按路线整理到 ComfyUI 输出目录：VDN 见 `output/video/h3_vdn_ref2va_clean/`，PDD + SageAttention 见 `output/video/h3_pdd_sage_ref2va_clean/`；普通 PDD/标准 20-step 对照不再混放在主视频目录。
 
 ### 2026-09-19 H3Memory 与 Sparse 路线补充
 

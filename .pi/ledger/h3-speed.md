@@ -154,6 +154,13 @@ C-20260914-02 | 普通 Ref2VA Turbo LoRA 1024×576 双角色长时基线 | 2026-
 
 结果：15s 端到端 393.1s（ComfyUI 390.41s），20s 端到端 615.1s（ComfyUI 626s）。输出：`output/video/h3_ref2va_ordinary_lora/dual_dialogue_15s_lora8_input_lock_1024x576_00001_.mp4`、`output/video/h3_ref2va_ordinary_lora/dual_dialogue_20s_lora8_input_lock_1024x576_00001_.mp4`。这是 Turbo LoRA，不是 PDD；同条件下慢于 VDN 15s/20s 的 286.39s/391.90s 基线。
 
+### C-H3SPEED-20261019-01 | PDD 8-step 前 3 次评估 + LightVAE 超速预览
+- 状态：✅现行（valid_from 2026-10-19）
+- 现行值：以普通 Ref2VA int8 ConvRot 为底模，加载官方 PDD Acc 8-step schedule，仅运行前 3 个 sigma 区间；`SamplerCustomAdvanced.denoised_output` 作为 denoised x0 estimate 交给 LightVAE INT8 H3 decoder。配置为 Euler、shift 12/3、SageAttention auto、无 KJ LowVRAM 节点，928×544、124 帧/24fps。
+- 实测：单次约 37.8 秒端到端生成 5.1667 秒视频。抽帧可读主体大形、黄雨衣/蓝店面关系及横向移动方向；画面明显模糊/不稳定，符合粗预览用途。不是正式质量验收；未与其他解码器做同参速度对照，故不能量化 LightVAE 单独提速。
+- 时间线：2026-10-19 实测通过，作为构图/动作方向预览；该次只验证单个场景，不推断不同 prompt/seed 下的稳定性。
+- 证据锚：[docs/34_ref2va_generation_guide.md](../../docs/34_ref2va_generation_guide.md) §超速预览车道；[experiments/sean_h3_preview_lane_20261019/run_001/](../../experiments/sean_h3_preview_lane_20261019/run_001/)；视频 SHA-256 `e2f5f7768f0f74d76221e745a1c0e8c9c9e74bf454c5fa277fb341da11abb891`。
+
 ### C-20260915-01 | Ref2VA PDD 8-step 与标准 20-step 5 秒同参对照
 - 状态：✅现行（valid_from 2026-09-15）
 - 现行值：RTX 4090 24GB、普通 Ref2VA（`minimax_h3_ref2va_pruned_int8_convrot`）、单张参考图、`NativeAudioLock` 外部 5.000s 粤语音频、768×448、124 帧、shift 12/3，除采样路线外全同参（同参考图/同音频/同六段式 prompt/同 seed `20260914`）：
@@ -289,3 +296,24 @@ C-20260914-02 | 普通 Ref2VA Turbo LoRA 1024×576 双角色长时基线 | 2026-
   - 2026-09-26 独立验收已完成产物，未重复提交 32 秒任务（避免共享实例二采阶段 RAM 风险）。
 - 证据锚：`experiments/h3_vae_upgrade/sean_continuum_768_native_audio_lock_independent_verification_20260926.md`、`sean_ref2va_continuum_dialogue_4x8_1344_face_20260926.md`；产物 `ComfyUI/output/video/sean_ref2va_continuum_dialogue_4x8_1344_00001_.mp4`；人脸边界并入 `docs/43_h3_facerefine_current_state.md`。
 - 覆盖关系：补充 C-20260925-01 的后处理与音频锁定范围；不改变其显存/内存结论，不把未量化的口型结果写成同步率定论。
+
+
+### C-H3SPEED-20261019-02 | PDD6 LightVAE 超速预览工作流确认（不含 Sol）
+- 状态：✅现行（valid_from 2026-10-19）
+- 当前选型：普通 H3 Ref2VA int8 ConvRot → PDD Acc 完整 `nfe=8` schedule → SageAttention auto → `SplitSigmas.step=6` 只运行前六个 sigma 区间 → `SamplerCustomAdvanced.denoised_output` x0 estimate → LightVAE INT8 H3 decoder。无 Sol-Attn、无 KJ LowVRAM / ChunkFeedForward 节点；928×544、121 输入帧（H3 对齐输出124帧）、24fps、视频无音频。
+- 确认实测：单次 28.168s，输出 5.166667s。抽帧可读黄雨衣人物、蓝色店面、湿街场景和左向右运动；画面偏软，精确跨水坑动作不够清楚。仅确认工作流能生成适用于构图/大形/方向预览的结果；单次计时不构成稳定吞吐基准，也不验收细节、身份、精确动作时序或音频。
+- 决策：PDD8 完整步数快车道和 PDD6 LightVAE 超速预览均不接 Sol-Attn；标准图保留 SageAttention。
+- 证据锚：[当前默认工作流](../../workflows/sean_h3_preview_pdd6_lightvae_api.json)；[确认运行记录](../../experiments/sean_h3_preview_lane_20261019/run_011_pdd6_workflow_confirmation/run-log.md)；输出 SHA-256 `6344fe5e94622476ccb523fed4cc38a5027c233d9134423ca157d9195bfeedda`；GPU lease `2a660f78-69da-4820-94dc-8d4a3ca58d95` 已释放。
+
+### C-H3SPEED-20261022-01 | H3 预览固定调用接口 v1
+- 状态：✅现行（valid_from 2026-10-22）
+- 现行值：共享 `comfyui` 的 `workflow.py` / `h3-preview-v1` 封装既有 PDD8 schedule 前 6 次评估 + denoised x0 → LightVAE 路线；提供参数映射、参考图上传/哈希、提交追踪、结果回收和不重复提交的恢复入口。
+- 验证范围：ComfyUI 0.42.1，默认 928×544、length=121→124 帧、24fps；纯文本与一张本地参考图均端到端成功。Luna 独立离线/loopback HTTP 20 项、最终 21 项测试通过。其他尺寸/长度与 2–4 图未做本轮实际生成。
+- 时间线：2026-10-22 补充 C-H3SPEED-20261019-02 的稳定调用方式，不改变采样基线。两次 runner 计时 50.395/30.386 秒，缓存/参考条件不同，各仅一次，不构成性能对照或吞吐基准。
+- 证据锚：[接口实验](../../experiments/h3_workflow_interface_20261022/REPORT.md)；[共享维护与调用契约](/home/sean/.pi/agent/skills/comfyui/references/workflows.md)。
+
+### C-H3SPEED-20261022-02 | Luna 独立调用非默认预览分辨率
+- 状态：✅现行（valid_from 2026-10-22）
+- 现行值：Luna 读取共享技能后实际调用 h3-preview-v1，单参考图、新 seed、768×448、请求 length121，输出124帧/24fps/5.166667秒无音频 MP4；回收成功，租约释放。
+- 适用边界：1.5/3.5秒抽帧可辨人物、街景与向右移动；水坑跨越动作不清楚。44.414秒为该单次runner端到端记录，不是吞吐基准或速度对照。没有改变PDD8 schedule前6次＋x0→LightVAE基线。
+- 证据锚：[Luna 六组复核](../../experiments/workflow_luna_forward_20261022/SUMMARY.md)；同目录 h3_ref2va_preview/execute/ 的实际图、history、receipt、视频和抽帧。

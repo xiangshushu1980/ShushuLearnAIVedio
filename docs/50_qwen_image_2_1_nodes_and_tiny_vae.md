@@ -7,6 +7,8 @@
 - For sampling previews, KJNodes `Model Preview Override` accepts `taeqi2_1_decoder.pth`. The final image should continue through `qwen_image_2.1_vae_bf16.safetensors` when final decode quality matters.
 - H3 has the same preview route with `taeh3.safetensors`; both files are installed under the central `/home/sean/projects/models/comfy/vae_approx` directory and recognized by the node. No H3 video generation was run in this check.
 
+当前固定调用及视图预设见共享 [Qwen 图片接口](/home/sean/.pi/agent/skills/comfyui/references/qwen-image.md)。人物/实体三视图任务的路由和验收入口见[跨模型三视图工作流](reference/three-view-workflow.md)；逐轮对照及生成产物保留在对应 experiments 报告中，不在节点说明里重复列数值。
+
 ## Cache smoke result
 
 On 2026-10-16, three Qwen Image 2.1 Turbo outputs used the same four ordered references, prompt, seed 421016, 1024×1024 canvas, 8 Euler/simple steps, and full BF16 final VAE:

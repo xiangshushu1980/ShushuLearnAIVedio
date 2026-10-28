@@ -13,10 +13,9 @@
 
 ## ComfyUI 权限边界
 
-- 禁止在沙箱权限下启动、重启、停止或直接操作 ComfyUI；也不要把沙箱内访问不到 `127.0.0.1:8188`、GPU、进程或模型目录解释为 ComfyUI 离线。
-- 需要查询、提交生成、读取队列/模型、访问 GPU 或操作 `/home/sean/projects/ComfyUI` 时，先请求宿主提供全局权限；权限不足就暂停并等待用户授权，不在沙箱内绕过或尝试替代启动。
-- ComfyUI 默认视为共享单实例服务：先检查共享 Agent 状态和队列，禁止擅自重启、切换数据库或创建第二实例。
-- 该规则只约束操作纪律，不授予权限；实际权限由 Codex 宿主/会话的 approval policy 和 sandbox profile 决定。
+- ComfyUI 的访问与操作权限完全由当前会话环境设置及宿主审批流程决定；本项目不另设沙箱、全局权限或逐项授权门槛。若宿主针对某项操作要求审批，按宿主流程向用户请求；获批后继续，不绕过审批。
+- ComfyUI 是共享单实例服务。操作前检查 Hive0 服务状态及共享队列；不得切换数据库或创建第二实例。需要启动或关闭服务时，统一通过 `http://hive0.localhost` 的 ComfyUI 服务卡片操作，使其与 Hive0 使用同一 `comfyui.service` 生命周期入口；不要另走 systemctl、wrapper 或脚本启动第二条管理路径。
+- ComfyUI MCP 已由 CLI/HTTP API 工作流替代；程序化访问的共享接口契约见用户级 `comfyui` skill 的 `references/api.md`。图片任务入口仍见该 skill 的图片流程。规范服务地址为 `http://comfy.localhost`；已有 CLI 可继续使用 IP+端口。本项目不再配置或启动 `comfyui-mcp`。
 
 ## 模型清理与恢复（Sean 决策，2026-10-11）
 
@@ -31,10 +30,10 @@
 
 ## ComfyUI 服务管理
 
-- ComfyUI 共享实例由用户级 `comfyui.service` 管理。Agent 与 Hivemind 面板使用同一个 unit：`systemctl --user start|stop|restart|status comfyui.service`；禁止使用 `start.sh`、`nohup` 或另一个脚本拉起第二个实例。
-- `scripts/comfy-stack.sh` 保留作人工兼容/诊断 wrapper，不是另一套生命周期管理器；它委托给 `comfyui.service`。Agent/MCP 由客户端根据项目 `.mcp.json` 管理，不由服务 unit 或 wrapper 再启动；Agent 只连接现有 `http://127.0.0.1:8188`。
+- ComfyUI 共享实例仍由用户级 `comfyui.service` 承载；统一经 `http://hive0.localhost` 的 ComfyUI 服务卡片启停和查看状态，该入口与 Hivemind 共用同一服务生命周期。Agent 不直接调用 systemctl，不用 `scripts/comfy-stack.sh`、`start.sh`、`nohup` 或其他脚本另行管理服务。
+- CLI/HTTP API 客户端连接现有共享实例，不由服务 unit 或其他 wrapper 再启动 ComfyUI；规范服务地址为 `http://comfy.localhost`，已有 CLI 可继续使用 IP+端口。
 - `hive-resource` 只负责资源预检、`service:comfyui` 服务登记和生成任务的 GPU lease；不把长驻 ComfyUI 当作短 TTL 的 GPU 独占 lease，也不把资源 lease 当作进程单例锁。
-- 启动前可由 wrapper 展示 `hive-resource occupancy`；具体生成任务仍按 hive-resource 规则申请 lease、heartbeat、observe 和 release。
+- 生成任务按 hive-resource 规则申请 lease、heartbeat、observe 和 release；服务启停仍统一走 Hive0 服务卡片。
 
 ## H3 测试与提示词硬规则
 
@@ -56,12 +55,6 @@
 - 只在 Agent 成功接收该回合上下文后确认已读游标；传递失败或 Agent 回合开始后产生的画布修改必须留到后续回合。区分 Agent 自己写入的事件，避免将其当成用户新修改重复处理。
 - Agent 可按用户意图整理和修改数据，但生成、采用、删除等操作仍遵守各 Workflow 的既有确认边界。
 - 用户要求刷新或同步时，只汇报本次检测到的变更及其影响；未变化上下文留在已有对话状态中，只有应用修改需要时才按需读取准确字段。被截断的差异值必须先读取完整字段再用于修改。没有待处理变更时简短说明即可。
-
-## Sean 新增内容标签
-
-- 本项目后续由 Sean 新增的脚本、节点、工作流、实验、manifest 和文档，必须带 `Sean` 所有者标签；不要为了加标签改名已有文件。
-- 代码/节点文件使用模块注释或节点显示名 `Owner: Sean` / `[Sean] ...`；实验与缓存文件在 metadata/manifest 中写 `owner: Sean`，机器文件名可使用 `sean_` 前缀。
-- 新增 ComfyUI 节点的 UI 名称优先使用 `[Sean] ...`，新增实验输出/manifest 的 prefix 优先使用 `sean_...`；历史文件和外部模型不追溯改名。
 
 ## Skill 划分纪律（多 skill 维护）
 

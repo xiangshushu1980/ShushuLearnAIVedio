@@ -140,6 +140,14 @@ Krea2 QuadView 的推荐起点也是 1536×1024、10 steps、CFG 1；但模型�
 
 配件仍不稳定：红法师法杖在两轮都缺失；矮人工程师背部铜齿轮包未稳定还原。Turbo 运行器 wall time 第二轮约 21.1 秒/张（包含提交和轮询，不等同纯采样时间）。这验证的是 prompt 对脸部 panel 的局部控制，不是 H3 下游或 canonical reference 验收。输入、prompt、seed、两轮图和实际 workflow 见 [`krea2_quadview_turbo_fourview_20261022`](../experiments/krea2_quadview_turbo_fourview_20261022/REPORT.md)。
 
+#### 2026-10-22 清晰锚图下的三栏/四栏配对测试
+
+用户指出装备一旦进入多视图就容易缺失、换手或错位；本轮先用 Krea2 Turbo + Jibs 生成三张细节醒目的正面锚图（红鞘长剑/指南针胸针、月牙长柄斧/吊坠、双青色药瓶/匕首/太阳胸饰），确认物品清晰后，再对每个锚图使用相同 seed 和 QuadView 设置配对生成：三栏正面/严格侧面/背面，对比四栏脸特写/正面/侧面/背面。除布局和正面留空脸约束外，条件相同。
+
+三栏输出有 2/3 遵循严格三栏，炼金术士多出一个重复侧面栏；四栏布局为 3/3 正确。风暴信使的红鞘长剑在两者中都保持；沙漠守卫长柄斧在三栏背面换边、侧面不清楚，在四栏侧/背也不稳定且被放大挤进特写；炼金术士的药瓶与匕首在正面醒目，但侧面只露出一瓶、背面消失。清晰锚图没有消除物品跨视角缺失问题。
+
+因此少一个 panel 可能让部分物品更突出，但目前不能归纳为更高控制力。旧版三栏“脸特写/正面/背面”曾在 10/10 样本保留标志装备，却牺牲侧视图；本轮真正的正/侧/背布局有一例结构失败。两种三栏布局不应混称为同一验证结果。报告、逐图 prompt/seed、参考图与输出见 [`krea2_quadview_items_3vs4_20261022`](../experiments/krea2_quadview_items_3vs4_20261022/REPORT.md)。
+
 ### 6. Flux Kontext / CharaConsist
 
 `reverentelusarca/kontext-turnaround-sheet-lora-v1` 用 Flux Kontext LoRA 直接生成 5/6 视图静态 sheet；其 prompt 要求 front、3/4 left、left profile、back、right profile、3/4 right。它与当前 Krea2 双栏测试的思路接近，但需要另一个基础模型生态。

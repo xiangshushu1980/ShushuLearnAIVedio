@@ -77,3 +77,14 @@
 - `ComfyUI_MiniMax_H3_Extender`：`939f773`（v2.8.4）→ `5183ad4`（上游 main，v3.0.12）。包括 refine VRAM preflight offload 实验功能及 FullBatch 片段间 AIMDO 资源清理；该版本高于最新正式 tag v3.0.6，按 Sean 要求跟进 main。`MiniMaxH3Extender` 已注册。
 - 五个仓库均为 Git fast-forward；更新差异没有 Python 依赖文件变化。原 commit 保留在各自 Git 历史中。FaceRefine 本地 `nodes.py` 改动、Latent Upscaler 和 Extender 的未跟踪缓存均保留。
 - 启动后 ComfyUI `v0.40.0` 健康，`/object_info` 共 1743 个节点，五组目标节点可加载，队列为空。未执行 H3 视频生成回归；生成质量、速度、音频与新工作流行为仍待实际 smoke 验证。
+
+## 2026-10-19 官方 H3 Model Sparse Attention / Sol-Attn 评估（Owner: Sean）
+
+- ComfyUI 共享实例当前为 `v0.42.1`；本机 `/object_info/BlockSparseAttention` 已注册，显示名 `Model Sparse Attention`，无需安装 custom node。核心源码为 `comfy_extras/nodes_sparse_attention.py`。
+- 官方 H3 文档：基础 H3 可用 `method=sol-attn`；`sla`/`vsa` 分别要求对应稀疏注意力训练权重；节点为实验功能，短序列默认阈值 `min_tokens=12288` 以下保持 dense。运行时还要求 CUDA、BF16、head_dim=128、可用 comfy-kitchen Sol-Attn kernel 和无 mask 等条件；verbose 可报告实际是否走 sparse 或回退原因。
+- 核心代码把已有 `optimized_attention_override` 作为稀疏节点的 dense fallback；对 H3 可训练层使用独立 block patch 和 `comfy_kitchen.sol_attn_chunked`。因此推断可按 `KJ Patch Sage Attention → Model Sparse Attention → guider/sampler` 连接，让不适配/不达阈值调用回退到 Sage；这是源码路径推断，尚未用当前预览 workflow 验证。
+- 适用判断：PDD 8 步 schedule 的前 6 次低分辨率 5 秒预览可能节省长序列 attention 计算，但短时低分辨率能否跨过 12,288 token 门槛尚未从当前 workflow 捕获；不能将 H3 高分辨率/长视频收益外推至本车道。稀疏近似会改变 attention 结果，须人工看动作一致性与画质。
+- `Saganaki22/ComfyUI-sol-attn` 的 H3 零拷贝 Triton 节点是社区实现，主要性能基准为 RTX 5090 / SM120（报告对 SageAttention 有 1.38–1.65× throughput）；其 README 明确 SM89/RTX 40 性能尚未基准化。Kijai 旧 `ComfyUI-SolAttn_triton` 已标记弃用，因为 ComfyUI + comfy-kitchen 已内置 Sol-Attn。不要为使用官方节点重新安装旧 custom node。
+- 搜索结果还出现社区 `Comfyui-minimaxh3-FBcache-shendumao` 的 “H3 Combined Acceleration V2”；它集成 Sage、可选 Sol-Attn 和 FirstBlockCache，不等同于 ComfyUI 官方 `Model Sparse Attention` 节点。其 Sage V2 启用时要求移除外部 KJ Sage patch，不能照搬到当前流程。
+- 决策：保持现有 preview default Sage-only；如需验证，在 640×352 与 768×448 各做同提示词/seed、同 PDD 前 6 步、Sage-only vs Sage+官方 Sol 的热态 A/B，并记录 verbose 实际 kernel 路径、单次/多次采样耗时和视频抽帧。当前没有安装、改线或生成 A/B。
+- 资料：ComfyUI [H3 Sparse Attention 指南](https://docs.comfy.org/tutorials/video/minimax/minimax-h3#speeding-up-generation-with-sparse-attention)、核心 [BlockSparseAttention 实现](https://github.com/Comfy-Org/ComfyUI/blob/master/comfy_extras/nodes_sparse_attention.py)、社区 [Saganaki22/ComfyUI-sol-attn](https://github.com/Saganaki22/ComfyUI-sol-attn)、旧 Kijai 节点 [弃用说明](https://github.com/kijai/ComfyUI-SolAttn_triton)、神都猫 [H3 Combined Acceleration V2](https://github.com/signerzwb/Comfyui-minimaxh3-FBcache-shendumao)。

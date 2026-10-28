@@ -14,6 +14,8 @@ metadata:
 3. For full-reference mode, read `references/ref-en.txt` and follow its six-section rewrite format.
 4. When this skill is used inside the comfy-ops repository, also read `../../../docs/17_h3_prompt_writing_rules.md` as the project strategy overlay. Official references own field names, labels, ordering, and syntax; the project overlay owns local defaults and verified operating constraints.
 5. Preserve the exact field names, section order, labels, and timing notation from the selected official guide.
+6. When scene layout or camera behavior is an acceptance criterion, read [spatial and camera constraints](references/spatial-camera-constraints.md). Use its reusable checklist, then fill it from this scene's approved references, scene plan, or measured layout. Never reuse another scene's coordinates or silently invent missing measurements.
+7. For an actual H3 generation run, create and maintain a [run record](references/run-record-template.md) in that run's artifact directory. Record decisions and events as they happen so another agent can reconstruct the prompt, execution, observed result, failures, and next useful experiment without relying on chat history.
 
 ## Base Modes
 
